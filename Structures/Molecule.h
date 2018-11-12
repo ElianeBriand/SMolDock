@@ -12,12 +12,21 @@
 
 namespace SmolDock {
 
+    class MoleculeTraversal;
+
     class Molecule : Structure {
+        friend MoleculeTraversal;
     public:
-        
+        Molecule();
+
+
+        /*** NOT FOR USE IN ACTUAL CODE ****/
+        void _dev_populateSampleMolecule();
+
+
     private:
-        std::vector<Atom> atoms;
-        std::vector<Bond> bonds;
+        std::vector<std::shared_ptr<Atom> > atoms;
+        std::vector<std::shared_ptr<Bond> > bonds;
     };
 
 }

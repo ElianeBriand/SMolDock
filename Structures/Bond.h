@@ -10,12 +10,16 @@
 
 namespace SmolDock {
 
-    class Bond {
+    class Bond : public std::enable_shared_from_this<Bond> {
 
     public:
         Bond(std::shared_ptr<Atom> atom_a, std::shared_ptr<Atom> atom_b);
 
+        std::shared_ptr<Atom> getEndA();
 
+        std::shared_ptr<Atom> getEndB();
+
+        void publicizeToAtom();
     private:
         std::shared_ptr<Atom> bond_end_a;
         std::shared_ptr<Atom> bond_end_b;

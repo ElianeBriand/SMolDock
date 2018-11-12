@@ -13,6 +13,6 @@ add_library(gslcblas STATIC IMPORTED)
 set_property(TARGET gslcblas PROPERTY
         IMPORTED_LOCATION /usr/lib/libgslcblas.a)
 
-add_executable(smoldock main.cpp Structures/Structure.cpp Structures/Structure.h Structures/Molecule.cpp Structures/Molecule.h Structures/Protein.cpp Structures/Protein.h Structures/Atom.cpp Structures/Atom.h Structures/Bond.cpp Structures/Bond.h)
+add_executable(smoldock main.cpp Structures/Structure.cpp Structures/Structure.h Structures/Molecule.cpp Structures/Molecule.h Structures/Protein.cpp Structures/Protein.h Structures/Atom.cpp Structures/Atom.h Structures/Bond.cpp Structures/Bond.h Utilities/MoleculeTraversal.cpp Utilities/MoleculeTraversal.h)
 
 target_link_libraries(smoldock gsl gslcblas)
