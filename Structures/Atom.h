@@ -23,12 +23,16 @@ namespace SmolDock {
         enum AtomType {
             hydrogen,
             carbon,
-            oxygen
+            oxygen,
+            nitrogen
         };
 
-        friend std::string atomTypeToString(const Atom::AtomType t);
+        friend std::string atomTypeToString(Atom::AtomType t);
 
         explicit Atom(AtomType t);
+
+        /* If you use this constructor, unique AtomID is not guaranteed */
+        Atom(AtomType t, unsigned int id);
 
         AtomType getType();
 
@@ -48,7 +52,7 @@ namespace SmolDock {
 
     };
 
-    std::string atomTypeToString(const Atom::AtomType t);
+    std::string atomTypeToString(Atom::AtomType t);
 }
 
 #endif //SMOLDOCK_ATOM_H

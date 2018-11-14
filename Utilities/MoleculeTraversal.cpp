@@ -16,7 +16,7 @@ namespace SmolDock {
 
     void MoleculeTraversal::traverse(shared_ptr<Atom> a) {
         cout << a->getAtomID() << " : " << a->getTypeString() << " (" << a->bonds.size() << " bonds)" << endl;
-        for (auto bond: a->bonds) {
+        for (const auto &bond: a->bonds) {
             auto b = bond.lock();
             if (b == nullptr) {
                 cout << "MoleculeTraversal::traverse : Cant lock weak ptr (?)" << endl;
@@ -25,7 +25,7 @@ namespace SmolDock {
             auto endB = b->getEndB();
             auto nonself_end = (endA == a) ? endB : endA; // Which end of the bond is not this atom
 
-            for (auto already_visited_atom: already_visited_atoms) {
+            for (const auto &already_visited_atom: already_visited_atoms) {
                 if (nonself_end == already_visited_atom) // already visited
                 {
                     goto nextbond; // end traversal, go to next iteration

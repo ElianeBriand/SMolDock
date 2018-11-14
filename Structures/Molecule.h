@@ -6,27 +6,49 @@
 #define SMOLDOCK_MOLECULE_H
 
 #include <vector>
+
+
+#include <GraphMol/RDKitBase.h>
+#include <GraphMol/RWMol.h>
+#include <GraphMol/MolOps.h>
+/*
+#include <GraphMol/ChemReactions/Reaction.h>
+#include <GraphMol/ChemReactions/ReactionPickler.h>
+#include <GraphMol/ChemReactions/ReactionParser.h>
+#include <GraphMol/ChemReactions/ReactionRunner.h>
+#include <GraphMol/ChemReactions/PreprocessRxn.h>
+#include <GraphMol/ChemReactions/SanitizeRxn.h>
+ */
+#include <GraphMol/SmilesParse/SmilesParse.h>
+#include <GraphMol/Substruct/SubstructMatch.h>
+
 #include "Structure.h"
 #include "Atom.h"
 #include "Bond.h"
 
 namespace SmolDock {
 
-    class MoleculeTraversal;
 
     class Molecule : Structure {
-        friend MoleculeTraversal;
+        friend class MoleculeTraversal;
+
+        friend class UnitTestHelper;
     public:
         Molecule();
 
+        explicit Molecule(const std::string &smiles);
 
-        /*** NOT FOR USE IN ACTUAL CODE ****/
-        void _dev_populateSampleMolecule();
+
+        std::shared_ptr<RDKit::RWMol> getInternalRWMol();
 
 
     private:
         std::vector<std::shared_ptr<Atom> > atoms;
         std::vector<std::shared_ptr<Bond> > bonds;
+
+        std::shared_ptr<RDKit::RWMol> rwmol;
+        std::string smiles;
+
     };
 
 }

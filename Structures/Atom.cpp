@@ -10,9 +10,14 @@ namespace SmolDock {
 
 
     Atom::Atom(AtomType t) : type(t) {
-        AtomID = nextAtomID;
+        this->AtomID = nextAtomID;
         nextAtomID++;
 
+    }
+
+
+    Atom::Atom(Atom::AtomType t, unsigned int id) : type(t) {
+        this->AtomID = id;
     }
 
     std::string atomTypeToString(const Atom::AtomType t) {
@@ -36,5 +41,6 @@ namespace SmolDock {
     std::string Atom::getTypeString() {
         return atomTypeToString(type);
     }
+
 
 }

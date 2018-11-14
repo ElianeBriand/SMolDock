@@ -7,67 +7,101 @@
 
 namespace SmolDock {
 
-    Molecule::Molecule() {
-
-    }
-
-    void Molecule::_dev_populateSampleMolecule() {
-
-        /* Molecule created : C-O-C-OH */
-        auto atom1 = std::make_shared<Atom>(Atom::carbon);
-        this->atoms.push_back(atom1);
-
-        auto atom1_h1 = std::make_shared<Atom>(Atom::hydrogen);
-        auto bond_atom1_h1 = std::make_shared<Bond>(atom1, atom1_h1);
-        this->atoms.push_back(atom1_h1);
-        this->bonds.push_back(bond_atom1_h1);
+    Molecule::Molecule() = default;
 
 
-        auto atom1_h2 = std::make_shared<Atom>(Atom::hydrogen);
-        auto bond_atom1_h2 = std::make_shared<Bond>(atom1, atom1_h2);
-        this->atoms.push_back(atom1_h2);
-        this->bonds.push_back(bond_atom1_h2);
+    Molecule::Molecule(const std::string &smiles) {
+        RDKit::RWMol *a;
+        try {
+            a = RDKit::SmilesToMol(smiles);
+        }
+        catch (...) {
+            std::cerr << "[!] Error in constructor Molecule::Molecule(const std::string &smiles)" << std::endl;
+            std::cerr << "[!] for smiles = " << smiles << std::endl;
+            std::cerr << "[!] The SMILES string was not correctly parsed by RDKit." << std::endl;
+            std::cerr << "[!] This often indicated a malformed SMILES. (but not always, RDKit has parsing bugs)"
+                      << std::endl;
+            throw;
+        }
+        // If this does not throw : we have a mol in *a
+        RDKit::MolOps::addHs(*a);
 
-        auto atom1_h3 = std::make_shared<Atom>(Atom::hydrogen);
-        auto bond_atom1_h3 = std::make_shared<Bond>(atom1, atom1_h3);
-        this->atoms.push_back(atom1_h3);
-        this->bonds.push_back(bond_atom1_h3);
+        rwmol.reset(a);
 
-        auto atom2 = std::make_shared<Atom>(Atom::oxygen);
-        auto bond_atom1_atom2 = std::make_shared<Bond>(atom1, atom2);
-        this->atoms.push_back(atom2);
-        this->bonds.push_back(bond_atom1_atom2);
-
-        auto atom3 = std::make_shared<Atom>(Atom::carbon);
-        auto bond_atom2_atom3 = std::make_shared<Bond>(atom2, atom3);
-        this->atoms.push_back(atom3);
-        this->bonds.push_back(bond_atom2_atom3);
-
-        auto atom3_h1 = std::make_shared<Atom>(Atom::hydrogen);
-        auto bond_atom3_h1 = std::make_shared<Bond>(atom3, atom3_h1);
-        this->atoms.push_back(atom3_h1);
-        this->bonds.push_back(bond_atom3_h1);
-
-        auto atom3_h2 = std::make_shared<Atom>(Atom::hydrogen);
-        auto bond_atom3_h2 = std::make_shared<Bond>(atom3, atom3_h2);
-        this->atoms.push_back(atom3_h2);
-        this->bonds.push_back(bond_atom3_h2);
-
-        auto atom4 = std::make_shared<Atom>(Atom::oxygen);
-        auto bond_atom3_atom4 = std::make_shared<Bond>(atom3, atom4);
-        this->atoms.push_back(atom4);
-        this->bonds.push_back(bond_atom3_atom4);
-
-        auto atom5 = std::make_shared<Atom>(Atom::hydrogen);
-        auto bond_atom4_atom5 = std::make_shared<Bond>(atom4, atom5);
-        this->atoms.push_back(atom5);
-        this->bonds.push_back(bond_atom4_atom5);
-
-
-        for (auto bond: this->bonds) {
-            bond->publicizeToAtom();
+        for (auto atom_it = rwmol->beginAtoms(); atom_it != rwmol->endAtoms(); ++atom_it) {
+            std::shared_ptr<Atom> current_atom;
+            switch ((*atom_it)->getAtomicNum()) {
+                case 1:
+                    current_atom = std::make_shared<Atom>(Atom::hydrogen, (*atom_it)->getIdx());
+                    break;
+                case 6:
+                    current_atom = std::make_shared<Atom>(Atom::carbon, (*atom_it)->getIdx());
+                    break;
+                case 7:
+                    current_atom = std::make_shared<Atom>(Atom::nitrogen, (*atom_it)->getIdx());
+                    break;
+                case 8:
+                    current_atom = std::make_shared<Atom>(Atom::oxygen, (*atom_it)->getIdx());
+                    break;
+                default:
+                    std::cout << "[!] Unsupported atom type" << std::endl;
+                    std::cout << "[!] Atomic num = " << (*atom_it)->getAtomicNum() << std::endl;
+                    std::exit(-1);
+                    // break;
+            }
+            atoms.push_back(current_atom);
         }
 
+        for (auto bond_it = rwmol->beginBonds(); bond_it != rwmol->endBonds(); ++bond_it) {
+            auto beginAtom = (*bond_it)->getBeginAtom();
+            auto endAtom = (*bond_it)->getEndAtom();
 
+            unsigned int beginAtomID = beginAtom->getIdx();
+            unsigned int endAtomID = endAtom->getIdx();
+
+            auto resultBegin = std::find_if(std::begin(atoms), std::end(atoms),
+                                            [beginAtomID](const std::shared_ptr<Atom> &atom) -> bool {
+                                                return atom->getAtomID() == beginAtomID;
+                                            }
+            );
+
+            auto resultEnd = std::find_if(std::begin(atoms), std::end(atoms),
+                                          [endAtomID](const std::shared_ptr<Atom> &atom) -> bool {
+                                              return atom->getAtomID() == endAtomID;
+                                          }
+            );
+
+            if (resultBegin == std::end(atoms) || resultEnd == std::end(atoms)) {
+                std::cout << "[!] Unable to find atom with ID = " << beginAtomID << " or " << endAtomID << std::endl;
+                std::exit(-1);
+            }
+
+            auto new_bond = std::make_shared<Bond>(*resultBegin, *resultEnd);
+
+            switch ((*bond_it)->getBondType()) {
+                case RDKit::Bond::SINGLE:
+                    new_bond->setBondType(Bond::BondType::singlebond);
+                    break;
+                case RDKit::Bond::DOUBLE:
+                    new_bond->setBondType(Bond::BondType::doublebond);
+                    break;
+                case RDKit::Bond::TRIPLE:
+                    new_bond->setBondType(Bond::BondType::triplebond);
+                    break;
+                default:
+                    std::cout << "[!] Unsupported bond type" << std::endl;
+                    std::cout << "[!] Enum bond type = " << (*bond_it)->getBondType() << std::endl;
+                    std::exit(-1);
+                    // break;
+            }
+            new_bond->publicizeToAtom();
+            bonds.push_back(new_bond);
+        }
+
+        this->smiles = smiles;
+    }
+
+    std::shared_ptr<RDKit::RWMol> Molecule::getInternalRWMol() {
+        return rwmol;
     }
 }
