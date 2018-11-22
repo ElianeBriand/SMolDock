@@ -26,6 +26,7 @@ LINK_DIRECTORIES(${RDKIT_ROOT}/lib)
 SET(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -lboost_system ")
 ######## END OF RDKIT ######
 
+include_directories(Dependencies)
 
 add_subdirectory(UnitTests)
 

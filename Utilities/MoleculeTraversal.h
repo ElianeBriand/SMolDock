@@ -6,6 +6,8 @@
 #define SMOLDOCK_MOLECULETRAVERSAL_H
 
 #include "../Structures/Molecule.h"
+#include "../Structures/Atom.h"
+
 
 namespace SmolDock {
 
@@ -26,6 +28,8 @@ namespace SmolDock {
 
 
     };
+
+
 }
 
 #endif //SMOLDOCK_MOLECULETRAVERSAL_H

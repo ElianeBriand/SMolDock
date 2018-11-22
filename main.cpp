@@ -18,13 +18,28 @@
 #include <GraphMol/Substruct/SubstructMatch.h>
 #include <DataStructs/ExplicitBitVect.h>
 
+#include <ESBTL/default.h>
+#include <ESBTL/atom_classifier.h>
+#include <ESBTL/weighted_atom_iterator.h>
+#include <ESBTL/compressed_ifstream.h>
+
+#define SMOLDOCK_VERBOSE_DEBUG
+
 #include "Structures/Molecule.h"
 #include "Utilities/MoleculeTraversal.h"
+#include "Structures/Protein.h"
 
 
 int main() {
 
 
+    SmolDock::Protein prot;
+
+    prot.populateFromPDB("1dpx.pdb");
+
+    return 0;
+
+    /*
     SmolDock::Molecule m("[CH3]O[CH2][OH]");
     SmolDock::MoleculeTraversal tr(m);
 
@@ -43,4 +58,5 @@ int main() {
 
 
     return 0;
+    */
 }

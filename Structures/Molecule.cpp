@@ -3,7 +3,7 @@
 //
 
 #include "Molecule.h"
-
+#include "Atom.h"
 
 namespace SmolDock {
 
@@ -30,18 +30,19 @@ namespace SmolDock {
 
         for (auto atom_it = rwmol->beginAtoms(); atom_it != rwmol->endAtoms(); ++atom_it) {
             std::shared_ptr<Atom> current_atom;
+            // TODO : refactor this using the std::set of type-name-properties
             switch ((*atom_it)->getAtomicNum()) {
                 case 1:
-                    current_atom = std::make_shared<Atom>(Atom::hydrogen, (*atom_it)->getIdx());
+                    current_atom = std::make_shared<Atom>(Atom::AtomType::hydrogen, (*atom_it)->getIdx());
                     break;
                 case 6:
-                    current_atom = std::make_shared<Atom>(Atom::carbon, (*atom_it)->getIdx());
+                    current_atom = std::make_shared<Atom>(Atom::AtomType::carbon, (*atom_it)->getIdx());
                     break;
                 case 7:
-                    current_atom = std::make_shared<Atom>(Atom::nitrogen, (*atom_it)->getIdx());
+                    current_atom = std::make_shared<Atom>(Atom::AtomType::nitrogen, (*atom_it)->getIdx());
                     break;
                 case 8:
-                    current_atom = std::make_shared<Atom>(Atom::oxygen, (*atom_it)->getIdx());
+                    current_atom = std::make_shared<Atom>(Atom::AtomType::oxygen, (*atom_it)->getIdx());
                     break;
                 default:
                     std::cout << "[!] Unsupported atom type" << std::endl;

@@ -7,7 +7,11 @@
 
 #include <vector>
 #include <memory>
+#include <set>
+#include <algorithm>
+#include <iostream>
 
+#include "AminoAcid.h"
 
 namespace SmolDock {
 
@@ -15,30 +19,86 @@ namespace SmolDock {
 
     class MoleculeTraversal;
 
+    class Atom;
+
+    // The data structure used internally for the computation
+    // (no cruft, as packed as possible)
+    struct SmolAtom {
+        Atom *atom;
+        double x, y, z;
+    };
+
+
     class Atom {
         friend Bond;
         friend MoleculeTraversal;
 
+        friend class Protein;
+
     public:
-        enum AtomType {
+
+        enum class AtomType {
+            unknown,
             hydrogen,
             carbon,
             oxygen,
-            nitrogen
+            nitrogen,
+            sulfur,
+            chlorine
         };
 
+        /** Too many cases, for now we just store as-is in a string
+        enum class AtomClassInResidue {
+            unknown,
+            C, O, N,
+            CA, CB, CG,
+            CZ, CZ2, CZ3,
+            CH2,
+            CD1, CD2,
+            CE1, CE2, CE3,
+            CG2,
+            NE, NE1, NE2,
+            NH1, NH2,
+            NZ,
+            OE1,
+            OD1, OD2,
+            OG1,
+            SG
+        };
+        */
+
+
+        /// Internal type <=> string conversion //////
         friend std::string atomTypeToString(Atom::AtomType t);
+
+        friend Atom::AtomType stringToAtomType(const std::string &symbol_or_name);
+
+        /// Constructors //////
 
         explicit Atom(AtomType t);
 
-        /* If you use this constructor, unique AtomID is not guaranteed */
+        Atom(const std::string &symbol_or_name, bool PDBFormat = false,
+             AminoAcid::AAType resType = AminoAcid::AAType::heteroatom);
+
+        /* If you use these constructors, unique AtomID is not guaranteed */
         Atom(AtomType t, unsigned int id);
+
+        Atom(const std::string &symbol_or_name, unsigned int id);
+
 
         AtomType getType();
 
         std::string getTypeString();
 
         unsigned int getAtomID();
+
+        std::weak_ptr<AminoAcid> getOwningAA();
+
+        void setOwningAA(std::shared_ptr<AminoAcid> &aa);
+
+        std::tuple<double, double, double> getAtomPosition();
+
+        void setAtomPosition(std::tuple<double, double, double> pos);
 
     protected:
         // Bonds involving this atom
@@ -47,12 +107,23 @@ namespace SmolDock {
     private:
         AtomType type;
 
+        bool fromResidue = false;
+        AminoAcid::AAType residueType = AminoAcid::AAType::heteroatom;
+        std::string atomClassInResidue; // The full atom name given in the PDB (CA, CB, CZ ...)
+        std::weak_ptr<AminoAcid> owningAA;
+
         static unsigned int nextAtomID;
         unsigned int AtomID;
 
+        SmolAtom smolAtom;
+
+        static std::set<std::tuple<Atom::AtomType, std::string, std::string> > AtomTypeLabel;
     };
 
     std::string atomTypeToString(Atom::AtomType t);
+
+    Atom::AtomType stringToAtomType(const std::string &symbol_or_name);
+
 }
 
 #endif //SMOLDOCK_ATOM_H

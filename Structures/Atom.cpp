@@ -21,14 +21,30 @@ namespace SmolDock {
     }
 
     std::string atomTypeToString(const Atom::AtomType t) {
-
-        if (t == Atom::AtomType::carbon)
-            return "Carbon";
-        if (t == Atom::AtomType::oxygen)
-            return "Oxygen";
-        if (t == Atom::AtomType::hydrogen)
-            return "Hydrogen";
+        auto it = std::find_if(Atom::AtomTypeLabel.begin(), Atom::AtomTypeLabel.end(),
+                               [&](const std::tuple<Atom::AtomType, std::string, std::string> &e) {
+                                   return std::get<0>(e) == t;
+                               });
+        if (it != Atom::AtomTypeLabel.end()) {
+            return std::get<1>(*it);
+        }
     }
+
+    Atom::AtomType stringToAtomType(const std::string &symbol_or_name) {
+        auto it = std::find_if(Atom::AtomTypeLabel.begin(), Atom::AtomTypeLabel.end(),
+                               [&](const std::tuple<Atom::AtomType, std::string, std::string> &e) {
+                                   return (std::get<1>(e) == symbol_or_name) || (std::get<2>(e) == symbol_or_name);
+                               });
+        if (it != Atom::AtomTypeLabel.end()) {
+            return std::get<0>(*it);
+        } else {
+
+            std::cout << "[!] Encountered unknown atom symbol_or_name : " << symbol_or_name << std::endl;
+            return Atom::AtomType::unknown;
+        }
+    }
+
+
 
     Atom::AtomType Atom::getType() {
         return type;
@@ -42,5 +58,58 @@ namespace SmolDock {
         return atomTypeToString(type);
     }
 
+    /*
+     *             hydrogen,
+            carbon,
+            oxygen,
+            nitrogen*/
+
+    std::set<std::tuple<Atom::AtomType, std::string, std::string> > Atom::AtomTypeLabel = {
+            {Atom::AtomType::unknown,  "unknown",  "?"},
+            {Atom::AtomType::hydrogen, "hydrogen", "H"},
+            {Atom::AtomType::carbon,   "carbon",   "C"},
+            {Atom::AtomType::oxygen,   "oxygen",   "O"},
+            {Atom::AtomType::nitrogen, "nitrogen", "N"},
+            {Atom::AtomType::sulfur,   "sulfur",   "S"},
+            {Atom::AtomType::chlorine, "chlorine", "CL"}
+    };
+
+
+    Atom::Atom(const std::string &symbol_or_name, bool PDBFormat, AminoAcid::AAType resType) {
+        if (PDBFormat == true) {
+            auto first_letter = symbol_or_name.substr(0, 1); // One letter code for atom is always same as usual
+            this->type = stringToAtomType(first_letter);
+            this->atomClassInResidue = symbol_or_name;
+            fromResidue = true;
+        } else {
+            this->type = stringToAtomType(symbol_or_name);
+        }
+        this->residueType = resType; // Default : heteroatom
+        this->AtomID = nextAtomID;
+        nextAtomID++;
+    }
+
+    Atom::Atom(const std::string &symbol_or_name, unsigned int id) {
+        this->type = stringToAtomType(symbol_or_name);
+        this->AtomID = id;
+    }
+
+    std::weak_ptr<AminoAcid> Atom::getOwningAA() {
+        return this->owningAA;
+    }
+
+    void Atom::setOwningAA(std::shared_ptr<AminoAcid> &aa) {
+        this->owningAA = aa;
+    }
+
+    std::tuple<double, double, double> Atom::getAtomPosition() {
+        return std::make_tuple(this->smolAtom.x, this->smolAtom.y, this->smolAtom.z);
+    }
+
+    void Atom::setAtomPosition(std::tuple<double, double, double> pos) {
+        this->smolAtom.x = std::get<0>(pos);
+        this->smolAtom.y = std::get<1>(pos);
+        this->smolAtom.z = std::get<2>(pos);
+    }
 
 }
