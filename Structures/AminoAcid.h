@@ -57,10 +57,9 @@ namespace SmolDock {
         friend AminoAcid::AAType stringToResType(const std::string &shorthand_or_name);
 
 
-        AminoAcid() = default;
-
         explicit AminoAcid(const std::string &AA3LettersShorthand);
 
+        explicit AminoAcid(const AminoAcid::AAType &type);
     protected:
         static std::set<std::tuple<AminoAcid::AAType, std::string, std::string> > AAShorthandSet;
 

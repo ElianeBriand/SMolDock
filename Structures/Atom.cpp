@@ -76,7 +76,7 @@ namespace SmolDock {
 
 
     Atom::Atom(const std::string &symbol_or_name, bool PDBFormat, AminoAcid::AAType resType) {
-        if (PDBFormat == true) {
+        if (PDBFormat) {
             auto first_letter = symbol_or_name.substr(0, 1); // One letter code for atom is always same as usual
             this->type = stringToAtomType(first_letter);
             this->atomClassInResidue = symbol_or_name;
@@ -103,13 +103,13 @@ namespace SmolDock {
     }
 
     std::tuple<double, double, double> Atom::getAtomPosition() {
-        return std::make_tuple(this->smolAtom.x, this->smolAtom.y, this->smolAtom.z);
+        return std::make_tuple(this->x, this->y, this->z);
     }
 
     void Atom::setAtomPosition(std::tuple<double, double, double> pos) {
-        this->smolAtom.x = std::get<0>(pos);
-        this->smolAtom.y = std::get<1>(pos);
-        this->smolAtom.z = std::get<2>(pos);
+        this->x = std::get<0>(pos);
+        this->y = std::get<1>(pos);
+        this->z = std::get<2>(pos);
     }
 
 }

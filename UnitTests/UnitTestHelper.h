@@ -31,14 +31,13 @@ namespace SmolDock {
 
         void populateMol_COCOH(std::shared_ptr<Molecule> mol);
 
-        std::tuple<unsigned int, unsigned int> getNumberOfAtomAndBonds(std::shared_ptr<Molecule> mol);
+        std::tuple<unsigned long, unsigned long> getNumberOfAtomAndBonds(std::shared_ptr<Molecule> mol);
 
         RDKit::RWMol *getRDKitRWMol(std::shared_ptr<Molecule> mol);
 
     private:
 
     };
-
 
 }
 

@@ -13,6 +13,7 @@
 
 #include "AminoAcid.h"
 
+
 namespace SmolDock {
 
     class Bond;
@@ -21,21 +22,21 @@ namespace SmolDock {
 
     class Atom;
 
-    // The data structure used internally for the computation
-    // (no cruft, as packed as possible)
-    struct SmolAtom {
-        Atom *atom;
-        double x, y, z;
-    };
+
+    class MoleculeTraversal;
+
+
+
 
 
     class Atom {
+    public:
+
         friend Bond;
         friend MoleculeTraversal;
 
         friend class Protein;
 
-    public:
 
         enum class AtomType {
             unknown,
@@ -77,8 +78,8 @@ namespace SmolDock {
 
         explicit Atom(AtomType t);
 
-        Atom(const std::string &symbol_or_name, bool PDBFormat = false,
-             AminoAcid::AAType resType = AminoAcid::AAType::heteroatom);
+        explicit Atom(const std::string &symbol_or_name, bool PDBFormat = false,
+                      AminoAcid::AAType resType = AminoAcid::AAType::heteroatom);
 
         /* If you use these constructors, unique AtomID is not guaranteed */
         Atom(AtomType t, unsigned int id);
@@ -115,7 +116,7 @@ namespace SmolDock {
         static unsigned int nextAtomID;
         unsigned int AtomID;
 
-        SmolAtom smolAtom;
+        double x, y, z;
 
         static std::set<std::tuple<Atom::AtomType, std::string, std::string> > AtomTypeLabel;
     };

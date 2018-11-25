@@ -19,11 +19,23 @@ endif ()
 ######## RDKIT ######
 # Adjust this according to where your RDKit build is :
 set(RDKIT_ROOT /home/eliane/Projects/RDKit/)
+set(RDKIT_ROOT_TWO /home/eliane/Projects/rdkit_src/rdkit/)
 
-include_directories(/home/eliane/Projects/rdkit_src/rdkit/Code/)
+include_directories(${RDKIT_ROOT_TWO}/Code/)
 
 LINK_DIRECTORIES(${RDKIT_ROOT}/lib)
+LINK_DIRECTORIES(${RDKIT_ROOT_TWO}/lib)
 SET(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -lboost_system ")
+######## END OF RDKIT ######
+
+
+######## VC ######
+# Adjust this according to where your Vc build is :
+set(VC_ROOT /home/eliane/Projects/VcInstall/)
+
+include_directories(${VC_ROOT}/include/)
+
+LINK_DIRECTORIES(${VC_ROOT}/lib)
 ######## END OF RDKIT ######
 
 include_directories(Dependencies)
@@ -51,7 +63,13 @@ set(SOURCE_LIST Structures/Structure.cpp
         Utilities/MoleculeTraversal.cpp
         Utilities/MoleculeTraversal.h
         Structures/AminoAcid.cpp
-        Structures/AminoAcid.h)
+        Structures/AminoAcid.h
+        Engines/AbstractDockingEngine.cpp
+        Engines/AbstractDockingEngine.h
+        Engines/MDStyleDockingEngine.cpp
+        Engines/MDStyleDockingEngine.h
+        Engines/VinaCompatibleDockingEngine.cpp
+        Engines/VinaCompatibleDockingEngine.h Structures/Results/DockingResult.cpp Structures/Results/DockingResult.h Utilities/DockingResultPrinter.cpp Utilities/DockingResultPrinter.h)
 
 ADD_LIBRARY(smoldock_object OBJECT ${SOURCE_LIST})
 
@@ -65,3 +83,4 @@ TARGET_LINK_LIBRARIES(smoldock RDKitAlignment RDKitForceFieldHelpers RDKitRDBoos
 
 
 target_link_libraries(smoldock gsl gslcblas)
+target_link_libraries(smoldock Vc)

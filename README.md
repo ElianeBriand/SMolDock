@@ -11,11 +11,23 @@ Use cmake
 
 See main.cpp for lack of a proper interface yet...
 
-# Liencing
+# Licencing
 SmolDock is licenced under GNU GPL version 3 or later.
 
 
 
 It includes works from :
 
-- (released under)
+- ESBTL (released under GNU GPLv3)
+
+
+# Dependencies
+
+## RDKit (linking with dynamic library)
+
+TODO : Add explicit instruction on how to build. For now, review the cmakelists.txt 
+to get an idea. It's a bit weird TBH.
+
+## Vc
+
+Edit cmakelists.txt with your Vc install dir

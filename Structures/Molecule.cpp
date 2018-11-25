@@ -10,9 +10,10 @@ namespace SmolDock {
     Molecule::Molecule() = default;
 
 
-    Molecule::Molecule(const std::string &smiles) {
-        RDKit::RWMol *a;
+    bool Molecule::populateFromSMILES(const std::string &smiles) {
+        RDKit::RWMol *a = nullptr;
         try {
+            /* This can throw */
             a = RDKit::SmilesToMol(smiles);
         }
         catch (...) {
@@ -21,12 +22,24 @@ namespace SmolDock {
             std::cerr << "[!] The SMILES string was not correctly parsed by RDKit." << std::endl;
             std::cerr << "[!] This often indicated a malformed SMILES. (but not always, RDKit has parsing bugs)"
                       << std::endl;
-            throw;
+            return false;
         }
+        if (a == nullptr) {
+            std::cerr << "[!] Error in constructor Molecule::Molecule(const std::string &smiles)" << std::endl;
+            std::cerr << "[!] for smiles = " << smiles << std::endl;
+            std::cerr << "[!] The SMILES string was not correctly parsed by RDKit." << std::endl;
+            std::cerr << "[!] This often indicated a malformed SMILES. (but not always, RDKit has parsing bugs)"
+                      << std::endl;
+            return false;
+        }
+
         // If this does not throw : we have a mol in *a
         RDKit::MolOps::addHs(*a);
 
         rwmol.reset(a);
+
+        int conformer_id = RDKit::DGeomHelpers::EmbedMolecule(*rwmol, 10, 367454, true);
+        RDKit::Conformer &starting_conformer = rwmol->getConformer(conformer_id);
 
         for (auto atom_it = rwmol->beginAtoms(); atom_it != rwmol->endAtoms(); ++atom_it) {
             std::shared_ptr<Atom> current_atom;
@@ -47,9 +60,11 @@ namespace SmolDock {
                 default:
                     std::cout << "[!] Unsupported atom type" << std::endl;
                     std::cout << "[!] Atomic num = " << (*atom_it)->getAtomicNum() << std::endl;
-                    std::exit(-1);
+                    return false;
                     // break;
             }
+            const RDGeom::Point3D &position = starting_conformer.getAtomPos((*atom_it)->getIdx());
+            current_atom->setAtomPosition(std::make_tuple(position.x, position.y, position.z));
             atoms.push_back(current_atom);
         }
 
@@ -74,7 +89,7 @@ namespace SmolDock {
 
             if (resultBegin == std::end(atoms) || resultEnd == std::end(atoms)) {
                 std::cout << "[!] Unable to find atom with ID = " << beginAtomID << " or " << endAtomID << std::endl;
-                std::exit(-1);
+                return false;
             }
 
             auto new_bond = std::make_shared<Bond>(*resultBegin, *resultEnd);
@@ -92,7 +107,7 @@ namespace SmolDock {
                 default:
                     std::cout << "[!] Unsupported bond type" << std::endl;
                     std::cout << "[!] Enum bond type = " << (*bond_it)->getBondType() << std::endl;
-                    std::exit(-1);
+                    return false;
                     // break;
             }
             new_bond->publicizeToAtom();
@@ -100,7 +115,10 @@ namespace SmolDock {
         }
 
         this->smiles = smiles;
+
+        return true;
     }
+
 
     std::shared_ptr<RDKit::RWMol> Molecule::getInternalRWMol() {
         return rwmol;

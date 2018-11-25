@@ -23,6 +23,7 @@
 #include <GraphMol/Substruct/SubstructMatch.h>
 #include <DataStructs/ExplicitBitVect.h>
 
+#define SMOLDOCK_VERBOSE_DEBUG
 
 #include "../Structures/Molecule.h"
 #include "UnitTestHelper.h"

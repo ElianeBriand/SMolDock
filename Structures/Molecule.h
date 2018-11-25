@@ -21,6 +21,7 @@
  */
 #include <GraphMol/SmilesParse/SmilesParse.h>
 #include <GraphMol/Substruct/SubstructMatch.h>
+#include <GraphMol/DistGeomHelpers/Embedder.h>
 
 #include "Structure.h"
 #include "Atom.h"
@@ -36,10 +37,11 @@ namespace SmolDock {
     public:
         Molecule();
 
-        explicit Molecule(const std::string &smiles);
 
 
         std::shared_ptr<RDKit::RWMol> getInternalRWMol();
+
+        bool populateFromSMILES(const std::string &smiles);
 
 
     private:

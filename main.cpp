@@ -28,19 +28,43 @@
 #include "Structures/Molecule.h"
 #include "Utilities/MoleculeTraversal.h"
 #include "Structures/Protein.h"
+#include "Engines/MDStyleDockingEngine.h"
+#include "Utilities/DockingResultPrinter.h"
+
+#include <Vc/Vc>
 
 
 int main() {
 
-
     SmolDock::Protein prot;
-
     prot.populateFromPDB("1dpx.pdb");
+
+    SmolDock::Molecule mol;
+    mol.populateFromSMILES("[CH3]O[CH2][OH]");
+
+
+    SmolDock::MDStyleDockingEngine docker;
+
+    docker.setProtein(&prot);
+    docker.setMolecule(&mol);
+    docker.setDockingBox(SmolDock::AbstractDockingEngine::DockingBoxSetting::everything);
+
+
+    if (!docker.setupDockingEngine()) {
+        std::cout << "Error while doing engine setup" << std::endl;
+    }
+
+    docker.runDockingEngine();
+
+    std::shared_ptr<SmolDock::DockingResult> res = docker.getDockingResult();
+
+    SmolDock::DockingResultPrinter printer(res);
+
+    printer.printToConsole();
 
     return 0;
 
     /*
-    SmolDock::Molecule m("[CH3]O[CH2][OH]");
     SmolDock::MoleculeTraversal tr(m);
 
     tr.printTraversal();

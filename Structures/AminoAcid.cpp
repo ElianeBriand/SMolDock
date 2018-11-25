@@ -15,8 +15,7 @@ namespace SmolDock {
     AminoAcid::AminoAcid(const std::string &AA3LettersShorthand) {
         //AminoAcid::AAType::
         shorthand = AA3LettersShorthand;
-
-
+        this->type = stringToResType(AA3LettersShorthand);
     }
 
     std::set<std::tuple<AminoAcid::AAType, std::string, std::string> > AminoAcid::AAShorthandSet = {
@@ -71,6 +70,10 @@ namespace SmolDock {
 #endif
             return AminoAcid::AminoAcid::AAType::unknown;
         }
+    }
+
+    AminoAcid::AminoAcid(const AminoAcid::AAType &type) {
+        this->type = type;
     }
 
 }
