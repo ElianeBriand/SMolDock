@@ -18,6 +18,9 @@ namespace SmolDock {
         return true;
     }
 
+    bool MDStyleDockingEngine::setupDockingEngine() {
+        return true;
+    }
 
     void MDStyleDockingEngine::runDockingEngine() {
 
@@ -27,9 +30,6 @@ namespace SmolDock {
         return std::make_shared<DockingResult>();
     }
 
-    bool MDStyleDockingEngine::setupDockingEngine() {
-        return true;
-    }
 
     bool MDStyleDockingEngine::setDockingBox(AbstractDockingEngine::DockingBoxSetting setting) {
         if (setting != DockingBoxSetting::everything) {

@@ -16,27 +16,26 @@ if (SANITIZER)
     SET(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -fsanitize=address")
 endif ()
 
-######## RDKIT ######
+######## RDKIT SETUP ######
 # Adjust this according to where your RDKit build is :
-set(RDKIT_ROOT /home/eliane/Projects/RDKit/)
-set(RDKIT_ROOT_TWO /home/eliane/Projects/rdkit_src/rdkit/)
+set(RDKIT_ROOT /home/eliane/Projects/RDKit_Git/rdkit-Release_2018_09_1/)
 
-include_directories(${RDKIT_ROOT_TWO}/Code/)
+include_directories(${RDKIT_ROOT}/Code/)
 
+LINK_DIRECTORIES(${RDKIT_ROOT}/lib/staticlib)
 LINK_DIRECTORIES(${RDKIT_ROOT}/lib)
-LINK_DIRECTORIES(${RDKIT_ROOT_TWO}/lib)
-SET(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -lboost_system ")
+SET(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -lboost_system -static  ")
 ######## END OF RDKIT ######
 
 
-######## VC ######
+######## VC SETUP ######
 # Adjust this according to where your Vc build is :
 set(VC_ROOT /home/eliane/Projects/VcInstall/)
 
 include_directories(${VC_ROOT}/include/)
 
 LINK_DIRECTORIES(${VC_ROOT}/lib)
-######## END OF RDKIT ######
+######## END OF VC  ######
 
 include_directories(Dependencies)
 
@@ -78,8 +77,9 @@ add_executable(smoldock main.cpp $<TARGET_OBJECTS:smoldock_object>)
 
 target_link_libraries(smoldock ${Boost_LIBRARIES})
 
-# RDKit lib*.so
-TARGET_LINK_LIBRARIES(smoldock RDKitAlignment RDKitForceFieldHelpers RDKitRDBoost RDKitCatalogs RDKitForceField RDKitRDGeneral RDKitChemicalFeatures RDKitFragCatalog RDKitRDGeometryLib RDKitChemReactions RDKitGraphMol RDKitReducedGraphs RDKitChemTransforms RDKithc RDKitRGroupDecomposition RDKitDataStructs RDKitInfoTheory RDKitShapeHelpers RDKitDepictor RDKitMMPA RDKitSimDivPickers RDKitDescriptors RDKitMolAlign RDKitSLNParse RDKitDistGeometry RDKitMolCatalog RDKitSmilesParse RDKitDistGeomHelpers RDKitMolChemicalFeatures RDKitStructChecker RDKitEigenSolvers RDKitMolDraw2D RDKitSubgraphs RDKitFileParsers RDKitMolHash RDKitSubstructLibrary RDKitFilterCatalog RDKitMolTransforms RDKitSubstructMatch RDKitFingerprints RDKitOptimizer RDKitTrajectory RDKitFMCS RDKitPartialCharges)
+######## RDKIT LINKAGE ######
+TARGET_LINK_LIBRARIES(smoldock RDKitStatic pthread RDKitStatic RDKitForceField_static RDKitForceFieldHelpers_static)
+######## END OF RDKIT LINKAGE ######
 
 
 target_link_libraries(smoldock gsl gslcblas)

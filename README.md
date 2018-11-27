@@ -5,11 +5,18 @@ difficult to understand.
 
 # Build
 
-Use cmake
+Check that you have the required dependencies (see below), then : 
+
+    cmake .
+    make -j4
 
 # Work with it
 
+    cd ./cmake-build-XXX
+    ./smoldock
+   
 See main.cpp for lack of a proper interface yet...
+
 
 # Licencing
 SmolDock is licenced under GNU GPL version 3 or later.
@@ -23,11 +30,115 @@ It includes works from :
 
 # Dependencies
 
-## RDKit (linking with dynamic library)
+## RDKit (linking with pre-built dynamic library)
 
-TODO : Add explicit instruction on how to build. For now, review the cmakelists.txt 
-to get an idea. It's a bit weird TBH.
+The main author does not rely on pre-built dynamic library shipped by distributions, because of linker
+problem that may or may not still exist. See next section for building static libs from source, else :
+
+In the ` RDKIT SETUP ` section of CMakeLists.txt, change :
+
+    SET(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -lboost_system -static  ") 
+
+to : 
+
+    SET(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -lboost_system ")
+
+And in the `RDKIT LINKAGE` section, change :
+ 
+    TARGET_LINK_LIBRARIES(smoldock RDKitStatic pthread RDKitStatic RDKitForceField_static RDKitForceFieldHelpers_static)
+
+to whatever is suitable for your installed version of RDKit, probably something like :
+ 
+    TARGET_LINK_LIBRARIES(smoldock RDKit pthread)
+
+or maybe : 
+
+    TARGET_LINK_LIBRARIES(smoldock RDKit pthread RDKitForceField RDKitForceFieldHelpers)
+
+
+## RDKit (linking with source-built static library)
+
+
+Download rdkit-Release_2018_09_1 (Garantueed to work, other probably do).
+
+CMake configuration : 
+
+      cd rdkit-Release_2018_09_1
+      mkdir RDKit_build
+      cd RDKit_build
+      
+      cmake -DRDK_BUILD_PYTHON_WRAPPERS=OFF \
+      -DBoost_USE_STATIC_LIBS=ON \
+      -DRDK_BUILD_AVALON_SUPPORT=OFF \
+      -DRDK_BUILD_CAIRO_SUPPORT=OFF \
+      -DRDK_BUILD_COMPRESSED_SUPPLIERS=OFF \
+      -DRDK_BUILD_CONTRIB=OFF \
+      -DRDK_BUILD_COORDGEN_SUPPORT=ON \
+      -DRDK_BUILD_CPP_TESTS=OFF \
+      -DRDK_BUILD_DESCRIPTORS3D=ON \
+      -DRDK_BUILD_FREESASA_SUPPORT=ON \
+      -DRDK_BUILD_INCHI_SUPPORT=OFF \
+      -DRDK_BUILD_MOLINTERCHANGE_SUPPORT=ON \
+      -DRDK_BUILD_PGSQL=OFF \
+      -DRDK_BUILD_QT_DEMO=OFF \
+      -DRDK_BUILD_QT_SUPPORT=OFF \
+      -DRDK_BUILD_RPATH_SUPPORT=OFF \
+      -DRDK_BUILD_SLN_SUPPORT=ON \
+      -DRDK_BUILD_SWIG_CSHARP_WRAPPER=OFF \
+      -DRDK_BUILD_SWIG_JAVA_WRAPPER=OFF \
+      -DRDK_BUILD_SWIG_WRAPPERS=OFF \
+      -DRDK_BUILD_TEST_GZIP=OFF \
+      -DRDK_BUILD_THREADSAFE_SSS=ON \
+      -DRDK_COORDGEN_LIBS=MolAlign \
+      -DRDK_INSTALL_DEV_COMPONENT=ON \
+      -DRDK_INSTALL_DLLS_MSVC=OFF \
+      -DRDK_INSTALL_INTREE=ON \
+      -DRDK_INSTALL_PYTHON_TESTS=OFF \
+      -DRDK_INSTALL_STATIC_LIBS=ON \
+      -DRDK_OPTIMIZE_NATIVE=ON \
+      -DRDK_PGSQL_STATIC=OFF \
+      -DRDK_SWIG_STATIC=OFF \
+      -DRDK_TEST_COVERAGE=OFF \
+      -DRDK_TEST_MMFF_COMPLIANCE=ON \
+      -DRDK_TEST_MULTITHREADED=ON \
+      -DRDK_USE_BOOST_REGEX=OFF \
+      -DRDK_USE_BOOST_SERIALIZATION=OFF \
+      -DRDK_USE_FLEXBISON=OFF \
+      -DRDK_USE_STRICT_ROTOR_DEFINITION=ON ..     
+
+Then build : 
+
+      make -j4
+      make install
+
+Then library magic :
+
+      cd ../lib
+      for libfilename in *.a; do ar -x $libfilename; done
+      ar -qc libRDKitStatic.a *.o
+      mkdir staticlib
+      cp libRDKitStatic.a staticlib
+
+Edit CMakeLists.txt with the install and source path (search for `RDKIT SETUP`)
+
+
+For some reason, it is not sufficient to only link against the newly created libRDKit static,
+and some additional linkage to the individual .a (like RDKitForceField_static) are necessary as seen in the CMakeLists.txt.
+ (Even though theoretically it containes the relevant symbols. A fix/explaination would be welcomed)
+
+If needs be, don't forget you can search where a symbol is defined using
+
+    for filename in *.so; do echo $filename;nm $filename | grep <SYMBOLNAME>; done
+
+The main author is able to create fully statically linked binary using this CMakeLists.txt, in particular
+ using `SET(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -lboost_system -static  ")` because she has the relevant libraries
+ in static format (libstdc++, libboost_system, libm, libc, libgcc, ...) thanks to a source based distribution. However, if you are
+ not in this situation, or have `Undefined reference to ...` linker errors, remove the `-static` from this line : you will still statically
+ link to RDKit, but have dependencies on boost, libstdc++ (etc etc) dynamic libraries.
+
+      
+
 
 ## Vc
 
-Edit cmakelists.txt with your Vc install dir
+Edit CMakeLists.txt with your Vc install path (search for `VC SETUP`). You can grab it from GitHub.
