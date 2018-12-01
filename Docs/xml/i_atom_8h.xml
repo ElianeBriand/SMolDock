@@ -1,0 +1,186 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="i_atom_8h" kind="file" language="C++">
+    <compoundname>iAtom.h</compoundname>
+    <includedby refid="_atom_8h" local="yes">Atom.h</includedby>
+    <includedby refid="i_conformer_8h" local="yes">iConformer.h</includedby>
+    <includedby refid="i_atom_8cpp" local="yes">iAtom.cpp</includedby>
+    <invincdepgraph>
+      <node id="260">
+        <label>ConformerRigidDockingEngine.h</label>
+        <link refid="_conformer_rigid_docking_engine_8h"/>
+        <childnode refid="261" relation="include">
+        </childnode>
+        <childnode refid="262" relation="include">
+        </childnode>
+      </node>
+      <node id="263">
+        <label>MDStyleDockingEngine.h</label>
+        <link refid="_m_d_style_docking_engine_8h"/>
+        <childnode refid="264" relation="include">
+        </childnode>
+      </node>
+      <node id="273">
+        <label>Atom.cpp</label>
+        <link refid="_atom_8cpp"/>
+      </node>
+      <node id="277">
+        <label>iAtom.cpp</label>
+        <link refid="i_atom_8cpp"/>
+      </node>
+      <node id="266">
+        <label>VinaCompatibleDockingEngine.cpp</label>
+        <link refid="_vina_compatible_docking_engine_8cpp"/>
+      </node>
+      <node id="276">
+        <label>iConformer.cpp</label>
+        <link refid="i_conformer_8cpp"/>
+      </node>
+      <node id="257">
+        <label>Atom.h</label>
+        <link refid="_atom_8h"/>
+        <childnode refid="258" relation="include">
+        </childnode>
+        <childnode refid="270" relation="include">
+        </childnode>
+        <childnode refid="272" relation="include">
+        </childnode>
+        <childnode refid="273" relation="include">
+        </childnode>
+        <childnode refid="267" relation="include">
+        </childnode>
+        <childnode refid="274" relation="include">
+        </childnode>
+        <childnode refid="268" relation="include">
+        </childnode>
+      </node>
+      <node id="275">
+        <label>iConformer.h</label>
+        <link refid="i_conformer_8h"/>
+        <childnode refid="258" relation="include">
+        </childnode>
+        <childnode refid="261" relation="include">
+        </childnode>
+        <childnode refid="276" relation="include">
+        </childnode>
+      </node>
+      <node id="265">
+        <label>VinaCompatibleDockingEngine.h</label>
+        <link refid="_vina_compatible_docking_engine_8h"/>
+        <childnode refid="266" relation="include">
+        </childnode>
+      </node>
+      <node id="256">
+        <label>iAtom.h</label>
+        <link refid="i_atom_8h"/>
+        <childnode refid="257" relation="include">
+        </childnode>
+        <childnode refid="275" relation="include">
+        </childnode>
+        <childnode refid="277" relation="include">
+        </childnode>
+      </node>
+      <node id="264">
+        <label>MDStyleDockingEngine.cpp</label>
+        <link refid="_m_d_style_docking_engine_8cpp"/>
+      </node>
+      <node id="262">
+        <label>main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+      <node id="267">
+        <label>Molecule.cpp</label>
+        <link refid="_molecule_8cpp"/>
+      </node>
+      <node id="270">
+        <label>Bond.h</label>
+        <link refid="_bond_8h"/>
+        <childnode refid="258" relation="include">
+        </childnode>
+        <childnode refid="271" relation="include">
+        </childnode>
+      </node>
+      <node id="272">
+        <label>AminoAcid.cpp</label>
+        <link refid="_amino_acid_8cpp"/>
+      </node>
+      <node id="269">
+        <label>MoleculeTraversal.cpp</label>
+        <link refid="_molecule_traversal_8cpp"/>
+      </node>
+      <node id="268">
+        <label>MoleculeTraversal.h</label>
+        <link refid="_molecule_traversal_8h"/>
+        <childnode refid="269" relation="include">
+        </childnode>
+        <childnode refid="262" relation="include">
+        </childnode>
+      </node>
+      <node id="259">
+        <label>AbstractDockingEngine.h</label>
+        <link refid="_abstract_docking_engine_8h"/>
+        <childnode refid="260" relation="include">
+        </childnode>
+        <childnode refid="263" relation="include">
+        </childnode>
+        <childnode refid="265" relation="include">
+        </childnode>
+      </node>
+      <node id="261">
+        <label>ConformerRigidDockingEngine.cpp</label>
+        <link refid="_conformer_rigid_docking_engine_8cpp"/>
+      </node>
+      <node id="258">
+        <label>Molecule.h</label>
+        <link refid="_molecule_8h"/>
+        <childnode refid="259" relation="include">
+        </childnode>
+        <childnode refid="260" relation="include">
+        </childnode>
+        <childnode refid="263" relation="include">
+        </childnode>
+        <childnode refid="267" relation="include">
+        </childnode>
+        <childnode refid="268" relation="include">
+        </childnode>
+        <childnode refid="262" relation="include">
+        </childnode>
+      </node>
+      <node id="274">
+        <label>Protein.cpp</label>
+        <link refid="_protein_8cpp"/>
+      </node>
+      <node id="271">
+        <label>Bond.cpp</label>
+        <link refid="_bond_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="struct_smol_dock_1_1i_atom" prot="public">SmolDock::iAtom</innerclass>
+    <innernamespace refid="namespace_smol_dock">SmolDock</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Created<sp/>by<sp/>eliane<sp/>on<sp/>29/11/18.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>SMOLDOCK_IATOM_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SMOLDOCK_IATOM_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_smol_dock" kindref="compound">SmolDock</ref><sp/>{</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10" refid="struct_smol_dock_1_1i_atom" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_smol_dock_1_1i_atom" kindref="compound">iAtom</ref><sp/>{</highlight></codeline>
+<codeline lineno="11" refid="struct_smol_dock_1_1i_atom_1a671e7d72c54e461a7719c94705ee6103" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><ref refid="struct_smol_dock_1_1i_atom_1a671e7d72c54e461a7719c94705ee6103" kindref="member">atomicNum</ref>;</highlight></codeline>
+<codeline lineno="12" refid="struct_smol_dock_1_1i_atom_1a7164b26142f6b8022af89d4ab1c32687" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="struct_smol_dock_1_1i_atom_1a9c2f9dadec039f72274d46b4292240ae" kindref="member">x</ref>,<ref refid="struct_smol_dock_1_1i_atom_1aed903239c438c1304b7e3c68d10d41e1" kindref="member">y</ref>,<ref refid="struct_smol_dock_1_1i_atom_1a7164b26142f6b8022af89d4ab1c32687" kindref="member">z</ref>;</highlight></codeline>
+<codeline lineno="13"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//SMOLDOCK_IATOM_H</highlight></codeline>
+    </programlisting>
+    <location file="Engines/Internals/iAtom.h"/>
+  </compounddef>
+</doxygen>

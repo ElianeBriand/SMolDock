@@ -4,7 +4,7 @@
 
 #include "VinaCompatibleDockingEngine.h"
 
-namespace SmolDock {
+namespace SmolDock::Engine {
 
 
 }

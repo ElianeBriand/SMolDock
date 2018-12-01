@@ -7,7 +7,7 @@
 namespace SmolDock {
 
     /* Molecule created : C-O-C-OH */
-    void UnitTestHelper::populateMol_COCOH(std::shared_ptr<Molecule> mol) {
+    void UnitTestHelper::populateMol_COCOH(Molecule *mol) {
         auto atom1 = std::make_shared<Atom>(Atom::AtomType::carbon);
         mol->atoms.push_back(atom1);
 
@@ -63,11 +63,5 @@ namespace SmolDock {
         }
     }
 
-    std::tuple<unsigned long, unsigned long> UnitTestHelper::getNumberOfAtomAndBonds(std::shared_ptr<Molecule> mol) {
-        return std::tuple<unsigned long, unsigned long>(mol->atoms.size(), mol->bonds.size());
-    }
 
-    RDKit::RWMol *UnitTestHelper::getRDKitRWMol(std::shared_ptr<Molecule> mol) {
-        return mol->rwmol.get();
-    }
 }

@@ -12,6 +12,7 @@
 #include <iostream>
 
 #include "AminoAcid.h"
+#include "../Engines/Internals/iAtom.h"
 
 
 namespace SmolDock {
@@ -26,9 +27,6 @@ namespace SmolDock {
     class MoleculeTraversal;
 
 
-
-
-
     class Atom {
     public:
 
@@ -37,15 +35,15 @@ namespace SmolDock {
 
         friend class Protein;
 
-
-        enum class AtomType {
-            unknown,
-            hydrogen,
-            carbon,
-            oxygen,
-            nitrogen,
-            sulfur,
-            chlorine
+        // Make the value of the enum be the atomic number
+        enum class AtomType : unsigned char {
+            unknown = 0,
+            hydrogen = 1,
+            carbon = 6,
+            oxygen = 8,
+            nitrogen = 7,
+            sulfur = 16,
+            chlorine = 17,
         };
 
         /** Too many cases, for now we just store as-is in a string
@@ -100,6 +98,10 @@ namespace SmolDock {
         std::tuple<double, double, double> getAtomPosition();
 
         void setAtomPosition(std::tuple<double, double, double> pos);
+
+        iAtom generateiAtom();
+
+        void emplaceiAtom(iAtom &atom);
 
     protected:
         // Bonds involving this atom

@@ -15,7 +15,7 @@ Check that you have the required dependencies (see below), then :
     cd ./cmake-build-XXX
     ./smoldock
    
-See main.cpp for lack of a proper interface yet...
+See Frontends/main.cpp for lack of a proper interface yet...
 
 
 # Licencing
@@ -28,12 +28,17 @@ It includes works from :
 - ESBTL (released under GNU GPLv3)
 
 
+# Documentation
+
+Checkout the Docs dir. We have code documentation with Doxygen in Docs/html, and sphinx-based more general HOWTO
+in Docs/build/html.
+
 # Dependencies
 
 ## RDKit (linking with pre-built dynamic library)
 
 The main author does not rely on pre-built dynamic library shipped by distributions, because of linker
-problem that may or may not still exist. See next section for building static libs from source, else :
+problems that may or may not still exist. See next section for building static libs from source, else :
 
 In the ` RDKIT SETUP ` section of CMakeLists.txt, change :
 
@@ -43,17 +48,17 @@ to :
 
     SET(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -lboost_system ")
 
-And in the `RDKIT LINKAGE` section, change :
+And modify the `RDKIT_LINKAGE_LIST` variable, change :
  
-    TARGET_LINK_LIBRARIES(smoldock RDKitStatic pthread RDKitStatic RDKitForceField_static RDKitForceFieldHelpers_static)
+    set(RDKIT_LINKAGE_LIST RDKitStatic pthread RDKitStatic RDKitForceField_static RDKitForceFieldHelpers_static)
 
 to whatever is suitable for your installed version of RDKit, probably something like :
  
-    TARGET_LINK_LIBRARIES(smoldock RDKit pthread)
+    set(RDKIT_LINKAGE_LIST RDKit pthread)
 
 or maybe : 
 
-    TARGET_LINK_LIBRARIES(smoldock RDKit pthread RDKitForceField RDKitForceFieldHelpers)
+    set(RDKIT_LINKAGE_LIST RDKit pthread RDKitForceField RDKitForceFieldHelpers)
 
 
 ## RDKit (linking with source-built static library)
@@ -124,11 +129,11 @@ Edit CMakeLists.txt with the install and source path (search for `RDKIT SETUP`)
 
 For some reason, it is not sufficient to only link against the newly created libRDKit static,
 and some additional linkage to the individual .a (like RDKitForceField_static) are necessary as seen in the CMakeLists.txt.
- (Even though theoretically it containes the relevant symbols. A fix/explaination would be welcomed)
+ (Even though theoretically it contains the relevant symbols. A fix/explaination would be welcomed)
 
 If needs be, don't forget you can search where a symbol is defined using
 
-    for filename in *.so; do echo $filename;nm $filename | grep <SYMBOLNAME>; done
+    for filename in *.a; do echo $filename;nm $filename | grep <SYMBOLNAME>; done
 
 The main author is able to create fully statically linked binary using this CMakeLists.txt, in particular
  using `SET(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -lboost_system -static  ")` because she has the relevant libraries

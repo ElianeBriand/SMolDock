@@ -22,6 +22,7 @@ namespace SmolDock {
     class AminoAcid {
 
         friend class Protein;
+
     public:
 
         enum class AAType {
@@ -60,6 +61,7 @@ namespace SmolDock {
         explicit AminoAcid(const std::string &AA3LettersShorthand);
 
         explicit AminoAcid(const AminoAcid::AAType &type);
+
     protected:
         static std::set<std::tuple<AminoAcid::AAType, std::string, std::string> > AAShorthandSet;
 
@@ -71,7 +73,6 @@ namespace SmolDock {
         std::string fullName;
 
         std::vector<std::shared_ptr<Atom> > atoms;
-
 
 
     };

@@ -9,9 +9,9 @@
 namespace SmolDock {
 
 
-class Structure {
+    class Structure {
 
-};
+    };
 
 
 }

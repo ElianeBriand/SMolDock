@@ -5,16 +5,16 @@
 #include "MDStyleDockingEngine.h"
 
 
-namespace SmolDock {
+namespace SmolDock::Engine {
 
 
-    bool MDStyleDockingEngine::setProtein(const Protein *p) {
+    bool MDStyleDockingEngine::setProtein(Protein *p) {
         this->protein = p;
         return true;
     }
 
-    bool MDStyleDockingEngine::setMolecule(const Molecule *m) {
-        this->molecule = m;
+    bool MDStyleDockingEngine::setLigand(Molecule *m) {
+        this->ligand = m;
         return true;
     }
 

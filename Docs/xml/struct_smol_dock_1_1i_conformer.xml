@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="struct_smol_dock_1_1i_conformer" kind="struct" language="C++" prot="public">
+    <compoundname>SmolDock::iConformer</compoundname>
+    <includes refid="i_conformer_8h" local="no">iConformer.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_smol_dock_1_1i_conformer_1a18fd974857dffddf4b6233c7c5d70f94" prot="public" static="no" mutable="no">
+        <type>std::unique_ptr&lt; std::vector&lt; <ref refid="struct_smol_dock_1_1i_atom" kindref="compound">iAtom</ref> &gt; &gt;</type>
+        <definition>std::unique_ptr&lt;std::vector&lt;iAtom&gt; &gt; SmolDock::iConformer::atoms_vect</definition>
+        <argsstring></argsstring>
+        <name>atoms_vect</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Engines/Internals/iConformer.h" line="16" column="1" bodyfile="Engines/Internals/iConformer.h" bodystart="16" bodyend="-1"/>
+        <referencedby refid="class_smol_dock_1_1_molecule_1a449f37f171474849ad896e33dfc9e2f4" compoundref="_molecule_8cpp" startline="127" endline="152">SmolDock::Molecule::generateConformer</referencedby>
+        <referencedby refid="class_smol_dock_1_1_molecule_1a6ab21fc10e78b92b579aa871245a9c55" compoundref="_molecule_8cpp" startline="154" endline="197">SmolDock::Molecule::generateConformers</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="63">
+        <label>T</label>
+      </node>
+      <node id="60">
+        <label>std::vector&lt; SmolDock::iAtom &gt;</label>
+        <childnode refid="61" relation="usage">
+          <edgelabel>+elements</edgelabel>
+        </childnode>
+        <childnode refid="62" relation="template-instance">
+          <edgelabel>&lt; SmolDock::iAtom &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="62">
+        <label>std::vector&lt; T &gt;</label>
+        <childnode refid="63" relation="usage">
+          <edgelabel>+elements</edgelabel>
+        </childnode>
+      </node>
+      <node id="58">
+        <label>SmolDock::iConformer</label>
+        <link refid="struct_smol_dock_1_1i_conformer"/>
+        <childnode refid="59" relation="usage">
+          <edgelabel>+atoms_vect</edgelabel>
+        </childnode>
+      </node>
+      <node id="64">
+        <label>std::unique_ptr&lt; T &gt;</label>
+        <childnode refid="63" relation="usage">
+          <edgelabel>+ptr</edgelabel>
+        </childnode>
+      </node>
+      <node id="59">
+        <label>std::unique_ptr&lt; std::vector&lt; SmolDock::iAtom &gt; &gt;</label>
+        <childnode refid="60" relation="usage">
+          <edgelabel>+ptr</edgelabel>
+        </childnode>
+        <childnode refid="64" relation="template-instance">
+          <edgelabel>&lt; std::vector&lt; SmolDock::iAtom &gt; &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="61">
+        <label>SmolDock::iAtom</label>
+        <link refid="struct_smol_dock_1_1i_atom"/>
+      </node>
+    </collaborationgraph>
+    <location file="Engines/Internals/iConformer.h" line="15" column="1" bodyfile="Engines/Internals/iConformer.h" bodystart="15" bodyend="17"/>
+    <listofallmembers>
+      <member refid="struct_smol_dock_1_1i_conformer_1a18fd974857dffddf4b6233c7c5d70f94" prot="public" virt="non-virtual"><scope>SmolDock::iConformer</scope><name>atoms_vect</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

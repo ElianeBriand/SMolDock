@@ -1,0 +1,273 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.8.14">
+  <compound refid="class_smol_dock_1_1_engine_1_1_abstract_docking_engine" kind="class"><name>SmolDock::Engine::AbstractDockingEngine</name>
+    <member refid="class_smol_dock_1_1_engine_1_1_abstract_docking_engine_1aca703508a3ce31d577d3ec108020789b" kind="enum"><name>DockingBoxSetting</name></member>
+    <member refid="class_smol_dock_1_1_engine_1_1_abstract_docking_engine_1aca703508a3ce31d577d3ec108020789ba312db69f5bf4447dfe3c58983083b54f" kind="enumvalue"><name>everything</name></member>
+    <member refid="class_smol_dock_1_1_engine_1_1_abstract_docking_engine_1aca703508a3ce31d577d3ec108020789ba546fe0111d10555811e641851eaf2dea" kind="enumvalue"><name>solventExposed</name></member>
+    <member refid="class_smol_dock_1_1_engine_1_1_abstract_docking_engine_1a8147cf906368466da87fa439d537bf62" kind="enum"><name>DockingBoxShape</name></member>
+    <member refid="class_smol_dock_1_1_engine_1_1_abstract_docking_engine_1a8147cf906368466da87fa439d537bf62a34248a9bfcbd589d9b5fccb6a0ac6963" kind="enumvalue"><name>sphere</name></member>
+    <member refid="class_smol_dock_1_1_engine_1_1_abstract_docking_engine_1a8147cf906368466da87fa439d537bf62a18a64f7251cfb123aa7c358135d00d10" kind="enumvalue"><name>cube</name></member>
+    <member refid="class_smol_dock_1_1_engine_1_1_abstract_docking_engine_1af00ee3be60acc0c4ba9aac03a3b09c35" kind="function"><name>setProtein</name></member>
+    <member refid="class_smol_dock_1_1_engine_1_1_abstract_docking_engine_1aae76a86e5dfc18b19e3a16c55da6556f" kind="function"><name>setLigand</name></member>
+    <member refid="class_smol_dock_1_1_engine_1_1_abstract_docking_engine_1a169f25051203c912c2b90bf3387baa22" kind="function"><name>setDockingBox</name></member>
+    <member refid="class_smol_dock_1_1_engine_1_1_abstract_docking_engine_1a6172e465dcd7dcecac29fb30612d0227" kind="function"><name>setRandomSeed</name></member>
+    <member refid="class_smol_dock_1_1_engine_1_1_abstract_docking_engine_1a38d55d9ee6fde7df45b25b772cffbb9f" kind="function"><name>setupDockingEngine</name></member>
+    <member refid="class_smol_dock_1_1_engine_1_1_abstract_docking_engine_1a0f08ef422ed79b3dac0b3144a241abe1" kind="function"><name>runDockingEngine</name></member>
+    <member refid="class_smol_dock_1_1_engine_1_1_abstract_docking_engine_1a2e881d63b0214caf95efa3245446faf3" kind="function"><name>getDockingResult</name></member>
+  </compound>
+  <compound refid="class_smol_dock_1_1_amino_acid" kind="class"><name>SmolDock::AminoAcid</name>
+    <member refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875d" kind="enum"><name>AAType</name></member>
+    <member refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875da7d0832b9f55cfd3f7c79f134de3b76a7" kind="enumvalue"><name>alanine</name></member>
+    <member refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875da9a1407676e926e8c94b54e0864da4546" kind="enumvalue"><name>arginine</name></member>
+    <member refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875da6d1d64af1a6d275bd2995d990072b129" kind="enumvalue"><name>asparagine</name></member>
+    <member refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875da1aa8cabca067057363a0b448f2db84e7" kind="enumvalue"><name>aspartate</name></member>
+    <member refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875da3ec90ee7bdd38cf0f8a68b4bee5eb202" kind="enumvalue"><name>cysteine</name></member>
+    <member refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875da12ea2245c0c7703f3863b9be45a07ae0" kind="enumvalue"><name>glutamate</name></member>
+    <member refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875daf91e23557b10705ecb971f90c17f8777" kind="enumvalue"><name>glutamine</name></member>
+    <member refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875da3a778f248ff123853d5605f084e2e260" kind="enumvalue"><name>glycine</name></member>
+    <member refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875da77d85f9928565a0fe8f709d63982efec" kind="enumvalue"><name>histidine</name></member>
+    <member refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875daf49712f65cf0d21531c38f3083a41066" kind="enumvalue"><name>isoleucine</name></member>
+    <member refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875da8fc32025ca0bd8d2a5a86c407ab4db14" kind="enumvalue"><name>leucine</name></member>
+    <member refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875da183c564fc49647ef130a793d2fc8eb63" kind="enumvalue"><name>lysine</name></member>
+    <member refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875da3d2f71c3aa615f44d4f7c394b4d89d24" kind="enumvalue"><name>methionine</name></member>
+    <member refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875daa74b51b040c4059a99fd0defb7f0d0f6" kind="enumvalue"><name>phenylalanine</name></member>
+    <member refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875da468e37d1ebb2b2d9488ad143d406e419" kind="enumvalue"><name>proline</name></member>
+    <member refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875daa693d5166186d99ae683963032f44119" kind="enumvalue"><name>serine</name></member>
+    <member refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875daa2a6737c3315b2d4391a24a8f672d4d2" kind="enumvalue"><name>threonine</name></member>
+    <member refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875daebd78192c93b932250b270f9ae1f2638" kind="enumvalue"><name>tryptophan</name></member>
+    <member refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875da1b54c05c5fc8eec4986ac75f82af9d65" kind="enumvalue"><name>tyrosine</name></member>
+    <member refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875dae1028fdd9757c76ba244c2521f716113" kind="enumvalue"><name>valine</name></member>
+    <member refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875daac3d9bd0eff79f662bcecac7c2887384" kind="enumvalue"><name>selenocysteine</name></member>
+    <member refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875da8b17b1023d7d4d8093a8cc3bffbc3e62" kind="enumvalue"><name>pyrrolysine</name></member>
+    <member refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875dad390be0ae98a5c4a22ca9b0b7e726f40" kind="enumvalue"><name>heteroatom</name></member>
+    <member refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875daad921d60486366258809553a3db49a4a" kind="enumvalue"><name>unknown</name></member>
+    <member refid="class_smol_dock_1_1_amino_acid_1a2cc8b86817f46f61585ecf591984f8eb" kind="friend"><name>Protein</name></member>
+    <member refid="class_smol_dock_1_1_amino_acid_1a114a9d96ae603d1a25779498205cec47" kind="friend"><name>resTypeToString</name></member>
+    <member refid="class_smol_dock_1_1_amino_acid_1a196e09203295c01d2a5fc157ee89f7ee" kind="friend"><name>stringToResType</name></member>
+    <member refid="class_smol_dock_1_1_amino_acid_1a23b1781c86be2991e2f668c07ad78d68" kind="variable"><name>AAShorthandSet</name></member>
+    <member refid="class_smol_dock_1_1_amino_acid_1ae3404d935519af353a5c323ce298e04a" kind="variable"><name>type</name></member>
+    <member refid="class_smol_dock_1_1_amino_acid_1ad0349cceaac80ad8a367c8130589dd76" kind="variable"><name>shorthand</name></member>
+    <member refid="class_smol_dock_1_1_amino_acid_1a2a83d6290c79b4d2145637a29ebb9d23" kind="variable"><name>fullName</name></member>
+    <member refid="class_smol_dock_1_1_amino_acid_1acf07ea167386e29d0ea6b5024663aed8" kind="variable"><name>atoms</name></member>
+    <member refid="class_smol_dock_1_1_amino_acid_1a0632e2366d8af52d467bffcde90657f2" kind="function"><name>AminoAcid</name></member>
+    <member refid="class_smol_dock_1_1_amino_acid_1acc14dd7bf81e1580703017427b130838" kind="function"><name>AminoAcid</name></member>
+  </compound>
+  <compound refid="class_smol_dock_1_1_atom" kind="class"><name>SmolDock::Atom</name>
+    <member refid="class_smol_dock_1_1_atom_1a57e9a532fd04e1846c0d83edebb9fd41" kind="enum"><name>AtomType</name></member>
+    <member refid="class_smol_dock_1_1_atom_1a57e9a532fd04e1846c0d83edebb9fd41aad921d60486366258809553a3db49a4a" kind="enumvalue"><name>unknown</name></member>
+    <member refid="class_smol_dock_1_1_atom_1a57e9a532fd04e1846c0d83edebb9fd41ad4ac1478a4d8a4f591d35e3d75f3de65" kind="enumvalue"><name>hydrogen</name></member>
+    <member refid="class_smol_dock_1_1_atom_1a57e9a532fd04e1846c0d83edebb9fd41ae1b832c8857262f1089376030b4298b3" kind="enumvalue"><name>carbon</name></member>
+    <member refid="class_smol_dock_1_1_atom_1a57e9a532fd04e1846c0d83edebb9fd41a6124d98749365e3db2c9e5b27ca04db6" kind="enumvalue"><name>oxygen</name></member>
+    <member refid="class_smol_dock_1_1_atom_1a57e9a532fd04e1846c0d83edebb9fd41a63ebb9250f49340aece8d4ac541eaf61" kind="enumvalue"><name>nitrogen</name></member>
+    <member refid="class_smol_dock_1_1_atom_1a57e9a532fd04e1846c0d83edebb9fd41a73a9bf52aa8ea9e256ec469dfce6e022" kind="enumvalue"><name>sulfur</name></member>
+    <member refid="class_smol_dock_1_1_atom_1a57e9a532fd04e1846c0d83edebb9fd41af3b7d449c5ca2f53a72210e4381769be" kind="enumvalue"><name>chlorine</name></member>
+    <member refid="class_smol_dock_1_1_atom_1ade04f26c3314bee1144e0704a07e95ea" kind="variable"><name>Bond</name></member>
+    <member refid="class_smol_dock_1_1_atom_1a90ad0859a5e5a747eecdc79b8bb80561" kind="variable"><name>MoleculeTraversal</name></member>
+    <member refid="class_smol_dock_1_1_atom_1a2cc8b86817f46f61585ecf591984f8eb" kind="friend"><name>Protein</name></member>
+    <member refid="class_smol_dock_1_1_atom_1ab7591815a3dc03bab05bcb6d5e2b741a" kind="friend"><name>atomTypeToString</name></member>
+    <member refid="class_smol_dock_1_1_atom_1abe46f23e1f169949c8d3916b7e0ad38b" kind="friend"><name>stringToAtomType</name></member>
+    <member refid="class_smol_dock_1_1_atom_1af45fc99da6ffbf539ba654c91e1bb752" kind="variable"><name>bonds</name></member>
+    <member refid="class_smol_dock_1_1_atom_1ab3867a9c2c98c5bb43ff4a6b7f1bf856" kind="variable"><name>type</name></member>
+    <member refid="class_smol_dock_1_1_atom_1aa19d070c9951c67a4b1d4c5d80f2ee22" kind="variable"><name>fromResidue</name></member>
+    <member refid="class_smol_dock_1_1_atom_1aeb5bd3da13c5e16176931c19bb622d91" kind="variable"><name>residueType</name></member>
+    <member refid="class_smol_dock_1_1_atom_1a79a0e80b2fdb39742cc4de548d73eb63" kind="variable"><name>atomClassInResidue</name></member>
+    <member refid="class_smol_dock_1_1_atom_1a41d894e0b89dfd6e28514617a4a16ecf" kind="variable"><name>owningAA</name></member>
+    <member refid="class_smol_dock_1_1_atom_1a76afdad512e9f593c4445c6407b26597" kind="variable"><name>AtomID</name></member>
+    <member refid="class_smol_dock_1_1_atom_1a02874f0a49c2fb34884d7e40c6b92e9e" kind="variable"><name>x</name></member>
+    <member refid="class_smol_dock_1_1_atom_1a253663ad700e72667d421f4d869798e1" kind="variable"><name>y</name></member>
+    <member refid="class_smol_dock_1_1_atom_1a8f28d43131d21536269e220d6fa43f07" kind="variable"><name>z</name></member>
+    <member refid="class_smol_dock_1_1_atom_1a699bf43dba89827d43019464a2a1507e" kind="variable"><name>nextAtomID</name></member>
+    <member refid="class_smol_dock_1_1_atom_1ad2ea08ee5e9fde5927f30ebe2a3a7142" kind="variable"><name>AtomTypeLabel</name></member>
+    <member refid="class_smol_dock_1_1_atom_1a6fdae20edd67e75fa5fab8cbdbb39faf" kind="function"><name>Atom</name></member>
+    <member refid="class_smol_dock_1_1_atom_1a72994dd53d1aa7e9bfb05aecc8a35a52" kind="function"><name>Atom</name></member>
+    <member refid="class_smol_dock_1_1_atom_1a6d8ef00ed712a00a3c6d0827faf6ff9e" kind="function"><name>Atom</name></member>
+    <member refid="class_smol_dock_1_1_atom_1a500f60cb0b8dac0c64bc44187dc90d41" kind="function"><name>Atom</name></member>
+    <member refid="class_smol_dock_1_1_atom_1a9f42fafbe3cd76da61edaf6a10876f2c" kind="function"><name>getType</name></member>
+    <member refid="class_smol_dock_1_1_atom_1a66de652129ef16355da3dfcc3ae566e3" kind="function"><name>getTypeString</name></member>
+    <member refid="class_smol_dock_1_1_atom_1a62d7246b7a8f3d6aa1aa63c9d5a86ed3" kind="function"><name>getAtomID</name></member>
+    <member refid="class_smol_dock_1_1_atom_1aeb93666d6868e72e846ecad7b1927b04" kind="function"><name>getOwningAA</name></member>
+    <member refid="class_smol_dock_1_1_atom_1ad4afec1a1299201398d64daaf874857f" kind="function"><name>setOwningAA</name></member>
+    <member refid="class_smol_dock_1_1_atom_1a9b7e3a83a87f3934edb0f15929f923bd" kind="function"><name>getAtomPosition</name></member>
+    <member refid="class_smol_dock_1_1_atom_1ae4b0b82523de139bd84ec27b62faa333" kind="function"><name>setAtomPosition</name></member>
+    <member refid="class_smol_dock_1_1_atom_1a9de7744f2ea4b8f273f9005c60f42999" kind="function"><name>generateiAtom</name></member>
+    <member refid="class_smol_dock_1_1_atom_1a7dede98478cab4cf7b6e6462d3886bd2" kind="function"><name>emplaceiAtom</name></member>
+  </compound>
+  <compound refid="class_smol_dock_1_1_bond" kind="class"><name>SmolDock::Bond</name>
+    <member refid="class_smol_dock_1_1_bond_1a6cbf152f682501c998bd06a55400c9cf" kind="enum"><name>BondType</name></member>
+    <member refid="class_smol_dock_1_1_bond_1a6cbf152f682501c998bd06a55400c9cfaccd9d70d0e74b128e8fdd74b302934f1" kind="enumvalue"><name>singlebond</name></member>
+    <member refid="class_smol_dock_1_1_bond_1a6cbf152f682501c998bd06a55400c9cfa076120e243046998cc8ecff65e716c35" kind="enumvalue"><name>doublebond</name></member>
+    <member refid="class_smol_dock_1_1_bond_1a6cbf152f682501c998bd06a55400c9cfa7381550bb1c4acbc5e3801c17ef7cae3" kind="enumvalue"><name>triplebond</name></member>
+    <member refid="class_smol_dock_1_1_bond_1a6cbf152f682501c998bd06a55400c9cfa0a3db58cd06e63f99bfd2d9e6773f555" kind="enumvalue"><name>defaultbond</name></member>
+    <member refid="class_smol_dock_1_1_bond_1ad909ef34f3b9b10acc221ac6d54e423a" kind="variable"><name>bond_end_a</name></member>
+    <member refid="class_smol_dock_1_1_bond_1adbbc73bd7bc4fc579237321be516ed2f" kind="variable"><name>bond_end_b</name></member>
+    <member refid="class_smol_dock_1_1_bond_1a6fb49dc80f21a23c8b039f85d3b7b5bf" kind="variable"><name>BondID</name></member>
+    <member refid="class_smol_dock_1_1_bond_1a7795dad7005c83f8702d8593eb81b1ff" kind="variable"><name>bondtype</name></member>
+    <member refid="class_smol_dock_1_1_bond_1acb9a24240df4164e4840611d7df39962" kind="variable"><name>nextBondID</name></member>
+    <member refid="class_smol_dock_1_1_bond_1a7f046d71521a269171643bdf147d5c80" kind="function"><name>Bond</name></member>
+    <member refid="class_smol_dock_1_1_bond_1ae864507cf1018efa1964e7b77b2d6e4f" kind="function"><name>Bond</name></member>
+    <member refid="class_smol_dock_1_1_bond_1a8ca51ba3f2abc758ecd7b4b040681f21" kind="function"><name>getEndA</name></member>
+    <member refid="class_smol_dock_1_1_bond_1a0a2feeb4cc88cbb8920ae5e9b142ead5" kind="function"><name>getEndB</name></member>
+    <member refid="class_smol_dock_1_1_bond_1a225d51b7edd43bc5aa16984981bc2dfe" kind="function"><name>publicizeToAtom</name></member>
+    <member refid="class_smol_dock_1_1_bond_1a4ebf28309120c880429f205edf67b9f8" kind="function"><name>setBondType</name></member>
+    <member refid="class_smol_dock_1_1_bond_1a6b8180f0f2b339c521f8a74b2445e8c8" kind="function"><name>getBondType</name></member>
+  </compound>
+  <compound refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine" kind="class"><name>SmolDock::Engine::ConformerRigidDockingEngine</name>
+    <member refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a022a37cb30a640404c634aace67ebea1" kind="variable"><name>conformer_num</name></member>
+    <member refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1adc3f28b5b4af09c54eb73d9f445dbd2d" kind="variable"><name>orig_protein</name></member>
+    <member refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1af3d543e92676f9d66a5a3d0ccc0cd5a9" kind="variable"><name>orig_ligand</name></member>
+    <member refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a046b6f9d1c856e1b38034388a8fb5f9f" kind="variable"><name>random_seed</name></member>
+    <member refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a9bc1d216cf102c383444cb6f9955dfaa" kind="variable"><name>rnd_generator</name></member>
+    <member refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a5a7a60763037a8d8b7c6c2a9defa512f" kind="variable"><name>rwmol</name></member>
+    <member refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1aeb9358858c3af9c718c168dcff14f96b" kind="function"><name>ConformerRigidDockingEngine</name></member>
+    <member refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1acd3b7345ecae8f0c92ca0168b794eac3" kind="function"><name>setDockingBox</name></member>
+    <member refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1acf8082b5d9d68fc2cfe975ad62a2459f" kind="function"><name>setProtein</name></member>
+    <member refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a14262d85db1fd4bfe21780029fba842c" kind="function"><name>setLigand</name></member>
+    <member refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a756b9c1300d1c3828b519a2ca05ada59" kind="function"><name>setRandomSeed</name></member>
+    <member refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a3abc1a2cdbb3f1b9f545f863f9ec5e43" kind="function"><name>setupDockingEngine</name></member>
+    <member refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a7bee39278168cb4d7ee6558b3a3d3bb4" kind="function"><name>runDockingEngine</name></member>
+    <member refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a52fa8c276c911df08d4dd8d6744ae540" kind="function"><name>getDockingResult</name></member>
+  </compound>
+  <compound refid="class_smol_dock_1_1_docking_result" kind="class"><name>SmolDock::DockingResult</name>
+  </compound>
+  <compound refid="class_smol_dock_1_1_docking_result_printer" kind="class"><name>SmolDock::DockingResultPrinter</name>
+    <member refid="class_smol_dock_1_1_docking_result_printer_1a7bd2f249617b1fcc7be8edb4e73bbd4f" kind="variable"><name>res</name></member>
+    <member refid="class_smol_dock_1_1_docking_result_printer_1a0c4ac739b1ee30a044a8e289c541717f" kind="function"><name>DockingResultPrinter</name></member>
+    <member refid="class_smol_dock_1_1_docking_result_printer_1afb1f0143452d4d8e94555f7f354bb134" kind="function"><name>printToConsole</name></member>
+  </compound>
+  <compound refid="struct_smol_dock_1_1i_atom" kind="struct"><name>SmolDock::iAtom</name>
+    <member refid="struct_smol_dock_1_1i_atom_1a671e7d72c54e461a7719c94705ee6103" kind="variable"><name>atomicNum</name></member>
+    <member refid="struct_smol_dock_1_1i_atom_1a9c2f9dadec039f72274d46b4292240ae" kind="variable"><name>x</name></member>
+    <member refid="struct_smol_dock_1_1i_atom_1aed903239c438c1304b7e3c68d10d41e1" kind="variable"><name>y</name></member>
+    <member refid="struct_smol_dock_1_1i_atom_1a7164b26142f6b8022af89d4ab1c32687" kind="variable"><name>z</name></member>
+  </compound>
+  <compound refid="struct_smol_dock_1_1i_conformer" kind="struct"><name>SmolDock::iConformer</name>
+    <member refid="struct_smol_dock_1_1i_conformer_1a18fd974857dffddf4b6233c7c5d70f94" kind="variable"><name>atoms_vect</name></member>
+  </compound>
+  <compound refid="class_smol_dock_1_1_engine_1_1_m_d_style_docking_engine" kind="class"><name>SmolDock::Engine::MDStyleDockingEngine</name>
+    <member refid="class_smol_dock_1_1_engine_1_1_m_d_style_docking_engine_1af4a699e7e7768ed9168cdb86b0a016f7" kind="variable"><name>protein</name></member>
+    <member refid="class_smol_dock_1_1_engine_1_1_m_d_style_docking_engine_1a84918732053b3811731fcbc8afc1d7ac" kind="variable"><name>ligand</name></member>
+    <member refid="class_smol_dock_1_1_engine_1_1_m_d_style_docking_engine_1ab57bcb44b2a6ab6ab0619ff1f0d7d4a7" kind="function"><name>MDStyleDockingEngine</name></member>
+    <member refid="class_smol_dock_1_1_engine_1_1_m_d_style_docking_engine_1aa06062e9afec77d49ab596d1111c5f43" kind="function"><name>setProtein</name></member>
+    <member refid="class_smol_dock_1_1_engine_1_1_m_d_style_docking_engine_1a95f5c470d1f93881a3759933e57af559" kind="function"><name>setLigand</name></member>
+    <member refid="class_smol_dock_1_1_engine_1_1_m_d_style_docking_engine_1a6de740c49189cf41d2c48f2e8e98e391" kind="function"><name>setDockingBox</name></member>
+    <member refid="class_smol_dock_1_1_engine_1_1_m_d_style_docking_engine_1a47f1e2b66b5fd02861d8aa35395c5434" kind="function"><name>setupDockingEngine</name></member>
+    <member refid="class_smol_dock_1_1_engine_1_1_m_d_style_docking_engine_1a0c4fd010b82335202f1fa05ee35a199c" kind="function"><name>runDockingEngine</name></member>
+    <member refid="class_smol_dock_1_1_engine_1_1_m_d_style_docking_engine_1ad5532459022278236d9afa6d0dd7b544" kind="function"><name>getDockingResult</name></member>
+  </compound>
+  <compound refid="class_smol_dock_1_1_molecule" kind="class"><name>SmolDock::Molecule</name>
+    <member refid="class_smol_dock_1_1_molecule_1a2033be89cdf71e3c8750054d8d19425f" kind="friend"><name>MoleculeTraversal</name></member>
+    <member refid="class_smol_dock_1_1_molecule_1a3cb039460aae8734c10a3588e1d670a2" kind="friend"><name>UnitTestHelper</name></member>
+    <member refid="class_smol_dock_1_1_molecule_1a322259625da05c62925c705d8c4fb7c3" kind="variable"><name>atoms</name></member>
+    <member refid="class_smol_dock_1_1_molecule_1a18d9793aa2e080c9cefdc22afd40f314" kind="variable"><name>bonds</name></member>
+    <member refid="class_smol_dock_1_1_molecule_1ad474d416278768d82c07fdf1d915e0f5" kind="variable"><name>rwmol</name></member>
+    <member refid="class_smol_dock_1_1_molecule_1a59288faa4bbacab2959858b398cb459e" kind="variable"><name>smiles</name></member>
+    <member refid="class_smol_dock_1_1_molecule_1a3a4a39128d64413d79d857bcbf790163" kind="function"><name>Molecule</name></member>
+    <member refid="class_smol_dock_1_1_molecule_1a8d3c96cb2b2014b96a5119ba1631272d" kind="function"><name>getInternalRWMol</name></member>
+    <member refid="class_smol_dock_1_1_molecule_1a7ca48f636fb8d3eed4c94e42a5b293ab" kind="function"><name>populateFromSMILES</name></member>
+    <member refid="class_smol_dock_1_1_molecule_1a7dc0c882da26261dcd2762429b07a3d4" kind="function"><name>numberOfAtoms</name></member>
+    <member refid="class_smol_dock_1_1_molecule_1a8b1f02ad4e3b2ad991162668a61c2ddc" kind="function"><name>numberOfBonds</name></member>
+    <member refid="class_smol_dock_1_1_molecule_1a449f37f171474849ad896e33dfc9e2f4" kind="function"><name>generateConformer</name></member>
+    <member refid="class_smol_dock_1_1_molecule_1a6ab21fc10e78b92b579aa871245a9c55" kind="function"><name>generateConformers</name></member>
+  </compound>
+  <compound refid="class_smol_dock_1_1_molecule_traversal" kind="class"><name>SmolDock::MoleculeTraversal</name>
+    <member refid="class_smol_dock_1_1_molecule_traversal_1af59b1f0d101bf5aec1da5ba0442f6990" kind="variable"><name>molecule</name></member>
+    <member refid="class_smol_dock_1_1_molecule_traversal_1a79631a26881095650a855b7ffb7b299e" kind="variable"><name>already_visited_atoms</name></member>
+    <member refid="class_smol_dock_1_1_molecule_traversal_1a15164d24acfa7e7b5935ddc07e783aac" kind="function"><name>MoleculeTraversal</name></member>
+    <member refid="class_smol_dock_1_1_molecule_traversal_1a4f5b4079ecf6cf8682f919f323eaf29a" kind="function"><name>printTraversal</name></member>
+    <member refid="class_smol_dock_1_1_molecule_traversal_1a430ae16c3c60897f4ec5412eb536fe45" kind="function"><name>traverse</name></member>
+  </compound>
+  <compound refid="class_smol_dock_1_1_protein" kind="class"><name>SmolDock::Protein</name>
+    <member refid="class_smol_dock_1_1_protein_1ae0fe8b9c66bfa8032c93e0d8269fd561" kind="variable"><name>aminoacids</name></member>
+    <member refid="class_smol_dock_1_1_protein_1a86e77c7079be2b4d3e1a8e3e53a4ce02" kind="variable"><name>heteroatoms</name></member>
+    <member refid="class_smol_dock_1_1_protein_1ae9cac74c19d706a93fb1e9d4929127a5" kind="function"><name>Protein</name></member>
+    <member refid="class_smol_dock_1_1_protein_1a99399b7db2f1b78fea8076a137a4b962" kind="function"><name>populateFromPDB</name></member>
+  </compound>
+  <compound refid="class_smol_dock_1_1_structure" kind="class"><name>SmolDock::Structure</name>
+  </compound>
+  <compound refid="class_smol_dock_1_1_engine_1_1_vina_compatible_docking_engine" kind="class"><name>SmolDock::Engine::VinaCompatibleDockingEngine</name>
+  </compound>
+  <compound refid="namespace_smol_dock" kind="namespace"><name>SmolDock</name>
+    <member refid="namespace_smol_dock_1a7980070f5c494cfe044ad9e90e34e3e3" kind="function"><name>resTypeToString</name></member>
+    <member refid="namespace_smol_dock_1a788f9308991cdf8fe5af07b27ff0f389" kind="function"><name>stringToResType</name></member>
+    <member refid="namespace_smol_dock_1adc50d67bf7b33de8b30d90f97c25fb24" kind="function"><name>atomTypeToString</name></member>
+    <member refid="namespace_smol_dock_1ae559278f4b66ec9a09ddfaebb224f897" kind="function"><name>stringToAtomType</name></member>
+  </compound>
+  <compound refid="namespace_smol_dock_1_1_engine" kind="namespace"><name>SmolDock::Engine</name>
+  </compound>
+  <compound refid="namespacestd" kind="namespace"><name>std</name>
+  </compound>
+  <compound refid="_abstract_docking_engine_8h" kind="file"><name>AbstractDockingEngine.h</name>
+  </compound>
+  <compound refid="_amino_acid_8cpp" kind="file"><name>AminoAcid.cpp</name>
+  </compound>
+  <compound refid="_amino_acid_8h" kind="file"><name>AminoAcid.h</name>
+  </compound>
+  <compound refid="_atom_8cpp" kind="file"><name>Atom.cpp</name>
+  </compound>
+  <compound refid="_atom_8h" kind="file"><name>Atom.h</name>
+  </compound>
+  <compound refid="_bond_8cpp" kind="file"><name>Bond.cpp</name>
+  </compound>
+  <compound refid="_bond_8h" kind="file"><name>Bond.h</name>
+  </compound>
+  <compound refid="_conformer_rigid_docking_engine_8cpp" kind="file"><name>ConformerRigidDockingEngine.cpp</name>
+  </compound>
+  <compound refid="_conformer_rigid_docking_engine_8h" kind="file"><name>ConformerRigidDockingEngine.h</name>
+  </compound>
+  <compound refid="_docking_result_8cpp" kind="file"><name>DockingResult.cpp</name>
+  </compound>
+  <compound refid="_docking_result_8h" kind="file"><name>DockingResult.h</name>
+  </compound>
+  <compound refid="_docking_result_printer_8cpp" kind="file"><name>DockingResultPrinter.cpp</name>
+  </compound>
+  <compound refid="_docking_result_printer_8h" kind="file"><name>DockingResultPrinter.h</name>
+  </compound>
+  <compound refid="i_atom_8cpp" kind="file"><name>iAtom.cpp</name>
+  </compound>
+  <compound refid="i_atom_8h" kind="file"><name>iAtom.h</name>
+  </compound>
+  <compound refid="i_conformer_8cpp" kind="file"><name>iConformer.cpp</name>
+  </compound>
+  <compound refid="i_conformer_8h" kind="file"><name>iConformer.h</name>
+  </compound>
+  <compound refid="main_8cpp" kind="file"><name>main.cpp</name>
+    <member refid="main_8cpp_1a1f832f93fb04cee3c2f3880839262d4b" kind="define"><name>SMOLDOCK_VERBOSE_DEBUG</name></member>
+    <member refid="main_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4" kind="function"><name>main</name></member>
+  </compound>
+  <compound refid="_m_d_style_docking_engine_8cpp" kind="file"><name>MDStyleDockingEngine.cpp</name>
+  </compound>
+  <compound refid="_m_d_style_docking_engine_8h" kind="file"><name>MDStyleDockingEngine.h</name>
+  </compound>
+  <compound refid="_molecule_8cpp" kind="file"><name>Molecule.cpp</name>
+  </compound>
+  <compound refid="_molecule_8h" kind="file"><name>Molecule.h</name>
+  </compound>
+  <compound refid="_molecule_traversal_8cpp" kind="file"><name>MoleculeTraversal.cpp</name>
+  </compound>
+  <compound refid="_molecule_traversal_8h" kind="file"><name>MoleculeTraversal.h</name>
+  </compound>
+  <compound refid="_protein_8cpp" kind="file"><name>Protein.cpp</name>
+  </compound>
+  <compound refid="_protein_8h" kind="file"><name>Protein.h</name>
+  </compound>
+  <compound refid="_structure_8cpp" kind="file"><name>Structure.cpp</name>
+  </compound>
+  <compound refid="_structure_8h" kind="file"><name>Structure.h</name>
+  </compound>
+  <compound refid="_vina_compatible_docking_engine_8cpp" kind="file"><name>VinaCompatibleDockingEngine.cpp</name>
+  </compound>
+  <compound refid="_vina_compatible_docking_engine_8h" kind="file"><name>VinaCompatibleDockingEngine.h</name>
+  </compound>
+  <compound refid="dir_3b692a38eb3defa157937dbd02adffca" kind="dir"><name>Engines</name>
+  </compound>
+  <compound refid="dir_d3f782666cc280dff880300cc44797c9" kind="dir"><name>Frontends</name>
+  </compound>
+  <compound refid="dir_238e222dc7cada3799d91028ff67fcc5" kind="dir"><name>Internals</name>
+  </compound>
+  <compound refid="dir_e31d196e87a16ac78d16cd78ed204c3b" kind="dir"><name>Results</name>
+  </compound>
+  <compound refid="dir_29b6d8349828f3fd4c784faff1564e9a" kind="dir"><name>Structures</name>
+  </compound>
+  <compound refid="dir_b05a5fa85f84bfc9013183c9d87f9a36" kind="dir"><name>Utilities</name>
+  </compound>
+</doxygenindex>

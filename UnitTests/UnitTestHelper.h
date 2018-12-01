@@ -29,11 +29,7 @@ namespace SmolDock {
     public:
         UnitTestHelper() = default;
 
-        void populateMol_COCOH(std::shared_ptr<Molecule> mol);
-
-        std::tuple<unsigned long, unsigned long> getNumberOfAtomAndBonds(std::shared_ptr<Molecule> mol);
-
-        RDKit::RWMol *getRDKitRWMol(std::shared_ptr<Molecule> mol);
+        void populateMol_COCOH(Molecule *mol);
 
     private:
 

@@ -1,0 +1,303 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="class_smol_dock_1_1_engine_1_1_m_d_style_docking_engine" kind="class" language="C++" prot="public">
+    <compoundname>SmolDock::Engine::MDStyleDockingEngine</compoundname>
+    <basecompoundref refid="class_smol_dock_1_1_engine_1_1_abstract_docking_engine" prot="private" virt="non-virtual">SmolDock::Engine::AbstractDockingEngine</basecompoundref>
+    <includes refid="_m_d_style_docking_engine_8h" local="no">MDStyleDockingEngine.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_smol_dock_1_1_engine_1_1_m_d_style_docking_engine_1af4a699e7e7768ed9168cdb86b0a016f7" prot="private" static="no" mutable="no">
+        <type><ref refid="class_smol_dock_1_1_protein" kindref="compound">Protein</ref> *</type>
+        <definition>Protein* SmolDock::Engine::MDStyleDockingEngine::protein</definition>
+        <argsstring></argsstring>
+        <name>protein</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Engines/MDStyleDockingEngine.h" line="37" column="1" bodyfile="Engines/MDStyleDockingEngine.h" bodystart="37" bodyend="-1"/>
+        <referencedby refid="class_smol_dock_1_1_engine_1_1_m_d_style_docking_engine_1aa06062e9afec77d49ab596d1111c5f43" compoundref="_m_d_style_docking_engine_8cpp" startline="11" endline="14">setProtein</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_smol_dock_1_1_engine_1_1_m_d_style_docking_engine_1a84918732053b3811731fcbc8afc1d7ac" prot="private" static="no" mutable="no">
+        <type><ref refid="class_smol_dock_1_1_molecule" kindref="compound">Molecule</ref> *</type>
+        <definition>Molecule* SmolDock::Engine::MDStyleDockingEngine::ligand</definition>
+        <argsstring></argsstring>
+        <name>ligand</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Engines/MDStyleDockingEngine.h" line="38" column="1" bodyfile="Engines/MDStyleDockingEngine.h" bodystart="38" bodyend="-1"/>
+        <referencedby refid="class_smol_dock_1_1_engine_1_1_m_d_style_docking_engine_1a95f5c470d1f93881a3759933e57af559" compoundref="_m_d_style_docking_engine_8cpp" startline="16" endline="19">setLigand</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_smol_dock_1_1_engine_1_1_m_d_style_docking_engine_1ab57bcb44b2a6ab6ab0619ff1f0d7d4a7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>SmolDock::Engine::MDStyleDockingEngine::MDStyleDockingEngine</definition>
+        <argsstring>()=default</argsstring>
+        <name>MDStyleDockingEngine</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Engines/MDStyleDockingEngine.h" line="18" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_smol_dock_1_1_engine_1_1_m_d_style_docking_engine_1aa06062e9afec77d49ab596d1111c5f43" prot="public" static="no" const="no" explicit="no" inline="no" final="yes" virt="virtual">
+        <type>bool</type>
+        <definition>bool SmolDock::Engine::MDStyleDockingEngine::setProtein</definition>
+        <argsstring>(Protein *p) final</argsstring>
+        <name>setProtein</name>
+        <reimplements refid="class_smol_dock_1_1_engine_1_1_abstract_docking_engine_1af00ee3be60acc0c4ba9aac03a3b09c35">setProtein</reimplements>
+        <param>
+          <type><ref refid="class_smol_dock_1_1_protein" kindref="compound">Protein</ref> *</type>
+          <declname>p</declname>
+        </param>
+        <briefdescription>
+<para>Load a protein for docking. </para>        </briefdescription>
+        <detaileddescription>
+<para>Load a protein for docking. Note that it <emphasis>can</emphasis> be modified by the engine.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the <ref refid="class_smol_dock_1_1_protein" kindref="compound">Protein</ref> </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Returns whether it has been successful </para></simplesect>
+<simplesect kind="see"><para><ref refid="class_smol_dock_1_1_engine_1_1_m_d_style_docking_engine_1a95f5c470d1f93881a3759933e57af559" kindref="member">setLigand()</ref>, <ref refid="class_smol_dock_1_1_engine_1_1_m_d_style_docking_engine_1a6de740c49189cf41d2c48f2e8e98e391" kindref="member">setDockingBox()</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Engines/MDStyleDockingEngine.h" line="21" column="1" bodyfile="Engines/MDStyleDockingEngine.cpp" bodystart="11" bodyend="14"/>
+        <references refid="class_smol_dock_1_1_engine_1_1_m_d_style_docking_engine_1af4a699e7e7768ed9168cdb86b0a016f7" compoundref="_m_d_style_docking_engine_8h" startline="37">protein</references>
+      </memberdef>
+      <memberdef kind="function" id="class_smol_dock_1_1_engine_1_1_m_d_style_docking_engine_1a95f5c470d1f93881a3759933e57af559" prot="public" static="no" const="no" explicit="no" inline="no" final="yes" virt="virtual">
+        <type>bool</type>
+        <definition>bool SmolDock::Engine::MDStyleDockingEngine::setLigand</definition>
+        <argsstring>(Molecule *m) final</argsstring>
+        <name>setLigand</name>
+        <reimplements refid="class_smol_dock_1_1_engine_1_1_abstract_docking_engine_1aae76a86e5dfc18b19e3a16c55da6556f">setLigand</reimplements>
+        <param>
+          <type><ref refid="class_smol_dock_1_1_molecule" kindref="compound">Molecule</ref> *</type>
+          <declname>m</declname>
+        </param>
+        <briefdescription>
+<para>Load a molecule ligand for docking. </para>        </briefdescription>
+        <detaileddescription>
+<para>Load a molecule ligand for docking. Note that it <emphasis>can</emphasis> be modified by the engine.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>m</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the <ref refid="class_smol_dock_1_1_molecule" kindref="compound">Molecule</ref> </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Returns whether it has been successful </para></simplesect>
+<simplesect kind="see"><para><ref refid="class_smol_dock_1_1_engine_1_1_m_d_style_docking_engine_1aa06062e9afec77d49ab596d1111c5f43" kindref="member">setProtein()</ref>, <ref refid="class_smol_dock_1_1_engine_1_1_m_d_style_docking_engine_1a6de740c49189cf41d2c48f2e8e98e391" kindref="member">setDockingBox()</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Engines/MDStyleDockingEngine.h" line="23" column="1" bodyfile="Engines/MDStyleDockingEngine.cpp" bodystart="16" bodyend="19"/>
+        <references refid="class_smol_dock_1_1_engine_1_1_m_d_style_docking_engine_1a84918732053b3811731fcbc8afc1d7ac" compoundref="_m_d_style_docking_engine_8h" startline="38">ligand</references>
+      </memberdef>
+      <memberdef kind="function" id="class_smol_dock_1_1_engine_1_1_m_d_style_docking_engine_1a6de740c49189cf41d2c48f2e8e98e391" prot="public" static="no" const="no" explicit="no" inline="no" final="yes" virt="virtual">
+        <type>bool</type>
+        <definition>bool SmolDock::Engine::MDStyleDockingEngine::setDockingBox</definition>
+        <argsstring>(DockingBoxSetting setting) final</argsstring>
+        <name>setDockingBox</name>
+        <reimplements refid="class_smol_dock_1_1_engine_1_1_abstract_docking_engine_1a169f25051203c912c2b90bf3387baa22">setDockingBox</reimplements>
+        <param>
+          <type><ref refid="class_smol_dock_1_1_engine_1_1_abstract_docking_engine_1aca703508a3ce31d577d3ec108020789b" kindref="member">DockingBoxSetting</ref></type>
+          <declname>setting</declname>
+        </param>
+        <briefdescription>
+<para>Set the protein domain/box to consider for docking. </para>        </briefdescription>
+        <detaileddescription>
+<para>A restriction of the search space can be necessary : this provides a way to specify a domain/box in the protein where the docking will take place.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>setting</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>General-scope DockingBox specification </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Returns whether it has been successful </para></simplesect>
+<simplesect kind="see"><para><ref refid="class_smol_dock_1_1_engine_1_1_m_d_style_docking_engine_1aa06062e9afec77d49ab596d1111c5f43" kindref="member">setProtein()</ref>, <ref refid="class_smol_dock_1_1_engine_1_1_m_d_style_docking_engine_1a95f5c470d1f93881a3759933e57af559" kindref="member">setLigand()</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Engines/MDStyleDockingEngine.h" line="26" column="1" bodyfile="Engines/MDStyleDockingEngine.cpp" bodystart="34" bodyend="42"/>
+        <references refid="class_smol_dock_1_1_engine_1_1_abstract_docking_engine_1aca703508a3ce31d577d3ec108020789ba312db69f5bf4447dfe3c58983083b54f">SmolDock::Engine::AbstractDockingEngine::everything</references>
+      </memberdef>
+      <memberdef kind="function" id="class_smol_dock_1_1_engine_1_1_m_d_style_docking_engine_1a47f1e2b66b5fd02861d8aa35395c5434" prot="public" static="no" const="no" explicit="no" inline="no" final="yes" virt="virtual">
+        <type>bool</type>
+        <definition>bool SmolDock::Engine::MDStyleDockingEngine::setupDockingEngine</definition>
+        <argsstring>() final</argsstring>
+        <name>setupDockingEngine</name>
+        <reimplements refid="class_smol_dock_1_1_engine_1_1_abstract_docking_engine_1a38d55d9ee6fde7df45b25b772cffbb9f">setupDockingEngine</reimplements>
+        <briefdescription>
+<para>Prepare the engine for docking. </para>        </briefdescription>
+        <detaileddescription>
+<para>Prepare the engine for docking. It is expected in future versions to separate protein, ligand, and prot-ligand initilization, so as to allow maximum work sharing in screening scenario (same prot = same prot prep, just different ligand)</para><para><simplesect kind="return"><para>Returns whether it has been successful </para></simplesect>
+<simplesect kind="see"><para></para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Engines/MDStyleDockingEngine.h" line="28" column="1" bodyfile="Engines/MDStyleDockingEngine.cpp" bodystart="21" bodyend="23"/>
+      </memberdef>
+      <memberdef kind="function" id="class_smol_dock_1_1_engine_1_1_m_d_style_docking_engine_1a0c4fd010b82335202f1fa05ee35a199c" prot="public" static="no" const="no" explicit="no" inline="no" final="yes" virt="virtual">
+        <type>void</type>
+        <definition>void SmolDock::Engine::MDStyleDockingEngine::runDockingEngine</definition>
+        <argsstring>() final</argsstring>
+        <name>runDockingEngine</name>
+        <reimplements refid="class_smol_dock_1_1_engine_1_1_abstract_docking_engine_1a0f08ef422ed79b3dac0b3144a241abe1">runDockingEngine</reimplements>
+        <briefdescription>
+<para>Run the docking. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Returns whether it has been successful </para></simplesect>
+<simplesect kind="see"><para></para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Engines/MDStyleDockingEngine.h" line="30" column="1" bodyfile="Engines/MDStyleDockingEngine.cpp" bodystart="25" bodyend="27"/>
+      </memberdef>
+      <memberdef kind="function" id="class_smol_dock_1_1_engine_1_1_m_d_style_docking_engine_1ad5532459022278236d9afa6d0dd7b544" prot="public" static="no" const="no" explicit="no" inline="no" final="yes" virt="virtual">
+        <type>std::shared_ptr&lt; <ref refid="class_smol_dock_1_1_docking_result" kindref="compound">DockingResult</ref> &gt;</type>
+        <definition>std::shared_ptr&lt; DockingResult &gt; SmolDock::Engine::MDStyleDockingEngine::getDockingResult</definition>
+        <argsstring>() final</argsstring>
+        <name>getDockingResult</name>
+        <reimplements refid="class_smol_dock_1_1_engine_1_1_abstract_docking_engine_1a2e881d63b0214caf95efa3245446faf3">getDockingResult</reimplements>
+        <briefdescription>
+<para>Get the docking results. </para>        </briefdescription>
+        <detaileddescription>
+<para>Behaviour is undefined if called before <ref refid="class_smol_dock_1_1_engine_1_1_m_d_style_docking_engine_1a0c4fd010b82335202f1fa05ee35a199c" kindref="member">runDockingEngine()</ref></para><para><simplesect kind="return"><para>The results of the docking. </para></simplesect>
+<simplesect kind="see"><para><ref refid="class_smol_dock_1_1_engine_1_1_m_d_style_docking_engine_1a0c4fd010b82335202f1fa05ee35a199c" kindref="member">runDockingEngine()</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Engines/MDStyleDockingEngine.h" line="32" column="1" bodyfile="Engines/MDStyleDockingEngine.cpp" bodystart="29" bodyend="31"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="66">
+        <label>SmolDock::Engine::AbstractDockingEngine</label>
+        <link refid="class_smol_dock_1_1_engine_1_1_abstract_docking_engine"/>
+      </node>
+      <node id="65">
+        <label>SmolDock::Engine::MDStyleDockingEngine</label>
+        <link refid="class_smol_dock_1_1_engine_1_1_m_d_style_docking_engine"/>
+        <childnode refid="66" relation="private-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="73">
+        <label>T</label>
+      </node>
+      <node id="69">
+        <label>SmolDock::Molecule</label>
+        <link refid="class_smol_dock_1_1_molecule"/>
+        <childnode refid="70" relation="private-inheritance">
+        </childnode>
+        <childnode refid="71" relation="usage">
+          <edgelabel>-bonds</edgelabel>
+        </childnode>
+        <childnode refid="74" relation="usage">
+          <edgelabel>-smiles</edgelabel>
+        </childnode>
+        <childnode refid="76" relation="usage">
+          <edgelabel>-atoms</edgelabel>
+        </childnode>
+      </node>
+      <node id="71">
+        <label>std::vector&lt; std::shared_ptr&lt; SmolDock::Bond &gt; &gt;</label>
+        <childnode refid="72" relation="template-instance">
+          <edgelabel>&lt; std::shared_ptr&lt; SmolDock::Bond &gt; &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="72">
+        <label>std::vector&lt; T &gt;</label>
+        <childnode refid="73" relation="usage">
+          <edgelabel>+elements</edgelabel>
+        </childnode>
+      </node>
+      <node id="78">
+        <label>std::vector&lt; std::shared_ptr&lt; SmolDock::AminoAcid &gt; &gt;</label>
+        <childnode refid="72" relation="template-instance">
+          <edgelabel>&lt; std::shared_ptr&lt; SmolDock::AminoAcid &gt; &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="70">
+        <label>SmolDock::Structure</label>
+        <link refid="class_smol_dock_1_1_structure"/>
+      </node>
+      <node id="75">
+        <label>std::basic_string&lt; char &gt;</label>
+      </node>
+      <node id="77">
+        <label>SmolDock::Protein</label>
+        <link refid="class_smol_dock_1_1_protein"/>
+        <childnode refid="70" relation="private-inheritance">
+        </childnode>
+        <childnode refid="78" relation="usage">
+          <edgelabel>-aminoacids</edgelabel>
+        </childnode>
+        <childnode refid="76" relation="usage">
+          <edgelabel>-heteroatoms</edgelabel>
+        </childnode>
+      </node>
+      <node id="68">
+        <label>SmolDock::Engine::AbstractDockingEngine</label>
+        <link refid="class_smol_dock_1_1_engine_1_1_abstract_docking_engine"/>
+      </node>
+      <node id="76">
+        <label>std::vector&lt; std::shared_ptr&lt; SmolDock::Atom &gt; &gt;</label>
+        <childnode refid="72" relation="template-instance">
+          <edgelabel>&lt; std::shared_ptr&lt; SmolDock::Atom &gt; &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="67">
+        <label>SmolDock::Engine::MDStyleDockingEngine</label>
+        <link refid="class_smol_dock_1_1_engine_1_1_m_d_style_docking_engine"/>
+        <childnode refid="68" relation="private-inheritance">
+        </childnode>
+        <childnode refid="69" relation="usage">
+          <edgelabel>-ligand</edgelabel>
+        </childnode>
+        <childnode refid="77" relation="usage">
+          <edgelabel>-protein</edgelabel>
+        </childnode>
+      </node>
+      <node id="74">
+        <label>std::string</label>
+        <childnode refid="75" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Engines/MDStyleDockingEngine.h" line="14" column="1" bodyfile="Engines/MDStyleDockingEngine.h" bodystart="14" bodyend="40"/>
+    <listofallmembers>
+      <member refid="class_smol_dock_1_1_engine_1_1_abstract_docking_engine_1aca703508a3ce31d577d3ec108020789b" prot="private" virt="non-virtual"><scope>SmolDock::Engine::MDStyleDockingEngine</scope><name>DockingBoxSetting</name></member>
+      <member refid="class_smol_dock_1_1_engine_1_1_abstract_docking_engine_1a8147cf906368466da87fa439d537bf62" prot="private" virt="non-virtual"><scope>SmolDock::Engine::MDStyleDockingEngine</scope><name>DockingBoxShape</name></member>
+      <member refid="class_smol_dock_1_1_engine_1_1_m_d_style_docking_engine_1ad5532459022278236d9afa6d0dd7b544" prot="public" virt="virtual"><scope>SmolDock::Engine::MDStyleDockingEngine</scope><name>getDockingResult</name></member>
+      <member refid="class_smol_dock_1_1_engine_1_1_m_d_style_docking_engine_1a84918732053b3811731fcbc8afc1d7ac" prot="private" virt="non-virtual"><scope>SmolDock::Engine::MDStyleDockingEngine</scope><name>ligand</name></member>
+      <member refid="class_smol_dock_1_1_engine_1_1_m_d_style_docking_engine_1ab57bcb44b2a6ab6ab0619ff1f0d7d4a7" prot="public" virt="non-virtual"><scope>SmolDock::Engine::MDStyleDockingEngine</scope><name>MDStyleDockingEngine</name></member>
+      <member refid="class_smol_dock_1_1_engine_1_1_m_d_style_docking_engine_1af4a699e7e7768ed9168cdb86b0a016f7" prot="private" virt="non-virtual"><scope>SmolDock::Engine::MDStyleDockingEngine</scope><name>protein</name></member>
+      <member refid="class_smol_dock_1_1_engine_1_1_m_d_style_docking_engine_1a0c4fd010b82335202f1fa05ee35a199c" prot="public" virt="virtual"><scope>SmolDock::Engine::MDStyleDockingEngine</scope><name>runDockingEngine</name></member>
+      <member refid="class_smol_dock_1_1_engine_1_1_m_d_style_docking_engine_1a6de740c49189cf41d2c48f2e8e98e391" prot="public" virt="virtual"><scope>SmolDock::Engine::MDStyleDockingEngine</scope><name>setDockingBox</name></member>
+      <member refid="class_smol_dock_1_1_engine_1_1_m_d_style_docking_engine_1a95f5c470d1f93881a3759933e57af559" prot="public" virt="virtual"><scope>SmolDock::Engine::MDStyleDockingEngine</scope><name>setLigand</name></member>
+      <member refid="class_smol_dock_1_1_engine_1_1_m_d_style_docking_engine_1aa06062e9afec77d49ab596d1111c5f43" prot="public" virt="virtual"><scope>SmolDock::Engine::MDStyleDockingEngine</scope><name>setProtein</name></member>
+      <member refid="class_smol_dock_1_1_engine_1_1_abstract_docking_engine_1a6172e465dcd7dcecac29fb30612d0227" prot="private" virt="pure-virtual"><scope>SmolDock::Engine::MDStyleDockingEngine</scope><name>setRandomSeed</name></member>
+      <member refid="class_smol_dock_1_1_engine_1_1_m_d_style_docking_engine_1a47f1e2b66b5fd02861d8aa35395c5434" prot="public" virt="virtual"><scope>SmolDock::Engine::MDStyleDockingEngine</scope><name>setupDockingEngine</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

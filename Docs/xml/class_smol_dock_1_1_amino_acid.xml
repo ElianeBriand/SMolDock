@@ -1,0 +1,449 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="class_smol_dock_1_1_amino_acid" kind="class" language="C++" prot="public">
+    <compoundname>SmolDock::AminoAcid</compoundname>
+    <includes refid="_amino_acid_8h" local="no">AminoAcid.h</includes>
+      <sectiondef kind="public-type">
+      <memberdef kind="enum" id="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875d" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>AAType</name>
+        <enumvalue id="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875da7d0832b9f55cfd3f7c79f134de3b76a7" prot="public">
+          <name>alanine</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875da9a1407676e926e8c94b54e0864da4546" prot="public">
+          <name>arginine</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875da6d1d64af1a6d275bd2995d990072b129" prot="public">
+          <name>asparagine</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875da1aa8cabca067057363a0b448f2db84e7" prot="public">
+          <name>aspartate</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875da3ec90ee7bdd38cf0f8a68b4bee5eb202" prot="public">
+          <name>cysteine</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875da12ea2245c0c7703f3863b9be45a07ae0" prot="public">
+          <name>glutamate</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875daf91e23557b10705ecb971f90c17f8777" prot="public">
+          <name>glutamine</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875da3a778f248ff123853d5605f084e2e260" prot="public">
+          <name>glycine</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875da77d85f9928565a0fe8f709d63982efec" prot="public">
+          <name>histidine</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875daf49712f65cf0d21531c38f3083a41066" prot="public">
+          <name>isoleucine</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875da8fc32025ca0bd8d2a5a86c407ab4db14" prot="public">
+          <name>leucine</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875da183c564fc49647ef130a793d2fc8eb63" prot="public">
+          <name>lysine</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875da3d2f71c3aa615f44d4f7c394b4d89d24" prot="public">
+          <name>methionine</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875daa74b51b040c4059a99fd0defb7f0d0f6" prot="public">
+          <name>phenylalanine</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875da468e37d1ebb2b2d9488ad143d406e419" prot="public">
+          <name>proline</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875daa693d5166186d99ae683963032f44119" prot="public">
+          <name>serine</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875daa2a6737c3315b2d4391a24a8f672d4d2" prot="public">
+          <name>threonine</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875daebd78192c93b932250b270f9ae1f2638" prot="public">
+          <name>tryptophan</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875da1b54c05c5fc8eec4986ac75f82af9d65" prot="public">
+          <name>tyrosine</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875dae1028fdd9757c76ba244c2521f716113" prot="public">
+          <name>valine</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875daac3d9bd0eff79f662bcecac7c2887384" prot="public">
+          <name>selenocysteine</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875da8b17b1023d7d4d8093a8cc3bffbc3e62" prot="public">
+          <name>pyrrolysine</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875dad390be0ae98a5c4a22ca9b0b7e726f40" prot="public">
+          <name>heteroatom</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875daad921d60486366258809553a3db49a4a" prot="public">
+          <name>unknown</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Structures/AminoAcid.h" line="27" column="1" bodyfile="Structures/AminoAcid.h" bodystart="27" bodyend="52"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="friend">
+      <memberdef kind="friend" id="class_smol_dock_1_1_amino_acid_1a2cc8b86817f46f61585ecf591984f8eb" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend class</type>
+        <definition>friend class Protein</definition>
+        <argsstring></argsstring>
+        <name>Protein</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Structures/AminoAcid.h" line="24" column="1" bodyfile="Structures/AminoAcid.h" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="friend" id="class_smol_dock_1_1_amino_acid_1a114a9d96ae603d1a25779498205cec47" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend std::string</type>
+        <definition>std::string resTypeToString</definition>
+        <argsstring>(AminoAcid::AAType t)</argsstring>
+        <name>resTypeToString</name>
+        <param>
+          <type><ref refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875d" kindref="member">AminoAcid::AAType</ref></type>
+          <declname>t</declname>
+        </param>
+        <briefdescription>
+<para>Internal type &lt;=&gt; string conversion //////. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Structures/AminoAcid.h" line="55" column="1" bodyfile="Structures/AminoAcid.cpp" bodystart="49" bodyend="57"/>
+      </memberdef>
+      <memberdef kind="friend" id="class_smol_dock_1_1_amino_acid_1a196e09203295c01d2a5fc157ee89f7ee" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend <ref refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875d" kindref="member">AminoAcid::AAType</ref></type>
+        <definition>AminoAcid::AAType stringToResType</definition>
+        <argsstring>(const std::string &amp;shorthand_or_name)</argsstring>
+        <name>stringToResType</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>shorthand_or_name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Structures/AminoAcid.h" line="57" column="1" bodyfile="Structures/AminoAcid.cpp" bodystart="59" bodyend="73"/>
+        <referencedby refid="class_smol_dock_1_1_amino_acid_1a0632e2366d8af52d467bffcde90657f2" compoundref="_amino_acid_8cpp" startline="15" endline="19">AminoAcid</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-static-attrib">
+      <memberdef kind="variable" id="class_smol_dock_1_1_amino_acid_1a23b1781c86be2991e2f668c07ad78d68" prot="protected" static="yes" mutable="no">
+        <type>std::set&lt; std::tuple&lt; <ref refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875d" kindref="member">AminoAcid::AAType</ref>, std::string, std::string &gt; &gt;</type>
+        <definition>std::set&lt; std::tuple&lt; AminoAcid::AAType, std::string, std::string &gt; &gt; SmolDock::AminoAcid::AAShorthandSet</definition>
+        <argsstring></argsstring>
+        <name>AAShorthandSet</name>
+        <initializer>= {
+            {<ref refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875dad390be0ae98a5c4a22ca9b0b7e726f40" kindref="member">AminoAcid::AAType::heteroatom</ref>,     &quot;heteroatom&quot;,     &quot;HETEROATOM&quot;},
+            {AminoAcid::AAType::unknown,        &quot;unknown&quot;,        &quot;UNKNOWN&quot;},
+            {AminoAcid::AAType::alanine,        &quot;alanine&quot;,        &quot;ALA&quot;},
+            {AminoAcid::AAType::arginine,       &quot;arginine&quot;,       &quot;ARG&quot;},
+            {AminoAcid::AAType::asparagine,     &quot;asparagine&quot;,     &quot;ASN&quot;},
+            {AminoAcid::AAType::aspartate,      &quot;aspartate&quot;,      &quot;ASP&quot;},
+            {AminoAcid::AAType::cysteine,       &quot;cysteine&quot;,       &quot;CYS&quot;},
+            {AminoAcid::AAType::glutamate,      &quot;glutamate&quot;,      &quot;GLU&quot;},
+            {AminoAcid::AAType::glutamine,      &quot;glutamine&quot;,      &quot;GLN&quot;},
+            {AminoAcid::AAType::glycine,        &quot;glycine&quot;,        &quot;GLY&quot;},
+            {AminoAcid::AAType::histidine,      &quot;histidine&quot;,      &quot;HIS&quot;},
+            {AminoAcid::AAType::isoleucine,     &quot;isoleucine&quot;,     &quot;ILE&quot;},
+            {AminoAcid::AAType::leucine,        &quot;leucine&quot;,        &quot;LEU&quot;},
+            {AminoAcid::AAType::lysine,         &quot;lysine&quot;,         &quot;LYS&quot;},
+            {AminoAcid::AAType::methionine,     &quot;methionine&quot;,     &quot;MET&quot;},
+            {AminoAcid::AAType::phenylalanine,  &quot;phenylalanine&quot;,  &quot;PHE&quot;},
+            {AminoAcid::AAType::proline,        &quot;proline&quot;,        &quot;PRO&quot;},
+            {AminoAcid::AAType::serine,         &quot;serine&quot;,         &quot;SER&quot;},
+            {AminoAcid::AAType::threonine,      &quot;threonine&quot;,      &quot;THR&quot;},
+            {AminoAcid::AAType::tryptophan,     &quot;tryptophan&quot;,     &quot;TRP&quot;},
+            {AminoAcid::AAType::tyrosine,       &quot;tyrosine&quot;,       &quot;TYR&quot;},
+            {AminoAcid::AAType::valine,         &quot;valine&quot;,         &quot;VAL&quot;},
+            {AminoAcid::AAType::selenocysteine, &quot;selenocysteine&quot;, &quot;SEC&quot;},
+            {AminoAcid::AAType::pyrrolysine,    &quot;pyrrolysine&quot;,    &quot;PYL&quot;}
+    }</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Structures/AminoAcid.h" line="64" column="1" bodyfile="Structures/AminoAcid.h" bodystart="64" bodyend="-1"/>
+        <referencedby refid="namespace_smol_dock_1a7980070f5c494cfe044ad9e90e34e3e3" compoundref="_amino_acid_8cpp" startline="49" endline="57">SmolDock::resTypeToString</referencedby>
+        <referencedby refid="namespace_smol_dock_1a788f9308991cdf8fe5af07b27ff0f389" compoundref="_amino_acid_8cpp" startline="59" endline="73">SmolDock::stringToResType</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_smol_dock_1_1_amino_acid_1ae3404d935519af353a5c323ce298e04a" prot="private" static="no" mutable="no">
+        <type><ref refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875d" kindref="member">AAType</ref></type>
+        <definition>AAType SmolDock::AminoAcid::type</definition>
+        <argsstring></argsstring>
+        <name>type</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Structures/AminoAcid.h" line="68" column="1" bodyfile="Structures/AminoAcid.h" bodystart="68" bodyend="-1"/>
+        <referencedby refid="class_smol_dock_1_1_amino_acid_1a0632e2366d8af52d467bffcde90657f2" compoundref="_amino_acid_8cpp" startline="15" endline="19">AminoAcid</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_smol_dock_1_1_amino_acid_1ad0349cceaac80ad8a367c8130589dd76" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string SmolDock::AminoAcid::shorthand</definition>
+        <argsstring></argsstring>
+        <name>shorthand</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Structures/AminoAcid.h" line="70" column="1" bodyfile="Structures/AminoAcid.h" bodystart="70" bodyend="-1"/>
+        <referencedby refid="class_smol_dock_1_1_amino_acid_1a0632e2366d8af52d467bffcde90657f2" compoundref="_amino_acid_8cpp" startline="15" endline="19">AminoAcid</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_smol_dock_1_1_amino_acid_1a2a83d6290c79b4d2145637a29ebb9d23" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string SmolDock::AminoAcid::fullName</definition>
+        <argsstring></argsstring>
+        <name>fullName</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Structures/AminoAcid.h" line="71" column="1" bodyfile="Structures/AminoAcid.h" bodystart="71" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_smol_dock_1_1_amino_acid_1acf07ea167386e29d0ea6b5024663aed8" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; std::shared_ptr&lt; <ref refid="class_smol_dock_1_1_atom" kindref="compound">Atom</ref> &gt; &gt;</type>
+        <definition>std::vector&lt;std::shared_ptr&lt;Atom&gt; &gt; SmolDock::AminoAcid::atoms</definition>
+        <argsstring></argsstring>
+        <name>atoms</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Structures/AminoAcid.h" line="73" column="1" bodyfile="Structures/AminoAcid.h" bodystart="73" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_smol_dock_1_1_amino_acid_1a0632e2366d8af52d467bffcde90657f2" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>SmolDock::AminoAcid::AminoAcid</definition>
+        <argsstring>(const std::string &amp;AA3LettersShorthand)</argsstring>
+        <name>AminoAcid</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>AA3LettersShorthand</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Structures/AminoAcid.h" line="60" column="1" bodyfile="Structures/AminoAcid.cpp" bodystart="15" bodyend="19"/>
+        <references refid="class_smol_dock_1_1_amino_acid_1ad0349cceaac80ad8a367c8130589dd76" compoundref="_amino_acid_8h" startline="70">shorthand</references>
+        <references refid="class_smol_dock_1_1_amino_acid_1a196e09203295c01d2a5fc157ee89f7ee" compoundref="_amino_acid_8cpp" startline="59" endline="73">stringToResType</references>
+        <references refid="class_smol_dock_1_1_amino_acid_1ae3404d935519af353a5c323ce298e04a" compoundref="_amino_acid_8h" startline="68">type</references>
+      </memberdef>
+      <memberdef kind="function" id="class_smol_dock_1_1_amino_acid_1acc14dd7bf81e1580703017427b130838" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>SmolDock::AminoAcid::AminoAcid</definition>
+        <argsstring>(const AminoAcid::AAType &amp;type)</argsstring>
+        <name>AminoAcid</name>
+        <param>
+          <type>const <ref refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875d" kindref="member">AminoAcid::AAType</ref> &amp;</type>
+          <declname>type</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Structures/AminoAcid.h" line="62" column="1" bodyfile="Structures/AminoAcid.cpp" bodystart="75" bodyend="77"/>
+        <references refid="class_smol_dock_1_1_amino_acid_1ae3404d935519af353a5c323ce298e04a" compoundref="_amino_acid_8h" startline="68">type</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="14">
+        <label>K</label>
+      </node>
+      <node id="11">
+        <label>T</label>
+      </node>
+      <node id="6">
+        <label>SmolDock::AminoAcid</label>
+        <link refid="class_smol_dock_1_1_amino_acid"/>
+        <childnode refid="7" relation="usage">
+          <edgelabel>-shorthand</edgelabel>
+          <edgelabel>-fullName</edgelabel>
+        </childnode>
+        <childnode refid="9" relation="usage">
+          <edgelabel>-atoms</edgelabel>
+        </childnode>
+        <childnode refid="12" relation="usage">
+          <edgelabel>#AAShorthandSet</edgelabel>
+        </childnode>
+      </node>
+      <node id="10">
+        <label>std::vector&lt; T &gt;</label>
+        <childnode refid="11" relation="usage">
+          <edgelabel>+elements</edgelabel>
+        </childnode>
+      </node>
+      <node id="8">
+        <label>std::basic_string&lt; char &gt;</label>
+      </node>
+      <node id="13">
+        <label>std::set&lt; K &gt;</label>
+        <childnode refid="14" relation="usage">
+          <edgelabel>+keys</edgelabel>
+        </childnode>
+      </node>
+      <node id="12">
+        <label>std::set&lt; std::tuple&lt; AminoAcid::AAType, std::string, std::string &gt; &gt;</label>
+        <childnode refid="13" relation="template-instance">
+          <edgelabel>&lt; std::tuple&lt; AminoAcid::AAType, std::string, std::string &gt; &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="9">
+        <label>std::vector&lt; std::shared_ptr&lt; SmolDock::Atom &gt; &gt;</label>
+        <childnode refid="10" relation="template-instance">
+          <edgelabel>&lt; std::shared_ptr&lt; SmolDock::Atom &gt; &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="7">
+        <label>std::string</label>
+        <childnode refid="8" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Structures/AminoAcid.h" line="22" column="1" bodyfile="Structures/AminoAcid.h" bodystart="22" bodyend="77"/>
+    <listofallmembers>
+      <member refid="class_smol_dock_1_1_amino_acid_1a23b1781c86be2991e2f668c07ad78d68" prot="protected" virt="non-virtual"><scope>SmolDock::AminoAcid</scope><name>AAShorthandSet</name></member>
+      <member refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875d" prot="public" virt="non-virtual"><scope>SmolDock::AminoAcid</scope><name>AAType</name></member>
+      <member refid="class_smol_dock_1_1_amino_acid_1a0632e2366d8af52d467bffcde90657f2" prot="public" virt="non-virtual"><scope>SmolDock::AminoAcid</scope><name>AminoAcid</name></member>
+      <member refid="class_smol_dock_1_1_amino_acid_1acc14dd7bf81e1580703017427b130838" prot="public" virt="non-virtual"><scope>SmolDock::AminoAcid</scope><name>AminoAcid</name></member>
+      <member refid="class_smol_dock_1_1_amino_acid_1acf07ea167386e29d0ea6b5024663aed8" prot="private" virt="non-virtual"><scope>SmolDock::AminoAcid</scope><name>atoms</name></member>
+      <member refid="class_smol_dock_1_1_amino_acid_1a2a83d6290c79b4d2145637a29ebb9d23" prot="private" virt="non-virtual"><scope>SmolDock::AminoAcid</scope><name>fullName</name></member>
+      <member refid="class_smol_dock_1_1_amino_acid_1a2cc8b86817f46f61585ecf591984f8eb" prot="private" virt="non-virtual"><scope>SmolDock::AminoAcid</scope><name>Protein</name></member>
+      <member refid="class_smol_dock_1_1_amino_acid_1a114a9d96ae603d1a25779498205cec47" prot="public" virt="non-virtual"><scope>SmolDock::AminoAcid</scope><name>resTypeToString</name></member>
+      <member refid="class_smol_dock_1_1_amino_acid_1ad0349cceaac80ad8a367c8130589dd76" prot="private" virt="non-virtual"><scope>SmolDock::AminoAcid</scope><name>shorthand</name></member>
+      <member refid="class_smol_dock_1_1_amino_acid_1a196e09203295c01d2a5fc157ee89f7ee" prot="public" virt="non-virtual"><scope>SmolDock::AminoAcid</scope><name>stringToResType</name></member>
+      <member refid="class_smol_dock_1_1_amino_acid_1ae3404d935519af353a5c323ce298e04a" prot="private" virt="non-virtual"><scope>SmolDock::AminoAcid</scope><name>type</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

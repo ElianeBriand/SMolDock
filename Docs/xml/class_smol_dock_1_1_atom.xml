@@ -1,0 +1,760 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="class_smol_dock_1_1_atom" kind="class" language="C++" prot="public">
+    <compoundname>SmolDock::Atom</compoundname>
+    <includes refid="_atom_8h" local="no">Atom.h</includes>
+      <sectiondef kind="public-type">
+      <memberdef kind="enum" id="class_smol_dock_1_1_atom_1a57e9a532fd04e1846c0d83edebb9fd41" prot="public" static="no" strong="yes">
+        <type>unsigned char</type>
+        <name>AtomType</name>
+        <enumvalue id="class_smol_dock_1_1_atom_1a57e9a532fd04e1846c0d83edebb9fd41aad921d60486366258809553a3db49a4a" prot="public">
+          <name>unknown</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_smol_dock_1_1_atom_1a57e9a532fd04e1846c0d83edebb9fd41ad4ac1478a4d8a4f591d35e3d75f3de65" prot="public">
+          <name>hydrogen</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_smol_dock_1_1_atom_1a57e9a532fd04e1846c0d83edebb9fd41ae1b832c8857262f1089376030b4298b3" prot="public">
+          <name>carbon</name>
+          <initializer>= 6</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_smol_dock_1_1_atom_1a57e9a532fd04e1846c0d83edebb9fd41a6124d98749365e3db2c9e5b27ca04db6" prot="public">
+          <name>oxygen</name>
+          <initializer>= 8</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_smol_dock_1_1_atom_1a57e9a532fd04e1846c0d83edebb9fd41a63ebb9250f49340aece8d4ac541eaf61" prot="public">
+          <name>nitrogen</name>
+          <initializer>= 7</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_smol_dock_1_1_atom_1a57e9a532fd04e1846c0d83edebb9fd41a73a9bf52aa8ea9e256ec469dfce6e022" prot="public">
+          <name>sulfur</name>
+          <initializer>= 16</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_smol_dock_1_1_atom_1a57e9a532fd04e1846c0d83edebb9fd41af3b7d449c5ca2f53a72210e4381769be" prot="public">
+          <name>chlorine</name>
+          <initializer>= 17</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Structures/Atom.h" line="42" column="1" bodyfile="Structures/Atom.h" bodystart="42" bodyend="50"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_smol_dock_1_1_atom_1ade04f26c3314bee1144e0704a07e95ea" prot="public" static="no" mutable="no">
+        <type>friend</type>
+        <definition>friend SmolDock::Atom::Bond</definition>
+        <argsstring></argsstring>
+        <name>Bond</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Structures/Atom.h" line="36" column="1" bodyfile="Structures/Atom.h" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_smol_dock_1_1_atom_1a90ad0859a5e5a747eecdc79b8bb80561" prot="public" static="no" mutable="no">
+        <type>friend</type>
+        <definition>friend SmolDock::Atom::MoleculeTraversal</definition>
+        <argsstring></argsstring>
+        <name>MoleculeTraversal</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Structures/Atom.h" line="37" column="1" bodyfile="Structures/Atom.h" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="friend">
+      <memberdef kind="friend" id="class_smol_dock_1_1_atom_1a2cc8b86817f46f61585ecf591984f8eb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend class</type>
+        <definition>friend class Protein</definition>
+        <argsstring></argsstring>
+        <name>Protein</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Structures/Atom.h" line="39" column="1" bodyfile="Structures/Atom.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="friend" id="class_smol_dock_1_1_atom_1ab7591815a3dc03bab05bcb6d5e2b741a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend std::string</type>
+        <definition>std::string atomTypeToString</definition>
+        <argsstring>(Atom::AtomType t)</argsstring>
+        <name>atomTypeToString</name>
+        <param>
+          <type><ref refid="class_smol_dock_1_1_atom_1a57e9a532fd04e1846c0d83edebb9fd41" kindref="member">Atom::AtomType</ref></type>
+          <declname>t</declname>
+        </param>
+        <briefdescription>
+<para>Internal type &lt;=&gt; string conversion //////. </para>        </briefdescription>
+        <detaileddescription>
+<para>Too many cases, for now we just store as-is in a string enum class AtomClassInResidue { unknown, C, O, N, CA, CB, CG, CZ, CZ2, CZ3, CH2, CD1, CD2, CE1, CE2, CE3, CG2, NE, NE1, NE2, NH1, NH2, NZ, OE1, OD1, OD2, OG1, SG }; </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Structures/Atom.h" line="74" column="1" bodyfile="Structures/Atom.cpp" bodystart="23" bodyend="31"/>
+        <referencedby refid="class_smol_dock_1_1_atom_1a66de652129ef16355da3dfcc3ae566e3" compoundref="_atom_8cpp" startline="57" endline="59">getTypeString</referencedby>
+      </memberdef>
+      <memberdef kind="friend" id="class_smol_dock_1_1_atom_1abe46f23e1f169949c8d3916b7e0ad38b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend <ref refid="class_smol_dock_1_1_atom_1a57e9a532fd04e1846c0d83edebb9fd41" kindref="member">Atom::AtomType</ref></type>
+        <definition>Atom::AtomType stringToAtomType</definition>
+        <argsstring>(const std::string &amp;symbol_or_name)</argsstring>
+        <name>stringToAtomType</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>symbol_or_name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Structures/Atom.h" line="76" column="1" bodyfile="Structures/Atom.cpp" bodystart="33" bodyend="45"/>
+        <referencedby refid="class_smol_dock_1_1_atom_1a72994dd53d1aa7e9bfb05aecc8a35a52" compoundref="_atom_8cpp" startline="78" endline="90">Atom</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="class_smol_dock_1_1_atom_1af45fc99da6ffbf539ba654c91e1bb752" prot="protected" static="no" mutable="no">
+        <type>std::vector&lt; std::weak_ptr&lt; <ref refid="class_smol_dock_1_1_bond" kindref="compound">Bond</ref> &gt; &gt;</type>
+        <definition>std::vector&lt;std::weak_ptr&lt;Bond&gt; &gt; SmolDock::Atom::bonds</definition>
+        <argsstring></argsstring>
+        <name>bonds</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Structures/Atom.h" line="110" column="1" bodyfile="Structures/Atom.h" bodystart="110" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_smol_dock_1_1_atom_1ab3867a9c2c98c5bb43ff4a6b7f1bf856" prot="private" static="no" mutable="no">
+        <type><ref refid="class_smol_dock_1_1_atom_1a57e9a532fd04e1846c0d83edebb9fd41" kindref="member">AtomType</ref></type>
+        <definition>AtomType SmolDock::Atom::type</definition>
+        <argsstring></argsstring>
+        <name>type</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Structures/Atom.h" line="113" column="1" bodyfile="Structures/Atom.h" bodystart="113" bodyend="-1"/>
+        <referencedby refid="class_smol_dock_1_1_atom_1a9f42fafbe3cd76da61edaf6a10876f2c" compoundref="_atom_8cpp" startline="49" endline="51">getType</referencedby>
+        <referencedby refid="class_smol_dock_1_1_atom_1a66de652129ef16355da3dfcc3ae566e3" compoundref="_atom_8cpp" startline="57" endline="59">getTypeString</referencedby>
+        <referencedby refid="class_smol_dock_1_1_atom_1a72994dd53d1aa7e9bfb05aecc8a35a52" compoundref="_atom_8cpp" startline="78" endline="90">Atom</referencedby>
+        <referencedby refid="class_smol_dock_1_1_atom_1a7dede98478cab4cf7b6e6462d3886bd2" compoundref="_atom_8cpp" startline="121" endline="126">emplaceiAtom</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_smol_dock_1_1_atom_1aa19d070c9951c67a4b1d4c5d80f2ee22" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool SmolDock::Atom::fromResidue</definition>
+        <argsstring></argsstring>
+        <name>fromResidue</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Structures/Atom.h" line="115" column="1" bodyfile="Structures/Atom.h" bodystart="115" bodyend="-1"/>
+        <referencedby refid="class_smol_dock_1_1_atom_1a72994dd53d1aa7e9bfb05aecc8a35a52" compoundref="_atom_8cpp" startline="78" endline="90">Atom</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_smol_dock_1_1_atom_1aeb5bd3da13c5e16176931c19bb622d91" prot="private" static="no" mutable="no">
+        <type><ref refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875d" kindref="member">AminoAcid::AAType</ref></type>
+        <definition>AminoAcid::AAType SmolDock::Atom::residueType</definition>
+        <argsstring></argsstring>
+        <name>residueType</name>
+        <initializer>= <ref refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875dad390be0ae98a5c4a22ca9b0b7e726f40" kindref="member">AminoAcid::AAType::heteroatom</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Structures/Atom.h" line="116" column="1" bodyfile="Structures/Atom.h" bodystart="116" bodyend="-1"/>
+        <referencedby refid="class_smol_dock_1_1_atom_1a72994dd53d1aa7e9bfb05aecc8a35a52" compoundref="_atom_8cpp" startline="78" endline="90">Atom</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_smol_dock_1_1_atom_1a79a0e80b2fdb39742cc4de548d73eb63" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string SmolDock::Atom::atomClassInResidue</definition>
+        <argsstring></argsstring>
+        <name>atomClassInResidue</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Structures/Atom.h" line="117" column="1" bodyfile="Structures/Atom.h" bodystart="117" bodyend="-1"/>
+        <referencedby refid="class_smol_dock_1_1_atom_1a72994dd53d1aa7e9bfb05aecc8a35a52" compoundref="_atom_8cpp" startline="78" endline="90">Atom</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_smol_dock_1_1_atom_1a41d894e0b89dfd6e28514617a4a16ecf" prot="private" static="no" mutable="no">
+        <type>std::weak_ptr&lt; <ref refid="class_smol_dock_1_1_amino_acid" kindref="compound">AminoAcid</ref> &gt;</type>
+        <definition>std::weak_ptr&lt;AminoAcid&gt; SmolDock::Atom::owningAA</definition>
+        <argsstring></argsstring>
+        <name>owningAA</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Structures/Atom.h" line="118" column="1" bodyfile="Structures/Atom.h" bodystart="118" bodyend="-1"/>
+        <referencedby refid="class_smol_dock_1_1_atom_1aeb93666d6868e72e846ecad7b1927b04" compoundref="_atom_8cpp" startline="97" endline="99">getOwningAA</referencedby>
+        <referencedby refid="class_smol_dock_1_1_atom_1ad4afec1a1299201398d64daaf874857f" compoundref="_atom_8cpp" startline="101" endline="103">setOwningAA</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_smol_dock_1_1_atom_1a76afdad512e9f593c4445c6407b26597" prot="private" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int SmolDock::Atom::AtomID</definition>
+        <argsstring></argsstring>
+        <name>AtomID</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Structures/Atom.h" line="121" column="1" bodyfile="Structures/Atom.h" bodystart="121" bodyend="-1"/>
+        <referencedby refid="class_smol_dock_1_1_atom_1a6fdae20edd67e75fa5fab8cbdbb39faf" compoundref="_atom_8cpp" startline="12" endline="16">Atom</referencedby>
+        <referencedby refid="class_smol_dock_1_1_atom_1a62d7246b7a8f3d6aa1aa63c9d5a86ed3" compoundref="_atom_8cpp" startline="53" endline="55">getAtomID</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_smol_dock_1_1_atom_1a02874f0a49c2fb34884d7e40c6b92e9e" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double SmolDock::Atom::x</definition>
+        <argsstring></argsstring>
+        <name>x</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Structures/Atom.h" line="123" column="1" bodyfile="Structures/Atom.h" bodystart="123" bodyend="-1"/>
+        <referencedby refid="class_smol_dock_1_1_atom_1a9b7e3a83a87f3934edb0f15929f923bd" compoundref="_atom_8cpp" startline="105" endline="107">getAtomPosition</referencedby>
+        <referencedby refid="class_smol_dock_1_1_atom_1ae4b0b82523de139bd84ec27b62faa333" compoundref="_atom_8cpp" startline="109" endline="113">setAtomPosition</referencedby>
+        <referencedby refid="class_smol_dock_1_1_atom_1a7dede98478cab4cf7b6e6462d3886bd2" compoundref="_atom_8cpp" startline="121" endline="126">emplaceiAtom</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_smol_dock_1_1_atom_1a253663ad700e72667d421f4d869798e1" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double SmolDock::Atom::y</definition>
+        <argsstring></argsstring>
+        <name>y</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Structures/Atom.h" line="123" column="1" bodyfile="Structures/Atom.h" bodystart="123" bodyend="-1"/>
+        <referencedby refid="class_smol_dock_1_1_atom_1a9b7e3a83a87f3934edb0f15929f923bd" compoundref="_atom_8cpp" startline="105" endline="107">getAtomPosition</referencedby>
+        <referencedby refid="class_smol_dock_1_1_atom_1ae4b0b82523de139bd84ec27b62faa333" compoundref="_atom_8cpp" startline="109" endline="113">setAtomPosition</referencedby>
+        <referencedby refid="class_smol_dock_1_1_atom_1a7dede98478cab4cf7b6e6462d3886bd2" compoundref="_atom_8cpp" startline="121" endline="126">emplaceiAtom</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_smol_dock_1_1_atom_1a8f28d43131d21536269e220d6fa43f07" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double SmolDock::Atom::z</definition>
+        <argsstring></argsstring>
+        <name>z</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Structures/Atom.h" line="123" column="1" bodyfile="Structures/Atom.h" bodystart="123" bodyend="-1"/>
+        <referencedby refid="class_smol_dock_1_1_atom_1a9b7e3a83a87f3934edb0f15929f923bd" compoundref="_atom_8cpp" startline="105" endline="107">getAtomPosition</referencedby>
+        <referencedby refid="class_smol_dock_1_1_atom_1ae4b0b82523de139bd84ec27b62faa333" compoundref="_atom_8cpp" startline="109" endline="113">setAtomPosition</referencedby>
+        <referencedby refid="class_smol_dock_1_1_atom_1a7dede98478cab4cf7b6e6462d3886bd2" compoundref="_atom_8cpp" startline="121" endline="126">emplaceiAtom</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="class_smol_dock_1_1_atom_1a699bf43dba89827d43019464a2a1507e" prot="private" static="yes" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int SmolDock::Atom::nextAtomID</definition>
+        <argsstring></argsstring>
+        <name>nextAtomID</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Structures/Atom.h" line="120" column="1" bodyfile="Structures/Atom.h" bodystart="120" bodyend="-1"/>
+        <referencedby refid="class_smol_dock_1_1_atom_1a6fdae20edd67e75fa5fab8cbdbb39faf" compoundref="_atom_8cpp" startline="12" endline="16">Atom</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_smol_dock_1_1_atom_1ad2ea08ee5e9fde5927f30ebe2a3a7142" prot="private" static="yes" mutable="no">
+        <type>std::set&lt; std::tuple&lt; <ref refid="class_smol_dock_1_1_atom_1a57e9a532fd04e1846c0d83edebb9fd41" kindref="member">Atom::AtomType</ref>, std::string, std::string &gt; &gt;</type>
+        <definition>std::set&lt; std::tuple&lt; Atom::AtomType, std::string, std::string &gt; &gt; SmolDock::Atom::AtomTypeLabel</definition>
+        <argsstring></argsstring>
+        <name>AtomTypeLabel</name>
+        <initializer>= {
+            {<ref refid="class_smol_dock_1_1_atom_1a57e9a532fd04e1846c0d83edebb9fd41aad921d60486366258809553a3db49a4a" kindref="member">Atom::AtomType::unknown</ref>,  &quot;unknown&quot;,  &quot;?&quot;},
+            {Atom::AtomType::hydrogen, &quot;hydrogen&quot;, &quot;H&quot;},
+            {Atom::AtomType::carbon,   &quot;carbon&quot;,   &quot;C&quot;},
+            {Atom::AtomType::oxygen,   &quot;oxygen&quot;,   &quot;O&quot;},
+            {Atom::AtomType::nitrogen, &quot;nitrogen&quot;, &quot;N&quot;},
+            {Atom::AtomType::sulfur,   &quot;sulfur&quot;,   &quot;S&quot;},
+            {Atom::AtomType::chlorine, &quot;chlorine&quot;, &quot;CL&quot;}
+    }</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Structures/Atom.h" line="125" column="1" bodyfile="Structures/Atom.h" bodystart="125" bodyend="-1"/>
+        <referencedby refid="namespace_smol_dock_1adc50d67bf7b33de8b30d90f97c25fb24" compoundref="_atom_8cpp" startline="23" endline="31">SmolDock::atomTypeToString</referencedby>
+        <referencedby refid="namespace_smol_dock_1ae559278f4b66ec9a09ddfaebb224f897" compoundref="_atom_8cpp" startline="33" endline="45">SmolDock::stringToAtomType</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_smol_dock_1_1_atom_1a6fdae20edd67e75fa5fab8cbdbb39faf" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>SmolDock::Atom::Atom</definition>
+        <argsstring>(AtomType t)</argsstring>
+        <name>Atom</name>
+        <param>
+          <type><ref refid="class_smol_dock_1_1_atom_1a57e9a532fd04e1846c0d83edebb9fd41" kindref="member">AtomType</ref></type>
+          <declname>t</declname>
+        </param>
+        <briefdescription>
+<para>Constructors //////. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Structures/Atom.h" line="80" column="1" bodyfile="Structures/Atom.cpp" bodystart="12" bodyend="16"/>
+        <references refid="class_smol_dock_1_1_atom_1a76afdad512e9f593c4445c6407b26597" compoundref="_atom_8h" startline="121">AtomID</references>
+        <references refid="class_smol_dock_1_1_atom_1a699bf43dba89827d43019464a2a1507e" compoundref="_atom_8h" startline="120">nextAtomID</references>
+      </memberdef>
+      <memberdef kind="function" id="class_smol_dock_1_1_atom_1a72994dd53d1aa7e9bfb05aecc8a35a52" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>SmolDock::Atom::Atom</definition>
+        <argsstring>(const std::string &amp;symbol_or_name, bool PDBFormat=false, AminoAcid::AAType resType=AminoAcid::AAType::heteroatom)</argsstring>
+        <name>Atom</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>symbol_or_name</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>PDBFormat</declname>
+          <defval>false</defval>
+        </param>
+        <param>
+          <type><ref refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875d" kindref="member">AminoAcid::AAType</ref></type>
+          <declname>resType</declname>
+          <defval><ref refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875dad390be0ae98a5c4a22ca9b0b7e726f40" kindref="member">AminoAcid::AAType::heteroatom</ref></defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Structures/Atom.h" line="82" column="1" bodyfile="Structures/Atom.cpp" bodystart="78" bodyend="90"/>
+        <references refid="class_smol_dock_1_1_atom_1a79a0e80b2fdb39742cc4de548d73eb63" compoundref="_atom_8h" startline="117">atomClassInResidue</references>
+        <references refid="class_smol_dock_1_1_atom_1a76afdad512e9f593c4445c6407b26597" compoundref="_atom_8h" startline="121">AtomID</references>
+        <references refid="class_smol_dock_1_1_atom_1aa19d070c9951c67a4b1d4c5d80f2ee22" compoundref="_atom_8h" startline="115">fromResidue</references>
+        <references refid="class_smol_dock_1_1_atom_1a699bf43dba89827d43019464a2a1507e" compoundref="_atom_8h" startline="120">nextAtomID</references>
+        <references refid="class_smol_dock_1_1_atom_1aeb5bd3da13c5e16176931c19bb622d91" compoundref="_atom_8h" startline="116">residueType</references>
+        <references refid="class_smol_dock_1_1_atom_1abe46f23e1f169949c8d3916b7e0ad38b" compoundref="_atom_8cpp" startline="33" endline="45">stringToAtomType</references>
+        <references refid="class_smol_dock_1_1_atom_1ab3867a9c2c98c5bb43ff4a6b7f1bf856" compoundref="_atom_8h" startline="113">type</references>
+      </memberdef>
+      <memberdef kind="function" id="class_smol_dock_1_1_atom_1a6d8ef00ed712a00a3c6d0827faf6ff9e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>SmolDock::Atom::Atom</definition>
+        <argsstring>(AtomType t, unsigned int id)</argsstring>
+        <name>Atom</name>
+        <param>
+          <type><ref refid="class_smol_dock_1_1_atom_1a57e9a532fd04e1846c0d83edebb9fd41" kindref="member">AtomType</ref></type>
+          <declname>t</declname>
+        </param>
+        <param>
+          <type>unsigned int</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Structures/Atom.h" line="86" column="1" bodyfile="Structures/Atom.cpp" bodystart="19" bodyend="21"/>
+        <references refid="class_smol_dock_1_1_atom_1a76afdad512e9f593c4445c6407b26597" compoundref="_atom_8h" startline="121">AtomID</references>
+      </memberdef>
+      <memberdef kind="function" id="class_smol_dock_1_1_atom_1a500f60cb0b8dac0c64bc44187dc90d41" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>SmolDock::Atom::Atom</definition>
+        <argsstring>(const std::string &amp;symbol_or_name, unsigned int id)</argsstring>
+        <name>Atom</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>symbol_or_name</declname>
+        </param>
+        <param>
+          <type>unsigned int</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Structures/Atom.h" line="88" column="1" bodyfile="Structures/Atom.cpp" bodystart="92" bodyend="95"/>
+        <references refid="class_smol_dock_1_1_atom_1a76afdad512e9f593c4445c6407b26597" compoundref="_atom_8h" startline="121">AtomID</references>
+        <references refid="class_smol_dock_1_1_atom_1abe46f23e1f169949c8d3916b7e0ad38b" compoundref="_atom_8cpp" startline="33" endline="45">stringToAtomType</references>
+        <references refid="class_smol_dock_1_1_atom_1ab3867a9c2c98c5bb43ff4a6b7f1bf856" compoundref="_atom_8h" startline="113">type</references>
+      </memberdef>
+      <memberdef kind="function" id="class_smol_dock_1_1_atom_1a9f42fafbe3cd76da61edaf6a10876f2c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_smol_dock_1_1_atom_1a57e9a532fd04e1846c0d83edebb9fd41" kindref="member">AtomType</ref></type>
+        <definition>Atom::AtomType SmolDock::Atom::getType</definition>
+        <argsstring>()</argsstring>
+        <name>getType</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Structures/Atom.h" line="91" column="1" bodyfile="Structures/Atom.cpp" bodystart="49" bodyend="51"/>
+        <references refid="class_smol_dock_1_1_atom_1ab3867a9c2c98c5bb43ff4a6b7f1bf856" compoundref="_atom_8h" startline="113">type</references>
+      </memberdef>
+      <memberdef kind="function" id="class_smol_dock_1_1_atom_1a66de652129ef16355da3dfcc3ae566e3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string SmolDock::Atom::getTypeString</definition>
+        <argsstring>()</argsstring>
+        <name>getTypeString</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Structures/Atom.h" line="93" column="1" bodyfile="Structures/Atom.cpp" bodystart="57" bodyend="59"/>
+        <references refid="class_smol_dock_1_1_atom_1ab7591815a3dc03bab05bcb6d5e2b741a" compoundref="_atom_8cpp" startline="23" endline="31">atomTypeToString</references>
+        <references refid="class_smol_dock_1_1_atom_1ab3867a9c2c98c5bb43ff4a6b7f1bf856" compoundref="_atom_8h" startline="113">type</references>
+      </memberdef>
+      <memberdef kind="function" id="class_smol_dock_1_1_atom_1a62d7246b7a8f3d6aa1aa63c9d5a86ed3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>unsigned int</type>
+        <definition>unsigned int SmolDock::Atom::getAtomID</definition>
+        <argsstring>()</argsstring>
+        <name>getAtomID</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Structures/Atom.h" line="95" column="1" bodyfile="Structures/Atom.cpp" bodystart="53" bodyend="55"/>
+        <references refid="class_smol_dock_1_1_atom_1a76afdad512e9f593c4445c6407b26597" compoundref="_atom_8h" startline="121">AtomID</references>
+      </memberdef>
+      <memberdef kind="function" id="class_smol_dock_1_1_atom_1aeb93666d6868e72e846ecad7b1927b04" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::weak_ptr&lt; <ref refid="class_smol_dock_1_1_amino_acid" kindref="compound">AminoAcid</ref> &gt;</type>
+        <definition>std::weak_ptr&lt; AminoAcid &gt; SmolDock::Atom::getOwningAA</definition>
+        <argsstring>()</argsstring>
+        <name>getOwningAA</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Structures/Atom.h" line="97" column="1" bodyfile="Structures/Atom.cpp" bodystart="97" bodyend="99"/>
+        <references refid="class_smol_dock_1_1_atom_1a41d894e0b89dfd6e28514617a4a16ecf" compoundref="_atom_8h" startline="118">owningAA</references>
+      </memberdef>
+      <memberdef kind="function" id="class_smol_dock_1_1_atom_1ad4afec1a1299201398d64daaf874857f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SmolDock::Atom::setOwningAA</definition>
+        <argsstring>(std::shared_ptr&lt; AminoAcid &gt; &amp;aa)</argsstring>
+        <name>setOwningAA</name>
+        <param>
+          <type>std::shared_ptr&lt; <ref refid="class_smol_dock_1_1_amino_acid" kindref="compound">AminoAcid</ref> &gt; &amp;</type>
+          <declname>aa</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Structures/Atom.h" line="99" column="1" bodyfile="Structures/Atom.cpp" bodystart="101" bodyend="103"/>
+        <references refid="class_smol_dock_1_1_atom_1a41d894e0b89dfd6e28514617a4a16ecf" compoundref="_atom_8h" startline="118">owningAA</references>
+      </memberdef>
+      <memberdef kind="function" id="class_smol_dock_1_1_atom_1a9b7e3a83a87f3934edb0f15929f923bd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::tuple&lt; double, double, double &gt;</type>
+        <definition>std::tuple&lt; double, double, double &gt; SmolDock::Atom::getAtomPosition</definition>
+        <argsstring>()</argsstring>
+        <name>getAtomPosition</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Structures/Atom.h" line="101" column="1" bodyfile="Structures/Atom.cpp" bodystart="105" bodyend="107"/>
+        <references refid="class_smol_dock_1_1_atom_1a02874f0a49c2fb34884d7e40c6b92e9e" compoundref="_atom_8h" startline="123">x</references>
+        <references refid="class_smol_dock_1_1_atom_1a253663ad700e72667d421f4d869798e1" compoundref="_atom_8h" startline="123">y</references>
+        <references refid="class_smol_dock_1_1_atom_1a8f28d43131d21536269e220d6fa43f07" compoundref="_atom_8h" startline="123">z</references>
+      </memberdef>
+      <memberdef kind="function" id="class_smol_dock_1_1_atom_1ae4b0b82523de139bd84ec27b62faa333" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SmolDock::Atom::setAtomPosition</definition>
+        <argsstring>(std::tuple&lt; double, double, double &gt; pos)</argsstring>
+        <name>setAtomPosition</name>
+        <param>
+          <type>std::tuple&lt; double, double, double &gt;</type>
+          <declname>pos</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Structures/Atom.h" line="103" column="1" bodyfile="Structures/Atom.cpp" bodystart="109" bodyend="113"/>
+        <references refid="class_smol_dock_1_1_atom_1a02874f0a49c2fb34884d7e40c6b92e9e" compoundref="_atom_8h" startline="123">x</references>
+        <references refid="class_smol_dock_1_1_atom_1a253663ad700e72667d421f4d869798e1" compoundref="_atom_8h" startline="123">y</references>
+        <references refid="class_smol_dock_1_1_atom_1a8f28d43131d21536269e220d6fa43f07" compoundref="_atom_8h" startline="123">z</references>
+      </memberdef>
+      <memberdef kind="function" id="class_smol_dock_1_1_atom_1a9de7744f2ea4b8f273f9005c60f42999" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="struct_smol_dock_1_1i_atom" kindref="compound">iAtom</ref></type>
+        <definition>iAtom SmolDock::Atom::generateiAtom</definition>
+        <argsstring>()</argsstring>
+        <name>generateiAtom</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Structures/Atom.h" line="105" column="1" bodyfile="Structures/Atom.cpp" bodystart="115" bodyend="119"/>
+        <references refid="class_smol_dock_1_1_atom_1a7dede98478cab4cf7b6e6462d3886bd2" compoundref="_atom_8cpp" startline="121" endline="126">emplaceiAtom</references>
+      </memberdef>
+      <memberdef kind="function" id="class_smol_dock_1_1_atom_1a7dede98478cab4cf7b6e6462d3886bd2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SmolDock::Atom::emplaceiAtom</definition>
+        <argsstring>(iAtom &amp;atom)</argsstring>
+        <name>emplaceiAtom</name>
+        <param>
+          <type><ref refid="struct_smol_dock_1_1i_atom" kindref="compound">iAtom</ref> &amp;</type>
+          <declname>atom</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Structures/Atom.h" line="106" column="1" bodyfile="Structures/Atom.cpp" bodystart="121" bodyend="126"/>
+        <references refid="struct_smol_dock_1_1i_atom_1a671e7d72c54e461a7719c94705ee6103" compoundref="i_atom_8h" startline="11">SmolDock::iAtom::atomicNum</references>
+        <references refid="class_smol_dock_1_1_atom_1ab3867a9c2c98c5bb43ff4a6b7f1bf856" compoundref="_atom_8h" startline="113">type</references>
+        <references refid="struct_smol_dock_1_1i_atom_1a9c2f9dadec039f72274d46b4292240ae" compoundref="i_atom_8h" startline="12">SmolDock::iAtom::x</references>
+        <references refid="class_smol_dock_1_1_atom_1a02874f0a49c2fb34884d7e40c6b92e9e" compoundref="_atom_8h" startline="123">x</references>
+        <references refid="struct_smol_dock_1_1i_atom_1aed903239c438c1304b7e3c68d10d41e1" compoundref="i_atom_8h" startline="12">SmolDock::iAtom::y</references>
+        <references refid="class_smol_dock_1_1_atom_1a253663ad700e72667d421f4d869798e1" compoundref="_atom_8h" startline="123">y</references>
+        <references refid="struct_smol_dock_1_1i_atom_1a7164b26142f6b8022af89d4ab1c32687" compoundref="i_atom_8h" startline="12">SmolDock::iAtom::z</references>
+        <references refid="class_smol_dock_1_1_atom_1a8f28d43131d21536269e220d6fa43f07" compoundref="_atom_8h" startline="123">z</references>
+        <referencedby refid="class_smol_dock_1_1_atom_1a9de7744f2ea4b8f273f9005c60f42999" compoundref="_atom_8cpp" startline="115" endline="119">generateiAtom</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="21">
+        <label>K</label>
+      </node>
+      <node id="26">
+        <label>T</label>
+      </node>
+      <node id="23">
+        <label>SmolDock::AminoAcid</label>
+        <link refid="class_smol_dock_1_1_amino_acid"/>
+        <childnode refid="17" relation="usage">
+          <edgelabel>-shorthand</edgelabel>
+          <edgelabel>-fullName</edgelabel>
+        </childnode>
+        <childnode refid="24" relation="usage">
+          <edgelabel>-atoms</edgelabel>
+        </childnode>
+        <childnode refid="27" relation="usage">
+          <edgelabel>#AAShorthandSet</edgelabel>
+        </childnode>
+      </node>
+      <node id="25">
+        <label>std::vector&lt; T &gt;</label>
+        <childnode refid="26" relation="usage">
+          <edgelabel>+elements</edgelabel>
+        </childnode>
+      </node>
+      <node id="22">
+        <label>std::weak_ptr&lt; SmolDock::AminoAcid &gt;</label>
+        <childnode refid="23" relation="usage">
+          <edgelabel>+ptr</edgelabel>
+        </childnode>
+        <childnode refid="28" relation="template-instance">
+          <edgelabel>&lt; SmolDock::AminoAcid &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="31">
+        <label>SmolDock::Bond</label>
+        <link refid="class_smol_dock_1_1_bond"/>
+        <childnode refid="32" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>std::set&lt; std::tuple&lt; Atom::AtomType, std::string, std::string &gt; &gt;</label>
+        <childnode refid="20" relation="template-instance">
+          <edgelabel>&lt; std::tuple&lt; Atom::AtomType, std::string, std::string &gt; &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="18">
+        <label>std::basic_string&lt; char &gt;</label>
+      </node>
+      <node id="30">
+        <label>std::weak_ptr&lt; SmolDock::Bond &gt;</label>
+        <childnode refid="31" relation="usage">
+          <edgelabel>+ptr</edgelabel>
+        </childnode>
+        <childnode refid="28" relation="template-instance">
+          <edgelabel>&lt; SmolDock::Bond &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="16">
+        <label>SmolDock::Atom</label>
+        <link refid="class_smol_dock_1_1_atom"/>
+        <childnode refid="17" relation="usage">
+          <edgelabel>-atomClassInResidue</edgelabel>
+        </childnode>
+        <childnode refid="19" relation="usage">
+          <edgelabel>-AtomTypeLabel</edgelabel>
+        </childnode>
+        <childnode refid="22" relation="usage">
+          <edgelabel>-owningAA</edgelabel>
+        </childnode>
+        <childnode refid="29" relation="usage">
+          <edgelabel>#bonds</edgelabel>
+        </childnode>
+      </node>
+      <node id="29">
+        <label>std::vector&lt; std::weak_ptr&lt; SmolDock::Bond &gt; &gt;</label>
+        <childnode refid="30" relation="usage">
+          <edgelabel>+elements</edgelabel>
+        </childnode>
+        <childnode refid="25" relation="template-instance">
+          <edgelabel>&lt; std::weak_ptr&lt; SmolDock::Bond &gt; &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="20">
+        <label>std::set&lt; K &gt;</label>
+        <childnode refid="21" relation="usage">
+          <edgelabel>+keys</edgelabel>
+        </childnode>
+      </node>
+      <node id="32">
+        <label>std::enable_shared_from_this&lt; Bond &gt;</label>
+      </node>
+      <node id="27">
+        <label>std::set&lt; std::tuple&lt; AminoAcid::AAType, std::string, std::string &gt; &gt;</label>
+        <childnode refid="20" relation="template-instance">
+          <edgelabel>&lt; std::tuple&lt; AminoAcid::AAType, std::string, std::string &gt; &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="24">
+        <label>std::vector&lt; std::shared_ptr&lt; SmolDock::Atom &gt; &gt;</label>
+        <childnode refid="25" relation="template-instance">
+          <edgelabel>&lt; std::shared_ptr&lt; SmolDock::Atom &gt; &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="28">
+        <label>std::weak_ptr&lt; T &gt;</label>
+        <childnode refid="26" relation="usage">
+          <edgelabel>+ptr</edgelabel>
+        </childnode>
+      </node>
+      <node id="17">
+        <label>std::string</label>
+        <childnode refid="18" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Structures/Atom.h" line="33" column="1" bodyfile="Structures/Atom.h" bodystart="33" bodyend="126"/>
+    <listofallmembers>
+      <member refid="class_smol_dock_1_1_atom_1a6fdae20edd67e75fa5fab8cbdbb39faf" prot="public" virt="non-virtual"><scope>SmolDock::Atom</scope><name>Atom</name></member>
+      <member refid="class_smol_dock_1_1_atom_1a72994dd53d1aa7e9bfb05aecc8a35a52" prot="public" virt="non-virtual"><scope>SmolDock::Atom</scope><name>Atom</name></member>
+      <member refid="class_smol_dock_1_1_atom_1a6d8ef00ed712a00a3c6d0827faf6ff9e" prot="public" virt="non-virtual"><scope>SmolDock::Atom</scope><name>Atom</name></member>
+      <member refid="class_smol_dock_1_1_atom_1a500f60cb0b8dac0c64bc44187dc90d41" prot="public" virt="non-virtual"><scope>SmolDock::Atom</scope><name>Atom</name></member>
+      <member refid="class_smol_dock_1_1_atom_1a79a0e80b2fdb39742cc4de548d73eb63" prot="private" virt="non-virtual"><scope>SmolDock::Atom</scope><name>atomClassInResidue</name></member>
+      <member refid="class_smol_dock_1_1_atom_1a76afdad512e9f593c4445c6407b26597" prot="private" virt="non-virtual"><scope>SmolDock::Atom</scope><name>AtomID</name></member>
+      <member refid="class_smol_dock_1_1_atom_1a57e9a532fd04e1846c0d83edebb9fd41" prot="public" virt="non-virtual"><scope>SmolDock::Atom</scope><name>AtomType</name></member>
+      <member refid="class_smol_dock_1_1_atom_1ad2ea08ee5e9fde5927f30ebe2a3a7142" prot="private" virt="non-virtual"><scope>SmolDock::Atom</scope><name>AtomTypeLabel</name></member>
+      <member refid="class_smol_dock_1_1_atom_1ab7591815a3dc03bab05bcb6d5e2b741a" prot="public" virt="non-virtual"><scope>SmolDock::Atom</scope><name>atomTypeToString</name></member>
+      <member refid="class_smol_dock_1_1_atom_1ade04f26c3314bee1144e0704a07e95ea" prot="public" virt="non-virtual"><scope>SmolDock::Atom</scope><name>Bond</name></member>
+      <member refid="class_smol_dock_1_1_atom_1af45fc99da6ffbf539ba654c91e1bb752" prot="protected" virt="non-virtual"><scope>SmolDock::Atom</scope><name>bonds</name></member>
+      <member refid="class_smol_dock_1_1_atom_1a7dede98478cab4cf7b6e6462d3886bd2" prot="public" virt="non-virtual"><scope>SmolDock::Atom</scope><name>emplaceiAtom</name></member>
+      <member refid="class_smol_dock_1_1_atom_1aa19d070c9951c67a4b1d4c5d80f2ee22" prot="private" virt="non-virtual"><scope>SmolDock::Atom</scope><name>fromResidue</name></member>
+      <member refid="class_smol_dock_1_1_atom_1a9de7744f2ea4b8f273f9005c60f42999" prot="public" virt="non-virtual"><scope>SmolDock::Atom</scope><name>generateiAtom</name></member>
+      <member refid="class_smol_dock_1_1_atom_1a62d7246b7a8f3d6aa1aa63c9d5a86ed3" prot="public" virt="non-virtual"><scope>SmolDock::Atom</scope><name>getAtomID</name></member>
+      <member refid="class_smol_dock_1_1_atom_1a9b7e3a83a87f3934edb0f15929f923bd" prot="public" virt="non-virtual"><scope>SmolDock::Atom</scope><name>getAtomPosition</name></member>
+      <member refid="class_smol_dock_1_1_atom_1aeb93666d6868e72e846ecad7b1927b04" prot="public" virt="non-virtual"><scope>SmolDock::Atom</scope><name>getOwningAA</name></member>
+      <member refid="class_smol_dock_1_1_atom_1a9f42fafbe3cd76da61edaf6a10876f2c" prot="public" virt="non-virtual"><scope>SmolDock::Atom</scope><name>getType</name></member>
+      <member refid="class_smol_dock_1_1_atom_1a66de652129ef16355da3dfcc3ae566e3" prot="public" virt="non-virtual"><scope>SmolDock::Atom</scope><name>getTypeString</name></member>
+      <member refid="class_smol_dock_1_1_atom_1a90ad0859a5e5a747eecdc79b8bb80561" prot="public" virt="non-virtual"><scope>SmolDock::Atom</scope><name>MoleculeTraversal</name></member>
+      <member refid="class_smol_dock_1_1_atom_1a699bf43dba89827d43019464a2a1507e" prot="private" virt="non-virtual"><scope>SmolDock::Atom</scope><name>nextAtomID</name></member>
+      <member refid="class_smol_dock_1_1_atom_1a41d894e0b89dfd6e28514617a4a16ecf" prot="private" virt="non-virtual"><scope>SmolDock::Atom</scope><name>owningAA</name></member>
+      <member refid="class_smol_dock_1_1_atom_1a2cc8b86817f46f61585ecf591984f8eb" prot="public" virt="non-virtual"><scope>SmolDock::Atom</scope><name>Protein</name></member>
+      <member refid="class_smol_dock_1_1_atom_1aeb5bd3da13c5e16176931c19bb622d91" prot="private" virt="non-virtual"><scope>SmolDock::Atom</scope><name>residueType</name></member>
+      <member refid="class_smol_dock_1_1_atom_1ae4b0b82523de139bd84ec27b62faa333" prot="public" virt="non-virtual"><scope>SmolDock::Atom</scope><name>setAtomPosition</name></member>
+      <member refid="class_smol_dock_1_1_atom_1ad4afec1a1299201398d64daaf874857f" prot="public" virt="non-virtual"><scope>SmolDock::Atom</scope><name>setOwningAA</name></member>
+      <member refid="class_smol_dock_1_1_atom_1abe46f23e1f169949c8d3916b7e0ad38b" prot="public" virt="non-virtual"><scope>SmolDock::Atom</scope><name>stringToAtomType</name></member>
+      <member refid="class_smol_dock_1_1_atom_1ab3867a9c2c98c5bb43ff4a6b7f1bf856" prot="private" virt="non-virtual"><scope>SmolDock::Atom</scope><name>type</name></member>
+      <member refid="class_smol_dock_1_1_atom_1a02874f0a49c2fb34884d7e40c6b92e9e" prot="private" virt="non-virtual"><scope>SmolDock::Atom</scope><name>x</name></member>
+      <member refid="class_smol_dock_1_1_atom_1a253663ad700e72667d421f4d869798e1" prot="private" virt="non-virtual"><scope>SmolDock::Atom</scope><name>y</name></member>
+      <member refid="class_smol_dock_1_1_atom_1a8f28d43131d21536269e220d6fa43f07" prot="private" virt="non-virtual"><scope>SmolDock::Atom</scope><name>z</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

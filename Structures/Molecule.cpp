@@ -10,7 +10,7 @@ namespace SmolDock {
     Molecule::Molecule() = default;
 
 
-    bool Molecule::populateFromSMILES(const std::string &smiles) {
+    bool Molecule::populateFromSMILES(const std::string &smiles, unsigned int seed) {
         RDKit::RWMol *a = nullptr;
         try {
             /* This can throw */
@@ -38,7 +38,7 @@ namespace SmolDock {
 
         rwmol.reset(a);
 
-        int conformer_id = RDKit::DGeomHelpers::EmbedMolecule(*rwmol, 10, 367454, true);
+        int conformer_id = RDKit::DGeomHelpers::EmbedMolecule(*rwmol, 10, seed, true);
         RDKit::Conformer &starting_conformer = rwmol->getConformer(conformer_id);
 
         for (auto atom_it = rwmol->beginAtoms(); atom_it != rwmol->endAtoms(); ++atom_it) {
@@ -120,7 +120,89 @@ namespace SmolDock {
     }
 
 
-    std::shared_ptr<RDKit::RWMol> Molecule::getInternalRWMol() {
+    std::shared_ptr<RDKit::RWMol> Molecule::getInternalRWMol() const {
         return rwmol;
     }
+
+    bool Molecule::generateConformer(iConformer &conformer, int seed) {
+
+        int conformer_id = RDKit::DGeomHelpers::EmbedMolecule(*rwmol, 10, seed, false);
+
+        if (conformer_id == -1) // Failed to generate
+            return false;
+
+        conformer.atoms_vect = std::make_unique<std::vector<iAtom> >();
+        conformer.atoms_vect->reserve(this->atoms.size());
+
+        RDKit::Conformer &rdkit_conformer = rwmol->getConformer(conformer_id);
+
+
+        for (auto atom_it = rwmol->beginAtoms(); atom_it != rwmol->endAtoms(); ++atom_it) {
+            iAtom atom;
+            atom.atomicNum = (*atom_it)->getAtomicNum();
+
+            const RDGeom::Point3D &position = rdkit_conformer.getAtomPos((*atom_it)->getIdx());
+            atom.x = position.x;
+            atom.y = position.y;
+            atom.z = position.z;
+            conformer.atoms_vect->push_back(std::move(atom));
+        }
+
+        return true;
+    }
+
+    unsigned int Molecule::generateConformers(std::vector<iConformer> *viConformers, unsigned int num, int seed) {
+
+
+        std::vector<int> conformer_ids = RDKit::DGeomHelpers::EmbedMultipleConfs(*rwmol, // Molecule
+                                                                                 num, // Num of conformer
+                                                                                 30, // Max attempts
+                                                                                 seed, // RNG seed
+                                                                                 false); // Erase existing conformer
+        if (conformer_ids.size() == 0)
+            return 0; // Early failure case
+
+        viConformers->reserve(viConformers->capacity() + conformer_ids.size());
+
+
+        //std::vector<RDKit::Conformer> rdkit_conformers;
+        //std::vector<iConformer> conformers;
+        //rdkit_conformers.reserve(this->conformer_num);
+        //conformers.reserve(this->conformer_num);
+
+        unsigned int num_atoms = this->atoms.size();
+
+        for (int i : conformer_ids) {
+            iConformer conformer;
+            RDKit::Conformer rdkit_conformer = this->rwmol->getConformer(i);
+
+            conformer.atoms_vect = std::make_unique<std::vector<iAtom> >(static_cast<size_t>(num_atoms));
+
+            for (auto atom_it = rwmol->beginAtoms(); atom_it != rwmol->endAtoms(); ++atom_it) {
+                iAtom atom;
+                atom.atomicNum = static_cast<unsigned char>((*atom_it)->getAtomicNum());
+
+                const RDGeom::Point3D &position = rdkit_conformer.getAtomPos((*atom_it)->getIdx());
+                atom.x = position.x;
+                atom.y = position.y;
+                atom.z = position.z;
+                conformer.atoms_vect->push_back(std::move(atom));
+            }
+
+            viConformers->push_back(std::move(conformer));
+
+        }
+
+        return conformer_ids.size();
+    }
+
+    unsigned int Molecule::numberOfAtoms() {
+        return atoms.size();
+    }
+
+    unsigned int Molecule::numberOfBonds() {
+        return bonds.size();
+    }
+
+
 }

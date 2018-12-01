@@ -1,0 +1,393 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="class_smol_dock_1_1_molecule" kind="class" language="C++" prot="public">
+    <compoundname>SmolDock::Molecule</compoundname>
+    <basecompoundref refid="class_smol_dock_1_1_structure" prot="private" virt="non-virtual">SmolDock::Structure</basecompoundref>
+    <includes refid="_molecule_8h" local="no">Molecule.h</includes>
+      <sectiondef kind="friend">
+      <memberdef kind="friend" id="class_smol_dock_1_1_molecule_1a2033be89cdf71e3c8750054d8d19425f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend class</type>
+        <definition>friend class MoleculeTraversal</definition>
+        <argsstring></argsstring>
+        <name>MoleculeTraversal</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Structures/Molecule.h" line="38" column="1" bodyfile="Structures/Molecule.h" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="friend" id="class_smol_dock_1_1_molecule_1a3cb039460aae8734c10a3588e1d670a2" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend class</type>
+        <definition>friend class UnitTestHelper</definition>
+        <argsstring></argsstring>
+        <name>UnitTestHelper</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Structures/Molecule.h" line="40" column="1" bodyfile="Structures/Molecule.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_smol_dock_1_1_molecule_1a322259625da05c62925c705d8c4fb7c3" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; std::shared_ptr&lt; <ref refid="class_smol_dock_1_1_atom" kindref="compound">Atom</ref> &gt; &gt;</type>
+        <definition>std::vector&lt;std::shared_ptr&lt;Atom&gt; &gt; SmolDock::Molecule::atoms</definition>
+        <argsstring></argsstring>
+        <name>atoms</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Structures/Molecule.h" line="82" column="1" bodyfile="Structures/Molecule.h" bodystart="82" bodyend="-1"/>
+        <referencedby refid="class_smol_dock_1_1_molecule_1a7ca48f636fb8d3eed4c94e42a5b293ab" compoundref="_molecule_8cpp" startline="13" endline="120">populateFromSMILES</referencedby>
+        <referencedby refid="class_smol_dock_1_1_molecule_1a449f37f171474849ad896e33dfc9e2f4" compoundref="_molecule_8cpp" startline="127" endline="152">generateConformer</referencedby>
+        <referencedby refid="class_smol_dock_1_1_molecule_1a6ab21fc10e78b92b579aa871245a9c55" compoundref="_molecule_8cpp" startline="154" endline="197">generateConformers</referencedby>
+        <referencedby refid="class_smol_dock_1_1_molecule_1a7dc0c882da26261dcd2762429b07a3d4" compoundref="_molecule_8cpp" startline="199" endline="201">numberOfAtoms</referencedby>
+        <referencedby refid="class_smol_dock_1_1_molecule_traversal_1a4f5b4079ecf6cf8682f919f323eaf29a" compoundref="_molecule_traversal_8cpp" startline="40" endline="55">SmolDock::MoleculeTraversal::printTraversal</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_smol_dock_1_1_molecule_1a18d9793aa2e080c9cefdc22afd40f314" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; std::shared_ptr&lt; <ref refid="class_smol_dock_1_1_bond" kindref="compound">Bond</ref> &gt; &gt;</type>
+        <definition>std::vector&lt;std::shared_ptr&lt;Bond&gt; &gt; SmolDock::Molecule::bonds</definition>
+        <argsstring></argsstring>
+        <name>bonds</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Structures/Molecule.h" line="83" column="1" bodyfile="Structures/Molecule.h" bodystart="83" bodyend="-1"/>
+        <referencedby refid="class_smol_dock_1_1_molecule_1a7ca48f636fb8d3eed4c94e42a5b293ab" compoundref="_molecule_8cpp" startline="13" endline="120">populateFromSMILES</referencedby>
+        <referencedby refid="class_smol_dock_1_1_molecule_1a8b1f02ad4e3b2ad991162668a61c2ddc" compoundref="_molecule_8cpp" startline="203" endline="205">numberOfBonds</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_smol_dock_1_1_molecule_1ad474d416278768d82c07fdf1d915e0f5" prot="private" static="no" mutable="no">
+        <type>std::shared_ptr&lt; RDKit::RWMol &gt;</type>
+        <definition>std::shared_ptr&lt;RDKit::RWMol&gt; SmolDock::Molecule::rwmol</definition>
+        <argsstring></argsstring>
+        <name>rwmol</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Structures/Molecule.h" line="85" column="1" bodyfile="Structures/Molecule.h" bodystart="85" bodyend="-1"/>
+        <referencedby refid="class_smol_dock_1_1_molecule_1a7ca48f636fb8d3eed4c94e42a5b293ab" compoundref="_molecule_8cpp" startline="13" endline="120">populateFromSMILES</referencedby>
+        <referencedby refid="class_smol_dock_1_1_molecule_1a8d3c96cb2b2014b96a5119ba1631272d" compoundref="_molecule_8cpp" startline="123" endline="125">getInternalRWMol</referencedby>
+        <referencedby refid="class_smol_dock_1_1_molecule_1a449f37f171474849ad896e33dfc9e2f4" compoundref="_molecule_8cpp" startline="127" endline="152">generateConformer</referencedby>
+        <referencedby refid="class_smol_dock_1_1_molecule_1a6ab21fc10e78b92b579aa871245a9c55" compoundref="_molecule_8cpp" startline="154" endline="197">generateConformers</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_smol_dock_1_1_molecule_1a59288faa4bbacab2959858b398cb459e" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string SmolDock::Molecule::smiles</definition>
+        <argsstring></argsstring>
+        <name>smiles</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Structures/Molecule.h" line="86" column="1" bodyfile="Structures/Molecule.h" bodystart="86" bodyend="-1"/>
+        <referencedby refid="class_smol_dock_1_1_molecule_1a7ca48f636fb8d3eed4c94e42a5b293ab" compoundref="_molecule_8cpp" startline="13" endline="120">populateFromSMILES</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_smol_dock_1_1_molecule_1a3a4a39128d64413d79d857bcbf790163" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>SmolDock::Molecule::Molecule</definition>
+        <argsstring>()</argsstring>
+        <name>Molecule</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Structures/Molecule.h" line="42" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_smol_dock_1_1_molecule_1a8d3c96cb2b2014b96a5119ba1631272d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::shared_ptr&lt; RDKit::RWMol &gt;</type>
+        <definition>std::shared_ptr&lt; RDKit::RWMol &gt; SmolDock::Molecule::getInternalRWMol</definition>
+        <argsstring>() const</argsstring>
+        <name>getInternalRWMol</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Structures/Molecule.h" line="46" column="1" bodyfile="Structures/Molecule.cpp" bodystart="123" bodyend="125"/>
+        <references refid="class_smol_dock_1_1_molecule_1ad474d416278768d82c07fdf1d915e0f5" compoundref="_molecule_8h" startline="85">rwmol</references>
+        <referencedby refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a14262d85db1fd4bfe21780029fba842c" compoundref="_conformer_rigid_docking_engine_8cpp" startline="39" endline="47">SmolDock::Engine::ConformerRigidDockingEngine::setLigand</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_smol_dock_1_1_molecule_1a7ca48f636fb8d3eed4c94e42a5b293ab" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool SmolDock::Molecule::populateFromSMILES</definition>
+        <argsstring>(const std::string &amp;smiles, unsigned int seed=367454)</argsstring>
+        <name>populateFromSMILES</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>smiles</declname>
+        </param>
+        <param>
+          <type>unsigned int</type>
+          <declname>seed</declname>
+          <defval>367454</defval>
+        </param>
+        <briefdescription>
+<para>Populate atoms and bonds from SMILES. </para>        </briefdescription>
+        <detaileddescription>
+<para>Populate atoms and bonds from SMILES. This uses the RDKit backend. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>smiles</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>SMILES string </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>seed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>RNG seed </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>whether the parsing and initial conformer generation was successful. </para></simplesect>
+<simplesect kind="see"><para><ref refid="class_smol_dock_1_1_molecule_1a6ab21fc10e78b92b579aa871245a9c55" kindref="member">generateConformers()</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Structures/Molecule.h" line="56" column="1" bodyfile="Structures/Molecule.cpp" bodystart="13" bodyend="120"/>
+        <references refid="class_smol_dock_1_1_molecule_1a322259625da05c62925c705d8c4fb7c3" compoundref="_molecule_8h" startline="82">atoms</references>
+        <references refid="class_smol_dock_1_1_molecule_1a18d9793aa2e080c9cefdc22afd40f314" compoundref="_molecule_8h" startline="83">bonds</references>
+        <references refid="class_smol_dock_1_1_atom_1a57e9a532fd04e1846c0d83edebb9fd41ae1b832c8857262f1089376030b4298b3">SmolDock::Atom::carbon</references>
+        <references refid="class_smol_dock_1_1_atom_1a57e9a532fd04e1846c0d83edebb9fd41ad4ac1478a4d8a4f591d35e3d75f3de65">SmolDock::Atom::hydrogen</references>
+        <references refid="class_smol_dock_1_1_atom_1a57e9a532fd04e1846c0d83edebb9fd41a63ebb9250f49340aece8d4ac541eaf61">SmolDock::Atom::nitrogen</references>
+        <references refid="class_smol_dock_1_1_atom_1a57e9a532fd04e1846c0d83edebb9fd41a6124d98749365e3db2c9e5b27ca04db6">SmolDock::Atom::oxygen</references>
+        <references refid="class_smol_dock_1_1_molecule_1ad474d416278768d82c07fdf1d915e0f5" compoundref="_molecule_8h" startline="85">rwmol</references>
+        <references refid="class_smol_dock_1_1_molecule_1a59288faa4bbacab2959858b398cb459e" compoundref="_molecule_8h" startline="86">smiles</references>
+        <referencedby refid="main_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4" compoundref="main_8cpp" startline="37" endline="86">main</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_smol_dock_1_1_molecule_1a7dc0c882da26261dcd2762429b07a3d4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>unsigned int</type>
+        <definition>unsigned int SmolDock::Molecule::numberOfAtoms</definition>
+        <argsstring>()</argsstring>
+        <name>numberOfAtoms</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Structures/Molecule.h" line="58" column="1" bodyfile="Structures/Molecule.cpp" bodystart="199" bodyend="201"/>
+        <references refid="class_smol_dock_1_1_molecule_1a322259625da05c62925c705d8c4fb7c3" compoundref="_molecule_8h" startline="82">atoms</references>
+      </memberdef>
+      <memberdef kind="function" id="class_smol_dock_1_1_molecule_1a8b1f02ad4e3b2ad991162668a61c2ddc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>unsigned int</type>
+        <definition>unsigned int SmolDock::Molecule::numberOfBonds</definition>
+        <argsstring>()</argsstring>
+        <name>numberOfBonds</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Structures/Molecule.h" line="59" column="1" bodyfile="Structures/Molecule.cpp" bodystart="203" bodyend="205"/>
+        <references refid="class_smol_dock_1_1_molecule_1a18d9793aa2e080c9cefdc22afd40f314" compoundref="_molecule_8h" startline="83">bonds</references>
+      </memberdef>
+      <memberdef kind="function" id="class_smol_dock_1_1_molecule_1a449f37f171474849ad896e33dfc9e2f4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool SmolDock::Molecule::generateConformer</definition>
+        <argsstring>(iConformer &amp;conformer, int seed=367454)</argsstring>
+        <name>generateConformer</name>
+        <param>
+          <type><ref refid="struct_smol_dock_1_1i_conformer" kindref="compound">iConformer</ref> &amp;</type>
+          <declname>conformer</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>seed</declname>
+          <defval>367454</defval>
+        </param>
+        <briefdescription>
+<para>Generate a conformer of this molecule. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>conformer</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Reference to conformer object to be filled. Not modified if generation fails. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>seed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>RNG seed </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Returns true if successfully generated conformer, false otherwise </para></simplesect>
+<simplesect kind="see"><para><ref refid="class_smol_dock_1_1_molecule_1a6ab21fc10e78b92b579aa871245a9c55" kindref="member">generateConformers()</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Structures/Molecule.h" line="68" column="1" bodyfile="Structures/Molecule.cpp" bodystart="127" bodyend="152"/>
+        <references refid="struct_smol_dock_1_1i_atom_1a671e7d72c54e461a7719c94705ee6103" compoundref="i_atom_8h" startline="11">SmolDock::iAtom::atomicNum</references>
+        <references refid="class_smol_dock_1_1_molecule_1a322259625da05c62925c705d8c4fb7c3" compoundref="_molecule_8h" startline="82">atoms</references>
+        <references refid="struct_smol_dock_1_1i_conformer_1a18fd974857dffddf4b6233c7c5d70f94" compoundref="i_conformer_8h" startline="16">SmolDock::iConformer::atoms_vect</references>
+        <references refid="class_smol_dock_1_1_molecule_1ad474d416278768d82c07fdf1d915e0f5" compoundref="_molecule_8h" startline="85">rwmol</references>
+        <references refid="struct_smol_dock_1_1i_atom_1a9c2f9dadec039f72274d46b4292240ae" compoundref="i_atom_8h" startline="12">SmolDock::iAtom::x</references>
+        <references refid="struct_smol_dock_1_1i_atom_1aed903239c438c1304b7e3c68d10d41e1" compoundref="i_atom_8h" startline="12">SmolDock::iAtom::y</references>
+        <references refid="struct_smol_dock_1_1i_atom_1a7164b26142f6b8022af89d4ab1c32687" compoundref="i_atom_8h" startline="12">SmolDock::iAtom::z</references>
+      </memberdef>
+      <memberdef kind="function" id="class_smol_dock_1_1_molecule_1a6ab21fc10e78b92b579aa871245a9c55" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>unsigned int</type>
+        <definition>unsigned int SmolDock::Molecule::generateConformers</definition>
+        <argsstring>(std::vector&lt; iConformer &gt; *viConformers, unsigned int num, int seed=367454)</argsstring>
+        <name>generateConformers</name>
+        <param>
+          <type>std::vector&lt; <ref refid="struct_smol_dock_1_1i_conformer" kindref="compound">iConformer</ref> &gt; *</type>
+          <declname>viConformers</declname>
+        </param>
+        <param>
+          <type>unsigned int</type>
+          <declname>num</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>seed</declname>
+          <defval>367454</defval>
+        </param>
+        <briefdescription>
+<para>Generate a vector of conformer of this molecule. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>viConformers</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to vector to be filled with conformer. May already contain something. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>num</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of conformers to attempt to generate. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>seed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>RNG seed </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Returns the number of conformer actually generated. May be 0. </para></simplesect>
+<simplesect kind="see"><para><ref refid="class_smol_dock_1_1_molecule_1a449f37f171474849ad896e33dfc9e2f4" kindref="member">generateConformer()</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Structures/Molecule.h" line="78" column="1" bodyfile="Structures/Molecule.cpp" bodystart="154" bodyend="197"/>
+        <references refid="struct_smol_dock_1_1i_atom_1a671e7d72c54e461a7719c94705ee6103" compoundref="i_atom_8h" startline="11">SmolDock::iAtom::atomicNum</references>
+        <references refid="class_smol_dock_1_1_molecule_1a322259625da05c62925c705d8c4fb7c3" compoundref="_molecule_8h" startline="82">atoms</references>
+        <references refid="struct_smol_dock_1_1i_conformer_1a18fd974857dffddf4b6233c7c5d70f94" compoundref="i_conformer_8h" startline="16">SmolDock::iConformer::atoms_vect</references>
+        <references refid="class_smol_dock_1_1_molecule_1ad474d416278768d82c07fdf1d915e0f5" compoundref="_molecule_8h" startline="85">rwmol</references>
+        <references refid="struct_smol_dock_1_1i_atom_1a9c2f9dadec039f72274d46b4292240ae" compoundref="i_atom_8h" startline="12">SmolDock::iAtom::x</references>
+        <references refid="struct_smol_dock_1_1i_atom_1aed903239c438c1304b7e3c68d10d41e1" compoundref="i_atom_8h" startline="12">SmolDock::iAtom::y</references>
+        <references refid="struct_smol_dock_1_1i_atom_1a7164b26142f6b8022af89d4ab1c32687" compoundref="i_atom_8h" startline="12">SmolDock::iAtom::z</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Class representing &quot;rich&quot; molecule. </para>    </briefdescription>
+    <detaileddescription>
+<para>Contains all extended attributes and functions. </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="79">
+        <label>SmolDock::Molecule</label>
+        <link refid="class_smol_dock_1_1_molecule"/>
+        <childnode refid="80" relation="private-inheritance">
+        </childnode>
+      </node>
+      <node id="80">
+        <label>SmolDock::Structure</label>
+        <link refid="class_smol_dock_1_1_structure"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="85">
+        <label>T</label>
+      </node>
+      <node id="81">
+        <label>SmolDock::Molecule</label>
+        <link refid="class_smol_dock_1_1_molecule"/>
+        <childnode refid="82" relation="private-inheritance">
+        </childnode>
+        <childnode refid="83" relation="usage">
+          <edgelabel>-bonds</edgelabel>
+        </childnode>
+        <childnode refid="86" relation="usage">
+          <edgelabel>-smiles</edgelabel>
+        </childnode>
+        <childnode refid="88" relation="usage">
+          <edgelabel>-atoms</edgelabel>
+        </childnode>
+      </node>
+      <node id="83">
+        <label>std::vector&lt; std::shared_ptr&lt; SmolDock::Bond &gt; &gt;</label>
+        <childnode refid="84" relation="template-instance">
+          <edgelabel>&lt; std::shared_ptr&lt; SmolDock::Bond &gt; &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="84">
+        <label>std::vector&lt; T &gt;</label>
+        <childnode refid="85" relation="usage">
+          <edgelabel>+elements</edgelabel>
+        </childnode>
+      </node>
+      <node id="82">
+        <label>SmolDock::Structure</label>
+        <link refid="class_smol_dock_1_1_structure"/>
+      </node>
+      <node id="87">
+        <label>std::basic_string&lt; char &gt;</label>
+      </node>
+      <node id="88">
+        <label>std::vector&lt; std::shared_ptr&lt; SmolDock::Atom &gt; &gt;</label>
+        <childnode refid="84" relation="template-instance">
+          <edgelabel>&lt; std::shared_ptr&lt; SmolDock::Atom &gt; &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="86">
+        <label>std::string</label>
+        <childnode refid="87" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Structures/Molecule.h" line="37" column="1" bodyfile="Structures/Molecule.h" bodystart="37" bodyend="88"/>
+    <listofallmembers>
+      <member refid="class_smol_dock_1_1_molecule_1a322259625da05c62925c705d8c4fb7c3" prot="private" virt="non-virtual"><scope>SmolDock::Molecule</scope><name>atoms</name></member>
+      <member refid="class_smol_dock_1_1_molecule_1a18d9793aa2e080c9cefdc22afd40f314" prot="private" virt="non-virtual"><scope>SmolDock::Molecule</scope><name>bonds</name></member>
+      <member refid="class_smol_dock_1_1_molecule_1a449f37f171474849ad896e33dfc9e2f4" prot="public" virt="non-virtual"><scope>SmolDock::Molecule</scope><name>generateConformer</name></member>
+      <member refid="class_smol_dock_1_1_molecule_1a6ab21fc10e78b92b579aa871245a9c55" prot="public" virt="non-virtual"><scope>SmolDock::Molecule</scope><name>generateConformers</name></member>
+      <member refid="class_smol_dock_1_1_molecule_1a8d3c96cb2b2014b96a5119ba1631272d" prot="public" virt="non-virtual"><scope>SmolDock::Molecule</scope><name>getInternalRWMol</name></member>
+      <member refid="class_smol_dock_1_1_molecule_1a3a4a39128d64413d79d857bcbf790163" prot="public" virt="non-virtual"><scope>SmolDock::Molecule</scope><name>Molecule</name></member>
+      <member refid="class_smol_dock_1_1_molecule_1a2033be89cdf71e3c8750054d8d19425f" prot="private" virt="non-virtual"><scope>SmolDock::Molecule</scope><name>MoleculeTraversal</name></member>
+      <member refid="class_smol_dock_1_1_molecule_1a7dc0c882da26261dcd2762429b07a3d4" prot="public" virt="non-virtual"><scope>SmolDock::Molecule</scope><name>numberOfAtoms</name></member>
+      <member refid="class_smol_dock_1_1_molecule_1a8b1f02ad4e3b2ad991162668a61c2ddc" prot="public" virt="non-virtual"><scope>SmolDock::Molecule</scope><name>numberOfBonds</name></member>
+      <member refid="class_smol_dock_1_1_molecule_1a7ca48f636fb8d3eed4c94e42a5b293ab" prot="public" virt="non-virtual"><scope>SmolDock::Molecule</scope><name>populateFromSMILES</name></member>
+      <member refid="class_smol_dock_1_1_molecule_1ad474d416278768d82c07fdf1d915e0f5" prot="private" virt="non-virtual"><scope>SmolDock::Molecule</scope><name>rwmol</name></member>
+      <member refid="class_smol_dock_1_1_molecule_1a59288faa4bbacab2959858b398cb459e" prot="private" virt="non-virtual"><scope>SmolDock::Molecule</scope><name>smiles</name></member>
+      <member refid="class_smol_dock_1_1_molecule_1a3cb039460aae8734c10a3588e1d670a2" prot="private" virt="non-virtual"><scope>SmolDock::Molecule</scope><name>UnitTestHelper</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

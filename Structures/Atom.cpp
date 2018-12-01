@@ -45,7 +45,6 @@ namespace SmolDock {
     }
 
 
-
     Atom::AtomType Atom::getType() {
         return type;
     }
@@ -110,6 +109,19 @@ namespace SmolDock {
         this->x = std::get<0>(pos);
         this->y = std::get<1>(pos);
         this->z = std::get<2>(pos);
+    }
+
+    iAtom Atom::generateiAtom() {
+        iAtom ret; // R.V.O.
+        emplaceiAtom(ret);
+        return ret;
+    }
+
+    void Atom::emplaceiAtom(iAtom &atom) {
+        atom.atomicNum = static_cast<unsigned char>(this->type); // The enum is defined such that the value are atomic numbers
+        atom.x = this->x;
+        atom.y = this->y;
+        atom.z = this->z;
     }
 
 }

@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="class_smol_dock_1_1_docking_result_printer" kind="class" language="C++" prot="public">
+    <compoundname>SmolDock::DockingResultPrinter</compoundname>
+    <includes refid="_docking_result_printer_8h" local="no">DockingResultPrinter.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_smol_dock_1_1_docking_result_printer_1a7bd2f249617b1fcc7be8edb4e73bbd4f" prot="private" static="no" mutable="no">
+        <type>std::shared_ptr&lt; <ref refid="class_smol_dock_1_1_docking_result" kindref="compound">SmolDock::DockingResult</ref> &gt;</type>
+        <definition>std::shared_ptr&lt;SmolDock::DockingResult&gt; SmolDock::DockingResultPrinter::res</definition>
+        <argsstring></argsstring>
+        <name>res</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Utilities/DockingResultPrinter.h" line="24" column="1" bodyfile="Utilities/DockingResultPrinter.h" bodystart="24" bodyend="-1"/>
+        <referencedby refid="class_smol_dock_1_1_docking_result_printer_1a0c4ac739b1ee30a044a8e289c541717f" compoundref="_docking_result_printer_8cpp" startline="14" endline="16">DockingResultPrinter</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_smol_dock_1_1_docking_result_printer_1a0c4ac739b1ee30a044a8e289c541717f" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>SmolDock::DockingResultPrinter::DockingResultPrinter</definition>
+        <argsstring>(std::shared_ptr&lt; SmolDock::DockingResult &gt; res)</argsstring>
+        <name>DockingResultPrinter</name>
+        <param>
+          <type>std::shared_ptr&lt; <ref refid="class_smol_dock_1_1_docking_result" kindref="compound">SmolDock::DockingResult</ref> &gt;</type>
+          <declname>res</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Utilities/DockingResultPrinter.h" line="18" column="1" bodyfile="Utilities/DockingResultPrinter.cpp" bodystart="14" bodyend="16"/>
+        <references refid="class_smol_dock_1_1_docking_result_printer_1a7bd2f249617b1fcc7be8edb4e73bbd4f" compoundref="_docking_result_printer_8h" startline="24">res</references>
+      </memberdef>
+      <memberdef kind="function" id="class_smol_dock_1_1_docking_result_printer_1afb1f0143452d4d8e94555f7f354bb134" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SmolDock::DockingResultPrinter::printToConsole</definition>
+        <argsstring>()</argsstring>
+        <name>printToConsole</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Utilities/DockingResultPrinter.h" line="20" column="1" bodyfile="Utilities/DockingResultPrinter.cpp" bodystart="10" bodyend="12"/>
+        <referencedby refid="main_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4" compoundref="main_8cpp" startline="37" endline="86">main</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="54">
+        <label>SmolDock::DockingResultPrinter</label>
+        <link refid="class_smol_dock_1_1_docking_result_printer"/>
+      </node>
+    </collaborationgraph>
+    <location file="Utilities/DockingResultPrinter.h" line="15" column="1" bodyfile="Utilities/DockingResultPrinter.h" bodystart="15" bodyend="27"/>
+    <listofallmembers>
+      <member refid="class_smol_dock_1_1_docking_result_printer_1a0c4ac739b1ee30a044a8e289c541717f" prot="public" virt="non-virtual"><scope>SmolDock::DockingResultPrinter</scope><name>DockingResultPrinter</name></member>
+      <member refid="class_smol_dock_1_1_docking_result_printer_1afb1f0143452d4d8e94555f7f354bb134" prot="public" virt="non-virtual"><scope>SmolDock::DockingResultPrinter</scope><name>printToConsole</name></member>
+      <member refid="class_smol_dock_1_1_docking_result_printer_1a7bd2f249617b1fcc7be8edb4e73bbd4f" prot="private" virt="non-virtual"><scope>SmolDock::DockingResultPrinter</scope><name>res</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

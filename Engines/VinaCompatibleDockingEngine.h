@@ -8,9 +8,10 @@
 
 #include "AbstractDockingEngine.h"
 
-namespace SmolDock {
+namespace SmolDock::Engine {
 
     class VinaCompatibleDockingEngine : AbstractDockingEngine {
+
 
     };
 

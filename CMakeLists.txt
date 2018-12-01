@@ -3,7 +3,7 @@ project(smoldock)
 
 set(CMAKE_CXX_STANDARD 17)
 
-find_package(Boost REQUIRED)
+find_package(Boost REQUIRED COMPONENTS unit_test_framework)
 
 include_directories(${Boost_INCLUDE_DIRS})
 
@@ -24,7 +24,8 @@ include_directories(${RDKIT_ROOT}/Code/)
 
 LINK_DIRECTORIES(${RDKIT_ROOT}/lib/staticlib)
 LINK_DIRECTORIES(${RDKIT_ROOT}/lib)
-SET(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -lboost_system -static  ")
+
+set(RDKIT_LINKAGE_LIST RDKitStatic pthread RDKitStatic RDKitForceField_static RDKitForceFieldHelpers_static)
 ######## END OF RDKIT ######
 
 
@@ -38,8 +39,8 @@ LINK_DIRECTORIES(${VC_ROOT}/lib)
 ######## END OF VC  ######
 
 include_directories(Dependencies)
+include_directories(.)
 
-add_subdirectory(UnitTests)
 
 add_library(gsl STATIC IMPORTED)
 set_property(TARGET gsl PROPERTY
@@ -63,24 +64,51 @@ set(SOURCE_LIST Structures/Structure.cpp
         Utilities/MoleculeTraversal.h
         Structures/AminoAcid.cpp
         Structures/AminoAcid.h
-        Engines/AbstractDockingEngine.cpp
         Engines/AbstractDockingEngine.h
         Engines/MDStyleDockingEngine.cpp
         Engines/MDStyleDockingEngine.h
         Engines/VinaCompatibleDockingEngine.cpp
-        Engines/VinaCompatibleDockingEngine.h Structures/Results/DockingResult.cpp Structures/Results/DockingResult.h Utilities/DockingResultPrinter.cpp Utilities/DockingResultPrinter.h)
+        Engines/VinaCompatibleDockingEngine.h
+        Structures/Results/DockingResult.cpp
+        Structures/Results/DockingResult.h
+        Utilities/DockingResultPrinter.cpp
+        Utilities/DockingResultPrinter.h
+        Engines/ConformerRigidDockingEngine.cpp
+        Engines/ConformerRigidDockingEngine.h
+        Engines/Internals/iConformer.cpp
+        Engines/Internals/iConformer.h Engines/Internals/iAtom.cpp Engines/Internals/iAtom.h)
 
 ADD_LIBRARY(smoldock_object OBJECT ${SOURCE_LIST})
 
-add_executable(smoldock main.cpp $<TARGET_OBJECTS:smoldock_object>)
+add_executable(smoldock Frontends/main.cpp $<TARGET_OBJECTS:smoldock_object>)
+set_target_properties(smoldock PROPERTIES LINK_FLAGS "  -lboost_system -static  ")
 
 
-target_link_libraries(smoldock ${Boost_LIBRARIES})
-
-######## RDKIT LINKAGE ######
-TARGET_LINK_LIBRARIES(smoldock RDKitStatic pthread RDKitStatic RDKitForceField_static RDKitForceFieldHelpers_static)
-######## END OF RDKIT LINKAGE ######
+TARGET_LINK_LIBRARIES(smoldock ${RDKIT_LINKAGE_LIST})
 
 
 target_link_libraries(smoldock gsl gslcblas)
 target_link_libraries(smoldock Vc)
+
+
+###############################################################################################################
+############                                  UNIT TESTING
+###############################################################################################################
+enable_testing()
+
+set(TEST_SOURCE_LIST
+        UnitTests/main_test_suite.cpp
+        UnitTests/UnitTestHelper.cpp
+        UnitTests/UnitTestHelper.h)
+
+
+add_executable(main_test_suite ${TEST_SOURCE_LIST} $<TARGET_OBJECTS:smoldock_object>)
+
+target_link_libraries(main_test_suite ${Boost_LIBRARIES} boost_unit_test_framework-mt)
+
+
+TARGET_LINK_LIBRARIES(main_test_suite ${RDKIT_LINKAGE_LIST})
+
+
+target_link_libraries(main_test_suite gsl gslcblas)
+target_link_libraries(main_test_suite Vc)

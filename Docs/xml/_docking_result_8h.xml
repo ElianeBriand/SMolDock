@@ -1,0 +1,179 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd"
+         version="1.8.14">
+    <compounddef id="_docking_result_8h" kind="file" language="C++">
+        <compoundname>DockingResult.h</compoundname>
+        <includedby refid="_abstract_docking_engine_8h" local="yes">AbstractDockingEngine.h</includedby>
+        <includedby refid="_docking_result_8cpp" local="yes">DockingResult.cpp</includedby>
+        <includedby refid="_docking_result_printer_8h" local="yes">DockingResultPrinter.h</includedby>
+        <invincdepgraph>
+            <node id="229">
+                <label>ConformerRigidDockingEngine.h</label>
+                <link refid="_conformer_rigid_docking_engine_8h"/>
+                <childnode refid="230" relation="include">
+                </childnode>
+                <childnode refid="231" relation="include">
+                </childnode>
+            </node>
+            <node id="232">
+                <label>MDStyleDockingEngine.h</label>
+                <link refid="_m_d_style_docking_engine_8h"/>
+                <childnode refid="233" relation="include">
+                </childnode>
+            </node>
+            <node id="235">
+                <label>VinaCompatibleDockingEngine.cpp</label>
+                <link refid="_vina_compatible_docking_engine_8cpp"/>
+            </node>
+            <node id="234">
+                <label>VinaCompatibleDockingEngine.h</label>
+                <link refid="_vina_compatible_docking_engine_8h"/>
+                <childnode refid="235" relation="include">
+                </childnode>
+            </node>
+            <node id="233">
+                <label>MDStyleDockingEngine.cpp</label>
+                <link refid="_m_d_style_docking_engine_8cpp"/>
+            </node>
+            <node id="231">
+                <label>main.cpp</label>
+                <link refid="main_8cpp"/>
+            </node>
+            <node id="228">
+                <label>AbstractDockingEngine.h</label>
+                <link refid="_abstract_docking_engine_8h"/>
+                <childnode refid="229" relation="include">
+                </childnode>
+                <childnode refid="232" relation="include">
+                </childnode>
+                <childnode refid="234" relation="include">
+                </childnode>
+            </node>
+            <node id="227">
+                <label>DockingResult.h</label>
+                <link refid="_docking_result_8h"/>
+                <childnode refid="228" relation="include">
+                </childnode>
+                <childnode refid="236" relation="include">
+                </childnode>
+                <childnode refid="237" relation="include">
+                </childnode>
+            </node>
+            <node id="230">
+                <label>ConformerRigidDockingEngine.cpp</label>
+                <link refid="_conformer_rigid_docking_engine_8cpp"/>
+            </node>
+            <node id="238">
+                <label>DockingResultPrinter.cpp</label>
+                <link refid="_docking_result_printer_8cpp"/>
+            </node>
+            <node id="237">
+                <label>DockingResultPrinter.h</label>
+                <link refid="_docking_result_printer_8h"/>
+                <childnode refid="238" relation="include">
+                </childnode>
+                <childnode refid="231" relation="include">
+                </childnode>
+            </node>
+            <node id="236">
+                <label>DockingResult.cpp</label>
+                <link refid="_docking_result_8cpp"/>
+            </node>
+        </invincdepgraph>
+        <innerclass refid="class_smol_dock_1_1_docking_result" prot="public">SmolDock::DockingResult</innerclass>
+        <innernamespace refid="namespace_smol_dock">SmolDock</innernamespace>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <programlisting>
+            <codeline lineno="1">
+                <highlight class="comment">//</highlight>
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="2">
+                <highlight class="normal"></highlight>
+                <highlight class="comment">//<sp/>Created<sp/>by<sp/>eliane<sp/>on<sp/>25/11/18.
+                </highlight>
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="3">
+                <highlight class="normal"></highlight>
+                <highlight class="comment">//</highlight>
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="4">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="5">
+                <highlight class="normal"></highlight>
+                <highlight class="preprocessor">#ifndef<sp/>SMOLDOCK_DOCKINGRESULTS_H
+                </highlight>
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="6">
+                <highlight class="normal"></highlight>
+                <highlight class="preprocessor">#define<sp/>SMOLDOCK_DOCKINGRESULTS_H
+                </highlight>
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="7">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="8">
+                <highlight class="normal"></highlight>
+                <highlight class="keyword">namespace
+                    <sp/>
+                </highlight>
+                <highlight class="normal">
+                    <ref refid="namespace_smol_dock" kindref="compound">SmolDock</ref>
+                    <sp/>{
+                </highlight>
+            </codeline>
+            <codeline lineno="9">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="10" refid="class_smol_dock_1_1_docking_result" refkind="compound">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                </highlight>
+                <highlight class="keyword">class
+                    <sp/>
+                </highlight>
+                <highlight class="normal">
+                    <ref refid="class_smol_dock_1_1_docking_result" kindref="compound">DockingResult</ref>
+                    <sp/>{
+                </highlight>
+            </codeline>
+            <codeline lineno="11">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="12">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>};
+                </highlight>
+            </codeline>
+            <codeline lineno="13">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="14">
+                <highlight class="normal">}</highlight>
+            </codeline>
+            <codeline lineno="15">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="16">
+                <highlight class="normal"></highlight>
+                <highlight class="preprocessor">#endif<sp/>//SMOLDOCK_DOCKINGRESULTS_H
+                </highlight>
+            </codeline>
+        </programlisting>
+        <location file="Structures/Results/DockingResult.h"/>
+    </compounddef>
+</doxygen>

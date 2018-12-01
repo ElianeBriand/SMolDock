@@ -9,7 +9,7 @@
 #include "../Structures/Protein.h"
 #include "../Structures/Molecule.h"
 
-namespace SmolDock {
+namespace SmolDock::Engine {
 
     class MDStyleDockingEngine : AbstractDockingEngine {
 
@@ -18,9 +18,9 @@ namespace SmolDock {
         MDStyleDockingEngine() = default;
 
 
-        bool setProtein(const Protein *p) final;
+        bool setProtein(Protein *p) final;
 
-        bool setMolecule(const Molecule *m) final;
+        bool setLigand(Molecule *m) final;
 
 
         bool setDockingBox(DockingBoxSetting setting) final;
@@ -34,8 +34,8 @@ namespace SmolDock {
 
     private:
 
-        const Protein *protein;
-        const Molecule *molecule;
+        Protein *protein;
+        Molecule *ligand;
 
     };
 

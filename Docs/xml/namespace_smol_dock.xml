@@ -1,0 +1,99 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="namespace_smol_dock" kind="namespace" language="C++">
+    <compoundname>SmolDock</compoundname>
+    <innerclass refid="class_smol_dock_1_1_amino_acid" prot="public">SmolDock::AminoAcid</innerclass>
+    <innerclass refid="class_smol_dock_1_1_atom" prot="public">SmolDock::Atom</innerclass>
+    <innerclass refid="class_smol_dock_1_1_bond" prot="public">SmolDock::Bond</innerclass>
+    <innerclass refid="class_smol_dock_1_1_docking_result" prot="public">SmolDock::DockingResult</innerclass>
+    <innerclass refid="class_smol_dock_1_1_docking_result_printer" prot="public">SmolDock::DockingResultPrinter</innerclass>
+    <innerclass refid="struct_smol_dock_1_1i_atom" prot="public">SmolDock::iAtom</innerclass>
+    <innerclass refid="struct_smol_dock_1_1i_conformer" prot="public">SmolDock::iConformer</innerclass>
+    <innerclass refid="class_smol_dock_1_1_molecule" prot="public">SmolDock::Molecule</innerclass>
+    <innerclass refid="class_smol_dock_1_1_molecule_traversal" prot="public">SmolDock::MoleculeTraversal</innerclass>
+    <innerclass refid="class_smol_dock_1_1_protein" prot="public">SmolDock::Protein</innerclass>
+    <innerclass refid="class_smol_dock_1_1_structure" prot="public">SmolDock::Structure</innerclass>
+    <innernamespace refid="namespace_smol_dock_1_1_engine">SmolDock::Engine</innernamespace>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespace_smol_dock_1a7980070f5c494cfe044ad9e90e34e3e3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string SmolDock::resTypeToString</definition>
+        <argsstring>(AminoAcid::AAType t)</argsstring>
+        <name>resTypeToString</name>
+        <param>
+          <type><ref refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875d" kindref="member">AminoAcid::AAType</ref></type>
+          <declname>t</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Structures/AminoAcid.cpp" line="49" column="1" bodyfile="Structures/AminoAcid.cpp" bodystart="49" bodyend="57"/>
+        <references refid="class_smol_dock_1_1_amino_acid_1a23b1781c86be2991e2f668c07ad78d68" compoundref="_amino_acid_8h" startline="64">SmolDock::AminoAcid::AAShorthandSet</references>
+      </memberdef>
+      <memberdef kind="function" id="namespace_smol_dock_1a788f9308991cdf8fe5af07b27ff0f389" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875d" kindref="member">AminoAcid::AAType</ref></type>
+        <definition>AminoAcid::AAType SmolDock::stringToResType</definition>
+        <argsstring>(const std::string &amp;shorthand_or_name)</argsstring>
+        <name>stringToResType</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>shorthand_or_name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Structures/AminoAcid.cpp" line="59" column="1" bodyfile="Structures/AminoAcid.cpp" bodystart="59" bodyend="73"/>
+        <references refid="class_smol_dock_1_1_amino_acid_1a23b1781c86be2991e2f668c07ad78d68" compoundref="_amino_acid_8h" startline="64">SmolDock::AminoAcid::AAShorthandSet</references>
+        <referencedby refid="class_smol_dock_1_1_protein_1a99399b7db2f1b78fea8076a137a4b962" compoundref="_protein_8cpp" startline="10" endline="97">SmolDock::Protein::populateFromPDB</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespace_smol_dock_1adc50d67bf7b33de8b30d90f97c25fb24" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string SmolDock::atomTypeToString</definition>
+        <argsstring>(const Atom::AtomType t)</argsstring>
+        <name>atomTypeToString</name>
+        <param>
+          <type>const <ref refid="class_smol_dock_1_1_atom_1a57e9a532fd04e1846c0d83edebb9fd41" kindref="member">Atom::AtomType</ref></type>
+          <declname>t</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Too many cases, for now we just store as-is in a string enum class AtomClassInResidue { unknown, C, O, N, CA, CB, CG, CZ, CZ2, CZ3, CH2, CD1, CD2, CE1, CE2, CE3, CG2, NE, NE1, NE2, NH1, NH2, NZ, OE1, OD1, OD2, OG1, SG }; </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Structures/Atom.cpp" line="23" column="1" bodyfile="Structures/Atom.cpp" bodystart="23" bodyend="31"/>
+        <references refid="class_smol_dock_1_1_atom_1ad2ea08ee5e9fde5927f30ebe2a3a7142" compoundref="_atom_8h" startline="125">SmolDock::Atom::AtomTypeLabel</references>
+      </memberdef>
+      <memberdef kind="function" id="namespace_smol_dock_1ae559278f4b66ec9a09ddfaebb224f897" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_smol_dock_1_1_atom_1a57e9a532fd04e1846c0d83edebb9fd41" kindref="member">Atom::AtomType</ref></type>
+        <definition>Atom::AtomType SmolDock::stringToAtomType</definition>
+        <argsstring>(const std::string &amp;symbol_or_name)</argsstring>
+        <name>stringToAtomType</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>symbol_or_name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Structures/Atom.cpp" line="33" column="1" bodyfile="Structures/Atom.cpp" bodystart="33" bodyend="45"/>
+        <references refid="class_smol_dock_1_1_atom_1ad2ea08ee5e9fde5927f30ebe2a3a7142" compoundref="_atom_8h" startline="125">SmolDock::Atom::AtomTypeLabel</references>
+        <references refid="class_smol_dock_1_1_atom_1a57e9a532fd04e1846c0d83edebb9fd41aad921d60486366258809553a3db49a4a">SmolDock::Atom::unknown</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Engines/AbstractDockingEngine.h" line="12" column="1"/>
+  </compounddef>
+</doxygen>
