@@ -34,8 +34,8 @@ namespace SmolDock::Engine {
 
     private:
 
-        Protein *protein;
-        Molecule *ligand;
+        Protein *protein = nullptr;
+        Molecule *ligand = nullptr;
 
     };
 

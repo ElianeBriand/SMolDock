@@ -3,10 +3,13 @@
 //
 
 #include <memory>
+#include <chrono>
+#include <thread>
 
 #include "ConformerRigidDockingEngine.h"
 #include "Internals/iConformer.h"
 
+#include "Utilities/TimingsLog.h"
 
 #include <GraphMol/RDKitBase.h>
 #include <GraphMol/RWMol.h>
@@ -29,6 +32,7 @@ namespace SmolDock {
 
         ConformerRigidDockingEngine::ConformerRigidDockingEngine(unsigned int conformer_num) {
             this->conformer_num = conformer_num;
+            assert(conformer_num != 0);
         }
 
         bool ConformerRigidDockingEngine::setProtein(Protein *p) {
@@ -47,52 +51,61 @@ namespace SmolDock {
         }
 
         bool ConformerRigidDockingEngine::setupDockingEngine() {
-/*
-        this->rnd_generator.seed(this->random_seed);
-        std::uniform_int_distribution<> dis(std::numeric_limits<int>::min(), std::numeric_limits<int>::max());
 
+            record_timings(begin_setup);
 
+            std::uniform_int_distribution<> dis(0, std::numeric_limits<int>::max());
 
-        std::vector<int> conformer_ids = RDKit::DGeomHelpers::EmbedMultipleConfs(*rwmol,
-            this->conformer_num,
-            30,
-            dis(rnd_generator),
-            false);
+            record_timings(start_conformersgen);
 
-        std::vector<RDKit::Conformer> rdkit_conformers;
-        std::vector<iConformer> conformers;
-        rdkit_conformers.reserve(this->conformer_num);
-        conformers.reserve(this->conformer_num);
+            this->orig_ligand->generateConformers(this->viConformers, this->conformer_num, dis(this->rnd_generator));
 
-        unsigned int num_atoms = this->orig_ligand->numberOfAtoms();
-
-        for(int i : conformer_ids){
-            iConformer conformer;
-            RDKit::Conformer rdkit_conformer = this->rwmol->getConformer(i);
-
-            rdkit_conformers.push_back(rdkit_conformer);
-
-            conformer.atoms_vect = std::make_unique< std::vector<iAtom> >(static_cast<size_t>(num_atoms));
-
-            for (auto atom_it = rwmol->beginAtoms(); atom_it != rwmol->endAtoms(); ++atom_it) {
-                const RDGeom::Point3D &position = rdkit_conformer.getAtomPos((*atom_it)->getIdx());
-            }
-
-            //             const RDGeom::Point3D &position = starting_conformer.getAtomPos((*atom_it)->getIdx());
-            //            current_atom->setAtomPosition(std::make_tuple(position.x, position.y, position.z));
-            //            atoms.push_back(current_atom);
-
-        }
+            record_timings(done_conformersgen);
 
 
 
 
-*/
+            record_timings(done_setup);
 
-            return true;
+
+#ifdef SMOLDOCK_VERBOSE_DEBUG
+            auto total_setup_time = static_cast< std::chrono::duration<double> >(done_setup - begin_setup).count();
+            auto timings_conformer = static_cast< std::chrono::duration<double> >(done_conformersgen - start_conformersgen).count();
+
+            std::cout << "[D] Timings ConformerRigidDockingEngine::setupDockingEngine : "
+                                  << total_setup_time
+                                  << " seconds total\n      Conformer: "
+                                  << timings_conformer
+                                  <<"s [n=" << this->conformer_num << "->" << this->viConformers.size() << "] "
+                                  << timings_conformer/this->conformer_num << "s each" << std::endl
+                                  << "      Other: 0"
+                                  <<"s"
+                                  << std::endl;
+#endif
+
+
+            return false;
         }
 
         void ConformerRigidDockingEngine::runDockingEngine() {
+            std::cout << "    |";
+            for(int i = 0; i < 98; i++)
+                std::cout << " ";
+            std::cout << "| 100%" << std::endl << "    " ;
+            std::cout.flush();
+            unsigned int quorum = (this->viConformers.size() - (this->viConformers.size() % 100)) / 100;
+            unsigned int current = 0;
+            for(auto& conformer : this->viConformers)
+            {
+                using namespace std::chrono_literals;
+                std::this_thread::sleep_for(0.3s);
+                if(current % quorum == 0) {
+                    std::cout << ".";
+                    std::cout.flush();
+                }
+                current++;
+            }
+            std::cout << std::endl;
 
         }
 
@@ -114,7 +127,9 @@ namespace SmolDock {
 
         void ConformerRigidDockingEngine::setRandomSeed(int seed) {
             this->random_seed = seed;
+            this->rnd_generator.seed(this->random_seed);
         }
+
 
     }
 

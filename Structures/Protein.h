@@ -31,6 +31,10 @@ namespace SmolDock {
         std::vector<std::shared_ptr<AminoAcid> > aminoacids;
         std::vector<std::shared_ptr<Atom> > heteroatoms;
 
+        double center_x = 0;
+        double center_y = 0;
+        double center_z = 0;
+
     };
 
 }

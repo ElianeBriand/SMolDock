@@ -5,11 +5,9 @@
     <includes refid="_abstract_docking_engine_8h" local="yes">AbstractDockingEngine.h</includes>
     <includedby refid="_vina_compatible_docking_engine_8cpp" local="yes">VinaCompatibleDockingEngine.cpp</includedby>
     <incdepgraph>
-      <node id="592">
+      <node id="593">
         <label>../Structures/Protein.h</label>
         <link refid="_protein_8h"/>
-        <childnode refid="593" relation="include">
-        </childnode>
         <childnode refid="594" relation="include">
         </childnode>
         <childnode refid="595" relation="include">
@@ -24,126 +22,126 @@
         </childnode>
         <childnode refid="600" relation="include">
         </childnode>
-      </node>
-      <node id="595">
-        <label>ESBTL/default.h</label>
-      </node>
-      <node id="608">
-        <label>GraphMol/RWMol.h</label>
-      </node>
-      <node id="609">
-        <label>GraphMol/MolOps.h</label>
-      </node>
-      <node id="611">
-        <label>GraphMol/Substruct/SubstructMatch.h</label>
-      </node>
-      <node id="612">
-        <label>GraphMol/DistGeomHelpers/Embedder.h</label>
-      </node>
-      <node id="601">
-        <label>string</label>
-      </node>
-      <node id="598">
-        <label>ESBTL/compressed_ifstream.h</label>
-      </node>
-      <node id="613">
-        <label>Atom.h</label>
-        <link refid="_atom_8h"/>
-        <childnode refid="593" relation="include">
-        </childnode>
-        <childnode refid="594" relation="include">
-        </childnode>
-        <childnode refid="602" relation="include">
-        </childnode>
-        <childnode refid="603" relation="include">
-        </childnode>
-        <childnode refid="614" relation="include">
-        </childnode>
-        <childnode refid="600" relation="include">
-        </childnode>
-        <childnode refid="615" relation="include">
-        </childnode>
-      </node>
-      <node id="617">
-        <label>../Engines/Internals/iConformer.h</label>
-        <link refid="i_conformer_8h"/>
-        <childnode refid="593" relation="include">
-        </childnode>
-        <childnode refid="594" relation="include">
-        </childnode>
-        <childnode refid="615" relation="include">
-        </childnode>
-      </node>
-      <node id="590">
-        <label>VinaCompatibleDockingEngine.h</label>
-        <link refid="_vina_compatible_docking_engine_8h"/>
-        <childnode refid="591" relation="include">
-        </childnode>
-      </node>
-      <node id="615">
-        <label>../Engines/Internals/iAtom.h</label>
-        <link refid="i_atom_8h"/>
-      </node>
-      <node id="616">
-        <label>Bond.h</label>
-        <link refid="_bond_8h"/>
-        <childnode refid="594" relation="include">
-        </childnode>
-        <childnode refid="613" relation="include">
+        <childnode refid="601" relation="include">
         </childnode>
       </node>
       <node id="596">
-        <label>ESBTL/atom_classifier.h</label>
+        <label>ESBTL/default.h</label>
       </node>
-      <node id="600">
-        <label>AminoAcid.h</label>
-        <link refid="_amino_acid_8h"/>
-        <childnode refid="601" relation="include">
+      <node id="609">
+        <label>GraphMol/RWMol.h</label>
+      </node>
+      <node id="610">
+        <label>GraphMol/MolOps.h</label>
+      </node>
+      <node id="612">
+        <label>GraphMol/Substruct/SubstructMatch.h</label>
+      </node>
+      <node id="613">
+        <label>GraphMol/DistGeomHelpers/Embedder.h</label>
+      </node>
+      <node id="602">
+        <label>string</label>
+      </node>
+      <node id="599">
+        <label>ESBTL/compressed_ifstream.h</label>
+      </node>
+      <node id="614">
+        <label>Atom.h</label>
+        <link refid="_atom_8h"/>
+        <childnode refid="594" relation="include">
         </childnode>
-        <childnode refid="593" relation="include">
-        </childnode>
-        <childnode refid="602" relation="include">
+        <childnode refid="595" relation="include">
         </childnode>
         <childnode refid="603" relation="include">
         </childnode>
         <childnode refid="604" relation="include">
         </childnode>
+        <childnode refid="615" relation="include">
+        </childnode>
+        <childnode refid="601" relation="include">
+        </childnode>
+        <childnode refid="616" relation="include">
+        </childnode>
+      </node>
+      <node id="618">
+        <label>../Engines/Internals/iConformer.h</label>
+        <link refid="i_conformer_8h"/>
         <childnode refid="594" relation="include">
+        </childnode>
+        <childnode refid="595" relation="include">
+        </childnode>
+        <childnode refid="616" relation="include">
         </childnode>
       </node>
       <node id="591">
-        <label>AbstractDockingEngine.h</label>
-        <link refid="_abstract_docking_engine_8h"/>
+        <label>VinaCompatibleDockingEngine.h</label>
+        <link refid="_vina_compatible_docking_engine_8h"/>
         <childnode refid="592" relation="include">
+        </childnode>
+      </node>
+      <node id="616">
+        <label>../Engines/Internals/iAtom.h</label>
+        <link refid="i_atom_8h"/>
+      </node>
+      <node id="617">
+        <label>Bond.h</label>
+        <link refid="_bond_8h"/>
+        <childnode refid="595" relation="include">
+        </childnode>
+        <childnode refid="614" relation="include">
+        </childnode>
+      </node>
+      <node id="597">
+        <label>ESBTL/atom_classifier.h</label>
+      </node>
+      <node id="601">
+        <label>AminoAcid.h</label>
+        <link refid="_amino_acid_8h"/>
+        <childnode refid="602" relation="include">
+        </childnode>
+        <childnode refid="594" relation="include">
+        </childnode>
+        <childnode refid="603" relation="include">
+        </childnode>
+        <childnode refid="604" relation="include">
         </childnode>
         <childnode refid="605" relation="include">
         </childnode>
-        <childnode refid="606" relation="include">
+        <childnode refid="595" relation="include">
         </childnode>
       </node>
-      <node id="605">
+      <node id="592">
+        <label>AbstractDockingEngine.h</label>
+        <link refid="_abstract_docking_engine_8h"/>
+        <childnode refid="593" relation="include">
+        </childnode>
+        <childnode refid="606" relation="include">
+        </childnode>
+        <childnode refid="607" relation="include">
+        </childnode>
+      </node>
+      <node id="606">
         <label>../Structures/Results/DockingResult.h</label>
         <link refid="_docking_result_8h"/>
       </node>
-      <node id="604">
+      <node id="605">
         <label>tuple</label>
       </node>
-      <node id="593">
+      <node id="594">
         <label>vector</label>
       </node>
-      <node id="610">
+      <node id="611">
         <label>GraphMol/SmilesParse/SmilesParse.h</label>
       </node>
-      <node id="599">
+      <node id="600">
         <label>Structure.h</label>
         <link refid="_structure_8h"/>
       </node>
-      <node id="606">
+      <node id="607">
         <label>../Structures/Molecule.h</label>
         <link refid="_molecule_8h"/>
-        <childnode refid="593" relation="include">
-        </childnode>
-        <childnode refid="607" relation="include">
+        <childnode refid="594" relation="include">
         </childnode>
         <childnode refid="608" relation="include">
         </childnode>
@@ -155,43 +153,45 @@
         </childnode>
         <childnode refid="612" relation="include">
         </childnode>
-        <childnode refid="599" relation="include">
-        </childnode>
         <childnode refid="613" relation="include">
         </childnode>
-        <childnode refid="616" relation="include">
+        <childnode refid="600" relation="include">
+        </childnode>
+        <childnode refid="614" relation="include">
         </childnode>
         <childnode refid="617" relation="include">
         </childnode>
+        <childnode refid="618" relation="include">
+        </childnode>
       </node>
-      <node id="607">
+      <node id="608">
         <label>GraphMol/RDKitBase.h</label>
       </node>
-      <node id="614">
+      <node id="615">
         <label>iostream</label>
       </node>
-      <node id="602">
+      <node id="603">
         <label>set</label>
       </node>
-      <node id="603">
+      <node id="604">
         <label>algorithm</label>
       </node>
-      <node id="597">
+      <node id="598">
         <label>ESBTL/weighted_atom_iterator.h</label>
       </node>
-      <node id="594">
+      <node id="595">
         <label>memory</label>
       </node>
     </incdepgraph>
     <invincdepgraph>
-      <node id="619">
+      <node id="620">
         <label>VinaCompatibleDockingEngine.cpp</label>
         <link refid="_vina_compatible_docking_engine_8cpp"/>
       </node>
-      <node id="618">
+      <node id="619">
         <label>VinaCompatibleDockingEngine.h</label>
         <link refid="_vina_compatible_docking_engine_8h"/>
-        <childnode refid="619" relation="include">
+        <childnode refid="620" relation="include">
         </childnode>
       </node>
     </invincdepgraph>
@@ -217,13 +217,12 @@
 <codeline lineno="13" refid="class_smol_dock_1_1_engine_1_1_vina_compatible_docking_engine" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_smol_dock_1_1_engine_1_1_vina_compatible_docking_engine" kindref="compound">VinaCompatibleDockingEngine</ref><sp/>:<sp/><ref refid="class_smol_dock_1_1_engine_1_1_abstract_docking_engine" kindref="compound">AbstractDockingEngine</ref><sp/>{</highlight></codeline>
 <codeline lineno="14"><highlight class="normal"></highlight></codeline>
 <codeline lineno="15"><highlight class="normal"></highlight></codeline>
-<codeline lineno="16"><highlight class="normal"></highlight></codeline>
-<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
-<codeline lineno="18"><highlight class="normal"></highlight></codeline>
-<codeline lineno="19"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
 <codeline lineno="20"><highlight class="normal"></highlight></codeline>
-<codeline lineno="21"><highlight class="normal"></highlight></codeline>
-<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//SMOLDOCK_VINACOMPATIBLEDOCKINGENGINE_H</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//SMOLDOCK_VINACOMPATIBLEDOCKINGENGINE_H</highlight></codeline>
     </programlisting>
     <location file="Engines/VinaCompatibleDockingEngine.h"/>
   </compounddef>

@@ -17,7 +17,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="Structures/Protein.h" line="31" column="1" bodyfile="Structures/Protein.h" bodystart="31" bodyend="-1"/>
-        <referencedby refid="class_smol_dock_1_1_protein_1a99399b7db2f1b78fea8076a137a4b962" compoundref="_protein_8cpp" startline="10" endline="97">populateFromPDB</referencedby>
+        <referencedby refid="class_smol_dock_1_1_protein_1a99399b7db2f1b78fea8076a137a4b962" compoundref="_protein_8cpp" startline="11" endline="97">populateFromPDB</referencedby>
       </memberdef>
       <memberdef kind="variable" id="class_smol_dock_1_1_protein_1a86e77c7079be2b4d3e1a8e3e53a4ce02" prot="private" static="no" mutable="no">
         <type>std::vector&lt; std::shared_ptr&lt; <ref refid="class_smol_dock_1_1_atom" kindref="compound">Atom</ref> &gt; &gt;</type>
@@ -31,7 +31,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="Structures/Protein.h" line="32" column="1" bodyfile="Structures/Protein.h" bodystart="32" bodyend="-1"/>
-        <referencedby refid="class_smol_dock_1_1_protein_1a99399b7db2f1b78fea8076a137a4b962" compoundref="_protein_8cpp" startline="10" endline="97">populateFromPDB</referencedby>
+        <referencedby refid="class_smol_dock_1_1_protein_1a99399b7db2f1b78fea8076a137a4b962" compoundref="_protein_8cpp" startline="11" endline="97">populateFromPDB</referencedby>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -63,12 +63,12 @@
         </detaileddescription>
         <inbodydescription>
 <para>For reference purpose, the hierarchy of the PDB file reading is : System (defined by ESBTL, like input filter in some ways) Model (PDB-file specification : more or less, protein) Chain (Amino acid chain) Residue (=Amino acid) <ref refid="class_smol_dock_1_1_atom" kindref="compound">Atom</ref></para><para>Heteroatoms (Cl, or crystallographic ions) are mixed in at the residue level. We detect those if residueName is not in {set of defined residueName} TODO : Differentiate between legit biological ions (metalloprotein, ...) and crystallographic heavy atoms</para>        </inbodydescription>
-        <location file="Structures/Protein.h" line="28" column="1" bodyfile="Structures/Protein.cpp" bodystart="10" bodyend="97"/>
+        <location file="Structures/Protein.h" line="28" column="1" bodyfile="Structures/Protein.cpp" bodystart="11" bodyend="97"/>
         <references refid="class_smol_dock_1_1_protein_1ae0fe8b9c66bfa8032c93e0d8269fd561" compoundref="_protein_8h" startline="31">aminoacids</references>
         <references refid="class_smol_dock_1_1_protein_1a86e77c7079be2b4d3e1a8e3e53a4ce02" compoundref="_protein_8h" startline="32">heteroatoms</references>
         <references refid="namespace_smol_dock_1a788f9308991cdf8fe5af07b27ff0f389" compoundref="_amino_acid_8cpp" startline="59" endline="73">SmolDock::stringToResType</references>
         <references refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875daad921d60486366258809553a3db49a4a">SmolDock::AminoAcid::unknown</references>
-        <referencedby refid="main_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4" compoundref="main_8cpp" startline="37" endline="86">main</referencedby>
+        <referencedby refid="main_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4" compoundref="main_8cpp" startline="37" endline="88">main</referencedby>
       </memberdef>
       </sectiondef>
     <briefdescription>

@@ -3,6 +3,7 @@
 //
 
 #include "DockingResultPrinter.h"
+#include <utility>
 
 namespace SmolDock {
 
@@ -12,6 +13,6 @@ namespace SmolDock {
     }
 
     DockingResultPrinter::DockingResultPrinter(std::shared_ptr<SmolDock::DockingResult> res) {
-        this->res = res;
+        this->res = std::move(res);
     }
 }

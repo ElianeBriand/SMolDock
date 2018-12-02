@@ -4,7 +4,8 @@ var class_smol_dock_1_1_bond =
       [ "singlebond", "class_smol_dock_1_1_bond.html#a6cbf152f682501c998bd06a55400c9cfaccd9d70d0e74b128e8fdd74b302934f1", null ],
       [ "doublebond", "class_smol_dock_1_1_bond.html#a6cbf152f682501c998bd06a55400c9cfa076120e243046998cc8ecff65e716c35", null ],
       [ "triplebond", "class_smol_dock_1_1_bond.html#a6cbf152f682501c998bd06a55400c9cfa7381550bb1c4acbc5e3801c17ef7cae3", null ],
-      [ "defaultbond", "class_smol_dock_1_1_bond.html#a6cbf152f682501c998bd06a55400c9cfa0a3db58cd06e63f99bfd2d9e6773f555", null ]
+      [ "defaultbond", "class_smol_dock_1_1_bond.html#a6cbf152f682501c998bd06a55400c9cfa0a3db58cd06e63f99bfd2d9e6773f555", null ],
+      [ "aromatic", "class_smol_dock_1_1_bond.html#a6cbf152f682501c998bd06a55400c9cfab055cca5ddd5fd7702867dffa64c1f8f", null ]
     ] ],
     [ "Bond", "class_smol_dock_1_1_bond.html#a7f046d71521a269171643bdf147d5c80", null ],
     [ "Bond", "class_smol_dock_1_1_bond.html#ae864507cf1018efa1964e7b77b2d6e4f", null ],

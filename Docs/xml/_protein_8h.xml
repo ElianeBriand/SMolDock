@@ -16,11 +16,9 @@
     <includedby refid="_protein_8cpp" local="yes">Protein.cpp</includedby>
     <includedby refid="main_8cpp" local="yes">main.cpp</includedby>
     <incdepgraph>
-      <node id="517">
+      <node id="518">
         <label>Protein.h</label>
         <link refid="_protein_8h"/>
-        <childnode refid="518" relation="include">
-        </childnode>
         <childnode refid="519" relation="include">
         </childnode>
         <childnode refid="520" relation="include">
@@ -35,120 +33,122 @@
         </childnode>
         <childnode refid="525" relation="include">
         </childnode>
-      </node>
-      <node id="520">
-        <label>ESBTL/default.h</label>
-      </node>
-      <node id="526">
-        <label>string</label>
-      </node>
-      <node id="523">
-        <label>ESBTL/compressed_ifstream.h</label>
-      </node>
-      <node id="521">
-        <label>ESBTL/atom_classifier.h</label>
-      </node>
-      <node id="525">
-        <label>AminoAcid.h</label>
-        <link refid="_amino_acid_8h"/>
         <childnode refid="526" relation="include">
         </childnode>
-        <childnode refid="518" relation="include">
-        </childnode>
+      </node>
+      <node id="521">
+        <label>ESBTL/default.h</label>
+      </node>
+      <node id="527">
+        <label>string</label>
+      </node>
+      <node id="524">
+        <label>ESBTL/compressed_ifstream.h</label>
+      </node>
+      <node id="522">
+        <label>ESBTL/atom_classifier.h</label>
+      </node>
+      <node id="526">
+        <label>AminoAcid.h</label>
+        <link refid="_amino_acid_8h"/>
         <childnode refid="527" relation="include">
+        </childnode>
+        <childnode refid="519" relation="include">
         </childnode>
         <childnode refid="528" relation="include">
         </childnode>
         <childnode refid="529" relation="include">
         </childnode>
-        <childnode refid="519" relation="include">
+        <childnode refid="530" relation="include">
+        </childnode>
+        <childnode refid="520" relation="include">
         </childnode>
       </node>
-      <node id="529">
+      <node id="530">
         <label>tuple</label>
       </node>
-      <node id="518">
+      <node id="519">
         <label>vector</label>
       </node>
-      <node id="524">
+      <node id="525">
         <label>Structure.h</label>
         <link refid="_structure_8h"/>
       </node>
-      <node id="527">
+      <node id="528">
         <label>set</label>
       </node>
-      <node id="528">
+      <node id="529">
         <label>algorithm</label>
       </node>
-      <node id="522">
+      <node id="523">
         <label>ESBTL/weighted_atom_iterator.h</label>
       </node>
-      <node id="519">
+      <node id="520">
         <label>memory</label>
       </node>
     </incdepgraph>
     <invincdepgraph>
-      <node id="530">
+      <node id="531">
         <label>Protein.h</label>
         <link refid="_protein_8h"/>
-        <childnode refid="531" relation="include">
-        </childnode>
         <childnode refid="532" relation="include">
         </childnode>
-        <childnode refid="535" relation="include">
-        </childnode>
-        <childnode refid="539" relation="include">
-        </childnode>
-        <childnode refid="534" relation="include">
-        </childnode>
-      </node>
-      <node id="532">
-        <label>ConformerRigidDockingEngine.h</label>
-        <link refid="_conformer_rigid_docking_engine_8h"/>
         <childnode refid="533" relation="include">
         </childnode>
-        <childnode refid="534" relation="include">
-        </childnode>
-      </node>
-      <node id="535">
-        <label>MDStyleDockingEngine.h</label>
-        <link refid="_m_d_style_docking_engine_8h"/>
         <childnode refid="536" relation="include">
         </childnode>
-      </node>
-      <node id="538">
-        <label>VinaCompatibleDockingEngine.cpp</label>
-        <link refid="_vina_compatible_docking_engine_8cpp"/>
-      </node>
-      <node id="537">
-        <label>VinaCompatibleDockingEngine.h</label>
-        <link refid="_vina_compatible_docking_engine_8h"/>
-        <childnode refid="538" relation="include">
-        </childnode>
-      </node>
-      <node id="536">
-        <label>MDStyleDockingEngine.cpp</label>
-        <link refid="_m_d_style_docking_engine_8cpp"/>
-      </node>
-      <node id="534">
-        <label>main.cpp</label>
-        <link refid="main_8cpp"/>
-      </node>
-      <node id="531">
-        <label>AbstractDockingEngine.h</label>
-        <link refid="_abstract_docking_engine_8h"/>
-        <childnode refid="532" relation="include">
+        <childnode refid="540" relation="include">
         </childnode>
         <childnode refid="535" relation="include">
-        </childnode>
-        <childnode refid="537" relation="include">
         </childnode>
       </node>
       <node id="533">
+        <label>ConformerRigidDockingEngine.h</label>
+        <link refid="_conformer_rigid_docking_engine_8h"/>
+        <childnode refid="534" relation="include">
+        </childnode>
+        <childnode refid="535" relation="include">
+        </childnode>
+      </node>
+      <node id="536">
+        <label>MDStyleDockingEngine.h</label>
+        <link refid="_m_d_style_docking_engine_8h"/>
+        <childnode refid="537" relation="include">
+        </childnode>
+      </node>
+      <node id="539">
+        <label>VinaCompatibleDockingEngine.cpp</label>
+        <link refid="_vina_compatible_docking_engine_8cpp"/>
+      </node>
+      <node id="538">
+        <label>VinaCompatibleDockingEngine.h</label>
+        <link refid="_vina_compatible_docking_engine_8h"/>
+        <childnode refid="539" relation="include">
+        </childnode>
+      </node>
+      <node id="537">
+        <label>MDStyleDockingEngine.cpp</label>
+        <link refid="_m_d_style_docking_engine_8cpp"/>
+      </node>
+      <node id="535">
+        <label>main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+      <node id="532">
+        <label>AbstractDockingEngine.h</label>
+        <link refid="_abstract_docking_engine_8h"/>
+        <childnode refid="533" relation="include">
+        </childnode>
+        <childnode refid="536" relation="include">
+        </childnode>
+        <childnode refid="538" relation="include">
+        </childnode>
+      </node>
+      <node id="534">
         <label>ConformerRigidDockingEngine.cpp</label>
         <link refid="_conformer_rigid_docking_engine_8cpp"/>
       </node>
-      <node id="539">
+      <node id="540">
         <label>Protein.cpp</label>
         <link refid="_protein_8cpp"/>
       </node>

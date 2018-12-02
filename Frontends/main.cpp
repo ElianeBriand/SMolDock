@@ -2,45 +2,22 @@
 // #include <gsl/gsl_sf_bessel.h>
 
 
-#include <GraphMol/RDKitBase.h>
-#include <GraphMol/RWMol.h>
-#include <GraphMol/MolOps.h>
-#include <GraphMol/Fingerprints/Fingerprints.h>
-/*
-#include <GraphMol/ChemReactions/Reaction.h>
-#include <GraphMol/ChemReactions/ReactionPickler.h>
-#include <GraphMol/ChemReactions/ReactionParser.h>
-#include <GraphMol/ChemReactions/ReactionRunner.h>
-#include <GraphMol/ChemReactions/PreprocessRxn.h>
-#include <GraphMol/ChemReactions/SanitizeRxn.h>
- */
-#include <GraphMol/SmilesParse/SmilesParse.h>
-#include <GraphMol/Substruct/SubstructMatch.h>
-#include <DataStructs/ExplicitBitVect.h>
-
-#include <ESBTL/default.h>
-#include <ESBTL/atom_classifier.h>
-#include <ESBTL/weighted_atom_iterator.h>
-#include <ESBTL/compressed_ifstream.h>
-
-#define SMOLDOCK_VERBOSE_DEBUG
-
 #include "Structures/Molecule.h"
 #include "Utilities/MoleculeTraversal.h"
 #include "Structures/Protein.h"
 #include "Utilities/DockingResultPrinter.h"
 #include "Engines/ConformerRigidDockingEngine.h"
 
-#include <Vc/Vc>
 
 
 int main() {
 
     SmolDock::Protein prot;
-    prot.populateFromPDB("1dpx.pdb");
+    // prot.populateFromPDB("1dpx.pdb"); // Lysozyme
+    prot.populateFromPDB("../DockingTests/COX2_Ibuprofen/3LN1_NoHeme_NoLigand.pdb"); // COX-2
 
     SmolDock::Molecule mol;
-    mol.populateFromSMILES("[CH3]O[CH2][OH]");
+    mol.populateFromSMILES("CC(C)Cc1ccc(cc1)[C@@H](C)C(=O)O"); // Ibuprofen
 
 
     SmolDock::Engine::ConformerRigidDockingEngine docker(100); // Use 100 conformers for docking
@@ -51,7 +28,8 @@ int main() {
     docker.setRandomSeed(3984);
 
     if (!docker.setupDockingEngine()) {
-        std::cout << "Error while doing engine setup" << std::endl;
+        std::cout << "[!] Error while doing engine setup" << std::endl;
+        return 2;
     }
 
     docker.runDockingEngine();

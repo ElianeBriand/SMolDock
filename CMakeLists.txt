@@ -76,9 +76,17 @@ set(SOURCE_LIST Structures/Structure.cpp
         Engines/ConformerRigidDockingEngine.cpp
         Engines/ConformerRigidDockingEngine.h
         Engines/Internals/iConformer.cpp
-        Engines/Internals/iConformer.h Engines/Internals/iAtom.cpp Engines/Internals/iAtom.h)
+        Engines/Internals/iConformer.h
+        Engines/Internals/iAtom.cpp
+        Engines/Internals/iAtom.h
+        Utilities/TimingsLog.h
+        Engines/ScoringFunctions/BasicScoringFunction.cpp
+        Engines/ScoringFunctions/BasicScoringFunction.h Engines/Internals/iProtein.cpp Engines/Internals/iProtein.h)
 
 ADD_LIBRARY(smoldock_object OBJECT ${SOURCE_LIST})
+
+### Remove this for prod build
+add_compile_definitions(SMOLDOCK_VERBOSE_DEBUG)
 
 add_executable(smoldock Frontends/main.cpp $<TARGET_OBJECTS:smoldock_object>)
 set_target_properties(smoldock PROPERTIES LINK_FLAGS "  -lboost_system -static  ")

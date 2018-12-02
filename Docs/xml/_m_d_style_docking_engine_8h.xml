@@ -7,11 +7,9 @@
     <includes refid="_molecule_8h" local="yes">../Structures/Molecule.h</includes>
     <includedby refid="_m_d_style_docking_engine_8cpp" local="yes">MDStyleDockingEngine.cpp</includedby>
     <incdepgraph>
-      <node id="370">
+      <node id="371">
         <label>../Structures/Protein.h</label>
         <link refid="_protein_8h"/>
-        <childnode refid="371" relation="include">
-        </childnode>
         <childnode refid="372" relation="include">
         </childnode>
         <childnode refid="373" relation="include">
@@ -26,130 +24,130 @@
         </childnode>
         <childnode refid="378" relation="include">
         </childnode>
-      </node>
-      <node id="373">
-        <label>ESBTL/default.h</label>
-      </node>
-      <node id="386">
-        <label>GraphMol/RWMol.h</label>
-      </node>
-      <node id="368">
-        <label>MDStyleDockingEngine.h</label>
-        <link refid="_m_d_style_docking_engine_8h"/>
-        <childnode refid="369" relation="include">
-        </childnode>
-        <childnode refid="370" relation="include">
-        </childnode>
-        <childnode refid="384" relation="include">
-        </childnode>
-      </node>
-      <node id="387">
-        <label>GraphMol/MolOps.h</label>
-      </node>
-      <node id="389">
-        <label>GraphMol/Substruct/SubstructMatch.h</label>
-      </node>
-      <node id="390">
-        <label>GraphMol/DistGeomHelpers/Embedder.h</label>
-      </node>
-      <node id="379">
-        <label>string</label>
-      </node>
-      <node id="376">
-        <label>ESBTL/compressed_ifstream.h</label>
-      </node>
-      <node id="391">
-        <label>Atom.h</label>
-        <link refid="_atom_8h"/>
-        <childnode refid="371" relation="include">
-        </childnode>
-        <childnode refid="372" relation="include">
-        </childnode>
-        <childnode refid="380" relation="include">
-        </childnode>
-        <childnode refid="381" relation="include">
-        </childnode>
-        <childnode refid="392" relation="include">
-        </childnode>
-        <childnode refid="378" relation="include">
-        </childnode>
-        <childnode refid="393" relation="include">
-        </childnode>
-      </node>
-      <node id="395">
-        <label>../Engines/Internals/iConformer.h</label>
-        <link refid="i_conformer_8h"/>
-        <childnode refid="371" relation="include">
-        </childnode>
-        <childnode refid="372" relation="include">
-        </childnode>
-        <childnode refid="393" relation="include">
-        </childnode>
-      </node>
-      <node id="393">
-        <label>../Engines/Internals/iAtom.h</label>
-        <link refid="i_atom_8h"/>
-      </node>
-      <node id="394">
-        <label>Bond.h</label>
-        <link refid="_bond_8h"/>
-        <childnode refid="372" relation="include">
-        </childnode>
-        <childnode refid="391" relation="include">
+        <childnode refid="379" relation="include">
         </childnode>
       </node>
       <node id="374">
-        <label>ESBTL/atom_classifier.h</label>
+        <label>ESBTL/default.h</label>
       </node>
-      <node id="378">
-        <label>AminoAcid.h</label>
-        <link refid="_amino_acid_8h"/>
-        <childnode refid="379" relation="include">
+      <node id="387">
+        <label>GraphMol/RWMol.h</label>
+      </node>
+      <node id="369">
+        <label>MDStyleDockingEngine.h</label>
+        <link refid="_m_d_style_docking_engine_8h"/>
+        <childnode refid="370" relation="include">
         </childnode>
         <childnode refid="371" relation="include">
         </childnode>
-        <childnode refid="380" relation="include">
+        <childnode refid="385" relation="include">
+        </childnode>
+      </node>
+      <node id="388">
+        <label>GraphMol/MolOps.h</label>
+      </node>
+      <node id="390">
+        <label>GraphMol/Substruct/SubstructMatch.h</label>
+      </node>
+      <node id="391">
+        <label>GraphMol/DistGeomHelpers/Embedder.h</label>
+      </node>
+      <node id="380">
+        <label>string</label>
+      </node>
+      <node id="377">
+        <label>ESBTL/compressed_ifstream.h</label>
+      </node>
+      <node id="392">
+        <label>Atom.h</label>
+        <link refid="_atom_8h"/>
+        <childnode refid="372" relation="include">
+        </childnode>
+        <childnode refid="373" relation="include">
         </childnode>
         <childnode refid="381" relation="include">
         </childnode>
         <childnode refid="382" relation="include">
         </childnode>
-        <childnode refid="372" relation="include">
+        <childnode refid="393" relation="include">
+        </childnode>
+        <childnode refid="379" relation="include">
+        </childnode>
+        <childnode refid="394" relation="include">
         </childnode>
       </node>
-      <node id="369">
-        <label>AbstractDockingEngine.h</label>
-        <link refid="_abstract_docking_engine_8h"/>
-        <childnode refid="370" relation="include">
+      <node id="396">
+        <label>../Engines/Internals/iConformer.h</label>
+        <link refid="i_conformer_8h"/>
+        <childnode refid="372" relation="include">
+        </childnode>
+        <childnode refid="373" relation="include">
+        </childnode>
+        <childnode refid="394" relation="include">
+        </childnode>
+      </node>
+      <node id="394">
+        <label>../Engines/Internals/iAtom.h</label>
+        <link refid="i_atom_8h"/>
+      </node>
+      <node id="395">
+        <label>Bond.h</label>
+        <link refid="_bond_8h"/>
+        <childnode refid="373" relation="include">
+        </childnode>
+        <childnode refid="392" relation="include">
+        </childnode>
+      </node>
+      <node id="375">
+        <label>ESBTL/atom_classifier.h</label>
+      </node>
+      <node id="379">
+        <label>AminoAcid.h</label>
+        <link refid="_amino_acid_8h"/>
+        <childnode refid="380" relation="include">
+        </childnode>
+        <childnode refid="372" relation="include">
+        </childnode>
+        <childnode refid="381" relation="include">
+        </childnode>
+        <childnode refid="382" relation="include">
         </childnode>
         <childnode refid="383" relation="include">
         </childnode>
-        <childnode refid="384" relation="include">
+        <childnode refid="373" relation="include">
         </childnode>
       </node>
-      <node id="383">
+      <node id="370">
+        <label>AbstractDockingEngine.h</label>
+        <link refid="_abstract_docking_engine_8h"/>
+        <childnode refid="371" relation="include">
+        </childnode>
+        <childnode refid="384" relation="include">
+        </childnode>
+        <childnode refid="385" relation="include">
+        </childnode>
+      </node>
+      <node id="384">
         <label>../Structures/Results/DockingResult.h</label>
         <link refid="_docking_result_8h"/>
       </node>
-      <node id="382">
+      <node id="383">
         <label>tuple</label>
       </node>
-      <node id="371">
+      <node id="372">
         <label>vector</label>
       </node>
-      <node id="388">
+      <node id="389">
         <label>GraphMol/SmilesParse/SmilesParse.h</label>
       </node>
-      <node id="377">
+      <node id="378">
         <label>Structure.h</label>
         <link refid="_structure_8h"/>
       </node>
-      <node id="384">
+      <node id="385">
         <label>../Structures/Molecule.h</label>
         <link refid="_molecule_8h"/>
-        <childnode refid="371" relation="include">
-        </childnode>
-        <childnode refid="385" relation="include">
+        <childnode refid="372" relation="include">
         </childnode>
         <childnode refid="386" relation="include">
         </childnode>
@@ -161,42 +159,44 @@
         </childnode>
         <childnode refid="390" relation="include">
         </childnode>
-        <childnode refid="377" relation="include">
-        </childnode>
         <childnode refid="391" relation="include">
         </childnode>
-        <childnode refid="394" relation="include">
+        <childnode refid="378" relation="include">
+        </childnode>
+        <childnode refid="392" relation="include">
         </childnode>
         <childnode refid="395" relation="include">
         </childnode>
+        <childnode refid="396" relation="include">
+        </childnode>
       </node>
-      <node id="385">
+      <node id="386">
         <label>GraphMol/RDKitBase.h</label>
       </node>
-      <node id="392">
+      <node id="393">
         <label>iostream</label>
       </node>
-      <node id="380">
+      <node id="381">
         <label>set</label>
       </node>
-      <node id="381">
+      <node id="382">
         <label>algorithm</label>
       </node>
-      <node id="375">
+      <node id="376">
         <label>ESBTL/weighted_atom_iterator.h</label>
       </node>
-      <node id="372">
+      <node id="373">
         <label>memory</label>
       </node>
     </incdepgraph>
     <invincdepgraph>
-      <node id="396">
+      <node id="397">
         <label>MDStyleDockingEngine.h</label>
         <link refid="_m_d_style_docking_engine_8h"/>
-        <childnode refid="397" relation="include">
+        <childnode refid="398" relation="include">
         </childnode>
       </node>
-      <node id="397">
+      <node id="398">
         <label>MDStyleDockingEngine.cpp</label>
         <link refid="_m_d_style_docking_engine_8cpp"/>
       </node>
@@ -244,8 +244,8 @@
 <codeline lineno="34"><highlight class="normal"></highlight></codeline>
 <codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
 <codeline lineno="36"><highlight class="normal"></highlight></codeline>
-<codeline lineno="37" refid="class_smol_dock_1_1_engine_1_1_m_d_style_docking_engine_1af4a699e7e7768ed9168cdb86b0a016f7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_protein" kindref="compound">Protein</ref><sp/>*<ref refid="class_smol_dock_1_1_engine_1_1_m_d_style_docking_engine_1af4a699e7e7768ed9168cdb86b0a016f7" kindref="member">protein</ref>;</highlight></codeline>
-<codeline lineno="38" refid="class_smol_dock_1_1_engine_1_1_m_d_style_docking_engine_1a84918732053b3811731fcbc8afc1d7ac" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_molecule" kindref="compound">Molecule</ref><sp/>*<ref refid="class_smol_dock_1_1_engine_1_1_m_d_style_docking_engine_1a84918732053b3811731fcbc8afc1d7ac" kindref="member">ligand</ref>;</highlight></codeline>
+<codeline lineno="37" refid="class_smol_dock_1_1_engine_1_1_m_d_style_docking_engine_1af4a699e7e7768ed9168cdb86b0a016f7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_protein" kindref="compound">Protein</ref><sp/>*<ref refid="class_smol_dock_1_1_engine_1_1_m_d_style_docking_engine_1af4a699e7e7768ed9168cdb86b0a016f7" kindref="member">protein</ref><sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="38" refid="class_smol_dock_1_1_engine_1_1_m_d_style_docking_engine_1a84918732053b3811731fcbc8afc1d7ac" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_molecule" kindref="compound">Molecule</ref><sp/>*<ref refid="class_smol_dock_1_1_engine_1_1_m_d_style_docking_engine_1a84918732053b3811731fcbc8afc1d7ac" kindref="member">ligand</ref><sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="39"><highlight class="normal"></highlight></codeline>
 <codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
 <codeline lineno="41"><highlight class="normal"></highlight></codeline>

@@ -55,7 +55,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_abstract_docking_engine_8h.html",
-"namespacemembers.html"
+"namespace_smol_dock_1_1_engine.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

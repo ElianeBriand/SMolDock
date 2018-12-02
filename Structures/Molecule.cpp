@@ -94,6 +94,39 @@ namespace SmolDock {
 
             auto new_bond = std::make_shared<Bond>(*resultBegin, *resultEnd);
 
+
+            /*
+              For reference, from RDKit's bond.h. We do not intent to support the exotic/dative bond for the
+              foreseeable future.
+
+              typedef enum {
+                 UNSPECIFIED = 0,
+                 SINGLE,
+                 DOUBLE,
+                 TRIPLE,
+                 QUADRUPLE,
+                 QUINTUPLE,
+                 HEXTUPLE,
+                 ONEANDAHALF,
+                 TWOANDAHALF,
+                 THREEANDAHALF,
+                 FOURANDAHALF,
+                 FIVEANDAHALF,
+                 AROMATIC,
+                 IONIC,
+                 HYDROGEN,
+                 THREECENTER,
+                 DATIVEONE,  //!< one-electron dative (e.g. from a C in a Cp ring to a metal)
+                 DATIVE,     //!< standard two-electron dative
+                 DATIVEL,    //!< standard two-electron dative
+                 DATIVER,    //!< standard two-electron dative
+                 OTHER,
+                 ZERO  //!< Zero-order bond (from
+                 // http://pubs.acs.org/doi/abs/10.1021/ci200488k)
+              } BondType;
+
+             */
+
             switch ((*bond_it)->getBondType()) {
                 case RDKit::Bond::SINGLE:
                     new_bond->setBondType(Bond::BondType::singlebond);
@@ -103,6 +136,10 @@ namespace SmolDock {
                     break;
                 case RDKit::Bond::TRIPLE:
                     new_bond->setBondType(Bond::BondType::triplebond);
+                    break;
+                case RDKit::Bond::AROMATIC: // As expected aromatic is set for all bond in the cycle
+                                            // , not just the kekule-style "double bond"
+                    new_bond->setBondType(Bond::BondType::aromatic);
                     break;
                 default:
                     std::cout << "[!] Unsupported bond type" << std::endl;
@@ -138,8 +175,8 @@ namespace SmolDock {
 
 
         for (auto atom_it = rwmol->beginAtoms(); atom_it != rwmol->endAtoms(); ++atom_it) {
-            iAtom atom;
-            atom.atomicNum = (*atom_it)->getAtomicNum();
+            iAtom atom{};
+            atom.atomicNum = static_cast<unsigned char>((*atom_it)->getAtomicNum());
 
             const RDGeom::Point3D &position = rdkit_conformer.getAtomPos((*atom_it)->getIdx());
             atom.x = position.x;
@@ -151,7 +188,7 @@ namespace SmolDock {
         return true;
     }
 
-    unsigned int Molecule::generateConformers(std::vector<iConformer> *viConformers, unsigned int num, int seed) {
+    unsigned int Molecule::generateConformers(std::vector<iConformer>& viConformers, unsigned int num, int seed) {
 
 
         std::vector<int> conformer_ids = RDKit::DGeomHelpers::EmbedMultipleConfs(*rwmol, // Molecule
@@ -162,7 +199,7 @@ namespace SmolDock {
         if (conformer_ids.size() == 0)
             return 0; // Early failure case
 
-        viConformers->reserve(viConformers->capacity() + conformer_ids.size());
+        viConformers.reserve(viConformers.capacity() + conformer_ids.size());
 
 
         //std::vector<RDKit::Conformer> rdkit_conformers;
@@ -189,7 +226,7 @@ namespace SmolDock {
                 conformer.atoms_vect->push_back(std::move(atom));
             }
 
-            viConformers->push_back(std::move(conformer));
+            viConformers.push_back(std::move(conformer));
 
         }
 

@@ -18,7 +18,8 @@ namespace SmolDock {
             singlebond,
             doublebond,
             triplebond,
-            defaultbond
+            defaultbond,
+            aromatic
         };
 
         Bond(std::shared_ptr<Atom> atom_a, std::shared_ptr<Atom> atom_b);

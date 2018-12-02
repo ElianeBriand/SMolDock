@@ -9,118 +9,118 @@
     <includedby refid="_conformer_rigid_docking_engine_8cpp" local="yes">ConformerRigidDockingEngine.cpp</includedby>
     <includedby refid="i_conformer_8cpp" local="yes">iConformer.cpp</includedby>
     <incdepgraph>
-      <node id="284">
+      <node id="285">
         <label>iConformer.h</label>
         <link refid="i_conformer_8h"/>
-        <childnode refid="285" relation="include">
-        </childnode>
         <childnode refid="286" relation="include">
         </childnode>
         <childnode refid="287" relation="include">
         </childnode>
+        <childnode refid="288" relation="include">
+        </childnode>
       </node>
-      <node id="287">
+      <node id="288">
         <label>iAtom.h</label>
         <link refid="i_atom_8h"/>
       </node>
-      <node id="285">
+      <node id="286">
         <label>vector</label>
       </node>
-      <node id="286">
+      <node id="287">
         <label>memory</label>
       </node>
     </incdepgraph>
     <invincdepgraph>
-      <node id="291">
+      <node id="292">
         <label>ConformerRigidDockingEngine.h</label>
         <link refid="_conformer_rigid_docking_engine_8h"/>
-        <childnode refid="292" relation="include">
-        </childnode>
         <childnode refid="293" relation="include">
         </childnode>
-      </node>
-      <node id="294">
-        <label>MDStyleDockingEngine.h</label>
-        <link refid="_m_d_style_docking_engine_8h"/>
-        <childnode refid="295" relation="include">
-        </childnode>
-      </node>
-      <node id="297">
-        <label>VinaCompatibleDockingEngine.cpp</label>
-        <link refid="_vina_compatible_docking_engine_8cpp"/>
-      </node>
-      <node id="301">
-        <label>iConformer.cpp</label>
-        <link refid="i_conformer_8cpp"/>
-      </node>
-      <node id="288">
-        <label>iConformer.h</label>
-        <link refid="i_conformer_8h"/>
-        <childnode refid="289" relation="include">
-        </childnode>
-        <childnode refid="292" relation="include">
-        </childnode>
-        <childnode refid="301" relation="include">
-        </childnode>
-      </node>
-      <node id="296">
-        <label>VinaCompatibleDockingEngine.h</label>
-        <link refid="_vina_compatible_docking_engine_8h"/>
-        <childnode refid="297" relation="include">
+        <childnode refid="294" relation="include">
         </childnode>
       </node>
       <node id="295">
-        <label>MDStyleDockingEngine.cpp</label>
-        <link refid="_m_d_style_docking_engine_8cpp"/>
-      </node>
-      <node id="293">
-        <label>main.cpp</label>
-        <link refid="main_8cpp"/>
-      </node>
-      <node id="298">
-        <label>Molecule.cpp</label>
-        <link refid="_molecule_8cpp"/>
-      </node>
-      <node id="300">
-        <label>MoleculeTraversal.cpp</label>
-        <link refid="_molecule_traversal_8cpp"/>
-      </node>
-      <node id="299">
-        <label>MoleculeTraversal.h</label>
-        <link refid="_molecule_traversal_8h"/>
-        <childnode refid="300" relation="include">
-        </childnode>
-        <childnode refid="293" relation="include">
-        </childnode>
-      </node>
-      <node id="290">
-        <label>AbstractDockingEngine.h</label>
-        <link refid="_abstract_docking_engine_8h"/>
-        <childnode refid="291" relation="include">
-        </childnode>
-        <childnode refid="294" relation="include">
-        </childnode>
+        <label>MDStyleDockingEngine.h</label>
+        <link refid="_m_d_style_docking_engine_8h"/>
         <childnode refid="296" relation="include">
         </childnode>
       </node>
-      <node id="292">
-        <label>ConformerRigidDockingEngine.cpp</label>
-        <link refid="_conformer_rigid_docking_engine_8cpp"/>
+      <node id="298">
+        <label>VinaCompatibleDockingEngine.cpp</label>
+        <link refid="_vina_compatible_docking_engine_8cpp"/>
+      </node>
+      <node id="302">
+        <label>iConformer.cpp</label>
+        <link refid="i_conformer_8cpp"/>
       </node>
       <node id="289">
-        <label>Molecule.h</label>
-        <link refid="_molecule_8h"/>
+        <label>iConformer.h</label>
+        <link refid="i_conformer_8h"/>
         <childnode refid="290" relation="include">
         </childnode>
-        <childnode refid="291" relation="include">
+        <childnode refid="293" relation="include">
+        </childnode>
+        <childnode refid="302" relation="include">
+        </childnode>
+      </node>
+      <node id="297">
+        <label>VinaCompatibleDockingEngine.h</label>
+        <link refid="_vina_compatible_docking_engine_8h"/>
+        <childnode refid="298" relation="include">
+        </childnode>
+      </node>
+      <node id="296">
+        <label>MDStyleDockingEngine.cpp</label>
+        <link refid="_m_d_style_docking_engine_8cpp"/>
+      </node>
+      <node id="294">
+        <label>main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+      <node id="299">
+        <label>Molecule.cpp</label>
+        <link refid="_molecule_8cpp"/>
+      </node>
+      <node id="301">
+        <label>MoleculeTraversal.cpp</label>
+        <link refid="_molecule_traversal_8cpp"/>
+      </node>
+      <node id="300">
+        <label>MoleculeTraversal.h</label>
+        <link refid="_molecule_traversal_8h"/>
+        <childnode refid="301" relation="include">
         </childnode>
         <childnode refid="294" relation="include">
         </childnode>
-        <childnode refid="298" relation="include">
+      </node>
+      <node id="291">
+        <label>AbstractDockingEngine.h</label>
+        <link refid="_abstract_docking_engine_8h"/>
+        <childnode refid="292" relation="include">
+        </childnode>
+        <childnode refid="295" relation="include">
+        </childnode>
+        <childnode refid="297" relation="include">
+        </childnode>
+      </node>
+      <node id="293">
+        <label>ConformerRigidDockingEngine.cpp</label>
+        <link refid="_conformer_rigid_docking_engine_8cpp"/>
+      </node>
+      <node id="290">
+        <label>Molecule.h</label>
+        <link refid="_molecule_8h"/>
+        <childnode refid="291" relation="include">
+        </childnode>
+        <childnode refid="292" relation="include">
+        </childnode>
+        <childnode refid="295" relation="include">
         </childnode>
         <childnode refid="299" relation="include">
         </childnode>
-        <childnode refid="293" relation="include">
+        <childnode refid="300" relation="include">
+        </childnode>
+        <childnode refid="294" relation="include">
         </childnode>
       </node>
     </invincdepgraph>
@@ -145,9 +145,9 @@
 <codeline lineno="12"><highlight class="normal"></highlight></codeline>
 <codeline lineno="13"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_smol_dock" kindref="compound">SmolDock</ref><sp/>{</highlight></codeline>
 <codeline lineno="14"><highlight class="normal"></highlight></codeline>
-<codeline lineno="15" refid="struct_smol_dock_1_1i_conformer" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_smol_dock_1_1i_conformer" kindref="compound">iConformer</ref><sp/>{</highlight></codeline>
-<codeline lineno="16" refid="struct_smol_dock_1_1i_conformer_1a18fd974857dffddf4b6233c7c5d70f94" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unique_ptr&lt;std::vector&lt;iAtom&gt;&gt;<sp/><ref refid="struct_smol_dock_1_1i_conformer_1a18fd974857dffddf4b6233c7c5d70f94" kindref="member">atoms_vect</ref>;</highlight></codeline>
-<codeline lineno="17"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="15" refid="struct_smol_dock_1_1i_conformer" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_smol_dock_1_1i_conformer" kindref="compound">iConformer</ref><sp/>{</highlight></codeline>
+<codeline lineno="16" refid="struct_smol_dock_1_1i_conformer_1a18fd974857dffddf4b6233c7c5d70f94" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::unique_ptr&lt;std::vector&lt;iAtom&gt;&gt;<sp/><ref refid="struct_smol_dock_1_1i_conformer_1a18fd974857dffddf4b6233c7c5d70f94" kindref="member">atoms_vect</ref>;</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
 <codeline lineno="18"><highlight class="normal"></highlight></codeline>
 <codeline lineno="19"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="20"><highlight class="normal"></highlight></codeline>

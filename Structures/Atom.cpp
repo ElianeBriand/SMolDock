@@ -112,7 +112,7 @@ namespace SmolDock {
     }
 
     iAtom Atom::generateiAtom() {
-        iAtom ret; // R.V.O.
+        iAtom ret{}; // R.V.O.
         emplaceiAtom(ret);
         return ret;
     }

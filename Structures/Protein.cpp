@@ -1,6 +1,7 @@
 //
 // Created by eliane on 11/11/18.
 //
+#include <memory>
 
 #include "Protein.h"
 #include "Atom.h"
@@ -43,6 +44,11 @@ namespace SmolDock {
              */
 
             unsigned int total_nb_model = 0, total_nb_chain = 0, total_nb_atom = 0, total_nb_hetatm = 0, total_nb_residue = 0;
+            unsigned int atom_processed_for_center = 0;
+            double center_intermediate_x, center_intermediate_y, center_intermediate_z;
+            double curr_center_x = 0;
+            double curr_center_y = 0;
+            double curr_center_z = 0;
 
             //Iterate over all models in the first system
             for (ESBTL::Default_system::Models_iterator
@@ -62,7 +68,7 @@ namespace SmolDock {
                         total_nb_residue++;
                         if (stringToResType(it_res->residue_name()) == AminoAcid::AAType::unknown) {
                             // We have an heteroatom
-                            this->heteroatoms.emplace_back(std::shared_ptr<Atom>(new Atom(it_res->residue_name())));
+                            this->heteroatoms.emplace_back(std::make_shared<Atom>(it_res->residue_name()));
                             total_nb_hetatm++;
                             total_nb_atom++;
                             continue;
@@ -74,21 +80,42 @@ namespace SmolDock {
                         // Iterate over atoms in the residue
                         for (ESBTL::Default_system::Residue::Atoms_const_iterator it_atm = it_res->atoms_begin();
                              it_atm != it_res->atoms_end(); ++it_atm) {
-                            assert(it_atm->is_hetatm() ==
-                                   false); // We expect heteroatoms to have been taken care of previously
+                            assert(it_atm->is_hetatm() == 0); // We expect heteroatoms to have been taken care of previously
                             total_nb_atom++;
                             auto current_atom = current_residue->atoms.emplace_back(
                                     std::shared_ptr<Atom>(new Atom(it_atm->atom_name(), true,
                                                                    stringToResType(it_res->residue_name())))
                             );
                             current_atom->setAtomPosition(std::make_tuple(it_atm->x(), it_atm->y(), it_atm->z()));
+
+                            center_intermediate_x = atom_processed_for_center * curr_center_x;
+                            center_intermediate_y = atom_processed_for_center * curr_center_y;
+                            center_intermediate_z = atom_processed_for_center * curr_center_z;
+                            atom_processed_for_center++;
+                            curr_center_x = (center_intermediate_x + it_atm->x())/atom_processed_for_center;
+                            curr_center_y = (center_intermediate_y + it_atm->y())/atom_processed_for_center;
+                            curr_center_z = (center_intermediate_z + it_atm->z())/atom_processed_for_center;
                         }
                     }
                 }
+
+                this->center_x = curr_center_x;
+                this->center_y = curr_center_y;
+                this->center_z = curr_center_z;
+
+
                 //Consider only the first model of the first system
-                std::cout << filename << " : loaded " << total_nb_model << " models, "
+                std::cout << "    Loaded : " << filename << "\n    --> " << total_nb_model << " models, "
                           << total_nb_chain << " chains, " << total_nb_residue << " residues, "
                           << total_nb_atom << " atoms (" << total_nb_hetatm << " heteroatoms)." << std::endl;
+
+#ifdef SMOLDOCK_VERBOSE_DEBUG
+                std::cout << "[D] Protein centered on : ("
+                          << this->center_x << ", " << this->center_y << ", " <<   this->center_z << ") [n=" <<
+                          atom_processed_for_center << "]"
+                          << std::endl;
+#endif
+
             }
         } else
             return false;

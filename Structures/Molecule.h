@@ -76,7 +76,7 @@ namespace SmolDock {
          * \return Returns the number of conformer actually generated. May be 0.
          * \sa generateConformer()
         */
-        unsigned int generateConformers(std::vector<iConformer> *viConformers, unsigned int num, int seed = 367454);
+        unsigned int generateConformers(std::vector<iConformer>& viConformers, unsigned int num, int seed = 367454);
 
 
     private:

@@ -11,6 +11,7 @@ var searchData=
   ['aminoacid_2eh',['AminoAcid.h',['../_amino_acid_8h.html',1,'']]],
   ['aminoacids',['aminoacids',['../class_smol_dock_1_1_protein.html#ae0fe8b9c66bfa8032c93e0d8269fd561',1,'SmolDock::Protein']]],
   ['arginine',['arginine',['../class_smol_dock_1_1_amino_acid.html#a08692b12e7f53812c5258bd8b805875da9a1407676e926e8c94b54e0864da4546',1,'SmolDock::AminoAcid']]],
+  ['aromatic',['aromatic',['../class_smol_dock_1_1_bond.html#a6cbf152f682501c998bd06a55400c9cfab055cca5ddd5fd7702867dffa64c1f8f',1,'SmolDock::Bond']]],
   ['asparagine',['asparagine',['../class_smol_dock_1_1_amino_acid.html#a08692b12e7f53812c5258bd8b805875da6d1d64af1a6d275bd2995d990072b129',1,'SmolDock::AminoAcid']]],
   ['aspartate',['aspartate',['../class_smol_dock_1_1_amino_acid.html#a08692b12e7f53812c5258bd8b805875da1aa8cabca067057363a0b448f2db84e7',1,'SmolDock::AminoAcid']]],
   ['atom',['Atom',['../class_smol_dock_1_1_atom.html',1,'SmolDock::Atom'],['../class_smol_dock_1_1_atom.html#a6fdae20edd67e75fa5fab8cbdbb39faf',1,'SmolDock::Atom::Atom(AtomType t)'],['../class_smol_dock_1_1_atom.html#a72994dd53d1aa7e9bfb05aecc8a35a52',1,'SmolDock::Atom::Atom(const std::string &amp;symbol_or_name, bool PDBFormat=false, AminoAcid::AAType resType=AminoAcid::AAType::heteroatom)'],['../class_smol_dock_1_1_atom.html#a6d8ef00ed712a00a3c6d0827faf6ff9e',1,'SmolDock::Atom::Atom(AtomType t, unsigned int id)'],['../class_smol_dock_1_1_atom.html#a500f60cb0b8dac0c64bc44187dc90d41',1,'SmolDock::Atom::Atom(const std::string &amp;symbol_or_name, unsigned int id)']]],

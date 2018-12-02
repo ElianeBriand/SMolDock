@@ -99,7 +99,7 @@ BOOST_AUTO_TEST_SUITE(main_test_suite)
         SmolDock::iConformer conformer1;
         bool res1 = mol1.generateConformer(conformer1, 234);
 
-        BOOST_CHECK(res1 == true);
+        BOOST_CHECK(res1);
 
 
         auto start_conformersgen = std::chrono::system_clock::now();
@@ -113,11 +113,13 @@ BOOST_AUTO_TEST_SUITE(main_test_suite)
 
         BOOST_CHECK(res2 == desired_num_conformer);
 
+        auto duration_second = static_cast< std::chrono::duration<double> >(end_conformersgen - start_conformersgen).count();
         std::cout << "[ ] Conformer generation took "
-                  << static_cast< std::chrono::duration<double> >(end_conformersgen - start_conformersgen).count()
+                  << duration_second
                   << "s for "
                   << res2 << " of " << desired_num_conformer << " generated." << std::endl;
 
+        BOOST_CHECK(duration_second < 1); // we hope to be faster,  but 50ms/conformer is our alert level.
 
     }
 

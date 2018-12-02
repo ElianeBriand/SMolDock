@@ -36,13 +36,20 @@
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
+        <enumvalue id="class_smol_dock_1_1_bond_1a6cbf152f682501c998bd06a55400c9cfab055cca5ddd5fd7702867dffa64c1f8f" prot="public">
+          <name>aromatic</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Structures/Bond.h" line="17" column="1" bodyfile="Structures/Bond.h" bodystart="17" bodyend="22"/>
+        <location file="Structures/Bond.h" line="17" column="1" bodyfile="Structures/Bond.h" bodystart="17" bodyend="23"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-attrib">
@@ -57,7 +64,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Structures/Bond.h" line="39" column="1" bodyfile="Structures/Bond.h" bodystart="39" bodyend="-1"/>
+        <location file="Structures/Bond.h" line="40" column="1" bodyfile="Structures/Bond.h" bodystart="40" bodyend="-1"/>
         <referencedby refid="class_smol_dock_1_1_bond_1a7f046d71521a269171643bdf147d5c80" compoundref="_bond_8cpp" startline="12" endline="15">Bond</referencedby>
         <referencedby refid="class_smol_dock_1_1_bond_1a8ca51ba3f2abc758ecd7b4b040681f21" compoundref="_bond_8cpp" startline="25" endline="27">getEndA</referencedby>
         <referencedby refid="class_smol_dock_1_1_bond_1a225d51b7edd43bc5aa16984981bc2dfe" compoundref="_bond_8cpp" startline="33" endline="38">publicizeToAtom</referencedby>
@@ -73,7 +80,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Structures/Bond.h" line="40" column="1" bodyfile="Structures/Bond.h" bodystart="40" bodyend="-1"/>
+        <location file="Structures/Bond.h" line="41" column="1" bodyfile="Structures/Bond.h" bodystart="41" bodyend="-1"/>
         <referencedby refid="class_smol_dock_1_1_bond_1a7f046d71521a269171643bdf147d5c80" compoundref="_bond_8cpp" startline="12" endline="15">Bond</referencedby>
         <referencedby refid="class_smol_dock_1_1_bond_1a0a2feeb4cc88cbb8920ae5e9b142ead5" compoundref="_bond_8cpp" startline="29" endline="31">getEndB</referencedby>
         <referencedby refid="class_smol_dock_1_1_bond_1a225d51b7edd43bc5aa16984981bc2dfe" compoundref="_bond_8cpp" startline="33" endline="38">publicizeToAtom</referencedby>
@@ -89,7 +96,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Structures/Bond.h" line="43" column="1" bodyfile="Structures/Bond.h" bodystart="43" bodyend="-1"/>
+        <location file="Structures/Bond.h" line="44" column="1" bodyfile="Structures/Bond.h" bodystart="44" bodyend="-1"/>
         <referencedby refid="class_smol_dock_1_1_bond_1ae864507cf1018efa1964e7b77b2d6e4f" compoundref="_bond_8cpp" startline="17" endline="23">Bond</referencedby>
       </memberdef>
       <memberdef kind="variable" id="class_smol_dock_1_1_bond_1a7795dad7005c83f8702d8593eb81b1ff" prot="private" static="no" mutable="no">
@@ -103,7 +110,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Structures/Bond.h" line="45" column="1" bodyfile="Structures/Bond.h" bodystart="45" bodyend="-1"/>
+        <location file="Structures/Bond.h" line="46" column="1" bodyfile="Structures/Bond.h" bodystart="46" bodyend="-1"/>
         <referencedby refid="class_smol_dock_1_1_bond_1ae864507cf1018efa1964e7b77b2d6e4f" compoundref="_bond_8cpp" startline="17" endline="23">Bond</referencedby>
         <referencedby refid="class_smol_dock_1_1_bond_1a4ebf28309120c880429f205edf67b9f8" compoundref="_bond_8cpp" startline="40" endline="42">setBondType</referencedby>
         <referencedby refid="class_smol_dock_1_1_bond_1a6b8180f0f2b339c521f8a74b2445e8c8" compoundref="_bond_8cpp" startline="44" endline="46">getBondType</referencedby>
@@ -122,7 +129,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Structures/Bond.h" line="42" column="1" bodyfile="Structures/Bond.h" bodystart="42" bodyend="-1"/>
+        <location file="Structures/Bond.h" line="43" column="1" bodyfile="Structures/Bond.h" bodystart="43" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -145,9 +152,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Structures/Bond.h" line="24" column="1" bodyfile="Structures/Bond.cpp" bodystart="12" bodyend="15"/>
-        <references refid="class_smol_dock_1_1_bond_1ad909ef34f3b9b10acc221ac6d54e423a" compoundref="_bond_8h" startline="39">bond_end_a</references>
-        <references refid="class_smol_dock_1_1_bond_1adbbc73bd7bc4fc579237321be516ed2f" compoundref="_bond_8h" startline="40">bond_end_b</references>
+        <location file="Structures/Bond.h" line="25" column="1" bodyfile="Structures/Bond.cpp" bodystart="12" bodyend="15"/>
+        <references refid="class_smol_dock_1_1_bond_1ad909ef34f3b9b10acc221ac6d54e423a" compoundref="_bond_8h" startline="40">bond_end_a</references>
+        <references refid="class_smol_dock_1_1_bond_1adbbc73bd7bc4fc579237321be516ed2f" compoundref="_bond_8h" startline="41">bond_end_b</references>
       </memberdef>
       <memberdef kind="function" id="class_smol_dock_1_1_bond_1ae864507cf1018efa1964e7b77b2d6e4f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -172,11 +179,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Structures/Bond.h" line="26" column="1" bodyfile="Structures/Bond.cpp" bodystart="17" bodyend="23"/>
-        <references refid="class_smol_dock_1_1_bond_1ad909ef34f3b9b10acc221ac6d54e423a" compoundref="_bond_8h" startline="39">bond_end_a</references>
-        <references refid="class_smol_dock_1_1_bond_1adbbc73bd7bc4fc579237321be516ed2f" compoundref="_bond_8h" startline="40">bond_end_b</references>
-        <references refid="class_smol_dock_1_1_bond_1a6fb49dc80f21a23c8b039f85d3b7b5bf" compoundref="_bond_8h" startline="43">BondID</references>
-        <references refid="class_smol_dock_1_1_bond_1a7795dad7005c83f8702d8593eb81b1ff" compoundref="_bond_8h" startline="45">bondtype</references>
+        <location file="Structures/Bond.h" line="27" column="1" bodyfile="Structures/Bond.cpp" bodystart="17" bodyend="23"/>
+        <references refid="class_smol_dock_1_1_bond_1ad909ef34f3b9b10acc221ac6d54e423a" compoundref="_bond_8h" startline="40">bond_end_a</references>
+        <references refid="class_smol_dock_1_1_bond_1adbbc73bd7bc4fc579237321be516ed2f" compoundref="_bond_8h" startline="41">bond_end_b</references>
+        <references refid="class_smol_dock_1_1_bond_1a6fb49dc80f21a23c8b039f85d3b7b5bf" compoundref="_bond_8h" startline="44">BondID</references>
+        <references refid="class_smol_dock_1_1_bond_1a7795dad7005c83f8702d8593eb81b1ff" compoundref="_bond_8h" startline="46">bondtype</references>
         <references refid="class_smol_dock_1_1_bond_1a6cbf152f682501c998bd06a55400c9cfa0a3db58cd06e63f99bfd2d9e6773f555" compoundref="_bond_8h" startline="21">defaultbond</references>
       </memberdef>
       <memberdef kind="function" id="class_smol_dock_1_1_bond_1a8ca51ba3f2abc758ecd7b4b040681f21" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
@@ -190,8 +197,8 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Structures/Bond.h" line="28" column="1" bodyfile="Structures/Bond.cpp" bodystart="25" bodyend="27"/>
-        <references refid="class_smol_dock_1_1_bond_1ad909ef34f3b9b10acc221ac6d54e423a" compoundref="_bond_8h" startline="39">bond_end_a</references>
+        <location file="Structures/Bond.h" line="29" column="1" bodyfile="Structures/Bond.cpp" bodystart="25" bodyend="27"/>
+        <references refid="class_smol_dock_1_1_bond_1ad909ef34f3b9b10acc221ac6d54e423a" compoundref="_bond_8h" startline="40">bond_end_a</references>
       </memberdef>
       <memberdef kind="function" id="class_smol_dock_1_1_bond_1a0a2feeb4cc88cbb8920ae5e9b142ead5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>std::shared_ptr&lt; <ref refid="class_smol_dock_1_1_atom" kindref="compound">Atom</ref> &gt;</type>
@@ -204,8 +211,8 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Structures/Bond.h" line="30" column="1" bodyfile="Structures/Bond.cpp" bodystart="29" bodyend="31"/>
-        <references refid="class_smol_dock_1_1_bond_1adbbc73bd7bc4fc579237321be516ed2f" compoundref="_bond_8h" startline="40">bond_end_b</references>
+        <location file="Structures/Bond.h" line="31" column="1" bodyfile="Structures/Bond.cpp" bodystart="29" bodyend="31"/>
+        <references refid="class_smol_dock_1_1_bond_1adbbc73bd7bc4fc579237321be516ed2f" compoundref="_bond_8h" startline="41">bond_end_b</references>
       </memberdef>
       <memberdef kind="function" id="class_smol_dock_1_1_bond_1a225d51b7edd43bc5aa16984981bc2dfe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -218,9 +225,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Structures/Bond.h" line="32" column="1" bodyfile="Structures/Bond.cpp" bodystart="33" bodyend="38"/>
-        <references refid="class_smol_dock_1_1_bond_1ad909ef34f3b9b10acc221ac6d54e423a" compoundref="_bond_8h" startline="39">bond_end_a</references>
-        <references refid="class_smol_dock_1_1_bond_1adbbc73bd7bc4fc579237321be516ed2f" compoundref="_bond_8h" startline="40">bond_end_b</references>
+        <location file="Structures/Bond.h" line="33" column="1" bodyfile="Structures/Bond.cpp" bodystart="33" bodyend="38"/>
+        <references refid="class_smol_dock_1_1_bond_1ad909ef34f3b9b10acc221ac6d54e423a" compoundref="_bond_8h" startline="40">bond_end_a</references>
+        <references refid="class_smol_dock_1_1_bond_1adbbc73bd7bc4fc579237321be516ed2f" compoundref="_bond_8h" startline="41">bond_end_b</references>
       </memberdef>
       <memberdef kind="function" id="class_smol_dock_1_1_bond_1a4ebf28309120c880429f205edf67b9f8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -237,8 +244,8 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Structures/Bond.h" line="34" column="1" bodyfile="Structures/Bond.cpp" bodystart="40" bodyend="42"/>
-        <references refid="class_smol_dock_1_1_bond_1a7795dad7005c83f8702d8593eb81b1ff" compoundref="_bond_8h" startline="45">bondtype</references>
+        <location file="Structures/Bond.h" line="35" column="1" bodyfile="Structures/Bond.cpp" bodystart="40" bodyend="42"/>
+        <references refid="class_smol_dock_1_1_bond_1a7795dad7005c83f8702d8593eb81b1ff" compoundref="_bond_8h" startline="46">bondtype</references>
       </memberdef>
       <memberdef kind="function" id="class_smol_dock_1_1_bond_1a6b8180f0f2b339c521f8a74b2445e8c8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="class_smol_dock_1_1_bond_1a6cbf152f682501c998bd06a55400c9cf" kindref="member">BondType</ref></type>
@@ -251,8 +258,8 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Structures/Bond.h" line="36" column="1" bodyfile="Structures/Bond.cpp" bodystart="44" bodyend="46"/>
-        <references refid="class_smol_dock_1_1_bond_1a7795dad7005c83f8702d8593eb81b1ff" compoundref="_bond_8h" startline="45">bondtype</references>
+        <location file="Structures/Bond.h" line="37" column="1" bodyfile="Structures/Bond.cpp" bodystart="44" bodyend="46"/>
+        <references refid="class_smol_dock_1_1_bond_1a7795dad7005c83f8702d8593eb81b1ff" compoundref="_bond_8h" startline="46">bondtype</references>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -281,8 +288,9 @@
         <label>std::enable_shared_from_this&lt; Bond &gt;</label>
       </node>
     </collaborationgraph>
-    <location file="Structures/Bond.h" line="13" column="1" bodyfile="Structures/Bond.h" bodystart="13" bodyend="47"/>
+    <location file="Structures/Bond.h" line="13" column="1" bodyfile="Structures/Bond.h" bodystart="13" bodyend="48"/>
     <listofallmembers>
+      <member refid="class_smol_dock_1_1_bond_1a6cbf152f682501c998bd06a55400c9cfab055cca5ddd5fd7702867dffa64c1f8f" prot="public" virt="non-virtual"><scope>SmolDock::Bond</scope><name>aromatic</name></member>
       <member refid="class_smol_dock_1_1_bond_1a7f046d71521a269171643bdf147d5c80" prot="public" virt="non-virtual"><scope>SmolDock::Bond</scope><name>Bond</name></member>
       <member refid="class_smol_dock_1_1_bond_1ae864507cf1018efa1964e7b77b2d6e4f" prot="public" virt="non-virtual"><scope>SmolDock::Bond</scope><name>Bond</name></member>
       <member refid="class_smol_dock_1_1_bond_1ad909ef34f3b9b10acc221ac6d54e423a" prot="private" virt="non-virtual"><scope>SmolDock::Bond</scope><name>bond_end_a</name></member>

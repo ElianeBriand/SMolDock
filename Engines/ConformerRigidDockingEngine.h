@@ -36,9 +36,14 @@ namespace SmolDock::Engine {
     class ConformerRigidDockingEngine : public AbstractDockingEngine {
 
     public:
-        ConformerRigidDockingEngine(unsigned int conformer_num);
 
-        ///// Parameters /////////////
+        //!
+        /*!
+         * \param conformer_num Number of conformer to generate
+        */
+        explicit ConformerRigidDockingEngine(unsigned int conformer_num);
+
+        // /// Parameters /////////////
         bool setDockingBox(DockingBoxSetting setting) final;
 
         bool setProtein(Protein *p) final;
@@ -48,12 +53,12 @@ namespace SmolDock::Engine {
         void setRandomSeed(int seed) final;
 
 
-        ///// Actions /////////////
+        // /// Actions /////////////
         bool setupDockingEngine() final;
 
         void runDockingEngine() final;
 
-        ///// Results /////////////
+        // /// Results /////////////
         std::shared_ptr<DockingResult> getDockingResult() final;
 
 
@@ -68,6 +73,8 @@ namespace SmolDock::Engine {
         std::mt19937 rnd_generator;
 
         std::shared_ptr<RDKit::RWMol> rwmol;
+
+        std::vector<iConformer> viConformers;
     };
 
 }
