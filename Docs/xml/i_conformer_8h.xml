@@ -8,119 +8,132 @@
     <includedby refid="_molecule_8h" local="yes">Molecule.h</includedby>
     <includedby refid="_conformer_rigid_docking_engine_8cpp" local="yes">ConformerRigidDockingEngine.cpp</includedby>
     <includedby refid="i_conformer_8cpp" local="yes">iConformer.cpp</includedby>
+    <includedby refid="_basic_scoring_function_8h" local="no">BasicScoringFunction.h</includedby>
     <incdepgraph>
-      <node id="285">
+      <node id="308">
         <label>iConformer.h</label>
         <link refid="i_conformer_8h"/>
-        <childnode refid="286" relation="include">
+        <childnode refid="309" relation="include">
         </childnode>
-        <childnode refid="287" relation="include">
+        <childnode refid="310" relation="include">
         </childnode>
-        <childnode refid="288" relation="include">
+        <childnode refid="311" relation="include">
         </childnode>
       </node>
-      <node id="288">
+      <node id="311">
         <label>iAtom.h</label>
         <link refid="i_atom_8h"/>
       </node>
-      <node id="286">
+      <node id="309">
         <label>vector</label>
       </node>
-      <node id="287">
+      <node id="310">
         <label>memory</label>
       </node>
     </incdepgraph>
     <invincdepgraph>
-      <node id="292">
+      <node id="315">
         <label>ConformerRigidDockingEngine.h</label>
         <link refid="_conformer_rigid_docking_engine_8h"/>
-        <childnode refid="293" relation="include">
+        <childnode refid="316" relation="include">
         </childnode>
-        <childnode refid="294" relation="include">
+        <childnode refid="317" relation="include">
         </childnode>
       </node>
-      <node id="295">
+      <node id="318">
         <label>MDStyleDockingEngine.h</label>
         <link refid="_m_d_style_docking_engine_8h"/>
-        <childnode refid="296" relation="include">
+        <childnode refid="319" relation="include">
         </childnode>
       </node>
-      <node id="298">
+      <node id="326">
+        <label>BasicScoringFunction.h</label>
+        <link refid="_basic_scoring_function_8h"/>
+        <childnode refid="327" relation="include">
+        </childnode>
+      </node>
+      <node id="321">
         <label>VinaCompatibleDockingEngine.cpp</label>
         <link refid="_vina_compatible_docking_engine_8cpp"/>
       </node>
-      <node id="302">
+      <node id="325">
         <label>iConformer.cpp</label>
         <link refid="i_conformer_8cpp"/>
       </node>
-      <node id="289">
+      <node id="312">
         <label>iConformer.h</label>
         <link refid="i_conformer_8h"/>
-        <childnode refid="290" relation="include">
+        <childnode refid="313" relation="include">
         </childnode>
-        <childnode refid="293" relation="include">
+        <childnode refid="316" relation="include">
         </childnode>
-        <childnode refid="302" relation="include">
+        <childnode refid="325" relation="include">
+        </childnode>
+        <childnode refid="326" relation="include">
         </childnode>
       </node>
-      <node id="297">
+      <node id="320">
         <label>VinaCompatibleDockingEngine.h</label>
         <link refid="_vina_compatible_docking_engine_8h"/>
-        <childnode refid="298" relation="include">
+        <childnode refid="321" relation="include">
         </childnode>
       </node>
-      <node id="296">
+      <node id="319">
         <label>MDStyleDockingEngine.cpp</label>
         <link refid="_m_d_style_docking_engine_8cpp"/>
       </node>
-      <node id="294">
+      <node id="317">
         <label>main.cpp</label>
         <link refid="main_8cpp"/>
       </node>
-      <node id="299">
+      <node id="322">
         <label>Molecule.cpp</label>
         <link refid="_molecule_8cpp"/>
       </node>
-      <node id="301">
+      <node id="324">
         <label>MoleculeTraversal.cpp</label>
         <link refid="_molecule_traversal_8cpp"/>
       </node>
-      <node id="300">
+      <node id="323">
         <label>MoleculeTraversal.h</label>
         <link refid="_molecule_traversal_8h"/>
-        <childnode refid="301" relation="include">
+        <childnode refid="324" relation="include">
         </childnode>
-        <childnode refid="294" relation="include">
+        <childnode refid="317" relation="include">
         </childnode>
       </node>
-      <node id="291">
+      <node id="314">
         <label>AbstractDockingEngine.h</label>
         <link refid="_abstract_docking_engine_8h"/>
-        <childnode refid="292" relation="include">
+        <childnode refid="315" relation="include">
         </childnode>
-        <childnode refid="295" relation="include">
+        <childnode refid="318" relation="include">
         </childnode>
-        <childnode refid="297" relation="include">
+        <childnode refid="320" relation="include">
         </childnode>
       </node>
-      <node id="293">
+      <node id="327">
+        <label>BasicScoringFunction.cpp</label>
+        <link refid="_basic_scoring_function_8cpp"/>
+      </node>
+      <node id="316">
         <label>ConformerRigidDockingEngine.cpp</label>
         <link refid="_conformer_rigid_docking_engine_8cpp"/>
       </node>
-      <node id="290">
+      <node id="313">
         <label>Molecule.h</label>
         <link refid="_molecule_8h"/>
-        <childnode refid="291" relation="include">
+        <childnode refid="314" relation="include">
         </childnode>
-        <childnode refid="292" relation="include">
+        <childnode refid="315" relation="include">
         </childnode>
-        <childnode refid="295" relation="include">
+        <childnode refid="318" relation="include">
         </childnode>
-        <childnode refid="299" relation="include">
+        <childnode refid="322" relation="include">
         </childnode>
-        <childnode refid="300" relation="include">
+        <childnode refid="323" relation="include">
         </childnode>
-        <childnode refid="294" relation="include">
+        <childnode refid="317" relation="include">
         </childnode>
       </node>
     </invincdepgraph>

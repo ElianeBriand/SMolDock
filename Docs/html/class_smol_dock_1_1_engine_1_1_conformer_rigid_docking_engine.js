@@ -13,5 +13,6 @@ var class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine =
     [ "orig_protein", "class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine.html#adc3f28b5b4af09c54eb73d9f445dbd2d", null ],
     [ "random_seed", "class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine.html#a046b6f9d1c856e1b38034388a8fb5f9f", null ],
     [ "rnd_generator", "class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine.html#a9bc1d216cf102c383444cb6f9955dfaa", null ],
-    [ "rwmol", "class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine.html#a5a7a60763037a8d8b7c6c2a9defa512f", null ]
+    [ "rwmol", "class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine.html#a5a7a60763037a8d8b7c6c2a9defa512f", null ],
+    [ "viConformers", "class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine.html#a1db0509172face64ab20380bea166765", null ]
 ];

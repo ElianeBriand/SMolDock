@@ -1,10 +1,29 @@
-//
-// Created by eliane on 28/11/18.
-//
+/*
+ * Copyright (c) 2018 Eliane Briand
+ *
+ * This file is part of SmolDock.
+ *
+ * SmolDock is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * Foobar is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with Foobar.  If not, see <https://www.gnu.org/licenses/>.
+ *
+ */
 
 #include <memory>
 #include <chrono>
 #include <thread>
+
+#include <boost/log/trivial.hpp>
+
 
 #include "ConformerRigidDockingEngine.h"
 #include "Internals/iConformer.h"
@@ -72,15 +91,14 @@ namespace SmolDock {
             auto total_setup_time = static_cast< std::chrono::duration<double> >(done_setup - begin_setup).count();
             auto timings_conformer = static_cast< std::chrono::duration<double> >(done_conformersgen - start_conformersgen).count();
 
-            std::cout << "[D] Timings ConformerRigidDockingEngine::setupDockingEngine : "
+            BOOST_LOG_TRIVIAL(debug) << "Timings ConformerRigidDockingEngine::setupDockingEngine : "
                                   << total_setup_time
                                   << " seconds total\n      Conformer: "
                                   << timings_conformer
                                   <<"s [n=" << this->conformer_num << "->" << this->viConformers.size() << "] "
                                   << timings_conformer/this->conformer_num << "s each" << std::endl
                                   << "      Other: 0"
-                                  <<"s"
-                                  << std::endl;
+                                  <<"s";
 #endif
 
 

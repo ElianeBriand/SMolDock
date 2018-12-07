@@ -1,6 +1,22 @@
-//
-// Created by eliane on 13/11/18.
-//
+/*
+ * Copyright (c) 2018 Eliane Briand
+ *
+ * This file is part of SmolDock.
+ *
+ * SmolDock is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * Foobar is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with Foobar.  If not, see <https://www.gnu.org/licenses/>.
+ *
+ */
 
 #include <chrono>
 
@@ -119,7 +135,8 @@ BOOST_AUTO_TEST_SUITE(main_test_suite)
                   << "s for "
                   << res2 << " of " << desired_num_conformer << " generated." << std::endl;
 
-        BOOST_CHECK(duration_second < 1); // we hope to be faster,  but 50ms/conformer is our alert level.
+        BOOST_CHECK(duration_second < 1); // we hope to be faster (for ibuprofen, consistently < 2ms)
+                                            // but 50ms/conformer is our "something is broken" alert level.
 
     }
 

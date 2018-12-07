@@ -1,6 +1,22 @@
-//
-// Created by eliane on 11/11/18.
-//
+/*
+ * Copyright (c) 2018 Eliane Briand
+ *
+ * This file is part of SmolDock.
+ *
+ * SmolDock is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * Foobar is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with Foobar.  If not, see <https://www.gnu.org/licenses/>.
+ *
+ */
 
 #ifndef SMOLDOCK_ATOM_H
 #define SMOLDOCK_ATOM_H
@@ -46,7 +62,16 @@ namespace SmolDock {
             chlorine = 17,
         };
 
-        /** Too many cases, for now we just store as-is in a string
+        enum class AtomVariant : unsigned int {
+            unknown = 0,
+            aromaticCarbon = 1,
+            aromaticNitrogen = 2,
+            sp3carbon = 3,
+            sp2carbon = 4,
+            sp1carbon = 5
+        };
+
+        /* Too many cases, for now we just store as-is in a string
         enum class AtomClassInResidue {
             unknown,
             C, O, N,
@@ -67,12 +92,12 @@ namespace SmolDock {
         */
 
 
-        /// Internal type <=> string conversion //////
+        // //// Internal type <=> string conversion //////
         friend std::string atomTypeToString(Atom::AtomType t);
 
         friend Atom::AtomType stringToAtomType(const std::string &symbol_or_name);
 
-        /// Constructors //////
+        // /// Constructors //////
 
         explicit Atom(AtomType t);
 
@@ -85,22 +110,25 @@ namespace SmolDock {
         Atom(const std::string &symbol_or_name, unsigned int id);
 
 
-        AtomType getType();
+        AtomType getAtomType();
+        void setAtomType(AtomType t);
+        std::string getTypeAsString();
 
-        std::string getTypeString();
+
+        AtomVariant getAtomVariant();
+        void setAtomVariant(AtomVariant v);
+
 
         unsigned int getAtomID();
+        void setAtomID(unsigned int id);
 
         std::weak_ptr<AminoAcid> getOwningAA();
-
         void setOwningAA(std::shared_ptr<AminoAcid> &aa);
 
         std::tuple<double, double, double> getAtomPosition();
-
         void setAtomPosition(std::tuple<double, double, double> pos);
 
         iAtom generateiAtom();
-
         void emplaceiAtom(iAtom &atom);
 
     protected:
@@ -109,6 +137,7 @@ namespace SmolDock {
 
     private:
         AtomType type;
+        AtomVariant variant;
 
         bool fromResidue = false;
         AminoAcid::AAType residueType = AminoAcid::AAType::heteroatom;

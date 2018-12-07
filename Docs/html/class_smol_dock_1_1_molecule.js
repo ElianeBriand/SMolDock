@@ -2,7 +2,7 @@ var class_smol_dock_1_1_molecule =
 [
     [ "Molecule", "class_smol_dock_1_1_molecule.html#a3a4a39128d64413d79d857bcbf790163", null ],
     [ "generateConformer", "class_smol_dock_1_1_molecule.html#a449f37f171474849ad896e33dfc9e2f4", null ],
-    [ "generateConformers", "class_smol_dock_1_1_molecule.html#a6ab21fc10e78b92b579aa871245a9c55", null ],
+    [ "generateConformers", "class_smol_dock_1_1_molecule.html#a2767177fabc41b3aeaa68c77d8addd1b", null ],
     [ "getInternalRWMol", "class_smol_dock_1_1_molecule.html#a8d3c96cb2b2014b96a5119ba1631272d", null ],
     [ "numberOfAtoms", "class_smol_dock_1_1_molecule.html#a7dc0c882da26261dcd2762429b07a3d4", null ],
     [ "numberOfBonds", "class_smol_dock_1_1_molecule.html#a8b1f02ad4e3b2ad991162668a61c2ddc", null ],

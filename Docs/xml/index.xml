@@ -119,6 +119,7 @@
     <member refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a046b6f9d1c856e1b38034388a8fb5f9f" kind="variable"><name>random_seed</name></member>
     <member refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a9bc1d216cf102c383444cb6f9955dfaa" kind="variable"><name>rnd_generator</name></member>
     <member refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a5a7a60763037a8d8b7c6c2a9defa512f" kind="variable"><name>rwmol</name></member>
+    <member refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a1db0509172face64ab20380bea166765" kind="variable"><name>viConformers</name></member>
     <member refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1aeb9358858c3af9c718c168dcff14f96b" kind="function"><name>ConformerRigidDockingEngine</name></member>
     <member refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1acd3b7345ecae8f0c92ca0168b794eac3" kind="function"><name>setDockingBox</name></member>
     <member refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1acf8082b5d9d68fc2cfe975ad62a2459f" kind="function"><name>setProtein</name></member>
@@ -144,6 +145,9 @@
   <compound refid="struct_smol_dock_1_1i_conformer" kind="struct"><name>SmolDock::iConformer</name>
     <member refid="struct_smol_dock_1_1i_conformer_1a18fd974857dffddf4b6233c7c5d70f94" kind="variable"><name>atoms_vect</name></member>
   </compound>
+  <compound refid="struct_smol_dock_1_1i_protein" kind="struct"><name>SmolDock::iProtein</name>
+    <member refid="struct_smol_dock_1_1i_protein_1a2a2bc12a606a78f7e37d88d1b2bcee1a" kind="variable"><name>atoms_vect</name></member>
+  </compound>
   <compound refid="class_smol_dock_1_1_engine_1_1_m_d_style_docking_engine" kind="class"><name>SmolDock::Engine::MDStyleDockingEngine</name>
     <member refid="class_smol_dock_1_1_engine_1_1_m_d_style_docking_engine_1af4a699e7e7768ed9168cdb86b0a016f7" kind="variable"><name>protein</name></member>
     <member refid="class_smol_dock_1_1_engine_1_1_m_d_style_docking_engine_1a84918732053b3811731fcbc8afc1d7ac" kind="variable"><name>ligand</name></member>
@@ -168,7 +172,7 @@
     <member refid="class_smol_dock_1_1_molecule_1a7dc0c882da26261dcd2762429b07a3d4" kind="function"><name>numberOfAtoms</name></member>
     <member refid="class_smol_dock_1_1_molecule_1a8b1f02ad4e3b2ad991162668a61c2ddc" kind="function"><name>numberOfBonds</name></member>
     <member refid="class_smol_dock_1_1_molecule_1a449f37f171474849ad896e33dfc9e2f4" kind="function"><name>generateConformer</name></member>
-    <member refid="class_smol_dock_1_1_molecule_1a6ab21fc10e78b92b579aa871245a9c55" kind="function"><name>generateConformers</name></member>
+    <member refid="class_smol_dock_1_1_molecule_1a2767177fabc41b3aeaa68c77d8addd1b" kind="function"><name>generateConformers</name></member>
   </compound>
   <compound refid="class_smol_dock_1_1_molecule_traversal" kind="class"><name>SmolDock::MoleculeTraversal</name>
     <member refid="class_smol_dock_1_1_molecule_traversal_1af59b1f0d101bf5aec1da5ba0442f6990" kind="variable"><name>molecule</name></member>
@@ -180,6 +184,9 @@
   <compound refid="class_smol_dock_1_1_protein" kind="class"><name>SmolDock::Protein</name>
     <member refid="class_smol_dock_1_1_protein_1ae0fe8b9c66bfa8032c93e0d8269fd561" kind="variable"><name>aminoacids</name></member>
     <member refid="class_smol_dock_1_1_protein_1a86e77c7079be2b4d3e1a8e3e53a4ce02" kind="variable"><name>heteroatoms</name></member>
+    <member refid="class_smol_dock_1_1_protein_1a3409e1f4c5789b7102e3941d030a1fc8" kind="variable"><name>center_x</name></member>
+    <member refid="class_smol_dock_1_1_protein_1a1b1d22d4cf7b2efa592904727cbc4318" kind="variable"><name>center_y</name></member>
+    <member refid="class_smol_dock_1_1_protein_1ae548b55999341c9b36325c79f8731de3" kind="variable"><name>center_z</name></member>
     <member refid="class_smol_dock_1_1_protein_1ae9cac74c19d706a93fb1e9d4929127a5" kind="function"><name>Protein</name></member>
     <member refid="class_smol_dock_1_1_protein_1a99399b7db2f1b78fea8076a137a4b962" kind="function"><name>populateFromPDB</name></member>
   </compound>
@@ -195,6 +202,9 @@
   </compound>
   <compound refid="namespace_smol_dock_1_1_engine" kind="namespace"><name>SmolDock::Engine</name>
   </compound>
+  <compound refid="namespace_smol_dock_1_1_score" kind="namespace"><name>SmolDock::Score</name>
+    <member refid="namespace_smol_dock_1_1_score_1afb989bd9d4f284d97692bd0d09116dfe" kind="function"><name>basic_scoring_func</name></member>
+  </compound>
   <compound refid="namespacestd" kind="namespace"><name>std</name>
   </compound>
   <compound refid="_abstract_docking_engine_8h" kind="file"><name>AbstractDockingEngine.h</name>
@@ -206,6 +216,10 @@
   <compound refid="_atom_8cpp" kind="file"><name>Atom.cpp</name>
   </compound>
   <compound refid="_atom_8h" kind="file"><name>Atom.h</name>
+  </compound>
+  <compound refid="_basic_scoring_function_8cpp" kind="file"><name>BasicScoringFunction.cpp</name>
+  </compound>
+  <compound refid="_basic_scoring_function_8h" kind="file"><name>BasicScoringFunction.h</name>
   </compound>
   <compound refid="_bond_8cpp" kind="file"><name>Bond.cpp</name>
   </compound>
@@ -231,8 +245,11 @@
   </compound>
   <compound refid="i_conformer_8h" kind="file"><name>iConformer.h</name>
   </compound>
+  <compound refid="i_protein_8cpp" kind="file"><name>iProtein.cpp</name>
+  </compound>
+  <compound refid="i_protein_8h" kind="file"><name>iProtein.h</name>
+  </compound>
   <compound refid="main_8cpp" kind="file"><name>main.cpp</name>
-    <member refid="main_8cpp_1a1f832f93fb04cee3c2f3880839262d4b" kind="define"><name>SMOLDOCK_VERBOSE_DEBUG</name></member>
     <member refid="main_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4" kind="function"><name>main</name></member>
   </compound>
   <compound refid="_m_d_style_docking_engine_8cpp" kind="file"><name>MDStyleDockingEngine.cpp</name>
@@ -255,6 +272,9 @@
   </compound>
   <compound refid="_structure_8h" kind="file"><name>Structure.h</name>
   </compound>
+  <compound refid="_timings_log_8h" kind="file"><name>TimingsLog.h</name>
+    <member refid="_timings_log_8h_1a62116d86cc873a334e6356d259772681" kind="define"><name>record_timings</name></member>
+  </compound>
   <compound refid="_vina_compatible_docking_engine_8cpp" kind="file"><name>VinaCompatibleDockingEngine.cpp</name>
   </compound>
   <compound refid="_vina_compatible_docking_engine_8h" kind="file"><name>VinaCompatibleDockingEngine.h</name>
@@ -266,6 +286,8 @@
   <compound refid="dir_238e222dc7cada3799d91028ff67fcc5" kind="dir"><name>Internals</name>
   </compound>
   <compound refid="dir_e31d196e87a16ac78d16cd78ed204c3b" kind="dir"><name>Results</name>
+  </compound>
+  <compound refid="dir_3650502fa8aa3e7e7737709300d35155" kind="dir"><name>ScoringFunctions</name>
   </compound>
   <compound refid="dir_29b6d8349828f3fd4c784faff1564e9a" kind="dir"><name>Structures</name>
   </compound>

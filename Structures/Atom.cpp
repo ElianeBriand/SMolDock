@@ -1,6 +1,22 @@
-//
-// Created by eliane on 11/11/18.
-//
+/*
+ * Copyright (c) 2018 Eliane Briand
+ *
+ * This file is part of SmolDock.
+ *
+ * SmolDock is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * Foobar is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with Foobar.  If not, see <https://www.gnu.org/licenses/>.
+ *
+ */
 
 #include "Atom.h"
 
@@ -45,7 +61,7 @@ namespace SmolDock {
     }
 
 
-    Atom::AtomType Atom::getType() {
+    Atom::AtomType Atom::getAtomType() {
         return type;
     }
 
@@ -53,7 +69,7 @@ namespace SmolDock {
         return AtomID;
     }
 
-    std::string Atom::getTypeString() {
+    std::string Atom::getTypeAsString() {
         return atomTypeToString(type);
     }
 
@@ -123,5 +139,27 @@ namespace SmolDock {
         atom.y = this->y;
         atom.z = this->z;
     }
+
+    void Atom::setAtomType(Atom::AtomType t) {
+        this->type = t;
+    }
+
+    Atom::AtomVariant Atom::getAtomVariant()
+    {
+        return this->variant;
+    }
+
+    void Atom::setAtomVariant(AtomVariant v)
+    {
+        this->variant = v;
+    }
+
+
+    void Atom::setAtomID(unsigned int id)
+    {
+        this->AtomID = id;
+    }
+
+
 
 }

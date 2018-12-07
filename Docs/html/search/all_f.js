@@ -1,6 +1,7 @@
 var searchData=
 [
   ['engine',['Engine',['../namespace_smol_dock_1_1_engine.html',1,'SmolDock']]],
+  ['score',['Score',['../namespace_smol_dock_1_1_score.html',1,'SmolDock']]],
   ['selenocysteine',['selenocysteine',['../class_smol_dock_1_1_amino_acid.html#a08692b12e7f53812c5258bd8b805875daac3d9bd0eff79f662bcecac7c2887384',1,'SmolDock::AminoAcid']]],
   ['serine',['serine',['../class_smol_dock_1_1_amino_acid.html#a08692b12e7f53812c5258bd8b805875daa693d5166186d99ae683963032f44119',1,'SmolDock::AminoAcid']]],
   ['setatomposition',['setAtomPosition',['../class_smol_dock_1_1_atom.html#ae4b0b82523de139bd84ec27b62faa333',1,'SmolDock::Atom']]],
@@ -15,7 +16,6 @@ var searchData=
   ['singlebond',['singlebond',['../class_smol_dock_1_1_bond.html#a6cbf152f682501c998bd06a55400c9cfaccd9d70d0e74b128e8fdd74b302934f1',1,'SmolDock::Bond']]],
   ['smiles',['smiles',['../class_smol_dock_1_1_molecule.html#a59288faa4bbacab2959858b398cb459e',1,'SmolDock::Molecule']]],
   ['smoldock',['SmolDock',['../namespace_smol_dock.html',1,'']]],
-  ['smoldock_5fverbose_5fdebug',['SMOLDOCK_VERBOSE_DEBUG',['../main_8cpp.html#a1f832f93fb04cee3c2f3880839262d4b',1,'main.cpp']]],
   ['solventexposed',['solventExposed',['../class_smol_dock_1_1_engine_1_1_abstract_docking_engine.html#aca703508a3ce31d577d3ec108020789ba546fe0111d10555811e641851eaf2dea',1,'SmolDock::Engine::AbstractDockingEngine']]],
   ['sphere',['sphere',['../class_smol_dock_1_1_engine_1_1_abstract_docking_engine.html#a8147cf906368466da87fa439d537bf62a34248a9bfcbd589d9b5fccb6a0ac6963',1,'SmolDock::Engine::AbstractDockingEngine']]],
   ['stringtoatomtype',['stringToAtomType',['../class_smol_dock_1_1_atom.html#abe46f23e1f169949c8d3916b7e0ad38b',1,'SmolDock::Atom::stringToAtomType()'],['../namespace_smol_dock.html#ae559278f4b66ec9a09ddfaebb224f897',1,'SmolDock::stringToAtomType()']]],

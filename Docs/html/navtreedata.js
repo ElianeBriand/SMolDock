@@ -24,9 +24,12 @@ for the JavaScript code in this file
 var NAVTREE =
 [
   [ "SmolDock", "index.html", [
-    [ "Namespace Members", "namespacemembers.html", [
-      [ "All", "namespacemembers.html", null ],
-      [ "Functions", "namespacemembers_func.html", null ]
+    [ "Namespaces", "namespaces.html", [
+      [ "Namespace List", "namespaces.html", "namespaces_dup" ],
+      [ "Namespace Members", "namespacemembers.html", [
+        [ "All", "namespacemembers.html", null ],
+        [ "Functions", "namespacemembers_func.html", null ]
+      ] ]
     ] ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
@@ -55,7 +58,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_abstract_docking_engine_8h.html",
-"namespace_smol_dock_1_1_engine.html"
+"i_atom_8h.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

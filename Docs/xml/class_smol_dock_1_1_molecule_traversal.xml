@@ -94,62 +94,62 @@
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
-      <node id="90">
+      <node id="104">
         <label>SmolDock::MoleculeTraversal</label>
         <link refid="class_smol_dock_1_1_molecule_traversal"/>
-        <childnode refid="91" relation="usage">
+        <childnode refid="105" relation="usage">
           <edgelabel>-molecule</edgelabel>
         </childnode>
-        <childnode refid="98" relation="usage">
+        <childnode refid="112" relation="usage">
           <edgelabel>-already_visited_atoms</edgelabel>
         </childnode>
       </node>
-      <node id="95">
+      <node id="109">
         <label>T</label>
       </node>
-      <node id="91">
+      <node id="105">
         <label>SmolDock::Molecule</label>
         <link refid="class_smol_dock_1_1_molecule"/>
-        <childnode refid="92" relation="private-inheritance">
+        <childnode refid="106" relation="private-inheritance">
         </childnode>
-        <childnode refid="93" relation="usage">
+        <childnode refid="107" relation="usage">
           <edgelabel>-bonds</edgelabel>
         </childnode>
-        <childnode refid="96" relation="usage">
+        <childnode refid="110" relation="usage">
           <edgelabel>-smiles</edgelabel>
         </childnode>
-        <childnode refid="98" relation="usage">
+        <childnode refid="112" relation="usage">
           <edgelabel>-atoms</edgelabel>
         </childnode>
       </node>
-      <node id="93">
+      <node id="107">
         <label>std::vector&lt; std::shared_ptr&lt; SmolDock::Bond &gt; &gt;</label>
-        <childnode refid="94" relation="template-instance">
+        <childnode refid="108" relation="template-instance">
           <edgelabel>&lt; std::shared_ptr&lt; SmolDock::Bond &gt; &gt;</edgelabel>
         </childnode>
       </node>
-      <node id="94">
+      <node id="108">
         <label>std::vector&lt; T &gt;</label>
-        <childnode refid="95" relation="usage">
+        <childnode refid="109" relation="usage">
           <edgelabel>+elements</edgelabel>
         </childnode>
       </node>
-      <node id="92">
+      <node id="106">
         <label>SmolDock::Structure</label>
         <link refid="class_smol_dock_1_1_structure"/>
       </node>
-      <node id="97">
+      <node id="111">
         <label>std::basic_string&lt; char &gt;</label>
       </node>
-      <node id="98">
+      <node id="112">
         <label>std::vector&lt; std::shared_ptr&lt; SmolDock::Atom &gt; &gt;</label>
-        <childnode refid="94" relation="template-instance">
+        <childnode refid="108" relation="template-instance">
           <edgelabel>&lt; std::shared_ptr&lt; SmolDock::Atom &gt; &gt;</edgelabel>
         </childnode>
       </node>
-      <node id="96">
+      <node id="110">
         <label>std::string</label>
-        <childnode refid="97" relation="public-inheritance">
+        <childnode refid="111" relation="public-inheritance">
         </childnode>
       </node>
     </collaborationgraph>

@@ -89,13 +89,13 @@ ADD_LIBRARY(smoldock_object OBJECT ${SOURCE_LIST})
 add_compile_definitions(SMOLDOCK_VERBOSE_DEBUG)
 
 add_executable(smoldock Frontends/main.cpp $<TARGET_OBJECTS:smoldock_object>)
-set_target_properties(smoldock PROPERTIES LINK_FLAGS "  -lboost_system -static  ")
+set_target_properties(smoldock PROPERTIES LINK_FLAGS " -static  ")
 
 
 TARGET_LINK_LIBRARIES(smoldock ${RDKIT_LINKAGE_LIST})
 
 
-target_link_libraries(smoldock gsl gslcblas)
+target_link_libraries(smoldock gsl gslcblas boost_log boost_system boost_filesystem boost_date_time boost_thread boost_regex)
 target_link_libraries(smoldock Vc)
 
 
@@ -118,5 +118,5 @@ target_link_libraries(main_test_suite ${Boost_LIBRARIES} boost_unit_test_framewo
 TARGET_LINK_LIBRARIES(main_test_suite ${RDKIT_LINKAGE_LIST})
 
 
-target_link_libraries(main_test_suite gsl gslcblas)
+target_link_libraries(main_test_suite gsl gslcblas boost_log boost_system boost_log boost_system boost_filesystem boost_date_time boost_thread boost_regex)
 target_link_libraries(main_test_suite Vc)

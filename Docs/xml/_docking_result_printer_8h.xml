@@ -8,42 +8,42 @@
     <includedby refid="_docking_result_printer_8cpp" local="yes">DockingResultPrinter.cpp</includedby>
     <includedby refid="main_8cpp" local="yes">main.cpp</includedby>
     <incdepgraph>
-      <node id="249">
+      <node id="268">
         <label>../Structures/Results/DockingResult.h</label>
         <link refid="_docking_result_8h"/>
       </node>
-      <node id="247">
+      <node id="266">
         <label>iostream</label>
       </node>
-      <node id="246">
+      <node id="265">
         <label>DockingResultPrinter.h</label>
         <link refid="_docking_result_printer_8h"/>
-        <childnode refid="247" relation="include">
+        <childnode refid="266" relation="include">
         </childnode>
-        <childnode refid="248" relation="include">
+        <childnode refid="267" relation="include">
         </childnode>
-        <childnode refid="249" relation="include">
+        <childnode refid="268" relation="include">
         </childnode>
       </node>
-      <node id="248">
+      <node id="267">
         <label>memory</label>
       </node>
     </incdepgraph>
     <invincdepgraph>
-      <node id="252">
+      <node id="271">
         <label>main.cpp</label>
         <link refid="main_8cpp"/>
       </node>
-      <node id="251">
+      <node id="270">
         <label>DockingResultPrinter.cpp</label>
         <link refid="_docking_result_printer_8cpp"/>
       </node>
-      <node id="250">
+      <node id="269">
         <label>DockingResultPrinter.h</label>
         <link refid="_docking_result_printer_8h"/>
-        <childnode refid="251" relation="include">
+        <childnode refid="270" relation="include">
         </childnode>
-        <childnode refid="252" relation="include">
+        <childnode refid="271" relation="include">
         </childnode>
       </node>
     </invincdepgraph>

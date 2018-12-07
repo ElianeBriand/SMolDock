@@ -17,7 +17,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="Structures/Protein.h" line="31" column="1" bodyfile="Structures/Protein.h" bodystart="31" bodyend="-1"/>
-        <referencedby refid="class_smol_dock_1_1_protein_1a99399b7db2f1b78fea8076a137a4b962" compoundref="_protein_8cpp" startline="11" endline="97">populateFromPDB</referencedby>
+        <referencedby refid="class_smol_dock_1_1_protein_1a99399b7db2f1b78fea8076a137a4b962" compoundref="_protein_8cpp" startline="11" endline="124">populateFromPDB</referencedby>
       </memberdef>
       <memberdef kind="variable" id="class_smol_dock_1_1_protein_1a86e77c7079be2b4d3e1a8e3e53a4ce02" prot="private" static="no" mutable="no">
         <type>std::vector&lt; std::shared_ptr&lt; <ref refid="class_smol_dock_1_1_atom" kindref="compound">Atom</ref> &gt; &gt;</type>
@@ -31,7 +31,52 @@
         <inbodydescription>
         </inbodydescription>
         <location file="Structures/Protein.h" line="32" column="1" bodyfile="Structures/Protein.h" bodystart="32" bodyend="-1"/>
-        <referencedby refid="class_smol_dock_1_1_protein_1a99399b7db2f1b78fea8076a137a4b962" compoundref="_protein_8cpp" startline="11" endline="97">populateFromPDB</referencedby>
+        <referencedby refid="class_smol_dock_1_1_protein_1a99399b7db2f1b78fea8076a137a4b962" compoundref="_protein_8cpp" startline="11" endline="124">populateFromPDB</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_smol_dock_1_1_protein_1a3409e1f4c5789b7102e3941d030a1fc8" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double SmolDock::Protein::center_x</definition>
+        <argsstring></argsstring>
+        <name>center_x</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Structures/Protein.h" line="34" column="1" bodyfile="Structures/Protein.h" bodystart="34" bodyend="-1"/>
+        <referencedby refid="class_smol_dock_1_1_protein_1a99399b7db2f1b78fea8076a137a4b962" compoundref="_protein_8cpp" startline="11" endline="124">populateFromPDB</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_smol_dock_1_1_protein_1a1b1d22d4cf7b2efa592904727cbc4318" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double SmolDock::Protein::center_y</definition>
+        <argsstring></argsstring>
+        <name>center_y</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Structures/Protein.h" line="35" column="1" bodyfile="Structures/Protein.h" bodystart="35" bodyend="-1"/>
+        <referencedby refid="class_smol_dock_1_1_protein_1a99399b7db2f1b78fea8076a137a4b962" compoundref="_protein_8cpp" startline="11" endline="124">populateFromPDB</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_smol_dock_1_1_protein_1ae548b55999341c9b36325c79f8731de3" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double SmolDock::Protein::center_z</definition>
+        <argsstring></argsstring>
+        <name>center_z</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Structures/Protein.h" line="36" column="1" bodyfile="Structures/Protein.h" bodystart="36" bodyend="-1"/>
+        <referencedby refid="class_smol_dock_1_1_protein_1a99399b7db2f1b78fea8076a137a4b962" compoundref="_protein_8cpp" startline="11" endline="124">populateFromPDB</referencedby>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -63,12 +108,15 @@
         </detaileddescription>
         <inbodydescription>
 <para>For reference purpose, the hierarchy of the PDB file reading is : System (defined by ESBTL, like input filter in some ways) Model (PDB-file specification : more or less, protein) Chain (Amino acid chain) Residue (=Amino acid) <ref refid="class_smol_dock_1_1_atom" kindref="compound">Atom</ref></para><para>Heteroatoms (Cl, or crystallographic ions) are mixed in at the residue level. We detect those if residueName is not in {set of defined residueName} TODO : Differentiate between legit biological ions (metalloprotein, ...) and crystallographic heavy atoms</para>        </inbodydescription>
-        <location file="Structures/Protein.h" line="28" column="1" bodyfile="Structures/Protein.cpp" bodystart="11" bodyend="97"/>
+        <location file="Structures/Protein.h" line="28" column="1" bodyfile="Structures/Protein.cpp" bodystart="11" bodyend="124"/>
         <references refid="class_smol_dock_1_1_protein_1ae0fe8b9c66bfa8032c93e0d8269fd561" compoundref="_protein_8h" startline="31">aminoacids</references>
+        <references refid="class_smol_dock_1_1_protein_1a3409e1f4c5789b7102e3941d030a1fc8" compoundref="_protein_8h" startline="34">center_x</references>
+        <references refid="class_smol_dock_1_1_protein_1a1b1d22d4cf7b2efa592904727cbc4318" compoundref="_protein_8h" startline="35">center_y</references>
+        <references refid="class_smol_dock_1_1_protein_1ae548b55999341c9b36325c79f8731de3" compoundref="_protein_8h" startline="36">center_z</references>
         <references refid="class_smol_dock_1_1_protein_1a86e77c7079be2b4d3e1a8e3e53a4ce02" compoundref="_protein_8h" startline="32">heteroatoms</references>
         <references refid="namespace_smol_dock_1a788f9308991cdf8fe5af07b27ff0f389" compoundref="_amino_acid_8cpp" startline="59" endline="73">SmolDock::stringToResType</references>
         <references refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875daad921d60486366258809553a3db49a4a">SmolDock::AminoAcid::unknown</references>
-        <referencedby refid="main_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4" compoundref="main_8cpp" startline="37" endline="88">main</referencedby>
+        <referencedby refid="main_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4" compoundref="main_8cpp" startline="13" endline="64">main</referencedby>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -76,59 +124,62 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="100">
+      <node id="114">
         <label>SmolDock::Structure</label>
         <link refid="class_smol_dock_1_1_structure"/>
       </node>
-      <node id="99">
+      <node id="113">
         <label>SmolDock::Protein</label>
         <link refid="class_smol_dock_1_1_protein"/>
-        <childnode refid="100" relation="private-inheritance">
+        <childnode refid="114" relation="private-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="105">
+      <node id="119">
         <label>T</label>
       </node>
-      <node id="104">
+      <node id="118">
         <label>std::vector&lt; T &gt;</label>
-        <childnode refid="105" relation="usage">
+        <childnode refid="119" relation="usage">
           <edgelabel>+elements</edgelabel>
         </childnode>
       </node>
-      <node id="103">
+      <node id="117">
         <label>std::vector&lt; std::shared_ptr&lt; SmolDock::AminoAcid &gt; &gt;</label>
-        <childnode refid="104" relation="template-instance">
+        <childnode refid="118" relation="template-instance">
           <edgelabel>&lt; std::shared_ptr&lt; SmolDock::AminoAcid &gt; &gt;</edgelabel>
         </childnode>
       </node>
-      <node id="102">
+      <node id="116">
         <label>SmolDock::Structure</label>
         <link refid="class_smol_dock_1_1_structure"/>
       </node>
-      <node id="101">
+      <node id="115">
         <label>SmolDock::Protein</label>
         <link refid="class_smol_dock_1_1_protein"/>
-        <childnode refid="102" relation="private-inheritance">
+        <childnode refid="116" relation="private-inheritance">
         </childnode>
-        <childnode refid="103" relation="usage">
+        <childnode refid="117" relation="usage">
           <edgelabel>-aminoacids</edgelabel>
         </childnode>
-        <childnode refid="106" relation="usage">
+        <childnode refid="120" relation="usage">
           <edgelabel>-heteroatoms</edgelabel>
         </childnode>
       </node>
-      <node id="106">
+      <node id="120">
         <label>std::vector&lt; std::shared_ptr&lt; SmolDock::Atom &gt; &gt;</label>
-        <childnode refid="104" relation="template-instance">
+        <childnode refid="118" relation="template-instance">
           <edgelabel>&lt; std::shared_ptr&lt; SmolDock::Atom &gt; &gt;</edgelabel>
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="Structures/Protein.h" line="23" column="1" bodyfile="Structures/Protein.h" bodystart="23" bodyend="34"/>
+    <location file="Structures/Protein.h" line="23" column="1" bodyfile="Structures/Protein.h" bodystart="23" bodyend="38"/>
     <listofallmembers>
       <member refid="class_smol_dock_1_1_protein_1ae0fe8b9c66bfa8032c93e0d8269fd561" prot="private" virt="non-virtual"><scope>SmolDock::Protein</scope><name>aminoacids</name></member>
+      <member refid="class_smol_dock_1_1_protein_1a3409e1f4c5789b7102e3941d030a1fc8" prot="private" virt="non-virtual"><scope>SmolDock::Protein</scope><name>center_x</name></member>
+      <member refid="class_smol_dock_1_1_protein_1a1b1d22d4cf7b2efa592904727cbc4318" prot="private" virt="non-virtual"><scope>SmolDock::Protein</scope><name>center_y</name></member>
+      <member refid="class_smol_dock_1_1_protein_1ae548b55999341c9b36325c79f8731de3" prot="private" virt="non-virtual"><scope>SmolDock::Protein</scope><name>center_z</name></member>
       <member refid="class_smol_dock_1_1_protein_1a86e77c7079be2b4d3e1a8e3e53a4ce02" prot="private" virt="non-virtual"><scope>SmolDock::Protein</scope><name>heteroatoms</name></member>
       <member refid="class_smol_dock_1_1_protein_1a99399b7db2f1b78fea8076a137a4b962" prot="public" virt="non-virtual"><scope>SmolDock::Protein</scope><name>populateFromPDB</name></member>
       <member refid="class_smol_dock_1_1_protein_1ae9cac74c19d706a93fb1e9d4929127a5" prot="public" virt="non-virtual"><scope>SmolDock::Protein</scope><name>Protein</name></member>

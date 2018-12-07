@@ -1,7 +1,27 @@
-//
-// Created by eliane on 11/11/18.
-//
+/*
+ * Copyright (c) 2018 Eliane Briand
+ *
+ * This file is part of SmolDock.
+ *
+ * SmolDock is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * Foobar is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with Foobar.  If not, see <https://www.gnu.org/licenses/>.
+ *
+ */
+
 #include <memory>
+#include <boost/log/trivial.hpp>
+
+#include <Utilities/TimingsLog.h>
 
 #include "Protein.h"
 #include "Atom.h"
@@ -9,6 +29,7 @@
 namespace SmolDock {
 
     bool Protein::populateFromPDB(const std::string &filename) {
+
 
 
         // Read all non-water atoms/stuff and water in two separate system
@@ -105,15 +126,14 @@ namespace SmolDock {
 
 
                 //Consider only the first model of the first system
-                std::cout << "    Loaded : " << filename << "\n    --> " << total_nb_model << " models, "
+                BOOST_LOG_TRIVIAL(info) << "Loaded : " << filename << "\n    --> " << total_nb_model << " models, "
                           << total_nb_chain << " chains, " << total_nb_residue << " residues, "
-                          << total_nb_atom << " atoms (" << total_nb_hetatm << " heteroatoms)." << std::endl;
+                          << total_nb_atom << " atoms (" << total_nb_hetatm << " heteroatoms).";
 
 #ifdef SMOLDOCK_VERBOSE_DEBUG
-                std::cout << "[D] Protein centered on : ("
+                BOOST_LOG_TRIVIAL(debug) << "Protein centered on : ("
                           << this->center_x << ", " << this->center_y << ", " <<   this->center_z << ") [n=" <<
-                          atom_processed_for_center << "]"
-                          << std::endl;
+                          atom_processed_for_center << "]";
 #endif
 
             }
@@ -121,6 +141,21 @@ namespace SmolDock {
             return false;
 
         return true;
+    }
+
+    iProtein Protein::getiProtein() {
+        iProtein prot;
+        auto vAtoms = std::make_unique< std::vector<iAtom> >();
+        prot.center_x = this->center_x;
+        prot.center_y = this->center_y;
+        prot.center_z = this->center_z;
+
+        for(auto residue: this->aminoacids)
+        {
+            //residue.fillThis(vAtoms);
+        }
+
+        return prot;
     }
 
 

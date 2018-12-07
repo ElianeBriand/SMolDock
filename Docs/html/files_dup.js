@@ -7,6 +7,8 @@ var files_dup =
     [ "AminoAcid.h", "_amino_acid_8h.html", "_amino_acid_8h" ],
     [ "Atom.cpp", "_atom_8cpp.html", "_atom_8cpp" ],
     [ "Atom.h", "_atom_8h.html", "_atom_8h" ],
+    [ "BasicScoringFunction.cpp", "_basic_scoring_function_8cpp.html", "_basic_scoring_function_8cpp" ],
+    [ "BasicScoringFunction.h", "_basic_scoring_function_8h.html", "_basic_scoring_function_8h" ],
     [ "Bond.cpp", "_bond_8cpp.html", null ],
     [ "Bond.h", "_bond_8h.html", [
       [ "Bond", "class_smol_dock_1_1_bond.html", "class_smol_dock_1_1_bond" ]
@@ -17,7 +19,7 @@ var files_dup =
     ] ],
     [ "DockingResult.cpp", "_docking_result_8cpp.html", null ],
     [ "DockingResult.h", "_docking_result_8h.html", [
-      [ "DockingResult", "class_smol_dock_1_1_docking_result.html", null ]
+      [ "DockingResult", "namespace_smol_dock.html#class_smol_dock_1_1_docking_result", null ]
     ] ],
     [ "DockingResultPrinter.cpp", "_docking_result_printer_8cpp.html", null ],
     [ "DockingResultPrinter.h", "_docking_result_printer_8h.html", [
@@ -25,11 +27,24 @@ var files_dup =
     ] ],
     [ "iAtom.cpp", "i_atom_8cpp.html", null ],
     [ "iAtom.h", "i_atom_8h.html", [
-      [ "iAtom", "struct_smol_dock_1_1i_atom.html", "struct_smol_dock_1_1i_atom" ]
+      [ "iAtom", "namespace_smol_dock.html#struct_smol_dock_1_1i_atom", [
+        [ "atomicNum", "namespace_smol_dock.html#a671e7d72c54e461a7719c94705ee6103", null ],
+        [ "x", "namespace_smol_dock.html#a9c2f9dadec039f72274d46b4292240ae", null ],
+        [ "y", "namespace_smol_dock.html#aed903239c438c1304b7e3c68d10d41e1", null ],
+        [ "z", "namespace_smol_dock.html#a7164b26142f6b8022af89d4ab1c32687", null ]
+      ] ]
     ] ],
     [ "iConformer.cpp", "i_conformer_8cpp.html", null ],
     [ "iConformer.h", "i_conformer_8h.html", [
-      [ "iConformer", "struct_smol_dock_1_1i_conformer.html", "struct_smol_dock_1_1i_conformer" ]
+      [ "iConformer", "namespace_smol_dock.html#struct_smol_dock_1_1i_conformer", [
+        [ "atoms_vect", "namespace_smol_dock.html#a18fd974857dffddf4b6233c7c5d70f94", null ]
+      ] ]
+    ] ],
+    [ "iProtein.cpp", "i_protein_8cpp.html", null ],
+    [ "iProtein.h", "i_protein_8h.html", [
+      [ "iProtein", "namespace_smol_dock.html#struct_smol_dock_1_1i_protein", [
+        [ "atoms_vect", "namespace_smol_dock.html#a2a2bc12a606a78f7e37d88d1b2bcee1a", null ]
+      ] ]
     ] ],
     [ "main.cpp", "main_8cpp.html", "main_8cpp" ],
     [ "MDStyleDockingEngine.cpp", "_m_d_style_docking_engine_8cpp.html", null ],
@@ -52,6 +67,7 @@ var files_dup =
     [ "Structure.h", "_structure_8h.html", [
       [ "Structure", "class_smol_dock_1_1_structure.html", null ]
     ] ],
+    [ "TimingsLog.h", "_timings_log_8h.html", "_timings_log_8h" ],
     [ "VinaCompatibleDockingEngine.cpp", "_vina_compatible_docking_engine_8cpp.html", null ],
     [ "VinaCompatibleDockingEngine.h", "_vina_compatible_docking_engine_8h.html", [
       [ "VinaCompatibleDockingEngine", "class_smol_dock_1_1_engine_1_1_vina_compatible_docking_engine.html", null ]
