@@ -20,6 +20,12 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script><script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -118,7 +124,7 @@ Private Attributes</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="_docking_result_printer_8h_source.html#l00015">15</a> of file <a class="el" href="_docking_result_printer_8h_source.html">DockingResultPrinter.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_docking_result_printer_8h_source.html#l00031">31</a> of file <a class="el" href="_docking_result_printer_8h_source.html">DockingResultPrinter.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a0c4ac739b1ee30a044a8e289c541717f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0c4ac739b1ee30a044a8e289c541717f">&#9670;&nbsp;</a></span>DockingResultPrinter()</h2>
@@ -144,10 +150,10 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_docking_result_printer_8cpp_source.html#l00015">15</a> of file <a class="el" href="_docking_result_printer_8cpp_source.html">DockingResultPrinter.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_docking_result_printer_8cpp_source.html#l00031">31</a> of file <a class="el" href="_docking_result_printer_8cpp_source.html">DockingResultPrinter.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_docking_result_printer_8h_source.html#l00024">res</a>.</p>
-<div class="fragment"><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;                                                                                       {</div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        this-&gt;<a class="code" href="class_smol_dock_1_1_docking_result_printer.html#a7bd2f249617b1fcc7be8edb4e73bbd4f">res</a> = std::move(<a class="code" href="class_smol_dock_1_1_docking_result_printer.html#a7bd2f249617b1fcc7be8edb4e73bbd4f">res</a>);</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    }</div><div class="ttc" id="class_smol_dock_1_1_docking_result_printer_html_a7bd2f249617b1fcc7be8edb4e73bbd4f"><div class="ttname"><a href="class_smol_dock_1_1_docking_result_printer.html#a7bd2f249617b1fcc7be8edb4e73bbd4f">SmolDock::DockingResultPrinter::res</a></div><div class="ttdeci">std::shared_ptr&lt; SmolDock::DockingResult &gt; res</div><div class="ttdef"><b>Definition:</b> <a href="_docking_result_printer_8h_source.html#l00024">DockingResultPrinter.h:24</a></div></div>
+<p class="reference">References <a class="el" href="_docking_result_printer_8h_source.html#l00040">res</a>.</p>
+<div class="fragment"><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                                                                                       {</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        this-&gt;<a class="code" href="class_smol_dock_1_1_docking_result_printer.html#a7bd2f249617b1fcc7be8edb4e73bbd4f">res</a> = std::move(<a class="code" href="class_smol_dock_1_1_docking_result_printer.html#a7bd2f249617b1fcc7be8edb4e73bbd4f">res</a>);</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    }</div><div class="ttc" id="class_smol_dock_1_1_docking_result_printer_html_a7bd2f249617b1fcc7be8edb4e73bbd4f"><div class="ttname"><a href="class_smol_dock_1_1_docking_result_printer.html#a7bd2f249617b1fcc7be8edb4e73bbd4f">SmolDock::DockingResultPrinter::res</a></div><div class="ttdeci">std::shared_ptr&lt; SmolDock::DockingResult &gt; res</div><div class="ttdef"><b>Definition:</b> <a href="_docking_result_printer_8h_source.html#l00040">DockingResultPrinter.h:40</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -167,8 +173,8 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_docking_result_printer_8cpp_source.html#l00011">11</a> of file <a class="el" href="_docking_result_printer_8cpp_source.html">DockingResultPrinter.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;                                              {</div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    }</div></div><!-- fragment --><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<p class="definition">Definition at line <a class="el" href="_docking_result_printer_8cpp_source.html#l00027">27</a> of file <a class="el" href="_docking_result_printer_8cpp_source.html">DockingResultPrinter.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                                              {</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    }</div></div><!-- fragment --><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
@@ -202,7 +208,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_docking_result_printer_8h_source.html#l00024">24</a> of file <a class="el" href="_docking_result_printer_8h_source.html">DockingResultPrinter.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_docking_result_printer_8h_source.html#l00040">40</a> of file <a class="el" href="_docking_result_printer_8h_source.html">DockingResultPrinter.h</a>.</p>
 
 </div>
 </div>

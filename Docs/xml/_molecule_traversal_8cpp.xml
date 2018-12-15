@@ -5,145 +5,152 @@
     <includes local="no">iostream</includes>
     <includes refid="_molecule_traversal_8h" local="yes">MoleculeTraversal.h</includes>
     <incdepgraph>
-      <node id="495">
+      <node id="516">
         <label>GraphMol/RWMol.h</label>
       </node>
-      <node id="496">
+      <node id="517">
         <label>GraphMol/MolOps.h</label>
       </node>
-      <node id="498">
+      <node id="519">
         <label>GraphMol/Substruct/SubstructMatch.h</label>
       </node>
-      <node id="499">
+      <node id="520">
         <label>GraphMol/DistGeomHelpers/Embedder.h</label>
       </node>
-      <node id="506">
+      <node id="527">
         <label>string</label>
       </node>
-      <node id="501">
+      <node id="522">
         <label>Atom.h</label>
         <link refid="_atom_8h"/>
-        <childnode refid="493" relation="include">
+        <childnode refid="514" relation="include">
         </childnode>
-        <childnode refid="502" relation="include">
+        <childnode refid="523" relation="include">
         </childnode>
-        <childnode refid="503" relation="include">
+        <childnode refid="524" relation="include">
         </childnode>
-        <childnode refid="504" relation="include">
+        <childnode refid="525" relation="include">
         </childnode>
-        <childnode refid="490" relation="include">
+        <childnode refid="511" relation="include">
         </childnode>
-        <childnode refid="505" relation="include">
+        <childnode refid="526" relation="include">
         </childnode>
-        <childnode refid="508" relation="include">
+      </node>
+      <node id="530">
+        <label>map</label>
+      </node>
+      <node id="532">
+        <label>../Engines/Internals/iConformer.h</label>
+        <link refid="i_conformer_8h"/>
+        <childnode refid="514" relation="include">
+        </childnode>
+        <childnode refid="523" relation="include">
+        </childnode>
+      </node>
+      <node id="531">
+        <label>Bond.h</label>
+        <link refid="_bond_8h"/>
+        <childnode refid="523" relation="include">
+        </childnode>
+        <childnode refid="522" relation="include">
         </childnode>
       </node>
       <node id="510">
-        <label>../Engines/Internals/iConformer.h</label>
-        <link refid="i_conformer_8h"/>
-        <childnode refid="493" relation="include">
-        </childnode>
-        <childnode refid="502" relation="include">
-        </childnode>
-        <childnode refid="508" relation="include">
-        </childnode>
-      </node>
-      <node id="508">
-        <label>../Engines/Internals/iAtom.h</label>
-        <link refid="i_atom_8h"/>
-      </node>
-      <node id="509">
-        <label>Bond.h</label>
-        <link refid="_bond_8h"/>
-        <childnode refid="502" relation="include">
-        </childnode>
-        <childnode refid="501" relation="include">
-        </childnode>
-      </node>
-      <node id="489">
         <label>MoleculeTraversal.cpp</label>
         <link refid="_molecule_traversal_8cpp"/>
-        <childnode refid="490" relation="include">
+        <childnode refid="511" relation="include">
         </childnode>
-        <childnode refid="491" relation="include">
+        <childnode refid="512" relation="include">
         </childnode>
       </node>
-      <node id="491">
+      <node id="512">
         <label>MoleculeTraversal.h</label>
         <link refid="_molecule_traversal_8h"/>
-        <childnode refid="492" relation="include">
+        <childnode refid="513" relation="include">
         </childnode>
-        <childnode refid="501" relation="include">
+        <childnode refid="522" relation="include">
         </childnode>
       </node>
-      <node id="505">
+      <node id="526">
         <label>AminoAcid.h</label>
         <link refid="_amino_acid_8h"/>
-        <childnode refid="506" relation="include">
+        <childnode refid="527" relation="include">
         </childnode>
-        <childnode refid="493" relation="include">
+        <childnode refid="514" relation="include">
         </childnode>
-        <childnode refid="503" relation="include">
+        <childnode refid="524" relation="include">
         </childnode>
-        <childnode refid="504" relation="include">
+        <childnode refid="525" relation="include">
         </childnode>
-        <childnode refid="507" relation="include">
+        <childnode refid="528" relation="include">
         </childnode>
-        <childnode refid="502" relation="include">
+        <childnode refid="523" relation="include">
+        </childnode>
+        <childnode refid="529" relation="include">
         </childnode>
       </node>
-      <node id="507">
+      <node id="528">
         <label>tuple</label>
       </node>
-      <node id="493">
+      <node id="529">
+        <label>Engines/Internals/iProtein.h</label>
+        <link refid="i_protein_8h"/>
+        <childnode refid="514" relation="include">
+        </childnode>
+        <childnode refid="523" relation="include">
+        </childnode>
+        <childnode refid="530" relation="include">
+        </childnode>
+      </node>
+      <node id="514">
         <label>vector</label>
       </node>
-      <node id="497">
+      <node id="518">
         <label>GraphMol/SmilesParse/SmilesParse.h</label>
       </node>
-      <node id="500">
+      <node id="521">
         <label>Structure.h</label>
         <link refid="_structure_8h"/>
       </node>
-      <node id="492">
+      <node id="513">
         <label>../Structures/Molecule.h</label>
         <link refid="_molecule_8h"/>
-        <childnode refid="493" relation="include">
+        <childnode refid="514" relation="include">
         </childnode>
-        <childnode refid="494" relation="include">
+        <childnode refid="515" relation="include">
         </childnode>
-        <childnode refid="495" relation="include">
+        <childnode refid="516" relation="include">
         </childnode>
-        <childnode refid="496" relation="include">
+        <childnode refid="517" relation="include">
         </childnode>
-        <childnode refid="497" relation="include">
+        <childnode refid="518" relation="include">
         </childnode>
-        <childnode refid="498" relation="include">
+        <childnode refid="519" relation="include">
         </childnode>
-        <childnode refid="499" relation="include">
+        <childnode refid="520" relation="include">
         </childnode>
-        <childnode refid="500" relation="include">
+        <childnode refid="521" relation="include">
         </childnode>
-        <childnode refid="501" relation="include">
+        <childnode refid="522" relation="include">
         </childnode>
-        <childnode refid="509" relation="include">
+        <childnode refid="531" relation="include">
         </childnode>
-        <childnode refid="510" relation="include">
+        <childnode refid="532" relation="include">
         </childnode>
       </node>
-      <node id="494">
+      <node id="515">
         <label>GraphMol/RDKitBase.h</label>
       </node>
-      <node id="490">
+      <node id="511">
         <label>iostream</label>
       </node>
-      <node id="503">
+      <node id="524">
         <label>set</label>
       </node>
-      <node id="504">
+      <node id="525">
         <label>algorithm</label>
       </node>
-      <node id="502">
+      <node id="523">
         <label>memory</label>
       </node>
     </incdepgraph>
@@ -153,62 +160,78 @@
     <detaileddescription>
     </detaileddescription>
     <programlisting>
-<codeline lineno="1"><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Created<sp/>by<sp/>eliane<sp/>on<sp/>11/11/18.</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="4"><highlight class="normal"></highlight></codeline>
-<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;iostream&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_molecule_traversal_8h" kindref="compound">MoleculeTraversal.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="7"><highlight class="normal"></highlight></codeline>
-<codeline lineno="8"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal"><ref refid="namespacestd" kindref="compound">std</ref>;</highlight></codeline>
-<codeline lineno="9"><highlight class="normal"></highlight></codeline>
-<codeline lineno="10"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_smol_dock" kindref="compound">SmolDock</ref><sp/>{</highlight></codeline>
-<codeline lineno="11"><highlight class="normal"></highlight></codeline>
-<codeline lineno="12"><highlight class="normal"></highlight></codeline>
-<codeline lineno="13" refid="class_smol_dock_1_1_molecule_traversal_1a15164d24acfa7e7b5935ddc07e783aac" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>MoleculeTraversal::MoleculeTraversal(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_molecule" kindref="compound">Molecule</ref><sp/>&amp;mol)<sp/>:<sp/>molecule(mol)<sp/>{</highlight></codeline>
-<codeline lineno="14"><highlight class="normal"></highlight></codeline>
-<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="16"><highlight class="normal"></highlight></codeline>
-<codeline lineno="17" refid="class_smol_dock_1_1_molecule_traversal_1a430ae16c3c60897f4ec5412eb536fe45" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_molecule_traversal_1a430ae16c3c60897f4ec5412eb536fe45" kindref="member">MoleculeTraversal::traverse</ref>(shared_ptr&lt;Atom&gt;<sp/>a)<sp/>{</highlight></codeline>
-<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cout<sp/>&lt;&lt;<sp/>a-&gt;getAtomID()<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>a-&gt;getTypeString()<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>(&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>a-&gt;bonds.size()<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>bonds)&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>endl;</highlight></codeline>
-<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>&amp;bond:<sp/>a-&gt;bonds)<sp/>{</highlight></codeline>
-<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>b<sp/>=<sp/>bond.lock();</highlight></codeline>
-<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(b<sp/>==<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
-<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;MoleculeTraversal::traverse<sp/>:<sp/>Cant<sp/>lock<sp/>weak<sp/>ptr<sp/>(?)&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>endl;</highlight></codeline>
-<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>endA<sp/>=<sp/>b-&gt;getEndA();</highlight></codeline>
-<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>endB<sp/>=<sp/>b-&gt;getEndB();</highlight></codeline>
-<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>nonself_end<sp/>=<sp/>(endA<sp/>==<sp/>a)<sp/>?<sp/>endB<sp/>:<sp/>endA;<sp/></highlight><highlight class="comment">//<sp/>Which<sp/>end<sp/>of<sp/>the<sp/>bond<sp/>is<sp/>not<sp/>this<sp/>atom</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2018<sp/>Eliane<sp/>Briand</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>SmolDock.</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>SmolDock<sp/>is<sp/>free<sp/>software:<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or<sp/>modify</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>it<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>as<sp/>published<sp/>by</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>the<sp/>Free<sp/>Software<sp/>Foundation,<sp/>either<sp/>version<sp/>3<sp/>of<sp/>the<sp/>License,<sp/>or</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>(at<sp/>your<sp/>option)<sp/>any<sp/>later<sp/>version.</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>Foobar<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>but<sp/>WITHOUT<sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE.<sp/><sp/>See<sp/>the</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>for<sp/>more<sp/>details.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>along<sp/>with<sp/>Foobar.<sp/><sp/>If<sp/>not,<sp/>see<sp/>&lt;https://www.gnu.org/licenses/&gt;.</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;iostream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_molecule_traversal_8h" kindref="compound">MoleculeTraversal.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal"><ref refid="namespacestd" kindref="compound">std</ref>;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_smol_dock" kindref="compound">SmolDock</ref><sp/>{</highlight></codeline>
 <codeline lineno="27"><highlight class="normal"></highlight></codeline>
-<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>&amp;already_visited_atom:<sp/><ref refid="class_smol_dock_1_1_molecule_traversal_1a79631a26881095650a855b7ffb7b299e" kindref="member">already_visited_atoms</ref>)<sp/>{</highlight></codeline>
-<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(nonself_end<sp/>==<sp/>already_visited_atom)<sp/></highlight><highlight class="comment">//<sp/>already<sp/>visited</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">goto</highlight><highlight class="normal"><sp/>nextbond;<sp/></highlight><highlight class="comment">//<sp/>end<sp/>traversal,<sp/>go<sp/>to<sp/>next<sp/>iteration</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_molecule_traversal_1a79631a26881095650a855b7ffb7b299e" kindref="member">already_visited_atoms</ref>.push_back(a);</highlight></codeline>
-<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_molecule_traversal_1a430ae16c3c60897f4ec5412eb536fe45" kindref="member">traverse</ref>(nonself_end);<sp/></highlight><highlight class="comment">//<sp/>Continue<sp/>deeper</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>nextbond:;</highlight></codeline>
-<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="39"><highlight class="normal"></highlight></codeline>
-<codeline lineno="40" refid="class_smol_dock_1_1_molecule_traversal_1a4f5b4079ecf6cf8682f919f323eaf29a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_molecule_traversal_1a4f5b4079ecf6cf8682f919f323eaf29a" kindref="member">MoleculeTraversal::printTraversal</ref>()<sp/>{</highlight></codeline>
-<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;===<sp/>MoleculeTraversal<sp/>===&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>endl;</highlight></codeline>
-<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>n_of_atom<sp/>=<sp/><ref refid="class_smol_dock_1_1_molecule_traversal_1af59b1f0d101bf5aec1da5ba0442f6990" kindref="member">molecule</ref>.<ref refid="class_smol_dock_1_1_molecule_1a322259625da05c62925c705d8c4fb7c3" kindref="member">atoms</ref>.size();</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29" refid="class_smol_dock_1_1_molecule_traversal_1a15164d24acfa7e7b5935ddc07e783aac" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>MoleculeTraversal::MoleculeTraversal(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_molecule" kindref="compound">Molecule</ref><sp/>&amp;mol)<sp/>:<sp/>molecule(mol)<sp/>{</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33" refid="class_smol_dock_1_1_molecule_traversal_1a430ae16c3c60897f4ec5412eb536fe45" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_molecule_traversal_1a430ae16c3c60897f4ec5412eb536fe45" kindref="member">MoleculeTraversal::traverse</ref>(shared_ptr&lt;Atom&gt;<sp/>a)<sp/>{</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cout<sp/>&lt;&lt;<sp/>a-&gt;getAtomID()<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>a-&gt;getTypeAsString()<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>(&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>a-&gt;bonds.size()<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>bonds)&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>endl;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>&amp;bond:<sp/>a-&gt;bonds)<sp/>{</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>b<sp/>=<sp/>bond.lock();</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(b<sp/>==<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;MoleculeTraversal::traverse<sp/>:<sp/>Cant<sp/>lock<sp/>weak<sp/>ptr<sp/>(?)&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>endl;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>endA<sp/>=<sp/>b-&gt;getEndA();</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>endB<sp/>=<sp/>b-&gt;getEndB();</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>nonself_end<sp/>=<sp/>(endA<sp/>==<sp/>a)<sp/>?<sp/>endB<sp/>:<sp/>endA;<sp/></highlight><highlight class="comment">//<sp/>Which<sp/>end<sp/>of<sp/>the<sp/>bond<sp/>is<sp/>not<sp/>this<sp/>atom</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="43"><highlight class="normal"></highlight></codeline>
-<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(n_of_atom<sp/>==<sp/>0)<sp/>{</highlight></codeline>
-<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Empty<sp/>molecule&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>endl;</highlight></codeline>
-<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;===<sp/>END<sp/>===&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>endl;</highlight></codeline>
-<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="48"><highlight class="normal"></highlight></codeline>
-<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="50"><highlight class="normal"></highlight></codeline>
-<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>first_atom<sp/>=<sp/><ref refid="class_smol_dock_1_1_molecule_traversal_1af59b1f0d101bf5aec1da5ba0442f6990" kindref="member">molecule</ref>.<ref refid="class_smol_dock_1_1_molecule_1a322259625da05c62925c705d8c4fb7c3" kindref="member">atoms</ref>[0];</highlight></codeline>
-<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_molecule_traversal_1a430ae16c3c60897f4ec5412eb536fe45" kindref="member">traverse</ref>(first_atom);</highlight></codeline>
-<codeline lineno="53"><highlight class="normal"></highlight></codeline>
-<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;===<sp/>END<sp/>===&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>endl;</highlight></codeline>
-<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="56"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>&amp;already_visited_atom:<sp/><ref refid="class_smol_dock_1_1_molecule_traversal_1a79631a26881095650a855b7ffb7b299e" kindref="member">already_visited_atoms</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(nonself_end<sp/>==<sp/>already_visited_atom)<sp/></highlight><highlight class="comment">//<sp/>already<sp/>visited</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">goto</highlight><highlight class="normal"><sp/>nextbond;<sp/></highlight><highlight class="comment">//<sp/>end<sp/>traversal,<sp/>go<sp/>to<sp/>next<sp/>iteration</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_molecule_traversal_1a79631a26881095650a855b7ffb7b299e" kindref="member">already_visited_atoms</ref>.push_back(a);</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_molecule_traversal_1a430ae16c3c60897f4ec5412eb536fe45" kindref="member">traverse</ref>(nonself_end);<sp/></highlight><highlight class="comment">//<sp/>Continue<sp/>deeper</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>nextbond:;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56" refid="class_smol_dock_1_1_molecule_traversal_1a4f5b4079ecf6cf8682f919f323eaf29a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_molecule_traversal_1a4f5b4079ecf6cf8682f919f323eaf29a" kindref="member">MoleculeTraversal::printTraversal</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;===<sp/>MoleculeTraversal<sp/>===&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>endl;</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>n_of_atom<sp/>=<sp/><ref refid="class_smol_dock_1_1_molecule_traversal_1af59b1f0d101bf5aec1da5ba0442f6990" kindref="member">molecule</ref>.<ref refid="class_smol_dock_1_1_molecule_1a322259625da05c62925c705d8c4fb7c3" kindref="member">atoms</ref>.size();</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(n_of_atom<sp/>==<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Empty<sp/>molecule&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>endl;</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;===<sp/>END<sp/>===&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>endl;</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>first_atom<sp/>=<sp/><ref refid="class_smol_dock_1_1_molecule_traversal_1af59b1f0d101bf5aec1da5ba0442f6990" kindref="member">molecule</ref>.<ref refid="class_smol_dock_1_1_molecule_1a322259625da05c62925c705d8c4fb7c3" kindref="member">atoms</ref>[0];</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_molecule_traversal_1a430ae16c3c60897f4ec5412eb536fe45" kindref="member">traverse</ref>(first_atom);</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;===<sp/>END<sp/>===&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>endl;</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="72"><highlight class="normal">}</highlight></codeline>
     </programlisting>
     <location file="Utilities/MoleculeTraversal.cpp"/>
   </compounddef>

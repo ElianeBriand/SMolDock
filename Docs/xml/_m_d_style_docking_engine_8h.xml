@@ -7,152 +7,9 @@
     <includes refid="_molecule_8h" local="yes">../Structures/Molecule.h</includes>
     <includedby refid="_m_d_style_docking_engine_8cpp" local="yes">MDStyleDockingEngine.cpp</includedby>
     <incdepgraph>
-      <node id="407">
+      <node id="423">
         <label>../Structures/Protein.h</label>
         <link refid="_protein_8h"/>
-        <childnode refid="408" relation="include">
-        </childnode>
-        <childnode refid="409" relation="include">
-        </childnode>
-        <childnode refid="410" relation="include">
-        </childnode>
-        <childnode refid="411" relation="include">
-        </childnode>
-        <childnode refid="412" relation="include">
-        </childnode>
-        <childnode refid="413" relation="include">
-        </childnode>
-        <childnode refid="414" relation="include">
-        </childnode>
-        <childnode refid="415" relation="include">
-        </childnode>
-      </node>
-      <node id="410">
-        <label>ESBTL/default.h</label>
-      </node>
-      <node id="423">
-        <label>GraphMol/RWMol.h</label>
-      </node>
-      <node id="405">
-        <label>MDStyleDockingEngine.h</label>
-        <link refid="_m_d_style_docking_engine_8h"/>
-        <childnode refid="406" relation="include">
-        </childnode>
-        <childnode refid="407" relation="include">
-        </childnode>
-        <childnode refid="421" relation="include">
-        </childnode>
-      </node>
-      <node id="424">
-        <label>GraphMol/MolOps.h</label>
-      </node>
-      <node id="426">
-        <label>GraphMol/Substruct/SubstructMatch.h</label>
-      </node>
-      <node id="427">
-        <label>GraphMol/DistGeomHelpers/Embedder.h</label>
-      </node>
-      <node id="416">
-        <label>string</label>
-      </node>
-      <node id="413">
-        <label>ESBTL/compressed_ifstream.h</label>
-      </node>
-      <node id="428">
-        <label>Atom.h</label>
-        <link refid="_atom_8h"/>
-        <childnode refid="408" relation="include">
-        </childnode>
-        <childnode refid="409" relation="include">
-        </childnode>
-        <childnode refid="417" relation="include">
-        </childnode>
-        <childnode refid="418" relation="include">
-        </childnode>
-        <childnode refid="429" relation="include">
-        </childnode>
-        <childnode refid="415" relation="include">
-        </childnode>
-        <childnode refid="430" relation="include">
-        </childnode>
-      </node>
-      <node id="432">
-        <label>../Engines/Internals/iConformer.h</label>
-        <link refid="i_conformer_8h"/>
-        <childnode refid="408" relation="include">
-        </childnode>
-        <childnode refid="409" relation="include">
-        </childnode>
-        <childnode refid="430" relation="include">
-        </childnode>
-      </node>
-      <node id="430">
-        <label>../Engines/Internals/iAtom.h</label>
-        <link refid="i_atom_8h"/>
-      </node>
-      <node id="431">
-        <label>Bond.h</label>
-        <link refid="_bond_8h"/>
-        <childnode refid="409" relation="include">
-        </childnode>
-        <childnode refid="428" relation="include">
-        </childnode>
-      </node>
-      <node id="411">
-        <label>ESBTL/atom_classifier.h</label>
-      </node>
-      <node id="415">
-        <label>AminoAcid.h</label>
-        <link refid="_amino_acid_8h"/>
-        <childnode refid="416" relation="include">
-        </childnode>
-        <childnode refid="408" relation="include">
-        </childnode>
-        <childnode refid="417" relation="include">
-        </childnode>
-        <childnode refid="418" relation="include">
-        </childnode>
-        <childnode refid="419" relation="include">
-        </childnode>
-        <childnode refid="409" relation="include">
-        </childnode>
-      </node>
-      <node id="406">
-        <label>AbstractDockingEngine.h</label>
-        <link refid="_abstract_docking_engine_8h"/>
-        <childnode refid="407" relation="include">
-        </childnode>
-        <childnode refid="420" relation="include">
-        </childnode>
-        <childnode refid="421" relation="include">
-        </childnode>
-      </node>
-      <node id="420">
-        <label>../Structures/Results/DockingResult.h</label>
-        <link refid="_docking_result_8h"/>
-      </node>
-      <node id="419">
-        <label>tuple</label>
-      </node>
-      <node id="408">
-        <label>vector</label>
-      </node>
-      <node id="425">
-        <label>GraphMol/SmilesParse/SmilesParse.h</label>
-      </node>
-      <node id="414">
-        <label>Structure.h</label>
-        <link refid="_structure_8h"/>
-      </node>
-      <node id="421">
-        <label>../Structures/Molecule.h</label>
-        <link refid="_molecule_8h"/>
-        <childnode refid="408" relation="include">
-        </childnode>
-        <childnode refid="422" relation="include">
-        </childnode>
-        <childnode refid="423" relation="include">
-        </childnode>
         <childnode refid="424" relation="include">
         </childnode>
         <childnode refid="425" relation="include">
@@ -161,42 +18,194 @@
         </childnode>
         <childnode refid="427" relation="include">
         </childnode>
-        <childnode refid="414" relation="include">
-        </childnode>
         <childnode refid="428" relation="include">
         </childnode>
-        <childnode refid="431" relation="include">
+        <childnode refid="429" relation="include">
+        </childnode>
+        <childnode refid="430" relation="include">
         </childnode>
         <childnode refid="432" relation="include">
         </childnode>
+        <childnode refid="433" relation="include">
+        </childnode>
       </node>
-      <node id="422">
-        <label>GraphMol/RDKitBase.h</label>
+      <node id="426">
+        <label>ESBTL/default.h</label>
+      </node>
+      <node id="441">
+        <label>GraphMol/RWMol.h</label>
+      </node>
+      <node id="421">
+        <label>MDStyleDockingEngine.h</label>
+        <link refid="_m_d_style_docking_engine_8h"/>
+        <childnode refid="422" relation="include">
+        </childnode>
+        <childnode refid="423" relation="include">
+        </childnode>
+        <childnode refid="439" relation="include">
+        </childnode>
+      </node>
+      <node id="442">
+        <label>GraphMol/MolOps.h</label>
+      </node>
+      <node id="444">
+        <label>GraphMol/Substruct/SubstructMatch.h</label>
+      </node>
+      <node id="445">
+        <label>GraphMol/DistGeomHelpers/Embedder.h</label>
+      </node>
+      <node id="434">
+        <label>string</label>
       </node>
       <node id="429">
+        <label>ESBTL/compressed_ifstream.h</label>
+      </node>
+      <node id="446">
+        <label>Atom.h</label>
+        <link refid="_atom_8h"/>
+        <childnode refid="424" relation="include">
+        </childnode>
+        <childnode refid="425" relation="include">
+        </childnode>
+        <childnode refid="435" relation="include">
+        </childnode>
+        <childnode refid="436" relation="include">
+        </childnode>
+        <childnode refid="447" relation="include">
+        </childnode>
+        <childnode refid="433" relation="include">
+        </childnode>
+      </node>
+      <node id="431">
+        <label>map</label>
+      </node>
+      <node id="449">
+        <label>../Engines/Internals/iConformer.h</label>
+        <link refid="i_conformer_8h"/>
+        <childnode refid="424" relation="include">
+        </childnode>
+        <childnode refid="425" relation="include">
+        </childnode>
+      </node>
+      <node id="448">
+        <label>Bond.h</label>
+        <link refid="_bond_8h"/>
+        <childnode refid="425" relation="include">
+        </childnode>
+        <childnode refid="446" relation="include">
+        </childnode>
+      </node>
+      <node id="427">
+        <label>ESBTL/atom_classifier.h</label>
+      </node>
+      <node id="433">
+        <label>AminoAcid.h</label>
+        <link refid="_amino_acid_8h"/>
+        <childnode refid="434" relation="include">
+        </childnode>
+        <childnode refid="424" relation="include">
+        </childnode>
+        <childnode refid="435" relation="include">
+        </childnode>
+        <childnode refid="436" relation="include">
+        </childnode>
+        <childnode refid="437" relation="include">
+        </childnode>
+        <childnode refid="425" relation="include">
+        </childnode>
+        <childnode refid="430" relation="include">
+        </childnode>
+      </node>
+      <node id="422">
+        <label>AbstractDockingEngine.h</label>
+        <link refid="_abstract_docking_engine_8h"/>
+        <childnode refid="423" relation="include">
+        </childnode>
+        <childnode refid="438" relation="include">
+        </childnode>
+        <childnode refid="439" relation="include">
+        </childnode>
+      </node>
+      <node id="438">
+        <label>../Structures/Results/DockingResult.h</label>
+        <link refid="_docking_result_8h"/>
+      </node>
+      <node id="437">
+        <label>tuple</label>
+      </node>
+      <node id="430">
+        <label>Engines/Internals/iProtein.h</label>
+        <link refid="i_protein_8h"/>
+        <childnode refid="424" relation="include">
+        </childnode>
+        <childnode refid="425" relation="include">
+        </childnode>
+        <childnode refid="431" relation="include">
+        </childnode>
+      </node>
+      <node id="424">
+        <label>vector</label>
+      </node>
+      <node id="443">
+        <label>GraphMol/SmilesParse/SmilesParse.h</label>
+      </node>
+      <node id="432">
+        <label>Structure.h</label>
+        <link refid="_structure_8h"/>
+      </node>
+      <node id="439">
+        <label>../Structures/Molecule.h</label>
+        <link refid="_molecule_8h"/>
+        <childnode refid="424" relation="include">
+        </childnode>
+        <childnode refid="440" relation="include">
+        </childnode>
+        <childnode refid="441" relation="include">
+        </childnode>
+        <childnode refid="442" relation="include">
+        </childnode>
+        <childnode refid="443" relation="include">
+        </childnode>
+        <childnode refid="444" relation="include">
+        </childnode>
+        <childnode refid="445" relation="include">
+        </childnode>
+        <childnode refid="432" relation="include">
+        </childnode>
+        <childnode refid="446" relation="include">
+        </childnode>
+        <childnode refid="448" relation="include">
+        </childnode>
+        <childnode refid="449" relation="include">
+        </childnode>
+      </node>
+      <node id="440">
+        <label>GraphMol/RDKitBase.h</label>
+      </node>
+      <node id="447">
         <label>iostream</label>
       </node>
-      <node id="417">
+      <node id="435">
         <label>set</label>
       </node>
-      <node id="418">
+      <node id="436">
         <label>algorithm</label>
       </node>
-      <node id="412">
+      <node id="428">
         <label>ESBTL/weighted_atom_iterator.h</label>
       </node>
-      <node id="409">
+      <node id="425">
         <label>memory</label>
       </node>
     </incdepgraph>
     <invincdepgraph>
-      <node id="433">
+      <node id="450">
         <label>MDStyleDockingEngine.h</label>
         <link refid="_m_d_style_docking_engine_8h"/>
-        <childnode refid="434" relation="include">
+        <childnode refid="451" relation="include">
         </childnode>
       </node>
-      <node id="434">
+      <node id="451">
         <label>MDStyleDockingEngine.cpp</label>
         <link refid="_m_d_style_docking_engine_8cpp"/>
       </node>
@@ -208,50 +217,66 @@
     <detaileddescription>
     </detaileddescription>
     <programlisting>
-<codeline lineno="1"><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Created<sp/>by<sp/>eliane<sp/>on<sp/>25/11/18.</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="4"><highlight class="normal"></highlight></codeline>
-<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>SMOLDOCK_MDSTYLEDOCKINGENGINE_H</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SMOLDOCK_MDSTYLEDOCKINGENGINE_H</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="7"><highlight class="normal"></highlight></codeline>
-<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_abstract_docking_engine_8h" kindref="compound">AbstractDockingEngine.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../Structures/Protein.h&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../Structures/Molecule.h&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="11"><highlight class="normal"></highlight></codeline>
-<codeline lineno="12"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_smol_dock_1_1_engine" kindref="compound">SmolDock::Engine</ref><sp/>{</highlight></codeline>
-<codeline lineno="13"><highlight class="normal"></highlight></codeline>
-<codeline lineno="14" refid="class_smol_dock_1_1_engine_1_1_m_d_style_docking_engine" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_smol_dock_1_1_engine_1_1_m_d_style_docking_engine" kindref="compound">MDStyleDockingEngine</ref><sp/>:<sp/><ref refid="class_smol_dock_1_1_engine_1_1_abstract_docking_engine" kindref="compound">AbstractDockingEngine</ref><sp/>{</highlight></codeline>
-<codeline lineno="15"><highlight class="normal"></highlight></codeline>
-<codeline lineno="16"><highlight class="normal"></highlight></codeline>
-<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_engine_1_1_m_d_style_docking_engine_1ab57bcb44b2a6ab6ab0619ff1f0d7d4a7" kindref="member">MDStyleDockingEngine</ref>()<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2018<sp/>Eliane<sp/>Briand</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>SmolDock.</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>SmolDock<sp/>is<sp/>free<sp/>software:<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or<sp/>modify</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>it<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>as<sp/>published<sp/>by</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>the<sp/>Free<sp/>Software<sp/>Foundation,<sp/>either<sp/>version<sp/>3<sp/>of<sp/>the<sp/>License,<sp/>or</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>(at<sp/>your<sp/>option)<sp/>any<sp/>later<sp/>version.</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>Foobar<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>but<sp/>WITHOUT<sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE.<sp/><sp/>See<sp/>the</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>for<sp/>more<sp/>details.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>along<sp/>with<sp/>Foobar.<sp/><sp/>If<sp/>not,<sp/>see<sp/>&lt;https://www.gnu.org/licenses/&gt;.</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="20"><highlight class="normal"></highlight></codeline>
-<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_engine_1_1_m_d_style_docking_engine_1aa06062e9afec77d49ab596d1111c5f43" kindref="member">setProtein</ref>(<ref refid="class_smol_dock_1_1_protein" kindref="compound">Protein</ref><sp/>*p)<sp/></highlight><highlight class="keyword">final</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="22"><highlight class="normal"></highlight></codeline>
-<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_engine_1_1_m_d_style_docking_engine_1a95f5c470d1f93881a3759933e57af559" kindref="member">setLigand</ref>(<ref refid="class_smol_dock_1_1_molecule" kindref="compound">Molecule</ref><sp/>*m)<sp/></highlight><highlight class="keyword">final</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="24"><highlight class="normal"></highlight></codeline>
-<codeline lineno="25"><highlight class="normal"></highlight></codeline>
-<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_engine_1_1_m_d_style_docking_engine_1a6de740c49189cf41d2c48f2e8e98e391" kindref="member">setDockingBox</ref>(<ref refid="class_smol_dock_1_1_engine_1_1_abstract_docking_engine_1aca703508a3ce31d577d3ec108020789b" kindref="member">DockingBoxSetting</ref><sp/>setting)<sp/></highlight><highlight class="keyword">final</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>SMOLDOCK_MDSTYLEDOCKINGENGINE_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SMOLDOCK_MDSTYLEDOCKINGENGINE_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_abstract_docking_engine_8h" kindref="compound">AbstractDockingEngine.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../Structures/Protein.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../Structures/Molecule.h&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="27"><highlight class="normal"></highlight></codeline>
-<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_engine_1_1_m_d_style_docking_engine_1a47f1e2b66b5fd02861d8aa35395c5434" kindref="member">setupDockingEngine</ref>()<sp/></highlight><highlight class="keyword">final</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_smol_dock_1_1_engine" kindref="compound">SmolDock::Engine</ref><sp/>{</highlight></codeline>
 <codeline lineno="29"><highlight class="normal"></highlight></codeline>
-<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_engine_1_1_m_d_style_docking_engine_1a0c4fd010b82335202f1fa05ee35a199c" kindref="member">runDockingEngine</ref>()<sp/></highlight><highlight class="keyword">final</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="30" refid="class_smol_dock_1_1_engine_1_1_m_d_style_docking_engine" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_smol_dock_1_1_engine_1_1_m_d_style_docking_engine" kindref="compound">MDStyleDockingEngine</ref><sp/>:<sp/><ref refid="class_smol_dock_1_1_engine_1_1_abstract_docking_engine" kindref="compound">AbstractDockingEngine</ref><sp/>{</highlight></codeline>
 <codeline lineno="31"><highlight class="normal"></highlight></codeline>
-<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::shared_ptr&lt;DockingResult&gt;<sp/><ref refid="class_smol_dock_1_1_engine_1_1_m_d_style_docking_engine_1ad5532459022278236d9afa6d0dd7b544" kindref="member">getDockingResult</ref>()<sp/></highlight><highlight class="keyword">final</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="33"><highlight class="normal"></highlight></codeline>
-<codeline lineno="34"><highlight class="normal"></highlight></codeline>
-<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_engine_1_1_m_d_style_docking_engine_1ab57bcb44b2a6ab6ab0619ff1f0d7d4a7" kindref="member">MDStyleDockingEngine</ref>()<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
 <codeline lineno="36"><highlight class="normal"></highlight></codeline>
-<codeline lineno="37" refid="class_smol_dock_1_1_engine_1_1_m_d_style_docking_engine_1af4a699e7e7768ed9168cdb86b0a016f7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_protein" kindref="compound">Protein</ref><sp/>*<ref refid="class_smol_dock_1_1_engine_1_1_m_d_style_docking_engine_1af4a699e7e7768ed9168cdb86b0a016f7" kindref="member">protein</ref><sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="38" refid="class_smol_dock_1_1_engine_1_1_m_d_style_docking_engine_1a84918732053b3811731fcbc8afc1d7ac" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_molecule" kindref="compound">Molecule</ref><sp/>*<ref refid="class_smol_dock_1_1_engine_1_1_m_d_style_docking_engine_1a84918732053b3811731fcbc8afc1d7ac" kindref="member">ligand</ref><sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="39"><highlight class="normal"></highlight></codeline>
-<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_engine_1_1_m_d_style_docking_engine_1aa06062e9afec77d49ab596d1111c5f43" kindref="member">setProtein</ref>(<ref refid="class_smol_dock_1_1_protein" kindref="compound">Protein</ref><sp/>*p)<sp/></highlight><highlight class="keyword">final</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_engine_1_1_m_d_style_docking_engine_1a95f5c470d1f93881a3759933e57af559" kindref="member">setLigand</ref>(<ref refid="class_smol_dock_1_1_molecule" kindref="compound">Molecule</ref><sp/>*m)<sp/></highlight><highlight class="keyword">final</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
 <codeline lineno="41"><highlight class="normal"></highlight></codeline>
-<codeline lineno="42"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_engine_1_1_m_d_style_docking_engine_1a6de740c49189cf41d2c48f2e8e98e391" kindref="member">setDockingBox</ref>(<ref refid="class_smol_dock_1_1_engine_1_1_abstract_docking_engine_1aca703508a3ce31d577d3ec108020789b" kindref="member">DockingBoxSetting</ref><sp/>setting)<sp/></highlight><highlight class="keyword">final</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="43"><highlight class="normal"></highlight></codeline>
-<codeline lineno="44"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//SMOLDOCK_MDSTYLEDOCKINGENGINE_H</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_engine_1_1_m_d_style_docking_engine_1a47f1e2b66b5fd02861d8aa35395c5434" kindref="member">setupDockingEngine</ref>()<sp/></highlight><highlight class="keyword">final</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_engine_1_1_m_d_style_docking_engine_1a0c4fd010b82335202f1fa05ee35a199c" kindref="member">runDockingEngine</ref>()<sp/></highlight><highlight class="keyword">final</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::shared_ptr&lt;DockingResult&gt;<sp/><ref refid="class_smol_dock_1_1_engine_1_1_m_d_style_docking_engine_1ad5532459022278236d9afa6d0dd7b544" kindref="member">getDockingResult</ref>()<sp/></highlight><highlight class="keyword">final</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53" refid="class_smol_dock_1_1_engine_1_1_m_d_style_docking_engine_1af4a699e7e7768ed9168cdb86b0a016f7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_protein" kindref="compound">Protein</ref><sp/>*<ref refid="class_smol_dock_1_1_engine_1_1_m_d_style_docking_engine_1af4a699e7e7768ed9168cdb86b0a016f7" kindref="member">protein</ref><sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="54" refid="class_smol_dock_1_1_engine_1_1_m_d_style_docking_engine_1a84918732053b3811731fcbc8afc1d7ac" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_molecule" kindref="compound">Molecule</ref><sp/>*<ref refid="class_smol_dock_1_1_engine_1_1_m_d_style_docking_engine_1a84918732053b3811731fcbc8afc1d7ac" kindref="member">ligand</ref><sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//SMOLDOCK_MDSTYLEDOCKINGENGINE_H</highlight></codeline>
     </programlisting>
     <location file="Engines/MDStyleDockingEngine.h"/>
   </compounddef>

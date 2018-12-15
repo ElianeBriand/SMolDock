@@ -49,7 +49,7 @@ int main() {
     console_logger->set_formatter([](boost::log::record_view const& rec, boost::log::formatting_ostream& strm) {
         if(rec[boost::log::trivial::severity] == boost::log::trivial::trace)
         {
-            strm << " T  "; //         use TRACE_LOG();
+            strm << " T  "; //         use TRACE_LOG(); macro for auto file:line:function
         }else if(rec[boost::log::trivial::severity] == boost::log::trivial::debug)
         {
             strm << "{D} ";
@@ -77,12 +77,12 @@ int main() {
     mol.populateFromSMILES("CC(C)Cc1ccc(cc1)[C@@H](C)C(=O)O"); // Ibuprofen
 
 
-    SmolDock::Engine::ConformerRigidDockingEngine docker(100); // Use 100 conformers for docking
+    SmolDock::Engine::ConformerRigidDockingEngine docker(10); // Use 10 conformers for docking
 
     docker.setProtein(&prot);
     docker.setLigand(&mol);
     docker.setDockingBox(SmolDock::Engine::AbstractDockingEngine::DockingBoxSetting::everything);
-    docker.setRandomSeed(3984);
+    docker.setRandomSeed(3985);
 
     if (!docker.setupDockingEngine()) {
         BOOST_LOG_TRIVIAL(error) << "Error while setting up engine";

@@ -20,6 +20,12 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script><script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -109,7 +115,7 @@ $(document).ready(function(){initNavTree('class_smol_dock_1_1_atom.html','');});
 <div class="center"><img src="class_smol_dock_1_1_atom__coll__graph.png" border="0" usemap="#_smol_dock_1_1_atom_coll__map" alt="Collaboration graph"/></div>
 <map name="_smol_dock_1_1_atom_coll__map" id="_smol_dock_1_1_atom_coll__map">
 <area shape="rect" id="node2" title="STL class. " alt="" coords="29,491,109,568"/>
-<area shape="rect" id="node8" href="class_smol_dock_1_1_amino_acid.html" title="{SmolDock::AminoAcid\n|&#45; type\l|+ AminoAcid()\l+ AminoAcid()\l}" alt="" coords="306,737,461,829"/>
+<area shape="rect" id="node8" href="class_smol_dock_1_1_amino_acid.html" title="{SmolDock::AminoAcid\n|&#45; type\l&#45; AAId\l|+ AminoAcid()\l+ AminoAcid()\l+ getAAId()\l+ setAAId()\l+ filliProtein()\l}" alt="" coords="306,752,461,903"/>
 <area shape="rect" id="node3" title="STL class. " alt="" coords="5,226,132,318"/>
 <area shape="rect" id="node5" title="STL class. " alt="" coords="218,233,317,311"/>
 <area shape="rect" id="node10" title="STL class. " alt="" coords="592,233,708,311"/>
@@ -132,6 +138,17 @@ Public Types</h2></td></tr>
 <br />
  }</td></tr>
 <tr class="separator:a57e9a532fd04e1846c0d83edebb9fd41"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77191f0919af58d733764e229cb1f973"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_smol_dock_1_1_atom.html#a77191f0919af58d733764e229cb1f973">AtomVariant</a> : unsigned int { <br />
+&#160;&#160;<a class="el" href="class_smol_dock_1_1_atom.html#a77191f0919af58d733764e229cb1f973aad921d60486366258809553a3db49a4a">AtomVariant::unknown</a> = 0, 
+<a class="el" href="class_smol_dock_1_1_atom.html#a77191f0919af58d733764e229cb1f973ae5ea25494bf7929c31404acb4d159ecb">AtomVariant::aromaticCarbon</a> = 1, 
+<a class="el" href="class_smol_dock_1_1_atom.html#a77191f0919af58d733764e229cb1f973a241861a1dfbbc92233d711bfa34e15d9">AtomVariant::aromaticNitrogen</a> = 2, 
+<a class="el" href="class_smol_dock_1_1_atom.html#a77191f0919af58d733764e229cb1f973aaa2ddc8a4ba81c550a95435991e2e75c">AtomVariant::sp3carbon</a> = 3, 
+<br />
+&#160;&#160;<a class="el" href="class_smol_dock_1_1_atom.html#a77191f0919af58d733764e229cb1f973a3fba3c7feaf9a1409328b29db90d0c36">AtomVariant::sp2carbon</a> = 4, 
+<a class="el" href="class_smol_dock_1_1_atom.html#a77191f0919af58d733764e229cb1f973ac5879e15d7caf9ac2db3a10a035a3cf4">AtomVariant::sp1carbon</a> = 5
+<br />
+ }</td></tr>
+<tr class="separator:a77191f0919af58d733764e229cb1f973"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -143,12 +160,24 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a6d8ef00ed712a00a3c6d0827faf6ff9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a500f60cb0b8dac0c64bc44187dc90d41"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_smol_dock_1_1_atom.html#a500f60cb0b8dac0c64bc44187dc90d41">Atom</a> (const std::string &amp;symbol_or_name, unsigned int id)</td></tr>
 <tr class="separator:a500f60cb0b8dac0c64bc44187dc90d41"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9f42fafbe3cd76da61edaf6a10876f2c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_smol_dock_1_1_atom.html#a57e9a532fd04e1846c0d83edebb9fd41">AtomType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_smol_dock_1_1_atom.html#a9f42fafbe3cd76da61edaf6a10876f2c">getType</a> ()</td></tr>
-<tr class="separator:a9f42fafbe3cd76da61edaf6a10876f2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a66de652129ef16355da3dfcc3ae566e3"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_smol_dock_1_1_atom.html#a66de652129ef16355da3dfcc3ae566e3">getTypeString</a> ()</td></tr>
-<tr class="separator:a66de652129ef16355da3dfcc3ae566e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b8315564e06bdc911053320fd3fa1a7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_smol_dock_1_1_atom.html#a57e9a532fd04e1846c0d83edebb9fd41">AtomType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_smol_dock_1_1_atom.html#a6b8315564e06bdc911053320fd3fa1a7">getAtomType</a> ()</td></tr>
+<tr class="separator:a6b8315564e06bdc911053320fd3fa1a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2adf89fbf4618bd294318062e198db66"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_smol_dock_1_1_atom.html#a2adf89fbf4618bd294318062e198db66">setAtomType</a> (<a class="el" href="class_smol_dock_1_1_atom.html#a57e9a532fd04e1846c0d83edebb9fd41">AtomType</a> t)</td></tr>
+<tr class="separator:a2adf89fbf4618bd294318062e198db66"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c58bed07491a0ad9e674d399f2ff888"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_smol_dock_1_1_atom.html#a5c58bed07491a0ad9e674d399f2ff888">getTypeAsString</a> ()</td></tr>
+<tr class="separator:a5c58bed07491a0ad9e674d399f2ff888"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7cd7a34817ac20e79ede418d6896ff48"><td class="memItemLeft" align="right" valign="top">unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_smol_dock_1_1_atom.html#a7cd7a34817ac20e79ede418d6896ff48">getAtomicNumber</a> ()</td></tr>
+<tr class="separator:a7cd7a34817ac20e79ede418d6896ff48"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a145bc96b3b410ea87a62baeb8b83f127"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_smol_dock_1_1_atom.html#a77191f0919af58d733764e229cb1f973">AtomVariant</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_smol_dock_1_1_atom.html#a145bc96b3b410ea87a62baeb8b83f127">getAtomVariant</a> ()</td></tr>
+<tr class="separator:a145bc96b3b410ea87a62baeb8b83f127"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa538e302c6c9e6cafbb9f0cbefce3a4e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_smol_dock_1_1_atom.html#aa538e302c6c9e6cafbb9f0cbefce3a4e">setAtomVariant</a> (<a class="el" href="class_smol_dock_1_1_atom.html#a77191f0919af58d733764e229cb1f973">AtomVariant</a> v)</td></tr>
+<tr class="separator:aa538e302c6c9e6cafbb9f0cbefce3a4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6436039c9775c1662be2c3691c2785a9"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_smol_dock_1_1_atom.html#a6436039c9775c1662be2c3691c2785a9">getAtomVariantAsUnderlyingType</a> ()</td></tr>
+<tr class="separator:a6436039c9775c1662be2c3691c2785a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a62d7246b7a8f3d6aa1aa63c9d5a86ed3"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_smol_dock_1_1_atom.html#a62d7246b7a8f3d6aa1aa63c9d5a86ed3">getAtomID</a> ()</td></tr>
 <tr class="separator:a62d7246b7a8f3d6aa1aa63c9d5a86ed3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4cd5cf6de8ed5b8254270eb2d7ccd81"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_smol_dock_1_1_atom.html#ae4cd5cf6de8ed5b8254270eb2d7ccd81">setAtomID</a> (unsigned int id)</td></tr>
+<tr class="separator:ae4cd5cf6de8ed5b8254270eb2d7ccd81"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeb93666d6868e72e846ecad7b1927b04"><td class="memItemLeft" align="right" valign="top">std::weak_ptr&lt; <a class="el" href="class_smol_dock_1_1_amino_acid.html">AminoAcid</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_smol_dock_1_1_atom.html#aeb93666d6868e72e846ecad7b1927b04">getOwningAA</a> ()</td></tr>
 <tr class="separator:aeb93666d6868e72e846ecad7b1927b04"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad4afec1a1299201398d64daaf874857f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_smol_dock_1_1_atom.html#ad4afec1a1299201398d64daaf874857f">setOwningAA</a> (std::shared_ptr&lt; <a class="el" href="class_smol_dock_1_1_amino_acid.html">AminoAcid</a> &gt; &amp;aa)</td></tr>
@@ -157,10 +186,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a9b7e3a83a87f3934edb0f15929f923bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae4b0b82523de139bd84ec27b62faa333"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_smol_dock_1_1_atom.html#ae4b0b82523de139bd84ec27b62faa333">setAtomPosition</a> (std::tuple&lt; double, double, double &gt; pos)</td></tr>
 <tr class="separator:ae4b0b82523de139bd84ec27b62faa333"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9de7744f2ea4b8f273f9005c60f42999"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_smol_dock.html#struct_smol_dock_1_1i_atom">iAtom</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_smol_dock_1_1_atom.html#a9de7744f2ea4b8f273f9005c60f42999">generateiAtom</a> ()</td></tr>
-<tr class="separator:a9de7744f2ea4b8f273f9005c60f42999"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7dede98478cab4cf7b6e6462d3886bd2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_smol_dock_1_1_atom.html#a7dede98478cab4cf7b6e6462d3886bd2">emplaceiAtom</a> (<a class="el" href="namespace_smol_dock.html#struct_smol_dock_1_1i_atom">iAtom</a> &amp;atom)</td></tr>
-<tr class="separator:a7dede98478cab4cf7b6e6462d3886bd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3933f5afa403001d87526a52a0f4c4b5"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_smol_dock_1_1_atom.html#a3933f5afa403001d87526a52a0f4c4b5">getAtomicRadius</a> ()</td></tr>
+<tr class="separator:a3933f5afa403001d87526a52a0f4c4b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba38aa3f004111483f078e97b8e34bd6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_smol_dock_1_1_atom.html#aba38aa3f004111483f078e97b8e34bd6">setAtomicRadius</a> (double r)</td></tr>
+<tr class="separator:aba38aa3f004111483f078e97b8e34bd6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -178,6 +207,8 @@ Protected Attributes</h2></td></tr>
 Private Attributes</h2></td></tr>
 <tr class="memitem:ab3867a9c2c98c5bb43ff4a6b7f1bf856"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_smol_dock_1_1_atom.html#a57e9a532fd04e1846c0d83edebb9fd41">AtomType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_smol_dock_1_1_atom.html#ab3867a9c2c98c5bb43ff4a6b7f1bf856">type</a></td></tr>
 <tr class="separator:ab3867a9c2c98c5bb43ff4a6b7f1bf856"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c54fdff29130e870237ba300a4e9d25"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_smol_dock_1_1_atom.html#a77191f0919af58d733764e229cb1f973">AtomVariant</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_smol_dock_1_1_atom.html#a0c54fdff29130e870237ba300a4e9d25">variant</a></td></tr>
+<tr class="separator:a0c54fdff29130e870237ba300a4e9d25"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa19d070c9951c67a4b1d4c5d80f2ee22"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_smol_dock_1_1_atom.html#aa19d070c9951c67a4b1d4c5d80f2ee22">fromResidue</a> = false</td></tr>
 <tr class="separator:aa19d070c9951c67a4b1d4c5d80f2ee22"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeb5bd3da13c5e16176931c19bb622d91"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_smol_dock_1_1_amino_acid.html#a08692b12e7f53812c5258bd8b805875d">AminoAcid::AAType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_smol_dock_1_1_atom.html#aeb5bd3da13c5e16176931c19bb622d91">residueType</a> = <a class="el" href="class_smol_dock_1_1_amino_acid.html#a08692b12e7f53812c5258bd8b805875dad390be0ae98a5c4a22ca9b0b7e726f40">AminoAcid::AAType::heteroatom</a></td></tr>
@@ -194,13 +225,15 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a253663ad700e72667d421f4d869798e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8f28d43131d21536269e220d6fa43f07"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_smol_dock_1_1_atom.html#a8f28d43131d21536269e220d6fa43f07">z</a></td></tr>
 <tr class="separator:a8f28d43131d21536269e220d6fa43f07"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d2c1ae04324600154ecd49c1b4a76c5"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_smol_dock_1_1_atom.html#a6d2c1ae04324600154ecd49c1b4a76c5">atomicRadius</a></td></tr>
+<tr class="separator:a6d2c1ae04324600154ecd49c1b4a76c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-attribs"></a>
 Static Private Attributes</h2></td></tr>
 <tr class="memitem:a699bf43dba89827d43019464a2a1507e"><td class="memItemLeft" align="right" valign="top">static unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_smol_dock_1_1_atom.html#a699bf43dba89827d43019464a2a1507e">nextAtomID</a> = 0</td></tr>
 <tr class="separator:a699bf43dba89827d43019464a2a1507e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad2ea08ee5e9fde5927f30ebe2a3a7142"><td class="memItemLeft" align="right" valign="top">static std::set&lt; std::tuple&lt; <a class="el" href="class_smol_dock_1_1_atom.html#a57e9a532fd04e1846c0d83edebb9fd41">Atom::AtomType</a>, std::string, std::string &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_smol_dock_1_1_atom.html#ad2ea08ee5e9fde5927f30ebe2a3a7142">AtomTypeLabel</a></td></tr>
-<tr class="separator:ad2ea08ee5e9fde5927f30ebe2a3a7142"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed79f9306267e3ddbd9a9b4dade2bbbf"><td class="memItemLeft" align="right" valign="top">static std::set&lt; std::tuple&lt; <a class="el" href="class_smol_dock_1_1_atom.html#a57e9a532fd04e1846c0d83edebb9fd41">Atom::AtomType</a>, std::string, std::string, double &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_smol_dock_1_1_atom.html#aed79f9306267e3ddbd9a9b4dade2bbbf">AtomTypeLabel</a></td></tr>
+<tr class="separator:aed79f9306267e3ddbd9a9b4dade2bbbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
 Friends</h2></td></tr>
@@ -210,10 +243,12 @@ Friends</h2></td></tr>
 <tr class="separator:ab7591815a3dc03bab05bcb6d5e2b741a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abe46f23e1f169949c8d3916b7e0ad38b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_smol_dock_1_1_atom.html#a57e9a532fd04e1846c0d83edebb9fd41">Atom::AtomType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_smol_dock_1_1_atom.html#abe46f23e1f169949c8d3916b7e0ad38b">stringToAtomType</a> (const std::string &amp;symbol_or_name)</td></tr>
 <tr class="separator:abe46f23e1f169949c8d3916b7e0ad38b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae8f2ceffdf7832e3a57549119e5fc341"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_smol_dock_1_1_atom.html#ae8f2ceffdf7832e3a57549119e5fc341">atomTypeToAtomicRadius</a> (<a class="el" href="class_smol_dock_1_1_atom.html#a57e9a532fd04e1846c0d83edebb9fd41">Atom::AtomType</a> t)</td></tr>
+<tr class="separator:ae8f2ceffdf7832e3a57549119e5fc341"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="_atom_8h_source.html#l00030">30</a> of file <a class="el" href="_atom_8h_source.html">Atom.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_atom_8h_source.html#l00045">45</a> of file <a class="el" href="_atom_8h_source.html">Atom.h</a>.</p>
 </div><h2 class="groupheader">Member Enumeration Documentation</h2>
 <a id="a57e9a532fd04e1846c0d83edebb9fd41"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a57e9a532fd04e1846c0d83edebb9fd41">&#9670;&nbsp;</a></span>AtomType</h2>
@@ -244,8 +279,40 @@ Friends</h2></td></tr>
 <tr><td class="fieldname"><a id="a57e9a532fd04e1846c0d83edebb9fd41af3b7d449c5ca2f53a72210e4381769be"></a>chlorine&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="_atom_8h_source.html#l00039">39</a> of file <a class="el" href="_atom_8h_source.html">Atom.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                            : <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> {</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            unknown = 0,</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            hydrogen = 1,</div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            carbon = 6,</div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            oxygen = 8,</div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            nitrogen = 7,</div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            sulfur = 16,</div><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            chlorine = 17,</div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        };</div></div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="_atom_8h_source.html#l00054">54</a> of file <a class="el" href="_atom_8h_source.html">Atom.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                            : <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> {</div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            unknown = 0,</div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            hydrogen = 1,</div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            carbon = 6,</div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            oxygen = 8,</div><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            nitrogen = 7,</div><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            sulfur = 16,</div><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            chlorine = 17,</div><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        };</div></div><!-- fragment -->
+</div>
+</div>
+<a id="a77191f0919af58d733764e229cb1f973"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a77191f0919af58d733764e229cb1f973">&#9670;&nbsp;</a></span>AtomVariant</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="class_smol_dock_1_1_atom.html#a77191f0919af58d733764e229cb1f973">SmolDock::Atom::AtomVariant</a> : unsigned int</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a77191f0919af58d733764e229cb1f973aad921d60486366258809553a3db49a4a"></a>unknown&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a77191f0919af58d733764e229cb1f973ae5ea25494bf7929c31404acb4d159ecb"></a>aromaticCarbon&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a77191f0919af58d733764e229cb1f973a241861a1dfbbc92233d711bfa34e15d9"></a>aromaticNitrogen&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a77191f0919af58d733764e229cb1f973aaa2ddc8a4ba81c550a95435991e2e75c"></a>sp3carbon&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a77191f0919af58d733764e229cb1f973a3fba3c7feaf9a1409328b29db90d0c36"></a>sp2carbon&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a77191f0919af58d733764e229cb1f973ac5879e15d7caf9ac2db3a10a035a3cf4"></a>sp1carbon&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition">Definition at line <a class="el" href="_atom_8h_source.html#l00064">64</a> of file <a class="el" href="_atom_8h_source.html">Atom.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                               : <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> {</div><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            unknown = 0,</div><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            aromaticCarbon = 1,</div><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            aromaticNitrogen = 2,</div><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            sp3carbon = 3,</div><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            sp2carbon = 4,</div><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            sp1carbon = 5</div><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        };</div></div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
@@ -273,12 +340,14 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_atom_8cpp_source.html#l00012">12</a> of file <a class="el" href="_atom_8cpp_source.html">Atom.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_atom_8cpp_source.html#l00031">31</a> of file <a class="el" href="_atom_8cpp_source.html">Atom.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_atom_8h_source.html#l00119">AtomID</a>, and <a class="el" href="_atom_8h_source.html#l00118">nextAtomID</a>.</p>
-<div class="fragment"><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;                         : <a class="code" href="class_smol_dock_1_1_atom.html#ab3867a9c2c98c5bb43ff4a6b7f1bf856">type</a>(t) {</div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        this-&gt;<a class="code" href="class_smol_dock_1_1_atom.html#a76afdad512e9f593c4445c6407b26597">AtomID</a> = <a class="code" href="class_smol_dock_1_1_atom.html#a699bf43dba89827d43019464a2a1507e">nextAtomID</a>;</div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        <a class="code" href="class_smol_dock_1_1_atom.html#a699bf43dba89827d43019464a2a1507e">nextAtomID</a>++;</div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    }</div><div class="ttc" id="class_smol_dock_1_1_atom_html_a76afdad512e9f593c4445c6407b26597"><div class="ttname"><a href="class_smol_dock_1_1_atom.html#a76afdad512e9f593c4445c6407b26597">SmolDock::Atom::AtomID</a></div><div class="ttdeci">unsigned int AtomID</div><div class="ttdef"><b>Definition:</b> <a href="_atom_8h_source.html#l00119">Atom.h:119</a></div></div>
-<div class="ttc" id="class_smol_dock_1_1_atom_html_ab3867a9c2c98c5bb43ff4a6b7f1bf856"><div class="ttname"><a href="class_smol_dock_1_1_atom.html#ab3867a9c2c98c5bb43ff4a6b7f1bf856">SmolDock::Atom::type</a></div><div class="ttdeci">AtomType type</div><div class="ttdef"><b>Definition:</b> <a href="_atom_8h_source.html#l00111">Atom.h:111</a></div></div>
-<div class="ttc" id="class_smol_dock_1_1_atom_html_a699bf43dba89827d43019464a2a1507e"><div class="ttname"><a href="class_smol_dock_1_1_atom.html#a699bf43dba89827d43019464a2a1507e">SmolDock::Atom::nextAtomID</a></div><div class="ttdeci">static unsigned int nextAtomID</div><div class="ttdef"><b>Definition:</b> <a href="_atom_8h_source.html#l00118">Atom.h:118</a></div></div>
+<p class="reference">References <a class="el" href="_atom_8h_source.html#l00155">atomicRadius</a>, <a class="el" href="_atom_8h_source.html#l00152">AtomID</a>, <a class="el" href="_atom_8cpp_source.html#l00073">atomTypeToAtomicRadius</a>, and <a class="el" href="_atom_8h_source.html#l00151">nextAtomID</a>.</p>
+<div class="fragment"><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                         : <a class="code" href="class_smol_dock_1_1_atom.html#ab3867a9c2c98c5bb43ff4a6b7f1bf856">type</a>(t) {</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        this-&gt;<a class="code" href="class_smol_dock_1_1_atom.html#a76afdad512e9f593c4445c6407b26597">AtomID</a> = <a class="code" href="class_smol_dock_1_1_atom.html#a699bf43dba89827d43019464a2a1507e">nextAtomID</a>;</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <a class="code" href="class_smol_dock_1_1_atom.html#a699bf43dba89827d43019464a2a1507e">nextAtomID</a>++;</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        this-&gt;<a class="code" href="class_smol_dock_1_1_atom.html#a6d2c1ae04324600154ecd49c1b4a76c5">atomicRadius</a> = <a class="code" href="class_smol_dock_1_1_atom.html#ae8f2ceffdf7832e3a57549119e5fc341">atomTypeToAtomicRadius</a>(t);</div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    }</div><div class="ttc" id="class_smol_dock_1_1_atom_html_a76afdad512e9f593c4445c6407b26597"><div class="ttname"><a href="class_smol_dock_1_1_atom.html#a76afdad512e9f593c4445c6407b26597">SmolDock::Atom::AtomID</a></div><div class="ttdeci">unsigned int AtomID</div><div class="ttdef"><b>Definition:</b> <a href="_atom_8h_source.html#l00152">Atom.h:152</a></div></div>
+<div class="ttc" id="class_smol_dock_1_1_atom_html_a6d2c1ae04324600154ecd49c1b4a76c5"><div class="ttname"><a href="class_smol_dock_1_1_atom.html#a6d2c1ae04324600154ecd49c1b4a76c5">SmolDock::Atom::atomicRadius</a></div><div class="ttdeci">double atomicRadius</div><div class="ttdef"><b>Definition:</b> <a href="_atom_8h_source.html#l00155">Atom.h:155</a></div></div>
+<div class="ttc" id="class_smol_dock_1_1_atom_html_ab3867a9c2c98c5bb43ff4a6b7f1bf856"><div class="ttname"><a href="class_smol_dock_1_1_atom.html#ab3867a9c2c98c5bb43ff4a6b7f1bf856">SmolDock::Atom::type</a></div><div class="ttdeci">AtomType type</div><div class="ttdef"><b>Definition:</b> <a href="_atom_8h_source.html#l00143">Atom.h:143</a></div></div>
+<div class="ttc" id="class_smol_dock_1_1_atom_html_ae8f2ceffdf7832e3a57549119e5fc341"><div class="ttname"><a href="class_smol_dock_1_1_atom.html#ae8f2ceffdf7832e3a57549119e5fc341">SmolDock::Atom::atomTypeToAtomicRadius</a></div><div class="ttdeci">friend double atomTypeToAtomicRadius(Atom::AtomType t)</div><div class="ttdef"><b>Definition:</b> <a href="_atom_8cpp_source.html#l00073">Atom.cpp:73</a></div></div>
+<div class="ttc" id="class_smol_dock_1_1_atom_html_a699bf43dba89827d43019464a2a1507e"><div class="ttname"><a href="class_smol_dock_1_1_atom.html#a699bf43dba89827d43019464a2a1507e">SmolDock::Atom::nextAtomID</a></div><div class="ttdeci">static unsigned int nextAtomID</div><div class="ttdef"><b>Definition:</b> <a href="_atom_8h_source.html#l00151">Atom.h:151</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -322,16 +391,18 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_atom_8cpp_source.html#l00077">77</a> of file <a class="el" href="_atom_8cpp_source.html">Atom.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_atom_8cpp_source.html#l00118">118</a> of file <a class="el" href="_atom_8cpp_source.html">Atom.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_atom_8h_source.html#l00115">atomClassInResidue</a>, <a class="el" href="_atom_8h_source.html#l00119">AtomID</a>, <a class="el" href="_atom_8h_source.html#l00113">fromResidue</a>, <a class="el" href="_atom_8h_source.html#l00118">nextAtomID</a>, <a class="el" href="_atom_8h_source.html#l00114">residueType</a>, <a class="el" href="_atom_8cpp_source.html#l00033">stringToAtomType</a>, and <a class="el" href="_atom_8h_source.html#l00111">type</a>.</p>
-<div class="fragment"><div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                                                                                       {</div><div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <span class="keywordflow">if</span> (PDBFormat) {</div><div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            <span class="keyword">auto</span> first_letter = symbol_or_name.substr(0, 1); <span class="comment">// One letter code for atom is always same as usual</span></div><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            this-&gt;<a class="code" href="class_smol_dock_1_1_atom.html#ab3867a9c2c98c5bb43ff4a6b7f1bf856">type</a> = <a class="code" href="class_smol_dock_1_1_atom.html#abe46f23e1f169949c8d3916b7e0ad38b">stringToAtomType</a>(first_letter);</div><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            this-&gt;<a class="code" href="class_smol_dock_1_1_atom.html#a79a0e80b2fdb39742cc4de548d73eb63">atomClassInResidue</a> = symbol_or_name;</div><div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            <a class="code" href="class_smol_dock_1_1_atom.html#aa19d070c9951c67a4b1d4c5d80f2ee22">fromResidue</a> = <span class="keyword">true</span>;</div><div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        } <span class="keywordflow">else</span> {</div><div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            this-&gt;<a class="code" href="class_smol_dock_1_1_atom.html#ab3867a9c2c98c5bb43ff4a6b7f1bf856">type</a> = <a class="code" href="class_smol_dock_1_1_atom.html#abe46f23e1f169949c8d3916b7e0ad38b">stringToAtomType</a>(symbol_or_name);</div><div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        }</div><div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        this-&gt;<a class="code" href="class_smol_dock_1_1_atom.html#aeb5bd3da13c5e16176931c19bb622d91">residueType</a> = resType; <span class="comment">// Default : heteroatom</span></div><div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        this-&gt;<a class="code" href="class_smol_dock_1_1_atom.html#a76afdad512e9f593c4445c6407b26597">AtomID</a> = <a class="code" href="class_smol_dock_1_1_atom.html#a699bf43dba89827d43019464a2a1507e">nextAtomID</a>;</div><div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <a class="code" href="class_smol_dock_1_1_atom.html#a699bf43dba89827d43019464a2a1507e">nextAtomID</a>++;</div><div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    }</div><div class="ttc" id="class_smol_dock_1_1_atom_html_aeb5bd3da13c5e16176931c19bb622d91"><div class="ttname"><a href="class_smol_dock_1_1_atom.html#aeb5bd3da13c5e16176931c19bb622d91">SmolDock::Atom::residueType</a></div><div class="ttdeci">AminoAcid::AAType residueType</div><div class="ttdef"><b>Definition:</b> <a href="_atom_8h_source.html#l00114">Atom.h:114</a></div></div>
-<div class="ttc" id="class_smol_dock_1_1_atom_html_a76afdad512e9f593c4445c6407b26597"><div class="ttname"><a href="class_smol_dock_1_1_atom.html#a76afdad512e9f593c4445c6407b26597">SmolDock::Atom::AtomID</a></div><div class="ttdeci">unsigned int AtomID</div><div class="ttdef"><b>Definition:</b> <a href="_atom_8h_source.html#l00119">Atom.h:119</a></div></div>
-<div class="ttc" id="class_smol_dock_1_1_atom_html_aa19d070c9951c67a4b1d4c5d80f2ee22"><div class="ttname"><a href="class_smol_dock_1_1_atom.html#aa19d070c9951c67a4b1d4c5d80f2ee22">SmolDock::Atom::fromResidue</a></div><div class="ttdeci">bool fromResidue</div><div class="ttdef"><b>Definition:</b> <a href="_atom_8h_source.html#l00113">Atom.h:113</a></div></div>
-<div class="ttc" id="class_smol_dock_1_1_atom_html_a79a0e80b2fdb39742cc4de548d73eb63"><div class="ttname"><a href="class_smol_dock_1_1_atom.html#a79a0e80b2fdb39742cc4de548d73eb63">SmolDock::Atom::atomClassInResidue</a></div><div class="ttdeci">std::string atomClassInResidue</div><div class="ttdef"><b>Definition:</b> <a href="_atom_8h_source.html#l00115">Atom.h:115</a></div></div>
-<div class="ttc" id="class_smol_dock_1_1_atom_html_abe46f23e1f169949c8d3916b7e0ad38b"><div class="ttname"><a href="class_smol_dock_1_1_atom.html#abe46f23e1f169949c8d3916b7e0ad38b">SmolDock::Atom::stringToAtomType</a></div><div class="ttdeci">friend Atom::AtomType stringToAtomType(const std::string &amp;symbol_or_name)</div><div class="ttdef"><b>Definition:</b> <a href="_atom_8cpp_source.html#l00033">Atom.cpp:33</a></div></div>
-<div class="ttc" id="class_smol_dock_1_1_atom_html_ab3867a9c2c98c5bb43ff4a6b7f1bf856"><div class="ttname"><a href="class_smol_dock_1_1_atom.html#ab3867a9c2c98c5bb43ff4a6b7f1bf856">SmolDock::Atom::type</a></div><div class="ttdeci">AtomType type</div><div class="ttdef"><b>Definition:</b> <a href="_atom_8h_source.html#l00111">Atom.h:111</a></div></div>
-<div class="ttc" id="class_smol_dock_1_1_atom_html_a699bf43dba89827d43019464a2a1507e"><div class="ttname"><a href="class_smol_dock_1_1_atom.html#a699bf43dba89827d43019464a2a1507e">SmolDock::Atom::nextAtomID</a></div><div class="ttdeci">static unsigned int nextAtomID</div><div class="ttdef"><b>Definition:</b> <a href="_atom_8h_source.html#l00118">Atom.h:118</a></div></div>
+<p class="reference">References <a class="el" href="_atom_8h_source.html#l00148">atomClassInResidue</a>, <a class="el" href="_atom_8h_source.html#l00155">atomicRadius</a>, <a class="el" href="_atom_8h_source.html#l00152">AtomID</a>, <a class="el" href="_atom_8cpp_source.html#l00073">atomTypeToAtomicRadius</a>, <a class="el" href="_atom_8h_source.html#l00146">fromResidue</a>, <a class="el" href="_atom_8h_source.html#l00151">nextAtomID</a>, <a class="el" href="_atom_8h_source.html#l00147">residueType</a>, <a class="el" href="_atom_8cpp_source.html#l00060">stringToAtomType</a>, and <a class="el" href="_atom_8h_source.html#l00143">type</a>.</p>
+<div class="fragment"><div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;                                                                                       {</div><div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        <span class="keywordflow">if</span> (PDBFormat) {</div><div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;            <span class="keyword">auto</span> first_letter = symbol_or_name.substr(0, 1); <span class="comment">// One letter code for atom is always same as usual</span></div><div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;            this-&gt;<a class="code" href="class_smol_dock_1_1_atom.html#ab3867a9c2c98c5bb43ff4a6b7f1bf856">type</a> = <a class="code" href="class_smol_dock_1_1_atom.html#abe46f23e1f169949c8d3916b7e0ad38b">stringToAtomType</a>(first_letter);</div><div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;            this-&gt;<a class="code" href="class_smol_dock_1_1_atom.html#a79a0e80b2fdb39742cc4de548d73eb63">atomClassInResidue</a> = symbol_or_name;</div><div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;            <a class="code" href="class_smol_dock_1_1_atom.html#aa19d070c9951c67a4b1d4c5d80f2ee22">fromResidue</a> = <span class="keyword">true</span>;</div><div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        } <span class="keywordflow">else</span> {</div><div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;            this-&gt;<a class="code" href="class_smol_dock_1_1_atom.html#ab3867a9c2c98c5bb43ff4a6b7f1bf856">type</a> = <a class="code" href="class_smol_dock_1_1_atom.html#abe46f23e1f169949c8d3916b7e0ad38b">stringToAtomType</a>(symbol_or_name);</div><div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        }</div><div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        this-&gt;<a class="code" href="class_smol_dock_1_1_atom.html#aeb5bd3da13c5e16176931c19bb622d91">residueType</a> = resType; <span class="comment">// Default : heteroatom</span></div><div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        this-&gt;<a class="code" href="class_smol_dock_1_1_atom.html#a76afdad512e9f593c4445c6407b26597">AtomID</a> = <a class="code" href="class_smol_dock_1_1_atom.html#a699bf43dba89827d43019464a2a1507e">nextAtomID</a>;</div><div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        this-&gt;<a class="code" href="class_smol_dock_1_1_atom.html#a6d2c1ae04324600154ecd49c1b4a76c5">atomicRadius</a> = <a class="code" href="class_smol_dock_1_1_atom.html#ae8f2ceffdf7832e3a57549119e5fc341">atomTypeToAtomicRadius</a>(this-&gt;<a class="code" href="class_smol_dock_1_1_atom.html#ab3867a9c2c98c5bb43ff4a6b7f1bf856">type</a>);</div><div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        <a class="code" href="class_smol_dock_1_1_atom.html#a699bf43dba89827d43019464a2a1507e">nextAtomID</a>++;</div><div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    }</div><div class="ttc" id="class_smol_dock_1_1_atom_html_aeb5bd3da13c5e16176931c19bb622d91"><div class="ttname"><a href="class_smol_dock_1_1_atom.html#aeb5bd3da13c5e16176931c19bb622d91">SmolDock::Atom::residueType</a></div><div class="ttdeci">AminoAcid::AAType residueType</div><div class="ttdef"><b>Definition:</b> <a href="_atom_8h_source.html#l00147">Atom.h:147</a></div></div>
+<div class="ttc" id="class_smol_dock_1_1_atom_html_a76afdad512e9f593c4445c6407b26597"><div class="ttname"><a href="class_smol_dock_1_1_atom.html#a76afdad512e9f593c4445c6407b26597">SmolDock::Atom::AtomID</a></div><div class="ttdeci">unsigned int AtomID</div><div class="ttdef"><b>Definition:</b> <a href="_atom_8h_source.html#l00152">Atom.h:152</a></div></div>
+<div class="ttc" id="class_smol_dock_1_1_atom_html_aa19d070c9951c67a4b1d4c5d80f2ee22"><div class="ttname"><a href="class_smol_dock_1_1_atom.html#aa19d070c9951c67a4b1d4c5d80f2ee22">SmolDock::Atom::fromResidue</a></div><div class="ttdeci">bool fromResidue</div><div class="ttdef"><b>Definition:</b> <a href="_atom_8h_source.html#l00146">Atom.h:146</a></div></div>
+<div class="ttc" id="class_smol_dock_1_1_atom_html_a79a0e80b2fdb39742cc4de548d73eb63"><div class="ttname"><a href="class_smol_dock_1_1_atom.html#a79a0e80b2fdb39742cc4de548d73eb63">SmolDock::Atom::atomClassInResidue</a></div><div class="ttdeci">std::string atomClassInResidue</div><div class="ttdef"><b>Definition:</b> <a href="_atom_8h_source.html#l00148">Atom.h:148</a></div></div>
+<div class="ttc" id="class_smol_dock_1_1_atom_html_a6d2c1ae04324600154ecd49c1b4a76c5"><div class="ttname"><a href="class_smol_dock_1_1_atom.html#a6d2c1ae04324600154ecd49c1b4a76c5">SmolDock::Atom::atomicRadius</a></div><div class="ttdeci">double atomicRadius</div><div class="ttdef"><b>Definition:</b> <a href="_atom_8h_source.html#l00155">Atom.h:155</a></div></div>
+<div class="ttc" id="class_smol_dock_1_1_atom_html_abe46f23e1f169949c8d3916b7e0ad38b"><div class="ttname"><a href="class_smol_dock_1_1_atom.html#abe46f23e1f169949c8d3916b7e0ad38b">SmolDock::Atom::stringToAtomType</a></div><div class="ttdeci">friend Atom::AtomType stringToAtomType(const std::string &amp;symbol_or_name)</div><div class="ttdef"><b>Definition:</b> <a href="_atom_8cpp_source.html#l00060">Atom.cpp:60</a></div></div>
+<div class="ttc" id="class_smol_dock_1_1_atom_html_ab3867a9c2c98c5bb43ff4a6b7f1bf856"><div class="ttname"><a href="class_smol_dock_1_1_atom.html#ab3867a9c2c98c5bb43ff4a6b7f1bf856">SmolDock::Atom::type</a></div><div class="ttdeci">AtomType type</div><div class="ttdef"><b>Definition:</b> <a href="_atom_8h_source.html#l00143">Atom.h:143</a></div></div>
+<div class="ttc" id="class_smol_dock_1_1_atom_html_ae8f2ceffdf7832e3a57549119e5fc341"><div class="ttname"><a href="class_smol_dock_1_1_atom.html#ae8f2ceffdf7832e3a57549119e5fc341">SmolDock::Atom::atomTypeToAtomicRadius</a></div><div class="ttdeci">friend double atomTypeToAtomicRadius(Atom::AtomType t)</div><div class="ttdef"><b>Definition:</b> <a href="_atom_8cpp_source.html#l00073">Atom.cpp:73</a></div></div>
+<div class="ttc" id="class_smol_dock_1_1_atom_html_a699bf43dba89827d43019464a2a1507e"><div class="ttname"><a href="class_smol_dock_1_1_atom.html#a699bf43dba89827d43019464a2a1507e">SmolDock::Atom::nextAtomID</a></div><div class="ttdeci">static unsigned int nextAtomID</div><div class="ttdef"><b>Definition:</b> <a href="_atom_8h_source.html#l00151">Atom.h:151</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -361,11 +432,13 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_atom_8cpp_source.html#l00019">19</a> of file <a class="el" href="_atom_8cpp_source.html">Atom.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_atom_8cpp_source.html#l00040">40</a> of file <a class="el" href="_atom_8cpp_source.html">Atom.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_atom_8h_source.html#l00119">AtomID</a>.</p>
-<div class="fragment"><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;                                              : <a class="code" href="class_smol_dock_1_1_atom.html#ab3867a9c2c98c5bb43ff4a6b7f1bf856">type</a>(t) {</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        this-&gt;<a class="code" href="class_smol_dock_1_1_atom.html#a76afdad512e9f593c4445c6407b26597">AtomID</a> = id;</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    }</div><div class="ttc" id="class_smol_dock_1_1_atom_html_a76afdad512e9f593c4445c6407b26597"><div class="ttname"><a href="class_smol_dock_1_1_atom.html#a76afdad512e9f593c4445c6407b26597">SmolDock::Atom::AtomID</a></div><div class="ttdeci">unsigned int AtomID</div><div class="ttdef"><b>Definition:</b> <a href="_atom_8h_source.html#l00119">Atom.h:119</a></div></div>
-<div class="ttc" id="class_smol_dock_1_1_atom_html_ab3867a9c2c98c5bb43ff4a6b7f1bf856"><div class="ttname"><a href="class_smol_dock_1_1_atom.html#ab3867a9c2c98c5bb43ff4a6b7f1bf856">SmolDock::Atom::type</a></div><div class="ttdeci">AtomType type</div><div class="ttdef"><b>Definition:</b> <a href="_atom_8h_source.html#l00111">Atom.h:111</a></div></div>
+<p class="reference">References <a class="el" href="_atom_8h_source.html#l00155">atomicRadius</a>, <a class="el" href="_atom_8h_source.html#l00152">AtomID</a>, and <a class="el" href="_atom_8cpp_source.html#l00073">atomTypeToAtomicRadius</a>.</p>
+<div class="fragment"><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                                              : <a class="code" href="class_smol_dock_1_1_atom.html#ab3867a9c2c98c5bb43ff4a6b7f1bf856">type</a>(t) {</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        this-&gt;<a class="code" href="class_smol_dock_1_1_atom.html#a76afdad512e9f593c4445c6407b26597">AtomID</a> = id;</div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        this-&gt;<a class="code" href="class_smol_dock_1_1_atom.html#a6d2c1ae04324600154ecd49c1b4a76c5">atomicRadius</a> = <a class="code" href="class_smol_dock_1_1_atom.html#ae8f2ceffdf7832e3a57549119e5fc341">atomTypeToAtomicRadius</a>(t);</div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    }</div><div class="ttc" id="class_smol_dock_1_1_atom_html_a76afdad512e9f593c4445c6407b26597"><div class="ttname"><a href="class_smol_dock_1_1_atom.html#a76afdad512e9f593c4445c6407b26597">SmolDock::Atom::AtomID</a></div><div class="ttdeci">unsigned int AtomID</div><div class="ttdef"><b>Definition:</b> <a href="_atom_8h_source.html#l00152">Atom.h:152</a></div></div>
+<div class="ttc" id="class_smol_dock_1_1_atom_html_a6d2c1ae04324600154ecd49c1b4a76c5"><div class="ttname"><a href="class_smol_dock_1_1_atom.html#a6d2c1ae04324600154ecd49c1b4a76c5">SmolDock::Atom::atomicRadius</a></div><div class="ttdeci">double atomicRadius</div><div class="ttdef"><b>Definition:</b> <a href="_atom_8h_source.html#l00155">Atom.h:155</a></div></div>
+<div class="ttc" id="class_smol_dock_1_1_atom_html_ab3867a9c2c98c5bb43ff4a6b7f1bf856"><div class="ttname"><a href="class_smol_dock_1_1_atom.html#ab3867a9c2c98c5bb43ff4a6b7f1bf856">SmolDock::Atom::type</a></div><div class="ttdeci">AtomType type</div><div class="ttdef"><b>Definition:</b> <a href="_atom_8h_source.html#l00143">Atom.h:143</a></div></div>
+<div class="ttc" id="class_smol_dock_1_1_atom_html_ae8f2ceffdf7832e3a57549119e5fc341"><div class="ttname"><a href="class_smol_dock_1_1_atom.html#ae8f2ceffdf7832e3a57549119e5fc341">SmolDock::Atom::atomTypeToAtomicRadius</a></div><div class="ttdeci">friend double atomTypeToAtomicRadius(Atom::AtomType t)</div><div class="ttdef"><b>Definition:</b> <a href="_atom_8cpp_source.html#l00073">Atom.cpp:73</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -395,60 +468,24 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_atom_8cpp_source.html#l00091">91</a> of file <a class="el" href="_atom_8cpp_source.html">Atom.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_atom_8cpp_source.html#l00133">133</a> of file <a class="el" href="_atom_8cpp_source.html">Atom.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_atom_8h_source.html#l00119">AtomID</a>, <a class="el" href="_atom_8cpp_source.html#l00033">stringToAtomType</a>, and <a class="el" href="_atom_8h_source.html#l00111">type</a>.</p>
-<div class="fragment"><div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                                                               {</div><div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        this-&gt;<a class="code" href="class_smol_dock_1_1_atom.html#ab3867a9c2c98c5bb43ff4a6b7f1bf856">type</a> = <a class="code" href="class_smol_dock_1_1_atom.html#abe46f23e1f169949c8d3916b7e0ad38b">stringToAtomType</a>(symbol_or_name);</div><div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        this-&gt;<a class="code" href="class_smol_dock_1_1_atom.html#a76afdad512e9f593c4445c6407b26597">AtomID</a> = id;</div><div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    }</div><div class="ttc" id="class_smol_dock_1_1_atom_html_a76afdad512e9f593c4445c6407b26597"><div class="ttname"><a href="class_smol_dock_1_1_atom.html#a76afdad512e9f593c4445c6407b26597">SmolDock::Atom::AtomID</a></div><div class="ttdeci">unsigned int AtomID</div><div class="ttdef"><b>Definition:</b> <a href="_atom_8h_source.html#l00119">Atom.h:119</a></div></div>
-<div class="ttc" id="class_smol_dock_1_1_atom_html_abe46f23e1f169949c8d3916b7e0ad38b"><div class="ttname"><a href="class_smol_dock_1_1_atom.html#abe46f23e1f169949c8d3916b7e0ad38b">SmolDock::Atom::stringToAtomType</a></div><div class="ttdeci">friend Atom::AtomType stringToAtomType(const std::string &amp;symbol_or_name)</div><div class="ttdef"><b>Definition:</b> <a href="_atom_8cpp_source.html#l00033">Atom.cpp:33</a></div></div>
-<div class="ttc" id="class_smol_dock_1_1_atom_html_ab3867a9c2c98c5bb43ff4a6b7f1bf856"><div class="ttname"><a href="class_smol_dock_1_1_atom.html#ab3867a9c2c98c5bb43ff4a6b7f1bf856">SmolDock::Atom::type</a></div><div class="ttdeci">AtomType type</div><div class="ttdef"><b>Definition:</b> <a href="_atom_8h_source.html#l00111">Atom.h:111</a></div></div>
+<p class="reference">References <a class="el" href="_atom_8h_source.html#l00152">AtomID</a>, <a class="el" href="_atom_8cpp_source.html#l00060">stringToAtomType</a>, and <a class="el" href="_atom_8h_source.html#l00143">type</a>.</p>
+<div class="fragment"><div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;                                                               {</div><div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        this-&gt;<a class="code" href="class_smol_dock_1_1_atom.html#ab3867a9c2c98c5bb43ff4a6b7f1bf856">type</a> = <a class="code" href="class_smol_dock_1_1_atom.html#abe46f23e1f169949c8d3916b7e0ad38b">stringToAtomType</a>(symbol_or_name);</div><div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        this-&gt;<a class="code" href="class_smol_dock_1_1_atom.html#a76afdad512e9f593c4445c6407b26597">AtomID</a> = id;</div><div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    }</div><div class="ttc" id="class_smol_dock_1_1_atom_html_a76afdad512e9f593c4445c6407b26597"><div class="ttname"><a href="class_smol_dock_1_1_atom.html#a76afdad512e9f593c4445c6407b26597">SmolDock::Atom::AtomID</a></div><div class="ttdeci">unsigned int AtomID</div><div class="ttdef"><b>Definition:</b> <a href="_atom_8h_source.html#l00152">Atom.h:152</a></div></div>
+<div class="ttc" id="class_smol_dock_1_1_atom_html_abe46f23e1f169949c8d3916b7e0ad38b"><div class="ttname"><a href="class_smol_dock_1_1_atom.html#abe46f23e1f169949c8d3916b7e0ad38b">SmolDock::Atom::stringToAtomType</a></div><div class="ttdeci">friend Atom::AtomType stringToAtomType(const std::string &amp;symbol_or_name)</div><div class="ttdef"><b>Definition:</b> <a href="_atom_8cpp_source.html#l00060">Atom.cpp:60</a></div></div>
+<div class="ttc" id="class_smol_dock_1_1_atom_html_ab3867a9c2c98c5bb43ff4a6b7f1bf856"><div class="ttname"><a href="class_smol_dock_1_1_atom.html#ab3867a9c2c98c5bb43ff4a6b7f1bf856">SmolDock::Atom::type</a></div><div class="ttdeci">AtomType type</div><div class="ttdef"><b>Definition:</b> <a href="_atom_8h_source.html#l00143">Atom.h:143</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a7dede98478cab4cf7b6e6462d3886bd2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7dede98478cab4cf7b6e6462d3886bd2">&#9670;&nbsp;</a></span>emplaceiAtom()</h2>
+<a id="a7cd7a34817ac20e79ede418d6896ff48"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7cd7a34817ac20e79ede418d6896ff48">&#9670;&nbsp;</a></span>getAtomicNumber()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void SmolDock::Atom::emplaceiAtom </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="namespace_smol_dock.html#struct_smol_dock_1_1i_atom">iAtom</a> &amp;&#160;</td>
-          <td class="paramname"><em>atom</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_atom_8cpp_source.html#l00120">120</a> of file <a class="el" href="_atom_8cpp_source.html">Atom.cpp</a>.</p>
-
-<p class="reference">References <a class="el" href="i_atom_8h_source.html#l00011">SmolDock::iAtom::atomicNum</a>, <a class="el" href="_atom_8h_source.html#l00111">type</a>, <a class="el" href="i_atom_8h_source.html#l00012">SmolDock::iAtom::x</a>, <a class="el" href="_atom_8h_source.html#l00121">x</a>, <a class="el" href="i_atom_8h_source.html#l00012">SmolDock::iAtom::y</a>, <a class="el" href="_atom_8h_source.html#l00121">y</a>, <a class="el" href="i_atom_8h_source.html#l00012">SmolDock::iAtom::z</a>, and <a class="el" href="_atom_8h_source.html#l00121">z</a>.</p>
-<div class="fragment"><div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;                                       {</div><div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        atom.atomicNum = <span class="keyword">static_cast&lt;</span><span class="keywordtype">unsigned</span> <span class="keywordtype">char</span><span class="keyword">&gt;</span>(this-&gt;<a class="code" href="class_smol_dock_1_1_atom.html#ab3867a9c2c98c5bb43ff4a6b7f1bf856">type</a>); <span class="comment">// The enum is defined such that the value are atomic numbers</span></div><div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        atom.x = this-&gt;<a class="code" href="class_smol_dock_1_1_atom.html#a02874f0a49c2fb34884d7e40c6b92e9e">x</a>;</div><div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        atom.y = this-&gt;<a class="code" href="class_smol_dock_1_1_atom.html#a253663ad700e72667d421f4d869798e1">y</a>;</div><div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        atom.z = this-&gt;<a class="code" href="class_smol_dock_1_1_atom.html#a8f28d43131d21536269e220d6fa43f07">z</a>;</div><div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    }</div><div class="ttc" id="class_smol_dock_1_1_atom_html_a253663ad700e72667d421f4d869798e1"><div class="ttname"><a href="class_smol_dock_1_1_atom.html#a253663ad700e72667d421f4d869798e1">SmolDock::Atom::y</a></div><div class="ttdeci">double y</div><div class="ttdef"><b>Definition:</b> <a href="_atom_8h_source.html#l00121">Atom.h:121</a></div></div>
-<div class="ttc" id="class_smol_dock_1_1_atom_html_a02874f0a49c2fb34884d7e40c6b92e9e"><div class="ttname"><a href="class_smol_dock_1_1_atom.html#a02874f0a49c2fb34884d7e40c6b92e9e">SmolDock::Atom::x</a></div><div class="ttdeci">double x</div><div class="ttdef"><b>Definition:</b> <a href="_atom_8h_source.html#l00121">Atom.h:121</a></div></div>
-<div class="ttc" id="class_smol_dock_1_1_atom_html_a8f28d43131d21536269e220d6fa43f07"><div class="ttname"><a href="class_smol_dock_1_1_atom.html#a8f28d43131d21536269e220d6fa43f07">SmolDock::Atom::z</a></div><div class="ttdeci">double z</div><div class="ttdef"><b>Definition:</b> <a href="_atom_8h_source.html#l00121">Atom.h:121</a></div></div>
-<div class="ttc" id="class_smol_dock_1_1_atom_html_ab3867a9c2c98c5bb43ff4a6b7f1bf856"><div class="ttname"><a href="class_smol_dock_1_1_atom.html#ab3867a9c2c98c5bb43ff4a6b7f1bf856">SmolDock::Atom::type</a></div><div class="ttdeci">AtomType type</div><div class="ttdef"><b>Definition:</b> <a href="_atom_8h_source.html#l00111">Atom.h:111</a></div></div>
-</div><!-- fragment --><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="class_smol_dock_1_1_atom_a7dede98478cab4cf7b6e6462d3886bd2_icgraph.png" border="0" usemap="#class_smol_dock_1_1_atom_a7dede98478cab4cf7b6e6462d3886bd2_icgraph" alt=""/></div>
-<map name="class_smol_dock_1_1_atom_a7dede98478cab4cf7b6e6462d3886bd2_icgraph" id="class_smol_dock_1_1_atom_a7dede98478cab4cf7b6e6462d3886bd2_icgraph">
-<area shape="rect" id="node2" href="class_smol_dock_1_1_atom.html#a9de7744f2ea4b8f273f9005c60f42999" title="SmolDock::Atom::generateiAtom" alt="" coords="267,5,481,32"/>
-</map>
-</div>
-
-</div>
-</div>
-<a id="a9de7744f2ea4b8f273f9005c60f42999"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9de7744f2ea4b8f273f9005c60f42999">&#9670;&nbsp;</a></span>generateiAtom()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="namespace_smol_dock.html#struct_smol_dock_1_1i_atom">iAtom</a> SmolDock::Atom::generateiAtom </td>
+          <td class="memname">unsigned char SmolDock::Atom::getAtomicNumber </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -456,21 +493,33 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_atom_8cpp_source.html#l00114">114</a> of file <a class="el" href="_atom_8cpp_source.html">Atom.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_atom_8cpp_source.html#l00178">178</a> of file <a class="el" href="_atom_8cpp_source.html">Atom.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_atom_8cpp_source.html#l00120">emplaceiAtom()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                              {</div><div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        iAtom ret{}; <span class="comment">// R.V.O.</span></div><div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        <a class="code" href="class_smol_dock_1_1_atom.html#a7dede98478cab4cf7b6e6462d3886bd2">emplaceiAtom</a>(ret);</div><div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        <span class="keywordflow">return</span> ret;</div><div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    }</div><div class="ttc" id="class_smol_dock_1_1_atom_html_a7dede98478cab4cf7b6e6462d3886bd2"><div class="ttname"><a href="class_smol_dock_1_1_atom.html#a7dede98478cab4cf7b6e6462d3886bd2">SmolDock::Atom::emplaceiAtom</a></div><div class="ttdeci">void emplaceiAtom(iAtom &amp;atom)</div><div class="ttdef"><b>Definition:</b> <a href="_atom_8cpp_source.html#l00120">Atom.cpp:120</a></div></div>
-</div><!-- fragment --><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+<p class="reference">References <a class="el" href="_atom_8h_source.html#l00143">type</a>.</p>
+<div class="fragment"><div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;                                        {</div><div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><span class="keywordtype">unsigned</span> <span class="keywordtype">char</span><span class="keyword">&gt;</span>(this-&gt;<a class="code" href="class_smol_dock_1_1_atom.html#ab3867a9c2c98c5bb43ff4a6b7f1bf856">type</a>);</div><div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    }</div><div class="ttc" id="class_smol_dock_1_1_atom_html_ab3867a9c2c98c5bb43ff4a6b7f1bf856"><div class="ttname"><a href="class_smol_dock_1_1_atom.html#ab3867a9c2c98c5bb43ff4a6b7f1bf856">SmolDock::Atom::type</a></div><div class="ttdeci">AtomType type</div><div class="ttdef"><b>Definition:</b> <a href="_atom_8h_source.html#l00143">Atom.h:143</a></div></div>
+</div><!-- fragment -->
 </div>
-<div id="dynsection-2-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="class_smol_dock_1_1_atom_a9de7744f2ea4b8f273f9005c60f42999_cgraph.png" border="0" usemap="#class_smol_dock_1_1_atom_a9de7744f2ea4b8f273f9005c60f42999_cgraph" alt=""/></div>
-<map name="class_smol_dock_1_1_atom_a9de7744f2ea4b8f273f9005c60f42999_cgraph" id="class_smol_dock_1_1_atom_a9de7744f2ea4b8f273f9005c60f42999_cgraph">
-<area shape="rect" id="node2" href="class_smol_dock_1_1_atom.html#a7dede98478cab4cf7b6e6462d3886bd2" title="SmolDock::Atom::emplaceiAtom" alt="" coords="268,5,481,32"/>
-</map>
 </div>
+<a id="a3933f5afa403001d87526a52a0f4c4b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3933f5afa403001d87526a52a0f4c4b5">&#9670;&nbsp;</a></span>getAtomicRadius()</h2>
 
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double SmolDock::Atom::getAtomicRadius </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_atom_8cpp_source.html#l00186">186</a> of file <a class="el" href="_atom_8cpp_source.html">Atom.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="_atom_8h_source.html#l00155">atomicRadius</a>.</p>
+<div class="fragment"><div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;                                 {</div><div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;        <span class="keywordflow">return</span> this-&gt;<a class="code" href="class_smol_dock_1_1_atom.html#a6d2c1ae04324600154ecd49c1b4a76c5">atomicRadius</a>;</div><div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    }</div><div class="ttc" id="class_smol_dock_1_1_atom_html_a6d2c1ae04324600154ecd49c1b4a76c5"><div class="ttname"><a href="class_smol_dock_1_1_atom.html#a6d2c1ae04324600154ecd49c1b4a76c5">SmolDock::Atom::atomicRadius</a></div><div class="ttdeci">double atomicRadius</div><div class="ttdef"><b>Definition:</b> <a href="_atom_8h_source.html#l00155">Atom.h:155</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a62d7246b7a8f3d6aa1aa63c9d5a86ed3"></a>
@@ -488,10 +537,10 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_atom_8cpp_source.html#l00052">52</a> of file <a class="el" href="_atom_8cpp_source.html">Atom.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_atom_8cpp_source.html#l00091">91</a> of file <a class="el" href="_atom_8cpp_source.html">Atom.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_atom_8h_source.html#l00119">AtomID</a>.</p>
-<div class="fragment"><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                                 {</div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="class_smol_dock_1_1_atom.html#a76afdad512e9f593c4445c6407b26597">AtomID</a>;</div><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    }</div><div class="ttc" id="class_smol_dock_1_1_atom_html_a76afdad512e9f593c4445c6407b26597"><div class="ttname"><a href="class_smol_dock_1_1_atom.html#a76afdad512e9f593c4445c6407b26597">SmolDock::Atom::AtomID</a></div><div class="ttdeci">unsigned int AtomID</div><div class="ttdef"><b>Definition:</b> <a href="_atom_8h_source.html#l00119">Atom.h:119</a></div></div>
+<p class="reference">References <a class="el" href="_atom_8h_source.html#l00152">AtomID</a>.</p>
+<div class="fragment"><div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                                 {</div><div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="class_smol_dock_1_1_atom.html#a76afdad512e9f593c4445c6407b26597">AtomID</a>;</div><div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    }</div><div class="ttc" id="class_smol_dock_1_1_atom_html_a76afdad512e9f593c4445c6407b26597"><div class="ttname"><a href="class_smol_dock_1_1_atom.html#a76afdad512e9f593c4445c6407b26597">SmolDock::Atom::AtomID</a></div><div class="ttdeci">unsigned int AtomID</div><div class="ttdef"><b>Definition:</b> <a href="_atom_8h_source.html#l00152">Atom.h:152</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -510,12 +559,78 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_atom_8cpp_source.html#l00104">104</a> of file <a class="el" href="_atom_8cpp_source.html">Atom.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_atom_8cpp_source.html#l00146">146</a> of file <a class="el" href="_atom_8cpp_source.html">Atom.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_atom_8h_source.html#l00121">x</a>, <a class="el" href="_atom_8h_source.html#l00121">y</a>, and <a class="el" href="_atom_8h_source.html#l00121">z</a>.</p>
-<div class="fragment"><div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                                                           {</div><div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        <span class="keywordflow">return</span> std::make_tuple(this-&gt;<a class="code" href="class_smol_dock_1_1_atom.html#a02874f0a49c2fb34884d7e40c6b92e9e">x</a>, this-&gt;<a class="code" href="class_smol_dock_1_1_atom.html#a253663ad700e72667d421f4d869798e1">y</a>, this-&gt;<a class="code" href="class_smol_dock_1_1_atom.html#a8f28d43131d21536269e220d6fa43f07">z</a>);</div><div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    }</div><div class="ttc" id="class_smol_dock_1_1_atom_html_a253663ad700e72667d421f4d869798e1"><div class="ttname"><a href="class_smol_dock_1_1_atom.html#a253663ad700e72667d421f4d869798e1">SmolDock::Atom::y</a></div><div class="ttdeci">double y</div><div class="ttdef"><b>Definition:</b> <a href="_atom_8h_source.html#l00121">Atom.h:121</a></div></div>
-<div class="ttc" id="class_smol_dock_1_1_atom_html_a02874f0a49c2fb34884d7e40c6b92e9e"><div class="ttname"><a href="class_smol_dock_1_1_atom.html#a02874f0a49c2fb34884d7e40c6b92e9e">SmolDock::Atom::x</a></div><div class="ttdeci">double x</div><div class="ttdef"><b>Definition:</b> <a href="_atom_8h_source.html#l00121">Atom.h:121</a></div></div>
-<div class="ttc" id="class_smol_dock_1_1_atom_html_a8f28d43131d21536269e220d6fa43f07"><div class="ttname"><a href="class_smol_dock_1_1_atom.html#a8f28d43131d21536269e220d6fa43f07">SmolDock::Atom::z</a></div><div class="ttdeci">double z</div><div class="ttdef"><b>Definition:</b> <a href="_atom_8h_source.html#l00121">Atom.h:121</a></div></div>
+<p class="reference">References <a class="el" href="_atom_8h_source.html#l00154">x</a>, <a class="el" href="_atom_8h_source.html#l00154">y</a>, and <a class="el" href="_atom_8h_source.html#l00154">z</a>.</p>
+<div class="fragment"><div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;                                                           {</div><div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        <span class="keywordflow">return</span> std::make_tuple(this-&gt;<a class="code" href="class_smol_dock_1_1_atom.html#a02874f0a49c2fb34884d7e40c6b92e9e">x</a>, this-&gt;<a class="code" href="class_smol_dock_1_1_atom.html#a253663ad700e72667d421f4d869798e1">y</a>, this-&gt;<a class="code" href="class_smol_dock_1_1_atom.html#a8f28d43131d21536269e220d6fa43f07">z</a>);</div><div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    }</div><div class="ttc" id="class_smol_dock_1_1_atom_html_a253663ad700e72667d421f4d869798e1"><div class="ttname"><a href="class_smol_dock_1_1_atom.html#a253663ad700e72667d421f4d869798e1">SmolDock::Atom::y</a></div><div class="ttdeci">double y</div><div class="ttdef"><b>Definition:</b> <a href="_atom_8h_source.html#l00154">Atom.h:154</a></div></div>
+<div class="ttc" id="class_smol_dock_1_1_atom_html_a02874f0a49c2fb34884d7e40c6b92e9e"><div class="ttname"><a href="class_smol_dock_1_1_atom.html#a02874f0a49c2fb34884d7e40c6b92e9e">SmolDock::Atom::x</a></div><div class="ttdeci">double x</div><div class="ttdef"><b>Definition:</b> <a href="_atom_8h_source.html#l00154">Atom.h:154</a></div></div>
+<div class="ttc" id="class_smol_dock_1_1_atom_html_a8f28d43131d21536269e220d6fa43f07"><div class="ttname"><a href="class_smol_dock_1_1_atom.html#a8f28d43131d21536269e220d6fa43f07">SmolDock::Atom::z</a></div><div class="ttdeci">double z</div><div class="ttdef"><b>Definition:</b> <a href="_atom_8h_source.html#l00154">Atom.h:154</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a6b8315564e06bdc911053320fd3fa1a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b8315564e06bdc911053320fd3fa1a7">&#9670;&nbsp;</a></span>getAtomType()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_smol_dock_1_1_atom.html#a57e9a532fd04e1846c0d83edebb9fd41">Atom::AtomType</a> SmolDock::Atom::getAtomType </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_atom_8cpp_source.html#l00087">87</a> of file <a class="el" href="_atom_8cpp_source.html">Atom.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="_atom_8h_source.html#l00143">type</a>.</p>
+<div class="fragment"><div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                                   {</div><div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="class_smol_dock_1_1_atom.html#ab3867a9c2c98c5bb43ff4a6b7f1bf856">type</a>;</div><div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    }</div><div class="ttc" id="class_smol_dock_1_1_atom_html_ab3867a9c2c98c5bb43ff4a6b7f1bf856"><div class="ttname"><a href="class_smol_dock_1_1_atom.html#ab3867a9c2c98c5bb43ff4a6b7f1bf856">SmolDock::Atom::type</a></div><div class="ttdeci">AtomType type</div><div class="ttdef"><b>Definition:</b> <a href="_atom_8h_source.html#l00143">Atom.h:143</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a145bc96b3b410ea87a62baeb8b83f127"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a145bc96b3b410ea87a62baeb8b83f127">&#9670;&nbsp;</a></span>getAtomVariant()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_smol_dock_1_1_atom.html#a77191f0919af58d733764e229cb1f973">Atom::AtomVariant</a> SmolDock::Atom::getAtomVariant </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_atom_8cpp_source.html#l00162">162</a> of file <a class="el" href="_atom_8cpp_source.html">Atom.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="_atom_8h_source.html#l00144">variant</a>.</p>
+<div class="fragment"><div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    {</div><div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        <span class="keywordflow">return</span> this-&gt;<a class="code" href="class_smol_dock_1_1_atom.html#a0c54fdff29130e870237ba300a4e9d25">variant</a>;</div><div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    }</div><div class="ttc" id="class_smol_dock_1_1_atom_html_a0c54fdff29130e870237ba300a4e9d25"><div class="ttname"><a href="class_smol_dock_1_1_atom.html#a0c54fdff29130e870237ba300a4e9d25">SmolDock::Atom::variant</a></div><div class="ttdeci">AtomVariant variant</div><div class="ttdef"><b>Definition:</b> <a href="_atom_8h_source.html#l00144">Atom.h:144</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a6436039c9775c1662be2c3691c2785a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6436039c9775c1662be2c3691c2785a9">&#9670;&nbsp;</a></span>getAtomVariantAsUnderlyingType()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int SmolDock::Atom::getAtomVariantAsUnderlyingType </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_atom_8cpp_source.html#l00182">182</a> of file <a class="el" href="_atom_8cpp_source.html">Atom.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="_atom_8h_source.html#l00144">variant</a>.</p>
+<div class="fragment"><div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;                                                      {</div><div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><span class="keywordtype">unsigned</span> <span class="keywordtype">int</span><span class="keyword">&gt;</span>(this-&gt;<a class="code" href="class_smol_dock_1_1_atom.html#a0c54fdff29130e870237ba300a4e9d25">variant</a>);</div><div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    }</div><div class="ttc" id="class_smol_dock_1_1_atom_html_a0c54fdff29130e870237ba300a4e9d25"><div class="ttname"><a href="class_smol_dock_1_1_atom.html#a0c54fdff29130e870237ba300a4e9d25">SmolDock::Atom::variant</a></div><div class="ttdeci">AtomVariant variant</div><div class="ttdef"><b>Definition:</b> <a href="_atom_8h_source.html#l00144">Atom.h:144</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -534,21 +649,21 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_atom_8cpp_source.html#l00096">96</a> of file <a class="el" href="_atom_8cpp_source.html">Atom.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_atom_8cpp_source.html#l00138">138</a> of file <a class="el" href="_atom_8cpp_source.html">Atom.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_atom_8h_source.html#l00116">owningAA</a>.</p>
-<div class="fragment"><div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                                             {</div><div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <span class="keywordflow">return</span> this-&gt;<a class="code" href="class_smol_dock_1_1_atom.html#a41d894e0b89dfd6e28514617a4a16ecf">owningAA</a>;</div><div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    }</div><div class="ttc" id="class_smol_dock_1_1_atom_html_a41d894e0b89dfd6e28514617a4a16ecf"><div class="ttname"><a href="class_smol_dock_1_1_atom.html#a41d894e0b89dfd6e28514617a4a16ecf">SmolDock::Atom::owningAA</a></div><div class="ttdeci">std::weak_ptr&lt; AminoAcid &gt; owningAA</div><div class="ttdef"><b>Definition:</b> <a href="_atom_8h_source.html#l00116">Atom.h:116</a></div></div>
+<p class="reference">References <a class="el" href="_atom_8h_source.html#l00149">owningAA</a>.</p>
+<div class="fragment"><div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;                                             {</div><div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;        <span class="keywordflow">return</span> this-&gt;<a class="code" href="class_smol_dock_1_1_atom.html#a41d894e0b89dfd6e28514617a4a16ecf">owningAA</a>;</div><div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    }</div><div class="ttc" id="class_smol_dock_1_1_atom_html_a41d894e0b89dfd6e28514617a4a16ecf"><div class="ttname"><a href="class_smol_dock_1_1_atom.html#a41d894e0b89dfd6e28514617a4a16ecf">SmolDock::Atom::owningAA</a></div><div class="ttdeci">std::weak_ptr&lt; AminoAcid &gt; owningAA</div><div class="ttdef"><b>Definition:</b> <a href="_atom_8h_source.html#l00149">Atom.h:149</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a9f42fafbe3cd76da61edaf6a10876f2c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9f42fafbe3cd76da61edaf6a10876f2c">&#9670;&nbsp;</a></span>getType()</h2>
+<a id="a5c58bed07491a0ad9e674d399f2ff888"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c58bed07491a0ad9e674d399f2ff888">&#9670;&nbsp;</a></span>getTypeAsString()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_smol_dock_1_1_atom.html#a57e9a532fd04e1846c0d83edebb9fd41">Atom::AtomType</a> SmolDock::Atom::getType </td>
+          <td class="memname">std::string SmolDock::Atom::getTypeAsString </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -556,33 +671,57 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_atom_8cpp_source.html#l00048">48</a> of file <a class="el" href="_atom_8cpp_source.html">Atom.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_atom_8cpp_source.html#l00095">95</a> of file <a class="el" href="_atom_8cpp_source.html">Atom.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_atom_8h_source.html#l00111">type</a>.</p>
-<div class="fragment"><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                               {</div><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="class_smol_dock_1_1_atom.html#ab3867a9c2c98c5bb43ff4a6b7f1bf856">type</a>;</div><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    }</div><div class="ttc" id="class_smol_dock_1_1_atom_html_ab3867a9c2c98c5bb43ff4a6b7f1bf856"><div class="ttname"><a href="class_smol_dock_1_1_atom.html#ab3867a9c2c98c5bb43ff4a6b7f1bf856">SmolDock::Atom::type</a></div><div class="ttdeci">AtomType type</div><div class="ttdef"><b>Definition:</b> <a href="_atom_8h_source.html#l00111">Atom.h:111</a></div></div>
+<p class="reference">References <a class="el" href="_atom_8cpp_source.html#l00047">atomTypeToString</a>, and <a class="el" href="_atom_8h_source.html#l00143">type</a>.</p>
+<div class="fragment"><div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                                    {</div><div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="class_smol_dock_1_1_atom.html#ab7591815a3dc03bab05bcb6d5e2b741a">atomTypeToString</a>(<a class="code" href="class_smol_dock_1_1_atom.html#ab3867a9c2c98c5bb43ff4a6b7f1bf856">type</a>);</div><div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    }</div><div class="ttc" id="class_smol_dock_1_1_atom_html_ab7591815a3dc03bab05bcb6d5e2b741a"><div class="ttname"><a href="class_smol_dock_1_1_atom.html#ab7591815a3dc03bab05bcb6d5e2b741a">SmolDock::Atom::atomTypeToString</a></div><div class="ttdeci">friend std::string atomTypeToString(Atom::AtomType t)</div><div class="ttdef"><b>Definition:</b> <a href="_atom_8cpp_source.html#l00047">Atom.cpp:47</a></div></div>
+<div class="ttc" id="class_smol_dock_1_1_atom_html_ab3867a9c2c98c5bb43ff4a6b7f1bf856"><div class="ttname"><a href="class_smol_dock_1_1_atom.html#ab3867a9c2c98c5bb43ff4a6b7f1bf856">SmolDock::Atom::type</a></div><div class="ttdeci">AtomType type</div><div class="ttdef"><b>Definition:</b> <a href="_atom_8h_source.html#l00143">Atom.h:143</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a66de652129ef16355da3dfcc3ae566e3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a66de652129ef16355da3dfcc3ae566e3">&#9670;&nbsp;</a></span>getTypeString()</h2>
+<a id="aba38aa3f004111483f078e97b8e34bd6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba38aa3f004111483f078e97b8e34bd6">&#9670;&nbsp;</a></span>setAtomicRadius()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::string SmolDock::Atom::getTypeString </td>
+          <td class="memname">void SmolDock::Atom::setAtomicRadius </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>r</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_atom_8cpp_source.html#l00056">56</a> of file <a class="el" href="_atom_8cpp_source.html">Atom.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_atom_8cpp_source.html#l00190">190</a> of file <a class="el" href="_atom_8cpp_source.html">Atom.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_atom_8cpp_source.html#l00023">atomTypeToString</a>, and <a class="el" href="_atom_8h_source.html#l00111">type</a>.</p>
-<div class="fragment"><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                                  {</div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="class_smol_dock_1_1_atom.html#ab7591815a3dc03bab05bcb6d5e2b741a">atomTypeToString</a>(<a class="code" href="class_smol_dock_1_1_atom.html#ab3867a9c2c98c5bb43ff4a6b7f1bf856">type</a>);</div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    }</div><div class="ttc" id="class_smol_dock_1_1_atom_html_ab7591815a3dc03bab05bcb6d5e2b741a"><div class="ttname"><a href="class_smol_dock_1_1_atom.html#ab7591815a3dc03bab05bcb6d5e2b741a">SmolDock::Atom::atomTypeToString</a></div><div class="ttdeci">friend std::string atomTypeToString(Atom::AtomType t)</div><div class="ttdef"><b>Definition:</b> <a href="_atom_8cpp_source.html#l00023">Atom.cpp:23</a></div></div>
-<div class="ttc" id="class_smol_dock_1_1_atom_html_ab3867a9c2c98c5bb43ff4a6b7f1bf856"><div class="ttname"><a href="class_smol_dock_1_1_atom.html#ab3867a9c2c98c5bb43ff4a6b7f1bf856">SmolDock::Atom::type</a></div><div class="ttdeci">AtomType type</div><div class="ttdef"><b>Definition:</b> <a href="_atom_8h_source.html#l00111">Atom.h:111</a></div></div>
+<p class="reference">References <a class="el" href="_atom_8h_source.html#l00155">atomicRadius</a>.</p>
+<div class="fragment"><div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;                                       {</div><div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;        this-&gt;<a class="code" href="class_smol_dock_1_1_atom.html#a6d2c1ae04324600154ecd49c1b4a76c5">atomicRadius</a> = r;</div><div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;</div><div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    }</div><div class="ttc" id="class_smol_dock_1_1_atom_html_a6d2c1ae04324600154ecd49c1b4a76c5"><div class="ttname"><a href="class_smol_dock_1_1_atom.html#a6d2c1ae04324600154ecd49c1b4a76c5">SmolDock::Atom::atomicRadius</a></div><div class="ttdeci">double atomicRadius</div><div class="ttdef"><b>Definition:</b> <a href="_atom_8h_source.html#l00155">Atom.h:155</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ae4cd5cf6de8ed5b8254270eb2d7ccd81"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae4cd5cf6de8ed5b8254270eb2d7ccd81">&#9670;&nbsp;</a></span>setAtomID()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SmolDock::Atom::setAtomID </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_atom_8cpp_source.html#l00173">173</a> of file <a class="el" href="_atom_8cpp_source.html">Atom.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="_atom_8h_source.html#l00152">AtomID</a>.</p>
+<div class="fragment"><div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    {</div><div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;        this-&gt;<a class="code" href="class_smol_dock_1_1_atom.html#a76afdad512e9f593c4445c6407b26597">AtomID</a> = id;</div><div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    }</div><div class="ttc" id="class_smol_dock_1_1_atom_html_a76afdad512e9f593c4445c6407b26597"><div class="ttname"><a href="class_smol_dock_1_1_atom.html#a76afdad512e9f593c4445c6407b26597">SmolDock::Atom::AtomID</a></div><div class="ttdeci">unsigned int AtomID</div><div class="ttdef"><b>Definition:</b> <a href="_atom_8h_source.html#l00152">Atom.h:152</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -602,12 +741,58 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_atom_8cpp_source.html#l00108">108</a> of file <a class="el" href="_atom_8cpp_source.html">Atom.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_atom_8cpp_source.html#l00150">150</a> of file <a class="el" href="_atom_8cpp_source.html">Atom.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_atom_8h_source.html#l00121">x</a>, <a class="el" href="_atom_8h_source.html#l00121">y</a>, and <a class="el" href="_atom_8h_source.html#l00121">z</a>.</p>
-<div class="fragment"><div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                                                                   {</div><div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        this-&gt;<a class="code" href="class_smol_dock_1_1_atom.html#a02874f0a49c2fb34884d7e40c6b92e9e">x</a> = std::get&lt;0&gt;(pos);</div><div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        this-&gt;<a class="code" href="class_smol_dock_1_1_atom.html#a253663ad700e72667d421f4d869798e1">y</a> = std::get&lt;1&gt;(pos);</div><div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        this-&gt;<a class="code" href="class_smol_dock_1_1_atom.html#a8f28d43131d21536269e220d6fa43f07">z</a> = std::get&lt;2&gt;(pos);</div><div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    }</div><div class="ttc" id="class_smol_dock_1_1_atom_html_a253663ad700e72667d421f4d869798e1"><div class="ttname"><a href="class_smol_dock_1_1_atom.html#a253663ad700e72667d421f4d869798e1">SmolDock::Atom::y</a></div><div class="ttdeci">double y</div><div class="ttdef"><b>Definition:</b> <a href="_atom_8h_source.html#l00121">Atom.h:121</a></div></div>
-<div class="ttc" id="class_smol_dock_1_1_atom_html_a02874f0a49c2fb34884d7e40c6b92e9e"><div class="ttname"><a href="class_smol_dock_1_1_atom.html#a02874f0a49c2fb34884d7e40c6b92e9e">SmolDock::Atom::x</a></div><div class="ttdeci">double x</div><div class="ttdef"><b>Definition:</b> <a href="_atom_8h_source.html#l00121">Atom.h:121</a></div></div>
-<div class="ttc" id="class_smol_dock_1_1_atom_html_a8f28d43131d21536269e220d6fa43f07"><div class="ttname"><a href="class_smol_dock_1_1_atom.html#a8f28d43131d21536269e220d6fa43f07">SmolDock::Atom::z</a></div><div class="ttdeci">double z</div><div class="ttdef"><b>Definition:</b> <a href="_atom_8h_source.html#l00121">Atom.h:121</a></div></div>
+<p class="reference">References <a class="el" href="_atom_8h_source.html#l00154">x</a>, <a class="el" href="_atom_8h_source.html#l00154">y</a>, and <a class="el" href="_atom_8h_source.html#l00154">z</a>.</p>
+<div class="fragment"><div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;                                                                   {</div><div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        this-&gt;<a class="code" href="class_smol_dock_1_1_atom.html#a02874f0a49c2fb34884d7e40c6b92e9e">x</a> = std::get&lt;0&gt;(pos);</div><div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        this-&gt;<a class="code" href="class_smol_dock_1_1_atom.html#a253663ad700e72667d421f4d869798e1">y</a> = std::get&lt;1&gt;(pos);</div><div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        this-&gt;<a class="code" href="class_smol_dock_1_1_atom.html#a8f28d43131d21536269e220d6fa43f07">z</a> = std::get&lt;2&gt;(pos);</div><div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    }</div><div class="ttc" id="class_smol_dock_1_1_atom_html_a253663ad700e72667d421f4d869798e1"><div class="ttname"><a href="class_smol_dock_1_1_atom.html#a253663ad700e72667d421f4d869798e1">SmolDock::Atom::y</a></div><div class="ttdeci">double y</div><div class="ttdef"><b>Definition:</b> <a href="_atom_8h_source.html#l00154">Atom.h:154</a></div></div>
+<div class="ttc" id="class_smol_dock_1_1_atom_html_a02874f0a49c2fb34884d7e40c6b92e9e"><div class="ttname"><a href="class_smol_dock_1_1_atom.html#a02874f0a49c2fb34884d7e40c6b92e9e">SmolDock::Atom::x</a></div><div class="ttdeci">double x</div><div class="ttdef"><b>Definition:</b> <a href="_atom_8h_source.html#l00154">Atom.h:154</a></div></div>
+<div class="ttc" id="class_smol_dock_1_1_atom_html_a8f28d43131d21536269e220d6fa43f07"><div class="ttname"><a href="class_smol_dock_1_1_atom.html#a8f28d43131d21536269e220d6fa43f07">SmolDock::Atom::z</a></div><div class="ttdeci">double z</div><div class="ttdef"><b>Definition:</b> <a href="_atom_8h_source.html#l00154">Atom.h:154</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a2adf89fbf4618bd294318062e198db66"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2adf89fbf4618bd294318062e198db66">&#9670;&nbsp;</a></span>setAtomType()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SmolDock::Atom::setAtomType </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_smol_dock_1_1_atom.html#a57e9a532fd04e1846c0d83edebb9fd41">Atom::AtomType</a>&#160;</td>
+          <td class="paramname"><em>t</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_atom_8cpp_source.html#l00158">158</a> of file <a class="el" href="_atom_8cpp_source.html">Atom.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="_atom_8h_source.html#l00143">type</a>.</p>
+<div class="fragment"><div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;                                         {</div><div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;        this-&gt;<a class="code" href="class_smol_dock_1_1_atom.html#ab3867a9c2c98c5bb43ff4a6b7f1bf856">type</a> = t;</div><div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    }</div><div class="ttc" id="class_smol_dock_1_1_atom_html_ab3867a9c2c98c5bb43ff4a6b7f1bf856"><div class="ttname"><a href="class_smol_dock_1_1_atom.html#ab3867a9c2c98c5bb43ff4a6b7f1bf856">SmolDock::Atom::type</a></div><div class="ttdeci">AtomType type</div><div class="ttdef"><b>Definition:</b> <a href="_atom_8h_source.html#l00143">Atom.h:143</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aa538e302c6c9e6cafbb9f0cbefce3a4e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa538e302c6c9e6cafbb9f0cbefce3a4e">&#9670;&nbsp;</a></span>setAtomVariant()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SmolDock::Atom::setAtomVariant </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_smol_dock_1_1_atom.html#a77191f0919af58d733764e229cb1f973">AtomVariant</a>&#160;</td>
+          <td class="paramname"><em>v</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_atom_8cpp_source.html#l00167">167</a> of file <a class="el" href="_atom_8cpp_source.html">Atom.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="_atom_8h_source.html#l00144">variant</a>.</p>
+<div class="fragment"><div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    {</div><div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;        this-&gt;<a class="code" href="class_smol_dock_1_1_atom.html#a0c54fdff29130e870237ba300a4e9d25">variant</a> = v;</div><div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    }</div><div class="ttc" id="class_smol_dock_1_1_atom_html_a0c54fdff29130e870237ba300a4e9d25"><div class="ttname"><a href="class_smol_dock_1_1_atom.html#a0c54fdff29130e870237ba300a4e9d25">SmolDock::Atom::variant</a></div><div class="ttdeci">AtomVariant variant</div><div class="ttdef"><b>Definition:</b> <a href="_atom_8h_source.html#l00144">Atom.h:144</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -627,14 +812,43 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_atom_8cpp_source.html#l00100">100</a> of file <a class="el" href="_atom_8cpp_source.html">Atom.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_atom_8cpp_source.html#l00142">142</a> of file <a class="el" href="_atom_8cpp_source.html">Atom.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_atom_8h_source.html#l00116">owningAA</a>.</p>
-<div class="fragment"><div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                                                       {</div><div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        this-&gt;<a class="code" href="class_smol_dock_1_1_atom.html#a41d894e0b89dfd6e28514617a4a16ecf">owningAA</a> = aa;</div><div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    }</div><div class="ttc" id="class_smol_dock_1_1_atom_html_a41d894e0b89dfd6e28514617a4a16ecf"><div class="ttname"><a href="class_smol_dock_1_1_atom.html#a41d894e0b89dfd6e28514617a4a16ecf">SmolDock::Atom::owningAA</a></div><div class="ttdeci">std::weak_ptr&lt; AminoAcid &gt; owningAA</div><div class="ttdef"><b>Definition:</b> <a href="_atom_8h_source.html#l00116">Atom.h:116</a></div></div>
+<p class="reference">References <a class="el" href="_atom_8h_source.html#l00149">owningAA</a>.</p>
+<div class="fragment"><div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;                                                       {</div><div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;        this-&gt;<a class="code" href="class_smol_dock_1_1_atom.html#a41d894e0b89dfd6e28514617a4a16ecf">owningAA</a> = aa;</div><div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    }</div><div class="ttc" id="class_smol_dock_1_1_atom_html_a41d894e0b89dfd6e28514617a4a16ecf"><div class="ttname"><a href="class_smol_dock_1_1_atom.html#a41d894e0b89dfd6e28514617a4a16ecf">SmolDock::Atom::owningAA</a></div><div class="ttdeci">std::weak_ptr&lt; AminoAcid &gt; owningAA</div><div class="ttdef"><b>Definition:</b> <a href="_atom_8h_source.html#l00149">Atom.h:149</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Friends And Related Function Documentation</h2>
+<a id="ae8f2ceffdf7832e3a57549119e5fc341"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae8f2ceffdf7832e3a57549119e5fc341">&#9670;&nbsp;</a></span>atomTypeToAtomicRadius</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double atomTypeToAtomicRadius </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_smol_dock_1_1_atom.html#a57e9a532fd04e1846c0d83edebb9fd41">Atom::AtomType</a>&#160;</td>
+          <td class="paramname"><em>t</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_atom_8cpp_source.html#l00073">73</a> of file <a class="el" href="_atom_8cpp_source.html">Atom.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                                                  {</div><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <span class="keyword">auto</span> it = std::find_if(<a class="code" href="class_smol_dock_1_1_atom.html#aed79f9306267e3ddbd9a9b4dade2bbbf">Atom::AtomTypeLabel</a>.begin(), <a class="code" href="class_smol_dock_1_1_atom.html#aed79f9306267e3ddbd9a9b4dade2bbbf">Atom::AtomTypeLabel</a>.end(),</div><div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                               [&amp;](<span class="keyword">const</span> std::tuple&lt;Atom::AtomType, std::string, std::string, double&gt; &amp;e) {</div><div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                                   <span class="keywordflow">return</span> std::get&lt;0&gt;(e) == t;</div><div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                               });</div><div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <span class="keywordflow">if</span> (it != <a class="code" href="class_smol_dock_1_1_atom.html#aed79f9306267e3ddbd9a9b4dade2bbbf">Atom::AtomTypeLabel</a>.end()) {</div><div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            <span class="keywordflow">return</span> std::get&lt;3&gt;(*it);</div><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        }<span class="keywordflow">else</span>{</div><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            BOOST_LOG_TRIVIAL(error) &lt;&lt; <span class="stringliteral">&quot;Encountered unknown AtomType while finding atomic radius: &quot;</span> &lt;&lt; <span class="keyword">static_cast&lt;</span><span class="keywordtype">unsigned</span> <span class="keywordtype">char</span><span class="keyword">&gt;</span>(t);</div><div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            <span class="keywordflow">return</span> 0;</div><div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        }</div><div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    }</div><div class="ttc" id="class_smol_dock_1_1_atom_html_aed79f9306267e3ddbd9a9b4dade2bbbf"><div class="ttname"><a href="class_smol_dock_1_1_atom.html#aed79f9306267e3ddbd9a9b4dade2bbbf">SmolDock::Atom::AtomTypeLabel</a></div><div class="ttdeci">static std::set&lt; std::tuple&lt; Atom::AtomType, std::string, std::string, double &gt; &gt; AtomTypeLabel</div><div class="ttdef"><b>Definition:</b> <a href="_atom_8h_source.html#l00157">Atom.h:157</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
 <a id="ab7591815a3dc03bab05bcb6d5e2b741a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab7591815a3dc03bab05bcb6d5e2b741a">&#9670;&nbsp;</a></span>atomTypeToString</h2>
 
@@ -659,8 +873,8 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_atom_8cpp_source.html#l00023">23</a> of file <a class="el" href="_atom_8cpp_source.html">Atom.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;                                                     {</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="keyword">auto</span> it = std::find_if(<a class="code" href="class_smol_dock_1_1_atom.html#ad2ea08ee5e9fde5927f30ebe2a3a7142">Atom::AtomTypeLabel</a>.begin(), <a class="code" href="class_smol_dock_1_1_atom.html#ad2ea08ee5e9fde5927f30ebe2a3a7142">Atom::AtomTypeLabel</a>.end(),</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                               [&amp;](<span class="keyword">const</span> std::tuple&lt;Atom::AtomType, std::string, std::string&gt; &amp;e) {</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                                   <span class="keywordflow">return</span> std::get&lt;0&gt;(e) == t;</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                               });</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keywordflow">if</span> (it != <a class="code" href="class_smol_dock_1_1_atom.html#ad2ea08ee5e9fde5927f30ebe2a3a7142">Atom::AtomTypeLabel</a>.end()) {</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            <span class="keywordflow">return</span> std::get&lt;1&gt;(*it);</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        }</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    }</div><div class="ttc" id="class_smol_dock_1_1_atom_html_ad2ea08ee5e9fde5927f30ebe2a3a7142"><div class="ttname"><a href="class_smol_dock_1_1_atom.html#ad2ea08ee5e9fde5927f30ebe2a3a7142">SmolDock::Atom::AtomTypeLabel</a></div><div class="ttdeci">static std::set&lt; std::tuple&lt; Atom::AtomType, std::string, std::string &gt; &gt; AtomTypeLabel</div><div class="ttdef"><b>Definition:</b> <a href="_atom_8h_source.html#l00123">Atom.h:123</a></div></div>
+<p class="definition">Definition at line <a class="el" href="_atom_8cpp_source.html#l00047">47</a> of file <a class="el" href="_atom_8cpp_source.html">Atom.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                                                     {</div><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keyword">auto</span> it = std::find_if(<a class="code" href="class_smol_dock_1_1_atom.html#aed79f9306267e3ddbd9a9b4dade2bbbf">Atom::AtomTypeLabel</a>.begin(), <a class="code" href="class_smol_dock_1_1_atom.html#aed79f9306267e3ddbd9a9b4dade2bbbf">Atom::AtomTypeLabel</a>.end(),</div><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                               [&amp;](<span class="keyword">const</span> std::tuple&lt;Atom::AtomType, std::string, std::string, double&gt; &amp;e) {</div><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                                   <span class="keywordflow">return</span> std::get&lt;0&gt;(e) == t;</div><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                               });</div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keywordflow">if</span> (it != <a class="code" href="class_smol_dock_1_1_atom.html#aed79f9306267e3ddbd9a9b4dade2bbbf">Atom::AtomTypeLabel</a>.end()) {</div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            <span class="keywordflow">return</span> std::get&lt;1&gt;(*it);</div><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        }<span class="keywordflow">else</span>{</div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            BOOST_LOG_TRIVIAL(error) &lt;&lt; <span class="stringliteral">&quot;Encountered unknown atom AtomType while converting to string: &quot;</span> &lt;&lt; <span class="keyword">static_cast&lt;</span><span class="keywordtype">unsigned</span> <span class="keywordtype">char</span><span class="keyword">&gt;</span>(t);</div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            <span class="keywordflow">return</span> std::string(<span class="stringliteral">&quot;&quot;</span>);</div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        }</div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    }</div><div class="ttc" id="class_smol_dock_1_1_atom_html_aed79f9306267e3ddbd9a9b4dade2bbbf"><div class="ttname"><a href="class_smol_dock_1_1_atom.html#aed79f9306267e3ddbd9a9b4dade2bbbf">SmolDock::Atom::AtomTypeLabel</a></div><div class="ttdeci">static std::set&lt; std::tuple&lt; Atom::AtomType, std::string, std::string, double &gt; &gt; AtomTypeLabel</div><div class="ttdef"><b>Definition:</b> <a href="_atom_8h_source.html#l00157">Atom.h:157</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -684,7 +898,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_atom_8h_source.html#l00036">36</a> of file <a class="el" href="_atom_8h_source.html">Atom.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_atom_8h_source.html#l00051">51</a> of file <a class="el" href="_atom_8h_source.html">Atom.h</a>.</p>
 
 </div>
 </div>
@@ -712,9 +926,9 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_atom_8cpp_source.html#l00033">33</a> of file <a class="el" href="_atom_8cpp_source.html">Atom.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                                                                   {</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="keyword">auto</span> it = std::find_if(<a class="code" href="class_smol_dock_1_1_atom.html#ad2ea08ee5e9fde5927f30ebe2a3a7142">Atom::AtomTypeLabel</a>.begin(), <a class="code" href="class_smol_dock_1_1_atom.html#ad2ea08ee5e9fde5927f30ebe2a3a7142">Atom::AtomTypeLabel</a>.end(),</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                               [&amp;](<span class="keyword">const</span> std::tuple&lt;Atom::AtomType, std::string, std::string&gt; &amp;e) {</div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                                   <span class="keywordflow">return</span> (std::get&lt;1&gt;(e) == symbol_or_name) || (std::get&lt;2&gt;(e) == symbol_or_name);</div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                               });</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keywordflow">if</span> (it != <a class="code" href="class_smol_dock_1_1_atom.html#ad2ea08ee5e9fde5927f30ebe2a3a7142">Atom::AtomTypeLabel</a>.end()) {</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            <span class="keywordflow">return</span> std::get&lt;0&gt;(*it);</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        } <span class="keywordflow">else</span> {</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            std::cout &lt;&lt; <span class="stringliteral">&quot;[!] Encountered unknown atom symbol_or_name : &quot;</span> &lt;&lt; symbol_or_name &lt;&lt; std::endl;</div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="class_smol_dock_1_1_atom.html#a57e9a532fd04e1846c0d83edebb9fd41aad921d60486366258809553a3db49a4a">Atom::AtomType::unknown</a>;</div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        }</div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    }</div><div class="ttc" id="class_smol_dock_1_1_atom_html_ad2ea08ee5e9fde5927f30ebe2a3a7142"><div class="ttname"><a href="class_smol_dock_1_1_atom.html#ad2ea08ee5e9fde5927f30ebe2a3a7142">SmolDock::Atom::AtomTypeLabel</a></div><div class="ttdeci">static std::set&lt; std::tuple&lt; Atom::AtomType, std::string, std::string &gt; &gt; AtomTypeLabel</div><div class="ttdef"><b>Definition:</b> <a href="_atom_8h_source.html#l00123">Atom.h:123</a></div></div>
-<div class="ttc" id="class_smol_dock_1_1_atom_html_a57e9a532fd04e1846c0d83edebb9fd41aad921d60486366258809553a3db49a4a"><div class="ttname"><a href="class_smol_dock_1_1_atom.html#a57e9a532fd04e1846c0d83edebb9fd41aad921d60486366258809553a3db49a4a">SmolDock::Atom::AtomType::unknown</a></div></div>
+<p class="definition">Definition at line <a class="el" href="_atom_8cpp_source.html#l00060">60</a> of file <a class="el" href="_atom_8cpp_source.html">Atom.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                                                                   {</div><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keyword">auto</span> it = std::find_if(<a class="code" href="class_smol_dock_1_1_atom.html#aed79f9306267e3ddbd9a9b4dade2bbbf">Atom::AtomTypeLabel</a>.begin(), <a class="code" href="class_smol_dock_1_1_atom.html#aed79f9306267e3ddbd9a9b4dade2bbbf">Atom::AtomTypeLabel</a>.end(),</div><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                               [&amp;](<span class="keyword">const</span> std::tuple&lt;Atom::AtomType, std::string, std::string, double&gt; &amp;e) {</div><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                                   <span class="keywordflow">return</span> (std::get&lt;1&gt;(e) == symbol_or_name) || (std::get&lt;2&gt;(e) == symbol_or_name);</div><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                               });</div><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="keywordflow">if</span> (it != <a class="code" href="class_smol_dock_1_1_atom.html#aed79f9306267e3ddbd9a9b4dade2bbbf">Atom::AtomTypeLabel</a>.end()) {</div><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            <span class="keywordflow">return</span> std::get&lt;0&gt;(*it);</div><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        } <span class="keywordflow">else</span> {</div><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            BOOST_LOG_TRIVIAL(error) &lt;&lt; <span class="stringliteral">&quot;Encountered unknown atom symbol_or_name while converting from string: &quot;</span> &lt;&lt; symbol_or_name;</div><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="class_smol_dock_1_1_atom.html#a57e9a532fd04e1846c0d83edebb9fd41aad921d60486366258809553a3db49a4a">Atom::AtomType::unknown</a>;</div><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        }</div><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    }</div><div class="ttc" id="class_smol_dock_1_1_atom_html_a57e9a532fd04e1846c0d83edebb9fd41aad921d60486366258809553a3db49a4a"><div class="ttname"><a href="class_smol_dock_1_1_atom.html#a57e9a532fd04e1846c0d83edebb9fd41aad921d60486366258809553a3db49a4a">SmolDock::Atom::AtomType::unknown</a></div></div>
+<div class="ttc" id="class_smol_dock_1_1_atom_html_aed79f9306267e3ddbd9a9b4dade2bbbf"><div class="ttname"><a href="class_smol_dock_1_1_atom.html#aed79f9306267e3ddbd9a9b4dade2bbbf">SmolDock::Atom::AtomTypeLabel</a></div><div class="ttdeci">static std::set&lt; std::tuple&lt; Atom::AtomType, std::string, std::string, double &gt; &gt; AtomTypeLabel</div><div class="ttdef"><b>Definition:</b> <a href="_atom_8h_source.html#l00157">Atom.h:157</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -739,7 +953,31 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_atom_8h_source.html#l00115">115</a> of file <a class="el" href="_atom_8h_source.html">Atom.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_atom_8h_source.html#l00148">148</a> of file <a class="el" href="_atom_8h_source.html">Atom.h</a>.</p>
+
+</div>
+</div>
+<a id="a6d2c1ae04324600154ecd49c1b4a76c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d2c1ae04324600154ecd49c1b4a76c5">&#9670;&nbsp;</a></span>atomicRadius</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double SmolDock::Atom::atomicRadius</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_atom_8h_source.html#l00155">155</a> of file <a class="el" href="_atom_8h_source.html">Atom.h</a>.</p>
 
 </div>
 </div>
@@ -763,12 +1001,12 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_atom_8h_source.html#l00119">119</a> of file <a class="el" href="_atom_8h_source.html">Atom.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_atom_8h_source.html#l00152">152</a> of file <a class="el" href="_atom_8h_source.html">Atom.h</a>.</p>
 
 </div>
 </div>
-<a id="ad2ea08ee5e9fde5927f30ebe2a3a7142"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad2ea08ee5e9fde5927f30ebe2a3a7142">&#9670;&nbsp;</a></span>AtomTypeLabel</h2>
+<a id="aed79f9306267e3ddbd9a9b4dade2bbbf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed79f9306267e3ddbd9a9b4dade2bbbf">&#9670;&nbsp;</a></span>AtomTypeLabel</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -777,7 +1015,7 @@ Friends</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::set&lt; std::tuple&lt; <a class="el" href="class_smol_dock_1_1_atom.html#a57e9a532fd04e1846c0d83edebb9fd41">Atom::AtomType</a>, std::string, std::string &gt; &gt; SmolDock::Atom::AtomTypeLabel</td>
+          <td class="memname">std::set&lt; std::tuple&lt; <a class="el" href="class_smol_dock_1_1_atom.html#a57e9a532fd04e1846c0d83edebb9fd41">Atom::AtomType</a>, std::string, std::string, double &gt; &gt; SmolDock::Atom::AtomTypeLabel</td>
         </tr>
       </table>
   </td>
@@ -786,8 +1024,8 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">= {</div><div class="line">            {<a class="code" href="class_smol_dock_1_1_atom.html#a57e9a532fd04e1846c0d83edebb9fd41aad921d60486366258809553a3db49a4a">Atom::AtomType::unknown</a>,  <span class="stringliteral">&quot;unknown&quot;</span>,  <span class="stringliteral">&quot;?&quot;</span>},</div><div class="line">            {<a class="code" href="class_smol_dock_1_1_atom.html#a57e9a532fd04e1846c0d83edebb9fd41ad4ac1478a4d8a4f591d35e3d75f3de65">Atom::AtomType::hydrogen</a>, <span class="stringliteral">&quot;hydrogen&quot;</span>, <span class="stringliteral">&quot;H&quot;</span>},</div><div class="line">            {<a class="code" href="class_smol_dock_1_1_atom.html#a57e9a532fd04e1846c0d83edebb9fd41ae1b832c8857262f1089376030b4298b3">Atom::AtomType::carbon</a>,   <span class="stringliteral">&quot;carbon&quot;</span>,   <span class="stringliteral">&quot;C&quot;</span>},</div><div class="line">            {<a class="code" href="class_smol_dock_1_1_atom.html#a57e9a532fd04e1846c0d83edebb9fd41a6124d98749365e3db2c9e5b27ca04db6">Atom::AtomType::oxygen</a>,   <span class="stringliteral">&quot;oxygen&quot;</span>,   <span class="stringliteral">&quot;O&quot;</span>},</div><div class="line">            {<a class="code" href="class_smol_dock_1_1_atom.html#a57e9a532fd04e1846c0d83edebb9fd41a63ebb9250f49340aece8d4ac541eaf61">Atom::AtomType::nitrogen</a>, <span class="stringliteral">&quot;nitrogen&quot;</span>, <span class="stringliteral">&quot;N&quot;</span>},</div><div class="line">            {<a class="code" href="class_smol_dock_1_1_atom.html#a57e9a532fd04e1846c0d83edebb9fd41a73a9bf52aa8ea9e256ec469dfce6e022">Atom::AtomType::sulfur</a>,   <span class="stringliteral">&quot;sulfur&quot;</span>,   <span class="stringliteral">&quot;S&quot;</span>},</div><div class="line">            {<a class="code" href="class_smol_dock_1_1_atom.html#a57e9a532fd04e1846c0d83edebb9fd41af3b7d449c5ca2f53a72210e4381769be">Atom::AtomType::chlorine</a>, <span class="stringliteral">&quot;chlorine&quot;</span>, <span class="stringliteral">&quot;CL&quot;</span>}</div><div class="line">    }</div></div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="_atom_8h_source.html#l00123">123</a> of file <a class="el" href="_atom_8h_source.html">Atom.h</a>.</p>
+<b>Initial value:</b><div class="fragment"><div class="line">= {</div><div class="line">            {<a class="code" href="class_smol_dock_1_1_atom.html#a57e9a532fd04e1846c0d83edebb9fd41aad921d60486366258809553a3db49a4a">Atom::AtomType::unknown</a>,  <span class="stringliteral">&quot;unknown&quot;</span>,  <span class="stringliteral">&quot;?&quot;</span>, 0.0},</div><div class="line">            {<a class="code" href="class_smol_dock_1_1_atom.html#a57e9a532fd04e1846c0d83edebb9fd41ad4ac1478a4d8a4f591d35e3d75f3de65">Atom::AtomType::hydrogen</a>, <span class="stringliteral">&quot;hydrogen&quot;</span>, <span class="stringliteral">&quot;H&quot;</span>, 0.3},</div><div class="line">            {<a class="code" href="class_smol_dock_1_1_atom.html#a57e9a532fd04e1846c0d83edebb9fd41ae1b832c8857262f1089376030b4298b3">Atom::AtomType::carbon</a>,   <span class="stringliteral">&quot;carbon&quot;</span>,   <span class="stringliteral">&quot;C&quot;</span>, 2.0},</div><div class="line">            {<a class="code" href="class_smol_dock_1_1_atom.html#a57e9a532fd04e1846c0d83edebb9fd41a6124d98749365e3db2c9e5b27ca04db6">Atom::AtomType::oxygen</a>,   <span class="stringliteral">&quot;oxygen&quot;</span>,   <span class="stringliteral">&quot;O&quot;</span>, 1.6},</div><div class="line">            {<a class="code" href="class_smol_dock_1_1_atom.html#a57e9a532fd04e1846c0d83edebb9fd41a63ebb9250f49340aece8d4ac541eaf61">Atom::AtomType::nitrogen</a>, <span class="stringliteral">&quot;nitrogen&quot;</span>, <span class="stringliteral">&quot;N&quot;</span>, 1.7},</div><div class="line">            {<a class="code" href="class_smol_dock_1_1_atom.html#a57e9a532fd04e1846c0d83edebb9fd41a73a9bf52aa8ea9e256ec469dfce6e022">Atom::AtomType::sulfur</a>,   <span class="stringliteral">&quot;sulfur&quot;</span>,   <span class="stringliteral">&quot;S&quot;</span>, 2.6},</div><div class="line">            {<a class="code" href="class_smol_dock_1_1_atom.html#a57e9a532fd04e1846c0d83edebb9fd41af3b7d449c5ca2f53a72210e4381769be">Atom::AtomType::chlorine</a>, <span class="stringliteral">&quot;chlorine&quot;</span>, <span class="stringliteral">&quot;CL&quot;</span>, 4.6}</div><div class="line">    }</div></div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="_atom_8h_source.html#l00157">157</a> of file <a class="el" href="_atom_8h_source.html">Atom.h</a>.</p>
 
 </div>
 </div>
@@ -803,7 +1041,7 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_atom_8h_source.html#l00033">33</a> of file <a class="el" href="_atom_8h_source.html">Atom.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_atom_8h_source.html#l00048">48</a> of file <a class="el" href="_atom_8h_source.html">Atom.h</a>.</p>
 
 </div>
 </div>
@@ -827,7 +1065,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_atom_8h_source.html#l00108">108</a> of file <a class="el" href="_atom_8h_source.html">Atom.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_atom_8h_source.html#l00140">140</a> of file <a class="el" href="_atom_8h_source.html">Atom.h</a>.</p>
 
 </div>
 </div>
@@ -851,7 +1089,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_atom_8h_source.html#l00113">113</a> of file <a class="el" href="_atom_8h_source.html">Atom.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_atom_8h_source.html#l00146">146</a> of file <a class="el" href="_atom_8h_source.html">Atom.h</a>.</p>
 
 </div>
 </div>
@@ -867,7 +1105,7 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_atom_8h_source.html#l00034">34</a> of file <a class="el" href="_atom_8h_source.html">Atom.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_atom_8h_source.html#l00049">49</a> of file <a class="el" href="_atom_8h_source.html">Atom.h</a>.</p>
 
 </div>
 </div>
@@ -891,7 +1129,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_atom_8h_source.html#l00118">118</a> of file <a class="el" href="_atom_8h_source.html">Atom.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_atom_8h_source.html#l00151">151</a> of file <a class="el" href="_atom_8h_source.html">Atom.h</a>.</p>
 
 </div>
 </div>
@@ -915,7 +1153,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_atom_8h_source.html#l00116">116</a> of file <a class="el" href="_atom_8h_source.html">Atom.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_atom_8h_source.html#l00149">149</a> of file <a class="el" href="_atom_8h_source.html">Atom.h</a>.</p>
 
 </div>
 </div>
@@ -939,7 +1177,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_atom_8h_source.html#l00114">114</a> of file <a class="el" href="_atom_8h_source.html">Atom.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_atom_8h_source.html#l00147">147</a> of file <a class="el" href="_atom_8h_source.html">Atom.h</a>.</p>
 
 </div>
 </div>
@@ -963,7 +1201,31 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_atom_8h_source.html#l00111">111</a> of file <a class="el" href="_atom_8h_source.html">Atom.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_atom_8h_source.html#l00143">143</a> of file <a class="el" href="_atom_8h_source.html">Atom.h</a>.</p>
+
+</div>
+</div>
+<a id="a0c54fdff29130e870237ba300a4e9d25"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c54fdff29130e870237ba300a4e9d25">&#9670;&nbsp;</a></span>variant</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_smol_dock_1_1_atom.html#a77191f0919af58d733764e229cb1f973">AtomVariant</a> SmolDock::Atom::variant</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_atom_8h_source.html#l00144">144</a> of file <a class="el" href="_atom_8h_source.html">Atom.h</a>.</p>
 
 </div>
 </div>
@@ -987,7 +1249,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_atom_8h_source.html#l00121">121</a> of file <a class="el" href="_atom_8h_source.html">Atom.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_atom_8h_source.html#l00154">154</a> of file <a class="el" href="_atom_8h_source.html">Atom.h</a>.</p>
 
 </div>
 </div>
@@ -1011,7 +1273,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_atom_8h_source.html#l00121">121</a> of file <a class="el" href="_atom_8h_source.html">Atom.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_atom_8h_source.html#l00154">154</a> of file <a class="el" href="_atom_8h_source.html">Atom.h</a>.</p>
 
 </div>
 </div>
@@ -1035,7 +1297,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_atom_8h_source.html#l00121">121</a> of file <a class="el" href="_atom_8h_source.html">Atom.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_atom_8h_source.html#l00154">154</a> of file <a class="el" href="_atom_8h_source.html">Atom.h</a>.</p>
 
 </div>
 </div>

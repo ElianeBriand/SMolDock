@@ -58,7 +58,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_abstract_docking_engine_8h.html",
-"i_atom_8h.html"
+"class_smol_dock_1_1_molecule_traversal.html#af59b1f0d101bf5aec1da5ba0442f6990"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

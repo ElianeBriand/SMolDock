@@ -29,6 +29,8 @@
 #include <tuple>
 #include <memory>
 
+#include "Engines/Internals/iProtein.h"
+
 
 namespace SmolDock {
 
@@ -79,12 +81,19 @@ namespace SmolDock {
         explicit AminoAcid(const AminoAcid::AAType &type);
 
 
+        unsigned int getAAId();
+        void setAAId(unsigned int id);
+
+        bool filliProtein(iProtein& prot);
+
     protected:
         static std::set<std::tuple<AminoAcid::AAType, std::string, std::string> > AAShorthandSet;
 
 
     private:
         AAType type;
+
+        unsigned int AAId;
 
         std::string shorthand;
         std::string fullName;

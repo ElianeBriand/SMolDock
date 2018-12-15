@@ -24,12 +24,14 @@
 #include <vector>
 #include <memory>
 
-#include "iAtom.h"
 
 namespace SmolDock {
 
     struct iConformer {
-        std::unique_ptr<std::vector<iAtom>> atoms_vect;
+        std::vector<double> x,y,z;
+        std::vector<double> atomicRadius;
+        std::vector<unsigned char> type;
+        std::vector<unsigned char> variant;
     };
 
 }

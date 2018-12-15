@@ -12,9 +12,13 @@ var hierarchy =
     [ "enable_shared_from_this", null, [
       [ "SmolDock::Bond", "class_smol_dock_1_1_bond.html", null ]
     ] ],
-    [ "SmolDock::iAtom", "namespace_smol_dock.html#struct_smol_dock_1_1i_atom", null ],
     [ "SmolDock::iConformer", "namespace_smol_dock.html#struct_smol_dock_1_1i_conformer", null ],
+    [ "SmolDock::iGradient", "namespace_smol_dock.html#struct_smol_dock_1_1i_gradient", null ],
     [ "SmolDock::iProtein", "namespace_smol_dock.html#struct_smol_dock_1_1i_protein", null ],
+    [ "SmolDock::iQuaternion", "namespace_smol_dock.html#struct_smol_dock_1_1i_quaternion", null ],
+    [ "SmolDock::iTransform", "namespace_smol_dock.html#struct_smol_dock_1_1i_transform", null ],
+    [ "SmolDock::iTranslation", "namespace_smol_dock.html#struct_smol_dock_1_1i_translation", null ],
+    [ "SmolDock::iVect", "namespace_smol_dock.html#struct_smol_dock_1_1i_vect", null ],
     [ "SmolDock::MoleculeTraversal", "class_smol_dock_1_1_molecule_traversal.html", null ],
     [ "SmolDock::Structure", "class_smol_dock_1_1_structure.html", [
       [ "SmolDock::Molecule", "class_smol_dock_1_1_molecule.html", null ],

@@ -25,27 +25,31 @@ var files_dup =
     [ "DockingResultPrinter.h", "_docking_result_printer_8h.html", [
       [ "DockingResultPrinter", "class_smol_dock_1_1_docking_result_printer.html", "class_smol_dock_1_1_docking_result_printer" ]
     ] ],
-    [ "iAtom.cpp", "i_atom_8cpp.html", null ],
-    [ "iAtom.h", "i_atom_8h.html", [
-      [ "iAtom", "namespace_smol_dock.html#struct_smol_dock_1_1i_atom", [
-        [ "atomicNum", "namespace_smol_dock.html#a671e7d72c54e461a7719c94705ee6103", null ],
-        [ "x", "namespace_smol_dock.html#a9c2f9dadec039f72274d46b4292240ae", null ],
-        [ "y", "namespace_smol_dock.html#aed903239c438c1304b7e3c68d10d41e1", null ],
-        [ "z", "namespace_smol_dock.html#a7164b26142f6b8022af89d4ab1c32687", null ]
-      ] ]
-    ] ],
-    [ "iConformer.cpp", "i_conformer_8cpp.html", null ],
     [ "iConformer.h", "i_conformer_8h.html", [
       [ "iConformer", "namespace_smol_dock.html#struct_smol_dock_1_1i_conformer", [
-        [ "atoms_vect", "namespace_smol_dock.html#a18fd974857dffddf4b6233c7c5d70f94", null ]
+        [ "atomicRadius", "namespace_smol_dock.html#a1dbd8cb4eaa4e5e2f0afcdd1b36dd862", null ],
+        [ "type", "namespace_smol_dock.html#add04de1dd457ae228e398ffa9260497d", null ],
+        [ "variant", "namespace_smol_dock.html#ad310936289e38ae6fca788741b0cfffa", null ],
+        [ "x", "namespace_smol_dock.html#a45c379f6a880da313bf3519dc415e992", null ],
+        [ "y", "namespace_smol_dock.html#ac3019c0cd62660a4392591dd9519cc9a", null ],
+        [ "z", "namespace_smol_dock.html#a5c1fc6f9bad31ec2731337e9ba1e9a0f", null ]
       ] ]
     ] ],
-    [ "iProtein.cpp", "i_protein_8cpp.html", null ],
     [ "iProtein.h", "i_protein_8h.html", [
       [ "iProtein", "namespace_smol_dock.html#struct_smol_dock_1_1i_protein", [
-        [ "atoms_vect", "namespace_smol_dock.html#a2a2bc12a606a78f7e37d88d1b2bcee1a", null ]
+        [ "AAId_to_AtomPositionInVect", "namespace_smol_dock.html#acee4fb06b1e47d4ae4de51e6d0ef144b", null ],
+        [ "atomicRadius", "namespace_smol_dock.html#a56480d9a766ca9a3564ade7b91585f0f", null ],
+        [ "center_x", "namespace_smol_dock.html#a8e62b22e54589f2727b0743cf58a3551", null ],
+        [ "center_y", "namespace_smol_dock.html#a834d2ab9d8580f255616a13a1af785c2", null ],
+        [ "center_z", "namespace_smol_dock.html#a8b3ccbb789373d51a3889158167c3c9a", null ],
+        [ "type", "namespace_smol_dock.html#a8a9cecc0e9750baf8d7074fe64b4331d", null ],
+        [ "variant", "namespace_smol_dock.html#ac8f37b4dd33f21e3a368f18e8ceaa153", null ],
+        [ "x", "namespace_smol_dock.html#ae36a5b0f6996e54f9ce1f746a79e23f8", null ],
+        [ "y", "namespace_smol_dock.html#a090a371c93db6928cdfef39b0ce3d1fd", null ],
+        [ "z", "namespace_smol_dock.html#ab95306577aa2d8bdd268504b44d046ad", null ]
       ] ]
     ] ],
+    [ "iTransform.h", "i_transform_8h.html", "i_transform_8h" ],
     [ "main.cpp", "main_8cpp.html", "main_8cpp" ],
     [ "MDStyleDockingEngine.cpp", "_m_d_style_docking_engine_8cpp.html", null ],
     [ "MDStyleDockingEngine.h", "_m_d_style_docking_engine_8h.html", [

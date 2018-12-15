@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['ligand',['ligand',['../class_smol_dock_1_1_engine_1_1_m_d_style_docking_engine.html#a84918732053b3811731fcbc8afc1d7ac',1,'SmolDock::Engine::MDStyleDockingEngine']]]
+  ['heteroatoms',['heteroatoms',['../class_smol_dock_1_1_protein.html#a86e77c7079be2b4d3e1a8e3e53a4ce02',1,'SmolDock::Protein']]]
 ];

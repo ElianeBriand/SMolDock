@@ -20,6 +20,9 @@
 
 #include "Atom.h"
 
+#include <boost/log/trivial.hpp>
+
+
 namespace SmolDock {
 
     unsigned int Atom::nextAtomID = 0;
@@ -29,34 +32,54 @@ namespace SmolDock {
         this->AtomID = nextAtomID;
         nextAtomID++;
 
+        this->atomicRadius = atomTypeToAtomicRadius(t);
+
     }
 
 
     Atom::Atom(Atom::AtomType t, unsigned int id) : type(t) {
         this->AtomID = id;
+
+        this->atomicRadius = atomTypeToAtomicRadius(t);
+
     }
 
     std::string atomTypeToString(const Atom::AtomType t) {
         auto it = std::find_if(Atom::AtomTypeLabel.begin(), Atom::AtomTypeLabel.end(),
-                               [&](const std::tuple<Atom::AtomType, std::string, std::string> &e) {
+                               [&](const std::tuple<Atom::AtomType, std::string, std::string, double> &e) {
                                    return std::get<0>(e) == t;
                                });
         if (it != Atom::AtomTypeLabel.end()) {
             return std::get<1>(*it);
+        }else{
+            BOOST_LOG_TRIVIAL(error) << "Encountered unknown atom AtomType while converting to string: " << static_cast<unsigned char>(t);
+            return std::string("");
         }
     }
 
     Atom::AtomType stringToAtomType(const std::string &symbol_or_name) {
         auto it = std::find_if(Atom::AtomTypeLabel.begin(), Atom::AtomTypeLabel.end(),
-                               [&](const std::tuple<Atom::AtomType, std::string, std::string> &e) {
+                               [&](const std::tuple<Atom::AtomType, std::string, std::string, double> &e) {
                                    return (std::get<1>(e) == symbol_or_name) || (std::get<2>(e) == symbol_or_name);
                                });
         if (it != Atom::AtomTypeLabel.end()) {
             return std::get<0>(*it);
         } else {
-
-            std::cout << "[!] Encountered unknown atom symbol_or_name : " << symbol_or_name << std::endl;
+            BOOST_LOG_TRIVIAL(error) << "Encountered unknown atom symbol_or_name while converting from string: " << symbol_or_name;
             return Atom::AtomType::unknown;
+        }
+    }
+
+    double atomTypeToAtomicRadius(Atom::AtomType t) {
+        auto it = std::find_if(Atom::AtomTypeLabel.begin(), Atom::AtomTypeLabel.end(),
+                               [&](const std::tuple<Atom::AtomType, std::string, std::string, double> &e) {
+                                   return std::get<0>(e) == t;
+                               });
+        if (it != Atom::AtomTypeLabel.end()) {
+            return std::get<3>(*it);
+        }else{
+            BOOST_LOG_TRIVIAL(error) << "Encountered unknown AtomType while finding atomic radius: " << static_cast<unsigned char>(t);
+            return 0;
         }
     }
 
@@ -79,14 +102,16 @@ namespace SmolDock {
             oxygen,
             nitrogen*/
 
-    std::set<std::tuple<Atom::AtomType, std::string, std::string> > Atom::AtomTypeLabel = {
-            {Atom::AtomType::unknown,  "unknown",  "?"},
-            {Atom::AtomType::hydrogen, "hydrogen", "H"},
-            {Atom::AtomType::carbon,   "carbon",   "C"},
-            {Atom::AtomType::oxygen,   "oxygen",   "O"},
-            {Atom::AtomType::nitrogen, "nitrogen", "N"},
-            {Atom::AtomType::sulfur,   "sulfur",   "S"},
-            {Atom::AtomType::chlorine, "chlorine", "CL"}
+    // Guestimated atomic raddi from https://www.researchgate.net/figure/Atomic-radii-used-in-Vina-and-Vinardo-scoring-functions-CA-are-aromatic-carbons-Values_fig12_303027182
+    // TODO : get real values for atomic radii
+    std::set<std::tuple<Atom::AtomType, std::string, std::string, double> > Atom::AtomTypeLabel = {
+            {Atom::AtomType::unknown,  "unknown",  "?", 0.0},
+            {Atom::AtomType::hydrogen, "hydrogen", "H", 0.3},
+            {Atom::AtomType::carbon,   "carbon",   "C", 2.0},
+            {Atom::AtomType::oxygen,   "oxygen",   "O", 1.6},
+            {Atom::AtomType::nitrogen, "nitrogen", "N", 1.7},
+            {Atom::AtomType::sulfur,   "sulfur",   "S", 2.6},
+            {Atom::AtomType::chlorine, "chlorine", "CL", 4.6}
     };
 
 
@@ -101,6 +126,7 @@ namespace SmolDock {
         }
         this->residueType = resType; // Default : heteroatom
         this->AtomID = nextAtomID;
+        this->atomicRadius = atomTypeToAtomicRadius(this->type);
         nextAtomID++;
     }
 
@@ -127,18 +153,7 @@ namespace SmolDock {
         this->z = std::get<2>(pos);
     }
 
-    iAtom Atom::generateiAtom() {
-        iAtom ret{}; // R.V.O.
-        emplaceiAtom(ret);
-        return ret;
-    }
 
-    void Atom::emplaceiAtom(iAtom &atom) {
-        atom.atomicNum = static_cast<unsigned char>(this->type); // The enum is defined such that the value are atomic numbers
-        atom.x = this->x;
-        atom.y = this->y;
-        atom.z = this->z;
-    }
 
     void Atom::setAtomType(Atom::AtomType t) {
         this->type = t;
@@ -160,6 +175,22 @@ namespace SmolDock {
         this->AtomID = id;
     }
 
+    unsigned char Atom::getAtomicNumber() {
+        return static_cast<unsigned char>(this->type);
+    }
+
+    unsigned int Atom::getAtomVariantAsUnderlyingType() {
+        return static_cast<unsigned int>(this->variant);
+    }
+
+    double Atom::getAtomicRadius() {
+        return this->atomicRadius;
+    }
+
+    void Atom::setAtomicRadius(double r) {
+        this->atomicRadius = r;
+
+    }
 
 
 }

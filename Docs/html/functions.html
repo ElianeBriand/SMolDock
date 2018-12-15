@@ -20,6 +20,12 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script><script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -89,6 +95,12 @@ $(document).ready(function(){initNavTree('functions.html','');});
 <div class="textblock">Here is a list of all class members with links to the classes they belong to:</div>
 
 <h3><a id="index_a"></a>- a -</h3><ul>
+<li>AAId
+: <a class="el" href="class_smol_dock_1_1_amino_acid.html#aed11fc710f3993ac1bda7ce5e59e102e">SmolDock::AminoAcid</a>
+</li>
+<li>AAId_to_AtomPositionInVect
+: <a class="el" href="namespace_smol_dock.html#acee4fb06b1e47d4ae4de51e6d0ef144b">SmolDock::iProtein</a>
+</li>
 <li>AAShorthandSet
 : <a class="el" href="class_smol_dock_1_1_amino_acid.html#a23b1781c86be2991e2f668c07ad78d68">SmolDock::AminoAcid</a>
 </li>
@@ -113,8 +125,10 @@ $(document).ready(function(){initNavTree('functions.html','');});
 <li>atomClassInResidue
 : <a class="el" href="class_smol_dock_1_1_atom.html#a79a0e80b2fdb39742cc4de548d73eb63">SmolDock::Atom</a>
 </li>
-<li>atomicNum
-: <a class="el" href="namespace_smol_dock.html#a671e7d72c54e461a7719c94705ee6103">SmolDock::iAtom</a>
+<li>atomicRadius
+: <a class="el" href="class_smol_dock_1_1_atom.html#a6d2c1ae04324600154ecd49c1b4a76c5">SmolDock::Atom</a>
+, <a class="el" href="namespace_smol_dock.html#a1dbd8cb4eaa4e5e2f0afcdd1b36dd862">SmolDock::iConformer</a>
+, <a class="el" href="namespace_smol_dock.html#a56480d9a766ca9a3564ade7b91585f0f">SmolDock::iProtein</a>
 </li>
 <li>AtomID
 : <a class="el" href="class_smol_dock_1_1_atom.html#a76afdad512e9f593c4445c6407b26597">SmolDock::Atom</a>
@@ -123,18 +137,20 @@ $(document).ready(function(){initNavTree('functions.html','');});
 : <a class="el" href="class_smol_dock_1_1_amino_acid.html#acf07ea167386e29d0ea6b5024663aed8">SmolDock::AminoAcid</a>
 , <a class="el" href="class_smol_dock_1_1_molecule.html#a322259625da05c62925c705d8c4fb7c3">SmolDock::Molecule</a>
 </li>
-<li>atoms_vect
-: <a class="el" href="namespace_smol_dock.html#a18fd974857dffddf4b6233c7c5d70f94">SmolDock::iConformer</a>
-, <a class="el" href="namespace_smol_dock.html#a2a2bc12a606a78f7e37d88d1b2bcee1a">SmolDock::iProtein</a>
-</li>
 <li>AtomType
 : <a class="el" href="class_smol_dock_1_1_atom.html#a57e9a532fd04e1846c0d83edebb9fd41">SmolDock::Atom</a>
 </li>
 <li>AtomTypeLabel
-: <a class="el" href="class_smol_dock_1_1_atom.html#ad2ea08ee5e9fde5927f30ebe2a3a7142">SmolDock::Atom</a>
+: <a class="el" href="class_smol_dock_1_1_atom.html#aed79f9306267e3ddbd9a9b4dade2bbbf">SmolDock::Atom</a>
+</li>
+<li>atomTypeToAtomicRadius
+: <a class="el" href="class_smol_dock_1_1_atom.html#ae8f2ceffdf7832e3a57549119e5fc341">SmolDock::Atom</a>
 </li>
 <li>atomTypeToString
 : <a class="el" href="class_smol_dock_1_1_atom.html#ab7591815a3dc03bab05bcb6d5e2b741a">SmolDock::Atom</a>
+</li>
+<li>AtomVariant
+: <a class="el" href="class_smol_dock_1_1_atom.html#a77191f0919af58d733764e229cb1f973">SmolDock::Atom</a>
 </li>
 </ul>
 
@@ -168,13 +184,16 @@ $(document).ready(function(){initNavTree('functions.html','');});
 
 <h3><a id="index_c"></a>- c -</h3><ul>
 <li>center_x
-: <a class="el" href="class_smol_dock_1_1_protein.html#a3409e1f4c5789b7102e3941d030a1fc8">SmolDock::Protein</a>
+: <a class="el" href="namespace_smol_dock.html#a8e62b22e54589f2727b0743cf58a3551">SmolDock::iProtein</a>
+, <a class="el" href="class_smol_dock_1_1_protein.html#a3409e1f4c5789b7102e3941d030a1fc8">SmolDock::Protein</a>
 </li>
 <li>center_y
-: <a class="el" href="class_smol_dock_1_1_protein.html#a1b1d22d4cf7b2efa592904727cbc4318">SmolDock::Protein</a>
+: <a class="el" href="namespace_smol_dock.html#a834d2ab9d8580f255616a13a1af785c2">SmolDock::iProtein</a>
+, <a class="el" href="class_smol_dock_1_1_protein.html#a1b1d22d4cf7b2efa592904727cbc4318">SmolDock::Protein</a>
 </li>
 <li>center_z
-: <a class="el" href="class_smol_dock_1_1_protein.html#ae548b55999341c9b36325c79f8731de3">SmolDock::Protein</a>
+: <a class="el" href="namespace_smol_dock.html#a8b3ccbb789373d51a3889158167c3c9a">SmolDock::iProtein</a>
+, <a class="el" href="class_smol_dock_1_1_protein.html#ae548b55999341c9b36325c79f8731de3">SmolDock::Protein</a>
 </li>
 <li>conformer_num
 : <a class="el" href="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine.html#a022a37cb30a640404c634aace67ebea1">SmolDock::Engine::ConformerRigidDockingEngine</a>
@@ -201,17 +220,28 @@ $(document).ready(function(){initNavTree('functions.html','');});
 <li>doublebond
 : <a class="el" href="class_smol_dock_1_1_bond.html#a6cbf152f682501c998bd06a55400c9cfa076120e243046998cc8ecff65e716c35">SmolDock::Bond</a>
 </li>
-</ul>
-
-
-<h3><a id="index_e"></a>- e -</h3><ul>
-<li>emplaceiAtom()
-: <a class="el" href="class_smol_dock_1_1_atom.html#a7dede98478cab4cf7b6e6462d3886bd2">SmolDock::Atom</a>
+<li>dr
+: <a class="el" href="namespace_smol_dock.html#ae9b79e134886f6dbced2fcc90b1e6996">SmolDock::iGradient</a>
+</li>
+<li>dw
+: <a class="el" href="namespace_smol_dock.html#ae073757fde901a0dbc40547d454329ea">SmolDock::iGradient</a>
+</li>
+<li>dx
+: <a class="el" href="namespace_smol_dock.html#a4780b049dba9b298fc9259a9b626b77c">SmolDock::iGradient</a>
+</li>
+<li>dy
+: <a class="el" href="namespace_smol_dock.html#a4c616a17c5cdd532679cc158dccc6797">SmolDock::iGradient</a>
+</li>
+<li>dz
+: <a class="el" href="namespace_smol_dock.html#adf3e33454ba5441435ce46894df07a49">SmolDock::iGradient</a>
 </li>
 </ul>
 
 
 <h3><a id="index_f"></a>- f -</h3><ul>
+<li>filliProtein()
+: <a class="el" href="class_smol_dock_1_1_amino_acid.html#a8d4e3aa2a1ae3d34dd78415c7afc60f1">SmolDock::AminoAcid</a>
+</li>
 <li>fromResidue
 : <a class="el" href="class_smol_dock_1_1_atom.html#aa19d070c9951c67a4b1d4c5d80f2ee22">SmolDock::Atom</a>
 </li>
@@ -228,14 +258,29 @@ $(document).ready(function(){initNavTree('functions.html','');});
 <li>generateConformers()
 : <a class="el" href="class_smol_dock_1_1_molecule.html#a2767177fabc41b3aeaa68c77d8addd1b">SmolDock::Molecule</a>
 </li>
-<li>generateiAtom()
-: <a class="el" href="class_smol_dock_1_1_atom.html#a9de7744f2ea4b8f273f9005c60f42999">SmolDock::Atom</a>
+<li>getAAId()
+: <a class="el" href="class_smol_dock_1_1_amino_acid.html#a8cd51ce91381cbd486fef313ff79e50d">SmolDock::AminoAcid</a>
+</li>
+<li>getAtomicNumber()
+: <a class="el" href="class_smol_dock_1_1_atom.html#a7cd7a34817ac20e79ede418d6896ff48">SmolDock::Atom</a>
+</li>
+<li>getAtomicRadius()
+: <a class="el" href="class_smol_dock_1_1_atom.html#a3933f5afa403001d87526a52a0f4c4b5">SmolDock::Atom</a>
 </li>
 <li>getAtomID()
 : <a class="el" href="class_smol_dock_1_1_atom.html#a62d7246b7a8f3d6aa1aa63c9d5a86ed3">SmolDock::Atom</a>
 </li>
 <li>getAtomPosition()
 : <a class="el" href="class_smol_dock_1_1_atom.html#a9b7e3a83a87f3934edb0f15929f923bd">SmolDock::Atom</a>
+</li>
+<li>getAtomType()
+: <a class="el" href="class_smol_dock_1_1_atom.html#a6b8315564e06bdc911053320fd3fa1a7">SmolDock::Atom</a>
+</li>
+<li>getAtomVariant()
+: <a class="el" href="class_smol_dock_1_1_atom.html#a145bc96b3b410ea87a62baeb8b83f127">SmolDock::Atom</a>
+</li>
+<li>getAtomVariantAsUnderlyingType()
+: <a class="el" href="class_smol_dock_1_1_atom.html#a6436039c9775c1662be2c3691c2785a9">SmolDock::Atom</a>
 </li>
 <li>getBondType()
 : <a class="el" href="class_smol_dock_1_1_bond.html#a6b8180f0f2b339c521f8a74b2445e8c8">SmolDock::Bond</a>
@@ -254,14 +299,14 @@ $(document).ready(function(){initNavTree('functions.html','');});
 <li>getInternalRWMol()
 : <a class="el" href="class_smol_dock_1_1_molecule.html#a8d3c96cb2b2014b96a5119ba1631272d">SmolDock::Molecule</a>
 </li>
+<li>getiProtein()
+: <a class="el" href="class_smol_dock_1_1_protein.html#a68856c725dbe91f5ccec59e8fa8306b2">SmolDock::Protein</a>
+</li>
 <li>getOwningAA()
 : <a class="el" href="class_smol_dock_1_1_atom.html#aeb93666d6868e72e846ecad7b1927b04">SmolDock::Atom</a>
 </li>
-<li>getType()
-: <a class="el" href="class_smol_dock_1_1_atom.html#a9f42fafbe3cd76da61edaf6a10876f2c">SmolDock::Atom</a>
-</li>
-<li>getTypeString()
-: <a class="el" href="class_smol_dock_1_1_atom.html#a66de652129ef16355da3dfcc3ae566e3">SmolDock::Atom</a>
+<li>getTypeAsString()
+: <a class="el" href="class_smol_dock_1_1_atom.html#a5c58bed07491a0ad9e674d399f2ff888">SmolDock::Atom</a>
 </li>
 </ul>
 
@@ -332,7 +377,7 @@ $(document).ready(function(){initNavTree('functions.html','');});
 : <a class="el" href="class_smol_dock_1_1_protein.html#a99399b7db2f1b78fea8076a137a4b962">SmolDock::Protein</a>
 </li>
 <li>populateFromSMILES()
-: <a class="el" href="class_smol_dock_1_1_molecule.html#a7ca48f636fb8d3eed4c94e42a5b293ab">SmolDock::Molecule</a>
+: <a class="el" href="class_smol_dock_1_1_molecule.html#a46a03e954e99f150a1503ee0d5083da7">SmolDock::Molecule</a>
 </li>
 <li>printToConsole()
 : <a class="el" href="class_smol_dock_1_1_docking_result_printer.html#afb1f0143452d4d8e94555f7f354bb134">SmolDock::DockingResultPrinter</a>
@@ -345,7 +390,8 @@ $(document).ready(function(){initNavTree('functions.html','');});
 , <a class="el" href="class_smol_dock_1_1_atom.html#a2cc8b86817f46f61585ecf591984f8eb">SmolDock::Atom</a>
 </li>
 <li>protein
-: <a class="el" href="class_smol_dock_1_1_engine_1_1_m_d_style_docking_engine.html#af4a699e7e7768ed9168cdb86b0a016f7">SmolDock::Engine::MDStyleDockingEngine</a>
+: <a class="el" href="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine.html#a1dc7396f84093bfca59c2d8accc9ed8c">SmolDock::Engine::ConformerRigidDockingEngine</a>
+, <a class="el" href="class_smol_dock_1_1_engine_1_1_m_d_style_docking_engine.html#af4a699e7e7768ed9168cdb86b0a016f7">SmolDock::Engine::MDStyleDockingEngine</a>
 </li>
 <li>Protein()
 : <a class="el" href="class_smol_dock_1_1_protein.html#ae9cac74c19d706a93fb1e9d4929127a5">SmolDock::Protein</a>
@@ -372,6 +418,9 @@ $(document).ready(function(){initNavTree('functions.html','');});
 <li>rnd_generator
 : <a class="el" href="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine.html#a9bc1d216cf102c383444cb6f9955dfaa">SmolDock::Engine::ConformerRigidDockingEngine</a>
 </li>
+<li>rota
+: <a class="el" href="namespace_smol_dock.html#a31861b55dc94ec0172ce602cd2a4a54f">SmolDock::iTransform</a>
+</li>
 <li>runDockingEngine()
 : <a class="el" href="class_smol_dock_1_1_engine_1_1_abstract_docking_engine.html#a0f08ef422ed79b3dac0b3144a241abe1">SmolDock::Engine::AbstractDockingEngine</a>
 , <a class="el" href="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine.html#a7bee39278168cb4d7ee6558b3a3d3bb4">SmolDock::Engine::ConformerRigidDockingEngine</a>
@@ -385,8 +434,26 @@ $(document).ready(function(){initNavTree('functions.html','');});
 
 
 <h3><a id="index_s"></a>- s -</h3><ul>
+<li>s
+: <a class="el" href="namespace_smol_dock.html#a07d95036803eb2a4ef32627df95043ad">SmolDock::iQuaternion</a>
+</li>
+<li>setAAId()
+: <a class="el" href="class_smol_dock_1_1_amino_acid.html#a091349e13f56cc9d28701dcfe8e30d45">SmolDock::AminoAcid</a>
+</li>
+<li>setAtomicRadius()
+: <a class="el" href="class_smol_dock_1_1_atom.html#aba38aa3f004111483f078e97b8e34bd6">SmolDock::Atom</a>
+</li>
+<li>setAtomID()
+: <a class="el" href="class_smol_dock_1_1_atom.html#ae4cd5cf6de8ed5b8254270eb2d7ccd81">SmolDock::Atom</a>
+</li>
 <li>setAtomPosition()
 : <a class="el" href="class_smol_dock_1_1_atom.html#ae4b0b82523de139bd84ec27b62faa333">SmolDock::Atom</a>
+</li>
+<li>setAtomType()
+: <a class="el" href="class_smol_dock_1_1_atom.html#a2adf89fbf4618bd294318062e198db66">SmolDock::Atom</a>
+</li>
+<li>setAtomVariant()
+: <a class="el" href="class_smol_dock_1_1_atom.html#aa538e302c6c9e6cafbb9f0cbefce3a4e">SmolDock::Atom</a>
 </li>
 <li>setBondType()
 : <a class="el" href="class_smol_dock_1_1_bond.html#a4ebf28309120c880429f205edf67b9f8">SmolDock::Bond</a>
@@ -437,6 +504,9 @@ $(document).ready(function(){initNavTree('functions.html','');});
 
 
 <h3><a id="index_t"></a>- t -</h3><ul>
+<li>transl
+: <a class="el" href="namespace_smol_dock.html#ab0039729b08d423b6e0414cec1b893e7">SmolDock::iTransform</a>
+</li>
 <li>traverse()
 : <a class="el" href="class_smol_dock_1_1_molecule_traversal.html#a430ae16c3c60897f4ec5412eb536fe45">SmolDock::MoleculeTraversal</a>
 </li>
@@ -446,6 +516,8 @@ $(document).ready(function(){initNavTree('functions.html','');});
 <li>type
 : <a class="el" href="class_smol_dock_1_1_amino_acid.html#ae3404d935519af353a5c323ce298e04a">SmolDock::AminoAcid</a>
 , <a class="el" href="class_smol_dock_1_1_atom.html#ab3867a9c2c98c5bb43ff4a6b7f1bf856">SmolDock::Atom</a>
+, <a class="el" href="namespace_smol_dock.html#add04de1dd457ae228e398ffa9260497d">SmolDock::iConformer</a>
+, <a class="el" href="namespace_smol_dock.html#a8a9cecc0e9750baf8d7074fe64b4331d">SmolDock::iProtein</a>
 </li>
 </ul>
 
@@ -458,6 +530,14 @@ $(document).ready(function(){initNavTree('functions.html','');});
 
 
 <h3><a id="index_v"></a>- v -</h3><ul>
+<li>v
+: <a class="el" href="namespace_smol_dock.html#abe19bca6bde4eb325a4feb7e017edc72">SmolDock::iQuaternion</a>
+</li>
+<li>variant
+: <a class="el" href="class_smol_dock_1_1_atom.html#a0c54fdff29130e870237ba300a4e9d25">SmolDock::Atom</a>
+, <a class="el" href="namespace_smol_dock.html#ad310936289e38ae6fca788741b0cfffa">SmolDock::iConformer</a>
+, <a class="el" href="namespace_smol_dock.html#ac8f37b4dd33f21e3a368f18e8ceaa153">SmolDock::iProtein</a>
+</li>
 <li>viConformers
 : <a class="el" href="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine.html#a1db0509172face64ab20380bea166765">SmolDock::Engine::ConformerRigidDockingEngine</a>
 </li>
@@ -467,7 +547,10 @@ $(document).ready(function(){initNavTree('functions.html','');});
 <h3><a id="index_x"></a>- x -</h3><ul>
 <li>x
 : <a class="el" href="class_smol_dock_1_1_atom.html#a02874f0a49c2fb34884d7e40c6b92e9e">SmolDock::Atom</a>
-, <a class="el" href="namespace_smol_dock.html#a9c2f9dadec039f72274d46b4292240ae">SmolDock::iAtom</a>
+, <a class="el" href="namespace_smol_dock.html#a45c379f6a880da313bf3519dc415e992">SmolDock::iConformer</a>
+, <a class="el" href="namespace_smol_dock.html#ae36a5b0f6996e54f9ce1f746a79e23f8">SmolDock::iProtein</a>
+, <a class="el" href="namespace_smol_dock.html#a74a60efc8b2463b7ea1ca1e824a4ed28">SmolDock::iTranslation</a>
+, <a class="el" href="namespace_smol_dock.html#a3ffc7082a3541ad0fadcb1880a6087a8">SmolDock::iVect</a>
 </li>
 </ul>
 
@@ -475,7 +558,10 @@ $(document).ready(function(){initNavTree('functions.html','');});
 <h3><a id="index_y"></a>- y -</h3><ul>
 <li>y
 : <a class="el" href="class_smol_dock_1_1_atom.html#a253663ad700e72667d421f4d869798e1">SmolDock::Atom</a>
-, <a class="el" href="namespace_smol_dock.html#aed903239c438c1304b7e3c68d10d41e1">SmolDock::iAtom</a>
+, <a class="el" href="namespace_smol_dock.html#ac3019c0cd62660a4392591dd9519cc9a">SmolDock::iConformer</a>
+, <a class="el" href="namespace_smol_dock.html#a090a371c93db6928cdfef39b0ce3d1fd">SmolDock::iProtein</a>
+, <a class="el" href="namespace_smol_dock.html#a5362a54675ecc6bac99325c69521fbb5">SmolDock::iTranslation</a>
+, <a class="el" href="namespace_smol_dock.html#af8165339c1e38179008c4ca49a565fb4">SmolDock::iVect</a>
 </li>
 </ul>
 
@@ -483,7 +569,10 @@ $(document).ready(function(){initNavTree('functions.html','');});
 <h3><a id="index_z"></a>- z -</h3><ul>
 <li>z
 : <a class="el" href="class_smol_dock_1_1_atom.html#a8f28d43131d21536269e220d6fa43f07">SmolDock::Atom</a>
-, <a class="el" href="namespace_smol_dock.html#a7164b26142f6b8022af89d4ab1c32687">SmolDock::iAtom</a>
+, <a class="el" href="namespace_smol_dock.html#a5c1fc6f9bad31ec2731337e9ba1e9a0f">SmolDock::iConformer</a>
+, <a class="el" href="namespace_smol_dock.html#ab95306577aa2d8bdd268504b44d046ad">SmolDock::iProtein</a>
+, <a class="el" href="namespace_smol_dock.html#a2ed07fcfc129a2bf7696b65d481317c5">SmolDock::iTranslation</a>
+, <a class="el" href="namespace_smol_dock.html#a013cdafb950199deb4511843ff389e73">SmolDock::iVect</a>
 </li>
 </ul>
 </div><!-- contents -->

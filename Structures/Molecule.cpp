@@ -21,6 +21,9 @@
 #include "Molecule.h"
 #include "Atom.h"
 
+#include <boost/algorithm/string.hpp>
+#include <boost/log/trivial.hpp>
+
 namespace SmolDock {
 
     Molecule::Molecule() = default;
@@ -49,8 +52,8 @@ namespace SmolDock {
             return false;
         }
 
-        // If this does not throw : we have a mol in *a
-        RDKit::MolOps::addHs(*a);
+        // TODO: find out if we really care about the H
+        //RDKit::MolOps::addHs(*a);
 
         rwmol.reset(a);
 
@@ -184,21 +187,25 @@ namespace SmolDock {
         if (conformer_id == -1) // Failed to generate
             return false;
 
-        conformer.atoms_vect = std::make_unique<std::vector<iAtom> >();
-        conformer.atoms_vect->reserve(this->atoms.size());
+
+        conformer.x.reserve(static_cast<size_t>(this->atoms.size()));
+        conformer.y.reserve(static_cast<size_t>(this->atoms.size()));
+        conformer.z.reserve(static_cast<size_t>(this->atoms.size()));
+        conformer.type.reserve(static_cast<size_t>(this->atoms.size()));
 
         RDKit::Conformer &rdkit_conformer = rwmol->getConformer(conformer_id);
 
 
         for (auto atom_it = rwmol->beginAtoms(); atom_it != rwmol->endAtoms(); ++atom_it) {
-            iAtom atom{};
-            atom.atomicNum = static_cast<unsigned char>((*atom_it)->getAtomicNum());
+            conformer.type.push_back(static_cast<unsigned char>((*atom_it)->getAtomicNum()));
 
             const RDGeom::Point3D &position = rdkit_conformer.getAtomPos((*atom_it)->getIdx());
-            atom.x = position.x;
-            atom.y = position.y;
-            atom.z = position.z;
-            conformer.atoms_vect->push_back(std::move(atom));
+            conformer.x.push_back(position.x);
+            conformer.y.push_back(position.y);
+            conformer.z.push_back(position.z);
+
+            // FIXME : this means there is an encapsulation problem, likely due to the RWMol* being in Molecule but not linked to Atom
+            conformer.atomicRadius.push_back(atomTypeToAtomicRadius(stringToAtomType(boost::to_upper_copy<std::string>((*atom_it)->getSymbol()))));
         }
 
         return true;
@@ -218,32 +225,32 @@ namespace SmolDock {
         viConformers.reserve(viConformers.capacity() + conformer_ids.size());
 
 
-        //std::vector<RDKit::Conformer> rdkit_conformers;
-        //std::vector<iConformer> conformers;
-        //rdkit_conformers.reserve(this->conformer_num);
-        //conformers.reserve(this->conformer_num);
-
         unsigned int num_atoms = this->atoms.size();
 
         for (int i : conformer_ids) {
             iConformer conformer;
             RDKit::Conformer rdkit_conformer = this->rwmol->getConformer(i);
 
-            conformer.atoms_vect = std::make_unique<std::vector<iAtom> >(static_cast<size_t>(num_atoms));
+
+            conformer.x.reserve(static_cast<size_t>(num_atoms));
+            conformer.y.reserve(static_cast<size_t>(num_atoms));
+            conformer.z.reserve(static_cast<size_t>(num_atoms));
+            conformer.type.reserve(static_cast<size_t>(num_atoms));
 
             for (auto atom_it = rwmol->beginAtoms(); atom_it != rwmol->endAtoms(); ++atom_it) {
-                iAtom atom;
-                atom.atomicNum = static_cast<unsigned char>((*atom_it)->getAtomicNum());
+                conformer.type.push_back(static_cast<unsigned char>((*atom_it)->getAtomicNum()));
+                conformer.variant.push_back(0); // Not implemented
 
                 const RDGeom::Point3D &position = rdkit_conformer.getAtomPos((*atom_it)->getIdx());
-                atom.x = position.x;
-                atom.y = position.y;
-                atom.z = position.z;
-                conformer.atoms_vect->push_back(std::move(atom));
+                conformer.x.push_back(position.x);
+                conformer.y.push_back(position.y);
+                conformer.z.push_back(position.z);
+
+                // FIXME : this means there is an encapsulation problem, likely due to the RWMol* being in Molecule but not linked to Atom
+                conformer.atomicRadius.push_back(atomTypeToAtomicRadius(stringToAtomType(boost::to_upper_copy<std::string>((*atom_it)->getSymbol()))));
             }
 
             viConformers.push_back(std::move(conformer));
-
         }
 
         return conformer_ids.size();

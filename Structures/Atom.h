@@ -28,7 +28,6 @@
 #include <iostream>
 
 #include "AminoAcid.h"
-#include "../Engines/Internals/iAtom.h"
 
 
 namespace SmolDock {
@@ -94,8 +93,10 @@ namespace SmolDock {
 
         // //// Internal type <=> string conversion //////
         friend std::string atomTypeToString(Atom::AtomType t);
-
         friend Atom::AtomType stringToAtomType(const std::string &symbol_or_name);
+
+        // //// Properties matcher helper //////
+        friend double atomTypeToAtomicRadius(Atom::AtomType t);
 
         // /// Constructors //////
 
@@ -113,10 +114,12 @@ namespace SmolDock {
         AtomType getAtomType();
         void setAtomType(AtomType t);
         std::string getTypeAsString();
+        unsigned char getAtomicNumber();
 
 
         AtomVariant getAtomVariant();
         void setAtomVariant(AtomVariant v);
+        unsigned int getAtomVariantAsUnderlyingType();
 
 
         unsigned int getAtomID();
@@ -128,8 +131,9 @@ namespace SmolDock {
         std::tuple<double, double, double> getAtomPosition();
         void setAtomPosition(std::tuple<double, double, double> pos);
 
-        iAtom generateiAtom();
-        void emplaceiAtom(iAtom &atom);
+        double getAtomicRadius();
+        void setAtomicRadius(double r);
+
 
     protected:
         // Bonds involving this atom
@@ -148,13 +152,16 @@ namespace SmolDock {
         unsigned int AtomID;
 
         double x, y, z;
+        double atomicRadius;
 
-        static std::set<std::tuple<Atom::AtomType, std::string, std::string> > AtomTypeLabel;
+        static std::set<std::tuple<Atom::AtomType, std::string, std::string, double> > AtomTypeLabel;
     };
 
     std::string atomTypeToString(Atom::AtomType t);
 
     Atom::AtomType stringToAtomType(const std::string &symbol_or_name);
+
+    double atomTypeToAtomicRadius(Atom::AtomType t);
 
 }
 

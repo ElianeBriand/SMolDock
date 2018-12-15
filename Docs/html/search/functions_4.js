@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['emplaceiatom',['emplaceiAtom',['../class_smol_dock_1_1_atom.html#a7dede98478cab4cf7b6e6462d3886bd2',1,'SmolDock::Atom']]]
+  ['elementwiseadd',['elementWiseAdd',['../namespace_smol_dock.html#a9499022a5adbbeee7abb978d7702157a',1,'SmolDock']]]
 ];

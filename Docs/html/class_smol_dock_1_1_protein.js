@@ -1,6 +1,7 @@
 var class_smol_dock_1_1_protein =
 [
     [ "Protein", "class_smol_dock_1_1_protein.html#ae9cac74c19d706a93fb1e9d4929127a5", null ],
+    [ "getiProtein", "class_smol_dock_1_1_protein.html#a68856c725dbe91f5ccec59e8fa8306b2", null ],
     [ "populateFromPDB", "class_smol_dock_1_1_protein.html#a99399b7db2f1b78fea8076a137a4b962", null ],
     [ "aminoacids", "class_smol_dock_1_1_protein.html#ae0fe8b9c66bfa8032c93e0d8269fd561", null ],
     [ "center_x", "class_smol_dock_1_1_protein.html#a3409e1f4c5789b7102e3941d030a1fc8", null ],

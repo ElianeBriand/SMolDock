@@ -15,8 +15,8 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Utilities/MoleculeTraversal.h" line="23" column="1" bodyfile="Utilities/MoleculeTraversal.h" bodystart="23" bodyend="-1"/>
-        <referencedby refid="class_smol_dock_1_1_molecule_traversal_1a4f5b4079ecf6cf8682f919f323eaf29a" compoundref="_molecule_traversal_8cpp" startline="40" endline="55">printTraversal</referencedby>
+        <location file="Utilities/MoleculeTraversal.h" line="39" column="1" bodyfile="Utilities/MoleculeTraversal.h" bodystart="39" bodyend="-1"/>
+        <referencedby refid="class_smol_dock_1_1_molecule_traversal_1a4f5b4079ecf6cf8682f919f323eaf29a" compoundref="_molecule_traversal_8cpp" startline="56" endline="71">printTraversal</referencedby>
       </memberdef>
       <memberdef kind="variable" id="class_smol_dock_1_1_molecule_traversal_1a79631a26881095650a855b7ffb7b299e" prot="private" static="no" mutable="no">
         <type>std::vector&lt; std::shared_ptr&lt; <ref refid="class_smol_dock_1_1_atom" kindref="compound">Atom</ref> &gt; &gt;</type>
@@ -29,8 +29,8 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Utilities/MoleculeTraversal.h" line="27" column="1" bodyfile="Utilities/MoleculeTraversal.h" bodystart="27" bodyend="-1"/>
-        <referencedby refid="class_smol_dock_1_1_molecule_traversal_1a430ae16c3c60897f4ec5412eb536fe45" compoundref="_molecule_traversal_8cpp" startline="17" endline="38">traverse</referencedby>
+        <location file="Utilities/MoleculeTraversal.h" line="43" column="1" bodyfile="Utilities/MoleculeTraversal.h" bodystart="43" bodyend="-1"/>
+        <referencedby refid="class_smol_dock_1_1_molecule_traversal_1a430ae16c3c60897f4ec5412eb536fe45" compoundref="_molecule_traversal_8cpp" startline="33" endline="54">traverse</referencedby>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -49,7 +49,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Utilities/MoleculeTraversal.h" line="18" column="1" bodyfile="Utilities/MoleculeTraversal.cpp" bodystart="13" bodyend="15"/>
+        <location file="Utilities/MoleculeTraversal.h" line="34" column="1" bodyfile="Utilities/MoleculeTraversal.cpp" bodystart="29" bodyend="31"/>
       </memberdef>
       <memberdef kind="function" id="class_smol_dock_1_1_molecule_traversal_1a4f5b4079ecf6cf8682f919f323eaf29a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -62,10 +62,10 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Utilities/MoleculeTraversal.h" line="20" column="1" bodyfile="Utilities/MoleculeTraversal.cpp" bodystart="40" bodyend="55"/>
-        <references refid="class_smol_dock_1_1_molecule_1a322259625da05c62925c705d8c4fb7c3" compoundref="_molecule_8h" startline="83">SmolDock::Molecule::atoms</references>
-        <references refid="class_smol_dock_1_1_molecule_traversal_1af59b1f0d101bf5aec1da5ba0442f6990" compoundref="_molecule_traversal_8h" startline="23">molecule</references>
-        <references refid="class_smol_dock_1_1_molecule_traversal_1a430ae16c3c60897f4ec5412eb536fe45" compoundref="_molecule_traversal_8cpp" startline="17" endline="38">traverse</references>
+        <location file="Utilities/MoleculeTraversal.h" line="36" column="1" bodyfile="Utilities/MoleculeTraversal.cpp" bodystart="56" bodyend="71"/>
+        <references refid="class_smol_dock_1_1_molecule_1a322259625da05c62925c705d8c4fb7c3" compoundref="_molecule_8h" startline="98">SmolDock::Molecule::atoms</references>
+        <references refid="class_smol_dock_1_1_molecule_traversal_1af59b1f0d101bf5aec1da5ba0442f6990" compoundref="_molecule_traversal_8h" startline="39">molecule</references>
+        <references refid="class_smol_dock_1_1_molecule_traversal_1a430ae16c3c60897f4ec5412eb536fe45" compoundref="_molecule_traversal_8cpp" startline="33" endline="54">traverse</references>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-func">
@@ -84,9 +84,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Utilities/MoleculeTraversal.h" line="25" column="1" bodyfile="Utilities/MoleculeTraversal.cpp" bodystart="17" bodyend="38"/>
-        <references refid="class_smol_dock_1_1_molecule_traversal_1a79631a26881095650a855b7ffb7b299e" compoundref="_molecule_traversal_8h" startline="27">already_visited_atoms</references>
-        <referencedby refid="class_smol_dock_1_1_molecule_traversal_1a4f5b4079ecf6cf8682f919f323eaf29a" compoundref="_molecule_traversal_8cpp" startline="40" endline="55">printTraversal</referencedby>
+        <location file="Utilities/MoleculeTraversal.h" line="41" column="1" bodyfile="Utilities/MoleculeTraversal.cpp" bodystart="33" bodyend="54"/>
+        <references refid="class_smol_dock_1_1_molecule_traversal_1a79631a26881095650a855b7ffb7b299e" compoundref="_molecule_traversal_8h" startline="43">already_visited_atoms</references>
+        <referencedby refid="class_smol_dock_1_1_molecule_traversal_1a4f5b4079ecf6cf8682f919f323eaf29a" compoundref="_molecule_traversal_8cpp" startline="56" endline="71">printTraversal</referencedby>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -94,66 +94,66 @@
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
-      <node id="104">
+      <node id="124">
         <label>SmolDock::MoleculeTraversal</label>
         <link refid="class_smol_dock_1_1_molecule_traversal"/>
-        <childnode refid="105" relation="usage">
+        <childnode refid="125" relation="usage">
           <edgelabel>-molecule</edgelabel>
         </childnode>
-        <childnode refid="112" relation="usage">
+        <childnode refid="132" relation="usage">
           <edgelabel>-already_visited_atoms</edgelabel>
         </childnode>
       </node>
-      <node id="109">
+      <node id="129">
         <label>T</label>
       </node>
-      <node id="105">
+      <node id="125">
         <label>SmolDock::Molecule</label>
         <link refid="class_smol_dock_1_1_molecule"/>
-        <childnode refid="106" relation="private-inheritance">
+        <childnode refid="126" relation="private-inheritance">
         </childnode>
-        <childnode refid="107" relation="usage">
+        <childnode refid="127" relation="usage">
           <edgelabel>-bonds</edgelabel>
         </childnode>
-        <childnode refid="110" relation="usage">
+        <childnode refid="130" relation="usage">
           <edgelabel>-smiles</edgelabel>
         </childnode>
-        <childnode refid="112" relation="usage">
+        <childnode refid="132" relation="usage">
           <edgelabel>-atoms</edgelabel>
         </childnode>
       </node>
-      <node id="107">
+      <node id="127">
         <label>std::vector&lt; std::shared_ptr&lt; SmolDock::Bond &gt; &gt;</label>
-        <childnode refid="108" relation="template-instance">
+        <childnode refid="128" relation="template-instance">
           <edgelabel>&lt; std::shared_ptr&lt; SmolDock::Bond &gt; &gt;</edgelabel>
         </childnode>
       </node>
-      <node id="108">
+      <node id="128">
         <label>std::vector&lt; T &gt;</label>
-        <childnode refid="109" relation="usage">
+        <childnode refid="129" relation="usage">
           <edgelabel>+elements</edgelabel>
         </childnode>
       </node>
-      <node id="106">
+      <node id="126">
         <label>SmolDock::Structure</label>
         <link refid="class_smol_dock_1_1_structure"/>
       </node>
-      <node id="111">
+      <node id="131">
         <label>std::basic_string&lt; char &gt;</label>
       </node>
-      <node id="112">
+      <node id="132">
         <label>std::vector&lt; std::shared_ptr&lt; SmolDock::Atom &gt; &gt;</label>
-        <childnode refid="108" relation="template-instance">
+        <childnode refid="128" relation="template-instance">
           <edgelabel>&lt; std::shared_ptr&lt; SmolDock::Atom &gt; &gt;</edgelabel>
         </childnode>
       </node>
-      <node id="110">
+      <node id="130">
         <label>std::string</label>
-        <childnode refid="111" relation="public-inheritance">
+        <childnode refid="131" relation="public-inheritance">
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="Utilities/MoleculeTraversal.h" line="15" column="1" bodyfile="Utilities/MoleculeTraversal.h" bodystart="15" bodyend="30"/>
+    <location file="Utilities/MoleculeTraversal.h" line="31" column="1" bodyfile="Utilities/MoleculeTraversal.h" bodystart="31" bodyend="46"/>
     <listofallmembers>
       <member refid="class_smol_dock_1_1_molecule_traversal_1a79631a26881095650a855b7ffb7b299e" prot="private" virt="non-virtual"><scope>SmolDock::MoleculeTraversal</scope><name>already_visited_atoms</name></member>
       <member refid="class_smol_dock_1_1_molecule_traversal_1af59b1f0d101bf5aec1da5ba0442f6990" prot="private" virt="non-virtual"><scope>SmolDock::MoleculeTraversal</scope><name>molecule</name></member>

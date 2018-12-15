@@ -23,8 +23,8 @@
 
 #include <vector>
 #include <memory>
+#include <map>
 
-#include "iAtom.h"
 
 
 namespace SmolDock {
@@ -36,8 +36,14 @@ namespace SmolDock {
     struct iProtein {
         //! Pseudo-center of protein as a mean of each atom coordinate
         double center_x,center_y,center_z;
-        //! Vector of internal representation of atom
-        std::unique_ptr<std::vector<iAtom>> atoms_vect;
+
+        std::vector<double> x,y,z;
+        std::vector<double> atomicRadius;
+        std::vector<unsigned char> type;
+        std::vector<unsigned char> variant;
+
+        //! Map the AAId of residues to the corresponding position of the atoms in the vector
+        std::map<unsigned int, std::tuple<unsigned long,unsigned long> > AAId_to_AtomPositionInVect;
     };
 
 }

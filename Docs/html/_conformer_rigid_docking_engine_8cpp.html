@@ -20,6 +20,12 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script><script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -97,6 +103,7 @@ $(document).ready(function(){initNavTree('_conformer_rigid_docking_engine_8cpp.h
 <code>#include &lt;thread&gt;</code><br />
 <code>#include &quot;<a class="el" href="_conformer_rigid_docking_engine_8h_source.html">ConformerRigidDockingEngine.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="i_conformer_8h_source.html">Internals/iConformer.h</a>&quot;</code><br />
+<code>#include &lt;<a class="el" href="_basic_scoring_function_8h_source.html">Engines/ScoringFunctions/BasicScoringFunction.h</a>&gt;</code><br />
 <code>#include &quot;<a class="el" href="_timings_log_8h_source.html">Utilities/TimingsLog.h</a>&quot;</code><br />
 <code>#include &lt;GraphMol/RDKitBase.h&gt;</code><br />
 <code>#include &lt;GraphMol/RWMol.h&gt;</code><br />
@@ -111,6 +118,11 @@ $(document).ready(function(){initNavTree('_conformer_rigid_docking_engine_8cpp.h
 <code>#include &lt;GraphMol/SmilesParse/SmilesParse.h&gt;</code><br />
 <code>#include &lt;GraphMol/Substruct/SubstructMatch.h&gt;</code><br />
 <code>#include &lt;DataStructs/ExplicitBitVect.h&gt;</code><br />
+<code>#include &lt;boost/log/trivial.hpp&gt;</code><br />
+<code>#include &lt;boost/accumulators/accumulators.hpp&gt;</code><br />
+<code>#include &lt;boost/accumulators/statistics/stats.hpp&gt;</code><br />
+<code>#include &lt;boost/accumulators/statistics/mean.hpp&gt;</code><br />
+<code>#include &lt;boost/accumulators/statistics/moment.hpp&gt;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for ConformerRigidDockingEngine.cpp:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
@@ -118,18 +130,20 @@ $(document).ready(function(){initNavTree('_conformer_rigid_docking_engine_8cpp.h
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="_conformer_rigid_docking_engine_8cpp__incl.png" border="0" usemap="#_conformer_rigid_docking_engine_8cpp" alt=""/></div>
 <map name="_conformer_rigid_docking_engine_8cpp" id="_conformer_rigid_docking_engine_8cpp">
-<area shape="rect" id="node5" href="_conformer_rigid_docking_engine_8h.html" title="ConformerRigidDockingEngine.h" alt="" coords="1373,87,1585,114"/>
-<area shape="rect" id="node32" href="i_conformer_8h.html" title="../Engines/Internals\l/iConformer.h" alt="" coords="1350,423,1485,464"/>
-<area shape="rect" id="node33" href="_timings_log_8h.html" title="Utilities/TimingsLog.h" alt="" coords="1074,87,1222,114"/>
-<area shape="rect" id="node8" href="_abstract_docking_engine_8h.html" title="AbstractDockingEngine.h" alt="" coords="1309,169,1480,196"/>
-<area shape="rect" id="node9" href="_protein_8h.html" title="../Structures/Protein.h" alt="" coords="637,251,787,278"/>
-<area shape="rect" id="node22" href="_molecule_8h.html" title="../Structures/Molecule.h" alt="" coords="1477,251,1638,278"/>
-<area shape="rect" id="node21" href="_docking_result_8h.html" title="../Structures/Results\l/DockingResult.h" alt="" coords="1310,244,1453,285"/>
-<area shape="rect" id="node15" href="_structure_8h.html" title="Structure.h" alt="" coords="889,341,975,367"/>
-<area shape="rect" id="node16" href="_amino_acid_8h.html" title="AminoAcid.h" alt="" coords="931,519,1027,546"/>
-<area shape="rect" id="node28" href="_atom_8h.html" title="Atom.h" alt="" coords="1160,430,1224,457"/>
-<area shape="rect" id="node31" href="_bond_8h.html" title="Bond.h" alt="" coords="1161,341,1223,367"/>
-<area shape="rect" id="node30" href="i_atom_8h.html" title="../Engines/Internals\l/iAtom.h" alt="" coords="1350,512,1485,553"/>
+<area shape="rect" id="node5" href="_conformer_rigid_docking_engine_8h.html" title="ConformerRigidDockingEngine.h" alt="" coords="1421,87,1633,114"/>
+<area shape="rect" id="node33" href="i_conformer_8h.html" title="../Engines/Internals\l/iConformer.h" alt="" coords="1586,587,1721,628"/>
+<area shape="rect" id="node34" href="_basic_scoring_function_8h.html" title="Engines/ScoringFunctions\l/BasicScoringFunction.h" alt="" coords="1698,497,1873,539"/>
+<area shape="rect" id="node37" href="_timings_log_8h.html" title="Utilities/TimingsLog.h" alt="" coords="941,87,1089,114"/>
+<area shape="rect" id="node8" href="_abstract_docking_engine_8h.html" title="AbstractDockingEngine.h" alt="" coords="1213,169,1384,196"/>
+<area shape="rect" id="node9" href="_protein_8h.html" title="../Structures/Protein.h" alt="" coords="762,423,913,449"/>
+<area shape="rect" id="node24" href="_molecule_8h.html" title="../Structures/Molecule.h" alt="" coords="1386,251,1547,278"/>
+<area shape="rect" id="node23" href="_docking_result_8h.html" title="../Structures/Results\l/DockingResult.h" alt="" coords="1219,244,1362,285"/>
+<area shape="rect" id="node15" href="i_protein_8h.html" title="Engines/Internals/iProtein.h" alt="" coords="859,594,1042,621"/>
+<area shape="rect" id="node17" href="_structure_8h.html" title="Structure.h" alt="" coords="989,505,1075,531"/>
+<area shape="rect" id="node18" href="_amino_acid_8h.html" title="AminoAcid.h" alt="" coords="1100,505,1196,531"/>
+<area shape="rect" id="node30" href="_atom_8h.html" title="Atom.h" alt="" coords="1348,423,1412,449"/>
+<area shape="rect" id="node32" href="_bond_8h.html" title="Bond.h" alt="" coords="1009,341,1071,367"/>
+<area shape="rect" id="node35" href="i_transform_8h.html" title="Engines/Internals/iTransform.h" alt="" coords="1745,594,1945,621"/>
 </map>
 </div>
 </div>

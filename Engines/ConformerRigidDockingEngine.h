@@ -81,6 +81,8 @@ namespace SmolDock::Engine {
         std::shared_ptr<RDKit::RWMol> rwmol;
 
         std::vector<iConformer> viConformers;
+
+        iProtein protein;
     };
 
 }

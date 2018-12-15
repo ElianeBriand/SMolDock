@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['numberofatoms',['numberOfAtoms',['../class_smol_dock_1_1_molecule.html#a7dc0c882da26261dcd2762429b07a3d4',1,'SmolDock::Molecule']]],
-  ['numberofbonds',['numberOfBonds',['../class_smol_dock_1_1_molecule.html#a8b1f02ad4e3b2ad991162668a61c2ddc',1,'SmolDock::Molecule']]]
+  ['iquaternionzeroinit',['iQuaternionZeroInit',['../namespace_smol_dock.html#a9823f182fd4e8ffa38a3cda81a5cc82e',1,'SmolDock']]],
+  ['itransformzeroinit',['iTransformZeroInit',['../namespace_smol_dock.html#a5a413d54c69a245f7e424a4f3d788b23',1,'SmolDock']]]
 ];

@@ -181,7 +181,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Structures/AminoAcid.h" line="28" column="1" bodyfile="Structures/AminoAcid.h" bodystart="28" bodyend="53"/>
+        <location file="Structures/AminoAcid.h" line="46" column="1" bodyfile="Structures/AminoAcid.h" bodystart="46" bodyend="71"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="friend">
@@ -196,7 +196,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Structures/AminoAcid.h" line="24" column="1" bodyfile="Structures/AminoAcid.h" bodystart="24" bodyend="-1"/>
+        <location file="Structures/AminoAcid.h" line="42" column="1" bodyfile="Structures/AminoAcid.h" bodystart="42" bodyend="-1"/>
       </memberdef>
       <memberdef kind="friend" id="class_smol_dock_1_1_amino_acid_1a114a9d96ae603d1a25779498205cec47" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>friend std::string</type>
@@ -213,7 +213,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Structures/AminoAcid.h" line="56" column="1" bodyfile="Structures/AminoAcid.cpp" bodystart="49" bodyend="57"/>
+        <location file="Structures/AminoAcid.h" line="74" column="1" bodyfile="Structures/AminoAcid.cpp" bodystart="65" bodyend="75"/>
       </memberdef>
       <memberdef kind="friend" id="class_smol_dock_1_1_amino_acid_1a196e09203295c01d2a5fc157ee89f7ee" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>friend <ref refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875d" kindref="member">AminoAcid::AAType</ref></type>
@@ -230,8 +230,8 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Structures/AminoAcid.h" line="58" column="1" bodyfile="Structures/AminoAcid.cpp" bodystart="59" bodyend="73"/>
-        <referencedby refid="class_smol_dock_1_1_amino_acid_1a0632e2366d8af52d467bffcde90657f2" compoundref="_amino_acid_8cpp" startline="15" endline="19">AminoAcid</referencedby>
+        <location file="Structures/AminoAcid.h" line="76" column="1" bodyfile="Structures/AminoAcid.cpp" bodystart="77" bodyend="91"/>
+        <referencedby refid="class_smol_dock_1_1_amino_acid_1a0632e2366d8af52d467bffcde90657f2" compoundref="_amino_acid_8cpp" startline="31" endline="35">AminoAcid</referencedby>
       </memberdef>
       </sectiondef>
       <sectiondef kind="protected-static-attrib">
@@ -272,9 +272,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Structures/AminoAcid.h" line="66" column="1" bodyfile="Structures/AminoAcid.h" bodystart="66" bodyend="-1"/>
-        <referencedby refid="namespace_smol_dock_1a7980070f5c494cfe044ad9e90e34e3e3" compoundref="_amino_acid_8cpp" startline="49" endline="57">SmolDock::resTypeToString</referencedby>
-        <referencedby refid="namespace_smol_dock_1a788f9308991cdf8fe5af07b27ff0f389" compoundref="_amino_acid_8cpp" startline="59" endline="73">SmolDock::stringToResType</referencedby>
+        <location file="Structures/AminoAcid.h" line="90" column="1" bodyfile="Structures/AminoAcid.h" bodystart="90" bodyend="-1"/>
+        <referencedby refid="namespace_smol_dock_1a7980070f5c494cfe044ad9e90e34e3e3" compoundref="_amino_acid_8cpp" startline="65" endline="75">SmolDock::resTypeToString</referencedby>
+        <referencedby refid="namespace_smol_dock_1a788f9308991cdf8fe5af07b27ff0f389" compoundref="_amino_acid_8cpp" startline="77" endline="91">SmolDock::stringToResType</referencedby>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-attrib">
@@ -289,8 +289,23 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Structures/AminoAcid.h" line="70" column="1" bodyfile="Structures/AminoAcid.h" bodystart="70" bodyend="-1"/>
-        <referencedby refid="class_smol_dock_1_1_amino_acid_1a0632e2366d8af52d467bffcde90657f2" compoundref="_amino_acid_8cpp" startline="15" endline="19">AminoAcid</referencedby>
+        <location file="Structures/AminoAcid.h" line="94" column="1" bodyfile="Structures/AminoAcid.h" bodystart="94" bodyend="-1"/>
+        <referencedby refid="class_smol_dock_1_1_amino_acid_1a0632e2366d8af52d467bffcde90657f2" compoundref="_amino_acid_8cpp" startline="31" endline="35">AminoAcid</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_smol_dock_1_1_amino_acid_1aed11fc710f3993ac1bda7ce5e59e102e" prot="private" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int SmolDock::AminoAcid::AAId</definition>
+        <argsstring></argsstring>
+        <name>AAId</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Structures/AminoAcid.h" line="96" column="1" bodyfile="Structures/AminoAcid.h" bodystart="96" bodyend="-1"/>
+        <referencedby refid="class_smol_dock_1_1_amino_acid_1a8cd51ce91381cbd486fef313ff79e50d" compoundref="_amino_acid_8cpp" startline="97" endline="99">getAAId</referencedby>
+        <referencedby refid="class_smol_dock_1_1_amino_acid_1a091349e13f56cc9d28701dcfe8e30d45" compoundref="_amino_acid_8cpp" startline="101" endline="104">setAAId</referencedby>
       </memberdef>
       <memberdef kind="variable" id="class_smol_dock_1_1_amino_acid_1ad0349cceaac80ad8a367c8130589dd76" prot="private" static="no" mutable="no">
         <type>std::string</type>
@@ -303,8 +318,8 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Structures/AminoAcid.h" line="72" column="1" bodyfile="Structures/AminoAcid.h" bodystart="72" bodyend="-1"/>
-        <referencedby refid="class_smol_dock_1_1_amino_acid_1a0632e2366d8af52d467bffcde90657f2" compoundref="_amino_acid_8cpp" startline="15" endline="19">AminoAcid</referencedby>
+        <location file="Structures/AminoAcid.h" line="98" column="1" bodyfile="Structures/AminoAcid.h" bodystart="98" bodyend="-1"/>
+        <referencedby refid="class_smol_dock_1_1_amino_acid_1a0632e2366d8af52d467bffcde90657f2" compoundref="_amino_acid_8cpp" startline="31" endline="35">AminoAcid</referencedby>
       </memberdef>
       <memberdef kind="variable" id="class_smol_dock_1_1_amino_acid_1a2a83d6290c79b4d2145637a29ebb9d23" prot="private" static="no" mutable="no">
         <type>std::string</type>
@@ -317,7 +332,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Structures/AminoAcid.h" line="73" column="1" bodyfile="Structures/AminoAcid.h" bodystart="73" bodyend="-1"/>
+        <location file="Structures/AminoAcid.h" line="99" column="1" bodyfile="Structures/AminoAcid.h" bodystart="99" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_smol_dock_1_1_amino_acid_1acf07ea167386e29d0ea6b5024663aed8" prot="private" static="no" mutable="no">
         <type>std::vector&lt; std::shared_ptr&lt; <ref refid="class_smol_dock_1_1_atom" kindref="compound">Atom</ref> &gt; &gt;</type>
@@ -330,7 +345,8 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Structures/AminoAcid.h" line="75" column="1" bodyfile="Structures/AminoAcid.h" bodystart="75" bodyend="-1"/>
+        <location file="Structures/AminoAcid.h" line="101" column="1" bodyfile="Structures/AminoAcid.h" bodystart="101" bodyend="-1"/>
+        <referencedby refid="class_smol_dock_1_1_amino_acid_1a8d4e3aa2a1ae3d34dd78415c7afc60f1" compoundref="_amino_acid_8cpp" startline="108" endline="124">filliProtein</referencedby>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -349,10 +365,10 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Structures/AminoAcid.h" line="61" column="1" bodyfile="Structures/AminoAcid.cpp" bodystart="15" bodyend="19"/>
-        <references refid="class_smol_dock_1_1_amino_acid_1ad0349cceaac80ad8a367c8130589dd76" compoundref="_amino_acid_8h" startline="72">shorthand</references>
-        <references refid="class_smol_dock_1_1_amino_acid_1a196e09203295c01d2a5fc157ee89f7ee" compoundref="_amino_acid_8cpp" startline="59" endline="73">stringToResType</references>
-        <references refid="class_smol_dock_1_1_amino_acid_1ae3404d935519af353a5c323ce298e04a" compoundref="_amino_acid_8h" startline="70">type</references>
+        <location file="Structures/AminoAcid.h" line="79" column="1" bodyfile="Structures/AminoAcid.cpp" bodystart="31" bodyend="35"/>
+        <references refid="class_smol_dock_1_1_amino_acid_1ad0349cceaac80ad8a367c8130589dd76" compoundref="_amino_acid_8h" startline="98">shorthand</references>
+        <references refid="class_smol_dock_1_1_amino_acid_1a196e09203295c01d2a5fc157ee89f7ee" compoundref="_amino_acid_8cpp" startline="77" endline="91">stringToResType</references>
+        <references refid="class_smol_dock_1_1_amino_acid_1ae3404d935519af353a5c323ce298e04a" compoundref="_amino_acid_8h" startline="94">type</references>
       </memberdef>
       <memberdef kind="function" id="class_smol_dock_1_1_amino_acid_1acc14dd7bf81e1580703017427b130838" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
         <type></type>
@@ -369,8 +385,64 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Structures/AminoAcid.h" line="63" column="1" bodyfile="Structures/AminoAcid.cpp" bodystart="75" bodyend="77"/>
-        <references refid="class_smol_dock_1_1_amino_acid_1ae3404d935519af353a5c323ce298e04a" compoundref="_amino_acid_8h" startline="70">type</references>
+        <location file="Structures/AminoAcid.h" line="81" column="1" bodyfile="Structures/AminoAcid.cpp" bodystart="93" bodyend="95"/>
+        <references refid="class_smol_dock_1_1_amino_acid_1ae3404d935519af353a5c323ce298e04a" compoundref="_amino_acid_8h" startline="94">type</references>
+      </memberdef>
+      <memberdef kind="function" id="class_smol_dock_1_1_amino_acid_1a8cd51ce91381cbd486fef313ff79e50d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>unsigned int</type>
+        <definition>unsigned int SmolDock::AminoAcid::getAAId</definition>
+        <argsstring>()</argsstring>
+        <name>getAAId</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Structures/AminoAcid.h" line="84" column="1" bodyfile="Structures/AminoAcid.cpp" bodystart="97" bodyend="99"/>
+        <references refid="class_smol_dock_1_1_amino_acid_1aed11fc710f3993ac1bda7ce5e59e102e" compoundref="_amino_acid_8h" startline="96">AAId</references>
+      </memberdef>
+      <memberdef kind="function" id="class_smol_dock_1_1_amino_acid_1a091349e13f56cc9d28701dcfe8e30d45" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SmolDock::AminoAcid::setAAId</definition>
+        <argsstring>(unsigned int id)</argsstring>
+        <name>setAAId</name>
+        <param>
+          <type>unsigned int</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Structures/AminoAcid.h" line="85" column="1" bodyfile="Structures/AminoAcid.cpp" bodystart="101" bodyend="104"/>
+        <references refid="class_smol_dock_1_1_amino_acid_1aed11fc710f3993ac1bda7ce5e59e102e" compoundref="_amino_acid_8h" startline="96">AAId</references>
+      </memberdef>
+      <memberdef kind="function" id="class_smol_dock_1_1_amino_acid_1a8d4e3aa2a1ae3d34dd78415c7afc60f1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool SmolDock::AminoAcid::filliProtein</definition>
+        <argsstring>(iProtein &amp;prot)</argsstring>
+        <name>filliProtein</name>
+        <param>
+          <type><ref refid="struct_smol_dock_1_1i_protein" kindref="compound">iProtein</ref> &amp;</type>
+          <declname>prot</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Structures/AminoAcid.h" line="87" column="1" bodyfile="Structures/AminoAcid.cpp" bodystart="108" bodyend="124"/>
+        <references refid="struct_smol_dock_1_1i_protein_1a56480d9a766ca9a3564ade7b91585f0f" compoundref="i_protein_8h" startline="41">SmolDock::iProtein::atomicRadius</references>
+        <references refid="class_smol_dock_1_1_amino_acid_1acf07ea167386e29d0ea6b5024663aed8" compoundref="_amino_acid_8h" startline="101">atoms</references>
+        <references refid="struct_smol_dock_1_1i_protein_1a8a9cecc0e9750baf8d7074fe64b4331d" compoundref="i_protein_8h" startline="42">SmolDock::iProtein::type</references>
+        <references refid="struct_smol_dock_1_1i_protein_1ac8f37b4dd33f21e3a368f18e8ceaa153" compoundref="i_protein_8h" startline="43">SmolDock::iProtein::variant</references>
+        <references refid="struct_smol_dock_1_1i_protein_1ae36a5b0f6996e54f9ce1f746a79e23f8" compoundref="i_protein_8h" startline="40">SmolDock::iProtein::x</references>
+        <references refid="struct_smol_dock_1_1i_protein_1a090a371c93db6928cdfef39b0ce3d1fd" compoundref="i_protein_8h" startline="40">SmolDock::iProtein::y</references>
+        <references refid="struct_smol_dock_1_1i_protein_1ab95306577aa2d8bdd268504b44d046ad" compoundref="i_protein_8h" startline="40">SmolDock::iProtein::z</references>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -431,16 +503,20 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="Structures/AminoAcid.h" line="22" column="1" bodyfile="Structures/AminoAcid.h" bodystart="22" bodyend="78"/>
+    <location file="Structures/AminoAcid.h" line="40" column="1" bodyfile="Structures/AminoAcid.h" bodystart="40" bodyend="104"/>
     <listofallmembers>
+      <member refid="class_smol_dock_1_1_amino_acid_1aed11fc710f3993ac1bda7ce5e59e102e" prot="private" virt="non-virtual"><scope>SmolDock::AminoAcid</scope><name>AAId</name></member>
       <member refid="class_smol_dock_1_1_amino_acid_1a23b1781c86be2991e2f668c07ad78d68" prot="protected" virt="non-virtual"><scope>SmolDock::AminoAcid</scope><name>AAShorthandSet</name></member>
       <member refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875d" prot="public" virt="non-virtual"><scope>SmolDock::AminoAcid</scope><name>AAType</name></member>
       <member refid="class_smol_dock_1_1_amino_acid_1a0632e2366d8af52d467bffcde90657f2" prot="public" virt="non-virtual"><scope>SmolDock::AminoAcid</scope><name>AminoAcid</name></member>
       <member refid="class_smol_dock_1_1_amino_acid_1acc14dd7bf81e1580703017427b130838" prot="public" virt="non-virtual"><scope>SmolDock::AminoAcid</scope><name>AminoAcid</name></member>
       <member refid="class_smol_dock_1_1_amino_acid_1acf07ea167386e29d0ea6b5024663aed8" prot="private" virt="non-virtual"><scope>SmolDock::AminoAcid</scope><name>atoms</name></member>
+      <member refid="class_smol_dock_1_1_amino_acid_1a8d4e3aa2a1ae3d34dd78415c7afc60f1" prot="public" virt="non-virtual"><scope>SmolDock::AminoAcid</scope><name>filliProtein</name></member>
       <member refid="class_smol_dock_1_1_amino_acid_1a2a83d6290c79b4d2145637a29ebb9d23" prot="private" virt="non-virtual"><scope>SmolDock::AminoAcid</scope><name>fullName</name></member>
+      <member refid="class_smol_dock_1_1_amino_acid_1a8cd51ce91381cbd486fef313ff79e50d" prot="public" virt="non-virtual"><scope>SmolDock::AminoAcid</scope><name>getAAId</name></member>
       <member refid="class_smol_dock_1_1_amino_acid_1a2cc8b86817f46f61585ecf591984f8eb" prot="private" virt="non-virtual"><scope>SmolDock::AminoAcid</scope><name>Protein</name></member>
       <member refid="class_smol_dock_1_1_amino_acid_1a114a9d96ae603d1a25779498205cec47" prot="public" virt="non-virtual"><scope>SmolDock::AminoAcid</scope><name>resTypeToString</name></member>
+      <member refid="class_smol_dock_1_1_amino_acid_1a091349e13f56cc9d28701dcfe8e30d45" prot="public" virt="non-virtual"><scope>SmolDock::AminoAcid</scope><name>setAAId</name></member>
       <member refid="class_smol_dock_1_1_amino_acid_1ad0349cceaac80ad8a367c8130589dd76" prot="private" virt="non-virtual"><scope>SmolDock::AminoAcid</scope><name>shorthand</name></member>
       <member refid="class_smol_dock_1_1_amino_acid_1a196e09203295c01d2a5fc157ee89f7ee" prot="public" virt="non-virtual"><scope>SmolDock::AminoAcid</scope><name>stringToResType</name></member>
       <member refid="class_smol_dock_1_1_amino_acid_1ae3404d935519af353a5c323ce298e04a" prot="private" virt="non-virtual"><scope>SmolDock::AminoAcid</scope><name>type</name></member>

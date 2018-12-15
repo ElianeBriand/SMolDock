@@ -7,162 +7,171 @@
     <includedby refid="_molecule_8h" local="yes">Molecule.h</includedby>
     <includedby refid="_bond_8cpp" local="yes">Bond.cpp</includedby>
     <incdepgraph>
-      <node id="151">
+      <node id="167">
         <label>string</label>
       </node>
-      <node id="145">
+      <node id="161">
         <label>Atom.h</label>
         <link refid="_atom_8h"/>
-        <childnode refid="146" relation="include">
-        </childnode>
-        <childnode refid="144" relation="include">
-        </childnode>
-        <childnode refid="147" relation="include">
-        </childnode>
-        <childnode refid="148" relation="include">
-        </childnode>
-        <childnode refid="149" relation="include">
-        </childnode>
-        <childnode refid="150" relation="include">
-        </childnode>
-        <childnode refid="153" relation="include">
-        </childnode>
-      </node>
-      <node id="153">
-        <label>../Engines/Internals/iAtom.h</label>
-        <link refid="i_atom_8h"/>
-      </node>
-      <node id="143">
-        <label>Bond.h</label>
-        <link refid="_bond_8h"/>
-        <childnode refid="144" relation="include">
-        </childnode>
-        <childnode refid="145" relation="include">
-        </childnode>
-      </node>
-      <node id="150">
-        <label>AminoAcid.h</label>
-        <link refid="_amino_acid_8h"/>
-        <childnode refid="151" relation="include">
-        </childnode>
-        <childnode refid="146" relation="include">
-        </childnode>
-        <childnode refid="147" relation="include">
-        </childnode>
-        <childnode refid="148" relation="include">
-        </childnode>
-        <childnode refid="152" relation="include">
-        </childnode>
-        <childnode refid="144" relation="include">
-        </childnode>
-      </node>
-      <node id="152">
-        <label>tuple</label>
-      </node>
-      <node id="146">
-        <label>vector</label>
-      </node>
-      <node id="149">
-        <label>iostream</label>
-      </node>
-      <node id="147">
-        <label>set</label>
-      </node>
-      <node id="148">
-        <label>algorithm</label>
-      </node>
-      <node id="144">
-        <label>memory</label>
-      </node>
-    </incdepgraph>
-    <invincdepgraph>
-      <node id="157">
-        <label>ConformerRigidDockingEngine.h</label>
-        <link refid="_conformer_rigid_docking_engine_8h"/>
-        <childnode refid="158" relation="include">
-        </childnode>
-        <childnode refid="159" relation="include">
-        </childnode>
-      </node>
-      <node id="160">
-        <label>MDStyleDockingEngine.h</label>
-        <link refid="_m_d_style_docking_engine_8h"/>
-        <childnode refid="161" relation="include">
-        </childnode>
-      </node>
-      <node id="163">
-        <label>VinaCompatibleDockingEngine.cpp</label>
-        <link refid="_vina_compatible_docking_engine_8cpp"/>
-      </node>
-      <node id="162">
-        <label>VinaCompatibleDockingEngine.h</label>
-        <link refid="_vina_compatible_docking_engine_8h"/>
-        <childnode refid="163" relation="include">
-        </childnode>
-      </node>
-      <node id="161">
-        <label>MDStyleDockingEngine.cpp</label>
-        <link refid="_m_d_style_docking_engine_8cpp"/>
-      </node>
-      <node id="159">
-        <label>main.cpp</label>
-        <link refid="main_8cpp"/>
-      </node>
-      <node id="164">
-        <label>Molecule.cpp</label>
-        <link refid="_molecule_8cpp"/>
-      </node>
-      <node id="154">
-        <label>Bond.h</label>
-        <link refid="_bond_8h"/>
-        <childnode refid="155" relation="include">
-        </childnode>
-        <childnode refid="167" relation="include">
-        </childnode>
-      </node>
-      <node id="166">
-        <label>MoleculeTraversal.cpp</label>
-        <link refid="_molecule_traversal_8cpp"/>
-      </node>
-      <node id="165">
-        <label>MoleculeTraversal.h</label>
-        <link refid="_molecule_traversal_8h"/>
-        <childnode refid="166" relation="include">
-        </childnode>
-        <childnode refid="159" relation="include">
-        </childnode>
-      </node>
-      <node id="156">
-        <label>AbstractDockingEngine.h</label>
-        <link refid="_abstract_docking_engine_8h"/>
-        <childnode refid="157" relation="include">
-        </childnode>
-        <childnode refid="160" relation="include">
-        </childnode>
         <childnode refid="162" relation="include">
         </childnode>
-      </node>
-      <node id="158">
-        <label>ConformerRigidDockingEngine.cpp</label>
-        <link refid="_conformer_rigid_docking_engine_8cpp"/>
-      </node>
-      <node id="155">
-        <label>Molecule.h</label>
-        <link refid="_molecule_8h"/>
-        <childnode refid="156" relation="include">
-        </childnode>
-        <childnode refid="157" relation="include">
-        </childnode>
         <childnode refid="160" relation="include">
+        </childnode>
+        <childnode refid="163" relation="include">
         </childnode>
         <childnode refid="164" relation="include">
         </childnode>
         <childnode refid="165" relation="include">
         </childnode>
-        <childnode refid="159" relation="include">
+        <childnode refid="166" relation="include">
         </childnode>
       </node>
-      <node id="167">
+      <node id="170">
+        <label>map</label>
+      </node>
+      <node id="159">
+        <label>Bond.h</label>
+        <link refid="_bond_8h"/>
+        <childnode refid="160" relation="include">
+        </childnode>
+        <childnode refid="161" relation="include">
+        </childnode>
+      </node>
+      <node id="166">
+        <label>AminoAcid.h</label>
+        <link refid="_amino_acid_8h"/>
+        <childnode refid="167" relation="include">
+        </childnode>
+        <childnode refid="162" relation="include">
+        </childnode>
+        <childnode refid="163" relation="include">
+        </childnode>
+        <childnode refid="164" relation="include">
+        </childnode>
+        <childnode refid="168" relation="include">
+        </childnode>
+        <childnode refid="160" relation="include">
+        </childnode>
+        <childnode refid="169" relation="include">
+        </childnode>
+      </node>
+      <node id="168">
+        <label>tuple</label>
+      </node>
+      <node id="169">
+        <label>Engines/Internals/iProtein.h</label>
+        <link refid="i_protein_8h"/>
+        <childnode refid="162" relation="include">
+        </childnode>
+        <childnode refid="160" relation="include">
+        </childnode>
+        <childnode refid="170" relation="include">
+        </childnode>
+      </node>
+      <node id="162">
+        <label>vector</label>
+      </node>
+      <node id="165">
+        <label>iostream</label>
+      </node>
+      <node id="163">
+        <label>set</label>
+      </node>
+      <node id="164">
+        <label>algorithm</label>
+      </node>
+      <node id="160">
+        <label>memory</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="174">
+        <label>ConformerRigidDockingEngine.h</label>
+        <link refid="_conformer_rigid_docking_engine_8h"/>
+        <childnode refid="175" relation="include">
+        </childnode>
+        <childnode refid="176" relation="include">
+        </childnode>
+      </node>
+      <node id="177">
+        <label>MDStyleDockingEngine.h</label>
+        <link refid="_m_d_style_docking_engine_8h"/>
+        <childnode refid="178" relation="include">
+        </childnode>
+      </node>
+      <node id="180">
+        <label>VinaCompatibleDockingEngine.cpp</label>
+        <link refid="_vina_compatible_docking_engine_8cpp"/>
+      </node>
+      <node id="179">
+        <label>VinaCompatibleDockingEngine.h</label>
+        <link refid="_vina_compatible_docking_engine_8h"/>
+        <childnode refid="180" relation="include">
+        </childnode>
+      </node>
+      <node id="178">
+        <label>MDStyleDockingEngine.cpp</label>
+        <link refid="_m_d_style_docking_engine_8cpp"/>
+      </node>
+      <node id="176">
+        <label>main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+      <node id="181">
+        <label>Molecule.cpp</label>
+        <link refid="_molecule_8cpp"/>
+      </node>
+      <node id="171">
+        <label>Bond.h</label>
+        <link refid="_bond_8h"/>
+        <childnode refid="172" relation="include">
+        </childnode>
+        <childnode refid="184" relation="include">
+        </childnode>
+      </node>
+      <node id="183">
+        <label>MoleculeTraversal.cpp</label>
+        <link refid="_molecule_traversal_8cpp"/>
+      </node>
+      <node id="182">
+        <label>MoleculeTraversal.h</label>
+        <link refid="_molecule_traversal_8h"/>
+        <childnode refid="183" relation="include">
+        </childnode>
+        <childnode refid="176" relation="include">
+        </childnode>
+      </node>
+      <node id="173">
+        <label>AbstractDockingEngine.h</label>
+        <link refid="_abstract_docking_engine_8h"/>
+        <childnode refid="174" relation="include">
+        </childnode>
+        <childnode refid="177" relation="include">
+        </childnode>
+        <childnode refid="179" relation="include">
+        </childnode>
+      </node>
+      <node id="175">
+        <label>ConformerRigidDockingEngine.cpp</label>
+        <link refid="_conformer_rigid_docking_engine_8cpp"/>
+      </node>
+      <node id="172">
+        <label>Molecule.h</label>
+        <link refid="_molecule_8h"/>
+        <childnode refid="173" relation="include">
+        </childnode>
+        <childnode refid="174" relation="include">
+        </childnode>
+        <childnode refid="177" relation="include">
+        </childnode>
+        <childnode refid="181" relation="include">
+        </childnode>
+        <childnode refid="182" relation="include">
+        </childnode>
+        <childnode refid="176" relation="include">
+        </childnode>
+      </node>
+      <node id="184">
         <label>Bond.cpp</label>
         <link refid="_bond_8cpp"/>
       </node>
@@ -174,58 +183,74 @@
     <detaileddescription>
     </detaileddescription>
     <programlisting>
-<codeline lineno="1"><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Created<sp/>by<sp/>eliane<sp/>on<sp/>11/11/18.</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="4"><highlight class="normal"></highlight></codeline>
-<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>SMOLDOCK_BOND_H</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SMOLDOCK_BOND_H</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="7"><highlight class="normal"></highlight></codeline>
-<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;memory&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_atom_8h" kindref="compound">Atom.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="10"><highlight class="normal"></highlight></codeline>
-<codeline lineno="11"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_smol_dock" kindref="compound">SmolDock</ref><sp/>{</highlight></codeline>
-<codeline lineno="12"><highlight class="normal"></highlight></codeline>
-<codeline lineno="13" refid="class_smol_dock_1_1_bond" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_smol_dock_1_1_bond" kindref="compound">Bond</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>std::enable_shared_from_this&lt;Bond&gt;<sp/>{</highlight></codeline>
-<codeline lineno="14"><highlight class="normal"></highlight></codeline>
-<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="16"><highlight class="normal"></highlight></codeline>
-<codeline lineno="17" refid="class_smol_dock_1_1_bond_1a6cbf152f682501c998bd06a55400c9cf" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_bond_1a6cbf152f682501c998bd06a55400c9cf" kindref="member">BondType</ref><sp/>{</highlight></codeline>
-<codeline lineno="18" refid="class_smol_dock_1_1_bond_1a6cbf152f682501c998bd06a55400c9cfaccd9d70d0e74b128e8fdd74b302934f1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_bond_1a6cbf152f682501c998bd06a55400c9cfaccd9d70d0e74b128e8fdd74b302934f1" kindref="member">singlebond</ref>,</highlight></codeline>
-<codeline lineno="19" refid="class_smol_dock_1_1_bond_1a6cbf152f682501c998bd06a55400c9cfa076120e243046998cc8ecff65e716c35" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_bond_1a6cbf152f682501c998bd06a55400c9cfa076120e243046998cc8ecff65e716c35" kindref="member">doublebond</ref>,</highlight></codeline>
-<codeline lineno="20" refid="class_smol_dock_1_1_bond_1a6cbf152f682501c998bd06a55400c9cfa7381550bb1c4acbc5e3801c17ef7cae3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_bond_1a6cbf152f682501c998bd06a55400c9cfa7381550bb1c4acbc5e3801c17ef7cae3" kindref="member">triplebond</ref>,</highlight></codeline>
-<codeline lineno="21" refid="class_smol_dock_1_1_bond_1a6cbf152f682501c998bd06a55400c9cfa0a3db58cd06e63f99bfd2d9e6773f555" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_bond_1a6cbf152f682501c998bd06a55400c9cfa0a3db58cd06e63f99bfd2d9e6773f555" kindref="member">defaultbond</ref>,</highlight></codeline>
-<codeline lineno="22" refid="class_smol_dock_1_1_bond_1a6cbf152f682501c998bd06a55400c9cfab055cca5ddd5fd7702867dffa64c1f8f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_bond_1a6cbf152f682501c998bd06a55400c9cfab055cca5ddd5fd7702867dffa64c1f8f" kindref="member">aromatic</ref></highlight></codeline>
-<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
-<codeline lineno="24"><highlight class="normal"></highlight></codeline>
-<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_bond_1a7f046d71521a269171643bdf147d5c80" kindref="member">Bond</ref>(std::shared_ptr&lt;Atom&gt;<sp/>atom_a,<sp/>std::shared_ptr&lt;Atom&gt;<sp/>atom_b);</highlight></codeline>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2018<sp/>Eliane<sp/>Briand</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>SmolDock.</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>SmolDock<sp/>is<sp/>free<sp/>software:<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or<sp/>modify</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>it<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>as<sp/>published<sp/>by</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>the<sp/>Free<sp/>Software<sp/>Foundation,<sp/>either<sp/>version<sp/>3<sp/>of<sp/>the<sp/>License,<sp/>or</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>(at<sp/>your<sp/>option)<sp/>any<sp/>later<sp/>version.</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>Foobar<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>but<sp/>WITHOUT<sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE.<sp/><sp/>See<sp/>the</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>for<sp/>more<sp/>details.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>along<sp/>with<sp/>Foobar.<sp/><sp/>If<sp/>not,<sp/>see<sp/>&lt;https://www.gnu.org/licenses/&gt;.</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>SMOLDOCK_BOND_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SMOLDOCK_BOND_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;memory&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_atom_8h" kindref="compound">Atom.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="26"><highlight class="normal"></highlight></codeline>
-<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_bond_1a7f046d71521a269171643bdf147d5c80" kindref="member">Bond</ref>(std::shared_ptr&lt;Atom&gt;<sp/>atom_a,<sp/>std::shared_ptr&lt;Atom&gt;<sp/>atom_b,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_smol_dock" kindref="compound">SmolDock</ref><sp/>{</highlight></codeline>
 <codeline lineno="28"><highlight class="normal"></highlight></codeline>
-<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Atom&gt;<sp/><ref refid="class_smol_dock_1_1_bond_1a8ca51ba3f2abc758ecd7b4b040681f21" kindref="member">getEndA</ref>();</highlight></codeline>
+<codeline lineno="29" refid="class_smol_dock_1_1_bond" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_smol_dock_1_1_bond" kindref="compound">Bond</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>std::enable_shared_from_this&lt;Bond&gt;<sp/>{</highlight></codeline>
 <codeline lineno="30"><highlight class="normal"></highlight></codeline>
-<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Atom&gt;<sp/><ref refid="class_smol_dock_1_1_bond_1a0a2feeb4cc88cbb8920ae5e9b142ead5" kindref="member">getEndB</ref>();</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
 <codeline lineno="32"><highlight class="normal"></highlight></codeline>
-<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_bond_1a225d51b7edd43bc5aa16984981bc2dfe" kindref="member">publicizeToAtom</ref>();</highlight></codeline>
-<codeline lineno="34"><highlight class="normal"></highlight></codeline>
-<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_bond_1a4ebf28309120c880429f205edf67b9f8" kindref="member">setBondType</ref>(<ref refid="class_smol_dock_1_1_bond_1a6cbf152f682501c998bd06a55400c9cf" kindref="member">Bond::BondType</ref><sp/>t);</highlight></codeline>
-<codeline lineno="36"><highlight class="normal"></highlight></codeline>
-<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_bond_1a6cbf152f682501c998bd06a55400c9cf" kindref="member">BondType</ref><sp/><ref refid="class_smol_dock_1_1_bond_1a6b8180f0f2b339c521f8a74b2445e8c8" kindref="member">getBondType</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="38"><highlight class="normal"></highlight></codeline>
-<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="40" refid="class_smol_dock_1_1_bond_1ad909ef34f3b9b10acc221ac6d54e423a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Atom&gt;<sp/><ref refid="class_smol_dock_1_1_bond_1ad909ef34f3b9b10acc221ac6d54e423a" kindref="member">bond_end_a</ref>;</highlight></codeline>
-<codeline lineno="41" refid="class_smol_dock_1_1_bond_1adbbc73bd7bc4fc579237321be516ed2f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Atom&gt;<sp/><ref refid="class_smol_dock_1_1_bond_1adbbc73bd7bc4fc579237321be516ed2f" kindref="member">bond_end_b</ref>;</highlight></codeline>
+<codeline lineno="33" refid="class_smol_dock_1_1_bond_1a6cbf152f682501c998bd06a55400c9cf" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_bond_1a6cbf152f682501c998bd06a55400c9cf" kindref="member">BondType</ref><sp/>{</highlight></codeline>
+<codeline lineno="34" refid="class_smol_dock_1_1_bond_1a6cbf152f682501c998bd06a55400c9cfaccd9d70d0e74b128e8fdd74b302934f1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_bond_1a6cbf152f682501c998bd06a55400c9cfaccd9d70d0e74b128e8fdd74b302934f1" kindref="member">singlebond</ref>,</highlight></codeline>
+<codeline lineno="35" refid="class_smol_dock_1_1_bond_1a6cbf152f682501c998bd06a55400c9cfa076120e243046998cc8ecff65e716c35" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_bond_1a6cbf152f682501c998bd06a55400c9cfa076120e243046998cc8ecff65e716c35" kindref="member">doublebond</ref>,</highlight></codeline>
+<codeline lineno="36" refid="class_smol_dock_1_1_bond_1a6cbf152f682501c998bd06a55400c9cfa7381550bb1c4acbc5e3801c17ef7cae3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_bond_1a6cbf152f682501c998bd06a55400c9cfa7381550bb1c4acbc5e3801c17ef7cae3" kindref="member">triplebond</ref>,</highlight></codeline>
+<codeline lineno="37" refid="class_smol_dock_1_1_bond_1a6cbf152f682501c998bd06a55400c9cfa0a3db58cd06e63f99bfd2d9e6773f555" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_bond_1a6cbf152f682501c998bd06a55400c9cfa0a3db58cd06e63f99bfd2d9e6773f555" kindref="member">defaultbond</ref>,</highlight></codeline>
+<codeline lineno="38" refid="class_smol_dock_1_1_bond_1a6cbf152f682501c998bd06a55400c9cfab055cca5ddd5fd7702867dffa64c1f8f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_bond_1a6cbf152f682501c998bd06a55400c9cfab055cca5ddd5fd7702867dffa64c1f8f" kindref="member">aromatic</ref></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_bond_1a7f046d71521a269171643bdf147d5c80" kindref="member">Bond</ref>(std::shared_ptr&lt;Atom&gt;<sp/>atom_a,<sp/>std::shared_ptr&lt;Atom&gt;<sp/>atom_b);</highlight></codeline>
 <codeline lineno="42"><highlight class="normal"></highlight></codeline>
-<codeline lineno="43" refid="class_smol_dock_1_1_bond_1acb9a24240df4164e4840611d7df39962" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_bond_1acb9a24240df4164e4840611d7df39962" kindref="member">nextBondID</ref>;</highlight></codeline>
-<codeline lineno="44" refid="class_smol_dock_1_1_bond_1a6fb49dc80f21a23c8b039f85d3b7b5bf" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_bond_1a6fb49dc80f21a23c8b039f85d3b7b5bf" kindref="member">BondID</ref>;</highlight></codeline>
-<codeline lineno="45"><highlight class="normal"></highlight></codeline>
-<codeline lineno="46" refid="class_smol_dock_1_1_bond_1a7795dad7005c83f8702d8593eb81b1ff" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_bond_1a6cbf152f682501c998bd06a55400c9cf" kindref="member">BondType</ref><sp/><ref refid="class_smol_dock_1_1_bond_1a7795dad7005c83f8702d8593eb81b1ff" kindref="member">bondtype</ref>;</highlight></codeline>
-<codeline lineno="47"><highlight class="normal"></highlight></codeline>
-<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
-<codeline lineno="49"><highlight class="normal"></highlight></codeline>
-<codeline lineno="50"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="51"><highlight class="normal"></highlight></codeline>
-<codeline lineno="52"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//SMOLDOCK_BOND_H</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_bond_1a7f046d71521a269171643bdf147d5c80" kindref="member">Bond</ref>(std::shared_ptr&lt;Atom&gt;<sp/>atom_a,<sp/>std::shared_ptr&lt;Atom&gt;<sp/>atom_b,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Atom&gt;<sp/><ref refid="class_smol_dock_1_1_bond_1a8ca51ba3f2abc758ecd7b4b040681f21" kindref="member">getEndA</ref>();</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Atom&gt;<sp/><ref refid="class_smol_dock_1_1_bond_1a0a2feeb4cc88cbb8920ae5e9b142ead5" kindref="member">getEndB</ref>();</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_bond_1a225d51b7edd43bc5aa16984981bc2dfe" kindref="member">publicizeToAtom</ref>();</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_bond_1a4ebf28309120c880429f205edf67b9f8" kindref="member">setBondType</ref>(<ref refid="class_smol_dock_1_1_bond_1a6cbf152f682501c998bd06a55400c9cf" kindref="member">Bond::BondType</ref><sp/>t);</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_bond_1a6cbf152f682501c998bd06a55400c9cf" kindref="member">BondType</ref><sp/><ref refid="class_smol_dock_1_1_bond_1a6b8180f0f2b339c521f8a74b2445e8c8" kindref="member">getBondType</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="56" refid="class_smol_dock_1_1_bond_1ad909ef34f3b9b10acc221ac6d54e423a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Atom&gt;<sp/><ref refid="class_smol_dock_1_1_bond_1ad909ef34f3b9b10acc221ac6d54e423a" kindref="member">bond_end_a</ref>;</highlight></codeline>
+<codeline lineno="57" refid="class_smol_dock_1_1_bond_1adbbc73bd7bc4fc579237321be516ed2f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Atom&gt;<sp/><ref refid="class_smol_dock_1_1_bond_1adbbc73bd7bc4fc579237321be516ed2f" kindref="member">bond_end_b</ref>;</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59" refid="class_smol_dock_1_1_bond_1acb9a24240df4164e4840611d7df39962" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_bond_1acb9a24240df4164e4840611d7df39962" kindref="member">nextBondID</ref>;</highlight></codeline>
+<codeline lineno="60" refid="class_smol_dock_1_1_bond_1a6fb49dc80f21a23c8b039f85d3b7b5bf" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_bond_1a6fb49dc80f21a23c8b039f85d3b7b5bf" kindref="member">BondID</ref>;</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62" refid="class_smol_dock_1_1_bond_1a7795dad7005c83f8702d8593eb81b1ff" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_bond_1a6cbf152f682501c998bd06a55400c9cf" kindref="member">BondType</ref><sp/><ref refid="class_smol_dock_1_1_bond_1a7795dad7005c83f8702d8593eb81b1ff" kindref="member">bondtype</ref>;</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//SMOLDOCK_BOND_H</highlight></codeline>
     </programlisting>
     <location file="Structures/Bond.h"/>
   </compounddef>

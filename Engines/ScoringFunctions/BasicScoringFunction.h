@@ -24,6 +24,7 @@
 
 #include <Engines/Internals/iConformer.h>
 #include <Engines/Internals/iProtein.h>
+#include <Engines/Internals/iTransform.h>
 
 
 namespace SmolDock {
@@ -38,11 +39,13 @@ namespace SmolDock {
          * general-purpose affinity ranking.
          *
          * \param conformer Ligand conformation & position to evaluate
+         * \param transform Transformation to apply to the ligand
          * \param protein Protein conformation to evaluate
          * \return The docking score
          * \sa
         */
-        double basic_scoring_func(iConformer& conformer, iProtein& protein);
+        double basic_scoring_func(iConformer& conformer, iTransform& transform, iProtein& protein);
+
 
     }
 

@@ -4,20 +4,99 @@
     <compoundname>SmolDock::iConformer</compoundname>
     <includes refid="i_conformer_8h" local="no">iConformer.h</includes>
       <sectiondef kind="public-attrib">
-      <memberdef kind="variable" id="struct_smol_dock_1_1i_conformer_1a18fd974857dffddf4b6233c7c5d70f94" prot="public" static="no" mutable="no">
-        <type>std::unique_ptr&lt; std::vector&lt; <ref refid="struct_smol_dock_1_1i_atom" kindref="compound">iAtom</ref> &gt; &gt;</type>
-        <definition>std::unique_ptr&lt;std::vector&lt;iAtom&gt; &gt; SmolDock::iConformer::atoms_vect</definition>
+      <memberdef kind="variable" id="struct_smol_dock_1_1i_conformer_1a45c379f6a880da313bf3519dc415e992" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; double &gt;</type>
+        <definition>std::vector&lt;double&gt; SmolDock::iConformer::x</definition>
         <argsstring></argsstring>
-        <name>atoms_vect</name>
+        <name>x</name>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Engines/Internals/iConformer.h" line="16" column="1" bodyfile="Engines/Internals/iConformer.h" bodystart="16" bodyend="-1"/>
-        <referencedby refid="class_smol_dock_1_1_molecule_1a449f37f171474849ad896e33dfc9e2f4" compoundref="_molecule_8cpp" startline="164" endline="189">SmolDock::Molecule::generateConformer</referencedby>
-        <referencedby refid="class_smol_dock_1_1_molecule_1a2767177fabc41b3aeaa68c77d8addd1b" compoundref="_molecule_8cpp" startline="191" endline="234">SmolDock::Molecule::generateConformers</referencedby>
+        <location file="Engines/Internals/iConformer.h" line="31" column="1" bodyfile="Engines/Internals/iConformer.h" bodystart="31" bodyend="-1"/>
+        <referencedby refid="namespace_smol_dock_1_1_score_1acb903220ddee4d311645b8df3204ff23" compoundref="_basic_scoring_function_8cpp" startline="34" endline="108">SmolDock::Score::basic_scoring_func</referencedby>
+        <referencedby refid="class_smol_dock_1_1_molecule_1a449f37f171474849ad896e33dfc9e2f4" compoundref="_molecule_8cpp" startline="183" endline="212">SmolDock::Molecule::generateConformer</referencedby>
+        <referencedby refid="class_smol_dock_1_1_molecule_1a2767177fabc41b3aeaa68c77d8addd1b" compoundref="_molecule_8cpp" startline="214" endline="257">SmolDock::Molecule::generateConformers</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="struct_smol_dock_1_1i_conformer_1ac3019c0cd62660a4392591dd9519cc9a" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; double &gt;</type>
+        <definition>std::vector&lt;double&gt; SmolDock::iConformer::y</definition>
+        <argsstring></argsstring>
+        <name>y</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Engines/Internals/iConformer.h" line="31" column="1" bodyfile="Engines/Internals/iConformer.h" bodystart="31" bodyend="-1"/>
+        <referencedby refid="namespace_smol_dock_1_1_score_1acb903220ddee4d311645b8df3204ff23" compoundref="_basic_scoring_function_8cpp" startline="34" endline="108">SmolDock::Score::basic_scoring_func</referencedby>
+        <referencedby refid="class_smol_dock_1_1_molecule_1a449f37f171474849ad896e33dfc9e2f4" compoundref="_molecule_8cpp" startline="183" endline="212">SmolDock::Molecule::generateConformer</referencedby>
+        <referencedby refid="class_smol_dock_1_1_molecule_1a2767177fabc41b3aeaa68c77d8addd1b" compoundref="_molecule_8cpp" startline="214" endline="257">SmolDock::Molecule::generateConformers</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="struct_smol_dock_1_1i_conformer_1a5c1fc6f9bad31ec2731337e9ba1e9a0f" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; double &gt;</type>
+        <definition>std::vector&lt;double&gt; SmolDock::iConformer::z</definition>
+        <argsstring></argsstring>
+        <name>z</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Engines/Internals/iConformer.h" line="31" column="1" bodyfile="Engines/Internals/iConformer.h" bodystart="31" bodyend="-1"/>
+        <referencedby refid="namespace_smol_dock_1_1_score_1acb903220ddee4d311645b8df3204ff23" compoundref="_basic_scoring_function_8cpp" startline="34" endline="108">SmolDock::Score::basic_scoring_func</referencedby>
+        <referencedby refid="class_smol_dock_1_1_molecule_1a449f37f171474849ad896e33dfc9e2f4" compoundref="_molecule_8cpp" startline="183" endline="212">SmolDock::Molecule::generateConformer</referencedby>
+        <referencedby refid="class_smol_dock_1_1_molecule_1a2767177fabc41b3aeaa68c77d8addd1b" compoundref="_molecule_8cpp" startline="214" endline="257">SmolDock::Molecule::generateConformers</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="struct_smol_dock_1_1i_conformer_1a1dbd8cb4eaa4e5e2f0afcdd1b36dd862" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; double &gt;</type>
+        <definition>std::vector&lt;double&gt; SmolDock::iConformer::atomicRadius</definition>
+        <argsstring></argsstring>
+        <name>atomicRadius</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Engines/Internals/iConformer.h" line="32" column="1" bodyfile="Engines/Internals/iConformer.h" bodystart="32" bodyend="-1"/>
+        <referencedby refid="namespace_smol_dock_1_1_score_1acb903220ddee4d311645b8df3204ff23" compoundref="_basic_scoring_function_8cpp" startline="34" endline="108">SmolDock::Score::basic_scoring_func</referencedby>
+        <referencedby refid="class_smol_dock_1_1_molecule_1a449f37f171474849ad896e33dfc9e2f4" compoundref="_molecule_8cpp" startline="183" endline="212">SmolDock::Molecule::generateConformer</referencedby>
+        <referencedby refid="class_smol_dock_1_1_molecule_1a2767177fabc41b3aeaa68c77d8addd1b" compoundref="_molecule_8cpp" startline="214" endline="257">SmolDock::Molecule::generateConformers</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="struct_smol_dock_1_1i_conformer_1add04de1dd457ae228e398ffa9260497d" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; unsigned char &gt;</type>
+        <definition>std::vector&lt;unsigned char&gt; SmolDock::iConformer::type</definition>
+        <argsstring></argsstring>
+        <name>type</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Engines/Internals/iConformer.h" line="33" column="1" bodyfile="Engines/Internals/iConformer.h" bodystart="33" bodyend="-1"/>
+        <referencedby refid="namespace_smol_dock_1_1_score_1acb903220ddee4d311645b8df3204ff23" compoundref="_basic_scoring_function_8cpp" startline="34" endline="108">SmolDock::Score::basic_scoring_func</referencedby>
+        <referencedby refid="class_smol_dock_1_1_molecule_1a449f37f171474849ad896e33dfc9e2f4" compoundref="_molecule_8cpp" startline="183" endline="212">SmolDock::Molecule::generateConformer</referencedby>
+        <referencedby refid="class_smol_dock_1_1_molecule_1a2767177fabc41b3aeaa68c77d8addd1b" compoundref="_molecule_8cpp" startline="214" endline="257">SmolDock::Molecule::generateConformers</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="struct_smol_dock_1_1i_conformer_1ad310936289e38ae6fca788741b0cfffa" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; unsigned char &gt;</type>
+        <definition>std::vector&lt;unsigned char&gt; SmolDock::iConformer::variant</definition>
+        <argsstring></argsstring>
+        <name>variant</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Engines/Internals/iConformer.h" line="34" column="1" bodyfile="Engines/Internals/iConformer.h" bodystart="34" bodyend="-1"/>
+        <referencedby refid="class_smol_dock_1_1_molecule_1a2767177fabc41b3aeaa68c77d8addd1b" compoundref="_molecule_8cpp" startline="214" endline="257">SmolDock::Molecule::generateConformers</referencedby>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -25,21 +104,18 @@
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
-      <node id="69">
+      <node id="67">
         <label>T</label>
       </node>
-      <node id="66">
-        <label>std::vector&lt; SmolDock::iAtom &gt;</label>
-        <childnode refid="67" relation="usage">
-          <edgelabel>+elements</edgelabel>
-        </childnode>
-        <childnode refid="68" relation="template-instance">
-          <edgelabel>&lt; SmolDock::iAtom &gt;</edgelabel>
+      <node id="68">
+        <label>std::vector&lt; double &gt;</label>
+        <childnode refid="66" relation="template-instance">
+          <edgelabel>&lt; double &gt;</edgelabel>
         </childnode>
       </node>
-      <node id="68">
+      <node id="66">
         <label>std::vector&lt; T &gt;</label>
-        <childnode refid="69" relation="usage">
+        <childnode refid="67" relation="usage">
           <edgelabel>+elements</edgelabel>
         </childnode>
       </node>
@@ -47,32 +123,31 @@
         <label>SmolDock::iConformer</label>
         <link refid="struct_smol_dock_1_1i_conformer"/>
         <childnode refid="65" relation="usage">
-          <edgelabel>+atoms_vect</edgelabel>
+          <edgelabel>+type</edgelabel>
+          <edgelabel>+variant</edgelabel>
         </childnode>
-      </node>
-      <node id="70">
-        <label>std::unique_ptr&lt; T &gt;</label>
-        <childnode refid="69" relation="usage">
-          <edgelabel>+ptr</edgelabel>
+        <childnode refid="68" relation="usage">
+          <edgelabel>+x</edgelabel>
+          <edgelabel>+y</edgelabel>
+          <edgelabel>+z</edgelabel>
+          <edgelabel>+atomicRadius</edgelabel>
         </childnode>
       </node>
       <node id="65">
-        <label>std::unique_ptr&lt; std::vector&lt; SmolDock::iAtom &gt; &gt;</label>
-        <childnode refid="66" relation="usage">
-          <edgelabel>+ptr</edgelabel>
+        <label>std::vector&lt; unsigned char &gt;</label>
+        <childnode refid="66" relation="template-instance">
+          <edgelabel>&lt; unsigned char &gt;</edgelabel>
         </childnode>
-        <childnode refid="70" relation="template-instance">
-          <edgelabel>&lt; std::vector&lt; SmolDock::iAtom &gt; &gt;</edgelabel>
-        </childnode>
-      </node>
-      <node id="67">
-        <label>SmolDock::iAtom</label>
-        <link refid="struct_smol_dock_1_1i_atom"/>
       </node>
     </collaborationgraph>
-    <location file="Engines/Internals/iConformer.h" line="15" column="1" bodyfile="Engines/Internals/iConformer.h" bodystart="15" bodyend="17"/>
+    <location file="Engines/Internals/iConformer.h" line="30" column="1" bodyfile="Engines/Internals/iConformer.h" bodystart="30" bodyend="35"/>
     <listofallmembers>
-      <member refid="struct_smol_dock_1_1i_conformer_1a18fd974857dffddf4b6233c7c5d70f94" prot="public" virt="non-virtual"><scope>SmolDock::iConformer</scope><name>atoms_vect</name></member>
+      <member refid="struct_smol_dock_1_1i_conformer_1a1dbd8cb4eaa4e5e2f0afcdd1b36dd862" prot="public" virt="non-virtual"><scope>SmolDock::iConformer</scope><name>atomicRadius</name></member>
+      <member refid="struct_smol_dock_1_1i_conformer_1add04de1dd457ae228e398ffa9260497d" prot="public" virt="non-virtual"><scope>SmolDock::iConformer</scope><name>type</name></member>
+      <member refid="struct_smol_dock_1_1i_conformer_1ad310936289e38ae6fca788741b0cfffa" prot="public" virt="non-virtual"><scope>SmolDock::iConformer</scope><name>variant</name></member>
+      <member refid="struct_smol_dock_1_1i_conformer_1a45c379f6a880da313bf3519dc415e992" prot="public" virt="non-virtual"><scope>SmolDock::iConformer</scope><name>x</name></member>
+      <member refid="struct_smol_dock_1_1i_conformer_1ac3019c0cd62660a4392591dd9519cc9a" prot="public" virt="non-virtual"><scope>SmolDock::iConformer</scope><name>y</name></member>
+      <member refid="struct_smol_dock_1_1i_conformer_1a5c1fc6f9bad31ec2731337e9ba1e9a0f" prot="public" virt="non-virtual"><scope>SmolDock::iConformer</scope><name>z</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

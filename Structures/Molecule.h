@@ -68,7 +68,7 @@ namespace SmolDock {
          * \return whether the parsing and initial conformer generation was successful.
          * \sa generateConformers()
         */
-        bool populateFromSMILES(const std::string &smiles, unsigned int seed = 367454);
+        bool populateFromSMILES(const std::string &smiles, unsigned int seed = 36754);
 
         unsigned int numberOfAtoms();
 

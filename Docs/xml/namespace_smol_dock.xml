@@ -7,9 +7,13 @@
     <innerclass refid="class_smol_dock_1_1_bond" prot="public">SmolDock::Bond</innerclass>
     <innerclass refid="class_smol_dock_1_1_docking_result" prot="public">SmolDock::DockingResult</innerclass>
     <innerclass refid="class_smol_dock_1_1_docking_result_printer" prot="public">SmolDock::DockingResultPrinter</innerclass>
-    <innerclass refid="struct_smol_dock_1_1i_atom" prot="public">SmolDock::iAtom</innerclass>
     <innerclass refid="struct_smol_dock_1_1i_conformer" prot="public">SmolDock::iConformer</innerclass>
+    <innerclass refid="struct_smol_dock_1_1i_gradient" prot="public">SmolDock::iGradient</innerclass>
     <innerclass refid="struct_smol_dock_1_1i_protein" prot="public">SmolDock::iProtein</innerclass>
+    <innerclass refid="struct_smol_dock_1_1i_quaternion" prot="public">SmolDock::iQuaternion</innerclass>
+    <innerclass refid="struct_smol_dock_1_1i_transform" prot="public">SmolDock::iTransform</innerclass>
+    <innerclass refid="struct_smol_dock_1_1i_translation" prot="public">SmolDock::iTranslation</innerclass>
+    <innerclass refid="struct_smol_dock_1_1i_vect" prot="public">SmolDock::iVect</innerclass>
     <innerclass refid="class_smol_dock_1_1_molecule" prot="public">SmolDock::Molecule</innerclass>
     <innerclass refid="class_smol_dock_1_1_molecule_traversal" prot="public">SmolDock::MoleculeTraversal</innerclass>
     <innerclass refid="class_smol_dock_1_1_protein" prot="public">SmolDock::Protein</innerclass>
@@ -17,6 +21,137 @@
     <innernamespace refid="namespace_smol_dock_1_1_engine">SmolDock::Engine</innernamespace>
     <innernamespace refid="namespace_smol_dock_1_1_score">SmolDock::Score</innernamespace>
       <sectiondef kind="func">
+      <memberdef kind="function" id="namespace_smol_dock_1a9823f182fd4e8ffa38a3cda81a5cc82e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="struct_smol_dock_1_1i_quaternion" kindref="compound">iQuaternion</ref></type>
+        <definition>iQuaternion SmolDock::iQuaternionZeroInit</definition>
+        <argsstring>()</argsstring>
+        <name>iQuaternionZeroInit</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Engines/Internals/iTransform.h" line="35" column="1" bodyfile="Engines/Internals/iTransform.h" bodystart="35" bodyend="43"/>
+        <references refid="struct_smol_dock_1_1i_quaternion_1a07d95036803eb2a4ef32627df95043ad" compoundref="i_transform_8h" startline="16">SmolDock::iQuaternion::s</references>
+        <references refid="struct_smol_dock_1_1i_quaternion_1abe19bca6bde4eb325a4feb7e017edc72" compoundref="i_transform_8h" startline="17">SmolDock::iQuaternion::v</references>
+        <referencedby refid="namespace_smol_dock_1a5a413d54c69a245f7e424a4f3d788b23" compoundref="i_transform_8h" startline="51" endline="59">iTransformZeroInit</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespace_smol_dock_1a5a413d54c69a245f7e424a4f3d788b23" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="struct_smol_dock_1_1i_transform" kindref="compound">iTransform</ref></type>
+        <definition>iTransform SmolDock::iTransformZeroInit</definition>
+        <argsstring>()</argsstring>
+        <name>iTransformZeroInit</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Engines/Internals/iTransform.h" line="51" column="1" bodyfile="Engines/Internals/iTransform.h" bodystart="51" bodyend="59"/>
+        <references refid="namespace_smol_dock_1a9823f182fd4e8ffa38a3cda81a5cc82e" compoundref="i_transform_8h" startline="35" endline="43">iQuaternionZeroInit</references>
+        <references refid="struct_smol_dock_1_1i_transform_1a31861b55dc94ec0172ce602cd2a4a54f" compoundref="i_transform_8h" startline="31">SmolDock::iTransform::rota</references>
+        <references refid="struct_smol_dock_1_1i_transform_1ab0039729b08d423b6e0414cec1b893e7" compoundref="i_transform_8h" startline="29">SmolDock::iTransform::transl</references>
+        <references refid="struct_smol_dock_1_1i_translation_1a74a60efc8b2463b7ea1ca1e824a4ed28" compoundref="i_transform_8h" startline="25">SmolDock::iTranslation::x</references>
+        <references refid="struct_smol_dock_1_1i_translation_1a5362a54675ecc6bac99325c69521fbb5" compoundref="i_transform_8h" startline="25">SmolDock::iTranslation::y</references>
+        <references refid="struct_smol_dock_1_1i_translation_1a2ed07fcfc129a2bf7696b65d481317c5" compoundref="i_transform_8h" startline="25">SmolDock::iTranslation::z</references>
+        <referencedby refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a7bee39278168cb4d7ee6558b3a3d3bb4" compoundref="_conformer_rigid_docking_engine_8cpp" startline="124" endline="257">SmolDock::Engine::ConformerRigidDockingEngine::runDockingEngine</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespace_smol_dock_1ae443c284a5d01b87040aa2e6e48d7e87" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::array&lt; double, 3 &gt;</type>
+        <definition>std::array&lt;double,3&gt; SmolDock::scale3DArray</definition>
+        <argsstring>(std::array&lt; double, 3 &gt; a, double factor)</argsstring>
+        <name>scale3DArray</name>
+        <param>
+          <type>std::array&lt; double, 3 &gt;</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>factor</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Engines/Internals/iTransform.h" line="61" column="1" bodyfile="Engines/Internals/iTransform.h" bodystart="61" bodyend="64"/>
+        <referencedby refid="namespace_smol_dock_1a1b95b1009567133c6c0ae60966d7afde" compoundref="i_transform_8h" startline="84" endline="98">rotatePosition</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespace_smol_dock_1a3f19e84b1bdeab82a9869a5534d05fc4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::array&lt; double, 3 &gt;</type>
+        <definition>std::array&lt;double,3&gt; SmolDock::crossProduct3DArray</definition>
+        <argsstring>(std::array&lt; double, 3 &gt; a, std::array&lt; double, 3 &gt; b)</argsstring>
+        <name>crossProduct3DArray</name>
+        <param>
+          <type>std::array&lt; double, 3 &gt;</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>std::array&lt; double, 3 &gt;</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Engines/Internals/iTransform.h" line="66" column="1" bodyfile="Engines/Internals/iTransform.h" bodystart="66" bodyend="73"/>
+        <referencedby refid="namespace_smol_dock_1a1b95b1009567133c6c0ae60966d7afde" compoundref="i_transform_8h" startline="84" endline="98">rotatePosition</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespace_smol_dock_1a9499022a5adbbeee7abb978d7702157a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::array&lt; double, 3 &gt;</type>
+        <definition>std::array&lt;double,3&gt; SmolDock::elementWiseAdd</definition>
+        <argsstring>(std::array&lt; double, 3 &gt; a, std::array&lt; double, 3 &gt; b)</argsstring>
+        <name>elementWiseAdd</name>
+        <param>
+          <type>std::array&lt; double, 3 &gt;</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>std::array&lt; double, 3 &gt;</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Engines/Internals/iTransform.h" line="75" column="1" bodyfile="Engines/Internals/iTransform.h" bodystart="75" bodyend="82"/>
+        <referencedby refid="namespace_smol_dock_1a1b95b1009567133c6c0ae60966d7afde" compoundref="i_transform_8h" startline="84" endline="98">rotatePosition</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespace_smol_dock_1a1b95b1009567133c6c0ae60966d7afde" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="struct_smol_dock_1_1i_vect" kindref="compound">iVect</ref></type>
+        <definition>iVect SmolDock::rotatePosition</definition>
+        <argsstring>(std::array&lt; double, 3 &gt; vec, iQuaternion qt)</argsstring>
+        <name>rotatePosition</name>
+        <param>
+          <type>std::array&lt; double, 3 &gt;</type>
+          <declname>vec</declname>
+        </param>
+        <param>
+          <type><ref refid="struct_smol_dock_1_1i_quaternion" kindref="compound">iQuaternion</ref></type>
+          <declname>qt</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Engines/Internals/iTransform.h" line="84" column="1" bodyfile="Engines/Internals/iTransform.h" bodystart="84" bodyend="98"/>
+        <references refid="namespace_smol_dock_1a3f19e84b1bdeab82a9869a5534d05fc4" compoundref="i_transform_8h" startline="66" endline="73">crossProduct3DArray</references>
+        <references refid="namespace_smol_dock_1a9499022a5adbbeee7abb978d7702157a" compoundref="i_transform_8h" startline="75" endline="82">elementWiseAdd</references>
+        <references refid="struct_smol_dock_1_1i_quaternion_1a07d95036803eb2a4ef32627df95043ad" compoundref="i_transform_8h" startline="16">SmolDock::iQuaternion::s</references>
+        <references refid="namespace_smol_dock_1ae443c284a5d01b87040aa2e6e48d7e87" compoundref="i_transform_8h" startline="61" endline="64">scale3DArray</references>
+        <references refid="struct_smol_dock_1_1i_quaternion_1abe19bca6bde4eb325a4feb7e017edc72" compoundref="i_transform_8h" startline="17">SmolDock::iQuaternion::v</references>
+        <references refid="struct_smol_dock_1_1i_vect_1a3ffc7082a3541ad0fadcb1880a6087a8" compoundref="i_transform_8h" startline="21">SmolDock::iVect::x</references>
+        <references refid="struct_smol_dock_1_1i_vect_1af8165339c1e38179008c4ca49a565fb4" compoundref="i_transform_8h" startline="21">SmolDock::iVect::y</references>
+        <references refid="struct_smol_dock_1_1i_vect_1a013cdafb950199deb4511843ff389e73" compoundref="i_transform_8h" startline="21">SmolDock::iVect::z</references>
+      </memberdef>
       <memberdef kind="function" id="namespace_smol_dock_1a7980070f5c494cfe044ad9e90e34e3e3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>std::string</type>
         <definition>std::string SmolDock::resTypeToString</definition>
@@ -32,8 +167,8 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Structures/AminoAcid.cpp" line="49" column="1" bodyfile="Structures/AminoAcid.cpp" bodystart="49" bodyend="57"/>
-        <references refid="class_smol_dock_1_1_amino_acid_1a23b1781c86be2991e2f668c07ad78d68" compoundref="_amino_acid_8h" startline="66">SmolDock::AminoAcid::AAShorthandSet</references>
+        <location file="Structures/AminoAcid.cpp" line="65" column="1" bodyfile="Structures/AminoAcid.cpp" bodystart="65" bodyend="75"/>
+        <references refid="class_smol_dock_1_1_amino_acid_1a23b1781c86be2991e2f668c07ad78d68" compoundref="_amino_acid_8h" startline="90">SmolDock::AminoAcid::AAShorthandSet</references>
       </memberdef>
       <memberdef kind="function" id="namespace_smol_dock_1a788f9308991cdf8fe5af07b27ff0f389" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875d" kindref="member">AminoAcid::AAType</ref></type>
@@ -50,9 +185,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Structures/AminoAcid.cpp" line="59" column="1" bodyfile="Structures/AminoAcid.cpp" bodystart="59" bodyend="73"/>
-        <references refid="class_smol_dock_1_1_amino_acid_1a23b1781c86be2991e2f668c07ad78d68" compoundref="_amino_acid_8h" startline="66">SmolDock::AminoAcid::AAShorthandSet</references>
-        <referencedby refid="class_smol_dock_1_1_protein_1a99399b7db2f1b78fea8076a137a4b962" compoundref="_protein_8cpp" startline="11" endline="124">SmolDock::Protein::populateFromPDB</referencedby>
+        <location file="Structures/AminoAcid.cpp" line="77" column="1" bodyfile="Structures/AminoAcid.cpp" bodystart="77" bodyend="91"/>
+        <references refid="class_smol_dock_1_1_amino_acid_1a23b1781c86be2991e2f668c07ad78d68" compoundref="_amino_acid_8h" startline="90">SmolDock::AminoAcid::AAShorthandSet</references>
+        <referencedby refid="class_smol_dock_1_1_protein_1a99399b7db2f1b78fea8076a137a4b962" compoundref="_protein_8cpp" startline="36" endline="159">SmolDock::Protein::populateFromPDB</referencedby>
       </memberdef>
       <memberdef kind="function" id="namespace_smol_dock_1adc50d67bf7b33de8b30d90f97c25fb24" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>std::string</type>
@@ -69,8 +204,8 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Structures/Atom.cpp" line="23" column="1" bodyfile="Structures/Atom.cpp" bodystart="23" bodyend="31"/>
-        <references refid="class_smol_dock_1_1_atom_1ad2ea08ee5e9fde5927f30ebe2a3a7142" compoundref="_atom_8h" startline="123">SmolDock::Atom::AtomTypeLabel</references>
+        <location file="Structures/Atom.cpp" line="47" column="1" bodyfile="Structures/Atom.cpp" bodystart="47" bodyend="58"/>
+        <references refid="class_smol_dock_1_1_atom_1aed79f9306267e3ddbd9a9b4dade2bbbf" compoundref="_atom_8h" startline="157">SmolDock::Atom::AtomTypeLabel</references>
       </memberdef>
       <memberdef kind="function" id="namespace_smol_dock_1ae559278f4b66ec9a09ddfaebb224f897" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="class_smol_dock_1_1_atom_1a57e9a532fd04e1846c0d83edebb9fd41" kindref="member">Atom::AtomType</ref></type>
@@ -87,15 +222,37 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Structures/Atom.cpp" line="33" column="1" bodyfile="Structures/Atom.cpp" bodystart="33" bodyend="45"/>
-        <references refid="class_smol_dock_1_1_atom_1ad2ea08ee5e9fde5927f30ebe2a3a7142" compoundref="_atom_8h" startline="123">SmolDock::Atom::AtomTypeLabel</references>
+        <location file="Structures/Atom.cpp" line="60" column="1" bodyfile="Structures/Atom.cpp" bodystart="60" bodyend="71"/>
+        <references refid="class_smol_dock_1_1_atom_1aed79f9306267e3ddbd9a9b4dade2bbbf" compoundref="_atom_8h" startline="157">SmolDock::Atom::AtomTypeLabel</references>
         <references refid="class_smol_dock_1_1_atom_1a57e9a532fd04e1846c0d83edebb9fd41aad921d60486366258809553a3db49a4a">SmolDock::Atom::unknown</references>
+        <referencedby refid="class_smol_dock_1_1_molecule_1a449f37f171474849ad896e33dfc9e2f4" compoundref="_molecule_8cpp" startline="183" endline="212">SmolDock::Molecule::generateConformer</referencedby>
+        <referencedby refid="class_smol_dock_1_1_molecule_1a2767177fabc41b3aeaa68c77d8addd1b" compoundref="_molecule_8cpp" startline="214" endline="257">SmolDock::Molecule::generateConformers</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespace_smol_dock_1a9c3abf1e37dc4fe013df80997dedb20b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double SmolDock::atomTypeToAtomicRadius</definition>
+        <argsstring>(Atom::AtomType t)</argsstring>
+        <name>atomTypeToAtomicRadius</name>
+        <param>
+          <type><ref refid="class_smol_dock_1_1_atom_1a57e9a532fd04e1846c0d83edebb9fd41" kindref="member">Atom::AtomType</ref></type>
+          <declname>t</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Structures/Atom.cpp" line="73" column="1" bodyfile="Structures/Atom.cpp" bodystart="73" bodyend="84"/>
+        <references refid="class_smol_dock_1_1_atom_1aed79f9306267e3ddbd9a9b4dade2bbbf" compoundref="_atom_8h" startline="157">SmolDock::Atom::AtomTypeLabel</references>
+        <referencedby refid="class_smol_dock_1_1_molecule_1a449f37f171474849ad896e33dfc9e2f4" compoundref="_molecule_8cpp" startline="183" endline="212">SmolDock::Molecule::generateConformer</referencedby>
+        <referencedby refid="class_smol_dock_1_1_molecule_1a2767177fabc41b3aeaa68c77d8addd1b" compoundref="_molecule_8cpp" startline="214" endline="257">SmolDock::Molecule::generateConformers</referencedby>
       </memberdef>
       </sectiondef>
     <briefdescription>
 <para>Global namespace for <ref refid="namespace_smol_dock" kindref="compound">SmolDock</ref>. </para>    </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="Engines/AbstractDockingEngine.h" line="12" column="1"/>
+    <location file="Engines/AbstractDockingEngine.h" line="28" column="1"/>
   </compounddef>
 </doxygen>

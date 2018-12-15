@@ -20,6 +20,12 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script><script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -95,7 +101,6 @@ $(document).ready(function(){initNavTree('i_conformer_8h.html','');});
 <div class="contents">
 <div class="textblock"><code>#include &lt;vector&gt;</code><br />
 <code>#include &lt;memory&gt;</code><br />
-<code>#include &quot;<a class="el" href="i_atom_8h_source.html">iAtom.h</a>&quot;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for iConformer.h:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
@@ -103,7 +108,6 @@ $(document).ready(function(){initNavTree('i_conformer_8h.html','');});
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="i_conformer_8h__incl.png" border="0" usemap="#i_conformer_8h" alt=""/></div>
 <map name="i_conformer_8h" id="i_conformer_8h">
-<area shape="rect" id="node4" href="i_atom_8h.html" title="iAtom.h" alt="" coords="181,80,248,107"/>
 </map>
 </div>
 </div><div class="textblock"><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -113,21 +117,20 @@ $(document).ready(function(){initNavTree('i_conformer_8h.html','');});
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="i_conformer_8h__dep__incl.png" border="0" usemap="#i_conformer_8hdep" alt=""/></div>
 <map name="i_conformer_8hdep" id="i_conformer_8hdep">
-<area shape="rect" id="node2" href="_molecule_8h.html" title="Molecule.h" alt="" coords="431,80,516,107"/>
-<area shape="rect" id="node5" href="_conformer_rigid_docking_engine_8cpp.html" title="ConformerRigidDockingEngine.cpp" alt="" coords="773,304,1000,331"/>
-<area shape="rect" id="node14" href="i_conformer_8cpp.html" title="iConformer.cpp" alt="" coords="1023,80,1134,107"/>
-<area shape="rect" id="node15" href="_basic_scoring_function_8h.html" title="BasicScoringFunction.h" alt="" coords="1159,80,1319,107"/>
-<area shape="rect" id="node3" href="_abstract_docking_engine_8h.html" title="AbstractDockingEngine.h" alt="" coords="143,155,313,181"/>
-<area shape="rect" id="node4" href="_conformer_rigid_docking_engine_8h.html" title="ConformerRigidDockingEngine.h" alt="" coords="507,229,719,256"/>
-<area shape="rect" id="node6" href="main_8cpp.html" title="main.cpp" alt="" coords="576,304,651,331"/>
-<area shape="rect" id="node7" href="_m_d_style_docking_engine_8h.html" title="MDStyleDockingEngine.h" alt="" coords="19,229,191,256"/>
-<area shape="rect" id="node11" href="_molecule_8cpp.html" title="Molecule.cpp" alt="" coords="337,155,436,181"/>
-<area shape="rect" id="node12" href="_molecule_traversal_8h.html" title="MoleculeTraversal.h" alt="" coords="687,155,825,181"/>
-<area shape="rect" id="node9" href="_vina_compatible_docking_engine_8h.html" title="VinaCompatibleDockingEngine.h" alt="" coords="219,229,432,256"/>
-<area shape="rect" id="node8" href="_m_d_style_docking_engine_8cpp.html" title="MDStyleDockingEngine.cpp" alt="" coords="5,304,192,331"/>
-<area shape="rect" id="node10" href="_vina_compatible_docking_engine_8cpp.html" title="VinaCompatibleDockingEngine.cpp" alt="" coords="216,304,443,331"/>
-<area shape="rect" id="node13" href="_molecule_traversal_8cpp.html" title="MoleculeTraversal.cpp" alt="" coords="794,229,947,256"/>
-<area shape="rect" id="node16" href="_basic_scoring_function_8cpp.html" title="BasicScoringFunction.cpp" alt="" coords="1151,155,1326,181"/>
+<area shape="rect" id="node2" href="_molecule_8h.html" title="Molecule.h" alt="" coords="733,80,819,107"/>
+<area shape="rect" id="node5" href="_conformer_rigid_docking_engine_8cpp.html" title="ConformerRigidDockingEngine.cpp" alt="" coords="5,304,232,331"/>
+<area shape="rect" id="node14" href="_basic_scoring_function_8h.html" title="BasicScoringFunction.h" alt="" coords="185,80,345,107"/>
+<area shape="rect" id="node3" href="_abstract_docking_engine_8h.html" title="AbstractDockingEngine.h" alt="" coords="548,155,719,181"/>
+<area shape="rect" id="node4" href="_conformer_rigid_docking_engine_8h.html" title="ConformerRigidDockingEngine.h" alt="" coords="670,229,882,256"/>
+<area shape="rect" id="node6" href="main_8cpp.html" title="main.cpp" alt="" coords="881,304,956,331"/>
+<area shape="rect" id="node7" href="_m_d_style_docking_engine_8h.html" title="MDStyleDockingEngine.h" alt="" coords="235,229,407,256"/>
+<area shape="rect" id="node11" href="_molecule_8cpp.html" title="Molecule.cpp" alt="" coords="1123,155,1221,181"/>
+<area shape="rect" id="node12" href="_molecule_traversal_8h.html" title="MoleculeTraversal.h" alt="" coords="960,155,1099,181"/>
+<area shape="rect" id="node9" href="_vina_compatible_docking_engine_8h.html" title="VinaCompatibleDockingEngine.h" alt="" coords="432,229,645,256"/>
+<area shape="rect" id="node8" href="_m_d_style_docking_engine_8cpp.html" title="MDStyleDockingEngine.cpp" alt="" coords="256,304,443,331"/>
+<area shape="rect" id="node10" href="_vina_compatible_docking_engine_8cpp.html" title="VinaCompatibleDockingEngine.cpp" alt="" coords="467,304,693,331"/>
+<area shape="rect" id="node13" href="_molecule_traversal_8cpp.html" title="MoleculeTraversal.cpp" alt="" coords="957,229,1110,256"/>
+<area shape="rect" id="node15" href="_basic_scoring_function_8cpp.html" title="BasicScoringFunction.cpp" alt="" coords="207,155,382,181"/>
 </map>
 </div>
 </div>
@@ -157,7 +160,7 @@ Namespaces</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="i_conformer_8h_source.html#l00015">15</a> of file <a class="el" href="i_conformer_8h_source.html">iConformer.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="i_conformer_8h_source.html#l00030">30</a> of file <a class="el" href="i_conformer_8h_source.html">iConformer.h</a>.</p>
 </div><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Collaboration diagram for SmolDock::iConformer:</div>
 <div id="dynsection-2-summary" class="dynsummary" style="display:block;">
@@ -165,17 +168,45 @@ Namespaces</h2></td></tr>
 <div id="dynsection-2-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="struct_smol_dock_1_1i_conformer__coll__graph.png" border="0" usemap="#_smol_dock_1_1i_conformer_coll__map" alt="Collaboration graph"/></div>
 <map name="_smol_dock_1_1i_conformer_coll__map" id="_smol_dock_1_1i_conformer_coll__map">
-<area shape="rect" id="node4" href="namespace_smol_dock.html#struct_smol_dock_1_1i_atom" title="{SmolDock::iAtom\n|+ atomicNum\l+ x\l+ y\l+ z\l|}" alt="" coords="5,145,131,267"/>
-<area shape="rect" id="node5" title="STL class. " alt="" coords="187,167,303,245"/>
-<area shape="rect" id="node7" title="STL class. " alt="" coords="303,291,443,368"/>
+<area shape="rect" id="node3" title="STL class. " alt="" coords="107,145,223,223"/>
 </map>
 </div>
 <table class="fieldtable">
 <tr><th colspan="3">Class Members</th></tr>
 <tr><td class="fieldtype">
-<a id="a18fd974857dffddf4b6233c7c5d70f94"></a>unique_ptr&lt; vector&lt; <a class="el" href="namespace_smol_dock.html#struct_smol_dock_1_1i_atom">iAtom</a> &gt; &gt;</td>
+<a id="a1dbd8cb4eaa4e5e2f0afcdd1b36dd862"></a>vector&lt; double &gt;</td>
 <td class="fieldname">
-atoms_vect</td>
+atomicRadius</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a id="add04de1dd457ae228e398ffa9260497d"></a>vector&lt; unsigned char &gt;</td>
+<td class="fieldname">
+type</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a id="ad310936289e38ae6fca788741b0cfffa"></a>vector&lt; unsigned char &gt;</td>
+<td class="fieldname">
+variant</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a id="a45c379f6a880da313bf3519dc415e992"></a>vector&lt; double &gt;</td>
+<td class="fieldname">
+x</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a id="ac3019c0cd62660a4392591dd9519cc9a"></a>vector&lt; double &gt;</td>
+<td class="fieldname">
+y</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a id="a5c1fc6f9bad31ec2731337e9ba1e9a0f"></a>vector&lt; double &gt;</td>
+<td class="fieldname">
+z</td>
 <td class="fielddoc">
 </td></tr>
 </table>

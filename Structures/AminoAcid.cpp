@@ -69,6 +69,8 @@ namespace SmolDock {
                                });
         if (it != AminoAcid::AAShorthandSet.end()) {
             return std::get<1>(*it);
+        }else{
+            return "";
         }
     }
 
@@ -91,5 +93,36 @@ namespace SmolDock {
     AminoAcid::AminoAcid(const AminoAcid::AAType &type) {
         this->type = type;
     }
+
+    unsigned int AminoAcid::getAAId() {
+        return this->AAId;
+    }
+
+    void AminoAcid::setAAId(unsigned int id) {
+        this->AAId = id;
+
+    }
+
+
+
+    bool AminoAcid::filliProtein(iProtein& prot)
+    {
+        for(auto& atom: this->atoms) {
+            prot.type.push_back(atom->getAtomicNumber());
+            prot.variant.push_back(0); // Not implemented
+
+
+            auto pos = atom->getAtomPosition();
+            prot.x.push_back(std::get<0>(pos));
+            prot.y.push_back(std::get<1>(pos));
+            prot.z.push_back(std::get<2>(pos));
+
+            prot.atomicRadius.push_back(atom->getAtomicRadius());
+
+        }
+        return true;
+    }
+
+
 
 }

@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['heteroatoms',['heteroatoms',['../class_smol_dock_1_1_protein.html#a86e77c7079be2b4d3e1a8e3e53a4ce02',1,'SmolDock::Protein']]]
+  ['fromresidue',['fromResidue',['../class_smol_dock_1_1_atom.html#aa19d070c9951c67a4b1d4c5d80f2ee22',1,'SmolDock::Atom']]],
+  ['fullname',['fullName',['../class_smol_dock_1_1_amino_acid.html#a2a83d6290c79b4d2145637a29ebb9d23',1,'SmolDock::AminoAcid']]]
 ];

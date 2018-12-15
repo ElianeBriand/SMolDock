@@ -6,113 +6,113 @@
     <includedby refid="_molecule_8h" local="yes">Molecule.h</includedby>
     <includedby refid="_structure_8cpp" local="yes">Structure.cpp</includedby>
     <invincdepgraph>
-      <node id="582">
+      <node id="615">
         <label>Protein.h</label>
         <link refid="_protein_8h"/>
-        <childnode refid="583" relation="include">
+        <childnode refid="616" relation="include">
         </childnode>
-        <childnode refid="584" relation="include">
+        <childnode refid="617" relation="include">
         </childnode>
-        <childnode refid="587" relation="include">
+        <childnode refid="620" relation="include">
         </childnode>
-        <childnode refid="591" relation="include">
+        <childnode refid="624" relation="include">
         </childnode>
-        <childnode refid="586" relation="include">
+        <childnode refid="619" relation="include">
         </childnode>
       </node>
-      <node id="584">
+      <node id="617">
         <label>ConformerRigidDockingEngine.h</label>
         <link refid="_conformer_rigid_docking_engine_8h"/>
-        <childnode refid="585" relation="include">
+        <childnode refid="618" relation="include">
         </childnode>
-        <childnode refid="586" relation="include">
+        <childnode refid="619" relation="include">
         </childnode>
       </node>
-      <node id="587">
+      <node id="620">
         <label>MDStyleDockingEngine.h</label>
         <link refid="_m_d_style_docking_engine_8h"/>
-        <childnode refid="588" relation="include">
+        <childnode refid="621" relation="include">
         </childnode>
       </node>
-      <node id="590">
+      <node id="623">
         <label>VinaCompatibleDockingEngine.cpp</label>
         <link refid="_vina_compatible_docking_engine_8cpp"/>
       </node>
-      <node id="589">
+      <node id="622">
         <label>VinaCompatibleDockingEngine.h</label>
         <link refid="_vina_compatible_docking_engine_8h"/>
-        <childnode refid="590" relation="include">
+        <childnode refid="623" relation="include">
         </childnode>
       </node>
-      <node id="588">
+      <node id="621">
         <label>MDStyleDockingEngine.cpp</label>
         <link refid="_m_d_style_docking_engine_8cpp"/>
       </node>
-      <node id="586">
+      <node id="619">
         <label>main.cpp</label>
         <link refid="main_8cpp"/>
       </node>
-      <node id="593">
+      <node id="626">
         <label>Molecule.cpp</label>
         <link refid="_molecule_8cpp"/>
       </node>
-      <node id="595">
+      <node id="628">
         <label>MoleculeTraversal.cpp</label>
         <link refid="_molecule_traversal_8cpp"/>
       </node>
-      <node id="594">
+      <node id="627">
         <label>MoleculeTraversal.h</label>
         <link refid="_molecule_traversal_8h"/>
-        <childnode refid="595" relation="include">
+        <childnode refid="628" relation="include">
         </childnode>
-        <childnode refid="586" relation="include">
+        <childnode refid="619" relation="include">
         </childnode>
       </node>
-      <node id="596">
+      <node id="629">
         <label>Structure.cpp</label>
         <link refid="_structure_8cpp"/>
       </node>
-      <node id="583">
+      <node id="616">
         <label>AbstractDockingEngine.h</label>
         <link refid="_abstract_docking_engine_8h"/>
-        <childnode refid="584" relation="include">
+        <childnode refid="617" relation="include">
         </childnode>
-        <childnode refid="587" relation="include">
+        <childnode refid="620" relation="include">
         </childnode>
-        <childnode refid="589" relation="include">
+        <childnode refid="622" relation="include">
         </childnode>
       </node>
-      <node id="585">
+      <node id="618">
         <label>ConformerRigidDockingEngine.cpp</label>
         <link refid="_conformer_rigid_docking_engine_8cpp"/>
       </node>
-      <node id="581">
+      <node id="614">
         <label>Structure.h</label>
         <link refid="_structure_8h"/>
-        <childnode refid="582" relation="include">
+        <childnode refid="615" relation="include">
         </childnode>
-        <childnode refid="592" relation="include">
+        <childnode refid="625" relation="include">
         </childnode>
-        <childnode refid="596" relation="include">
+        <childnode refid="629" relation="include">
         </childnode>
       </node>
-      <node id="592">
+      <node id="625">
         <label>Molecule.h</label>
         <link refid="_molecule_8h"/>
-        <childnode refid="583" relation="include">
+        <childnode refid="616" relation="include">
         </childnode>
-        <childnode refid="584" relation="include">
+        <childnode refid="617" relation="include">
         </childnode>
-        <childnode refid="587" relation="include">
+        <childnode refid="620" relation="include">
         </childnode>
-        <childnode refid="593" relation="include">
+        <childnode refid="626" relation="include">
         </childnode>
-        <childnode refid="594" relation="include">
+        <childnode refid="627" relation="include">
         </childnode>
-        <childnode refid="586" relation="include">
+        <childnode refid="619" relation="include">
         </childnode>
       </node>
-      <node id="591">
+      <node id="624">
         <label>Protein.cpp</label>
         <link refid="_protein_8cpp"/>
       </node>
@@ -124,26 +124,42 @@
     <detaileddescription>
     </detaileddescription>
     <programlisting>
-<codeline lineno="1"><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Created<sp/>by<sp/>eliane<sp/>on<sp/>11/11/18.</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="4"><highlight class="normal"></highlight></codeline>
-<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>SMOLDOCK_STRUCTURE_H</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SMOLDOCK_STRUCTURE_H</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="7"><highlight class="normal"></highlight></codeline>
-<codeline lineno="8"><highlight class="normal"></highlight></codeline>
-<codeline lineno="9"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_smol_dock" kindref="compound">SmolDock</ref><sp/>{</highlight></codeline>
-<codeline lineno="10"><highlight class="normal"></highlight></codeline>
-<codeline lineno="11"><highlight class="normal"></highlight></codeline>
-<codeline lineno="12" refid="class_smol_dock_1_1_structure" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_smol_dock_1_1_structure" kindref="compound">Structure</ref><sp/>{</highlight></codeline>
-<codeline lineno="13"><highlight class="normal"></highlight></codeline>
-<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
-<codeline lineno="15"><highlight class="normal"></highlight></codeline>
-<codeline lineno="16"><highlight class="normal"></highlight></codeline>
-<codeline lineno="17"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="18"><highlight class="normal"></highlight></codeline>
-<codeline lineno="19"><highlight class="normal"></highlight></codeline>
-<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//SMOLDOCK_STRUCTURE_H</highlight></codeline>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2018<sp/>Eliane<sp/>Briand</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>SmolDock.</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>SmolDock<sp/>is<sp/>free<sp/>software:<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or<sp/>modify</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>it<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>as<sp/>published<sp/>by</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>the<sp/>Free<sp/>Software<sp/>Foundation,<sp/>either<sp/>version<sp/>3<sp/>of<sp/>the<sp/>License,<sp/>or</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>(at<sp/>your<sp/>option)<sp/>any<sp/>later<sp/>version.</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>Foobar<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>but<sp/>WITHOUT<sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE.<sp/><sp/>See<sp/>the</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>for<sp/>more<sp/>details.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>along<sp/>with<sp/>Foobar.<sp/><sp/>If<sp/>not,<sp/>see<sp/>&lt;https://www.gnu.org/licenses/&gt;.</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>SMOLDOCK_STRUCTURE_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SMOLDOCK_STRUCTURE_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_smol_dock" kindref="compound">SmolDock</ref><sp/>{</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28" refid="class_smol_dock_1_1_structure" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_smol_dock_1_1_structure" kindref="compound">Structure</ref><sp/>{</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//SMOLDOCK_STRUCTURE_H</highlight></codeline>
     </programlisting>
     <location file="Structures/Structure.h"/>
   </compounddef>

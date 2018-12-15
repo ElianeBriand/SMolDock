@@ -20,6 +20,12 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script><script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -103,13 +109,17 @@ $(document).ready(function(){initNavTree('annotated.html','');});
 <tr id="row_0_3_" class="even"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="class_smol_dock_1_1_bond.html" target="_self">Bond</a></td><td class="desc"></td></tr>
 <tr id="row_0_4_"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="namespace_smol_dock.html#class_smol_dock_1_1_docking_result" target="_self">DockingResult</a></td><td class="desc"></td></tr>
 <tr id="row_0_5_" class="even"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="class_smol_dock_1_1_docking_result_printer.html" target="_self">DockingResultPrinter</a></td><td class="desc"></td></tr>
-<tr id="row_0_6_"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="namespace_smol_dock.html#struct_smol_dock_1_1i_atom" target="_self">iAtom</a></td><td class="desc"></td></tr>
-<tr id="row_0_7_" class="even"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="namespace_smol_dock.html#struct_smol_dock_1_1i_conformer" target="_self">iConformer</a></td><td class="desc"></td></tr>
+<tr id="row_0_6_"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="namespace_smol_dock.html#struct_smol_dock_1_1i_conformer" target="_self">iConformer</a></td><td class="desc"></td></tr>
+<tr id="row_0_7_" class="even"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="namespace_smol_dock.html#struct_smol_dock_1_1i_gradient" target="_self">iGradient</a></td><td class="desc"></td></tr>
 <tr id="row_0_8_"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="namespace_smol_dock.html#struct_smol_dock_1_1i_protein" target="_self">iProtein</a></td><td class="desc">Internal, fast representation of <a class="el" href="class_smol_dock_1_1_protein.html">Protein</a> for efficiency </td></tr>
-<tr id="row_0_9_" class="even"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="class_smol_dock_1_1_molecule.html" target="_self">Molecule</a></td><td class="desc">Class representing "rich" molecule </td></tr>
-<tr id="row_0_10_"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="class_smol_dock_1_1_molecule_traversal.html" target="_self">MoleculeTraversal</a></td><td class="desc"></td></tr>
-<tr id="row_0_11_" class="even"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="class_smol_dock_1_1_protein.html" target="_self">Protein</a></td><td class="desc"></td></tr>
-<tr id="row_0_12_"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="class_smol_dock_1_1_structure.html" target="_self">Structure</a></td><td class="desc"></td></tr>
+<tr id="row_0_9_" class="even"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="namespace_smol_dock.html#struct_smol_dock_1_1i_quaternion" target="_self">iQuaternion</a></td><td class="desc"></td></tr>
+<tr id="row_0_10_"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="namespace_smol_dock.html#struct_smol_dock_1_1i_transform" target="_self">iTransform</a></td><td class="desc"></td></tr>
+<tr id="row_0_11_" class="even"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="namespace_smol_dock.html#struct_smol_dock_1_1i_translation" target="_self">iTranslation</a></td><td class="desc"></td></tr>
+<tr id="row_0_12_"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="namespace_smol_dock.html#struct_smol_dock_1_1i_vect" target="_self">iVect</a></td><td class="desc"></td></tr>
+<tr id="row_0_13_" class="even"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="class_smol_dock_1_1_molecule.html" target="_self">Molecule</a></td><td class="desc">Class representing "rich" molecule </td></tr>
+<tr id="row_0_14_"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="class_smol_dock_1_1_molecule_traversal.html" target="_self">MoleculeTraversal</a></td><td class="desc"></td></tr>
+<tr id="row_0_15_" class="even"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="class_smol_dock_1_1_protein.html" target="_self">Protein</a></td><td class="desc"></td></tr>
+<tr id="row_0_16_"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="class_smol_dock_1_1_structure.html" target="_self">Structure</a></td><td class="desc"></td></tr>
 </table>
 </div><!-- directory -->
 </div><!-- contents -->

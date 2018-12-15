@@ -20,6 +20,12 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script><script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -100,7 +106,6 @@ $(document).ready(function(){initNavTree('_atom_8h.html','');});
 <code>#include &lt;algorithm&gt;</code><br />
 <code>#include &lt;iostream&gt;</code><br />
 <code>#include &quot;<a class="el" href="_amino_acid_8h_source.html">AminoAcid.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="i_atom_8h_source.html">../Engines/Internals/iAtom.h</a>&quot;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for Atom.h:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
@@ -108,8 +113,8 @@ $(document).ready(function(){initNavTree('_atom_8h.html','');});
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="_atom_8h__incl.png" border="0" usemap="#_atom_8h" alt=""/></div>
 <map name="_atom_8h" id="_atom_8h">
-<area shape="rect" id="node7" href="_amino_acid_8h.html" title="AminoAcid.h" alt="" coords="221,87,317,114"/>
-<area shape="rect" id="node10" href="i_atom_8h.html" title="../Engines/Internals\l/iAtom.h" alt="" coords="489,80,623,121"/>
+<area shape="rect" id="node7" href="_amino_acid_8h.html" title="AminoAcid.h" alt="" coords="361,80,457,107"/>
+<area shape="rect" id="node10" href="i_protein_8h.html" title="Engines/Internals/iProtein.h" alt="" coords="73,155,255,181"/>
 </map>
 </div>
 </div><div class="textblock"><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -158,6 +163,8 @@ Functions</h2></td></tr>
 <tr class="separator:adc50d67bf7b33de8b30d90f97c25fb24"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae559278f4b66ec9a09ddfaebb224f897"><td class="memItemLeft" align="right" valign="top">Atom::AtomType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_smol_dock.html#ae559278f4b66ec9a09ddfaebb224f897">SmolDock::stringToAtomType</a> (const std::string &amp;symbol_or_name)</td></tr>
 <tr class="separator:ae559278f4b66ec9a09ddfaebb224f897"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c3abf1e37dc4fe013df80997dedb20b"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_smol_dock.html#a9c3abf1e37dc4fe013df80997dedb20b">SmolDock::atomTypeToAtomicRadius</a> (Atom::AtomType t)</td></tr>
+<tr class="separator:a9c3abf1e37dc4fe013df80997dedb20b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->
