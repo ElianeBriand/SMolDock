@@ -450,7 +450,6 @@ public:
   typedef Point                                        Point_3;
   typedef typename System::Residue                     Residue;
 
-private:
   const Residue* residue_;
 public:
   

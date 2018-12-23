@@ -5,20 +5,18 @@ set(CMAKE_CXX_STANDARD 17)
 
 find_package(Boost REQUIRED)
 
+set(PY_VERSION 3.6)
+
+find_package(PythonLibs ${PY_VERSION} REQUIRED)
+
 include_directories(${Boost_INCLUDE_DIRS})
 
 SET (CMAKE_CXX_FLAGS                "-Wall")
 SET (CMAKE_CXX_COMPILER             "clang++")
 SET (CMAKE_CXX_FLAGS_DEBUG          "-g")
 SET (CMAKE_CXX_FLAGS_MINSIZEREL     "-Os -DNDEBUG")
-SET (CMAKE_CXX_FLAGS_RELEASE        "-O3 -DNDEBUG")
-SET (CMAKE_CXX_FLAGS_RELWITHDEBINFO "-O2 -g")
-
-SET (CMAKE_AR      "llvm-ar")
-SET (CMAKE_LINKER  "llvm-ld")
-SET (CMAKE_NM      "llvm-nm")
-SET (CMAKE_OBJDUMP "llvm-objdump")
-SET (CMAKE_RANLIB  "llvm-ranlib")
+SET (CMAKE_CXX_FLAGS_RELEASE        "-O3 -march=native -DNDEBUG")
+SET (CMAKE_CXX_FLAGS_RELWITHDEBINFO "-O3 -march=native -g ")
 
 
 
@@ -48,6 +46,8 @@ include_directories(Dependencies)
 include_directories(.)
 
 
+include_directories(${PYTHON_INCLUDE_DIRS})
+
 add_library(gsl STATIC IMPORTED)
 set_property(TARGET gsl PROPERTY
         IMPORTED_LOCATION /usr/lib/libgsl.a)
@@ -66,8 +66,6 @@ set(SOURCE_LIST Structures/Structure.cpp
         Structures/Atom.h
         Structures/Bond.cpp
         Structures/Bond.h
-        Utilities/MoleculeTraversal.cpp
-        Utilities/MoleculeTraversal.h
         Structures/AminoAcid.cpp
         Structures/AminoAcid.h
         Engines/AbstractDockingEngine.h
@@ -85,14 +83,30 @@ set(SOURCE_LIST Structures/Structure.cpp
         Utilities/TimingsLog.h
         Engines/ScoringFunctions/BasicScoringFunction.cpp
         Engines/ScoringFunctions/BasicScoringFunction.h
-        Engines/Internals/iProtein.h Engines/Internals/iTransform.h)
+        Engines/Internals/iProtein.h
+        Engines/Internals/iTransform.h
+        Utilities/PDBWriter.cpp
+        Utilities/PDBWriter.h Utilities/PDBLigandUtils.h Utilities/PDBLigandUtils.cpp Engines/Optimizers/GradientDescentLineSearch.cpp Engines/Optimizers/GradientDescentLineSearch.h Engines/Math/GradientCalculator.cpp Engines/Math/GradientCalculator.h Engines/Math/LigandStateUpdater.cpp Engines/Math/LigandStateUpdater.h)
+
+
 
 ADD_LIBRARY(smoldock_object OBJECT ${SOURCE_LIST})
+set_target_properties(smoldock_object PROPERTIES LINK_FLAGS " -static  ")
+
+ADD_LIBRARY(libsmoldock STATIC ${SOURCE_LIST})
+set_target_properties(libsmoldock PROPERTIES LINK_FLAGS " -static ")
+set_target_properties(libsmoldock PROPERTIES PREFIX "lib")
+set_target_properties(libsmoldock PROPERTIES OUTPUT_NAME "smoldock")
 
 ### Remove this for prod build
 add_compile_definitions(SMOLDOCK_VERBOSE_DEBUG)
 
+# You need this if you do NOT generate a static executable
+#add_compile_definitions(BOOST_LOG_DYN_LINK BOOST_TEST_DYN_LINK)
+
 add_executable(smoldock Frontends/main.cpp $<TARGET_OBJECTS:smoldock_object>)
+
+# Comment this out if you do NOT want to build a static executable
 set_target_properties(smoldock PROPERTIES LINK_FLAGS " -static  ")
 
 
@@ -102,6 +116,24 @@ TARGET_LINK_LIBRARIES(smoldock ${RDKIT_LINKAGE_LIST})
 target_link_libraries(smoldock gsl gslcblas boost_log boost_log_setup boost_system boost_log boost_system boost_filesystem boost_date_time boost_thread boost_regex pthread)
 target_link_libraries(smoldock Vc)
 
+# For Intel VTune/Profiler tools, you need this if you generate a static executable
+#target_link_options(smoldock PRIVATE "-u_init" "-usetenv" "-ugetenv" "-u__errno_location" "-upthread_create" "-upthread_getattr_np")
+#target_link_options(smoldock PRIVATE "-upthread_self" "-upthread_getspecific" "-upthread_setspecific")
+#target_link_options(smoldock PRIVATE "-upthread_getattr_np" "-upthread_attr_destroy" "-upthread_attr_setstack" "-upthread_attr_getstack")
+#target_link_options(smoldock PRIVATE "-upthread_attr_getstacksize" "-upthread_attr_setstacksize" "-upthread_cancel" "-u_pthread_cleanup_push")
+#target_link_options(smoldock PRIVATE "-u_pthread_cleanup_pop" "-upthread_attr_setstacksize" "-upthread_cancel" "-u_pthread_cleanup_push")
+#target_link_options(smoldock PRIVATE "-upthread_mutex_lock" "-upthread_mutex_trylock" "-upthread_spin_lock" "-upthread_spin_trylock")
+
+add_library(PySmolDock MODULE Frontends/SmoldockPythonBindings.cpp)
+set_target_properties(PySmolDock PROPERTIES COMPILE_FLAGS " -fPIC ")
+set_target_properties(PySmolDock PROPERTIES LINK_FLAGS " -Wl,--no-undefined ")
+set_target_properties(PySmolDock PROPERTIES PREFIX "")
+set_target_properties(PySmolDock PROPERTIES OUTPUT_NAME "PySmolDock")
+
+# link
+target_link_libraries(PySmolDock libsmoldock boost_numpy boost_python-3.6-mt python3.6m)
+
+
 
 ###############################################################################################################
 ############                                  UNIT TESTING
@@ -110,19 +142,19 @@ enable_testing()
 
 set(TEST_SOURCE_LIST
         UnitTests/main_test_suite.cpp
-        UnitTests/UnitTestHelper.cpp
-        UnitTests/UnitTestHelper.h)
+        UnitTests/engine_test_suite.cpp)
 
 
-add_executable(main_test_suite ${TEST_SOURCE_LIST} $<TARGET_OBJECTS:smoldock_object>)
+add_executable(complete_test_suite ${TEST_SOURCE_LIST} $<TARGET_OBJECTS:smoldock_object>)
 
-set_target_properties(main_test_suite PROPERTIES LINK_FLAGS " -static  ")
+# Comment this out if you do NOT want to build a static executable
+set_target_properties(complete_test_suite PROPERTIES LINK_FLAGS " -static  ")
 
 
 
-TARGET_LINK_LIBRARIES(main_test_suite ${RDKIT_LINKAGE_LIST})
+TARGET_LINK_LIBRARIES(complete_test_suite ${RDKIT_LINKAGE_LIST})
 
-target_link_libraries(main_test_suite gsl gslcblas boost_log boost_log_setup  boost_system boost_system boost_filesystem boost_date_time boost_thread boost_regex )
-target_link_libraries(main_test_suite Vc)
+target_link_libraries(complete_test_suite gsl gslcblas boost_log boost_log_setup  boost_system boost_system boost_filesystem boost_date_time boost_thread boost_regex )
+target_link_libraries(complete_test_suite Vc)
 
-target_link_libraries(main_test_suite ${Boost_LIBRARIES} boost_unit_test_framework)
+target_link_libraries(complete_test_suite ${Boost_LIBRARIES} boost_unit_test_framework)
