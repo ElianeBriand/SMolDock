@@ -47,16 +47,15 @@ namespace SmolDock {
         ESBTL::All_atom_system_builder<ESBTL::Default_system> builder(systems, sel.max_nb_systems());
 
 
-        //read the pdb file
         if (ESBTL::read_a_pdb_file(filename, sel, builder,
                                    ESBTL::Accept_none_occupancy_policy<ESBTL::PDB::Line_format<> >())) {
 
             if (systems.empty() || systems[0].has_no_model()) {
-                std::cerr << "[!] No atoms found in PDB" << std::endl;
+                BOOST_LOG_TRIVIAL(error) << "No atoms found in protein PDB";
                 std::exit(-1);
             }
 
-            /**
+            /*
              * For reference purpose, the hierarchy of the PDB file reading is :
              * System (defined by ESBTL, like input filter in some ways)
              * Model (PDB-file specification : more or less, protein)
@@ -138,10 +137,9 @@ namespace SmolDock {
                 this->center_z = mean(acc_z);
 
 
-                //Consider only the first model of the first system
-                BOOST_LOG_TRIVIAL(info) << "Loaded : " << filename << "\n    --> " << total_nb_model << " models, "
+                BOOST_LOG_TRIVIAL(info) << "Loaded protein : " << filename << "\n    --> " << total_nb_model << " models, "
                           << total_nb_chain << " chains, " << total_nb_residue << " residues, "
-                          << total_nb_atom << " atoms (" << total_nb_hetatm << " heteroatoms).";
+                          << total_nb_atom << " atoms (" << total_nb_hetatm << " heteroatoms)";
 
 #ifdef SMOLDOCK_VERBOSE_DEBUG
                 BOOST_LOG_TRIVIAL(debug) << "Protein centered on : ("
@@ -151,7 +149,7 @@ namespace SmolDock {
 
             }
         } else {
-            BOOST_LOG_TRIVIAL(error) << "Could not load " << filename ;
+            BOOST_LOG_TRIVIAL(error) << "Could not load protein PDB file: " << filename ;
             return false;
         }
 

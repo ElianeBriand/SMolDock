@@ -26,6 +26,8 @@
 #include <GraphMol/RDKitBase.h>
 #include <GraphMol/RWMol.h>
 #include <GraphMol/MolOps.h>
+#include <GraphMol/FileParsers/FileParsers.h>
+
 /*
 #include <GraphMol/ChemReactions/Reaction.h>
 #include <GraphMol/ChemReactions/ReactionPickler.h>
@@ -51,8 +53,8 @@ namespace SmolDock {
      */
     class Molecule : Structure {
         friend class MoleculeTraversal;
-
         friend class UnitTestHelper;
+        friend class PDBWriter;
 
     public:
         Molecule();
@@ -66,9 +68,26 @@ namespace SmolDock {
          * \param smiles SMILES string
          * \param seed RNG seed
          * \return whether the parsing and initial conformer generation was successful.
-         * \sa generateConformers()
+         * \sa populateFromPDB()
         */
         bool populateFromSMILES(const std::string &smiles, unsigned int seed = 36754);
+
+        //! Populate atoms and bonds from a PDB file. Additionally, a SMILES string can be used for bond order hint.
+        /*!
+         *
+         * Due to limitation of the PDB file format, it is difficult to infer bond order (single/double/aromatic bond) from
+         * connectivity data. The underlying implementation in RDKit does not attempts it. A SMILES string with the correct
+         * aromaticity/bonds can be supplied to help obtain accurate internal representation.
+         *
+         * Only the first model and first chain of the PDB file is used to construct the molecule.
+         *
+         * Populate atoms and bonds from SMILES. This uses the RDKit backend.
+         * \param filename Path to PDB file
+         * \param smiles_hint SMILES for the loaded molecule. If none available, use the empty string.
+         * \return whether the parsing and initial conformer generation was successful.
+         * \sa populateFromSMILES()
+        */
+        bool populateFromPDB(const std::string& filename,const std::string& smiles_hint = "", unsigned int seed = 36754);
 
         unsigned int numberOfAtoms();
 
@@ -93,6 +112,20 @@ namespace SmolDock {
         */
         unsigned int generateConformers(std::vector<iConformer>& viConformers, unsigned int num, int seed = 367454);
 
+        //! Get the 3-letter residue code used for this molecule in PDB file
+        /*!
+         * \return A 3-letter residue name string
+         * \sa setResidueName()
+        */
+        std::string getResidueName() const;
+
+        //! Set the 3-letter residue code used for this molecule in PDB file
+        /*!
+         * \param res_name Residue name. Characters beyond the first three are ignored.
+         * \return A 3-letter residue name string
+         * \sa setResidueName()
+        */
+        void setResidueName(const std::string& res_name);
 
     private:
         std::vector<std::shared_ptr<Atom> > atoms;
@@ -100,6 +133,12 @@ namespace SmolDock {
 
         std::shared_ptr<RDKit::RWMol> rwmol;
         std::string smiles;
+
+
+        std::string residue_name = "LIG";
+
+        //! Use this if using RDKit RWMol as entry.
+        bool populateInternalAtomAndBondFromRWMol(unsigned int seed);
 
     };
 

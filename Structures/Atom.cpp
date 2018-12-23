@@ -57,6 +57,19 @@ namespace SmolDock {
         }
     }
 
+    std::string atomTypeToSymbolString(const Atom::AtomType t) {
+        auto it = std::find_if(Atom::AtomTypeLabel.begin(), Atom::AtomTypeLabel.end(),
+                               [&](const std::tuple<Atom::AtomType, std::string, std::string, double> &e) {
+                                   return std::get<0>(e) == t;
+                               });
+        if (it != Atom::AtomTypeLabel.end()) {
+            return std::get<2>(*it);
+        }else{
+            BOOST_LOG_TRIVIAL(error) << "Encountered unknown atom AtomType while converting to symbol string: " << static_cast<unsigned char>(t);
+            return std::string("");
+        }
+    }
+
     Atom::AtomType stringToAtomType(const std::string &symbol_or_name) {
         auto it = std::find_if(Atom::AtomTypeLabel.begin(), Atom::AtomTypeLabel.end(),
                                [&](const std::tuple<Atom::AtomType, std::string, std::string, double> &e) {
@@ -190,6 +203,18 @@ namespace SmolDock {
     void Atom::setAtomicRadius(double r) {
         this->atomicRadius = r;
 
+    }
+
+    int Atom::getCharge() {
+        return this->charge;
+    }
+
+    void Atom::setCharge(int ch) {
+        this->charge = ch;
+    }
+
+    std::string Atom::getAtomSymbol() {
+        return "";
     }
 
 

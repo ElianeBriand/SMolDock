@@ -20,6 +20,13 @@
 
 #include "Molecule.h"
 #include "Atom.h"
+#include "Utilities/PDBLigandUtils.h"
+
+#include <ESBTL/default.h>
+#include <ESBTL/atom_classifier.h>
+#include <ESBTL/weighted_atom_iterator.h>
+#include <ESBTL/compressed_ifstream.h>
+
 
 #include <boost/algorithm/string.hpp>
 #include <boost/log/trivial.hpp>
@@ -36,29 +43,172 @@ namespace SmolDock {
             a = RDKit::SmilesToMol(smiles);
         }
         catch (...) {
-            std::cerr << "[!] Error in constructor Molecule::Molecule(const std::string &smiles)" << std::endl;
-            std::cerr << "[!] for smiles = " << smiles << std::endl;
-            std::cerr << "[!] The SMILES string was not correctly parsed by RDKit." << std::endl;
-            std::cerr << "[!] This often indicated a malformed SMILES. (but not always, RDKit has parsing bugs)"
-                      << std::endl;
-            return false;
+            a = nullptr;
         }
         if (a == nullptr) {
-            std::cerr << "[!] Error in constructor Molecule::Molecule(const std::string &smiles)" << std::endl;
-            std::cerr << "[!] for smiles = " << smiles << std::endl;
-            std::cerr << "[!] The SMILES string was not correctly parsed by RDKit." << std::endl;
-            std::cerr << "[!] This often indicated a malformed SMILES. (but not always, RDKit has parsing bugs)"
-                      << std::endl;
+            BOOST_LOG_TRIVIAL(error) << "Error in constructor Molecule::Molecule(const std::string &smiles)";
+            BOOST_LOG_TRIVIAL(error) << "for smiles = " << smiles;
+            BOOST_LOG_TRIVIAL(error) << "The SMILES string was not correctly parsed by RDKit.";
+            BOOST_LOG_TRIVIAL(error) << "This often indicated a malformed SMILES. (but not always, RDKit has parsing bugs)";
             return false;
         }
 
-        // TODO: find out if we really care about the H
-        //RDKit::MolOps::addHs(*a);
+        this->rwmol.reset(a);
 
-        rwmol.reset(a);
+        if(this->populateInternalAtomAndBondFromRWMol(seed) == false)
+            return false;
 
-        int conformer_id = RDKit::DGeomHelpers::EmbedMolecule(*rwmol, 10, seed, true);
+        this->smiles = smiles;
+
+        return true;
+    }
+
+
+    std::shared_ptr<RDKit::RWMol> Molecule::getInternalRWMol() const {
+        return rwmol;
+    }
+
+    bool Molecule::generateConformer(iConformer &conformer, int seed) {
+
+        // Hydrogen added for conformer gen
+        RDKit::MolOps::addHs(*rwmol);
+        int conformer_id = RDKit::DGeomHelpers::EmbedMolecule(*rwmol, 10, seed, false);
+        RDKit::MolOps::removeHs(*rwmol);
+
+        if (conformer_id == -1) // Failed to generate
+            return false;
+
+
+        conformer.x.reserve(static_cast<size_t>(this->atoms.size()));
+        conformer.y.reserve(static_cast<size_t>(this->atoms.size()));
+        conformer.z.reserve(static_cast<size_t>(this->atoms.size()));
+        conformer.type.reserve(static_cast<size_t>(this->atoms.size()));
+
+        RDKit::Conformer &rdkit_conformer = rwmol->getConformer(conformer_id);
+
+
+        for (auto atom_it = rwmol->beginAtoms(); atom_it != rwmol->endAtoms(); ++atom_it) {
+            assert((*atom_it)->getAtomicNum() != 1); // Conformer should not contain Hs (which were removed earlier)
+
+            conformer.type.push_back(static_cast<unsigned char>((*atom_it)->getAtomicNum()));
+
+            const RDGeom::Point3D &position = rdkit_conformer.getAtomPos((*atom_it)->getIdx());
+            conformer.x.push_back(position.x);
+            conformer.y.push_back(position.y);
+            conformer.z.push_back(position.z);
+
+            // FIXME : this means there is an encapsulation problem, likely due to the RWMol* being in Molecule but not linked to Atom
+            conformer.atomicRadius.push_back(atomTypeToAtomicRadius(
+                    stringToAtomType(boost::to_upper_copy<std::string>((*atom_it)->getSymbol()))));
+        }
+
+        return true;
+    }
+
+    unsigned int Molecule::generateConformers(std::vector<iConformer> &viConformers, unsigned int num, int seed) {
+
+
+        std::vector<int> conformer_ids = RDKit::DGeomHelpers::EmbedMultipleConfs(*rwmol, // Molecule
+                                                                                 num, // Num of conformer
+                                                                                 30, // Max attempts
+                                                                                 seed, // RNG seed
+                                                                                 false); // Erase existing conformer
+        if (conformer_ids.size() == 0)
+            return 0; // Early failure case
+
+        viConformers.reserve(viConformers.capacity() + conformer_ids.size());
+
+
+        unsigned int num_atoms = this->atoms.size();
+
+        for (int i : conformer_ids) {
+            iConformer conformer;
+            RDKit::Conformer rdkit_conformer = this->rwmol->getConformer(i);
+
+
+            conformer.x.reserve(static_cast<size_t>(num_atoms));
+            conformer.y.reserve(static_cast<size_t>(num_atoms));
+            conformer.z.reserve(static_cast<size_t>(num_atoms));
+            conformer.type.reserve(static_cast<size_t>(num_atoms));
+
+            for (auto atom_it = rwmol->beginAtoms(); atom_it != rwmol->endAtoms(); ++atom_it) {
+                conformer.type.push_back(static_cast<unsigned char>((*atom_it)->getAtomicNum()));
+                conformer.variant.push_back(0); // Not implemented
+
+                const RDGeom::Point3D &position = rdkit_conformer.getAtomPos((*atom_it)->getIdx());
+                conformer.x.push_back(position.x);
+                conformer.y.push_back(position.y);
+                conformer.z.push_back(position.z);
+
+                // FIXME : this means there is an encapsulation problem, likely due to the RWMol* being in Molecule but not linked to Atom
+                conformer.atomicRadius.push_back(atomTypeToAtomicRadius(
+                        stringToAtomType(boost::to_upper_copy<std::string>((*atom_it)->getSymbol()))));
+            }
+
+            viConformers.push_back(std::move(conformer));
+        }
+
+        return conformer_ids.size();
+    }
+
+    unsigned int Molecule::numberOfAtoms() {
+        return atoms.size();
+    }
+
+    unsigned int Molecule::numberOfBonds() {
+        return bonds.size();
+    }
+
+    bool Molecule::populateFromPDB(const std::string &filename, const std::string &smiles_hint, unsigned int seed) {
+
+
+        // Flavor = 1 --> ignore alternate location
+        RDKit::RWMol* mol = RDKit::PDBFileToMol(filename,false, false,1,true);
+
+        if(mol == nullptr)
+        {
+            return false;
+        }
+
+        this->rwmol.reset(mol);
+
+        if(smiles_hint != "")
+        {
+            AssignBondOrderFromTemplateSMILES(this->rwmol,smiles_hint);
+        }
+
+        populateInternalAtomAndBondFromRWMol(seed);
+
+        return true;
+    }
+
+    std::string Molecule::getResidueName() const {
+        return this->residue_name;
+    }
+
+    void Molecule::setResidueName(const std::string &res_name) {
+        this->residue_name = res_name.substr(0, 3);
+
+    }
+
+    bool Molecule::populateInternalAtomAndBondFromRWMol(unsigned int seed) {
+
+        // We care about Hs only during conformer generation
+        // TODO: find out if we need to care at other moments...
+        RDKit::MolOps::addHs(*(this->rwmol));
+
+        int conformer_id = 0;
+        if(this->rwmol->getNumConformers() == 0) // We need to generate the first conformer
+        {
+            conformer_id = RDKit::DGeomHelpers::EmbedMolecule(*rwmol, 1000, seed, true);
+        }else { // Else we will just use the first
+            conformer_id = (*(this->rwmol->beginConformers()))->getId();
+        }
+
         RDKit::Conformer &starting_conformer = rwmol->getConformer(conformer_id);
+
+        // We remove them afterward
+        RDKit::MolOps::removeHs((*(this->rwmol)));
 
         for (auto atom_it = rwmol->beginAtoms(); atom_it != rwmol->endAtoms(); ++atom_it) {
             std::shared_ptr<Atom> current_atom;
@@ -157,7 +307,7 @@ namespace SmolDock {
                     new_bond->setBondType(Bond::BondType::triplebond);
                     break;
                 case RDKit::Bond::AROMATIC: // As expected aromatic is set for all bond in the cycle
-                                            // , not just the kekule-style "double bond"
+                    // , not just the kekule-style "double bond"
                     new_bond->setBondType(Bond::BondType::aromatic);
                     break;
                 default:
@@ -169,99 +319,7 @@ namespace SmolDock {
             new_bond->publicizeToAtom();
             bonds.push_back(new_bond);
         }
-
-        this->smiles = smiles;
-
         return true;
-    }
-
-
-    std::shared_ptr<RDKit::RWMol> Molecule::getInternalRWMol() const {
-        return rwmol;
-    }
-
-    bool Molecule::generateConformer(iConformer &conformer, int seed) {
-
-        int conformer_id = RDKit::DGeomHelpers::EmbedMolecule(*rwmol, 10, seed, false);
-
-        if (conformer_id == -1) // Failed to generate
-            return false;
-
-
-        conformer.x.reserve(static_cast<size_t>(this->atoms.size()));
-        conformer.y.reserve(static_cast<size_t>(this->atoms.size()));
-        conformer.z.reserve(static_cast<size_t>(this->atoms.size()));
-        conformer.type.reserve(static_cast<size_t>(this->atoms.size()));
-
-        RDKit::Conformer &rdkit_conformer = rwmol->getConformer(conformer_id);
-
-
-        for (auto atom_it = rwmol->beginAtoms(); atom_it != rwmol->endAtoms(); ++atom_it) {
-            conformer.type.push_back(static_cast<unsigned char>((*atom_it)->getAtomicNum()));
-
-            const RDGeom::Point3D &position = rdkit_conformer.getAtomPos((*atom_it)->getIdx());
-            conformer.x.push_back(position.x);
-            conformer.y.push_back(position.y);
-            conformer.z.push_back(position.z);
-
-            // FIXME : this means there is an encapsulation problem, likely due to the RWMol* being in Molecule but not linked to Atom
-            conformer.atomicRadius.push_back(atomTypeToAtomicRadius(stringToAtomType(boost::to_upper_copy<std::string>((*atom_it)->getSymbol()))));
-        }
-
-        return true;
-    }
-
-    unsigned int Molecule::generateConformers(std::vector<iConformer>& viConformers, unsigned int num, int seed) {
-
-
-        std::vector<int> conformer_ids = RDKit::DGeomHelpers::EmbedMultipleConfs(*rwmol, // Molecule
-                                                                                 num, // Num of conformer
-                                                                                 30, // Max attempts
-                                                                                 seed, // RNG seed
-                                                                                 false); // Erase existing conformer
-        if (conformer_ids.size() == 0)
-            return 0; // Early failure case
-
-        viConformers.reserve(viConformers.capacity() + conformer_ids.size());
-
-
-        unsigned int num_atoms = this->atoms.size();
-
-        for (int i : conformer_ids) {
-            iConformer conformer;
-            RDKit::Conformer rdkit_conformer = this->rwmol->getConformer(i);
-
-
-            conformer.x.reserve(static_cast<size_t>(num_atoms));
-            conformer.y.reserve(static_cast<size_t>(num_atoms));
-            conformer.z.reserve(static_cast<size_t>(num_atoms));
-            conformer.type.reserve(static_cast<size_t>(num_atoms));
-
-            for (auto atom_it = rwmol->beginAtoms(); atom_it != rwmol->endAtoms(); ++atom_it) {
-                conformer.type.push_back(static_cast<unsigned char>((*atom_it)->getAtomicNum()));
-                conformer.variant.push_back(0); // Not implemented
-
-                const RDGeom::Point3D &position = rdkit_conformer.getAtomPos((*atom_it)->getIdx());
-                conformer.x.push_back(position.x);
-                conformer.y.push_back(position.y);
-                conformer.z.push_back(position.z);
-
-                // FIXME : this means there is an encapsulation problem, likely due to the RWMol* being in Molecule but not linked to Atom
-                conformer.atomicRadius.push_back(atomTypeToAtomicRadius(stringToAtomType(boost::to_upper_copy<std::string>((*atom_it)->getSymbol()))));
-            }
-
-            viConformers.push_back(std::move(conformer));
-        }
-
-        return conformer_ids.size();
-    }
-
-    unsigned int Molecule::numberOfAtoms() {
-        return atoms.size();
-    }
-
-    unsigned int Molecule::numberOfBonds() {
-        return bonds.size();
     }
 
 

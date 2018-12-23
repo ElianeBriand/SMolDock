@@ -47,7 +47,6 @@ namespace SmolDock {
 
         friend Bond;
         friend MoleculeTraversal;
-
         friend class Protein;
 
         // Make the value of the enum be the atomic number
@@ -93,6 +92,7 @@ namespace SmolDock {
 
         // //// Internal type <=> string conversion //////
         friend std::string atomTypeToString(Atom::AtomType t);
+        friend std::string atomTypeToSymbolString(Atom::AtomType t);
         friend Atom::AtomType stringToAtomType(const std::string &symbol_or_name);
 
         // //// Properties matcher helper //////
@@ -102,6 +102,13 @@ namespace SmolDock {
 
         explicit Atom(AtomType t);
 
+        //! Construct atom from symbol (C,O,N), lower-case atom name (carbon, hydrogen) or optionnally PDB file symbol (CA,NZ, ...)
+        /*!
+         *
+         * \param symbol_or_name Either a one-letter symbol, lower-case atom name, or a PDB file symbol.
+         * \param PDBFormat Parse as PDB file symbol.
+         * \sa Atom(AtomType t)
+        */
         explicit Atom(const std::string &symbol_or_name, bool PDBFormat = false,
                       AminoAcid::AAType resType = AminoAcid::AAType::heteroatom);
 
@@ -114,6 +121,7 @@ namespace SmolDock {
         AtomType getAtomType();
         void setAtomType(AtomType t);
         std::string getTypeAsString();
+        std::string getAtomSymbol();
         unsigned char getAtomicNumber();
 
 
@@ -134,6 +142,9 @@ namespace SmolDock {
         double getAtomicRadius();
         void setAtomicRadius(double r);
 
+        int getCharge();
+        void setCharge(int ch);
+
 
     protected:
         // Bonds involving this atom
@@ -142,6 +153,7 @@ namespace SmolDock {
     private:
         AtomType type;
         AtomVariant variant;
+        int charge = 0;
 
         bool fromResidue = false;
         AminoAcid::AAType residueType = AminoAcid::AAType::heteroatom;
@@ -158,6 +170,7 @@ namespace SmolDock {
     };
 
     std::string atomTypeToString(Atom::AtomType t);
+    std::string atomTypeToSymbolString(Atom::AtomType t);
 
     Atom::AtomType stringToAtomType(const std::string &symbol_or_name);
 
