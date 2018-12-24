@@ -23,7 +23,6 @@
 
 
 #include "Structures/Molecule.h"
-#include "Utilities/MoleculeTraversal.h"
 #include "Structures/Protein.h"
 #include "Utilities/DockingResultPrinter.h"
 #include "Engines/ConformerRigidDockingEngine.h"
@@ -33,33 +32,36 @@
 #include <boost/log/expressions.hpp>
 #include <boost/log/utility/setup/console.hpp>
 
+#include <Utilities/IntermediateConformerCollector.h>
+SmolDock::IntermediateConformerCollector* conformerCollector;
+
+
 int main() {
+
+
+
 
     /* Setting up the logger */
     boost::log::core::get()->set_filter
             (
 #ifdef NDEBUG
-                    boost::log::trivial::severity >= boost::log::trivial::info
+            boost::log::trivial::severity >= boost::log::trivial::info
 #else
             boost::log::trivial::severity >= boost::log::trivial::debug
 #endif
-            );
+    );
 
     auto console_logger = boost::log::add_console_log(std::cout);
-    console_logger->set_formatter([](boost::log::record_view const& rec, boost::log::formatting_ostream& strm) {
-        if(rec[boost::log::trivial::severity] == boost::log::trivial::trace)
-        {
+    console_logger->set_formatter([](boost::log::record_view const &rec, boost::log::formatting_ostream &strm) {
+        if (rec[boost::log::trivial::severity] == boost::log::trivial::trace) {
             strm << " T  "; //         use TRACE_LOG(); macro for auto file:line:function
-        }else if(rec[boost::log::trivial::severity] == boost::log::trivial::debug)
-        {
+        } else if (rec[boost::log::trivial::severity] == boost::log::trivial::debug) {
             strm << "{D} ";
-        }else   if(rec[boost::log::trivial::severity] == boost::log::trivial::info)
-        {
+        } else if (rec[boost::log::trivial::severity] == boost::log::trivial::info) {
             strm << "    ";
-        }else if(rec[boost::log::trivial::severity] == boost::log::trivial::warning)
-        {
+        } else if (rec[boost::log::trivial::severity] == boost::log::trivial::warning) {
             strm << "[!] ";
-        }else if(rec[boost::log::trivial::severity] >= boost::log::trivial::error) {
+        } else if (rec[boost::log::trivial::severity] >= boost::log::trivial::error) {
             strm << "[E] ";
         }
 
@@ -74,48 +76,59 @@ int main() {
     prot.populateFromPDB("../DockingTests/COX2_Ibuprofen/3LN1_NoHeme_NoLigand.pdb"); // COX-2
 
     SmolDock::Molecule mol;
-    mol.populateFromSMILES("CC(C)Cc1ccc(cc1)[C@@H](C)C(=O)O"); // Ibuprofen
+    //mol.populateFromSMILES("CC(C)Cc1ccc(cc1)[C@@H](C)C(=O)O"); // Ibuprofen
+    mol.populateFromPDB("IBP_model.pdb", "CC(C)Cc1ccc(cc1)[C@H](C)C(=O)O");
 
 
-    SmolDock::Engine::ConformerRigidDockingEngine docker(10); // Use 10 conformers for docking
+
+    SmolDock::PDBWriter pwriter;
+    SmolDock::IntermediateConformerCollector collector(&mol,&pwriter);
+    conformerCollector = &collector;
+
+
+    SmolDock::Engine::ConformerRigidDockingEngine docker(1); // Use 10 conformers for docking
 
     docker.setProtein(&prot);
     docker.setLigand(&mol);
     docker.setDockingBox(SmolDock::Engine::AbstractDockingEngine::DockingBoxSetting::everything);
-    docker.setRandomSeed(3985);
+    docker.setRandomSeed(3986);
 
     if (!docker.setupDockingEngine()) {
         BOOST_LOG_TRIVIAL(error) << "Error while setting up engine";
         return 2;
     }
 
+
     docker.runDockingEngine();
 
+    /*
     std::shared_ptr<SmolDock::DockingResult> res = docker.getDockingResult();
 
+
+    if(res->ligandPoses.size() == 0){
+        BOOST_LOG_TRIVIAL(error) << "No result to export";
+        return 3;
+    }
+
+
+    for(auto& mol: res->ligandPoses)
+    {
+        pwriter.addLigand(mol);
+    }
+     */
+
+    pwriter.writePDB("res.pdb");
+
+
+    return 0;
+
+
+
+    /*
     SmolDock::DockingResultPrinter printer(res);
 
     printer.printToConsole();
-
-    return 0;
-
-    /*
-    SmolDock::MoleculeTraversal tr(m);
-
-    tr.printTraversal();
-
-    SmolDock::Molecule m2("COCO");
-    SmolDock::MoleculeTraversal tr2(m2);
-    tr2.printTraversal();
-
-
-    auto fingerprint_mol1 = RDKit::LayeredFingerprintMol(*m.getInternalRWMol());
-    auto fingerprint_mol2 = RDKit::LayeredFingerprintMol(*m2.getInternalRWMol());
-
-    std::cout << "Test ! " << (*fingerprint_mol1 == *fingerprint_mol2) << std::endl;
-
-
-
-    return 0;
     */
+    return 0;
+
 }

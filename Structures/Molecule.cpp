@@ -18,6 +18,8 @@
  *
  */
 
+#include <tuple>
+
 #include "Molecule.h"
 #include "Atom.h"
 #include "Utilities/PDBLigandUtils.h"
@@ -49,13 +51,14 @@ namespace SmolDock {
             BOOST_LOG_TRIVIAL(error) << "Error in constructor Molecule::Molecule(const std::string &smiles)";
             BOOST_LOG_TRIVIAL(error) << "for smiles = " << smiles;
             BOOST_LOG_TRIVIAL(error) << "The SMILES string was not correctly parsed by RDKit.";
-            BOOST_LOG_TRIVIAL(error) << "This often indicated a malformed SMILES. (but not always, RDKit has parsing bugs)";
+            BOOST_LOG_TRIVIAL(error)
+                << "This often indicated a malformed SMILES. (but not always, RDKit has parsing bugs)";
             return false;
         }
 
         this->rwmol.reset(a);
 
-        if(this->populateInternalAtomAndBondFromRWMol(seed) == false)
+        if (this->populateInternalAtomAndBondFromRWMol(seed) == false)
             return false;
 
         this->smiles = smiles;
@@ -163,18 +166,16 @@ namespace SmolDock {
 
 
         // Flavor = 1 --> ignore alternate location
-        RDKit::RWMol* mol = RDKit::PDBFileToMol(filename,false, false,1,true);
+        RDKit::RWMol *mol = RDKit::PDBFileToMol(filename, false, false, 1, true);
 
-        if(mol == nullptr)
-        {
+        if (mol == nullptr) {
             return false;
         }
 
         this->rwmol.reset(mol);
 
-        if(smiles_hint != "")
-        {
-            AssignBondOrderFromTemplateSMILES(this->rwmol,smiles_hint);
+        if (smiles_hint != "") {
+            AssignBondOrderFromTemplateSMILES(this->rwmol, smiles_hint);
         }
 
         populateInternalAtomAndBondFromRWMol(seed);
@@ -198,10 +199,10 @@ namespace SmolDock {
         RDKit::MolOps::addHs(*(this->rwmol));
 
         int conformer_id = 0;
-        if(this->rwmol->getNumConformers() == 0) // We need to generate the first conformer
+        if (this->rwmol->getNumConformers() == 0) // We need to generate the first conformer
         {
             conformer_id = RDKit::DGeomHelpers::EmbedMolecule(*rwmol, 1000, seed, true);
-        }else { // Else we will just use the first
+        } else { // Else we will just use the first
             conformer_id = (*(this->rwmol->beginConformers()))->getId();
         }
 
@@ -320,6 +321,68 @@ namespace SmolDock {
             bonds.push_back(new_bond);
         }
         return true;
+    }
+
+    bool Molecule::updateAtomPositionsFromiConformer(const iConformer &conformer) {
+
+        for (int i = 0; i < atoms.size(); ++i) {
+            atoms[i]->setAtomPosition(
+                    std::make_tuple(conformer.x[i], conformer.y[i], conformer.z[i])
+            );
+
+        }
+
+        return true;
+    }
+
+    Molecule Molecule::deepcopy() {
+        Molecule newmol(*this);
+        /*
+        *         std::vector<std::shared_ptr<Atom> > atoms;
+        std::vector<std::shared_ptr<Bond> > bonds;
+
+        std::shared_ptr<RDKit::RWMol> rwmol;*/
+
+
+        std::vector< std::tuple<std::shared_ptr<Atom>,Atom*> > new_old_lookup_table;
+        newmol.atoms.clear();
+        for(auto& ptr: this->atoms)
+        {
+            Atom* newatom_ptr = new Atom(*ptr);
+            newatom_ptr->bonds.clear(); // We will restore it after rebuilding the bonds
+            std::shared_ptr<Atom>& inserted = newmol.atoms.emplace_back(newatom_ptr);
+            new_old_lookup_table.push_back(std::make_tuple(inserted,ptr.get())); // Register new/old pair to rebuild bonds
+
+        }
+
+        newmol.bonds.clear();
+        for(auto& ptr: this->bonds)
+        {
+            Atom* endA_ptr = ptr->getEndA().get();
+            Atom* endB_ptr = ptr->getEndB().get();
+
+            // Find matches in lookup table :
+            std::shared_ptr<Atom> endA = std::get<0>(*(std::find_if(std::begin(new_old_lookup_table), std::end(new_old_lookup_table),
+                                   [&](const std::tuple<std::shared_ptr<Atom>,Atom*> &e) {
+                                       return (std::get<1>(e) == endA_ptr);
+                                   })));
+
+            std::shared_ptr<Atom> endB = std::get<0>(*(std::find_if(std::begin(new_old_lookup_table), std::end(new_old_lookup_table),
+                                                                    [&](const std::tuple<std::shared_ptr<Atom>,Atom*> &e) {
+                                                                        return (std::get<1>(e) == endB_ptr);
+                                                                    })));
+
+            Bond* newbond = new Bond(endA,endB,ptr->getBondID());
+            newbond->setBondType(ptr->getBondType());
+            std::shared_ptr<Bond>& inserted_bond = newmol.bonds.emplace_back(newbond);
+            // PublicizeToAtom uses enable_shared_from_this, which means the previous statement, creating a shared_ptr
+            // must occur before the following statement, lest throw std::bad_weak_ptr
+            inserted_bond->publicizeToAtom();
+        }
+
+        newmol.rwmol.reset(new RDKit::RWMol(*rwmol));
+
+        return newmol;
     }
 
 

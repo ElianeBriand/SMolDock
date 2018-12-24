@@ -32,11 +32,11 @@ namespace SmolDock {
     /*! \namespace SmolDock::Score Free-standing docking score functions */
     namespace Score {
 
-        //! \fn Score a protein-ligand configuration. Variant : Basic
+        //! \fn Score a protein-ligand configuration. Variant : Vina-like, rigid, inter-only
         /*!
-         * Process both the intra- and inter-molecular part of the docking score.
-         * The Basic variant is a  simple scoring function destined for
-         * general-purpose affinity ranking.
+         * Compute inter-molecular part of the docking score, 
+         * according to the Vina scoring function. The transform provided will
+         * be applied to the entire, rigid ligand.
          *
          * \param conformer Ligand conformation & position to evaluate
          * \param transform Transformation to apply to the ligand
@@ -44,7 +44,7 @@ namespace SmolDock {
          * \return The docking score
          * \sa
         */
-        double basic_scoring_func(iConformer& conformer, iTransform& transform, iProtein& protein);
+        double vina_like_rigid_inter_scoring_func(const iConformer& conformer,const iTransform& transform, const iProtein& protein);
 
 
     }

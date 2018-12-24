@@ -32,10 +32,10 @@ namespace SmolDock {
     };
 
 
-    inline iQuaternion iQuaternionZeroInit()
+    inline iQuaternion iQuaternionIdentityInit()
     {
         iQuaternion qt;
-        qt.s = 0.0;
+        qt.s = 1.0;
         qt.v[0] = 0.0;
         qt.v[1] = 0.0;
         qt.v[2] = 0.0;
@@ -48,55 +48,72 @@ namespace SmolDock {
         double dw;
         std::array<double,3> dr;
     };
-    inline iTransform iTransformZeroInit()
+
+    inline iTransform iTransformIdentityInit()
     {
         iTransform tr;
         tr.transl.x = 0.0;
         tr.transl.y = 0.0;
         tr.transl.z = 0.0;
-        tr.rota = iQuaternionZeroInit();
+        tr.rota = iQuaternionIdentityInit();
         return tr;
     }
 
-    inline std::array<double,3> scale3DArray(std::array<double,3> a, double factor)
+    inline void applyRotationInPlace(iVect& vec, const iQuaternion& qt)
     {
-        return std::array<double, 3>{a[0]*factor,a[1]*factor,a[2]*factor};
+        iVect v = vec;
+        vec.x = qt.s*qt.s*v.x + 2*qt.v[1]*qt.s*v.z - 2*qt.v[2]*qt.s*v.y + qt.v[0]*qt.v[0]*v.x + 2*qt.v[1]*qt.v[0]*v.y + 2*qt.v[2]*qt.v[0]*v.z - qt.v[2]*qt.v[2]*v.x - qt.v[1]*qt.v[1]*v.x;
+        vec.y = 2*qt.v[0]*qt.v[1]*v.x + qt.v[1]*qt.v[1]*v.y + 2*qt.v[2]*qt.v[1]*v.z + 2*qt.s*qt.v[2]*v.x - qt.v[2]*qt.v[2]*v.y + qt.s*qt.s*v.y - 2*qt.v[0]*qt.s*v.z - qt.v[0]*qt.v[0]*v.y;
+        vec.z = 2*qt.v[0]*qt.v[2]*v.x + 2*qt.v[1]*qt.v[2]*v.y + qt.v[2]*qt.v[2]*v.z - 2*qt.s*qt.v[1]*v.x - qt.v[1]*qt.v[1]*v.z + 2*qt.s*qt.v[0]*v.y - qt.v[0]*qt.v[0]*v.z + qt.s*qt.s*v.z;
     }
 
-    inline std::array<double,3> crossProduct3DArray(std::array<double,3> a, std::array<double,3> b)
+    inline iVect applyRotation(const iVect& v,const iQuaternion& qt)
     {
-        std::array<double,3> ret;
-        ret[0] = (a[1]*b[2]) - (a[2]*b[1]);
-        ret[1] = (a[2]*b[0]) - (a[0]*b[2]);
-        ret[2] = (a[0]*b[1]) - (a[1]*b[0]);
-        return ret;
-    }
-
-    inline std::array<double,3> elementWiseAdd(std::array<double,3> a, std::array<double,3> b)
-    {
-        std::array<double,3> ret;
-        ret[0] = a[0] + b[0];
-        ret[1] = a[1] + b[1];
-        ret[2] = a[2] + b[2];
-        return ret;
-    }
-
-    inline iVect rotatePosition(std::array<double,3> vec, iQuaternion qt)
-    {
-        // Formula for quaternion rotation :
-        // Quatertion = w (scalar) + |R>
-        // |V_rotated> = |V_initial> + 2*|R> x (|R> x |V_initial> + w|V_initial>)
-        iVect res;
-        std::array<double,3> twoScaledR = scale3DArray(qt.v,2.0);
-        std::array<double,3> RxV = crossProduct3DArray(qt.v,vec);
-        std::array<double,3> wScaledV = scale3DArray(vec,qt.s);
-        auto a = elementWiseAdd(vec, crossProduct3DArray(twoScaledR,elementWiseAdd(RxV,wScaledV)));
-        res.x = a[0];
-        res.y = a[1];
-        res.z = a[2];
+        iVect res(v);
+        applyRotationInPlace(res,qt);
         return res;
     }
 
+    inline void applyTranslationInPlace(iVect& v,const iTranslation& t)
+    {
+        v.x += t.x;
+        v.y += t.y;
+        v.z += t.z;
+    }
+
+    inline iVect applyTranslation(const iVect& v,const iTranslation& t)
+    {
+        iVect res(v);
+        applyTranslationInPlace(res,t);
+        return res;
+    }
+
+
+
+    inline void applyTransformInPlace(iVect& v, const iTransform& tr)
+    {
+        applyRotationInPlace(v,tr.rota);
+        applyTranslationInPlace(v,tr.transl);
+    }
+
+    inline iVect applyTransform(const iVect& v, const iTransform& tr)
+    {
+        iVect res(v);
+        applyTransformInPlace(res,tr);
+        return res;
+    }
+
+
+    inline void applyTransformInPlace(iConformer& conformer, const iTransform& tr)
+    {
+        for (unsigned int i = 0; i < conformer.x.size(); i++) {
+            iVect posVect = {conformer.x[i],conformer.y[i],conformer.z[i]};
+            applyTransformInPlace(posVect, tr);
+            conformer.x[i] = posVect.x;
+            conformer.y[i] = posVect.y;
+            conformer.z[i] = posVect.z;
+        }
+    }
 
 
 

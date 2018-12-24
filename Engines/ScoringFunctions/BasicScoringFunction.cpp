@@ -31,21 +31,19 @@ namespace SmolDock {
     namespace Score {
 
 
-        double basic_scoring_func(iConformer &ligand, iTransform& transform, iProtein &protein) {
-            // This is actually based on the vina scoring function, more or less
+        double vina_like_rigid_inter_scoring_func(const iConformer &ligand, const iTransform& transform,const iProtein &protein) {
 
             double score = 0;
 
             for (unsigned int idxLig = 0; idxLig < ligand.x.size(); idxLig++) {
                 for (unsigned int idxProt = 0; idxProt < protein.x.size(); idxProt++) {
 
-                    double xLig = ligand.x[idxLig] + transform.transl.x;
-                    double yLig = ligand.y[idxLig] + transform.transl.y;
-                    double zLig = ligand.z[idxLig] + transform.transl.z;
+                    iVect LigPosition = {ligand.x[idxLig],ligand.y[idxLig],ligand.z[idxLig]};
+                    applyTransformInPlace(LigPosition, transform);
 
-                    double x_diff_sq = std::pow(xLig - protein.x[idxProt], 2);
-                    double y_diff_sq = std::pow(yLig - protein.y[idxProt], 2);
-                    double z_diff_sq = std::pow(zLig - protein.z[idxProt], 2);
+                    double x_diff_sq = std::pow(LigPosition.x - protein.x[idxProt], 2);
+                    double y_diff_sq = std::pow(LigPosition.y - protein.y[idxProt], 2);
+                    double z_diff_sq = std::pow(LigPosition.z - protein.z[idxProt], 2);
 
 
                     double atomicRadiusLig = ligand.atomicRadius[idxLig];
@@ -53,6 +51,15 @@ namespace SmolDock {
                     double rawDist = std::sqrt(x_diff_sq + y_diff_sq + z_diff_sq);
                     double radToRemove = (atomicRadiusLig + atomicRadiusProt);
                     double distance = rawDist - radToRemove;
+
+
+                    // Special rubber band term not in Vina scoring func
+                    double x_diff_center = std::pow(LigPosition.x - protein.center_x, 2);
+                    double y_diff_center = std::pow(LigPosition.y - protein.center_y, 2);
+                    double z_diff_center = std::pow(LigPosition.z - protein.center_z, 2);
+                    double rawDistCenter = std::sqrt(x_diff_center + y_diff_center + z_diff_center);
+
+                    score += 0.00001 * rawDistCenter;
 
 
                     // exp −(d/0.5Å)^2

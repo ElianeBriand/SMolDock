@@ -6,6 +6,8 @@
 
 #include <iomanip>
 
+#include <boost/log/trivial.hpp>
+
 
 #include <ESBTL/default.h>
 #include <ESBTL/atom_classifier.h>
@@ -56,14 +58,18 @@ namespace SmolDock {
 
         }
 
-
-
-       // std::cout << filecontent.str() << std::endl;
+        /*
+        std::cout << "##### PDB #####" << std::endl;
+       std::cout << filecontent.str() << std::endl;
+        std::cout << "##### PDB #####" << std::endl;
+        */
 
         std::ofstream pdbfile;
         pdbfile.open(filename);
         pdbfile << filecontent.str() << std::endl;
         pdbfile.close();
+
+        BOOST_LOG_TRIVIAL(info) << "Wrote PDB file :  " << filename;
 
         return true;
     }

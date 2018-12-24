@@ -21,9 +21,14 @@
 #ifndef SMOLDOCK_DOCKINGRESULTS_H
 #define SMOLDOCK_DOCKINGRESULTS_H
 
+#include <vector>
+#include <Structures/Molecule.h>
+
 namespace SmolDock {
 
     class DockingResult {
+    public:
+        std::vector<Molecule> ligandPoses;
 
     };
 

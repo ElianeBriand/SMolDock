@@ -86,7 +86,14 @@ set(SOURCE_LIST Structures/Structure.cpp
         Engines/Internals/iProtein.h
         Engines/Internals/iTransform.h
         Utilities/PDBWriter.cpp
-        Utilities/PDBWriter.h Utilities/PDBLigandUtils.h Utilities/PDBLigandUtils.cpp Engines/Optimizers/GradientDescentLineSearch.cpp Engines/Optimizers/GradientDescentLineSearch.h Engines/Math/GradientCalculator.cpp Engines/Math/GradientCalculator.h Engines/Math/LigandStateUpdater.cpp Engines/Math/LigandStateUpdater.h)
+        Utilities/PDBWriter.h Utilities/PDBLigandUtils.h
+        Utilities/PDBLigandUtils.cpp
+        Engines/Optimizers/GradientDescentLineSearch.cpp
+        Engines/Optimizers/GradientDescentLineSearch.h
+        Engines/Math/GradientCalculator.cpp
+        Engines/Math/GradientCalculator.h
+        Utilities/IntermediateConformerCollector.cpp
+        Utilities/IntermediateConformerCollector.h)
 
 
 

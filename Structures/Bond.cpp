@@ -61,5 +61,9 @@ namespace SmolDock {
         return bondtype;
     }
 
+    unsigned int Bond::getBondID() {
+        return this->BondID;
+    }
+
 
 }

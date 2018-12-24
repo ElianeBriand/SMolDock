@@ -127,6 +127,14 @@ namespace SmolDock {
         */
         void setResidueName(const std::string& res_name);
 
+        bool updateAtomPositionsFromiConformer(const iConformer& conformer);
+
+        //! Make a copy of the Molecule object where the underlying Atom and Bond are new objects instead of references to
+        /*!
+         * \return A new Molecule object with copied values
+        */
+        Molecule deepcopy();
+
     private:
         std::vector<std::shared_ptr<Atom> > atoms;
         std::vector<std::shared_ptr<Bond> > bonds;

@@ -47,6 +47,7 @@ namespace SmolDock {
 
         friend Bond;
         friend MoleculeTraversal;
+        friend class Molecule;
         friend class Protein;
 
         // Make the value of the enum be the atomic number
@@ -144,6 +145,7 @@ namespace SmolDock {
 
         int getCharge();
         void setCharge(int ch);
+
 
 
     protected:

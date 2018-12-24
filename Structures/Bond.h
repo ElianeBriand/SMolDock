@@ -42,6 +42,8 @@ namespace SmolDock {
 
         Bond(std::shared_ptr<Atom> atom_a, std::shared_ptr<Atom> atom_b, unsigned int id);
 
+        unsigned int getBondID();
+
         std::shared_ptr<Atom> getEndA();
 
         std::shared_ptr<Atom> getEndB();

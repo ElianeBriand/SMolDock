@@ -41,7 +41,6 @@
 #endif
 
 #include "../Structures/Molecule.h"
-#include "UnitTestHelper.h"
 #include "Engines/Internals/iTransform.h"
 
 #define BOOST_TEST_MODULE main_test_module
@@ -56,12 +55,6 @@ BOOST_AUTO_TEST_SUITE(main_test_suite)
     BOOST_AUTO_TEST_CASE(molecule_class_tests) {
 
 
-
-/*  We dont care about the hydrogen anyore
-        SmolDock::Molecule mol1;
-        // Molecule created : CH3-O-CH2-OH
-        helper.populateMol_COCOH(&mol1);
-*/
 
         SmolDock::Molecule mol2;
         mol2.populateFromSMILES("COCO");
@@ -219,36 +212,5 @@ BOOST_AUTO_TEST_SUITE(main_test_suite)
 
     }
 
-    BOOST_AUTO_TEST_CASE(internal_math_iTransform_test) {
-        // Some example vectors
-        std::array<double,3> vec1 = {1.0,2.0,0.0};
-        std::array<double,3> vec2 = {2.0,1.0,3.0};
-        std::array<double,3> vec3 = {120.0,-2.0,3.0};
-
-        // Testing the cross product
-        std::array<double,3> vecRes1 = SmolDock::crossProduct3DArray(vec1, vec2);
-        std::array<double,3> vecRes2 = SmolDock::crossProduct3DArray(vec3, vec2);
-
-        BOOST_CHECK((vecRes1[0] - (+6.0)) < 0.001);
-        BOOST_CHECK((vecRes1[1] - (-3.0)) < 0.001);
-        BOOST_CHECK((vecRes1[2] - (-3.0)) < 0.001);
-
-        BOOST_CHECK((vecRes2[0] - (-9.0)) < 0.001);
-        BOOST_CHECK((vecRes2[1] - (-354.0)) < 0.001);
-        BOOST_CHECK((vecRes2[2] - (+124.0)) < 0.001);
-
-        // Testing the scalar scaling
-        std::array<double,3> vecRes3 = SmolDock::scale3DArray(vec3, 3.0);
-        std::array<double,3> vecRes4 = SmolDock::scale3DArray(vec3, -1.0);
-
-        BOOST_CHECK((vecRes3[0] - (+360.0)) < 0.001);
-        BOOST_CHECK((vecRes3[1] - (-6.0)) < 0.001);
-        BOOST_CHECK((vecRes3[2] - (+9.0)) < 0.001);
-
-        BOOST_CHECK((vecRes4[0] - (-120.0)) < 0.001);
-        BOOST_CHECK((vecRes4[1] - (+2.0)) < 0.001);
-        BOOST_CHECK((vecRes4[2] - (-3.0)) < 0.001);
-
-    }
 
 BOOST_AUTO_TEST_SUITE_END();

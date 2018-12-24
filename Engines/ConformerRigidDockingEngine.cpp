@@ -53,14 +53,16 @@
 #include <boost/accumulators/statistics/moment.hpp>
 
 
-
 namespace SmolDock {
     namespace Engine {
 
 
         ConformerRigidDockingEngine::ConformerRigidDockingEngine(unsigned int conformer_num) {
             this->conformer_num = conformer_num;
-            assert(conformer_num != 0);
+            assert(conformer_num > 0);
+
+            scores.reserve(this->conformer_num);
+            final_iConformer.reserve(this->conformer_num);
         }
 
         bool ConformerRigidDockingEngine::setProtein(Protein *p) {
@@ -82,11 +84,12 @@ namespace SmolDock {
 
             record_timings(begin_setup);
 
-            std::uniform_int_distribution<> dis(0, std::numeric_limits<int>::max());
+            std::uniform_int_distribution<> dis_int(0, std::numeric_limits<int>::max());
+            std::uniform_real_distribution<double> dis_real_position(-100.0, 100.0);
 
             record_timings(begin_conformersgen);
 
-            auto seed = dis(this->rnd_generator);
+            int seed = dis_int(this->rnd_generator);
             BOOST_LOG_TRIVIAL(debug) << "Seed : " << seed;
             this->orig_ligand->generateConformers(this->viConformers, this->conformer_num, seed);
 
@@ -94,6 +97,16 @@ namespace SmolDock {
 
             this->protein = this->orig_protein->getiProtein();
 
+
+            iTransform starting_pos_tr = iTransformIdentityInit();
+            starting_pos_tr.transl.x = dis_real_position(this->rnd_generator);
+            starting_pos_tr.transl.y = dis_real_position(this->rnd_generator);
+            starting_pos_tr.transl.z = dis_real_position(this->rnd_generator);
+            BOOST_LOG_TRIVIAL(debug) << "Initial transform : " << starting_pos_tr.transl.x << ","<< starting_pos_tr.transl.y << "," << starting_pos_tr.transl.z;
+            for(iConformer& conformer: this->viConformers)
+            {
+                applyTransformInPlace(conformer,starting_pos_tr);
+            }
 
 
             record_timings(end_iprotgen);
@@ -125,8 +138,10 @@ namespace SmolDock {
             using namespace boost::accumulators;
             accumulator_set<double, stats<tag::mean, tag::moment<2> > > acc_score;
             accumulator_set<double, stats<tag::mean, tag::moment<2> > > acc_duration;
-            std::vector<double> scores;
-            scores.reserve(this->conformer_num);
+            accumulator_set<double, stats<tag::mean, tag::moment<2> > > acc_iteration;
+
+
+
 
             record_timings(begin_docking);
 
@@ -134,99 +149,22 @@ namespace SmolDock {
             {
                 record_timings(begin_docking_this_conformer);
 
-                iTransform transform = iTransformZeroInit();
-                iGradient translationGradient;
-                double score = Score::basic_scoring_func(conformer,transform, this->protein);
-                double oldscore;
-                double score_progress = 100.0;
-                double differential_epsilon = 0.01;
-                unsigned int iterationNbr = 0;
+                GradientDescentLineSearch gradOptimizer(Score::vina_like_rigid_inter_scoring_func);
+                gradOptimizer.setProtein(&(this->protein));
+                gradOptimizer.setStartingConformer(&conformer);
 
-                while(score_progress > 0.001 )
-                {
-                    oldscore = score;
+                gradOptimizer.optimize();
 
-                    // Compute approx gradient to find in which direction to go
-                    iTransform transform_dx = transform;
-                    transform_dx.transl.x += differential_epsilon;
-                    translationGradient.dx = oldscore - Score::basic_scoring_func(conformer,transform_dx, this->protein);
-
-                    iTransform transform_dy = transform;
-                    transform_dy.transl.y += differential_epsilon;
-                    translationGradient.dy = oldscore -  Score::basic_scoring_func(conformer,transform_dy, this->protein);
-
-                    iTransform transform_dz = transform;
-                    transform_dz.transl.z += differential_epsilon;
-                    translationGradient.dz = oldscore - Score::basic_scoring_func(conformer,transform_dz, this->protein);
+                double score = gradOptimizer.getScore();
+                iConformer result = gradOptimizer.getFinalConformer();
 
 
-                    // Now we want to know how far in that direction
-                    // We do a line-search
-
-                    iTransform transform_linesearch;
-
-                    double step = 0.0001;
-                    double previous_step = 0.0;
-                    double temp_score;
-                    double previous_temp_score = std::numeric_limits<double>::max();
-
-                    // We go further and further in the direction of the gradient, until we are not bettering the score
-                    while(true) {
-                        transform_linesearch = transform;
-                        transform_linesearch.transl.x  += step * translationGradient.dx;
-                        transform_linesearch.transl.y  += step * translationGradient.dy;
-                        transform_linesearch.transl.z  += step * translationGradient.dz;
-
-                        temp_score = Score::basic_scoring_func(conformer, transform_linesearch, this->protein);
-
-                        double diff_oldscore_tempscore = oldscore - temp_score;
-                        double diff_previous_tempscore = previous_temp_score - temp_score;
-
-                        previous_temp_score = temp_score;
-
-                        if (diff_oldscore_tempscore > 0 && // temp_score is lower than the old score thus better
-                            diff_previous_tempscore > 0 ) // It is also lower than in the previous iteration
-                        {
-                            // so we jump further to see if it can be even better
-                            previous_step = step;
-                            step = step * 10;
-                            continue;
-                        } else {
-                            // We hit a step that is not better than either oldscore or the previous iterator
-                            break;
-                        }
-                    }
-
-
-                    // We then go back to previous_step for updating the score
-
-                    if(previous_step == 0.0)
-                    {
-                        // This means we could not do any jump forward
-                        // So this is the best we can do (to the precision of the starting step 0.0001 (angstrom))
-                        // So we stop the search (this is one of the stop condition, the other is score_progress)
-                        break;
-                    }
-
-                    // Otherwise we update the transform and go for another round
-
-                    transform.transl.x  += previous_step * translationGradient.dx;
-                    transform.transl.y  += previous_step * translationGradient.dy;
-                    transform.transl.z  += previous_step * translationGradient.dz;
-
-                    score = Score::basic_scoring_func(conformer,transform, this->protein);
-                    score_progress = oldscore - score;
-
-                    iterationNbr++;
-
-                    //BOOST_LOG_TRIVIAL(debug) << "     Score: " << score << " (progress: "<< score_progress <<  " )";
-
-                }
-
-                scores.push_back(score);
+                this->scores.push_back(score);
+                this->final_iConformer.push_back(result);
 
                 record_timings(end_docking_this_conformer);
 
+                acc_iteration(gradOptimizer.getIterationNumber());
                 acc_score(score);
                 acc_duration(
                         static_cast< std::chrono::duration<double> >(end_docking_this_conformer - begin_docking_this_conformer).count()
@@ -246,6 +184,8 @@ namespace SmolDock {
 #endif
 
             BOOST_LOG_TRIVIAL(info) << "Results:";
+            BOOST_LOG_TRIVIAL(info) << "   Iteration Mean: " << mean(acc_iteration);
+            BOOST_LOG_TRIVIAL(info) << "   Iteration StdDev: " << std::sqrt(moment<2>(acc_iteration));
             BOOST_LOG_TRIVIAL(info) << "   Score Mean: " << mean(acc_score);
             BOOST_LOG_TRIVIAL(info) << "   Score StdDev: " << std::sqrt(moment<2>(acc_score));
             BOOST_LOG_TRIVIAL(info) << "   Scores: ";
@@ -257,7 +197,14 @@ namespace SmolDock {
         }
 
         std::shared_ptr<DockingResult> ConformerRigidDockingEngine::getDockingResult() {
-            return std::make_shared<DockingResult>();
+            auto ret = std::make_shared<DockingResult>();
+            for(const auto& confr : this->final_iConformer)
+            {
+                Molecule finalLigand = this->orig_ligand->deepcopy();
+                finalLigand.updateAtomPositionsFromiConformer(confr);
+                ret->ligandPoses.emplace_back(finalLigand);
+            }
+            return ret;
         }
 
 

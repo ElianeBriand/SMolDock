@@ -29,6 +29,8 @@
 #include "../Structures/Protein.h"
 #include "../Structures/Molecule.h"
 
+#include "Engines/Optimizers/GradientDescentLineSearch.h"
+
 
 namespace SmolDock::Engine {
 
@@ -83,6 +85,10 @@ namespace SmolDock::Engine {
         std::vector<iConformer> viConformers;
 
         iProtein protein;
+
+
+        std::vector<double> scores;
+        std::vector<iConformer> final_iConformer;
     };
 
 }
