@@ -8,13 +8,16 @@
 #include <vector>
 #include <memory>
 #include <array>
+#include <cmath>
+
+#include "iConformer.h"
 
 namespace SmolDock {
 
     struct iQuaternion {
         // Quaternion :
         double s;
-        std::array<double,3> v;
+        double u,v,t;
     };
 
     struct iVect {
@@ -35,18 +38,18 @@ namespace SmolDock {
     inline iQuaternion iQuaternionIdentityInit()
     {
         iQuaternion qt;
-        qt.s = 1.0;
-        qt.v[0] = 0.0;
-        qt.v[1] = 0.0;
-        qt.v[2] = 0.0;
+        qt.s = 0.5;
+        qt.u = 0.5;
+        qt.v = 0.5;
+        qt.t = 0.5;
         return qt;
     }
 
     struct iGradient {
         double dx,dy,dz;
 
-        double dw;
-        std::array<double,3> dr;
+        double ds;
+        double du,dv,dt;
     };
 
     inline iTransform iTransformIdentityInit()
@@ -62,9 +65,12 @@ namespace SmolDock {
     inline void applyRotationInPlace(iVect& vec, const iQuaternion& qt)
     {
         iVect v = vec;
-        vec.x = qt.s*qt.s*v.x + 2*qt.v[1]*qt.s*v.z - 2*qt.v[2]*qt.s*v.y + qt.v[0]*qt.v[0]*v.x + 2*qt.v[1]*qt.v[0]*v.y + 2*qt.v[2]*qt.v[0]*v.z - qt.v[2]*qt.v[2]*v.x - qt.v[1]*qt.v[1]*v.x;
-        vec.y = 2*qt.v[0]*qt.v[1]*v.x + qt.v[1]*qt.v[1]*v.y + 2*qt.v[2]*qt.v[1]*v.z + 2*qt.s*qt.v[2]*v.x - qt.v[2]*qt.v[2]*v.y + qt.s*qt.s*v.y - 2*qt.v[0]*qt.s*v.z - qt.v[0]*qt.v[0]*v.y;
-        vec.z = 2*qt.v[0]*qt.v[2]*v.x + 2*qt.v[1]*qt.v[2]*v.y + qt.v[2]*qt.v[2]*v.z - 2*qt.s*qt.v[1]*v.x - qt.v[1]*qt.v[1]*v.z + 2*qt.s*qt.v[0]*v.y - qt.v[0]*qt.v[0]*v.z + qt.s*qt.s*v.z;
+
+        //TODO : Check this quaternion rotation formula
+        //TODO : Refactor this formula to be clearer
+        vec.x = qt.s*qt.s*v.x + 2*qt.v*qt.s*v.z - 2*qt.t*qt.s*v.y + qt.u*qt.u*v.x + 2*qt.v*qt.u*v.y + 2*qt.t*qt.u*v.z - qt.t*qt.t*v.x - qt.v*qt.v*v.x;
+        vec.y = 2*qt.u*qt.v*v.x + qt.v*qt.v*v.y + 2*qt.t*qt.v*v.z + 2*qt.s*qt.t*v.x - qt.t*qt.t*v.y + qt.s*qt.s*v.y - 2*qt.u*qt.s*v.z - qt.u*qt.u*v.y;
+        vec.z = 2*qt.u*qt.t*v.x + 2*qt.v*qt.t*v.y + qt.t*qt.t*v.z - 2*qt.s*qt.v*v.x - qt.v*qt.v*v.z + 2*qt.s*qt.u*v.y - qt.u*qt.u*v.z + qt.s*qt.s*v.z;
     }
 
     inline iVect applyRotation(const iVect& v,const iQuaternion& qt)
@@ -113,6 +119,36 @@ namespace SmolDock {
             conformer.y[i] = posVect.y;
             conformer.z[i] = posVect.z;
         }
+    }
+
+    inline double quaternionNorm(iQuaternion quat)
+    {
+        return std::sqrt(
+                std::pow(quat.s,2) + std::pow(quat.u,2) + std::pow(quat.v,2) + std::pow(quat.t,2)
+                );
+    }
+
+    inline double vectorNorm(iVect v)
+    {
+        return std::sqrt(
+                std::pow(v.x,2) + std::pow(v.y,2) + std::pow(v.z,2)
+        );
+    }
+
+    inline void normalizeQuaternionInPlace(iQuaternion& quat)
+    {
+        double norm = quaternionNorm(quat);
+        quat.s /= norm;
+        quat.u /= norm;
+        quat.v /= norm;
+        quat.t /= norm;
+    }
+
+    inline iQuaternion normalizeQuaternion(const iQuaternion& quat)
+    {
+        iQuaternion ret = quat;
+        normalizeQuaternionInPlace(ret);
+        return ret;
     }
 
 

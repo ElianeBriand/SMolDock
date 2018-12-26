@@ -4,6 +4,10 @@
 
 
 #include <boost/test/unit_test.hpp>
+#include <iostream>
+
+#include <Utilities/IntermediateConformerCollector.h>
+SmolDock::IntermediateConformerCollector* conformerCollector;
 
 
 BOOST_AUTO_TEST_SUITE(engine_test_suite)
@@ -33,15 +37,16 @@ BOOST_AUTO_TEST_SUITE(engine_test_suite)
         BOOST_CHECK((resVect2.z - (+3.0)) < 0.001);
 
         SmolDock::iQuaternion rotateXQt = SmolDock::iQuaternionIdentityInit();
-        rotateXQt.s = 0;
-        rotateXQt.v[0] = 1;
+        rotateXQt.s = std::sqrt(1.0 - std::pow(0.02,2));
+        rotateXQt.u = 0.02;
 
         SmolDock::iVect resVect3 = SmolDock::applyRotation(vect1,rotateXQt);
 
         BOOST_CHECK((resVect3.x - (+1.0)) < 0.001);
-        BOOST_CHECK((resVect3.y - (-2.0)) < 0.001);
-        BOOST_CHECK((resVect3.z - (-3.0)) < 0.001);
-
+        BOOST_CHECK((resVect3.y - (1.87842)) < 0.001);
+        BOOST_CHECK((resVect3.z - (3.07758)) < 0.001);
+        
+         
     }
 
 BOOST_AUTO_TEST_SUITE_END();

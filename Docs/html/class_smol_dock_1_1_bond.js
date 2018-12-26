@@ -9,6 +9,7 @@ var class_smol_dock_1_1_bond =
     ] ],
     [ "Bond", "class_smol_dock_1_1_bond.html#a7f046d71521a269171643bdf147d5c80", null ],
     [ "Bond", "class_smol_dock_1_1_bond.html#ae864507cf1018efa1964e7b77b2d6e4f", null ],
+    [ "getBondID", "class_smol_dock_1_1_bond.html#a382edad0cb2bd339e3ff676cd232d093", null ],
     [ "getBondType", "class_smol_dock_1_1_bond.html#a6b8180f0f2b339c521f8a74b2445e8c8", null ],
     [ "getEndA", "class_smol_dock_1_1_bond.html#a8ca51ba3f2abc758ecd7b4b040681f21", null ],
     [ "getEndB", "class_smol_dock_1_1_bond.html#a0a2feeb4cc88cbb8920ae5e9b142ead5", null ],

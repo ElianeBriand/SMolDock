@@ -65,14 +65,6 @@ BOOST_AUTO_TEST_SUITE(main_test_suite)
 
     */
 
-        SmolDock::Molecule mol3;
-        mol3.populateFromSMILES("[CH3]O[CH2][OH]");
-
-        auto fingerprint_mol2 = RDKit::RDKFingerprintMol(*(mol2.getInternalRWMol()));
-        auto fingerprint_mol3 = RDKit::RDKFingerprintMol(*(mol3.getInternalRWMol()));
-
-        BOOST_CHECK(*fingerprint_mol2 == *fingerprint_mol3);
-
 
         SmolDock::Molecule failed_mol;
         bool ret_failed_smiles = failed_mol.populateFromSMILES("HcndDH"); // Garbage SMILES

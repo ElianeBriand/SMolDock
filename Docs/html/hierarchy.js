@@ -12,14 +12,18 @@ var hierarchy =
     [ "enable_shared_from_this", null, [
       [ "SmolDock::Bond", "class_smol_dock_1_1_bond.html", null ]
     ] ],
+    [ "SmolDock::GradientCalculator< LigandState, LigandTransform >", "namespace_smol_dock.html#class_smol_dock_1_1_gradient_calculator", null ],
+    [ "SmolDock::GradientDescentLineSearch", "class_smol_dock_1_1_gradient_descent_line_search.html", null ],
     [ "SmolDock::iConformer", "namespace_smol_dock.html#struct_smol_dock_1_1i_conformer", null ],
     [ "SmolDock::iGradient", "namespace_smol_dock.html#struct_smol_dock_1_1i_gradient", null ],
+    [ "SmolDock::IntermediateConformerCollector", "class_smol_dock_1_1_intermediate_conformer_collector.html", null ],
     [ "SmolDock::iProtein", "namespace_smol_dock.html#struct_smol_dock_1_1i_protein", null ],
     [ "SmolDock::iQuaternion", "namespace_smol_dock.html#struct_smol_dock_1_1i_quaternion", null ],
     [ "SmolDock::iTransform", "namespace_smol_dock.html#struct_smol_dock_1_1i_transform", null ],
     [ "SmolDock::iTranslation", "namespace_smol_dock.html#struct_smol_dock_1_1i_translation", null ],
     [ "SmolDock::iVect", "namespace_smol_dock.html#struct_smol_dock_1_1i_vect", null ],
-    [ "SmolDock::MoleculeTraversal", "class_smol_dock_1_1_molecule_traversal.html", null ],
+    [ "SmolDock::PDBWriter", "class_smol_dock_1_1_p_d_b_writer.html", null ],
+    [ "SmolDock::ReScorer", "class_smol_dock_1_1_re_scorer.html", null ],
     [ "SmolDock::Structure", "class_smol_dock_1_1_structure.html", [
       [ "SmolDock::Molecule", "class_smol_dock_1_1_molecule.html", null ],
       [ "SmolDock::Protein", "class_smol_dock_1_1_protein.html", null ]

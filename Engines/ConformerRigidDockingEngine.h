@@ -80,7 +80,7 @@ namespace SmolDock::Engine {
         int random_seed = 1;
         std::mt19937 rnd_generator;
 
-        std::shared_ptr<RDKit::RWMol> rwmol;
+        //std::shared_ptr<RDKit::RWMol> rwmol;
 
         std::vector<iConformer> viConformers;
 

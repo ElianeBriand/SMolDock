@@ -93,17 +93,25 @@ set(SOURCE_LIST Structures/Structure.cpp
         Engines/Math/GradientCalculator.cpp
         Engines/Math/GradientCalculator.h
         Utilities/IntermediateConformerCollector.cpp
-        Utilities/IntermediateConformerCollector.h)
+        Utilities/IntermediateConformerCollector.h
+        Utilities/ReScorer.cpp
+        Utilities/ReScorer.h)
 
-
+set(PY_EXPORT_SOURCE_LIST Frontends/Python/PyStructures.cpp Frontends/Python/PyStructures.h Frontends/Python/PySTLWrapper.cpp Frontends/Python/PySTLWrapper.h)
 
 ADD_LIBRARY(smoldock_object OBJECT ${SOURCE_LIST})
 set_target_properties(smoldock_object PROPERTIES LINK_FLAGS " -static  ")
 
 ADD_LIBRARY(libsmoldock STATIC ${SOURCE_LIST})
-set_target_properties(libsmoldock PROPERTIES LINK_FLAGS " -static ")
+set_target_properties(libsmoldock PROPERTIES COMPILE_FLAGS " -fPIC ")
+set_target_properties(libsmoldock PROPERTIES LINK_FLAGS " -static -v -Wl,--no-undefined -Wl,--as-needed ")
 set_target_properties(libsmoldock PROPERTIES PREFIX "lib")
 set_target_properties(libsmoldock PROPERTIES OUTPUT_NAME "smoldock")
+TARGET_LINK_LIBRARIES(libsmoldock ${RDKIT_LINKAGE_LIST})
+target_link_libraries(libsmoldock gsl gslcblas boost_log boost_log_setup boost_system boost_log boost_system boost_filesystem boost_date_time boost_thread boost_regex pthread)
+target_link_libraries(libsmoldock Vc)
+target_compile_definitions(libsmoldock PUBLIC BOOST_LOG_DYN_LINK)
+
 
 ### Remove this for prod build
 add_compile_definitions(SMOLDOCK_VERBOSE_DEBUG)
@@ -131,14 +139,14 @@ target_link_libraries(smoldock Vc)
 #target_link_options(smoldock PRIVATE "-u_pthread_cleanup_pop" "-upthread_attr_setstacksize" "-upthread_cancel" "-u_pthread_cleanup_push")
 #target_link_options(smoldock PRIVATE "-upthread_mutex_lock" "-upthread_mutex_trylock" "-upthread_spin_lock" "-upthread_spin_trylock")
 
-add_library(PySmolDock MODULE Frontends/SmoldockPythonBindings.cpp)
+add_library(PySmolDock MODULE  Frontends/SmoldockPythonBindings.cpp ${PY_EXPORT_SOURCE_LIST} )
 set_target_properties(PySmolDock PROPERTIES COMPILE_FLAGS " -fPIC ")
-set_target_properties(PySmolDock PROPERTIES LINK_FLAGS " -Wl,--no-undefined ")
+set_target_properties(PySmolDock PROPERTIES LINK_FLAGS " -Wl,--no-undefined  -Wl,--as-needed ")
 set_target_properties(PySmolDock PROPERTIES PREFIX "")
 set_target_properties(PySmolDock PROPERTIES OUTPUT_NAME "PySmolDock")
 
 # link
-target_link_libraries(PySmolDock libsmoldock boost_numpy boost_python-3.6-mt python3.6m)
+target_link_libraries(PySmolDock libsmoldock boost_numpy boost_python-3.6-mt python3.6m boost_log_setup boost_log boost_date_time)
 
 
 

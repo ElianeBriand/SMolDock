@@ -38,9 +38,6 @@ SmolDock::IntermediateConformerCollector* conformerCollector;
 
 int main() {
 
-
-
-
     /* Setting up the logger */
     boost::log::core::get()->set_filter
             (
@@ -73,7 +70,8 @@ int main() {
 
     SmolDock::Protein prot;
     // prot.populateFromPDB("1dpx.pdb"); // Lysozyme
-    prot.populateFromPDB("../DockingTests/COX2_Ibuprofen/3LN1_NoHeme_NoLigand.pdb"); // COX-2
+    // prot.populateFromPDB("../DockingTests/COX2_Ibuprofen/4PH9_COX2_without_Ibuprofen.pdb"); // COX-2
+    prot.populateFromPDB("../DockingTests/Tripeptide/Tripeptide.pdb"); // A random tripeptide
 
     SmolDock::Molecule mol;
     //mol.populateFromSMILES("CC(C)Cc1ccc(cc1)[C@@H](C)C(=O)O"); // Ibuprofen
@@ -86,12 +84,12 @@ int main() {
     conformerCollector = &collector;
 
 
-    SmolDock::Engine::ConformerRigidDockingEngine docker(1); // Use 10 conformers for docking
+    SmolDock::Engine::ConformerRigidDockingEngine docker(3); // Use 10 conformers for docking
 
     docker.setProtein(&prot);
     docker.setLigand(&mol);
     docker.setDockingBox(SmolDock::Engine::AbstractDockingEngine::DockingBoxSetting::everything);
-    docker.setRandomSeed(3986);
+    docker.setRandomSeed(3985);
 
     if (!docker.setupDockingEngine()) {
         BOOST_LOG_TRIVIAL(error) << "Error while setting up engine";

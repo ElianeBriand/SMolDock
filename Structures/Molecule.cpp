@@ -67,10 +67,6 @@ namespace SmolDock {
     }
 
 
-    std::shared_ptr<RDKit::RWMol> Molecule::getInternalRWMol() const {
-        return rwmol;
-    }
-
     bool Molecule::generateConformer(iConformer &conformer, int seed) {
 
         // Hydrogen added for conformer gen
@@ -119,8 +115,10 @@ namespace SmolDock {
         if (conformer_ids.size() == 0)
             return 0; // Early failure case
 
-        viConformers.reserve(viConformers.capacity() + conformer_ids.size());
+        viConformers.reserve(viConformers.capacity() + conformer_ids.size() + 1);
 
+        // Add the initial conformer
+        conformer_ids.push_back(this->initial_conformer_id);
 
         unsigned int num_atoms = this->atoms.size();
 
@@ -198,15 +196,15 @@ namespace SmolDock {
         // TODO: find out if we need to care at other moments...
         RDKit::MolOps::addHs(*(this->rwmol));
 
-        int conformer_id = 0;
+        this->initial_conformer_id = 0;
         if (this->rwmol->getNumConformers() == 0) // We need to generate the first conformer
         {
-            conformer_id = RDKit::DGeomHelpers::EmbedMolecule(*rwmol, 1000, seed, true);
+            this->initial_conformer_id = RDKit::DGeomHelpers::EmbedMolecule(*rwmol, 1000, seed, true);
         } else { // Else we will just use the first
-            conformer_id = (*(this->rwmol->beginConformers()))->getId();
+            this->initial_conformer_id = (*(this->rwmol->beginConformers()))->getId();
         }
 
-        RDKit::Conformer &starting_conformer = rwmol->getConformer(conformer_id);
+        RDKit::Conformer &starting_conformer = rwmol->getConformer(this->initial_conformer_id);
 
         // We remove them afterward
         RDKit::MolOps::removeHs((*(this->rwmol)));
@@ -337,11 +335,6 @@ namespace SmolDock {
 
     Molecule Molecule::deepcopy() {
         Molecule newmol(*this);
-        /*
-        *         std::vector<std::shared_ptr<Atom> > atoms;
-        std::vector<std::shared_ptr<Bond> > bonds;
-
-        std::shared_ptr<RDKit::RWMol> rwmol;*/
 
 
         std::vector< std::tuple<std::shared_ptr<Atom>,Atom*> > new_old_lookup_table;
@@ -383,6 +376,25 @@ namespace SmolDock {
         newmol.rwmol.reset(new RDKit::RWMol(*rwmol));
 
         return newmol;
+    }
+
+    iConformer Molecule::getInitialConformer() {
+        iConformer conformer;
+        auto rdkit_conformer = (*(this->rwmol->beginConformers()));
+        for (auto atom_it = this->rwmol->beginAtoms(); atom_it != this->rwmol->endAtoms(); ++atom_it) {
+            assert((*atom_it)->getAtomicNum() != 1); // Conformer should not contain Hs (which were removed earlier)
+
+            conformer.type.push_back(static_cast<unsigned char>((*atom_it)->getAtomicNum()));
+
+            const RDGeom::Point3D &position = rdkit_conformer->getAtomPos((*atom_it)->getIdx());
+            conformer.x.push_back(position.x);
+            conformer.y.push_back(position.y);
+            conformer.z.push_back(position.z);
+
+            conformer.atomicRadius.push_back(atomTypeToAtomicRadius(
+                    stringToAtomType(boost::to_upper_copy<std::string>((*atom_it)->getSymbol()))));
+        }
+        return conformer;
     }
 
 

@@ -191,98 +191,99 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="100">
+      <node id="128">
         <label>SmolDock::Engine::AbstractDockingEngine</label>
         <link refid="class_smol_dock_1_1_engine_1_1_abstract_docking_engine"/>
       </node>
-      <node id="99">
+      <node id="127">
         <label>SmolDock::Engine::MDStyleDockingEngine</label>
         <link refid="class_smol_dock_1_1_engine_1_1_m_d_style_docking_engine"/>
-        <childnode refid="100" relation="private-inheritance">
+        <childnode refid="128" relation="private-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="107">
+      <node id="135">
         <label>T</label>
       </node>
-      <node id="103">
+      <node id="131">
         <label>SmolDock::Molecule</label>
         <link refid="class_smol_dock_1_1_molecule"/>
-        <childnode refid="104" relation="private-inheritance">
+        <childnode refid="132" relation="private-inheritance">
         </childnode>
-        <childnode refid="105" relation="usage">
+        <childnode refid="133" relation="usage">
           <edgelabel>-bonds</edgelabel>
         </childnode>
-        <childnode refid="108" relation="usage">
+        <childnode refid="136" relation="usage">
           <edgelabel>-smiles</edgelabel>
+          <edgelabel>-residue_name</edgelabel>
         </childnode>
-        <childnode refid="110" relation="usage">
+        <childnode refid="138" relation="usage">
           <edgelabel>-atoms</edgelabel>
         </childnode>
       </node>
-      <node id="105">
+      <node id="133">
         <label>std::vector&lt; std::shared_ptr&lt; SmolDock::Bond &gt; &gt;</label>
-        <childnode refid="106" relation="template-instance">
+        <childnode refid="134" relation="template-instance">
           <edgelabel>&lt; std::shared_ptr&lt; SmolDock::Bond &gt; &gt;</edgelabel>
         </childnode>
       </node>
-      <node id="106">
+      <node id="134">
         <label>std::vector&lt; T &gt;</label>
-        <childnode refid="107" relation="usage">
+        <childnode refid="135" relation="usage">
           <edgelabel>+elements</edgelabel>
         </childnode>
       </node>
-      <node id="112">
+      <node id="140">
         <label>std::vector&lt; std::shared_ptr&lt; SmolDock::AminoAcid &gt; &gt;</label>
-        <childnode refid="106" relation="template-instance">
+        <childnode refid="134" relation="template-instance">
           <edgelabel>&lt; std::shared_ptr&lt; SmolDock::AminoAcid &gt; &gt;</edgelabel>
         </childnode>
       </node>
-      <node id="104">
+      <node id="132">
         <label>SmolDock::Structure</label>
         <link refid="class_smol_dock_1_1_structure"/>
       </node>
-      <node id="109">
+      <node id="137">
         <label>std::basic_string&lt; char &gt;</label>
       </node>
-      <node id="111">
+      <node id="139">
         <label>SmolDock::Protein</label>
         <link refid="class_smol_dock_1_1_protein"/>
-        <childnode refid="104" relation="private-inheritance">
+        <childnode refid="132" relation="private-inheritance">
         </childnode>
-        <childnode refid="112" relation="usage">
+        <childnode refid="140" relation="usage">
           <edgelabel>-aminoacids</edgelabel>
         </childnode>
-        <childnode refid="110" relation="usage">
+        <childnode refid="138" relation="usage">
           <edgelabel>-heteroatoms</edgelabel>
         </childnode>
       </node>
-      <node id="102">
+      <node id="130">
         <label>SmolDock::Engine::AbstractDockingEngine</label>
         <link refid="class_smol_dock_1_1_engine_1_1_abstract_docking_engine"/>
       </node>
-      <node id="110">
+      <node id="138">
         <label>std::vector&lt; std::shared_ptr&lt; SmolDock::Atom &gt; &gt;</label>
-        <childnode refid="106" relation="template-instance">
+        <childnode refid="134" relation="template-instance">
           <edgelabel>&lt; std::shared_ptr&lt; SmolDock::Atom &gt; &gt;</edgelabel>
         </childnode>
       </node>
-      <node id="101">
+      <node id="129">
         <label>SmolDock::Engine::MDStyleDockingEngine</label>
         <link refid="class_smol_dock_1_1_engine_1_1_m_d_style_docking_engine"/>
-        <childnode refid="102" relation="private-inheritance">
+        <childnode refid="130" relation="private-inheritance">
         </childnode>
-        <childnode refid="103" relation="usage">
+        <childnode refid="131" relation="usage">
           <edgelabel>-ligand</edgelabel>
         </childnode>
-        <childnode refid="111" relation="usage">
+        <childnode refid="139" relation="usage">
           <edgelabel>-protein</edgelabel>
         </childnode>
       </node>
-      <node id="108">
+      <node id="136">
         <label>std::string</label>
-        <childnode refid="109" relation="public-inheritance">
+        <childnode refid="137" relation="public-inheritance">
         </childnode>
       </node>
     </collaborationgraph>

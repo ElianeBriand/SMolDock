@@ -7,173 +7,245 @@
     <includedby refid="_molecule_8h" local="yes">Molecule.h</includedby>
     <includedby refid="_bond_8cpp" local="yes">Bond.cpp</includedby>
     <incdepgraph>
-      <node id="167">
+      <node id="191">
         <label>string</label>
       </node>
-      <node id="161">
+      <node id="185">
         <label>Atom.h</label>
         <link refid="_atom_8h"/>
-        <childnode refid="162" relation="include">
+        <childnode refid="186" relation="include">
         </childnode>
-        <childnode refid="160" relation="include">
+        <childnode refid="184" relation="include">
         </childnode>
-        <childnode refid="163" relation="include">
+        <childnode refid="187" relation="include">
         </childnode>
-        <childnode refid="164" relation="include">
+        <childnode refid="188" relation="include">
         </childnode>
-        <childnode refid="165" relation="include">
+        <childnode refid="189" relation="include">
         </childnode>
-        <childnode refid="166" relation="include">
+        <childnode refid="190" relation="include">
         </childnode>
       </node>
-      <node id="170">
+      <node id="194">
         <label>map</label>
       </node>
-      <node id="159">
+      <node id="183">
         <label>Bond.h</label>
         <link refid="_bond_8h"/>
-        <childnode refid="160" relation="include">
+        <childnode refid="184" relation="include">
         </childnode>
-        <childnode refid="161" relation="include">
+        <childnode refid="185" relation="include">
         </childnode>
       </node>
-      <node id="166">
+      <node id="190">
         <label>AminoAcid.h</label>
         <link refid="_amino_acid_8h"/>
-        <childnode refid="167" relation="include">
+        <childnode refid="191" relation="include">
         </childnode>
-        <childnode refid="162" relation="include">
+        <childnode refid="186" relation="include">
         </childnode>
-        <childnode refid="163" relation="include">
+        <childnode refid="187" relation="include">
         </childnode>
-        <childnode refid="164" relation="include">
+        <childnode refid="188" relation="include">
         </childnode>
-        <childnode refid="168" relation="include">
+        <childnode refid="192" relation="include">
         </childnode>
-        <childnode refid="160" relation="include">
+        <childnode refid="184" relation="include">
         </childnode>
-        <childnode refid="169" relation="include">
+        <childnode refid="193" relation="include">
         </childnode>
       </node>
-      <node id="168">
+      <node id="192">
         <label>tuple</label>
       </node>
-      <node id="169">
+      <node id="193">
         <label>Engines/Internals/iProtein.h</label>
         <link refid="i_protein_8h"/>
-        <childnode refid="162" relation="include">
+        <childnode refid="186" relation="include">
         </childnode>
-        <childnode refid="160" relation="include">
+        <childnode refid="184" relation="include">
         </childnode>
-        <childnode refid="170" relation="include">
+        <childnode refid="194" relation="include">
         </childnode>
       </node>
-      <node id="162">
+      <node id="186">
         <label>vector</label>
       </node>
-      <node id="165">
+      <node id="189">
         <label>iostream</label>
       </node>
-      <node id="163">
+      <node id="187">
         <label>set</label>
       </node>
-      <node id="164">
+      <node id="188">
         <label>algorithm</label>
       </node>
-      <node id="160">
+      <node id="184">
         <label>memory</label>
       </node>
     </incdepgraph>
     <invincdepgraph>
-      <node id="174">
+      <node id="199">
         <label>ConformerRigidDockingEngine.h</label>
         <link refid="_conformer_rigid_docking_engine_8h"/>
-        <childnode refid="175" relation="include">
+        <childnode refid="200" relation="include">
         </childnode>
-        <childnode refid="176" relation="include">
+        <childnode refid="201" relation="include">
         </childnode>
       </node>
-      <node id="177">
+      <node id="218">
+        <label>PyStructures.cpp</label>
+        <link refid="_py_structures_8cpp"/>
+      </node>
+      <node id="202">
         <label>MDStyleDockingEngine.h</label>
         <link refid="_m_d_style_docking_engine_8h"/>
-        <childnode refid="178" relation="include">
+        <childnode refid="203" relation="include">
         </childnode>
       </node>
-      <node id="180">
+      <node id="209">
+        <label>IntermediateConformerCollector.h</label>
+        <link refid="_intermediate_conformer_collector_8h"/>
+        <childnode refid="210" relation="include">
+        </childnode>
+        <childnode refid="211" relation="include">
+        </childnode>
+        <childnode refid="201" relation="include">
+        </childnode>
+      </node>
+      <node id="210">
+        <label>GradientDescentLineSearch.cpp</label>
+        <link refid="_gradient_descent_line_search_8cpp"/>
+      </node>
+      <node id="213">
+        <label>PDBWriter.cpp</label>
+        <link refid="_p_d_b_writer_8cpp"/>
+      </node>
+      <node id="217">
+        <label>PySTLWrapper.cpp</label>
+        <link refid="_py_s_t_l_wrapper_8cpp"/>
+      </node>
+      <node id="205">
         <label>VinaCompatibleDockingEngine.cpp</label>
         <link refid="_vina_compatible_docking_engine_8cpp"/>
       </node>
-      <node id="179">
+      <node id="216">
+        <label>ReScorer.cpp</label>
+        <link refid="_re_scorer_8cpp"/>
+      </node>
+      <node id="204">
         <label>VinaCompatibleDockingEngine.h</label>
         <link refid="_vina_compatible_docking_engine_8h"/>
-        <childnode refid="180" relation="include">
+        <childnode refid="205" relation="include">
         </childnode>
       </node>
-      <node id="178">
+      <node id="203">
         <label>MDStyleDockingEngine.cpp</label>
         <link refid="_m_d_style_docking_engine_8cpp"/>
       </node>
-      <node id="176">
+      <node id="201">
         <label>main.cpp</label>
         <link refid="main_8cpp"/>
       </node>
-      <node id="181">
+      <node id="214">
         <label>Molecule.cpp</label>
         <link refid="_molecule_8cpp"/>
       </node>
-      <node id="171">
+      <node id="195">
         <label>Bond.h</label>
         <link refid="_bond_8h"/>
-        <childnode refid="172" relation="include">
+        <childnode refid="196" relation="include">
         </childnode>
-        <childnode refid="184" relation="include">
-        </childnode>
-      </node>
-      <node id="183">
-        <label>MoleculeTraversal.cpp</label>
-        <link refid="_molecule_traversal_8cpp"/>
-      </node>
-      <node id="182">
-        <label>MoleculeTraversal.h</label>
-        <link refid="_molecule_traversal_8h"/>
-        <childnode refid="183" relation="include">
-        </childnode>
-        <childnode refid="176" relation="include">
+        <childnode refid="219" relation="include">
         </childnode>
       </node>
-      <node id="173">
+      <node id="215">
+        <label>ReScorer.h</label>
+        <link refid="_re_scorer_8h"/>
+        <childnode refid="216" relation="include">
+        </childnode>
+      </node>
+      <node id="198">
         <label>AbstractDockingEngine.h</label>
         <link refid="_abstract_docking_engine_8h"/>
-        <childnode refid="174" relation="include">
+        <childnode refid="199" relation="include">
         </childnode>
-        <childnode refid="177" relation="include">
+        <childnode refid="202" relation="include">
         </childnode>
-        <childnode refid="179" relation="include">
+        <childnode refid="204" relation="include">
         </childnode>
       </node>
-      <node id="175">
+      <node id="197">
+        <label>DockingResult.h</label>
+        <link refid="_docking_result_8h"/>
+        <childnode refid="198" relation="include">
+        </childnode>
+        <childnode refid="206" relation="include">
+        </childnode>
+        <childnode refid="207" relation="include">
+        </childnode>
+      </node>
+      <node id="200">
         <label>ConformerRigidDockingEngine.cpp</label>
         <link refid="_conformer_rigid_docking_engine_8cpp"/>
       </node>
-      <node id="172">
+      <node id="208">
+        <label>DockingResultPrinter.cpp</label>
+        <link refid="_docking_result_printer_8cpp"/>
+      </node>
+      <node id="196">
         <label>Molecule.h</label>
         <link refid="_molecule_8h"/>
-        <childnode refid="173" relation="include">
+        <childnode refid="197" relation="include">
         </childnode>
-        <childnode refid="174" relation="include">
+        <childnode refid="198" relation="include">
         </childnode>
-        <childnode refid="177" relation="include">
+        <childnode refid="199" relation="include">
         </childnode>
-        <childnode refid="181" relation="include">
+        <childnode refid="202" relation="include">
         </childnode>
-        <childnode refid="182" relation="include">
+        <childnode refid="209" relation="include">
         </childnode>
-        <childnode refid="176" relation="include">
+        <childnode refid="212" relation="include">
+        </childnode>
+        <childnode refid="214" relation="include">
+        </childnode>
+        <childnode refid="215" relation="include">
+        </childnode>
+        <childnode refid="201" relation="include">
+        </childnode>
+        <childnode refid="217" relation="include">
+        </childnode>
+        <childnode refid="218" relation="include">
         </childnode>
       </node>
-      <node id="184">
+      <node id="211">
+        <label>IntermediateConformerCollector.cpp</label>
+        <link refid="_intermediate_conformer_collector_8cpp"/>
+      </node>
+      <node id="212">
+        <label>PDBWriter.h</label>
+        <link refid="_p_d_b_writer_8h"/>
+        <childnode refid="209" relation="include">
+        </childnode>
+        <childnode refid="213" relation="include">
+        </childnode>
+      </node>
+      <node id="207">
+        <label>DockingResultPrinter.h</label>
+        <link refid="_docking_result_printer_8h"/>
+        <childnode refid="208" relation="include">
+        </childnode>
+        <childnode refid="201" relation="include">
+        </childnode>
+      </node>
+      <node id="219">
         <label>Bond.cpp</label>
         <link refid="_bond_8cpp"/>
+      </node>
+      <node id="206">
+        <label>DockingResult.cpp</label>
+        <link refid="_docking_result_8cpp"/>
       </node>
     </invincdepgraph>
     <innerclass refid="class_smol_dock_1_1_bond" prot="public">SmolDock::Bond</innerclass>
@@ -227,30 +299,32 @@
 <codeline lineno="42"><highlight class="normal"></highlight></codeline>
 <codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_bond_1a7f046d71521a269171643bdf147d5c80" kindref="member">Bond</ref>(std::shared_ptr&lt;Atom&gt;<sp/>atom_a,<sp/>std::shared_ptr&lt;Atom&gt;<sp/>atom_b,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="44"><highlight class="normal"></highlight></codeline>
-<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Atom&gt;<sp/><ref refid="class_smol_dock_1_1_bond_1a8ca51ba3f2abc758ecd7b4b040681f21" kindref="member">getEndA</ref>();</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_bond_1a382edad0cb2bd339e3ff676cd232d093" kindref="member">getBondID</ref>();</highlight></codeline>
 <codeline lineno="46"><highlight class="normal"></highlight></codeline>
-<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Atom&gt;<sp/><ref refid="class_smol_dock_1_1_bond_1a0a2feeb4cc88cbb8920ae5e9b142ead5" kindref="member">getEndB</ref>();</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Atom&gt;<sp/><ref refid="class_smol_dock_1_1_bond_1a8ca51ba3f2abc758ecd7b4b040681f21" kindref="member">getEndA</ref>();</highlight></codeline>
 <codeline lineno="48"><highlight class="normal"></highlight></codeline>
-<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_bond_1a225d51b7edd43bc5aa16984981bc2dfe" kindref="member">publicizeToAtom</ref>();</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Atom&gt;<sp/><ref refid="class_smol_dock_1_1_bond_1a0a2feeb4cc88cbb8920ae5e9b142ead5" kindref="member">getEndB</ref>();</highlight></codeline>
 <codeline lineno="50"><highlight class="normal"></highlight></codeline>
-<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_bond_1a4ebf28309120c880429f205edf67b9f8" kindref="member">setBondType</ref>(<ref refid="class_smol_dock_1_1_bond_1a6cbf152f682501c998bd06a55400c9cf" kindref="member">Bond::BondType</ref><sp/>t);</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_bond_1a225d51b7edd43bc5aa16984981bc2dfe" kindref="member">publicizeToAtom</ref>();</highlight></codeline>
 <codeline lineno="52"><highlight class="normal"></highlight></codeline>
-<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_bond_1a6cbf152f682501c998bd06a55400c9cf" kindref="member">BondType</ref><sp/><ref refid="class_smol_dock_1_1_bond_1a6b8180f0f2b339c521f8a74b2445e8c8" kindref="member">getBondType</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_bond_1a4ebf28309120c880429f205edf67b9f8" kindref="member">setBondType</ref>(<ref refid="class_smol_dock_1_1_bond_1a6cbf152f682501c998bd06a55400c9cf" kindref="member">Bond::BondType</ref><sp/>t);</highlight></codeline>
 <codeline lineno="54"><highlight class="normal"></highlight></codeline>
-<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="56" refid="class_smol_dock_1_1_bond_1ad909ef34f3b9b10acc221ac6d54e423a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Atom&gt;<sp/><ref refid="class_smol_dock_1_1_bond_1ad909ef34f3b9b10acc221ac6d54e423a" kindref="member">bond_end_a</ref>;</highlight></codeline>
-<codeline lineno="57" refid="class_smol_dock_1_1_bond_1adbbc73bd7bc4fc579237321be516ed2f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Atom&gt;<sp/><ref refid="class_smol_dock_1_1_bond_1adbbc73bd7bc4fc579237321be516ed2f" kindref="member">bond_end_b</ref>;</highlight></codeline>
-<codeline lineno="58"><highlight class="normal"></highlight></codeline>
-<codeline lineno="59" refid="class_smol_dock_1_1_bond_1acb9a24240df4164e4840611d7df39962" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_bond_1acb9a24240df4164e4840611d7df39962" kindref="member">nextBondID</ref>;</highlight></codeline>
-<codeline lineno="60" refid="class_smol_dock_1_1_bond_1a6fb49dc80f21a23c8b039f85d3b7b5bf" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_bond_1a6fb49dc80f21a23c8b039f85d3b7b5bf" kindref="member">BondID</ref>;</highlight></codeline>
-<codeline lineno="61"><highlight class="normal"></highlight></codeline>
-<codeline lineno="62" refid="class_smol_dock_1_1_bond_1a7795dad7005c83f8702d8593eb81b1ff" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_bond_1a6cbf152f682501c998bd06a55400c9cf" kindref="member">BondType</ref><sp/><ref refid="class_smol_dock_1_1_bond_1a7795dad7005c83f8702d8593eb81b1ff" kindref="member">bondtype</ref>;</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_bond_1a6cbf152f682501c998bd06a55400c9cf" kindref="member">BondType</ref><sp/><ref refid="class_smol_dock_1_1_bond_1a6b8180f0f2b339c521f8a74b2445e8c8" kindref="member">getBondType</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="58" refid="class_smol_dock_1_1_bond_1ad909ef34f3b9b10acc221ac6d54e423a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Atom&gt;<sp/><ref refid="class_smol_dock_1_1_bond_1ad909ef34f3b9b10acc221ac6d54e423a" kindref="member">bond_end_a</ref>;</highlight></codeline>
+<codeline lineno="59" refid="class_smol_dock_1_1_bond_1adbbc73bd7bc4fc579237321be516ed2f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Atom&gt;<sp/><ref refid="class_smol_dock_1_1_bond_1adbbc73bd7bc4fc579237321be516ed2f" kindref="member">bond_end_b</ref>;</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61" refid="class_smol_dock_1_1_bond_1acb9a24240df4164e4840611d7df39962" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_bond_1acb9a24240df4164e4840611d7df39962" kindref="member">nextBondID</ref>;</highlight></codeline>
+<codeline lineno="62" refid="class_smol_dock_1_1_bond_1a6fb49dc80f21a23c8b039f85d3b7b5bf" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_bond_1a6fb49dc80f21a23c8b039f85d3b7b5bf" kindref="member">BondID</ref>;</highlight></codeline>
 <codeline lineno="63"><highlight class="normal"></highlight></codeline>
-<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="64" refid="class_smol_dock_1_1_bond_1a7795dad7005c83f8702d8593eb81b1ff" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_bond_1a6cbf152f682501c998bd06a55400c9cf" kindref="member">BondType</ref><sp/><ref refid="class_smol_dock_1_1_bond_1a7795dad7005c83f8702d8593eb81b1ff" kindref="member">bondtype</ref>;</highlight></codeline>
 <codeline lineno="65"><highlight class="normal"></highlight></codeline>
-<codeline lineno="66"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
 <codeline lineno="67"><highlight class="normal"></highlight></codeline>
-<codeline lineno="68"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//SMOLDOCK_BOND_H</highlight></codeline>
+<codeline lineno="68"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//SMOLDOCK_BOND_H</highlight></codeline>
     </programlisting>
     <location file="Structures/Bond.h"/>
   </compounddef>

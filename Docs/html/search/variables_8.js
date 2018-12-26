@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['nextatomid',['nextAtomID',['../class_smol_dock_1_1_atom.html#a699bf43dba89827d43019464a2a1507e',1,'SmolDock::Atom']]],
-  ['nextbondid',['nextBondID',['../class_smol_dock_1_1_bond.html#acb9a24240df4164e4840611d7df39962',1,'SmolDock::Bond']]]
+    ['molecule', ['molecule', ['../class_smol_dock_1_1_intermediate_conformer_collector.html#af4af1651349015597a2582237817db51', 1, 'SmolDock::IntermediateConformerCollector::molecule()'], ['../class_smol_dock_1_1_re_scorer.html#acfa92e136e1a1681477539bd14bed734', 1, 'SmolDock::ReScorer::molecule()']]],
+    ['moleculetraversal', ['MoleculeTraversal', ['../class_smol_dock_1_1_atom.html#a90ad0859a5e5a747eecdc79b8bb80561', 1, 'SmolDock::Atom']]]
 ];

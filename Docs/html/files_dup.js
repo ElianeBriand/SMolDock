@@ -19,11 +19,21 @@ var files_dup =
     ] ],
     [ "DockingResult.cpp", "_docking_result_8cpp.html", null ],
     [ "DockingResult.h", "_docking_result_8h.html", [
-      [ "DockingResult", "namespace_smol_dock.html#class_smol_dock_1_1_docking_result", null ]
+      [ "DockingResult", "namespace_smol_dock.html#class_smol_dock_1_1_docking_result", [
+        [ "ligandPoses", "namespace_smol_dock.html#a13f9ac78867b9834693c7b35d68bf63c", null ]
+      ] ]
     ] ],
     [ "DockingResultPrinter.cpp", "_docking_result_printer_8cpp.html", null ],
     [ "DockingResultPrinter.h", "_docking_result_printer_8h.html", [
       [ "DockingResultPrinter", "class_smol_dock_1_1_docking_result_printer.html", "class_smol_dock_1_1_docking_result_printer" ]
+    ] ],
+    [ "GradientCalculator.cpp", "_gradient_calculator_8cpp.html", null ],
+    [ "GradientCalculator.h", "_gradient_calculator_8h.html", [
+      [ "GradientCalculator", "namespace_smol_dock.html#class_smol_dock_1_1_gradient_calculator", null ]
+    ] ],
+    [ "GradientDescentLineSearch.cpp", "_gradient_descent_line_search_8cpp.html", "_gradient_descent_line_search_8cpp" ],
+    [ "GradientDescentLineSearch.h", "_gradient_descent_line_search_8h.html", [
+      [ "GradientDescentLineSearch", "class_smol_dock_1_1_gradient_descent_line_search.html", "class_smol_dock_1_1_gradient_descent_line_search" ]
     ] ],
     [ "iConformer.h", "i_conformer_8h.html", [
       [ "iConformer", "namespace_smol_dock.html#struct_smol_dock_1_1i_conformer", [
@@ -34,6 +44,10 @@ var files_dup =
         [ "y", "namespace_smol_dock.html#ac3019c0cd62660a4392591dd9519cc9a", null ],
         [ "z", "namespace_smol_dock.html#a5c1fc6f9bad31ec2731337e9ba1e9a0f", null ]
       ] ]
+    ] ],
+    [ "IntermediateConformerCollector.cpp", "_intermediate_conformer_collector_8cpp.html", null ],
+    [ "IntermediateConformerCollector.h", "_intermediate_conformer_collector_8h.html", [
+      [ "IntermediateConformerCollector", "class_smol_dock_1_1_intermediate_conformer_collector.html", "class_smol_dock_1_1_intermediate_conformer_collector" ]
     ] ],
     [ "iProtein.h", "i_protein_8h.html", [
       [ "iProtein", "namespace_smol_dock.html#struct_smol_dock_1_1i_protein", [
@@ -59,14 +73,25 @@ var files_dup =
     [ "Molecule.h", "_molecule_8h.html", [
       [ "Molecule", "class_smol_dock_1_1_molecule.html", "class_smol_dock_1_1_molecule" ]
     ] ],
-    [ "MoleculeTraversal.cpp", "_molecule_traversal_8cpp.html", null ],
-    [ "MoleculeTraversal.h", "_molecule_traversal_8h.html", [
-      [ "MoleculeTraversal", "class_smol_dock_1_1_molecule_traversal.html", "class_smol_dock_1_1_molecule_traversal" ]
+    [ "PDBLigandUtils.cpp", "_p_d_b_ligand_utils_8cpp.html", "_p_d_b_ligand_utils_8cpp" ],
+    [ "PDBLigandUtils.h", "_p_d_b_ligand_utils_8h.html", "_p_d_b_ligand_utils_8h" ],
+    [ "PDBWriter.cpp", "_p_d_b_writer_8cpp.html", null ],
+    [ "PDBWriter.h", "_p_d_b_writer_8h.html", [
+      [ "PDBWriter", "class_smol_dock_1_1_p_d_b_writer.html", "class_smol_dock_1_1_p_d_b_writer" ]
     ] ],
     [ "Protein.cpp", "_protein_8cpp.html", null ],
     [ "Protein.h", "_protein_8h.html", [
       [ "Protein", "class_smol_dock_1_1_protein.html", "class_smol_dock_1_1_protein" ]
     ] ],
+    [ "PySTLWrapper.cpp", "_py_s_t_l_wrapper_8cpp.html", "_py_s_t_l_wrapper_8cpp" ],
+    [ "PySTLWrapper.h", "_py_s_t_l_wrapper_8h.html", "_py_s_t_l_wrapper_8h" ],
+    [ "PyStructures.cpp", "_py_structures_8cpp.html", "_py_structures_8cpp" ],
+    [ "PyStructures.h", "_py_structures_8h.html", "_py_structures_8h" ],
+    [ "ReScorer.cpp", "_re_scorer_8cpp.html", null ],
+    [ "ReScorer.h", "_re_scorer_8h.html", [
+      [ "ReScorer", "class_smol_dock_1_1_re_scorer.html", "class_smol_dock_1_1_re_scorer" ]
+    ] ],
+    [ "SmoldockPythonBindings.cpp", "_smoldock_python_bindings_8cpp.html", "_smoldock_python_bindings_8cpp" ],
     [ "Structure.cpp", "_structure_8cpp.html", null ],
     [ "Structure.h", "_structure_8h.html", [
       [ "Structure", "class_smol_dock_1_1_structure.html", null ]

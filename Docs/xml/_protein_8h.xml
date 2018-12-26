@@ -15,158 +15,178 @@
     <includedby refid="_conformer_rigid_docking_engine_8h" local="yes">ConformerRigidDockingEngine.h</includedby>
     <includedby refid="_m_d_style_docking_engine_8h" local="yes">MDStyleDockingEngine.h</includedby>
     <includedby refid="_protein_8cpp" local="yes">Protein.cpp</includedby>
+    <includedby refid="_re_scorer_8h" local="no">ReScorer.h</includedby>
     <includedby refid="main_8cpp" local="yes">main.cpp</includedby>
+    <includedby refid="_py_structures_8cpp" local="no">PyStructures.cpp</includedby>
     <incdepgraph>
-      <node id="585">
+      <node id="925">
         <label>Protein.h</label>
         <link refid="_protein_8h"/>
-        <childnode refid="586" relation="include">
+        <childnode refid="926" relation="include">
         </childnode>
-        <childnode refid="587" relation="include">
+        <childnode refid="927" relation="include">
         </childnode>
-        <childnode refid="588" relation="include">
+        <childnode refid="928" relation="include">
         </childnode>
-        <childnode refid="589" relation="include">
+        <childnode refid="929" relation="include">
         </childnode>
-        <childnode refid="590" relation="include">
+        <childnode refid="930" relation="include">
         </childnode>
-        <childnode refid="591" relation="include">
+        <childnode refid="931" relation="include">
         </childnode>
-        <childnode refid="592" relation="include">
+        <childnode refid="932" relation="include">
         </childnode>
-        <childnode refid="594" relation="include">
+        <childnode refid="934" relation="include">
         </childnode>
-        <childnode refid="595" relation="include">
+        <childnode refid="935" relation="include">
         </childnode>
       </node>
-      <node id="588">
+      <node id="928">
         <label>ESBTL/default.h</label>
       </node>
-      <node id="596">
+      <node id="936">
         <label>string</label>
       </node>
-      <node id="591">
+      <node id="931">
         <label>ESBTL/compressed_ifstream.h</label>
       </node>
-      <node id="593">
+      <node id="933">
         <label>map</label>
       </node>
-      <node id="589">
+      <node id="929">
         <label>ESBTL/atom_classifier.h</label>
       </node>
-      <node id="595">
+      <node id="935">
         <label>AminoAcid.h</label>
         <link refid="_amino_acid_8h"/>
-        <childnode refid="596" relation="include">
+        <childnode refid="936" relation="include">
         </childnode>
-        <childnode refid="586" relation="include">
+        <childnode refid="926" relation="include">
         </childnode>
-        <childnode refid="597" relation="include">
+        <childnode refid="937" relation="include">
         </childnode>
-        <childnode refid="598" relation="include">
+        <childnode refid="938" relation="include">
         </childnode>
-        <childnode refid="599" relation="include">
+        <childnode refid="939" relation="include">
         </childnode>
-        <childnode refid="587" relation="include">
+        <childnode refid="927" relation="include">
         </childnode>
-        <childnode refid="592" relation="include">
+        <childnode refid="932" relation="include">
         </childnode>
       </node>
-      <node id="599">
+      <node id="939">
         <label>tuple</label>
       </node>
-      <node id="592">
+      <node id="932">
         <label>Engines/Internals/iProtein.h</label>
         <link refid="i_protein_8h"/>
-        <childnode refid="586" relation="include">
+        <childnode refid="926" relation="include">
         </childnode>
-        <childnode refid="587" relation="include">
+        <childnode refid="927" relation="include">
         </childnode>
-        <childnode refid="593" relation="include">
+        <childnode refid="933" relation="include">
         </childnode>
       </node>
-      <node id="586">
+      <node id="926">
         <label>vector</label>
       </node>
-      <node id="594">
+      <node id="934">
         <label>Structure.h</label>
         <link refid="_structure_8h"/>
       </node>
-      <node id="597">
+      <node id="937">
         <label>set</label>
       </node>
-      <node id="598">
+      <node id="938">
         <label>algorithm</label>
       </node>
-      <node id="590">
+      <node id="930">
         <label>ESBTL/weighted_atom_iterator.h</label>
       </node>
-      <node id="587">
+      <node id="927">
         <label>memory</label>
       </node>
     </incdepgraph>
     <invincdepgraph>
-      <node id="600">
+      <node id="940">
         <label>Protein.h</label>
         <link refid="_protein_8h"/>
-        <childnode refid="601" relation="include">
+        <childnode refid="941" relation="include">
         </childnode>
-        <childnode refid="602" relation="include">
+        <childnode refid="942" relation="include">
         </childnode>
-        <childnode refid="605" relation="include">
+        <childnode refid="945" relation="include">
         </childnode>
-        <childnode refid="609" relation="include">
+        <childnode refid="949" relation="include">
         </childnode>
-        <childnode refid="604" relation="include">
+        <childnode refid="950" relation="include">
+        </childnode>
+        <childnode refid="944" relation="include">
+        </childnode>
+        <childnode refid="952" relation="include">
         </childnode>
       </node>
-      <node id="602">
+      <node id="942">
         <label>ConformerRigidDockingEngine.h</label>
         <link refid="_conformer_rigid_docking_engine_8h"/>
-        <childnode refid="603" relation="include">
+        <childnode refid="943" relation="include">
         </childnode>
-        <childnode refid="604" relation="include">
+        <childnode refid="944" relation="include">
         </childnode>
       </node>
-      <node id="605">
+      <node id="952">
+        <label>PyStructures.cpp</label>
+        <link refid="_py_structures_8cpp"/>
+      </node>
+      <node id="945">
         <label>MDStyleDockingEngine.h</label>
         <link refid="_m_d_style_docking_engine_8h"/>
-        <childnode refid="606" relation="include">
+        <childnode refid="946" relation="include">
         </childnode>
       </node>
-      <node id="608">
+      <node id="948">
         <label>VinaCompatibleDockingEngine.cpp</label>
         <link refid="_vina_compatible_docking_engine_8cpp"/>
       </node>
-      <node id="607">
+      <node id="951">
+        <label>ReScorer.cpp</label>
+        <link refid="_re_scorer_8cpp"/>
+      </node>
+      <node id="947">
         <label>VinaCompatibleDockingEngine.h</label>
         <link refid="_vina_compatible_docking_engine_8h"/>
-        <childnode refid="608" relation="include">
+        <childnode refid="948" relation="include">
         </childnode>
       </node>
-      <node id="606">
+      <node id="946">
         <label>MDStyleDockingEngine.cpp</label>
         <link refid="_m_d_style_docking_engine_8cpp"/>
       </node>
-      <node id="604">
+      <node id="944">
         <label>main.cpp</label>
         <link refid="main_8cpp"/>
       </node>
-      <node id="601">
-        <label>AbstractDockingEngine.h</label>
-        <link refid="_abstract_docking_engine_8h"/>
-        <childnode refid="602" relation="include">
-        </childnode>
-        <childnode refid="605" relation="include">
-        </childnode>
-        <childnode refid="607" relation="include">
+      <node id="950">
+        <label>ReScorer.h</label>
+        <link refid="_re_scorer_8h"/>
+        <childnode refid="951" relation="include">
         </childnode>
       </node>
-      <node id="603">
+      <node id="941">
+        <label>AbstractDockingEngine.h</label>
+        <link refid="_abstract_docking_engine_8h"/>
+        <childnode refid="942" relation="include">
+        </childnode>
+        <childnode refid="945" relation="include">
+        </childnode>
+        <childnode refid="947" relation="include">
+        </childnode>
+      </node>
+      <node id="943">
         <label>ConformerRigidDockingEngine.cpp</label>
         <link refid="_conformer_rigid_docking_engine_8cpp"/>
       </node>
-      <node id="609">
+      <node id="949">
         <label>Protein.cpp</label>
         <link refid="_protein_8cpp"/>
       </node>
@@ -226,23 +246,24 @@
 <codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
 <codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_protein_1ae9cac74c19d706a93fb1e9d4929127a5" kindref="member">Protein</ref>()<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="48"><highlight class="normal"></highlight></codeline>
-<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_protein_1a99399b7db2f1b78fea8076a137a4b962" kindref="member">populateFromPDB</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;filename);</highlight></codeline>
-<codeline lineno="50"><highlight class="normal"></highlight></codeline>
-<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_smol_dock_1_1i_protein" kindref="compound">iProtein</ref><sp/><ref refid="class_smol_dock_1_1_protein_1a68856c725dbe91f5ccec59e8fa8306b2" kindref="member">getiProtein</ref>();</highlight></codeline>
-<codeline lineno="52"><highlight class="normal"></highlight></codeline>
-<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="54" refid="class_smol_dock_1_1_protein_1ae0fe8b9c66bfa8032c93e0d8269fd561" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::vector&lt;std::shared_ptr&lt;AminoAcid&gt;<sp/>&gt;<sp/><ref refid="class_smol_dock_1_1_protein_1ae0fe8b9c66bfa8032c93e0d8269fd561" kindref="member">aminoacids</ref>;</highlight></codeline>
-<codeline lineno="55" refid="class_smol_dock_1_1_protein_1a86e77c7079be2b4d3e1a8e3e53a4ce02" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::vector&lt;std::shared_ptr&lt;Atom&gt;<sp/>&gt;<sp/><ref refid="class_smol_dock_1_1_protein_1a86e77c7079be2b4d3e1a8e3e53a4ce02" kindref="member">heteroatoms</ref>;</highlight></codeline>
-<codeline lineno="56"><highlight class="normal"></highlight></codeline>
-<codeline lineno="57" refid="class_smol_dock_1_1_protein_1a3409e1f4c5789b7102e3941d030a1fc8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_protein_1a3409e1f4c5789b7102e3941d030a1fc8" kindref="member">center_x</ref><sp/>=<sp/>0;</highlight></codeline>
-<codeline lineno="58" refid="class_smol_dock_1_1_protein_1a1b1d22d4cf7b2efa592904727cbc4318" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_protein_1a1b1d22d4cf7b2efa592904727cbc4318" kindref="member">center_y</ref><sp/>=<sp/>0;</highlight></codeline>
-<codeline lineno="59" refid="class_smol_dock_1_1_protein_1ae548b55999341c9b36325c79f8731de3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_protein_1ae548b55999341c9b36325c79f8731de3" kindref="member">center_z</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="50"></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_protein_1a99399b7db2f1b78fea8076a137a4b962" kindref="member">populateFromPDB</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;filename);</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_smol_dock_1_1i_protein" kindref="compound">iProtein</ref><sp/><ref refid="class_smol_dock_1_1_protein_1a68856c725dbe91f5ccec59e8fa8306b2" kindref="member">getiProtein</ref>();</highlight></codeline>
 <codeline lineno="60"><highlight class="normal"></highlight></codeline>
-<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
-<codeline lineno="62"><highlight class="normal"></highlight></codeline>
-<codeline lineno="63"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="62" refid="class_smol_dock_1_1_protein_1ae0fe8b9c66bfa8032c93e0d8269fd561" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::vector&lt;std::shared_ptr&lt;AminoAcid&gt;<sp/>&gt;<sp/><ref refid="class_smol_dock_1_1_protein_1ae0fe8b9c66bfa8032c93e0d8269fd561" kindref="member">aminoacids</ref>;</highlight></codeline>
+<codeline lineno="63" refid="class_smol_dock_1_1_protein_1a86e77c7079be2b4d3e1a8e3e53a4ce02" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::vector&lt;std::shared_ptr&lt;Atom&gt;<sp/>&gt;<sp/><ref refid="class_smol_dock_1_1_protein_1a86e77c7079be2b4d3e1a8e3e53a4ce02" kindref="member">heteroatoms</ref>;</highlight></codeline>
 <codeline lineno="64"><highlight class="normal"></highlight></codeline>
-<codeline lineno="65"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//SMOLDOCK_PROTEIN_H</highlight></codeline>
+<codeline lineno="65" refid="class_smol_dock_1_1_protein_1a3409e1f4c5789b7102e3941d030a1fc8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_protein_1a3409e1f4c5789b7102e3941d030a1fc8" kindref="member">center_x</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="66" refid="class_smol_dock_1_1_protein_1a1b1d22d4cf7b2efa592904727cbc4318" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_protein_1a1b1d22d4cf7b2efa592904727cbc4318" kindref="member">center_y</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="67" refid="class_smol_dock_1_1_protein_1ae548b55999341c9b36325c79f8731de3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_protein_1ae548b55999341c9b36325c79f8731de3" kindref="member">center_z</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//SMOLDOCK_PROTEIN_H</highlight></codeline>
     </programlisting>
     <location file="Structures/Protein.h"/>
   </compounddef>

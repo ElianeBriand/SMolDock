@@ -23,17 +23,19 @@
 #include <boost/numpy.hpp>
 
 
-char const* greet()
-{
-    return "hello, world";
-}
+#include "Python/PySTLWrapper.h"
+#include "Python/PyStructures.h"
+
+namespace p = boost::python;
+namespace np = boost::numpy;
 
 BOOST_PYTHON_MODULE(PySmolDock)
 {
     Py_Initialize();
-    boost::numpy::initialize();
+    np::initialize();
 
-    boost::python::def("greet", greet);
+    export_STLWrapper();
+    export_Structures();
 
 
 }

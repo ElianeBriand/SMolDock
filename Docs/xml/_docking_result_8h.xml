@@ -2,79 +2,228 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
   <compounddef id="_docking_result_8h" kind="file" language="C++">
     <compoundname>DockingResult.h</compoundname>
+    <includes local="no">vector</includes>
+    <includes refid="_molecule_8h" local="no">Structures/Molecule.h</includes>
     <includedby refid="_abstract_docking_engine_8h" local="yes">AbstractDockingEngine.h</includedby>
     <includedby refid="_docking_result_8cpp" local="yes">DockingResult.cpp</includedby>
     <includedby refid="_docking_result_printer_8h" local="yes">DockingResultPrinter.h</includedby>
+    <incdepgraph>
+      <node id="345">
+        <label>GraphMol/RWMol.h</label>
+      </node>
+      <node id="346">
+        <label>GraphMol/MolOps.h</label>
+      </node>
+      <node id="349">
+        <label>GraphMol/Substruct/SubstructMatch.h</label>
+      </node>
+      <node id="350">
+        <label>GraphMol/DistGeomHelpers/Embedder.h</label>
+      </node>
+      <node id="358">
+        <label>string</label>
+      </node>
+      <node id="352">
+        <label>Atom.h</label>
+        <link refid="_atom_8h"/>
+        <childnode refid="342" relation="include">
+        </childnode>
+        <childnode refid="353" relation="include">
+        </childnode>
+        <childnode refid="354" relation="include">
+        </childnode>
+        <childnode refid="355" relation="include">
+        </childnode>
+        <childnode refid="356" relation="include">
+        </childnode>
+        <childnode refid="357" relation="include">
+        </childnode>
+      </node>
+      <node id="361">
+        <label>map</label>
+      </node>
+      <node id="363">
+        <label>../Engines/Internals/iConformer.h</label>
+        <link refid="i_conformer_8h"/>
+        <childnode refid="342" relation="include">
+        </childnode>
+        <childnode refid="353" relation="include">
+        </childnode>
+      </node>
+      <node id="362">
+        <label>Bond.h</label>
+        <link refid="_bond_8h"/>
+        <childnode refid="353" relation="include">
+        </childnode>
+        <childnode refid="352" relation="include">
+        </childnode>
+      </node>
+      <node id="357">
+        <label>AminoAcid.h</label>
+        <link refid="_amino_acid_8h"/>
+        <childnode refid="358" relation="include">
+        </childnode>
+        <childnode refid="342" relation="include">
+        </childnode>
+        <childnode refid="354" relation="include">
+        </childnode>
+        <childnode refid="355" relation="include">
+        </childnode>
+        <childnode refid="359" relation="include">
+        </childnode>
+        <childnode refid="353" relation="include">
+        </childnode>
+        <childnode refid="360" relation="include">
+        </childnode>
+      </node>
+      <node id="341">
+        <label>DockingResult.h</label>
+        <link refid="_docking_result_8h"/>
+        <childnode refid="342" relation="include">
+        </childnode>
+        <childnode refid="343" relation="include">
+        </childnode>
+      </node>
+      <node id="359">
+        <label>tuple</label>
+      </node>
+      <node id="360">
+        <label>Engines/Internals/iProtein.h</label>
+        <link refid="i_protein_8h"/>
+        <childnode refid="342" relation="include">
+        </childnode>
+        <childnode refid="353" relation="include">
+        </childnode>
+        <childnode refid="361" relation="include">
+        </childnode>
+      </node>
+      <node id="342">
+        <label>vector</label>
+      </node>
+      <node id="348">
+        <label>GraphMol/SmilesParse/SmilesParse.h</label>
+      </node>
+      <node id="351">
+        <label>Structure.h</label>
+        <link refid="_structure_8h"/>
+      </node>
+      <node id="343">
+        <label>Structures/Molecule.h</label>
+        <link refid="_molecule_8h"/>
+        <childnode refid="342" relation="include">
+        </childnode>
+        <childnode refid="344" relation="include">
+        </childnode>
+        <childnode refid="345" relation="include">
+        </childnode>
+        <childnode refid="346" relation="include">
+        </childnode>
+        <childnode refid="347" relation="include">
+        </childnode>
+        <childnode refid="348" relation="include">
+        </childnode>
+        <childnode refid="349" relation="include">
+        </childnode>
+        <childnode refid="350" relation="include">
+        </childnode>
+        <childnode refid="351" relation="include">
+        </childnode>
+        <childnode refid="352" relation="include">
+        </childnode>
+        <childnode refid="362" relation="include">
+        </childnode>
+        <childnode refid="363" relation="include">
+        </childnode>
+      </node>
+      <node id="344">
+        <label>GraphMol/RDKitBase.h</label>
+      </node>
+      <node id="356">
+        <label>iostream</label>
+      </node>
+      <node id="354">
+        <label>set</label>
+      </node>
+      <node id="355">
+        <label>algorithm</label>
+      </node>
+      <node id="353">
+        <label>memory</label>
+      </node>
+      <node id="347">
+        <label>GraphMol/FileParsers/FileParsers.h</label>
+      </node>
+    </incdepgraph>
     <invincdepgraph>
-      <node id="275">
+      <node id="366">
         <label>ConformerRigidDockingEngine.h</label>
         <link refid="_conformer_rigid_docking_engine_8h"/>
-        <childnode refid="276" relation="include">
+        <childnode refid="367" relation="include">
         </childnode>
-        <childnode refid="277" relation="include">
+        <childnode refid="368" relation="include">
         </childnode>
       </node>
-      <node id="278">
+      <node id="369">
         <label>MDStyleDockingEngine.h</label>
         <link refid="_m_d_style_docking_engine_8h"/>
-        <childnode refid="279" relation="include">
+        <childnode refid="370" relation="include">
         </childnode>
       </node>
-      <node id="281">
+      <node id="372">
         <label>VinaCompatibleDockingEngine.cpp</label>
         <link refid="_vina_compatible_docking_engine_8cpp"/>
       </node>
-      <node id="280">
+      <node id="371">
         <label>VinaCompatibleDockingEngine.h</label>
         <link refid="_vina_compatible_docking_engine_8h"/>
-        <childnode refid="281" relation="include">
+        <childnode refid="372" relation="include">
         </childnode>
       </node>
-      <node id="279">
+      <node id="370">
         <label>MDStyleDockingEngine.cpp</label>
         <link refid="_m_d_style_docking_engine_8cpp"/>
       </node>
-      <node id="277">
+      <node id="368">
         <label>main.cpp</label>
         <link refid="main_8cpp"/>
       </node>
-      <node id="274">
+      <node id="365">
         <label>AbstractDockingEngine.h</label>
         <link refid="_abstract_docking_engine_8h"/>
-        <childnode refid="275" relation="include">
+        <childnode refid="366" relation="include">
         </childnode>
-        <childnode refid="278" relation="include">
+        <childnode refid="369" relation="include">
         </childnode>
-        <childnode refid="280" relation="include">
+        <childnode refid="371" relation="include">
         </childnode>
       </node>
-      <node id="273">
+      <node id="364">
         <label>DockingResult.h</label>
         <link refid="_docking_result_8h"/>
-        <childnode refid="274" relation="include">
+        <childnode refid="365" relation="include">
         </childnode>
-        <childnode refid="282" relation="include">
+        <childnode refid="373" relation="include">
         </childnode>
-        <childnode refid="283" relation="include">
+        <childnode refid="374" relation="include">
         </childnode>
       </node>
-      <node id="276">
+      <node id="367">
         <label>ConformerRigidDockingEngine.cpp</label>
         <link refid="_conformer_rigid_docking_engine_8cpp"/>
       </node>
-      <node id="284">
+      <node id="375">
         <label>DockingResultPrinter.cpp</label>
         <link refid="_docking_result_printer_8cpp"/>
       </node>
-      <node id="283">
+      <node id="374">
         <label>DockingResultPrinter.h</label>
         <link refid="_docking_result_printer_8h"/>
-        <childnode refid="284" relation="include">
+        <childnode refid="375" relation="include">
         </childnode>
-        <childnode refid="277" relation="include">
+        <childnode refid="368" relation="include">
         </childnode>
       </node>
-      <node id="282">
+      <node id="373">
         <label>DockingResult.cpp</label>
         <link refid="_docking_result_8cpp"/>
       </node>
@@ -109,15 +258,20 @@
 <codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>SMOLDOCK_DOCKINGRESULTS_H</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SMOLDOCK_DOCKINGRESULTS_H</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="23"><highlight class="normal"></highlight></codeline>
-<codeline lineno="24"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_smol_dock" kindref="compound">SmolDock</ref><sp/>{</highlight></codeline>
-<codeline lineno="25"><highlight class="normal"></highlight></codeline>
-<codeline lineno="26" refid="class_smol_dock_1_1_docking_result" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_smol_dock_1_1_docking_result" kindref="compound">DockingResult</ref><sp/>{</highlight></codeline>
-<codeline lineno="27"><highlight class="normal"></highlight></codeline>
-<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
-<codeline lineno="29"><highlight class="normal"></highlight></codeline>
-<codeline lineno="30"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="31"><highlight class="normal"></highlight></codeline>
-<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//SMOLDOCK_DOCKINGRESULTS_H</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_molecule_8h" kindref="compound">Structures/Molecule.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_smol_dock" kindref="compound">SmolDock</ref><sp/>{</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29" refid="class_smol_dock_1_1_docking_result" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_smol_dock_1_1_docking_result" kindref="compound">DockingResult</ref><sp/>{</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="31" refid="class_smol_dock_1_1_docking_result_1a13f9ac78867b9834693c7b35d68bf63c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::vector&lt;Molecule&gt;<sp/><ref refid="class_smol_dock_1_1_docking_result_1a13f9ac78867b9834693c7b35d68bf63c" kindref="member">ligandPoses</ref>;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//SMOLDOCK_DOCKINGRESULTS_H</highlight></codeline>
     </programlisting>
     <location file="Structures/Results/DockingResult.h"/>
   </compounddef>

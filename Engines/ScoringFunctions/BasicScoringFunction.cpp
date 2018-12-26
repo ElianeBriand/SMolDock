@@ -35,6 +35,8 @@ namespace SmolDock {
 
             double score = 0;
 
+            assert(std::abs(quaternionNorm(transform.rota) - 1) < 0.01);
+
             for (unsigned int idxLig = 0; idxLig < ligand.x.size(); idxLig++) {
                 for (unsigned int idxProt = 0; idxProt < protein.x.size(); idxProt++) {
 
@@ -52,7 +54,7 @@ namespace SmolDock {
                     double radToRemove = (atomicRadiusLig + atomicRadiusProt);
                     double distance = rawDist - radToRemove;
 
-
+/*
                     // Special rubber band term not in Vina scoring func
                     double x_diff_center = std::pow(LigPosition.x - protein.center_x, 2);
                     double y_diff_center = std::pow(LigPosition.y - protein.center_y, 2);
@@ -60,7 +62,7 @@ namespace SmolDock {
                     double rawDistCenter = std::sqrt(x_diff_center + y_diff_center + z_diff_center);
 
                     score += 0.00001 * rawDistCenter;
-
+//*/
 
                     // exp −(d/0.5Å)^2
                     double gauss1 = -0.0356 * std::exp(-1 * std::pow(distance / 0.5, 2));
@@ -73,7 +75,7 @@ namespace SmolDock {
 
                     if (distance < 0)
                         score += 0.840 * std::pow(distance, 2);
-
+//*
                     unsigned char ligandAtomicNum = ligand.type[idxLig];
                     unsigned char proteinAtomicNum = protein.type[idxProt];
 
@@ -107,9 +109,9 @@ namespace SmolDock {
                         score += -0.597*hbond_contrib;
 
                     }
-
-                }
-            }
+//*/
+                } // for
+            } // for
 
             return score;
         }

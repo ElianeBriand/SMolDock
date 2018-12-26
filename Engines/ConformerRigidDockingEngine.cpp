@@ -74,7 +74,7 @@ namespace SmolDock {
             this->orig_ligand = m;
 
             // Getting a handle on the RWMol
-            this->rwmol = this->orig_ligand->getInternalRWMol();
+            // this->rwmol = this->orig_ligand->getInternalRWMol();
 
 
             return true;
@@ -85,7 +85,7 @@ namespace SmolDock {
             record_timings(begin_setup);
 
             std::uniform_int_distribution<> dis_int(0, std::numeric_limits<int>::max());
-            std::uniform_real_distribution<double> dis_real_position(-100.0, 100.0);
+            std::uniform_real_distribution<double> dis_real_position(-20.0, 20.0);
 
             record_timings(begin_conformersgen);
 
@@ -97,17 +97,17 @@ namespace SmolDock {
 
             this->protein = this->orig_protein->getiProtein();
 
+            /*
 
-            iTransform starting_pos_tr = iTransformIdentityInit();
-            starting_pos_tr.transl.x = dis_real_position(this->rnd_generator);
-            starting_pos_tr.transl.y = dis_real_position(this->rnd_generator);
-            starting_pos_tr.transl.z = dis_real_position(this->rnd_generator);
-            BOOST_LOG_TRIVIAL(debug) << "Initial transform : " << starting_pos_tr.transl.x << ","<< starting_pos_tr.transl.y << "," << starting_pos_tr.transl.z;
             for(iConformer& conformer: this->viConformers)
             {
+                iTransform starting_pos_tr = iTransformIdentityInit();
+                starting_pos_tr.transl.x = this->protein.center_x + dis_real_position(this->rnd_generator);
+                starting_pos_tr.transl.y = this->protein.center_y + dis_real_position(this->rnd_generator);
+                starting_pos_tr.transl.z = this->protein.center_z + dis_real_position(this->rnd_generator);
                 applyTransformInPlace(conformer,starting_pos_tr);
             }
-
+            */
 
             record_timings(end_iprotgen);
 
@@ -147,6 +147,10 @@ namespace SmolDock {
 
             for(auto& conformer : this->viConformers)
             {
+
+                BOOST_LOG_TRIVIAL(debug) << "Initial score : " << Score::vina_like_rigid_inter_scoring_func(conformer,iTransformIdentityInit(),this->protein);
+                continue;
+
                 record_timings(begin_docking_this_conformer);
 
                 GradientDescentLineSearch gradOptimizer(Score::vina_like_rigid_inter_scoring_func);

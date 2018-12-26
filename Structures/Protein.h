@@ -46,6 +46,14 @@ namespace SmolDock {
     public:
         Protein() = default;
 
+        //! Populate Protein from a PDB file.
+        /*!
+         *
+         * Alternative location, temperature factor and other subtleties of the PDB format are ignored.
+         *
+         * \param filename Path to PDB file
+         * \return whether the parsing was successful.
+        */
         bool populateFromPDB(const std::string &filename);
 
         iProtein getiProtein();

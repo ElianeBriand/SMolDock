@@ -5,124 +5,220 @@
     <includes local="no">vector</includes>
     <includes local="no">memory</includes>
     <includedby refid="_molecule_8h" local="yes">Molecule.h</includedby>
+    <includedby refid="_gradient_descent_line_search_8h" local="yes">GradientDescentLineSearch.h</includedby>
+    <includedby refid="i_transform_8h" local="yes">iTransform.h</includedby>
     <includedby refid="_conformer_rigid_docking_engine_8cpp" local="yes">ConformerRigidDockingEngine.cpp</includedby>
     <includedby refid="_basic_scoring_function_8h" local="no">BasicScoringFunction.h</includedby>
     <incdepgraph>
-      <node id="299">
+      <node id="490">
         <label>iConformer.h</label>
         <link refid="i_conformer_8h"/>
-        <childnode refid="300" relation="include">
+        <childnode refid="491" relation="include">
         </childnode>
-        <childnode refid="301" relation="include">
+        <childnode refid="492" relation="include">
         </childnode>
       </node>
-      <node id="300">
+      <node id="491">
         <label>vector</label>
       </node>
-      <node id="301">
+      <node id="492">
         <label>memory</label>
       </node>
     </incdepgraph>
     <invincdepgraph>
-      <node id="305">
+      <node id="497">
         <label>ConformerRigidDockingEngine.h</label>
         <link refid="_conformer_rigid_docking_engine_8h"/>
-        <childnode refid="306" relation="include">
+        <childnode refid="498" relation="include">
         </childnode>
-        <childnode refid="307" relation="include">
+        <childnode refid="499" relation="include">
         </childnode>
       </node>
-      <node id="308">
+      <node id="516">
+        <label>PyStructures.cpp</label>
+        <link refid="_py_structures_8cpp"/>
+      </node>
+      <node id="500">
         <label>MDStyleDockingEngine.h</label>
         <link refid="_m_d_style_docking_engine_8h"/>
-        <childnode refid="309" relation="include">
+        <childnode refid="501" relation="include">
         </childnode>
       </node>
-      <node id="315">
+      <node id="519">
         <label>BasicScoringFunction.h</label>
         <link refid="_basic_scoring_function_8h"/>
-        <childnode refid="306" relation="include">
+        <childnode refid="498" relation="include">
         </childnode>
-        <childnode refid="316" relation="include">
+        <childnode refid="520" relation="include">
         </childnode>
       </node>
-      <node id="311">
+      <node id="507">
+        <label>IntermediateConformerCollector.h</label>
+        <link refid="_intermediate_conformer_collector_8h"/>
+        <childnode refid="508" relation="include">
+        </childnode>
+        <childnode refid="509" relation="include">
+        </childnode>
+        <childnode refid="499" relation="include">
+        </childnode>
+      </node>
+      <node id="508">
+        <label>GradientDescentLineSearch.cpp</label>
+        <link refid="_gradient_descent_line_search_8cpp"/>
+      </node>
+      <node id="511">
+        <label>PDBWriter.cpp</label>
+        <link refid="_p_d_b_writer_8cpp"/>
+      </node>
+      <node id="515">
+        <label>PySTLWrapper.cpp</label>
+        <link refid="_py_s_t_l_wrapper_8cpp"/>
+      </node>
+      <node id="503">
         <label>VinaCompatibleDockingEngine.cpp</label>
         <link refid="_vina_compatible_docking_engine_8cpp"/>
       </node>
-      <node id="302">
+      <node id="514">
+        <label>ReScorer.cpp</label>
+        <link refid="_re_scorer_8cpp"/>
+      </node>
+      <node id="493">
         <label>iConformer.h</label>
         <link refid="i_conformer_8h"/>
-        <childnode refid="303" relation="include">
+        <childnode refid="494" relation="include">
         </childnode>
-        <childnode refid="306" relation="include">
+        <childnode refid="517" relation="include">
         </childnode>
-        <childnode refid="315" relation="include">
+        <childnode refid="518" relation="include">
+        </childnode>
+        <childnode refid="498" relation="include">
+        </childnode>
+        <childnode refid="519" relation="include">
         </childnode>
       </node>
-      <node id="310">
+      <node id="502">
         <label>VinaCompatibleDockingEngine.h</label>
         <link refid="_vina_compatible_docking_engine_8h"/>
-        <childnode refid="311" relation="include">
+        <childnode refid="503" relation="include">
         </childnode>
       </node>
-      <node id="309">
+      <node id="501">
         <label>MDStyleDockingEngine.cpp</label>
         <link refid="_m_d_style_docking_engine_8cpp"/>
       </node>
-      <node id="307">
+      <node id="517">
+        <label>GradientDescentLineSearch.h</label>
+        <link refid="_gradient_descent_line_search_8h"/>
+        <childnode refid="497" relation="include">
+        </childnode>
+        <childnode refid="508" relation="include">
+        </childnode>
+      </node>
+      <node id="499">
         <label>main.cpp</label>
         <link refid="main_8cpp"/>
       </node>
-      <node id="312">
+      <node id="512">
         <label>Molecule.cpp</label>
         <link refid="_molecule_8cpp"/>
       </node>
-      <node id="314">
-        <label>MoleculeTraversal.cpp</label>
-        <link refid="_molecule_traversal_8cpp"/>
-      </node>
-      <node id="313">
-        <label>MoleculeTraversal.h</label>
-        <link refid="_molecule_traversal_8h"/>
-        <childnode refid="314" relation="include">
-        </childnode>
-        <childnode refid="307" relation="include">
+      <node id="513">
+        <label>ReScorer.h</label>
+        <link refid="_re_scorer_8h"/>
+        <childnode refid="514" relation="include">
         </childnode>
       </node>
-      <node id="304">
+      <node id="496">
         <label>AbstractDockingEngine.h</label>
         <link refid="_abstract_docking_engine_8h"/>
-        <childnode refid="305" relation="include">
+        <childnode refid="497" relation="include">
         </childnode>
-        <childnode refid="308" relation="include">
+        <childnode refid="500" relation="include">
         </childnode>
-        <childnode refid="310" relation="include">
+        <childnode refid="502" relation="include">
         </childnode>
       </node>
-      <node id="316">
+      <node id="520">
         <label>BasicScoringFunction.cpp</label>
         <link refid="_basic_scoring_function_8cpp"/>
       </node>
-      <node id="306">
+      <node id="495">
+        <label>DockingResult.h</label>
+        <link refid="_docking_result_8h"/>
+        <childnode refid="496" relation="include">
+        </childnode>
+        <childnode refid="504" relation="include">
+        </childnode>
+        <childnode refid="505" relation="include">
+        </childnode>
+      </node>
+      <node id="518">
+        <label>iTransform.h</label>
+        <link refid="i_transform_8h"/>
+        <childnode refid="517" relation="include">
+        </childnode>
+        <childnode refid="519" relation="include">
+        </childnode>
+        <childnode refid="513" relation="include">
+        </childnode>
+      </node>
+      <node id="498">
         <label>ConformerRigidDockingEngine.cpp</label>
         <link refid="_conformer_rigid_docking_engine_8cpp"/>
       </node>
-      <node id="303">
+      <node id="506">
+        <label>DockingResultPrinter.cpp</label>
+        <link refid="_docking_result_printer_8cpp"/>
+      </node>
+      <node id="494">
         <label>Molecule.h</label>
         <link refid="_molecule_8h"/>
-        <childnode refid="304" relation="include">
+        <childnode refid="495" relation="include">
         </childnode>
-        <childnode refid="305" relation="include">
+        <childnode refid="496" relation="include">
         </childnode>
-        <childnode refid="308" relation="include">
+        <childnode refid="497" relation="include">
         </childnode>
-        <childnode refid="312" relation="include">
+        <childnode refid="500" relation="include">
         </childnode>
-        <childnode refid="313" relation="include">
+        <childnode refid="507" relation="include">
         </childnode>
-        <childnode refid="307" relation="include">
+        <childnode refid="510" relation="include">
         </childnode>
+        <childnode refid="512" relation="include">
+        </childnode>
+        <childnode refid="513" relation="include">
+        </childnode>
+        <childnode refid="499" relation="include">
+        </childnode>
+        <childnode refid="515" relation="include">
+        </childnode>
+        <childnode refid="516" relation="include">
+        </childnode>
+      </node>
+      <node id="509">
+        <label>IntermediateConformerCollector.cpp</label>
+        <link refid="_intermediate_conformer_collector_8cpp"/>
+      </node>
+      <node id="510">
+        <label>PDBWriter.h</label>
+        <link refid="_p_d_b_writer_8h"/>
+        <childnode refid="507" relation="include">
+        </childnode>
+        <childnode refid="511" relation="include">
+        </childnode>
+      </node>
+      <node id="505">
+        <label>DockingResultPrinter.h</label>
+        <link refid="_docking_result_printer_8h"/>
+        <childnode refid="506" relation="include">
+        </childnode>
+        <childnode refid="499" relation="include">
+        </childnode>
+      </node>
+      <node id="504">
+        <label>DockingResult.cpp</label>
+        <link refid="_docking_result_8cpp"/>
       </node>
     </invincdepgraph>
     <innerclass refid="struct_smol_dock_1_1i_conformer" prot="public">SmolDock::iConformer</innerclass>

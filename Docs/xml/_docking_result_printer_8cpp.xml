@@ -5,36 +5,171 @@
     <includes refid="_docking_result_printer_8h" local="yes">DockingResultPrinter.h</includes>
     <includes local="no">utility</includes>
     <incdepgraph>
-      <node id="289">
+      <node id="384">
+        <label>GraphMol/RWMol.h</label>
+      </node>
+      <node id="385">
+        <label>GraphMol/MolOps.h</label>
+      </node>
+      <node id="388">
+        <label>GraphMol/Substruct/SubstructMatch.h</label>
+      </node>
+      <node id="389">
+        <label>GraphMol/DistGeomHelpers/Embedder.h</label>
+      </node>
+      <node id="395">
+        <label>string</label>
+      </node>
+      <node id="391">
+        <label>Atom.h</label>
+        <link refid="_atom_8h"/>
+        <childnode refid="381" relation="include">
+        </childnode>
+        <childnode refid="379" relation="include">
+        </childnode>
+        <childnode refid="392" relation="include">
+        </childnode>
+        <childnode refid="393" relation="include">
+        </childnode>
+        <childnode refid="378" relation="include">
+        </childnode>
+        <childnode refid="394" relation="include">
+        </childnode>
+      </node>
+      <node id="398">
+        <label>map</label>
+      </node>
+      <node id="400">
+        <label>../Engines/Internals/iConformer.h</label>
+        <link refid="i_conformer_8h"/>
+        <childnode refid="381" relation="include">
+        </childnode>
+        <childnode refid="379" relation="include">
+        </childnode>
+      </node>
+      <node id="399">
+        <label>Bond.h</label>
+        <link refid="_bond_8h"/>
+        <childnode refid="379" relation="include">
+        </childnode>
+        <childnode refid="391" relation="include">
+        </childnode>
+      </node>
+      <node id="394">
+        <label>AminoAcid.h</label>
+        <link refid="_amino_acid_8h"/>
+        <childnode refid="395" relation="include">
+        </childnode>
+        <childnode refid="381" relation="include">
+        </childnode>
+        <childnode refid="392" relation="include">
+        </childnode>
+        <childnode refid="393" relation="include">
+        </childnode>
+        <childnode refid="396" relation="include">
+        </childnode>
+        <childnode refid="379" relation="include">
+        </childnode>
+        <childnode refid="397" relation="include">
+        </childnode>
+      </node>
+      <node id="380">
         <label>../Structures/Results/DockingResult.h</label>
         <link refid="_docking_result_8h"/>
+        <childnode refid="381" relation="include">
+        </childnode>
+        <childnode refid="382" relation="include">
+        </childnode>
       </node>
-      <node id="290">
+      <node id="396">
+        <label>tuple</label>
+      </node>
+      <node id="397">
+        <label>Engines/Internals/iProtein.h</label>
+        <link refid="i_protein_8h"/>
+        <childnode refid="381" relation="include">
+        </childnode>
+        <childnode refid="379" relation="include">
+        </childnode>
+        <childnode refid="398" relation="include">
+        </childnode>
+      </node>
+      <node id="381">
+        <label>vector</label>
+      </node>
+      <node id="401">
         <label>utility</label>
       </node>
-      <node id="285">
+      <node id="387">
+        <label>GraphMol/SmilesParse/SmilesParse.h</label>
+      </node>
+      <node id="376">
         <label>DockingResultPrinter.cpp</label>
         <link refid="_docking_result_printer_8cpp"/>
-        <childnode refid="286" relation="include">
+        <childnode refid="377" relation="include">
         </childnode>
-        <childnode refid="290" relation="include">
+        <childnode refid="401" relation="include">
         </childnode>
       </node>
-      <node id="287">
+      <node id="390">
+        <label>Structure.h</label>
+        <link refid="_structure_8h"/>
+      </node>
+      <node id="382">
+        <label>Structures/Molecule.h</label>
+        <link refid="_molecule_8h"/>
+        <childnode refid="381" relation="include">
+        </childnode>
+        <childnode refid="383" relation="include">
+        </childnode>
+        <childnode refid="384" relation="include">
+        </childnode>
+        <childnode refid="385" relation="include">
+        </childnode>
+        <childnode refid="386" relation="include">
+        </childnode>
+        <childnode refid="387" relation="include">
+        </childnode>
+        <childnode refid="388" relation="include">
+        </childnode>
+        <childnode refid="389" relation="include">
+        </childnode>
+        <childnode refid="390" relation="include">
+        </childnode>
+        <childnode refid="391" relation="include">
+        </childnode>
+        <childnode refid="399" relation="include">
+        </childnode>
+        <childnode refid="400" relation="include">
+        </childnode>
+      </node>
+      <node id="383">
+        <label>GraphMol/RDKitBase.h</label>
+      </node>
+      <node id="378">
         <label>iostream</label>
       </node>
-      <node id="286">
+      <node id="377">
         <label>DockingResultPrinter.h</label>
         <link refid="_docking_result_printer_8h"/>
-        <childnode refid="287" relation="include">
+        <childnode refid="378" relation="include">
         </childnode>
-        <childnode refid="288" relation="include">
+        <childnode refid="379" relation="include">
         </childnode>
-        <childnode refid="289" relation="include">
+        <childnode refid="380" relation="include">
         </childnode>
       </node>
-      <node id="288">
+      <node id="392">
+        <label>set</label>
+      </node>
+      <node id="393">
+        <label>algorithm</label>
+      </node>
+      <node id="379">
         <label>memory</label>
+      </node>
+      <node id="386">
+        <label>GraphMol/FileParsers/FileParsers.h</label>
       </node>
     </incdepgraph>
     <innernamespace refid="namespace_smol_dock">SmolDock</innernamespace>

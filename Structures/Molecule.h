@@ -60,7 +60,6 @@ namespace SmolDock {
         Molecule();
 
 
-        std::shared_ptr<RDKit::RWMol> getInternalRWMol() const;
 
         //! Populate atoms and bonds from SMILES.
         /*!
@@ -89,9 +88,22 @@ namespace SmolDock {
         */
         bool populateFromPDB(const std::string& filename,const std::string& smiles_hint = "", unsigned int seed = 36754);
 
+        //! Return the number of atom in the Molecule, Hydrogen excepted
         unsigned int numberOfAtoms();
 
+        //! Return the number of bonds in the Molecule
         unsigned int numberOfBonds();
+
+        //! Obtain the conformer that was either loaded from file or generated when populating the Molecule
+        /*!
+         *
+         * If the Molecule was loaded from a file format containing coordinate (PDB, ...), the initial conformer has those
+         * coordinate. Otherwise, it is a RDKit generated conformer.
+         *
+         * \return Returns iConformer for initial conformer
+         * \sa generateConformer(), generateConformers()
+        */
+        iConformer getInitialConformer();
 
         //! Generate a conformer of this molecule
         /*!
@@ -147,6 +159,8 @@ namespace SmolDock {
 
         //! Use this if using RDKit RWMol as entry.
         bool populateInternalAtomAndBondFromRWMol(unsigned int seed);
+
+        int initial_conformer_id = -1;
 
     };
 

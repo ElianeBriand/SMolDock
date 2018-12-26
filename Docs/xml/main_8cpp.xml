@@ -4,7 +4,6 @@
     <compoundname>main.cpp</compoundname>
     <includes local="no">iostream</includes>
     <includes refid="_molecule_8h" local="yes">Structures/Molecule.h</includes>
-    <includes refid="_molecule_traversal_8h" local="yes">Utilities/MoleculeTraversal.h</includes>
     <includes refid="_protein_8h" local="yes">Structures/Protein.h</includes>
     <includes refid="_docking_result_printer_8h" local="yes">Utilities/DockingResultPrinter.h</includes>
     <includes refid="_conformer_rigid_docking_engine_8h" local="yes">Engines/ConformerRigidDockingEngine.h</includes>
@@ -12,259 +11,339 @@
     <includes local="no">boost/log/trivial.hpp</includes>
     <includes local="no">boost/log/expressions.hpp</includes>
     <includes local="no">boost/log/utility/setup/console.hpp</includes>
+    <includes refid="_intermediate_conformer_collector_8h" local="no">Utilities/IntermediateConformerCollector.h</includes>
     <incdepgraph>
-      <node id="375">
+      <node id="653">
         <label>Structures/Protein.h</label>
         <link refid="_protein_8h"/>
-        <childnode refid="355" relation="include">
+        <childnode refid="633" relation="include">
         </childnode>
-        <childnode refid="364" relation="include">
+        <childnode refid="643" relation="include">
         </childnode>
-        <childnode refid="376" relation="include">
+        <childnode refid="654" relation="include">
         </childnode>
-        <childnode refid="377" relation="include">
+        <childnode refid="655" relation="include">
         </childnode>
-        <childnode refid="378" relation="include">
+        <childnode refid="656" relation="include">
         </childnode>
-        <childnode refid="379" relation="include">
+        <childnode refid="657" relation="include">
         </childnode>
-        <childnode refid="370" relation="include">
+        <childnode refid="649" relation="include">
         </childnode>
-        <childnode refid="362" relation="include">
+        <childnode refid="641" relation="include">
         </childnode>
-        <childnode refid="367" relation="include">
+        <childnode refid="646" relation="include">
         </childnode>
       </node>
-      <node id="382">
+      <node id="660">
         <label>Engines/ConformerRigidDockingEngine.h</label>
         <link refid="_conformer_rigid_docking_engine_8h"/>
-        <childnode refid="357" relation="include">
+        <childnode refid="635" relation="include">
         </childnode>
-        <childnode refid="383" relation="include">
+        <childnode refid="661" relation="include">
         </childnode>
-        <childnode refid="384" relation="include">
+        <childnode refid="662" relation="include">
         </childnode>
-        <childnode refid="375" relation="include">
+        <childnode refid="653" relation="include">
         </childnode>
-        <childnode refid="354" relation="include">
+        <childnode refid="632" relation="include">
+        </childnode>
+        <childnode refid="663" relation="include">
         </childnode>
       </node>
-      <node id="376">
+      <node id="654">
         <label>ESBTL/default.h</label>
       </node>
-      <node id="357">
+      <node id="664">
+        <label>functional</label>
+      </node>
+      <node id="635">
         <label>GraphMol/RWMol.h</label>
       </node>
-      <node id="358">
+      <node id="636">
         <label>GraphMol/MolOps.h</label>
       </node>
-      <node id="360">
+      <node id="673">
+        <label>Utilities/IntermediateConformerCollector.h</label>
+        <link refid="_intermediate_conformer_collector_8h"/>
+        <childnode refid="632" relation="include">
+        </childnode>
+        <childnode refid="674" relation="include">
+        </childnode>
+      </node>
+      <node id="639">
         <label>GraphMol/Substruct/SubstructMatch.h</label>
       </node>
-      <node id="385">
+      <node id="669">
         <label>boost/log/core.hpp</label>
       </node>
-      <node id="361">
+      <node id="668">
+        <label>cmath</label>
+      </node>
+      <node id="640">
         <label>GraphMol/DistGeomHelpers/Embedder.h</label>
       </node>
-      <node id="368">
+      <node id="647">
         <label>string</label>
       </node>
-      <node id="379">
+      <node id="657">
         <label>ESBTL/compressed_ifstream.h</label>
       </node>
-      <node id="363">
+      <node id="642">
         <label>Atom.h</label>
         <link refid="_atom_8h"/>
-        <childnode refid="355" relation="include">
+        <childnode refid="633" relation="include">
         </childnode>
-        <childnode refid="364" relation="include">
+        <childnode refid="643" relation="include">
         </childnode>
-        <childnode refid="365" relation="include">
+        <childnode refid="644" relation="include">
         </childnode>
-        <childnode refid="366" relation="include">
+        <childnode refid="645" relation="include">
         </childnode>
-        <childnode refid="353" relation="include">
+        <childnode refid="631" relation="include">
         </childnode>
-        <childnode refid="367" relation="include">
+        <childnode refid="646" relation="include">
         </childnode>
       </node>
-      <node id="371">
+      <node id="650">
         <label>map</label>
       </node>
-      <node id="388">
+      <node id="672">
         <label>boost/log/utility/setup/console.hpp</label>
       </node>
-      <node id="373">
+      <node id="652">
         <label>../Engines/Internals/iConformer.h</label>
         <link refid="i_conformer_8h"/>
-        <childnode refid="355" relation="include">
+        <childnode refid="633" relation="include">
         </childnode>
-        <childnode refid="364" relation="include">
+        <childnode refid="643" relation="include">
         </childnode>
       </node>
-      <node id="386">
+      <node id="670">
         <label>boost/log/trivial.hpp</label>
       </node>
-      <node id="352">
+      <node id="663">
+        <label>Engines/Optimizers/GradientDescentLineSearch.h</label>
+        <link refid="_gradient_descent_line_search_8h"/>
+        <childnode refid="664" relation="include">
+        </childnode>
+        <childnode refid="665" relation="include">
+        </childnode>
+        <childnode refid="652" relation="include">
+        </childnode>
+        <childnode refid="666" relation="include">
+        </childnode>
+        <childnode refid="649" relation="include">
+        </childnode>
+      </node>
+      <node id="630">
         <label>main.cpp</label>
         <link refid="main_8cpp"/>
-        <childnode refid="353" relation="include">
+        <childnode refid="631" relation="include">
         </childnode>
-        <childnode refid="354" relation="include">
+        <childnode refid="632" relation="include">
         </childnode>
-        <childnode refid="374" relation="include">
+        <childnode refid="653" relation="include">
         </childnode>
-        <childnode refid="375" relation="include">
+        <childnode refid="658" relation="include">
         </childnode>
-        <childnode refid="380" relation="include">
+        <childnode refid="660" relation="include">
         </childnode>
-        <childnode refid="382" relation="include">
+        <childnode refid="669" relation="include">
         </childnode>
-        <childnode refid="385" relation="include">
+        <childnode refid="670" relation="include">
         </childnode>
-        <childnode refid="386" relation="include">
+        <childnode refid="671" relation="include">
         </childnode>
-        <childnode refid="387" relation="include">
+        <childnode refid="672" relation="include">
         </childnode>
-        <childnode refid="388" relation="include">
+        <childnode refid="673" relation="include">
         </childnode>
       </node>
-      <node id="372">
+      <node id="651">
         <label>Bond.h</label>
         <link refid="_bond_8h"/>
-        <childnode refid="364" relation="include">
+        <childnode refid="643" relation="include">
         </childnode>
-        <childnode refid="363" relation="include">
+        <childnode refid="642" relation="include">
         </childnode>
       </node>
-      <node id="387">
+      <node id="671">
         <label>boost/log/expressions.hpp</label>
       </node>
-      <node id="374">
-        <label>Utilities/MoleculeTraversal.h</label>
-        <link refid="_molecule_traversal_8h"/>
-        <childnode refid="354" relation="include">
-        </childnode>
-        <childnode refid="363" relation="include">
-        </childnode>
+      <node id="665">
+        <label>Engines/Math/GradientCalculator.h</label>
+        <link refid="_gradient_calculator_8h"/>
       </node>
-      <node id="377">
+      <node id="655">
         <label>ESBTL/atom_classifier.h</label>
       </node>
-      <node id="383">
+      <node id="661">
         <label>random</label>
       </node>
-      <node id="367">
+      <node id="646">
         <label>AminoAcid.h</label>
         <link refid="_amino_acid_8h"/>
-        <childnode refid="368" relation="include">
+        <childnode refid="647" relation="include">
         </childnode>
-        <childnode refid="355" relation="include">
+        <childnode refid="633" relation="include">
         </childnode>
-        <childnode refid="365" relation="include">
+        <childnode refid="644" relation="include">
         </childnode>
-        <childnode refid="366" relation="include">
+        <childnode refid="645" relation="include">
         </childnode>
-        <childnode refid="369" relation="include">
+        <childnode refid="648" relation="include">
         </childnode>
-        <childnode refid="364" relation="include">
+        <childnode refid="643" relation="include">
         </childnode>
-        <childnode refid="370" relation="include">
+        <childnode refid="649" relation="include">
         </childnode>
       </node>
-      <node id="384">
+      <node id="662">
         <label>AbstractDockingEngine.h</label>
         <link refid="_abstract_docking_engine_8h"/>
-        <childnode refid="375" relation="include">
+        <childnode refid="653" relation="include">
         </childnode>
-        <childnode refid="381" relation="include">
+        <childnode refid="659" relation="include">
         </childnode>
-        <childnode refid="354" relation="include">
+        <childnode refid="632" relation="include">
         </childnode>
       </node>
-      <node id="381">
+      <node id="659">
         <label>../Structures/Results/DockingResult.h</label>
         <link refid="_docking_result_8h"/>
+        <childnode refid="633" relation="include">
+        </childnode>
+        <childnode refid="632" relation="include">
+        </childnode>
       </node>
-      <node id="369">
+      <node id="648">
         <label>tuple</label>
       </node>
-      <node id="370">
+      <node id="649">
         <label>Engines/Internals/iProtein.h</label>
         <link refid="i_protein_8h"/>
-        <childnode refid="355" relation="include">
+        <childnode refid="633" relation="include">
         </childnode>
-        <childnode refid="364" relation="include">
+        <childnode refid="643" relation="include">
         </childnode>
-        <childnode refid="371" relation="include">
+        <childnode refid="650" relation="include">
         </childnode>
       </node>
-      <node id="355">
+      <node id="666">
+        <label>Engines/Internals/iTransform.h</label>
+        <link refid="i_transform_8h"/>
+        <childnode refid="633" relation="include">
+        </childnode>
+        <childnode refid="643" relation="include">
+        </childnode>
+        <childnode refid="667" relation="include">
+        </childnode>
+        <childnode refid="668" relation="include">
+        </childnode>
+        <childnode refid="652" relation="include">
+        </childnode>
+      </node>
+      <node id="633">
         <label>vector</label>
       </node>
-      <node id="359">
+      <node id="667">
+        <label>array</label>
+      </node>
+      <node id="638">
         <label>GraphMol/SmilesParse/SmilesParse.h</label>
       </node>
-      <node id="362">
+      <node id="641">
         <label>Structure.h</label>
         <link refid="_structure_8h"/>
       </node>
-      <node id="354">
+      <node id="632">
         <label>Structures/Molecule.h</label>
         <link refid="_molecule_8h"/>
-        <childnode refid="355" relation="include">
+        <childnode refid="633" relation="include">
         </childnode>
-        <childnode refid="356" relation="include">
+        <childnode refid="634" relation="include">
         </childnode>
-        <childnode refid="357" relation="include">
+        <childnode refid="635" relation="include">
         </childnode>
-        <childnode refid="358" relation="include">
+        <childnode refid="636" relation="include">
         </childnode>
-        <childnode refid="359" relation="include">
+        <childnode refid="637" relation="include">
         </childnode>
-        <childnode refid="360" relation="include">
+        <childnode refid="638" relation="include">
         </childnode>
-        <childnode refid="361" relation="include">
+        <childnode refid="639" relation="include">
         </childnode>
-        <childnode refid="362" relation="include">
+        <childnode refid="640" relation="include">
         </childnode>
-        <childnode refid="363" relation="include">
+        <childnode refid="641" relation="include">
         </childnode>
-        <childnode refid="372" relation="include">
+        <childnode refid="642" relation="include">
         </childnode>
-        <childnode refid="373" relation="include">
+        <childnode refid="651" relation="include">
+        </childnode>
+        <childnode refid="652" relation="include">
         </childnode>
       </node>
-      <node id="356">
+      <node id="634">
         <label>GraphMol/RDKitBase.h</label>
       </node>
-      <node id="353">
+      <node id="631">
         <label>iostream</label>
       </node>
-      <node id="380">
+      <node id="674">
+        <label>PDBWriter.h</label>
+        <link refid="_p_d_b_writer_8h"/>
+        <childnode refid="647" relation="include">
+        </childnode>
+        <childnode refid="633" relation="include">
+        </childnode>
+        <childnode refid="632" relation="include">
+        </childnode>
+      </node>
+      <node id="658">
         <label>Utilities/DockingResultPrinter.h</label>
         <link refid="_docking_result_printer_8h"/>
-        <childnode refid="353" relation="include">
+        <childnode refid="631" relation="include">
         </childnode>
-        <childnode refid="364" relation="include">
+        <childnode refid="643" relation="include">
         </childnode>
-        <childnode refid="381" relation="include">
+        <childnode refid="659" relation="include">
         </childnode>
       </node>
-      <node id="365">
+      <node id="644">
         <label>set</label>
       </node>
-      <node id="366">
+      <node id="645">
         <label>algorithm</label>
       </node>
-      <node id="378">
+      <node id="656">
         <label>ESBTL/weighted_atom_iterator.h</label>
       </node>
-      <node id="364">
+      <node id="643">
         <label>memory</label>
       </node>
+      <node id="637">
+        <label>GraphMol/FileParsers/FileParsers.h</label>
+      </node>
     </incdepgraph>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="main_8cpp_1aed1cc446d8c31ec6ad4dae32bbbcc42a" prot="public" static="no" mutable="no">
+        <type><ref refid="class_smol_dock_1_1_intermediate_conformer_collector" kindref="compound">SmolDock::IntermediateConformerCollector</ref> *</type>
+        <definition>SmolDock::IntermediateConformerCollector* conformerCollector</definition>
+        <argsstring></argsstring>
+        <name>conformerCollector</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Frontends/main.cpp" line="36" column="1" bodyfile="Frontends/main.cpp" bodystart="36" bodyend="-1"/>
+        <referencedby refid="class_smol_dock_1_1_gradient_descent_line_search_1a04d6d79864edd42fb3e6729b6d402398" compoundref="_gradient_descent_line_search_8cpp" startline="216" endline="220">SmolDock::GradientDescentLineSearch::setStartingConformer</referencedby>
+        <referencedby refid="main_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4" compoundref="main_8cpp" startline="39" endline="132">main</referencedby>
+      </memberdef>
+      </sectiondef>
       <sectiondef kind="func">
       <memberdef kind="function" id="main_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -277,18 +356,18 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Frontends/main.cpp" line="36" column="1" bodyfile="Frontends/main.cpp" bodystart="36" bodyend="121"/>
+        <location file="Frontends/main.cpp" line="39" column="1" bodyfile="Frontends/main.cpp" bodystart="39" bodyend="132"/>
+        <references refid="main_8cpp_1aed1cc446d8c31ec6ad4dae32bbbcc42a" compoundref="main_8cpp" startline="36">conformerCollector</references>
         <references refid="class_smol_dock_1_1_engine_1_1_abstract_docking_engine_1aca703508a3ce31d577d3ec108020789ba312db69f5bf4447dfe3c58983083b54f">SmolDock::Engine::AbstractDockingEngine::everything</references>
-        <references refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a52fa8c276c911df08d4dd8d6744ae540" compoundref="_conformer_rigid_docking_engine_8cpp" startline="259" endline="261">SmolDock::Engine::ConformerRigidDockingEngine::getDockingResult</references>
-        <references refid="class_smol_dock_1_1_protein_1a99399b7db2f1b78fea8076a137a4b962" compoundref="_protein_8cpp" startline="36" endline="159">SmolDock::Protein::populateFromPDB</references>
-        <references refid="class_smol_dock_1_1_molecule_1a46a03e954e99f150a1503ee0d5083da7" compoundref="_molecule_8cpp" startline="32" endline="176">SmolDock::Molecule::populateFromSMILES</references>
-        <references refid="class_smol_dock_1_1_docking_result_printer_1afb1f0143452d4d8e94555f7f354bb134" compoundref="_docking_result_printer_8cpp" startline="27" endline="29">SmolDock::DockingResultPrinter::printToConsole</references>
-        <references refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a7bee39278168cb4d7ee6558b3a3d3bb4" compoundref="_conformer_rigid_docking_engine_8cpp" startline="124" endline="257">SmolDock::Engine::ConformerRigidDockingEngine::runDockingEngine</references>
-        <references refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1acd3b7345ecae8f0c92ca0168b794eac3" compoundref="_conformer_rigid_docking_engine_8cpp" startline="264" endline="272">SmolDock::Engine::ConformerRigidDockingEngine::setDockingBox</references>
-        <references refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a14262d85db1fd4bfe21780029fba842c" compoundref="_conformer_rigid_docking_engine_8cpp" startline="71" endline="79">SmolDock::Engine::ConformerRigidDockingEngine::setLigand</references>
-        <references refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1acf8082b5d9d68fc2cfe975ad62a2459f" compoundref="_conformer_rigid_docking_engine_8cpp" startline="66" endline="69">SmolDock::Engine::ConformerRigidDockingEngine::setProtein</references>
-        <references refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a756b9c1300d1c3828b519a2ca05ada59" compoundref="_conformer_rigid_docking_engine_8cpp" startline="275" endline="278">SmolDock::Engine::ConformerRigidDockingEngine::setRandomSeed</references>
-        <references refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a3abc1a2cdbb3f1b9f545f863f9ec5e43" compoundref="_conformer_rigid_docking_engine_8cpp" startline="81" endline="122">SmolDock::Engine::ConformerRigidDockingEngine::setupDockingEngine</references>
+        <references refid="class_smol_dock_1_1_protein_1a99399b7db2f1b78fea8076a137a4b962" compoundref="_protein_8cpp" startline="36" endline="157">SmolDock::Protein::populateFromPDB</references>
+        <references refid="class_smol_dock_1_1_molecule_1a4ae176fc96acfab443a13ba50882a849" compoundref="_molecule_8cpp" startline="163" endline="182">SmolDock::Molecule::populateFromPDB</references>
+        <references refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a7bee39278168cb4d7ee6558b3a3d3bb4" compoundref="_conformer_rigid_docking_engine_8cpp" startline="137" endline="201">SmolDock::Engine::ConformerRigidDockingEngine::runDockingEngine</references>
+        <references refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1acd3b7345ecae8f0c92ca0168b794eac3" compoundref="_conformer_rigid_docking_engine_8cpp" startline="215" endline="223">SmolDock::Engine::ConformerRigidDockingEngine::setDockingBox</references>
+        <references refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a14262d85db1fd4bfe21780029fba842c" compoundref="_conformer_rigid_docking_engine_8cpp" startline="73" endline="81">SmolDock::Engine::ConformerRigidDockingEngine::setLigand</references>
+        <references refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1acf8082b5d9d68fc2cfe975ad62a2459f" compoundref="_conformer_rigid_docking_engine_8cpp" startline="68" endline="71">SmolDock::Engine::ConformerRigidDockingEngine::setProtein</references>
+        <references refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a756b9c1300d1c3828b519a2ca05ada59" compoundref="_conformer_rigid_docking_engine_8cpp" startline="226" endline="229">SmolDock::Engine::ConformerRigidDockingEngine::setRandomSeed</references>
+        <references refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a3abc1a2cdbb3f1b9f545f863f9ec5e43" compoundref="_conformer_rigid_docking_engine_8cpp" startline="83" endline="135">SmolDock::Engine::ConformerRigidDockingEngine::setupDockingEngine</references>
+        <references refid="class_smol_dock_1_1_p_d_b_writer_1aaad8350fc387575ed549a1fd8569aad2" compoundref="_p_d_b_writer_8cpp" startline="21" endline="75">SmolDock::PDBWriter::writePDB</references>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -321,102 +400,113 @@
 <codeline lineno="23"><highlight class="normal"></highlight></codeline>
 <codeline lineno="24"><highlight class="normal"></highlight></codeline>
 <codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_molecule_8h" kindref="compound">Structures/Molecule.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_molecule_traversal_8h" kindref="compound">Utilities/MoleculeTraversal.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_protein_8h" kindref="compound">Structures/Protein.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_docking_result_printer_8h" kindref="compound">Utilities/DockingResultPrinter.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_conformer_rigid_docking_engine_8h" kindref="compound">Engines/ConformerRigidDockingEngine.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="30"><highlight class="normal"></highlight></codeline>
-<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/log/core.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/log/trivial.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="33"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/log/expressions.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="34"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/log/utility/setup/console.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="35"><highlight class="normal"></highlight></codeline>
-<codeline lineno="36" refid="main_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="main_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4" kindref="member">main</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_protein_8h" kindref="compound">Structures/Protein.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_docking_result_printer_8h" kindref="compound">Utilities/DockingResultPrinter.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_conformer_rigid_docking_engine_8h" kindref="compound">Engines/ConformerRigidDockingEngine.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/log/core.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/log/trivial.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/log/expressions.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/log/utility/setup/console.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_intermediate_conformer_collector_8h" kindref="compound">Utilities/IntermediateConformerCollector.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36" refid="main_8cpp_1aed1cc446d8c31ec6ad4dae32bbbcc42a" refkind="member"><highlight class="normal"><ref refid="class_smol_dock_1_1_intermediate_conformer_collector" kindref="compound">SmolDock::IntermediateConformerCollector</ref>*<sp/><ref refid="main_8cpp_1aed1cc446d8c31ec6ad4dae32bbbcc42a" kindref="member">conformerCollector</ref>;</highlight></codeline>
 <codeline lineno="37"><highlight class="normal"></highlight></codeline>
-<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Setting<sp/>up<sp/>the<sp/>logger<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>boost::log::core::get()-&gt;set_filter</highlight></codeline>
-<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(</highlight></codeline>
-<codeline lineno="41"><highlight class="normal">#ifdef<sp/>NDEBUG</highlight></codeline>
-<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>boost::log::trivial::severity<sp/>&gt;=<sp/>boost::log::trivial::info</highlight></codeline>
-<codeline lineno="43"><highlight class="normal">#</highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>boost::log::trivial::severity<sp/>&gt;=<sp/>boost::log::trivial::debug</highlight></codeline>
-<codeline lineno="45"><highlight class="normal">#endif</highlight></codeline>
-<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>);</highlight></codeline>
-<codeline lineno="47"><highlight class="normal"></highlight></codeline>
-<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>console_logger<sp/>=<sp/>boost::log::add_console_log(std::cout);</highlight></codeline>
-<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/>console_logger-&gt;set_formatter([](boost::log::record_view<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>rec,<sp/>boost::log::formatting_ostream&amp;<sp/>strm)<sp/>{</highlight></codeline>
-<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(rec[boost::log::trivial::severity]<sp/>==<sp/>boost::log::trivial::trace)</highlight></codeline>
-<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>strm<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>T<sp/><sp/>&quot;</highlight><highlight class="normal">;<sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>use<sp/>TRACE_LOG();<sp/>macro<sp/>for<sp/>auto<sp/>file:line:function</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(rec[boost::log::trivial::severity]<sp/>==<sp/>boost::log::trivial::debug)</highlight></codeline>
-<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>strm<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;{D}<sp/>&quot;</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(rec[boost::log::trivial::severity]<sp/>==<sp/>boost::log::trivial::info)</highlight></codeline>
-<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39" refid="main_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="main_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4" kindref="member">main</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Setting<sp/>up<sp/>the<sp/>logger<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>boost::log::core::get()-&gt;set_filter</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(</highlight></codeline>
+<codeline lineno="44"><highlight class="normal">#ifdef<sp/>NDEBUG</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>boost::log::trivial::severity<sp/>&gt;=<sp/>boost::log::trivial::info</highlight></codeline>
+<codeline lineno="46"><highlight class="normal">#</highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>boost::log::trivial::severity<sp/>&gt;=<sp/>boost::log::trivial::debug</highlight></codeline>
+<codeline lineno="48"><highlight class="normal">#endif</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/>);</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>console_logger<sp/>=<sp/>boost::log::add_console_log(std::cout);</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/>console_logger-&gt;set_formatter([](boost::log::record_view<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>&amp;rec,<sp/>boost::log::formatting_ostream<sp/>&amp;strm)<sp/>{</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(rec[boost::log::trivial::severity]<sp/>==<sp/>boost::log::trivial::trace)<sp/>{</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>strm<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>T<sp/><sp/>&quot;</highlight><highlight class="normal">;<sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>use<sp/>TRACE_LOG();<sp/>macro<sp/>for<sp/>auto<sp/>file:line:function</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(rec[boost::log::trivial::severity]<sp/>==<sp/>boost::log::trivial::debug)<sp/>{</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>strm<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;{D}<sp/>&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(rec[boost::log::trivial::severity]<sp/>==<sp/>boost::log::trivial::info)<sp/>{</highlight></codeline>
 <codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>strm<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/><sp/><sp/>&quot;</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(rec[boost::log::trivial::severity]<sp/>==<sp/>boost::log::trivial::warning)</highlight></codeline>
-<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>strm<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;[!]<sp/>&quot;</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(rec[boost::log::trivial::severity]<sp/>&gt;=<sp/>boost::log::trivial::error)<sp/>{</highlight></codeline>
-<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>strm<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;[E]<sp/>&quot;</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="65"><highlight class="normal"></highlight></codeline>
-<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>strm<sp/>&lt;&lt;<sp/>rec[boost::log::expressions::smessage];</highlight></codeline>
-<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/>});</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(rec[boost::log::trivial::severity]<sp/>==<sp/>boost::log::trivial::warning)<sp/>{</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>strm<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;[!]<sp/>&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(rec[boost::log::trivial::severity]<sp/>&gt;=<sp/>boost::log::trivial::error)<sp/>{</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>strm<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;[E]<sp/>&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>strm<sp/>&lt;&lt;<sp/>rec[boost::log::expressions::smessage];</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/>});</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
 <codeline lineno="68"><highlight class="normal"></highlight></codeline>
-<codeline lineno="69"><highlight class="normal"></highlight></codeline>
-<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/>BOOST_LOG_TRIVIAL(info)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;SmolDock<sp/>v0.1&quot;</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="71"><highlight class="normal"></highlight></codeline>
-<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_protein" kindref="compound">SmolDock::Protein</ref><sp/>prot;</highlight></codeline>
-<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>prot.populateFromPDB(&quot;1dpx.pdb&quot;);<sp/>//<sp/>Lysozyme</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/>prot.<ref refid="class_smol_dock_1_1_protein_1a99399b7db2f1b78fea8076a137a4b962" kindref="member">populateFromPDB</ref>(</highlight><highlight class="stringliteral">&quot;../DockingTests/COX2_Ibuprofen/3LN1_NoHeme_NoLigand.pdb&quot;</highlight><highlight class="normal">);<sp/></highlight><highlight class="comment">//<sp/>COX-2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/>BOOST_LOG_TRIVIAL(info)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;SmolDock<sp/>v0.1&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_protein" kindref="compound">SmolDock::Protein</ref><sp/>prot;</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>prot.populateFromPDB(&quot;1dpx.pdb&quot;);<sp/>//<sp/>Lysozyme</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>prot.populateFromPDB(&quot;../DockingTests/COX2_Ibuprofen/4PH9_COX2_without_Ibuprofen.pdb&quot;);<sp/>//<sp/>COX-2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/>prot.<ref refid="class_smol_dock_1_1_protein_1a99399b7db2f1b78fea8076a137a4b962" kindref="member">populateFromPDB</ref>(</highlight><highlight class="stringliteral">&quot;../DockingTests/Tripeptide/Tripeptide.pdb&quot;</highlight><highlight class="normal">);<sp/></highlight><highlight class="comment">//<sp/>A<sp/>random<sp/>tripeptide</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="75"><highlight class="normal"></highlight></codeline>
 <codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_molecule" kindref="compound">SmolDock::Molecule</ref><sp/>mol;</highlight></codeline>
-<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/>mol.<ref refid="class_smol_dock_1_1_molecule_1a46a03e954e99f150a1503ee0d5083da7" kindref="member">populateFromSMILES</ref>(</highlight><highlight class="stringliteral">&quot;CC(C)Cc1ccc(cc1)[C@@H](C)C(=O)O&quot;</highlight><highlight class="normal">);<sp/></highlight><highlight class="comment">//<sp/>Ibuprofen</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//mol.populateFromSMILES(&quot;CC(C)Cc1ccc(cc1)[C@@H](C)C(=O)O&quot;);<sp/>//<sp/>Ibuprofen</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/>mol.<ref refid="class_smol_dock_1_1_molecule_1a4ae176fc96acfab443a13ba50882a849" kindref="member">populateFromPDB</ref>(</highlight><highlight class="stringliteral">&quot;IBP_model.pdb&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;CC(C)Cc1ccc(cc1)[C@H](C)C(=O)O&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="79"><highlight class="normal"></highlight></codeline>
-<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine" kindref="compound">SmolDock::Engine::ConformerRigidDockingEngine</ref><sp/>docker(10);<sp/></highlight><highlight class="comment">//<sp/>Use<sp/>10<sp/>conformers<sp/>for<sp/>docking</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
 <codeline lineno="81"><highlight class="normal"></highlight></codeline>
-<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/>docker.<ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1acf8082b5d9d68fc2cfe975ad62a2459f" kindref="member">setProtein</ref>(&amp;prot);</highlight></codeline>
-<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/>docker.<ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a14262d85db1fd4bfe21780029fba842c" kindref="member">setLigand</ref>(&amp;mol);</highlight></codeline>
-<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/>docker.<ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1acd3b7345ecae8f0c92ca0168b794eac3" kindref="member">setDockingBox</ref>(<ref refid="class_smol_dock_1_1_engine_1_1_abstract_docking_engine_1aca703508a3ce31d577d3ec108020789ba312db69f5bf4447dfe3c58983083b54f" kindref="member">SmolDock::Engine::AbstractDockingEngine::DockingBoxSetting::everything</ref>);</highlight></codeline>
-<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/>docker.<ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a756b9c1300d1c3828b519a2ca05ada59" kindref="member">setRandomSeed</ref>(3985);</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_p_d_b_writer" kindref="compound">SmolDock::PDBWriter</ref><sp/>pwriter;</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_intermediate_conformer_collector" kindref="compound">SmolDock::IntermediateConformerCollector</ref><sp/>collector(&amp;mol,&amp;pwriter);</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1aed1cc446d8c31ec6ad4dae32bbbcc42a" kindref="member">conformerCollector</ref><sp/>=<sp/>&amp;collector;</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
 <codeline lineno="86"><highlight class="normal"></highlight></codeline>
-<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!docker.<ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a3abc1a2cdbb3f1b9f545f863f9ec5e43" kindref="member">setupDockingEngine</ref>())<sp/>{</highlight></codeline>
-<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_LOG_TRIVIAL(error)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Error<sp/>while<sp/>setting<sp/>up<sp/>engine&quot;</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>2;</highlight></codeline>
-<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="91"><highlight class="normal"></highlight></codeline>
-<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/>docker.<ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a7bee39278168cb4d7ee6558b3a3d3bb4" kindref="member">runDockingEngine</ref>();</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine" kindref="compound">SmolDock::Engine::ConformerRigidDockingEngine</ref><sp/>docker(3);<sp/></highlight><highlight class="comment">//<sp/>Use<sp/>10<sp/>conformers<sp/>for<sp/>docking</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/>docker.<ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1acf8082b5d9d68fc2cfe975ad62a2459f" kindref="member">setProtein</ref>(&amp;prot);</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/>docker.<ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a14262d85db1fd4bfe21780029fba842c" kindref="member">setLigand</ref>(&amp;mol);</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/>docker.<ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1acd3b7345ecae8f0c92ca0168b794eac3" kindref="member">setDockingBox</ref>(<ref refid="class_smol_dock_1_1_engine_1_1_abstract_docking_engine_1aca703508a3ce31d577d3ec108020789ba312db69f5bf4447dfe3c58983083b54f" kindref="member">SmolDock::Engine::AbstractDockingEngine::DockingBoxSetting::everything</ref>);</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/>docker.<ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a756b9c1300d1c3828b519a2ca05ada59" kindref="member">setRandomSeed</ref>(3985);</highlight></codeline>
 <codeline lineno="93"><highlight class="normal"></highlight></codeline>
-<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;SmolDock::DockingResult&gt;<sp/>res<sp/>=<sp/>docker.<ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a52fa8c276c911df08d4dd8d6744ae540" kindref="member">getDockingResult</ref>();</highlight></codeline>
-<codeline lineno="95"><highlight class="normal"></highlight></codeline>
-<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_docking_result_printer" kindref="compound">SmolDock::DockingResultPrinter</ref><sp/>printer(res);</highlight></codeline>
-<codeline lineno="97"><highlight class="normal"></highlight></codeline>
-<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/>printer.<ref refid="class_smol_dock_1_1_docking_result_printer_1afb1f0143452d4d8e94555f7f354bb134" kindref="member">printToConsole</ref>();</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!docker.<ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a3abc1a2cdbb3f1b9f545f863f9ec5e43" kindref="member">setupDockingEngine</ref>())<sp/>{</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_LOG_TRIVIAL(error)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Error<sp/>while<sp/>setting<sp/>up<sp/>engine&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>2;</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight></codeline>
 <codeline lineno="99"><highlight class="normal"></highlight></codeline>
-<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/>docker.<ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a7bee39278168cb4d7ee6558b3a3d3bb4" kindref="member">runDockingEngine</ref>();</highlight></codeline>
 <codeline lineno="101"><highlight class="normal"></highlight></codeline>
 <codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
-<codeline lineno="103"><highlight class="comment"><sp/><sp/><sp/><sp/>SmolDock::MoleculeTraversal<sp/>tr(m);</highlight></codeline>
+<codeline lineno="103"><highlight class="comment"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;SmolDock::DockingResult&gt;<sp/>res<sp/>=<sp/>docker.getDockingResult();</highlight></codeline>
 <codeline lineno="104"><highlight class="comment"></highlight></codeline>
-<codeline lineno="105"><highlight class="comment"><sp/><sp/><sp/><sp/>tr.printTraversal();</highlight></codeline>
-<codeline lineno="106"><highlight class="comment"></highlight></codeline>
-<codeline lineno="107"><highlight class="comment"><sp/><sp/><sp/><sp/>SmolDock::Molecule<sp/>m2(&quot;COCO&quot;);</highlight></codeline>
-<codeline lineno="108"><highlight class="comment"><sp/><sp/><sp/><sp/>SmolDock::MoleculeTraversal<sp/>tr2(m2);</highlight></codeline>
-<codeline lineno="109"><highlight class="comment"><sp/><sp/><sp/><sp/>tr2.printTraversal();</highlight></codeline>
+<codeline lineno="105"><highlight class="comment"></highlight></codeline>
+<codeline lineno="106"><highlight class="comment"><sp/><sp/><sp/><sp/>if(res-&gt;ligandPoses.size()<sp/>==<sp/>0){</highlight></codeline>
+<codeline lineno="107"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_LOG_TRIVIAL(error)<sp/>&lt;&lt;<sp/>&quot;No<sp/>result<sp/>to<sp/>export&quot;;</highlight></codeline>
+<codeline lineno="108"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>3;</highlight></codeline>
+<codeline lineno="109"><highlight class="comment"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="110"><highlight class="comment"></highlight></codeline>
 <codeline lineno="111"><highlight class="comment"></highlight></codeline>
-<codeline lineno="112"><highlight class="comment"><sp/><sp/><sp/><sp/>auto<sp/>fingerprint_mol1<sp/>=<sp/>RDKit::LayeredFingerprintMol(*m.getInternalRWMol());</highlight></codeline>
-<codeline lineno="113"><highlight class="comment"><sp/><sp/><sp/><sp/>auto<sp/>fingerprint_mol2<sp/>=<sp/>RDKit::LayeredFingerprintMol(*m2.getInternalRWMol());</highlight></codeline>
-<codeline lineno="114"><highlight class="comment"></highlight></codeline>
-<codeline lineno="115"><highlight class="comment"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/>&quot;Test<sp/>!<sp/>&quot;<sp/>&lt;&lt;<sp/>(*fingerprint_mol1<sp/>==<sp/>*fingerprint_mol2)<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
-<codeline lineno="116"><highlight class="comment"></highlight></codeline>
-<codeline lineno="117"><highlight class="comment"></highlight></codeline>
-<codeline lineno="118"><highlight class="comment"></highlight></codeline>
-<codeline lineno="119"><highlight class="comment"><sp/><sp/><sp/><sp/>return<sp/>0;</highlight></codeline>
-<codeline lineno="120"><highlight class="comment"><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="121"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="112"><highlight class="comment"><sp/><sp/><sp/><sp/>for(auto&amp;<sp/>mol:<sp/>res-&gt;ligandPoses)</highlight></codeline>
+<codeline lineno="113"><highlight class="comment"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="114"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pwriter.addLigand(mol);</highlight></codeline>
+<codeline lineno="115"><highlight class="comment"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="116"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/>pwriter.<ref refid="class_smol_dock_1_1_p_d_b_writer_1aaad8350fc387575ed549a1fd8569aad2" kindref="member">writePDB</ref>(</highlight><highlight class="stringliteral">&quot;res.pdb&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="126"><highlight class="comment"><sp/><sp/><sp/><sp/>SmolDock::DockingResultPrinter<sp/>printer(res);</highlight></codeline>
+<codeline lineno="127"><highlight class="comment"></highlight></codeline>
+<codeline lineno="128"><highlight class="comment"><sp/><sp/><sp/><sp/>printer.printToConsole();</highlight></codeline>
+<codeline lineno="129"><highlight class="comment"><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal">}</highlight></codeline>
     </programlisting>
     <location file="Frontends/main.cpp"/>
   </compounddef>

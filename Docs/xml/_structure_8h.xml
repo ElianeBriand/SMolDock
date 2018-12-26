@@ -6,115 +6,191 @@
     <includedby refid="_molecule_8h" local="yes">Molecule.h</includedby>
     <includedby refid="_structure_8cpp" local="yes">Structure.cpp</includedby>
     <invincdepgraph>
-      <node id="615">
+      <node id="1095">
         <label>Protein.h</label>
         <link refid="_protein_8h"/>
-        <childnode refid="616" relation="include">
+        <childnode refid="1096" relation="include">
         </childnode>
-        <childnode refid="617" relation="include">
+        <childnode refid="1097" relation="include">
         </childnode>
-        <childnode refid="620" relation="include">
+        <childnode refid="1100" relation="include">
         </childnode>
-        <childnode refid="624" relation="include">
+        <childnode refid="1104" relation="include">
         </childnode>
-        <childnode refid="619" relation="include">
+        <childnode refid="1105" relation="include">
+        </childnode>
+        <childnode refid="1099" relation="include">
+        </childnode>
+        <childnode refid="1107" relation="include">
         </childnode>
       </node>
-      <node id="617">
+      <node id="1097">
         <label>ConformerRigidDockingEngine.h</label>
         <link refid="_conformer_rigid_docking_engine_8h"/>
-        <childnode refid="618" relation="include">
+        <childnode refid="1098" relation="include">
         </childnode>
-        <childnode refid="619" relation="include">
+        <childnode refid="1099" relation="include">
         </childnode>
       </node>
-      <node id="620">
+      <node id="1107">
+        <label>PyStructures.cpp</label>
+        <link refid="_py_structures_8cpp"/>
+      </node>
+      <node id="1100">
         <label>MDStyleDockingEngine.h</label>
         <link refid="_m_d_style_docking_engine_8h"/>
-        <childnode refid="621" relation="include">
+        <childnode refid="1101" relation="include">
         </childnode>
       </node>
-      <node id="623">
+      <node id="1113">
+        <label>IntermediateConformerCollector.h</label>
+        <link refid="_intermediate_conformer_collector_8h"/>
+        <childnode refid="1114" relation="include">
+        </childnode>
+        <childnode refid="1115" relation="include">
+        </childnode>
+        <childnode refid="1099" relation="include">
+        </childnode>
+      </node>
+      <node id="1114">
+        <label>GradientDescentLineSearch.cpp</label>
+        <link refid="_gradient_descent_line_search_8cpp"/>
+      </node>
+      <node id="1117">
+        <label>PDBWriter.cpp</label>
+        <link refid="_p_d_b_writer_8cpp"/>
+      </node>
+      <node id="1119">
+        <label>PySTLWrapper.cpp</label>
+        <link refid="_py_s_t_l_wrapper_8cpp"/>
+      </node>
+      <node id="1103">
         <label>VinaCompatibleDockingEngine.cpp</label>
         <link refid="_vina_compatible_docking_engine_8cpp"/>
       </node>
-      <node id="622">
+      <node id="1106">
+        <label>ReScorer.cpp</label>
+        <link refid="_re_scorer_8cpp"/>
+      </node>
+      <node id="1102">
         <label>VinaCompatibleDockingEngine.h</label>
         <link refid="_vina_compatible_docking_engine_8h"/>
-        <childnode refid="623" relation="include">
+        <childnode refid="1103" relation="include">
         </childnode>
       </node>
-      <node id="621">
+      <node id="1101">
         <label>MDStyleDockingEngine.cpp</label>
         <link refid="_m_d_style_docking_engine_8cpp"/>
       </node>
-      <node id="619">
+      <node id="1099">
         <label>main.cpp</label>
         <link refid="main_8cpp"/>
       </node>
-      <node id="626">
+      <node id="1118">
         <label>Molecule.cpp</label>
         <link refid="_molecule_8cpp"/>
       </node>
-      <node id="628">
-        <label>MoleculeTraversal.cpp</label>
-        <link refid="_molecule_traversal_8cpp"/>
-      </node>
-      <node id="627">
-        <label>MoleculeTraversal.h</label>
-        <link refid="_molecule_traversal_8h"/>
-        <childnode refid="628" relation="include">
-        </childnode>
-        <childnode refid="619" relation="include">
+      <node id="1105">
+        <label>ReScorer.h</label>
+        <link refid="_re_scorer_8h"/>
+        <childnode refid="1106" relation="include">
         </childnode>
       </node>
-      <node id="629">
+      <node id="1120">
         <label>Structure.cpp</label>
         <link refid="_structure_8cpp"/>
       </node>
-      <node id="616">
+      <node id="1096">
         <label>AbstractDockingEngine.h</label>
         <link refid="_abstract_docking_engine_8h"/>
-        <childnode refid="617" relation="include">
+        <childnode refid="1097" relation="include">
         </childnode>
-        <childnode refid="620" relation="include">
+        <childnode refid="1100" relation="include">
         </childnode>
-        <childnode refid="622" relation="include">
+        <childnode refid="1102" relation="include">
         </childnode>
       </node>
-      <node id="618">
+      <node id="1109">
+        <label>DockingResult.h</label>
+        <link refid="_docking_result_8h"/>
+        <childnode refid="1096" relation="include">
+        </childnode>
+        <childnode refid="1110" relation="include">
+        </childnode>
+        <childnode refid="1111" relation="include">
+        </childnode>
+      </node>
+      <node id="1098">
         <label>ConformerRigidDockingEngine.cpp</label>
         <link refid="_conformer_rigid_docking_engine_8cpp"/>
       </node>
-      <node id="614">
+      <node id="1112">
+        <label>DockingResultPrinter.cpp</label>
+        <link refid="_docking_result_printer_8cpp"/>
+      </node>
+      <node id="1094">
         <label>Structure.h</label>
         <link refid="_structure_8h"/>
-        <childnode refid="615" relation="include">
+        <childnode refid="1095" relation="include">
         </childnode>
-        <childnode refid="625" relation="include">
+        <childnode refid="1108" relation="include">
         </childnode>
-        <childnode refid="629" relation="include">
+        <childnode refid="1120" relation="include">
         </childnode>
       </node>
-      <node id="625">
+      <node id="1108">
         <label>Molecule.h</label>
         <link refid="_molecule_8h"/>
-        <childnode refid="616" relation="include">
+        <childnode refid="1109" relation="include">
         </childnode>
-        <childnode refid="617" relation="include">
+        <childnode refid="1096" relation="include">
         </childnode>
-        <childnode refid="620" relation="include">
+        <childnode refid="1097" relation="include">
         </childnode>
-        <childnode refid="626" relation="include">
+        <childnode refid="1100" relation="include">
         </childnode>
-        <childnode refid="627" relation="include">
+        <childnode refid="1113" relation="include">
         </childnode>
-        <childnode refid="619" relation="include">
+        <childnode refid="1116" relation="include">
+        </childnode>
+        <childnode refid="1118" relation="include">
+        </childnode>
+        <childnode refid="1105" relation="include">
+        </childnode>
+        <childnode refid="1099" relation="include">
+        </childnode>
+        <childnode refid="1119" relation="include">
+        </childnode>
+        <childnode refid="1107" relation="include">
         </childnode>
       </node>
-      <node id="624">
+      <node id="1115">
+        <label>IntermediateConformerCollector.cpp</label>
+        <link refid="_intermediate_conformer_collector_8cpp"/>
+      </node>
+      <node id="1116">
+        <label>PDBWriter.h</label>
+        <link refid="_p_d_b_writer_8h"/>
+        <childnode refid="1113" relation="include">
+        </childnode>
+        <childnode refid="1117" relation="include">
+        </childnode>
+      </node>
+      <node id="1111">
+        <label>DockingResultPrinter.h</label>
+        <link refid="_docking_result_printer_8h"/>
+        <childnode refid="1112" relation="include">
+        </childnode>
+        <childnode refid="1099" relation="include">
+        </childnode>
+      </node>
+      <node id="1104">
         <label>Protein.cpp</label>
         <link refid="_protein_8cpp"/>
+      </node>
+      <node id="1110">
+        <label>DockingResult.cpp</label>
+        <link refid="_docking_result_8cpp"/>
       </node>
     </invincdepgraph>
     <innerclass refid="class_smol_dock_1_1_structure" prot="public">SmolDock::Structure</innerclass>
