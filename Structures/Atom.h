@@ -33,15 +33,14 @@
 namespace SmolDock {
 
     class Bond;
-
     class MoleculeTraversal;
-
     class Atom;
-
-
     class MoleculeTraversal;
 
-
+    /*!
+     * \brief Class representing "rich" atom in Molecule and Protein.
+     *
+     */
     class Atom {
     public:
 

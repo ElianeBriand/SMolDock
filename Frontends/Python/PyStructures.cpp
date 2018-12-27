@@ -23,6 +23,7 @@
 
 #include <Structures/Molecule.h>
 #include <Structures/Protein.h>
+#include <Structures/Results/DockingResult.h>
 
 namespace p = boost::python;
 namespace np = boost::numpy;
@@ -77,6 +78,10 @@ void export_Structures()
     p::class_<sd::Protein>("Protein")
             .def("populateFromPDB", &sd::Protein::populateFromPDB)
             .def("getiProtein", &sd::Protein::getiProtein)
+            ;
+
+    p::class_<sd::DockingResult>("DockingResult")
+            .def_readwrite("ligandPoses", &sd::DockingResult::ligandPoses)
             ;
 
 

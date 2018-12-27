@@ -27,6 +27,10 @@
 
 namespace SmolDock {
 
+    //! Internal, fast representation of a given Molecule conformer for efficiency
+    /*!
+     * \sa iAtom, iProtein
+    */
     struct iConformer {
         std::vector<double> x,y,z;
         std::vector<double> atomicRadius;

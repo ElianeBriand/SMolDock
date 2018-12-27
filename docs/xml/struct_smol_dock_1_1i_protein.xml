@@ -1,0 +1,240 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="struct_smol_dock_1_1i_protein" kind="struct" language="C++" prot="public">
+    <compoundname>SmolDock::iProtein</compoundname>
+    <includes refid="i_protein_8h" local="no">iProtein.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_smol_dock_1_1i_protein_1a8e62b22e54589f2727b0743cf58a3551" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double SmolDock::iProtein::center_x</definition>
+        <argsstring></argsstring>
+        <name>center_x</name>
+        <briefdescription>
+<para>Pseudo-center of protein as a mean of each atom coordinate. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Engines/Internals/iProtein.h" line="38" column="1" bodyfile="Engines/Internals/iProtein.h" bodystart="38" bodyend="-1"/>
+        <referencedby refid="class_smol_dock_1_1_protein_1a68856c725dbe91f5ccec59e8fa8306b2" compoundref="_protein_8cpp" startline="159" endline="208">SmolDock::Protein::getiProtein</referencedby>
+        <referencedby refid="_py_structures_8h_1a18cad6e29d14a0da9d2cd9464e7e2356" compoundref="_py_structures_8cpp" startline="39" endline="88">export_Structures</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="struct_smol_dock_1_1i_protein_1a834d2ab9d8580f255616a13a1af785c2" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double SmolDock::iProtein::center_y</definition>
+        <argsstring></argsstring>
+        <name>center_y</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Engines/Internals/iProtein.h" line="38" column="1" bodyfile="Engines/Internals/iProtein.h" bodystart="38" bodyend="-1"/>
+        <referencedby refid="class_smol_dock_1_1_protein_1a68856c725dbe91f5ccec59e8fa8306b2" compoundref="_protein_8cpp" startline="159" endline="208">SmolDock::Protein::getiProtein</referencedby>
+        <referencedby refid="_py_structures_8h_1a18cad6e29d14a0da9d2cd9464e7e2356" compoundref="_py_structures_8cpp" startline="39" endline="88">export_Structures</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="struct_smol_dock_1_1i_protein_1a8b3ccbb789373d51a3889158167c3c9a" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double SmolDock::iProtein::center_z</definition>
+        <argsstring></argsstring>
+        <name>center_z</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Engines/Internals/iProtein.h" line="38" column="1" bodyfile="Engines/Internals/iProtein.h" bodystart="38" bodyend="-1"/>
+        <referencedby refid="class_smol_dock_1_1_protein_1a68856c725dbe91f5ccec59e8fa8306b2" compoundref="_protein_8cpp" startline="159" endline="208">SmolDock::Protein::getiProtein</referencedby>
+        <referencedby refid="_py_structures_8h_1a18cad6e29d14a0da9d2cd9464e7e2356" compoundref="_py_structures_8cpp" startline="39" endline="88">export_Structures</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="struct_smol_dock_1_1i_protein_1ae36a5b0f6996e54f9ce1f746a79e23f8" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; double &gt;</type>
+        <definition>std::vector&lt;double&gt; SmolDock::iProtein::x</definition>
+        <argsstring></argsstring>
+        <name>x</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Engines/Internals/iProtein.h" line="40" column="1" bodyfile="Engines/Internals/iProtein.h" bodystart="40" bodyend="-1"/>
+        <referencedby refid="class_smol_dock_1_1_amino_acid_1a8d4e3aa2a1ae3d34dd78415c7afc60f1" compoundref="_amino_acid_8cpp" startline="108" endline="124">SmolDock::AminoAcid::filliProtein</referencedby>
+        <referencedby refid="namespace_smol_dock_1_1_score_1ac205731c7b0098c2900d9d16fff1a93b" compoundref="_basic_scoring_function_8cpp" startline="34" endline="117">SmolDock::Score::vina_like_rigid_inter_scoring_func</referencedby>
+        <referencedby refid="class_smol_dock_1_1_protein_1a68856c725dbe91f5ccec59e8fa8306b2" compoundref="_protein_8cpp" startline="159" endline="208">SmolDock::Protein::getiProtein</referencedby>
+        <referencedby refid="_py_structures_8h_1a18cad6e29d14a0da9d2cd9464e7e2356" compoundref="_py_structures_8cpp" startline="39" endline="88">export_Structures</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="struct_smol_dock_1_1i_protein_1a090a371c93db6928cdfef39b0ce3d1fd" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; double &gt;</type>
+        <definition>std::vector&lt;double&gt; SmolDock::iProtein::y</definition>
+        <argsstring></argsstring>
+        <name>y</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Engines/Internals/iProtein.h" line="40" column="1" bodyfile="Engines/Internals/iProtein.h" bodystart="40" bodyend="-1"/>
+        <referencedby refid="class_smol_dock_1_1_amino_acid_1a8d4e3aa2a1ae3d34dd78415c7afc60f1" compoundref="_amino_acid_8cpp" startline="108" endline="124">SmolDock::AminoAcid::filliProtein</referencedby>
+        <referencedby refid="namespace_smol_dock_1_1_score_1ac205731c7b0098c2900d9d16fff1a93b" compoundref="_basic_scoring_function_8cpp" startline="34" endline="117">SmolDock::Score::vina_like_rigid_inter_scoring_func</referencedby>
+        <referencedby refid="_py_structures_8h_1a18cad6e29d14a0da9d2cd9464e7e2356" compoundref="_py_structures_8cpp" startline="39" endline="88">export_Structures</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="struct_smol_dock_1_1i_protein_1ab95306577aa2d8bdd268504b44d046ad" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; double &gt;</type>
+        <definition>std::vector&lt;double&gt; SmolDock::iProtein::z</definition>
+        <argsstring></argsstring>
+        <name>z</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Engines/Internals/iProtein.h" line="40" column="1" bodyfile="Engines/Internals/iProtein.h" bodystart="40" bodyend="-1"/>
+        <referencedby refid="class_smol_dock_1_1_amino_acid_1a8d4e3aa2a1ae3d34dd78415c7afc60f1" compoundref="_amino_acid_8cpp" startline="108" endline="124">SmolDock::AminoAcid::filliProtein</referencedby>
+        <referencedby refid="namespace_smol_dock_1_1_score_1ac205731c7b0098c2900d9d16fff1a93b" compoundref="_basic_scoring_function_8cpp" startline="34" endline="117">SmolDock::Score::vina_like_rigid_inter_scoring_func</referencedby>
+        <referencedby refid="_py_structures_8h_1a18cad6e29d14a0da9d2cd9464e7e2356" compoundref="_py_structures_8cpp" startline="39" endline="88">export_Structures</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="struct_smol_dock_1_1i_protein_1a56480d9a766ca9a3564ade7b91585f0f" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; double &gt;</type>
+        <definition>std::vector&lt;double&gt; SmolDock::iProtein::atomicRadius</definition>
+        <argsstring></argsstring>
+        <name>atomicRadius</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Engines/Internals/iProtein.h" line="41" column="1" bodyfile="Engines/Internals/iProtein.h" bodystart="41" bodyend="-1"/>
+        <referencedby refid="class_smol_dock_1_1_amino_acid_1a8d4e3aa2a1ae3d34dd78415c7afc60f1" compoundref="_amino_acid_8cpp" startline="108" endline="124">SmolDock::AminoAcid::filliProtein</referencedby>
+        <referencedby refid="namespace_smol_dock_1_1_score_1ac205731c7b0098c2900d9d16fff1a93b" compoundref="_basic_scoring_function_8cpp" startline="34" endline="117">SmolDock::Score::vina_like_rigid_inter_scoring_func</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="struct_smol_dock_1_1i_protein_1a8a9cecc0e9750baf8d7074fe64b4331d" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; unsigned char &gt;</type>
+        <definition>std::vector&lt;unsigned char&gt; SmolDock::iProtein::type</definition>
+        <argsstring></argsstring>
+        <name>type</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Engines/Internals/iProtein.h" line="42" column="1" bodyfile="Engines/Internals/iProtein.h" bodystart="42" bodyend="-1"/>
+        <referencedby refid="class_smol_dock_1_1_amino_acid_1a8d4e3aa2a1ae3d34dd78415c7afc60f1" compoundref="_amino_acid_8cpp" startline="108" endline="124">SmolDock::AminoAcid::filliProtein</referencedby>
+        <referencedby refid="namespace_smol_dock_1_1_score_1ac205731c7b0098c2900d9d16fff1a93b" compoundref="_basic_scoring_function_8cpp" startline="34" endline="117">SmolDock::Score::vina_like_rigid_inter_scoring_func</referencedby>
+        <referencedby refid="_py_structures_8h_1a18cad6e29d14a0da9d2cd9464e7e2356" compoundref="_py_structures_8cpp" startline="39" endline="88">export_Structures</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="struct_smol_dock_1_1i_protein_1ac8f37b4dd33f21e3a368f18e8ceaa153" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; unsigned char &gt;</type>
+        <definition>std::vector&lt;unsigned char&gt; SmolDock::iProtein::variant</definition>
+        <argsstring></argsstring>
+        <name>variant</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Engines/Internals/iProtein.h" line="43" column="1" bodyfile="Engines/Internals/iProtein.h" bodystart="43" bodyend="-1"/>
+        <referencedby refid="class_smol_dock_1_1_amino_acid_1a8d4e3aa2a1ae3d34dd78415c7afc60f1" compoundref="_amino_acid_8cpp" startline="108" endline="124">SmolDock::AminoAcid::filliProtein</referencedby>
+        <referencedby refid="_py_structures_8h_1a18cad6e29d14a0da9d2cd9464e7e2356" compoundref="_py_structures_8cpp" startline="39" endline="88">export_Structures</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="struct_smol_dock_1_1i_protein_1acee4fb06b1e47d4ae4de51e6d0ef144b" prot="public" static="no" mutable="no">
+        <type>std::map&lt; unsigned int, std::tuple&lt; unsigned long, unsigned long &gt; &gt;</type>
+        <definition>std::map&lt;unsigned int, std::tuple&lt;unsigned long,unsigned long&gt; &gt; SmolDock::iProtein::AAId_to_AtomPositionInVect</definition>
+        <argsstring></argsstring>
+        <name>AAId_to_AtomPositionInVect</name>
+        <briefdescription>
+<para>Map the AAId of residues to the corresponding position of the atoms in the vector. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Engines/Internals/iProtein.h" line="46" column="1" bodyfile="Engines/Internals/iProtein.h" bodystart="46" bodyend="-1"/>
+        <referencedby refid="class_smol_dock_1_1_protein_1a68856c725dbe91f5ccec59e8fa8306b2" compoundref="_protein_8cpp" startline="159" endline="208">SmolDock::Protein::getiProtein</referencedby>
+        <referencedby refid="_py_structures_8h_1a18cad6e29d14a0da9d2cd9464e7e2356" compoundref="_py_structures_8cpp" startline="39" endline="88">export_Structures</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Internal, fast representation of <ref refid="class_smol_dock_1_1_protein" kindref="compound">Protein</ref> for efficiency. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="see"><para>iAtom, <ref refid="struct_smol_dock_1_1i_conformer" kindref="compound">iConformer</ref> </para></simplesect>
+</para>    </detaileddescription>
+    <collaborationgraph>
+      <node id="112">
+        <label>K</label>
+      </node>
+      <node id="113">
+        <label>T</label>
+      </node>
+      <node id="116">
+        <label>std::vector&lt; double &gt;</label>
+        <childnode refid="115" relation="template-instance">
+          <edgelabel>&lt; double &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="115">
+        <label>std::vector&lt; T &gt;</label>
+        <childnode refid="113" relation="usage">
+          <edgelabel>+elements</edgelabel>
+        </childnode>
+      </node>
+      <node id="111">
+        <label>std::map&lt; K, T &gt;</label>
+        <childnode refid="112" relation="usage">
+          <edgelabel>+keys</edgelabel>
+        </childnode>
+        <childnode refid="113" relation="usage">
+          <edgelabel>+elements</edgelabel>
+        </childnode>
+      </node>
+      <node id="109">
+        <label>SmolDock::iProtein</label>
+        <link refid="struct_smol_dock_1_1i_protein"/>
+        <childnode refid="110" relation="usage">
+          <edgelabel>+AAId_to_AtomPositionInVect</edgelabel>
+        </childnode>
+        <childnode refid="114" relation="usage">
+          <edgelabel>+type</edgelabel>
+          <edgelabel>+variant</edgelabel>
+        </childnode>
+        <childnode refid="116" relation="usage">
+          <edgelabel>+x</edgelabel>
+          <edgelabel>+y</edgelabel>
+          <edgelabel>+z</edgelabel>
+          <edgelabel>+atomicRadius</edgelabel>
+        </childnode>
+      </node>
+      <node id="114">
+        <label>std::vector&lt; unsigned char &gt;</label>
+        <childnode refid="115" relation="template-instance">
+          <edgelabel>&lt; unsigned char &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="110">
+        <label>std::map&lt; unsigned int, std::tuple&lt; unsigned long, unsigned long &gt; &gt;</label>
+        <childnode refid="111" relation="template-instance">
+          <edgelabel>&lt; unsigned int, std::tuple&lt; unsigned long, unsigned long &gt; &gt;</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Engines/Internals/iProtein.h" line="36" column="1" bodyfile="Engines/Internals/iProtein.h" bodystart="36" bodyend="47"/>
+    <listofallmembers>
+      <member refid="struct_smol_dock_1_1i_protein_1acee4fb06b1e47d4ae4de51e6d0ef144b" prot="public" virt="non-virtual"><scope>SmolDock::iProtein</scope><name>AAId_to_AtomPositionInVect</name></member>
+      <member refid="struct_smol_dock_1_1i_protein_1a56480d9a766ca9a3564ade7b91585f0f" prot="public" virt="non-virtual"><scope>SmolDock::iProtein</scope><name>atomicRadius</name></member>
+      <member refid="struct_smol_dock_1_1i_protein_1a8e62b22e54589f2727b0743cf58a3551" prot="public" virt="non-virtual"><scope>SmolDock::iProtein</scope><name>center_x</name></member>
+      <member refid="struct_smol_dock_1_1i_protein_1a834d2ab9d8580f255616a13a1af785c2" prot="public" virt="non-virtual"><scope>SmolDock::iProtein</scope><name>center_y</name></member>
+      <member refid="struct_smol_dock_1_1i_protein_1a8b3ccbb789373d51a3889158167c3c9a" prot="public" virt="non-virtual"><scope>SmolDock::iProtein</scope><name>center_z</name></member>
+      <member refid="struct_smol_dock_1_1i_protein_1a8a9cecc0e9750baf8d7074fe64b4331d" prot="public" virt="non-virtual"><scope>SmolDock::iProtein</scope><name>type</name></member>
+      <member refid="struct_smol_dock_1_1i_protein_1ac8f37b4dd33f21e3a368f18e8ceaa153" prot="public" virt="non-virtual"><scope>SmolDock::iProtein</scope><name>variant</name></member>
+      <member refid="struct_smol_dock_1_1i_protein_1ae36a5b0f6996e54f9ce1f746a79e23f8" prot="public" virt="non-virtual"><scope>SmolDock::iProtein</scope><name>x</name></member>
+      <member refid="struct_smol_dock_1_1i_protein_1a090a371c93db6928cdfef39b0ce3d1fd" prot="public" virt="non-virtual"><scope>SmolDock::iProtein</scope><name>y</name></member>
+      <member refid="struct_smol_dock_1_1i_protein_1ab95306577aa2d8bdd268504b44d046ad" prot="public" virt="non-virtual"><scope>SmolDock::iProtein</scope><name>z</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

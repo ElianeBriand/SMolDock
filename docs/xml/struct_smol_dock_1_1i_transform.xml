@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="struct_smol_dock_1_1i_transform" kind="struct" language="C++" prot="public">
+    <compoundname>SmolDock::iTransform</compoundname>
+    <includes refid="i_transform_8h" local="no">iTransform.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_smol_dock_1_1i_transform_1ab0039729b08d423b6e0414cec1b893e7" prot="public" static="no" mutable="no">
+        <type><ref refid="struct_smol_dock_1_1i_translation" kindref="compound">iTranslation</ref></type>
+        <definition>iTranslation SmolDock::iTransform::transl</definition>
+        <argsstring></argsstring>
+        <name>transl</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Engines/Internals/iTransform.h" line="45" column="1" bodyfile="Engines/Internals/iTransform.h" bodystart="45" bodyend="-1"/>
+        <referencedby refid="class_smol_dock_1_1_gradient_descent_line_search_1a8bc11fdd0f47562e773df6dff62dc82a" compoundref="_gradient_descent_line_search_8cpp" startline="28" endline="210">SmolDock::GradientDescentLineSearch::optimize</referencedby>
+        <referencedby refid="namespace_smol_dock_1a3974d1e3a6f729a7ca05b97996ca2079" compoundref="i_transform_8h" startline="72" endline="80">SmolDock::iTransformIdentityInit</referencedby>
+        <referencedby refid="namespace_smol_dock_1a73bb4756419c2b3361ae4d23b24eee20" compoundref="i_transform_8h" startline="120" endline="124">SmolDock::applyTransformInPlace</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="struct_smol_dock_1_1i_transform_1a31861b55dc94ec0172ce602cd2a4a54f" prot="public" static="no" mutable="no">
+        <type><ref refid="struct_smol_dock_1_1i_quaternion" kindref="compound">iQuaternion</ref></type>
+        <definition>iQuaternion SmolDock::iTransform::rota</definition>
+        <argsstring></argsstring>
+        <name>rota</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Engines/Internals/iTransform.h" line="46" column="1" bodyfile="Engines/Internals/iTransform.h" bodystart="46" bodyend="-1"/>
+        <referencedby refid="namespace_smol_dock_1_1_score_1ac205731c7b0098c2900d9d16fff1a93b" compoundref="_basic_scoring_function_8cpp" startline="34" endline="117">SmolDock::Score::vina_like_rigid_inter_scoring_func</referencedby>
+        <referencedby refid="class_smol_dock_1_1_gradient_descent_line_search_1a8bc11fdd0f47562e773df6dff62dc82a" compoundref="_gradient_descent_line_search_8cpp" startline="28" endline="210">SmolDock::GradientDescentLineSearch::optimize</referencedby>
+        <referencedby refid="namespace_smol_dock_1a3974d1e3a6f729a7ca05b97996ca2079" compoundref="i_transform_8h" startline="72" endline="80">SmolDock::iTransformIdentityInit</referencedby>
+        <referencedby refid="namespace_smol_dock_1a73bb4756419c2b3361ae4d23b24eee20" compoundref="i_transform_8h" startline="120" endline="124">SmolDock::applyTransformInPlace</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Represents a rotation and translation transform to be applied on ligand/ligand part. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="see"><para><ref refid="struct_smol_dock_1_1i_translation" kindref="compound">iTranslation</ref>, <ref refid="struct_smol_dock_1_1i_quaternion" kindref="compound">iQuaternion</ref> </para></simplesect>
+</para>    </detaileddescription>
+    <collaborationgraph>
+      <node id="122">
+        <label>SmolDock::iQuaternion</label>
+        <link refid="struct_smol_dock_1_1i_quaternion"/>
+      </node>
+      <node id="120">
+        <label>SmolDock::iTransform</label>
+        <link refid="struct_smol_dock_1_1i_transform"/>
+        <childnode refid="121" relation="usage">
+          <edgelabel>+transl</edgelabel>
+        </childnode>
+        <childnode refid="122" relation="usage">
+          <edgelabel>+rota</edgelabel>
+        </childnode>
+      </node>
+      <node id="121">
+        <label>SmolDock::iTranslation</label>
+        <link refid="struct_smol_dock_1_1i_translation"/>
+      </node>
+    </collaborationgraph>
+    <location file="Engines/Internals/iTransform.h" line="44" column="1" bodyfile="Engines/Internals/iTransform.h" bodystart="44" bodyend="47"/>
+    <listofallmembers>
+      <member refid="struct_smol_dock_1_1i_transform_1a31861b55dc94ec0172ce602cd2a4a54f" prot="public" virt="non-virtual"><scope>SmolDock::iTransform</scope><name>rota</name></member>
+      <member refid="struct_smol_dock_1_1i_transform_1ab0039729b08d423b6e0414cec1b893e7" prot="public" virt="non-virtual"><scope>SmolDock::iTransform</scope><name>transl</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

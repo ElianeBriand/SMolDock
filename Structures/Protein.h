@@ -40,7 +40,10 @@
 
 namespace SmolDock {
 
-
+    /*!
+     * \brief Class representing "rich" protein. Contains all extended attributes and functions.
+     *
+     */
     class Protein : Structure {
 
     public:
@@ -56,6 +59,11 @@ namespace SmolDock {
         */
         bool populateFromPDB(const std::string &filename);
 
+        //! Return an iProtein object for use in docking engine
+        /*!
+         *
+         * \return the equivalent iProtein object
+        */
         iProtein getiProtein();
 
     private:

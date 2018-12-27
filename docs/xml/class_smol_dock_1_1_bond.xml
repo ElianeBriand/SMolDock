@@ -1,0 +1,383 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="class_smol_dock_1_1_bond" kind="class" language="C++" prot="public">
+    <compoundname>SmolDock::Bond</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">std::enable_shared_from_this&lt; Bond &gt;</basecompoundref>
+    <includes refid="_bond_8h" local="no">Bond.h</includes>
+      <sectiondef kind="public-type">
+      <memberdef kind="enum" id="class_smol_dock_1_1_bond_1a6cbf152f682501c998bd06a55400c9cf" prot="public" static="no" strong="no">
+        <type></type>
+        <name>BondType</name>
+        <enumvalue id="class_smol_dock_1_1_bond_1a6cbf152f682501c998bd06a55400c9cfaccd9d70d0e74b128e8fdd74b302934f1" prot="public">
+          <name>singlebond</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_smol_dock_1_1_bond_1a6cbf152f682501c998bd06a55400c9cfa076120e243046998cc8ecff65e716c35" prot="public">
+          <name>doublebond</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_smol_dock_1_1_bond_1a6cbf152f682501c998bd06a55400c9cfa7381550bb1c4acbc5e3801c17ef7cae3" prot="public">
+          <name>triplebond</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_smol_dock_1_1_bond_1a6cbf152f682501c998bd06a55400c9cfa0a3db58cd06e63f99bfd2d9e6773f555" prot="public">
+          <name>defaultbond</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_smol_dock_1_1_bond_1a6cbf152f682501c998bd06a55400c9cfab055cca5ddd5fd7702867dffa64c1f8f" prot="public">
+          <name>aromatic</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Supported bond type. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Structures/Bond.h" line="38" column="1" bodyfile="Structures/Bond.h" bodystart="38" bodyend="44"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_smol_dock_1_1_bond_1ad909ef34f3b9b10acc221ac6d54e423a" prot="private" static="no" mutable="no">
+        <type>std::shared_ptr&lt; <ref refid="class_smol_dock_1_1_atom" kindref="compound">Atom</ref> &gt;</type>
+        <definition>std::shared_ptr&lt;Atom&gt; SmolDock::Bond::bond_end_a</definition>
+        <argsstring></argsstring>
+        <name>bond_end_a</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Structures/Bond.h" line="111" column="1" bodyfile="Structures/Bond.h" bodystart="111" bodyend="-1"/>
+        <referencedby refid="class_smol_dock_1_1_bond_1a7f046d71521a269171643bdf147d5c80" compoundref="_bond_8cpp" startline="28" endline="31">Bond</referencedby>
+        <referencedby refid="class_smol_dock_1_1_bond_1a8ca51ba3f2abc758ecd7b4b040681f21" compoundref="_bond_8cpp" startline="41" endline="43">getEndA</referencedby>
+        <referencedby refid="class_smol_dock_1_1_bond_1a225d51b7edd43bc5aa16984981bc2dfe" compoundref="_bond_8cpp" startline="49" endline="54">publicizeToAtom</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_smol_dock_1_1_bond_1adbbc73bd7bc4fc579237321be516ed2f" prot="private" static="no" mutable="no">
+        <type>std::shared_ptr&lt; <ref refid="class_smol_dock_1_1_atom" kindref="compound">Atom</ref> &gt;</type>
+        <definition>std::shared_ptr&lt;Atom&gt; SmolDock::Bond::bond_end_b</definition>
+        <argsstring></argsstring>
+        <name>bond_end_b</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Structures/Bond.h" line="112" column="1" bodyfile="Structures/Bond.h" bodystart="112" bodyend="-1"/>
+        <referencedby refid="class_smol_dock_1_1_bond_1a7f046d71521a269171643bdf147d5c80" compoundref="_bond_8cpp" startline="28" endline="31">Bond</referencedby>
+        <referencedby refid="class_smol_dock_1_1_bond_1a0a2feeb4cc88cbb8920ae5e9b142ead5" compoundref="_bond_8cpp" startline="45" endline="47">getEndB</referencedby>
+        <referencedby refid="class_smol_dock_1_1_bond_1a225d51b7edd43bc5aa16984981bc2dfe" compoundref="_bond_8cpp" startline="49" endline="54">publicizeToAtom</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_smol_dock_1_1_bond_1a6fb49dc80f21a23c8b039f85d3b7b5bf" prot="private" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int SmolDock::Bond::BondID</definition>
+        <argsstring></argsstring>
+        <name>BondID</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Structures/Bond.h" line="115" column="1" bodyfile="Structures/Bond.h" bodystart="115" bodyend="-1"/>
+        <referencedby refid="class_smol_dock_1_1_bond_1ae864507cf1018efa1964e7b77b2d6e4f" compoundref="_bond_8cpp" startline="33" endline="39">Bond</referencedby>
+        <referencedby refid="class_smol_dock_1_1_bond_1a382edad0cb2bd339e3ff676cd232d093" compoundref="_bond_8cpp" startline="64" endline="66">getBondID</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_smol_dock_1_1_bond_1a7795dad7005c83f8702d8593eb81b1ff" prot="private" static="no" mutable="no">
+        <type><ref refid="class_smol_dock_1_1_bond_1a6cbf152f682501c998bd06a55400c9cf" kindref="member">BondType</ref></type>
+        <definition>BondType SmolDock::Bond::bondtype</definition>
+        <argsstring></argsstring>
+        <name>bondtype</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Structures/Bond.h" line="117" column="1" bodyfile="Structures/Bond.h" bodystart="117" bodyend="-1"/>
+        <referencedby refid="class_smol_dock_1_1_bond_1ae864507cf1018efa1964e7b77b2d6e4f" compoundref="_bond_8cpp" startline="33" endline="39">Bond</referencedby>
+        <referencedby refid="class_smol_dock_1_1_bond_1a4ebf28309120c880429f205edf67b9f8" compoundref="_bond_8cpp" startline="56" endline="58">setBondType</referencedby>
+        <referencedby refid="class_smol_dock_1_1_bond_1a6b8180f0f2b339c521f8a74b2445e8c8" compoundref="_bond_8cpp" startline="60" endline="62">getBondType</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="class_smol_dock_1_1_bond_1acb9a24240df4164e4840611d7df39962" prot="private" static="yes" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int SmolDock::Bond::nextBondID</definition>
+        <argsstring></argsstring>
+        <name>nextBondID</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Structures/Bond.h" line="114" column="1" bodyfile="Structures/Bond.h" bodystart="114" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_smol_dock_1_1_bond_1a7f046d71521a269171643bdf147d5c80" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>SmolDock::Bond::Bond</definition>
+        <argsstring>(std::shared_ptr&lt; Atom &gt; atom_a, std::shared_ptr&lt; Atom &gt; atom_b)</argsstring>
+        <name>Bond</name>
+        <param>
+          <type>std::shared_ptr&lt; <ref refid="class_smol_dock_1_1_atom" kindref="compound">Atom</ref> &gt;</type>
+          <declname>atom_a</declname>
+        </param>
+        <param>
+          <type>std::shared_ptr&lt; <ref refid="class_smol_dock_1_1_atom" kindref="compound">Atom</ref> &gt;</type>
+          <declname>atom_b</declname>
+        </param>
+        <briefdescription>
+<para>Create a bond from two shared_ptr to <ref refid="class_smol_dock_1_1_atom" kindref="compound">Atom</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>atom_a</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>First atom ptr </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>atom_b</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Second atom ptr </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Structures/Bond.h" line="51" column="1" bodyfile="Structures/Bond.cpp" bodystart="28" bodyend="31"/>
+        <references refid="class_smol_dock_1_1_bond_1ad909ef34f3b9b10acc221ac6d54e423a" compoundref="_bond_8h" startline="111">bond_end_a</references>
+        <references refid="class_smol_dock_1_1_bond_1adbbc73bd7bc4fc579237321be516ed2f" compoundref="_bond_8h" startline="112">bond_end_b</references>
+      </memberdef>
+      <memberdef kind="function" id="class_smol_dock_1_1_bond_1ae864507cf1018efa1964e7b77b2d6e4f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>SmolDock::Bond::Bond</definition>
+        <argsstring>(std::shared_ptr&lt; Atom &gt; atom_a, std::shared_ptr&lt; Atom &gt; atom_b, unsigned int id)</argsstring>
+        <name>Bond</name>
+        <param>
+          <type>std::shared_ptr&lt; <ref refid="class_smol_dock_1_1_atom" kindref="compound">Atom</ref> &gt;</type>
+          <declname>atom_a</declname>
+        </param>
+        <param>
+          <type>std::shared_ptr&lt; <ref refid="class_smol_dock_1_1_atom" kindref="compound">Atom</ref> &gt;</type>
+          <declname>atom_b</declname>
+        </param>
+        <param>
+          <type>unsigned int</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+<para>Create a bond from two shared_ptr to <ref refid="class_smol_dock_1_1_atom" kindref="compound">Atom</ref>, specifying a particular BondID. </para>        </briefdescription>
+        <detaileddescription>
+<para>Use of this constructor loses the garantee that BondID are unique across a <ref refid="class_smol_dock_1_1_molecule" kindref="compound">Molecule</ref>. (and, given it is implemented as a static member variable, across <emphasis>all</emphasis> <ref refid="class_smol_dock_1_1_molecule" kindref="compound">Molecule</ref>)</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>atom_a</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>First atom ptr </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>atom_b</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Second atom ptr </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>BondID </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Structures/Bond.h" line="63" column="1" bodyfile="Structures/Bond.cpp" bodystart="33" bodyend="39"/>
+        <references refid="class_smol_dock_1_1_bond_1ad909ef34f3b9b10acc221ac6d54e423a" compoundref="_bond_8h" startline="111">bond_end_a</references>
+        <references refid="class_smol_dock_1_1_bond_1adbbc73bd7bc4fc579237321be516ed2f" compoundref="_bond_8h" startline="112">bond_end_b</references>
+        <references refid="class_smol_dock_1_1_bond_1a6fb49dc80f21a23c8b039f85d3b7b5bf" compoundref="_bond_8h" startline="115">BondID</references>
+        <references refid="class_smol_dock_1_1_bond_1a7795dad7005c83f8702d8593eb81b1ff" compoundref="_bond_8h" startline="117">bondtype</references>
+        <references refid="class_smol_dock_1_1_bond_1a6cbf152f682501c998bd06a55400c9cfa0a3db58cd06e63f99bfd2d9e6773f555" compoundref="_bond_8h" startline="42">defaultbond</references>
+      </memberdef>
+      <memberdef kind="function" id="class_smol_dock_1_1_bond_1a382edad0cb2bd339e3ff676cd232d093" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>unsigned int</type>
+        <definition>unsigned int SmolDock::Bond::getBondID</definition>
+        <argsstring>()</argsstring>
+        <name>getBondID</name>
+        <briefdescription>
+<para>Get the integer ID of the bond. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>BondID </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Structures/Bond.h" line="69" column="1" bodyfile="Structures/Bond.cpp" bodystart="64" bodyend="66"/>
+        <references refid="class_smol_dock_1_1_bond_1a6fb49dc80f21a23c8b039f85d3b7b5bf" compoundref="_bond_8h" startline="115">BondID</references>
+      </memberdef>
+      <memberdef kind="function" id="class_smol_dock_1_1_bond_1a8ca51ba3f2abc758ecd7b4b040681f21" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::shared_ptr&lt; <ref refid="class_smol_dock_1_1_atom" kindref="compound">Atom</ref> &gt;</type>
+        <definition>std::shared_ptr&lt; Atom &gt; SmolDock::Bond::getEndA</definition>
+        <argsstring>()</argsstring>
+        <name>getEndA</name>
+        <briefdescription>
+<para>Get first end of bond. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>std::shared_ptr to the first atom in the bond </para></simplesect>
+<simplesect kind="see"><para><ref refid="class_smol_dock_1_1_bond_1a0a2feeb4cc88cbb8920ae5e9b142ead5" kindref="member">getEndB()</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Structures/Bond.h" line="76" column="1" bodyfile="Structures/Bond.cpp" bodystart="41" bodyend="43"/>
+        <references refid="class_smol_dock_1_1_bond_1ad909ef34f3b9b10acc221ac6d54e423a" compoundref="_bond_8h" startline="111">bond_end_a</references>
+      </memberdef>
+      <memberdef kind="function" id="class_smol_dock_1_1_bond_1a0a2feeb4cc88cbb8920ae5e9b142ead5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::shared_ptr&lt; <ref refid="class_smol_dock_1_1_atom" kindref="compound">Atom</ref> &gt;</type>
+        <definition>std::shared_ptr&lt; Atom &gt; SmolDock::Bond::getEndB</definition>
+        <argsstring>()</argsstring>
+        <name>getEndB</name>
+        <briefdescription>
+<para>Get second end of bond. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>std::shared_ptr to the second atom in the bond </para></simplesect>
+<simplesect kind="see"><para><ref refid="class_smol_dock_1_1_bond_1a8ca51ba3f2abc758ecd7b4b040681f21" kindref="member">getEndA()</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Structures/Bond.h" line="83" column="1" bodyfile="Structures/Bond.cpp" bodystart="45" bodyend="47"/>
+        <references refid="class_smol_dock_1_1_bond_1adbbc73bd7bc4fc579237321be516ed2f" compoundref="_bond_8h" startline="112">bond_end_b</references>
+      </memberdef>
+      <memberdef kind="function" id="class_smol_dock_1_1_bond_1a225d51b7edd43bc5aa16984981bc2dfe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SmolDock::Bond::publicizeToAtom</definition>
+        <argsstring>()</argsstring>
+        <name>publicizeToAtom</name>
+        <briefdescription>
+<para>Modify the weak_ptr of the atom involved in the bond to point to this bond. </para>        </briefdescription>
+        <detaileddescription>
+<para>This publicizing of the bond allow atom-based traversal. Uses std::enable_shared_from_this, thus this member function has meaningful effects only if <emphasis>this</emphasis> bond is stored by a std::shared_ptr. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Structures/Bond.h" line="90" column="1" bodyfile="Structures/Bond.cpp" bodystart="49" bodyend="54"/>
+        <references refid="class_smol_dock_1_1_bond_1ad909ef34f3b9b10acc221ac6d54e423a" compoundref="_bond_8h" startline="111">bond_end_a</references>
+        <references refid="class_smol_dock_1_1_bond_1adbbc73bd7bc4fc579237321be516ed2f" compoundref="_bond_8h" startline="112">bond_end_b</references>
+      </memberdef>
+      <memberdef kind="function" id="class_smol_dock_1_1_bond_1a4ebf28309120c880429f205edf67b9f8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SmolDock::Bond::setBondType</definition>
+        <argsstring>(Bond::BondType t)</argsstring>
+        <name>setBondType</name>
+        <param>
+          <type><ref refid="class_smol_dock_1_1_bond_1a6cbf152f682501c998bd06a55400c9cf" kindref="member">Bond::BondType</ref></type>
+          <declname>t</declname>
+        </param>
+        <briefdescription>
+<para>Set the type of the bond. </para>        </briefdescription>
+        <detaileddescription>
+<para>Exotic bond type are not supported yet (if at all), as the corresponding logic for them to have meaningfull effect is not present.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>t</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="class_smol_dock_1_1_bond" kindref="compound">Bond</ref> type </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para><ref refid="class_smol_dock_1_1_bond_1a6b8180f0f2b339c521f8a74b2445e8c8" kindref="member">getBondType()</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Structures/Bond.h" line="101" column="1" bodyfile="Structures/Bond.cpp" bodystart="56" bodyend="58"/>
+        <references refid="class_smol_dock_1_1_bond_1a7795dad7005c83f8702d8593eb81b1ff" compoundref="_bond_8h" startline="117">bondtype</references>
+        <referencedby refid="class_smol_dock_1_1_molecule_1a70156ffc4081eb92f9dc4e2c70096c84" compoundref="_molecule_8cpp" startline="336" endline="379">SmolDock::Molecule::deepcopy</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_smol_dock_1_1_bond_1a6b8180f0f2b339c521f8a74b2445e8c8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_smol_dock_1_1_bond_1a6cbf152f682501c998bd06a55400c9cf" kindref="member">BondType</ref></type>
+        <definition>Bond::BondType SmolDock::Bond::getBondType</definition>
+        <argsstring>() const</argsstring>
+        <name>getBondType</name>
+        <briefdescription>
+<para>Get the bond type. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The bond type </para></simplesect>
+<simplesect kind="see"><para><ref refid="class_smol_dock_1_1_bond_1a4ebf28309120c880429f205edf67b9f8" kindref="member">setBondType()</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Structures/Bond.h" line="108" column="1" bodyfile="Structures/Bond.cpp" bodystart="60" bodyend="62"/>
+        <references refid="class_smol_dock_1_1_bond_1a7795dad7005c83f8702d8593eb81b1ff" compoundref="_bond_8h" startline="117">bondtype</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Class representing a bond in <ref refid="class_smol_dock_1_1_molecule" kindref="compound">Molecule</ref> object. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="33">
+        <label>SmolDock::Bond</label>
+        <link refid="class_smol_dock_1_1_bond"/>
+        <childnode refid="34" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="34">
+        <label>std::enable_shared_from_this&lt; Bond &gt;</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="35">
+        <label>SmolDock::Bond</label>
+        <link refid="class_smol_dock_1_1_bond"/>
+        <childnode refid="36" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="36">
+        <label>std::enable_shared_from_this&lt; Bond &gt;</label>
+      </node>
+    </collaborationgraph>
+    <location file="Structures/Bond.h" line="33" column="1" bodyfile="Structures/Bond.h" bodystart="33" bodyend="119"/>
+    <listofallmembers>
+      <member refid="class_smol_dock_1_1_bond_1a6cbf152f682501c998bd06a55400c9cfab055cca5ddd5fd7702867dffa64c1f8f" prot="public" virt="non-virtual"><scope>SmolDock::Bond</scope><name>aromatic</name></member>
+      <member refid="class_smol_dock_1_1_bond_1a7f046d71521a269171643bdf147d5c80" prot="public" virt="non-virtual"><scope>SmolDock::Bond</scope><name>Bond</name></member>
+      <member refid="class_smol_dock_1_1_bond_1ae864507cf1018efa1964e7b77b2d6e4f" prot="public" virt="non-virtual"><scope>SmolDock::Bond</scope><name>Bond</name></member>
+      <member refid="class_smol_dock_1_1_bond_1ad909ef34f3b9b10acc221ac6d54e423a" prot="private" virt="non-virtual"><scope>SmolDock::Bond</scope><name>bond_end_a</name></member>
+      <member refid="class_smol_dock_1_1_bond_1adbbc73bd7bc4fc579237321be516ed2f" prot="private" virt="non-virtual"><scope>SmolDock::Bond</scope><name>bond_end_b</name></member>
+      <member refid="class_smol_dock_1_1_bond_1a6fb49dc80f21a23c8b039f85d3b7b5bf" prot="private" virt="non-virtual"><scope>SmolDock::Bond</scope><name>BondID</name></member>
+      <member refid="class_smol_dock_1_1_bond_1a6cbf152f682501c998bd06a55400c9cf" prot="public" virt="non-virtual"><scope>SmolDock::Bond</scope><name>BondType</name></member>
+      <member refid="class_smol_dock_1_1_bond_1a7795dad7005c83f8702d8593eb81b1ff" prot="private" virt="non-virtual"><scope>SmolDock::Bond</scope><name>bondtype</name></member>
+      <member refid="class_smol_dock_1_1_bond_1a6cbf152f682501c998bd06a55400c9cfa0a3db58cd06e63f99bfd2d9e6773f555" prot="public" virt="non-virtual"><scope>SmolDock::Bond</scope><name>defaultbond</name></member>
+      <member refid="class_smol_dock_1_1_bond_1a6cbf152f682501c998bd06a55400c9cfa076120e243046998cc8ecff65e716c35" prot="public" virt="non-virtual"><scope>SmolDock::Bond</scope><name>doublebond</name></member>
+      <member refid="class_smol_dock_1_1_bond_1a382edad0cb2bd339e3ff676cd232d093" prot="public" virt="non-virtual"><scope>SmolDock::Bond</scope><name>getBondID</name></member>
+      <member refid="class_smol_dock_1_1_bond_1a6b8180f0f2b339c521f8a74b2445e8c8" prot="public" virt="non-virtual"><scope>SmolDock::Bond</scope><name>getBondType</name></member>
+      <member refid="class_smol_dock_1_1_bond_1a8ca51ba3f2abc758ecd7b4b040681f21" prot="public" virt="non-virtual"><scope>SmolDock::Bond</scope><name>getEndA</name></member>
+      <member refid="class_smol_dock_1_1_bond_1a0a2feeb4cc88cbb8920ae5e9b142ead5" prot="public" virt="non-virtual"><scope>SmolDock::Bond</scope><name>getEndB</name></member>
+      <member refid="class_smol_dock_1_1_bond_1acb9a24240df4164e4840611d7df39962" prot="private" virt="non-virtual"><scope>SmolDock::Bond</scope><name>nextBondID</name></member>
+      <member refid="class_smol_dock_1_1_bond_1a225d51b7edd43bc5aa16984981bc2dfe" prot="public" virt="non-virtual"><scope>SmolDock::Bond</scope><name>publicizeToAtom</name></member>
+      <member refid="class_smol_dock_1_1_bond_1a4ebf28309120c880429f205edf67b9f8" prot="public" virt="non-virtual"><scope>SmolDock::Bond</scope><name>setBondType</name></member>
+      <member refid="class_smol_dock_1_1_bond_1a6cbf152f682501c998bd06a55400c9cfaccd9d70d0e74b128e8fdd74b302934f1" prot="public" virt="non-virtual"><scope>SmolDock::Bond</scope><name>singlebond</name></member>
+      <member refid="class_smol_dock_1_1_bond_1a6cbf152f682501c998bd06a55400c9cfa7381550bb1c4acbc5e3801c17ef7cae3" prot="public" virt="non-virtual"><scope>SmolDock::Bond</scope><name>triplebond</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

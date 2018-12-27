@@ -1,0 +1,79 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="namespace_smol_dock_1_1_score" kind="namespace" language="C++">
+    <compoundname>SmolDock::Score</compoundname>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespace_smol_dock_1_1_score_1ac205731c7b0098c2900d9d16fff1a93b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double SmolDock::Score::vina_like_rigid_inter_scoring_func</definition>
+        <argsstring>(const iConformer &amp;conformer, const iTransform &amp;transform, const iProtein &amp;protein)</argsstring>
+        <name>vina_like_rigid_inter_scoring_func</name>
+        <param>
+          <type>const <ref refid="struct_smol_dock_1_1i_conformer" kindref="compound">iConformer</ref> &amp;</type>
+          <declname>conformer</declname>
+        </param>
+        <param>
+          <type>const <ref refid="struct_smol_dock_1_1i_transform" kindref="compound">iTransform</ref> &amp;</type>
+          <declname>transform</declname>
+        </param>
+        <param>
+          <type>const <ref refid="struct_smol_dock_1_1i_protein" kindref="compound">iProtein</ref> &amp;</type>
+          <declname>protein</declname>
+        </param>
+        <briefdescription>
+<para>Compute inter-molecular part of the docking score, according to the Vina scoring function. </para>        </briefdescription>
+        <detaileddescription>
+<para>The transform provided will be applied to the entire, rigid ligand.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>conformer</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Ligand conformation &amp; position to evaluate </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>transform</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Transformation to apply to the ligand </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>protein</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="class_smol_dock_1_1_protein" kindref="compound">Protein</ref> conformation to evaluate </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The docking score </para></simplesect>
+<simplesect kind="see"><para></para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Engines/ScoringFunctions/BasicScoringFunction.cpp" line="34" column="1" bodyfile="Engines/ScoringFunctions/BasicScoringFunction.cpp" bodystart="34" bodyend="117"/>
+        <references refid="namespace_smol_dock_1a73bb4756419c2b3361ae4d23b24eee20" compoundref="i_transform_8h" startline="120" endline="124">SmolDock::applyTransformInPlace</references>
+        <references refid="struct_smol_dock_1_1i_conformer_1a1dbd8cb4eaa4e5e2f0afcdd1b36dd862" compoundref="i_conformer_8h" startline="36">SmolDock::iConformer::atomicRadius</references>
+        <references refid="struct_smol_dock_1_1i_protein_1a56480d9a766ca9a3564ade7b91585f0f" compoundref="i_protein_8h" startline="41">SmolDock::iProtein::atomicRadius</references>
+        <references refid="namespace_smol_dock_1afb62962c202721eaa8aa64d19bd42fdf" compoundref="i_transform_8h" startline="148" endline="153">SmolDock::quaternionNorm</references>
+        <references refid="struct_smol_dock_1_1i_transform_1a31861b55dc94ec0172ce602cd2a4a54f" compoundref="i_transform_8h" startline="46">SmolDock::iTransform::rota</references>
+        <references refid="struct_smol_dock_1_1i_conformer_1add04de1dd457ae228e398ffa9260497d" compoundref="i_conformer_8h" startline="37">SmolDock::iConformer::type</references>
+        <references refid="struct_smol_dock_1_1i_protein_1a8a9cecc0e9750baf8d7074fe64b4331d" compoundref="i_protein_8h" startline="42">SmolDock::iProtein::type</references>
+        <references refid="struct_smol_dock_1_1i_vect_1a3ffc7082a3541ad0fadcb1880a6087a8" compoundref="i_transform_8h" startline="31">SmolDock::iVect::x</references>
+        <references refid="struct_smol_dock_1_1i_conformer_1a45c379f6a880da313bf3519dc415e992" compoundref="i_conformer_8h" startline="35">SmolDock::iConformer::x</references>
+        <references refid="struct_smol_dock_1_1i_protein_1ae36a5b0f6996e54f9ce1f746a79e23f8" compoundref="i_protein_8h" startline="40">SmolDock::iProtein::x</references>
+        <references refid="struct_smol_dock_1_1i_vect_1af8165339c1e38179008c4ca49a565fb4" compoundref="i_transform_8h" startline="31">SmolDock::iVect::y</references>
+        <references refid="struct_smol_dock_1_1i_conformer_1ac3019c0cd62660a4392591dd9519cc9a" compoundref="i_conformer_8h" startline="35">SmolDock::iConformer::y</references>
+        <references refid="struct_smol_dock_1_1i_protein_1a090a371c93db6928cdfef39b0ce3d1fd" compoundref="i_protein_8h" startline="40">SmolDock::iProtein::y</references>
+        <references refid="struct_smol_dock_1_1i_vect_1a013cdafb950199deb4511843ff389e73" compoundref="i_transform_8h" startline="31">SmolDock::iVect::z</references>
+        <references refid="struct_smol_dock_1_1i_conformer_1a5c1fc6f9bad31ec2731337e9ba1e9a0f" compoundref="i_conformer_8h" startline="35">SmolDock::iConformer::z</references>
+        <references refid="struct_smol_dock_1_1i_protein_1ab95306577aa2d8bdd268504b44d046ad" compoundref="i_protein_8h" startline="40">SmolDock::iProtein::z</references>
+        <referencedby refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a7bee39278168cb4d7ee6558b3a3d3bb4" compoundref="_conformer_rigid_docking_engine_8cpp" startline="137" endline="201">SmolDock::Engine::ConformerRigidDockingEngine::runDockingEngine</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Free-standing docking score functions. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Engines/ScoringFunctions/BasicScoringFunction.cpp" line="31" column="1"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,305 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="class_smol_dock_1_1_re_scorer" kind="class" language="C++" prot="public">
+    <compoundname>SmolDock::ReScorer</compoundname>
+    <includes refid="_re_scorer_8h" local="no">ReScorer.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_smol_dock_1_1_re_scorer_1ab3d128591e75a32b1d6152bb3b4d3ea4" prot="private" static="no" mutable="no">
+        <type><ref refid="class_smol_dock_1_1_protein" kindref="compound">Protein</ref> &amp;</type>
+        <definition>Protein&amp; SmolDock::ReScorer::protein</definition>
+        <argsstring></argsstring>
+        <name>protein</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Utilities/ReScorer.h" line="20" column="1" bodyfile="Utilities/ReScorer.h" bodystart="20" bodyend="-1"/>
+        <referencedby refid="class_smol_dock_1_1_re_scorer_1a102b6af24e4f5dc420c2bdfba5a792f0" compoundref="_re_scorer_8cpp" startline="15" endline="20">prepare</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_smol_dock_1_1_re_scorer_1acfa92e136e1a1681477539bd14bed734" prot="private" static="no" mutable="no">
+        <type><ref refid="class_smol_dock_1_1_molecule" kindref="compound">Molecule</ref> &amp;</type>
+        <definition>Molecule&amp; SmolDock::ReScorer::molecule</definition>
+        <argsstring></argsstring>
+        <name>molecule</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Utilities/ReScorer.h" line="21" column="1" bodyfile="Utilities/ReScorer.h" bodystart="21" bodyend="-1"/>
+        <referencedby refid="class_smol_dock_1_1_re_scorer_1a102b6af24e4f5dc420c2bdfba5a792f0" compoundref="_re_scorer_8cpp" startline="15" endline="20">prepare</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_smol_dock_1_1_re_scorer_1aa23484f98a480115afdd978a83f9091f" prot="private" static="no" mutable="no">
+        <type>std::function&lt; double(const <ref refid="struct_smol_dock_1_1i_conformer" kindref="compound">iConformer</ref> &amp;, const <ref refid="struct_smol_dock_1_1i_transform" kindref="compound">iTransform</ref> &amp;, const <ref refid="struct_smol_dock_1_1i_protein" kindref="compound">iProtein</ref> &amp;)&gt; &amp;</type>
+        <definition>std::function&lt;double(const iConformer &amp;, const iTransform &amp;, const iProtein &amp;)&gt;&amp; SmolDock::ReScorer::scoringFunction</definition>
+        <argsstring></argsstring>
+        <name>scoringFunction</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Utilities/ReScorer.h" line="22" column="1" bodyfile="Utilities/ReScorer.h" bodystart="22" bodyend="-1"/>
+        <referencedby refid="class_smol_dock_1_1_re_scorer_1a4f372ac345e57254d9b00672f169d2fd" compoundref="_re_scorer_8cpp" startline="22" endline="24">getScore</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_smol_dock_1_1_re_scorer_1a415f9b1b65c644dc042cb14131af1c10" prot="private" static="no" mutable="no">
+        <type><ref refid="struct_smol_dock_1_1i_protein" kindref="compound">iProtein</ref></type>
+        <definition>iProtein SmolDock::ReScorer::iprotein</definition>
+        <argsstring></argsstring>
+        <name>iprotein</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Utilities/ReScorer.h" line="24" column="1" bodyfile="Utilities/ReScorer.h" bodystart="24" bodyend="-1"/>
+        <referencedby refid="class_smol_dock_1_1_re_scorer_1a102b6af24e4f5dc420c2bdfba5a792f0" compoundref="_re_scorer_8cpp" startline="15" endline="20">prepare</referencedby>
+        <referencedby refid="class_smol_dock_1_1_re_scorer_1a4f372ac345e57254d9b00672f169d2fd" compoundref="_re_scorer_8cpp" startline="22" endline="24">getScore</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_smol_dock_1_1_re_scorer_1ac8cf11ff4b1e73fea599b6eba7d05ad0" prot="private" static="no" mutable="no">
+        <type><ref refid="struct_smol_dock_1_1i_conformer" kindref="compound">iConformer</ref></type>
+        <definition>iConformer SmolDock::ReScorer::iconformer</definition>
+        <argsstring></argsstring>
+        <name>iconformer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Utilities/ReScorer.h" line="25" column="1" bodyfile="Utilities/ReScorer.h" bodystart="25" bodyend="-1"/>
+        <referencedby refid="class_smol_dock_1_1_re_scorer_1a102b6af24e4f5dc420c2bdfba5a792f0" compoundref="_re_scorer_8cpp" startline="15" endline="20">prepare</referencedby>
+        <referencedby refid="class_smol_dock_1_1_re_scorer_1a4f372ac345e57254d9b00672f169d2fd" compoundref="_re_scorer_8cpp" startline="22" endline="24">getScore</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_smol_dock_1_1_re_scorer_1ae77b0b4b724627836a85359936ae63a1" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>SmolDock::ReScorer::ReScorer</definition>
+        <argsstring>(Protein &amp;prot, Molecule &amp;mol, std::function&lt; double(const iConformer &amp;, const iTransform &amp;, const iProtein &amp;)&gt; &amp;scorFunc)</argsstring>
+        <name>ReScorer</name>
+        <param>
+          <type><ref refid="class_smol_dock_1_1_protein" kindref="compound">Protein</ref> &amp;</type>
+          <declname>prot</declname>
+        </param>
+        <param>
+          <type><ref refid="class_smol_dock_1_1_molecule" kindref="compound">Molecule</ref> &amp;</type>
+          <declname>mol</declname>
+        </param>
+        <param>
+          <type>std::function&lt; double(const <ref refid="struct_smol_dock_1_1i_conformer" kindref="compound">iConformer</ref> &amp;, const <ref refid="struct_smol_dock_1_1i_transform" kindref="compound">iTransform</ref> &amp;, const <ref refid="struct_smol_dock_1_1i_protein" kindref="compound">iProtein</ref> &amp;)&gt; &amp;</type>
+          <declname>scorFunc</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Utilities/ReScorer.h" line="15" column="1" bodyfile="Utilities/ReScorer.cpp" bodystart="8" bodyend="13"/>
+      </memberdef>
+      <memberdef kind="function" id="class_smol_dock_1_1_re_scorer_1a102b6af24e4f5dc420c2bdfba5a792f0" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool SmolDock::ReScorer::prepare</definition>
+        <argsstring>()</argsstring>
+        <name>prepare</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Utilities/ReScorer.h" line="17" column="1" bodyfile="Utilities/ReScorer.cpp" bodystart="15" bodyend="20"/>
+        <references refid="class_smol_dock_1_1_molecule_1a9aba4607923da552cf15847567c77603" compoundref="_molecule_8cpp" startline="381" endline="398">SmolDock::Molecule::getInitialConformer</references>
+        <references refid="class_smol_dock_1_1_protein_1a68856c725dbe91f5ccec59e8fa8306b2" compoundref="_protein_8cpp" startline="159" endline="208">SmolDock::Protein::getiProtein</references>
+        <references refid="class_smol_dock_1_1_re_scorer_1ac8cf11ff4b1e73fea599b6eba7d05ad0" compoundref="_re_scorer_8h" startline="25">iconformer</references>
+        <references refid="class_smol_dock_1_1_re_scorer_1a415f9b1b65c644dc042cb14131af1c10" compoundref="_re_scorer_8h" startline="24">iprotein</references>
+        <references refid="class_smol_dock_1_1_re_scorer_1acfa92e136e1a1681477539bd14bed734" compoundref="_re_scorer_8h" startline="21">molecule</references>
+        <references refid="class_smol_dock_1_1_re_scorer_1ab3d128591e75a32b1d6152bb3b4d3ea4" compoundref="_re_scorer_8h" startline="20">protein</references>
+      </memberdef>
+      <memberdef kind="function" id="class_smol_dock_1_1_re_scorer_1a4f372ac345e57254d9b00672f169d2fd" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double SmolDock::ReScorer::getScore</definition>
+        <argsstring>()</argsstring>
+        <name>getScore</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Utilities/ReScorer.h" line="18" column="1" bodyfile="Utilities/ReScorer.cpp" bodystart="22" bodyend="24"/>
+        <references refid="class_smol_dock_1_1_re_scorer_1ac8cf11ff4b1e73fea599b6eba7d05ad0" compoundref="_re_scorer_8h" startline="25">iconformer</references>
+        <references refid="class_smol_dock_1_1_re_scorer_1a415f9b1b65c644dc042cb14131af1c10" compoundref="_re_scorer_8h" startline="24">iprotein</references>
+        <references refid="namespace_smol_dock_1a3974d1e3a6f729a7ca05b97996ca2079" compoundref="i_transform_8h" startline="72" endline="80">SmolDock::iTransformIdentityInit</references>
+        <references refid="class_smol_dock_1_1_re_scorer_1aa23484f98a480115afdd978a83f9091f" compoundref="_re_scorer_8h" startline="22">scoringFunction</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="188">
+        <label>K</label>
+      </node>
+      <node id="175">
+        <label>T</label>
+      </node>
+      <node id="177">
+        <label>SmolDock::Molecule</label>
+        <link refid="class_smol_dock_1_1_molecule"/>
+        <childnode refid="178" relation="private-inheritance">
+        </childnode>
+        <childnode refid="179" relation="usage">
+          <edgelabel>-bonds</edgelabel>
+        </childnode>
+        <childnode refid="180" relation="usage">
+          <edgelabel>-smiles</edgelabel>
+          <edgelabel>-residue_name</edgelabel>
+        </childnode>
+        <childnode refid="182" relation="usage">
+          <edgelabel>-atoms</edgelabel>
+        </childnode>
+      </node>
+      <node id="179">
+        <label>std::vector&lt; std::shared_ptr&lt; SmolDock::Bond &gt; &gt;</label>
+        <childnode refid="174" relation="template-instance">
+          <edgelabel>&lt; std::shared_ptr&lt; SmolDock::Bond &gt; &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="176">
+        <label>std::vector&lt; double &gt;</label>
+        <childnode refid="174" relation="template-instance">
+          <edgelabel>&lt; double &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="174">
+        <label>std::vector&lt; T &gt;</label>
+        <childnode refid="175" relation="usage">
+          <edgelabel>+elements</edgelabel>
+        </childnode>
+      </node>
+      <node id="172">
+        <label>SmolDock::iConformer</label>
+        <link refid="struct_smol_dock_1_1i_conformer"/>
+        <childnode refid="173" relation="usage">
+          <edgelabel>+type</edgelabel>
+          <edgelabel>+variant</edgelabel>
+        </childnode>
+        <childnode refid="176" relation="usage">
+          <edgelabel>+x</edgelabel>
+          <edgelabel>+y</edgelabel>
+          <edgelabel>+z</edgelabel>
+          <edgelabel>+atomicRadius</edgelabel>
+        </childnode>
+      </node>
+      <node id="187">
+        <label>std::map&lt; K, T &gt;</label>
+        <childnode refid="188" relation="usage">
+          <edgelabel>+keys</edgelabel>
+        </childnode>
+        <childnode refid="175" relation="usage">
+          <edgelabel>+elements</edgelabel>
+        </childnode>
+      </node>
+      <node id="185">
+        <label>SmolDock::iProtein</label>
+        <link refid="struct_smol_dock_1_1i_protein"/>
+        <childnode refid="186" relation="usage">
+          <edgelabel>+AAId_to_AtomPositionInVect</edgelabel>
+        </childnode>
+        <childnode refid="173" relation="usage">
+          <edgelabel>+type</edgelabel>
+          <edgelabel>+variant</edgelabel>
+        </childnode>
+        <childnode refid="176" relation="usage">
+          <edgelabel>+x</edgelabel>
+          <edgelabel>+y</edgelabel>
+          <edgelabel>+z</edgelabel>
+          <edgelabel>+atomicRadius</edgelabel>
+        </childnode>
+      </node>
+      <node id="184">
+        <label>std::vector&lt; std::shared_ptr&lt; SmolDock::AminoAcid &gt; &gt;</label>
+        <childnode refid="174" relation="template-instance">
+          <edgelabel>&lt; std::shared_ptr&lt; SmolDock::AminoAcid &gt; &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="178">
+        <label>SmolDock::Structure</label>
+        <link refid="class_smol_dock_1_1_structure"/>
+      </node>
+      <node id="181">
+        <label>std::basic_string&lt; char &gt;</label>
+      </node>
+      <node id="171">
+        <label>SmolDock::ReScorer</label>
+        <link refid="class_smol_dock_1_1_re_scorer"/>
+        <childnode refid="172" relation="usage">
+          <edgelabel>-iconformer</edgelabel>
+        </childnode>
+        <childnode refid="177" relation="usage">
+          <edgelabel>-molecule</edgelabel>
+        </childnode>
+        <childnode refid="183" relation="usage">
+          <edgelabel>-protein</edgelabel>
+        </childnode>
+        <childnode refid="185" relation="usage">
+          <edgelabel>-iprotein</edgelabel>
+        </childnode>
+      </node>
+      <node id="183">
+        <label>SmolDock::Protein</label>
+        <link refid="class_smol_dock_1_1_protein"/>
+        <childnode refid="178" relation="private-inheritance">
+        </childnode>
+        <childnode refid="184" relation="usage">
+          <edgelabel>-aminoacids</edgelabel>
+        </childnode>
+        <childnode refid="182" relation="usage">
+          <edgelabel>-heteroatoms</edgelabel>
+        </childnode>
+      </node>
+      <node id="173">
+        <label>std::vector&lt; unsigned char &gt;</label>
+        <childnode refid="174" relation="template-instance">
+          <edgelabel>&lt; unsigned char &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="182">
+        <label>std::vector&lt; std::shared_ptr&lt; SmolDock::Atom &gt; &gt;</label>
+        <childnode refid="174" relation="template-instance">
+          <edgelabel>&lt; std::shared_ptr&lt; SmolDock::Atom &gt; &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="186">
+        <label>std::map&lt; unsigned int, std::tuple&lt; unsigned long, unsigned long &gt; &gt;</label>
+        <childnode refid="187" relation="template-instance">
+          <edgelabel>&lt; unsigned int, std::tuple&lt; unsigned long, unsigned long &gt; &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="180">
+        <label>std::string</label>
+        <childnode refid="181" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Utilities/ReScorer.h" line="14" column="1" bodyfile="Utilities/ReScorer.h" bodystart="14" bodyend="26"/>
+    <listofallmembers>
+      <member refid="class_smol_dock_1_1_re_scorer_1a4f372ac345e57254d9b00672f169d2fd" prot="private" virt="non-virtual"><scope>SmolDock::ReScorer</scope><name>getScore</name></member>
+      <member refid="class_smol_dock_1_1_re_scorer_1ac8cf11ff4b1e73fea599b6eba7d05ad0" prot="private" virt="non-virtual"><scope>SmolDock::ReScorer</scope><name>iconformer</name></member>
+      <member refid="class_smol_dock_1_1_re_scorer_1a415f9b1b65c644dc042cb14131af1c10" prot="private" virt="non-virtual"><scope>SmolDock::ReScorer</scope><name>iprotein</name></member>
+      <member refid="class_smol_dock_1_1_re_scorer_1acfa92e136e1a1681477539bd14bed734" prot="private" virt="non-virtual"><scope>SmolDock::ReScorer</scope><name>molecule</name></member>
+      <member refid="class_smol_dock_1_1_re_scorer_1a102b6af24e4f5dc420c2bdfba5a792f0" prot="private" virt="non-virtual"><scope>SmolDock::ReScorer</scope><name>prepare</name></member>
+      <member refid="class_smol_dock_1_1_re_scorer_1ab3d128591e75a32b1d6152bb3b4d3ea4" prot="private" virt="non-virtual"><scope>SmolDock::ReScorer</scope><name>protein</name></member>
+      <member refid="class_smol_dock_1_1_re_scorer_1ae77b0b4b724627836a85359936ae63a1" prot="private" virt="non-virtual"><scope>SmolDock::ReScorer</scope><name>ReScorer</name></member>
+      <member refid="class_smol_dock_1_1_re_scorer_1aa23484f98a480115afdd978a83f9091f" prot="private" virt="non-virtual"><scope>SmolDock::ReScorer</scope><name>scoringFunction</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

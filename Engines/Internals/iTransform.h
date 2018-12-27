@@ -14,23 +14,35 @@
 
 namespace SmolDock {
 
+    //! Represents a rotation
+    /*!
+     *
+     *
+     * \sa iTransform
+     */
     struct iQuaternion {
         // Quaternion :
-        double s;
-        double u,v,t;
+        double s; //! Scalar part
+        double u,v,t; //! Vector part
     };
 
+    //! General purpose 3D-vector type
     struct iVect {
         double x,y,z;
     };
 
+    //! Represents a translation
     struct iTranslation {
         double x,y,z;
     };
 
+
+    //! Represents a rotation and translation transform to be applied on ligand/ligand part
+    /*!
+     * \sa iTranslation, iQuaternion
+    */
     struct iTransform {
         iTranslation transl;
-
         iQuaternion rota;
     };
 
@@ -38,20 +50,25 @@ namespace SmolDock {
     inline iQuaternion iQuaternionIdentityInit()
     {
         iQuaternion qt;
-        qt.s = 0.5;
-        qt.u = 0.5;
-        qt.v = 0.5;
-        qt.t = 0.5;
+        qt.s = 1.0;
+        qt.u = 0.0;
+        qt.v = 0.0;
+        qt.t = 0.0;
         return qt;
     }
 
+    //! Holds a gradient for the score function with regard to an iTransform
+    /*!
+     * \sa iTranslation, iQuaternion
+    */
     struct iGradient {
-        double dx,dy,dz;
+        double dx,dy,dz; //! Translation part
 
-        double ds;
-        double du,dv,dt;
+        double ds; //! Scalar quaternion part
+        double du,dv,dt; //! Vector quaternion part
     };
 
+    //! Returns a neutral transform
     inline iTransform iTransformIdentityInit()
     {
         iTransform tr;
@@ -62,6 +79,7 @@ namespace SmolDock {
         return tr;
     }
 
+    //! Apply the rotation given by a quaternion to a vector
     inline void applyRotationInPlace(iVect& vec, const iQuaternion& qt)
     {
         iVect v = vec;
@@ -73,6 +91,7 @@ namespace SmolDock {
         vec.z = 2*qt.u*qt.t*v.x + 2*qt.v*qt.t*v.y + qt.t*qt.t*v.z - 2*qt.s*qt.v*v.x - qt.v*qt.v*v.z + 2*qt.s*qt.u*v.y - qt.u*qt.u*v.z + qt.s*qt.s*v.z;
     }
 
+    //! Apply the rotation given by a quaternion to a vector
     inline iVect applyRotation(const iVect& v,const iQuaternion& qt)
     {
         iVect res(v);
@@ -80,6 +99,7 @@ namespace SmolDock {
         return res;
     }
 
+    //! Apply the provided translation to a vector
     inline void applyTranslationInPlace(iVect& v,const iTranslation& t)
     {
         v.x += t.x;
@@ -87,6 +107,7 @@ namespace SmolDock {
         v.z += t.z;
     }
 
+    //! Apply the provided translation to a vector
     inline iVect applyTranslation(const iVect& v,const iTranslation& t)
     {
         iVect res(v);
@@ -95,13 +116,14 @@ namespace SmolDock {
     }
 
 
-
+    //! Apply the provided iTransform to a vector
     inline void applyTransformInPlace(iVect& v, const iTransform& tr)
     {
         applyRotationInPlace(v,tr.rota);
         applyTranslationInPlace(v,tr.transl);
     }
 
+    //! Apply the provided iTransform to a vector
     inline iVect applyTransform(const iVect& v, const iTransform& tr)
     {
         iVect res(v);
@@ -110,6 +132,7 @@ namespace SmolDock {
     }
 
 
+    //! Apply the provided iTransform to a confomer, atom-by-atom
     inline void applyTransformInPlace(iConformer& conformer, const iTransform& tr)
     {
         for (unsigned int i = 0; i < conformer.x.size(); i++) {
@@ -121,13 +144,15 @@ namespace SmolDock {
         }
     }
 
-    inline double quaternionNorm(iQuaternion quat)
+    //! Returns the norm of the given quaternion
+    inline double quaternionNorm(const iQuaternion& quat)
     {
         return std::sqrt(
                 std::pow(quat.s,2) + std::pow(quat.u,2) + std::pow(quat.v,2) + std::pow(quat.t,2)
                 );
     }
 
+    //! Returns the norm of the given vector
     inline double vectorNorm(iVect v)
     {
         return std::sqrt(
@@ -135,6 +160,7 @@ namespace SmolDock {
         );
     }
 
+    //! Normalize a quaternion (which then has norm == 1.0)
     inline void normalizeQuaternionInPlace(iQuaternion& quat)
     {
         double norm = quaternionNorm(quat);
@@ -144,6 +170,7 @@ namespace SmolDock {
         quat.t /= norm;
     }
 
+    //! Normalize a quaternion (which then has norm == 1.0)
     inline iQuaternion normalizeQuaternion(const iQuaternion& quat)
     {
         iQuaternion ret = quat;
