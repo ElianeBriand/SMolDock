@@ -8,21 +8,24 @@
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  *
- * Foobar is distributed in the hope that it will be useful,
+ * SmolDock is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with Foobar.  If not, see <https://www.gnu.org/licenses/>.
+ * along with SmolDock.  If not, see <https://www.gnu.org/licenses/>.
  *
  */
 
 #include <tuple>
+#include <algorithm>
 
 #include "Molecule.h"
 #include "Atom.h"
 #include "Utilities/PDBLigandUtils.h"
+
+#include <GraphMol/Descriptors/Lipinski.h>
 
 #include <ESBTL/default.h>
 #include <ESBTL/atom_classifier.h>
@@ -77,75 +80,31 @@ namespace SmolDock {
         if (conformer_id == -1) // Failed to generate
             return false;
 
-
-        conformer.x.reserve(static_cast<size_t>(this->atoms.size()));
-        conformer.y.reserve(static_cast<size_t>(this->atoms.size()));
-        conformer.z.reserve(static_cast<size_t>(this->atoms.size()));
-        conformer.type.reserve(static_cast<size_t>(this->atoms.size()));
-
-        RDKit::Conformer &rdkit_conformer = rwmol->getConformer(conformer_id);
-
-
-        for (auto atom_it = rwmol->beginAtoms(); atom_it != rwmol->endAtoms(); ++atom_it) {
-            assert((*atom_it)->getAtomicNum() != 1); // Conformer should not contain Hs (which were removed earlier)
-
-            conformer.type.push_back(static_cast<unsigned char>((*atom_it)->getAtomicNum()));
-
-            const RDGeom::Point3D &position = rdkit_conformer.getAtomPos((*atom_it)->getIdx());
-            conformer.x.push_back(position.x);
-            conformer.y.push_back(position.y);
-            conformer.z.push_back(position.z);
-
-            // FIXME : this means there is an encapsulation problem, likely due to the RWMol* being in Molecule but not linked to Atom
-            conformer.atomicRadius.push_back(atomTypeToAtomicRadius(
-                    stringToAtomType(boost::to_upper_copy<std::string>((*atom_it)->getSymbol()))));
-        }
+        conformer = generateIConformerForGivenRDKitConformerID(conformer_id);
 
         return true;
     }
 
     unsigned int Molecule::generateConformers(std::vector<iConformer> &viConformers, unsigned int num, int seed) {
 
-
+        RDKit::MolOps::addHs(*rwmol);
         std::vector<int> conformer_ids = RDKit::DGeomHelpers::EmbedMultipleConfs(*rwmol, // Molecule
                                                                                  num, // Num of conformer
                                                                                  30, // Max attempts
                                                                                  seed, // RNG seed
                                                                                  false); // Erase existing conformer
+        RDKit::MolOps::removeHs(*rwmol);
+
         if (conformer_ids.size() == 0)
             return 0; // Early failure case
 
-        viConformers.reserve(viConformers.capacity() + conformer_ids.size() + 1);
+        viConformers.reserve(viConformers.capacity() + conformer_ids.size());
 
-        // Add the initial conformer
-        conformer_ids.push_back(this->initial_conformer_id);
 
-        unsigned int num_atoms = this->atoms.size();
+
 
         for (int i : conformer_ids) {
-            iConformer conformer;
-            RDKit::Conformer rdkit_conformer = this->rwmol->getConformer(i);
-
-
-            conformer.x.reserve(static_cast<size_t>(num_atoms));
-            conformer.y.reserve(static_cast<size_t>(num_atoms));
-            conformer.z.reserve(static_cast<size_t>(num_atoms));
-            conformer.type.reserve(static_cast<size_t>(num_atoms));
-
-            for (auto atom_it = rwmol->beginAtoms(); atom_it != rwmol->endAtoms(); ++atom_it) {
-                conformer.type.push_back(static_cast<unsigned char>((*atom_it)->getAtomicNum()));
-                conformer.variant.push_back(0); // Not implemented
-
-                const RDGeom::Point3D &position = rdkit_conformer.getAtomPos((*atom_it)->getIdx());
-                conformer.x.push_back(position.x);
-                conformer.y.push_back(position.y);
-                conformer.z.push_back(position.z);
-
-                // FIXME : this means there is an encapsulation problem, likely due to the RWMol* being in Molecule but not linked to Atom
-                conformer.atomicRadius.push_back(atomTypeToAtomicRadius(
-                        stringToAtomType(boost::to_upper_copy<std::string>((*atom_it)->getSymbol()))));
-            }
-
+            iConformer conformer = this->generateIConformerForGivenRDKitConformerID(i);
             viConformers.push_back(std::move(conformer));
         }
 
@@ -318,6 +277,15 @@ namespace SmolDock {
             new_bond->publicizeToAtom();
             bonds.push_back(new_bond);
         }
+
+        // Post processing to assign variant
+
+        // Processing to assign the apolar flag to carbon
+        assignApolarCarbonFlag(this->atoms);
+
+        numberOfRotatableBonds = RDKit::Descriptors::calcNumRotatableBonds((RDKit::ROMol)(*this->rwmol));
+
+
         return true;
     }
 
@@ -379,22 +347,47 @@ namespace SmolDock {
     }
 
     iConformer Molecule::getInitialConformer() {
+        unsigned int rdkit_first_conformer_id = (*(this->rwmol->beginConformers()))->getId();
+        iConformer conformer = this->generateIConformerForGivenRDKitConformerID(rdkit_first_conformer_id);
+        return conformer;
+    }
+
+    iConformer Molecule::generateIConformerForGivenRDKitConformerID(unsigned int id) {
         iConformer conformer;
-        auto rdkit_conformer = (*(this->rwmol->beginConformers()));
-        for (auto atom_it = this->rwmol->beginAtoms(); atom_it != this->rwmol->endAtoms(); ++atom_it) {
-            assert((*atom_it)->getAtomicNum() != 1); // Conformer should not contain Hs (which were removed earlier)
+        RDKit::Conformer rdkit_conformer = this->rwmol->getConformer(id);
+
+        unsigned int num_atoms = this->atoms.size();
+        conformer.x.reserve(static_cast<size_t>(num_atoms));
+        conformer.y.reserve(static_cast<size_t>(num_atoms));
+        conformer.z.reserve(static_cast<size_t>(num_atoms));
+        conformer.type.reserve(static_cast<size_t>(num_atoms));
+
+        for (auto atom_it = rwmol->beginAtoms(); atom_it != rwmol->endAtoms(); ++atom_it) {
+
+            // Find the corresponding Atom in this->atoms
+            std::shared_ptr<Atom> current_Atom = *(std::find_if(std::begin(this->atoms), std::end(this->atoms),
+                                                                [&](const std::shared_ptr<Atom> &e) {
+                                                                    return e->getAtomID() == (*atom_it)->getIdx();
+                                                                }));
 
             conformer.type.push_back(static_cast<unsigned char>((*atom_it)->getAtomicNum()));
+            conformer.variant.push_back((unsigned int)current_Atom->variant);
 
-            const RDGeom::Point3D &position = rdkit_conformer->getAtomPos((*atom_it)->getIdx());
+            const RDGeom::Point3D &position = rdkit_conformer.getAtomPos((*atom_it)->getIdx());
             conformer.x.push_back(position.x);
             conformer.y.push_back(position.y);
             conformer.z.push_back(position.z);
 
             conformer.atomicRadius.push_back(atomTypeToAtomicRadius(
                     stringToAtomType(boost::to_upper_copy<std::string>((*atom_it)->getSymbol()))));
+            conformer.num_rotatable_bond = this->numberOfRotatableBonds;
         }
+
         return conformer;
+    }
+
+    unsigned int Molecule::getNumRotatableBond() {
+        return this->numberOfRotatableBonds;
     }
 
 

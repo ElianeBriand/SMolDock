@@ -8,13 +8,13 @@
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  *
- * Foobar is distributed in the hope that it will be useful,
+ * SmolDock is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with Foobar.  If not, see <https://www.gnu.org/licenses/>.
+ * along with SmolDock.  If not, see <https://www.gnu.org/licenses/>.
  *
  */
 
@@ -94,7 +94,7 @@ namespace SmolDock {
         this->type = type;
     }
 
-    unsigned int AminoAcid::getAAId() {
+    unsigned int AminoAcid::getAAId() const {
         return this->AAId;
     }
 
@@ -105,11 +105,14 @@ namespace SmolDock {
 
 
 
-    bool AminoAcid::filliProtein(iProtein& prot)
+    bool AminoAcid::filliProtein(iProtein& prot, bool skipHydrogen)
     {
         for(auto& atom: this->atoms) {
+            if(skipHydrogen && atom->getAtomType() == Atom::AtomType::hydrogen)
+                continue;
+
             prot.type.push_back(atom->getAtomicNumber());
-            prot.variant.push_back(0); // Not implemented
+            prot.variant.push_back((unsigned int)atom->getAtomVariant()); // Not implemented
 
 
             auto pos = atom->getAtomPosition();
@@ -123,6 +126,14 @@ namespace SmolDock {
         return true;
     }
 
+    AminoAcid::AAType AminoAcid::getType() const {
+        return this->type;
+    }
+
+    void AminoAcid::setType(AminoAcid::AAType t) {
+        this->type = t;
+
+    }
 
 
 }

@@ -8,13 +8,13 @@
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  *
- * Foobar is distributed in the hope that it will be useful,
+ * SmolDock is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with Foobar.  If not, see <https://www.gnu.org/licenses/>.
+ * along with SmolDock.  If not, see <https://www.gnu.org/licenses/>.
  *
  */
 
@@ -36,6 +36,7 @@ namespace SmolDock {
     class MoleculeTraversal;
     class Atom;
     class MoleculeTraversal;
+    enum class PDBResidueVariantAssignationType;
 
     /*!
      * \brief Class representing "rich" atom in Molecule and Protein.
@@ -48,25 +49,27 @@ namespace SmolDock {
         friend MoleculeTraversal;
         friend class Molecule;
         friend class Protein;
+        friend void assignApolarCarbonFlag(std::vector< std::shared_ptr<Atom> >& atomVect);
+        friend void assignVariantFlagsForResidueAtom(AminoAcid& residue, PDBResidueVariantAssignationType assignation_type);
+
 
         // Make the value of the enum be the atomic number
         enum class AtomType : unsigned char {
             unknown = 0,
             hydrogen = 1,
+
             carbon = 6,
             oxygen = 8,
             nitrogen = 7,
+
+            phosporus = 15,
             sulfur = 16,
-            chlorine = 17,
+            chlorine = 17
         };
 
         enum class AtomVariant : unsigned int {
-            unknown = 0,
-            aromaticCarbon = 1,
-            aromaticNitrogen = 2,
-            sp3carbon = 3,
-            sp2carbon = 4,
-            sp1carbon = 5
+            apolar = 1 << 0 // Hydrophobic flag (notably, identifies hydrophobic carbon vs partial-charge-carrying carbon for scoring)
+            // next flag : xxx = 1 << 1;
         };
 
         /* Too many cases, for now we just store as-is in a string
@@ -153,7 +156,7 @@ namespace SmolDock {
 
     private:
         AtomType type;
-        AtomVariant variant;
+        AtomVariant variant = Atom::AtomVariant{0};
         int charge = 0;
 
         bool fromResidue = false;
@@ -176,6 +179,10 @@ namespace SmolDock {
     Atom::AtomType stringToAtomType(const std::string &symbol_or_name);
 
     double atomTypeToAtomicRadius(Atom::AtomType t);
+
+
+    inline constexpr Atom::AtomVariant operator|(Atom::AtomVariant a, Atom::AtomVariant b)
+    {return static_cast<Atom::AtomVariant>(static_cast<unsigned int>(a) | static_cast<unsigned int>(b));}
 
 }
 

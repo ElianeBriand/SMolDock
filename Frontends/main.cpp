@@ -8,13 +8,13 @@
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  *
- * Foobar is distributed in the hope that it will be useful,
+ * SmolDock is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with Foobar.  If not, see <https://www.gnu.org/licenses/>.
+ * along with SmolDock.  If not, see <https://www.gnu.org/licenses/>.
  *
  */
 
@@ -26,6 +26,7 @@
 #include "Structures/Protein.h"
 #include "Utilities/DockingResultPrinter.h"
 #include "Engines/ConformerRigidDockingEngine.h"
+#include "Engines/ScoringFunctions/VinaLikeScoringFunction.h"
 
 #include <boost/log/core.hpp>
 #include <boost/log/trivial.hpp>
@@ -36,7 +37,9 @@
 SmolDock::IntermediateConformerCollector* conformerCollector;
 
 
+
 int main() {
+
 
     /* Setting up the logger */
     boost::log::core::get()->set_filter
@@ -75,8 +78,13 @@ int main() {
 
     SmolDock::Molecule mol;
     //mol.populateFromSMILES("CC(C)Cc1ccc(cc1)[C@@H](C)C(=O)O"); // Ibuprofen
-    mol.populateFromPDB("IBP_model.pdb", "CC(C)Cc1ccc(cc1)[C@H](C)C(=O)O");
+    mol.populateFromPDB("../DockingTests/Tripeptide/VINA_bestres.pdb", "CC(C)Cc1ccc(cc1)[C@H](C)C(=O)O");
 
+    SmolDock::iConformer conf_init = mol.getInitialConformer();
+    SmolDock::iProtein iprot = prot.getiProtein();
+    BOOST_LOG_TRIVIAL(debug) << "Score without docking : " << SmolDock::Score::vina_like_rigid_inter_scoring_func(conf_init,SmolDock::iTransformIdentityInit(),iprot);
+
+    return 0;
 
 
     SmolDock::PDBWriter pwriter;

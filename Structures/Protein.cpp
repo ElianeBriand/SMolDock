@@ -8,13 +8,13 @@
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  *
- * Foobar is distributed in the hope that it will be useful,
+ * SmolDock is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with Foobar.  If not, see <https://www.gnu.org/licenses/>.
+ * along with SmolDock.  If not, see <https://www.gnu.org/licenses/>.
  *
  */
 
@@ -30,6 +30,9 @@
 
 #include "Protein.h"
 #include "Atom.h"
+
+#include "Structures/Common/VariantFlagAssignation.h"
+#include "Structures/Common/PDBResidueVariantTable.h"
 
 namespace SmolDock {
 
@@ -115,6 +118,7 @@ namespace SmolDock {
 
                             assert(it_atm->is_hetatm() == 0); // We expect heteroatoms to have been taken care of previously
 
+
                             total_nb_atom++;
 
                             auto current_atom = current_residue->atoms.emplace_back(
@@ -124,11 +128,15 @@ namespace SmolDock {
 
                             current_atom->setAtomPosition(std::make_tuple(it_atm->x(), it_atm->y(), it_atm->z()));
 
+
                             acc_x(it_atm->x());
                             acc_y(it_atm->y());
                             acc_z(it_atm->z());
 
                         }
+
+                        assignVariantFlagsForResidueAtom(*current_residue, PDBResidueVariantAssignationType::GeneralPurpose);
+
                     }
                 }
 
@@ -152,6 +160,16 @@ namespace SmolDock {
             BOOST_LOG_TRIVIAL(error) << "Could not load protein PDB file: " << filename ;
             return false;
         }
+
+
+        // Post processing steps to add variant flags
+/*
+        for(auto& residue : this->aminoacids)
+        {
+            //residue->atoms
+        }
+*/
+
 
         return true;
     }
@@ -178,7 +196,7 @@ namespace SmolDock {
         for(auto& residue: this->aminoacids)
         {
             unsigned long size_before = prot.x.size();
-            residue->filliProtein(prot);
+            residue->filliProtein(prot, true /* Skip hydrogen */);
             unsigned long size_after = prot.x.size();
 
             // Visual demo :

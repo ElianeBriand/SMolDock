@@ -18,28 +18,32 @@
  *
  */
 
-
 #include <boost/python.hpp>
 #include <boost/numpy.hpp>
 
+#include "PyUtilities.h"
 
-#include "Python/PySTLWrapper.h"
-#include "Python/PyStructures.h"
-#include "Python/PyUtilities.h"
-#include "Python/PyScoringFunctions.h"
+#include <Utilities/ReScorer.h>
+
 
 namespace p = boost::python;
 namespace np = boost::numpy;
 
-BOOST_PYTHON_MODULE(PySmolDock)
-{
-    Py_Initialize();
-    np::initialize();
+namespace sd = SmolDock;
 
-    export_STLWrapper();
-    export_Structures();
-    export_Utilities();
-    export_ScoringFunctions();
+/*        ReScorer(Protein &prot, Molecule &mol, std::function<double(const iConformer &, const iTransform &, const iProtein &)>& scorFunc);
 
+        bool prepare();
+        double getScore();*/
+
+void export_Utilities() {
+    p::class_<sd::ReScorer>("ReScorer", p::init<sd::Protein&, sd::Molecule&,std::function<double(const sd::iConformer &, const sd::iTransform &, const sd::iProtein &)>& >())
+        .def("prepare", &sd::ReScorer::prepare)
+        .def("getScore", &sd::ReScorer::getScore)
+        //.def("set", &World::set)
+        //.add_property("rovalue", &Num::get)
+        //.add_property("value", &Num::get, &Num::set);
+            ;
 
 }
+

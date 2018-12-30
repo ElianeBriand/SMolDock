@@ -81,8 +81,8 @@ set(SOURCE_LIST Structures/Structure.cpp
         Engines/ConformerRigidDockingEngine.h
         Engines/Internals/iConformer.h
         Utilities/TimingsLog.h
-        Engines/ScoringFunctions/BasicScoringFunction.cpp
-        Engines/ScoringFunctions/BasicScoringFunction.h
+        Engines/ScoringFunctions/VinaLikeScoringFunction.cpp
+        Engines/ScoringFunctions/VinaLikeScoringFunction.h
         Engines/Internals/iProtein.h
         Engines/Internals/iTransform.h
         Utilities/PDBWriter.cpp
@@ -95,14 +95,18 @@ set(SOURCE_LIST Structures/Structure.cpp
         Utilities/IntermediateConformerCollector.cpp
         Utilities/IntermediateConformerCollector.h
         Utilities/ReScorer.cpp
-        Utilities/ReScorer.h)
+        Utilities/ReScorer.h
+        Structures/Common/VariantFlagAssignation.cpp
+        Structures/Common/VariantFlagAssignation.h
+        Structures/Common/PDBResidueVariantTable.cpp
+        Structures/Common/PDBResidueVariantTable.h)
 
-set(PY_EXPORT_SOURCE_LIST Frontends/Python/PyStructures.cpp Frontends/Python/PyStructures.h Frontends/Python/PySTLWrapper.cpp Frontends/Python/PySTLWrapper.h)
+set(PY_EXPORT_SOURCE_LIST Frontends/Python/PyStructures.cpp Frontends/Python/PyStructures.h Frontends/Python/PySTLWrapper.cpp Frontends/Python/PySTLWrapper.h Frontends/Python/PyUtilities.cpp Frontends/Python/PyUtilities.h Frontends/Python/PyScoringFunctions.cpp Frontends/Python/PyScoringFunctions.h)
 
 ADD_LIBRARY(smoldock_object OBJECT ${SOURCE_LIST})
 set_target_properties(smoldock_object PROPERTIES LINK_FLAGS " -static  ")
 
-ADD_LIBRARY(libsmoldock STATIC ${SOURCE_LIST})
+ADD_LIBRARY(libsmoldock STATIC ${SOURCE_LIST} )
 set_target_properties(libsmoldock PROPERTIES COMPILE_FLAGS " -fPIC ")
 set_target_properties(libsmoldock PROPERTIES LINK_FLAGS " -static -v -Wl,--no-undefined -Wl,--as-needed ")
 set_target_properties(libsmoldock PROPERTIES PREFIX "lib")
@@ -130,6 +134,7 @@ TARGET_LINK_LIBRARIES(smoldock ${RDKIT_LINKAGE_LIST})
 
 target_link_libraries(smoldock gsl gslcblas boost_log boost_log_setup boost_system boost_log boost_system boost_filesystem boost_date_time boost_thread boost_regex pthread)
 target_link_libraries(smoldock Vc)
+
 
 # For Intel VTune/Profiler tools, you need this if you generate a static executable
 #target_link_options(smoldock PRIVATE "-u_init" "-usetenv" "-ugetenv" "-u__errno_location" "-upthread_create" "-upthread_getattr_np")

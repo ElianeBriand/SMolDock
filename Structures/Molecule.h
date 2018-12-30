@@ -8,13 +8,13 @@
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  *
- * Foobar is distributed in the hope that it will be useful,
+ * SmolDock is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with Foobar.  If not, see <https://www.gnu.org/licenses/>.
+ * along with SmolDock.  If not, see <https://www.gnu.org/licenses/>.
  *
  */
 #ifndef SMOLDOCK_MOLECULE_H
@@ -147,6 +147,8 @@ namespace SmolDock {
         */
         Molecule deepcopy();
 
+        unsigned int getNumRotatableBond();
+
     private:
         std::vector<std::shared_ptr<Atom> > atoms;
         std::vector<std::shared_ptr<Bond> > bonds;
@@ -162,6 +164,10 @@ namespace SmolDock {
 
         int initial_conformer_id = -1;
 
+        iConformer generateIConformerForGivenRDKitConformerID(unsigned int id);
+
+
+        unsigned int numberOfRotatableBonds = 0;
     };
 
 }

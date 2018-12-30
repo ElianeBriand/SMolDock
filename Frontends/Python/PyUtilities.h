@@ -18,20 +18,11 @@
  *
  */
 
-#ifndef SMOLDOCK_VINACOMPATIBLEDOCKINGENGINE_H
-#define SMOLDOCK_VINACOMPATIBLEDOCKINGENGINE_H
+
+#ifndef SMOLDOCK_PYUTILITIES_H
+#define SMOLDOCK_PYUTILITIES_H
 
 
-#include "AbstractDockingEngine.h"
+void export_Utilities();
 
-namespace SmolDock::Engine {
-
-    class VinaCompatibleDockingEngine : AbstractDockingEngine {
-
-
-    };
-
-}
-
-
-#endif //SMOLDOCK_VINACOMPATIBLEDOCKINGENGINE_H
+#endif //SMOLDOCK_PYUTILITIES_H

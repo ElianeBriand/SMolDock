@@ -20,6 +20,13 @@ namespace SmolDock {
 
     bool PDBWriter::writePDB(std::string filename) {
 
+        if(this->ligand_to_export.size() == 0)
+        {
+            BOOST_LOG_TRIVIAL(error)
+                << "PDBWriter::writePDB called, yet 0 ligand were added to the PDBWriter. File not emitted.";
+            return false;
+        }
+
         ESBTL::Default_system system(0, "defsyst");
         std::ostringstream filecontent;
 

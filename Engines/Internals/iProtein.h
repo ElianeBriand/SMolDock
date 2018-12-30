@@ -8,13 +8,13 @@
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  *
- * Foobar is distributed in the hope that it will be useful,
+ * SmolDock is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with Foobar.  If not, see <https://www.gnu.org/licenses/>.
+ * along with SmolDock.  If not, see <https://www.gnu.org/licenses/>.
  *
  */
 
@@ -40,7 +40,7 @@ namespace SmolDock {
         std::vector<double> x,y,z;
         std::vector<double> atomicRadius;
         std::vector<unsigned char> type;
-        std::vector<unsigned char> variant;
+        std::vector<unsigned int> variant;
 
         //! Map the AAId of residues to the corresponding position of the atoms in the vector
         std::map<unsigned int, std::tuple<unsigned long,unsigned long> > AAId_to_AtomPositionInVect;

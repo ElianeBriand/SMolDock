@@ -18,20 +18,25 @@
  *
  */
 
-#ifndef SMOLDOCK_VINACOMPATIBLEDOCKINGENGINE_H
-#define SMOLDOCK_VINACOMPATIBLEDOCKINGENGINE_H
+#ifndef SMOLDOCK_VARIANTFLAGASSIGNATION_H
+#define SMOLDOCK_VARIANTFLAGASSIGNATION_H
+
+#include <vector>
+#include <memory>
+
+#include <Structures/Common/PDBResidueVariantTable.h>
+
+#include <Structures/Atom.h>
+
+namespace SmolDock {
 
 
-#include "AbstractDockingEngine.h"
 
-namespace SmolDock::Engine {
+    void assignApolarCarbonFlag(std::vector<Atom>& atomVect);
+    void assignVariantFlagsForResidueAtom(AminoAcid& residue, PDBResidueVariantAssignationType assignation_type = PDBResidueVariantAssignationType::GeneralPurpose);
 
-    class VinaCompatibleDockingEngine : AbstractDockingEngine {
-
-
-    };
 
 }
 
 
-#endif //SMOLDOCK_VINACOMPATIBLEDOCKINGENGINE_H
+#endif //SMOLDOCK_VARIANTFLAGASSIGNATION_H

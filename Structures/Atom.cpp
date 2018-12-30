@@ -8,13 +8,13 @@
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  *
- * Foobar is distributed in the hope that it will be useful,
+ * SmolDock is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with Foobar.  If not, see <https://www.gnu.org/licenses/>.
+ * along with SmolDock.  If not, see <https://www.gnu.org/licenses/>.
  *
  */
 
@@ -120,11 +120,12 @@ namespace SmolDock {
     std::set<std::tuple<Atom::AtomType, std::string, std::string, double> > Atom::AtomTypeLabel = {
             {Atom::AtomType::unknown,  "unknown",  "?", 0.0},
             {Atom::AtomType::hydrogen, "hydrogen", "H", 0.3},
-            {Atom::AtomType::carbon,   "carbon",   "C", 2.0},
-            {Atom::AtomType::oxygen,   "oxygen",   "O", 1.6},
-            {Atom::AtomType::nitrogen, "nitrogen", "N", 1.7},
-            {Atom::AtomType::sulfur,   "sulfur",   "S", 2.6},
-            {Atom::AtomType::chlorine, "chlorine", "CL", 4.6}
+            {Atom::AtomType::carbon,   "carbon",   "C", 1.9},
+            {Atom::AtomType::oxygen,   "oxygen",   "O", 1.7},
+            {Atom::AtomType::nitrogen, "nitrogen", "N", 1.8},
+            {Atom::AtomType::sulfur,   "sulfur",   "S", 2.0},
+            {Atom::AtomType::chlorine, "chlorine", "CL", 1.8},
+            {Atom::AtomType::phosporus, "phosphorus", "P", 2.1}
     };
 
 

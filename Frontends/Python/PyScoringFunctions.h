@@ -18,20 +18,13 @@
  *
  */
 
-#ifndef SMOLDOCK_VINACOMPATIBLEDOCKINGENGINE_H
-#define SMOLDOCK_VINACOMPATIBLEDOCKINGENGINE_H
 
 
-#include "AbstractDockingEngine.h"
-
-namespace SmolDock::Engine {
-
-    class VinaCompatibleDockingEngine : AbstractDockingEngine {
+#ifndef SMOLDOCK_PYSCORINGFUNCTIONS_H
+#define SMOLDOCK_PYSCORINGFUNCTIONS_H
 
 
-    };
-
-}
+void export_ScoringFunctions();
 
 
-#endif //SMOLDOCK_VINACOMPATIBLEDOCKINGENGINE_H
+#endif //SMOLDOCK_PYSCORINGFUNCTIONS_H
