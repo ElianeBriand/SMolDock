@@ -6,31 +6,45 @@
     <includes local="no">boost/numpy.hpp</includes>
     <includes refid="_py_s_t_l_wrapper_8h" local="yes">Python/PySTLWrapper.h</includes>
     <includes refid="_py_structures_8h" local="yes">Python/PyStructures.h</includes>
+    <includes refid="_py_utilities_8h" local="yes">Python/PyUtilities.h</includes>
+    <includes refid="_py_scoring_functions_8h" local="yes">Python/PyScoringFunctions.h</includes>
     <incdepgraph>
-      <node id="1092">
+      <node id="1613">
         <label>Python/PyStructures.h</label>
         <link refid="_py_structures_8h"/>
       </node>
-      <node id="1091">
+      <node id="1612">
         <label>Python/PySTLWrapper.h</label>
         <link refid="_py_s_t_l_wrapper_8h"/>
       </node>
-      <node id="1090">
+      <node id="1611">
         <label>boost/numpy.hpp</label>
       </node>
-      <node id="1089">
+      <node id="1615">
+        <label>Python/PyScoringFunctions.h</label>
+        <link refid="_py_scoring_functions_8h"/>
+      </node>
+      <node id="1610">
         <label>boost/python.hpp</label>
       </node>
-      <node id="1088">
+      <node id="1614">
+        <label>Python/PyUtilities.h</label>
+        <link refid="_py_utilities_8h"/>
+      </node>
+      <node id="1609">
         <label>SmoldockPythonBindings.cpp</label>
         <link refid="_smoldock_python_bindings_8cpp"/>
-        <childnode refid="1089" relation="include">
+        <childnode refid="1610" relation="include">
         </childnode>
-        <childnode refid="1090" relation="include">
+        <childnode refid="1611" relation="include">
         </childnode>
-        <childnode refid="1091" relation="include">
+        <childnode refid="1612" relation="include">
         </childnode>
-        <childnode refid="1092" relation="include">
+        <childnode refid="1613" relation="include">
+        </childnode>
+        <childnode refid="1614" relation="include">
+        </childnode>
+        <childnode refid="1615" relation="include">
         </childnode>
       </node>
     </incdepgraph>
@@ -49,9 +63,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Frontends/SmoldockPythonBindings.cpp" line="32" column="1" bodyfile="Frontends/SmoldockPythonBindings.cpp" bodystart="32" bodyend="41"/>
-        <references refid="_py_s_t_l_wrapper_8cpp_1a168320ae6ebe56579c717093cbb24708" compoundref="_py_s_t_l_wrapper_8cpp" startline="41" endline="48">export_STLWrapper</references>
+        <location file="Frontends/SmoldockPythonBindings.cpp" line="34" column="1" bodyfile="Frontends/SmoldockPythonBindings.cpp" bodystart="34" bodyend="45"/>
+        <references refid="_py_scoring_functions_8cpp_1a2ede6b770a3e6131986d822ec5842b63" compoundref="_py_scoring_functions_8cpp" startline="52" endline="66">export_ScoringFunctions</references>
+        <references refid="_py_s_t_l_wrapper_8cpp_1a168320ae6ebe56579c717093cbb24708" compoundref="_py_s_t_l_wrapper_8cpp" startline="41" endline="49">export_STLWrapper</references>
         <references refid="_py_structures_8cpp_1a18cad6e29d14a0da9d2cd9464e7e2356" compoundref="_py_structures_8cpp" startline="39" endline="88">export_Structures</references>
+        <references refid="_py_utilities_8cpp_1a48b6c8c5377d2e7c99f7084ea93aa77b" compoundref="_py_utilities_8cpp" startline="39" endline="48">export_Utilities</references>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -69,13 +85,13 @@
 <codeline lineno="8"><highlight class="comment"><sp/>*<sp/>the<sp/>Free<sp/>Software<sp/>Foundation,<sp/>either<sp/>version<sp/>3<sp/>of<sp/>the<sp/>License,<sp/>or</highlight></codeline>
 <codeline lineno="9"><highlight class="comment"><sp/>*<sp/>(at<sp/>your<sp/>option)<sp/>any<sp/>later<sp/>version.</highlight></codeline>
 <codeline lineno="10"><highlight class="comment"><sp/>*</highlight></codeline>
-<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>Foobar<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>SmolDock<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,</highlight></codeline>
 <codeline lineno="12"><highlight class="comment"><sp/>*<sp/>but<sp/>WITHOUT<sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of</highlight></codeline>
 <codeline lineno="13"><highlight class="comment"><sp/>*<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE.<sp/><sp/>See<sp/>the</highlight></codeline>
 <codeline lineno="14"><highlight class="comment"><sp/>*<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>for<sp/>more<sp/>details.</highlight></codeline>
 <codeline lineno="15"><highlight class="comment"><sp/>*</highlight></codeline>
 <codeline lineno="16"><highlight class="comment"><sp/>*<sp/>You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License</highlight></codeline>
-<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>along<sp/>with<sp/>Foobar.<sp/><sp/>If<sp/>not,<sp/>see<sp/>&lt;https://www.gnu.org/licenses/&gt;.</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>along<sp/>with<sp/>SmolDock.<sp/><sp/>If<sp/>not,<sp/>see<sp/>&lt;https://www.gnu.org/licenses/&gt;.</highlight></codeline>
 <codeline lineno="18"><highlight class="comment"><sp/>*</highlight></codeline>
 <codeline lineno="19"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="20"><highlight class="normal"></highlight></codeline>
@@ -86,20 +102,24 @@
 <codeline lineno="25"><highlight class="normal"></highlight></codeline>
 <codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_py_s_t_l_wrapper_8h" kindref="compound">Python/PySTLWrapper.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_py_structures_8h" kindref="compound">Python/PyStructures.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="28"><highlight class="normal"></highlight></codeline>
-<codeline lineno="29"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">p<sp/>=<sp/>boost::python;</highlight></codeline>
-<codeline lineno="30"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">np<sp/>=<sp/>boost::numpy;</highlight></codeline>
-<codeline lineno="31"><highlight class="normal"></highlight></codeline>
-<codeline lineno="32" refid="_smoldock_python_bindings_8cpp_1a9002869529fdb857c7ffa4a170c4f3ef" refkind="member"><highlight class="normal"><ref refid="_smoldock_python_bindings_8cpp_1a9002869529fdb857c7ffa4a170c4f3ef" kindref="member">BOOST_PYTHON_MODULE</ref>(PySmolDock)</highlight></codeline>
-<codeline lineno="33"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>Py_Initialize();</highlight></codeline>
-<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/>np::initialize();</highlight></codeline>
-<codeline lineno="36"><highlight class="normal"></highlight></codeline>
-<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_py_s_t_l_wrapper_8cpp_1a168320ae6ebe56579c717093cbb24708" kindref="member">export_STLWrapper</ref>();</highlight></codeline>
-<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_py_structures_8cpp_1a18cad6e29d14a0da9d2cd9464e7e2356" kindref="member">export_Structures</ref>();</highlight></codeline>
-<codeline lineno="39"><highlight class="normal"></highlight></codeline>
-<codeline lineno="40"><highlight class="normal"></highlight></codeline>
-<codeline lineno="41"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_py_utilities_8h" kindref="compound">Python/PyUtilities.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_py_scoring_functions_8h" kindref="compound">Python/PyScoringFunctions.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">p<sp/>=<sp/>boost::python;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">np<sp/>=<sp/>boost::numpy;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34" refid="_smoldock_python_bindings_8cpp_1a9002869529fdb857c7ffa4a170c4f3ef" refkind="member"><highlight class="normal"><ref refid="_smoldock_python_bindings_8cpp_1a9002869529fdb857c7ffa4a170c4f3ef" kindref="member">BOOST_PYTHON_MODULE</ref>(PySmolDock)</highlight></codeline>
+<codeline lineno="35"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>Py_Initialize();</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>np::initialize();</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_py_s_t_l_wrapper_8cpp_1a168320ae6ebe56579c717093cbb24708" kindref="member">export_STLWrapper</ref>();</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_py_structures_8cpp_1a18cad6e29d14a0da9d2cd9464e7e2356" kindref="member">export_Structures</ref>();</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_py_utilities_8cpp_1a48b6c8c5377d2e7c99f7084ea93aa77b" kindref="member">export_Utilities</ref>();</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_py_scoring_functions_8cpp_1a2ede6b770a3e6131986d822ec5842b63" kindref="member">export_ScoringFunctions</ref>();</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal">}</highlight></codeline>
     </programlisting>
     <location file="Frontends/SmoldockPythonBindings.cpp"/>
   </compounddef>

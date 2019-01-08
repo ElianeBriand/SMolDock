@@ -29,8 +29,9 @@
 #include "../Structures/Protein.h"
 #include "../Structures/Molecule.h"
 
-#include "Engines/Optimizers/GradientDescentLineSearch.h"
+#include "Engines/LocalOptimizers/GradientDescentLineSearch.h"
 
+#include "Engines/ScoringFunctions/ScoringFunctionFactory.h"
 
 namespace SmolDock::Engine {
 
@@ -49,16 +50,16 @@ namespace SmolDock::Engine {
         /*!
          * \param conformer_num Number of conformer to generate
         */
-        explicit ConformerRigidDockingEngine(unsigned int conformer_num);
+        explicit ConformerRigidDockingEngine(unsigned int conformer_num,
+                Protein* protein,
+                Molecule* ligand,
+                Score::ScoringFunctionType scFuncType,
+                unsigned int seed);
 
         // /// Parameters /////////////
         bool setDockingBox(DockingBoxSetting setting) final;
 
-        bool setProtein(Protein *p) final;
 
-        bool setLigand(Molecule *m) final;
-
-        void setRandomSeed(int seed) final;
 
 
         // /// Actions /////////////
@@ -77,6 +78,10 @@ namespace SmolDock::Engine {
         Protein *orig_protein;
         Molecule *orig_ligand;
 
+        Score::ScoringFunctionType scoringFuncType;
+        std::unique_ptr<Score::ScoringFunction> scoringFunction;
+
+
         int random_seed = 1;
         std::mt19937 rnd_generator;
 
@@ -85,6 +90,7 @@ namespace SmolDock::Engine {
         std::vector<iConformer> viConformers;
 
         iProtein protein;
+
 
 
         std::vector<double> scores;

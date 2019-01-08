@@ -4,6 +4,9 @@
 
 #include "ReScorer.h"
 
+#include <Engines/Internals/InternalsUtilityFunctions.h>
+
+
 namespace SmolDock {
     ReScorer::ReScorer(SmolDock::Protein &prot, SmolDock::Molecule &mol,
                        std::function<double(const iConformer &, const iTransform &, const iProtein &)>& scorFunc) :

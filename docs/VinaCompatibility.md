@@ -14,7 +14,7 @@ grid computation are not necessarily performed, and the scoring function might n
 `w` the weight factor (0.058459). 
     * The procedure used in Vina appears to not be exactly the same. We are working to reverse-engineer exactly
     what is it that is does.
-    * In the meantime, there is a discrepency of around 10^-4 (kcal/mol) between the reported affinity score (~binding free energy)
+    * In the meantime, there is a discrepency of around 10^-3 (kcal/mol) between the reported affinity score (~binding free energy)
     of both software.
     * It is currently not known, but is under investigation, whether this affects the relative ranking of ligand poses,
      or is just random noise.

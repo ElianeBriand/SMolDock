@@ -100,7 +100,9 @@ $(document).ready(function(){initNavTree('_gradient_descent_line_search_8h.html'
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;functional&gt;</code><br />
-<code>#include &lt;<a class="el" href="_gradient_calculator_8h_source.html">Engines/Math/GradientCalculator.h</a>&gt;</code><br />
+<code>#include &lt;armadillo&gt;</code><br />
+<code>#include &quot;<a class="el" href="_optimizer_interface_8h_source.html">OptimizerInterface.h</a>&quot;</code><br />
+<code>#include &lt;<a class="el" href="_scoring_function_interface_8h_source.html">Engines/ScoringFunctions/ScoringFunctionInterface.h</a>&gt;</code><br />
 <code>#include &quot;<a class="el" href="i_conformer_8h_source.html">Engines/Internals/iConformer.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="i_transform_8h_source.html">Engines/Internals/iTransform.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="i_protein_8h_source.html">Engines/Internals/iProtein.h</a>&quot;</code><br />
@@ -111,10 +113,11 @@ $(document).ready(function(){initNavTree('_gradient_descent_line_search_8h.html'
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="_gradient_descent_line_search_8h__incl.png" border="0" usemap="#_gradient_descent_line_search_8h" alt=""/></div>
 <map name="_gradient_descent_line_search_8h" id="_gradient_descent_line_search_8h">
-<area shape="rect" id="node3" href="_gradient_calculator_8h.html" title="Engines/Math/GradientCalculator.h" alt="" coords="108,80,333,107"/>
-<area shape="rect" id="node4" href="i_conformer_8h.html" title="Engines/Internals/iConformer.h" alt="" coords="561,155,763,181"/>
-<area shape="rect" id="node7" href="i_transform_8h.html" title="Engines/Internals/iTransform.h" alt="" coords="407,80,607,107"/>
-<area shape="rect" id="node10" href="i_protein_8h.html" title="Engines/Internals/iProtein.h" alt="" coords="145,155,328,181"/>
+<area shape="rect" id="node4" href="_optimizer_interface_8h.html" title="OptimizerInterface.h" alt="" coords="108,87,248,114"/>
+<area shape="rect" id="node5" href="_scoring_function_interface_8h.html" title="Engines/ScoringFunctions\l/ScoringFunctionInterface.h" alt="" coords="375,80,557,121"/>
+<area shape="rect" id="node6" href="i_conformer_8h.html" title="Engines/Internals/iConformer.h" alt="" coords="406,169,609,196"/>
+<area shape="rect" id="node9" href="i_transform_8h.html" title="iTransform.h" alt="" coords="555,244,649,271"/>
+<area shape="rect" id="node13" href="i_protein_8h.html" title="Engines/Internals/iProtein.h" alt="" coords="245,244,428,271"/>
 </map>
 </div>
 </div><div class="textblock"><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -135,13 +138,12 @@ $(document).ready(function(){initNavTree('_gradient_descent_line_search_8h.html'
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_smol_dock_1_1_gradient_descent_line_search.html">SmolDock::GradientDescentLineSearch</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_smol_dock_1_1_optimizer_1_1_gradient_descent_line_search.html">SmolDock::Optimizer::GradientDescentLineSearch</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
-<tr class="memitem:namespace_smol_dock"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_smol_dock.html">SmolDock</a></td></tr>
-<tr class="memdesc:namespace_smol_dock"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global namespace for <a class="el" href="namespace_smol_dock.html" title="Global namespace for SmolDock. ">SmolDock</a>. <br /></td></tr>
+<tr class="memitem:namespace_smol_dock_1_1_optimizer"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_smol_dock_1_1_optimizer.html">SmolDock::Optimizer</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
@@ -149,7 +151,7 @@ Namespaces</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_3b692a38eb3defa157937dbd02adffca.html">Engines</a></li><li class="navelem"><a class="el" href="dir_0bbf9864ee7b05ab02a2914ba0733fb1.html">Optimizers</a></li><li class="navelem"><a class="el" href="_gradient_descent_line_search_8h.html">GradientDescentLineSearch.h</a></li>
+    <li class="navelem"><a class="el" href="dir_3b692a38eb3defa157937dbd02adffca.html">Engines</a></li><li class="navelem"><a class="el" href="dir_7792eeab349244a7e7018da0fe5032c6.html">LocalOptimizers</a></li><li class="navelem"><a class="el" href="_gradient_descent_line_search_8h.html">GradientDescentLineSearch.h</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.14 </li>

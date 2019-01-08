@@ -16,11 +16,14 @@
         <inbodydescription>
         </inbodydescription>
         <location file="Engines/Internals/iTransform.h" line="25" column="1" bodyfile="Engines/Internals/iTransform.h" bodystart="25" bodyend="-1"/>
-        <referencedby refid="class_smol_dock_1_1_gradient_descent_line_search_1a8bc11fdd0f47562e773df6dff62dc82a" compoundref="_gradient_descent_line_search_8cpp" startline="28" endline="210">SmolDock::GradientDescentLineSearch::optimize</referencedby>
-        <referencedby refid="namespace_smol_dock_1a44a91384d128c3beb5c57ec507dddb6e" compoundref="i_transform_8h" startline="50" endline="58">SmolDock::iQuaternionIdentityInit</referencedby>
-        <referencedby refid="namespace_smol_dock_1a835c8bf0a7983ba17c48cd10f152726f" compoundref="i_transform_8h" startline="83" endline="92">SmolDock::applyRotationInPlace</referencedby>
-        <referencedby refid="namespace_smol_dock_1afb62962c202721eaa8aa64d19bd42fdf" compoundref="i_transform_8h" startline="148" endline="153">SmolDock::quaternionNorm</referencedby>
-        <referencedby refid="namespace_smol_dock_1aeef66e92064c4a5e5102102342542853" compoundref="i_transform_8h" startline="164" endline="171">SmolDock::normalizeQuaternionInPlace</referencedby>
+        <referencedby refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a7bee39278168cb4d7ee6558b3a3d3bb4" compoundref="_conformer_rigid_docking_engine_8cpp" startline="132" endline="217">SmolDock::Engine::ConformerRigidDockingEngine::runDockingEngine</referencedby>
+        <referencedby refid="namespace_smol_dock_1a44a91384d128c3beb5c57ec507dddb6e" compoundref="_internals_utility_functions_8h" startline="13" endline="20">SmolDock::iQuaternionIdentityInit</referencedby>
+        <referencedby refid="namespace_smol_dock_1a835c8bf0a7983ba17c48cd10f152726f" compoundref="_internals_utility_functions_8h" startline="36" endline="47">SmolDock::applyRotationInPlace</referencedby>
+        <referencedby refid="namespace_smol_dock_1afb62962c202721eaa8aa64d19bd42fdf" compoundref="_internals_utility_functions_8h" startline="97" endline="101">SmolDock::quaternionNorm</referencedby>
+        <referencedby refid="namespace_smol_dock_1aeef66e92064c4a5e5102102342542853" compoundref="_internals_utility_functions_8h" startline="111" endline="121">SmolDock::normalizeQuaternionInPlace</referencedby>
+        <referencedby refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1a574511b3c12769902e2c0366d4d3db96" compoundref="_vina_like_scoring_function_8cpp" startline="236" endline="294">SmolDock::Score::VinaLikeRigidScoringFunction::EvaluateWithGradient</referencedby>
+        <referencedby refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1a7998fd7ab2237aa8da50d05d553ffec0" compoundref="_vina_like_scoring_function_8h" startline="83" endline="98">SmolDock::Score::VinaLikeRigidScoringFunction::internalToExternalRepr</referencedby>
+        <referencedby refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1a78f389f738bb184be926a272f55baa95" compoundref="_vina_like_scoring_function_8h" startline="100" endline="113">SmolDock::Score::VinaLikeRigidScoringFunction::externalToInternalRepr</referencedby>
       </memberdef>
       <memberdef kind="variable" id="struct_smol_dock_1_1i_quaternion_1a3692d71434fede9771686a73240e6ba7" prot="public" static="no" mutable="no">
         <type>double</type>
@@ -34,11 +37,14 @@
         <inbodydescription>
         </inbodydescription>
         <location file="Engines/Internals/iTransform.h" line="26" column="1" bodyfile="Engines/Internals/iTransform.h" bodystart="26" bodyend="-1"/>
-        <referencedby refid="class_smol_dock_1_1_gradient_descent_line_search_1a8bc11fdd0f47562e773df6dff62dc82a" compoundref="_gradient_descent_line_search_8cpp" startline="28" endline="210">SmolDock::GradientDescentLineSearch::optimize</referencedby>
-        <referencedby refid="namespace_smol_dock_1a44a91384d128c3beb5c57ec507dddb6e" compoundref="i_transform_8h" startline="50" endline="58">SmolDock::iQuaternionIdentityInit</referencedby>
-        <referencedby refid="namespace_smol_dock_1a835c8bf0a7983ba17c48cd10f152726f" compoundref="i_transform_8h" startline="83" endline="92">SmolDock::applyRotationInPlace</referencedby>
-        <referencedby refid="namespace_smol_dock_1afb62962c202721eaa8aa64d19bd42fdf" compoundref="i_transform_8h" startline="148" endline="153">SmolDock::quaternionNorm</referencedby>
-        <referencedby refid="namespace_smol_dock_1aeef66e92064c4a5e5102102342542853" compoundref="i_transform_8h" startline="164" endline="171">SmolDock::normalizeQuaternionInPlace</referencedby>
+        <referencedby refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a7bee39278168cb4d7ee6558b3a3d3bb4" compoundref="_conformer_rigid_docking_engine_8cpp" startline="132" endline="217">SmolDock::Engine::ConformerRigidDockingEngine::runDockingEngine</referencedby>
+        <referencedby refid="namespace_smol_dock_1a44a91384d128c3beb5c57ec507dddb6e" compoundref="_internals_utility_functions_8h" startline="13" endline="20">SmolDock::iQuaternionIdentityInit</referencedby>
+        <referencedby refid="namespace_smol_dock_1a835c8bf0a7983ba17c48cd10f152726f" compoundref="_internals_utility_functions_8h" startline="36" endline="47">SmolDock::applyRotationInPlace</referencedby>
+        <referencedby refid="namespace_smol_dock_1afb62962c202721eaa8aa64d19bd42fdf" compoundref="_internals_utility_functions_8h" startline="97" endline="101">SmolDock::quaternionNorm</referencedby>
+        <referencedby refid="namespace_smol_dock_1aeef66e92064c4a5e5102102342542853" compoundref="_internals_utility_functions_8h" startline="111" endline="121">SmolDock::normalizeQuaternionInPlace</referencedby>
+        <referencedby refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1a574511b3c12769902e2c0366d4d3db96" compoundref="_vina_like_scoring_function_8cpp" startline="236" endline="294">SmolDock::Score::VinaLikeRigidScoringFunction::EvaluateWithGradient</referencedby>
+        <referencedby refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1a7998fd7ab2237aa8da50d05d553ffec0" compoundref="_vina_like_scoring_function_8h" startline="83" endline="98">SmolDock::Score::VinaLikeRigidScoringFunction::internalToExternalRepr</referencedby>
+        <referencedby refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1a78f389f738bb184be926a272f55baa95" compoundref="_vina_like_scoring_function_8h" startline="100" endline="113">SmolDock::Score::VinaLikeRigidScoringFunction::externalToInternalRepr</referencedby>
       </memberdef>
       <memberdef kind="variable" id="struct_smol_dock_1_1i_quaternion_1a97a15d15b2fae3ec29c2fdb2388f5e5b" prot="public" static="no" mutable="no">
         <type>double</type>
@@ -52,11 +58,14 @@
         <inbodydescription>
         </inbodydescription>
         <location file="Engines/Internals/iTransform.h" line="26" column="1" bodyfile="Engines/Internals/iTransform.h" bodystart="26" bodyend="-1"/>
-        <referencedby refid="class_smol_dock_1_1_gradient_descent_line_search_1a8bc11fdd0f47562e773df6dff62dc82a" compoundref="_gradient_descent_line_search_8cpp" startline="28" endline="210">SmolDock::GradientDescentLineSearch::optimize</referencedby>
-        <referencedby refid="namespace_smol_dock_1a44a91384d128c3beb5c57ec507dddb6e" compoundref="i_transform_8h" startline="50" endline="58">SmolDock::iQuaternionIdentityInit</referencedby>
-        <referencedby refid="namespace_smol_dock_1a835c8bf0a7983ba17c48cd10f152726f" compoundref="i_transform_8h" startline="83" endline="92">SmolDock::applyRotationInPlace</referencedby>
-        <referencedby refid="namespace_smol_dock_1afb62962c202721eaa8aa64d19bd42fdf" compoundref="i_transform_8h" startline="148" endline="153">SmolDock::quaternionNorm</referencedby>
-        <referencedby refid="namespace_smol_dock_1aeef66e92064c4a5e5102102342542853" compoundref="i_transform_8h" startline="164" endline="171">SmolDock::normalizeQuaternionInPlace</referencedby>
+        <referencedby refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a7bee39278168cb4d7ee6558b3a3d3bb4" compoundref="_conformer_rigid_docking_engine_8cpp" startline="132" endline="217">SmolDock::Engine::ConformerRigidDockingEngine::runDockingEngine</referencedby>
+        <referencedby refid="namespace_smol_dock_1a44a91384d128c3beb5c57ec507dddb6e" compoundref="_internals_utility_functions_8h" startline="13" endline="20">SmolDock::iQuaternionIdentityInit</referencedby>
+        <referencedby refid="namespace_smol_dock_1a835c8bf0a7983ba17c48cd10f152726f" compoundref="_internals_utility_functions_8h" startline="36" endline="47">SmolDock::applyRotationInPlace</referencedby>
+        <referencedby refid="namespace_smol_dock_1afb62962c202721eaa8aa64d19bd42fdf" compoundref="_internals_utility_functions_8h" startline="97" endline="101">SmolDock::quaternionNorm</referencedby>
+        <referencedby refid="namespace_smol_dock_1aeef66e92064c4a5e5102102342542853" compoundref="_internals_utility_functions_8h" startline="111" endline="121">SmolDock::normalizeQuaternionInPlace</referencedby>
+        <referencedby refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1a574511b3c12769902e2c0366d4d3db96" compoundref="_vina_like_scoring_function_8cpp" startline="236" endline="294">SmolDock::Score::VinaLikeRigidScoringFunction::EvaluateWithGradient</referencedby>
+        <referencedby refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1a7998fd7ab2237aa8da50d05d553ffec0" compoundref="_vina_like_scoring_function_8h" startline="83" endline="98">SmolDock::Score::VinaLikeRigidScoringFunction::internalToExternalRepr</referencedby>
+        <referencedby refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1a78f389f738bb184be926a272f55baa95" compoundref="_vina_like_scoring_function_8h" startline="100" endline="113">SmolDock::Score::VinaLikeRigidScoringFunction::externalToInternalRepr</referencedby>
       </memberdef>
       <memberdef kind="variable" id="struct_smol_dock_1_1i_quaternion_1a1ff0d5e99369aa47273864dfea352c05" prot="public" static="no" mutable="no">
         <type>double</type>
@@ -70,11 +79,14 @@
         <inbodydescription>
         </inbodydescription>
         <location file="Engines/Internals/iTransform.h" line="26" column="1" bodyfile="Engines/Internals/iTransform.h" bodystart="26" bodyend="-1"/>
-        <referencedby refid="class_smol_dock_1_1_gradient_descent_line_search_1a8bc11fdd0f47562e773df6dff62dc82a" compoundref="_gradient_descent_line_search_8cpp" startline="28" endline="210">SmolDock::GradientDescentLineSearch::optimize</referencedby>
-        <referencedby refid="namespace_smol_dock_1a44a91384d128c3beb5c57ec507dddb6e" compoundref="i_transform_8h" startline="50" endline="58">SmolDock::iQuaternionIdentityInit</referencedby>
-        <referencedby refid="namespace_smol_dock_1a835c8bf0a7983ba17c48cd10f152726f" compoundref="i_transform_8h" startline="83" endline="92">SmolDock::applyRotationInPlace</referencedby>
-        <referencedby refid="namespace_smol_dock_1afb62962c202721eaa8aa64d19bd42fdf" compoundref="i_transform_8h" startline="148" endline="153">SmolDock::quaternionNorm</referencedby>
-        <referencedby refid="namespace_smol_dock_1aeef66e92064c4a5e5102102342542853" compoundref="i_transform_8h" startline="164" endline="171">SmolDock::normalizeQuaternionInPlace</referencedby>
+        <referencedby refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a7bee39278168cb4d7ee6558b3a3d3bb4" compoundref="_conformer_rigid_docking_engine_8cpp" startline="132" endline="217">SmolDock::Engine::ConformerRigidDockingEngine::runDockingEngine</referencedby>
+        <referencedby refid="namespace_smol_dock_1a44a91384d128c3beb5c57ec507dddb6e" compoundref="_internals_utility_functions_8h" startline="13" endline="20">SmolDock::iQuaternionIdentityInit</referencedby>
+        <referencedby refid="namespace_smol_dock_1a835c8bf0a7983ba17c48cd10f152726f" compoundref="_internals_utility_functions_8h" startline="36" endline="47">SmolDock::applyRotationInPlace</referencedby>
+        <referencedby refid="namespace_smol_dock_1afb62962c202721eaa8aa64d19bd42fdf" compoundref="_internals_utility_functions_8h" startline="97" endline="101">SmolDock::quaternionNorm</referencedby>
+        <referencedby refid="namespace_smol_dock_1aeef66e92064c4a5e5102102342542853" compoundref="_internals_utility_functions_8h" startline="111" endline="121">SmolDock::normalizeQuaternionInPlace</referencedby>
+        <referencedby refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1a574511b3c12769902e2c0366d4d3db96" compoundref="_vina_like_scoring_function_8cpp" startline="236" endline="294">SmolDock::Score::VinaLikeRigidScoringFunction::EvaluateWithGradient</referencedby>
+        <referencedby refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1a7998fd7ab2237aa8da50d05d553ffec0" compoundref="_vina_like_scoring_function_8h" startline="83" endline="98">SmolDock::Score::VinaLikeRigidScoringFunction::internalToExternalRepr</referencedby>
+        <referencedby refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1a78f389f738bb184be926a272f55baa95" compoundref="_vina_like_scoring_function_8h" startline="100" endline="113">SmolDock::Score::VinaLikeRigidScoringFunction::externalToInternalRepr</referencedby>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -83,7 +95,7 @@
 <para><simplesect kind="see"><para><ref refid="struct_smol_dock_1_1i_transform" kindref="compound">iTransform</ref> </para></simplesect>
 </para>    </detaileddescription>
     <collaborationgraph>
-      <node id="118">
+      <node id="121">
         <label>SmolDock::iQuaternion</label>
         <link refid="struct_smol_dock_1_1i_quaternion"/>
       </node>

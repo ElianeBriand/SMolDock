@@ -6,16 +6,14 @@ var class_smol_dock_1_1_atom =
       [ "carbon", "class_smol_dock_1_1_atom.html#a57e9a532fd04e1846c0d83edebb9fd41ae1b832c8857262f1089376030b4298b3", null ],
       [ "oxygen", "class_smol_dock_1_1_atom.html#a57e9a532fd04e1846c0d83edebb9fd41a6124d98749365e3db2c9e5b27ca04db6", null ],
       [ "nitrogen", "class_smol_dock_1_1_atom.html#a57e9a532fd04e1846c0d83edebb9fd41a63ebb9250f49340aece8d4ac541eaf61", null ],
+      [ "phosporus", "class_smol_dock_1_1_atom.html#a57e9a532fd04e1846c0d83edebb9fd41a3e17873c24bbb0b8ab2dac324dd67b9f", null ],
       [ "sulfur", "class_smol_dock_1_1_atom.html#a57e9a532fd04e1846c0d83edebb9fd41a73a9bf52aa8ea9e256ec469dfce6e022", null ],
       [ "chlorine", "class_smol_dock_1_1_atom.html#a57e9a532fd04e1846c0d83edebb9fd41af3b7d449c5ca2f53a72210e4381769be", null ]
     ] ],
     [ "AtomVariant", "class_smol_dock_1_1_atom.html#a77191f0919af58d733764e229cb1f973", [
-      [ "unknown", "class_smol_dock_1_1_atom.html#a77191f0919af58d733764e229cb1f973aad921d60486366258809553a3db49a4a", null ],
-      [ "aromaticCarbon", "class_smol_dock_1_1_atom.html#a77191f0919af58d733764e229cb1f973ae5ea25494bf7929c31404acb4d159ecb", null ],
-      [ "aromaticNitrogen", "class_smol_dock_1_1_atom.html#a77191f0919af58d733764e229cb1f973a241861a1dfbbc92233d711bfa34e15d9", null ],
-      [ "sp3carbon", "class_smol_dock_1_1_atom.html#a77191f0919af58d733764e229cb1f973aaa2ddc8a4ba81c550a95435991e2e75c", null ],
-      [ "sp2carbon", "class_smol_dock_1_1_atom.html#a77191f0919af58d733764e229cb1f973a3fba3c7feaf9a1409328b29db90d0c36", null ],
-      [ "sp1carbon", "class_smol_dock_1_1_atom.html#a77191f0919af58d733764e229cb1f973ac5879e15d7caf9ac2db3a10a035a3cf4", null ]
+      [ "apolar", "class_smol_dock_1_1_atom.html#a77191f0919af58d733764e229cb1f973ae5e437761e40c78a4c0929be07a3ab04", null ],
+      [ "hydrogenDonor", "class_smol_dock_1_1_atom.html#a77191f0919af58d733764e229cb1f973ade31e8114bf9ba2ec47d55c59f61853d", null ],
+      [ "hydrogenAcceptor", "class_smol_dock_1_1_atom.html#a77191f0919af58d733764e229cb1f973ad68216b54381a7b2b87b7924ab0191c4", null ]
     ] ],
     [ "Atom", "class_smol_dock_1_1_atom.html#a6fdae20edd67e75fa5fab8cbdbb39faf", null ],
     [ "Atom", "class_smol_dock_1_1_atom.html#a72994dd53d1aa7e9bfb05aecc8a35a52", null ],
@@ -39,6 +37,8 @@ var class_smol_dock_1_1_atom =
     [ "setAtomVariant", "class_smol_dock_1_1_atom.html#aa538e302c6c9e6cafbb9f0cbefce3a4e", null ],
     [ "setCharge", "class_smol_dock_1_1_atom.html#a16fb238f339c0accd83095ae078040f1", null ],
     [ "setOwningAA", "class_smol_dock_1_1_atom.html#ad4afec1a1299201398d64daaf874857f", null ],
+    [ "assignApolarCarbonFlag", "class_smol_dock_1_1_atom.html#af4fe090161ac376dcfd99d5eb17c0d4a", null ],
+    [ "assignVariantFlagsForResidueAtom", "class_smol_dock_1_1_atom.html#a74b6203c0c737ad86fb18da22ec935ff", null ],
     [ "atomTypeToAtomicRadius", "class_smol_dock_1_1_atom.html#ae8f2ceffdf7832e3a57549119e5fc341", null ],
     [ "atomTypeToString", "class_smol_dock_1_1_atom.html#ab7591815a3dc03bab05bcb6d5e2b741a", null ],
     [ "atomTypeToSymbolString", "class_smol_dock_1_1_atom.html#ac56105f17fd519b4438ef07334e68d60", null ],

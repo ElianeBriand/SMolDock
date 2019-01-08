@@ -25,6 +25,8 @@
 #include <boost/accumulators/statistics/stats.hpp>
 #include <boost/accumulators/statistics/mean.hpp>
 #include <boost/accumulators/statistics/count.hpp>
+#include <boost/accumulators/statistics/min.hpp>
+#include <boost/accumulators/statistics/max.hpp>
 
 #include <Utilities/TimingsLog.h>
 
@@ -36,7 +38,7 @@
 
 namespace SmolDock {
 
-    bool Protein::populateFromPDB(const std::string &filename) {
+    bool Protein::populateFromPDB(const std::string &filename, std::vector<InputPostProcessor::InputPostProcessor*> postProcessors) {
 
 
 
@@ -74,7 +76,7 @@ namespace SmolDock {
             unsigned int total_nb_model = 0, total_nb_chain = 0, total_nb_atom = 0, total_nb_hetatm = 0, total_nb_residue = 0;
 
             using namespace boost::accumulators;
-            accumulator_set<double, stats<tag::mean, tag::count > > acc_x, acc_y, acc_z;
+            accumulator_set<double, stats<tag::mean, tag::count, tag::min, tag::max > > acc_x, acc_y, acc_z;
 
 
             //Iterate over all models in the first system
@@ -133,6 +135,8 @@ namespace SmolDock {
                             acc_y(it_atm->y());
                             acc_z(it_atm->z());
 
+
+
                         }
 
                         assignVariantFlagsForResidueAtom(*current_residue, PDBResidueVariantAssignationType::GeneralPurpose);
@@ -140,9 +144,31 @@ namespace SmolDock {
                     }
                 }
 
+
+                // Post processing
+                for(InputPostProcessor::InputPostProcessor* pprocessor : postProcessors )
+                {
+                    for(auto& residue: aminoacids)
+                    {
+                        for(auto& atom: residue->atoms)
+                        {
+                            pprocessor->processAtomFromProtein(*atom,*residue);
+                        }
+                    }
+                }
+
+
                 this->center_x = mean(acc_x);
                 this->center_y = mean(acc_y);
                 this->center_z = mean(acc_z);
+
+                this->min_x = min(acc_x);
+                this->min_y = min(acc_y);
+                this->min_z = min(acc_z);
+
+                this->max_x = max(acc_x);
+                this->max_y = max(acc_y);
+                this->max_z = max(acc_z);
 
 
                 BOOST_LOG_TRIVIAL(info) << "Loaded protein : " << filename << "\n    --> " << total_nb_model << " models, "
@@ -174,7 +200,7 @@ namespace SmolDock {
         return true;
     }
 
-    iProtein Protein::getiProtein() {
+    iProtein Protein::getiProtein() const {
         /*
          *     struct iProtein {
         //! Pseudo-center of protein as a mean of each atom coordinate

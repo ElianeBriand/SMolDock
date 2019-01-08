@@ -8,274 +8,392 @@
     <includes local="no">algorithm</includes>
     <includes local="no">iostream</includes>
     <includes refid="_amino_acid_8h" local="yes">AminoAcid.h</includes>
+    <includedby refid="_input_post_processor_interface_8h" local="no">InputPostProcessorInterface.h</includedby>
     <includedby refid="_molecule_8h" local="yes">Molecule.h</includedby>
     <includedby refid="_bond_8h" local="yes">Bond.h</includedby>
+    <includedby refid="_vina_like_scoring_function_8cpp" local="no">VinaLikeScoringFunction.cpp</includedby>
     <includedby refid="_amino_acid_8cpp" local="yes">AminoAcid.cpp</includedby>
     <includedby refid="_atom_8cpp" local="yes">Atom.cpp</includedby>
+    <includedby refid="_p_d_b_residue_variant_table_8h" local="no">PDBResidueVariantTable.h</includedby>
+    <includedby refid="_variant_flag_assignation_8h" local="no">VariantFlagAssignation.h</includedby>
     <includedby refid="_molecule_8cpp" local="yes">Molecule.cpp</includedby>
     <includedby refid="_protein_8cpp" local="yes">Protein.cpp</includedby>
     <incdepgraph>
-      <node id="111">
+      <node id="128">
         <label>string</label>
       </node>
-      <node id="104">
-        <label>Atom.h</label>
-        <link refid="_atom_8h"/>
-        <childnode refid="105" relation="include">
-        </childnode>
-        <childnode refid="106" relation="include">
-        </childnode>
-        <childnode refid="107" relation="include">
-        </childnode>
-        <childnode refid="108" relation="include">
-        </childnode>
-        <childnode refid="109" relation="include">
-        </childnode>
-        <childnode refid="110" relation="include">
-        </childnode>
-      </node>
-      <node id="114">
-        <label>map</label>
-      </node>
-      <node id="110">
-        <label>AminoAcid.h</label>
-        <link refid="_amino_acid_8h"/>
-        <childnode refid="111" relation="include">
-        </childnode>
-        <childnode refid="105" relation="include">
-        </childnode>
-        <childnode refid="107" relation="include">
-        </childnode>
-        <childnode refid="108" relation="include">
-        </childnode>
-        <childnode refid="112" relation="include">
-        </childnode>
-        <childnode refid="106" relation="include">
-        </childnode>
-        <childnode refid="113" relation="include">
-        </childnode>
-      </node>
-      <node id="112">
-        <label>tuple</label>
-      </node>
-      <node id="113">
-        <label>Engines/Internals/iProtein.h</label>
-        <link refid="i_protein_8h"/>
-        <childnode refid="105" relation="include">
-        </childnode>
-        <childnode refid="106" relation="include">
-        </childnode>
-        <childnode refid="114" relation="include">
-        </childnode>
-      </node>
-      <node id="105">
-        <label>vector</label>
-      </node>
-      <node id="109">
-        <label>iostream</label>
-      </node>
-      <node id="107">
-        <label>set</label>
-      </node>
-      <node id="108">
-        <label>algorithm</label>
-      </node>
-      <node id="106">
-        <label>memory</label>
-      </node>
-    </incdepgraph>
-    <invincdepgraph>
-      <node id="119">
-        <label>ConformerRigidDockingEngine.h</label>
-        <link refid="_conformer_rigid_docking_engine_8h"/>
-        <childnode refid="120" relation="include">
-        </childnode>
-        <childnode refid="121" relation="include">
-        </childnode>
-      </node>
-      <node id="129">
-        <label>PyStructures.cpp</label>
-        <link refid="_py_structures_8cpp"/>
-      </node>
-      <node id="122">
-        <label>MDStyleDockingEngine.h</label>
-        <link refid="_m_d_style_docking_engine_8h"/>
-        <childnode refid="123" relation="include">
-        </childnode>
-      </node>
-      <node id="130">
-        <label>IntermediateConformerCollector.h</label>
-        <link refid="_intermediate_conformer_collector_8h"/>
-        <childnode refid="131" relation="include">
-        </childnode>
-        <childnode refid="132" relation="include">
-        </childnode>
-        <childnode refid="121" relation="include">
-        </childnode>
-      </node>
-      <node id="142">
-        <label>Atom.cpp</label>
-        <link refid="_atom_8cpp"/>
-      </node>
-      <node id="131">
-        <label>GradientDescentLineSearch.cpp</label>
-        <link refid="_gradient_descent_line_search_8cpp"/>
-      </node>
-      <node id="134">
-        <label>PDBWriter.cpp</label>
-        <link refid="_p_d_b_writer_8cpp"/>
-      </node>
-      <node id="138">
-        <label>PySTLWrapper.cpp</label>
-        <link refid="_py_s_t_l_wrapper_8cpp"/>
-      </node>
-      <node id="125">
-        <label>VinaCompatibleDockingEngine.cpp</label>
-        <link refid="_vina_compatible_docking_engine_8cpp"/>
-      </node>
-      <node id="137">
-        <label>ReScorer.cpp</label>
-        <link refid="_re_scorer_8cpp"/>
-      </node>
-      <node id="115">
-        <label>Atom.h</label>
-        <link refid="_atom_8h"/>
-        <childnode refid="116" relation="include">
-        </childnode>
-        <childnode refid="139" relation="include">
-        </childnode>
-        <childnode refid="141" relation="include">
-        </childnode>
-        <childnode refid="142" relation="include">
-        </childnode>
-        <childnode refid="135" relation="include">
-        </childnode>
-        <childnode refid="143" relation="include">
-        </childnode>
-      </node>
-      <node id="124">
-        <label>VinaCompatibleDockingEngine.h</label>
-        <link refid="_vina_compatible_docking_engine_8h"/>
-        <childnode refid="125" relation="include">
-        </childnode>
-      </node>
-      <node id="123">
-        <label>MDStyleDockingEngine.cpp</label>
-        <link refid="_m_d_style_docking_engine_8cpp"/>
-      </node>
       <node id="121">
-        <label>main.cpp</label>
-        <link refid="main_8cpp"/>
-      </node>
-      <node id="135">
-        <label>Molecule.cpp</label>
-        <link refid="_molecule_8cpp"/>
-      </node>
-      <node id="139">
-        <label>Bond.h</label>
-        <link refid="_bond_8h"/>
-        <childnode refid="116" relation="include">
-        </childnode>
-        <childnode refid="140" relation="include">
-        </childnode>
-      </node>
-      <node id="136">
-        <label>ReScorer.h</label>
-        <link refid="_re_scorer_8h"/>
-        <childnode refid="137" relation="include">
-        </childnode>
-      </node>
-      <node id="141">
-        <label>AminoAcid.cpp</label>
-        <link refid="_amino_acid_8cpp"/>
-      </node>
-      <node id="118">
-        <label>AbstractDockingEngine.h</label>
-        <link refid="_abstract_docking_engine_8h"/>
-        <childnode refid="119" relation="include">
-        </childnode>
+        <label>Atom.h</label>
+        <link refid="_atom_8h"/>
         <childnode refid="122" relation="include">
+        </childnode>
+        <childnode refid="123" relation="include">
         </childnode>
         <childnode refid="124" relation="include">
         </childnode>
-      </node>
-      <node id="117">
-        <label>DockingResult.h</label>
-        <link refid="_docking_result_8h"/>
-        <childnode refid="118" relation="include">
+        <childnode refid="125" relation="include">
         </childnode>
         <childnode refid="126" relation="include">
         </childnode>
         <childnode refid="127" relation="include">
         </childnode>
-        <childnode refid="129" relation="include">
-        </childnode>
       </node>
-      <node id="120">
-        <label>ConformerRigidDockingEngine.cpp</label>
-        <link refid="_conformer_rigid_docking_engine_8cpp"/>
+      <node id="131">
+        <label>map</label>
       </node>
-      <node id="128">
-        <label>DockingResultPrinter.cpp</label>
-        <link refid="_docking_result_printer_8cpp"/>
-      </node>
-      <node id="116">
-        <label>Molecule.h</label>
-        <link refid="_molecule_8h"/>
-        <childnode refid="117" relation="include">
-        </childnode>
-        <childnode refid="118" relation="include">
-        </childnode>
-        <childnode refid="119" relation="include">
+      <node id="127">
+        <label>AminoAcid.h</label>
+        <link refid="_amino_acid_8h"/>
+        <childnode refid="128" relation="include">
         </childnode>
         <childnode refid="122" relation="include">
         </childnode>
+        <childnode refid="124" relation="include">
+        </childnode>
+        <childnode refid="125" relation="include">
+        </childnode>
+        <childnode refid="129" relation="include">
+        </childnode>
+        <childnode refid="123" relation="include">
+        </childnode>
         <childnode refid="130" relation="include">
         </childnode>
+      </node>
+      <node id="129">
+        <label>tuple</label>
+      </node>
+      <node id="130">
+        <label>Engines/Internals/iProtein.h</label>
+        <link refid="i_protein_8h"/>
+        <childnode refid="122" relation="include">
+        </childnode>
+        <childnode refid="123" relation="include">
+        </childnode>
+        <childnode refid="131" relation="include">
+        </childnode>
+      </node>
+      <node id="122">
+        <label>vector</label>
+      </node>
+      <node id="126">
+        <label>iostream</label>
+      </node>
+      <node id="124">
+        <label>set</label>
+      </node>
+      <node id="125">
+        <label>algorithm</label>
+      </node>
+      <node id="123">
+        <label>memory</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="134">
+        <label>Protein.h</label>
+        <link refid="_protein_8h"/>
+        <childnode refid="135" relation="include">
+        </childnode>
+        <childnode refid="136" relation="include">
+        </childnode>
+        <childnode refid="143" relation="include">
+        </childnode>
+        <childnode refid="139" relation="include">
+        </childnode>
+        <childnode refid="148" relation="include">
+        </childnode>
+        <childnode refid="149" relation="include">
+        </childnode>
+        <childnode refid="138" relation="include">
+        </childnode>
+        <childnode refid="152" relation="include">
+        </childnode>
+      </node>
+      <node id="136">
+        <label>ConformerRigidDockingEngine.h</label>
+        <link refid="_conformer_rigid_docking_engine_8h"/>
+        <childnode refid="137" relation="include">
+        </childnode>
+        <childnode refid="138" relation="include">
+        </childnode>
+      </node>
+      <node id="152">
+        <label>PyStructures.cpp</label>
+        <link refid="_py_structures_8cpp"/>
+      </node>
+      <node id="139">
+        <label>MDStyleDockingEngine.h</label>
+        <link refid="_m_d_style_docking_engine_8h"/>
+        <childnode refid="140" relation="include">
+        </childnode>
+      </node>
+      <node id="159">
+        <label>IntermediateConformerCollector.h</label>
+        <link refid="_intermediate_conformer_collector_8h"/>
+        <childnode refid="160" relation="include">
+        </childnode>
+        <childnode refid="138" relation="include">
+        </childnode>
+      </node>
+      <node id="168">
+        <label>VariantFlagAssignation.cpp</label>
+        <link refid="_variant_flag_assignation_8cpp"/>
+      </node>
+      <node id="170">
+        <label>Atom.cpp</label>
+        <link refid="_atom_8cpp"/>
+      </node>
+      <node id="162">
+        <label>PDBWriter.cpp</label>
+        <link refid="_p_d_b_writer_8cpp"/>
+      </node>
+      <node id="146">
+        <label>VinaLikeScoringFunction.cpp</label>
+        <link refid="_vina_like_scoring_function_8cpp"/>
+      </node>
+      <node id="163">
+        <label>PySTLWrapper.cpp</label>
+        <link refid="_py_s_t_l_wrapper_8cpp"/>
+      </node>
+      <node id="142">
+        <label>VinaCompatibleDockingEngine.cpp</label>
+        <link refid="_vina_compatible_docking_engine_8cpp"/>
+      </node>
+      <node id="133">
+        <label>InputPostProcessorInterface.h</label>
+        <link refid="_input_post_processor_interface_8h"/>
+        <childnode refid="134" relation="include">
+        </childnode>
+        <childnode refid="153" relation="include">
+        </childnode>
+        <childnode refid="164" relation="include">
+        </childnode>
+      </node>
+      <node id="150">
+        <label>ReScorer.cpp</label>
+        <link refid="_re_scorer_8cpp"/>
+      </node>
+      <node id="132">
+        <label>Atom.h</label>
+        <link refid="_atom_8h"/>
         <childnode refid="133" relation="include">
+        </childnode>
+        <childnode refid="153" relation="include">
+        </childnode>
+        <childnode refid="166" relation="include">
+        </childnode>
+        <childnode refid="146" relation="include">
+        </childnode>
+        <childnode refid="169" relation="include">
+        </childnode>
+        <childnode refid="170" relation="include">
+        </childnode>
+        <childnode refid="171" relation="include">
+        </childnode>
+        <childnode refid="173" relation="include">
+        </childnode>
+        <childnode refid="158" relation="include">
+        </childnode>
+        <childnode refid="148" relation="include">
+        </childnode>
+      </node>
+      <node id="141">
+        <label>VinaCompatibleDockingEngine.h</label>
+        <link refid="_vina_compatible_docking_engine_8h"/>
+        <childnode refid="142" relation="include">
+        </childnode>
+      </node>
+      <node id="140">
+        <label>MDStyleDockingEngine.cpp</label>
+        <link refid="_m_d_style_docking_engine_8cpp"/>
+      </node>
+      <node id="138">
+        <label>main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+      <node id="158">
+        <label>Molecule.cpp</label>
+        <link refid="_molecule_8cpp"/>
+      </node>
+      <node id="171">
+        <label>PDBResidueVariantTable.h</label>
+        <link refid="_p_d_b_residue_variant_table_8h"/>
+        <childnode refid="172" relation="include">
+        </childnode>
+        <childnode refid="173" relation="include">
+        </childnode>
+        <childnode refid="168" relation="include">
+        </childnode>
+        <childnode refid="148" relation="include">
+        </childnode>
+      </node>
+      <node id="166">
+        <label>Bond.h</label>
+        <link refid="_bond_8h"/>
+        <childnode refid="153" relation="include">
+        </childnode>
+        <childnode refid="167" relation="include">
+        </childnode>
+        <childnode refid="168" relation="include">
+        </childnode>
+      </node>
+      <node id="145">
+        <label>ScoringFunctionFactory.cpp</label>
+        <link refid="_scoring_function_factory_8cpp"/>
+      </node>
+      <node id="149">
+        <label>ReScorer.h</label>
+        <link refid="_re_scorer_8h"/>
+        <childnode refid="150" relation="include">
+        </childnode>
+        <childnode refid="151" relation="include">
+        </childnode>
+      </node>
+      <node id="169">
+        <label>AminoAcid.cpp</label>
+        <link refid="_amino_acid_8cpp"/>
+      </node>
+      <node id="172">
+        <label>PDBResidueVariantTable.cpp</label>
+        <link refid="_p_d_b_residue_variant_table_8cpp"/>
+      </node>
+      <node id="151">
+        <label>PyUtilities.cpp</label>
+        <link refid="_py_utilities_8cpp"/>
+      </node>
+      <node id="135">
+        <label>AbstractDockingEngine.h</label>
+        <link refid="_abstract_docking_engine_8h"/>
+        <childnode refid="136" relation="include">
+        </childnode>
+        <childnode refid="139" relation="include">
+        </childnode>
+        <childnode refid="141" relation="include">
+        </childnode>
+      </node>
+      <node id="154">
+        <label>DockingResult.h</label>
+        <link refid="_docking_result_8h"/>
+        <childnode refid="135" relation="include">
+        </childnode>
+        <childnode refid="155" relation="include">
+        </childnode>
+        <childnode refid="156" relation="include">
+        </childnode>
+        <childnode refid="152" relation="include">
+        </childnode>
+      </node>
+      <node id="137">
+        <label>ConformerRigidDockingEngine.cpp</label>
+        <link refid="_conformer_rigid_docking_engine_8cpp"/>
+      </node>
+      <node id="144">
+        <label>GradientDescentLineSearch.cpp</label>
+        <link refid="_gradient_descent_line_search_8cpp"/>
+      </node>
+      <node id="157">
+        <label>DockingResultPrinter.cpp</label>
+        <link refid="_docking_result_printer_8cpp"/>
+      </node>
+      <node id="153">
+        <label>Molecule.h</label>
+        <link refid="_molecule_8h"/>
+        <childnode refid="154" relation="include">
         </childnode>
         <childnode refid="135" relation="include">
         </childnode>
         <childnode refid="136" relation="include">
         </childnode>
-        <childnode refid="121" relation="include">
+        <childnode refid="143" relation="include">
+        </childnode>
+        <childnode refid="139" relation="include">
+        </childnode>
+        <childnode refid="158" relation="include">
+        </childnode>
+        <childnode refid="159" relation="include">
+        </childnode>
+        <childnode refid="161" relation="include">
+        </childnode>
+        <childnode refid="149" relation="include">
         </childnode>
         <childnode refid="138" relation="include">
         </childnode>
-        <childnode refid="129" relation="include">
+        <childnode refid="163" relation="include">
+        </childnode>
+        <childnode refid="152" relation="include">
         </childnode>
       </node>
-      <node id="132">
+      <node id="160">
         <label>IntermediateConformerCollector.cpp</label>
         <link refid="_intermediate_conformer_collector_8cpp"/>
       </node>
-      <node id="133">
+      <node id="173">
+        <label>VariantFlagAssignation.h</label>
+        <link refid="_variant_flag_assignation_8h"/>
+        <childnode refid="168" relation="include">
+        </childnode>
+        <childnode refid="148" relation="include">
+        </childnode>
+      </node>
+      <node id="161">
         <label>PDBWriter.h</label>
         <link refid="_p_d_b_writer_8h"/>
-        <childnode refid="130" relation="include">
+        <childnode refid="159" relation="include">
         </childnode>
-        <childnode refid="134" relation="include">
+        <childnode refid="162" relation="include">
         </childnode>
       </node>
-      <node id="127">
+      <node id="156">
         <label>DockingResultPrinter.h</label>
         <link refid="_docking_result_printer_8h"/>
-        <childnode refid="128" relation="include">
+        <childnode refid="157" relation="include">
         </childnode>
-        <childnode refid="121" relation="include">
+        <childnode refid="138" relation="include">
         </childnode>
       </node>
-      <node id="143">
+      <node id="148">
         <label>Protein.cpp</label>
         <link refid="_protein_8cpp"/>
       </node>
-      <node id="140">
+      <node id="167">
         <label>Bond.cpp</label>
         <link refid="_bond_8cpp"/>
       </node>
-      <node id="126">
+      <node id="147">
+        <label>PyScoringFunctions.cpp</label>
+        <link refid="_py_scoring_functions_8cpp"/>
+      </node>
+      <node id="143">
+        <label>VinaLikeScoringFunction.h</label>
+        <link refid="_vina_like_scoring_function_8h"/>
+        <childnode refid="137" relation="include">
+        </childnode>
+        <childnode refid="144" relation="include">
+        </childnode>
+        <childnode refid="145" relation="include">
+        </childnode>
+        <childnode refid="146" relation="include">
+        </childnode>
+        <childnode refid="138" relation="include">
+        </childnode>
+        <childnode refid="147" relation="include">
+        </childnode>
+      </node>
+      <node id="155">
         <label>DockingResult.cpp</label>
         <link refid="_docking_result_8cpp"/>
+      </node>
+      <node id="165">
+        <label>VinaCompatibilityPostProcessor.cpp</label>
+        <link refid="_vina_compatibility_post_processor_8cpp"/>
+      </node>
+      <node id="164">
+        <label>VinaCompatibilityPostProcessor.h</label>
+        <link refid="_vina_compatibility_post_processor_8h"/>
+        <childnode refid="165" relation="include">
+        </childnode>
+        <childnode refid="138" relation="include">
+        </childnode>
       </node>
     </invincdepgraph>
     <innerclass refid="class_smol_dock_1_1_atom" prot="public">SmolDock::Atom</innerclass>
@@ -295,13 +413,13 @@
 <codeline lineno="8"><highlight class="comment"><sp/>*<sp/>the<sp/>Free<sp/>Software<sp/>Foundation,<sp/>either<sp/>version<sp/>3<sp/>of<sp/>the<sp/>License,<sp/>or</highlight></codeline>
 <codeline lineno="9"><highlight class="comment"><sp/>*<sp/>(at<sp/>your<sp/>option)<sp/>any<sp/>later<sp/>version.</highlight></codeline>
 <codeline lineno="10"><highlight class="comment"><sp/>*</highlight></codeline>
-<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>Foobar<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>SmolDock<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,</highlight></codeline>
 <codeline lineno="12"><highlight class="comment"><sp/>*<sp/>but<sp/>WITHOUT<sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of</highlight></codeline>
 <codeline lineno="13"><highlight class="comment"><sp/>*<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE.<sp/><sp/>See<sp/>the</highlight></codeline>
 <codeline lineno="14"><highlight class="comment"><sp/>*<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>for<sp/>more<sp/>details.</highlight></codeline>
 <codeline lineno="15"><highlight class="comment"><sp/>*</highlight></codeline>
 <codeline lineno="16"><highlight class="comment"><sp/>*<sp/>You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License</highlight></codeline>
-<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>along<sp/>with<sp/>Foobar.<sp/><sp/>If<sp/>not,<sp/>see<sp/>&lt;https://www.gnu.org/licenses/&gt;.</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>along<sp/>with<sp/>SmolDock.<sp/><sp/>If<sp/>not,<sp/>see<sp/>&lt;https://www.gnu.org/licenses/&gt;.</highlight></codeline>
 <codeline lineno="18"><highlight class="comment"><sp/>*</highlight></codeline>
 <codeline lineno="19"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="20"><highlight class="normal"></highlight></codeline>
@@ -323,140 +441,150 @@
 <codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">MoleculeTraversal;</highlight></codeline>
 <codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">Atom;</highlight></codeline>
 <codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">MoleculeTraversal;</highlight></codeline>
-<codeline lineno="39"><highlight class="normal"></highlight></codeline>
-<codeline lineno="44" refid="class_smol_dock_1_1_atom" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_smol_dock_1_1_atom" kindref="compound">Atom</ref><sp/>{</highlight></codeline>
-<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="46"><highlight class="normal"></highlight></codeline>
-<codeline lineno="47" refid="class_smol_dock_1_1_atom_1ade04f26c3314bee1144e0704a07e95ea" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">friend</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_atom_1ade04f26c3314bee1144e0704a07e95ea" kindref="member">Bond</ref>;</highlight></codeline>
-<codeline lineno="48" refid="class_smol_dock_1_1_atom_1a90ad0859a5e5a747eecdc79b8bb80561" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">friend</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_atom_1a90ad0859a5e5a747eecdc79b8bb80561" kindref="member">MoleculeTraversal</ref>;</highlight></codeline>
-<codeline lineno="49" refid="class_smol_dock_1_1_atom_1ae0d120b8bbafe454abebd374e2402082" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">friend</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_smol_dock_1_1_molecule" kindref="compound">Molecule</ref>;</highlight></codeline>
-<codeline lineno="50" refid="class_smol_dock_1_1_atom_1a2cc8b86817f46f61585ecf591984f8eb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">friend</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_smol_dock_1_1_protein" kindref="compound">Protein</ref>;</highlight></codeline>
-<codeline lineno="51"><highlight class="normal"></highlight></codeline>
-<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Make<sp/>the<sp/>value<sp/>of<sp/>the<sp/>enum<sp/>be<sp/>the<sp/>atomic<sp/>number</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="53" refid="class_smol_dock_1_1_atom_1a57e9a532fd04e1846c0d83edebb9fd41" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">enum<sp/>class</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_atom_1a57e9a532fd04e1846c0d83edebb9fd41" kindref="member">AtomType</ref><sp/>:<sp/>unsigned<sp/>char<sp/>{</highlight></codeline>
-<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_atom_1a57e9a532fd04e1846c0d83edebb9fd41aad921d60486366258809553a3db49a4a" kindref="member">unknown</ref><sp/>=<sp/>0,</highlight></codeline>
-<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_atom_1a57e9a532fd04e1846c0d83edebb9fd41ad4ac1478a4d8a4f591d35e3d75f3de65" kindref="member">hydrogen</ref><sp/>=<sp/>1,</highlight></codeline>
-<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_atom_1a57e9a532fd04e1846c0d83edebb9fd41ae1b832c8857262f1089376030b4298b3" kindref="member">carbon</ref><sp/>=<sp/>6,</highlight></codeline>
-<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_atom_1a57e9a532fd04e1846c0d83edebb9fd41a6124d98749365e3db2c9e5b27ca04db6" kindref="member">oxygen</ref><sp/>=<sp/>8,</highlight></codeline>
-<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_atom_1a57e9a532fd04e1846c0d83edebb9fd41a63ebb9250f49340aece8d4ac541eaf61" kindref="member">nitrogen</ref><sp/>=<sp/>7,</highlight></codeline>
-<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_atom_1a57e9a532fd04e1846c0d83edebb9fd41a73a9bf52aa8ea9e256ec469dfce6e022" kindref="member">sulfur</ref><sp/>=<sp/>16,</highlight></codeline>
-<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_atom_1a57e9a532fd04e1846c0d83edebb9fd41af3b7d449c5ca2f53a72210e4381769be" kindref="member">chlorine</ref><sp/>=<sp/>17,</highlight></codeline>
-<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
-<codeline lineno="62"><highlight class="normal"></highlight></codeline>
-<codeline lineno="63" refid="class_smol_dock_1_1_atom_1a77191f0919af58d733764e229cb1f973" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">enum<sp/>class</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_atom_1a77191f0919af58d733764e229cb1f973" kindref="member">AtomVariant</ref><sp/>:<sp/>unsigned<sp/>int<sp/>{</highlight></codeline>
-<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_atom_1a77191f0919af58d733764e229cb1f973aad921d60486366258809553a3db49a4a" kindref="member">unknown</ref><sp/>=<sp/>0,</highlight></codeline>
-<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_atom_1a77191f0919af58d733764e229cb1f973ae5ea25494bf7929c31404acb4d159ecb" kindref="member">aromaticCarbon</ref><sp/>=<sp/>1,</highlight></codeline>
-<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_atom_1a77191f0919af58d733764e229cb1f973a241861a1dfbbc92233d711bfa34e15d9" kindref="member">aromaticNitrogen</ref><sp/>=<sp/>2,</highlight></codeline>
-<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_atom_1a77191f0919af58d733764e229cb1f973aaa2ddc8a4ba81c550a95435991e2e75c" kindref="member">sp3carbon</ref><sp/>=<sp/>3,</highlight></codeline>
-<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_atom_1a77191f0919af58d733764e229cb1f973a3fba3c7feaf9a1409328b29db90d0c36" kindref="member">sp2carbon</ref><sp/>=<sp/>4,</highlight></codeline>
-<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_atom_1a77191f0919af58d733764e229cb1f973ac5879e15d7caf9ac2db3a10a035a3cf4" kindref="member">sp1carbon</ref><sp/>=<sp/>5</highlight></codeline>
-<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
-<codeline lineno="71"><highlight class="normal"></highlight></codeline>
-<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Too<sp/>many<sp/>cases,<sp/>for<sp/>now<sp/>we<sp/>just<sp/>store<sp/>as-is<sp/>in<sp/>a<sp/>string</highlight></codeline>
-<codeline lineno="73"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>enum<sp/>class<sp/>AtomClassInResidue<sp/>{</highlight></codeline>
-<codeline lineno="74"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>unknown,</highlight></codeline>
-<codeline lineno="75"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>C,<sp/>O,<sp/>N,</highlight></codeline>
-<codeline lineno="76"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CA,<sp/>CB,<sp/>CG,</highlight></codeline>
-<codeline lineno="77"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CZ,<sp/>CZ2,<sp/>CZ3,</highlight></codeline>
-<codeline lineno="78"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CH2,</highlight></codeline>
-<codeline lineno="79"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CD1,<sp/>CD2,</highlight></codeline>
-<codeline lineno="80"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CE1,<sp/>CE2,<sp/>CE3,</highlight></codeline>
-<codeline lineno="81"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CG2,</highlight></codeline>
-<codeline lineno="82"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>NE,<sp/>NE1,<sp/>NE2,</highlight></codeline>
-<codeline lineno="83"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>NH1,<sp/>NH2,</highlight></codeline>
-<codeline lineno="84"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>NZ,</highlight></codeline>
-<codeline lineno="85"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>OE1,</highlight></codeline>
-<codeline lineno="86"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>OD1,<sp/>OD2,</highlight></codeline>
-<codeline lineno="87"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>OG1,</highlight></codeline>
-<codeline lineno="88"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SG</highlight></codeline>
-<codeline lineno="89"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
-<codeline lineno="90"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="91"><highlight class="normal"></highlight></codeline>
-<codeline lineno="92"><highlight class="normal"></highlight></codeline>
-<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>////<sp/>Internal<sp/>type<sp/>&lt;=&gt;<sp/>string<sp/>conversion<sp/>//////</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">friend</highlight><highlight class="normal"><sp/>std::string<sp/><ref refid="class_smol_dock_1_1_atom_1ab7591815a3dc03bab05bcb6d5e2b741a" kindref="member">atomTypeToString</ref>(<ref refid="class_smol_dock_1_1_atom_1a57e9a532fd04e1846c0d83edebb9fd41" kindref="member">Atom::AtomType</ref><sp/>t);</highlight></codeline>
-<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">friend</highlight><highlight class="normal"><sp/>std::string<sp/><ref refid="class_smol_dock_1_1_atom_1ac56105f17fd519b4438ef07334e68d60" kindref="member">atomTypeToSymbolString</ref>(<ref refid="class_smol_dock_1_1_atom_1a57e9a532fd04e1846c0d83edebb9fd41" kindref="member">Atom::AtomType</ref><sp/>t);</highlight></codeline>
-<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">friend</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_atom_1a57e9a532fd04e1846c0d83edebb9fd41" kindref="member">Atom::AtomType</ref><sp/><ref refid="class_smol_dock_1_1_atom_1abe46f23e1f169949c8d3916b7e0ad38b" kindref="member">stringToAtomType</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;symbol_or_name);</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">enum<sp/>class</highlight><highlight class="normal"><sp/><ref refid="namespace_smol_dock_1ab797122db8030eb70bf4d042c897df5e" kindref="member">PDBResidueVariantAssignationType</ref>;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45" refid="class_smol_dock_1_1_atom" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_smol_dock_1_1_atom" kindref="compound">Atom</ref><sp/>{</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48" refid="class_smol_dock_1_1_atom_1ade04f26c3314bee1144e0704a07e95ea" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">friend</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_atom_1ade04f26c3314bee1144e0704a07e95ea" kindref="member">Bond</ref>;</highlight></codeline>
+<codeline lineno="49" refid="class_smol_dock_1_1_atom_1a90ad0859a5e5a747eecdc79b8bb80561" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">friend</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_atom_1a90ad0859a5e5a747eecdc79b8bb80561" kindref="member">MoleculeTraversal</ref>;</highlight></codeline>
+<codeline lineno="50" refid="class_smol_dock_1_1_atom_1ae0d120b8bbafe454abebd374e2402082" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">friend</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_smol_dock_1_1_molecule" kindref="compound">Molecule</ref>;</highlight></codeline>
+<codeline lineno="51" refid="class_smol_dock_1_1_atom_1a2cc8b86817f46f61585ecf591984f8eb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">friend</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_smol_dock_1_1_protein" kindref="compound">Protein</ref>;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">friend</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_atom_1af4fe090161ac376dcfd99d5eb17c0d4a" kindref="member">assignApolarCarbonFlag</ref>(std::vector&lt;<sp/>std::shared_ptr&lt;Atom&gt;<sp/>&gt;&amp;<sp/>atomVect);</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">friend</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_atom_1a74b6203c0c737ad86fb18da22ec935ff" kindref="member">assignVariantFlagsForResidueAtom</ref>(<ref refid="class_smol_dock_1_1_amino_acid" kindref="compound">AminoAcid</ref>&amp;<sp/>residue,<sp/><ref refid="namespace_smol_dock_1ab797122db8030eb70bf4d042c897df5e" kindref="member">PDBResidueVariantAssignationType</ref><sp/>assignation_type);</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Make<sp/>the<sp/>value<sp/>of<sp/>the<sp/>enum<sp/>be<sp/>the<sp/>atomic<sp/>number</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57" refid="class_smol_dock_1_1_atom_1a57e9a532fd04e1846c0d83edebb9fd41" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">enum<sp/>class</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_atom_1a57e9a532fd04e1846c0d83edebb9fd41" kindref="member">AtomType</ref><sp/>:<sp/>unsigned<sp/>char<sp/>{</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_atom_1a57e9a532fd04e1846c0d83edebb9fd41aad921d60486366258809553a3db49a4a" kindref="member">unknown</ref><sp/>=<sp/>0,</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_atom_1a57e9a532fd04e1846c0d83edebb9fd41ad4ac1478a4d8a4f591d35e3d75f3de65" kindref="member">hydrogen</ref><sp/>=<sp/>1,</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_atom_1a57e9a532fd04e1846c0d83edebb9fd41ae1b832c8857262f1089376030b4298b3" kindref="member">carbon</ref><sp/>=<sp/>6,</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_atom_1a57e9a532fd04e1846c0d83edebb9fd41a6124d98749365e3db2c9e5b27ca04db6" kindref="member">oxygen</ref><sp/>=<sp/>8,</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_atom_1a57e9a532fd04e1846c0d83edebb9fd41a63ebb9250f49340aece8d4ac541eaf61" kindref="member">nitrogen</ref><sp/>=<sp/>7,</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_atom_1a57e9a532fd04e1846c0d83edebb9fd41a3e17873c24bbb0b8ab2dac324dd67b9f" kindref="member">phosporus</ref><sp/>=<sp/>15,</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_atom_1a57e9a532fd04e1846c0d83edebb9fd41a73a9bf52aa8ea9e256ec469dfce6e022" kindref="member">sulfur</ref><sp/>=<sp/>16,</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_atom_1a57e9a532fd04e1846c0d83edebb9fd41af3b7d449c5ca2f53a72210e4381769be" kindref="member">chlorine</ref><sp/>=<sp/>17</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70" refid="class_smol_dock_1_1_atom_1a77191f0919af58d733764e229cb1f973" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">enum<sp/>class</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_atom_1a77191f0919af58d733764e229cb1f973" kindref="member">AtomVariant</ref><sp/>:<sp/>unsigned<sp/>int<sp/>{</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_atom_1a77191f0919af58d733764e229cb1f973ae5e437761e40c78a4c0929be07a3ab04" kindref="member">apolar</ref><sp/>=<sp/>1<sp/>&lt;&lt;<sp/>0,<sp/></highlight><highlight class="comment">//<sp/>Hydrophobic<sp/>flag<sp/>(notably,<sp/>identifies<sp/>hydrophobic<sp/>carbon<sp/>vs<sp/>partial-charge-carrying<sp/>carbon<sp/>for<sp/>scoring)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_atom_1a77191f0919af58d733764e229cb1f973ade31e8114bf9ba2ec47d55c59f61853d" kindref="member">hydrogenDonor</ref><sp/>=<sp/>1<sp/>&lt;&lt;<sp/>1,</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_atom_1a77191f0919af58d733764e229cb1f973ad68216b54381a7b2b87b7924ab0191c4" kindref="member">hydrogenAcceptor</ref><sp/>=<sp/>1<sp/>&lt;&lt;<sp/>2</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>next<sp/>flag<sp/>:<sp/>xxx<sp/>=<sp/>1<sp/>&lt;&lt;<sp/>3;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Too<sp/>many<sp/>cases,<sp/>for<sp/>now<sp/>we<sp/>just<sp/>store<sp/>as-is<sp/>in<sp/>a<sp/>string</highlight></codeline>
+<codeline lineno="79"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>enum<sp/>class<sp/>AtomClassInResidue<sp/>{</highlight></codeline>
+<codeline lineno="80"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>unknown,</highlight></codeline>
+<codeline lineno="81"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>C,<sp/>O,<sp/>N,</highlight></codeline>
+<codeline lineno="82"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CA,<sp/>CB,<sp/>CG,</highlight></codeline>
+<codeline lineno="83"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CZ,<sp/>CZ2,<sp/>CZ3,</highlight></codeline>
+<codeline lineno="84"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CH2,</highlight></codeline>
+<codeline lineno="85"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CD1,<sp/>CD2,</highlight></codeline>
+<codeline lineno="86"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CE1,<sp/>CE2,<sp/>CE3,</highlight></codeline>
+<codeline lineno="87"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CG2,</highlight></codeline>
+<codeline lineno="88"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>NE,<sp/>NE1,<sp/>NE2,</highlight></codeline>
+<codeline lineno="89"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>NH1,<sp/>NH2,</highlight></codeline>
+<codeline lineno="90"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>NZ,</highlight></codeline>
+<codeline lineno="91"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>OE1,</highlight></codeline>
+<codeline lineno="92"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>OD1,<sp/>OD2,</highlight></codeline>
+<codeline lineno="93"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>OG1,</highlight></codeline>
+<codeline lineno="94"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SG</highlight></codeline>
+<codeline lineno="95"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="96"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="97"><highlight class="normal"></highlight></codeline>
-<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>////<sp/>Properties<sp/>matcher<sp/>helper<sp/>//////</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">friend</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_atom_1ae8f2ceffdf7832e3a57549119e5fc341" kindref="member">atomTypeToAtomicRadius</ref>(<ref refid="class_smol_dock_1_1_atom_1a57e9a532fd04e1846c0d83edebb9fd41" kindref="member">Atom::AtomType</ref><sp/>t);</highlight></codeline>
-<codeline lineno="100"><highlight class="normal"></highlight></codeline>
-<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>///<sp/>Constructors<sp/>//////</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="102"><highlight class="normal"></highlight></codeline>
-<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_atom_1a6fdae20edd67e75fa5fab8cbdbb39faf" kindref="member">Atom</ref>(<ref refid="class_smol_dock_1_1_atom_1a57e9a532fd04e1846c0d83edebb9fd41" kindref="member">AtomType</ref><sp/>t);</highlight></codeline>
-<codeline lineno="104"><highlight class="normal"></highlight></codeline>
-<codeline lineno="106"></codeline>
-<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_atom_1a6fdae20edd67e75fa5fab8cbdbb39faf" kindref="member">Atom</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;symbol_or_name,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>PDBFormat<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">,</highlight></codeline>
-<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875d" kindref="member">AminoAcid::AAType</ref><sp/>resType<sp/>=<sp/><ref refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875dad390be0ae98a5c4a22ca9b0b7e726f40" kindref="member">AminoAcid::AAType::heteroatom</ref>);</highlight></codeline>
-<codeline lineno="114"><highlight class="normal"></highlight></codeline>
-<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>If<sp/>you<sp/>use<sp/>these<sp/>constructors,<sp/>unique<sp/>AtomID<sp/>is<sp/>not<sp/>guaranteed<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_atom_1a6fdae20edd67e75fa5fab8cbdbb39faf" kindref="member">Atom</ref>(<ref refid="class_smol_dock_1_1_atom_1a57e9a532fd04e1846c0d83edebb9fd41" kindref="member">AtomType</ref><sp/>t,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="117"><highlight class="normal"></highlight></codeline>
-<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_atom_1a6fdae20edd67e75fa5fab8cbdbb39faf" kindref="member">Atom</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;symbol_or_name,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="119"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>////<sp/>Internal<sp/>type<sp/>&lt;=&gt;<sp/>string<sp/>conversion<sp/>//////</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">friend</highlight><highlight class="normal"><sp/>std::string<sp/><ref refid="class_smol_dock_1_1_atom_1ab7591815a3dc03bab05bcb6d5e2b741a" kindref="member">atomTypeToString</ref>(<ref refid="class_smol_dock_1_1_atom_1a57e9a532fd04e1846c0d83edebb9fd41" kindref="member">Atom::AtomType</ref><sp/>t);</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">friend</highlight><highlight class="normal"><sp/>std::string<sp/><ref refid="class_smol_dock_1_1_atom_1ac56105f17fd519b4438ef07334e68d60" kindref="member">atomTypeToSymbolString</ref>(<ref refid="class_smol_dock_1_1_atom_1a57e9a532fd04e1846c0d83edebb9fd41" kindref="member">Atom::AtomType</ref><sp/>t);</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">friend</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_atom_1a57e9a532fd04e1846c0d83edebb9fd41" kindref="member">Atom::AtomType</ref><sp/><ref refid="class_smol_dock_1_1_atom_1abe46f23e1f169949c8d3916b7e0ad38b" kindref="member">stringToAtomType</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;symbol_or_name);</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>////<sp/>Properties<sp/>matcher<sp/>helper<sp/>//////</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">friend</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_atom_1ae8f2ceffdf7832e3a57549119e5fc341" kindref="member">atomTypeToAtomicRadius</ref>(<ref refid="class_smol_dock_1_1_atom_1a57e9a532fd04e1846c0d83edebb9fd41" kindref="member">Atom::AtomType</ref><sp/>t);</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>///<sp/>Constructors<sp/>//////</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_atom_1a6fdae20edd67e75fa5fab8cbdbb39faf" kindref="member">Atom</ref>(<ref refid="class_smol_dock_1_1_atom_1a57e9a532fd04e1846c0d83edebb9fd41" kindref="member">AtomType</ref><sp/>t);</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_atom_1a6fdae20edd67e75fa5fab8cbdbb39faf" kindref="member">Atom</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;symbol_or_name,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>PDBFormat<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875d" kindref="member">AminoAcid::AAType</ref><sp/>resType<sp/>=<sp/><ref refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875dad390be0ae98a5c4a22ca9b0b7e726f40" kindref="member">AminoAcid::AAType::heteroatom</ref>);</highlight></codeline>
 <codeline lineno="120"><highlight class="normal"></highlight></codeline>
-<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_atom_1a57e9a532fd04e1846c0d83edebb9fd41" kindref="member">AtomType</ref><sp/><ref refid="class_smol_dock_1_1_atom_1a6b8315564e06bdc911053320fd3fa1a7" kindref="member">getAtomType</ref>();</highlight></codeline>
-<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_atom_1a2adf89fbf4618bd294318062e198db66" kindref="member">setAtomType</ref>(<ref refid="class_smol_dock_1_1_atom_1a57e9a532fd04e1846c0d83edebb9fd41" kindref="member">AtomType</ref><sp/>t);</highlight></codeline>
-<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="class_smol_dock_1_1_atom_1a5c58bed07491a0ad9e674d399f2ff888" kindref="member">getTypeAsString</ref>();</highlight></codeline>
-<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="class_smol_dock_1_1_atom_1a68b727ae85b17478fe62c339a0590b14" kindref="member">getAtomSymbol</ref>();</highlight></codeline>
-<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_atom_1a7cd7a34817ac20e79ede418d6896ff48" kindref="member">getAtomicNumber</ref>();</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>If<sp/>you<sp/>use<sp/>these<sp/>constructors,<sp/>unique<sp/>AtomID<sp/>is<sp/>not<sp/>guaranteed<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_atom_1a6fdae20edd67e75fa5fab8cbdbb39faf" kindref="member">Atom</ref>(<ref refid="class_smol_dock_1_1_atom_1a57e9a532fd04e1846c0d83edebb9fd41" kindref="member">AtomType</ref><sp/>t,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_atom_1a6fdae20edd67e75fa5fab8cbdbb39faf" kindref="member">Atom</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;symbol_or_name,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight></codeline>
 <codeline lineno="126"><highlight class="normal"></highlight></codeline>
-<codeline lineno="127"><highlight class="normal"></highlight></codeline>
-<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_atom_1a77191f0919af58d733764e229cb1f973" kindref="member">AtomVariant</ref><sp/><ref refid="class_smol_dock_1_1_atom_1a145bc96b3b410ea87a62baeb8b83f127" kindref="member">getAtomVariant</ref>();</highlight></codeline>
-<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_atom_1aa538e302c6c9e6cafbb9f0cbefce3a4e" kindref="member">setAtomVariant</ref>(<ref refid="class_smol_dock_1_1_atom_1a77191f0919af58d733764e229cb1f973" kindref="member">AtomVariant</ref><sp/>v);</highlight></codeline>
-<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_atom_1a6436039c9775c1662be2c3691c2785a9" kindref="member">getAtomVariantAsUnderlyingType</ref>();</highlight></codeline>
-<codeline lineno="131"><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_atom_1a57e9a532fd04e1846c0d83edebb9fd41" kindref="member">AtomType</ref><sp/><ref refid="class_smol_dock_1_1_atom_1a6b8315564e06bdc911053320fd3fa1a7" kindref="member">getAtomType</ref>();</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_atom_1a2adf89fbf4618bd294318062e198db66" kindref="member">setAtomType</ref>(<ref refid="class_smol_dock_1_1_atom_1a57e9a532fd04e1846c0d83edebb9fd41" kindref="member">AtomType</ref><sp/>t);</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="class_smol_dock_1_1_atom_1a5c58bed07491a0ad9e674d399f2ff888" kindref="member">getTypeAsString</ref>();</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="class_smol_dock_1_1_atom_1a68b727ae85b17478fe62c339a0590b14" kindref="member">getAtomSymbol</ref>();</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_atom_1a7cd7a34817ac20e79ede418d6896ff48" kindref="member">getAtomicNumber</ref>();</highlight></codeline>
 <codeline lineno="132"><highlight class="normal"></highlight></codeline>
-<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_atom_1a62d7246b7a8f3d6aa1aa63c9d5a86ed3" kindref="member">getAtomID</ref>();</highlight></codeline>
-<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_atom_1ae4cd5cf6de8ed5b8254270eb2d7ccd81" kindref="member">setAtomID</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="135"><highlight class="normal"></highlight></codeline>
-<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::weak_ptr&lt;AminoAcid&gt;<sp/><ref refid="class_smol_dock_1_1_atom_1aeb93666d6868e72e846ecad7b1927b04" kindref="member">getOwningAA</ref>();</highlight></codeline>
-<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_atom_1ad4afec1a1299201398d64daaf874857f" kindref="member">setOwningAA</ref>(std::shared_ptr&lt;AminoAcid&gt;<sp/>&amp;aa);</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_atom_1a77191f0919af58d733764e229cb1f973" kindref="member">AtomVariant</ref><sp/><ref refid="class_smol_dock_1_1_atom_1a145bc96b3b410ea87a62baeb8b83f127" kindref="member">getAtomVariant</ref>();</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_atom_1aa538e302c6c9e6cafbb9f0cbefce3a4e" kindref="member">setAtomVariant</ref>(<ref refid="class_smol_dock_1_1_atom_1a77191f0919af58d733764e229cb1f973" kindref="member">AtomVariant</ref><sp/>v);</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_atom_1a6436039c9775c1662be2c3691c2785a9" kindref="member">getAtomVariantAsUnderlyingType</ref>();</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"></highlight></codeline>
 <codeline lineno="138"><highlight class="normal"></highlight></codeline>
-<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::tuple&lt;double,<sp/>double,<sp/>double&gt;<sp/><ref refid="class_smol_dock_1_1_atom_1a9b7e3a83a87f3934edb0f15929f923bd" kindref="member">getAtomPosition</ref>();</highlight></codeline>
-<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_atom_1ae4b0b82523de139bd84ec27b62faa333" kindref="member">setAtomPosition</ref>(std::tuple&lt;double,<sp/>double,<sp/>double&gt;<sp/>pos);</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_atom_1a62d7246b7a8f3d6aa1aa63c9d5a86ed3" kindref="member">getAtomID</ref>();</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_atom_1ae4cd5cf6de8ed5b8254270eb2d7ccd81" kindref="member">setAtomID</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="141"><highlight class="normal"></highlight></codeline>
-<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_atom_1a3933f5afa403001d87526a52a0f4c4b5" kindref="member">getAtomicRadius</ref>();</highlight></codeline>
-<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_atom_1aba38aa3f004111483f078e97b8e34bd6" kindref="member">setAtomicRadius</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>r);</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::weak_ptr&lt;AminoAcid&gt;<sp/><ref refid="class_smol_dock_1_1_atom_1aeb93666d6868e72e846ecad7b1927b04" kindref="member">getOwningAA</ref>();</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_atom_1ad4afec1a1299201398d64daaf874857f" kindref="member">setOwningAA</ref>(std::shared_ptr&lt;AminoAcid&gt;<sp/>&amp;aa);</highlight></codeline>
 <codeline lineno="144"><highlight class="normal"></highlight></codeline>
-<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_atom_1af5d8a7887cbd714ad4b728e1b68c0881" kindref="member">getCharge</ref>();</highlight></codeline>
-<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_atom_1a16fb238f339c0accd83095ae078040f1" kindref="member">setCharge</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ch);</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::tuple&lt;double,<sp/>double,<sp/>double&gt;<sp/><ref refid="class_smol_dock_1_1_atom_1a9b7e3a83a87f3934edb0f15929f923bd" kindref="member">getAtomPosition</ref>();</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_atom_1ae4b0b82523de139bd84ec27b62faa333" kindref="member">setAtomPosition</ref>(std::tuple&lt;double,<sp/>double,<sp/>double&gt;<sp/>pos);</highlight></codeline>
 <codeline lineno="147"><highlight class="normal"></highlight></codeline>
-<codeline lineno="148"><highlight class="normal"></highlight></codeline>
-<codeline lineno="149"><highlight class="normal"></highlight></codeline>
-<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Bonds<sp/>involving<sp/>this<sp/>atom</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="152" refid="class_smol_dock_1_1_atom_1af45fc99da6ffbf539ba654c91e1bb752" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::vector&lt;std::weak_ptr&lt;Bond&gt;<sp/>&gt;<sp/><ref refid="class_smol_dock_1_1_atom_1af45fc99da6ffbf539ba654c91e1bb752" kindref="member">bonds</ref>;</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_atom_1a3933f5afa403001d87526a52a0f4c4b5" kindref="member">getAtomicRadius</ref>();</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_atom_1aba38aa3f004111483f078e97b8e34bd6" kindref="member">setAtomicRadius</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>r);</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"></highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_atom_1af5d8a7887cbd714ad4b728e1b68c0881" kindref="member">getCharge</ref>();</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_atom_1a16fb238f339c0accd83095ae078040f1" kindref="member">setCharge</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ch);</highlight></codeline>
 <codeline lineno="153"><highlight class="normal"></highlight></codeline>
-<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="155" refid="class_smol_dock_1_1_atom_1ab3867a9c2c98c5bb43ff4a6b7f1bf856" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_atom_1a57e9a532fd04e1846c0d83edebb9fd41" kindref="member">AtomType</ref><sp/><ref refid="class_smol_dock_1_1_atom_1ab3867a9c2c98c5bb43ff4a6b7f1bf856" kindref="member">type</ref>;</highlight></codeline>
-<codeline lineno="156" refid="class_smol_dock_1_1_atom_1a0c54fdff29130e870237ba300a4e9d25" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_atom_1a77191f0919af58d733764e229cb1f973" kindref="member">AtomVariant</ref><sp/><ref refid="class_smol_dock_1_1_atom_1a0c54fdff29130e870237ba300a4e9d25" kindref="member">variant</ref>;</highlight></codeline>
-<codeline lineno="157" refid="class_smol_dock_1_1_atom_1acec4104851702c781abb5f86844cf6b3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_atom_1acec4104851702c781abb5f86844cf6b3" kindref="member">charge</ref><sp/>=<sp/>0;</highlight></codeline>
-<codeline lineno="158"><highlight class="normal"></highlight></codeline>
-<codeline lineno="159" refid="class_smol_dock_1_1_atom_1aa19d070c9951c67a4b1d4c5d80f2ee22" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_atom_1aa19d070c9951c67a4b1d4c5d80f2ee22" kindref="member">fromResidue</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="160" refid="class_smol_dock_1_1_atom_1aeb5bd3da13c5e16176931c19bb622d91" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875d" kindref="member">AminoAcid::AAType</ref><sp/><ref refid="class_smol_dock_1_1_atom_1aeb5bd3da13c5e16176931c19bb622d91" kindref="member">residueType</ref><sp/>=<sp/><ref refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875dad390be0ae98a5c4a22ca9b0b7e726f40" kindref="member">AminoAcid::AAType::heteroatom</ref>;</highlight></codeline>
-<codeline lineno="161" refid="class_smol_dock_1_1_atom_1a79a0e80b2fdb39742cc4de548d73eb63" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="class_smol_dock_1_1_atom_1a79a0e80b2fdb39742cc4de548d73eb63" kindref="member">atomClassInResidue</ref>;<sp/></highlight><highlight class="comment">//<sp/>The<sp/>full<sp/>atom<sp/>name<sp/>given<sp/>in<sp/>the<sp/>PDB<sp/>(CA,<sp/>CB,<sp/>CZ<sp/>...)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="162" refid="class_smol_dock_1_1_atom_1a41d894e0b89dfd6e28514617a4a16ecf" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::weak_ptr&lt;AminoAcid&gt;<sp/><ref refid="class_smol_dock_1_1_atom_1a41d894e0b89dfd6e28514617a4a16ecf" kindref="member">owningAA</ref>;</highlight></codeline>
-<codeline lineno="163"><highlight class="normal"></highlight></codeline>
-<codeline lineno="164" refid="class_smol_dock_1_1_atom_1a699bf43dba89827d43019464a2a1507e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_atom_1a699bf43dba89827d43019464a2a1507e" kindref="member">nextAtomID</ref>;</highlight></codeline>
-<codeline lineno="165" refid="class_smol_dock_1_1_atom_1a76afdad512e9f593c4445c6407b26597" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_atom_1a76afdad512e9f593c4445c6407b26597" kindref="member">AtomID</ref>;</highlight></codeline>
-<codeline lineno="166"><highlight class="normal"></highlight></codeline>
-<codeline lineno="167" refid="class_smol_dock_1_1_atom_1a8f28d43131d21536269e220d6fa43f07" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_atom_1a02874f0a49c2fb34884d7e40c6b92e9e" kindref="member">x</ref>,<sp/><ref refid="class_smol_dock_1_1_atom_1a253663ad700e72667d421f4d869798e1" kindref="member">y</ref>,<sp/><ref refid="class_smol_dock_1_1_atom_1a8f28d43131d21536269e220d6fa43f07" kindref="member">z</ref>;</highlight></codeline>
-<codeline lineno="168" refid="class_smol_dock_1_1_atom_1a6d2c1ae04324600154ecd49c1b4a76c5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_atom_1a6d2c1ae04324600154ecd49c1b4a76c5" kindref="member">atomicRadius</ref>;</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"></highlight></codeline>
+<codeline lineno="155"><highlight class="normal"></highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Bonds<sp/>involving<sp/>this<sp/>atom</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="158" refid="class_smol_dock_1_1_atom_1af45fc99da6ffbf539ba654c91e1bb752" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::vector&lt;std::weak_ptr&lt;Bond&gt;<sp/>&gt;<sp/><ref refid="class_smol_dock_1_1_atom_1af45fc99da6ffbf539ba654c91e1bb752" kindref="member">bonds</ref>;</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"></highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="161" refid="class_smol_dock_1_1_atom_1ab3867a9c2c98c5bb43ff4a6b7f1bf856" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_atom_1a57e9a532fd04e1846c0d83edebb9fd41" kindref="member">AtomType</ref><sp/><ref refid="class_smol_dock_1_1_atom_1ab3867a9c2c98c5bb43ff4a6b7f1bf856" kindref="member">type</ref>;</highlight></codeline>
+<codeline lineno="162" refid="class_smol_dock_1_1_atom_1a0c54fdff29130e870237ba300a4e9d25" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_atom_1a77191f0919af58d733764e229cb1f973" kindref="member">AtomVariant</ref><sp/><ref refid="class_smol_dock_1_1_atom_1a0c54fdff29130e870237ba300a4e9d25" kindref="member">variant</ref><sp/>=<sp/><ref refid="class_smol_dock_1_1_atom_1a77191f0919af58d733764e229cb1f973" kindref="member">Atom::AtomVariant</ref>{0};</highlight></codeline>
+<codeline lineno="163" refid="class_smol_dock_1_1_atom_1acec4104851702c781abb5f86844cf6b3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_atom_1acec4104851702c781abb5f86844cf6b3" kindref="member">charge</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"></highlight></codeline>
+<codeline lineno="165" refid="class_smol_dock_1_1_atom_1aa19d070c9951c67a4b1d4c5d80f2ee22" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_atom_1aa19d070c9951c67a4b1d4c5d80f2ee22" kindref="member">fromResidue</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="166" refid="class_smol_dock_1_1_atom_1aeb5bd3da13c5e16176931c19bb622d91" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875d" kindref="member">AminoAcid::AAType</ref><sp/><ref refid="class_smol_dock_1_1_atom_1aeb5bd3da13c5e16176931c19bb622d91" kindref="member">residueType</ref><sp/>=<sp/><ref refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875dad390be0ae98a5c4a22ca9b0b7e726f40" kindref="member">AminoAcid::AAType::heteroatom</ref>;</highlight></codeline>
+<codeline lineno="167" refid="class_smol_dock_1_1_atom_1a79a0e80b2fdb39742cc4de548d73eb63" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="class_smol_dock_1_1_atom_1a79a0e80b2fdb39742cc4de548d73eb63" kindref="member">atomClassInResidue</ref>;<sp/></highlight><highlight class="comment">//<sp/>The<sp/>full<sp/>atom<sp/>name<sp/>given<sp/>in<sp/>the<sp/>PDB<sp/>(CA,<sp/>CB,<sp/>CZ<sp/>...)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="168" refid="class_smol_dock_1_1_atom_1a41d894e0b89dfd6e28514617a4a16ecf" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::weak_ptr&lt;AminoAcid&gt;<sp/><ref refid="class_smol_dock_1_1_atom_1a41d894e0b89dfd6e28514617a4a16ecf" kindref="member">owningAA</ref>;</highlight></codeline>
 <codeline lineno="169"><highlight class="normal"></highlight></codeline>
-<codeline lineno="170" refid="class_smol_dock_1_1_atom_1aed79f9306267e3ddbd9a9b4dade2bbbf" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>std::set&lt;std::tuple&lt;Atom::AtomType,<sp/>std::string,<sp/>std::string,<sp/>double&gt;<sp/>&gt;<sp/><ref refid="class_smol_dock_1_1_atom_1aed79f9306267e3ddbd9a9b4dade2bbbf" kindref="member">AtomTypeLabel</ref>;</highlight></codeline>
-<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="170" refid="class_smol_dock_1_1_atom_1a699bf43dba89827d43019464a2a1507e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_atom_1a699bf43dba89827d43019464a2a1507e" kindref="member">nextAtomID</ref>;</highlight></codeline>
+<codeline lineno="171" refid="class_smol_dock_1_1_atom_1a76afdad512e9f593c4445c6407b26597" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_atom_1a76afdad512e9f593c4445c6407b26597" kindref="member">AtomID</ref>;</highlight></codeline>
 <codeline lineno="172"><highlight class="normal"></highlight></codeline>
-<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="namespace_smol_dock_1adc50d67bf7b33de8b30d90f97c25fb24" kindref="member">atomTypeToString</ref>(<ref refid="class_smol_dock_1_1_atom_1a57e9a532fd04e1846c0d83edebb9fd41" kindref="member">Atom::AtomType</ref><sp/>t);</highlight></codeline>
-<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="namespace_smol_dock_1abf06ab90cb8bd0858a883be16bb9f563" kindref="member">atomTypeToSymbolString</ref>(<ref refid="class_smol_dock_1_1_atom_1a57e9a532fd04e1846c0d83edebb9fd41" kindref="member">Atom::AtomType</ref><sp/>t);</highlight></codeline>
+<codeline lineno="173" refid="class_smol_dock_1_1_atom_1a8f28d43131d21536269e220d6fa43f07" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_atom_1a02874f0a49c2fb34884d7e40c6b92e9e" kindref="member">x</ref>,<sp/><ref refid="class_smol_dock_1_1_atom_1a253663ad700e72667d421f4d869798e1" kindref="member">y</ref>,<sp/><ref refid="class_smol_dock_1_1_atom_1a8f28d43131d21536269e220d6fa43f07" kindref="member">z</ref>;</highlight></codeline>
+<codeline lineno="174" refid="class_smol_dock_1_1_atom_1a6d2c1ae04324600154ecd49c1b4a76c5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_atom_1a6d2c1ae04324600154ecd49c1b4a76c5" kindref="member">atomicRadius</ref>;</highlight></codeline>
 <codeline lineno="175"><highlight class="normal"></highlight></codeline>
-<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_atom_1a57e9a532fd04e1846c0d83edebb9fd41" kindref="member">Atom::AtomType</ref><sp/><ref refid="namespace_smol_dock_1ae559278f4b66ec9a09ddfaebb224f897" kindref="member">stringToAtomType</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;symbol_or_name);</highlight></codeline>
-<codeline lineno="177"><highlight class="normal"></highlight></codeline>
-<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="namespace_smol_dock_1a9c3abf1e37dc4fe013df80997dedb20b" kindref="member">atomTypeToAtomicRadius</ref>(<ref refid="class_smol_dock_1_1_atom_1a57e9a532fd04e1846c0d83edebb9fd41" kindref="member">Atom::AtomType</ref><sp/>t);</highlight></codeline>
-<codeline lineno="179"><highlight class="normal"></highlight></codeline>
-<codeline lineno="180"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="176" refid="class_smol_dock_1_1_atom_1aed79f9306267e3ddbd9a9b4dade2bbbf" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>std::set&lt;std::tuple&lt;Atom::AtomType,<sp/>std::string,<sp/>std::string,<sp/>double&gt;<sp/>&gt;<sp/><ref refid="class_smol_dock_1_1_atom_1aed79f9306267e3ddbd9a9b4dade2bbbf" kindref="member">AtomTypeLabel</ref>;</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"></highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="namespace_smol_dock_1adc50d67bf7b33de8b30d90f97c25fb24" kindref="member">atomTypeToString</ref>(<ref refid="class_smol_dock_1_1_atom_1a57e9a532fd04e1846c0d83edebb9fd41" kindref="member">Atom::AtomType</ref><sp/>t);</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="namespace_smol_dock_1abf06ab90cb8bd0858a883be16bb9f563" kindref="member">atomTypeToSymbolString</ref>(<ref refid="class_smol_dock_1_1_atom_1a57e9a532fd04e1846c0d83edebb9fd41" kindref="member">Atom::AtomType</ref><sp/>t);</highlight></codeline>
 <codeline lineno="181"><highlight class="normal"></highlight></codeline>
-<codeline lineno="182"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//SMOLDOCK_ATOM_H</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_atom_1a57e9a532fd04e1846c0d83edebb9fd41" kindref="member">Atom::AtomType</ref><sp/><ref refid="namespace_smol_dock_1ae559278f4b66ec9a09ddfaebb224f897" kindref="member">stringToAtomType</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;symbol_or_name);</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"></highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="namespace_smol_dock_1a9c3abf1e37dc4fe013df80997dedb20b" kindref="member">atomTypeToAtomicRadius</ref>(<ref refid="class_smol_dock_1_1_atom_1a57e9a532fd04e1846c0d83edebb9fd41" kindref="member">Atom::AtomType</ref><sp/>t);</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"></highlight></codeline>
+<codeline lineno="186"><highlight class="normal"></highlight></codeline>
+<codeline lineno="187" refid="namespace_smol_dock_1a5b696009e136f369f88b0ebfc51175bc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/>constexpr<sp/><ref refid="class_smol_dock_1_1_atom_1a77191f0919af58d733764e229cb1f973" kindref="member">Atom::AtomVariant</ref><sp/><ref refid="namespace_smol_dock_1a5b696009e136f369f88b0ebfc51175bc" kindref="member">operator|</ref>(<ref refid="class_smol_dock_1_1_atom_1a77191f0919af58d733764e229cb1f973" kindref="member">Atom::AtomVariant</ref><sp/>a,<sp/><ref refid="class_smol_dock_1_1_atom_1a77191f0919af58d733764e229cb1f973" kindref="member">Atom::AtomVariant</ref><sp/>b)</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal"><ref refid="class_smol_dock_1_1_atom_1a77191f0919af58d733764e229cb1f973" kindref="member">Atom::AtomVariant</ref></highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(</highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(a)<sp/>|<sp/>static_cast&lt;unsigned<sp/>int&gt;(b));}</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"></highlight></codeline>
+<codeline lineno="190"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"></highlight></codeline>
+<codeline lineno="192"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//SMOLDOCK_ATOM_H</highlight></codeline>
     </programlisting>
     <location file="Structures/Atom.h"/>
   </compounddef>

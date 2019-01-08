@@ -101,12 +101,16 @@ $(document).ready(function(){initNavTree('i_conformer_8h.html','');});
 <div class="contents">
 <div class="textblock"><code>#include &lt;vector&gt;</code><br />
 <code>#include &lt;memory&gt;</code><br />
+<code>#include &quot;<a class="el" href="i_transform_8h_source.html">iTransform.h</a>&quot;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for iConformer.h:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="i_conformer_8h__incl.png" border="0" usemap="#i_conformer_8h" alt=""/></div>
+<map name="i_conformer_8h" id="i_conformer_8h">
+<area shape="rect" id="node4" href="i_transform_8h.html" title="iTransform.h" alt="" coords="159,80,254,107"/>
+</map>
 </div>
 </div><div class="textblock"><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="closed.png" alt="+"/> This graph shows which files directly or indirectly include this file:</div>
@@ -115,33 +119,42 @@ $(document).ready(function(){initNavTree('i_conformer_8h.html','');});
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="i_conformer_8h__dep__incl.png" border="0" usemap="#i_conformer_8hdep" alt=""/></div>
 <map name="i_conformer_8hdep" id="i_conformer_8hdep">
-<area shape="rect" id="node2" href="_molecule_8h.html" title="Molecule.h" alt="" coords="987,80,1073,107"/>
-<area shape="rect" id="node6" href="_conformer_rigid_docking_engine_8cpp.html" title="ConformerRigidDockingEngine.cpp" alt="" coords="122,379,349,405"/>
-<area shape="rect" id="node25" href="_gradient_descent_line_search_8h.html" title="GradientDescentLineSearch.h" alt="" coords="273,155,469,181"/>
-<area shape="rect" id="node26" href="i_transform_8h.html" title="iTransform.h" alt="" coords="324,80,419,107"/>
-<area shape="rect" id="node27" href="_basic_scoring_function_8h.html" title="BasicScoringFunction.h" alt="" coords="34,155,194,181"/>
-<area shape="rect" id="node3" href="_docking_result_8h.html" title="DockingResult.h" alt="" coords="1375,155,1493,181"/>
-<area shape="rect" id="node4" href="_abstract_docking_engine_8h.html" title="AbstractDockingEngine.h" alt="" coords="1161,229,1331,256"/>
-<area shape="rect" id="node5" href="_conformer_rigid_docking_engine_8h.html" title="ConformerRigidDockingEngine.h" alt="" coords="764,304,976,331"/>
-<area shape="rect" id="node7" href="main_8cpp.html" title="main.cpp" alt="" coords="959,379,1034,405"/>
-<area shape="rect" id="node8" href="_m_d_style_docking_engine_8h.html" title="MDStyleDockingEngine.h" alt="" coords="1051,304,1223,331"/>
-<area shape="rect" id="node15" href="_py_structures_8cpp.html" title="PyStructures.cpp" alt="" coords="1694,229,1817,256"/>
-<area shape="rect" id="node16" href="_intermediate_conformer_collector_8h.html" title="IntermediateConformerCollector.h" alt="" coords="609,229,827,256"/>
-<area shape="rect" id="node19" href="_p_d_b_writer_8h.html" title="PDBWriter.h" alt="" coords="939,155,1035,181"/>
-<area shape="rect" id="node21" href="_molecule_8cpp.html" title="Molecule.cpp" alt="" coords="657,155,755,181"/>
-<area shape="rect" id="node22" href="_re_scorer_8h.html" title="ReScorer.h" alt="" coords="494,155,582,181"/>
-<area shape="rect" id="node24" href="_py_s_t_l_wrapper_8cpp.html" title="PySTLWrapper.cpp" alt="" coords="779,155,915,181"/>
-<area shape="rect" id="node12" href="_docking_result_8cpp.html" title="DockingResult.cpp" alt="" coords="1537,229,1670,256"/>
-<area shape="rect" id="node13" href="_docking_result_printer_8h.html" title="DockingResultPrinter.h" alt="" coords="1355,229,1513,256"/>
-<area shape="rect" id="node10" href="_vina_compatible_docking_engine_8h.html" title="VinaCompatibleDockingEngine.h" alt="" coords="1247,304,1461,331"/>
-<area shape="rect" id="node9" href="_m_d_style_docking_engine_8cpp.html" title="MDStyleDockingEngine.cpp" alt="" coords="1058,379,1245,405"/>
-<area shape="rect" id="node11" href="_vina_compatible_docking_engine_8cpp.html" title="VinaCompatibleDockingEngine.cpp" alt="" coords="1269,379,1495,405"/>
-<area shape="rect" id="node14" href="_docking_result_printer_8cpp.html" title="DockingResultPrinter.cpp" alt="" coords="1535,304,1706,331"/>
-<area shape="rect" id="node17" href="_gradient_descent_line_search_8cpp.html" title="GradientDescentLineSearch.cpp" alt="" coords="273,304,483,331"/>
-<area shape="rect" id="node18" href="_intermediate_conformer_collector_8cpp.html" title="IntermediateConformerCollector.cpp" alt="" coords="507,304,739,331"/>
-<area shape="rect" id="node20" href="_p_d_b_writer_8cpp.html" title="PDBWriter.cpp" alt="" coords="924,229,1035,256"/>
-<area shape="rect" id="node23" href="_re_scorer_8cpp.html" title="ReScorer.cpp" alt="" coords="481,229,584,256"/>
-<area shape="rect" id="node28" href="_basic_scoring_function_8cpp.html" title="BasicScoringFunction.cpp" alt="" coords="23,229,197,256"/>
+<area shape="rect" id="node2" href="_molecule_8h.html" title="Molecule.h" alt="" coords="1996,80,2081,107"/>
+<area shape="rect" id="node6" href="_conformer_rigid_docking_engine_8cpp.html" title="ConformerRigidDockingEngine.cpp" alt="" coords="305,379,532,405"/>
+<area shape="rect" id="node16" href="_vina_like_scoring_function_8h.html" title="VinaLikeScoringFunction.h" alt="" coords="707,229,885,256"/>
+<area shape="rect" id="node30" href="_scoring_function_interface_8h.html" title="ScoringFunctionInterface.h" alt="" coords="877,155,1056,181"/>
+<area shape="rect" id="node31" href="_gradient_descent_line_search_8h.html" title="GradientDescentLineSearch.h" alt="" coords="1105,229,1301,256"/>
+<area shape="rect" id="node37" href="_internals_utility_functions_8h.html" title="InternalsUtilityFunctions.h" alt="" coords="1325,229,1499,256"/>
+<area shape="rect" id="node3" href="_docking_result_8h.html" title="DockingResult.h" alt="" coords="2442,155,2561,181"/>
+<area shape="rect" id="node4" href="_abstract_docking_engine_8h.html" title="AbstractDockingEngine.h" alt="" coords="2761,229,2932,256"/>
+<area shape="rect" id="node5" href="_conformer_rigid_docking_engine_8h.html" title="ConformerRigidDockingEngine.h" alt="" coords="1431,304,1643,331"/>
+<area shape="rect" id="node7" href="main_8cpp.html" title="main.cpp" alt="" coords="1732,379,1807,405"/>
+<area shape="rect" id="node8" href="_m_d_style_docking_engine_8h.html" title="MDStyleDockingEngine.h" alt="" coords="2883,304,3055,331"/>
+<area shape="rect" id="node15" href="_py_structures_8cpp.html" title="PyStructures.cpp" alt="" coords="2276,229,2399,256"/>
+<area shape="rect" id="node21" href="_molecule_8cpp.html" title="Molecule.cpp" alt="" coords="1989,155,2088,181"/>
+<area shape="rect" id="node22" href="_intermediate_conformer_collector_8h.html" title="IntermediateConformerCollector.h" alt="" coords="2033,229,2252,256"/>
+<area shape="rect" id="node24" href="_p_d_b_writer_8h.html" title="PDBWriter.h" alt="" coords="1869,155,1965,181"/>
+<area shape="rect" id="node26" href="_re_scorer_8h.html" title="ReScorer.h" alt="" coords="1785,229,1873,256"/>
+<area shape="rect" id="node29" href="_py_s_t_l_wrapper_8cpp.html" title="PySTLWrapper.cpp" alt="" coords="2112,155,2248,181"/>
+<area shape="rect" id="node12" href="_docking_result_8cpp.html" title="DockingResult.cpp" alt="" coords="2604,229,2737,256"/>
+<area shape="rect" id="node13" href="_docking_result_printer_8h.html" title="DockingResultPrinter.h" alt="" coords="2423,229,2580,256"/>
+<area shape="rect" id="node10" href="_vina_compatible_docking_engine_8h.html" title="VinaCompatibleDockingEngine.h" alt="" coords="2639,304,2852,331"/>
+<area shape="rect" id="node9" href="_m_d_style_docking_engine_8cpp.html" title="MDStyleDockingEngine.cpp" alt="" coords="2879,379,3065,405"/>
+<area shape="rect" id="node11" href="_vina_compatible_docking_engine_8cpp.html" title="VinaCompatibleDockingEngine.cpp" alt="" coords="2628,379,2855,405"/>
+<area shape="rect" id="node14" href="_docking_result_printer_8cpp.html" title="DockingResultPrinter.cpp" alt="" coords="2416,304,2587,331"/>
+<area shape="rect" id="node17" href="_gradient_descent_line_search_8cpp.html" title="GradientDescentLineSearch.cpp" alt="" coords="1147,304,1357,331"/>
+<area shape="rect" id="node18" href="_scoring_function_factory_8cpp.html" title="ScoringFunctionFactory.cpp" alt="" coords="722,304,907,331"/>
+<area shape="rect" id="node19" href="_vina_like_scoring_function_8cpp.html" title="VinaLikeScoringFunction.cpp" alt="" coords="931,304,1122,331"/>
+<area shape="rect" id="node20" href="_py_scoring_functions_8cpp.html" title="PyScoringFunctions.cpp" alt="" coords="482,304,646,331"/>
+<area shape="rect" id="node23" href="_intermediate_conformer_collector_8cpp.html" title="IntermediateConformerCollector.cpp" alt="" coords="2027,304,2259,331"/>
+<area shape="rect" id="node25" href="_p_d_b_writer_8cpp.html" title="PDBWriter.cpp" alt="" coords="1898,229,2009,256"/>
+<area shape="rect" id="node27" href="_re_scorer_8cpp.html" title="ReScorer.cpp" alt="" coords="1718,304,1821,331"/>
+<area shape="rect" id="node28" href="_py_utilities_8cpp.html" title="PyUtilities.cpp" alt="" coords="1896,304,2003,331"/>
+<area shape="rect" id="node32" href="_scoring_function_factory_8h.html" title="ScoringFunctionFactory.h" alt="" coords="909,229,1080,256"/>
+<area shape="rect" id="node33" href="_l___b_f_g_s_8h.html" title="L_BFGS.h" alt="" coords="139,229,221,256"/>
+<area shape="rect" id="node35" href="_random_restart_8h.html" title="RandomRestart.h" alt="" coords="331,229,456,256"/>
+<area shape="rect" id="node34" href="_l___b_f_g_s_8cpp.html" title="L_BFGS.cpp" alt="" coords="45,304,142,331"/>
+<area shape="rect" id="node36" href="_random_restart_8cpp.html" title="RandomRestart.cpp" alt="" coords="217,304,356,331"/>
 </map>
 </div>
 </div>
@@ -174,7 +187,7 @@ Namespaces</h2></td></tr>
 <div class="textblock"><p>Internal, fast representation of a given <a class="el" href="class_smol_dock_1_1_molecule.html" title="Class representing &quot;rich&quot; molecule. ">Molecule</a> conformer for efficiency. </p>
 <dl class="section see"><dt>See also</dt><dd>iAtom, <a class="el" href="namespace_smol_dock.html#struct_smol_dock_1_1i_protein" title="Internal, fast representation of Protein for efficiency. ">iProtein</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="i_conformer_8h_source.html#l00034">34</a> of file <a class="el" href="i_conformer_8h_source.html">iConformer.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="i_conformer_8h_source.html#l00038">38</a> of file <a class="el" href="i_conformer_8h_source.html">iConformer.h</a>.</p>
 </div><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Collaboration diagram for SmolDock::iConformer:</div>
 <div id="dynsection-2-summary" class="dynsummary" style="display:block;">
@@ -182,7 +195,8 @@ Namespaces</h2></td></tr>
 <div id="dynsection-2-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="struct_smol_dock_1_1i_conformer__coll__graph.png" border="0" usemap="#_smol_dock_1_1i_conformer_coll__map" alt="Collaboration graph"/></div>
 <map name="_smol_dock_1_1i_conformer_coll__map" id="_smol_dock_1_1i_conformer_coll__map">
-<area shape="rect" id="node3" title="STL class. " alt="" coords="107,145,223,223"/>
+<area shape="rect" id="node2" href="namespace_smol_dock.html#struct_smol_dock_1_1i_translation" title="Represents a translation. " alt="" coords="5,285,164,392"/>
+<area shape="rect" id="node4" title="STL class. " alt="" coords="376,145,492,223"/>
 </map>
 </div>
 <table class="fieldtable">
@@ -194,13 +208,25 @@ atomicRadius</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
+<a id="aca79d26663d734bf23b5ed7ddc3dba57"></a><a class="el" href="namespace_smol_dock.html#struct_smol_dock_1_1i_translation">iTranslation</a></td>
+<td class="fieldname">
+centroidNormalizingTransform</td>
+<td class="fielddoc">
+If the coordinate have been normalized so as to have the centroid as [0,0,0], then this contain the translation that restore it to its original position, aka the coordinate of the centroid (because |normalized&gt; = |originalPos&gt; - |centroidPos&gt; ) Else it's just 0,0,0. </td></tr>
+<tr><td class="fieldtype">
+<a id="aabef94f550eef03cf2d4304df78cf403"></a>unsigned int</td>
+<td class="fieldname">
+num_rotatable_bond</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
 <a id="add04de1dd457ae228e398ffa9260497d"></a>vector&lt; unsigned char &gt;</td>
 <td class="fieldname">
 type</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="ad310936289e38ae6fca788741b0cfffa"></a>vector&lt; unsigned char &gt;</td>
+<a id="af56992de619302df905180a481a4d993"></a>vector&lt; unsigned int &gt;</td>
 <td class="fieldname">
 variant</td>
 <td class="fielddoc">

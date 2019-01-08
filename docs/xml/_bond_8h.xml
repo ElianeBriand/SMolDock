@@ -6,246 +6,287 @@
     <includes refid="_atom_8h" local="yes">Atom.h</includes>
     <includedby refid="_molecule_8h" local="yes">Molecule.h</includedby>
     <includedby refid="_bond_8cpp" local="yes">Bond.cpp</includedby>
+    <includedby refid="_variant_flag_assignation_8cpp" local="yes">VariantFlagAssignation.cpp</includedby>
     <incdepgraph>
-      <node id="191">
+      <node id="196">
         <label>string</label>
       </node>
-      <node id="185">
+      <node id="190">
         <label>Atom.h</label>
         <link refid="_atom_8h"/>
-        <childnode refid="186" relation="include">
+        <childnode refid="191" relation="include">
         </childnode>
-        <childnode refid="184" relation="include">
+        <childnode refid="189" relation="include">
         </childnode>
-        <childnode refid="187" relation="include">
+        <childnode refid="192" relation="include">
         </childnode>
-        <childnode refid="188" relation="include">
+        <childnode refid="193" relation="include">
         </childnode>
+        <childnode refid="194" relation="include">
+        </childnode>
+        <childnode refid="195" relation="include">
+        </childnode>
+      </node>
+      <node id="199">
+        <label>map</label>
+      </node>
+      <node id="188">
+        <label>Bond.h</label>
+        <link refid="_bond_8h"/>
         <childnode refid="189" relation="include">
         </childnode>
         <childnode refid="190" relation="include">
         </childnode>
       </node>
-      <node id="194">
-        <label>map</label>
-      </node>
-      <node id="183">
-        <label>Bond.h</label>
-        <link refid="_bond_8h"/>
-        <childnode refid="184" relation="include">
-        </childnode>
-        <childnode refid="185" relation="include">
-        </childnode>
-      </node>
-      <node id="190">
+      <node id="195">
         <label>AminoAcid.h</label>
         <link refid="_amino_acid_8h"/>
+        <childnode refid="196" relation="include">
+        </childnode>
         <childnode refid="191" relation="include">
-        </childnode>
-        <childnode refid="186" relation="include">
-        </childnode>
-        <childnode refid="187" relation="include">
-        </childnode>
-        <childnode refid="188" relation="include">
         </childnode>
         <childnode refid="192" relation="include">
         </childnode>
-        <childnode refid="184" relation="include">
-        </childnode>
         <childnode refid="193" relation="include">
         </childnode>
+        <childnode refid="197" relation="include">
+        </childnode>
+        <childnode refid="189" relation="include">
+        </childnode>
+        <childnode refid="198" relation="include">
+        </childnode>
       </node>
-      <node id="192">
+      <node id="197">
         <label>tuple</label>
       </node>
-      <node id="193">
+      <node id="198">
         <label>Engines/Internals/iProtein.h</label>
         <link refid="i_protein_8h"/>
-        <childnode refid="186" relation="include">
+        <childnode refid="191" relation="include">
         </childnode>
-        <childnode refid="184" relation="include">
+        <childnode refid="189" relation="include">
         </childnode>
-        <childnode refid="194" relation="include">
+        <childnode refid="199" relation="include">
         </childnode>
       </node>
-      <node id="186">
+      <node id="191">
         <label>vector</label>
       </node>
-      <node id="189">
+      <node id="194">
         <label>iostream</label>
       </node>
-      <node id="187">
+      <node id="192">
         <label>set</label>
       </node>
-      <node id="188">
+      <node id="193">
         <label>algorithm</label>
       </node>
-      <node id="184">
+      <node id="189">
         <label>memory</label>
       </node>
     </incdepgraph>
     <invincdepgraph>
-      <node id="199">
+      <node id="204">
         <label>ConformerRigidDockingEngine.h</label>
         <link refid="_conformer_rigid_docking_engine_8h"/>
-        <childnode refid="200" relation="include">
+        <childnode refid="205" relation="include">
         </childnode>
-        <childnode refid="201" relation="include">
+        <childnode refid="206" relation="include">
         </childnode>
       </node>
-      <node id="209">
+      <node id="214">
         <label>PyStructures.cpp</label>
         <link refid="_py_structures_8cpp"/>
       </node>
-      <node id="202">
+      <node id="207">
         <label>MDStyleDockingEngine.h</label>
         <link refid="_m_d_style_docking_engine_8h"/>
-        <childnode refid="203" relation="include">
+        <childnode refid="208" relation="include">
         </childnode>
       </node>
-      <node id="210">
+      <node id="221">
         <label>IntermediateConformerCollector.h</label>
         <link refid="_intermediate_conformer_collector_8h"/>
-        <childnode refid="211" relation="include">
+        <childnode refid="222" relation="include">
         </childnode>
-        <childnode refid="212" relation="include">
-        </childnode>
-        <childnode refid="201" relation="include">
+        <childnode refid="206" relation="include">
         </childnode>
       </node>
-      <node id="211">
-        <label>GradientDescentLineSearch.cpp</label>
-        <link refid="_gradient_descent_line_search_8cpp"/>
+      <node id="230">
+        <label>VariantFlagAssignation.cpp</label>
+        <link refid="_variant_flag_assignation_8cpp"/>
       </node>
-      <node id="214">
+      <node id="224">
         <label>PDBWriter.cpp</label>
         <link refid="_p_d_b_writer_8cpp"/>
       </node>
       <node id="218">
+        <label>VinaLikeScoringFunction.cpp</label>
+        <link refid="_vina_like_scoring_function_8cpp"/>
+      </node>
+      <node id="228">
         <label>PySTLWrapper.cpp</label>
         <link refid="_py_s_t_l_wrapper_8cpp"/>
       </node>
-      <node id="205">
+      <node id="210">
         <label>VinaCompatibleDockingEngine.cpp</label>
         <link refid="_vina_compatible_docking_engine_8cpp"/>
       </node>
-      <node id="217">
+      <node id="226">
         <label>ReScorer.cpp</label>
         <link refid="_re_scorer_8cpp"/>
       </node>
-      <node id="204">
+      <node id="209">
         <label>VinaCompatibleDockingEngine.h</label>
         <link refid="_vina_compatible_docking_engine_8h"/>
-        <childnode refid="205" relation="include">
+        <childnode refid="210" relation="include">
         </childnode>
       </node>
-      <node id="203">
+      <node id="208">
         <label>MDStyleDockingEngine.cpp</label>
         <link refid="_m_d_style_docking_engine_8cpp"/>
       </node>
-      <node id="201">
+      <node id="206">
         <label>main.cpp</label>
         <link refid="main_8cpp"/>
       </node>
-      <node id="215">
+      <node id="220">
         <label>Molecule.cpp</label>
         <link refid="_molecule_8cpp"/>
       </node>
-      <node id="195">
+      <node id="200">
         <label>Bond.h</label>
         <link refid="_bond_8h"/>
-        <childnode refid="196" relation="include">
+        <childnode refid="201" relation="include">
         </childnode>
-        <childnode refid="219" relation="include">
+        <childnode refid="229" relation="include">
+        </childnode>
+        <childnode refid="230" relation="include">
         </childnode>
       </node>
-      <node id="216">
+      <node id="217">
+        <label>ScoringFunctionFactory.cpp</label>
+        <link refid="_scoring_function_factory_8cpp"/>
+      </node>
+      <node id="225">
         <label>ReScorer.h</label>
         <link refid="_re_scorer_8h"/>
-        <childnode refid="217" relation="include">
+        <childnode refid="226" relation="include">
+        </childnode>
+        <childnode refid="227" relation="include">
         </childnode>
       </node>
-      <node id="198">
+      <node id="227">
+        <label>PyUtilities.cpp</label>
+        <link refid="_py_utilities_8cpp"/>
+      </node>
+      <node id="203">
         <label>AbstractDockingEngine.h</label>
         <link refid="_abstract_docking_engine_8h"/>
-        <childnode refid="199" relation="include">
-        </childnode>
-        <childnode refid="202" relation="include">
-        </childnode>
         <childnode refid="204" relation="include">
-        </childnode>
-      </node>
-      <node id="197">
-        <label>DockingResult.h</label>
-        <link refid="_docking_result_8h"/>
-        <childnode refid="198" relation="include">
-        </childnode>
-        <childnode refid="206" relation="include">
         </childnode>
         <childnode refid="207" relation="include">
         </childnode>
         <childnode refid="209" relation="include">
         </childnode>
       </node>
-      <node id="200">
-        <label>ConformerRigidDockingEngine.cpp</label>
-        <link refid="_conformer_rigid_docking_engine_8cpp"/>
-      </node>
-      <node id="208">
-        <label>DockingResultPrinter.cpp</label>
-        <link refid="_docking_result_printer_8cpp"/>
-      </node>
-      <node id="196">
-        <label>Molecule.h</label>
-        <link refid="_molecule_8h"/>
-        <childnode refid="197" relation="include">
+      <node id="202">
+        <label>DockingResult.h</label>
+        <link refid="_docking_result_8h"/>
+        <childnode refid="203" relation="include">
         </childnode>
-        <childnode refid="198" relation="include">
+        <childnode refid="211" relation="include">
         </childnode>
-        <childnode refid="199" relation="include">
-        </childnode>
-        <childnode refid="202" relation="include">
-        </childnode>
-        <childnode refid="210" relation="include">
-        </childnode>
-        <childnode refid="213" relation="include">
-        </childnode>
-        <childnode refid="215" relation="include">
-        </childnode>
-        <childnode refid="216" relation="include">
-        </childnode>
-        <childnode refid="201" relation="include">
-        </childnode>
-        <childnode refid="218" relation="include">
-        </childnode>
-        <childnode refid="209" relation="include">
-        </childnode>
-      </node>
-      <node id="212">
-        <label>IntermediateConformerCollector.cpp</label>
-        <link refid="_intermediate_conformer_collector_8cpp"/>
-      </node>
-      <node id="213">
-        <label>PDBWriter.h</label>
-        <link refid="_p_d_b_writer_8h"/>
-        <childnode refid="210" relation="include">
+        <childnode refid="212" relation="include">
         </childnode>
         <childnode refid="214" relation="include">
         </childnode>
       </node>
-      <node id="207">
-        <label>DockingResultPrinter.h</label>
-        <link refid="_docking_result_printer_8h"/>
-        <childnode refid="208" relation="include">
+      <node id="205">
+        <label>ConformerRigidDockingEngine.cpp</label>
+        <link refid="_conformer_rigid_docking_engine_8cpp"/>
+      </node>
+      <node id="216">
+        <label>GradientDescentLineSearch.cpp</label>
+        <link refid="_gradient_descent_line_search_8cpp"/>
+      </node>
+      <node id="213">
+        <label>DockingResultPrinter.cpp</label>
+        <link refid="_docking_result_printer_8cpp"/>
+      </node>
+      <node id="201">
+        <label>Molecule.h</label>
+        <link refid="_molecule_8h"/>
+        <childnode refid="202" relation="include">
         </childnode>
-        <childnode refid="201" relation="include">
+        <childnode refid="203" relation="include">
+        </childnode>
+        <childnode refid="204" relation="include">
+        </childnode>
+        <childnode refid="215" relation="include">
+        </childnode>
+        <childnode refid="207" relation="include">
+        </childnode>
+        <childnode refid="220" relation="include">
+        </childnode>
+        <childnode refid="221" relation="include">
+        </childnode>
+        <childnode refid="223" relation="include">
+        </childnode>
+        <childnode refid="225" relation="include">
+        </childnode>
+        <childnode refid="206" relation="include">
+        </childnode>
+        <childnode refid="228" relation="include">
+        </childnode>
+        <childnode refid="214" relation="include">
         </childnode>
       </node>
-      <node id="219">
+      <node id="222">
+        <label>IntermediateConformerCollector.cpp</label>
+        <link refid="_intermediate_conformer_collector_8cpp"/>
+      </node>
+      <node id="223">
+        <label>PDBWriter.h</label>
+        <link refid="_p_d_b_writer_8h"/>
+        <childnode refid="221" relation="include">
+        </childnode>
+        <childnode refid="224" relation="include">
+        </childnode>
+      </node>
+      <node id="212">
+        <label>DockingResultPrinter.h</label>
+        <link refid="_docking_result_printer_8h"/>
+        <childnode refid="213" relation="include">
+        </childnode>
+        <childnode refid="206" relation="include">
+        </childnode>
+      </node>
+      <node id="229">
         <label>Bond.cpp</label>
         <link refid="_bond_8cpp"/>
       </node>
-      <node id="206">
+      <node id="219">
+        <label>PyScoringFunctions.cpp</label>
+        <link refid="_py_scoring_functions_8cpp"/>
+      </node>
+      <node id="215">
+        <label>VinaLikeScoringFunction.h</label>
+        <link refid="_vina_like_scoring_function_8h"/>
+        <childnode refid="205" relation="include">
+        </childnode>
+        <childnode refid="216" relation="include">
+        </childnode>
+        <childnode refid="217" relation="include">
+        </childnode>
+        <childnode refid="218" relation="include">
+        </childnode>
+        <childnode refid="206" relation="include">
+        </childnode>
+        <childnode refid="219" relation="include">
+        </childnode>
+      </node>
+      <node id="211">
         <label>DockingResult.cpp</label>
         <link refid="_docking_result_8cpp"/>
       </node>
@@ -267,13 +308,13 @@
 <codeline lineno="8"><highlight class="comment"><sp/>*<sp/>the<sp/>Free<sp/>Software<sp/>Foundation,<sp/>either<sp/>version<sp/>3<sp/>of<sp/>the<sp/>License,<sp/>or</highlight></codeline>
 <codeline lineno="9"><highlight class="comment"><sp/>*<sp/>(at<sp/>your<sp/>option)<sp/>any<sp/>later<sp/>version.</highlight></codeline>
 <codeline lineno="10"><highlight class="comment"><sp/>*</highlight></codeline>
-<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>Foobar<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>SmolDock<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,</highlight></codeline>
 <codeline lineno="12"><highlight class="comment"><sp/>*<sp/>but<sp/>WITHOUT<sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of</highlight></codeline>
 <codeline lineno="13"><highlight class="comment"><sp/>*<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE.<sp/><sp/>See<sp/>the</highlight></codeline>
 <codeline lineno="14"><highlight class="comment"><sp/>*<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>for<sp/>more<sp/>details.</highlight></codeline>
 <codeline lineno="15"><highlight class="comment"><sp/>*</highlight></codeline>
 <codeline lineno="16"><highlight class="comment"><sp/>*<sp/>You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License</highlight></codeline>
-<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>along<sp/>with<sp/>Foobar.<sp/><sp/>If<sp/>not,<sp/>see<sp/>&lt;https://www.gnu.org/licenses/&gt;.</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>along<sp/>with<sp/>SmolDock.<sp/><sp/>If<sp/>not,<sp/>see<sp/>&lt;https://www.gnu.org/licenses/&gt;.</highlight></codeline>
 <codeline lineno="18"><highlight class="comment"><sp/>*</highlight></codeline>
 <codeline lineno="19"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="20"><highlight class="normal"></highlight></codeline>

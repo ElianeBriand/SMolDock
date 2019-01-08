@@ -88,10 +88,8 @@ set(SOURCE_LIST Structures/Structure.cpp
         Utilities/PDBWriter.cpp
         Utilities/PDBWriter.h Utilities/PDBLigandUtils.h
         Utilities/PDBLigandUtils.cpp
-        Engines/Optimizers/GradientDescentLineSearch.cpp
-        Engines/Optimizers/GradientDescentLineSearch.h
-        Engines/Math/GradientCalculator.cpp
-        Engines/Math/GradientCalculator.h
+        Engines/LocalOptimizers/GradientDescentLineSearch.cpp
+        Engines/LocalOptimizers/GradientDescentLineSearch.h
         Utilities/IntermediateConformerCollector.cpp
         Utilities/IntermediateConformerCollector.h
         Utilities/ReScorer.cpp
@@ -99,12 +97,25 @@ set(SOURCE_LIST Structures/Structure.cpp
         Structures/Common/VariantFlagAssignation.cpp
         Structures/Common/VariantFlagAssignation.h
         Structures/Common/PDBResidueVariantTable.cpp
-        Structures/Common/PDBResidueVariantTable.h)
+        Structures/Common/PDBResidueVariantTable.h
+        Structures/InputPostProcessors/VinaCompatibilityPostProcessor.cpp
+        Structures/InputPostProcessors/VinaCompatibilityPostProcessor.h
+        Structures/InputPostProcessors/InputPostProcessorInterface.h
+        Engines/ScoringFunctions/ScoringFunctionInterface.h
+        Engines/LocalOptimizers/L_BFGS.cpp
+        Engines/LocalOptimizers/L_BFGS.h
+        Engines/LocalOptimizers/OptimizerInterface.h
+        Engines/Internals/InternalsUtilityFunctions.h
+        Engines/LocalOptimizers/LocalOptimizerUtilityFunctions.h
+        Engines/GlobalHeuristics/RandomRestart.cpp
+        Engines/GlobalHeuristics/RandomRestart.h
+        Engines/GlobalHeuristics/HeuristicInterface.h Engines/ScoringFunctions/ScoringFunctionFactory.cpp Engines/ScoringFunctions/ScoringFunctionFactory.h)
 
 set(PY_EXPORT_SOURCE_LIST Frontends/Python/PyStructures.cpp Frontends/Python/PyStructures.h Frontends/Python/PySTLWrapper.cpp Frontends/Python/PySTLWrapper.h Frontends/Python/PyUtilities.cpp Frontends/Python/PyUtilities.h Frontends/Python/PyScoringFunctions.cpp Frontends/Python/PyScoringFunctions.h)
 
 ADD_LIBRARY(smoldock_object OBJECT ${SOURCE_LIST})
 set_target_properties(smoldock_object PROPERTIES LINK_FLAGS " -static  ")
+target_compile_definitions(smoldock_object PUBLIC ARMA_DONT_USE_WRAPPER)
 
 ADD_LIBRARY(libsmoldock STATIC ${SOURCE_LIST} )
 set_target_properties(libsmoldock PROPERTIES COMPILE_FLAGS " -fPIC ")
@@ -114,8 +125,9 @@ set_target_properties(libsmoldock PROPERTIES OUTPUT_NAME "smoldock")
 TARGET_LINK_LIBRARIES(libsmoldock ${RDKIT_LINKAGE_LIST})
 target_link_libraries(libsmoldock gsl gslcblas boost_log boost_log_setup boost_system boost_log boost_system boost_filesystem boost_date_time boost_thread boost_regex pthread)
 target_link_libraries(libsmoldock Vc)
+target_link_libraries(libsmoldock blas lapack gfortran quadmath)
 target_compile_definitions(libsmoldock PUBLIC BOOST_LOG_DYN_LINK)
-
+target_compile_definitions(smoldock_object PUBLIC ARMA_DONT_USE_WRAPPER)
 
 ### Remove this for prod build
 add_compile_definitions(SMOLDOCK_VERBOSE_DEBUG)
@@ -126,7 +138,7 @@ add_compile_definitions(SMOLDOCK_VERBOSE_DEBUG)
 add_executable(smoldock Frontends/main.cpp $<TARGET_OBJECTS:smoldock_object>)
 
 # Comment this out if you do NOT want to build a static executable
-set_target_properties(smoldock PROPERTIES LINK_FLAGS " -static  ")
+set_target_properties(smoldock PROPERTIES LINK_FLAGS " -Wl,--no-undefined  -Wl,--as-needed  -static  ")
 
 
 TARGET_LINK_LIBRARIES(smoldock ${RDKIT_LINKAGE_LIST})
@@ -134,6 +146,8 @@ TARGET_LINK_LIBRARIES(smoldock ${RDKIT_LINKAGE_LIST})
 
 target_link_libraries(smoldock gsl gslcblas boost_log boost_log_setup boost_system boost_log boost_system boost_filesystem boost_date_time boost_thread boost_regex pthread)
 target_link_libraries(smoldock Vc)
+target_link_libraries(smoldock blas lapack gfortran quadmath)
+
 
 
 # For Intel VTune/Profiler tools, you need this if you generate a static executable
@@ -176,5 +190,5 @@ TARGET_LINK_LIBRARIES(complete_test_suite ${RDKIT_LINKAGE_LIST})
 
 target_link_libraries(complete_test_suite gsl gslcblas boost_log boost_log_setup  boost_system boost_system boost_filesystem boost_date_time boost_thread boost_regex )
 target_link_libraries(complete_test_suite Vc)
-
+target_link_libraries(complete_test_suite blas lapack gfortran quadmath)
 target_link_libraries(complete_test_suite ${Boost_LIBRARIES} boost_unit_test_framework)

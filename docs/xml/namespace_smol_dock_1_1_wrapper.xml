@@ -2,10 +2,52 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
   <compounddef id="namespace_smol_dock_1_1_wrapper" kind="namespace" language="C++">
     <compoundname>SmolDock::Wrapper</compoundname>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="namespace_smol_dock_1_1_wrapper_1a309113da58ce167f3e4280f1e64b7966" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>ScoringFunctionEnum</name>
+        <enumvalue id="namespace_smol_dock_1_1_wrapper_1a309113da58ce167f3e4280f1e64b7966aa618164cb1361917b852a79699b7bb2d" prot="public">
+          <name>VinaLike</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Frontends/Python/PyScoringFunctions.cpp" line="36" column="1" bodyfile="Frontends/Python/PyScoringFunctions.cpp" bodystart="36" bodyend="38"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespace_smol_dock_1_1_wrapper_1afc6fe0925036a67cbd9856c1077296ca" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::function&lt; double(const <ref refid="struct_smol_dock_1_1i_conformer" kindref="compound">sd::iConformer</ref> &amp;, const <ref refid="struct_smol_dock_1_1i_transform" kindref="compound">sd::iTransform</ref> &amp;, const <ref refid="struct_smol_dock_1_1i_protein" kindref="compound">sd::iProtein</ref> &amp;)&gt;</type>
+        <definition>std::function&lt;double(const sd::iConformer &amp;, const sd::iTransform &amp;, const sd::iProtein &amp;)&gt; SmolDock::Wrapper::getScoringFunc</definition>
+        <argsstring>(ScoringFunctionEnum which)</argsstring>
+        <name>getScoringFunc</name>
+        <param>
+          <type><ref refid="namespace_smol_dock_1_1_wrapper_1a309113da58ce167f3e4280f1e64b7966" kindref="member">ScoringFunctionEnum</ref></type>
+          <declname>which</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Frontends/Python/PyScoringFunctions.cpp" line="41" column="1" bodyfile="Frontends/Python/PyScoringFunctions.cpp" bodystart="41" bodyend="47"/>
+        <references refid="namespace_smol_dock_1_1_score_1ac205731c7b0098c2900d9d16fff1a93b" compoundref="_vina_like_scoring_function_8cpp" startline="149" endline="223">SmolDock::Score::vina_like_rigid_inter_scoring_func</references>
+        <references refid="namespace_smol_dock_1_1_wrapper_1a309113da58ce167f3e4280f1e64b7966aa618164cb1361917b852a79699b7bb2d">VinaLike</references>
+        <referencedby refid="_py_scoring_functions_8h_1a2ede6b770a3e6131986d822ec5842b63" compoundref="_py_scoring_functions_8cpp" startline="52" endline="66">export_ScoringFunctions</referencedby>
+      </memberdef>
+      </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="Frontends/Python/PySTLWrapper.h" line="26" column="1"/>
+    <location file="Frontends/Python/PyScoringFunctions.cpp" line="34" column="1"/>
   </compounddef>
 </doxygen>

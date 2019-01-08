@@ -3,237 +3,302 @@
   <compounddef id="_gradient_descent_line_search_8cpp" kind="file" language="C++">
     <compoundname>GradientDescentLineSearch.cpp</compoundname>
     <includes refid="_gradient_descent_line_search_8h" local="yes">GradientDescentLineSearch.h</includes>
-    <includes refid="_intermediate_conformer_collector_8h" local="no">Utilities/IntermediateConformerCollector.h</includes>
+    <includes refid="_vina_like_scoring_function_8h" local="no">Engines/ScoringFunctions/VinaLikeScoringFunction.h</includes>
+    <includes refid="_internals_utility_functions_8h" local="no">Engines/Internals/InternalsUtilityFunctions.h</includes>
+    <includes refid="_local_optimizer_utility_functions_8h" local="yes">LocalOptimizerUtilityFunctions.h</includes>
     <includes local="no">boost/log/trivial.hpp</includes>
     <incdepgraph>
-      <node id="444">
+      <node id="510">
+        <label>Structures/Protein.h</label>
+        <link refid="_protein_8h"/>
+        <childnode refid="483" relation="include">
+        </childnode>
+        <childnode refid="484" relation="include">
+        </childnode>
+        <childnode refid="511" relation="include">
+        </childnode>
+        <childnode refid="512" relation="include">
+        </childnode>
+        <childnode refid="513" relation="include">
+        </childnode>
+        <childnode refid="514" relation="include">
+        </childnode>
+        <childnode refid="489" relation="include">
+        </childnode>
+        <childnode refid="500" relation="include">
+        </childnode>
+        <childnode refid="508" relation="include">
+        </childnode>
+        <childnode refid="505" relation="include">
+        </childnode>
+      </node>
+      <node id="511">
+        <label>ESBTL/default.h</label>
+      </node>
+      <node id="478">
         <label>functional</label>
       </node>
-      <node id="457">
+      <node id="494">
         <label>GraphMol/RWMol.h</label>
       </node>
-      <node id="458">
+      <node id="495">
         <label>GraphMol/MolOps.h</label>
       </node>
-      <node id="454">
-        <label>Utilities/IntermediateConformerCollector.h</label>
-        <link refid="_intermediate_conformer_collector_8h"/>
-        <childnode refid="455" relation="include">
-        </childnode>
-        <childnode refid="472" relation="include">
-        </childnode>
-      </node>
-      <node id="461">
+      <node id="498">
         <label>GraphMol/Substruct/SubstructMatch.h</label>
       </node>
-      <node id="442">
-        <label>GradientDescentLineSearch.cpp</label>
-        <link refid="_gradient_descent_line_search_8cpp"/>
-        <childnode refid="443" relation="include">
-        </childnode>
-        <childnode refid="454" relation="include">
-        </childnode>
-        <childnode refid="473" relation="include">
+      <node id="480">
+        <label>OptimizerInterface.h</label>
+        <link refid="_optimizer_interface_8h"/>
+        <childnode refid="479" relation="include">
         </childnode>
       </node>
-      <node id="451">
+      <node id="487">
         <label>cmath</label>
       </node>
-      <node id="462">
+      <node id="488">
+        <label>cassert</label>
+      </node>
+      <node id="499">
         <label>GraphMol/DistGeomHelpers/Embedder.h</label>
       </node>
-      <node id="469">
+      <node id="500">
+        <label>Structures/InputPostProcessors/InputPostProcessorInterface.h</label>
+        <link refid="_input_post_processor_interface_8h"/>
+        <childnode refid="501" relation="include">
+        </childnode>
+      </node>
+      <node id="506">
         <label>string</label>
       </node>
-      <node id="464">
-        <label>Atom.h</label>
-        <link refid="_atom_8h"/>
-        <childnode refid="447" relation="include">
+      <node id="514">
+        <label>ESBTL/compressed_ifstream.h</label>
+      </node>
+      <node id="481">
+        <label>Engines/ScoringFunctions/ScoringFunctionInterface.h</label>
+        <link refid="_scoring_function_interface_8h"/>
+        <childnode refid="479" relation="include">
         </childnode>
-        <childnode refid="448" relation="include">
-        </childnode>
-        <childnode refid="465" relation="include">
-        </childnode>
-        <childnode refid="466" relation="include">
-        </childnode>
-        <childnode refid="467" relation="include">
-        </childnode>
-        <childnode refid="468" relation="include">
+        <childnode refid="482" relation="include">
         </childnode>
       </node>
-      <node id="453">
+      <node id="501">
+        <label>Structures/Atom.h</label>
+        <link refid="_atom_8h"/>
+        <childnode refid="483" relation="include">
+        </childnode>
+        <childnode refid="484" relation="include">
+        </childnode>
+        <childnode refid="502" relation="include">
+        </childnode>
+        <childnode refid="503" relation="include">
+        </childnode>
+        <childnode refid="504" relation="include">
+        </childnode>
+        <childnode refid="505" relation="include">
+        </childnode>
+      </node>
+      <node id="490">
         <label>map</label>
       </node>
-      <node id="446">
+      <node id="482">
         <label>Engines/Internals/iConformer.h</label>
         <link refid="i_conformer_8h"/>
-        <childnode refid="447" relation="include">
+        <childnode refid="483" relation="include">
         </childnode>
-        <childnode refid="448" relation="include">
+        <childnode refid="484" relation="include">
+        </childnode>
+        <childnode refid="485" relation="include">
         </childnode>
       </node>
-      <node id="473">
+      <node id="479">
+        <label>armadillo</label>
+      </node>
+      <node id="517">
         <label>boost/log/trivial.hpp</label>
       </node>
-      <node id="443">
+      <node id="477">
         <label>GradientDescentLineSearch.h</label>
         <link refid="_gradient_descent_line_search_8h"/>
-        <childnode refid="444" relation="include">
+        <childnode refid="478" relation="include">
         </childnode>
-        <childnode refid="445" relation="include">
+        <childnode refid="479" relation="include">
         </childnode>
-        <childnode refid="446" relation="include">
+        <childnode refid="480" relation="include">
         </childnode>
-        <childnode refid="449" relation="include">
+        <childnode refid="481" relation="include">
         </childnode>
-        <childnode refid="452" relation="include">
+        <childnode refid="482" relation="include">
+        </childnode>
+        <childnode refid="485" relation="include">
+        </childnode>
+        <childnode refid="489" relation="include">
         </childnode>
       </node>
-      <node id="471">
+      <node id="509">
         <label>Bond.h</label>
         <link refid="_bond_8h"/>
-        <childnode refid="448" relation="include">
+        <childnode refid="484" relation="include">
         </childnode>
-        <childnode refid="464" relation="include">
+        <childnode refid="501" relation="include">
         </childnode>
       </node>
-      <node id="445">
-        <label>Engines/Math/GradientCalculator.h</label>
-        <link refid="_gradient_calculator_8h"/>
+      <node id="516">
+        <label>LocalOptimizerUtilityFunctions.h</label>
+        <link refid="_local_optimizer_utility_functions_8h"/>
       </node>
-      <node id="468">
+      <node id="512">
+        <label>ESBTL/atom_classifier.h</label>
+      </node>
+      <node id="505">
         <label>AminoAcid.h</label>
         <link refid="_amino_acid_8h"/>
-        <childnode refid="469" relation="include">
+        <childnode refid="506" relation="include">
         </childnode>
-        <childnode refid="447" relation="include">
+        <childnode refid="483" relation="include">
         </childnode>
-        <childnode refid="465" relation="include">
+        <childnode refid="502" relation="include">
         </childnode>
-        <childnode refid="466" relation="include">
+        <childnode refid="503" relation="include">
         </childnode>
-        <childnode refid="470" relation="include">
+        <childnode refid="507" relation="include">
         </childnode>
-        <childnode refid="448" relation="include">
+        <childnode refid="484" relation="include">
         </childnode>
-        <childnode refid="452" relation="include">
+        <childnode refid="489" relation="include">
         </childnode>
       </node>
-      <node id="470">
+      <node id="507">
         <label>tuple</label>
       </node>
-      <node id="452">
+      <node id="489">
         <label>Engines/Internals/iProtein.h</label>
         <link refid="i_protein_8h"/>
-        <childnode refid="447" relation="include">
+        <childnode refid="483" relation="include">
         </childnode>
-        <childnode refid="448" relation="include">
+        <childnode refid="484" relation="include">
         </childnode>
-        <childnode refid="453" relation="include">
+        <childnode refid="490" relation="include">
         </childnode>
       </node>
-      <node id="449">
-        <label>Engines/Internals/iTransform.h</label>
+      <node id="485">
+        <label>iTransform.h</label>
         <link refid="i_transform_8h"/>
-        <childnode refid="447" relation="include">
+        <childnode refid="483" relation="include">
         </childnode>
-        <childnode refid="448" relation="include">
+        <childnode refid="484" relation="include">
         </childnode>
-        <childnode refid="450" relation="include">
+        <childnode refid="486" relation="include">
         </childnode>
-        <childnode refid="451" relation="include">
+        <childnode refid="487" relation="include">
         </childnode>
-        <childnode refid="446" relation="include">
+        <childnode refid="488" relation="include">
         </childnode>
       </node>
-      <node id="447">
+      <node id="483">
         <label>vector</label>
       </node>
-      <node id="450">
+      <node id="476">
+        <label>GradientDescentLineSearch.cpp</label>
+        <link refid="_gradient_descent_line_search_8cpp"/>
+        <childnode refid="477" relation="include">
+        </childnode>
+        <childnode refid="491" relation="include">
+        </childnode>
+        <childnode refid="515" relation="include">
+        </childnode>
+        <childnode refid="516" relation="include">
+        </childnode>
+        <childnode refid="517" relation="include">
+        </childnode>
+      </node>
+      <node id="486">
         <label>array</label>
       </node>
-      <node id="460">
+      <node id="497">
         <label>GraphMol/SmilesParse/SmilesParse.h</label>
       </node>
-      <node id="463">
+      <node id="508">
         <label>Structure.h</label>
         <link refid="_structure_8h"/>
       </node>
-      <node id="455">
+      <node id="492">
         <label>Structures/Molecule.h</label>
         <link refid="_molecule_8h"/>
-        <childnode refid="447" relation="include">
+        <childnode refid="483" relation="include">
         </childnode>
-        <childnode refid="456" relation="include">
+        <childnode refid="493" relation="include">
         </childnode>
-        <childnode refid="457" relation="include">
+        <childnode refid="494" relation="include">
         </childnode>
-        <childnode refid="458" relation="include">
+        <childnode refid="495" relation="include">
         </childnode>
-        <childnode refid="459" relation="include">
+        <childnode refid="496" relation="include">
         </childnode>
-        <childnode refid="460" relation="include">
+        <childnode refid="497" relation="include">
         </childnode>
-        <childnode refid="461" relation="include">
+        <childnode refid="498" relation="include">
         </childnode>
-        <childnode refid="462" relation="include">
+        <childnode refid="499" relation="include">
         </childnode>
-        <childnode refid="463" relation="include">
+        <childnode refid="500" relation="include">
         </childnode>
-        <childnode refid="464" relation="include">
+        <childnode refid="508" relation="include">
         </childnode>
-        <childnode refid="471" relation="include">
+        <childnode refid="501" relation="include">
         </childnode>
-        <childnode refid="446" relation="include">
+        <childnode refid="509" relation="include">
+        </childnode>
+        <childnode refid="482" relation="include">
         </childnode>
       </node>
-      <node id="456">
+      <node id="493">
         <label>GraphMol/RDKitBase.h</label>
       </node>
-      <node id="467">
+      <node id="504">
         <label>iostream</label>
       </node>
-      <node id="472">
-        <label>PDBWriter.h</label>
-        <link refid="_p_d_b_writer_8h"/>
-        <childnode refid="469" relation="include">
+      <node id="515">
+        <label>Engines/Internals/InternalsUtilityFunctions.h</label>
+        <link refid="_internals_utility_functions_8h"/>
+        <childnode refid="482" relation="include">
         </childnode>
-        <childnode refid="447" relation="include">
-        </childnode>
-        <childnode refid="455" relation="include">
+        <childnode refid="485" relation="include">
         </childnode>
       </node>
-      <node id="465">
+      <node id="491">
+        <label>Engines/ScoringFunctions/VinaLikeScoringFunction.h</label>
+        <link refid="_vina_like_scoring_function_8h"/>
+        <childnode refid="482" relation="include">
+        </childnode>
+        <childnode refid="489" relation="include">
+        </childnode>
+        <childnode refid="485" relation="include">
+        </childnode>
+        <childnode refid="481" relation="include">
+        </childnode>
+        <childnode refid="492" relation="include">
+        </childnode>
+        <childnode refid="510" relation="include">
+        </childnode>
+      </node>
+      <node id="502">
         <label>set</label>
       </node>
-      <node id="466">
+      <node id="503">
         <label>algorithm</label>
       </node>
-      <node id="448">
+      <node id="513">
+        <label>ESBTL/weighted_atom_iterator.h</label>
+      </node>
+      <node id="484">
         <label>memory</label>
       </node>
-      <node id="459">
+      <node id="496">
         <label>GraphMol/FileParsers/FileParsers.h</label>
       </node>
     </incdepgraph>
-    <innernamespace refid="namespace_smol_dock">SmolDock</innernamespace>
-      <sectiondef kind="var">
-      <memberdef kind="variable" id="_gradient_descent_line_search_8cpp_1aed1cc446d8c31ec6ad4dae32bbbcc42a" prot="public" static="no" mutable="no">
-        <type><ref refid="class_smol_dock_1_1_intermediate_conformer_collector" kindref="compound">SmolDock::IntermediateConformerCollector</ref> *</type>
-        <definition>SmolDock::IntermediateConformerCollector* conformerCollector</definition>
-        <argsstring></argsstring>
-        <name>conformerCollector</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="Engines/Optimizers/GradientDescentLineSearch.cpp" line="10" column="1" bodyfile="Frontends/main.cpp" bodystart="36" bodyend="-1"/>
-        <referencedby refid="class_smol_dock_1_1_gradient_descent_line_search_1a04d6d79864edd42fb3e6729b6d402398" compoundref="_gradient_descent_line_search_8cpp" startline="216" endline="220">SmolDock::GradientDescentLineSearch::setStartingConformer</referencedby>
-        <referencedby refid="main_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4" compoundref="main_8cpp" startline="39" endline="132">main</referencedby>
-      </memberdef>
-      </sectiondef>
+    <innernamespace refid="namespace_smol_dock_1_1_optimizer">SmolDock::Optimizer</innernamespace>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
@@ -246,241 +311,129 @@
 <codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_gradient_descent_line_search_8h" kindref="compound">GradientDescentLineSearch.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="6"><highlight class="normal"></highlight></codeline>
 <codeline lineno="7"><highlight class="normal"></highlight></codeline>
-<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_intermediate_conformer_collector_8h" kindref="compound">Utilities/IntermediateConformerCollector.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="9"><highlight class="normal"></highlight></codeline>
-<codeline lineno="10"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_intermediate_conformer_collector" kindref="compound">SmolDock::IntermediateConformerCollector</ref><sp/>*<ref refid="_gradient_descent_line_search_8cpp_1aed1cc446d8c31ec6ad4dae32bbbcc42a" kindref="member">conformerCollector</ref>;</highlight></codeline>
-<codeline lineno="11"><highlight class="normal"></highlight></codeline>
-<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#undef<sp/>BOOST_LOG</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="13"><highlight class="normal"></highlight></codeline>
-<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/log/trivial.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="15"><highlight class="normal"></highlight></codeline>
-<codeline lineno="16"><highlight class="normal"></highlight></codeline>
-<codeline lineno="17"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_smol_dock" kindref="compound">SmolDock</ref><sp/>{</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_vina_like_scoring_function_8h" kindref="compound">Engines/ScoringFunctions/VinaLikeScoringFunction.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_internals_utility_functions_8h" kindref="compound">Engines/Internals/InternalsUtilityFunctions.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_local_optimizer_utility_functions_8h" kindref="compound">LocalOptimizerUtilityFunctions.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#undef<sp/>BOOST_LOG</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/log/trivial.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
 <codeline lineno="18"><highlight class="normal"></highlight></codeline>
 <codeline lineno="19"><highlight class="normal"></highlight></codeline>
-<codeline lineno="20" refid="class_smol_dock_1_1_gradient_descent_line_search_1ab9d9aa6055a02a03df8a1e6c49af2813" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_gradient_descent_line_search_1ab9d9aa6055a02a03df8a1e6c49af2813" kindref="member">GradientDescentLineSearch::GradientDescentLineSearch</ref>(</highlight></codeline>
-<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::function&lt;</highlight><highlight class="keywordtype">double</highlight><highlight class="normal">(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_smol_dock_1_1i_conformer" kindref="compound">iConformer</ref><sp/>&amp;,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_smol_dock_1_1i_transform" kindref="compound">iTransform</ref><sp/>&amp;,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_smol_dock_1_1i_protein" kindref="compound">iProtein</ref><sp/>&amp;)&gt;<sp/>scorFunc,</highlight></codeline>
-<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>differentialUpsilon)<sp/>:</highlight></codeline>
-<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>scoringFunction(scorFunc),</highlight></codeline>
-<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>differential_epsilon(differentialUpsilon)<sp/>{</highlight></codeline>
-<codeline lineno="25"><highlight class="normal"></highlight></codeline>
-<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="27"><highlight class="normal"></highlight></codeline>
-<codeline lineno="28" refid="class_smol_dock_1_1_gradient_descent_line_search_1a8bc11fdd0f47562e773df6dff62dc82a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_gradient_descent_line_search_1a8bc11fdd0f47562e773df6dff62dc82a" kindref="member">GradientDescentLineSearch::optimize</ref>()<sp/>{</highlight></codeline>
-<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="class_smol_dock_1_1_gradient_descent_line_search_1a9a95675712350a379bf812078c24b3f8" kindref="member">currentTransform</ref><sp/>=<sp/><ref refid="namespace_smol_dock_1a3974d1e3a6f729a7ca05b97996ca2079" kindref="member">iTransformIdentityInit</ref>();</highlight></codeline>
-<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_smol_dock_1_1i_gradient" kindref="compound">iGradient</ref><sp/>translationGradient;</highlight></codeline>
-<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_gradient_descent_line_search_1a9691fe15b63382d7bc59ac767d26227d" kindref="member">score</ref><sp/>=<sp/>this-&gt;<ref refid="class_smol_dock_1_1_gradient_descent_line_search_1a45bfe2138561fd779568b96853fac0e9" kindref="member">scoringFunction</ref>(this-&gt;<ref refid="class_smol_dock_1_1_gradient_descent_line_search_1a17b21512432ae8a50a470b5b574216cd" kindref="member">currentConformer</ref>,<sp/>this-&gt;<ref refid="class_smol_dock_1_1_gradient_descent_line_search_1a9a95675712350a379bf812078c24b3f8" kindref="member">currentTransform</ref>,<sp/>*(this-&gt;<ref refid="class_smol_dock_1_1_gradient_descent_line_search_1ac3c992864c7e8b73dbf6303a481be173" kindref="member">protein</ref>));</highlight></codeline>
-<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>oldscore;</highlight></codeline>
-<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>score_progress<sp/>=<sp/>100.0;</highlight></codeline>
+<codeline lineno="20" refid="namespace_smol_dock_1_1_optimizer" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_smol_dock_1_1_optimizer" kindref="compound">SmolDock::Optimizer</ref><sp/>{</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23" refid="class_smol_dock_1_1_optimizer_1_1_gradient_descent_line_search_1abc5e7a2cc3b11c6aa320dbae9b33c816" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_optimizer_1_1_gradient_descent_line_search_1abc5e7a2cc3b11c6aa320dbae9b33c816" kindref="member">GradientDescentLineSearch::GradientDescentLineSearch</ref>(<ref refid="class_smol_dock_1_1_score_1_1_scoring_function" kindref="compound">Score::ScoringFunction</ref><sp/>*scoringFunc_,</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>differentialUpsilon)<sp/>:</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>scoringFunction(scoringFunc_),</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>differential_epsilon(differentialUpsilon),</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>paramVectorDimension(scoringFunc_-&gt;getParamVectorDimension()),</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>result(scoringFunc_-&gt;getParamVectorDimension(),<sp/>1,<sp/>arma::fill::zeros),</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>iterationNumber(0)<sp/>{</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33" refid="class_smol_dock_1_1_optimizer_1_1_gradient_descent_line_search_1ae0888f9903112cfbe93af8d5946a52da" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_optimizer_1_1_gradient_descent_line_search_1ae0888f9903112cfbe93af8d5946a52da" kindref="member">GradientDescentLineSearch::optimize</ref>(arma::mat<sp/>startingPoint)<sp/>{</highlight></codeline>
 <codeline lineno="34"><highlight class="normal"></highlight></codeline>
-<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(score_progress<sp/>&gt;<sp/>0.001)<sp/>{</highlight></codeline>
-<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>oldscore<sp/>=<sp/><ref refid="class_smol_dock_1_1_gradient_descent_line_search_1a9691fe15b63382d7bc59ac767d26227d" kindref="member">score</ref>;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>arma::mat&amp;<sp/>paramsToOptimize<sp/>=<sp/>startingPoint;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>arma::mat<sp/>gradient(<ref refid="class_smol_dock_1_1_optimizer_1_1_gradient_descent_line_search_1a8b335ed348fc56a3f873d7b6520c2e2f" kindref="member">paramVectorDimension</ref>,<sp/>1,<sp/>arma::fill::zeros);</highlight></codeline>
 <codeline lineno="37"><highlight class="normal"></highlight></codeline>
-<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_LOG_TRIVIAL(info)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_LOG_TRIVIAL(debug)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;score:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/><ref refid="class_smol_dock_1_1_gradient_descent_line_search_1a9691fe15b63382d7bc59ac767d26227d" kindref="member">score</ref>;</highlight></codeline>
-<codeline lineno="40"><highlight class="normal"></highlight></codeline>
-<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Compute<sp/>approx<sp/>gradient<sp/>to<sp/>find<sp/>in<sp/>which<sp/>direction<sp/>to<sp/>go</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>score_<sp/>=<sp/>this-&gt;<ref refid="class_smol_dock_1_1_optimizer_1_1_gradient_descent_line_search_1a5a7ea295c87622dc13f80e4315321463" kindref="member">scoringFunction</ref>-&gt;<ref refid="class_smol_dock_1_1_score_1_1_scoring_function_1a56e7633750240c7511d5f719c87eeb2f" kindref="member">EvaluateWithGradient</ref>(paramsToOptimize,<sp/>gradient);</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_LOG_TRIVIAL(debug)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Initial<sp/>score<sp/>:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>score_;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
 <codeline lineno="42"><highlight class="normal"></highlight></codeline>
-<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Translation</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_smol_dock_1_1i_transform" kindref="compound">iTransform</ref><sp/>transform_dx<sp/>=<sp/>this-&gt;<ref refid="class_smol_dock_1_1_gradient_descent_line_search_1a9a95675712350a379bf812078c24b3f8" kindref="member">currentTransform</ref>;</highlight></codeline>
-<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>transform_dx.<ref refid="struct_smol_dock_1_1i_transform_1ab0039729b08d423b6e0414cec1b893e7" kindref="member">transl</ref>.<ref refid="struct_smol_dock_1_1i_translation_1a74a60efc8b2463b7ea1ca1e824a4ed28" kindref="member">x</ref><sp/>+=<sp/>this-&gt;<ref refid="class_smol_dock_1_1_gradient_descent_line_search_1a22682b77e2ac67df501890dc8922c374" kindref="member">differential_epsilon</ref>;</highlight></codeline>
-<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>translationGradient.<ref refid="struct_smol_dock_1_1i_gradient_1a4780b049dba9b298fc9259a9b626b77c" kindref="member">dx</ref><sp/>=</highlight></codeline>
-<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>oldscore<sp/>-<sp/>this-&gt;<ref refid="class_smol_dock_1_1_gradient_descent_line_search_1a45bfe2138561fd779568b96853fac0e9" kindref="member">scoringFunction</ref>(this-&gt;<ref refid="class_smol_dock_1_1_gradient_descent_line_search_1a17b21512432ae8a50a470b5b574216cd" kindref="member">currentConformer</ref>,<sp/>transform_dx,<sp/>*(this-&gt;<ref refid="class_smol_dock_1_1_gradient_descent_line_search_1ac3c992864c7e8b73dbf6303a481be173" kindref="member">protein</ref>));</highlight></codeline>
-<codeline lineno="48"><highlight class="normal"></highlight></codeline>
-<codeline lineno="49"><highlight class="normal"></highlight></codeline>
-<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_smol_dock_1_1i_transform" kindref="compound">iTransform</ref><sp/>transform_dy<sp/>=<sp/>this-&gt;<ref refid="class_smol_dock_1_1_gradient_descent_line_search_1a9a95675712350a379bf812078c24b3f8" kindref="member">currentTransform</ref>;</highlight></codeline>
-<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>transform_dy.<ref refid="struct_smol_dock_1_1i_transform_1ab0039729b08d423b6e0414cec1b893e7" kindref="member">transl</ref>.<ref refid="struct_smol_dock_1_1i_translation_1a5362a54675ecc6bac99325c69521fbb5" kindref="member">y</ref><sp/>+=<sp/>this-&gt;<ref refid="class_smol_dock_1_1_gradient_descent_line_search_1a22682b77e2ac67df501890dc8922c374" kindref="member">differential_epsilon</ref>;</highlight></codeline>
-<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>translationGradient.<ref refid="struct_smol_dock_1_1i_gradient_1a4c616a17c5cdd532679cc158dccc6797" kindref="member">dy</ref><sp/>=</highlight></codeline>
-<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>oldscore<sp/>-<sp/>this-&gt;<ref refid="class_smol_dock_1_1_gradient_descent_line_search_1a45bfe2138561fd779568b96853fac0e9" kindref="member">scoringFunction</ref>(this-&gt;<ref refid="class_smol_dock_1_1_gradient_descent_line_search_1a17b21512432ae8a50a470b5b574216cd" kindref="member">currentConformer</ref>,<sp/>transform_dy,<sp/>*(this-&gt;<ref refid="class_smol_dock_1_1_gradient_descent_line_search_1ac3c992864c7e8b73dbf6303a481be173" kindref="member">protein</ref>));</highlight></codeline>
-<codeline lineno="54"><highlight class="normal"></highlight></codeline>
-<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_smol_dock_1_1i_transform" kindref="compound">iTransform</ref><sp/>transform_dz<sp/>=<sp/>this-&gt;<ref refid="class_smol_dock_1_1_gradient_descent_line_search_1a9a95675712350a379bf812078c24b3f8" kindref="member">currentTransform</ref>;</highlight></codeline>
-<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>transform_dz.<ref refid="struct_smol_dock_1_1i_transform_1ab0039729b08d423b6e0414cec1b893e7" kindref="member">transl</ref>.<ref refid="struct_smol_dock_1_1i_translation_1a2ed07fcfc129a2bf7696b65d481317c5" kindref="member">z</ref><sp/>+=<sp/>this-&gt;<ref refid="class_smol_dock_1_1_gradient_descent_line_search_1a22682b77e2ac67df501890dc8922c374" kindref="member">differential_epsilon</ref>;</highlight></codeline>
-<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>translationGradient.<ref refid="struct_smol_dock_1_1i_gradient_1adf3e33454ba5441435ce46894df07a49" kindref="member">dz</ref><sp/>=</highlight></codeline>
-<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>oldscore<sp/>-<sp/>this-&gt;<ref refid="class_smol_dock_1_1_gradient_descent_line_search_1a45bfe2138561fd779568b96853fac0e9" kindref="member">scoringFunction</ref>(this-&gt;<ref refid="class_smol_dock_1_1_gradient_descent_line_search_1a17b21512432ae8a50a470b5b574216cd" kindref="member">currentConformer</ref>,<sp/>transform_dz,<sp/>*(this-&gt;<ref refid="class_smol_dock_1_1_gradient_descent_line_search_1ac3c992864c7e8b73dbf6303a481be173" kindref="member">protein</ref>));</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>oldscore;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>score_progress<sp/>=<sp/>100.0;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(score_progress<sp/>&gt;<sp/>0.001)<sp/>{</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="namespace_smol_dock_1_1_optimizer_1a79ed0dc5e1f1a738bd5bb281f09748a7" kindref="member">hasNonZeroComponent</ref>(gradient))<sp/>{</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Score<sp/>and<sp/>all<sp/>gradient<sp/>components<sp/>are<sp/>zero<sp/>:<sp/>cannot<sp/>decide<sp/>on<sp/>a<sp/>direction,</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>--&gt;<sp/>Search<sp/>failure</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_LOG_TRIVIAL(debug)</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Gradient<sp/>components<sp/>are<sp/>zero<sp/>:<sp/>cannot<sp/>use<sp/>gradient<sp/>descent<sp/>for<sp/>this<sp/>starting<sp/>position.&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>We<sp/>do<sp/>a<sp/>linesearch</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Aka<sp/>:<sp/>we<sp/>want<sp/>to<sp/>know<sp/>how<sp/>far<sp/>in<sp/>the<sp/>gradient<sp/>direction<sp/>we<sp/>will<sp/>go</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="59"><highlight class="normal"></highlight></codeline>
-<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Rotation</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_smol_dock_1_1i_transform" kindref="compound">iTransform</ref><sp/>transform_ds<sp/>=<sp/>this-&gt;<ref refid="class_smol_dock_1_1_gradient_descent_line_search_1a9a95675712350a379bf812078c24b3f8" kindref="member">currentTransform</ref>;</highlight></codeline>
-<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>transform_ds.<ref refid="struct_smol_dock_1_1i_transform_1a31861b55dc94ec0172ce602cd2a4a54f" kindref="member">rota</ref>.<ref refid="struct_smol_dock_1_1i_quaternion_1a07d95036803eb2a4ef32627df95043ad" kindref="member">s</ref><sp/>+=<sp/>this-&gt;<ref refid="class_smol_dock_1_1_gradient_descent_line_search_1a22682b77e2ac67df501890dc8922c374" kindref="member">differential_epsilon</ref>;</highlight></codeline>
-<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespace_smol_dock_1aeef66e92064c4a5e5102102342542853" kindref="member">normalizeQuaternionInPlace</ref>(transform_ds.<ref refid="struct_smol_dock_1_1i_transform_1a31861b55dc94ec0172ce602cd2a4a54f" kindref="member">rota</ref>);</highlight></codeline>
-<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>translationGradient.<ref refid="struct_smol_dock_1_1i_gradient_1af93eb07f1c8b1f8fe103ed5aa028ce2c" kindref="member">ds</ref><sp/>=</highlight></codeline>
-<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>oldscore<sp/>-<sp/>this-&gt;<ref refid="class_smol_dock_1_1_gradient_descent_line_search_1a45bfe2138561fd779568b96853fac0e9" kindref="member">scoringFunction</ref>(this-&gt;<ref refid="class_smol_dock_1_1_gradient_descent_line_search_1a17b21512432ae8a50a470b5b574216cd" kindref="member">currentConformer</ref>,<sp/>transform_ds,<sp/>*(this-&gt;<ref refid="class_smol_dock_1_1_gradient_descent_line_search_1ac3c992864c7e8b73dbf6303a481be173" kindref="member">protein</ref>));</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>step<sp/>=<sp/>this-&gt;<ref refid="class_smol_dock_1_1_optimizer_1_1_gradient_descent_line_search_1a0680dc929db0fe521e0820e473b8bcb6" kindref="member">differential_epsilon</ref><sp/>/<sp/>10;</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>previous_step<sp/>=<sp/>0.0;</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>previous_tentativeNewScore<sp/>=<sp/>std::numeric_limits&lt;double&gt;::max();</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>We<sp/>go<sp/>further<sp/>and<sp/>further<sp/>in<sp/>the<sp/>direction<sp/>of<sp/>the<sp/>gradient,<sp/>until<sp/>we<sp/>are<sp/>not<sp/>bettering<sp/>the<sp/>score</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">true</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
 <codeline lineno="66"><highlight class="normal"></highlight></codeline>
-<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_smol_dock_1_1i_transform" kindref="compound">iTransform</ref><sp/>transform_du<sp/>=<sp/>this-&gt;<ref refid="class_smol_dock_1_1_gradient_descent_line_search_1a9a95675712350a379bf812078c24b3f8" kindref="member">currentTransform</ref>;</highlight></codeline>
-<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>transform_du.<ref refid="struct_smol_dock_1_1i_transform_1a31861b55dc94ec0172ce602cd2a4a54f" kindref="member">rota</ref>.<ref refid="struct_smol_dock_1_1i_quaternion_1a3692d71434fede9771686a73240e6ba7" kindref="member">u</ref><sp/>+=<sp/>this-&gt;<ref refid="class_smol_dock_1_1_gradient_descent_line_search_1a22682b77e2ac67df501890dc8922c374" kindref="member">differential_epsilon</ref>;</highlight></codeline>
-<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespace_smol_dock_1aeef66e92064c4a5e5102102342542853" kindref="member">normalizeQuaternionInPlace</ref>(transform_du.<ref refid="struct_smol_dock_1_1i_transform_1a31861b55dc94ec0172ce602cd2a4a54f" kindref="member">rota</ref>);</highlight></codeline>
-<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>translationGradient.<ref refid="struct_smol_dock_1_1i_gradient_1a5583a237c1d002cba8afcb0b34d7a483" kindref="member">du</ref><sp/>=</highlight></codeline>
-<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>oldscore<sp/>-<sp/>this-&gt;<ref refid="class_smol_dock_1_1_gradient_descent_line_search_1a45bfe2138561fd779568b96853fac0e9" kindref="member">scoringFunction</ref>(this-&gt;<ref refid="class_smol_dock_1_1_gradient_descent_line_search_1a17b21512432ae8a50a470b5b574216cd" kindref="member">currentConformer</ref>,<sp/>transform_du,<sp/>*(this-&gt;<ref refid="class_smol_dock_1_1_gradient_descent_line_search_1ac3c992864c7e8b73dbf6303a481be173" kindref="member">protein</ref>));</highlight></codeline>
-<codeline lineno="72"><highlight class="normal"></highlight></codeline>
-<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_smol_dock_1_1i_transform" kindref="compound">iTransform</ref><sp/>transform_dv<sp/>=<sp/>this-&gt;<ref refid="class_smol_dock_1_1_gradient_descent_line_search_1a9a95675712350a379bf812078c24b3f8" kindref="member">currentTransform</ref>;</highlight></codeline>
-<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>transform_dv.<ref refid="struct_smol_dock_1_1i_transform_1a31861b55dc94ec0172ce602cd2a4a54f" kindref="member">rota</ref>.<ref refid="struct_smol_dock_1_1i_quaternion_1a97a15d15b2fae3ec29c2fdb2388f5e5b" kindref="member">v</ref><sp/>+=<sp/>this-&gt;<ref refid="class_smol_dock_1_1_gradient_descent_line_search_1a22682b77e2ac67df501890dc8922c374" kindref="member">differential_epsilon</ref>;</highlight></codeline>
-<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespace_smol_dock_1aeef66e92064c4a5e5102102342542853" kindref="member">normalizeQuaternionInPlace</ref>(transform_dv.<ref refid="struct_smol_dock_1_1i_transform_1a31861b55dc94ec0172ce602cd2a4a54f" kindref="member">rota</ref>);</highlight></codeline>
-<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>translationGradient.<ref refid="struct_smol_dock_1_1i_gradient_1aff52214e33a8a7ec32fac66f0342764d" kindref="member">dv</ref><sp/>=</highlight></codeline>
-<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>oldscore<sp/>-<sp/>this-&gt;<ref refid="class_smol_dock_1_1_gradient_descent_line_search_1a45bfe2138561fd779568b96853fac0e9" kindref="member">scoringFunction</ref>(this-&gt;<ref refid="class_smol_dock_1_1_gradient_descent_line_search_1a17b21512432ae8a50a470b5b574216cd" kindref="member">currentConformer</ref>,<sp/>transform_dv,<sp/>*(this-&gt;<ref refid="class_smol_dock_1_1_gradient_descent_line_search_1ac3c992864c7e8b73dbf6303a481be173" kindref="member">protein</ref>));</highlight></codeline>
-<codeline lineno="78"><highlight class="normal"></highlight></codeline>
-<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_smol_dock_1_1i_transform" kindref="compound">iTransform</ref><sp/>transform_dt<sp/>=<sp/>this-&gt;<ref refid="class_smol_dock_1_1_gradient_descent_line_search_1a9a95675712350a379bf812078c24b3f8" kindref="member">currentTransform</ref>;</highlight></codeline>
-<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>transform_dt.<ref refid="struct_smol_dock_1_1i_transform_1a31861b55dc94ec0172ce602cd2a4a54f" kindref="member">rota</ref>.<ref refid="struct_smol_dock_1_1i_quaternion_1a1ff0d5e99369aa47273864dfea352c05" kindref="member">t</ref><sp/>+=<sp/>this-&gt;<ref refid="class_smol_dock_1_1_gradient_descent_line_search_1a22682b77e2ac67df501890dc8922c374" kindref="member">differential_epsilon</ref>;</highlight></codeline>
-<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespace_smol_dock_1aeef66e92064c4a5e5102102342542853" kindref="member">normalizeQuaternionInPlace</ref>(transform_dt.<ref refid="struct_smol_dock_1_1i_transform_1a31861b55dc94ec0172ce602cd2a4a54f" kindref="member">rota</ref>);</highlight></codeline>
-<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>translationGradient.<ref refid="struct_smol_dock_1_1i_gradient_1a728b006fb9f40f843dcca18768a0618c" kindref="member">dt</ref><sp/>=</highlight></codeline>
-<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>oldscore<sp/>-<sp/>this-&gt;<ref refid="class_smol_dock_1_1_gradient_descent_line_search_1a45bfe2138561fd779568b96853fac0e9" kindref="member">scoringFunction</ref>(this-&gt;<ref refid="class_smol_dock_1_1_gradient_descent_line_search_1a17b21512432ae8a50a470b5b574216cd" kindref="member">currentConformer</ref>,<sp/>transform_dt,<sp/>*(this-&gt;<ref refid="class_smol_dock_1_1_gradient_descent_line_search_1ac3c992864c7e8b73dbf6303a481be173" kindref="member">protein</ref>));</highlight></codeline>
-<codeline lineno="84"><highlight class="normal"></highlight></codeline>
-<codeline lineno="85"><highlight class="normal"></highlight></codeline>
-<codeline lineno="86"><highlight class="normal"></highlight></codeline>
-<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_LOG_TRIVIAL(debug)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Gradient&quot;</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_LOG_TRIVIAL(debug)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/><sp/><sp/><sp/>ds:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>translationGradient.<ref refid="struct_smol_dock_1_1i_gradient_1af93eb07f1c8b1f8fe103ed5aa028ce2c" kindref="member">ds</ref>;</highlight></codeline>
-<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_LOG_TRIVIAL(debug)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/><sp/><sp/><sp/>du:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>translationGradient.<ref refid="struct_smol_dock_1_1i_gradient_1a5583a237c1d002cba8afcb0b34d7a483" kindref="member">du</ref><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/><sp/>dx:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>translationGradient.<ref refid="struct_smol_dock_1_1i_gradient_1a4780b049dba9b298fc9259a9b626b77c" kindref="member">dx</ref>;</highlight></codeline>
-<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_LOG_TRIVIAL(debug)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/><sp/><sp/><sp/>dv:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>translationGradient.<ref refid="struct_smol_dock_1_1i_gradient_1aff52214e33a8a7ec32fac66f0342764d" kindref="member">dv</ref><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/><sp/>dy:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>translationGradient.<ref refid="struct_smol_dock_1_1i_gradient_1a4c616a17c5cdd532679cc158dccc6797" kindref="member">dy</ref>;</highlight></codeline>
-<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_LOG_TRIVIAL(debug)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/><sp/><sp/><sp/>dt:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>translationGradient.<ref refid="struct_smol_dock_1_1i_gradient_1a728b006fb9f40f843dcca18768a0618c" kindref="member">dt</ref><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/><sp/>dx:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>translationGradient.<ref refid="struct_smol_dock_1_1i_gradient_1adf3e33454ba5441435ce46894df07a49" kindref="member">dz</ref>;</highlight></codeline>
-<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Now<sp/>we<sp/>want<sp/>to<sp/>know<sp/>how<sp/>far<sp/>in<sp/>that<sp/>direction</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>We<sp/>do<sp/>a<sp/>line-search</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="94"><highlight class="normal"></highlight></codeline>
-<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_smol_dock_1_1i_transform" kindref="compound">iTransform</ref><sp/>transform_linesearch;</highlight></codeline>
-<codeline lineno="96"><highlight class="normal"></highlight></codeline>
-<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>step<sp/>=<sp/>this-&gt;<ref refid="class_smol_dock_1_1_gradient_descent_line_search_1a22682b77e2ac67df501890dc8922c374" kindref="member">differential_epsilon</ref><sp/>/<sp/>10;</highlight></codeline>
-<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>previous_step<sp/>=<sp/>0.0;</highlight></codeline>
-<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>temp_score;</highlight></codeline>
-<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>previous_temp_score<sp/>=<sp/>std::numeric_limits&lt;double&gt;::max();</highlight></codeline>
-<codeline lineno="101"><highlight class="normal"></highlight></codeline>
-<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>We<sp/>go<sp/>further<sp/>and<sp/>further<sp/>in<sp/>the<sp/>direction<sp/>of<sp/>the<sp/>gradient,<sp/>until<sp/>we<sp/>are<sp/>not<sp/>bettering<sp/>the<sp/>score</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">true</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
-<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>transform_linesearch<sp/>=<sp/>this-&gt;<ref refid="class_smol_dock_1_1_gradient_descent_line_search_1a9a95675712350a379bf812078c24b3f8" kindref="member">currentTransform</ref>;</highlight></codeline>
-<codeline lineno="105"><highlight class="normal"></highlight></codeline>
-<codeline lineno="106"><highlight class="normal"></highlight></codeline>
-<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>transform_linesearch.<ref refid="struct_smol_dock_1_1i_transform_1ab0039729b08d423b6e0414cec1b893e7" kindref="member">transl</ref>.<ref refid="struct_smol_dock_1_1i_translation_1a74a60efc8b2463b7ea1ca1e824a4ed28" kindref="member">x</ref><sp/>+=<sp/>step<sp/>*<sp/>translationGradient.<ref refid="struct_smol_dock_1_1i_gradient_1a4780b049dba9b298fc9259a9b626b77c" kindref="member">dx</ref>;</highlight></codeline>
-<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>transform_linesearch.<ref refid="struct_smol_dock_1_1i_transform_1ab0039729b08d423b6e0414cec1b893e7" kindref="member">transl</ref>.<ref refid="struct_smol_dock_1_1i_translation_1a5362a54675ecc6bac99325c69521fbb5" kindref="member">y</ref><sp/>+=<sp/>step<sp/>*<sp/>translationGradient.<ref refid="struct_smol_dock_1_1i_gradient_1a4c616a17c5cdd532679cc158dccc6797" kindref="member">dy</ref>;</highlight></codeline>
-<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>transform_linesearch.<ref refid="struct_smol_dock_1_1i_transform_1ab0039729b08d423b6e0414cec1b893e7" kindref="member">transl</ref>.<ref refid="struct_smol_dock_1_1i_translation_1a2ed07fcfc129a2bf7696b65d481317c5" kindref="member">z</ref><sp/>+=<sp/>step<sp/>*<sp/>translationGradient.<ref refid="struct_smol_dock_1_1i_gradient_1adf3e33454ba5441435ce46894df07a49" kindref="member">dz</ref>;</highlight></codeline>
-<codeline lineno="110"><highlight class="normal"></highlight></codeline>
-<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>transform_linesearch.<ref refid="struct_smol_dock_1_1i_transform_1a31861b55dc94ec0172ce602cd2a4a54f" kindref="member">rota</ref>.<ref refid="struct_smol_dock_1_1i_quaternion_1a07d95036803eb2a4ef32627df95043ad" kindref="member">s</ref><sp/>+=<sp/>step<sp/>*<sp/>translationGradient.<ref refid="struct_smol_dock_1_1i_gradient_1af93eb07f1c8b1f8fe103ed5aa028ce2c" kindref="member">ds</ref>;</highlight></codeline>
-<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>transform_linesearch.<ref refid="struct_smol_dock_1_1i_transform_1a31861b55dc94ec0172ce602cd2a4a54f" kindref="member">rota</ref>.<ref refid="struct_smol_dock_1_1i_quaternion_1a3692d71434fede9771686a73240e6ba7" kindref="member">u</ref><sp/>+=<sp/>step<sp/>*<sp/>translationGradient.<ref refid="struct_smol_dock_1_1i_gradient_1a5583a237c1d002cba8afcb0b34d7a483" kindref="member">du</ref>;</highlight></codeline>
-<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>transform_linesearch.<ref refid="struct_smol_dock_1_1i_transform_1a31861b55dc94ec0172ce602cd2a4a54f" kindref="member">rota</ref>.<ref refid="struct_smol_dock_1_1i_quaternion_1a97a15d15b2fae3ec29c2fdb2388f5e5b" kindref="member">v</ref><sp/>+=<sp/>step<sp/>*<sp/>translationGradient.<ref refid="struct_smol_dock_1_1i_gradient_1aff52214e33a8a7ec32fac66f0342764d" kindref="member">dv</ref>;</highlight></codeline>
-<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>transform_linesearch.<ref refid="struct_smol_dock_1_1i_transform_1a31861b55dc94ec0172ce602cd2a4a54f" kindref="member">rota</ref>.<ref refid="struct_smol_dock_1_1i_quaternion_1a1ff0d5e99369aa47273864dfea352c05" kindref="member">t</ref><sp/>+=<sp/>step<sp/>*<sp/>translationGradient.<ref refid="struct_smol_dock_1_1i_gradient_1a728b006fb9f40f843dcca18768a0618c" kindref="member">dt</ref>;</highlight></codeline>
-<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespace_smol_dock_1aeef66e92064c4a5e5102102342542853" kindref="member">normalizeQuaternionInPlace</ref>(transform_linesearch.<ref refid="struct_smol_dock_1_1i_transform_1a31861b55dc94ec0172ce602cd2a4a54f" kindref="member">rota</ref>);</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>arma::mat<sp/>tentativeNewParams<sp/>=<sp/>paramsToOptimize<sp/>+<sp/>(step<sp/>*<sp/>gradient);</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>tentativeNewScore<sp/>=<sp/>this-&gt;<ref refid="class_smol_dock_1_1_optimizer_1_1_gradient_descent_line_search_1a5a7ea295c87622dc13f80e4315321463" kindref="member">scoringFunction</ref>-&gt;<ref refid="class_smol_dock_1_1_score_1_1_scoring_function_1a92b9b5f6d23b07740dd9f6718207d31a" kindref="member">Evaluate</ref>(tentativeNewParams);</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>initial_tentative_scoreDifference<sp/>=<sp/>score_<sp/>-<sp/>tentativeNewScore;</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>previous_tentative_scoreDifference<sp/>=<sp/>previous_tentativeNewScore<sp/>-<sp/>tentativeNewScore;</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Prepare<sp/>for<sp/>next<sp/>iteration</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>previous_tentativeNewScore<sp/>=<sp/>tentativeNewScore;</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(initial_tentative_scoreDifference<sp/>&gt;<sp/>0</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;&amp;<sp/>previous_tentative_scoreDifference<sp/>&gt;<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>We<sp/>are<sp/>both<sp/>better<sp/>than<sp/>the<sp/>initial<sp/>score,<sp/>and<sp/>the<sp/>previous<sp/>try<sp/>for<sp/>step</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>We<sp/>try<sp/>a<sp/>somewhat<sp/>larger<sp/>step</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>previous_step<sp/>=<sp/>step;</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>step<sp/>=<sp/>step<sp/>+<sp/>(this-&gt;<ref refid="class_smol_dock_1_1_optimizer_1_1_gradient_descent_line_search_1a0680dc929db0fe521e0820e473b8bcb6" kindref="member">differential_epsilon</ref><sp/>/<sp/>10);</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>We<sp/>are<sp/>not<sp/>better<sp/>on<sp/>both<sp/>count</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;<sp/></highlight><highlight class="comment">//<sp/>We<sp/>stop<sp/>the<sp/>linesearch</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Analysing<sp/>the<sp/>result<sp/>of<sp/>the<sp/>linesearch</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(previous_step<sp/>==<sp/>0.0)<sp/>{</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>We<sp/>have<sp/>not<sp/>been<sp/>able<sp/>to<sp/>do<sp/>any<sp/>step<sp/>which<sp/>improves<sp/>the<sp/>score</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Most<sp/>probably,<sp/>it<sp/>means<sp/>we<sp/>are<sp/>at<sp/>a<sp/>(local)<sp/>minimum</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;<sp/></highlight><highlight class="comment">//<sp/>Stopping<sp/>the<sp/>gradient<sp/>search</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Else<sp/>:</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>The<sp/>previous<sp/>step<sp/>was<sp/>an<sp/>improvement,<sp/>but<sp/>this<sp/>one<sp/>is<sp/>not</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>We<sp/>use<sp/>previous_step</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>arma::mat<sp/>newParams<sp/>=<sp/>paramsToOptimize<sp/>+<sp/>(previous_step<sp/>*<sp/>gradient);</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>paramsToOptimize<sp/>=<sp/>newParams;</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>oldscore<sp/>=<sp/>score_;</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>score_<sp/>=<sp/>this-&gt;<ref refid="class_smol_dock_1_1_optimizer_1_1_gradient_descent_line_search_1a5a7ea295c87622dc13f80e4315321463" kindref="member">scoringFunction</ref>-&gt;<ref refid="class_smol_dock_1_1_score_1_1_scoring_function_1a56e7633750240c7511d5f719c87eeb2f" kindref="member">EvaluateWithGradient</ref>(paramsToOptimize,<sp/>gradient);</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="class_smol_dock_1_1_optimizer_1_1_gradient_descent_line_search_1a4749cfb31b9b88db96aef6a254078e6d" kindref="member">iterationNumber</ref>++;</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>score_progress<sp/>=<sp/>oldscore<sp/>-<sp/>score_;</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_LOG_TRIVIAL(debug)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;New<sp/>score:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>score_<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>(progress:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>score_progress<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>)&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_LOG_TRIVIAL(debug)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Finished<sp/>gradient<sp/>descent&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="class_smol_dock_1_1_optimizer_1_1_gradient_descent_line_search_1a1eafe95f8c30c31960fd7ac4af247fa3" kindref="member">score</ref><sp/>=<sp/>score_;</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_optimizer_1_1_gradient_descent_line_search_1a0515ae128ea249f61272a10250b91fd8" kindref="member">result</ref><sp/>=<sp/>paramsToOptimize;</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight></codeline>
 <codeline lineno="116"><highlight class="normal"></highlight></codeline>
-<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>temp_score<sp/>=<sp/>this-&gt;<ref refid="class_smol_dock_1_1_gradient_descent_line_search_1a45bfe2138561fd779568b96853fac0e9" kindref="member">scoringFunction</ref>(this-&gt;<ref refid="class_smol_dock_1_1_gradient_descent_line_search_1a17b21512432ae8a50a470b5b574216cd" kindref="member">currentConformer</ref>,<sp/>transform_linesearch,<sp/>*(this-&gt;<ref refid="class_smol_dock_1_1_gradient_descent_line_search_1ac3c992864c7e8b73dbf6303a481be173" kindref="member">protein</ref>));</highlight></codeline>
-<codeline lineno="118"><highlight class="normal"></highlight></codeline>
-<codeline lineno="119"><highlight class="normal"></highlight></codeline>
-<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>diff_oldscore_tempscore<sp/>=<sp/>oldscore<sp/>-<sp/>temp_score;</highlight></codeline>
-<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>diff_previous_tempscore<sp/>=<sp/>previous_temp_score<sp/>-<sp/>temp_score;</highlight></codeline>
-<codeline lineno="122"><highlight class="normal"></highlight></codeline>
-<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
-<codeline lineno="124"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_LOG_TRIVIAL(info)<sp/>&lt;&lt;<sp/>&quot;&quot;;</highlight></codeline>
-<codeline lineno="125"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_LOG_TRIVIAL(debug)<sp/>&lt;&lt;<sp/>&quot;oldscore:<sp/>&quot;<sp/>&lt;&lt;<sp/>oldscore;</highlight></codeline>
-<codeline lineno="126"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_LOG_TRIVIAL(debug)<sp/>&lt;&lt;<sp/>&quot;temp_score:<sp/>&quot;<sp/>&lt;&lt;<sp/>temp_score;</highlight></codeline>
-<codeline lineno="127"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_LOG_TRIVIAL(debug)<sp/>&lt;&lt;<sp/>&quot;previous_temp_score:<sp/>&quot;<sp/>&lt;&lt;<sp/>previous_temp_score;</highlight></codeline>
-<codeline lineno="128"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_LOG_TRIVIAL(debug)<sp/>&lt;&lt;<sp/>&quot;diff_oldscore_tempscore:<sp/>&quot;<sp/>&lt;&lt;<sp/>diff_oldscore_tempscore;</highlight></codeline>
-<codeline lineno="129"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_LOG_TRIVIAL(debug)<sp/>&lt;&lt;<sp/>&quot;diff_previous_tempscore:<sp/>&quot;<sp/>&lt;&lt;<sp/>diff_previous_tempscore;</highlight></codeline>
-<codeline lineno="130"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="131"><highlight class="normal"></highlight></codeline>
-<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>previous_temp_score<sp/>=<sp/>temp_score;</highlight></codeline>
-<codeline lineno="133"><highlight class="normal"></highlight></codeline>
-<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(diff_oldscore_tempscore<sp/>&gt;<sp/>0<sp/><sp/></highlight><highlight class="comment">//<sp/>temp_score<sp/>is<sp/>lower<sp/>than<sp/>the<sp/>old<sp/>score<sp/>thus<sp/>better</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;&amp;<sp/>diff_previous_tempscore<sp/>&gt;<sp/>0<sp/>)<sp/></highlight><highlight class="comment">//<sp/>It<sp/>is<sp/>also<sp/>lower<sp/>than<sp/>in<sp/>the<sp/>previous<sp/>iteration</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="137"><highlight class="normal"></highlight></codeline>
-<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>so<sp/>we<sp/>jump<sp/>further<sp/>to<sp/>see<sp/>if<sp/>it<sp/>can<sp/>be<sp/>even<sp/>better</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>previous_step<sp/>=<sp/>step;</highlight></codeline>
-<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>step<sp/>=<sp/>step<sp/>*<sp/>10;</highlight></codeline>
-<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_LOG_TRIVIAL(debug)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Going<sp/>further:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>step;</highlight></codeline>
-<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">continue</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
-<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_LOG_TRIVIAL(debug)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Regression,<sp/>stepping<sp/>back<sp/>to<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>previous_step;</highlight></codeline>
-<codeline lineno="145"><highlight class="normal"></highlight></codeline>
-<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>We<sp/>hit<sp/>a<sp/>step<sp/>that<sp/>is<sp/>not<sp/>better<sp/>than<sp/>either<sp/>oldscore<sp/>or<sp/>the<sp/>previous<sp/>iterator</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="150"><highlight class="normal"></highlight></codeline>
-<codeline lineno="151"><highlight class="normal"></highlight></codeline>
-<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>We<sp/>then<sp/>go<sp/>back<sp/>to<sp/>previous_step<sp/>for<sp/>updating<sp/>the<sp/>score</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="153"><highlight class="normal"></highlight></codeline>
-<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(previous_step<sp/>==<sp/>0.0)<sp/>{</highlight></codeline>
-<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>This<sp/>means<sp/>we<sp/>could<sp/>not<sp/>do<sp/>any<sp/>jump<sp/>forward</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>So<sp/>this<sp/>is<sp/>the<sp/>best<sp/>we<sp/>can<sp/>do<sp/>(to<sp/>the<sp/>precision<sp/>of<sp/>the<sp/>starting<sp/>step<sp/>0.0001<sp/>(angstrom))</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>So<sp/>we<sp/>stop<sp/>the<sp/>search<sp/>(this<sp/>is<sp/>one<sp/>of<sp/>the<sp/>stop<sp/>condition,<sp/>the<sp/>other<sp/>is<sp/>score_progress)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="160"><highlight class="normal"></highlight></codeline>
-<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Otherwise<sp/>we<sp/>update<sp/>the<sp/>transform<sp/>and<sp/>go<sp/>for<sp/>another<sp/>round</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="162"><highlight class="normal"></highlight></codeline>
-<codeline lineno="163"><highlight class="normal"></highlight></codeline>
-<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="class_smol_dock_1_1_gradient_descent_line_search_1a9a95675712350a379bf812078c24b3f8" kindref="member">currentTransform</ref>.<ref refid="struct_smol_dock_1_1i_transform_1ab0039729b08d423b6e0414cec1b893e7" kindref="member">transl</ref>.<ref refid="struct_smol_dock_1_1i_translation_1a74a60efc8b2463b7ea1ca1e824a4ed28" kindref="member">x</ref><sp/>+=<sp/>previous_step<sp/>*<sp/>translationGradient.<ref refid="struct_smol_dock_1_1i_gradient_1a4780b049dba9b298fc9259a9b626b77c" kindref="member">dx</ref>;</highlight></codeline>
-<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="class_smol_dock_1_1_gradient_descent_line_search_1a9a95675712350a379bf812078c24b3f8" kindref="member">currentTransform</ref>.<ref refid="struct_smol_dock_1_1i_transform_1ab0039729b08d423b6e0414cec1b893e7" kindref="member">transl</ref>.<ref refid="struct_smol_dock_1_1i_translation_1a5362a54675ecc6bac99325c69521fbb5" kindref="member">y</ref><sp/>+=<sp/>previous_step<sp/>*<sp/>translationGradient.<ref refid="struct_smol_dock_1_1i_gradient_1a4c616a17c5cdd532679cc158dccc6797" kindref="member">dy</ref>;</highlight></codeline>
-<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="class_smol_dock_1_1_gradient_descent_line_search_1a9a95675712350a379bf812078c24b3f8" kindref="member">currentTransform</ref>.<ref refid="struct_smol_dock_1_1i_transform_1ab0039729b08d423b6e0414cec1b893e7" kindref="member">transl</ref>.<ref refid="struct_smol_dock_1_1i_translation_1a2ed07fcfc129a2bf7696b65d481317c5" kindref="member">z</ref><sp/>+=<sp/>previous_step<sp/>*<sp/>translationGradient.<ref refid="struct_smol_dock_1_1i_gradient_1adf3e33454ba5441435ce46894df07a49" kindref="member">dz</ref>;</highlight></codeline>
-<codeline lineno="167"><highlight class="normal"></highlight></codeline>
-<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="class_smol_dock_1_1_gradient_descent_line_search_1a9a95675712350a379bf812078c24b3f8" kindref="member">currentTransform</ref>.<ref refid="struct_smol_dock_1_1i_transform_1a31861b55dc94ec0172ce602cd2a4a54f" kindref="member">rota</ref>.<ref refid="struct_smol_dock_1_1i_quaternion_1a07d95036803eb2a4ef32627df95043ad" kindref="member">s</ref><sp/>+=<sp/>previous_step<sp/>*<sp/>translationGradient.<ref refid="struct_smol_dock_1_1i_gradient_1af93eb07f1c8b1f8fe103ed5aa028ce2c" kindref="member">ds</ref>;</highlight></codeline>
-<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="class_smol_dock_1_1_gradient_descent_line_search_1a9a95675712350a379bf812078c24b3f8" kindref="member">currentTransform</ref>.<ref refid="struct_smol_dock_1_1i_transform_1a31861b55dc94ec0172ce602cd2a4a54f" kindref="member">rota</ref>.<ref refid="struct_smol_dock_1_1i_quaternion_1a3692d71434fede9771686a73240e6ba7" kindref="member">u</ref><sp/>+=<sp/>previous_step<sp/>*<sp/>translationGradient.<ref refid="struct_smol_dock_1_1i_gradient_1a5583a237c1d002cba8afcb0b34d7a483" kindref="member">du</ref>;</highlight></codeline>
-<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="class_smol_dock_1_1_gradient_descent_line_search_1a9a95675712350a379bf812078c24b3f8" kindref="member">currentTransform</ref>.<ref refid="struct_smol_dock_1_1i_transform_1a31861b55dc94ec0172ce602cd2a4a54f" kindref="member">rota</ref>.<ref refid="struct_smol_dock_1_1i_quaternion_1a97a15d15b2fae3ec29c2fdb2388f5e5b" kindref="member">v</ref><sp/>+=<sp/>previous_step<sp/>*<sp/>translationGradient.<ref refid="struct_smol_dock_1_1i_gradient_1aff52214e33a8a7ec32fac66f0342764d" kindref="member">dv</ref>;</highlight></codeline>
-<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="class_smol_dock_1_1_gradient_descent_line_search_1a9a95675712350a379bf812078c24b3f8" kindref="member">currentTransform</ref>.<ref refid="struct_smol_dock_1_1i_transform_1a31861b55dc94ec0172ce602cd2a4a54f" kindref="member">rota</ref>.<ref refid="struct_smol_dock_1_1i_quaternion_1a1ff0d5e99369aa47273864dfea352c05" kindref="member">t</ref><sp/>+=<sp/>previous_step<sp/>*<sp/>translationGradient.<ref refid="struct_smol_dock_1_1i_gradient_1a728b006fb9f40f843dcca18768a0618c" kindref="member">dt</ref>;</highlight></codeline>
-<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespace_smol_dock_1aeef66e92064c4a5e5102102342542853" kindref="member">normalizeQuaternionInPlace</ref>(this-&gt;<ref refid="class_smol_dock_1_1_gradient_descent_line_search_1a9a95675712350a379bf812078c24b3f8" kindref="member">currentTransform</ref>.<ref refid="struct_smol_dock_1_1i_transform_1a31861b55dc94ec0172ce602cd2a4a54f" kindref="member">rota</ref>);</highlight></codeline>
-<codeline lineno="173"><highlight class="normal"></highlight></codeline>
-<codeline lineno="174"><highlight class="normal"></highlight></codeline>
-<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_LOG_TRIVIAL(debug)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;==<sp/>Accepted<sp/>transform<sp/>after<sp/>iteration<sp/>==&quot;</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_LOG_TRIVIAL(debug)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/><sp/><sp/><sp/>s:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>this-&gt;<ref refid="class_smol_dock_1_1_gradient_descent_line_search_1a9a95675712350a379bf812078c24b3f8" kindref="member">currentTransform</ref>.<ref refid="struct_smol_dock_1_1i_transform_1a31861b55dc94ec0172ce602cd2a4a54f" kindref="member">rota</ref>.<ref refid="struct_smol_dock_1_1i_quaternion_1a07d95036803eb2a4ef32627df95043ad" kindref="member">s</ref>;</highlight></codeline>
-<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_LOG_TRIVIAL(debug)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/><sp/><sp/><sp/>u:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>this-&gt;<ref refid="class_smol_dock_1_1_gradient_descent_line_search_1a9a95675712350a379bf812078c24b3f8" kindref="member">currentTransform</ref>.<ref refid="struct_smol_dock_1_1i_transform_1a31861b55dc94ec0172ce602cd2a4a54f" kindref="member">rota</ref>.<ref refid="struct_smol_dock_1_1i_quaternion_1a3692d71434fede9771686a73240e6ba7" kindref="member">u</ref><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/><sp/>x:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>this-&gt;<ref refid="class_smol_dock_1_1_gradient_descent_line_search_1a9a95675712350a379bf812078c24b3f8" kindref="member">currentTransform</ref>.<ref refid="struct_smol_dock_1_1i_transform_1ab0039729b08d423b6e0414cec1b893e7" kindref="member">transl</ref>.<ref refid="struct_smol_dock_1_1i_translation_1a74a60efc8b2463b7ea1ca1e824a4ed28" kindref="member">x</ref>;</highlight></codeline>
-<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_LOG_TRIVIAL(debug)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/><sp/><sp/><sp/>v:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>this-&gt;<ref refid="class_smol_dock_1_1_gradient_descent_line_search_1a9a95675712350a379bf812078c24b3f8" kindref="member">currentTransform</ref>.<ref refid="struct_smol_dock_1_1i_transform_1a31861b55dc94ec0172ce602cd2a4a54f" kindref="member">rota</ref>.<ref refid="struct_smol_dock_1_1i_quaternion_1a97a15d15b2fae3ec29c2fdb2388f5e5b" kindref="member">v</ref><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/><sp/>y:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>this-&gt;<ref refid="class_smol_dock_1_1_gradient_descent_line_search_1a9a95675712350a379bf812078c24b3f8" kindref="member">currentTransform</ref>.<ref refid="struct_smol_dock_1_1i_transform_1ab0039729b08d423b6e0414cec1b893e7" kindref="member">transl</ref>.<ref refid="struct_smol_dock_1_1i_translation_1a5362a54675ecc6bac99325c69521fbb5" kindref="member">y</ref>;</highlight></codeline>
-<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_LOG_TRIVIAL(debug)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/><sp/><sp/><sp/>t:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>this-&gt;<ref refid="class_smol_dock_1_1_gradient_descent_line_search_1a9a95675712350a379bf812078c24b3f8" kindref="member">currentTransform</ref>.<ref refid="struct_smol_dock_1_1i_transform_1a31861b55dc94ec0172ce602cd2a4a54f" kindref="member">rota</ref>.<ref refid="struct_smol_dock_1_1i_quaternion_1a1ff0d5e99369aa47273864dfea352c05" kindref="member">t</ref><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/><sp/>x:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>this-&gt;<ref refid="class_smol_dock_1_1_gradient_descent_line_search_1a9a95675712350a379bf812078c24b3f8" kindref="member">currentTransform</ref>.<ref refid="struct_smol_dock_1_1i_transform_1ab0039729b08d423b6e0414cec1b893e7" kindref="member">transl</ref>.<ref refid="struct_smol_dock_1_1i_translation_1a2ed07fcfc129a2bf7696b65d481317c5" kindref="member">z</ref>;</highlight></codeline>
-<codeline lineno="180"><highlight class="normal"></highlight></codeline>
-<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>score<sp/>=<sp/>this-&gt;<ref refid="class_smol_dock_1_1_gradient_descent_line_search_1a45bfe2138561fd779568b96853fac0e9" kindref="member">scoringFunction</ref>(this-&gt;<ref refid="class_smol_dock_1_1_gradient_descent_line_search_1a17b21512432ae8a50a470b5b574216cd" kindref="member">currentConformer</ref>,<sp/>this-&gt;<ref refid="class_smol_dock_1_1_gradient_descent_line_search_1a9a95675712350a379bf812078c24b3f8" kindref="member">currentTransform</ref>,<sp/>*(this-&gt;<ref refid="class_smol_dock_1_1_gradient_descent_line_search_1ac3c992864c7e8b73dbf6303a481be173" kindref="member">protein</ref>));</highlight></codeline>
-<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>score_progress<sp/>=<sp/>oldscore<sp/>-<sp/><ref refid="class_smol_dock_1_1_gradient_descent_line_search_1a9691fe15b63382d7bc59ac767d26227d" kindref="member">score</ref>;</highlight></codeline>
-<codeline lineno="183"><highlight class="normal"></highlight></codeline>
-<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="class_smol_dock_1_1_gradient_descent_line_search_1a530a3fbbf932a7a4815baa4242614c1b" kindref="member">iterationNbr</ref>++;</highlight></codeline>
-<codeline lineno="185"><highlight class="normal"></highlight></codeline>
-<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>conformerCollector-&gt;<ref refid="class_smol_dock_1_1_intermediate_conformer_collector_1a1d878b323a17e56169fb4fad4f92a742" kindref="member">addiConformer</ref>(this-&gt;<ref refid="class_smol_dock_1_1_gradient_descent_line_search_1aa4a1f5365397747805edd12aa4d53270" kindref="member">getCurrentConformerWithTransform</ref>());</highlight></codeline>
-<codeline lineno="187"><highlight class="normal"></highlight></codeline>
-<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//BOOST_LOG_TRIVIAL(debug)<sp/>&lt;&lt;<sp/>&quot;<sp/><sp/><sp/><sp/><sp/>Score:<sp/>&quot;<sp/>&lt;&lt;<sp/>score<sp/>&lt;&lt;<sp/>&quot;<sp/>(progress:<sp/>&quot;&lt;&lt;<sp/>score_progress<sp/>&lt;&lt;<sp/><sp/>&quot;<sp/>)&quot;;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="189"><highlight class="normal"></highlight></codeline>
-<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="191"><highlight class="normal"></highlight></codeline>
-<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;score<sp/>=<sp/><ref refid="class_smol_dock_1_1_gradient_descent_line_search_1a9691fe15b63382d7bc59ac767d26227d" kindref="member">score</ref>;</highlight></codeline>
-<codeline lineno="193"><highlight class="normal"></highlight></codeline>
-<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
-<codeline lineno="195"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>scores.push_back(score);</highlight></codeline>
-<codeline lineno="196"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>final_transform.push_back(transform);</highlight></codeline>
-<codeline lineno="197"><highlight class="comment"></highlight></codeline>
-<codeline lineno="198"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>record_timings(end_docking_this_conformer);</highlight></codeline>
-<codeline lineno="199"><highlight class="comment"></highlight></codeline>
-<codeline lineno="200"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>acc_iteration(iterationNbr);</highlight></codeline>
-<codeline lineno="201"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>acc_score(score);</highlight></codeline>
-<codeline lineno="202"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>acc_duration(</highlight></codeline>
-<codeline lineno="203"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>static_cast&lt;<sp/>std::chrono::duration&lt;double&gt;<sp/>&gt;(end_docking_this_conformer<sp/>-</highlight></codeline>
-<codeline lineno="204"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>begin_docking_this_conformer).count()</highlight></codeline>
-<codeline lineno="205"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>);</highlight></codeline>
-<codeline lineno="206"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="207"><highlight class="normal"></highlight></codeline>
-<codeline lineno="208"><highlight class="normal"></highlight></codeline>
-<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="211"><highlight class="normal"></highlight></codeline>
-<codeline lineno="212" refid="class_smol_dock_1_1_gradient_descent_line_search_1afef68c7d049ade8925a3f75b3b0867af" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_gradient_descent_line_search_1afef68c7d049ade8925a3f75b3b0867af" kindref="member">GradientDescentLineSearch::setProtein</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_smol_dock_1_1i_protein" kindref="compound">iProtein</ref><sp/>*prot)<sp/>{</highlight></codeline>
-<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="class_smol_dock_1_1_gradient_descent_line_search_1ac3c992864c7e8b73dbf6303a481be173" kindref="member">protein</ref><sp/>=<sp/>prot;</highlight></codeline>
-<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="215"><highlight class="normal"></highlight></codeline>
-<codeline lineno="216" refid="class_smol_dock_1_1_gradient_descent_line_search_1a04d6d79864edd42fb3e6729b6d402398" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_gradient_descent_line_search_1a04d6d79864edd42fb3e6729b6d402398" kindref="member">GradientDescentLineSearch::setStartingConformer</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_smol_dock_1_1i_conformer" kindref="compound">iConformer</ref><sp/>*conformer)<sp/>{</highlight></codeline>
-<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="class_smol_dock_1_1_gradient_descent_line_search_1a0d5679ea02d21bd1608a258f1efde6ac" kindref="member">startingConformer</ref><sp/>=<sp/>conformer;</highlight></codeline>
-<codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_gradient_descent_line_search_8cpp_1aed1cc446d8c31ec6ad4dae32bbbcc42a" kindref="member">conformerCollector</ref>-&gt;<ref refid="class_smol_dock_1_1_intermediate_conformer_collector_1a1d878b323a17e56169fb4fad4f92a742" kindref="member">addiConformer</ref>(*this-&gt;<ref refid="class_smol_dock_1_1_gradient_descent_line_search_1a0d5679ea02d21bd1608a258f1efde6ac" kindref="member">startingConformer</ref>);</highlight></codeline>
-<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="class_smol_dock_1_1_gradient_descent_line_search_1a17b21512432ae8a50a470b5b574216cd" kindref="member">currentConformer</ref><sp/>=<sp/>*conformer;</highlight></codeline>
-<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="221"><highlight class="normal"></highlight></codeline>
-<codeline lineno="222" refid="class_smol_dock_1_1_gradient_descent_line_search_1a5a70b5fce84800680475f98b2b1c0f05" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_smol_dock_1_1i_conformer" kindref="compound">iConformer</ref><sp/><ref refid="class_smol_dock_1_1_gradient_descent_line_search_1a5a70b5fce84800680475f98b2b1c0f05" kindref="member">GradientDescentLineSearch::getFinalConformer</ref>()<sp/>{</highlight></codeline>
-<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespace_smol_dock_1a73bb4756419c2b3361ae4d23b24eee20" kindref="member">applyTransformInPlace</ref>(this-&gt;<ref refid="class_smol_dock_1_1_gradient_descent_line_search_1a17b21512432ae8a50a470b5b574216cd" kindref="member">currentConformer</ref>,<sp/>this-&gt;<ref refid="class_smol_dock_1_1_gradient_descent_line_search_1a9a95675712350a379bf812078c24b3f8" kindref="member">currentTransform</ref>);</highlight></codeline>
-<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>this-&gt;<ref refid="class_smol_dock_1_1_gradient_descent_line_search_1a17b21512432ae8a50a470b5b574216cd" kindref="member">currentConformer</ref>;</highlight></codeline>
-<codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="226"><highlight class="normal"></highlight></codeline>
-<codeline lineno="227" refid="class_smol_dock_1_1_gradient_descent_line_search_1a050eb315b21e5d48495d5968c2aaa8d6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_gradient_descent_line_search_1a050eb315b21e5d48495d5968c2aaa8d6" kindref="member">GradientDescentLineSearch::getScore</ref>()<sp/>{</highlight></codeline>
-<codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>this-&gt;<ref refid="class_smol_dock_1_1_gradient_descent_line_search_1a9691fe15b63382d7bc59ac767d26227d" kindref="member">score</ref>;</highlight></codeline>
-<codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="230"><highlight class="normal"></highlight></codeline>
-<codeline lineno="231" refid="class_smol_dock_1_1_gradient_descent_line_search_1aa4a1f5365397747805edd12aa4d53270" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_smol_dock_1_1i_conformer" kindref="compound">iConformer</ref><sp/><ref refid="class_smol_dock_1_1_gradient_descent_line_search_1aa4a1f5365397747805edd12aa4d53270" kindref="member">GradientDescentLineSearch::getCurrentConformerWithTransform</ref>()<sp/>{</highlight></codeline>
-<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_smol_dock_1_1i_conformer" kindref="compound">iConformer</ref><sp/>current<sp/>=<sp/>this-&gt;<ref refid="class_smol_dock_1_1_gradient_descent_line_search_1a17b21512432ae8a50a470b5b574216cd" kindref="member">currentConformer</ref>;</highlight></codeline>
-<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespace_smol_dock_1a73bb4756419c2b3361ae4d23b24eee20" kindref="member">applyTransformInPlace</ref>(current,<sp/>this-&gt;<ref refid="class_smol_dock_1_1_gradient_descent_line_search_1a9a95675712350a379bf812078c24b3f8" kindref="member">currentTransform</ref>);</highlight></codeline>
-<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>current;</highlight></codeline>
-<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="236"><highlight class="normal"></highlight></codeline>
-<codeline lineno="237" refid="class_smol_dock_1_1_gradient_descent_line_search_1a650bdae47cab1418c9a06f9de8264045" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_gradient_descent_line_search_1a650bdae47cab1418c9a06f9de8264045" kindref="member">GradientDescentLineSearch::getIterationNumber</ref>()<sp/>{</highlight></codeline>
-<codeline lineno="238"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>this-&gt;<ref refid="class_smol_dock_1_1_gradient_descent_line_search_1a530a3fbbf932a7a4815baa4242614c1b" kindref="member">iterationNbr</ref>;</highlight></codeline>
-<codeline lineno="239"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="240"><highlight class="normal"></highlight></codeline>
-<codeline lineno="241"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="117" refid="class_smol_dock_1_1_optimizer_1_1_gradient_descent_line_search_1a14219d5c7e209f0aeae91966eea06c14" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_optimizer_1_1_gradient_descent_line_search_1a14219d5c7e209f0aeae91966eea06c14" kindref="member">GradientDescentLineSearch::getIterationNumber</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>this-&gt;<ref refid="class_smol_dock_1_1_optimizer_1_1_gradient_descent_line_search_1a4749cfb31b9b88db96aef6a254078e6d" kindref="member">iterationNumber</ref>;</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight></codeline>
+<codeline lineno="121" refid="class_smol_dock_1_1_optimizer_1_1_gradient_descent_line_search_1ae3fdb46d5b28724146c8c496d59b8128" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>arma::mat<sp/><ref refid="class_smol_dock_1_1_optimizer_1_1_gradient_descent_line_search_1ae3fdb46d5b28724146c8c496d59b8128" kindref="member">GradientDescentLineSearch::getRawResultMatrix</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>this-&gt;<ref refid="class_smol_dock_1_1_optimizer_1_1_gradient_descent_line_search_1a0515ae128ea249f61272a10250b91fd8" kindref="member">result</ref>;</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight></codeline>
+<codeline lineno="125" refid="class_smol_dock_1_1_optimizer_1_1_gradient_descent_line_search_1a497ef5405f36f6e5113f83a37d9542b3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_optimizer_1_1_gradient_descent_line_search_1a497ef5405f36f6e5113f83a37d9542b3" kindref="member">GradientDescentLineSearch::getScore</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>this-&gt;<ref refid="class_smol_dock_1_1_optimizer_1_1_gradient_descent_line_search_1a1eafe95f8c30c31960fd7ac4af247fa3" kindref="member">score</ref>;</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal">}</highlight></codeline>
     </programlisting>
-    <location file="Engines/Optimizers/GradientDescentLineSearch.cpp"/>
+    <location file="Engines/LocalOptimizers/GradientDescentLineSearch.cpp"/>
   </compounddef>
 </doxygen>

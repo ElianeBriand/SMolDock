@@ -16,9 +16,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Engines/ConformerRigidDockingEngine.h" line="75" column="1" bodyfile="Engines/ConformerRigidDockingEngine.h" bodystart="75" bodyend="-1"/>
-        <referencedby refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1aeb9358858c3af9c718c168dcff14f96b" compoundref="_conformer_rigid_docking_engine_8cpp" startline="60" endline="66">ConformerRigidDockingEngine</referencedby>
-        <referencedby refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a3abc1a2cdbb3f1b9f545f863f9ec5e43" compoundref="_conformer_rigid_docking_engine_8cpp" startline="83" endline="135">setupDockingEngine</referencedby>
+        <location file="Engines/ConformerRigidDockingEngine.h" line="76" column="1" bodyfile="Engines/ConformerRigidDockingEngine.h" bodystart="76" bodyend="-1"/>
+        <referencedby refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a27a2069ffd4fa0bacb4f026ca7f8021d" compoundref="_conformer_rigid_docking_engine_8cpp" startline="62" endline="78">ConformerRigidDockingEngine</referencedby>
+        <referencedby refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a3abc1a2cdbb3f1b9f545f863f9ec5e43" compoundref="_conformer_rigid_docking_engine_8cpp" startline="81" endline="130">setupDockingEngine</referencedby>
       </memberdef>
       <memberdef kind="variable" id="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1adc3f28b5b4af09c54eb73d9f445dbd2d" prot="private" static="no" mutable="no">
         <type><ref refid="class_smol_dock_1_1_protein" kindref="compound">Protein</ref> *</type>
@@ -31,9 +31,8 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Engines/ConformerRigidDockingEngine.h" line="77" column="1" bodyfile="Engines/ConformerRigidDockingEngine.h" bodystart="77" bodyend="-1"/>
-        <referencedby refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1acf8082b5d9d68fc2cfe975ad62a2459f" compoundref="_conformer_rigid_docking_engine_8cpp" startline="68" endline="71">setProtein</referencedby>
-        <referencedby refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a3abc1a2cdbb3f1b9f545f863f9ec5e43" compoundref="_conformer_rigid_docking_engine_8cpp" startline="83" endline="135">setupDockingEngine</referencedby>
+        <location file="Engines/ConformerRigidDockingEngine.h" line="78" column="1" bodyfile="Engines/ConformerRigidDockingEngine.h" bodystart="78" bodyend="-1"/>
+        <referencedby refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a3abc1a2cdbb3f1b9f545f863f9ec5e43" compoundref="_conformer_rigid_docking_engine_8cpp" startline="81" endline="130">setupDockingEngine</referencedby>
       </memberdef>
       <memberdef kind="variable" id="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1af3d543e92676f9d66a5a3d0ccc0cd5a9" prot="private" static="no" mutable="no">
         <type><ref refid="class_smol_dock_1_1_molecule" kindref="compound">Molecule</ref> *</type>
@@ -46,10 +45,36 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Engines/ConformerRigidDockingEngine.h" line="78" column="1" bodyfile="Engines/ConformerRigidDockingEngine.h" bodystart="78" bodyend="-1"/>
-        <referencedby refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a14262d85db1fd4bfe21780029fba842c" compoundref="_conformer_rigid_docking_engine_8cpp" startline="73" endline="81">setLigand</referencedby>
-        <referencedby refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a3abc1a2cdbb3f1b9f545f863f9ec5e43" compoundref="_conformer_rigid_docking_engine_8cpp" startline="83" endline="135">setupDockingEngine</referencedby>
-        <referencedby refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a52fa8c276c911df08d4dd8d6744ae540" compoundref="_conformer_rigid_docking_engine_8cpp" startline="203" endline="212">getDockingResult</referencedby>
+        <location file="Engines/ConformerRigidDockingEngine.h" line="79" column="1" bodyfile="Engines/ConformerRigidDockingEngine.h" bodystart="79" bodyend="-1"/>
+        <referencedby refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a3abc1a2cdbb3f1b9f545f863f9ec5e43" compoundref="_conformer_rigid_docking_engine_8cpp" startline="81" endline="130">setupDockingEngine</referencedby>
+        <referencedby refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a52fa8c276c911df08d4dd8d6744ae540" compoundref="_conformer_rigid_docking_engine_8cpp" startline="219" endline="227">getDockingResult</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1ab58e856743bf2e8612185902f8ae233a" prot="private" static="no" mutable="no">
+        <type><ref refid="namespace_smol_dock_1_1_score_1a7d8761ef06699c5fc8793056bc903911" kindref="member">Score::ScoringFunctionType</ref></type>
+        <definition>Score::ScoringFunctionType SmolDock::Engine::ConformerRigidDockingEngine::scoringFuncType</definition>
+        <argsstring></argsstring>
+        <name>scoringFuncType</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Engines/ConformerRigidDockingEngine.h" line="81" column="1" bodyfile="Engines/ConformerRigidDockingEngine.h" bodystart="81" bodyend="-1"/>
+        <referencedby refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a7bee39278168cb4d7ee6558b3a3d3bb4" compoundref="_conformer_rigid_docking_engine_8cpp" startline="132" endline="217">runDockingEngine</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a733e397779ddd24cdf8781d4a23cf361" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="class_smol_dock_1_1_score_1_1_scoring_function" kindref="compound">Score::ScoringFunction</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;Score::ScoringFunction&gt; SmolDock::Engine::ConformerRigidDockingEngine::scoringFunction</definition>
+        <argsstring></argsstring>
+        <name>scoringFunction</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Engines/ConformerRigidDockingEngine.h" line="82" column="1" bodyfile="Engines/ConformerRigidDockingEngine.h" bodystart="82" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a046b6f9d1c856e1b38034388a8fb5f9f" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -63,8 +88,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Engines/ConformerRigidDockingEngine.h" line="80" column="1" bodyfile="Engines/ConformerRigidDockingEngine.h" bodystart="80" bodyend="-1"/>
-        <referencedby refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a756b9c1300d1c3828b519a2ca05ada59" compoundref="_conformer_rigid_docking_engine_8cpp" startline="226" endline="229">setRandomSeed</referencedby>
+        <location file="Engines/ConformerRigidDockingEngine.h" line="85" column="1" bodyfile="Engines/ConformerRigidDockingEngine.h" bodystart="85" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a9bc1d216cf102c383444cb6f9955dfaa" prot="private" static="no" mutable="no">
         <type>std::mt19937</type>
@@ -77,9 +101,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Engines/ConformerRigidDockingEngine.h" line="81" column="1" bodyfile="Engines/ConformerRigidDockingEngine.h" bodystart="81" bodyend="-1"/>
-        <referencedby refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a3abc1a2cdbb3f1b9f545f863f9ec5e43" compoundref="_conformer_rigid_docking_engine_8cpp" startline="83" endline="135">setupDockingEngine</referencedby>
-        <referencedby refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a756b9c1300d1c3828b519a2ca05ada59" compoundref="_conformer_rigid_docking_engine_8cpp" startline="226" endline="229">setRandomSeed</referencedby>
+        <location file="Engines/ConformerRigidDockingEngine.h" line="86" column="1" bodyfile="Engines/ConformerRigidDockingEngine.h" bodystart="86" bodyend="-1"/>
+        <referencedby refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a3abc1a2cdbb3f1b9f545f863f9ec5e43" compoundref="_conformer_rigid_docking_engine_8cpp" startline="81" endline="130">setupDockingEngine</referencedby>
+        <referencedby refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a7bee39278168cb4d7ee6558b3a3d3bb4" compoundref="_conformer_rigid_docking_engine_8cpp" startline="132" endline="217">runDockingEngine</referencedby>
       </memberdef>
       <memberdef kind="variable" id="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a1db0509172face64ab20380bea166765" prot="private" static="no" mutable="no">
         <type>std::vector&lt; <ref refid="struct_smol_dock_1_1i_conformer" kindref="compound">iConformer</ref> &gt;</type>
@@ -92,9 +116,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Engines/ConformerRigidDockingEngine.h" line="85" column="1" bodyfile="Engines/ConformerRigidDockingEngine.h" bodystart="85" bodyend="-1"/>
-        <referencedby refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a3abc1a2cdbb3f1b9f545f863f9ec5e43" compoundref="_conformer_rigid_docking_engine_8cpp" startline="83" endline="135">setupDockingEngine</referencedby>
-        <referencedby refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a7bee39278168cb4d7ee6558b3a3d3bb4" compoundref="_conformer_rigid_docking_engine_8cpp" startline="137" endline="201">runDockingEngine</referencedby>
+        <location file="Engines/ConformerRigidDockingEngine.h" line="90" column="1" bodyfile="Engines/ConformerRigidDockingEngine.h" bodystart="90" bodyend="-1"/>
+        <referencedby refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a3abc1a2cdbb3f1b9f545f863f9ec5e43" compoundref="_conformer_rigid_docking_engine_8cpp" startline="81" endline="130">setupDockingEngine</referencedby>
+        <referencedby refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a7bee39278168cb4d7ee6558b3a3d3bb4" compoundref="_conformer_rigid_docking_engine_8cpp" startline="132" endline="217">runDockingEngine</referencedby>
       </memberdef>
       <memberdef kind="variable" id="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a1dc7396f84093bfca59c2d8accc9ed8c" prot="private" static="no" mutable="no">
         <type><ref refid="struct_smol_dock_1_1i_protein" kindref="compound">iProtein</ref></type>
@@ -107,9 +131,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Engines/ConformerRigidDockingEngine.h" line="87" column="1" bodyfile="Engines/ConformerRigidDockingEngine.h" bodystart="87" bodyend="-1"/>
-        <referencedby refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a3abc1a2cdbb3f1b9f545f863f9ec5e43" compoundref="_conformer_rigid_docking_engine_8cpp" startline="83" endline="135">setupDockingEngine</referencedby>
-        <referencedby refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a7bee39278168cb4d7ee6558b3a3d3bb4" compoundref="_conformer_rigid_docking_engine_8cpp" startline="137" endline="201">runDockingEngine</referencedby>
+        <location file="Engines/ConformerRigidDockingEngine.h" line="92" column="1" bodyfile="Engines/ConformerRigidDockingEngine.h" bodystart="92" bodyend="-1"/>
+        <referencedby refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a3abc1a2cdbb3f1b9f545f863f9ec5e43" compoundref="_conformer_rigid_docking_engine_8cpp" startline="81" endline="130">setupDockingEngine</referencedby>
+        <referencedby refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a7bee39278168cb4d7ee6558b3a3d3bb4" compoundref="_conformer_rigid_docking_engine_8cpp" startline="132" endline="217">runDockingEngine</referencedby>
       </memberdef>
       <memberdef kind="variable" id="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a3ebcfe47e865aad0c91105a58996d22e" prot="private" static="no" mutable="no">
         <type>std::vector&lt; double &gt;</type>
@@ -122,9 +146,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Engines/ConformerRigidDockingEngine.h" line="90" column="1" bodyfile="Engines/ConformerRigidDockingEngine.h" bodystart="90" bodyend="-1"/>
-        <referencedby refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1aeb9358858c3af9c718c168dcff14f96b" compoundref="_conformer_rigid_docking_engine_8cpp" startline="60" endline="66">ConformerRigidDockingEngine</referencedby>
-        <referencedby refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a7bee39278168cb4d7ee6558b3a3d3bb4" compoundref="_conformer_rigid_docking_engine_8cpp" startline="137" endline="201">runDockingEngine</referencedby>
+        <location file="Engines/ConformerRigidDockingEngine.h" line="96" column="1" bodyfile="Engines/ConformerRigidDockingEngine.h" bodystart="96" bodyend="-1"/>
+        <referencedby refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a27a2069ffd4fa0bacb4f026ca7f8021d" compoundref="_conformer_rigid_docking_engine_8cpp" startline="62" endline="78">ConformerRigidDockingEngine</referencedby>
+        <referencedby refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a7bee39278168cb4d7ee6558b3a3d3bb4" compoundref="_conformer_rigid_docking_engine_8cpp" startline="132" endline="217">runDockingEngine</referencedby>
       </memberdef>
       <memberdef kind="variable" id="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a4ea3d83dced816021dc9e1a39d0f197d" prot="private" static="no" mutable="no">
         <type>std::vector&lt; <ref refid="struct_smol_dock_1_1i_conformer" kindref="compound">iConformer</ref> &gt;</type>
@@ -137,21 +161,37 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Engines/ConformerRigidDockingEngine.h" line="91" column="1" bodyfile="Engines/ConformerRigidDockingEngine.h" bodystart="91" bodyend="-1"/>
-        <referencedby refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1aeb9358858c3af9c718c168dcff14f96b" compoundref="_conformer_rigid_docking_engine_8cpp" startline="60" endline="66">ConformerRigidDockingEngine</referencedby>
-        <referencedby refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a7bee39278168cb4d7ee6558b3a3d3bb4" compoundref="_conformer_rigid_docking_engine_8cpp" startline="137" endline="201">runDockingEngine</referencedby>
-        <referencedby refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a52fa8c276c911df08d4dd8d6744ae540" compoundref="_conformer_rigid_docking_engine_8cpp" startline="203" endline="212">getDockingResult</referencedby>
+        <location file="Engines/ConformerRigidDockingEngine.h" line="97" column="1" bodyfile="Engines/ConformerRigidDockingEngine.h" bodystart="97" bodyend="-1"/>
+        <referencedby refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a27a2069ffd4fa0bacb4f026ca7f8021d" compoundref="_conformer_rigid_docking_engine_8cpp" startline="62" endline="78">ConformerRigidDockingEngine</referencedby>
+        <referencedby refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a7bee39278168cb4d7ee6558b3a3d3bb4" compoundref="_conformer_rigid_docking_engine_8cpp" startline="132" endline="217">runDockingEngine</referencedby>
+        <referencedby refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a52fa8c276c911df08d4dd8d6744ae540" compoundref="_conformer_rigid_docking_engine_8cpp" startline="219" endline="227">getDockingResult</referencedby>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
-      <memberdef kind="function" id="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1aeb9358858c3af9c718c168dcff14f96b" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a27a2069ffd4fa0bacb4f026ca7f8021d" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
         <type></type>
         <definition>SmolDock::Engine::ConformerRigidDockingEngine::ConformerRigidDockingEngine</definition>
-        <argsstring>(unsigned int conformer_num)</argsstring>
+        <argsstring>(unsigned int conformer_num, Protein *protein, Molecule *ligand, Score::ScoringFunctionType scFuncType, unsigned int seed)</argsstring>
         <name>ConformerRigidDockingEngine</name>
         <param>
           <type>unsigned int</type>
           <declname>conformer_num</declname>
+        </param>
+        <param>
+          <type><ref refid="class_smol_dock_1_1_protein" kindref="compound">Protein</ref> *</type>
+          <declname>protein</declname>
+        </param>
+        <param>
+          <type><ref refid="class_smol_dock_1_1_molecule" kindref="compound">Molecule</ref> *</type>
+          <declname>ligand</declname>
+        </param>
+        <param>
+          <type><ref refid="namespace_smol_dock_1_1_score_1a7d8761ef06699c5fc8793056bc903911" kindref="member">Score::ScoringFunctionType</ref></type>
+          <declname>scFuncType</declname>
+        </param>
+        <param>
+          <type>unsigned int</type>
+          <declname>seed</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -167,10 +207,10 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Engines/ConformerRigidDockingEngine.h" line="52" column="1" bodyfile="Engines/ConformerRigidDockingEngine.cpp" bodystart="60" bodyend="66"/>
-        <references refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a022a37cb30a640404c634aace67ebea1" compoundref="_conformer_rigid_docking_engine_8h" startline="75">conformer_num</references>
-        <references refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a4ea3d83dced816021dc9e1a39d0f197d" compoundref="_conformer_rigid_docking_engine_8h" startline="91">final_iConformer</references>
-        <references refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a3ebcfe47e865aad0c91105a58996d22e" compoundref="_conformer_rigid_docking_engine_8h" startline="90">scores</references>
+        <location file="Engines/ConformerRigidDockingEngine.h" line="53" column="1" bodyfile="Engines/ConformerRigidDockingEngine.cpp" bodystart="62" bodyend="78"/>
+        <references refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a022a37cb30a640404c634aace67ebea1" compoundref="_conformer_rigid_docking_engine_8h" startline="76">conformer_num</references>
+        <references refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a4ea3d83dced816021dc9e1a39d0f197d" compoundref="_conformer_rigid_docking_engine_8h" startline="97">final_iConformer</references>
+        <references refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a3ebcfe47e865aad0c91105a58996d22e" compoundref="_conformer_rigid_docking_engine_8h" startline="96">scores</references>
       </memberdef>
       <memberdef kind="function" id="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1acd3b7345ecae8f0c92ca0168b794eac3" prot="public" static="no" const="no" explicit="no" inline="no" final="yes" virt="virtual">
         <type>bool</type>
@@ -194,104 +234,13 @@
 </parameteritem>
 </parameterlist>
 <simplesect kind="return"><para>Returns whether it has been successful </para></simplesect>
-<simplesect kind="see"><para><ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1acf8082b5d9d68fc2cfe975ad62a2459f" kindref="member">setProtein()</ref>, <ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a14262d85db1fd4bfe21780029fba842c" kindref="member">setLigand()</ref> </para></simplesect>
+<simplesect kind="see"><para>setProtein(), setLigand() </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Engines/ConformerRigidDockingEngine.h" line="55" column="1" bodyfile="Engines/ConformerRigidDockingEngine.cpp" bodystart="215" bodyend="223"/>
+        <location file="Engines/ConformerRigidDockingEngine.h" line="60" column="1" bodyfile="Engines/ConformerRigidDockingEngine.cpp" bodystart="230" bodyend="238"/>
         <references refid="class_smol_dock_1_1_engine_1_1_abstract_docking_engine_1aca703508a3ce31d577d3ec108020789ba312db69f5bf4447dfe3c58983083b54f">SmolDock::Engine::AbstractDockingEngine::everything</references>
-        <referencedby refid="main_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4" compoundref="main_8cpp" startline="39" endline="132">main</referencedby>
-      </memberdef>
-      <memberdef kind="function" id="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1acf8082b5d9d68fc2cfe975ad62a2459f" prot="public" static="no" const="no" explicit="no" inline="no" final="yes" virt="virtual">
-        <type>bool</type>
-        <definition>bool SmolDock::Engine::ConformerRigidDockingEngine::setProtein</definition>
-        <argsstring>(Protein *p) final</argsstring>
-        <name>setProtein</name>
-        <reimplements refid="class_smol_dock_1_1_engine_1_1_abstract_docking_engine_1af00ee3be60acc0c4ba9aac03a3b09c35">setProtein</reimplements>
-        <param>
-          <type><ref refid="class_smol_dock_1_1_protein" kindref="compound">Protein</ref> *</type>
-          <declname>p</declname>
-        </param>
-        <briefdescription>
-<para>Load a protein for docking. </para>        </briefdescription>
-        <detaileddescription>
-<para>Load a protein for docking. Note that it <emphasis>can</emphasis> be modified by the engine.</para><para><parameterlist kind="param"><parameteritem>
-<parameternamelist>
-<parametername>p</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>Pointer to the <ref refid="class_smol_dock_1_1_protein" kindref="compound">Protein</ref> </para></parameterdescription>
-</parameteritem>
-</parameterlist>
-<simplesect kind="return"><para>Returns whether it has been successful </para></simplesect>
-<simplesect kind="see"><para><ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a14262d85db1fd4bfe21780029fba842c" kindref="member">setLigand()</ref>, <ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1acd3b7345ecae8f0c92ca0168b794eac3" kindref="member">setDockingBox()</ref> </para></simplesect>
-</para>        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="Engines/ConformerRigidDockingEngine.h" line="57" column="1" bodyfile="Engines/ConformerRigidDockingEngine.cpp" bodystart="68" bodyend="71"/>
-        <references refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1adc3f28b5b4af09c54eb73d9f445dbd2d" compoundref="_conformer_rigid_docking_engine_8h" startline="77">orig_protein</references>
-        <referencedby refid="main_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4" compoundref="main_8cpp" startline="39" endline="132">main</referencedby>
-      </memberdef>
-      <memberdef kind="function" id="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a14262d85db1fd4bfe21780029fba842c" prot="public" static="no" const="no" explicit="no" inline="no" final="yes" virt="virtual">
-        <type>bool</type>
-        <definition>bool SmolDock::Engine::ConformerRigidDockingEngine::setLigand</definition>
-        <argsstring>(Molecule *m) final</argsstring>
-        <name>setLigand</name>
-        <reimplements refid="class_smol_dock_1_1_engine_1_1_abstract_docking_engine_1aae76a86e5dfc18b19e3a16c55da6556f">setLigand</reimplements>
-        <param>
-          <type><ref refid="class_smol_dock_1_1_molecule" kindref="compound">Molecule</ref> *</type>
-          <declname>m</declname>
-        </param>
-        <briefdescription>
-<para>Load a molecule ligand for docking. </para>        </briefdescription>
-        <detaileddescription>
-<para>Load a molecule ligand for docking. Note that it <emphasis>can</emphasis> be modified by the engine.</para><para><parameterlist kind="param"><parameteritem>
-<parameternamelist>
-<parametername>m</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>Pointer to the <ref refid="class_smol_dock_1_1_molecule" kindref="compound">Molecule</ref> </para></parameterdescription>
-</parameteritem>
-</parameterlist>
-<simplesect kind="return"><para>Returns whether it has been successful </para></simplesect>
-<simplesect kind="see"><para><ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1acf8082b5d9d68fc2cfe975ad62a2459f" kindref="member">setProtein()</ref>, <ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1acd3b7345ecae8f0c92ca0168b794eac3" kindref="member">setDockingBox()</ref> </para></simplesect>
-</para>        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="Engines/ConformerRigidDockingEngine.h" line="59" column="1" bodyfile="Engines/ConformerRigidDockingEngine.cpp" bodystart="73" bodyend="81"/>
-        <references refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1af3d543e92676f9d66a5a3d0ccc0cd5a9" compoundref="_conformer_rigid_docking_engine_8h" startline="78">orig_ligand</references>
-        <referencedby refid="main_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4" compoundref="main_8cpp" startline="39" endline="132">main</referencedby>
-      </memberdef>
-      <memberdef kind="function" id="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a756b9c1300d1c3828b519a2ca05ada59" prot="public" static="no" const="no" explicit="no" inline="no" final="yes" virt="virtual">
-        <type>void</type>
-        <definition>void SmolDock::Engine::ConformerRigidDockingEngine::setRandomSeed</definition>
-        <argsstring>(int seed) final</argsstring>
-        <name>setRandomSeed</name>
-        <reimplements refid="class_smol_dock_1_1_engine_1_1_abstract_docking_engine_1a6172e465dcd7dcecac29fb30612d0227">setRandomSeed</reimplements>
-        <param>
-          <type>int</type>
-          <declname>seed</declname>
-        </param>
-        <briefdescription>
-<para>Set the RNG seed for reproducibility. </para>        </briefdescription>
-        <detaileddescription>
-<para><parameterlist kind="param"><parameteritem>
-<parameternamelist>
-<parametername>seed</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>RNG see </para></parameterdescription>
-</parameteritem>
-</parameterlist>
-<simplesect kind="return"><para>Returns whether it has been successful </para></simplesect>
-<simplesect kind="see"><para><ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1acf8082b5d9d68fc2cfe975ad62a2459f" kindref="member">setProtein()</ref>, <ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a14262d85db1fd4bfe21780029fba842c" kindref="member">setLigand()</ref>, <ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1acd3b7345ecae8f0c92ca0168b794eac3" kindref="member">setDockingBox()</ref> </para></simplesect>
-</para>        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="Engines/ConformerRigidDockingEngine.h" line="61" column="1" bodyfile="Engines/ConformerRigidDockingEngine.cpp" bodystart="226" bodyend="229"/>
-        <references refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a046b6f9d1c856e1b38034388a8fb5f9f" compoundref="_conformer_rigid_docking_engine_8h" startline="80">random_seed</references>
-        <references refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a9bc1d216cf102c383444cb6f9955dfaa" compoundref="_conformer_rigid_docking_engine_8h" startline="81">rnd_generator</references>
-        <referencedby refid="main_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4" compoundref="main_8cpp" startline="39" endline="132">main</referencedby>
+        <referencedby refid="main_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4" compoundref="main_8cpp" startline="45" endline="154">main</referencedby>
       </memberdef>
       <memberdef kind="function" id="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a3abc1a2cdbb3f1b9f545f863f9ec5e43" prot="public" static="no" const="no" explicit="no" inline="no" final="yes" virt="virtual">
         <type>bool</type>
@@ -307,17 +256,17 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Engines/ConformerRigidDockingEngine.h" line="65" column="1" bodyfile="Engines/ConformerRigidDockingEngine.cpp" bodystart="83" bodyend="135"/>
-        <references refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a022a37cb30a640404c634aace67ebea1" compoundref="_conformer_rigid_docking_engine_8h" startline="75">conformer_num</references>
-        <references refid="class_smol_dock_1_1_molecule_1a2767177fabc41b3aeaa68c77d8addd1b" compoundref="_molecule_8cpp" startline="107" endline="153">SmolDock::Molecule::generateConformers</references>
-        <references refid="class_smol_dock_1_1_protein_1a68856c725dbe91f5ccec59e8fa8306b2" compoundref="_protein_8cpp" startline="159" endline="208">SmolDock::Protein::getiProtein</references>
-        <references refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1af3d543e92676f9d66a5a3d0ccc0cd5a9" compoundref="_conformer_rigid_docking_engine_8h" startline="78">orig_ligand</references>
-        <references refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1adc3f28b5b4af09c54eb73d9f445dbd2d" compoundref="_conformer_rigid_docking_engine_8h" startline="77">orig_protein</references>
-        <references refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a1dc7396f84093bfca59c2d8accc9ed8c" compoundref="_conformer_rigid_docking_engine_8h" startline="87">protein</references>
+        <location file="Engines/ConformerRigidDockingEngine.h" line="66" column="1" bodyfile="Engines/ConformerRigidDockingEngine.cpp" bodystart="81" bodyend="130"/>
+        <references refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a022a37cb30a640404c634aace67ebea1" compoundref="_conformer_rigid_docking_engine_8h" startline="76">conformer_num</references>
+        <references refid="class_smol_dock_1_1_molecule_1a1cce96a4a5296ab42ae3ab06fbc374a1" compoundref="_molecule_8cpp" startline="97" endline="127">SmolDock::Molecule::generateConformers</references>
+        <references refid="class_smol_dock_1_1_protein_1a2cccfc64e088ed1846d15c6909c9379f" compoundref="_protein_8cpp" startline="203" endline="252">SmolDock::Protein::getiProtein</references>
+        <references refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1af3d543e92676f9d66a5a3d0ccc0cd5a9" compoundref="_conformer_rigid_docking_engine_8h" startline="79">orig_ligand</references>
+        <references refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1adc3f28b5b4af09c54eb73d9f445dbd2d" compoundref="_conformer_rigid_docking_engine_8h" startline="78">orig_protein</references>
+        <references refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a1dc7396f84093bfca59c2d8accc9ed8c" compoundref="_conformer_rigid_docking_engine_8h" startline="92">protein</references>
         <references refid="_timings_log_8h_1a62116d86cc873a334e6356d259772681" compoundref="_timings_log_8h" startline="32">record_timings</references>
-        <references refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a9bc1d216cf102c383444cb6f9955dfaa" compoundref="_conformer_rigid_docking_engine_8h" startline="81">rnd_generator</references>
-        <references refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a1db0509172face64ab20380bea166765" compoundref="_conformer_rigid_docking_engine_8h" startline="85">viConformers</references>
-        <referencedby refid="main_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4" compoundref="main_8cpp" startline="39" endline="132">main</referencedby>
+        <references refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a9bc1d216cf102c383444cb6f9955dfaa" compoundref="_conformer_rigid_docking_engine_8h" startline="86">rnd_generator</references>
+        <references refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a1db0509172face64ab20380bea166765" compoundref="_conformer_rigid_docking_engine_8h" startline="90">viConformers</references>
+        <referencedby refid="main_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4" compoundref="main_8cpp" startline="45" endline="154">main</referencedby>
       </memberdef>
       <memberdef kind="function" id="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a7bee39278168cb4d7ee6558b3a3d3bb4" prot="public" static="no" const="no" explicit="no" inline="no" final="yes" virt="virtual">
         <type>void</type>
@@ -333,21 +282,28 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Engines/ConformerRigidDockingEngine.h" line="67" column="1" bodyfile="Engines/ConformerRigidDockingEngine.cpp" bodystart="137" bodyend="201"/>
-        <references refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a4ea3d83dced816021dc9e1a39d0f197d" compoundref="_conformer_rigid_docking_engine_8h" startline="91">final_iConformer</references>
-        <references refid="class_smol_dock_1_1_gradient_descent_line_search_1a5a70b5fce84800680475f98b2b1c0f05" compoundref="_gradient_descent_line_search_8cpp" startline="222" endline="225">SmolDock::GradientDescentLineSearch::getFinalConformer</references>
-        <references refid="class_smol_dock_1_1_gradient_descent_line_search_1a650bdae47cab1418c9a06f9de8264045" compoundref="_gradient_descent_line_search_8cpp" startline="237" endline="239">SmolDock::GradientDescentLineSearch::getIterationNumber</references>
-        <references refid="class_smol_dock_1_1_gradient_descent_line_search_1a050eb315b21e5d48495d5968c2aaa8d6" compoundref="_gradient_descent_line_search_8cpp" startline="227" endline="229">SmolDock::GradientDescentLineSearch::getScore</references>
-        <references refid="namespace_smol_dock_1a3974d1e3a6f729a7ca05b97996ca2079" compoundref="i_transform_8h" startline="72" endline="80">SmolDock::iTransformIdentityInit</references>
-        <references refid="class_smol_dock_1_1_gradient_descent_line_search_1a8bc11fdd0f47562e773df6dff62dc82a" compoundref="_gradient_descent_line_search_8cpp" startline="28" endline="210">SmolDock::GradientDescentLineSearch::optimize</references>
-        <references refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a1dc7396f84093bfca59c2d8accc9ed8c" compoundref="_conformer_rigid_docking_engine_8h" startline="87">protein</references>
+        <location file="Engines/ConformerRigidDockingEngine.h" line="68" column="1" bodyfile="Engines/ConformerRigidDockingEngine.cpp" bodystart="132" bodyend="217"/>
+        <references refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a4ea3d83dced816021dc9e1a39d0f197d" compoundref="_conformer_rigid_docking_engine_8h" startline="97">final_iConformer</references>
+        <references refid="namespace_smol_dock_1a3974d1e3a6f729a7ca05b97996ca2079" compoundref="_internals_utility_functions_8h" startline="26" endline="33">SmolDock::iTransformIdentityInit</references>
+        <references refid="namespace_smol_dock_1aeef66e92064c4a5e5102102342542853" compoundref="_internals_utility_functions_8h" startline="111" endline="121">SmolDock::normalizeQuaternionInPlace</references>
+        <references refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a1dc7396f84093bfca59c2d8accc9ed8c" compoundref="_conformer_rigid_docking_engine_8h" startline="92">protein</references>
         <references refid="_timings_log_8h_1a62116d86cc873a334e6356d259772681" compoundref="_timings_log_8h" startline="32">record_timings</references>
-        <references refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a3ebcfe47e865aad0c91105a58996d22e" compoundref="_conformer_rigid_docking_engine_8h" startline="90">scores</references>
-        <references refid="class_smol_dock_1_1_gradient_descent_line_search_1afef68c7d049ade8925a3f75b3b0867af" compoundref="_gradient_descent_line_search_8cpp" startline="212" endline="214">SmolDock::GradientDescentLineSearch::setProtein</references>
-        <references refid="class_smol_dock_1_1_gradient_descent_line_search_1a04d6d79864edd42fb3e6729b6d402398" compoundref="_gradient_descent_line_search_8cpp" startline="216" endline="220">SmolDock::GradientDescentLineSearch::setStartingConformer</references>
-        <references refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a1db0509172face64ab20380bea166765" compoundref="_conformer_rigid_docking_engine_8h" startline="85">viConformers</references>
-        <references refid="namespace_smol_dock_1_1_score_1ac205731c7b0098c2900d9d16fff1a93b" compoundref="_basic_scoring_function_8cpp" startline="34" endline="117">SmolDock::Score::vina_like_rigid_inter_scoring_func</references>
-        <referencedby refid="main_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4" compoundref="main_8cpp" startline="39" endline="132">main</referencedby>
+        <references refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a9bc1d216cf102c383444cb6f9955dfaa" compoundref="_conformer_rigid_docking_engine_8h" startline="86">rnd_generator</references>
+        <references refid="struct_smol_dock_1_1i_transform_1a31861b55dc94ec0172ce602cd2a4a54f" compoundref="i_transform_8h" startline="46">SmolDock::iTransform::rota</references>
+        <references refid="struct_smol_dock_1_1i_quaternion_1a07d95036803eb2a4ef32627df95043ad" compoundref="i_transform_8h" startline="25">SmolDock::iQuaternion::s</references>
+        <references refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a3ebcfe47e865aad0c91105a58996d22e" compoundref="_conformer_rigid_docking_engine_8h" startline="96">scores</references>
+        <references refid="namespace_smol_dock_1_1_score_1af914f3a629ac463d825d7cc7b1ec95cd" compoundref="_scoring_function_factory_8cpp" startline="11" endline="18">SmolDock::Score::scoringFunctionFactory</references>
+        <references refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1ab58e856743bf2e8612185902f8ae233a" compoundref="_conformer_rigid_docking_engine_8h" startline="81">scoringFuncType</references>
+        <references refid="class_smol_dock_1_1_heuristics_1_1_random_restart_1abfa7882757c070d876d94090520cef92" compoundref="_random_restart_8cpp" startline="20" endline="51">SmolDock::Heuristics::RandomRestart::search</references>
+        <references refid="struct_smol_dock_1_1i_quaternion_1a1ff0d5e99369aa47273864dfea352c05" compoundref="i_transform_8h" startline="26">SmolDock::iQuaternion::t</references>
+        <references refid="struct_smol_dock_1_1i_transform_1ab0039729b08d423b6e0414cec1b893e7" compoundref="i_transform_8h" startline="45">SmolDock::iTransform::transl</references>
+        <references refid="struct_smol_dock_1_1i_quaternion_1a3692d71434fede9771686a73240e6ba7" compoundref="i_transform_8h" startline="26">SmolDock::iQuaternion::u</references>
+        <references refid="struct_smol_dock_1_1i_quaternion_1a97a15d15b2fae3ec29c2fdb2388f5e5b" compoundref="i_transform_8h" startline="26">SmolDock::iQuaternion::v</references>
+        <references refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a1db0509172face64ab20380bea166765" compoundref="_conformer_rigid_docking_engine_8h" startline="90">viConformers</references>
+        <references refid="namespace_smol_dock_1_1_score_1ac205731c7b0098c2900d9d16fff1a93b" compoundref="_vina_like_scoring_function_8cpp" startline="149" endline="223">SmolDock::Score::vina_like_rigid_inter_scoring_func</references>
+        <references refid="struct_smol_dock_1_1i_translation_1a74a60efc8b2463b7ea1ca1e824a4ed28" compoundref="i_transform_8h" startline="36">SmolDock::iTranslation::x</references>
+        <references refid="struct_smol_dock_1_1i_translation_1a5362a54675ecc6bac99325c69521fbb5" compoundref="i_transform_8h" startline="36">SmolDock::iTranslation::y</references>
+        <referencedby refid="main_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4" compoundref="main_8cpp" startline="45" endline="154">main</referencedby>
       </memberdef>
       <memberdef kind="function" id="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a52fa8c276c911df08d4dd8d6744ae540" prot="public" static="no" const="no" explicit="no" inline="no" final="yes" virt="virtual">
         <type>std::shared_ptr&lt; <ref refid="class_smol_dock_1_1_docking_result" kindref="compound">DockingResult</ref> &gt;</type>
@@ -363,11 +319,12 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Engines/ConformerRigidDockingEngine.h" line="70" column="1" bodyfile="Engines/ConformerRigidDockingEngine.cpp" bodystart="203" bodyend="212"/>
-        <references refid="class_smol_dock_1_1_molecule_1a70156ffc4081eb92f9dc4e2c70096c84" compoundref="_molecule_8cpp" startline="336" endline="379">SmolDock::Molecule::deepcopy</references>
-        <references refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a4ea3d83dced816021dc9e1a39d0f197d" compoundref="_conformer_rigid_docking_engine_8h" startline="91">final_iConformer</references>
-        <references refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1af3d543e92676f9d66a5a3d0ccc0cd5a9" compoundref="_conformer_rigid_docking_engine_8h" startline="78">orig_ligand</references>
-        <references refid="class_smol_dock_1_1_molecule_1af6263934134836e9ce66d2254b6b6801" compoundref="_molecule_8cpp" startline="324" endline="334">SmolDock::Molecule::updateAtomPositionsFromiConformer</references>
+        <location file="Engines/ConformerRigidDockingEngine.h" line="71" column="1" bodyfile="Engines/ConformerRigidDockingEngine.cpp" bodystart="219" bodyend="227"/>
+        <references refid="class_smol_dock_1_1_molecule_1a70156ffc4081eb92f9dc4e2c70096c84" compoundref="_molecule_8cpp" startline="332" endline="376">SmolDock::Molecule::deepcopy</references>
+        <references refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a4ea3d83dced816021dc9e1a39d0f197d" compoundref="_conformer_rigid_docking_engine_8h" startline="97">final_iConformer</references>
+        <references refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1af3d543e92676f9d66a5a3d0ccc0cd5a9" compoundref="_conformer_rigid_docking_engine_8h" startline="79">orig_ligand</references>
+        <references refid="class_smol_dock_1_1_molecule_1af6263934134836e9ce66d2254b6b6801" compoundref="_molecule_8cpp" startline="320" endline="330">SmolDock::Molecule::updateAtomPositionsFromiConformer</references>
+        <referencedby refid="main_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4" compoundref="main_8cpp" startline="45" endline="154">main</referencedby>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -387,117 +344,140 @@
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="58">
+      <node id="63">
         <label>K</label>
       </node>
-      <node id="45">
+      <node id="44">
         <label>T</label>
       </node>
-      <node id="47">
+      <node id="52">
         <label>SmolDock::Molecule</label>
         <link refid="class_smol_dock_1_1_molecule"/>
-        <childnode refid="48" relation="private-inheritance">
+        <childnode refid="53" relation="private-inheritance">
         </childnode>
-        <childnode refid="49" relation="usage">
+        <childnode refid="54" relation="usage">
           <edgelabel>-bonds</edgelabel>
         </childnode>
-        <childnode refid="50" relation="usage">
+        <childnode refid="55" relation="usage">
           <edgelabel>-smiles</edgelabel>
           <edgelabel>-residue_name</edgelabel>
         </childnode>
-        <childnode refid="52" relation="usage">
+        <childnode refid="57" relation="usage">
           <edgelabel>-atoms</edgelabel>
         </childnode>
       </node>
-      <node id="49">
+      <node id="54">
         <label>std::vector&lt; std::shared_ptr&lt; SmolDock::Bond &gt; &gt;</label>
-        <childnode refid="44" relation="template-instance">
+        <childnode refid="49" relation="template-instance">
           <edgelabel>&lt; std::shared_ptr&lt; SmolDock::Bond &gt; &gt;</edgelabel>
         </childnode>
       </node>
-      <node id="46">
+      <node id="51">
         <label>std::vector&lt; double &gt;</label>
-        <childnode refid="44" relation="template-instance">
+        <childnode refid="49" relation="template-instance">
           <edgelabel>&lt; double &gt;</edgelabel>
         </childnode>
       </node>
-      <node id="44">
+      <node id="49">
         <label>std::vector&lt; T &gt;</label>
-        <childnode refid="45" relation="usage">
+        <childnode refid="44" relation="usage">
           <edgelabel>+elements</edgelabel>
         </childnode>
       </node>
-      <node id="42">
+      <node id="46">
         <label>SmolDock::iConformer</label>
         <link refid="struct_smol_dock_1_1i_conformer"/>
-        <childnode refid="43" relation="usage">
-          <edgelabel>+type</edgelabel>
+        <childnode refid="47" relation="usage">
+          <edgelabel>+centroidNormalizingTransform</edgelabel>
+        </childnode>
+        <childnode refid="48" relation="usage">
           <edgelabel>+variant</edgelabel>
         </childnode>
-        <childnode refid="46" relation="usage">
+        <childnode refid="50" relation="usage">
+          <edgelabel>+type</edgelabel>
+        </childnode>
+        <childnode refid="51" relation="usage">
           <edgelabel>+x</edgelabel>
           <edgelabel>+y</edgelabel>
           <edgelabel>+z</edgelabel>
           <edgelabel>+atomicRadius</edgelabel>
         </childnode>
       </node>
-      <node id="57">
+      <node id="62">
         <label>std::map&lt; K, T &gt;</label>
-        <childnode refid="58" relation="usage">
+        <childnode refid="63" relation="usage">
           <edgelabel>+keys</edgelabel>
         </childnode>
-        <childnode refid="45" relation="usage">
+        <childnode refid="44" relation="usage">
           <edgelabel>+elements</edgelabel>
         </childnode>
       </node>
-      <node id="41">
+      <node id="43">
+        <label>std::unique_ptr&lt; T &gt;</label>
+        <childnode refid="44" relation="usage">
+          <edgelabel>+ptr</edgelabel>
+        </childnode>
+      </node>
+      <node id="45">
         <label>std::vector&lt; SmolDock::iConformer &gt;</label>
-        <childnode refid="42" relation="usage">
+        <childnode refid="46" relation="usage">
           <edgelabel>+elements</edgelabel>
         </childnode>
-        <childnode refid="44" relation="template-instance">
+        <childnode refid="49" relation="template-instance">
           <edgelabel>&lt; SmolDock::iConformer &gt;</edgelabel>
         </childnode>
       </node>
-      <node id="55">
+      <node id="60">
         <label>SmolDock::iProtein</label>
         <link refid="struct_smol_dock_1_1i_protein"/>
-        <childnode refid="56" relation="usage">
+        <childnode refid="61" relation="usage">
           <edgelabel>+AAId_to_AtomPositionInVect</edgelabel>
         </childnode>
-        <childnode refid="43" relation="usage">
-          <edgelabel>+type</edgelabel>
+        <childnode refid="48" relation="usage">
           <edgelabel>+variant</edgelabel>
         </childnode>
-        <childnode refid="46" relation="usage">
+        <childnode refid="50" relation="usage">
+          <edgelabel>+type</edgelabel>
+        </childnode>
+        <childnode refid="51" relation="usage">
           <edgelabel>+x</edgelabel>
           <edgelabel>+y</edgelabel>
           <edgelabel>+z</edgelabel>
           <edgelabel>+atomicRadius</edgelabel>
         </childnode>
       </node>
-      <node id="54">
+      <node id="59">
         <label>std::vector&lt; std::shared_ptr&lt; SmolDock::AminoAcid &gt; &gt;</label>
-        <childnode refid="44" relation="template-instance">
+        <childnode refid="49" relation="template-instance">
           <edgelabel>&lt; std::shared_ptr&lt; SmolDock::AminoAcid &gt; &gt;</edgelabel>
         </childnode>
       </node>
-      <node id="48">
+      <node id="42">
+        <label>SmolDock::Score::ScoringFunction</label>
+        <link refid="class_smol_dock_1_1_score_1_1_scoring_function"/>
+      </node>
+      <node id="53">
         <label>SmolDock::Structure</label>
         <link refid="class_smol_dock_1_1_structure"/>
       </node>
-      <node id="51">
+      <node id="56">
         <label>std::basic_string&lt; char &gt;</label>
       </node>
-      <node id="53">
+      <node id="48">
+        <label>std::vector&lt; unsigned int &gt;</label>
+        <childnode refid="49" relation="template-instance">
+          <edgelabel>&lt; unsigned int &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="58">
         <label>SmolDock::Protein</label>
         <link refid="class_smol_dock_1_1_protein"/>
-        <childnode refid="48" relation="private-inheritance">
+        <childnode refid="53" relation="private-inheritance">
         </childnode>
-        <childnode refid="54" relation="usage">
+        <childnode refid="59" relation="usage">
           <edgelabel>-aminoacids</edgelabel>
         </childnode>
-        <childnode refid="52" relation="usage">
+        <childnode refid="57" relation="usage">
           <edgelabel>-heteroatoms</edgelabel>
         </childnode>
       </node>
@@ -511,50 +491,66 @@
         <childnode refid="40" relation="public-inheritance">
         </childnode>
         <childnode refid="41" relation="usage">
+          <edgelabel>-scoringFunction</edgelabel>
+        </childnode>
+        <childnode refid="45" relation="usage">
           <edgelabel>-final_iConformer</edgelabel>
           <edgelabel>-viConformers</edgelabel>
         </childnode>
-        <childnode refid="47" relation="usage">
+        <childnode refid="52" relation="usage">
           <edgelabel>-orig_ligand</edgelabel>
         </childnode>
-        <childnode refid="53" relation="usage">
+        <childnode refid="58" relation="usage">
           <edgelabel>-orig_protein</edgelabel>
         </childnode>
-        <childnode refid="46" relation="usage">
+        <childnode refid="51" relation="usage">
           <edgelabel>-scores</edgelabel>
         </childnode>
-        <childnode refid="55" relation="usage">
+        <childnode refid="60" relation="usage">
           <edgelabel>-protein</edgelabel>
         </childnode>
       </node>
-      <node id="43">
+      <node id="50">
         <label>std::vector&lt; unsigned char &gt;</label>
-        <childnode refid="44" relation="template-instance">
+        <childnode refid="49" relation="template-instance">
           <edgelabel>&lt; unsigned char &gt;</edgelabel>
         </childnode>
       </node>
-      <node id="52">
+      <node id="57">
         <label>std::vector&lt; std::shared_ptr&lt; SmolDock::Atom &gt; &gt;</label>
-        <childnode refid="44" relation="template-instance">
+        <childnode refid="49" relation="template-instance">
           <edgelabel>&lt; std::shared_ptr&lt; SmolDock::Atom &gt; &gt;</edgelabel>
         </childnode>
       </node>
-      <node id="56">
+      <node id="47">
+        <label>SmolDock::iTranslation</label>
+        <link refid="struct_smol_dock_1_1i_translation"/>
+      </node>
+      <node id="61">
         <label>std::map&lt; unsigned int, std::tuple&lt; unsigned long, unsigned long &gt; &gt;</label>
-        <childnode refid="57" relation="template-instance">
+        <childnode refid="62" relation="template-instance">
           <edgelabel>&lt; unsigned int, std::tuple&lt; unsigned long, unsigned long &gt; &gt;</edgelabel>
         </childnode>
       </node>
-      <node id="50">
+      <node id="41">
+        <label>std::unique_ptr&lt; SmolDock::Score::ScoringFunction &gt;</label>
+        <childnode refid="42" relation="usage">
+          <edgelabel>+ptr</edgelabel>
+        </childnode>
+        <childnode refid="43" relation="template-instance">
+          <edgelabel>&lt; SmolDock::Score::ScoringFunction &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="55">
         <label>std::string</label>
-        <childnode refid="51" relation="public-inheritance">
+        <childnode refid="56" relation="public-inheritance">
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="Engines/ConformerRigidDockingEngine.h" line="44" column="1" bodyfile="Engines/ConformerRigidDockingEngine.h" bodystart="44" bodyend="92"/>
+    <location file="Engines/ConformerRigidDockingEngine.h" line="45" column="1" bodyfile="Engines/ConformerRigidDockingEngine.h" bodystart="45" bodyend="98"/>
     <listofallmembers>
       <member refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a022a37cb30a640404c634aace67ebea1" prot="private" virt="non-virtual"><scope>SmolDock::Engine::ConformerRigidDockingEngine</scope><name>conformer_num</name></member>
-      <member refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1aeb9358858c3af9c718c168dcff14f96b" prot="public" virt="non-virtual"><scope>SmolDock::Engine::ConformerRigidDockingEngine</scope><name>ConformerRigidDockingEngine</name></member>
+      <member refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a27a2069ffd4fa0bacb4f026ca7f8021d" prot="public" virt="non-virtual"><scope>SmolDock::Engine::ConformerRigidDockingEngine</scope><name>ConformerRigidDockingEngine</name></member>
       <member refid="class_smol_dock_1_1_engine_1_1_abstract_docking_engine_1aca703508a3ce31d577d3ec108020789b" prot="public" virt="non-virtual"><scope>SmolDock::Engine::ConformerRigidDockingEngine</scope><name>DockingBoxSetting</name></member>
       <member refid="class_smol_dock_1_1_engine_1_1_abstract_docking_engine_1a8147cf906368466da87fa439d537bf62" prot="public" virt="non-virtual"><scope>SmolDock::Engine::ConformerRigidDockingEngine</scope><name>DockingBoxShape</name></member>
       <member refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a4ea3d83dced816021dc9e1a39d0f197d" prot="private" virt="non-virtual"><scope>SmolDock::Engine::ConformerRigidDockingEngine</scope><name>final_iConformer</name></member>
@@ -566,10 +562,9 @@
       <member refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a9bc1d216cf102c383444cb6f9955dfaa" prot="private" virt="non-virtual"><scope>SmolDock::Engine::ConformerRigidDockingEngine</scope><name>rnd_generator</name></member>
       <member refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a7bee39278168cb4d7ee6558b3a3d3bb4" prot="public" virt="virtual"><scope>SmolDock::Engine::ConformerRigidDockingEngine</scope><name>runDockingEngine</name></member>
       <member refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a3ebcfe47e865aad0c91105a58996d22e" prot="private" virt="non-virtual"><scope>SmolDock::Engine::ConformerRigidDockingEngine</scope><name>scores</name></member>
+      <member refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a733e397779ddd24cdf8781d4a23cf361" prot="private" virt="non-virtual"><scope>SmolDock::Engine::ConformerRigidDockingEngine</scope><name>scoringFunction</name></member>
+      <member refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1ab58e856743bf2e8612185902f8ae233a" prot="private" virt="non-virtual"><scope>SmolDock::Engine::ConformerRigidDockingEngine</scope><name>scoringFuncType</name></member>
       <member refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1acd3b7345ecae8f0c92ca0168b794eac3" prot="public" virt="virtual"><scope>SmolDock::Engine::ConformerRigidDockingEngine</scope><name>setDockingBox</name></member>
-      <member refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a14262d85db1fd4bfe21780029fba842c" prot="public" virt="virtual"><scope>SmolDock::Engine::ConformerRigidDockingEngine</scope><name>setLigand</name></member>
-      <member refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1acf8082b5d9d68fc2cfe975ad62a2459f" prot="public" virt="virtual"><scope>SmolDock::Engine::ConformerRigidDockingEngine</scope><name>setProtein</name></member>
-      <member refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a756b9c1300d1c3828b519a2ca05ada59" prot="public" virt="virtual"><scope>SmolDock::Engine::ConformerRigidDockingEngine</scope><name>setRandomSeed</name></member>
       <member refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a3abc1a2cdbb3f1b9f545f863f9ec5e43" prot="public" virt="virtual"><scope>SmolDock::Engine::ConformerRigidDockingEngine</scope><name>setupDockingEngine</name></member>
       <member refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a1db0509172face64ab20380bea166765" prot="private" virt="non-virtual"><scope>SmolDock::Engine::ConformerRigidDockingEngine</scope><name>viConformers</name></member>
     </listofallmembers>

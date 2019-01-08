@@ -59,64 +59,6 @@
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
-      <memberdef kind="function" id="class_smol_dock_1_1_engine_1_1_abstract_docking_engine_1af00ee3be60acc0c4ba9aac03a3b09c35" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
-        <type>bool</type>
-        <definition>virtual bool SmolDock::Engine::AbstractDockingEngine::setProtein</definition>
-        <argsstring>(Protein *p)=0</argsstring>
-        <name>setProtein</name>
-        <reimplementedby refid="class_smol_dock_1_1_engine_1_1_m_d_style_docking_engine_1aa06062e9afec77d49ab596d1111c5f43">setProtein</reimplementedby>
-        <reimplementedby refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1acf8082b5d9d68fc2cfe975ad62a2459f">setProtein</reimplementedby>
-        <param>
-          <type><ref refid="class_smol_dock_1_1_protein" kindref="compound">Protein</ref> *</type>
-          <declname>p</declname>
-        </param>
-        <briefdescription>
-<para>Load a protein for docking. </para>        </briefdescription>
-        <detaileddescription>
-<para>Load a protein for docking. Note that it <emphasis>can</emphasis> be modified by the engine.</para><para><parameterlist kind="param"><parameteritem>
-<parameternamelist>
-<parametername>p</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>Pointer to the <ref refid="class_smol_dock_1_1_protein" kindref="compound">Protein</ref> </para></parameterdescription>
-</parameteritem>
-</parameterlist>
-<simplesect kind="return"><para>Returns whether it has been successful </para></simplesect>
-<simplesect kind="see"><para><ref refid="class_smol_dock_1_1_engine_1_1_abstract_docking_engine_1aae76a86e5dfc18b19e3a16c55da6556f" kindref="member">setLigand()</ref>, <ref refid="class_smol_dock_1_1_engine_1_1_abstract_docking_engine_1a169f25051203c912c2b90bf3387baa22" kindref="member">setDockingBox()</ref> </para></simplesect>
-</para>        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="Engines/AbstractDockingEngine.h" line="62" column="1"/>
-      </memberdef>
-      <memberdef kind="function" id="class_smol_dock_1_1_engine_1_1_abstract_docking_engine_1aae76a86e5dfc18b19e3a16c55da6556f" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
-        <type>bool</type>
-        <definition>virtual bool SmolDock::Engine::AbstractDockingEngine::setLigand</definition>
-        <argsstring>(Molecule *m)=0</argsstring>
-        <name>setLigand</name>
-        <reimplementedby refid="class_smol_dock_1_1_engine_1_1_m_d_style_docking_engine_1a95f5c470d1f93881a3759933e57af559">setLigand</reimplementedby>
-        <reimplementedby refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a14262d85db1fd4bfe21780029fba842c">setLigand</reimplementedby>
-        <param>
-          <type><ref refid="class_smol_dock_1_1_molecule" kindref="compound">Molecule</ref> *</type>
-          <declname>m</declname>
-        </param>
-        <briefdescription>
-<para>Load a molecule ligand for docking. </para>        </briefdescription>
-        <detaileddescription>
-<para>Load a molecule ligand for docking. Note that it <emphasis>can</emphasis> be modified by the engine.</para><para><parameterlist kind="param"><parameteritem>
-<parameternamelist>
-<parametername>m</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>Pointer to the <ref refid="class_smol_dock_1_1_molecule" kindref="compound">Molecule</ref> </para></parameterdescription>
-</parameteritem>
-</parameterlist>
-<simplesect kind="return"><para>Returns whether it has been successful </para></simplesect>
-<simplesect kind="see"><para><ref refid="class_smol_dock_1_1_engine_1_1_abstract_docking_engine_1af00ee3be60acc0c4ba9aac03a3b09c35" kindref="member">setProtein()</ref>, <ref refid="class_smol_dock_1_1_engine_1_1_abstract_docking_engine_1a169f25051203c912c2b90bf3387baa22" kindref="member">setDockingBox()</ref> </para></simplesect>
-</para>        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="Engines/AbstractDockingEngine.h" line="72" column="1"/>
-      </memberdef>
       <memberdef kind="function" id="class_smol_dock_1_1_engine_1_1_abstract_docking_engine_1a169f25051203c912c2b90bf3387baa22" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type>bool</type>
         <definition>virtual bool SmolDock::Engine::AbstractDockingEngine::setDockingBox</definition>
@@ -140,39 +82,11 @@
 </parameteritem>
 </parameterlist>
 <simplesect kind="return"><para>Returns whether it has been successful </para></simplesect>
-<simplesect kind="see"><para><ref refid="class_smol_dock_1_1_engine_1_1_abstract_docking_engine_1af00ee3be60acc0c4ba9aac03a3b09c35" kindref="member">setProtein()</ref>, <ref refid="class_smol_dock_1_1_engine_1_1_abstract_docking_engine_1aae76a86e5dfc18b19e3a16c55da6556f" kindref="member">setLigand()</ref> </para></simplesect>
+<simplesect kind="see"><para>setProtein(), setLigand() </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Engines/AbstractDockingEngine.h" line="82" column="1"/>
-      </memberdef>
-      <memberdef kind="function" id="class_smol_dock_1_1_engine_1_1_abstract_docking_engine_1a6172e465dcd7dcecac29fb30612d0227" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
-        <type>void</type>
-        <definition>virtual void SmolDock::Engine::AbstractDockingEngine::setRandomSeed</definition>
-        <argsstring>(int seed)=0</argsstring>
-        <name>setRandomSeed</name>
-        <reimplementedby refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a756b9c1300d1c3828b519a2ca05ada59">setRandomSeed</reimplementedby>
-        <param>
-          <type>int</type>
-          <declname>seed</declname>
-        </param>
-        <briefdescription>
-<para>Set the RNG seed for reproducibility. </para>        </briefdescription>
-        <detaileddescription>
-<para><parameterlist kind="param"><parameteritem>
-<parameternamelist>
-<parametername>seed</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>RNG see </para></parameterdescription>
-</parameteritem>
-</parameterlist>
-<simplesect kind="return"><para>Returns whether it has been successful </para></simplesect>
-<simplesect kind="see"><para><ref refid="class_smol_dock_1_1_engine_1_1_abstract_docking_engine_1af00ee3be60acc0c4ba9aac03a3b09c35" kindref="member">setProtein()</ref>, <ref refid="class_smol_dock_1_1_engine_1_1_abstract_docking_engine_1aae76a86e5dfc18b19e3a16c55da6556f" kindref="member">setLigand()</ref>, <ref refid="class_smol_dock_1_1_engine_1_1_abstract_docking_engine_1a169f25051203c912c2b90bf3387baa22" kindref="member">setDockingBox()</ref> </para></simplesect>
-</para>        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="Engines/AbstractDockingEngine.h" line="91" column="1"/>
+        <location file="Engines/AbstractDockingEngine.h" line="63" column="1"/>
       </memberdef>
       <memberdef kind="function" id="class_smol_dock_1_1_engine_1_1_abstract_docking_engine_1a38d55d9ee6fde7df45b25b772cffbb9f" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type>bool</type>
@@ -189,7 +103,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Engines/AbstractDockingEngine.h" line="104" column="1"/>
+        <location file="Engines/AbstractDockingEngine.h" line="78" column="1"/>
       </memberdef>
       <memberdef kind="function" id="class_smol_dock_1_1_engine_1_1_abstract_docking_engine_1a0f08ef422ed79b3dac0b3144a241abe1" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type>void</type>
@@ -206,7 +120,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Engines/AbstractDockingEngine.h" line="118" column="1"/>
+        <location file="Engines/AbstractDockingEngine.h" line="92" column="1"/>
       </memberdef>
       <memberdef kind="function" id="class_smol_dock_1_1_engine_1_1_abstract_docking_engine_1a2e881d63b0214caf95efa3245446faf3" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type>std::shared_ptr&lt; <ref refid="class_smol_dock_1_1_docking_result" kindref="compound">DockingResult</ref> &gt;</type>
@@ -223,7 +137,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Engines/AbstractDockingEngine.h" line="132" column="1"/>
+        <location file="Engines/AbstractDockingEngine.h" line="106" column="1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -260,16 +174,13 @@
         <link refid="class_smol_dock_1_1_engine_1_1_abstract_docking_engine"/>
       </node>
     </collaborationgraph>
-    <location file="Engines/AbstractDockingEngine.h" line="39" column="1" bodyfile="Engines/AbstractDockingEngine.h" bodystart="39" bodyend="133"/>
+    <location file="Engines/AbstractDockingEngine.h" line="39" column="1" bodyfile="Engines/AbstractDockingEngine.h" bodystart="39" bodyend="107"/>
     <listofallmembers>
       <member refid="class_smol_dock_1_1_engine_1_1_abstract_docking_engine_1aca703508a3ce31d577d3ec108020789b" prot="public" virt="non-virtual"><scope>SmolDock::Engine::AbstractDockingEngine</scope><name>DockingBoxSetting</name></member>
       <member refid="class_smol_dock_1_1_engine_1_1_abstract_docking_engine_1a8147cf906368466da87fa439d537bf62" prot="public" virt="non-virtual"><scope>SmolDock::Engine::AbstractDockingEngine</scope><name>DockingBoxShape</name></member>
       <member refid="class_smol_dock_1_1_engine_1_1_abstract_docking_engine_1a2e881d63b0214caf95efa3245446faf3" prot="public" virt="pure-virtual"><scope>SmolDock::Engine::AbstractDockingEngine</scope><name>getDockingResult</name></member>
       <member refid="class_smol_dock_1_1_engine_1_1_abstract_docking_engine_1a0f08ef422ed79b3dac0b3144a241abe1" prot="public" virt="pure-virtual"><scope>SmolDock::Engine::AbstractDockingEngine</scope><name>runDockingEngine</name></member>
       <member refid="class_smol_dock_1_1_engine_1_1_abstract_docking_engine_1a169f25051203c912c2b90bf3387baa22" prot="public" virt="pure-virtual"><scope>SmolDock::Engine::AbstractDockingEngine</scope><name>setDockingBox</name></member>
-      <member refid="class_smol_dock_1_1_engine_1_1_abstract_docking_engine_1aae76a86e5dfc18b19e3a16c55da6556f" prot="public" virt="pure-virtual"><scope>SmolDock::Engine::AbstractDockingEngine</scope><name>setLigand</name></member>
-      <member refid="class_smol_dock_1_1_engine_1_1_abstract_docking_engine_1af00ee3be60acc0c4ba9aac03a3b09c35" prot="public" virt="pure-virtual"><scope>SmolDock::Engine::AbstractDockingEngine</scope><name>setProtein</name></member>
-      <member refid="class_smol_dock_1_1_engine_1_1_abstract_docking_engine_1a6172e465dcd7dcecac29fb30612d0227" prot="public" virt="pure-virtual"><scope>SmolDock::Engine::AbstractDockingEngine</scope><name>setRandomSeed</name></member>
       <member refid="class_smol_dock_1_1_engine_1_1_abstract_docking_engine_1a38d55d9ee6fde7df45b25b772cffbb9f" prot="public" virt="pure-virtual"><scope>SmolDock::Engine::AbstractDockingEngine</scope><name>setupDockingEngine</name></member>
     </listofallmembers>
   </compounddef>

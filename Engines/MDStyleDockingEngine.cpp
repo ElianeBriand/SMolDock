@@ -24,16 +24,6 @@
 namespace SmolDock::Engine {
 
 
-    bool MDStyleDockingEngine::setProtein(Protein *p) {
-        this->protein = p;
-        return true;
-    }
-
-    bool MDStyleDockingEngine::setLigand(Molecule *m) {
-        this->ligand = m;
-        return true;
-    }
-
     bool MDStyleDockingEngine::setupDockingEngine() {
         return true;
     }

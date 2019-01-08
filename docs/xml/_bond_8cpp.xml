@@ -4,86 +4,86 @@
     <compoundname>Bond.cpp</compoundname>
     <includes refid="_bond_8h" local="yes">Bond.h</includes>
     <incdepgraph>
-      <node id="178">
+      <node id="183">
         <label>string</label>
       </node>
-      <node id="172">
+      <node id="177">
         <label>Atom.h</label>
         <link refid="_atom_8h"/>
-        <childnode refid="173" relation="include">
+        <childnode refid="178" relation="include">
         </childnode>
-        <childnode refid="171" relation="include">
+        <childnode refid="176" relation="include">
         </childnode>
-        <childnode refid="174" relation="include">
+        <childnode refid="179" relation="include">
         </childnode>
-        <childnode refid="175" relation="include">
+        <childnode refid="180" relation="include">
         </childnode>
+        <childnode refid="181" relation="include">
+        </childnode>
+        <childnode refid="182" relation="include">
+        </childnode>
+      </node>
+      <node id="186">
+        <label>map</label>
+      </node>
+      <node id="175">
+        <label>Bond.h</label>
+        <link refid="_bond_8h"/>
         <childnode refid="176" relation="include">
         </childnode>
         <childnode refid="177" relation="include">
         </childnode>
       </node>
-      <node id="181">
-        <label>map</label>
-      </node>
-      <node id="170">
-        <label>Bond.h</label>
-        <link refid="_bond_8h"/>
-        <childnode refid="171" relation="include">
-        </childnode>
-        <childnode refid="172" relation="include">
-        </childnode>
-      </node>
-      <node id="177">
+      <node id="182">
         <label>AminoAcid.h</label>
         <link refid="_amino_acid_8h"/>
+        <childnode refid="183" relation="include">
+        </childnode>
         <childnode refid="178" relation="include">
-        </childnode>
-        <childnode refid="173" relation="include">
-        </childnode>
-        <childnode refid="174" relation="include">
-        </childnode>
-        <childnode refid="175" relation="include">
         </childnode>
         <childnode refid="179" relation="include">
         </childnode>
-        <childnode refid="171" relation="include">
-        </childnode>
         <childnode refid="180" relation="include">
+        </childnode>
+        <childnode refid="184" relation="include">
+        </childnode>
+        <childnode refid="176" relation="include">
+        </childnode>
+        <childnode refid="185" relation="include">
+        </childnode>
+      </node>
+      <node id="184">
+        <label>tuple</label>
+      </node>
+      <node id="185">
+        <label>Engines/Internals/iProtein.h</label>
+        <link refid="i_protein_8h"/>
+        <childnode refid="178" relation="include">
+        </childnode>
+        <childnode refid="176" relation="include">
+        </childnode>
+        <childnode refid="186" relation="include">
+        </childnode>
+      </node>
+      <node id="178">
+        <label>vector</label>
+      </node>
+      <node id="181">
+        <label>iostream</label>
+      </node>
+      <node id="174">
+        <label>Bond.cpp</label>
+        <link refid="_bond_8cpp"/>
+        <childnode refid="175" relation="include">
         </childnode>
       </node>
       <node id="179">
-        <label>tuple</label>
-      </node>
-      <node id="180">
-        <label>Engines/Internals/iProtein.h</label>
-        <link refid="i_protein_8h"/>
-        <childnode refid="173" relation="include">
-        </childnode>
-        <childnode refid="171" relation="include">
-        </childnode>
-        <childnode refid="181" relation="include">
-        </childnode>
-      </node>
-      <node id="173">
-        <label>vector</label>
-      </node>
-      <node id="176">
-        <label>iostream</label>
-      </node>
-      <node id="169">
-        <label>Bond.cpp</label>
-        <link refid="_bond_8cpp"/>
-        <childnode refid="170" relation="include">
-        </childnode>
-      </node>
-      <node id="174">
         <label>set</label>
       </node>
-      <node id="175">
+      <node id="180">
         <label>algorithm</label>
       </node>
-      <node id="171">
+      <node id="176">
         <label>memory</label>
       </node>
     </incdepgraph>
@@ -103,13 +103,13 @@
 <codeline lineno="8"><highlight class="comment"><sp/>*<sp/>the<sp/>Free<sp/>Software<sp/>Foundation,<sp/>either<sp/>version<sp/>3<sp/>of<sp/>the<sp/>License,<sp/>or</highlight></codeline>
 <codeline lineno="9"><highlight class="comment"><sp/>*<sp/>(at<sp/>your<sp/>option)<sp/>any<sp/>later<sp/>version.</highlight></codeline>
 <codeline lineno="10"><highlight class="comment"><sp/>*</highlight></codeline>
-<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>Foobar<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>SmolDock<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,</highlight></codeline>
 <codeline lineno="12"><highlight class="comment"><sp/>*<sp/>but<sp/>WITHOUT<sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of</highlight></codeline>
 <codeline lineno="13"><highlight class="comment"><sp/>*<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE.<sp/><sp/>See<sp/>the</highlight></codeline>
 <codeline lineno="14"><highlight class="comment"><sp/>*<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>for<sp/>more<sp/>details.</highlight></codeline>
 <codeline lineno="15"><highlight class="comment"><sp/>*</highlight></codeline>
 <codeline lineno="16"><highlight class="comment"><sp/>*<sp/>You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License</highlight></codeline>
-<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>along<sp/>with<sp/>Foobar.<sp/><sp/>If<sp/>not,<sp/>see<sp/>&lt;https://www.gnu.org/licenses/&gt;.</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>along<sp/>with<sp/>SmolDock.<sp/><sp/>If<sp/>not,<sp/>see<sp/>&lt;https://www.gnu.org/licenses/&gt;.</highlight></codeline>
 <codeline lineno="18"><highlight class="comment"><sp/>*</highlight></codeline>
 <codeline lineno="19"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="20"><highlight class="normal"></highlight></codeline>

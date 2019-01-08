@@ -95,7 +95,9 @@ $(document).ready(function(){initNavTree('namespace_smol_dock.html','');});
   <div class="summary">
 <a href="#namespaces">Namespaces</a> &#124;
 <a href="#nested-classes">Classes</a> &#124;
-<a href="#func-members">Functions</a>  </div>
+<a href="#enum-members">Enumerations</a> &#124;
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">SmolDock Namespace Reference</div>  </div>
 </div><!--header-->
@@ -108,6 +110,12 @@ $(document).ready(function(){initNavTree('namespace_smol_dock.html','');});
 Namespaces</h2></td></tr>
 <tr class="memitem:namespace_smol_dock_1_1_engine"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_smol_dock_1_1_engine.html">Engine</a></td></tr>
 <tr class="memdesc:namespace_smol_dock_1_1_engine"><td class="mdescLeft">&#160;</td><td class="mdescRight">Docking engines. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespace_smol_dock_1_1_heuristics"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_smol_dock_1_1_heuristics.html">Heuristics</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespace_smol_dock_1_1_input_post_processor"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_smol_dock_1_1_input_post_processor.html">InputPostProcessor</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespace_smol_dock_1_1_optimizer"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_smol_dock_1_1_optimizer.html">Optimizer</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:namespace_smol_dock_1_1_score"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_smol_dock_1_1_score.html">Score</a></td></tr>
 <tr class="memdesc:namespace_smol_dock_1_1_score"><td class="mdescLeft">&#160;</td><td class="mdescRight">Free-standing docking score functions. <br /></td></tr>
@@ -129,15 +137,10 @@ Classes</h2></td></tr>
 <tr class="separator:class_smol_dock_1_1_docking_result"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_smol_dock_1_1_docking_result_printer.html">DockingResultPrinter</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:class_smol_dock_1_1_gradient_calculator"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_smol_dock.html#class_smol_dock_1_1_gradient_calculator">GradientCalculator</a></td></tr>
-<tr class="separator:class_smol_dock_1_1_gradient_calculator"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_smol_dock_1_1_gradient_descent_line_search.html">GradientDescentLineSearch</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:struct_smol_dock_1_1i_conformer"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_smol_dock.html#struct_smol_dock_1_1i_conformer">iConformer</a></td></tr>
 <tr class="memdesc:struct_smol_dock_1_1i_conformer"><td class="mdescLeft">&#160;</td><td class="mdescRight">Internal, fast representation of a given <a class="el" href="class_smol_dock_1_1_molecule.html" title="Class representing &quot;rich&quot; molecule. ">Molecule</a> conformer for efficiency.  <a href="namespace_smol_dock.html#struct_smol_dock_1_1i_conformer">More...</a><br /></td></tr>
 <tr class="separator:struct_smol_dock_1_1i_conformer"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:struct_smol_dock_1_1i_gradient"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_smol_dock.html#struct_smol_dock_1_1i_gradient">iGradient</a></td></tr>
-<tr class="memdesc:struct_smol_dock_1_1i_gradient"><td class="mdescLeft">&#160;</td><td class="mdescRight">Holds a gradient for the score function with regard to an <a class="el" href="namespace_smol_dock.html#struct_smol_dock_1_1i_transform" title="Represents a rotation and translation transform to be applied on ligand/ligand part. ">iTransform</a>.  <a href="namespace_smol_dock.html#struct_smol_dock_1_1i_gradient">More...</a><br /></td></tr>
 <tr class="separator:struct_smol_dock_1_1i_gradient"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_smol_dock_1_1_intermediate_conformer_collector.html">IntermediateConformerCollector</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -166,16 +169,23 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class representing "rich" protein.  <a href="class_smol_dock_1_1_protein.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_smol_dock_1_1_re_scorer.html">ReScorer</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A simple wrapper to get docking scores from various score function for a given ligand-protein configuration.  <a href="class_smol_dock_1_1_re_scorer.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_smol_dock_1_1_structure.html">Structure</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:ab797122db8030eb70bf4d042c897df5e"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_smol_dock.html#ab797122db8030eb70bf4d042c897df5e">PDBResidueVariantAssignationType</a> { <a class="el" href="namespace_smol_dock.html#ab797122db8030eb70bf4d042c897df5eab7f023dbb86242b37e451d0b36dde93d">PDBResidueVariantAssignationType::GeneralPurpose</a>
+ }</td></tr>
+<tr class="separator:ab797122db8030eb70bf4d042c897df5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a44a91384d128c3beb5c57ec507dddb6e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_smol_dock.html#struct_smol_dock_1_1i_quaternion">iQuaternion</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_smol_dock.html#a44a91384d128c3beb5c57ec507dddb6e">iQuaternionIdentityInit</a> ()</td></tr>
 <tr class="separator:a44a91384d128c3beb5c57ec507dddb6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3974d1e3a6f729a7ca05b97996ca2079"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_smol_dock.html#struct_smol_dock_1_1i_transform">iTransform</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_smol_dock.html#a3974d1e3a6f729a7ca05b97996ca2079">iTransformIdentityInit</a> ()</td></tr>
-<tr class="memdesc:a3974d1e3a6f729a7ca05b97996ca2079"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a neutral transform.  <a href="#a3974d1e3a6f729a7ca05b97996ca2079">More...</a><br /></td></tr>
+<tr class="memdesc:a3974d1e3a6f729a7ca05b97996ca2079"><td class="mdescLeft">&#160;</td><td class="mdescRight">Holds a gradient for the score function with regard to an <a class="el" href="namespace_smol_dock.html#struct_smol_dock_1_1i_transform" title="Represents a rotation and translation transform to be applied on ligand/ligand part. ">iTransform</a>.  <a href="#a3974d1e3a6f729a7ca05b97996ca2079">More...</a><br /></td></tr>
 <tr class="separator:a3974d1e3a6f729a7ca05b97996ca2079"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a835c8bf0a7983ba17c48cd10f152726f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_smol_dock.html#a835c8bf0a7983ba17c48cd10f152726f">applyRotationInPlace</a> (<a class="el" href="namespace_smol_dock.html#struct_smol_dock_1_1i_vect">iVect</a> &amp;vec, const <a class="el" href="namespace_smol_dock.html#struct_smol_dock_1_1i_quaternion">iQuaternion</a> &amp;qt)</td></tr>
 <tr class="memdesc:a835c8bf0a7983ba17c48cd10f152726f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply the rotation given by a quaternion to a vector.  <a href="#a835c8bf0a7983ba17c48cd10f152726f">More...</a><br /></td></tr>
@@ -195,9 +205,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a19b5383f74c017874f93a6dcc8a1d508"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_smol_dock.html#struct_smol_dock_1_1i_vect">iVect</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_smol_dock.html#a19b5383f74c017874f93a6dcc8a1d508">applyTransform</a> (const <a class="el" href="namespace_smol_dock.html#struct_smol_dock_1_1i_vect">iVect</a> &amp;v, const <a class="el" href="namespace_smol_dock.html#struct_smol_dock_1_1i_transform">iTransform</a> &amp;tr)</td></tr>
 <tr class="memdesc:a19b5383f74c017874f93a6dcc8a1d508"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply the provided <a class="el" href="namespace_smol_dock.html#struct_smol_dock_1_1i_transform" title="Represents a rotation and translation transform to be applied on ligand/ligand part. ">iTransform</a> to a vector.  <a href="#a19b5383f74c017874f93a6dcc8a1d508">More...</a><br /></td></tr>
 <tr class="separator:a19b5383f74c017874f93a6dcc8a1d508"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5871417c24785e5de766c90b08f61d64"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_smol_dock.html#a5871417c24785e5de766c90b08f61d64">applyTransformInPlace</a> (<a class="el" href="namespace_smol_dock.html#struct_smol_dock_1_1i_conformer">iConformer</a> &amp;conformer, const <a class="el" href="namespace_smol_dock.html#struct_smol_dock_1_1i_transform">iTransform</a> &amp;tr)</td></tr>
-<tr class="memdesc:a5871417c24785e5de766c90b08f61d64"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply the provided <a class="el" href="namespace_smol_dock.html#struct_smol_dock_1_1i_transform" title="Represents a rotation and translation transform to be applied on ligand/ligand part. ">iTransform</a> to a confomer, atom-by-atom.  <a href="#a5871417c24785e5de766c90b08f61d64">More...</a><br /></td></tr>
-<tr class="separator:a5871417c24785e5de766c90b08f61d64"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd058af9bf8a2fa90a0ec7bf42c31e31"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_smol_dock.html#afd058af9bf8a2fa90a0ec7bf42c31e31">applyTransformInPlace</a> (<a class="el" href="namespace_smol_dock.html#struct_smol_dock_1_1i_conformer">SmolDock::iConformer</a> &amp;conformer, const <a class="el" href="namespace_smol_dock.html#struct_smol_dock_1_1i_transform">iTransform</a> &amp;tr)</td></tr>
+<tr class="memdesc:afd058af9bf8a2fa90a0ec7bf42c31e31"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply the provided <a class="el" href="namespace_smol_dock.html#struct_smol_dock_1_1i_transform" title="Represents a rotation and translation transform to be applied on ligand/ligand part. ">iTransform</a> to a confomer, atom-by-atom.  <a href="#afd058af9bf8a2fa90a0ec7bf42c31e31">More...</a><br /></td></tr>
+<tr class="separator:afd058af9bf8a2fa90a0ec7bf42c31e31"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afb62962c202721eaa8aa64d19bd42fdf"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_smol_dock.html#afb62962c202721eaa8aa64d19bd42fdf">quaternionNorm</a> (const <a class="el" href="namespace_smol_dock.html#struct_smol_dock_1_1i_quaternion">iQuaternion</a> &amp;quat)</td></tr>
 <tr class="memdesc:afb62962c202721eaa8aa64d19bd42fdf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the norm of the given quaternion.  <a href="#afb62962c202721eaa8aa64d19bd42fdf">More...</a><br /></td></tr>
 <tr class="separator:afb62962c202721eaa8aa64d19bd42fdf"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -222,8 +232,21 @@ Functions</h2></td></tr>
 <tr class="separator:ae559278f4b66ec9a09ddfaebb224f897"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9c3abf1e37dc4fe013df80997dedb20b"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_smol_dock.html#a9c3abf1e37dc4fe013df80997dedb20b">atomTypeToAtomicRadius</a> (<a class="el" href="class_smol_dock_1_1_atom.html#a57e9a532fd04e1846c0d83edebb9fd41">Atom::AtomType</a> t)</td></tr>
 <tr class="separator:a9c3abf1e37dc4fe013df80997dedb20b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b696009e136f369f88b0ebfc51175bc"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="class_smol_dock_1_1_atom.html#a77191f0919af58d733764e229cb1f973">Atom::AtomVariant</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_smol_dock.html#a5b696009e136f369f88b0ebfc51175bc">operator|</a> (<a class="el" href="class_smol_dock_1_1_atom.html#a77191f0919af58d733764e229cb1f973">Atom::AtomVariant</a> a, <a class="el" href="class_smol_dock_1_1_atom.html#a77191f0919af58d733764e229cb1f973">Atom::AtomVariant</a> b)</td></tr>
+<tr class="separator:a5b696009e136f369f88b0ebfc51175bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2820b77a3fd140cd601c75028ed8dd51"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_smol_dock.html#a2820b77a3fd140cd601c75028ed8dd51">assignVariantFlagsForResidueAtom</a> (<a class="el" href="class_smol_dock_1_1_amino_acid.html">AminoAcid</a> &amp;residue, <a class="el" href="namespace_smol_dock.html#ab797122db8030eb70bf4d042c897df5e">PDBResidueVariantAssignationType</a> assignation_type)</td></tr>
+<tr class="separator:a2820b77a3fd140cd601c75028ed8dd51"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a43bbd3ed0ad4b1eec9e5ae8d9d99318d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_smol_dock.html#a43bbd3ed0ad4b1eec9e5ae8d9d99318d">assignApolarCarbonFlag</a> (std::vector&lt; std::shared_ptr&lt; <a class="el" href="class_smol_dock_1_1_atom.html">Atom</a> &gt; &gt; &amp;atomVect)</td></tr>
+<tr class="separator:a43bbd3ed0ad4b1eec9e5ae8d9d99318d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af232b04c4eb1c52a6ebea14bb1056be0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_smol_dock.html#af232b04c4eb1c52a6ebea14bb1056be0">assignApolarCarbonFlag</a> (std::vector&lt; <a class="el" href="class_smol_dock_1_1_atom.html">Atom</a> &gt; &amp;atomVect)</td></tr>
+<tr class="separator:af232b04c4eb1c52a6ebea14bb1056be0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a288ddd3593922bcc17e5feb114841802"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_smol_dock.html#a288ddd3593922bcc17e5feb114841802">AssignBondOrderFromTemplateSMILES</a> (std::shared_ptr&lt; RDKit::RWMol &gt; mol, const std::string &amp;smiles)</td></tr>
 <tr class="separator:a288ddd3593922bcc17e5feb114841802"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a1c9575126d6be4889918032116fd8add"><td class="memItemLeft" align="right" valign="top">std::set&lt; std::tuple&lt; <a class="el" href="class_smol_dock_1_1_amino_acid.html#a08692b12e7f53812c5258bd8b805875d">AminoAcid::AAType</a>, std::vector&lt; std::tuple&lt; std::string, <a class="el" href="class_smol_dock_1_1_atom.html#a77191f0919af58d733764e229cb1f973">Atom::AtomVariant</a> &gt; &gt; &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_smol_dock.html#a1c9575126d6be4889918032116fd8add">ResidueAtomPropertiesLookupTable_General</a></td></tr>
+<tr class="separator:a1c9575126d6be4889918032116fd8add"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Global namespace for <a class="el" href="namespace_smol_dock.html" title="Global namespace for SmolDock. ">SmolDock</a>. </p>
@@ -260,34 +283,6 @@ Poses generated by the docking engine. </td></tr>
 
 </div>
 </div>
-<a name="class_smol_dock_1_1_gradient_calculator" id="class_smol_dock_1_1_gradient_calculator"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#class_smol_dock_1_1_gradient_calculator">&#9670;&nbsp;</a></span>SmolDock::GradientCalculator</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">class SmolDock::GradientCalculator</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<div class="textblock"><h3>template&lt;typename LigandState, typename LigandTransform&gt;<br />
-class SmolDock::GradientCalculator&lt; LigandState, LigandTransform &gt;</h3>
-
-
-<p class="definition">Definition at line <a class="el" href="_gradient_calculator_8h_source.html#l00011">11</a> of file <a class="el" href="_gradient_calculator_8h_source.html">GradientCalculator.h</a>.</p>
-</div><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Collaboration diagram for SmolDock::GradientCalculator&lt; LigandState, LigandTransform &gt;:</div>
-<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="class_smol_dock_1_1_gradient_calculator__coll__graph.png" border="0" usemap="#_smol_dock_1_1_gradient_calculator_3_01_ligand_state_00_01_ligand_transform_01_4_coll__map" alt="Collaboration graph"/></div>
-<map name="_smol_dock_1_1_gradient_calculator_3_01_ligand_state_00_01_ligand_transform_01_4_coll__map" id="_smol_dock_1_1_gradient_calculator_3_01_ligand_state_00_01_ligand_transform_01_4_coll__map">
-</map>
-</div>
-
-</div>
-</div>
 <a name="struct_smol_dock_1_1i_conformer" id="struct_smol_dock_1_1i_conformer"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#struct_smol_dock_1_1i_conformer">&#9670;&nbsp;</a></span>SmolDock::iConformer</h2>
 
@@ -302,15 +297,16 @@ class SmolDock::GradientCalculator&lt; LigandState, LigandTransform &gt;</h3>
 <div class="textblock"><p>Internal, fast representation of a given <a class="el" href="class_smol_dock_1_1_molecule.html" title="Class representing &quot;rich&quot; molecule. ">Molecule</a> conformer for efficiency. </p>
 <dl class="section see"><dt>See also</dt><dd>iAtom, <a class="el" href="namespace_smol_dock.html#struct_smol_dock_1_1i_protein" title="Internal, fast representation of Protein for efficiency. ">iProtein</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="i_conformer_8h_source.html#l00034">34</a> of file <a class="el" href="i_conformer_8h_source.html">iConformer.h</a>.</p>
-</div><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Collaboration diagram for SmolDock::iConformer:</div>
-<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+<p class="definition">Definition at line <a class="el" href="i_conformer_8h_source.html#l00038">38</a> of file <a class="el" href="i_conformer_8h_source.html">iConformer.h</a>.</p>
+</div><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Collaboration diagram for SmolDock::iConformer:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="struct_smol_dock_1_1i_conformer__coll__graph.png" border="0" usemap="#_smol_dock_1_1i_conformer_coll__map" alt="Collaboration graph"/></div>
 <map name="_smol_dock_1_1i_conformer_coll__map" id="_smol_dock_1_1i_conformer_coll__map">
-<area shape="rect" id="node3" title="STL class. " alt="" coords="107,145,223,223"/>
+<area shape="rect" id="node2" href="namespace_smol_dock.html#struct_smol_dock_1_1i_translation" title="Represents a translation. " alt="" coords="5,285,164,392"/>
+<area shape="rect" id="node4" title="STL class. " alt="" coords="376,145,492,223"/>
 </map>
 </div>
 <table class="fieldtable">
@@ -322,13 +318,25 @@ atomicRadius</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
+<a id="aca79d26663d734bf23b5ed7ddc3dba57"></a><a class="el" href="namespace_smol_dock.html#struct_smol_dock_1_1i_translation">iTranslation</a></td>
+<td class="fieldname">
+centroidNormalizingTransform</td>
+<td class="fielddoc">
+If the coordinate have been normalized so as to have the centroid as [0,0,0], then this contain the translation that restore it to its original position, aka the coordinate of the centroid (because |normalized&gt; = |originalPos&gt; - |centroidPos&gt; ) Else it's just 0,0,0. </td></tr>
+<tr><td class="fieldtype">
+<a id="aabef94f550eef03cf2d4304df78cf403"></a>unsigned int</td>
+<td class="fieldname">
+num_rotatable_bond</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
 <a id="add04de1dd457ae228e398ffa9260497d"></a>vector&lt; unsigned char &gt;</td>
 <td class="fieldname">
 type</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="ad310936289e38ae6fca788741b0cfffa"></a>vector&lt; unsigned char &gt;</td>
+<a id="af56992de619302df905180a481a4d993"></a>vector&lt; unsigned int &gt;</td>
 <td class="fieldname">
 variant</td>
 <td class="fielddoc">
@@ -366,15 +374,14 @@ z</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="textblock"><p>Holds a gradient for the score function with regard to an <a class="el" href="namespace_smol_dock.html#struct_smol_dock_1_1i_transform" title="Represents a rotation and translation transform to be applied on ligand/ligand part. ">iTransform</a>. </p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="namespace_smol_dock.html#struct_smol_dock_1_1i_translation" title="Represents a translation. ">iTranslation</a>, <a class="el" href="namespace_smol_dock.html#struct_smol_dock_1_1i_quaternion" title="Represents a rotation. ">iQuaternion</a> </dd></dl>
+<div class="textblock"><dl class="section see"><dt>See also</dt><dd><a class="el" href="namespace_smol_dock.html#struct_smol_dock_1_1i_translation" title="Represents a translation. ">iTranslation</a>, <a class="el" href="namespace_smol_dock.html#struct_smol_dock_1_1i_quaternion" title="Represents a rotation. ">iQuaternion</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="i_transform_8h_source.html#l00064">64</a> of file <a class="el" href="i_transform_8h_source.html">iTransform.h</a>.</p>
-</div><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Collaboration diagram for SmolDock::iGradient:</div>
-<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+<p class="definition">Definition at line <a class="el" href="i_transform_8h_source.html#l00052">52</a> of file <a class="el" href="i_transform_8h_source.html">iTransform.h</a>.</p>
+</div><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Collaboration diagram for SmolDock::iGradient:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="struct_smol_dock_1_1i_gradient__coll__graph.png" border="0" usemap="#_smol_dock_1_1i_gradient_coll__map" alt="Collaboration graph"/></div>
 <map name="_smol_dock_1_1i_gradient_coll__map" id="_smol_dock_1_1i_gradient_coll__map">
 </map>
@@ -441,22 +448,22 @@ dz</td>
 <div class="textblock"><p>Internal, fast representation of <a class="el" href="class_smol_dock_1_1_protein.html" title="Class representing &quot;rich&quot; protein. ">Protein</a> for efficiency. </p>
 <dl class="section see"><dt>See also</dt><dd>iAtom, <a class="el" href="namespace_smol_dock.html#struct_smol_dock_1_1i_conformer" title="Internal, fast representation of a given Molecule conformer for efficiency. ">iConformer</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="i_protein_8h_source.html#l00036">36</a> of file <a class="el" href="i_protein_8h_source.html">iProtein.h</a>.</p>
-</div><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Collaboration diagram for SmolDock::iProtein:</div>
-<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+<p class="definition">Definition at line <a class="el" href="i_protein_8h_source.html#l00035">35</a> of file <a class="el" href="i_protein_8h_source.html">iProtein.h</a>.</p>
+</div><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Collaboration diagram for SmolDock::iProtein:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-4-content" class="dyncontent" style="display:none;">
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="struct_smol_dock_1_1i_protein__coll__graph.png" border="0" usemap="#_smol_dock_1_1i_protein_coll__map" alt="Collaboration graph"/></div>
 <map name="_smol_dock_1_1i_protein_coll__map" id="_smol_dock_1_1i_protein_coll__map">
-<area shape="rect" id="node3" title="STL class. " alt="" coords="35,145,158,223"/>
-<area shape="rect" id="node7" title="STL class. " alt="" coords="212,145,328,223"/>
+<area shape="rect" id="node3" title="STL class. " alt="" coords="54,145,177,223"/>
+<area shape="rect" id="node7" title="STL class. " alt="" coords="231,145,347,223"/>
 </map>
 </div>
 <table class="fieldtable">
 <tr><th colspan="3">Class Members</th></tr>
 <tr><td class="fieldtype">
-<a id="acee4fb06b1e47d4ae4de51e6d0ef144b"></a>map&lt; unsigned int, tuple&lt; unsigned long, unsigned long &gt; &gt;</td>
+<a id="a0b900dfe18415ab4fc200bc7d8570c80"></a>map&lt; unsigned int, tuple&lt; unsigned long, unsigned long &gt; &gt;</td>
 <td class="fieldname">
 AAId_to_AtomPositionInVect</td>
 <td class="fielddoc">
@@ -492,7 +499,7 @@ type</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="ac8f37b4dd33f21e3a368f18e8ceaa153"></a>vector&lt; unsigned char &gt;</td>
+<a id="ac452f5ddb99ed5a703615f9c03337ddd"></a>vector&lt; unsigned int &gt;</td>
 <td class="fieldname">
 variant</td>
 <td class="fielddoc">
@@ -534,11 +541,11 @@ z</td>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="namespace_smol_dock.html#struct_smol_dock_1_1i_transform" title="Represents a rotation and translation transform to be applied on ligand/ligand part. ">iTransform</a> </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="i_transform_8h_source.html#l00023">23</a> of file <a class="el" href="i_transform_8h_source.html">iTransform.h</a>.</p>
-</div><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-5-trigger" src="closed.png" alt="+"/> Collaboration diagram for SmolDock::iQuaternion:</div>
-<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+</div><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Collaboration diagram for SmolDock::iQuaternion:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-5-content" class="dyncontent" style="display:none;">
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="struct_smol_dock_1_1i_quaternion__coll__graph.png" border="0" usemap="#_smol_dock_1_1i_quaternion_coll__map" alt="Collaboration graph"/></div>
 <map name="_smol_dock_1_1i_quaternion_coll__map" id="_smol_dock_1_1i_quaternion_coll__map">
 </map>
@@ -588,11 +595,11 @@ v</td>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="namespace_smol_dock.html#struct_smol_dock_1_1i_translation" title="Represents a translation. ">iTranslation</a>, <a class="el" href="namespace_smol_dock.html#struct_smol_dock_1_1i_quaternion" title="Represents a rotation. ">iQuaternion</a> </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="i_transform_8h_source.html#l00044">44</a> of file <a class="el" href="i_transform_8h_source.html">iTransform.h</a>.</p>
-</div><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-6-trigger" src="closed.png" alt="+"/> Collaboration diagram for SmolDock::iTransform:</div>
-<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
+</div><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-5-trigger" src="closed.png" alt="+"/> Collaboration diagram for SmolDock::iTransform:</div>
+<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-6-content" class="dyncontent" style="display:none;">
+<div id="dynsection-5-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="struct_smol_dock_1_1i_transform__coll__graph.png" border="0" usemap="#_smol_dock_1_1i_transform_coll__map" alt="Collaboration graph"/></div>
 <map name="_smol_dock_1_1i_transform_coll__map" id="_smol_dock_1_1i_transform_coll__map">
 <area shape="rect" id="node2" href="namespace_smol_dock.html#struct_smol_dock_1_1i_translation" title="Represents a translation. " alt="" coords="5,13,164,119"/>
@@ -631,11 +638,11 @@ transl</td>
 <div class="textblock"><p>Represents a translation. </p>
 
 <p class="definition">Definition at line <a class="el" href="i_transform_8h_source.html#l00035">35</a> of file <a class="el" href="i_transform_8h_source.html">iTransform.h</a>.</p>
-</div><div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-7-trigger" src="closed.png" alt="+"/> Collaboration diagram for SmolDock::iTranslation:</div>
-<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
+</div><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-6-trigger" src="closed.png" alt="+"/> Collaboration diagram for SmolDock::iTranslation:</div>
+<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-7-content" class="dyncontent" style="display:none;">
+<div id="dynsection-6-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="struct_smol_dock_1_1i_translation__coll__graph.png" border="0" usemap="#_smol_dock_1_1i_translation_coll__map" alt="Collaboration graph"/></div>
 <map name="_smol_dock_1_1i_translation_coll__map" id="_smol_dock_1_1i_translation_coll__map">
 </map>
@@ -678,11 +685,11 @@ z</td>
 <div class="textblock"><p>General purpose 3D-vector type. </p>
 
 <p class="definition">Definition at line <a class="el" href="i_transform_8h_source.html#l00030">30</a> of file <a class="el" href="i_transform_8h_source.html">iTransform.h</a>.</p>
-</div><div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-8-trigger" src="closed.png" alt="+"/> Collaboration diagram for SmolDock::iVect:</div>
-<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
+</div><div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-7-trigger" src="closed.png" alt="+"/> Collaboration diagram for SmolDock::iVect:</div>
+<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-8-content" class="dyncontent" style="display:none;">
+<div id="dynsection-7-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="struct_smol_dock_1_1i_vect__coll__graph.png" border="0" usemap="#_smol_dock_1_1i_vect_coll__map" alt="Collaboration graph"/></div>
 <map name="_smol_dock_1_1i_vect_coll__map" id="_smol_dock_1_1i_vect_coll__map">
 </map>
@@ -708,6 +715,34 @@ z</td>
 <td class="fielddoc">
 </td></tr>
 </table>
+
+</div>
+</div>
+<h2 class="groupheader">Enumeration Type Documentation</h2>
+<a id="ab797122db8030eb70bf4d042c897df5e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab797122db8030eb70bf4d042c897df5e">&#9670;&nbsp;</a></span>PDBResidueVariantAssignationType</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="namespace_smol_dock.html#ab797122db8030eb70bf4d042c897df5e">SmolDock::PDBResidueVariantAssignationType</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ab797122db8030eb70bf4d042c897df5eab7f023dbb86242b37e451d0b36dde93d"></a>GeneralPurpose&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition">Definition at line <a class="el" href="_p_d_b_residue_variant_table_8h_source.html#l00018">18</a> of file <a class="el" href="_p_d_b_residue_variant_table_8h_source.html">PDBResidueVariantTable.h</a>.</p>
 
 </div>
 </div>
@@ -748,15 +783,14 @@ z</td>
 
 <p>Apply the rotation given by a quaternion to a vector. </p>
 
-<p class="definition">Definition at line <a class="el" href="i_transform_8h_source.html#l00095">95</a> of file <a class="el" href="i_transform_8h_source.html">iTransform.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_internals_utility_functions_8h_source.html#l00050">50</a> of file <a class="el" href="_internals_utility_functions_8h_source.html">InternalsUtilityFunctions.h</a>.</p>
 
-<p class="reference">References <a class="el" href="i_transform_8h_source.html#l00083">applyRotationInPlace()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    {</div><div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        iVect res(v);</div><div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        <a class="code" href="namespace_smol_dock.html#a835c8bf0a7983ba17c48cd10f152726f">applyRotationInPlace</a>(res,qt);</div><div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <span class="keywordflow">return</span> res;</div><div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    }</div><div class="ttc" id="namespace_smol_dock_html_a835c8bf0a7983ba17c48cd10f152726f"><div class="ttname"><a href="namespace_smol_dock.html#a835c8bf0a7983ba17c48cd10f152726f">SmolDock::applyRotationInPlace</a></div><div class="ttdeci">void applyRotationInPlace(iVect &amp;vec, const iQuaternion &amp;qt)</div><div class="ttdoc">Apply the rotation given by a quaternion to a vector. </div><div class="ttdef"><b>Definition:</b> <a href="i_transform_8h_source.html#l00083">iTransform.h:83</a></div></div>
-</div><!-- fragment --><div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-9-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-9-summary" class="dynsummary" style="display:block;">
+<p class="reference">References <a class="el" href="_internals_utility_functions_8h_source.html#l00036">applyRotationInPlace()</a>.</p>
+<div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-8-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-9-content" class="dyncontent" style="display:none;">
+<div id="dynsection-8-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="namespace_smol_dock_a65d30b0d0a54dad29b43fc9acfbf6570_cgraph.png" border="0" usemap="#namespace_smol_dock_a65d30b0d0a54dad29b43fc9acfbf6570_cgraph" alt=""/></div>
 <map name="namespace_smol_dock_a65d30b0d0a54dad29b43fc9acfbf6570_cgraph" id="namespace_smol_dock_a65d30b0d0a54dad29b43fc9acfbf6570_cgraph">
 <area shape="rect" id="node2" href="namespace_smol_dock.html#a835c8bf0a7983ba17c48cd10f152726f" title="Apply the rotation given by a quaternion to a vector. " alt="" coords="224,5,407,47"/>
@@ -801,26 +835,29 @@ z</td>
 
 <p>Apply the rotation given by a quaternion to a vector. </p>
 
-<p class="definition">Definition at line <a class="el" href="i_transform_8h_source.html#l00083">83</a> of file <a class="el" href="i_transform_8h_source.html">iTransform.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_internals_utility_functions_8h_source.html#l00036">36</a> of file <a class="el" href="_internals_utility_functions_8h_source.html">InternalsUtilityFunctions.h</a>.</p>
 
 <p class="reference">References <a class="el" href="i_transform_8h_source.html#l00025">SmolDock::iQuaternion::s</a>, <a class="el" href="i_transform_8h_source.html#l00026">SmolDock::iQuaternion::t</a>, <a class="el" href="i_transform_8h_source.html#l00026">SmolDock::iQuaternion::u</a>, <a class="el" href="i_transform_8h_source.html#l00026">SmolDock::iQuaternion::v</a>, <a class="el" href="i_transform_8h_source.html#l00031">SmolDock::iVect::x</a>, <a class="el" href="i_transform_8h_source.html#l00031">SmolDock::iVect::y</a>, and <a class="el" href="i_transform_8h_source.html#l00031">SmolDock::iVect::z</a>.</p>
-<div class="fragment"><div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    {</div><div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        iVect v = vec;</div><div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div><div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <span class="comment">//TODO : Check this quaternion rotation formula</span></div><div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <span class="comment">//TODO : Refactor this formula to be clearer</span></div><div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        vec.x = qt.s*qt.s*v.x + 2*qt.v*qt.s*v.z - 2*qt.t*qt.s*v.y + qt.u*qt.u*v.x + 2*qt.v*qt.u*v.y + 2*qt.t*qt.u*v.z - qt.t*qt.t*v.x - qt.v*qt.v*v.x;</div><div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        vec.y = 2*qt.u*qt.v*v.x + qt.v*qt.v*v.y + 2*qt.t*qt.v*v.z + 2*qt.s*qt.t*v.x - qt.t*qt.t*v.y + qt.s*qt.s*v.y - 2*qt.u*qt.s*v.z - qt.u*qt.u*v.y;</div><div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        vec.z = 2*qt.u*qt.t*v.x + 2*qt.v*qt.t*v.y + qt.t*qt.t*v.z - 2*qt.s*qt.v*v.x - qt.v*qt.v*v.z + 2*qt.s*qt.u*v.y - qt.u*qt.u*v.z + qt.s*qt.s*v.z;</div><div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    }</div></div><!-- fragment --><div id="dynsection-10" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-10-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-10-summary" class="dynsummary" style="display:block;">
+<div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-9-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-9-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-10-content" class="dyncontent" style="display:none;">
+<div id="dynsection-9-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="namespace_smol_dock_a835c8bf0a7983ba17c48cd10f152726f_icgraph.png" border="0" usemap="#namespace_smol_dock_a835c8bf0a7983ba17c48cd10f152726f_icgraph" alt=""/></div>
 <map name="namespace_smol_dock_a835c8bf0a7983ba17c48cd10f152726f_icgraph" id="namespace_smol_dock_a835c8bf0a7983ba17c48cd10f152726f_icgraph">
-<area shape="rect" id="node2" href="namespace_smol_dock.html#a65d30b0d0a54dad29b43fc9acfbf6570" title="Apply the rotation given by a quaternion to a vector. " alt="" coords="241,85,412,111"/>
-<area shape="rect" id="node3" href="namespace_smol_dock.html#a73bb4756419c2b3361ae4d23b24eee20" title="Apply the provided iTransform to a vector. " alt="" coords="236,136,417,177"/>
-<area shape="rect" id="node4" href="namespace_smol_dock_1_1_score.html#ac205731c7b0098c2900d9d16fff1a93b" title="Compute inter&#45;molecular part of the docking score, according to the Vina scoring function. " alt="" coords="735,5,929,47"/>
-<area shape="rect" id="node7" href="class_smol_dock_1_1_gradient_descent_line_search.html#a5a70b5fce84800680475f98b2b1c0f05" title="SmolDock::GradientDescent\lLineSearch::getFinalConformer" alt="" coords="731,71,933,112"/>
-<area shape="rect" id="node8" href="class_smol_dock_1_1_gradient_descent_line_search.html#aa4a1f5365397747805edd12aa4d53270" title="SmolDock::GradientDescent\lLineSearch::getCurrentConformer\lWithTransform" alt="" coords="465,129,683,185"/>
-<area shape="rect" id="node10" href="namespace_smol_dock.html#a19b5383f74c017874f93a6dcc8a1d508" title="Apply the provided iTransform to a vector. " alt="" coords="483,209,665,235"/>
-<area shape="rect" id="node11" href="namespace_smol_dock.html#a5871417c24785e5de766c90b08f61d64" title="Apply the provided iTransform to a confomer, atom&#45;by&#45;atom. " alt="" coords="483,260,665,301"/>
-<area shape="rect" id="node5" href="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine.html#a7bee39278168cb4d7ee6558b3a3d3bb4" title="Run the docking. " alt="" coords="981,71,1236,112"/>
-<area shape="rect" id="node6" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="1284,78,1335,105"/>
-<area shape="rect" id="node9" href="class_smol_dock_1_1_gradient_descent_line_search.html#a8bc11fdd0f47562e773df6dff62dc82a" title="SmolDock::GradientDescent\lLineSearch::optimize" alt="" coords="737,136,927,177"/>
+<area shape="rect" id="node2" href="namespace_smol_dock.html#a65d30b0d0a54dad29b43fc9acfbf6570" title="Apply the rotation given by a quaternion to a vector. " alt="" coords="241,39,412,66"/>
+<area shape="rect" id="node3" href="namespace_smol_dock.html#a73bb4756419c2b3361ae4d23b24eee20" title="Apply the provided iTransform to a vector. " alt="" coords="236,91,417,132"/>
+<area shape="rect" id="node4" href="namespace_smol_dock.html#a19b5383f74c017874f93a6dcc8a1d508" title="Apply the provided iTransform to a vector. " alt="" coords="491,6,673,33"/>
+<area shape="rect" id="node5" href="namespace_smol_dock.html#afd058af9bf8a2fa90a0ec7bf42c31e31" title="Apply the provided iTransform to a confomer, atom&#45;by&#45;atom. " alt="" coords="491,57,673,99"/>
+<area shape="rect" id="node6" href="namespace_smol_dock_1_1_score.html#ac205731c7b0098c2900d9d16fff1a93b" title="Compute inter&#45;molecular part of the docking score, according to the Vina scoring function. " alt="" coords="485,123,679,164"/>
+<area shape="rect" id="node14" href="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function.html#a6b173e704b812af5cde72610f1143577" title="SmolDock::Score::VinaLike\lRigidScoringFunction::getConformer\lForParamMatrix" alt="" coords="465,189,699,245"/>
+<area shape="rect" id="node7" href="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine.html#a7bee39278168cb4d7ee6558b3a3d3bb4" title="Run the docking. " alt="" coords="747,5,1001,47"/>
+<area shape="rect" id="node8" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="1107,42,1158,69"/>
+<area shape="rect" id="node9" href="namespace_smol_dock_1_1_wrapper.html#afc6fe0925036a67cbd9856c1077296ca" title="SmolDock::Wrapper::\lgetScoringFunc" alt="" coords="800,123,948,164"/>
+<area shape="rect" id="node12" href="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function.html#ab89f08da2f4f79abfe9130b3593c3522" title="SmolDock::Score::VinaLike\lRigidScoringFunction::Evaluate" alt="" coords="771,188,977,229"/>
+<area shape="rect" id="node13" href="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function.html#a574511b3c12769902e2c0366d4d3db96" title="SmolDock::Score::VinaLike\lRigidScoringFunction::Evaluate\lWithGradient" alt="" coords="771,254,977,310"/>
+<area shape="rect" id="node10" href="_py_scoring_functions_8h.html#a2ede6b770a3e6131986d822ec5842b63" title="export_ScoringFunctions" alt="" coords="1049,130,1216,157"/>
+<area shape="rect" id="node11" href="_smoldock_python_bindings_8cpp.html#a9002869529fdb857c7ffa4a170c4f3ef" title="BOOST_PYTHON_MODULE" alt="" coords="1264,130,1459,157"/>
 </map>
 </div>
 
@@ -862,15 +899,14 @@ z</td>
 
 <p>Apply the provided <a class="el" href="namespace_smol_dock.html#struct_smol_dock_1_1i_transform" title="Represents a rotation and translation transform to be applied on ligand/ligand part. ">iTransform</a> to a vector. </p>
 
-<p class="definition">Definition at line <a class="el" href="i_transform_8h_source.html#l00127">127</a> of file <a class="el" href="i_transform_8h_source.html">iTransform.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_internals_utility_functions_8h_source.html#l00078">78</a> of file <a class="el" href="_internals_utility_functions_8h_source.html">InternalsUtilityFunctions.h</a>.</p>
 
-<p class="reference">References <a class="el" href="i_transform_8h_source.html#l00120">applyTransformInPlace()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    {</div><div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        iVect res(v);</div><div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        <a class="code" href="namespace_smol_dock.html#a5871417c24785e5de766c90b08f61d64">applyTransformInPlace</a>(res,tr);</div><div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        <span class="keywordflow">return</span> res;</div><div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    }</div><div class="ttc" id="namespace_smol_dock_html_a5871417c24785e5de766c90b08f61d64"><div class="ttname"><a href="namespace_smol_dock.html#a5871417c24785e5de766c90b08f61d64">SmolDock::applyTransformInPlace</a></div><div class="ttdeci">void applyTransformInPlace(iConformer &amp;conformer, const iTransform &amp;tr)</div><div class="ttdoc">Apply the provided iTransform to a confomer, atom-by-atom. </div><div class="ttdef"><b>Definition:</b> <a href="i_transform_8h_source.html#l00136">iTransform.h:136</a></div></div>
-</div><!-- fragment --><div id="dynsection-11" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-11-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-11-summary" class="dynsummary" style="display:block;">
+<p class="reference">References <a class="el" href="_internals_utility_functions_8h_source.html#l00072">applyTransformInPlace()</a>.</p>
+<div id="dynsection-10" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-10-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-10-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-11-content" class="dyncontent" style="display:none;">
+<div id="dynsection-10-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="namespace_smol_dock_a19b5383f74c017874f93a6dcc8a1d508_cgraph.png" border="0" usemap="#namespace_smol_dock_a19b5383f74c017874f93a6dcc8a1d508_cgraph" alt=""/></div>
 <map name="namespace_smol_dock_a19b5383f74c017874f93a6dcc8a1d508_cgraph" id="namespace_smol_dock_a19b5383f74c017874f93a6dcc8a1d508_cgraph">
 <area shape="rect" id="node2" href="namespace_smol_dock.html#a73bb4756419c2b3361ae4d23b24eee20" title="Apply the provided iTransform to a vector. " alt="" coords="235,39,416,80"/>
@@ -917,44 +953,45 @@ z</td>
 
 <p>Apply the provided <a class="el" href="namespace_smol_dock.html#struct_smol_dock_1_1i_transform" title="Represents a rotation and translation transform to be applied on ligand/ligand part. ">iTransform</a> to a vector. </p>
 
-<p class="definition">Definition at line <a class="el" href="i_transform_8h_source.html#l00120">120</a> of file <a class="el" href="i_transform_8h_source.html">iTransform.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_internals_utility_functions_8h_source.html#l00072">72</a> of file <a class="el" href="_internals_utility_functions_8h_source.html">InternalsUtilityFunctions.h</a>.</p>
 
-<p class="reference">References <a class="el" href="i_transform_8h_source.html#l00083">applyRotationInPlace()</a>, <a class="el" href="i_transform_8h_source.html#l00103">applyTranslationInPlace()</a>, <a class="el" href="i_transform_8h_source.html#l00046">SmolDock::iTransform::rota</a>, and <a class="el" href="i_transform_8h_source.html#l00045">SmolDock::iTransform::transl</a>.</p>
-<div class="fragment"><div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    {</div><div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        <a class="code" href="namespace_smol_dock.html#a835c8bf0a7983ba17c48cd10f152726f">applyRotationInPlace</a>(v,tr.rota);</div><div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        <a class="code" href="namespace_smol_dock.html#a20628b953f3dec7f26d7c8221a508160">applyTranslationInPlace</a>(v,tr.transl);</div><div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    }</div><div class="ttc" id="namespace_smol_dock_html_a20628b953f3dec7f26d7c8221a508160"><div class="ttname"><a href="namespace_smol_dock.html#a20628b953f3dec7f26d7c8221a508160">SmolDock::applyTranslationInPlace</a></div><div class="ttdeci">void applyTranslationInPlace(iVect &amp;v, const iTranslation &amp;t)</div><div class="ttdoc">Apply the provided translation to a vector. </div><div class="ttdef"><b>Definition:</b> <a href="i_transform_8h_source.html#l00103">iTransform.h:103</a></div></div>
-<div class="ttc" id="namespace_smol_dock_html_a835c8bf0a7983ba17c48cd10f152726f"><div class="ttname"><a href="namespace_smol_dock.html#a835c8bf0a7983ba17c48cd10f152726f">SmolDock::applyRotationInPlace</a></div><div class="ttdeci">void applyRotationInPlace(iVect &amp;vec, const iQuaternion &amp;qt)</div><div class="ttdoc">Apply the rotation given by a quaternion to a vector. </div><div class="ttdef"><b>Definition:</b> <a href="i_transform_8h_source.html#l00083">iTransform.h:83</a></div></div>
-</div><!-- fragment --><div id="dynsection-12" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-12-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-12-summary" class="dynsummary" style="display:block;">
+<p class="reference">References <a class="el" href="_internals_utility_functions_8h_source.html#l00036">applyRotationInPlace()</a>, <a class="el" href="_internals_utility_functions_8h_source.html#l00057">applyTranslationInPlace()</a>, <a class="el" href="i_transform_8h_source.html#l00046">SmolDock::iTransform::rota</a>, and <a class="el" href="i_transform_8h_source.html#l00045">SmolDock::iTransform::transl</a>.</p>
+<div id="dynsection-11" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-11-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-11-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-12-content" class="dyncontent" style="display:none;">
+<div id="dynsection-11-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="namespace_smol_dock_a73bb4756419c2b3361ae4d23b24eee20_cgraph.png" border="0" usemap="#namespace_smol_dock_a73bb4756419c2b3361ae4d23b24eee20_cgraph" alt=""/></div>
 <map name="namespace_smol_dock_a73bb4756419c2b3361ae4d23b24eee20_cgraph" id="namespace_smol_dock_a73bb4756419c2b3361ae4d23b24eee20_cgraph">
 <area shape="rect" id="node2" href="namespace_smol_dock.html#a835c8bf0a7983ba17c48cd10f152726f" title="Apply the rotation given by a quaternion to a vector. " alt="" coords="237,5,419,47"/>
 <area shape="rect" id="node3" href="namespace_smol_dock.html#a20628b953f3dec7f26d7c8221a508160" title="Apply the provided translation to a vector. " alt="" coords="235,71,421,112"/>
 </map>
 </div>
-<div id="dynsection-13" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-13-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-13-summary" class="dynsummary" style="display:block;">
+<div id="dynsection-12" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-12-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-12-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-13-content" class="dyncontent" style="display:none;">
+<div id="dynsection-12-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="namespace_smol_dock_a73bb4756419c2b3361ae4d23b24eee20_icgraph.png" border="0" usemap="#namespace_smol_dock_a73bb4756419c2b3361ae4d23b24eee20_icgraph" alt=""/></div>
 <map name="namespace_smol_dock_a73bb4756419c2b3361ae4d23b24eee20_icgraph" id="namespace_smol_dock_a73bb4756419c2b3361ae4d23b24eee20_icgraph">
-<area shape="rect" id="node2" href="namespace_smol_dock_1_1_score.html#ac205731c7b0098c2900d9d16fff1a93b" title="Compute inter&#45;molecular part of the docking score, according to the Vina scoring function. " alt="" coords="505,5,698,47"/>
-<area shape="rect" id="node5" href="class_smol_dock_1_1_gradient_descent_line_search.html#a5a70b5fce84800680475f98b2b1c0f05" title="SmolDock::GradientDescent\lLineSearch::getFinalConformer" alt="" coords="500,71,703,112"/>
-<area shape="rect" id="node6" href="class_smol_dock_1_1_gradient_descent_line_search.html#aa4a1f5365397747805edd12aa4d53270" title="SmolDock::GradientDescent\lLineSearch::getCurrentConformer\lWithTransform" alt="" coords="235,129,452,185"/>
-<area shape="rect" id="node8" href="namespace_smol_dock.html#a19b5383f74c017874f93a6dcc8a1d508" title="Apply the provided iTransform to a vector. " alt="" coords="253,209,434,235"/>
-<area shape="rect" id="node9" href="namespace_smol_dock.html#a5871417c24785e5de766c90b08f61d64" title="Apply the provided iTransform to a confomer, atom&#45;by&#45;atom. " alt="" coords="253,260,434,301"/>
-<area shape="rect" id="node3" href="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine.html#a7bee39278168cb4d7ee6558b3a3d3bb4" title="Run the docking. " alt="" coords="751,71,1005,112"/>
-<area shape="rect" id="node4" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="1053,78,1104,105"/>
-<area shape="rect" id="node7" href="class_smol_dock_1_1_gradient_descent_line_search.html#a8bc11fdd0f47562e773df6dff62dc82a" title="SmolDock::GradientDescent\lLineSearch::optimize" alt="" coords="507,136,696,177"/>
+<area shape="rect" id="node2" href="namespace_smol_dock.html#a19b5383f74c017874f93a6dcc8a1d508" title="Apply the provided iTransform to a vector. " alt="" coords="261,6,442,33"/>
+<area shape="rect" id="node3" href="namespace_smol_dock.html#afd058af9bf8a2fa90a0ec7bf42c31e31" title="Apply the provided iTransform to a confomer, atom&#45;by&#45;atom. " alt="" coords="261,57,442,99"/>
+<area shape="rect" id="node4" href="namespace_smol_dock_1_1_score.html#ac205731c7b0098c2900d9d16fff1a93b" title="Compute inter&#45;molecular part of the docking score, according to the Vina scoring function. " alt="" coords="255,123,448,164"/>
+<area shape="rect" id="node12" href="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function.html#a6b173e704b812af5cde72610f1143577" title="SmolDock::Score::VinaLike\lRigidScoringFunction::getConformer\lForParamMatrix" alt="" coords="235,189,468,245"/>
+<area shape="rect" id="node5" href="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine.html#a7bee39278168cb4d7ee6558b3a3d3bb4" title="Run the docking. " alt="" coords="516,5,771,47"/>
+<area shape="rect" id="node6" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="877,42,927,69"/>
+<area shape="rect" id="node7" href="namespace_smol_dock_1_1_wrapper.html#afc6fe0925036a67cbd9856c1077296ca" title="SmolDock::Wrapper::\lgetScoringFunc" alt="" coords="569,123,717,164"/>
+<area shape="rect" id="node10" href="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function.html#ab89f08da2f4f79abfe9130b3593c3522" title="SmolDock::Score::VinaLike\lRigidScoringFunction::Evaluate" alt="" coords="541,188,746,229"/>
+<area shape="rect" id="node11" href="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function.html#a574511b3c12769902e2c0366d4d3db96" title="SmolDock::Score::VinaLike\lRigidScoringFunction::Evaluate\lWithGradient" alt="" coords="541,254,746,310"/>
+<area shape="rect" id="node8" href="_py_scoring_functions_8h.html#a2ede6b770a3e6131986d822ec5842b63" title="export_ScoringFunctions" alt="" coords="819,130,985,157"/>
+<area shape="rect" id="node9" href="_smoldock_python_bindings_8cpp.html#a9002869529fdb857c7ffa4a170c4f3ef" title="BOOST_PYTHON_MODULE" alt="" coords="1033,130,1228,157"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="a5871417c24785e5de766c90b08f61d64"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5871417c24785e5de766c90b08f61d64">&#9670;&nbsp;</a></span>applyTransformInPlace() <span class="overload">[2/2]</span></h2>
+<a id="afd058af9bf8a2fa90a0ec7bf42c31e31"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd058af9bf8a2fa90a0ec7bf42c31e31">&#9670;&nbsp;</a></span>applyTransformInPlace() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -965,7 +1002,7 @@ z</td>
         <tr>
           <td class="memname">void SmolDock::applyTransformInPlace </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="namespace_smol_dock.html#struct_smol_dock_1_1i_conformer">iConformer</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="namespace_smol_dock.html#struct_smol_dock_1_1i_conformer">SmolDock::iConformer</a> &amp;&#160;</td>
           <td class="paramname"><em>conformer</em>, </td>
         </tr>
         <tr>
@@ -989,17 +1026,16 @@ z</td>
 
 <p>Apply the provided <a class="el" href="namespace_smol_dock.html#struct_smol_dock_1_1i_transform" title="Represents a rotation and translation transform to be applied on ligand/ligand part. ">iTransform</a> to a confomer, atom-by-atom. </p>
 
-<p class="definition">Definition at line <a class="el" href="i_transform_8h_source.html#l00136">136</a> of file <a class="el" href="i_transform_8h_source.html">iTransform.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_internals_utility_functions_8h_source.html#l00086">86</a> of file <a class="el" href="_internals_utility_functions_8h_source.html">InternalsUtilityFunctions.h</a>.</p>
 
-<p class="reference">References <a class="el" href="i_transform_8h_source.html#l00120">applyTransformInPlace()</a>, <a class="el" href="i_transform_8h_source.html#l00031">SmolDock::iVect::x</a>, <a class="el" href="i_conformer_8h_source.html#l00035">SmolDock::iConformer::x</a>, <a class="el" href="i_transform_8h_source.html#l00031">SmolDock::iVect::y</a>, <a class="el" href="i_conformer_8h_source.html#l00035">SmolDock::iConformer::y</a>, <a class="el" href="i_transform_8h_source.html#l00031">SmolDock::iVect::z</a>, and <a class="el" href="i_conformer_8h_source.html#l00035">SmolDock::iConformer::z</a>.</p>
-<div class="fragment"><div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    {</div><div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i = 0; i &lt; conformer.x.size(); i++) {</div><div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;            iVect posVect = {conformer.x[i],conformer.y[i],conformer.z[i]};</div><div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;            <a class="code" href="namespace_smol_dock.html#a5871417c24785e5de766c90b08f61d64">applyTransformInPlace</a>(posVect, tr);</div><div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;            conformer.x[i] = posVect.x;</div><div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;            conformer.y[i] = posVect.y;</div><div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;            conformer.z[i] = posVect.z;</div><div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;        }</div><div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    }</div><div class="ttc" id="namespace_smol_dock_html_a5871417c24785e5de766c90b08f61d64"><div class="ttname"><a href="namespace_smol_dock.html#a5871417c24785e5de766c90b08f61d64">SmolDock::applyTransformInPlace</a></div><div class="ttdeci">void applyTransformInPlace(iConformer &amp;conformer, const iTransform &amp;tr)</div><div class="ttdoc">Apply the provided iTransform to a confomer, atom-by-atom. </div><div class="ttdef"><b>Definition:</b> <a href="i_transform_8h_source.html#l00136">iTransform.h:136</a></div></div>
-</div><!-- fragment --><div id="dynsection-14" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-14-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-14-summary" class="dynsummary" style="display:block;">
+<p class="reference">References <a class="el" href="_internals_utility_functions_8h_source.html#l00072">applyTransformInPlace()</a>, <a class="el" href="i_transform_8h_source.html#l00031">SmolDock::iVect::x</a>, <a class="el" href="i_conformer_8h_source.html#l00048">SmolDock::iConformer::x</a>, <a class="el" href="i_transform_8h_source.html#l00031">SmolDock::iVect::y</a>, <a class="el" href="i_conformer_8h_source.html#l00048">SmolDock::iConformer::y</a>, <a class="el" href="i_transform_8h_source.html#l00031">SmolDock::iVect::z</a>, and <a class="el" href="i_conformer_8h_source.html#l00048">SmolDock::iConformer::z</a>.</p>
+<div id="dynsection-13" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-13-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-13-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-14-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="namespace_smol_dock_a5871417c24785e5de766c90b08f61d64_cgraph.png" border="0" usemap="#namespace_smol_dock_a5871417c24785e5de766c90b08f61d64_cgraph" alt=""/></div>
-<map name="namespace_smol_dock_a5871417c24785e5de766c90b08f61d64_cgraph" id="namespace_smol_dock_a5871417c24785e5de766c90b08f61d64_cgraph">
+<div id="dynsection-13-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="namespace_smol_dock_afd058af9bf8a2fa90a0ec7bf42c31e31_cgraph.png" border="0" usemap="#namespace_smol_dock_afd058af9bf8a2fa90a0ec7bf42c31e31_cgraph" alt=""/></div>
+<map name="namespace_smol_dock_afd058af9bf8a2fa90a0ec7bf42c31e31_cgraph" id="namespace_smol_dock_afd058af9bf8a2fa90a0ec7bf42c31e31_cgraph">
 <area shape="rect" id="node2" href="namespace_smol_dock.html#a73bb4756419c2b3361ae4d23b24eee20" title="Apply the provided iTransform to a vector. " alt="" coords="235,39,416,80"/>
 <area shape="rect" id="node3" href="namespace_smol_dock.html#a835c8bf0a7983ba17c48cd10f152726f" title="Apply the rotation given by a quaternion to a vector. " alt="" coords="466,5,649,47"/>
 <area shape="rect" id="node4" href="namespace_smol_dock.html#a20628b953f3dec7f26d7c8221a508160" title="Apply the provided translation to a vector. " alt="" coords="464,71,651,112"/>
@@ -1044,15 +1080,14 @@ z</td>
 
 <p>Apply the provided translation to a vector. </p>
 
-<p class="definition">Definition at line <a class="el" href="i_transform_8h_source.html#l00111">111</a> of file <a class="el" href="i_transform_8h_source.html">iTransform.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_internals_utility_functions_8h_source.html#l00064">64</a> of file <a class="el" href="_internals_utility_functions_8h_source.html">InternalsUtilityFunctions.h</a>.</p>
 
-<p class="reference">References <a class="el" href="i_transform_8h_source.html#l00103">applyTranslationInPlace()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    {</div><div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        iVect res(v);</div><div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        <a class="code" href="namespace_smol_dock.html#a20628b953f3dec7f26d7c8221a508160">applyTranslationInPlace</a>(res,t);</div><div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        <span class="keywordflow">return</span> res;</div><div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    }</div><div class="ttc" id="namespace_smol_dock_html_a20628b953f3dec7f26d7c8221a508160"><div class="ttname"><a href="namespace_smol_dock.html#a20628b953f3dec7f26d7c8221a508160">SmolDock::applyTranslationInPlace</a></div><div class="ttdeci">void applyTranslationInPlace(iVect &amp;v, const iTranslation &amp;t)</div><div class="ttdoc">Apply the provided translation to a vector. </div><div class="ttdef"><b>Definition:</b> <a href="i_transform_8h_source.html#l00103">iTransform.h:103</a></div></div>
-</div><!-- fragment --><div id="dynsection-15" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-15-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-15-summary" class="dynsummary" style="display:block;">
+<p class="reference">References <a class="el" href="_internals_utility_functions_8h_source.html#l00057">applyTranslationInPlace()</a>.</p>
+<div id="dynsection-14" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-14-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-14-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-15-content" class="dyncontent" style="display:none;">
+<div id="dynsection-14-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="namespace_smol_dock_a293a24f2936d34c0b73f8ef8b2d8d84b_cgraph.png" border="0" usemap="#namespace_smol_dock_a293a24f2936d34c0b73f8ef8b2d8d84b_cgraph" alt=""/></div>
 <map name="namespace_smol_dock_a293a24f2936d34c0b73f8ef8b2d8d84b_cgraph" id="namespace_smol_dock_a293a24f2936d34c0b73f8ef8b2d8d84b_cgraph">
 <area shape="rect" id="node2" href="namespace_smol_dock.html#a20628b953f3dec7f26d7c8221a508160" title="Apply the provided translation to a vector. " alt="" coords="240,5,427,47"/>
@@ -1097,26 +1132,84 @@ z</td>
 
 <p>Apply the provided translation to a vector. </p>
 
-<p class="definition">Definition at line <a class="el" href="i_transform_8h_source.html#l00103">103</a> of file <a class="el" href="i_transform_8h_source.html">iTransform.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_internals_utility_functions_8h_source.html#l00057">57</a> of file <a class="el" href="_internals_utility_functions_8h_source.html">InternalsUtilityFunctions.h</a>.</p>
 
 <p class="reference">References <a class="el" href="i_transform_8h_source.html#l00031">SmolDock::iVect::x</a>, <a class="el" href="i_transform_8h_source.html#l00036">SmolDock::iTranslation::x</a>, <a class="el" href="i_transform_8h_source.html#l00031">SmolDock::iVect::y</a>, <a class="el" href="i_transform_8h_source.html#l00036">SmolDock::iTranslation::y</a>, <a class="el" href="i_transform_8h_source.html#l00031">SmolDock::iVect::z</a>, and <a class="el" href="i_transform_8h_source.html#l00036">SmolDock::iTranslation::z</a>.</p>
-<div class="fragment"><div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    {</div><div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        v.x += t.x;</div><div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        v.y += t.y;</div><div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        v.z += t.z;</div><div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    }</div></div><!-- fragment --><div id="dynsection-16" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<div id="dynsection-15" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-15-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-15-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-15-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="namespace_smol_dock_a20628b953f3dec7f26d7c8221a508160_icgraph.png" border="0" usemap="#namespace_smol_dock_a20628b953f3dec7f26d7c8221a508160_icgraph" alt=""/></div>
+<map name="namespace_smol_dock_a20628b953f3dec7f26d7c8221a508160_icgraph" id="namespace_smol_dock_a20628b953f3dec7f26d7c8221a508160_icgraph">
+<area shape="rect" id="node2" href="namespace_smol_dock.html#a293a24f2936d34c0b73f8ef8b2d8d84b" title="Apply the provided translation to a vector. " alt="" coords="240,39,427,66"/>
+<area shape="rect" id="node3" href="namespace_smol_dock.html#a73bb4756419c2b3361ae4d23b24eee20" title="Apply the provided iTransform to a vector. " alt="" coords="243,91,424,132"/>
+<area shape="rect" id="node4" href="namespace_smol_dock.html#a19b5383f74c017874f93a6dcc8a1d508" title="Apply the provided iTransform to a vector. " alt="" coords="501,6,682,33"/>
+<area shape="rect" id="node5" href="namespace_smol_dock.html#afd058af9bf8a2fa90a0ec7bf42c31e31" title="Apply the provided iTransform to a confomer, atom&#45;by&#45;atom. " alt="" coords="501,57,682,99"/>
+<area shape="rect" id="node6" href="namespace_smol_dock_1_1_score.html#ac205731c7b0098c2900d9d16fff1a93b" title="Compute inter&#45;molecular part of the docking score, according to the Vina scoring function. " alt="" coords="495,123,688,164"/>
+<area shape="rect" id="node14" href="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function.html#a6b173e704b812af5cde72610f1143577" title="SmolDock::Score::VinaLike\lRigidScoringFunction::getConformer\lForParamMatrix" alt="" coords="475,189,708,245"/>
+<area shape="rect" id="node7" href="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine.html#a7bee39278168cb4d7ee6558b3a3d3bb4" title="Run the docking. " alt="" coords="756,5,1011,47"/>
+<area shape="rect" id="node8" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="1117,42,1167,69"/>
+<area shape="rect" id="node9" href="namespace_smol_dock_1_1_wrapper.html#afc6fe0925036a67cbd9856c1077296ca" title="SmolDock::Wrapper::\lgetScoringFunc" alt="" coords="809,123,957,164"/>
+<area shape="rect" id="node12" href="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function.html#ab89f08da2f4f79abfe9130b3593c3522" title="SmolDock::Score::VinaLike\lRigidScoringFunction::Evaluate" alt="" coords="781,188,986,229"/>
+<area shape="rect" id="node13" href="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function.html#a574511b3c12769902e2c0366d4d3db96" title="SmolDock::Score::VinaLike\lRigidScoringFunction::Evaluate\lWithGradient" alt="" coords="781,254,986,310"/>
+<area shape="rect" id="node10" href="_py_scoring_functions_8h.html#a2ede6b770a3e6131986d822ec5842b63" title="export_ScoringFunctions" alt="" coords="1059,130,1225,157"/>
+<area shape="rect" id="node11" href="_smoldock_python_bindings_8cpp.html#a9002869529fdb857c7ffa4a170c4f3ef" title="BOOST_PYTHON_MODULE" alt="" coords="1273,130,1468,157"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="af232b04c4eb1c52a6ebea14bb1056be0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af232b04c4eb1c52a6ebea14bb1056be0">&#9670;&nbsp;</a></span>assignApolarCarbonFlag() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SmolDock::assignApolarCarbonFlag </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="class_smol_dock_1_1_atom.html">Atom</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>atomVect</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a43bbd3ed0ad4b1eec9e5ae8d9d99318d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a43bbd3ed0ad4b1eec9e5ae8d9d99318d">&#9670;&nbsp;</a></span>assignApolarCarbonFlag() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SmolDock::assignApolarCarbonFlag </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; std::shared_ptr&lt; <a class="el" href="class_smol_dock_1_1_atom.html">Atom</a> &gt; &gt; &amp;&#160;</td>
+          <td class="paramname"><em>atomVect</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_variant_flag_assignation_8cpp_source.html#l00089">89</a> of file <a class="el" href="_variant_flag_assignation_8cpp_source.html">VariantFlagAssignation.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="class_smol_dock_1_1_atom.html#a77191f0919af58d733764e229cb1f973ae5e437761e40c78a4c0929be07a3ab04">SmolDock::Atom::apolar</a>, <a class="el" href="class_smol_dock_1_1_atom.html#a57e9a532fd04e1846c0d83edebb9fd41ae1b832c8857262f1089376030b4298b3">SmolDock::Atom::carbon</a>, and <a class="el" href="class_smol_dock_1_1_atom.html#a57e9a532fd04e1846c0d83edebb9fd41ad4ac1478a4d8a4f591d35e3d75f3de65">SmolDock::Atom::hydrogen</a>.</p>
+<div id="dynsection-16" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-16-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-16-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-16-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="namespace_smol_dock_a20628b953f3dec7f26d7c8221a508160_icgraph.png" border="0" usemap="#namespace_smol_dock_a20628b953f3dec7f26d7c8221a508160_icgraph" alt=""/></div>
-<map name="namespace_smol_dock_a20628b953f3dec7f26d7c8221a508160_icgraph" id="namespace_smol_dock_a20628b953f3dec7f26d7c8221a508160_icgraph">
-<area shape="rect" id="node2" href="namespace_smol_dock.html#a293a24f2936d34c0b73f8ef8b2d8d84b" title="Apply the provided translation to a vector. " alt="" coords="240,85,427,111"/>
-<area shape="rect" id="node3" href="namespace_smol_dock.html#a73bb4756419c2b3361ae4d23b24eee20" title="Apply the provided iTransform to a vector. " alt="" coords="243,136,424,177"/>
-<area shape="rect" id="node4" href="namespace_smol_dock_1_1_score.html#ac205731c7b0098c2900d9d16fff1a93b" title="Compute inter&#45;molecular part of the docking score, according to the Vina scoring function. " alt="" coords="745,5,938,47"/>
-<area shape="rect" id="node7" href="class_smol_dock_1_1_gradient_descent_line_search.html#a5a70b5fce84800680475f98b2b1c0f05" title="SmolDock::GradientDescent\lLineSearch::getFinalConformer" alt="" coords="740,71,943,112"/>
-<area shape="rect" id="node8" href="class_smol_dock_1_1_gradient_descent_line_search.html#aa4a1f5365397747805edd12aa4d53270" title="SmolDock::GradientDescent\lLineSearch::getCurrentConformer\lWithTransform" alt="" coords="475,129,692,185"/>
-<area shape="rect" id="node10" href="namespace_smol_dock.html#a19b5383f74c017874f93a6dcc8a1d508" title="Apply the provided iTransform to a vector. " alt="" coords="493,209,674,235"/>
-<area shape="rect" id="node11" href="namespace_smol_dock.html#a5871417c24785e5de766c90b08f61d64" title="Apply the provided iTransform to a confomer, atom&#45;by&#45;atom. " alt="" coords="493,260,674,301"/>
-<area shape="rect" id="node5" href="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine.html#a7bee39278168cb4d7ee6558b3a3d3bb4" title="Run the docking. " alt="" coords="991,71,1245,112"/>
-<area shape="rect" id="node6" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="1293,78,1344,105"/>
-<area shape="rect" id="node9" href="class_smol_dock_1_1_gradient_descent_line_search.html#a8bc11fdd0f47562e773df6dff62dc82a" title="SmolDock::GradientDescent\lLineSearch::optimize" alt="" coords="747,136,936,177"/>
+<div class="center"><img src="namespace_smol_dock_a43bbd3ed0ad4b1eec9e5ae8d9d99318d_icgraph.png" border="0" usemap="#namespace_smol_dock_a43bbd3ed0ad4b1eec9e5ae8d9d99318d_icgraph" alt=""/></div>
+<map name="namespace_smol_dock_a43bbd3ed0ad4b1eec9e5ae8d9d99318d_icgraph" id="namespace_smol_dock_a43bbd3ed0ad4b1eec9e5ae8d9d99318d_icgraph">
+<area shape="rect" id="node2" href="class_smol_dock_1_1_molecule.html#a2bb03cc6894518ac8208ddff1556d6c3" title="Use this if using RDKit RWMol as entry. " alt="" coords="287,31,493,87"/>
+<area shape="rect" id="node3" href="class_smol_dock_1_1_molecule.html#a40ef9fd6a1d62cf31ae054d4acc09841" title="Populate atoms and bonds from SMILES. " alt="" coords="541,5,700,47"/>
+<area shape="rect" id="node6" href="class_smol_dock_1_1_molecule.html#ac4d8ee94aeb7bd75e50a11ece1546b79" title="Populate atoms and bonds from a PDB file. Additionally, a SMILES string can be used for bond order hi..." alt="" coords="549,71,692,112"/>
+<area shape="rect" id="node4" href="_py_structures_8h.html#a18cad6e29d14a0da9d2cd9464e7e2356" title="export_Structures" alt="" coords="748,21,873,47"/>
+<area shape="rect" id="node5" href="_smoldock_python_bindings_8cpp.html#a9002869529fdb857c7ffa4a170c4f3ef" title="BOOST_PYTHON_MODULE" alt="" coords="921,21,1116,47"/>
+<area shape="rect" id="node7" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="785,78,836,105"/>
 </map>
 </div>
 
@@ -1149,17 +1242,73 @@ z</td>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="_p_d_b_ligand_utils_8cpp_source.html#l00011">11</a> of file <a class="el" href="_p_d_b_ligand_utils_8cpp_source.html">PDBLigandUtils.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;                                                                                                   {</div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        RDKit::RWMol *attempt_ptr = <span class="keyword">nullptr</span>;</div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        <span class="keywordflow">try</span> {</div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;            <span class="comment">/* This can throw */</span></div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;            attempt_ptr = RDKit::SmilesToMol(smiles);</div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        }</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        <span class="keywordflow">catch</span> (...) {</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;            attempt_ptr = <span class="keyword">nullptr</span>;</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        }</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <span class="keywordflow">if</span> (attempt_ptr == <span class="keyword">nullptr</span>) {</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;            BOOST_LOG_TRIVIAL(error)</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;                &lt;&lt; <span class="stringliteral">&quot;Error in AssignBondOrderFromTemplateSMILES(std::shared_ptr&lt;RDKit::RWMol&gt; mol,const std::string&amp; smiles)&quot;</span>;</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            BOOST_LOG_TRIVIAL(error) &lt;&lt; <span class="stringliteral">&quot;for teplate smiles = &quot;</span> &lt;&lt; smiles;</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            BOOST_LOG_TRIVIAL(error) &lt;&lt; <span class="stringliteral">&quot;The SMILES string was not correctly parsed by RDKit.&quot;</span>;</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            BOOST_LOG_TRIVIAL(error)</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                &lt;&lt; <span class="stringliteral">&quot;This often indicated a malformed SMILES. (but not always, RDKit has parsing bugs)&quot;</span>;</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            BOOST_LOG_TRIVIAL(error) &lt;&lt; <span class="stringliteral">&quot;Non-modified mol will be used (likely with incorrect bond order)&quot;</span>;</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        }</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        std::shared_ptr&lt;RDKit::RWMol&gt; templatemol(attempt_ptr);</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        RDKit::MolOps::removeHs(*(mol));</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="comment">// The following code, until the END RDKIT CODE comment, is a C++ translation</span></div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="comment">// of python code from RDKit, in particular, the function AssignBondOrdersFromTemplate</span></div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="comment">//</span></div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="comment">// As a reminder, the copyright for this code is</span></div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="comment">//  Copyright (C) 2001-2017 Greg Landrum and Rational Discovery LLC</span></div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="comment">//</span></div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="comment">//   @@ All Rights Reserved @@</span></div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="comment">//  The contents are covered by the terms of the BSD license</span></div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="comment">//  which is included in the file COPYING</span></div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="comment">//</span></div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="comment">// RDKit::MatchVectType matches = std::vector&lt;std::pair&lt;int, int&gt;&gt;</span></div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="comment">//  The format is (queryAtomIdx, molAtomIdx)</span></div><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        RDKit::MatchVectType matches;</div><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keywordtype">bool</span> matching = RDKit::SubstructMatch((RDKit::ROMol) *mol, (RDKit::ROMol) *templatemol, matches);</div><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="keywordflow">if</span> (!matching) {</div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            <span class="comment">// We make a copy on which we will remove all double bond/charges/... to compare</span></div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            std::shared_ptr&lt;RDKit::RWMol&gt; templatemol_plainstruct(<span class="keyword">new</span> RDKit::RWMol(*templatemol));</div><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            <span class="comment">// Set all bonds to single, non-aromatic</span></div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; mol-&gt;getNumBonds(); i++) {</div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                <span class="keyword">auto</span> bond = mol-&gt;getBondWithIdx(i);</div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                bond-&gt;setIsAromatic(<span class="keyword">false</span>);</div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                bond-&gt;setBondType(RDKit::Bond::BondType::SINGLE);</div><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            }</div><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            <span class="comment">// Also in templatemol_plainstruct</span></div><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; templatemol_plainstruct-&gt;getNumBonds(); i++) {</div><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                <span class="keyword">auto</span> bond = templatemol_plainstruct-&gt;getBondWithIdx(i);</div><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                bond-&gt;setIsAromatic(<span class="keyword">false</span>);</div><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                bond-&gt;setBondType(RDKit::Bond::BondType::SINGLE);</div><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            }</div><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            <span class="comment">// Remove all charges</span></div><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; mol-&gt;getNumAtoms(); i++) {</div><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                <span class="keyword">auto</span> atom = mol-&gt;getAtomWithIdx(i);</div><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                atom-&gt;setFormalCharge(0);</div><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            }</div><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; templatemol_plainstruct-&gt;getNumAtoms(); i++) {</div><div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                <span class="keyword">auto</span> atom = templatemol_plainstruct-&gt;getAtomWithIdx(i);</div><div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                atom-&gt;setFormalCharge(0);</div><div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            }</div><div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div><div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            <span class="keywordtype">bool</span> matching = RDKit::SubstructMatch((RDKit::ROMol) *mol, (RDKit::ROMol) *templatemol_plainstruct, matches);</div><div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            <span class="keywordflow">if</span> (!matching) <span class="comment">// Cant reconcile even without charges or double bond</span></div><div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            {</div><div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                BOOST_LOG_TRIVIAL(error)</div><div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                    &lt;&lt; <span class="stringliteral">&quot;Cannot match molecule with SMILES template, thus cannot adjust bond order &quot;</span>;</div><div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                BOOST_LOG_TRIVIAL(error) &lt;&lt; <span class="stringliteral">&quot;Plain mol will be used (all bond order single, no charges, no nothing)&quot;</span>;</div><div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                <span class="keywordflow">return</span>;</div><div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            }</div><div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div><div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        }</div><div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;</div><div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <span class="comment">// After this point, we are matching (or we returned)</span></div><div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <span class="comment">// And we have matches in RDKit::MatchVectType matches</span></div><div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;</div><div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <span class="comment">// For each bond of the template, we find the corresponding one in the molecule to edit</span></div><div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <span class="comment">// Then we set it to the same characteristics</span></div><div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; templatemol-&gt;getNumBonds(); i++) {</div><div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;            <span class="keyword">auto</span> template_bond = templatemol-&gt;getBondWithIdx(i);</div><div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;</div><div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            <span class="comment">// RDKit::MatchVectType matches = std::vector&lt;std::pair&lt;int, int&gt;&gt;</span></div><div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;            <span class="comment">//  The format is (queryAtomIdx, molAtomIdx)</span></div><div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;            <span class="comment">// So we find_if for matching queryAtomIdx to the beginning and end of the bond</span></div><div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            <span class="keywordtype">int</span> idx_atom1 = std::get&lt;1&gt;(*(std::find_if(matches.begin(), matches.end(),</div><div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                                                       [&amp;](<span class="keyword">const</span> std::pair&lt;int, int&gt; &amp;e) {</div><div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                                                           <span class="keywordflow">return</span> (std::get&lt;0&gt;(e) == template_bond-&gt;getBeginAtomIdx());</div><div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;                                                       })));</div><div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;            <span class="keywordtype">int</span> idx_atom2 = std::get&lt;1&gt;(*(std::find_if(matches.begin(), matches.end(),</div><div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                                                       [&amp;](<span class="keyword">const</span> std::pair&lt;int, int&gt; &amp;e) {</div><div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                                                           <span class="keywordflow">return</span> (std::get&lt;0&gt;(e) == template_bond-&gt;getEndAtomIdx());</div><div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                                                       })));</div><div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;</div><div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;            <span class="keyword">auto</span> bond_to_edit = mol-&gt;getBondBetweenAtoms(idx_atom1, idx_atom2);</div><div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;            bond_to_edit-&gt;setBondType(template_bond-&gt;getBondType());</div><div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;            bond_to_edit-&gt;setIsAromatic(template_bond-&gt;getIsAromatic());</div><div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        }</div><div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;</div><div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; templatemol-&gt;getNumAtoms(); i++) {</div><div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;            <span class="keyword">auto</span> template_atom = templatemol-&gt;getAtomWithIdx(i);</div><div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;</div><div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;            <span class="keywordtype">int</span> idx_atom_to_edit = std::get&lt;1&gt;(*(std::find_if(matches.begin(), matches.end(),</div><div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;                                                              [&amp;](<span class="keyword">const</span> std::pair&lt;int, int&gt; &amp;e) {</div><div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;                                                                  <span class="keywordflow">return</span> (std::get&lt;0&gt;(e) == i);</div><div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;                                                              })));</div><div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;</div><div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;            <span class="keyword">auto</span> atom_to_edit = mol-&gt;getAtomWithIdx(idx_atom_to_edit);</div><div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;</div><div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;            atom_to_edit-&gt;setHybridization(template_atom-&gt;getHybridization());</div><div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;            atom_to_edit-&gt;setIsAromatic(template_atom-&gt;getIsAromatic());</div><div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;            atom_to_edit-&gt;setNumExplicitHs(template_atom-&gt;getNumExplicitHs());</div><div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;            atom_to_edit-&gt;setFormalCharge(template_atom-&gt;getFormalCharge());</div><div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;            atom_to_edit-&gt;setChiralTag(template_atom-&gt;getChiralTag());</div><div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        }</div><div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;</div><div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        RDKit::MolOps::sanitizeMol(*mol);</div><div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;</div><div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        <span class="comment">// //////////////// END RDKIT CODE  //////////////////////////////////</span></div><div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;</div><div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;</div><div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    }</div></div><!-- fragment --><div id="dynsection-17" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<div id="dynsection-17" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-17-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-17-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-17-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="namespace_smol_dock_a288ddd3593922bcc17e5feb114841802_icgraph.png" border="0" usemap="#namespace_smol_dock_a288ddd3593922bcc17e5feb114841802_icgraph" alt=""/></div>
 <map name="namespace_smol_dock_a288ddd3593922bcc17e5feb114841802_icgraph" id="namespace_smol_dock_a288ddd3593922bcc17e5feb114841802_icgraph">
-<area shape="rect" id="node2" href="class_smol_dock_1_1_molecule.html#a4ae176fc96acfab443a13ba50882a849" title="Populate atoms and bonds from a PDB file. Additionally, a SMILES string can be used for bond order hi..." alt="" coords="247,23,389,65"/>
+<area shape="rect" id="node2" href="class_smol_dock_1_1_molecule.html#ac4d8ee94aeb7bd75e50a11ece1546b79" title="Populate atoms and bonds from a PDB file. Additionally, a SMILES string can be used for bond order hi..." alt="" coords="247,23,389,65"/>
 <area shape="rect" id="node3" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="475,5,525,32"/>
 <area shape="rect" id="node4" href="_py_structures_8h.html#a18cad6e29d14a0da9d2cd9464e7e2356" title="export_Structures" alt="" coords="437,56,563,83"/>
 <area shape="rect" id="node5" href="_smoldock_python_bindings_8cpp.html#a9002869529fdb857c7ffa4a170c4f3ef" title="BOOST_PYTHON_MODULE" alt="" coords="611,56,805,83"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a2820b77a3fd140cd601c75028ed8dd51"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2820b77a3fd140cd601c75028ed8dd51">&#9670;&nbsp;</a></span>assignVariantFlagsForResidueAtom()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SmolDock::assignVariantFlagsForResidueAtom </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_smol_dock_1_1_amino_acid.html">AminoAcid</a> &amp;&#160;</td>
+          <td class="paramname"><em>residue</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespace_smol_dock.html#ab797122db8030eb70bf4d042c897df5e">PDBResidueVariantAssignationType</a>&#160;</td>
+          <td class="paramname"><em>assignation_type</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_variant_flag_assignation_8cpp_source.html#l00035">35</a> of file <a class="el" href="_variant_flag_assignation_8cpp_source.html">VariantFlagAssignation.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="_amino_acid_8h_source.html#l00107">SmolDock::AminoAcid::atoms</a>, <a class="el" href="namespace_smol_dock.html#ab797122db8030eb70bf4d042c897df5eab7f023dbb86242b37e451d0b36dde93d">GeneralPurpose</a>, <a class="el" href="_amino_acid_8cpp_source.html#l00129">SmolDock::AminoAcid::getType()</a>, <a class="el" href="_p_d_b_residue_variant_table_8cpp_source.html#l00018">ResidueAtomPropertiesLookupTable_General</a>, <a class="el" href="_amino_acid_8cpp_source.html#l00065">resTypeToString()</a>, and <a class="el" href="class_smol_dock_1_1_amino_acid.html#a08692b12e7f53812c5258bd8b805875daad921d60486366258809553a3db49a4a">SmolDock::AminoAcid::unknown</a>.</p>
+<div id="dynsection-18" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-18-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-18-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-18-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="namespace_smol_dock_a2820b77a3fd140cd601c75028ed8dd51_cgraph.png" border="0" usemap="#namespace_smol_dock_a2820b77a3fd140cd601c75028ed8dd51_cgraph" alt=""/></div>
+<map name="namespace_smol_dock_a2820b77a3fd140cd601c75028ed8dd51_cgraph" id="namespace_smol_dock_a2820b77a3fd140cd601c75028ed8dd51_cgraph">
+<area shape="rect" id="node2" href="class_smol_dock_1_1_amino_acid.html#a556f668f759abed9c33c3522106d520b" title="SmolDock::AminoAcid\l::getType" alt="" coords="272,5,427,47"/>
+<area shape="rect" id="node3" href="namespace_smol_dock.html#a7980070f5c494cfe044ad9e90e34e3e3" title="SmolDock::resTypeToString" alt="" coords="256,71,443,98"/>
+</map>
+</div>
+<div id="dynsection-19" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-19-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-19-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-19-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="namespace_smol_dock_a2820b77a3fd140cd601c75028ed8dd51_icgraph.png" border="0" usemap="#namespace_smol_dock_a2820b77a3fd140cd601c75028ed8dd51_icgraph" alt=""/></div>
+<map name="namespace_smol_dock_a2820b77a3fd140cd601c75028ed8dd51_icgraph" id="namespace_smol_dock_a2820b77a3fd140cd601c75028ed8dd51_icgraph">
+<area shape="rect" id="node2" href="class_smol_dock_1_1_protein.html#ab28029d0d4fcf11088a32a132667b78c" title="Populate Protein from a PDB file. " alt="" coords="256,23,396,65"/>
+<area shape="rect" id="node3" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="481,5,532,32"/>
+<area shape="rect" id="node4" href="_py_structures_8h.html#a18cad6e29d14a0da9d2cd9464e7e2356" title="export_Structures" alt="" coords="444,56,569,83"/>
+<area shape="rect" id="node5" href="_smoldock_python_bindings_8cpp.html#a9002869529fdb857c7ffa4a170c4f3ef" title="BOOST_PYTHON_MODULE" alt="" coords="617,56,812,83"/>
 </map>
 </div>
 
@@ -1183,22 +1332,24 @@ z</td>
 
 <p class="definition">Definition at line <a class="el" href="_atom_8cpp_source.html#l00086">86</a> of file <a class="el" href="_atom_8cpp_source.html">Atom.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_atom_8h_source.html#l00170">SmolDock::Atom::AtomTypeLabel</a>.</p>
-<div class="fragment"><div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                                                  {</div><div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <span class="keyword">auto</span> it = std::find_if(Atom::AtomTypeLabel.begin(), Atom::AtomTypeLabel.end(),</div><div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                               [&amp;](<span class="keyword">const</span> std::tuple&lt;Atom::AtomType, std::string, std::string, double&gt; &amp;e) {</div><div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                                   <span class="keywordflow">return</span> std::get&lt;0&gt;(e) == t;</div><div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                               });</div><div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <span class="keywordflow">if</span> (it != Atom::AtomTypeLabel.end()) {</div><div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            <span class="keywordflow">return</span> std::get&lt;3&gt;(*it);</div><div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        }<span class="keywordflow">else</span>{</div><div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            BOOST_LOG_TRIVIAL(error) &lt;&lt; <span class="stringliteral">&quot;Encountered unknown AtomType while finding atomic radius: &quot;</span> &lt;&lt; <span class="keyword">static_cast&lt;</span><span class="keywordtype">unsigned</span> <span class="keywordtype">char</span><span class="keyword">&gt;</span>(t);</div><div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;            <span class="keywordflow">return</span> 0;</div><div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        }</div><div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    }</div></div><!-- fragment --><div id="dynsection-18" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-18-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-18-summary" class="dynsummary" style="display:block;">
+<p class="reference">References <a class="el" href="_atom_8h_source.html#l00176">SmolDock::Atom::AtomTypeLabel</a>.</p>
+<div id="dynsection-20" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-20-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-20-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-18-content" class="dyncontent" style="display:none;">
+<div id="dynsection-20-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="namespace_smol_dock_a9c3abf1e37dc4fe013df80997dedb20b_icgraph.png" border="0" usemap="#namespace_smol_dock_a9c3abf1e37dc4fe013df80997dedb20b_icgraph" alt=""/></div>
 <map name="namespace_smol_dock_a9c3abf1e37dc4fe013df80997dedb20b_icgraph" id="namespace_smol_dock_a9c3abf1e37dc4fe013df80997dedb20b_icgraph">
-<area shape="rect" id="node2" href="class_smol_dock_1_1_molecule.html#a449f37f171474849ad896e33dfc9e2f4" title="Generate a conformer of this molecule. " alt="" coords="261,78,404,119"/>
-<area shape="rect" id="node5" href="class_smol_dock_1_1_molecule.html#a2767177fabc41b3aeaa68c77d8addd1b" title="Generate a vector of conformer of this molecule. " alt="" coords="259,13,407,54"/>
-<area shape="rect" id="node8" href="class_smol_dock_1_1_molecule.html#a9aba4607923da552cf15847567c77603" title="Obtain the conformer that was either loaded from file or generated when populating the Molecule..." alt="" coords="261,143,404,185"/>
-<area shape="rect" id="node3" href="_py_structures_8h.html#a18cad6e29d14a0da9d2cd9464e7e2356" title="export_Structures" alt="" coords="506,88,631,115"/>
-<area shape="rect" id="node4" href="_smoldock_python_bindings_8cpp.html#a9002869529fdb857c7ffa4a170c4f3ef" title="BOOST_PYTHON_MODULE" alt="" coords="731,88,925,115"/>
-<area shape="rect" id="node6" href="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine.html#a3abc1a2cdbb3f1b9f545f863f9ec5e43" title="Prepare the engine for docking. " alt="" coords="455,5,683,61"/>
-<area shape="rect" id="node7" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="803,20,853,47"/>
-<area shape="rect" id="node9" href="class_smol_dock_1_1_re_scorer.html#a102b6af24e4f5dc420c2bdfba5a792f0" title="SmolDock::ReScorer\l::prepare" alt="" coords="495,143,642,185"/>
+<area shape="rect" id="node2" href="class_smol_dock_1_1_molecule.html#a5247ebed094d5593a5a704c0c2919c0c" title="SmolDock::Molecule\l::generateIConformerForGiven\lRDKitConformerID" alt="" coords="259,63,457,119"/>
+<area shape="rect" id="node3" href="class_smol_dock_1_1_molecule.html#ad10dcbd80a2ac181b3d76fbae3f90ca2" title="Generate a conformer of this molecule. " alt="" coords="508,5,651,47"/>
+<area shape="rect" id="node6" href="class_smol_dock_1_1_molecule.html#a1cce96a4a5296ab42ae3ab06fbc374a1" title="Generate a vector of conformer of this molecule. " alt="" coords="505,161,653,203"/>
+<area shape="rect" id="node9" href="class_smol_dock_1_1_molecule.html#ab5fc86fa1ac97374e7d8d339404568e9" title="Obtain the conformer that was either loaded from file or generated when populating the Molecule..." alt="" coords="508,71,651,112"/>
+<area shape="rect" id="node4" href="_py_structures_8h.html#a18cad6e29d14a0da9d2cd9464e7e2356" title="export_Structures" alt="" coords="753,13,878,39"/>
+<area shape="rect" id="node5" href="_smoldock_python_bindings_8cpp.html#a9002869529fdb857c7ffa4a170c4f3ef" title="BOOST_PYTHON_MODULE" alt="" coords="1135,43,1329,70"/>
+<area shape="rect" id="node7" href="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine.html#a3abc1a2cdbb3f1b9f545f863f9ec5e43" title="Prepare the engine for docking. " alt="" coords="701,181,929,237"/>
+<area shape="rect" id="node8" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="1007,162,1057,189"/>
+<area shape="rect" id="node10" href="class_smol_dock_1_1_re_scorer.html#a102b6af24e4f5dc420c2bdfba5a792f0" title="SmolDock::ReScorer\l::prepare" alt="" coords="742,64,889,105"/>
+<area shape="rect" id="node11" href="_py_utilities_8h.html#a48b6c8c5377d2e7c99f7084ea93aa77b" title="export_Utilities" alt="" coords="977,70,1087,97"/>
 </map>
 </div>
 
@@ -1222,8 +1373,8 @@ z</td>
 
 <p class="definition">Definition at line <a class="el" href="_atom_8cpp_source.html#l00047">47</a> of file <a class="el" href="_atom_8cpp_source.html">Atom.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_atom_8h_source.html#l00170">SmolDock::Atom::AtomTypeLabel</a>.</p>
-<div class="fragment"><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                                                     {</div><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keyword">auto</span> it = std::find_if(Atom::AtomTypeLabel.begin(), Atom::AtomTypeLabel.end(),</div><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                               [&amp;](<span class="keyword">const</span> std::tuple&lt;Atom::AtomType, std::string, std::string, double&gt; &amp;e) {</div><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                                   <span class="keywordflow">return</span> std::get&lt;0&gt;(e) == t;</div><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                               });</div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keywordflow">if</span> (it != Atom::AtomTypeLabel.end()) {</div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            <span class="keywordflow">return</span> std::get&lt;1&gt;(*it);</div><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        }<span class="keywordflow">else</span>{</div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            BOOST_LOG_TRIVIAL(error) &lt;&lt; <span class="stringliteral">&quot;Encountered unknown atom AtomType while converting to string: &quot;</span> &lt;&lt; <span class="keyword">static_cast&lt;</span><span class="keywordtype">unsigned</span> <span class="keywordtype">char</span><span class="keyword">&gt;</span>(t);</div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            <span class="keywordflow">return</span> std::string(<span class="stringliteral">&quot;&quot;</span>);</div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        }</div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    }</div></div><!-- fragment -->
+<p class="reference">References <a class="el" href="_atom_8h_source.html#l00176">SmolDock::Atom::AtomTypeLabel</a>.</p>
+
 </div>
 </div>
 <a id="abf06ab90cb8bd0858a883be16bb9f563"></a>
@@ -1244,12 +1395,12 @@ z</td>
 
 <p class="definition">Definition at line <a class="el" href="_atom_8cpp_source.html#l00060">60</a> of file <a class="el" href="_atom_8cpp_source.html">Atom.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_atom_8h_source.html#l00170">SmolDock::Atom::AtomTypeLabel</a>.</p>
-<div class="fragment"><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                                                           {</div><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keyword">auto</span> it = std::find_if(Atom::AtomTypeLabel.begin(), Atom::AtomTypeLabel.end(),</div><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                               [&amp;](<span class="keyword">const</span> std::tuple&lt;Atom::AtomType, std::string, std::string, double&gt; &amp;e) {</div><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                                   <span class="keywordflow">return</span> std::get&lt;0&gt;(e) == t;</div><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                               });</div><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="keywordflow">if</span> (it != Atom::AtomTypeLabel.end()) {</div><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            <span class="keywordflow">return</span> std::get&lt;2&gt;(*it);</div><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        }<span class="keywordflow">else</span>{</div><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            BOOST_LOG_TRIVIAL(error) &lt;&lt; <span class="stringliteral">&quot;Encountered unknown atom AtomType while converting to symbol string: &quot;</span> &lt;&lt; <span class="keyword">static_cast&lt;</span><span class="keywordtype">unsigned</span> <span class="keywordtype">char</span><span class="keyword">&gt;</span>(t);</div><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            <span class="keywordflow">return</span> std::string(<span class="stringliteral">&quot;&quot;</span>);</div><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        }</div><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    }</div></div><!-- fragment --><div id="dynsection-19" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-19-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-19-summary" class="dynsummary" style="display:block;">
+<p class="reference">References <a class="el" href="_atom_8h_source.html#l00176">SmolDock::Atom::AtomTypeLabel</a>.</p>
+<div id="dynsection-21" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-21-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-21-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-19-content" class="dyncontent" style="display:none;">
+<div id="dynsection-21-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="namespace_smol_dock_abf06ab90cb8bd0858a883be16bb9f563_icgraph.png" border="0" usemap="#namespace_smol_dock_abf06ab90cb8bd0858a883be16bb9f563_icgraph" alt=""/></div>
 <map name="namespace_smol_dock_abf06ab90cb8bd0858a883be16bb9f563_icgraph" id="namespace_smol_dock_abf06ab90cb8bd0858a883be16bb9f563_icgraph">
 <area shape="rect" id="node2" href="class_smol_dock_1_1_p_d_b_writer.html#aaad8350fc387575ed549a1fd8569aad2" title="Write the added ligand to filename. " alt="" coords="261,5,416,47"/>
@@ -1282,21 +1433,22 @@ z</td>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="i_transform_8h_source.html#l00050">50</a> of file <a class="el" href="i_transform_8h_source.html">iTransform.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_internals_utility_functions_8h_source.html#l00013">13</a> of file <a class="el" href="_internals_utility_functions_8h_source.html">InternalsUtilityFunctions.h</a>.</p>
 
 <p class="reference">References <a class="el" href="i_transform_8h_source.html#l00025">SmolDock::iQuaternion::s</a>, <a class="el" href="i_transform_8h_source.html#l00026">SmolDock::iQuaternion::t</a>, <a class="el" href="i_transform_8h_source.html#l00026">SmolDock::iQuaternion::u</a>, and <a class="el" href="i_transform_8h_source.html#l00026">SmolDock::iQuaternion::v</a>.</p>
-<div class="fragment"><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    {</div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        iQuaternion qt;</div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        qt.s = 1.0;</div><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        qt.u = 0.0;</div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        qt.v = 0.0;</div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        qt.t = 0.0;</div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keywordflow">return</span> qt;</div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    }</div></div><!-- fragment --><div id="dynsection-20" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-20-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-20-summary" class="dynsummary" style="display:block;">
+<div id="dynsection-22" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-22-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-22-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-20-content" class="dyncontent" style="display:none;">
+<div id="dynsection-22-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="namespace_smol_dock_a44a91384d128c3beb5c57ec507dddb6e_icgraph.png" border="0" usemap="#namespace_smol_dock_a44a91384d128c3beb5c57ec507dddb6e_icgraph" alt=""/></div>
 <map name="namespace_smol_dock_a44a91384d128c3beb5c57ec507dddb6e_icgraph" id="namespace_smol_dock_a44a91384d128c3beb5c57ec507dddb6e_icgraph">
-<area shape="rect" id="node2" href="namespace_smol_dock.html#a3974d1e3a6f729a7ca05b97996ca2079" title="Returns a neutral transform. " alt="" coords="272,42,487,69"/>
-<area shape="rect" id="node3" href="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine.html#a7bee39278168cb4d7ee6558b3a3d3bb4" title="Run the docking. " alt="" coords="772,5,1027,47"/>
-<area shape="rect" id="node5" href="class_smol_dock_1_1_gradient_descent_line_search.html#a8bc11fdd0f47562e773df6dff62dc82a" title="SmolDock::GradientDescent\lLineSearch::optimize" alt="" coords="535,35,724,76"/>
-<area shape="rect" id="node6" href="class_smol_dock_1_1_re_scorer.html#a4f372ac345e57254d9b00672f169d2fd" title="SmolDock::ReScorer\l::getScore" alt="" coords="556,100,703,141"/>
-<area shape="rect" id="node4" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="1075,13,1125,39"/>
+<area shape="rect" id="node2" href="namespace_smol_dock.html#a3974d1e3a6f729a7ca05b97996ca2079" title="Holds a gradient for the score function with regard to an iTransform. " alt="" coords="272,71,487,98"/>
+<area shape="rect" id="node3" href="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine.html#a7bee39278168cb4d7ee6558b3a3d3bb4" title="Run the docking. " alt="" coords="535,5,789,47"/>
+<area shape="rect" id="node4" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="867,42,917,69"/>
+<area shape="rect" id="node5" href="class_smol_dock_1_1_re_scorer.html#a4f372ac345e57254d9b00672f169d2fd" title="SmolDock::ReScorer\l::getScore" alt="" coords="589,123,735,164"/>
+<area shape="rect" id="node6" href="_py_utilities_8h.html#a48b6c8c5377d2e7c99f7084ea93aa77b" title="export_Utilities" alt="" coords="837,130,947,157"/>
+<area shape="rect" id="node7" href="_smoldock_python_bindings_8cpp.html#a9002869529fdb857c7ffa4a170c4f3ef" title="BOOST_PYTHON_MODULE" alt="" coords="995,130,1189,157"/>
 </map>
 </div>
 
@@ -1325,33 +1477,34 @@ z</td>
 </table>
 </div><div class="memdoc">
 
-<p>Returns a neutral transform. </p>
+<p>Holds a gradient for the score function with regard to an <a class="el" href="namespace_smol_dock.html#struct_smol_dock_1_1i_transform" title="Represents a rotation and translation transform to be applied on ligand/ligand part. ">iTransform</a>. </p>
+<p>Returns a neutral transform </p>
 
-<p class="definition">Definition at line <a class="el" href="i_transform_8h_source.html#l00072">72</a> of file <a class="el" href="i_transform_8h_source.html">iTransform.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_internals_utility_functions_8h_source.html#l00026">26</a> of file <a class="el" href="_internals_utility_functions_8h_source.html">InternalsUtilityFunctions.h</a>.</p>
 
-<p class="reference">References <a class="el" href="i_transform_8h_source.html#l00050">iQuaternionIdentityInit()</a>, <a class="el" href="i_transform_8h_source.html#l00046">SmolDock::iTransform::rota</a>, <a class="el" href="i_transform_8h_source.html#l00045">SmolDock::iTransform::transl</a>, <a class="el" href="i_transform_8h_source.html#l00036">SmolDock::iTranslation::x</a>, <a class="el" href="i_transform_8h_source.html#l00036">SmolDock::iTranslation::y</a>, and <a class="el" href="i_transform_8h_source.html#l00036">SmolDock::iTranslation::z</a>.</p>
-<div class="fragment"><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    {</div><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        iTransform tr;</div><div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        tr.transl.x = 0.0;</div><div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        tr.transl.y = 0.0;</div><div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        tr.transl.z = 0.0;</div><div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        tr.rota = <a class="code" href="namespace_smol_dock.html#a44a91384d128c3beb5c57ec507dddb6e">iQuaternionIdentityInit</a>();</div><div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="keywordflow">return</span> tr;</div><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    }</div><div class="ttc" id="namespace_smol_dock_html_a44a91384d128c3beb5c57ec507dddb6e"><div class="ttname"><a href="namespace_smol_dock.html#a44a91384d128c3beb5c57ec507dddb6e">SmolDock::iQuaternionIdentityInit</a></div><div class="ttdeci">iQuaternion iQuaternionIdentityInit()</div><div class="ttdef"><b>Definition:</b> <a href="i_transform_8h_source.html#l00050">iTransform.h:50</a></div></div>
-</div><!-- fragment --><div id="dynsection-21" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-21-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-21-summary" class="dynsummary" style="display:block;">
+<p class="reference">References <a class="el" href="_internals_utility_functions_8h_source.html#l00013">iQuaternionIdentityInit()</a>, <a class="el" href="i_transform_8h_source.html#l00046">SmolDock::iTransform::rota</a>, <a class="el" href="i_transform_8h_source.html#l00045">SmolDock::iTransform::transl</a>, <a class="el" href="i_transform_8h_source.html#l00036">SmolDock::iTranslation::x</a>, <a class="el" href="i_transform_8h_source.html#l00036">SmolDock::iTranslation::y</a>, and <a class="el" href="i_transform_8h_source.html#l00036">SmolDock::iTranslation::z</a>.</p>
+<div id="dynsection-23" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-23-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-23-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-21-content" class="dyncontent" style="display:none;">
+<div id="dynsection-23-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="namespace_smol_dock_a3974d1e3a6f729a7ca05b97996ca2079_cgraph.png" border="0" usemap="#namespace_smol_dock_a3974d1e3a6f729a7ca05b97996ca2079_cgraph" alt=""/></div>
 <map name="namespace_smol_dock_a3974d1e3a6f729a7ca05b97996ca2079_cgraph" id="namespace_smol_dock_a3974d1e3a6f729a7ca05b97996ca2079_cgraph">
 <area shape="rect" id="node2" href="namespace_smol_dock.html#a44a91384d128c3beb5c57ec507dddb6e" title="SmolDock::iQuaternionIdentityInit" alt="" coords="268,5,487,32"/>
 </map>
 </div>
-<div id="dynsection-22" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-22-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-22-summary" class="dynsummary" style="display:block;">
+<div id="dynsection-24" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-24-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-24-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-22-content" class="dyncontent" style="display:none;">
+<div id="dynsection-24-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="namespace_smol_dock_a3974d1e3a6f729a7ca05b97996ca2079_icgraph.png" border="0" usemap="#namespace_smol_dock_a3974d1e3a6f729a7ca05b97996ca2079_icgraph" alt=""/></div>
 <map name="namespace_smol_dock_a3974d1e3a6f729a7ca05b97996ca2079_icgraph" id="namespace_smol_dock_a3974d1e3a6f729a7ca05b97996ca2079_icgraph">
-<area shape="rect" id="node2" href="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine.html#a7bee39278168cb4d7ee6558b3a3d3bb4" title="Run the docking. " alt="" coords="505,5,760,47"/>
-<area shape="rect" id="node4" href="class_smol_dock_1_1_gradient_descent_line_search.html#a8bc11fdd0f47562e773df6dff62dc82a" title="SmolDock::GradientDescent\lLineSearch::optimize" alt="" coords="268,35,457,76"/>
-<area shape="rect" id="node5" href="class_smol_dock_1_1_re_scorer.html#a4f372ac345e57254d9b00672f169d2fd" title="SmolDock::ReScorer\l::getScore" alt="" coords="289,100,436,141"/>
-<area shape="rect" id="node3" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="808,13,859,39"/>
+<area shape="rect" id="node2" href="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine.html#a7bee39278168cb4d7ee6558b3a3d3bb4" title="Run the docking. " alt="" coords="268,5,523,47"/>
+<area shape="rect" id="node3" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="600,42,651,69"/>
+<area shape="rect" id="node4" href="class_smol_dock_1_1_re_scorer.html#a4f372ac345e57254d9b00672f169d2fd" title="SmolDock::ReScorer\l::getScore" alt="" coords="322,123,469,164"/>
+<area shape="rect" id="node5" href="_py_utilities_8h.html#a48b6c8c5377d2e7c99f7084ea93aa77b" title="export_Utilities" alt="" coords="571,130,680,157"/>
+<area shape="rect" id="node6" href="_smoldock_python_bindings_8cpp.html#a9002869529fdb857c7ffa4a170c4f3ef" title="BOOST_PYTHON_MODULE" alt="" coords="728,130,923,157"/>
 </map>
 </div>
 
@@ -1383,15 +1536,14 @@ z</td>
 
 <p>Normalize a quaternion (which then has norm == 1.0) </p>
 
-<p class="definition">Definition at line <a class="el" href="i_transform_8h_source.html#l00174">174</a> of file <a class="el" href="i_transform_8h_source.html">iTransform.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_internals_utility_functions_8h_source.html#l00124">124</a> of file <a class="el" href="_internals_utility_functions_8h_source.html">InternalsUtilityFunctions.h</a>.</p>
 
-<p class="reference">References <a class="el" href="i_transform_8h_source.html#l00164">normalizeQuaternionInPlace()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    {</div><div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;        iQuaternion ret = quat;</div><div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        <a class="code" href="namespace_smol_dock.html#aeef66e92064c4a5e5102102342542853">normalizeQuaternionInPlace</a>(ret);</div><div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;        <span class="keywordflow">return</span> ret;</div><div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    }</div><div class="ttc" id="namespace_smol_dock_html_aeef66e92064c4a5e5102102342542853"><div class="ttname"><a href="namespace_smol_dock.html#aeef66e92064c4a5e5102102342542853">SmolDock::normalizeQuaternionInPlace</a></div><div class="ttdeci">void normalizeQuaternionInPlace(iQuaternion &amp;quat)</div><div class="ttdoc">Normalize a quaternion (which then has norm == 1.0) </div><div class="ttdef"><b>Definition:</b> <a href="i_transform_8h_source.html#l00164">iTransform.h:164</a></div></div>
-</div><!-- fragment --><div id="dynsection-23" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-23-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-23-summary" class="dynsummary" style="display:block;">
+<p class="reference">References <a class="el" href="_internals_utility_functions_8h_source.html#l00111">normalizeQuaternionInPlace()</a>.</p>
+<div id="dynsection-25" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-25-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-25-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-23-content" class="dyncontent" style="display:none;">
+<div id="dynsection-25-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="namespace_smol_dock_addb7785924a5380574728cfd0978d8f0_cgraph.png" border="0" usemap="#namespace_smol_dock_addb7785924a5380574728cfd0978d8f0_cgraph" alt=""/></div>
 <map name="namespace_smol_dock_addb7785924a5380574728cfd0978d8f0_cgraph" id="namespace_smol_dock_addb7785924a5380574728cfd0978d8f0_cgraph">
 <area shape="rect" id="node2" href="namespace_smol_dock.html#aeef66e92064c4a5e5102102342542853" title="Normalize a quaternion (which then has norm == 1.0) " alt="" coords="264,5,475,47"/>
@@ -1427,33 +1579,71 @@ z</td>
 
 <p>Normalize a quaternion (which then has norm == 1.0) </p>
 
-<p class="definition">Definition at line <a class="el" href="i_transform_8h_source.html#l00164">164</a> of file <a class="el" href="i_transform_8h_source.html">iTransform.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_internals_utility_functions_8h_source.html#l00111">111</a> of file <a class="el" href="_internals_utility_functions_8h_source.html">InternalsUtilityFunctions.h</a>.</p>
 
-<p class="reference">References <a class="el" href="i_transform_8h_source.html#l00148">quaternionNorm()</a>, <a class="el" href="i_transform_8h_source.html#l00025">SmolDock::iQuaternion::s</a>, <a class="el" href="i_transform_8h_source.html#l00026">SmolDock::iQuaternion::t</a>, <a class="el" href="i_transform_8h_source.html#l00026">SmolDock::iQuaternion::u</a>, and <a class="el" href="i_transform_8h_source.html#l00026">SmolDock::iQuaternion::v</a>.</p>
-<div class="fragment"><div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    {</div><div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        <span class="keywordtype">double</span> norm = <a class="code" href="namespace_smol_dock.html#afb62962c202721eaa8aa64d19bd42fdf">quaternionNorm</a>(quat);</div><div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;        quat.s /= norm;</div><div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;        quat.u /= norm;</div><div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;        quat.v /= norm;</div><div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;        quat.t /= norm;</div><div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    }</div><div class="ttc" id="namespace_smol_dock_html_afb62962c202721eaa8aa64d19bd42fdf"><div class="ttname"><a href="namespace_smol_dock.html#afb62962c202721eaa8aa64d19bd42fdf">SmolDock::quaternionNorm</a></div><div class="ttdeci">double quaternionNorm(const iQuaternion &amp;quat)</div><div class="ttdoc">Returns the norm of the given quaternion. </div><div class="ttdef"><b>Definition:</b> <a href="i_transform_8h_source.html#l00148">iTransform.h:148</a></div></div>
-</div><!-- fragment --><div id="dynsection-24" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-24-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-24-summary" class="dynsummary" style="display:block;">
+<p class="reference">References <a class="el" href="_internals_utility_functions_8h_source.html#l00097">quaternionNorm()</a>, <a class="el" href="i_transform_8h_source.html#l00025">SmolDock::iQuaternion::s</a>, <a class="el" href="i_transform_8h_source.html#l00026">SmolDock::iQuaternion::t</a>, <a class="el" href="i_transform_8h_source.html#l00026">SmolDock::iQuaternion::u</a>, and <a class="el" href="i_transform_8h_source.html#l00026">SmolDock::iQuaternion::v</a>.</p>
+<div id="dynsection-26" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-26-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-26-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-24-content" class="dyncontent" style="display:none;">
+<div id="dynsection-26-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="namespace_smol_dock_aeef66e92064c4a5e5102102342542853_cgraph.png" border="0" usemap="#namespace_smol_dock_aeef66e92064c4a5e5102102342542853_cgraph" alt=""/></div>
 <map name="namespace_smol_dock_aeef66e92064c4a5e5102102342542853_cgraph" id="namespace_smol_dock_aeef66e92064c4a5e5102102342542853_cgraph">
 <area shape="rect" id="node2" href="namespace_smol_dock.html#afb62962c202721eaa8aa64d19bd42fdf" title="Returns the norm of the given quaternion. " alt="" coords="264,13,447,39"/>
 </map>
 </div>
-<div id="dynsection-25" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-25-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-25-summary" class="dynsummary" style="display:block;">
+<div id="dynsection-27" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-27-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-27-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-25-content" class="dyncontent" style="display:none;">
+<div id="dynsection-27-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="namespace_smol_dock_aeef66e92064c4a5e5102102342542853_icgraph.png" border="0" usemap="#namespace_smol_dock_aeef66e92064c4a5e5102102342542853_icgraph" alt=""/></div>
 <map name="namespace_smol_dock_aeef66e92064c4a5e5102102342542853_icgraph" id="namespace_smol_dock_aeef66e92064c4a5e5102102342542853_icgraph">
-<area shape="rect" id="node2" href="class_smol_dock_1_1_gradient_descent_line_search.html#a8bc11fdd0f47562e773df6dff62dc82a" title="SmolDock::GradientDescent\lLineSearch::optimize" alt="" coords="275,5,464,47"/>
-<area shape="rect" id="node5" href="namespace_smol_dock.html#addb7785924a5380574728cfd0978d8f0" title="Normalize a quaternion (which then has norm == 1.0) " alt="" coords="264,71,475,98"/>
-<area shape="rect" id="node3" href="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine.html#a7bee39278168cb4d7ee6558b3a3d3bb4" title="Run the docking. " alt="" coords="523,5,777,47"/>
-<area shape="rect" id="node4" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="825,13,876,39"/>
+<area shape="rect" id="node2" href="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine.html#a7bee39278168cb4d7ee6558b3a3d3bb4" title="Run the docking. " alt="" coords="264,5,519,47"/>
+<area shape="rect" id="node4" href="namespace_smol_dock.html#addb7785924a5380574728cfd0978d8f0" title="Normalize a quaternion (which then has norm == 1.0) " alt="" coords="286,71,497,98"/>
+<area shape="rect" id="node5" href="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function.html#ab89f08da2f4f79abfe9130b3593c3522" title="SmolDock::Score::VinaLike\lRigidScoringFunction::Evaluate" alt="" coords="289,123,494,164"/>
+<area shape="rect" id="node6" href="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function.html#a574511b3c12769902e2c0366d4d3db96" title="SmolDock::Score::VinaLike\lRigidScoringFunction::Evaluate\lWithGradient" alt="" coords="289,189,494,245"/>
+<area shape="rect" id="node3" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="567,13,617,39"/>
 </map>
 </div>
+
+</div>
+</div>
+<a id="a5b696009e136f369f88b0ebfc51175bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b696009e136f369f88b0ebfc51175bc">&#9670;&nbsp;</a></span>operator|()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr <a class="el" href="class_smol_dock_1_1_atom.html#a77191f0919af58d733764e229cb1f973">Atom::AtomVariant</a> SmolDock::operator| </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_smol_dock_1_1_atom.html#a77191f0919af58d733764e229cb1f973">Atom::AtomVariant</a>&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_smol_dock_1_1_atom.html#a77191f0919af58d733764e229cb1f973">Atom::AtomVariant</a>&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_atom_8h_source.html#l00187">187</a> of file <a class="el" href="_atom_8h_source.html">Atom.h</a>.</p>
 
 </div>
 </div>
@@ -1483,22 +1673,26 @@ z</td>
 
 <p>Returns the norm of the given quaternion. </p>
 
-<p class="definition">Definition at line <a class="el" href="i_transform_8h_source.html#l00148">148</a> of file <a class="el" href="i_transform_8h_source.html">iTransform.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_internals_utility_functions_8h_source.html#l00097">97</a> of file <a class="el" href="_internals_utility_functions_8h_source.html">InternalsUtilityFunctions.h</a>.</p>
 
 <p class="reference">References <a class="el" href="i_transform_8h_source.html#l00025">SmolDock::iQuaternion::s</a>, <a class="el" href="i_transform_8h_source.html#l00026">SmolDock::iQuaternion::t</a>, <a class="el" href="i_transform_8h_source.html#l00026">SmolDock::iQuaternion::u</a>, and <a class="el" href="i_transform_8h_source.html#l00026">SmolDock::iQuaternion::v</a>.</p>
-<div class="fragment"><div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    {</div><div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        <span class="keywordflow">return</span> std::sqrt(</div><div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;                std::pow(quat.s,2) + std::pow(quat.u,2) + std::pow(quat.v,2) + std::pow(quat.t,2)</div><div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;                );</div><div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    }</div></div><!-- fragment --><div id="dynsection-26" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-26-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-26-summary" class="dynsummary" style="display:block;">
+<div id="dynsection-28" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-28-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-28-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-26-content" class="dyncontent" style="display:none;">
+<div id="dynsection-28-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="namespace_smol_dock_afb62962c202721eaa8aa64d19bd42fdf_icgraph.png" border="0" usemap="#namespace_smol_dock_afb62962c202721eaa8aa64d19bd42fdf_icgraph" alt=""/></div>
 <map name="namespace_smol_dock_afb62962c202721eaa8aa64d19bd42fdf_icgraph" id="namespace_smol_dock_afb62962c202721eaa8aa64d19bd42fdf_icgraph">
-<area shape="rect" id="node2" href="namespace_smol_dock_1_1_score.html#ac205731c7b0098c2900d9d16fff1a93b" title="Compute inter&#45;molecular part of the docking score, according to the Vina scoring function. " alt="" coords="245,5,438,47"/>
-<area shape="rect" id="node5" href="namespace_smol_dock.html#aeef66e92064c4a5e5102102342542853" title="Normalize a quaternion (which then has norm == 1.0) " alt="" coords="236,71,447,112"/>
-<area shape="rect" id="node3" href="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine.html#a7bee39278168cb4d7ee6558b3a3d3bb4" title="Run the docking. " alt="" coords="753,35,1008,76"/>
-<area shape="rect" id="node4" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="1056,42,1107,69"/>
-<area shape="rect" id="node6" href="class_smol_dock_1_1_gradient_descent_line_search.html#a8bc11fdd0f47562e773df6dff62dc82a" title="SmolDock::GradientDescent\lLineSearch::optimize" alt="" coords="505,64,695,105"/>
-<area shape="rect" id="node7" href="namespace_smol_dock.html#addb7785924a5380574728cfd0978d8f0" title="Normalize a quaternion (which then has norm == 1.0) " alt="" coords="495,130,705,157"/>
+<area shape="rect" id="node2" href="namespace_smol_dock.html#aeef66e92064c4a5e5102102342542853" title="Normalize a quaternion (which then has norm == 1.0) " alt="" coords="236,203,447,244"/>
+<area shape="rect" id="node8" href="namespace_smol_dock_1_1_score.html#ac205731c7b0098c2900d9d16fff1a93b" title="Compute inter&#45;molecular part of the docking score, according to the Vina scoring function. " alt="" coords="245,133,438,175"/>
+<area shape="rect" id="node3" href="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine.html#a7bee39278168cb4d7ee6558b3a3d3bb4" title="Run the docking. " alt="" coords="495,268,749,309"/>
+<area shape="rect" id="node5" href="namespace_smol_dock.html#addb7785924a5380574728cfd0978d8f0" title="Normalize a quaternion (which then has norm == 1.0) " alt="" coords="517,334,727,361"/>
+<area shape="rect" id="node6" href="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function.html#ab89f08da2f4f79abfe9130b3593c3522" title="SmolDock::Score::VinaLike\lRigidScoringFunction::Evaluate" alt="" coords="519,203,725,244"/>
+<area shape="rect" id="node7" href="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function.html#a574511b3c12769902e2c0366d4d3db96" title="SmolDock::Score::VinaLike\lRigidScoringFunction::Evaluate\lWithGradient" alt="" coords="519,122,725,178"/>
+<area shape="rect" id="node4" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="855,173,906,199"/>
+<area shape="rect" id="node9" href="namespace_smol_dock_1_1_wrapper.html#afc6fe0925036a67cbd9856c1077296ca" title="SmolDock::Wrapper::\lgetScoringFunc" alt="" coords="548,5,696,47"/>
+<area shape="rect" id="node10" href="_py_scoring_functions_8h.html#a2ede6b770a3e6131986d822ec5842b63" title="export_ScoringFunctions" alt="" coords="797,13,964,39"/>
+<area shape="rect" id="node11" href="_smoldock_python_bindings_8cpp.html#a9002869529fdb857c7ffa4a170c4f3ef" title="BOOST_PYTHON_MODULE" alt="" coords="1012,13,1207,39"/>
 </map>
 </div>
 
@@ -1522,8 +1716,22 @@ z</td>
 
 <p class="definition">Definition at line <a class="el" href="_amino_acid_8cpp_source.html#l00065">65</a> of file <a class="el" href="_amino_acid_8cpp_source.html">AminoAcid.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_amino_acid_8h_source.html#l00090">SmolDock::AminoAcid::AAShorthandSet</a>.</p>
-<div class="fragment"><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                                                 {</div><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="keyword">auto</span> it = std::find_if(AminoAcid::AAShorthandSet.begin(), AminoAcid::AAShorthandSet.end(),</div><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                               [&amp;](<span class="keyword">const</span> std::tuple&lt;AminoAcid::AAType, std::string, std::string&gt; &amp;e) {</div><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                                   <span class="keywordflow">return</span> std::get&lt;0&gt;(e) == t;</div><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                               });</div><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="keywordflow">if</span> (it != AminoAcid::AAShorthandSet.end()) {</div><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            <span class="keywordflow">return</span> std::get&lt;1&gt;(*it);</div><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        }<span class="keywordflow">else</span>{</div><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            <span class="keywordflow">return</span> <span class="stringliteral">&quot;&quot;</span>;</div><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        }</div><div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    }</div></div><!-- fragment -->
+<p class="reference">References <a class="el" href="_amino_acid_8h_source.html#l00096">SmolDock::AminoAcid::AAShorthandSet</a>.</p>
+<div id="dynsection-29" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-29-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-29-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-29-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="namespace_smol_dock_a7980070f5c494cfe044ad9e90e34e3e3_icgraph.png" border="0" usemap="#namespace_smol_dock_a7980070f5c494cfe044ad9e90e34e3e3_icgraph" alt=""/></div>
+<map name="namespace_smol_dock_a7980070f5c494cfe044ad9e90e34e3e3_icgraph" id="namespace_smol_dock_a7980070f5c494cfe044ad9e90e34e3e3_icgraph">
+<area shape="rect" id="node2" href="namespace_smol_dock.html#a2820b77a3fd140cd601c75028ed8dd51" title="SmolDock::assignVariantFlags\lForResidueAtom" alt="" coords="240,23,443,65"/>
+<area shape="rect" id="node3" href="class_smol_dock_1_1_protein.html#ab28029d0d4fcf11088a32a132667b78c" title="Populate Protein from a PDB file. " alt="" coords="491,23,631,65"/>
+<area shape="rect" id="node4" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="716,5,767,32"/>
+<area shape="rect" id="node5" href="_py_structures_8h.html#a18cad6e29d14a0da9d2cd9464e7e2356" title="export_Structures" alt="" coords="679,56,804,83"/>
+<area shape="rect" id="node6" href="_smoldock_python_bindings_8cpp.html#a9002869529fdb857c7ffa4a170c4f3ef" title="BOOST_PYTHON_MODULE" alt="" coords="852,56,1047,83"/>
+</map>
+</div>
+
 </div>
 </div>
 <a id="ae559278f4b66ec9a09ddfaebb224f897"></a>
@@ -1544,22 +1752,24 @@ z</td>
 
 <p class="definition">Definition at line <a class="el" href="_atom_8cpp_source.html#l00073">73</a> of file <a class="el" href="_atom_8cpp_source.html">Atom.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_atom_8h_source.html#l00170">SmolDock::Atom::AtomTypeLabel</a>, and <a class="el" href="class_smol_dock_1_1_atom.html#a57e9a532fd04e1846c0d83edebb9fd41aad921d60486366258809553a3db49a4a">SmolDock::Atom::unknown</a>.</p>
-<div class="fragment"><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                                                                   {</div><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <span class="keyword">auto</span> it = std::find_if(Atom::AtomTypeLabel.begin(), Atom::AtomTypeLabel.end(),</div><div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                               [&amp;](<span class="keyword">const</span> std::tuple&lt;Atom::AtomType, std::string, std::string, double&gt; &amp;e) {</div><div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                                   <span class="keywordflow">return</span> (std::get&lt;1&gt;(e) == symbol_or_name) || (std::get&lt;2&gt;(e) == symbol_or_name);</div><div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                               });</div><div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <span class="keywordflow">if</span> (it != Atom::AtomTypeLabel.end()) {</div><div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            <span class="keywordflow">return</span> std::get&lt;0&gt;(*it);</div><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        } <span class="keywordflow">else</span> {</div><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            BOOST_LOG_TRIVIAL(error) &lt;&lt; <span class="stringliteral">&quot;Encountered unknown atom symbol_or_name while converting from string: &quot;</span> &lt;&lt; symbol_or_name;</div><div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            <span class="keywordflow">return</span> Atom::AtomType::unknown;</div><div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        }</div><div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    }</div></div><!-- fragment --><div id="dynsection-27" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-27-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-27-summary" class="dynsummary" style="display:block;">
+<p class="reference">References <a class="el" href="_atom_8h_source.html#l00176">SmolDock::Atom::AtomTypeLabel</a>, and <a class="el" href="class_smol_dock_1_1_atom.html#a57e9a532fd04e1846c0d83edebb9fd41aad921d60486366258809553a3db49a4a">SmolDock::Atom::unknown</a>.</p>
+<div id="dynsection-30" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-30-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-30-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-27-content" class="dyncontent" style="display:none;">
+<div id="dynsection-30-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="namespace_smol_dock_ae559278f4b66ec9a09ddfaebb224f897_icgraph.png" border="0" usemap="#namespace_smol_dock_ae559278f4b66ec9a09ddfaebb224f897_icgraph" alt=""/></div>
 <map name="namespace_smol_dock_ae559278f4b66ec9a09ddfaebb224f897_icgraph" id="namespace_smol_dock_ae559278f4b66ec9a09ddfaebb224f897_icgraph">
-<area shape="rect" id="node2" href="class_smol_dock_1_1_molecule.html#a449f37f171474849ad896e33dfc9e2f4" title="Generate a conformer of this molecule. " alt="" coords="255,78,397,119"/>
-<area shape="rect" id="node5" href="class_smol_dock_1_1_molecule.html#a2767177fabc41b3aeaa68c77d8addd1b" title="Generate a vector of conformer of this molecule. " alt="" coords="252,13,400,54"/>
-<area shape="rect" id="node8" href="class_smol_dock_1_1_molecule.html#a9aba4607923da552cf15847567c77603" title="Obtain the conformer that was either loaded from file or generated when populating the Molecule..." alt="" coords="255,143,397,185"/>
-<area shape="rect" id="node3" href="_py_structures_8h.html#a18cad6e29d14a0da9d2cd9464e7e2356" title="export_Structures" alt="" coords="499,88,625,115"/>
-<area shape="rect" id="node4" href="_smoldock_python_bindings_8cpp.html#a9002869529fdb857c7ffa4a170c4f3ef" title="BOOST_PYTHON_MODULE" alt="" coords="724,88,919,115"/>
-<area shape="rect" id="node6" href="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine.html#a3abc1a2cdbb3f1b9f545f863f9ec5e43" title="Prepare the engine for docking. " alt="" coords="448,5,676,61"/>
-<area shape="rect" id="node7" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="796,20,847,47"/>
-<area shape="rect" id="node9" href="class_smol_dock_1_1_re_scorer.html#a102b6af24e4f5dc420c2bdfba5a792f0" title="SmolDock::ReScorer\l::prepare" alt="" coords="489,143,635,185"/>
+<area shape="rect" id="node2" href="class_smol_dock_1_1_molecule.html#a5247ebed094d5593a5a704c0c2919c0c" title="SmolDock::Molecule\l::generateIConformerForGiven\lRDKitConformerID" alt="" coords="252,63,451,119"/>
+<area shape="rect" id="node3" href="class_smol_dock_1_1_molecule.html#ad10dcbd80a2ac181b3d76fbae3f90ca2" title="Generate a conformer of this molecule. " alt="" coords="501,5,644,47"/>
+<area shape="rect" id="node6" href="class_smol_dock_1_1_molecule.html#a1cce96a4a5296ab42ae3ab06fbc374a1" title="Generate a vector of conformer of this molecule. " alt="" coords="499,161,647,203"/>
+<area shape="rect" id="node9" href="class_smol_dock_1_1_molecule.html#ab5fc86fa1ac97374e7d8d339404568e9" title="Obtain the conformer that was either loaded from file or generated when populating the Molecule..." alt="" coords="501,71,644,112"/>
+<area shape="rect" id="node4" href="_py_structures_8h.html#a18cad6e29d14a0da9d2cd9464e7e2356" title="export_Structures" alt="" coords="746,13,871,39"/>
+<area shape="rect" id="node5" href="_smoldock_python_bindings_8cpp.html#a9002869529fdb857c7ffa4a170c4f3ef" title="BOOST_PYTHON_MODULE" alt="" coords="1128,43,1323,70"/>
+<area shape="rect" id="node7" href="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine.html#a3abc1a2cdbb3f1b9f545f863f9ec5e43" title="Prepare the engine for docking. " alt="" coords="695,181,923,237"/>
+<area shape="rect" id="node8" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="1000,162,1051,189"/>
+<area shape="rect" id="node10" href="class_smol_dock_1_1_re_scorer.html#a102b6af24e4f5dc420c2bdfba5a792f0" title="SmolDock::ReScorer\l::prepare" alt="" coords="735,64,882,105"/>
+<area shape="rect" id="node11" href="_py_utilities_8h.html#a48b6c8c5377d2e7c99f7084ea93aa77b" title="export_Utilities" alt="" coords="971,70,1080,97"/>
 </map>
 </div>
 
@@ -1583,15 +1793,15 @@ z</td>
 
 <p class="definition">Definition at line <a class="el" href="_amino_acid_8cpp_source.html#l00077">77</a> of file <a class="el" href="_amino_acid_8cpp_source.html">AminoAcid.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_amino_acid_8h_source.html#l00090">SmolDock::AminoAcid::AAShorthandSet</a>.</p>
-<div class="fragment"><div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                                                                        {</div><div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <span class="keyword">auto</span> it = std::find_if(AminoAcid::AAShorthandSet.begin(), AminoAcid::AAShorthandSet.end(),</div><div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                               [&amp;](<span class="keyword">const</span> std::tuple&lt;AminoAcid::AAType, std::string, std::string&gt; &amp;e) {</div><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                                   <span class="keywordflow">return</span> (std::get&lt;1&gt;(e) == shorthand_or_name) ||</div><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                                          (std::get&lt;2&gt;(e) == shorthand_or_name);</div><div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                               });</div><div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="keywordflow">if</span> (it != AminoAcid::AAShorthandSet.end()) {</div><div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            <span class="keywordflow">return</span> std::get&lt;0&gt;(*it);</div><div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        } <span class="keywordflow">else</span> {</div><div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="preprocessor">#ifdef SMOLDOCK_VERBOSE_DEBUG</span></div><div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            std::cout &lt;&lt; <span class="stringliteral">&quot;[!] Encountered unknown residue shorthand_or_name : &quot;</span> &lt;&lt; shorthand_or_name &lt;&lt; std::endl;</div><div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="preprocessor">#endif</span></div><div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            <span class="keywordflow">return</span> AminoAcid::AminoAcid::AAType::unknown;</div><div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        }</div><div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    }</div></div><!-- fragment --><div id="dynsection-28" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-28-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-28-summary" class="dynsummary" style="display:block;">
+<p class="reference">References <a class="el" href="_amino_acid_8h_source.html#l00096">SmolDock::AminoAcid::AAShorthandSet</a>.</p>
+<div id="dynsection-31" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-31-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-31-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-28-content" class="dyncontent" style="display:none;">
+<div id="dynsection-31-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="namespace_smol_dock_a788f9308991cdf8fe5af07b27ff0f389_icgraph.png" border="0" usemap="#namespace_smol_dock_a788f9308991cdf8fe5af07b27ff0f389_icgraph" alt=""/></div>
 <map name="namespace_smol_dock_a788f9308991cdf8fe5af07b27ff0f389_icgraph" id="namespace_smol_dock_a788f9308991cdf8fe5af07b27ff0f389_icgraph">
-<area shape="rect" id="node2" href="class_smol_dock_1_1_protein.html#a99399b7db2f1b78fea8076a137a4b962" title="Populate Protein from a PDB file. " alt="" coords="244,23,384,65"/>
+<area shape="rect" id="node2" href="class_smol_dock_1_1_protein.html#ab28029d0d4fcf11088a32a132667b78c" title="Populate Protein from a PDB file. " alt="" coords="244,23,384,65"/>
 <area shape="rect" id="node3" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="469,5,520,32"/>
 <area shape="rect" id="node4" href="_py_structures_8h.html#a18cad6e29d14a0da9d2cd9464e7e2356" title="export_Structures" alt="" coords="432,56,557,83"/>
 <area shape="rect" id="node5" href="_smoldock_python_bindings_8cpp.html#a9002869529fdb857c7ffa4a170c4f3ef" title="BOOST_PYTHON_MODULE" alt="" coords="605,56,800,83"/>
@@ -1626,10 +1836,27 @@ z</td>
 
 <p>Returns the norm of the given vector. </p>
 
-<p class="definition">Definition at line <a class="el" href="i_transform_8h_source.html#l00156">156</a> of file <a class="el" href="i_transform_8h_source.html">iTransform.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_internals_utility_functions_8h_source.html#l00104">104</a> of file <a class="el" href="_internals_utility_functions_8h_source.html">InternalsUtilityFunctions.h</a>.</p>
 
 <p class="reference">References <a class="el" href="i_transform_8h_source.html#l00031">SmolDock::iVect::x</a>, <a class="el" href="i_transform_8h_source.html#l00031">SmolDock::iVect::y</a>, and <a class="el" href="i_transform_8h_source.html#l00031">SmolDock::iVect::z</a>.</p>
-<div class="fragment"><div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    {</div><div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;        <span class="keywordflow">return</span> std::sqrt(</div><div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;                std::pow(v.x,2) + std::pow(v.y,2) + std::pow(v.z,2)</div><div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;        );</div><div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    }</div></div><!-- fragment -->
+
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="a1c9575126d6be4889918032116fd8add"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c9575126d6be4889918032116fd8add">&#9670;&nbsp;</a></span>ResidueAtomPropertiesLookupTable_General</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::set&lt; std::tuple&lt; <a class="el" href="class_smol_dock_1_1_amino_acid.html#a08692b12e7f53812c5258bd8b805875d">AminoAcid::AAType</a>, std::vector&lt; std::tuple&lt; std::string, <a class="el" href="class_smol_dock_1_1_atom.html#a77191f0919af58d733764e229cb1f973">Atom::AtomVariant</a> &gt; &gt; &gt; &gt; SmolDock::ResidueAtomPropertiesLookupTable_General</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_p_d_b_residue_variant_table_8cpp_source.html#l00018">18</a> of file <a class="el" href="_p_d_b_residue_variant_table_8cpp_source.html">PDBResidueVariantTable.cpp</a>.</p>
+
 </div>
 </div>
 </div><!-- contents -->

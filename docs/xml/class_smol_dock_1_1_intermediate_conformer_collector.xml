@@ -73,13 +73,11 @@
         <inbodydescription>
         </inbodydescription>
         <location file="Utilities/IntermediateConformerCollector.h" line="16" column="1" bodyfile="Utilities/IntermediateConformerCollector.cpp" bodystart="13" bodyend="17"/>
-        <references refid="class_smol_dock_1_1_p_d_b_writer_1a74fc5d4cb9bbe5c8f0362366178dbff0" compoundref="_p_d_b_writer_8cpp" startline="77" endline="79">SmolDock::PDBWriter::addLigand</references>
-        <references refid="class_smol_dock_1_1_molecule_1a70156ffc4081eb92f9dc4e2c70096c84" compoundref="_molecule_8cpp" startline="336" endline="379">SmolDock::Molecule::deepcopy</references>
+        <references refid="class_smol_dock_1_1_p_d_b_writer_1a74fc5d4cb9bbe5c8f0362366178dbff0" compoundref="_p_d_b_writer_8cpp" startline="84" endline="86">SmolDock::PDBWriter::addLigand</references>
+        <references refid="class_smol_dock_1_1_molecule_1a70156ffc4081eb92f9dc4e2c70096c84" compoundref="_molecule_8cpp" startline="332" endline="376">SmolDock::Molecule::deepcopy</references>
         <references refid="class_smol_dock_1_1_intermediate_conformer_collector_1af4af1651349015597a2582237817db51" compoundref="_intermediate_conformer_collector_8h" startline="19">molecule</references>
-        <references refid="class_smol_dock_1_1_molecule_1af6263934134836e9ce66d2254b6b6801" compoundref="_molecule_8cpp" startline="324" endline="334">SmolDock::Molecule::updateAtomPositionsFromiConformer</references>
+        <references refid="class_smol_dock_1_1_molecule_1af6263934134836e9ce66d2254b6b6801" compoundref="_molecule_8cpp" startline="320" endline="330">SmolDock::Molecule::updateAtomPositionsFromiConformer</references>
         <references refid="class_smol_dock_1_1_intermediate_conformer_collector_1a2fc9343d0d285bef646d6ae5da619ad6" compoundref="_intermediate_conformer_collector_8h" startline="20">writer</references>
-        <referencedby refid="class_smol_dock_1_1_gradient_descent_line_search_1a8bc11fdd0f47562e773df6dff62dc82a" compoundref="_gradient_descent_line_search_8cpp" startline="28" endline="210">SmolDock::GradientDescentLineSearch::optimize</referencedby>
-        <referencedby refid="class_smol_dock_1_1_gradient_descent_line_search_1a04d6d79864edd42fb3e6729b6d402398" compoundref="_gradient_descent_line_search_8cpp" startline="216" endline="220">SmolDock::GradientDescentLineSearch::setStartingConformer</referencedby>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -87,79 +85,79 @@
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
-      <node id="102">
+      <node id="104">
         <label>T</label>
       </node>
-      <node id="98">
+      <node id="100">
         <label>SmolDock::Molecule</label>
         <link refid="class_smol_dock_1_1_molecule"/>
-        <childnode refid="99" relation="private-inheritance">
+        <childnode refid="101" relation="private-inheritance">
         </childnode>
-        <childnode refid="100" relation="usage">
+        <childnode refid="102" relation="usage">
           <edgelabel>-bonds</edgelabel>
         </childnode>
-        <childnode refid="103" relation="usage">
+        <childnode refid="105" relation="usage">
           <edgelabel>-smiles</edgelabel>
           <edgelabel>-residue_name</edgelabel>
         </childnode>
-        <childnode refid="105" relation="usage">
+        <childnode refid="107" relation="usage">
           <edgelabel>-atoms</edgelabel>
         </childnode>
       </node>
-      <node id="100">
+      <node id="102">
         <label>std::vector&lt; std::shared_ptr&lt; SmolDock::Bond &gt; &gt;</label>
-        <childnode refid="101" relation="template-instance">
+        <childnode refid="103" relation="template-instance">
           <edgelabel>&lt; std::shared_ptr&lt; SmolDock::Bond &gt; &gt;</edgelabel>
         </childnode>
       </node>
-      <node id="101">
+      <node id="103">
         <label>std::vector&lt; T &gt;</label>
-        <childnode refid="102" relation="usage">
+        <childnode refid="104" relation="usage">
           <edgelabel>+elements</edgelabel>
         </childnode>
       </node>
-      <node id="106">
+      <node id="108">
         <label>SmolDock::PDBWriter</label>
         <link refid="class_smol_dock_1_1_p_d_b_writer"/>
-        <childnode refid="107" relation="usage">
+        <childnode refid="109" relation="usage">
           <edgelabel>-ligand_to_export</edgelabel>
         </childnode>
       </node>
-      <node id="99">
+      <node id="101">
         <label>SmolDock::Structure</label>
         <link refid="class_smol_dock_1_1_structure"/>
       </node>
-      <node id="104">
+      <node id="106">
         <label>std::basic_string&lt; char &gt;</label>
       </node>
-      <node id="107">
+      <node id="109">
         <label>std::vector&lt; SmolDock::Molecule &gt;</label>
-        <childnode refid="98" relation="usage">
+        <childnode refid="100" relation="usage">
           <edgelabel>+elements</edgelabel>
         </childnode>
-        <childnode refid="101" relation="template-instance">
+        <childnode refid="103" relation="template-instance">
           <edgelabel>&lt; SmolDock::Molecule &gt;</edgelabel>
         </childnode>
       </node>
-      <node id="105">
+      <node id="107">
         <label>std::vector&lt; std::shared_ptr&lt; SmolDock::Atom &gt; &gt;</label>
-        <childnode refid="101" relation="template-instance">
+        <childnode refid="103" relation="template-instance">
           <edgelabel>&lt; std::shared_ptr&lt; SmolDock::Atom &gt; &gt;</edgelabel>
         </childnode>
       </node>
-      <node id="97">
+      <node id="99">
         <label>SmolDock::IntermediateConformerCollector</label>
         <link refid="class_smol_dock_1_1_intermediate_conformer_collector"/>
-        <childnode refid="98" relation="usage">
+        <childnode refid="100" relation="usage">
           <edgelabel>-molecule</edgelabel>
         </childnode>
-        <childnode refid="106" relation="usage">
+        <childnode refid="108" relation="usage">
           <edgelabel>-writer</edgelabel>
         </childnode>
       </node>
-      <node id="103">
+      <node id="105">
         <label>std::string</label>
-        <childnode refid="104" relation="public-inheritance">
+        <childnode refid="106" relation="public-inheritance">
         </childnode>
       </node>
     </collaborationgraph>

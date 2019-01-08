@@ -206,12 +206,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 
 <p class="definition">Definition at line <a class="el" href="_bond_8h_source.html#l00038">38</a> of file <a class="el" href="_bond_8h_source.html">Bond.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                      {</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            <a class="code" href="class_smol_dock_1_1_bond.html#a6cbf152f682501c998bd06a55400c9cfaccd9d70d0e74b128e8fdd74b302934f1">singlebond</a>,</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            <a class="code" href="class_smol_dock_1_1_bond.html#a6cbf152f682501c998bd06a55400c9cfa076120e243046998cc8ecff65e716c35">doublebond</a>,</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            <a class="code" href="class_smol_dock_1_1_bond.html#a6cbf152f682501c998bd06a55400c9cfa7381550bb1c4acbc5e3801c17ef7cae3">triplebond</a>,</div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            <a class="code" href="class_smol_dock_1_1_bond.html#a6cbf152f682501c998bd06a55400c9cfa0a3db58cd06e63f99bfd2d9e6773f555">defaultbond</a>,</div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            <a class="code" href="class_smol_dock_1_1_bond.html#a6cbf152f682501c998bd06a55400c9cfab055cca5ddd5fd7702867dffa64c1f8f">aromatic</a></div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        };</div><div class="ttc" id="class_smol_dock_1_1_bond_html_a6cbf152f682501c998bd06a55400c9cfa0a3db58cd06e63f99bfd2d9e6773f555"><div class="ttname"><a href="class_smol_dock_1_1_bond.html#a6cbf152f682501c998bd06a55400c9cfa0a3db58cd06e63f99bfd2d9e6773f555">SmolDock::Bond::defaultbond</a></div><div class="ttdef"><b>Definition:</b> <a href="_bond_8h_source.html#l00042">Bond.h:42</a></div></div>
-<div class="ttc" id="class_smol_dock_1_1_bond_html_a6cbf152f682501c998bd06a55400c9cfa7381550bb1c4acbc5e3801c17ef7cae3"><div class="ttname"><a href="class_smol_dock_1_1_bond.html#a6cbf152f682501c998bd06a55400c9cfa7381550bb1c4acbc5e3801c17ef7cae3">SmolDock::Bond::triplebond</a></div><div class="ttdef"><b>Definition:</b> <a href="_bond_8h_source.html#l00041">Bond.h:41</a></div></div>
-<div class="ttc" id="class_smol_dock_1_1_bond_html_a6cbf152f682501c998bd06a55400c9cfaccd9d70d0e74b128e8fdd74b302934f1"><div class="ttname"><a href="class_smol_dock_1_1_bond.html#a6cbf152f682501c998bd06a55400c9cfaccd9d70d0e74b128e8fdd74b302934f1">SmolDock::Bond::singlebond</a></div><div class="ttdef"><b>Definition:</b> <a href="_bond_8h_source.html#l00039">Bond.h:39</a></div></div>
-<div class="ttc" id="class_smol_dock_1_1_bond_html_a6cbf152f682501c998bd06a55400c9cfa076120e243046998cc8ecff65e716c35"><div class="ttname"><a href="class_smol_dock_1_1_bond.html#a6cbf152f682501c998bd06a55400c9cfa076120e243046998cc8ecff65e716c35">SmolDock::Bond::doublebond</a></div><div class="ttdef"><b>Definition:</b> <a href="_bond_8h_source.html#l00040">Bond.h:40</a></div></div>
-<div class="ttc" id="class_smol_dock_1_1_bond_html_a6cbf152f682501c998bd06a55400c9cfab055cca5ddd5fd7702867dffa64c1f8f"><div class="ttname"><a href="class_smol_dock_1_1_bond.html#a6cbf152f682501c998bd06a55400c9cfab055cca5ddd5fd7702867dffa64c1f8f">SmolDock::Bond::aromatic</a></div><div class="ttdef"><b>Definition:</b> <a href="_bond_8h_source.html#l00043">Bond.h:43</a></div></div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
@@ -253,9 +248,7 @@ Static Private Attributes</h2></td></tr>
 <p class="definition">Definition at line <a class="el" href="_bond_8cpp_source.html#l00028">28</a> of file <a class="el" href="_bond_8cpp_source.html">Bond.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="_bond_8h_source.html#l00111">bond_end_a</a>, and <a class="el" href="_bond_8h_source.html#l00112">bond_end_b</a>.</p>
-<div class="fragment"><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                                                                     {</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        this-&gt;<a class="code" href="class_smol_dock_1_1_bond.html#ad909ef34f3b9b10acc221ac6d54e423a">bond_end_a</a> = std::move(atom_a);</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        this-&gt;<a class="code" href="class_smol_dock_1_1_bond.html#adbbc73bd7bc4fc579237321be516ed2f">bond_end_b</a> = std::move(atom_b);</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    }</div><div class="ttc" id="class_smol_dock_1_1_bond_html_ad909ef34f3b9b10acc221ac6d54e423a"><div class="ttname"><a href="class_smol_dock_1_1_bond.html#ad909ef34f3b9b10acc221ac6d54e423a">SmolDock::Bond::bond_end_a</a></div><div class="ttdeci">std::shared_ptr&lt; Atom &gt; bond_end_a</div><div class="ttdef"><b>Definition:</b> <a href="_bond_8h_source.html#l00111">Bond.h:111</a></div></div>
-<div class="ttc" id="class_smol_dock_1_1_bond_html_adbbc73bd7bc4fc579237321be516ed2f"><div class="ttname"><a href="class_smol_dock_1_1_bond.html#adbbc73bd7bc4fc579237321be516ed2f">SmolDock::Bond::bond_end_b</a></div><div class="ttdeci">std::shared_ptr&lt; Atom &gt; bond_end_b</div><div class="ttdef"><b>Definition:</b> <a href="_bond_8h_source.html#l00112">Bond.h:112</a></div></div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="ae864507cf1018efa1964e7b77b2d6e4f"></a>
@@ -304,12 +297,7 @@ Static Private Attributes</h2></td></tr>
 <p class="definition">Definition at line <a class="el" href="_bond_8cpp_source.html#l00033">33</a> of file <a class="el" href="_bond_8cpp_source.html">Bond.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="_bond_8h_source.html#l00111">bond_end_a</a>, <a class="el" href="_bond_8h_source.html#l00112">bond_end_b</a>, <a class="el" href="_bond_8h_source.html#l00115">BondID</a>, <a class="el" href="_bond_8h_source.html#l00117">bondtype</a>, and <a class="el" href="_bond_8h_source.html#l00042">defaultbond</a>.</p>
-<div class="fragment"><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                                                                                      {</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        this-&gt;<a class="code" href="class_smol_dock_1_1_bond.html#ad909ef34f3b9b10acc221ac6d54e423a">bond_end_a</a> = std::move(atom_a);</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        this-&gt;<a class="code" href="class_smol_dock_1_1_bond.html#adbbc73bd7bc4fc579237321be516ed2f">bond_end_b</a> = std::move(atom_b);</div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <a class="code" href="class_smol_dock_1_1_bond.html#a6fb49dc80f21a23c8b039f85d3b7b5bf">BondID</a> = id;</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <a class="code" href="class_smol_dock_1_1_bond.html#a7795dad7005c83f8702d8593eb81b1ff">bondtype</a> = <a class="code" href="class_smol_dock_1_1_bond.html#a6cbf152f682501c998bd06a55400c9cfa0a3db58cd06e63f99bfd2d9e6773f555">defaultbond</a>;</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    }</div><div class="ttc" id="class_smol_dock_1_1_bond_html_a6cbf152f682501c998bd06a55400c9cfa0a3db58cd06e63f99bfd2d9e6773f555"><div class="ttname"><a href="class_smol_dock_1_1_bond.html#a6cbf152f682501c998bd06a55400c9cfa0a3db58cd06e63f99bfd2d9e6773f555">SmolDock::Bond::defaultbond</a></div><div class="ttdef"><b>Definition:</b> <a href="_bond_8h_source.html#l00042">Bond.h:42</a></div></div>
-<div class="ttc" id="class_smol_dock_1_1_bond_html_a7795dad7005c83f8702d8593eb81b1ff"><div class="ttname"><a href="class_smol_dock_1_1_bond.html#a7795dad7005c83f8702d8593eb81b1ff">SmolDock::Bond::bondtype</a></div><div class="ttdeci">BondType bondtype</div><div class="ttdef"><b>Definition:</b> <a href="_bond_8h_source.html#l00117">Bond.h:117</a></div></div>
-<div class="ttc" id="class_smol_dock_1_1_bond_html_ad909ef34f3b9b10acc221ac6d54e423a"><div class="ttname"><a href="class_smol_dock_1_1_bond.html#ad909ef34f3b9b10acc221ac6d54e423a">SmolDock::Bond::bond_end_a</a></div><div class="ttdeci">std::shared_ptr&lt; Atom &gt; bond_end_a</div><div class="ttdef"><b>Definition:</b> <a href="_bond_8h_source.html#l00111">Bond.h:111</a></div></div>
-<div class="ttc" id="class_smol_dock_1_1_bond_html_a6fb49dc80f21a23c8b039f85d3b7b5bf"><div class="ttname"><a href="class_smol_dock_1_1_bond.html#a6fb49dc80f21a23c8b039f85d3b7b5bf">SmolDock::Bond::BondID</a></div><div class="ttdeci">unsigned int BondID</div><div class="ttdef"><b>Definition:</b> <a href="_bond_8h_source.html#l00115">Bond.h:115</a></div></div>
-<div class="ttc" id="class_smol_dock_1_1_bond_html_adbbc73bd7bc4fc579237321be516ed2f"><div class="ttname"><a href="class_smol_dock_1_1_bond.html#adbbc73bd7bc4fc579237321be516ed2f">SmolDock::Bond::bond_end_b</a></div><div class="ttdeci">std::shared_ptr&lt; Atom &gt; bond_end_b</div><div class="ttdef"><b>Definition:</b> <a href="_bond_8h_source.html#l00112">Bond.h:112</a></div></div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -334,8 +322,7 @@ Static Private Attributes</h2></td></tr>
 <p class="definition">Definition at line <a class="el" href="_bond_8cpp_source.html#l00064">64</a> of file <a class="el" href="_bond_8cpp_source.html">Bond.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="_bond_8h_source.html#l00115">BondID</a>.</p>
-<div class="fragment"><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                                 {</div><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="keywordflow">return</span> this-&gt;<a class="code" href="class_smol_dock_1_1_bond.html#a6fb49dc80f21a23c8b039f85d3b7b5bf">BondID</a>;</div><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    }</div><div class="ttc" id="class_smol_dock_1_1_bond_html_a6fb49dc80f21a23c8b039f85d3b7b5bf"><div class="ttname"><a href="class_smol_dock_1_1_bond.html#a6fb49dc80f21a23c8b039f85d3b7b5bf">SmolDock::Bond::BondID</a></div><div class="ttdeci">unsigned int BondID</div><div class="ttdef"><b>Definition:</b> <a href="_bond_8h_source.html#l00115">Bond.h:115</a></div></div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="a6b8180f0f2b339c521f8a74b2445e8c8"></a>
@@ -360,8 +347,7 @@ Static Private Attributes</h2></td></tr>
 <p class="definition">Definition at line <a class="el" href="_bond_8cpp_source.html#l00060">60</a> of file <a class="el" href="_bond_8cpp_source.html">Bond.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="_bond_8h_source.html#l00117">bondtype</a>.</p>
-<div class="fragment"><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                                         {</div><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="class_smol_dock_1_1_bond.html#a7795dad7005c83f8702d8593eb81b1ff">bondtype</a>;</div><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    }</div><div class="ttc" id="class_smol_dock_1_1_bond_html_a7795dad7005c83f8702d8593eb81b1ff"><div class="ttname"><a href="class_smol_dock_1_1_bond.html#a7795dad7005c83f8702d8593eb81b1ff">SmolDock::Bond::bondtype</a></div><div class="ttdeci">BondType bondtype</div><div class="ttdef"><b>Definition:</b> <a href="_bond_8h_source.html#l00117">Bond.h:117</a></div></div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="a8ca51ba3f2abc758ecd7b4b040681f21"></a>
@@ -386,8 +372,7 @@ Static Private Attributes</h2></td></tr>
 <p class="definition">Definition at line <a class="el" href="_bond_8cpp_source.html#l00041">41</a> of file <a class="el" href="_bond_8cpp_source.html">Bond.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="_bond_8h_source.html#l00111">bond_end_a</a>.</p>
-<div class="fragment"><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                                      {</div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="class_smol_dock_1_1_bond.html#ad909ef34f3b9b10acc221ac6d54e423a">bond_end_a</a>;</div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    }</div><div class="ttc" id="class_smol_dock_1_1_bond_html_ad909ef34f3b9b10acc221ac6d54e423a"><div class="ttname"><a href="class_smol_dock_1_1_bond.html#ad909ef34f3b9b10acc221ac6d54e423a">SmolDock::Bond::bond_end_a</a></div><div class="ttdeci">std::shared_ptr&lt; Atom &gt; bond_end_a</div><div class="ttdef"><b>Definition:</b> <a href="_bond_8h_source.html#l00111">Bond.h:111</a></div></div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="a0a2feeb4cc88cbb8920ae5e9b142ead5"></a>
@@ -412,8 +397,7 @@ Static Private Attributes</h2></td></tr>
 <p class="definition">Definition at line <a class="el" href="_bond_8cpp_source.html#l00045">45</a> of file <a class="el" href="_bond_8cpp_source.html">Bond.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="_bond_8h_source.html#l00112">bond_end_b</a>.</p>
-<div class="fragment"><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                                      {</div><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="class_smol_dock_1_1_bond.html#adbbc73bd7bc4fc579237321be516ed2f">bond_end_b</a>;</div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    }</div><div class="ttc" id="class_smol_dock_1_1_bond_html_adbbc73bd7bc4fc579237321be516ed2f"><div class="ttname"><a href="class_smol_dock_1_1_bond.html#adbbc73bd7bc4fc579237321be516ed2f">SmolDock::Bond::bond_end_b</a></div><div class="ttdeci">std::shared_ptr&lt; Atom &gt; bond_end_b</div><div class="ttdef"><b>Definition:</b> <a href="_bond_8h_source.html#l00112">Bond.h:112</a></div></div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="a225d51b7edd43bc5aa16984981bc2dfe"></a>
@@ -437,9 +421,7 @@ Static Private Attributes</h2></td></tr>
 <p class="definition">Definition at line <a class="el" href="_bond_8cpp_source.html#l00049">49</a> of file <a class="el" href="_bond_8cpp_source.html">Bond.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="_bond_8h_source.html#l00111">bond_end_a</a>, and <a class="el" href="_bond_8h_source.html#l00112">bond_end_b</a>.</p>
-<div class="fragment"><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                               {</div><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="comment">// Publicize the bond to the atoms involved</span></div><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="comment">// (allow for easy atom based molecule traversal)</span></div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <a class="code" href="class_smol_dock_1_1_bond.html#ad909ef34f3b9b10acc221ac6d54e423a">bond_end_a</a>-&gt;bonds.push_back(shared_from_this());</div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <a class="code" href="class_smol_dock_1_1_bond.html#adbbc73bd7bc4fc579237321be516ed2f">bond_end_b</a>-&gt;bonds.push_back(shared_from_this());</div><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    }</div><div class="ttc" id="class_smol_dock_1_1_bond_html_ad909ef34f3b9b10acc221ac6d54e423a"><div class="ttname"><a href="class_smol_dock_1_1_bond.html#ad909ef34f3b9b10acc221ac6d54e423a">SmolDock::Bond::bond_end_a</a></div><div class="ttdeci">std::shared_ptr&lt; Atom &gt; bond_end_a</div><div class="ttdef"><b>Definition:</b> <a href="_bond_8h_source.html#l00111">Bond.h:111</a></div></div>
-<div class="ttc" id="class_smol_dock_1_1_bond_html_adbbc73bd7bc4fc579237321be516ed2f"><div class="ttname"><a href="class_smol_dock_1_1_bond.html#adbbc73bd7bc4fc579237321be516ed2f">SmolDock::Bond::bond_end_b</a></div><div class="ttdeci">std::shared_ptr&lt; Atom &gt; bond_end_b</div><div class="ttdef"><b>Definition:</b> <a href="_bond_8h_source.html#l00112">Bond.h:112</a></div></div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="a4ebf28309120c880429f205edf67b9f8"></a>
@@ -471,8 +453,7 @@ Static Private Attributes</h2></td></tr>
 <p class="definition">Definition at line <a class="el" href="_bond_8cpp_source.html#l00056">56</a> of file <a class="el" href="_bond_8cpp_source.html">Bond.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="_bond_8h_source.html#l00117">bondtype</a>.</p>
-<div class="fragment"><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                                               {</div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <a class="code" href="class_smol_dock_1_1_bond.html#a7795dad7005c83f8702d8593eb81b1ff">bondtype</a> = t;</div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    }</div><div class="ttc" id="class_smol_dock_1_1_bond_html_a7795dad7005c83f8702d8593eb81b1ff"><div class="ttname"><a href="class_smol_dock_1_1_bond.html#a7795dad7005c83f8702d8593eb81b1ff">SmolDock::Bond::bondtype</a></div><div class="ttdeci">BondType bondtype</div><div class="ttdef"><b>Definition:</b> <a href="_bond_8h_source.html#l00117">Bond.h:117</a></div></div>
-</div><!-- fragment --><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-2-summary" class="dynsummary" style="display:block;">
 </div>
@@ -481,13 +462,10 @@ Static Private Attributes</h2></td></tr>
 <map name="class_smol_dock_1_1_bond_a4ebf28309120c880429f205edf67b9f8_icgraph" id="class_smol_dock_1_1_bond_a4ebf28309120c880429f205edf67b9f8_icgraph">
 <area shape="rect" id="node2" href="class_smol_dock_1_1_molecule.html#a70156ffc4081eb92f9dc4e2c70096c84" title="Make a copy of the Molecule object where the underlying Atom and Bond are new objects instead of refe..." alt="" coords="260,71,403,112"/>
 <area shape="rect" id="node3" href="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine.html#a52fa8c276c911df08d4dd8d6744ae540" title="Get the docking results. " alt="" coords="451,5,703,47"/>
-<area shape="rect" id="node4" href="class_smol_dock_1_1_intermediate_conformer_collector.html#a1d878b323a17e56169fb4fad4f92a742" title="SmolDock::IntermediateConformer\lCollector::addiConformer" alt="" coords="465,71,689,112"/>
-<area shape="rect" id="node9" href="_py_structures_8h.html#a18cad6e29d14a0da9d2cd9464e7e2356" title="export_Structures" alt="" coords="514,137,639,163"/>
-<area shape="rect" id="node5" href="class_smol_dock_1_1_gradient_descent_line_search.html#a8bc11fdd0f47562e773df6dff62dc82a" title="SmolDock::GradientDescent\lLineSearch::optimize" alt="" coords="765,5,955,47"/>
-<area shape="rect" id="node8" href="class_smol_dock_1_1_gradient_descent_line_search.html#a04d6d79864edd42fb3e6729b6d402398" title="SmolDock::GradientDescent\lLineSearch::setStartingConformer" alt="" coords="751,71,969,112"/>
-<area shape="rect" id="node6" href="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine.html#a7bee39278168cb4d7ee6558b3a3d3bb4" title="Run the docking. " alt="" coords="1017,39,1272,80"/>
-<area shape="rect" id="node7" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="1320,46,1371,73"/>
-<area shape="rect" id="node10" href="_smoldock_python_bindings_8cpp.html#a9002869529fdb857c7ffa4a170c4f3ef" title="BOOST_PYTHON_MODULE" alt="" coords="763,137,957,163"/>
+<area shape="rect" id="node5" href="class_smol_dock_1_1_intermediate_conformer_collector.html#a1d878b323a17e56169fb4fad4f92a742" title="SmolDock::IntermediateConformer\lCollector::addiConformer" alt="" coords="465,71,689,112"/>
+<area shape="rect" id="node6" href="_py_structures_8h.html#a18cad6e29d14a0da9d2cd9464e7e2356" title="export_Structures" alt="" coords="514,137,639,163"/>
+<area shape="rect" id="node4" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="823,13,873,39"/>
+<area shape="rect" id="node7" href="_smoldock_python_bindings_8cpp.html#a9002869529fdb857c7ffa4a170c4f3ef" title="BOOST_PYTHON_MODULE" alt="" coords="751,137,945,163"/>
 </map>
 </div>
 

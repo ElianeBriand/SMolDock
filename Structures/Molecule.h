@@ -39,6 +39,7 @@
 #include <GraphMol/SmilesParse/SmilesParse.h>
 #include <GraphMol/Substruct/SubstructMatch.h>
 #include <GraphMol/DistGeomHelpers/Embedder.h>
+#include <Structures/InputPostProcessors/InputPostProcessorInterface.h>
 
 #include "Structure.h"
 #include "Atom.h"
@@ -69,8 +70,8 @@ namespace SmolDock {
          * \return whether the parsing and initial conformer generation was successful.
          * \sa populateFromPDB()
         */
-        bool populateFromSMILES(const std::string &smiles, unsigned int seed = 36754);
-
+        bool populateFromSMILES(const std::string &smiles, unsigned int seed = 36754,
+                std::vector<InputPostProcessor::InputPostProcessor*> postProcessors = {} );
         //! Populate atoms and bonds from a PDB file. Additionally, a SMILES string can be used for bond order hint.
         /*!
          *
@@ -86,7 +87,9 @@ namespace SmolDock {
          * \return whether the parsing and initial conformer generation was successful.
          * \sa populateFromSMILES()
         */
-        bool populateFromPDB(const std::string& filename,const std::string& smiles_hint = "", unsigned int seed = 36754);
+        bool populateFromPDB(const std::string& filename,const std::string& smiles_hint = "", unsigned int seed = 36754,
+                std::vector<InputPostProcessor::InputPostProcessor*> postProcessors = {} );
+
 
         //! Return the number of atom in the Molecule, Hydrogen excepted
         unsigned int numberOfAtoms();
@@ -100,29 +103,32 @@ namespace SmolDock {
          * If the Molecule was loaded from a file format containing coordinate (PDB, ...), the initial conformer has those
          * coordinate. Otherwise, it is a RDKit generated conformer.
          *
+         * \param centroidNormalization If true, gives the coordinates with the molecule centroid as 0,0,0. This is useful for easier application of rotation
          * \return Returns iConformer for initial conformer
          * \sa generateConformer(), generateConformers()
         */
-        iConformer getInitialConformer();
+        iConformer getInitialConformer(bool centroidNormalization = false) const;
 
         //! Generate a conformer of this molecule
         /*!
          * \param conformer Reference to conformer object to be filled. Not modified if generation fails.
+         * \param centroidNormalization If true, gives the coordinates with the molecule centroid as 0,0,0. This is useful for easier application of rotation
          * \param seed RNG seed
          * \return Returns true if successfully generated conformer, false otherwise
          * \sa generateConformers()
         */
-        bool generateConformer(iConformer &conformer, int seed = 367454);
+        bool generateConformer(iConformer &conformer, bool centroidNormalization = false, int seed = 367454);
 
         //! Generate a vector of conformer of this molecule
         /*!
          * \param viConformers Pointer to vector to be filled with conformer. May already contain something.
          * \param num Number of conformers to attempt to generate.
+         * \param centroidNormalization If true, gives the coordinates with the molecule centroid as 0,0,0. This is useful for easier application of rotation
          * \param seed RNG seed
          * \return Returns the number of conformer actually generated. May be 0.
          * \sa generateConformer()
         */
-        unsigned int generateConformers(std::vector<iConformer>& viConformers, unsigned int num, int seed = 367454);
+        unsigned int generateConformers(std::vector<iConformer>& viConformers, unsigned int num,bool centroidNormalization = false, int seed = 367454);
 
         //! Get the 3-letter residue code used for this molecule in PDB file
         /*!
@@ -147,7 +153,12 @@ namespace SmolDock {
         */
         Molecule deepcopy();
 
+        //! Number of rotatable bonds between heavy (= non-hydrogen) atoms
+        /*!
+         * \return Number of rotatable bonds
+        */
         unsigned int getNumRotatableBond();
+
 
     private:
         std::vector<std::shared_ptr<Atom> > atoms;
@@ -160,11 +171,13 @@ namespace SmolDock {
         std::string residue_name = "LIG";
 
         //! Use this if using RDKit RWMol as entry.
-        bool populateInternalAtomAndBondFromRWMol(unsigned int seed);
+        bool populateInternalAtomAndBondFromRWMol(unsigned int seed, std::vector<InputPostProcessor::InputPostProcessor*> postProcessors);
 
         int initial_conformer_id = -1;
 
-        iConformer generateIConformerForGivenRDKitConformerID(unsigned int id);
+        iConformer generateIConformerForGivenRDKitConformerID(unsigned int id, bool centroidNormalization = false) const;
+
+
 
 
         unsigned int numberOfRotatableBonds = 0;

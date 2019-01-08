@@ -51,25 +51,6 @@ namespace SmolDock {
 
             // /// Parameters /////////////
 
-            //! Load a protein for docking.
-            /*!
-             * Load a protein for docking. Note that it *can* be modified by the engine.
-             *
-             * \param p Pointer to the Protein
-             * \return Returns whether it has been successful
-             * \sa setLigand(), setDockingBox()
-            */
-            virtual bool setProtein(Protein *p) = 0;
-
-            //! Load a molecule ligand for docking.
-            /*!
-             * Load a molecule ligand for docking. Note that it *can* be modified by the engine.
-             *
-             * \param m Pointer to the Molecule
-             * \return Returns whether it has been successful
-             * \sa setProtein(), setDockingBox()
-            */
-            virtual bool setLigand(Molecule *m) = 0;
 
             //! Set the protein domain/box to consider for docking.
             /*! A restriction of the search space can be necessary : this provides a way to specify a domain/box in the protein
@@ -82,13 +63,6 @@ namespace SmolDock {
             virtual bool setDockingBox(DockingBoxSetting setting) = 0;
             // virtual bool setDockingBox(std::tuple<double,double,double> center, double r, DockingBoxShape shape = DockingBoxShape::sphere) = 0;
 
-            //! Set the RNG seed for reproducibility.
-            /*!
-             * \param seed RNG see
-             * \return Returns whether it has been successful
-             * \sa setProtein(), setLigand(), setDockingBox()
-            */
-            virtual void setRandomSeed(int seed) = 0;
 
             // /// Actions /////////////
 

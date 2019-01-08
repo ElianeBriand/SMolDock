@@ -1,13 +1,15 @@
 var namespace_smol_dock =
 [
     [ "Engine", "namespace_smol_dock_1_1_engine.html", "namespace_smol_dock_1_1_engine" ],
+    [ "Heuristics", "namespace_smol_dock_1_1_heuristics.html", "namespace_smol_dock_1_1_heuristics" ],
+    [ "InputPostProcessor", "namespace_smol_dock_1_1_input_post_processor.html", "namespace_smol_dock_1_1_input_post_processor" ],
+    [ "Optimizer", "namespace_smol_dock_1_1_optimizer.html", "namespace_smol_dock_1_1_optimizer" ],
+    [ "Score", "namespace_smol_dock_1_1_score.html", "namespace_smol_dock_1_1_score" ],
     [ "AminoAcid", "class_smol_dock_1_1_amino_acid.html", "class_smol_dock_1_1_amino_acid" ],
     [ "Atom", "class_smol_dock_1_1_atom.html", "class_smol_dock_1_1_atom" ],
     [ "Bond", "class_smol_dock_1_1_bond.html", "class_smol_dock_1_1_bond" ],
     [ "DockingResult", "namespace_smol_dock.html#class_smol_dock_1_1_docking_result", "namespace_smol_dock_class_smol_dock_1_1_docking_result_dup" ],
     [ "DockingResultPrinter", "class_smol_dock_1_1_docking_result_printer.html", "class_smol_dock_1_1_docking_result_printer" ],
-    [ "GradientCalculator", "namespace_smol_dock.html#class_smol_dock_1_1_gradient_calculator", null ],
-    [ "GradientDescentLineSearch", "class_smol_dock_1_1_gradient_descent_line_search.html", "class_smol_dock_1_1_gradient_descent_line_search" ],
     [ "iConformer", "namespace_smol_dock.html#struct_smol_dock_1_1i_conformer", "namespace_smol_dock_struct_smol_dock_1_1i_conformer_dup" ],
     [ "iGradient", "namespace_smol_dock.html#struct_smol_dock_1_1i_gradient", "namespace_smol_dock_struct_smol_dock_1_1i_gradient_dup" ],
     [ "IntermediateConformerCollector", "class_smol_dock_1_1_intermediate_conformer_collector.html", "class_smol_dock_1_1_intermediate_conformer_collector" ],

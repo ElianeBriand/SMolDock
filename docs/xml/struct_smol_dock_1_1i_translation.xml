@@ -16,9 +16,13 @@
         <inbodydescription>
         </inbodydescription>
         <location file="Engines/Internals/iTransform.h" line="36" column="1" bodyfile="Engines/Internals/iTransform.h" bodystart="36" bodyend="-1"/>
-        <referencedby refid="class_smol_dock_1_1_gradient_descent_line_search_1a8bc11fdd0f47562e773df6dff62dc82a" compoundref="_gradient_descent_line_search_8cpp" startline="28" endline="210">SmolDock::GradientDescentLineSearch::optimize</referencedby>
-        <referencedby refid="namespace_smol_dock_1a3974d1e3a6f729a7ca05b97996ca2079" compoundref="i_transform_8h" startline="72" endline="80">SmolDock::iTransformIdentityInit</referencedby>
-        <referencedby refid="namespace_smol_dock_1a20628b953f3dec7f26d7c8221a508160" compoundref="i_transform_8h" startline="103" endline="108">SmolDock::applyTranslationInPlace</referencedby>
+        <referencedby refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a7bee39278168cb4d7ee6558b3a3d3bb4" compoundref="_conformer_rigid_docking_engine_8cpp" startline="132" endline="217">SmolDock::Engine::ConformerRigidDockingEngine::runDockingEngine</referencedby>
+        <referencedby refid="namespace_smol_dock_1a3974d1e3a6f729a7ca05b97996ca2079" compoundref="_internals_utility_functions_8h" startline="26" endline="33">SmolDock::iTransformIdentityInit</referencedby>
+        <referencedby refid="namespace_smol_dock_1a20628b953f3dec7f26d7c8221a508160" compoundref="_internals_utility_functions_8h" startline="57" endline="61">SmolDock::applyTranslationInPlace</referencedby>
+        <referencedby refid="class_smol_dock_1_1_molecule_1a5247ebed094d5593a5a704c0c2919c0c" compoundref="_molecule_8cpp" startline="384" endline="453">SmolDock::Molecule::generateIConformerForGivenRDKitConformerID</referencedby>
+        <referencedby refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1a574511b3c12769902e2c0366d4d3db96" compoundref="_vina_like_scoring_function_8cpp" startline="236" endline="294">SmolDock::Score::VinaLikeRigidScoringFunction::EvaluateWithGradient</referencedby>
+        <referencedby refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1a7998fd7ab2237aa8da50d05d553ffec0" compoundref="_vina_like_scoring_function_8h" startline="83" endline="98">SmolDock::Score::VinaLikeRigidScoringFunction::internalToExternalRepr</referencedby>
+        <referencedby refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1a78f389f738bb184be926a272f55baa95" compoundref="_vina_like_scoring_function_8h" startline="100" endline="113">SmolDock::Score::VinaLikeRigidScoringFunction::externalToInternalRepr</referencedby>
       </memberdef>
       <memberdef kind="variable" id="struct_smol_dock_1_1i_translation_1a5362a54675ecc6bac99325c69521fbb5" prot="public" static="no" mutable="no">
         <type>double</type>
@@ -32,9 +36,13 @@
         <inbodydescription>
         </inbodydescription>
         <location file="Engines/Internals/iTransform.h" line="36" column="1" bodyfile="Engines/Internals/iTransform.h" bodystart="36" bodyend="-1"/>
-        <referencedby refid="class_smol_dock_1_1_gradient_descent_line_search_1a8bc11fdd0f47562e773df6dff62dc82a" compoundref="_gradient_descent_line_search_8cpp" startline="28" endline="210">SmolDock::GradientDescentLineSearch::optimize</referencedby>
-        <referencedby refid="namespace_smol_dock_1a3974d1e3a6f729a7ca05b97996ca2079" compoundref="i_transform_8h" startline="72" endline="80">SmolDock::iTransformIdentityInit</referencedby>
-        <referencedby refid="namespace_smol_dock_1a20628b953f3dec7f26d7c8221a508160" compoundref="i_transform_8h" startline="103" endline="108">SmolDock::applyTranslationInPlace</referencedby>
+        <referencedby refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a7bee39278168cb4d7ee6558b3a3d3bb4" compoundref="_conformer_rigid_docking_engine_8cpp" startline="132" endline="217">SmolDock::Engine::ConformerRigidDockingEngine::runDockingEngine</referencedby>
+        <referencedby refid="namespace_smol_dock_1a3974d1e3a6f729a7ca05b97996ca2079" compoundref="_internals_utility_functions_8h" startline="26" endline="33">SmolDock::iTransformIdentityInit</referencedby>
+        <referencedby refid="namespace_smol_dock_1a20628b953f3dec7f26d7c8221a508160" compoundref="_internals_utility_functions_8h" startline="57" endline="61">SmolDock::applyTranslationInPlace</referencedby>
+        <referencedby refid="class_smol_dock_1_1_molecule_1a5247ebed094d5593a5a704c0c2919c0c" compoundref="_molecule_8cpp" startline="384" endline="453">SmolDock::Molecule::generateIConformerForGivenRDKitConformerID</referencedby>
+        <referencedby refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1a574511b3c12769902e2c0366d4d3db96" compoundref="_vina_like_scoring_function_8cpp" startline="236" endline="294">SmolDock::Score::VinaLikeRigidScoringFunction::EvaluateWithGradient</referencedby>
+        <referencedby refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1a7998fd7ab2237aa8da50d05d553ffec0" compoundref="_vina_like_scoring_function_8h" startline="83" endline="98">SmolDock::Score::VinaLikeRigidScoringFunction::internalToExternalRepr</referencedby>
+        <referencedby refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1a78f389f738bb184be926a272f55baa95" compoundref="_vina_like_scoring_function_8h" startline="100" endline="113">SmolDock::Score::VinaLikeRigidScoringFunction::externalToInternalRepr</referencedby>
       </memberdef>
       <memberdef kind="variable" id="struct_smol_dock_1_1i_translation_1a2ed07fcfc129a2bf7696b65d481317c5" prot="public" static="no" mutable="no">
         <type>double</type>
@@ -48,9 +56,12 @@
         <inbodydescription>
         </inbodydescription>
         <location file="Engines/Internals/iTransform.h" line="36" column="1" bodyfile="Engines/Internals/iTransform.h" bodystart="36" bodyend="-1"/>
-        <referencedby refid="class_smol_dock_1_1_gradient_descent_line_search_1a8bc11fdd0f47562e773df6dff62dc82a" compoundref="_gradient_descent_line_search_8cpp" startline="28" endline="210">SmolDock::GradientDescentLineSearch::optimize</referencedby>
-        <referencedby refid="namespace_smol_dock_1a3974d1e3a6f729a7ca05b97996ca2079" compoundref="i_transform_8h" startline="72" endline="80">SmolDock::iTransformIdentityInit</referencedby>
-        <referencedby refid="namespace_smol_dock_1a20628b953f3dec7f26d7c8221a508160" compoundref="i_transform_8h" startline="103" endline="108">SmolDock::applyTranslationInPlace</referencedby>
+        <referencedby refid="namespace_smol_dock_1a3974d1e3a6f729a7ca05b97996ca2079" compoundref="_internals_utility_functions_8h" startline="26" endline="33">SmolDock::iTransformIdentityInit</referencedby>
+        <referencedby refid="namespace_smol_dock_1a20628b953f3dec7f26d7c8221a508160" compoundref="_internals_utility_functions_8h" startline="57" endline="61">SmolDock::applyTranslationInPlace</referencedby>
+        <referencedby refid="class_smol_dock_1_1_molecule_1a5247ebed094d5593a5a704c0c2919c0c" compoundref="_molecule_8cpp" startline="384" endline="453">SmolDock::Molecule::generateIConformerForGivenRDKitConformerID</referencedby>
+        <referencedby refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1a574511b3c12769902e2c0366d4d3db96" compoundref="_vina_like_scoring_function_8cpp" startline="236" endline="294">SmolDock::Score::VinaLikeRigidScoringFunction::EvaluateWithGradient</referencedby>
+        <referencedby refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1a7998fd7ab2237aa8da50d05d553ffec0" compoundref="_vina_like_scoring_function_8h" startline="83" endline="98">SmolDock::Score::VinaLikeRigidScoringFunction::internalToExternalRepr</referencedby>
+        <referencedby refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1a78f389f738bb184be926a272f55baa95" compoundref="_vina_like_scoring_function_8h" startline="100" endline="113">SmolDock::Score::VinaLikeRigidScoringFunction::externalToInternalRepr</referencedby>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -58,7 +69,7 @@
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
-      <node id="124">
+      <node id="127">
         <label>SmolDock::iTranslation</label>
         <link refid="struct_smol_dock_1_1i_translation"/>
       </node>

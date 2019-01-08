@@ -3,6 +3,8 @@ A small protein-ligand docking software.
 I'm reimplementing something similar to Autodock Vina because I find the source code to be somewhat
 difficult to understand.
 
+Find the documentation on GitHub Pages : https://elianebriand.github.io/SmolDock/
+
 # Build
 
 Check that you have the required dependencies (see below), then : 
@@ -22,11 +24,18 @@ See Frontends/main.cpp for lack of a proper interface yet...
 SmolDock is licenced under GNU GPL version 3 or later.
 
 
-
 It includes works from :
 
-- ESBTL (released under GNU GPLv3)
+- ESBTL (GNU GPLv3)
+- Autodock Vina (Apache 2.0)
+- RDKit (BSD 3-clauses)
+- Ensmallen (BSD 3-clauses)
 
+It links with
+- RDKit (BSD 3-clauses)
+- Vc (BSD 3-clauses)
+
+See COPYING for copyrights and text of these licences.
 
 # Documentation
 

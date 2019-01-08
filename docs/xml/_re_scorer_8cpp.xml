@@ -3,212 +3,238 @@
   <compounddef id="_re_scorer_8cpp" kind="file" language="C++">
     <compoundname>ReScorer.cpp</compoundname>
     <includes refid="_re_scorer_8h" local="yes">ReScorer.h</includes>
+    <includes refid="_internals_utility_functions_8h" local="no">Engines/Internals/InternalsUtilityFunctions.h</includes>
     <incdepgraph>
-      <node id="1024">
+      <node id="1460">
         <label>Structures/Protein.h</label>
         <link refid="_protein_8h"/>
-        <childnode refid="1025" relation="include">
+        <childnode refid="1461" relation="include">
         </childnode>
-        <childnode refid="1026" relation="include">
+        <childnode refid="1462" relation="include">
         </childnode>
-        <childnode refid="1027" relation="include">
+        <childnode refid="1463" relation="include">
         </childnode>
-        <childnode refid="1028" relation="include">
+        <childnode refid="1464" relation="include">
         </childnode>
-        <childnode refid="1029" relation="include">
+        <childnode refid="1465" relation="include">
         </childnode>
-        <childnode refid="1030" relation="include">
+        <childnode refid="1466" relation="include">
         </childnode>
-        <childnode refid="1031" relation="include">
+        <childnode refid="1467" relation="include">
         </childnode>
-        <childnode refid="1033" relation="include">
+        <childnode refid="1469" relation="include">
         </childnode>
-        <childnode refid="1034" relation="include">
+        <childnode refid="1477" relation="include">
+        </childnode>
+        <childnode refid="1474" relation="include">
         </childnode>
       </node>
-      <node id="1027">
+      <node id="1463">
         <label>ESBTL/default.h</label>
       </node>
-      <node id="1041">
+      <node id="1480">
         <label>GraphMol/RWMol.h</label>
       </node>
-      <node id="1042">
+      <node id="1481">
         <label>GraphMol/MolOps.h</label>
       </node>
-      <node id="1045">
+      <node id="1484">
         <label>GraphMol/Substruct/SubstructMatch.h</label>
       </node>
-      <node id="1053">
+      <node id="1490">
         <label>cmath</label>
       </node>
-      <node id="1046">
+      <node id="1491">
+        <label>cassert</label>
+      </node>
+      <node id="1485">
         <label>GraphMol/DistGeomHelpers/Embedder.h</label>
       </node>
-      <node id="1022">
+      <node id="1469">
+        <label>Structures/InputPostProcessors/InputPostProcessorInterface.h</label>
+        <link refid="_input_post_processor_interface_8h"/>
+        <childnode refid="1470" relation="include">
+        </childnode>
+      </node>
+      <node id="1458">
         <label>ReScorer.cpp</label>
         <link refid="_re_scorer_8cpp"/>
-        <childnode refid="1023" relation="include">
+        <childnode refid="1459" relation="include">
+        </childnode>
+        <childnode refid="1492" relation="include">
         </childnode>
       </node>
-      <node id="1035">
+      <node id="1475">
         <label>string</label>
       </node>
-      <node id="1030">
+      <node id="1466">
         <label>ESBTL/compressed_ifstream.h</label>
       </node>
-      <node id="1047">
-        <label>Atom.h</label>
+      <node id="1470">
+        <label>Structures/Atom.h</label>
         <link refid="_atom_8h"/>
-        <childnode refid="1025" relation="include">
+        <childnode refid="1461" relation="include">
         </childnode>
-        <childnode refid="1026" relation="include">
+        <childnode refid="1462" relation="include">
         </childnode>
-        <childnode refid="1036" relation="include">
+        <childnode refid="1471" relation="include">
         </childnode>
-        <childnode refid="1037" relation="include">
+        <childnode refid="1472" relation="include">
         </childnode>
-        <childnode refid="1048" relation="include">
+        <childnode refid="1473" relation="include">
         </childnode>
-        <childnode refid="1034" relation="include">
+        <childnode refid="1474" relation="include">
         </childnode>
       </node>
-      <node id="1032">
+      <node id="1468">
         <label>map</label>
       </node>
-      <node id="1050">
+      <node id="1487">
         <label>../Engines/Internals/iConformer.h</label>
         <link refid="i_conformer_8h"/>
-        <childnode refid="1025" relation="include">
+        <childnode refid="1461" relation="include">
         </childnode>
-        <childnode refid="1026" relation="include">
+        <childnode refid="1462" relation="include">
+        </childnode>
+        <childnode refid="1488" relation="include">
         </childnode>
       </node>
-      <node id="1049">
+      <node id="1486">
         <label>Bond.h</label>
         <link refid="_bond_8h"/>
-        <childnode refid="1026" relation="include">
+        <childnode refid="1462" relation="include">
         </childnode>
-        <childnode refid="1047" relation="include">
+        <childnode refid="1470" relation="include">
         </childnode>
       </node>
-      <node id="1023">
+      <node id="1459">
         <label>ReScorer.h</label>
         <link refid="_re_scorer_8h"/>
-        <childnode refid="1024" relation="include">
+        <childnode refid="1460" relation="include">
         </childnode>
-        <childnode refid="1039" relation="include">
+        <childnode refid="1478" relation="include">
         </childnode>
-        <childnode refid="1051" relation="include">
+        <childnode refid="1488" relation="include">
         </childnode>
       </node>
-      <node id="1028">
+      <node id="1464">
         <label>ESBTL/atom_classifier.h</label>
       </node>
-      <node id="1034">
+      <node id="1474">
         <label>AminoAcid.h</label>
         <link refid="_amino_acid_8h"/>
-        <childnode refid="1035" relation="include">
+        <childnode refid="1475" relation="include">
         </childnode>
-        <childnode refid="1025" relation="include">
+        <childnode refid="1461" relation="include">
         </childnode>
-        <childnode refid="1036" relation="include">
+        <childnode refid="1471" relation="include">
         </childnode>
-        <childnode refid="1037" relation="include">
+        <childnode refid="1472" relation="include">
         </childnode>
-        <childnode refid="1038" relation="include">
+        <childnode refid="1476" relation="include">
         </childnode>
-        <childnode refid="1026" relation="include">
+        <childnode refid="1462" relation="include">
         </childnode>
-        <childnode refid="1031" relation="include">
+        <childnode refid="1467" relation="include">
         </childnode>
       </node>
-      <node id="1038">
+      <node id="1476">
         <label>tuple</label>
       </node>
-      <node id="1031">
+      <node id="1467">
         <label>Engines/Internals/iProtein.h</label>
         <link refid="i_protein_8h"/>
-        <childnode refid="1025" relation="include">
+        <childnode refid="1461" relation="include">
         </childnode>
-        <childnode refid="1026" relation="include">
+        <childnode refid="1462" relation="include">
         </childnode>
-        <childnode refid="1032" relation="include">
+        <childnode refid="1468" relation="include">
         </childnode>
       </node>
-      <node id="1051">
-        <label>Engines/Internals/iTransform.h</label>
+      <node id="1488">
+        <label>iTransform.h</label>
         <link refid="i_transform_8h"/>
-        <childnode refid="1025" relation="include">
+        <childnode refid="1461" relation="include">
         </childnode>
-        <childnode refid="1026" relation="include">
+        <childnode refid="1462" relation="include">
         </childnode>
-        <childnode refid="1052" relation="include">
+        <childnode refid="1489" relation="include">
         </childnode>
-        <childnode refid="1053" relation="include">
+        <childnode refid="1490" relation="include">
         </childnode>
-        <childnode refid="1050" relation="include">
+        <childnode refid="1491" relation="include">
         </childnode>
       </node>
-      <node id="1025">
+      <node id="1461">
         <label>vector</label>
       </node>
-      <node id="1052">
+      <node id="1489">
         <label>array</label>
       </node>
-      <node id="1044">
+      <node id="1483">
         <label>GraphMol/SmilesParse/SmilesParse.h</label>
       </node>
-      <node id="1033">
+      <node id="1477">
         <label>Structure.h</label>
         <link refid="_structure_8h"/>
       </node>
-      <node id="1039">
+      <node id="1478">
         <label>Structures/Molecule.h</label>
         <link refid="_molecule_8h"/>
-        <childnode refid="1025" relation="include">
+        <childnode refid="1461" relation="include">
         </childnode>
-        <childnode refid="1040" relation="include">
+        <childnode refid="1479" relation="include">
         </childnode>
-        <childnode refid="1041" relation="include">
+        <childnode refid="1480" relation="include">
         </childnode>
-        <childnode refid="1042" relation="include">
+        <childnode refid="1481" relation="include">
         </childnode>
-        <childnode refid="1043" relation="include">
+        <childnode refid="1482" relation="include">
         </childnode>
-        <childnode refid="1044" relation="include">
+        <childnode refid="1483" relation="include">
         </childnode>
-        <childnode refid="1045" relation="include">
+        <childnode refid="1484" relation="include">
         </childnode>
-        <childnode refid="1046" relation="include">
+        <childnode refid="1485" relation="include">
         </childnode>
-        <childnode refid="1033" relation="include">
+        <childnode refid="1469" relation="include">
         </childnode>
-        <childnode refid="1047" relation="include">
+        <childnode refid="1477" relation="include">
         </childnode>
-        <childnode refid="1049" relation="include">
+        <childnode refid="1470" relation="include">
         </childnode>
-        <childnode refid="1050" relation="include">
+        <childnode refid="1486" relation="include">
+        </childnode>
+        <childnode refid="1487" relation="include">
         </childnode>
       </node>
-      <node id="1040">
+      <node id="1479">
         <label>GraphMol/RDKitBase.h</label>
       </node>
-      <node id="1048">
+      <node id="1473">
         <label>iostream</label>
       </node>
-      <node id="1036">
+      <node id="1492">
+        <label>Engines/Internals/InternalsUtilityFunctions.h</label>
+        <link refid="_internals_utility_functions_8h"/>
+        <childnode refid="1487" relation="include">
+        </childnode>
+        <childnode refid="1488" relation="include">
+        </childnode>
+      </node>
+      <node id="1471">
         <label>set</label>
       </node>
-      <node id="1037">
+      <node id="1472">
         <label>algorithm</label>
       </node>
-      <node id="1029">
+      <node id="1465">
         <label>ESBTL/weighted_atom_iterator.h</label>
       </node>
-      <node id="1026">
+      <node id="1462">
         <label>memory</label>
       </node>
-      <node id="1043">
+      <node id="1482">
         <label>GraphMol/FileParsers/FileParsers.h</label>
       </node>
     </incdepgraph>
@@ -224,28 +250,31 @@
 <codeline lineno="4"><highlight class="normal"></highlight></codeline>
 <codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_re_scorer_8h" kindref="compound">ReScorer.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="6"><highlight class="normal"></highlight></codeline>
-<codeline lineno="7"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_smol_dock" kindref="compound">SmolDock</ref><sp/>{</highlight></codeline>
-<codeline lineno="8" refid="class_smol_dock_1_1_re_scorer_1ae77b0b4b724627836a85359936ae63a1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_re_scorer_1ae77b0b4b724627836a85359936ae63a1" kindref="member">ReScorer::ReScorer</ref>(<ref refid="class_smol_dock_1_1_protein" kindref="compound">SmolDock::Protein</ref><sp/>&amp;prot,<sp/><ref refid="class_smol_dock_1_1_molecule" kindref="compound">SmolDock::Molecule</ref><sp/>&amp;mol,</highlight></codeline>
-<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::function&lt;</highlight><highlight class="keywordtype">double</highlight><highlight class="normal">(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_smol_dock_1_1i_conformer" kindref="compound">iConformer</ref><sp/>&amp;,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_smol_dock_1_1i_transform" kindref="compound">iTransform</ref><sp/>&amp;,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_smol_dock_1_1i_protein" kindref="compound">iProtein</ref><sp/>&amp;)&gt;&amp;<sp/>scorFunc)<sp/>:</highlight></codeline>
-<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>protein(prot),<sp/>molecule(mol),</highlight></codeline>
-<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>scoringFunction(scorFunc){</highlight></codeline>
-<codeline lineno="12"><highlight class="normal"></highlight></codeline>
-<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="14"><highlight class="normal"></highlight></codeline>
-<codeline lineno="15" refid="class_smol_dock_1_1_re_scorer_1a102b6af24e4f5dc420c2bdfba5a792f0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_re_scorer_1a102b6af24e4f5dc420c2bdfba5a792f0" kindref="member">ReScorer::prepare</ref>()<sp/>{</highlight></codeline>
-<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="class_smol_dock_1_1_re_scorer_1a415f9b1b65c644dc042cb14131af1c10" kindref="member">iprotein</ref><sp/>=<sp/>this-&gt;<ref refid="class_smol_dock_1_1_re_scorer_1ab3d128591e75a32b1d6152bb3b4d3ea4" kindref="member">protein</ref>.<ref refid="class_smol_dock_1_1_protein_1a68856c725dbe91f5ccec59e8fa8306b2" kindref="member">getiProtein</ref>();</highlight></codeline>
-<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="class_smol_dock_1_1_re_scorer_1ac8cf11ff4b1e73fea599b6eba7d05ad0" kindref="member">iconformer</ref><sp/>=<sp/>this-&gt;<ref refid="class_smol_dock_1_1_re_scorer_1acfa92e136e1a1681477539bd14bed734" kindref="member">molecule</ref>.<ref refid="class_smol_dock_1_1_molecule_1a9aba4607923da552cf15847567c77603" kindref="member">getInitialConformer</ref>();</highlight></codeline>
-<codeline lineno="18"><highlight class="normal"></highlight></codeline>
-<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_internals_utility_functions_8h" kindref="compound">Engines/Internals/InternalsUtilityFunctions.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_smol_dock" kindref="compound">SmolDock</ref><sp/>{</highlight></codeline>
+<codeline lineno="11" refid="class_smol_dock_1_1_re_scorer_1ae77b0b4b724627836a85359936ae63a1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_re_scorer_1ae77b0b4b724627836a85359936ae63a1" kindref="member">ReScorer::ReScorer</ref>(<ref refid="class_smol_dock_1_1_protein" kindref="compound">SmolDock::Protein</ref><sp/>&amp;prot,<sp/><ref refid="class_smol_dock_1_1_molecule" kindref="compound">SmolDock::Molecule</ref><sp/>&amp;mol,</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::function&lt;</highlight><highlight class="keywordtype">double</highlight><highlight class="normal">(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_smol_dock_1_1i_conformer" kindref="compound">iConformer</ref><sp/>&amp;,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_smol_dock_1_1i_transform" kindref="compound">iTransform</ref><sp/>&amp;,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_smol_dock_1_1i_protein" kindref="compound">iProtein</ref><sp/>&amp;)&gt;&amp;<sp/>scorFunc)<sp/>:</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>protein(prot),<sp/>molecule(mol),</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>scoringFunction(scorFunc){</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18" refid="class_smol_dock_1_1_re_scorer_1a102b6af24e4f5dc420c2bdfba5a792f0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_re_scorer_1a102b6af24e4f5dc420c2bdfba5a792f0" kindref="member">ReScorer::prepare</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="class_smol_dock_1_1_re_scorer_1a415f9b1b65c644dc042cb14131af1c10" kindref="member">iprotein</ref><sp/>=<sp/>this-&gt;<ref refid="class_smol_dock_1_1_re_scorer_1ab3d128591e75a32b1d6152bb3b4d3ea4" kindref="member">protein</ref>.<ref refid="class_smol_dock_1_1_protein_1a2cccfc64e088ed1846d15c6909c9379f" kindref="member">getiProtein</ref>();</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="class_smol_dock_1_1_re_scorer_1ac8cf11ff4b1e73fea599b6eba7d05ad0" kindref="member">iconformer</ref><sp/>=<sp/>this-&gt;<ref refid="class_smol_dock_1_1_re_scorer_1acfa92e136e1a1681477539bd14bed734" kindref="member">molecule</ref>.<ref refid="class_smol_dock_1_1_molecule_1ab5fc86fa1ac97374e7d8d339404568e9" kindref="member">getInitialConformer</ref>();</highlight></codeline>
 <codeline lineno="21"><highlight class="normal"></highlight></codeline>
-<codeline lineno="22" refid="class_smol_dock_1_1_re_scorer_1a4f372ac345e57254d9b00672f169d2fd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_re_scorer_1a4f372ac345e57254d9b00672f169d2fd" kindref="member">ReScorer::getScore</ref>()<sp/>{</highlight></codeline>
-<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_re_scorer_1aa23484f98a480115afdd978a83f9091f" kindref="member">scoringFunction</ref>(this-&gt;<ref refid="class_smol_dock_1_1_re_scorer_1ac8cf11ff4b1e73fea599b6eba7d05ad0" kindref="member">iconformer</ref>,<sp/><ref refid="namespace_smol_dock_1a3974d1e3a6f729a7ca05b97996ca2079" kindref="member">iTransformIdentityInit</ref>(),<sp/>this-&gt;<ref refid="class_smol_dock_1_1_re_scorer_1a415f9b1b65c644dc042cb14131af1c10" kindref="member">iprotein</ref>);</highlight></codeline>
-<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="25"><highlight class="normal"></highlight></codeline>
-<codeline lineno="26"><highlight class="normal"></highlight></codeline>
-<codeline lineno="27"><highlight class="normal"></highlight></codeline>
-<codeline lineno="28"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25" refid="class_smol_dock_1_1_re_scorer_1a4f372ac345e57254d9b00672f169d2fd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_re_scorer_1a4f372ac345e57254d9b00672f169d2fd" kindref="member">ReScorer::getScore</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_re_scorer_1aa23484f98a480115afdd978a83f9091f" kindref="member">scoringFunction</ref>(this-&gt;<ref refid="class_smol_dock_1_1_re_scorer_1ac8cf11ff4b1e73fea599b6eba7d05ad0" kindref="member">iconformer</ref>,<sp/><ref refid="namespace_smol_dock_1a3974d1e3a6f729a7ca05b97996ca2079" kindref="member">iTransformIdentityInit</ref>(),<sp/>this-&gt;<ref refid="class_smol_dock_1_1_re_scorer_1a415f9b1b65c644dc042cb14131af1c10" kindref="member">iprotein</ref>);</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal">}</highlight></codeline>
     </programlisting>
     <location file="Utilities/ReScorer.cpp"/>
   </compounddef>

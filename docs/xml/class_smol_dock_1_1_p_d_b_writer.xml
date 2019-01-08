@@ -16,8 +16,8 @@
         <inbodydescription>
         </inbodydescription>
         <location file="Utilities/PDBWriter.h" line="37" column="1" bodyfile="Utilities/PDBWriter.h" bodystart="37" bodyend="-1"/>
-        <referencedby refid="class_smol_dock_1_1_p_d_b_writer_1aaad8350fc387575ed549a1fd8569aad2" compoundref="_p_d_b_writer_8cpp" startline="21" endline="75">writePDB</referencedby>
-        <referencedby refid="class_smol_dock_1_1_p_d_b_writer_1a74fc5d4cb9bbe5c8f0362366178dbff0" compoundref="_p_d_b_writer_8cpp" startline="77" endline="79">addLigand</referencedby>
+        <referencedby refid="class_smol_dock_1_1_p_d_b_writer_1aaad8350fc387575ed549a1fd8569aad2" compoundref="_p_d_b_writer_8cpp" startline="21" endline="82">writePDB</referencedby>
+        <referencedby refid="class_smol_dock_1_1_p_d_b_writer_1a74fc5d4cb9bbe5c8f0362366178dbff0" compoundref="_p_d_b_writer_8cpp" startline="84" endline="86">addLigand</referencedby>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -44,9 +44,10 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Utilities/PDBWriter.h" line="27" column="1" bodyfile="Utilities/PDBWriter.cpp" bodystart="77" bodyend="79"/>
+        <location file="Utilities/PDBWriter.h" line="27" column="1" bodyfile="Utilities/PDBWriter.cpp" bodystart="84" bodyend="86"/>
         <references refid="class_smol_dock_1_1_p_d_b_writer_1a6b87555fa4218995d083a9b3181494dc" compoundref="_p_d_b_writer_8h" startline="37">ligand_to_export</references>
         <referencedby refid="class_smol_dock_1_1_intermediate_conformer_collector_1a1d878b323a17e56169fb4fad4f92a742" compoundref="_intermediate_conformer_collector_8cpp" startline="13" endline="17">SmolDock::IntermediateConformerCollector::addiConformer</referencedby>
+        <referencedby refid="main_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4" compoundref="main_8cpp" startline="45" endline="154">main</referencedby>
       </memberdef>
       <memberdef kind="function" id="class_smol_dock_1_1_p_d_b_writer_1aaad8350fc387575ed549a1fd8569aad2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -72,10 +73,10 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Utilities/PDBWriter.h" line="34" column="1" bodyfile="Utilities/PDBWriter.cpp" bodystart="21" bodyend="75"/>
+        <location file="Utilities/PDBWriter.h" line="34" column="1" bodyfile="Utilities/PDBWriter.cpp" bodystart="21" bodyend="82"/>
         <references refid="namespace_smol_dock_1abf06ab90cb8bd0858a883be16bb9f563" compoundref="_atom_8cpp" startline="60" endline="71">SmolDock::atomTypeToSymbolString</references>
         <references refid="class_smol_dock_1_1_p_d_b_writer_1a6b87555fa4218995d083a9b3181494dc" compoundref="_p_d_b_writer_8h" startline="37">ligand_to_export</references>
-        <referencedby refid="main_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4" compoundref="main_8cpp" startline="39" endline="132">main</referencedby>
+        <referencedby refid="main_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4" compoundref="main_8cpp" startline="45" endline="154">main</referencedby>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -83,69 +84,69 @@
     <detaileddescription>
 <para>Not really standard conformant but ChemInfo software will open the generated file without problem. </para>    </detaileddescription>
     <collaborationgraph>
-      <node id="158">
+      <node id="160">
         <label>T</label>
       </node>
-      <node id="154">
+      <node id="156">
         <label>SmolDock::Molecule</label>
         <link refid="class_smol_dock_1_1_molecule"/>
-        <childnode refid="155" relation="private-inheritance">
+        <childnode refid="157" relation="private-inheritance">
         </childnode>
-        <childnode refid="156" relation="usage">
+        <childnode refid="158" relation="usage">
           <edgelabel>-bonds</edgelabel>
         </childnode>
-        <childnode refid="159" relation="usage">
+        <childnode refid="161" relation="usage">
           <edgelabel>-smiles</edgelabel>
           <edgelabel>-residue_name</edgelabel>
         </childnode>
-        <childnode refid="161" relation="usage">
+        <childnode refid="163" relation="usage">
           <edgelabel>-atoms</edgelabel>
         </childnode>
       </node>
-      <node id="156">
+      <node id="158">
         <label>std::vector&lt; std::shared_ptr&lt; SmolDock::Bond &gt; &gt;</label>
-        <childnode refid="157" relation="template-instance">
+        <childnode refid="159" relation="template-instance">
           <edgelabel>&lt; std::shared_ptr&lt; SmolDock::Bond &gt; &gt;</edgelabel>
         </childnode>
       </node>
-      <node id="157">
+      <node id="159">
         <label>std::vector&lt; T &gt;</label>
-        <childnode refid="158" relation="usage">
+        <childnode refid="160" relation="usage">
           <edgelabel>+elements</edgelabel>
         </childnode>
       </node>
-      <node id="152">
+      <node id="154">
         <label>SmolDock::PDBWriter</label>
         <link refid="class_smol_dock_1_1_p_d_b_writer"/>
-        <childnode refid="153" relation="usage">
+        <childnode refid="155" relation="usage">
           <edgelabel>-ligand_to_export</edgelabel>
         </childnode>
       </node>
-      <node id="155">
+      <node id="157">
         <label>SmolDock::Structure</label>
         <link refid="class_smol_dock_1_1_structure"/>
       </node>
-      <node id="160">
+      <node id="162">
         <label>std::basic_string&lt; char &gt;</label>
       </node>
-      <node id="153">
+      <node id="155">
         <label>std::vector&lt; SmolDock::Molecule &gt;</label>
-        <childnode refid="154" relation="usage">
+        <childnode refid="156" relation="usage">
           <edgelabel>+elements</edgelabel>
         </childnode>
-        <childnode refid="157" relation="template-instance">
+        <childnode refid="159" relation="template-instance">
           <edgelabel>&lt; SmolDock::Molecule &gt;</edgelabel>
         </childnode>
       </node>
-      <node id="161">
+      <node id="163">
         <label>std::vector&lt; std::shared_ptr&lt; SmolDock::Atom &gt; &gt;</label>
-        <childnode refid="157" relation="template-instance">
+        <childnode refid="159" relation="template-instance">
           <edgelabel>&lt; std::shared_ptr&lt; SmolDock::Atom &gt; &gt;</edgelabel>
         </childnode>
       </node>
-      <node id="159">
+      <node id="161">
         <label>std::string</label>
-        <childnode refid="160" relation="public-inheritance">
+        <childnode refid="162" relation="public-inheritance">
         </childnode>
       </node>
     </collaborationgraph>

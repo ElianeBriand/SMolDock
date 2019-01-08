@@ -30,9 +30,9 @@ namespace np = boost::numpy;
 
 namespace sd = SmolDock;
 
-BOOST_PYTHON_MEMBER_FUNCTION_OVERLOADS(populateFromPDB_overloads, sd::Molecule::populateFromPDB, 1, 3)
-BOOST_PYTHON_MEMBER_FUNCTION_OVERLOADS(populateFromSMILES_overloads, sd::Molecule::populateFromSMILES, 1, 2)
-BOOST_PYTHON_MEMBER_FUNCTION_OVERLOADS(generateConformer_overloads, sd::Molecule::generateConformer, 1, 2)
+BOOST_PYTHON_MEMBER_FUNCTION_OVERLOADS(populateFromPDB_overloads, sd::Molecule::populateFromPDB, 1, 4)
+BOOST_PYTHON_MEMBER_FUNCTION_OVERLOADS(populateFromSMILES_overloads, sd::Molecule::populateFromSMILES, 1, 3)
+BOOST_PYTHON_MEMBER_FUNCTION_OVERLOADS(generateConformer_overloads, sd::Molecule::generateConformer, 1, 3)
 
 
 

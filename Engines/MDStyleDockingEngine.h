@@ -34,10 +34,6 @@ namespace SmolDock::Engine {
         MDStyleDockingEngine() = default;
 
 
-        bool setProtein(Protein *p) final;
-
-        bool setLigand(Molecule *m) final;
-
 
         bool setDockingBox(DockingBoxSetting setting) final;
 
@@ -49,10 +45,10 @@ namespace SmolDock::Engine {
 
 
     private:
-
+/*
         Protein *protein = nullptr;
         Molecule *ligand = nullptr;
-
+*/
     };
 
 }

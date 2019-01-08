@@ -34,6 +34,7 @@
 
 
 #include <Engines/Internals/iProtein.h>
+#include <Structures/InputPostProcessors/InputPostProcessorInterface.h>
 
 #include "Structure.h"
 #include "AminoAcid.h"
@@ -55,16 +56,17 @@ namespace SmolDock {
          * Alternative location, temperature factor and other subtleties of the PDB format are ignored.
          *
          * \param filename Path to PDB file
+         * \param postProcessors A vector of pointer to post-processors object that will be applied to the protein
          * \return whether the parsing was successful.
         */
-        bool populateFromPDB(const std::string &filename);
+        bool populateFromPDB(const std::string &filename, std::vector<InputPostProcessor::InputPostProcessor*> postProcessors = {} );
 
         //! Return an iProtein object for use in docking engine
         /*!
          *
          * \return the equivalent iProtein object
         */
-        iProtein getiProtein();
+        iProtein getiProtein() const;
 
     private:
         std::vector<std::shared_ptr<AminoAcid> > aminoacids;
@@ -73,6 +75,14 @@ namespace SmolDock {
         double center_x = 0;
         double center_y = 0;
         double center_z = 0;
+
+        double min_x = 0;
+        double min_y = 0;
+        double min_z = 0;
+
+        double max_x = 0;
+        double max_y = 0;
+        double max_z = 0;
 
     };
 

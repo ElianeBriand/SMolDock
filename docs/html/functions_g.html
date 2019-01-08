@@ -96,13 +96,16 @@ $(document).ready(function(){initNavTree('functions_g.html','');});
 
 <h3><a id="index_g"></a>- g -</h3><ul>
 <li>generateConformer()
-: <a class="el" href="class_smol_dock_1_1_molecule.html#a449f37f171474849ad896e33dfc9e2f4">SmolDock::Molecule</a>
+: <a class="el" href="class_smol_dock_1_1_molecule.html#ad10dcbd80a2ac181b3d76fbae3f90ca2">SmolDock::Molecule</a>
 </li>
 <li>generateConformers()
-: <a class="el" href="class_smol_dock_1_1_molecule.html#a2767177fabc41b3aeaa68c77d8addd1b">SmolDock::Molecule</a>
+: <a class="el" href="class_smol_dock_1_1_molecule.html#a1cce96a4a5296ab42ae3ab06fbc374a1">SmolDock::Molecule</a>
+</li>
+<li>generateIConformerForGivenRDKitConformerID()
+: <a class="el" href="class_smol_dock_1_1_molecule.html#a5247ebed094d5593a5a704c0c2919c0c">SmolDock::Molecule</a>
 </li>
 <li>getAAId()
-: <a class="el" href="class_smol_dock_1_1_amino_acid.html#a8cd51ce91381cbd486fef313ff79e50d">SmolDock::AminoAcid</a>
+: <a class="el" href="class_smol_dock_1_1_amino_acid.html#a8d76cf7b2a088f713aa507029f03ac20">SmolDock::AminoAcid</a>
 </li>
 <li>getAtomicNumber()
 : <a class="el" href="class_smol_dock_1_1_atom.html#a7cd7a34817ac20e79ede418d6896ff48">SmolDock::Atom</a>
@@ -137,8 +140,13 @@ $(document).ready(function(){initNavTree('functions_g.html','');});
 <li>getCharge()
 : <a class="el" href="class_smol_dock_1_1_atom.html#af5d8a7887cbd714ad4b728e1b68c0881">SmolDock::Atom</a>
 </li>
-<li>getCurrentConformerWithTransform()
-: <a class="el" href="class_smol_dock_1_1_gradient_descent_line_search.html#aa4a1f5365397747805edd12aa4d53270">SmolDock::GradientDescentLineSearch</a>
+<li>getConformerForParamMatrix()
+: <a class="el" href="class_smol_dock_1_1_score_1_1_scoring_function.html#ac446224ef6f15aa89c1d3b604fd43a13">SmolDock::Score::ScoringFunction</a>
+, <a class="el" href="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function.html#a6b173e704b812af5cde72610f1143577">SmolDock::Score::VinaLikeRigidScoringFunction</a>
+</li>
+<li>getDifferentialEpsilon()
+: <a class="el" href="class_smol_dock_1_1_score_1_1_scoring_function.html#a526926e386e47c0c4bace70b75b54632">SmolDock::Score::ScoringFunction</a>
+, <a class="el" href="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function.html#a2173a0716d2426518a601e1525798fcd">SmolDock::Score::VinaLikeRigidScoringFunction</a>
 </li>
 <li>getDockingResult()
 : <a class="el" href="class_smol_dock_1_1_engine_1_1_abstract_docking_engine.html#a2e881d63b0214caf95efa3245446faf3">SmolDock::Engine::AbstractDockingEngine</a>
@@ -151,33 +159,55 @@ $(document).ready(function(){initNavTree('functions_g.html','');});
 <li>getEndB()
 : <a class="el" href="class_smol_dock_1_1_bond.html#a0a2feeb4cc88cbb8920ae5e9b142ead5">SmolDock::Bond</a>
 </li>
-<li>getFinalConformer()
-: <a class="el" href="class_smol_dock_1_1_gradient_descent_line_search.html#a5a70b5fce84800680475f98b2b1c0f05">SmolDock::GradientDescentLineSearch</a>
-</li>
 <li>getInitialConformer()
-: <a class="el" href="class_smol_dock_1_1_molecule.html#a9aba4607923da552cf15847567c77603">SmolDock::Molecule</a>
+: <a class="el" href="class_smol_dock_1_1_molecule.html#ab5fc86fa1ac97374e7d8d339404568e9">SmolDock::Molecule</a>
 </li>
 <li>getiProtein()
-: <a class="el" href="class_smol_dock_1_1_protein.html#a68856c725dbe91f5ccec59e8fa8306b2">SmolDock::Protein</a>
+: <a class="el" href="class_smol_dock_1_1_protein.html#a2cccfc64e088ed1846d15c6909c9379f">SmolDock::Protein</a>
 </li>
 <li>getIterationNumber()
-: <a class="el" href="class_smol_dock_1_1_gradient_descent_line_search.html#a650bdae47cab1418c9a06f9de8264045">SmolDock::GradientDescentLineSearch</a>
+: <a class="el" href="class_smol_dock_1_1_optimizer_1_1_gradient_descent_line_search.html#a14219d5c7e209f0aeae91966eea06c14">SmolDock::Optimizer::GradientDescentLineSearch</a>
+</li>
+<li>getNumRotatableBond()
+: <a class="el" href="class_smol_dock_1_1_molecule.html#a41216a87fbe541655f267501568e2aa7">SmolDock::Molecule</a>
 </li>
 <li>getOwningAA()
 : <a class="el" href="class_smol_dock_1_1_atom.html#aeb93666d6868e72e846ecad7b1927b04">SmolDock::Atom</a>
 </li>
+<li>getParamVectorDimension()
+: <a class="el" href="class_smol_dock_1_1_score_1_1_scoring_function.html#a19d85e9febea604032a62624a70adc4e">SmolDock::Score::ScoringFunction</a>
+, <a class="el" href="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function.html#ad5633f6ee3c7d72b593e5101730747a2">SmolDock::Score::VinaLikeRigidScoringFunction</a>
+</li>
+<li>getRawResultMatrix()
+: <a class="el" href="class_smol_dock_1_1_optimizer_1_1_gradient_descent_line_search.html#ae3fdb46d5b28724146c8c496d59b8128">SmolDock::Optimizer::GradientDescentLineSearch</a>
+, <a class="el" href="class_smol_dock_1_1_optimizer_1_1_l___b_f_g_s.html#a7155407cb5df962be30e1fd44c82bb87">SmolDock::Optimizer::L_BFGS</a>
+, <a class="el" href="class_smol_dock_1_1_optimizer_1_1_optimizer.html#a127349b071842e954d7a89f026685b8f">SmolDock::Optimizer::Optimizer</a>
+</li>
 <li>getResidueName()
 : <a class="el" href="class_smol_dock_1_1_molecule.html#afe9743bfc4876343b6c63b0aac892f83">SmolDock::Molecule</a>
 </li>
+<li>getResultMatrix()
+: <a class="el" href="class_smol_dock_1_1_heuristics_1_1_global_heuristic.html#a1abc970d50c981e4df49833d4e7f0551">SmolDock::Heuristics::GlobalHeuristic</a>
+, <a class="el" href="class_smol_dock_1_1_heuristics_1_1_random_restart.html#abe7b812d2debcc8cd6eed8f24c9805a6">SmolDock::Heuristics::RandomRestart</a>
+</li>
 <li>getScore()
-: <a class="el" href="class_smol_dock_1_1_gradient_descent_line_search.html#a050eb315b21e5d48495d5968c2aaa8d6">SmolDock::GradientDescentLineSearch</a>
+: <a class="el" href="class_smol_dock_1_1_optimizer_1_1_gradient_descent_line_search.html#a497ef5405f36f6e5113f83a37d9542b3">SmolDock::Optimizer::GradientDescentLineSearch</a>
+, <a class="el" href="class_smol_dock_1_1_optimizer_1_1_l___b_f_g_s.html#ae6e836e829ea1f79f9e69e9c2bee26f8">SmolDock::Optimizer::L_BFGS</a>
+, <a class="el" href="class_smol_dock_1_1_optimizer_1_1_optimizer.html#a5165027808dafc096faf1048a48e7c1c">SmolDock::Optimizer::Optimizer</a>
 , <a class="el" href="class_smol_dock_1_1_re_scorer.html#a4f372ac345e57254d9b00672f169d2fd">SmolDock::ReScorer</a>
+</li>
+<li>getStartingConditions()
+: <a class="el" href="class_smol_dock_1_1_score_1_1_scoring_function.html#a70e93a6f7e50f4a57273b0faf60e8e90">SmolDock::Score::ScoringFunction</a>
+, <a class="el" href="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function.html#ad16c38589c65800f164078fcbd929e99">SmolDock::Score::VinaLikeRigidScoringFunction</a>
+</li>
+<li>getType()
+: <a class="el" href="class_smol_dock_1_1_amino_acid.html#a556f668f759abed9c33c3522106d520b">SmolDock::AminoAcid</a>
 </li>
 <li>getTypeAsString()
 : <a class="el" href="class_smol_dock_1_1_atom.html#a5c58bed07491a0ad9e674d399f2ff888">SmolDock::Atom</a>
 </li>
 <li>GradientDescentLineSearch()
-: <a class="el" href="class_smol_dock_1_1_gradient_descent_line_search.html#ab9d9aa6055a02a03df8a1e6c49af2813">SmolDock::GradientDescentLineSearch</a>
+: <a class="el" href="class_smol_dock_1_1_optimizer_1_1_gradient_descent_line_search.html#abc5e7a2cc3b11c6aa320dbae9b33c816">SmolDock::Optimizer::GradientDescentLineSearch</a>
 </li>
 </ul>
 </div><!-- contents -->

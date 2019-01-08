@@ -47,6 +47,14 @@
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
+        <enumvalue id="class_smol_dock_1_1_atom_1a57e9a532fd04e1846c0d83edebb9fd41a3e17873c24bbb0b8ab2dac324dd67b9f" prot="public">
+          <name>phosporus</name>
+          <initializer>= 15</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
         <enumvalue id="class_smol_dock_1_1_atom_1a57e9a532fd04e1846c0d83edebb9fd41a73a9bf52aa8ea9e256ec469dfce6e022" prot="public">
           <name>sulfur</name>
           <initializer>= 16</initializer>
@@ -69,54 +77,30 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Structures/Atom.h" line="53" column="1" bodyfile="Structures/Atom.h" bodystart="53" bodyend="61"/>
+        <location file="Structures/Atom.h" line="57" column="1" bodyfile="Structures/Atom.h" bodystart="57" bodyend="68"/>
       </memberdef>
       <memberdef kind="enum" id="class_smol_dock_1_1_atom_1a77191f0919af58d733764e229cb1f973" prot="public" static="no" strong="yes">
         <type>unsigned int</type>
         <name>AtomVariant</name>
-        <enumvalue id="class_smol_dock_1_1_atom_1a77191f0919af58d733764e229cb1f973aad921d60486366258809553a3db49a4a" prot="public">
-          <name>unknown</name>
-          <initializer>= 0</initializer>
+        <enumvalue id="class_smol_dock_1_1_atom_1a77191f0919af58d733764e229cb1f973ae5e437761e40c78a4c0929be07a3ab04" prot="public">
+          <name>apolar</name>
+          <initializer>= 1 &lt;&lt; 0</initializer>
           <briefdescription>
           </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="class_smol_dock_1_1_atom_1a77191f0919af58d733764e229cb1f973ae5ea25494bf7929c31404acb4d159ecb" prot="public">
-          <name>aromaticCarbon</name>
-          <initializer>= 1</initializer>
+        <enumvalue id="class_smol_dock_1_1_atom_1a77191f0919af58d733764e229cb1f973ade31e8114bf9ba2ec47d55c59f61853d" prot="public">
+          <name>hydrogenDonor</name>
+          <initializer>= 1 &lt;&lt; 1</initializer>
           <briefdescription>
           </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="class_smol_dock_1_1_atom_1a77191f0919af58d733764e229cb1f973a241861a1dfbbc92233d711bfa34e15d9" prot="public">
-          <name>aromaticNitrogen</name>
-          <initializer>= 2</initializer>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="class_smol_dock_1_1_atom_1a77191f0919af58d733764e229cb1f973aaa2ddc8a4ba81c550a95435991e2e75c" prot="public">
-          <name>sp3carbon</name>
-          <initializer>= 3</initializer>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="class_smol_dock_1_1_atom_1a77191f0919af58d733764e229cb1f973a3fba3c7feaf9a1409328b29db90d0c36" prot="public">
-          <name>sp2carbon</name>
-          <initializer>= 4</initializer>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="class_smol_dock_1_1_atom_1a77191f0919af58d733764e229cb1f973ac5879e15d7caf9ac2db3a10a035a3cf4" prot="public">
-          <name>sp1carbon</name>
-          <initializer>= 5</initializer>
+        <enumvalue id="class_smol_dock_1_1_atom_1a77191f0919af58d733764e229cb1f973ad68216b54381a7b2b87b7924ab0191c4" prot="public">
+          <name>hydrogenAcceptor</name>
+          <initializer>= 1 &lt;&lt; 2</initializer>
           <briefdescription>
           </briefdescription>
           <detaileddescription>
@@ -128,7 +112,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Structures/Atom.h" line="63" column="1" bodyfile="Structures/Atom.h" bodystart="63" bodyend="70"/>
+        <location file="Structures/Atom.h" line="70" column="1" bodyfile="Structures/Atom.h" bodystart="70" bodyend="76"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-attrib">
@@ -143,7 +127,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Structures/Atom.h" line="47" column="1" bodyfile="Structures/Atom.h" bodystart="47" bodyend="-1"/>
+        <location file="Structures/Atom.h" line="48" column="1" bodyfile="Structures/Atom.h" bodystart="48" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_smol_dock_1_1_atom_1a90ad0859a5e5a747eecdc79b8bb80561" prot="public" static="no" mutable="no">
         <type>friend</type>
@@ -156,7 +140,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Structures/Atom.h" line="48" column="1" bodyfile="Structures/Atom.h" bodystart="48" bodyend="-1"/>
+        <location file="Structures/Atom.h" line="49" column="1" bodyfile="Structures/Atom.h" bodystart="49" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="friend">
@@ -171,7 +155,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Structures/Atom.h" line="49" column="1" bodyfile="Structures/Atom.h" bodystart="49" bodyend="-1"/>
+        <location file="Structures/Atom.h" line="50" column="1" bodyfile="Structures/Atom.h" bodystart="50" bodyend="-1"/>
       </memberdef>
       <memberdef kind="friend" id="class_smol_dock_1_1_atom_1a2cc8b86817f46f61585ecf591984f8eb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>friend class</type>
@@ -184,7 +168,45 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Structures/Atom.h" line="50" column="1" bodyfile="Structures/Atom.h" bodystart="50" bodyend="-1"/>
+        <location file="Structures/Atom.h" line="51" column="1" bodyfile="Structures/Atom.h" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="friend" id="class_smol_dock_1_1_atom_1af4fe090161ac376dcfd99d5eb17c0d4a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend void</type>
+        <definition>void assignApolarCarbonFlag</definition>
+        <argsstring>(std::vector&lt; std::shared_ptr&lt; Atom &gt; &gt; &amp;atomVect)</argsstring>
+        <name>assignApolarCarbonFlag</name>
+        <param>
+          <type>std::vector&lt; std::shared_ptr&lt; <ref refid="class_smol_dock_1_1_atom" kindref="compound">Atom</ref> &gt; &gt; &amp;</type>
+          <declname>atomVect</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Structures/Atom.h" line="52" column="1" bodyfile="Structures/Common/VariantFlagAssignation.cpp" bodystart="89" bodyend="127"/>
+      </memberdef>
+      <memberdef kind="friend" id="class_smol_dock_1_1_atom_1a74b6203c0c737ad86fb18da22ec935ff" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend void</type>
+        <definition>void assignVariantFlagsForResidueAtom</definition>
+        <argsstring>(AminoAcid &amp;residue, PDBResidueVariantAssignationType assignation_type)</argsstring>
+        <name>assignVariantFlagsForResidueAtom</name>
+        <param>
+          <type><ref refid="class_smol_dock_1_1_amino_acid" kindref="compound">AminoAcid</ref> &amp;</type>
+          <declname>residue</declname>
+        </param>
+        <param>
+          <type><ref refid="namespace_smol_dock_1ab797122db8030eb70bf4d042c897df5e" kindref="member">PDBResidueVariantAssignationType</ref></type>
+          <declname>assignation_type</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Structures/Atom.h" line="53" column="1" bodyfile="Structures/Common/VariantFlagAssignation.cpp" bodystart="35" bodyend="87"/>
       </memberdef>
       <memberdef kind="friend" id="class_smol_dock_1_1_atom_1ab7591815a3dc03bab05bcb6d5e2b741a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>friend std::string</type>
@@ -201,7 +223,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Structures/Atom.h" line="94" column="1" bodyfile="Structures/Atom.cpp" bodystart="47" bodyend="58"/>
+        <location file="Structures/Atom.h" line="100" column="1" bodyfile="Structures/Atom.cpp" bodystart="47" bodyend="58"/>
         <referencedby refid="class_smol_dock_1_1_atom_1a5c58bed07491a0ad9e674d399f2ff888" compoundref="_atom_8cpp" startline="108" endline="110">getTypeAsString</referencedby>
       </memberdef>
       <memberdef kind="friend" id="class_smol_dock_1_1_atom_1ac56105f17fd519b4438ef07334e68d60" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
@@ -219,7 +241,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Structures/Atom.h" line="95" column="1" bodyfile="Structures/Atom.cpp" bodystart="60" bodyend="71"/>
+        <location file="Structures/Atom.h" line="101" column="1" bodyfile="Structures/Atom.cpp" bodystart="60" bodyend="71"/>
       </memberdef>
       <memberdef kind="friend" id="class_smol_dock_1_1_atom_1abe46f23e1f169949c8d3916b7e0ad38b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>friend <ref refid="class_smol_dock_1_1_atom_1a57e9a532fd04e1846c0d83edebb9fd41" kindref="member">Atom::AtomType</ref></type>
@@ -236,8 +258,8 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Structures/Atom.h" line="96" column="1" bodyfile="Structures/Atom.cpp" bodystart="73" bodyend="84"/>
-        <referencedby refid="class_smol_dock_1_1_atom_1a72994dd53d1aa7e9bfb05aecc8a35a52" compoundref="_atom_8cpp" startline="131" endline="144">Atom</referencedby>
+        <location file="Structures/Atom.h" line="102" column="1" bodyfile="Structures/Atom.cpp" bodystart="73" bodyend="84"/>
+        <referencedby refid="class_smol_dock_1_1_atom_1a72994dd53d1aa7e9bfb05aecc8a35a52" compoundref="_atom_8cpp" startline="132" endline="145">Atom</referencedby>
       </memberdef>
       <memberdef kind="friend" id="class_smol_dock_1_1_atom_1ae8f2ceffdf7832e3a57549119e5fc341" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>friend double</type>
@@ -254,7 +276,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Structures/Atom.h" line="99" column="1" bodyfile="Structures/Atom.cpp" bodystart="86" bodyend="97"/>
+        <location file="Structures/Atom.h" line="105" column="1" bodyfile="Structures/Atom.cpp" bodystart="86" bodyend="97"/>
         <referencedby refid="class_smol_dock_1_1_atom_1a6fdae20edd67e75fa5fab8cbdbb39faf" compoundref="_atom_8cpp" startline="31" endline="37">Atom</referencedby>
       </memberdef>
       </sectiondef>
@@ -270,8 +292,8 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Structures/Atom.h" line="152" column="1" bodyfile="Structures/Atom.h" bodystart="152" bodyend="-1"/>
-        <referencedby refid="class_smol_dock_1_1_molecule_1a70156ffc4081eb92f9dc4e2c70096c84" compoundref="_molecule_8cpp" startline="336" endline="379">SmolDock::Molecule::deepcopy</referencedby>
+        <location file="Structures/Atom.h" line="158" column="1" bodyfile="Structures/Atom.h" bodystart="158" bodyend="-1"/>
+        <referencedby refid="class_smol_dock_1_1_molecule_1a70156ffc4081eb92f9dc4e2c70096c84" compoundref="_molecule_8cpp" startline="332" endline="376">SmolDock::Molecule::deepcopy</referencedby>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-attrib">
@@ -286,28 +308,29 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Structures/Atom.h" line="155" column="1" bodyfile="Structures/Atom.h" bodystart="155" bodyend="-1"/>
+        <location file="Structures/Atom.h" line="161" column="1" bodyfile="Structures/Atom.h" bodystart="161" bodyend="-1"/>
         <referencedby refid="class_smol_dock_1_1_atom_1a6b8315564e06bdc911053320fd3fa1a7" compoundref="_atom_8cpp" startline="100" endline="102">getAtomType</referencedby>
         <referencedby refid="class_smol_dock_1_1_atom_1a5c58bed07491a0ad9e674d399f2ff888" compoundref="_atom_8cpp" startline="108" endline="110">getTypeAsString</referencedby>
-        <referencedby refid="class_smol_dock_1_1_atom_1a72994dd53d1aa7e9bfb05aecc8a35a52" compoundref="_atom_8cpp" startline="131" endline="144">Atom</referencedby>
-        <referencedby refid="class_smol_dock_1_1_atom_1a2adf89fbf4618bd294318062e198db66" compoundref="_atom_8cpp" startline="171" endline="173">setAtomType</referencedby>
-        <referencedby refid="class_smol_dock_1_1_atom_1a7cd7a34817ac20e79ede418d6896ff48" compoundref="_atom_8cpp" startline="191" endline="193">getAtomicNumber</referencedby>
+        <referencedby refid="class_smol_dock_1_1_atom_1a72994dd53d1aa7e9bfb05aecc8a35a52" compoundref="_atom_8cpp" startline="132" endline="145">Atom</referencedby>
+        <referencedby refid="class_smol_dock_1_1_atom_1a2adf89fbf4618bd294318062e198db66" compoundref="_atom_8cpp" startline="172" endline="174">setAtomType</referencedby>
+        <referencedby refid="class_smol_dock_1_1_atom_1a7cd7a34817ac20e79ede418d6896ff48" compoundref="_atom_8cpp" startline="192" endline="194">getAtomicNumber</referencedby>
       </memberdef>
       <memberdef kind="variable" id="class_smol_dock_1_1_atom_1a0c54fdff29130e870237ba300a4e9d25" prot="private" static="no" mutable="no">
         <type><ref refid="class_smol_dock_1_1_atom_1a77191f0919af58d733764e229cb1f973" kindref="member">AtomVariant</ref></type>
         <definition>AtomVariant SmolDock::Atom::variant</definition>
         <argsstring></argsstring>
         <name>variant</name>
+        <initializer>= <ref refid="class_smol_dock_1_1_atom_1a77191f0919af58d733764e229cb1f973" kindref="member">Atom::AtomVariant</ref>{0}</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Structures/Atom.h" line="156" column="1" bodyfile="Structures/Atom.h" bodystart="156" bodyend="-1"/>
-        <referencedby refid="class_smol_dock_1_1_atom_1a145bc96b3b410ea87a62baeb8b83f127" compoundref="_atom_8cpp" startline="175" endline="178">getAtomVariant</referencedby>
-        <referencedby refid="class_smol_dock_1_1_atom_1aa538e302c6c9e6cafbb9f0cbefce3a4e" compoundref="_atom_8cpp" startline="180" endline="183">setAtomVariant</referencedby>
-        <referencedby refid="class_smol_dock_1_1_atom_1a6436039c9775c1662be2c3691c2785a9" compoundref="_atom_8cpp" startline="195" endline="197">getAtomVariantAsUnderlyingType</referencedby>
+        <location file="Structures/Atom.h" line="162" column="1" bodyfile="Structures/Atom.h" bodystart="162" bodyend="-1"/>
+        <referencedby refid="class_smol_dock_1_1_atom_1a145bc96b3b410ea87a62baeb8b83f127" compoundref="_atom_8cpp" startline="176" endline="179">getAtomVariant</referencedby>
+        <referencedby refid="class_smol_dock_1_1_atom_1aa538e302c6c9e6cafbb9f0cbefce3a4e" compoundref="_atom_8cpp" startline="181" endline="184">setAtomVariant</referencedby>
+        <referencedby refid="class_smol_dock_1_1_atom_1a6436039c9775c1662be2c3691c2785a9" compoundref="_atom_8cpp" startline="196" endline="198">getAtomVariantAsUnderlyingType</referencedby>
       </memberdef>
       <memberdef kind="variable" id="class_smol_dock_1_1_atom_1acec4104851702c781abb5f86844cf6b3" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -321,9 +344,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Structures/Atom.h" line="157" column="1" bodyfile="Structures/Atom.h" bodystart="157" bodyend="-1"/>
-        <referencedby refid="class_smol_dock_1_1_atom_1af5d8a7887cbd714ad4b728e1b68c0881" compoundref="_atom_8cpp" startline="208" endline="210">getCharge</referencedby>
-        <referencedby refid="class_smol_dock_1_1_atom_1a16fb238f339c0accd83095ae078040f1" compoundref="_atom_8cpp" startline="212" endline="214">setCharge</referencedby>
+        <location file="Structures/Atom.h" line="163" column="1" bodyfile="Structures/Atom.h" bodystart="163" bodyend="-1"/>
+        <referencedby refid="class_smol_dock_1_1_atom_1af5d8a7887cbd714ad4b728e1b68c0881" compoundref="_atom_8cpp" startline="209" endline="211">getCharge</referencedby>
+        <referencedby refid="class_smol_dock_1_1_atom_1a16fb238f339c0accd83095ae078040f1" compoundref="_atom_8cpp" startline="213" endline="215">setCharge</referencedby>
       </memberdef>
       <memberdef kind="variable" id="class_smol_dock_1_1_atom_1aa19d070c9951c67a4b1d4c5d80f2ee22" prot="private" static="no" mutable="no">
         <type>bool</type>
@@ -337,8 +360,8 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Structures/Atom.h" line="159" column="1" bodyfile="Structures/Atom.h" bodystart="159" bodyend="-1"/>
-        <referencedby refid="class_smol_dock_1_1_atom_1a72994dd53d1aa7e9bfb05aecc8a35a52" compoundref="_atom_8cpp" startline="131" endline="144">Atom</referencedby>
+        <location file="Structures/Atom.h" line="165" column="1" bodyfile="Structures/Atom.h" bodystart="165" bodyend="-1"/>
+        <referencedby refid="class_smol_dock_1_1_atom_1a72994dd53d1aa7e9bfb05aecc8a35a52" compoundref="_atom_8cpp" startline="132" endline="145">Atom</referencedby>
       </memberdef>
       <memberdef kind="variable" id="class_smol_dock_1_1_atom_1aeb5bd3da13c5e16176931c19bb622d91" prot="private" static="no" mutable="no">
         <type><ref refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875d" kindref="member">AminoAcid::AAType</ref></type>
@@ -352,8 +375,8 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Structures/Atom.h" line="160" column="1" bodyfile="Structures/Atom.h" bodystart="160" bodyend="-1"/>
-        <referencedby refid="class_smol_dock_1_1_atom_1a72994dd53d1aa7e9bfb05aecc8a35a52" compoundref="_atom_8cpp" startline="131" endline="144">Atom</referencedby>
+        <location file="Structures/Atom.h" line="166" column="1" bodyfile="Structures/Atom.h" bodystart="166" bodyend="-1"/>
+        <referencedby refid="class_smol_dock_1_1_atom_1a72994dd53d1aa7e9bfb05aecc8a35a52" compoundref="_atom_8cpp" startline="132" endline="145">Atom</referencedby>
       </memberdef>
       <memberdef kind="variable" id="class_smol_dock_1_1_atom_1a79a0e80b2fdb39742cc4de548d73eb63" prot="private" static="no" mutable="no">
         <type>std::string</type>
@@ -366,8 +389,8 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Structures/Atom.h" line="161" column="1" bodyfile="Structures/Atom.h" bodystart="161" bodyend="-1"/>
-        <referencedby refid="class_smol_dock_1_1_atom_1a72994dd53d1aa7e9bfb05aecc8a35a52" compoundref="_atom_8cpp" startline="131" endline="144">Atom</referencedby>
+        <location file="Structures/Atom.h" line="167" column="1" bodyfile="Structures/Atom.h" bodystart="167" bodyend="-1"/>
+        <referencedby refid="class_smol_dock_1_1_atom_1a72994dd53d1aa7e9bfb05aecc8a35a52" compoundref="_atom_8cpp" startline="132" endline="145">Atom</referencedby>
       </memberdef>
       <memberdef kind="variable" id="class_smol_dock_1_1_atom_1a41d894e0b89dfd6e28514617a4a16ecf" prot="private" static="no" mutable="no">
         <type>std::weak_ptr&lt; <ref refid="class_smol_dock_1_1_amino_acid" kindref="compound">AminoAcid</ref> &gt;</type>
@@ -380,9 +403,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Structures/Atom.h" line="162" column="1" bodyfile="Structures/Atom.h" bodystart="162" bodyend="-1"/>
-        <referencedby refid="class_smol_dock_1_1_atom_1aeb93666d6868e72e846ecad7b1927b04" compoundref="_atom_8cpp" startline="151" endline="153">getOwningAA</referencedby>
-        <referencedby refid="class_smol_dock_1_1_atom_1ad4afec1a1299201398d64daaf874857f" compoundref="_atom_8cpp" startline="155" endline="157">setOwningAA</referencedby>
+        <location file="Structures/Atom.h" line="168" column="1" bodyfile="Structures/Atom.h" bodystart="168" bodyend="-1"/>
+        <referencedby refid="class_smol_dock_1_1_atom_1aeb93666d6868e72e846ecad7b1927b04" compoundref="_atom_8cpp" startline="152" endline="154">getOwningAA</referencedby>
+        <referencedby refid="class_smol_dock_1_1_atom_1ad4afec1a1299201398d64daaf874857f" compoundref="_atom_8cpp" startline="156" endline="158">setOwningAA</referencedby>
       </memberdef>
       <memberdef kind="variable" id="class_smol_dock_1_1_atom_1a76afdad512e9f593c4445c6407b26597" prot="private" static="no" mutable="no">
         <type>unsigned int</type>
@@ -395,10 +418,10 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Structures/Atom.h" line="165" column="1" bodyfile="Structures/Atom.h" bodystart="165" bodyend="-1"/>
+        <location file="Structures/Atom.h" line="171" column="1" bodyfile="Structures/Atom.h" bodystart="171" bodyend="-1"/>
         <referencedby refid="class_smol_dock_1_1_atom_1a6fdae20edd67e75fa5fab8cbdbb39faf" compoundref="_atom_8cpp" startline="31" endline="37">Atom</referencedby>
         <referencedby refid="class_smol_dock_1_1_atom_1a62d7246b7a8f3d6aa1aa63c9d5a86ed3" compoundref="_atom_8cpp" startline="104" endline="106">getAtomID</referencedby>
-        <referencedby refid="class_smol_dock_1_1_atom_1ae4cd5cf6de8ed5b8254270eb2d7ccd81" compoundref="_atom_8cpp" startline="186" endline="189">setAtomID</referencedby>
+        <referencedby refid="class_smol_dock_1_1_atom_1ae4cd5cf6de8ed5b8254270eb2d7ccd81" compoundref="_atom_8cpp" startline="187" endline="190">setAtomID</referencedby>
       </memberdef>
       <memberdef kind="variable" id="class_smol_dock_1_1_atom_1a02874f0a49c2fb34884d7e40c6b92e9e" prot="private" static="no" mutable="no">
         <type>double</type>
@@ -411,9 +434,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Structures/Atom.h" line="167" column="1" bodyfile="Structures/Atom.h" bodystart="167" bodyend="-1"/>
-        <referencedby refid="class_smol_dock_1_1_atom_1a9b7e3a83a87f3934edb0f15929f923bd" compoundref="_atom_8cpp" startline="159" endline="161">getAtomPosition</referencedby>
-        <referencedby refid="class_smol_dock_1_1_atom_1ae4b0b82523de139bd84ec27b62faa333" compoundref="_atom_8cpp" startline="163" endline="167">setAtomPosition</referencedby>
+        <location file="Structures/Atom.h" line="173" column="1" bodyfile="Structures/Atom.h" bodystart="173" bodyend="-1"/>
+        <referencedby refid="class_smol_dock_1_1_atom_1a9b7e3a83a87f3934edb0f15929f923bd" compoundref="_atom_8cpp" startline="160" endline="162">getAtomPosition</referencedby>
+        <referencedby refid="class_smol_dock_1_1_atom_1ae4b0b82523de139bd84ec27b62faa333" compoundref="_atom_8cpp" startline="164" endline="168">setAtomPosition</referencedby>
       </memberdef>
       <memberdef kind="variable" id="class_smol_dock_1_1_atom_1a253663ad700e72667d421f4d869798e1" prot="private" static="no" mutable="no">
         <type>double</type>
@@ -426,9 +449,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Structures/Atom.h" line="167" column="1" bodyfile="Structures/Atom.h" bodystart="167" bodyend="-1"/>
-        <referencedby refid="class_smol_dock_1_1_atom_1a9b7e3a83a87f3934edb0f15929f923bd" compoundref="_atom_8cpp" startline="159" endline="161">getAtomPosition</referencedby>
-        <referencedby refid="class_smol_dock_1_1_atom_1ae4b0b82523de139bd84ec27b62faa333" compoundref="_atom_8cpp" startline="163" endline="167">setAtomPosition</referencedby>
+        <location file="Structures/Atom.h" line="173" column="1" bodyfile="Structures/Atom.h" bodystart="173" bodyend="-1"/>
+        <referencedby refid="class_smol_dock_1_1_atom_1a9b7e3a83a87f3934edb0f15929f923bd" compoundref="_atom_8cpp" startline="160" endline="162">getAtomPosition</referencedby>
+        <referencedby refid="class_smol_dock_1_1_atom_1ae4b0b82523de139bd84ec27b62faa333" compoundref="_atom_8cpp" startline="164" endline="168">setAtomPosition</referencedby>
       </memberdef>
       <memberdef kind="variable" id="class_smol_dock_1_1_atom_1a8f28d43131d21536269e220d6fa43f07" prot="private" static="no" mutable="no">
         <type>double</type>
@@ -441,9 +464,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Structures/Atom.h" line="167" column="1" bodyfile="Structures/Atom.h" bodystart="167" bodyend="-1"/>
-        <referencedby refid="class_smol_dock_1_1_atom_1a9b7e3a83a87f3934edb0f15929f923bd" compoundref="_atom_8cpp" startline="159" endline="161">getAtomPosition</referencedby>
-        <referencedby refid="class_smol_dock_1_1_atom_1ae4b0b82523de139bd84ec27b62faa333" compoundref="_atom_8cpp" startline="163" endline="167">setAtomPosition</referencedby>
+        <location file="Structures/Atom.h" line="173" column="1" bodyfile="Structures/Atom.h" bodystart="173" bodyend="-1"/>
+        <referencedby refid="class_smol_dock_1_1_atom_1a9b7e3a83a87f3934edb0f15929f923bd" compoundref="_atom_8cpp" startline="160" endline="162">getAtomPosition</referencedby>
+        <referencedby refid="class_smol_dock_1_1_atom_1ae4b0b82523de139bd84ec27b62faa333" compoundref="_atom_8cpp" startline="164" endline="168">setAtomPosition</referencedby>
       </memberdef>
       <memberdef kind="variable" id="class_smol_dock_1_1_atom_1a6d2c1ae04324600154ecd49c1b4a76c5" prot="private" static="no" mutable="no">
         <type>double</type>
@@ -456,10 +479,10 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Structures/Atom.h" line="168" column="1" bodyfile="Structures/Atom.h" bodystart="168" bodyend="-1"/>
+        <location file="Structures/Atom.h" line="174" column="1" bodyfile="Structures/Atom.h" bodystart="174" bodyend="-1"/>
         <referencedby refid="class_smol_dock_1_1_atom_1a6fdae20edd67e75fa5fab8cbdbb39faf" compoundref="_atom_8cpp" startline="31" endline="37">Atom</referencedby>
-        <referencedby refid="class_smol_dock_1_1_atom_1a3933f5afa403001d87526a52a0f4c4b5" compoundref="_atom_8cpp" startline="199" endline="201">getAtomicRadius</referencedby>
-        <referencedby refid="class_smol_dock_1_1_atom_1aba38aa3f004111483f078e97b8e34bd6" compoundref="_atom_8cpp" startline="203" endline="206">setAtomicRadius</referencedby>
+        <referencedby refid="class_smol_dock_1_1_atom_1a3933f5afa403001d87526a52a0f4c4b5" compoundref="_atom_8cpp" startline="200" endline="202">getAtomicRadius</referencedby>
+        <referencedby refid="class_smol_dock_1_1_atom_1aba38aa3f004111483f078e97b8e34bd6" compoundref="_atom_8cpp" startline="204" endline="207">setAtomicRadius</referencedby>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-static-attrib">
@@ -475,7 +498,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Structures/Atom.h" line="164" column="1" bodyfile="Structures/Atom.h" bodystart="164" bodyend="-1"/>
+        <location file="Structures/Atom.h" line="170" column="1" bodyfile="Structures/Atom.h" bodystart="170" bodyend="-1"/>
         <referencedby refid="class_smol_dock_1_1_atom_1a6fdae20edd67e75fa5fab8cbdbb39faf" compoundref="_atom_8cpp" startline="31" endline="37">Atom</referencedby>
       </memberdef>
       <memberdef kind="variable" id="class_smol_dock_1_1_atom_1aed79f9306267e3ddbd9a9b4dade2bbbf" prot="private" static="yes" mutable="no">
@@ -486,11 +509,12 @@
         <initializer>= {
             {<ref refid="class_smol_dock_1_1_atom_1a57e9a532fd04e1846c0d83edebb9fd41aad921d60486366258809553a3db49a4a" kindref="member">Atom::AtomType::unknown</ref>,  &quot;unknown&quot;,  &quot;?&quot;, 0.0},
             {Atom::AtomType::hydrogen, &quot;hydrogen&quot;, &quot;H&quot;, 0.3},
-            {Atom::AtomType::carbon,   &quot;carbon&quot;,   &quot;C&quot;, 2.0},
-            {Atom::AtomType::oxygen,   &quot;oxygen&quot;,   &quot;O&quot;, 1.6},
-            {Atom::AtomType::nitrogen, &quot;nitrogen&quot;, &quot;N&quot;, 1.7},
-            {Atom::AtomType::sulfur,   &quot;sulfur&quot;,   &quot;S&quot;, 2.6},
-            {Atom::AtomType::chlorine, &quot;chlorine&quot;, &quot;CL&quot;, 4.6}
+            {Atom::AtomType::carbon,   &quot;carbon&quot;,   &quot;C&quot;, 1.9},
+            {Atom::AtomType::oxygen,   &quot;oxygen&quot;,   &quot;O&quot;, 1.7},
+            {Atom::AtomType::nitrogen, &quot;nitrogen&quot;, &quot;N&quot;, 1.8},
+            {Atom::AtomType::sulfur,   &quot;sulfur&quot;,   &quot;S&quot;, 2.0},
+            {Atom::AtomType::chlorine, &quot;chlorine&quot;, &quot;CL&quot;, 1.8},
+            {Atom::AtomType::phosporus, &quot;phosphorus&quot;, &quot;P&quot;, 2.1}
     }</initializer>
         <briefdescription>
         </briefdescription>
@@ -498,7 +522,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Structures/Atom.h" line="170" column="1" bodyfile="Structures/Atom.h" bodystart="170" bodyend="-1"/>
+        <location file="Structures/Atom.h" line="176" column="1" bodyfile="Structures/Atom.h" bodystart="176" bodyend="-1"/>
         <referencedby refid="namespace_smol_dock_1adc50d67bf7b33de8b30d90f97c25fb24" compoundref="_atom_8cpp" startline="47" endline="58">SmolDock::atomTypeToString</referencedby>
         <referencedby refid="namespace_smol_dock_1abf06ab90cb8bd0858a883be16bb9f563" compoundref="_atom_8cpp" startline="60" endline="71">SmolDock::atomTypeToSymbolString</referencedby>
         <referencedby refid="namespace_smol_dock_1ae559278f4b66ec9a09ddfaebb224f897" compoundref="_atom_8cpp" startline="73" endline="84">SmolDock::stringToAtomType</referencedby>
@@ -521,11 +545,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Structures/Atom.h" line="103" column="1" bodyfile="Structures/Atom.cpp" bodystart="31" bodyend="37"/>
-        <references refid="class_smol_dock_1_1_atom_1a6d2c1ae04324600154ecd49c1b4a76c5" compoundref="_atom_8h" startline="168">atomicRadius</references>
-        <references refid="class_smol_dock_1_1_atom_1a76afdad512e9f593c4445c6407b26597" compoundref="_atom_8h" startline="165">AtomID</references>
+        <location file="Structures/Atom.h" line="109" column="1" bodyfile="Structures/Atom.cpp" bodystart="31" bodyend="37"/>
+        <references refid="class_smol_dock_1_1_atom_1a6d2c1ae04324600154ecd49c1b4a76c5" compoundref="_atom_8h" startline="174">atomicRadius</references>
+        <references refid="class_smol_dock_1_1_atom_1a76afdad512e9f593c4445c6407b26597" compoundref="_atom_8h" startline="171">AtomID</references>
         <references refid="class_smol_dock_1_1_atom_1ae8f2ceffdf7832e3a57549119e5fc341" compoundref="_atom_8cpp" startline="86" endline="97">atomTypeToAtomicRadius</references>
-        <references refid="class_smol_dock_1_1_atom_1a699bf43dba89827d43019464a2a1507e" compoundref="_atom_8h" startline="164">nextAtomID</references>
+        <references refid="class_smol_dock_1_1_atom_1a699bf43dba89827d43019464a2a1507e" compoundref="_atom_8h" startline="170">nextAtomID</references>
       </memberdef>
       <memberdef kind="function" id="class_smol_dock_1_1_atom_1a72994dd53d1aa7e9bfb05aecc8a35a52" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
         <type></type>
@@ -568,16 +592,16 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Structures/Atom.h" line="112" column="1" bodyfile="Structures/Atom.cpp" bodystart="131" bodyend="144"/>
-        <references refid="class_smol_dock_1_1_atom_1a79a0e80b2fdb39742cc4de548d73eb63" compoundref="_atom_8h" startline="161">atomClassInResidue</references>
-        <references refid="class_smol_dock_1_1_atom_1a6d2c1ae04324600154ecd49c1b4a76c5" compoundref="_atom_8h" startline="168">atomicRadius</references>
-        <references refid="class_smol_dock_1_1_atom_1a76afdad512e9f593c4445c6407b26597" compoundref="_atom_8h" startline="165">AtomID</references>
+        <location file="Structures/Atom.h" line="118" column="1" bodyfile="Structures/Atom.cpp" bodystart="132" bodyend="145"/>
+        <references refid="class_smol_dock_1_1_atom_1a79a0e80b2fdb39742cc4de548d73eb63" compoundref="_atom_8h" startline="167">atomClassInResidue</references>
+        <references refid="class_smol_dock_1_1_atom_1a6d2c1ae04324600154ecd49c1b4a76c5" compoundref="_atom_8h" startline="174">atomicRadius</references>
+        <references refid="class_smol_dock_1_1_atom_1a76afdad512e9f593c4445c6407b26597" compoundref="_atom_8h" startline="171">AtomID</references>
         <references refid="class_smol_dock_1_1_atom_1ae8f2ceffdf7832e3a57549119e5fc341" compoundref="_atom_8cpp" startline="86" endline="97">atomTypeToAtomicRadius</references>
-        <references refid="class_smol_dock_1_1_atom_1aa19d070c9951c67a4b1d4c5d80f2ee22" compoundref="_atom_8h" startline="159">fromResidue</references>
-        <references refid="class_smol_dock_1_1_atom_1a699bf43dba89827d43019464a2a1507e" compoundref="_atom_8h" startline="164">nextAtomID</references>
-        <references refid="class_smol_dock_1_1_atom_1aeb5bd3da13c5e16176931c19bb622d91" compoundref="_atom_8h" startline="160">residueType</references>
+        <references refid="class_smol_dock_1_1_atom_1aa19d070c9951c67a4b1d4c5d80f2ee22" compoundref="_atom_8h" startline="165">fromResidue</references>
+        <references refid="class_smol_dock_1_1_atom_1a699bf43dba89827d43019464a2a1507e" compoundref="_atom_8h" startline="170">nextAtomID</references>
+        <references refid="class_smol_dock_1_1_atom_1aeb5bd3da13c5e16176931c19bb622d91" compoundref="_atom_8h" startline="166">residueType</references>
         <references refid="class_smol_dock_1_1_atom_1abe46f23e1f169949c8d3916b7e0ad38b" compoundref="_atom_8cpp" startline="73" endline="84">stringToAtomType</references>
-        <references refid="class_smol_dock_1_1_atom_1ab3867a9c2c98c5bb43ff4a6b7f1bf856" compoundref="_atom_8h" startline="155">type</references>
+        <references refid="class_smol_dock_1_1_atom_1ab3867a9c2c98c5bb43ff4a6b7f1bf856" compoundref="_atom_8h" startline="161">type</references>
       </memberdef>
       <memberdef kind="function" id="class_smol_dock_1_1_atom_1a6d8ef00ed712a00a3c6d0827faf6ff9e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -598,9 +622,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Structures/Atom.h" line="116" column="1" bodyfile="Structures/Atom.cpp" bodystart="40" bodyend="45"/>
-        <references refid="class_smol_dock_1_1_atom_1a6d2c1ae04324600154ecd49c1b4a76c5" compoundref="_atom_8h" startline="168">atomicRadius</references>
-        <references refid="class_smol_dock_1_1_atom_1a76afdad512e9f593c4445c6407b26597" compoundref="_atom_8h" startline="165">AtomID</references>
+        <location file="Structures/Atom.h" line="122" column="1" bodyfile="Structures/Atom.cpp" bodystart="40" bodyend="45"/>
+        <references refid="class_smol_dock_1_1_atom_1a6d2c1ae04324600154ecd49c1b4a76c5" compoundref="_atom_8h" startline="174">atomicRadius</references>
+        <references refid="class_smol_dock_1_1_atom_1a76afdad512e9f593c4445c6407b26597" compoundref="_atom_8h" startline="171">AtomID</references>
         <references refid="class_smol_dock_1_1_atom_1ae8f2ceffdf7832e3a57549119e5fc341" compoundref="_atom_8cpp" startline="86" endline="97">atomTypeToAtomicRadius</references>
       </memberdef>
       <memberdef kind="function" id="class_smol_dock_1_1_atom_1a500f60cb0b8dac0c64bc44187dc90d41" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
@@ -622,10 +646,10 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Structures/Atom.h" line="118" column="1" bodyfile="Structures/Atom.cpp" bodystart="146" bodyend="149"/>
-        <references refid="class_smol_dock_1_1_atom_1a76afdad512e9f593c4445c6407b26597" compoundref="_atom_8h" startline="165">AtomID</references>
+        <location file="Structures/Atom.h" line="124" column="1" bodyfile="Structures/Atom.cpp" bodystart="147" bodyend="150"/>
+        <references refid="class_smol_dock_1_1_atom_1a76afdad512e9f593c4445c6407b26597" compoundref="_atom_8h" startline="171">AtomID</references>
         <references refid="class_smol_dock_1_1_atom_1abe46f23e1f169949c8d3916b7e0ad38b" compoundref="_atom_8cpp" startline="73" endline="84">stringToAtomType</references>
-        <references refid="class_smol_dock_1_1_atom_1ab3867a9c2c98c5bb43ff4a6b7f1bf856" compoundref="_atom_8h" startline="155">type</references>
+        <references refid="class_smol_dock_1_1_atom_1ab3867a9c2c98c5bb43ff4a6b7f1bf856" compoundref="_atom_8h" startline="161">type</references>
       </memberdef>
       <memberdef kind="function" id="class_smol_dock_1_1_atom_1a6b8315564e06bdc911053320fd3fa1a7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="class_smol_dock_1_1_atom_1a57e9a532fd04e1846c0d83edebb9fd41" kindref="member">AtomType</ref></type>
@@ -638,8 +662,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Structures/Atom.h" line="121" column="1" bodyfile="Structures/Atom.cpp" bodystart="100" bodyend="102"/>
-        <references refid="class_smol_dock_1_1_atom_1ab3867a9c2c98c5bb43ff4a6b7f1bf856" compoundref="_atom_8h" startline="155">type</references>
+        <location file="Structures/Atom.h" line="127" column="1" bodyfile="Structures/Atom.cpp" bodystart="100" bodyend="102"/>
+        <references refid="class_smol_dock_1_1_atom_1ab3867a9c2c98c5bb43ff4a6b7f1bf856" compoundref="_atom_8h" startline="161">type</references>
+        <referencedby refid="class_smol_dock_1_1_input_post_processor_1_1_vina_compatibility_post_processor_1a32e204f2bc8c35192036888be4eb554f" compoundref="_vina_compatibility_post_processor_8cpp" startline="18" endline="30">SmolDock::InputPostProcessor::VinaCompatibilityPostProcessor::processAtomFromProtein</referencedby>
       </memberdef>
       <memberdef kind="function" id="class_smol_dock_1_1_atom_1a2adf89fbf4618bd294318062e198db66" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -656,8 +681,8 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Structures/Atom.h" line="122" column="1" bodyfile="Structures/Atom.cpp" bodystart="171" bodyend="173"/>
-        <references refid="class_smol_dock_1_1_atom_1ab3867a9c2c98c5bb43ff4a6b7f1bf856" compoundref="_atom_8h" startline="155">type</references>
+        <location file="Structures/Atom.h" line="128" column="1" bodyfile="Structures/Atom.cpp" bodystart="172" bodyend="174"/>
+        <references refid="class_smol_dock_1_1_atom_1ab3867a9c2c98c5bb43ff4a6b7f1bf856" compoundref="_atom_8h" startline="161">type</references>
       </memberdef>
       <memberdef kind="function" id="class_smol_dock_1_1_atom_1a5c58bed07491a0ad9e674d399f2ff888" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>std::string</type>
@@ -670,9 +695,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Structures/Atom.h" line="123" column="1" bodyfile="Structures/Atom.cpp" bodystart="108" bodyend="110"/>
+        <location file="Structures/Atom.h" line="129" column="1" bodyfile="Structures/Atom.cpp" bodystart="108" bodyend="110"/>
         <references refid="class_smol_dock_1_1_atom_1ab7591815a3dc03bab05bcb6d5e2b741a" compoundref="_atom_8cpp" startline="47" endline="58">atomTypeToString</references>
-        <references refid="class_smol_dock_1_1_atom_1ab3867a9c2c98c5bb43ff4a6b7f1bf856" compoundref="_atom_8h" startline="155">type</references>
+        <references refid="class_smol_dock_1_1_atom_1ab3867a9c2c98c5bb43ff4a6b7f1bf856" compoundref="_atom_8h" startline="161">type</references>
       </memberdef>
       <memberdef kind="function" id="class_smol_dock_1_1_atom_1a68b727ae85b17478fe62c339a0590b14" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>std::string</type>
@@ -685,7 +710,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Structures/Atom.h" line="124" column="1" bodyfile="Structures/Atom.cpp" bodystart="216" bodyend="218"/>
+        <location file="Structures/Atom.h" line="130" column="1" bodyfile="Structures/Atom.cpp" bodystart="217" bodyend="219"/>
       </memberdef>
       <memberdef kind="function" id="class_smol_dock_1_1_atom_1a7cd7a34817ac20e79ede418d6896ff48" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>unsigned char</type>
@@ -698,8 +723,8 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Structures/Atom.h" line="125" column="1" bodyfile="Structures/Atom.cpp" bodystart="191" bodyend="193"/>
-        <references refid="class_smol_dock_1_1_atom_1ab3867a9c2c98c5bb43ff4a6b7f1bf856" compoundref="_atom_8h" startline="155">type</references>
+        <location file="Structures/Atom.h" line="131" column="1" bodyfile="Structures/Atom.cpp" bodystart="192" bodyend="194"/>
+        <references refid="class_smol_dock_1_1_atom_1ab3867a9c2c98c5bb43ff4a6b7f1bf856" compoundref="_atom_8h" startline="161">type</references>
       </memberdef>
       <memberdef kind="function" id="class_smol_dock_1_1_atom_1a145bc96b3b410ea87a62baeb8b83f127" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="class_smol_dock_1_1_atom_1a77191f0919af58d733764e229cb1f973" kindref="member">AtomVariant</ref></type>
@@ -712,8 +737,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Structures/Atom.h" line="128" column="1" bodyfile="Structures/Atom.cpp" bodystart="175" bodyend="178"/>
-        <references refid="class_smol_dock_1_1_atom_1a0c54fdff29130e870237ba300a4e9d25" compoundref="_atom_8h" startline="156">variant</references>
+        <location file="Structures/Atom.h" line="134" column="1" bodyfile="Structures/Atom.cpp" bodystart="176" bodyend="179"/>
+        <references refid="class_smol_dock_1_1_atom_1a0c54fdff29130e870237ba300a4e9d25" compoundref="_atom_8h" startline="162">variant</references>
+        <referencedby refid="class_smol_dock_1_1_input_post_processor_1_1_vina_compatibility_post_processor_1a32e204f2bc8c35192036888be4eb554f" compoundref="_vina_compatibility_post_processor_8cpp" startline="18" endline="30">SmolDock::InputPostProcessor::VinaCompatibilityPostProcessor::processAtomFromProtein</referencedby>
       </memberdef>
       <memberdef kind="function" id="class_smol_dock_1_1_atom_1aa538e302c6c9e6cafbb9f0cbefce3a4e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -730,8 +756,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Structures/Atom.h" line="129" column="1" bodyfile="Structures/Atom.cpp" bodystart="180" bodyend="183"/>
-        <references refid="class_smol_dock_1_1_atom_1a0c54fdff29130e870237ba300a4e9d25" compoundref="_atom_8h" startline="156">variant</references>
+        <location file="Structures/Atom.h" line="135" column="1" bodyfile="Structures/Atom.cpp" bodystart="181" bodyend="184"/>
+        <references refid="class_smol_dock_1_1_atom_1a0c54fdff29130e870237ba300a4e9d25" compoundref="_atom_8h" startline="162">variant</references>
+        <referencedby refid="class_smol_dock_1_1_input_post_processor_1_1_vina_compatibility_post_processor_1a32e204f2bc8c35192036888be4eb554f" compoundref="_vina_compatibility_post_processor_8cpp" startline="18" endline="30">SmolDock::InputPostProcessor::VinaCompatibilityPostProcessor::processAtomFromProtein</referencedby>
       </memberdef>
       <memberdef kind="function" id="class_smol_dock_1_1_atom_1a6436039c9775c1662be2c3691c2785a9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>unsigned int</type>
@@ -744,8 +771,8 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Structures/Atom.h" line="130" column="1" bodyfile="Structures/Atom.cpp" bodystart="195" bodyend="197"/>
-        <references refid="class_smol_dock_1_1_atom_1a0c54fdff29130e870237ba300a4e9d25" compoundref="_atom_8h" startline="156">variant</references>
+        <location file="Structures/Atom.h" line="136" column="1" bodyfile="Structures/Atom.cpp" bodystart="196" bodyend="198"/>
+        <references refid="class_smol_dock_1_1_atom_1a0c54fdff29130e870237ba300a4e9d25" compoundref="_atom_8h" startline="162">variant</references>
       </memberdef>
       <memberdef kind="function" id="class_smol_dock_1_1_atom_1a62d7246b7a8f3d6aa1aa63c9d5a86ed3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>unsigned int</type>
@@ -758,8 +785,8 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Structures/Atom.h" line="133" column="1" bodyfile="Structures/Atom.cpp" bodystart="104" bodyend="106"/>
-        <references refid="class_smol_dock_1_1_atom_1a76afdad512e9f593c4445c6407b26597" compoundref="_atom_8h" startline="165">AtomID</references>
+        <location file="Structures/Atom.h" line="139" column="1" bodyfile="Structures/Atom.cpp" bodystart="104" bodyend="106"/>
+        <references refid="class_smol_dock_1_1_atom_1a76afdad512e9f593c4445c6407b26597" compoundref="_atom_8h" startline="171">AtomID</references>
       </memberdef>
       <memberdef kind="function" id="class_smol_dock_1_1_atom_1ae4cd5cf6de8ed5b8254270eb2d7ccd81" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -776,8 +803,8 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Structures/Atom.h" line="134" column="1" bodyfile="Structures/Atom.cpp" bodystart="186" bodyend="189"/>
-        <references refid="class_smol_dock_1_1_atom_1a76afdad512e9f593c4445c6407b26597" compoundref="_atom_8h" startline="165">AtomID</references>
+        <location file="Structures/Atom.h" line="140" column="1" bodyfile="Structures/Atom.cpp" bodystart="187" bodyend="190"/>
+        <references refid="class_smol_dock_1_1_atom_1a76afdad512e9f593c4445c6407b26597" compoundref="_atom_8h" startline="171">AtomID</references>
       </memberdef>
       <memberdef kind="function" id="class_smol_dock_1_1_atom_1aeb93666d6868e72e846ecad7b1927b04" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>std::weak_ptr&lt; <ref refid="class_smol_dock_1_1_amino_acid" kindref="compound">AminoAcid</ref> &gt;</type>
@@ -790,8 +817,8 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Structures/Atom.h" line="136" column="1" bodyfile="Structures/Atom.cpp" bodystart="151" bodyend="153"/>
-        <references refid="class_smol_dock_1_1_atom_1a41d894e0b89dfd6e28514617a4a16ecf" compoundref="_atom_8h" startline="162">owningAA</references>
+        <location file="Structures/Atom.h" line="142" column="1" bodyfile="Structures/Atom.cpp" bodystart="152" bodyend="154"/>
+        <references refid="class_smol_dock_1_1_atom_1a41d894e0b89dfd6e28514617a4a16ecf" compoundref="_atom_8h" startline="168">owningAA</references>
       </memberdef>
       <memberdef kind="function" id="class_smol_dock_1_1_atom_1ad4afec1a1299201398d64daaf874857f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -808,8 +835,8 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Structures/Atom.h" line="137" column="1" bodyfile="Structures/Atom.cpp" bodystart="155" bodyend="157"/>
-        <references refid="class_smol_dock_1_1_atom_1a41d894e0b89dfd6e28514617a4a16ecf" compoundref="_atom_8h" startline="162">owningAA</references>
+        <location file="Structures/Atom.h" line="143" column="1" bodyfile="Structures/Atom.cpp" bodystart="156" bodyend="158"/>
+        <references refid="class_smol_dock_1_1_atom_1a41d894e0b89dfd6e28514617a4a16ecf" compoundref="_atom_8h" startline="168">owningAA</references>
       </memberdef>
       <memberdef kind="function" id="class_smol_dock_1_1_atom_1a9b7e3a83a87f3934edb0f15929f923bd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>std::tuple&lt; double, double, double &gt;</type>
@@ -822,10 +849,10 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Structures/Atom.h" line="139" column="1" bodyfile="Structures/Atom.cpp" bodystart="159" bodyend="161"/>
-        <references refid="class_smol_dock_1_1_atom_1a02874f0a49c2fb34884d7e40c6b92e9e" compoundref="_atom_8h" startline="167">x</references>
-        <references refid="class_smol_dock_1_1_atom_1a253663ad700e72667d421f4d869798e1" compoundref="_atom_8h" startline="167">y</references>
-        <references refid="class_smol_dock_1_1_atom_1a8f28d43131d21536269e220d6fa43f07" compoundref="_atom_8h" startline="167">z</references>
+        <location file="Structures/Atom.h" line="145" column="1" bodyfile="Structures/Atom.cpp" bodystart="160" bodyend="162"/>
+        <references refid="class_smol_dock_1_1_atom_1a02874f0a49c2fb34884d7e40c6b92e9e" compoundref="_atom_8h" startline="173">x</references>
+        <references refid="class_smol_dock_1_1_atom_1a253663ad700e72667d421f4d869798e1" compoundref="_atom_8h" startline="173">y</references>
+        <references refid="class_smol_dock_1_1_atom_1a8f28d43131d21536269e220d6fa43f07" compoundref="_atom_8h" startline="173">z</references>
       </memberdef>
       <memberdef kind="function" id="class_smol_dock_1_1_atom_1ae4b0b82523de139bd84ec27b62faa333" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -842,10 +869,10 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Structures/Atom.h" line="140" column="1" bodyfile="Structures/Atom.cpp" bodystart="163" bodyend="167"/>
-        <references refid="class_smol_dock_1_1_atom_1a02874f0a49c2fb34884d7e40c6b92e9e" compoundref="_atom_8h" startline="167">x</references>
-        <references refid="class_smol_dock_1_1_atom_1a253663ad700e72667d421f4d869798e1" compoundref="_atom_8h" startline="167">y</references>
-        <references refid="class_smol_dock_1_1_atom_1a8f28d43131d21536269e220d6fa43f07" compoundref="_atom_8h" startline="167">z</references>
+        <location file="Structures/Atom.h" line="146" column="1" bodyfile="Structures/Atom.cpp" bodystart="164" bodyend="168"/>
+        <references refid="class_smol_dock_1_1_atom_1a02874f0a49c2fb34884d7e40c6b92e9e" compoundref="_atom_8h" startline="173">x</references>
+        <references refid="class_smol_dock_1_1_atom_1a253663ad700e72667d421f4d869798e1" compoundref="_atom_8h" startline="173">y</references>
+        <references refid="class_smol_dock_1_1_atom_1a8f28d43131d21536269e220d6fa43f07" compoundref="_atom_8h" startline="173">z</references>
       </memberdef>
       <memberdef kind="function" id="class_smol_dock_1_1_atom_1a3933f5afa403001d87526a52a0f4c4b5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>double</type>
@@ -858,8 +885,8 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Structures/Atom.h" line="142" column="1" bodyfile="Structures/Atom.cpp" bodystart="199" bodyend="201"/>
-        <references refid="class_smol_dock_1_1_atom_1a6d2c1ae04324600154ecd49c1b4a76c5" compoundref="_atom_8h" startline="168">atomicRadius</references>
+        <location file="Structures/Atom.h" line="148" column="1" bodyfile="Structures/Atom.cpp" bodystart="200" bodyend="202"/>
+        <references refid="class_smol_dock_1_1_atom_1a6d2c1ae04324600154ecd49c1b4a76c5" compoundref="_atom_8h" startline="174">atomicRadius</references>
       </memberdef>
       <memberdef kind="function" id="class_smol_dock_1_1_atom_1aba38aa3f004111483f078e97b8e34bd6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -876,8 +903,8 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Structures/Atom.h" line="143" column="1" bodyfile="Structures/Atom.cpp" bodystart="203" bodyend="206"/>
-        <references refid="class_smol_dock_1_1_atom_1a6d2c1ae04324600154ecd49c1b4a76c5" compoundref="_atom_8h" startline="168">atomicRadius</references>
+        <location file="Structures/Atom.h" line="149" column="1" bodyfile="Structures/Atom.cpp" bodystart="204" bodyend="207"/>
+        <references refid="class_smol_dock_1_1_atom_1a6d2c1ae04324600154ecd49c1b4a76c5" compoundref="_atom_8h" startline="174">atomicRadius</references>
       </memberdef>
       <memberdef kind="function" id="class_smol_dock_1_1_atom_1af5d8a7887cbd714ad4b728e1b68c0881" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -890,8 +917,8 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Structures/Atom.h" line="145" column="1" bodyfile="Structures/Atom.cpp" bodystart="208" bodyend="210"/>
-        <references refid="class_smol_dock_1_1_atom_1acec4104851702c781abb5f86844cf6b3" compoundref="_atom_8h" startline="157">charge</references>
+        <location file="Structures/Atom.h" line="151" column="1" bodyfile="Structures/Atom.cpp" bodystart="209" bodyend="211"/>
+        <references refid="class_smol_dock_1_1_atom_1acec4104851702c781abb5f86844cf6b3" compoundref="_atom_8h" startline="163">charge</references>
       </memberdef>
       <memberdef kind="function" id="class_smol_dock_1_1_atom_1a16fb238f339c0accd83095ae078040f1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -908,8 +935,8 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Structures/Atom.h" line="146" column="1" bodyfile="Structures/Atom.cpp" bodystart="212" bodyend="214"/>
-        <references refid="class_smol_dock_1_1_atom_1acec4104851702c781abb5f86844cf6b3" compoundref="_atom_8h" startline="157">charge</references>
+        <location file="Structures/Atom.h" line="152" column="1" bodyfile="Structures/Atom.cpp" bodystart="213" bodyend="215"/>
+        <references refid="class_smol_dock_1_1_atom_1acec4104851702c781abb5f86844cf6b3" compoundref="_atom_8h" startline="163">charge</references>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -1034,8 +1061,10 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="Structures/Atom.h" line="44" column="1" bodyfile="Structures/Atom.h" bodystart="44" bodyend="171"/>
+    <location file="Structures/Atom.h" line="45" column="1" bodyfile="Structures/Atom.h" bodystart="45" bodyend="177"/>
     <listofallmembers>
+      <member refid="class_smol_dock_1_1_atom_1af4fe090161ac376dcfd99d5eb17c0d4a" prot="public" virt="non-virtual"><scope>SmolDock::Atom</scope><name>assignApolarCarbonFlag</name></member>
+      <member refid="class_smol_dock_1_1_atom_1a74b6203c0c737ad86fb18da22ec935ff" prot="public" virt="non-virtual"><scope>SmolDock::Atom</scope><name>assignVariantFlagsForResidueAtom</name></member>
       <member refid="class_smol_dock_1_1_atom_1a6fdae20edd67e75fa5fab8cbdbb39faf" prot="public" virt="non-virtual"><scope>SmolDock::Atom</scope><name>Atom</name></member>
       <member refid="class_smol_dock_1_1_atom_1a72994dd53d1aa7e9bfb05aecc8a35a52" prot="public" virt="non-virtual"><scope>SmolDock::Atom</scope><name>Atom</name></member>
       <member refid="class_smol_dock_1_1_atom_1a6d8ef00ed712a00a3c6d0827faf6ff9e" prot="public" virt="non-virtual"><scope>SmolDock::Atom</scope><name>Atom</name></member>

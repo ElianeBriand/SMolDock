@@ -21,12 +21,15 @@
 #include "VinaLikeScoringFunction.h"
 
 #undef BOOST_LOG
+
 #include <boost/log/trivial.hpp>
 
 #include <cmath>
 #include <cassert>
 #include <iomanip>
 #include <Structures/Atom.h>
+
+#include <Engines/Internals/InternalsUtilityFunctions.h>
 
 namespace SmolDock {
     namespace Score {
@@ -39,31 +42,36 @@ namespace SmolDock {
         // See COPYING for more details on licence information
 
         inline bool isHydrophobic(unsigned char atomicNumber, unsigned int variantFlags) {
-            return (atomicNumber == 6 && (variantFlags & ((unsigned int) Atom::AtomVariant::apolar) ))|| // C && apolar
-                    atomicNumber == 9 || // F
-                    atomicNumber == 17 || // Cl
-                    atomicNumber == 35 || // Br
-                    atomicNumber == 53; // I
+            return (atomicNumber == 6 && (variantFlags & ((unsigned int) Atom::AtomVariant::apolar))) || // C && apolar
+                   atomicNumber == 9 || // F
+                   atomicNumber == 17 || // Cl
+                   atomicNumber == 35 || // Br
+                   atomicNumber == 53; // I
         }
 
 
-        inline bool isHydrogenAcceptor(unsigned char atomicNumber) {
-            return atomicNumber == 7 || //N
-                    atomicNumber == 8; // O
+        inline bool isHydrogenAcceptor(unsigned char atomicNumber, unsigned int atomVariantFlags) {
+            return (atomicNumber == 7 || //N
+                    atomicNumber == 8) // O
+                   && (atomVariantFlags & ((unsigned int) Atom::AtomVariant::hydrogenAcceptor));
         }
 
-        inline bool isHydrogenDonor(unsigned char atomicNumber) {
-            return atomicNumber == 7 ||
-                    atomicNumber == 8;
-            // TODO : better differentiate donor atom and non-donor using variant
+        inline bool isHydrogenDonor(unsigned char atomicNumber, unsigned int atomVariantFlags) {
+            return (atomicNumber == 7 ||
+                    atomicNumber == 8)
+                   && (atomVariantFlags & ((unsigned int) Atom::AtomVariant::hydrogenDonor));
         }
 
-        inline bool hydrogenDonorAcceptorPair(unsigned char atomicNumber1, unsigned char atomicNumber2) {
-            return isHydrogenDonor(atomicNumber1) && isHydrogenAcceptor(atomicNumber2);
+        inline bool hydrogenDonorAcceptorPair(unsigned char atomicNumber1, unsigned int atom1VariantFlags,
+                                              unsigned char atomicNumber2, unsigned int atom2VariantFlags) {
+            return isHydrogenDonor(atomicNumber1, atom1VariantFlags) &&
+                   isHydrogenAcceptor(atomicNumber2, atom2VariantFlags);
         }
 
-        inline bool hydrogenBondingPossible(unsigned char atomicNumber1, unsigned char atomicNumber2) {
-            return hydrogenDonorAcceptorPair(atomicNumber1, atomicNumber2) || hydrogenDonorAcceptorPair(atomicNumber2, atomicNumber1);
+        inline bool hydrogenBondingPossible(unsigned char atomicNumber1, unsigned int atom1VariantFlags,
+                                            unsigned char atomicNumber2, unsigned int atom2VariantFlags) {
+            return hydrogenDonorAcceptorPair(atomicNumber1, atom1VariantFlags, atomicNumber2, atom2VariantFlags) ||
+                   hydrogenDonorAcceptorPair(atomicNumber2, atom2VariantFlags, atomicNumber1, atom1VariantFlags);
         }
 
         // ////////////////// VINA CODE END //////////////////////////////////////////////////
@@ -82,86 +90,86 @@ namespace SmolDock {
         double score_hydrophobic = 0;
         double score_hydrogen = 0;
 
-        inline double scoreForAtomCouple(double distance, unsigned char atom1AtomicNumber, unsigned int atom1AtomVariant,
-                                                            unsigned char atom2AtomicNumber, unsigned int atom2AtomVariant)
-        {
+        inline double
+        scoreForAtomCouple(double distance, unsigned char atom1AtomicNumber, unsigned int atom1AtomVariant,
+                           unsigned char atom2AtomicNumber, unsigned int atom2AtomVariant) {
 
-            double score = 0.0;
-            /*
-                    // Special rubber band term not in Vina scoring func
-                    double x_diff_center = std::pow(LigPosition.x - protein.center_x, 2);
-                    double y_diff_center = std::pow(LigPosition.y - protein.center_y, 2);
-                    double z_diff_center = std::pow(LigPosition.z - protein.center_z, 2);
-                    double rawDistCenter = std::sqrt(x_diff_center + y_diff_center + z_diff_center);
+            double score_intermol = 0.0;
 
-                    score += 0.00001 * rawDistCenter;
-            //*/
 
             // exp −(d/0.5Å)^2
-            double gauss1 =  std::exp(-1 * std::pow(distance / 0.5, 2));
-            score += -0.035579 * gauss1;
+            double gauss1 = std::exp(-1 * std::pow(distance / 0.5, 2));
+            score_intermol += -0.035579 * gauss1;
             score_gauss1 += gauss1;
 
             // exp −((d−3Å)/2Å)^2
-            double gauss2 =  std::exp(-1 * std::pow((distance - 3.0) / 2.0, 2));
-            score += -0.005156 * gauss2;
+            double gauss2 = std::exp(-1 * std::pow((distance - 3.0) / 2.0, 2));
+            score_intermol += -0.005156 * gauss2;
             score_gauss2 += gauss2;
 
-            if (distance < 0)
-            {
-                double repuls =  std::pow(distance, 2);
-                score += 0.840245 * repuls;
+            if (distance < 0) {
+                double repuls = std::pow(distance, 2);
+                score_intermol += 0.840245 * repuls;
                 score_repulsion += repuls;
             }
 
-            if ( isHydrophobic(atom1AtomicNumber, atom1AtomVariant) && isHydrophobic(atom2AtomicNumber, atom2AtomVariant)) // "Hydrophobic" atoms
+            if (isHydrophobic(atom1AtomicNumber, atom1AtomVariant) &&
+                isHydrophobic(atom2AtomicNumber, atom2AtomVariant)) // "Hydrophobic" atoms
             {
                 double hydrophobic_contrib = 0;
-                if(distance >= 1.5)
+                if (distance >= 1.5)
                     hydrophobic_contrib = 0;
-                if(distance <= 0.5)
+                if (distance <= 0.5)
                     hydrophobic_contrib = 1;
-                if(0.5 < distance &&  distance < 1.5 )
+                if (0.5 < distance && distance < 1.5)
                     hydrophobic_contrib = (1.5 - distance);
 
-                score += -0.035069 * hydrophobic_contrib;
+                score_intermol += -0.035069 * hydrophobic_contrib;
                 score_hydrophobic += hydrophobic_contrib;
             }
 
-            if (hydrogenBondingPossible(atom1AtomicNumber,atom2AtomicNumber)) // Hydrogen donor and acceptor
+            if (hydrogenBondingPossible(atom1AtomicNumber, atom1AtomVariant, atom2AtomicNumber,
+                                        atom2AtomVariant)) // Hydrogen donor and acceptor
             {
                 double hbond_contrib = 0;
-                if(distance < - 0.7)
-                {
+                if (distance < -0.7) {
                     hbond_contrib = 1;
-                }else if(distance < 0) //  // ==> distance between -0.7 and 0
+                } else if (distance < 0) //  // ==> distance between -0.7 and 0
                 {
-                    hbond_contrib = -distance/0.7;
+                    hbond_contrib = -distance / 0.7;
                 }
-                score += -0.587439*hbond_contrib;
+                score_intermol += -0.587439 * hbond_contrib;
                 score_hydrogen += hbond_contrib;
 
             }
-            return score;
+            return score_intermol;
         }
 
 
-        double vina_like_rigid_inter_scoring_func(const iConformer &ligand, const iTransform& transform,const iProtein &protein) {
+        double vina_like_rigid_inter_scoring_func(const iConformer &ligand, const iTransform &transform,
+                                                  const iProtein &protein) {
 
-
-
-            double score = 0;
-
-
-
+            assert(ligand.x.size() != 0);
+            assert(protein.x.size() != 0);
             assert(std::abs(quaternionNorm(transform.rota) - 1) < 0.01);
+
+
+            double score_raw = 0;
+
+
+            score_gauss1 = 0;
+            score_gauss2 = 0;
+            score_repulsion = 0;
+            score_hydrophobic = 0;
+            score_hydrogen = 0;
 
             for (unsigned int idxLig = 0; idxLig < ligand.x.size(); idxLig++) {
                 for (unsigned int idxProt = 0; idxProt < protein.x.size(); idxProt++) {
 
 
-                    iVect LigPosition = {ligand.x[idxLig],ligand.y[idxLig],ligand.z[idxLig]};
+                    iVect LigPosition = {ligand.x[idxLig], ligand.y[idxLig], ligand.z[idxLig]};
                     applyTransformInPlace(LigPosition, transform);
+
 
                     double x_diff_sq = std::pow(LigPosition.x - protein.x[idxProt], 2);
                     double y_diff_sq = std::pow(LigPosition.y - protein.y[idxProt], 2);
@@ -172,14 +180,25 @@ namespace SmolDock {
                     double atomicRadiusProt = protein.atomicRadius[idxProt];
                     double rawDist = std::sqrt(x_diff_sq + y_diff_sq + z_diff_sq);
 
+
                     const double cutoff = 8.0;
-                    if(rawDist >= cutoff)
+                    if (rawDist >= cutoff)
                         continue;
 
                     double radToRemove = (atomicRadiusLig + atomicRadiusProt);
                     double distance = rawDist - radToRemove;
 
-                    score += scoreForAtomCouple(distance,ligand.type[idxLig],ligand.variant[idxLig],protein.type[idxProt],protein.variant[idxProt]);
+                    score_raw += scoreForAtomCouple(distance, ligand.type[idxLig], ligand.variant[idxLig],
+                                                    protein.type[idxProt], protein.variant[idxProt]);
+/*
+                    // Special rubber band term not in Vina scoring func
+                    double x_diff_center = std::pow(LigPosition.x - protein.center_x, 2);
+                    double y_diff_center = std::pow(LigPosition.y - protein.center_y, 2);
+                    double z_diff_center = std::pow(LigPosition.z - protein.center_z, 2);
+                    double rawDistCenter = std::sqrt(x_diff_center + y_diff_center + z_diff_center);
+
+                    score += 0.00001 * rawDistCenter;
+*/
 
                 } // for
             } // for
@@ -191,15 +210,122 @@ namespace SmolDock {
             BOOST_LOG_TRIVIAL(debug) << "Hydrophobic  : " << std::fixed<< std::setprecision(5) << score_hydrophobic;
             BOOST_LOG_TRIVIAL(debug) << "Hydrogen     : " << std::fixed<< std::setprecision(5) << score_hydrogen;
             BOOST_LOG_TRIVIAL(debug) << "------------------------------------------";
-            BOOST_LOG_TRIVIAL(debug) << "Raw Score    : " << score;
+            BOOST_LOG_TRIVIAL(debug) << "Raw Score    : " << score_raw;
             BOOST_LOG_TRIVIAL(debug) << "Nrotatable   : " << ligand.num_rotatable_bond;
-            */
-            double final_score = score / (1 + (0.058459999999999998*ligand.num_rotatable_bond));
+            //*/
+            double final_score = score_raw / (1 + (0.058459999999999998 * ligand.num_rotatable_bond));
             /*
             BOOST_LOG_TRIVIAL(debug) << "------------------------------------------";
             BOOST_LOG_TRIVIAL(debug) << "Final Score  : " << final_score;
-            */
+            //*/
+
             return final_score;
+        }
+
+        double VinaLikeRigidScoringFunction::Evaluate(const arma::mat &x) {
+            assert(x.n_rows == 7);
+
+            iTransform tr = this->internalToExternalRepr(x);
+            normalizeQuaternionInPlace(tr.rota);
+
+            double score_ = vina_like_rigid_inter_scoring_func(this->startingConformation, tr, this->prot);
+
+            return score_;
+        }
+
+        double VinaLikeRigidScoringFunction::EvaluateWithGradient(const arma::mat &x, arma::mat &grad) {
+
+            assert(!x.has_nan());
+            assert(!grad.has_nan());
+            assert(x.n_rows == 7);
+            assert(grad.n_rows == 7);
+
+            iTransform tr = this->internalToExternalRepr(x);
+            normalizeQuaternionInPlace(tr.rota);
+
+            double score_ = vina_like_rigid_inter_scoring_func(this->startingConformation, tr, this->prot);
+
+            // Translation
+            iTransform transform_dx = tr;
+            transform_dx.transl.x += this->differential_epsilon;
+            grad[0] = vina_like_rigid_inter_scoring_func(this->startingConformation, transform_dx, this->prot) - score_;
+
+            iTransform transform_dy = tr;
+            transform_dy.transl.y += this->differential_epsilon;
+            grad[1] = vina_like_rigid_inter_scoring_func(this->startingConformation, transform_dy, this->prot) - score_;
+
+            iTransform transform_dz = tr;
+            transform_dz.transl.z += this->differential_epsilon;
+            grad[2] = vina_like_rigid_inter_scoring_func(this->startingConformation, transform_dz, this->prot) - score_;
+
+            // Rotation
+            iTransform transform_ds = tr;
+            transform_ds.rota.s += this->differential_epsilon;
+            normalizeQuaternionInPlace(transform_ds.rota);
+            grad[3] = vina_like_rigid_inter_scoring_func(this->startingConformation, transform_ds, this->prot) - score_;
+
+            iTransform transform_du = tr;
+            transform_ds.rota.u += this->differential_epsilon;
+            normalizeQuaternionInPlace(transform_du.rota);
+            grad[4] = vina_like_rigid_inter_scoring_func(this->startingConformation, transform_du, this->prot) - score_;
+
+            iTransform transform_dv = tr;
+            transform_ds.rota.v += this->differential_epsilon;
+            normalizeQuaternionInPlace(transform_dv.rota);
+            grad[5] = vina_like_rigid_inter_scoring_func(this->startingConformation, transform_dv, this->prot) - score_;
+
+            iTransform transform_dt = tr;
+            transform_ds.rota.t += this->differential_epsilon;
+            normalizeQuaternionInPlace(transform_dt.rota);
+            grad[6] = vina_like_rigid_inter_scoring_func(this->startingConformation, transform_dt, this->prot) - score_;
+
+            /*
+            BOOST_LOG_TRIVIAL(debug) << "Transform: " << x.t();
+            BOOST_LOG_TRIVIAL(debug) << "Score: " << score_;
+            BOOST_LOG_TRIVIAL(debug) << "Gradient";
+            BOOST_LOG_TRIVIAL(debug) << "     ds: " << grad[3];
+            BOOST_LOG_TRIVIAL(debug) << "     du: " << grad[4] << "   dx: " << grad[0];
+            BOOST_LOG_TRIVIAL(debug) << "     dv: " << grad[5] << "   dy: " << grad[1];
+            BOOST_LOG_TRIVIAL(debug) << "     dt: " << grad[6] << "   dx: " << grad[2];
+            //*/
+
+            assert(score_ == score_); // catches NaN
+            return score_;
+        }
+
+
+        VinaLikeRigidScoringFunction::VinaLikeRigidScoringFunction(const iConformer &startingConformation_,
+                                                                   const iProtein &p,
+                                                                   const iTransform &initialTransform_,
+                                                                   double differential_epsilon_) :
+
+                startingConformation(startingConformation_),
+                prot(p),
+                initialTransform(initialTransform_),
+                differential_epsilon(differential_epsilon_) {}
+
+
+        double VinaLikeRigidScoringFunction::getDifferentialEpsilon() const {
+            return this->differential_epsilon;
+        }
+
+        arma::mat VinaLikeRigidScoringFunction::getStartingConditions() const {
+            return this->externalToInternalRepr(this->initialTransform);
+        }
+
+        iConformer VinaLikeRigidScoringFunction::getConformerForParamMatrix(const arma::mat &x) {
+            assert(x.n_rows == 7);
+
+            iTransform tr = this->internalToExternalRepr(x);
+
+            iConformer ret = this->startingConformation;
+            applyTransformInPlace(ret, tr);
+
+            return ret;
+        }
+
+        unsigned int VinaLikeRigidScoringFunction::getParamVectorDimension() const {
+            return 7;
         }
 
 

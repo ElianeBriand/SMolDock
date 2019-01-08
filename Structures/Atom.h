@@ -68,8 +68,11 @@ namespace SmolDock {
         };
 
         enum class AtomVariant : unsigned int {
-            apolar = 1 << 0 // Hydrophobic flag (notably, identifies hydrophobic carbon vs partial-charge-carrying carbon for scoring)
-            // next flag : xxx = 1 << 1;
+            apolar = 1 << 0, // Hydrophobic flag (notably, identifies hydrophobic carbon vs partial-charge-carrying carbon for scoring)
+            hydrogenDonor = 1 << 1,
+            hydrogenAcceptor = 1 << 2
+
+            // next flag : xxx = 1 << 3;
         };
 
         /* Too many cases, for now we just store as-is in a string

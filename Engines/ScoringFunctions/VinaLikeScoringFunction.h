@@ -25,7 +25,10 @@
 #include <Engines/Internals/iConformer.h>
 #include <Engines/Internals/iProtein.h>
 #include <Engines/Internals/iTransform.h>
+#include "ScoringFunctionInterface.h"
 
+#include <Structures/Molecule.h>
+#include <Structures/Protein.h>
 
 namespace SmolDock {
 
@@ -44,7 +47,78 @@ namespace SmolDock {
          * \return The docking score
          * \sa
         */
-        double vina_like_rigid_inter_scoring_func(const iConformer& conformer,const iTransform& transform, const iProtein& protein);
+        double vina_like_rigid_inter_scoring_func(const iConformer &conformer, const iTransform &transform,
+                                                  const iProtein &protein);
+
+        class VinaLikeRigidScoringFunction : public ScoringFunction {
+        public:
+
+
+            VinaLikeRigidScoringFunction(const iConformer &startingConformation_,
+                                         const iProtein &p,
+                                         const iTransform &initialTransform_,
+                                         double differential_epsilon_ = 1e-3);
+
+
+            double Evaluate(const arma::mat &x) final;
+
+            double EvaluateWithGradient(const arma::mat &x, arma::mat &gradient) final;
+
+            arma::mat getStartingConditions() const final;
+
+
+            double getDifferentialEpsilon() const final;
+
+
+            iConformer getConformerForParamMatrix(const arma::mat &x) final;
+
+            unsigned int getParamVectorDimension() const final;
+
+
+            ~VinaLikeRigidScoringFunction() final = default;
+
+
+        private:
+
+            inline iTransform internalToExternalRepr(const arma::mat &x_) const {
+                assert(x_.n_rows == 7);
+
+                iTransform tr_;
+
+                tr_.transl.x = x_[0];
+                tr_.transl.y = x_[1];
+                tr_.transl.z = x_[2];
+
+                tr_.rota.s = x_[3];
+                tr_.rota.u = x_[4];
+                tr_.rota.v = x_[5];
+                tr_.rota.t = x_[6];
+
+                return tr_;
+            }
+
+            inline arma::mat externalToInternalRepr(const iTransform &tr_) const {
+                arma::mat ret(7, 1);
+
+                ret[0] = tr_.transl.x;
+                ret[1] = tr_.transl.y;
+                ret[2] = tr_.transl.z;
+
+                ret[3] = tr_.rota.s;
+                ret[4] = tr_.rota.u;
+                ret[5] = tr_.rota.v;
+                ret[6] = tr_.rota.t;
+
+                return ret;
+            }
+
+            iConformer startingConformation;
+            const iProtein &prot;
+            const iTransform initialTransform;
+            double differential_epsilon;
+
+
+        };
 
 
     }

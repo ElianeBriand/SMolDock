@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['basicscoringfunction_2ecpp',['BasicScoringFunction.cpp',['../_basic_scoring_function_8cpp.html',1,'']]],
-  ['basicscoringfunction_2eh',['BasicScoringFunction.h',['../_basic_scoring_function_8h.html',1,'']]],
   ['bond',['Bond',['../class_smol_dock_1_1_bond.html',1,'SmolDock::Bond'],['../class_smol_dock_1_1_atom.html#ade04f26c3314bee1144e0704a07e95ea',1,'SmolDock::Atom::Bond()'],['../class_smol_dock_1_1_bond.html#a7f046d71521a269171643bdf147d5c80',1,'SmolDock::Bond::Bond(std::shared_ptr&lt; Atom &gt; atom_a, std::shared_ptr&lt; Atom &gt; atom_b)'],['../class_smol_dock_1_1_bond.html#ae864507cf1018efa1964e7b77b2d6e4f',1,'SmolDock::Bond::Bond(std::shared_ptr&lt; Atom &gt; atom_a, std::shared_ptr&lt; Atom &gt; atom_b, unsigned int id)']]],
   ['bond_2ecpp',['Bond.cpp',['../_bond_8cpp.html',1,'']]],
   ['bond_2eh',['Bond.h',['../_bond_8h.html',1,'']]],

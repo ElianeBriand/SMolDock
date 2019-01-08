@@ -927,34 +927,68 @@ ORIGX3      0.000000  0.000000  1.000000        0.00000
 SCALE1      0.008268  0.000000  0.000000        0.00000                         
 SCALE2      0.000000  0.007563  0.000000        0.00000                         
 SCALE3      0.000000  0.000000  0.005541        0.00000                         
-HETATM    1  C1  IBP B 601      16.786  12.747  67.198  1.00 29.03           C
-HETATM    2  C2  IBP B 601      22.202  16.247  68.565  1.00 23.90           C
-HETATM    3  C3  IBP B 601      21.617  17.648  68.647  1.00 23.93           C
-HETATM    4  C4  IBP B 601      20.857  17.813  69.964  1.00 24.36           C
-HETATM    5  C5  IBP B 601      22.763  18.645  68.667  1.00 25.40           C
-HETATM    6  C6  IBP B 601      18.142  12.164  67.526  1.00 22.26           C
-HETATM    7  C7  IBP B 601      18.567  11.108  66.525  1.00 26.57           C
-HETATM    8  C8  IBP B 601      19.191  13.240  67.737  1.00 25.96           C
-HETATM    9  C9  IBP B 601      19.602  13.508  69.034  1.00 24.90           C
-HETATM   10  C10 IBP B 601      20.561  14.466  69.318  1.00 26.92           C
-HETATM   11  C11 IBP B 601      21.135  15.190  68.272  1.00 29.37           C
-HETATM   12  C12 IBP B 601      20.736  14.910  66.977  1.00 22.28           C
-HETATM   13  C13 IBP B 601      19.767  13.947  66.682  1.00 22.96           C
-HETATM   14  O1  IBP B 601      15.844  12.746  68.077  1.00 29.40           O
-HETATM   15  O2  IBP B 601      16.625  13.239  66.038  1.00 26.61           O
+HETATM    1  C1  IBP A 601      10.826  20.933  25.878  1.00 33.92           C
+HETATM    2  C2  IBP A 601      15.101  25.781  24.665  1.00 28.94           C
+HETATM    3  C3  IBP A 601      16.391  24.988  24.665  1.00 25.87           C
+HETATM    4  C4  IBP A 601      16.472  24.146  23.393  1.00 25.59           C
+HETATM    5  C5  IBP A 601      17.536  25.990  24.761  1.00 27.56           C
+HETATM    6  C6  IBP A 601      10.455  22.395  25.628  1.00 30.79           C
+HETATM    7  C7  IBP A 601       9.619  22.939  26.769  1.00 29.16           C
+HETATM    8  C8  IBP A 601      11.677  23.272  25.420  1.00 29.61           C
+HETATM    9  C9  IBP A 601      12.039  23.629  24.126  1.00 31.41           C
+HETATM   10  C10 IBP A 601      13.148  24.427  23.874  1.00 28.75           C
+HETATM   11  C11 IBP A 601      13.900  24.893  24.944  1.00 28.48           C
+HETATM   12  C12 IBP A 601      13.554  24.547  26.246  1.00 24.72           C
+HETATM   13  C13 IBP A 601      12.438  23.738  26.498  1.00 27.03           C
+HETATM   14  O1  IBP A 601      11.237  20.572  27.017  1.00 27.18           O
+HETATM   15  O2  IBP A 601      10.729  20.058  24.950  1.00 30.28           O
+HETATM   16  H22 IBP A 601      15.159  26.550  25.435  1.00  0.00           H
+HETATM   17  H23 IBP A 601      14.975  26.257  23.693  1.00  0.00           H
+HETATM   18  H3  IBP A 601      16.412  24.331  25.535  1.00  0.00           H
+HETATM   19  H6  IBP A 601       9.853  22.438  24.721  1.00  0.00           H
+HETATM   20  H9  IBP A 601      11.444  23.277  23.296  1.00  0.00           H
+HETATM   21  H10 IBP A 601      13.421  24.681  22.860  1.00  0.00           H
+HETATM   22  H12 IBP A 601      14.152  24.906  27.071  1.00  0.00           H
+HETATM   23  H13 IBP A 601      12.169  23.478  27.511  1.00  0.00           H
+HETATM   24  H41 IBP A 601      17.401  23.575  23.393  1.00  0.00           H
+HETATM   25  H42 IBP A 601      16.448  24.801  22.522  1.00  0.00           H
+HETATM   26  H43 IBP A 601      15.625  23.461  23.356  1.00  0.00           H
+HETATM   27  H51 IBP A 601      18.487  25.457  24.764  1.00  0.00           H
+HETATM   28  H52 IBP A 601      17.501  26.665  23.906  1.00  0.00           H
+HETATM   29  H53 IBP A 601      17.439  26.565  25.682  1.00  0.00           H
+HETATM   30  H71 IBP A 601       9.366  23.981  26.570  1.00  0.00           H
+HETATM   31  H72 IBP A 601      10.186  22.874  27.698  1.00  0.00           H
+HETATM   32  H73 IBP A 601       8.704  22.354  26.860  1.00  0.00           H
 CONECT    1    6   14   15
-CONECT   10    9   11
+CONECT   10    9   11   21
 CONECT   11    2   10   12
-CONECT   12   11   13
-CONECT   13    8   12
-CONECT    2    3   11
-CONECT    3    2    4    5
-CONECT    4    3
-CONECT    5    3
-CONECT    6    1    7    8
-CONECT    7    6
+CONECT   12   11   13   22
+CONECT   13    8   12   23
+CONECT    2    3   11   16   17
+CONECT    3    2    4    5   18
+CONECT    4    3   24   25   26
+CONECT    5    3   27   28   29
+CONECT    6    7    1    8   19
+CONECT    7    6   30   31   32
 CONECT    8    6    9   13
-CONECT    9    8   10
+CONECT    9    8   10   20
+CONECT   21   10
+CONECT   22   12
+CONECT   23   13
+CONECT   16    2
+CONECT   17    2
+CONECT   18    3
+CONECT   24    4
+CONECT   25    4
+CONECT   26    4
+CONECT   27    5
+CONECT   28    5
+CONECT   29    5
+CONECT   19    6
+CONECT   30    7
+CONECT   31    7
+CONECT   32    7
+CONECT   20    9
 CONECT   14    1
 CONECT   15    1
 END

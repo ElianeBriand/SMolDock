@@ -25,17 +25,27 @@
 #include <memory>
 
 
+#include "iTransform.h"
+
 namespace SmolDock {
 
     //! Internal, fast representation of a given Molecule conformer for efficiency
     /*!
      * \sa iAtom, iProtein
     */
+
+
     struct iConformer {
 
         unsigned int num_rotatable_bond;
 
-        std::vector<double> x,y,z;
+        iTranslation centroidNormalizingTransform; /*!< If the coordinate have been normalized so as to have the centroid
+                                                        as [0,0,0], then this contain the translation that restore it to its original position,
+                                                        aka the coordinate of the centroid (because |normalized> = |originalPos> - |centroidPos> )
+                                                        Else it's just 0,0,0 */
+
+
+        std::vector<double> x, y, z;
         std::vector<double> atomicRadius;
         std::vector<unsigned char> type;
         std::vector<unsigned int> variant;

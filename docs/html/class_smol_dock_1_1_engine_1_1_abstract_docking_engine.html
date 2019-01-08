@@ -112,9 +112,9 @@ $(document).ready(function(){initNavTree('class_smol_dock_1_1_engine_1_1_abstrac
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="class_smol_dock_1_1_engine_1_1_abstract_docking_engine__inherit__graph.png" border="0" usemap="#_smol_dock_1_1_engine_1_1_abstract_docking_engine_inherit__map" alt="Inheritance graph"/></div>
 <map name="_smol_dock_1_1_engine_1_1_abstract_docking_engine_inherit__map" id="_smol_dock_1_1_engine_1_1_abstract_docking_engine_inherit__map">
-<area shape="rect" id="node2" href="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine.html" title="Generates a lot of conformer, then runs rigid docking on them. " alt="" coords="5,233,227,545"/>
-<area shape="rect" id="node3" href="class_smol_dock_1_1_engine_1_1_m_d_style_docking_engine.html" title="{SmolDock::Engine::MDStyle\lDockingEngine\n|&#45; protein\l&#45; ligand\l|+ MDStyleDockingEngine()\l+ setProtein()\l+ setLigand()\l+ setDockingBox()\l+ setupDockingEngine()\l+ runDockingEngine()\l+ getDockingResult()\l}" alt="" coords="251,292,442,487"/>
-<area shape="rect" id="node4" href="class_smol_dock_1_1_engine_1_1_vina_compatible_docking_engine.html" title="{SmolDock::Engine::VinaCompatible\lDockingEngine\n||}" alt="" coords="466,343,697,435"/>
+<area shape="rect" id="node2" href="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine.html" title="Generates a lot of conformer, then runs rigid docking on them. " alt="" coords="5,189,227,487"/>
+<area shape="rect" id="node3" href="class_smol_dock_1_1_engine_1_1_m_d_style_docking_engine.html" title="{SmolDock::Engine::MDStyle\lDockingEngine\n||+ MDStyleDockingEngine()\l+ setDockingBox()\l+ setupDockingEngine()\l+ runDockingEngine()\l+ getDockingResult()\l}" alt="" coords="251,263,442,413"/>
+<area shape="rect" id="node4" href="class_smol_dock_1_1_engine_1_1_vina_compatible_docking_engine.html" title="{SmolDock::Engine::VinaCompatible\lDockingEngine\n||}" alt="" coords="466,292,697,384"/>
 </map>
 </div>
 <div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -123,6 +123,8 @@ $(document).ready(function(){initNavTree('class_smol_dock_1_1_engine_1_1_abstrac
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="class_smol_dock_1_1_engine_1_1_abstract_docking_engine__coll__graph.png" border="0" usemap="#_smol_dock_1_1_engine_1_1_abstract_docking_engine_coll__map" alt="Collaboration graph"/></div>
+<map name="_smol_dock_1_1_engine_1_1_abstract_docking_engine_coll__map" id="_smol_dock_1_1_engine_1_1_abstract_docking_engine_coll__map">
+</map>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
@@ -138,18 +140,9 @@ Public Types</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:af00ee3be60acc0c4ba9aac03a3b09c35"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_smol_dock_1_1_engine_1_1_abstract_docking_engine.html#af00ee3be60acc0c4ba9aac03a3b09c35">setProtein</a> (<a class="el" href="class_smol_dock_1_1_protein.html">Protein</a> *p)=0</td></tr>
-<tr class="memdesc:af00ee3be60acc0c4ba9aac03a3b09c35"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load a protein for docking.  <a href="#af00ee3be60acc0c4ba9aac03a3b09c35">More...</a><br /></td></tr>
-<tr class="separator:af00ee3be60acc0c4ba9aac03a3b09c35"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aae76a86e5dfc18b19e3a16c55da6556f"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_smol_dock_1_1_engine_1_1_abstract_docking_engine.html#aae76a86e5dfc18b19e3a16c55da6556f">setLigand</a> (<a class="el" href="class_smol_dock_1_1_molecule.html">Molecule</a> *m)=0</td></tr>
-<tr class="memdesc:aae76a86e5dfc18b19e3a16c55da6556f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load a molecule ligand for docking.  <a href="#aae76a86e5dfc18b19e3a16c55da6556f">More...</a><br /></td></tr>
-<tr class="separator:aae76a86e5dfc18b19e3a16c55da6556f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a169f25051203c912c2b90bf3387baa22"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_smol_dock_1_1_engine_1_1_abstract_docking_engine.html#a169f25051203c912c2b90bf3387baa22">setDockingBox</a> (<a class="el" href="class_smol_dock_1_1_engine_1_1_abstract_docking_engine.html#aca703508a3ce31d577d3ec108020789b">DockingBoxSetting</a> setting)=0</td></tr>
 <tr class="memdesc:a169f25051203c912c2b90bf3387baa22"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the protein domain/box to consider for docking.  <a href="#a169f25051203c912c2b90bf3387baa22">More...</a><br /></td></tr>
 <tr class="separator:a169f25051203c912c2b90bf3387baa22"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6172e465dcd7dcecac29fb30612d0227"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_smol_dock_1_1_engine_1_1_abstract_docking_engine.html#a6172e465dcd7dcecac29fb30612d0227">setRandomSeed</a> (int seed)=0</td></tr>
-<tr class="memdesc:a6172e465dcd7dcecac29fb30612d0227"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the RNG seed for reproducibility.  <a href="#a6172e465dcd7dcecac29fb30612d0227">More...</a><br /></td></tr>
-<tr class="separator:a6172e465dcd7dcecac29fb30612d0227"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a38d55d9ee6fde7df45b25b772cffbb9f"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_smol_dock_1_1_engine_1_1_abstract_docking_engine.html#a38d55d9ee6fde7df45b25b772cffbb9f">setupDockingEngine</a> ()=0</td></tr>
 <tr class="memdesc:a38d55d9ee6fde7df45b25b772cffbb9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prepare the engine for docking.  <a href="#a38d55d9ee6fde7df45b25b772cffbb9f">More...</a><br /></td></tr>
 <tr class="separator:a38d55d9ee6fde7df45b25b772cffbb9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -190,7 +183,7 @@ Public Member Functions</h2></td></tr>
 </table>
 
 <p class="definition">Definition at line <a class="el" href="_abstract_docking_engine_8h_source.html#l00042">42</a> of file <a class="el" href="_abstract_docking_engine_8h_source.html">AbstractDockingEngine.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                                         {</div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                everything,</div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                solventExposed</div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            };</div></div><!-- fragment -->
+
 </div>
 </div>
 <a id="a8147cf906368466da87fa439d537bf62"></a>
@@ -218,7 +211,7 @@ Public Member Functions</h2></td></tr>
 </table>
 
 <p class="definition">Definition at line <a class="el" href="_abstract_docking_engine_8h_source.html#l00047">47</a> of file <a class="el" href="_abstract_docking_engine_8h_source.html">AbstractDockingEngine.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                                       {</div><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                sphere,</div><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                cube</div><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            };</div></div><!-- fragment -->
+
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -318,125 +311,9 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Returns whether it has been successful </dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_smol_dock_1_1_engine_1_1_abstract_docking_engine.html#af00ee3be60acc0c4ba9aac03a3b09c35" title="Load a protein for docking. ">setProtein()</a>, <a class="el" href="class_smol_dock_1_1_engine_1_1_abstract_docking_engine.html#aae76a86e5dfc18b19e3a16c55da6556f" title="Load a molecule ligand for docking. ">setLigand()</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd>setProtein(), setLigand() </dd></dl>
 
 <p>Implemented in <a class="el" href="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine.html#acd3b7345ecae8f0c92ca0168b794eac3">SmolDock::Engine::ConformerRigidDockingEngine</a>, and <a class="el" href="class_smol_dock_1_1_engine_1_1_m_d_style_docking_engine.html#a6de740c49189cf41d2c48f2e8e98e391">SmolDock::Engine::MDStyleDockingEngine</a>.</p>
-
-</div>
-</div>
-<a id="aae76a86e5dfc18b19e3a16c55da6556f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aae76a86e5dfc18b19e3a16c55da6556f">&#9670;&nbsp;</a></span>setLigand()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual bool SmolDock::Engine::AbstractDockingEngine::setLigand </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="class_smol_dock_1_1_molecule.html">Molecule</a> *&#160;</td>
-          <td class="paramname"><em>m</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Load a molecule ligand for docking. </p>
-<p>Load a molecule ligand for docking. Note that it <em>can</em> be modified by the engine.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">m</td><td>Pointer to the <a class="el" href="class_smol_dock_1_1_molecule.html" title="Class representing &quot;rich&quot; molecule. ">Molecule</a> </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Returns whether it has been successful </dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_smol_dock_1_1_engine_1_1_abstract_docking_engine.html#af00ee3be60acc0c4ba9aac03a3b09c35" title="Load a protein for docking. ">setProtein()</a>, <a class="el" href="class_smol_dock_1_1_engine_1_1_abstract_docking_engine.html#a169f25051203c912c2b90bf3387baa22" title="Set the protein domain/box to consider for docking. ">setDockingBox()</a> </dd></dl>
-
-<p>Implemented in <a class="el" href="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine.html#a14262d85db1fd4bfe21780029fba842c">SmolDock::Engine::ConformerRigidDockingEngine</a>, and <a class="el" href="class_smol_dock_1_1_engine_1_1_m_d_style_docking_engine.html#a95f5c470d1f93881a3759933e57af559">SmolDock::Engine::MDStyleDockingEngine</a>.</p>
-
-</div>
-</div>
-<a id="af00ee3be60acc0c4ba9aac03a3b09c35"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af00ee3be60acc0c4ba9aac03a3b09c35">&#9670;&nbsp;</a></span>setProtein()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual bool SmolDock::Engine::AbstractDockingEngine::setProtein </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="class_smol_dock_1_1_protein.html">Protein</a> *&#160;</td>
-          <td class="paramname"><em>p</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Load a protein for docking. </p>
-<p>Load a protein for docking. Note that it <em>can</em> be modified by the engine.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">p</td><td>Pointer to the <a class="el" href="class_smol_dock_1_1_protein.html" title="Class representing &quot;rich&quot; protein. ">Protein</a> </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Returns whether it has been successful </dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_smol_dock_1_1_engine_1_1_abstract_docking_engine.html#aae76a86e5dfc18b19e3a16c55da6556f" title="Load a molecule ligand for docking. ">setLigand()</a>, <a class="el" href="class_smol_dock_1_1_engine_1_1_abstract_docking_engine.html#a169f25051203c912c2b90bf3387baa22" title="Set the protein domain/box to consider for docking. ">setDockingBox()</a> </dd></dl>
-
-<p>Implemented in <a class="el" href="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine.html#acf8082b5d9d68fc2cfe975ad62a2459f">SmolDock::Engine::ConformerRigidDockingEngine</a>, and <a class="el" href="class_smol_dock_1_1_engine_1_1_m_d_style_docking_engine.html#aa06062e9afec77d49ab596d1111c5f43">SmolDock::Engine::MDStyleDockingEngine</a>.</p>
-
-</div>
-</div>
-<a id="a6172e465dcd7dcecac29fb30612d0227"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6172e465dcd7dcecac29fb30612d0227">&#9670;&nbsp;</a></span>setRandomSeed()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void SmolDock::Engine::AbstractDockingEngine::setRandomSeed </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>seed</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Set the RNG seed for reproducibility. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">seed</td><td>RNG see </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Returns whether it has been successful </dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_smol_dock_1_1_engine_1_1_abstract_docking_engine.html#af00ee3be60acc0c4ba9aac03a3b09c35" title="Load a protein for docking. ">setProtein()</a>, <a class="el" href="class_smol_dock_1_1_engine_1_1_abstract_docking_engine.html#aae76a86e5dfc18b19e3a16c55da6556f" title="Load a molecule ligand for docking. ">setLigand()</a>, <a class="el" href="class_smol_dock_1_1_engine_1_1_abstract_docking_engine.html#a169f25051203c912c2b90bf3387baa22" title="Set the protein domain/box to consider for docking. ">setDockingBox()</a> </dd></dl>
-
-<p>Implemented in <a class="el" href="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine.html#a756b9c1300d1c3828b519a2ca05ada59">SmolDock::Engine::ConformerRigidDockingEngine</a>.</p>
 
 </div>
 </div>

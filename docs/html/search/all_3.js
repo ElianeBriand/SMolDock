@@ -2,7 +2,7 @@ var searchData=
 [
   ['deepcopy',['deepcopy',['../class_smol_dock_1_1_molecule.html#a70156ffc4081eb92f9dc4e2c70096c84',1,'SmolDock::Molecule']]],
   ['defaultbond',['defaultbond',['../class_smol_dock_1_1_bond.html#a6cbf152f682501c998bd06a55400c9cfa0a3db58cd06e63f99bfd2d9e6773f555',1,'SmolDock::Bond']]],
-  ['differential_5fepsilon',['differential_epsilon',['../class_smol_dock_1_1_gradient_descent_line_search.html#a22682b77e2ac67df501890dc8922c374',1,'SmolDock::GradientDescentLineSearch']]],
+  ['differential_5fepsilon',['differential_epsilon',['../class_smol_dock_1_1_optimizer_1_1_gradient_descent_line_search.html#a0680dc929db0fe521e0820e473b8bcb6',1,'SmolDock::Optimizer::GradientDescentLineSearch::differential_epsilon()'],['../class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function.html#ade3afba236d274a7ff1bdff886bdeaca',1,'SmolDock::Score::VinaLikeRigidScoringFunction::differential_epsilon()']]],
   ['dockingboxsetting',['DockingBoxSetting',['../class_smol_dock_1_1_engine_1_1_abstract_docking_engine.html#aca703508a3ce31d577d3ec108020789b',1,'SmolDock::Engine::AbstractDockingEngine']]],
   ['dockingboxshape',['DockingBoxShape',['../class_smol_dock_1_1_engine_1_1_abstract_docking_engine.html#a8147cf906368466da87fa439d537bf62',1,'SmolDock::Engine::AbstractDockingEngine']]],
   ['dockingresult',['DockingResult',['../namespace_smol_dock.html#class_smol_dock_1_1_docking_result',1,'SmolDock']]],

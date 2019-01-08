@@ -36,12 +36,20 @@
 #include <boost/algorithm/string.hpp>
 #include <boost/log/trivial.hpp>
 
+#include <boost/accumulators/accumulators.hpp>
+#include <boost/accumulators/statistics/stats.hpp>
+#include <boost/accumulators/statistics/mean.hpp>
+#include <boost/accumulators/statistics/count.hpp>
+#include <boost/accumulators/statistics/min.hpp>
+#include <boost/accumulators/statistics/max.hpp>
+
 namespace SmolDock {
 
     Molecule::Molecule() = default;
 
 
-    bool Molecule::populateFromSMILES(const std::string &smiles, unsigned int seed) {
+    bool Molecule::populateFromSMILES(const std::string &smiles, unsigned int seed,
+                                      std::vector<InputPostProcessor::InputPostProcessor *> postProcessors) {
         RDKit::RWMol *a = nullptr;
         try {
             /* This can throw */
@@ -61,7 +69,7 @@ namespace SmolDock {
 
         this->rwmol.reset(a);
 
-        if (this->populateInternalAtomAndBondFromRWMol(seed) == false)
+        if (this->populateInternalAtomAndBondFromRWMol(seed, postProcessors) == false)
             return false;
 
         this->smiles = smiles;
@@ -70,7 +78,7 @@ namespace SmolDock {
     }
 
 
-    bool Molecule::generateConformer(iConformer &conformer, int seed) {
+    bool Molecule::generateConformer(iConformer &conformer, bool centroidNormalization, int seed) {
 
         // Hydrogen added for conformer gen
         RDKit::MolOps::addHs(*rwmol);
@@ -85,7 +93,9 @@ namespace SmolDock {
         return true;
     }
 
-    unsigned int Molecule::generateConformers(std::vector<iConformer> &viConformers, unsigned int num, int seed) {
+    unsigned int
+    Molecule::generateConformers(std::vector<iConformer> &viConformers, unsigned int num, bool centroidNormalization,
+                                 int seed) {
 
         RDKit::MolOps::addHs(*rwmol);
         std::vector<int> conformer_ids = RDKit::DGeomHelpers::EmbedMultipleConfs(*rwmol, // Molecule
@@ -98,15 +108,20 @@ namespace SmolDock {
         if (conformer_ids.size() == 0)
             return 0; // Early failure case
 
-        viConformers.reserve(viConformers.capacity() + conformer_ids.size());
 
+        viConformers.reserve(viConformers.capacity() + conformer_ids.size() + 1);
 
+        unsigned int rdkit_first_conformer_id = (*(this->rwmol->beginConformers()))->getId();
+        iConformer conformer_initial = this->generateIConformerForGivenRDKitConformerID(rdkit_first_conformer_id, centroidNormalization);
+        viConformers.push_back(conformer_initial);
 
-
+        //* // FIXME : uncomment this after fixing scoring function, and remove the initial conformer
         for (int i : conformer_ids) {
-            iConformer conformer = this->generateIConformerForGivenRDKitConformerID(i);
-            viConformers.push_back(std::move(conformer));
+            iConformer conformer = this->generateIConformerForGivenRDKitConformerID(i, centroidNormalization);
+            viConformers.push_back(conformer);
         }
+        //*/
+
 
         return conformer_ids.size();
     }
@@ -119,7 +134,8 @@ namespace SmolDock {
         return bonds.size();
     }
 
-    bool Molecule::populateFromPDB(const std::string &filename, const std::string &smiles_hint, unsigned int seed) {
+    bool Molecule::populateFromPDB(const std::string &filename, const std::string &smiles_hint, unsigned int seed,
+                                   std::vector<InputPostProcessor::InputPostProcessor *> postProcessors) {
 
 
         // Flavor = 1 --> ignore alternate location
@@ -135,7 +151,8 @@ namespace SmolDock {
             AssignBondOrderFromTemplateSMILES(this->rwmol, smiles_hint);
         }
 
-        populateInternalAtomAndBondFromRWMol(seed);
+        if (this->populateInternalAtomAndBondFromRWMol(seed, postProcessors) == false)
+            return false;
 
         return true;
     }
@@ -149,7 +166,8 @@ namespace SmolDock {
 
     }
 
-    bool Molecule::populateInternalAtomAndBondFromRWMol(unsigned int seed) {
+    bool Molecule::populateInternalAtomAndBondFromRWMol(unsigned int seed,
+                                                        std::vector<InputPostProcessor::InputPostProcessor *> postProcessors) {
 
         // We care about Hs only during conformer generation
         // TODO: find out if we need to care at other moments...
@@ -168,6 +186,7 @@ namespace SmolDock {
         // We remove them afterward
         RDKit::MolOps::removeHs((*(this->rwmol)));
 
+
         for (auto atom_it = rwmol->beginAtoms(); atom_it != rwmol->endAtoms(); ++atom_it) {
             std::shared_ptr<Atom> current_atom;
             // TODO : refactor this using the std::set of type-name-properties
@@ -185,13 +204,15 @@ namespace SmolDock {
                     current_atom = std::make_shared<Atom>(Atom::AtomType::oxygen, (*atom_it)->getIdx());
                     break;
                 default:
-                    std::cout << "[!] Unsupported atom type" << std::endl;
-                    std::cout << "[!] Atomic num = " << (*atom_it)->getAtomicNum() << std::endl;
+                    BOOST_LOG_TRIVIAL(error) << "Unsupported atom type";
+                    BOOST_LOG_TRIVIAL(error) << "Atomic num = " << (*atom_it)->getAtomicNum();
                     return false;
                     // break;
             }
             const RDGeom::Point3D &position = starting_conformer.getAtomPos((*atom_it)->getIdx());
             current_atom->setAtomPosition(std::make_tuple(position.x, position.y, position.z));
+
+
             atoms.push_back(current_atom);
         }
 
@@ -215,7 +236,7 @@ namespace SmolDock {
             );
 
             if (resultBegin == std::end(atoms) || resultEnd == std::end(atoms)) {
-                std::cout << "[!] Unable to find atom with ID = " << beginAtomID << " or " << endAtomID << std::endl;
+                BOOST_LOG_TRIVIAL(error) << "Unable to find atom with ID = " << beginAtomID << " or " << endAtomID;
                 return false;
             }
 
@@ -269,8 +290,8 @@ namespace SmolDock {
                     new_bond->setBondType(Bond::BondType::aromatic);
                     break;
                 default:
-                    std::cout << "[!] Unsupported bond type" << std::endl;
-                    std::cout << "[!] Enum bond type = " << (*bond_it)->getBondType() << std::endl;
+                    BOOST_LOG_TRIVIAL(error) << "Unsupported bond type";
+                    BOOST_LOG_TRIVIAL(error) << "Enum bond type = " << (*bond_it)->getBondType();
                     return false;
                     // break;
             }
@@ -278,13 +299,20 @@ namespace SmolDock {
             bonds.push_back(new_bond);
         }
 
+        this->numberOfRotatableBonds = RDKit::Descriptors::calcNumRotatableBonds((RDKit::ROMol) (*this->rwmol));
+
+
         // Post processing to assign variant
 
         // Processing to assign the apolar flag to carbon
         assignApolarCarbonFlag(this->atoms);
 
-        numberOfRotatableBonds = RDKit::Descriptors::calcNumRotatableBonds((RDKit::ROMol)(*this->rwmol));
-
+        // Final post processing : calling
+        for (InputPostProcessor::InputPostProcessor *pprocessor : postProcessors) {
+            for (auto &atom: this->atoms) {
+                pprocessor->processAtomFromLigand(*atom);
+            }
+        }
 
         return true;
     }
@@ -305,37 +333,38 @@ namespace SmolDock {
         Molecule newmol(*this);
 
 
-        std::vector< std::tuple<std::shared_ptr<Atom>,Atom*> > new_old_lookup_table;
+        std::vector<std::tuple<std::shared_ptr<Atom>, Atom *> > new_old_lookup_table;
         newmol.atoms.clear();
-        for(auto& ptr: this->atoms)
-        {
-            Atom* newatom_ptr = new Atom(*ptr);
+        for (auto &ptr: this->atoms) {
+            Atom *newatom_ptr = new Atom(*ptr);
             newatom_ptr->bonds.clear(); // We will restore it after rebuilding the bonds
-            std::shared_ptr<Atom>& inserted = newmol.atoms.emplace_back(newatom_ptr);
-            new_old_lookup_table.push_back(std::make_tuple(inserted,ptr.get())); // Register new/old pair to rebuild bonds
+            std::shared_ptr<Atom> &inserted = newmol.atoms.emplace_back(newatom_ptr);
+            new_old_lookup_table.push_back(
+                    std::make_tuple(inserted, ptr.get())); // Register new/old pair to rebuild bonds
 
         }
 
         newmol.bonds.clear();
-        for(auto& ptr: this->bonds)
-        {
-            Atom* endA_ptr = ptr->getEndA().get();
-            Atom* endB_ptr = ptr->getEndB().get();
+        for (auto &ptr: this->bonds) {
+            Atom *endA_ptr = ptr->getEndA().get();
+            Atom *endB_ptr = ptr->getEndB().get();
 
             // Find matches in lookup table :
-            std::shared_ptr<Atom> endA = std::get<0>(*(std::find_if(std::begin(new_old_lookup_table), std::end(new_old_lookup_table),
-                                   [&](const std::tuple<std::shared_ptr<Atom>,Atom*> &e) {
+            std::shared_ptr<Atom> endA = std::get<0>(
+                    *(std::find_if(std::begin(new_old_lookup_table), std::end(new_old_lookup_table),
+                                   [&](const std::tuple<std::shared_ptr<Atom>, Atom *> &e) {
                                        return (std::get<1>(e) == endA_ptr);
                                    })));
 
-            std::shared_ptr<Atom> endB = std::get<0>(*(std::find_if(std::begin(new_old_lookup_table), std::end(new_old_lookup_table),
-                                                                    [&](const std::tuple<std::shared_ptr<Atom>,Atom*> &e) {
-                                                                        return (std::get<1>(e) == endB_ptr);
-                                                                    })));
+            std::shared_ptr<Atom> endB = std::get<0>(
+                    *(std::find_if(std::begin(new_old_lookup_table), std::end(new_old_lookup_table),
+                                   [&](const std::tuple<std::shared_ptr<Atom>, Atom *> &e) {
+                                       return (std::get<1>(e) == endB_ptr);
+                                   })));
 
-            Bond* newbond = new Bond(endA,endB,ptr->getBondID());
+            Bond *newbond = new Bond(endA, endB, ptr->getBondID());
             newbond->setBondType(ptr->getBondType());
-            std::shared_ptr<Bond>& inserted_bond = newmol.bonds.emplace_back(newbond);
+            std::shared_ptr<Bond> &inserted_bond = newmol.bonds.emplace_back(newbond);
             // PublicizeToAtom uses enable_shared_from_this, which means the previous statement, creating a shared_ptr
             // must occur before the following statement, lest throw std::bad_weak_ptr
             inserted_bond->publicizeToAtom();
@@ -346,13 +375,14 @@ namespace SmolDock {
         return newmol;
     }
 
-    iConformer Molecule::getInitialConformer() {
+    iConformer Molecule::getInitialConformer(bool centroidNormalization) const {
         unsigned int rdkit_first_conformer_id = (*(this->rwmol->beginConformers()))->getId();
-        iConformer conformer = this->generateIConformerForGivenRDKitConformerID(rdkit_first_conformer_id);
+        iConformer conformer = this->generateIConformerForGivenRDKitConformerID(rdkit_first_conformer_id, centroidNormalization);
         return conformer;
     }
 
-    iConformer Molecule::generateIConformerForGivenRDKitConformerID(unsigned int id) {
+    iConformer Molecule::generateIConformerForGivenRDKitConformerID(unsigned int id,
+                                                                    bool centroidNormalization) const {
         iConformer conformer;
         RDKit::Conformer rdkit_conformer = this->rwmol->getConformer(id);
 
@@ -362,25 +392,61 @@ namespace SmolDock {
         conformer.z.reserve(static_cast<size_t>(num_atoms));
         conformer.type.reserve(static_cast<size_t>(num_atoms));
 
+        conformer.num_rotatable_bond = this->numberOfRotatableBonds;
+
+
+        using namespace boost::accumulators;
+        accumulator_set<double, stats<tag::mean, tag::count, tag::min, tag::max> > acc_x, acc_y, acc_z;
+
+        if(centroidNormalization) {
+            for (auto atom_it = rwmol->beginAtoms(); atom_it != rwmol->endAtoms(); ++atom_it) {
+                const RDGeom::Point3D &position = rdkit_conformer.getAtomPos((*atom_it)->getIdx());
+                acc_x(position.x);
+                acc_y(position.y);
+                acc_z(position.z);
+            }
+
+            conformer.centroidNormalizingTransform.x = mean(acc_x);
+            conformer.centroidNormalizingTransform.y = mean(acc_y);
+            conformer.centroidNormalizingTransform.z = mean(acc_z);
+
+        }else {
+            conformer.centroidNormalizingTransform.x = 0.0;
+            conformer.centroidNormalizingTransform.y = 0.0;
+            conformer.centroidNormalizingTransform.z = 0.0;
+        }
+
         for (auto atom_it = rwmol->beginAtoms(); atom_it != rwmol->endAtoms(); ++atom_it) {
 
             // Find the corresponding Atom in this->atoms
-            std::shared_ptr<Atom> current_Atom = *(std::find_if(std::begin(this->atoms), std::end(this->atoms),
-                                                                [&](const std::shared_ptr<Atom> &e) {
-                                                                    return e->getAtomID() == (*atom_it)->getIdx();
-                                                                }));
-
+            auto current_Atom_it = (std::find_if(std::begin(this->atoms), std::end(this->atoms),
+                                                 [&](const std::shared_ptr<Atom> &e) {
+                                                     return e->getAtomID() == (*atom_it)->getIdx();
+                                                 }));
+            if (current_Atom_it == std::end(this->atoms)) {
+                BOOST_LOG_TRIVIAL(error) << "Cannot find current atom";
+                std::exit(3);
+            }
+            std::shared_ptr<Atom> current_Atom = *current_Atom_it;
             conformer.type.push_back(static_cast<unsigned char>((*atom_it)->getAtomicNum()));
-            conformer.variant.push_back((unsigned int)current_Atom->variant);
+            conformer.variant.push_back((unsigned int) current_Atom->variant);
 
             const RDGeom::Point3D &position = rdkit_conformer.getAtomPos((*atom_it)->getIdx());
-            conformer.x.push_back(position.x);
-            conformer.y.push_back(position.y);
-            conformer.z.push_back(position.z);
+
+            if(centroidNormalization) {
+                conformer.x.push_back(position.x - conformer.centroidNormalizingTransform.x );
+                conformer.y.push_back(position.y - conformer.centroidNormalizingTransform.y );
+                conformer.z.push_back(position.z - conformer.centroidNormalizingTransform.z );
+            }else{
+
+                conformer.x.push_back(position.x);
+                conformer.y.push_back(position.y);
+                conformer.z.push_back(position.z);
+            }
 
             conformer.atomicRadius.push_back(atomTypeToAtomicRadius(
-                    stringToAtomType(boost::to_upper_copy<std::string>((*atom_it)->getSymbol()))));
-            conformer.num_rotatable_bond = this->numberOfRotatableBonds;
+                    stringToAtomType(boost::to_upper_copy<std::string>((*atom_it)->getSymbol()))
+            ));
         }
 
         return conformer;
@@ -389,6 +455,9 @@ namespace SmolDock {
     unsigned int Molecule::getNumRotatableBond() {
         return this->numberOfRotatableBonds;
     }
+
+
+
 
 
 }

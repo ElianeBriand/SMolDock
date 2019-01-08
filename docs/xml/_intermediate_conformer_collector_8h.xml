@@ -4,186 +4,212 @@
     <compoundname>IntermediateConformerCollector.h</compoundname>
     <includes refid="_molecule_8h" local="no">Structures/Molecule.h</includes>
     <includes refid="_p_d_b_writer_8h" local="yes">PDBWriter.h</includes>
-    <includedby refid="_gradient_descent_line_search_8cpp" local="no">GradientDescentLineSearch.cpp</includedby>
     <includedby refid="_intermediate_conformer_collector_8cpp" local="yes">IntermediateConformerCollector.cpp</includedby>
     <includedby refid="main_8cpp" local="no">main.cpp</includedby>
     <incdepgraph>
-      <node id="552">
+      <node id="667">
         <label>GraphMol/RWMol.h</label>
       </node>
-      <node id="553">
+      <node id="668">
         <label>GraphMol/MolOps.h</label>
       </node>
-      <node id="548">
+      <node id="663">
         <label>IntermediateConformerCollector.h</label>
         <link refid="_intermediate_conformer_collector_8h"/>
-        <childnode refid="549" relation="include">
+        <childnode refid="664" relation="include">
         </childnode>
-        <childnode refid="571" relation="include">
+        <childnode refid="691" relation="include">
         </childnode>
       </node>
-      <node id="556">
+      <node id="671">
         <label>GraphMol/Substruct/SubstructMatch.h</label>
       </node>
-      <node id="557">
+      <node id="689">
+        <label>cmath</label>
+      </node>
+      <node id="690">
+        <label>cassert</label>
+      </node>
+      <node id="672">
         <label>GraphMol/DistGeomHelpers/Embedder.h</label>
       </node>
-      <node id="565">
+      <node id="673">
+        <label>Structures/InputPostProcessors/InputPostProcessorInterface.h</label>
+        <link refid="_input_post_processor_interface_8h"/>
+        <childnode refid="674" relation="include">
+        </childnode>
+      </node>
+      <node id="680">
         <label>string</label>
       </node>
-      <node id="559">
-        <label>Atom.h</label>
+      <node id="674">
+        <label>Structures/Atom.h</label>
         <link refid="_atom_8h"/>
-        <childnode refid="550" relation="include">
+        <childnode refid="665" relation="include">
         </childnode>
-        <childnode refid="560" relation="include">
+        <childnode refid="675" relation="include">
         </childnode>
-        <childnode refid="561" relation="include">
+        <childnode refid="676" relation="include">
         </childnode>
-        <childnode refid="562" relation="include">
+        <childnode refid="677" relation="include">
         </childnode>
-        <childnode refid="563" relation="include">
+        <childnode refid="678" relation="include">
         </childnode>
-        <childnode refid="564" relation="include">
+        <childnode refid="679" relation="include">
         </childnode>
       </node>
-      <node id="568">
+      <node id="683">
         <label>map</label>
       </node>
-      <node id="570">
+      <node id="686">
         <label>../Engines/Internals/iConformer.h</label>
         <link refid="i_conformer_8h"/>
-        <childnode refid="550" relation="include">
+        <childnode refid="665" relation="include">
         </childnode>
-        <childnode refid="560" relation="include">
+        <childnode refid="675" relation="include">
+        </childnode>
+        <childnode refid="687" relation="include">
         </childnode>
       </node>
-      <node id="569">
+      <node id="685">
         <label>Bond.h</label>
         <link refid="_bond_8h"/>
-        <childnode refid="560" relation="include">
+        <childnode refid="675" relation="include">
         </childnode>
-        <childnode refid="559" relation="include">
+        <childnode refid="674" relation="include">
         </childnode>
       </node>
-      <node id="564">
+      <node id="679">
         <label>AminoAcid.h</label>
         <link refid="_amino_acid_8h"/>
-        <childnode refid="565" relation="include">
+        <childnode refid="680" relation="include">
         </childnode>
-        <childnode refid="550" relation="include">
+        <childnode refid="665" relation="include">
         </childnode>
-        <childnode refid="561" relation="include">
+        <childnode refid="676" relation="include">
         </childnode>
-        <childnode refid="562" relation="include">
+        <childnode refid="677" relation="include">
         </childnode>
-        <childnode refid="566" relation="include">
+        <childnode refid="681" relation="include">
         </childnode>
-        <childnode refid="560" relation="include">
+        <childnode refid="675" relation="include">
         </childnode>
-        <childnode refid="567" relation="include">
+        <childnode refid="682" relation="include">
         </childnode>
       </node>
-      <node id="566">
+      <node id="681">
         <label>tuple</label>
       </node>
-      <node id="567">
+      <node id="682">
         <label>Engines/Internals/iProtein.h</label>
         <link refid="i_protein_8h"/>
-        <childnode refid="550" relation="include">
+        <childnode refid="665" relation="include">
         </childnode>
-        <childnode refid="560" relation="include">
+        <childnode refid="675" relation="include">
         </childnode>
-        <childnode refid="568" relation="include">
+        <childnode refid="683" relation="include">
         </childnode>
       </node>
-      <node id="550">
+      <node id="687">
+        <label>iTransform.h</label>
+        <link refid="i_transform_8h"/>
+        <childnode refid="665" relation="include">
+        </childnode>
+        <childnode refid="675" relation="include">
+        </childnode>
+        <childnode refid="688" relation="include">
+        </childnode>
+        <childnode refid="689" relation="include">
+        </childnode>
+        <childnode refid="690" relation="include">
+        </childnode>
+      </node>
+      <node id="665">
         <label>vector</label>
       </node>
-      <node id="555">
+      <node id="688">
+        <label>array</label>
+      </node>
+      <node id="670">
         <label>GraphMol/SmilesParse/SmilesParse.h</label>
       </node>
-      <node id="558">
+      <node id="684">
         <label>Structure.h</label>
         <link refid="_structure_8h"/>
       </node>
-      <node id="549">
+      <node id="664">
         <label>Structures/Molecule.h</label>
         <link refid="_molecule_8h"/>
-        <childnode refid="550" relation="include">
+        <childnode refid="665" relation="include">
         </childnode>
-        <childnode refid="551" relation="include">
+        <childnode refid="666" relation="include">
         </childnode>
-        <childnode refid="552" relation="include">
+        <childnode refid="667" relation="include">
         </childnode>
-        <childnode refid="553" relation="include">
+        <childnode refid="668" relation="include">
         </childnode>
-        <childnode refid="554" relation="include">
+        <childnode refid="669" relation="include">
         </childnode>
-        <childnode refid="555" relation="include">
+        <childnode refid="670" relation="include">
         </childnode>
-        <childnode refid="556" relation="include">
+        <childnode refid="671" relation="include">
         </childnode>
-        <childnode refid="557" relation="include">
+        <childnode refid="672" relation="include">
         </childnode>
-        <childnode refid="558" relation="include">
+        <childnode refid="673" relation="include">
         </childnode>
-        <childnode refid="559" relation="include">
+        <childnode refid="684" relation="include">
         </childnode>
-        <childnode refid="569" relation="include">
+        <childnode refid="674" relation="include">
         </childnode>
-        <childnode refid="570" relation="include">
+        <childnode refid="685" relation="include">
+        </childnode>
+        <childnode refid="686" relation="include">
         </childnode>
       </node>
-      <node id="551">
+      <node id="666">
         <label>GraphMol/RDKitBase.h</label>
       </node>
-      <node id="563">
+      <node id="678">
         <label>iostream</label>
       </node>
-      <node id="571">
+      <node id="691">
         <label>PDBWriter.h</label>
         <link refid="_p_d_b_writer_8h"/>
-        <childnode refid="565" relation="include">
+        <childnode refid="680" relation="include">
         </childnode>
-        <childnode refid="550" relation="include">
+        <childnode refid="665" relation="include">
         </childnode>
-        <childnode refid="549" relation="include">
+        <childnode refid="664" relation="include">
         </childnode>
       </node>
-      <node id="561">
+      <node id="676">
         <label>set</label>
       </node>
-      <node id="562">
+      <node id="677">
         <label>algorithm</label>
       </node>
-      <node id="560">
+      <node id="675">
         <label>memory</label>
       </node>
-      <node id="554">
+      <node id="669">
         <label>GraphMol/FileParsers/FileParsers.h</label>
       </node>
     </incdepgraph>
     <invincdepgraph>
-      <node id="572">
+      <node id="692">
         <label>IntermediateConformerCollector.h</label>
         <link refid="_intermediate_conformer_collector_8h"/>
-        <childnode refid="573" relation="include">
+        <childnode refid="693" relation="include">
         </childnode>
-        <childnode refid="574" relation="include">
-        </childnode>
-        <childnode refid="575" relation="include">
+        <childnode refid="694" relation="include">
         </childnode>
       </node>
-      <node id="573">
-        <label>GradientDescentLineSearch.cpp</label>
-        <link refid="_gradient_descent_line_search_8cpp"/>
-      </node>
-      <node id="575">
+      <node id="694">
         <label>main.cpp</label>
         <link refid="main_8cpp"/>
       </node>
-      <node id="574">
+      <node id="693">
         <label>IntermediateConformerCollector.cpp</label>
         <link refid="_intermediate_conformer_collector_8cpp"/>
       </node>

@@ -27,6 +27,8 @@
 #include "Utilities/DockingResultPrinter.h"
 #include "Engines/ConformerRigidDockingEngine.h"
 #include "Engines/ScoringFunctions/VinaLikeScoringFunction.h"
+#include <Engines/Internals/InternalsUtilityFunctions.h>
+
 
 #include <boost/log/core.hpp>
 #include <boost/log/trivial.hpp>
@@ -34,6 +36,8 @@
 #include <boost/log/utility/setup/console.hpp>
 
 #include <Utilities/IntermediateConformerCollector.h>
+#include <Structures/InputPostProcessors/VinaCompatibilityPostProcessor.h>
+
 SmolDock::IntermediateConformerCollector* conformerCollector;
 
 
@@ -71,20 +75,29 @@ int main() {
 
     BOOST_LOG_TRIVIAL(info) << "SmolDock v0.1";
 
+    SmolDock::InputPostProcessor::VinaCompatibilityPostProcessor vinaPP;
+    std::vector<SmolDock::InputPostProcessor::InputPostProcessor*> postProcessors;
+    postProcessors.push_back(&vinaPP);
+
     SmolDock::Protein prot;
     // prot.populateFromPDB("1dpx.pdb"); // Lysozyme
-    // prot.populateFromPDB("../DockingTests/COX2_Ibuprofen/4PH9_COX2_without_Ibuprofen.pdb"); // COX-2
-    prot.populateFromPDB("../DockingTests/Tripeptide/Tripeptide.pdb"); // A random tripeptide
+     prot.populateFromPDB("../DockingTests/COX2_Ibuprofen/4PH9_COX2_without_Ibuprofen.pdb"); // COX-2
+    //prot.populateFromPDB("../DockingTests/Tripeptide/Tripeptide.pdb"); // A random tripeptide
 
     SmolDock::Molecule mol;
     //mol.populateFromSMILES("CC(C)Cc1ccc(cc1)[C@@H](C)C(=O)O"); // Ibuprofen
-    mol.populateFromPDB("../DockingTests/Tripeptide/VINA_bestres.pdb", "CC(C)Cc1ccc(cc1)[C@H](C)C(=O)O");
+    mol.populateFromPDB("../DockingTests/COX2_Ibuprofen/VINA_Cox2_BestRes.pdb",
+            "CC(C)Cc1ccc(cc1)[C@H](C)C(=O)O", /* SMILES hint for bond order*/
+            120 /* seed */,
+            postProcessors);
+
 
     SmolDock::iConformer conf_init = mol.getInitialConformer();
     SmolDock::iProtein iprot = prot.getiProtein();
     BOOST_LOG_TRIVIAL(debug) << "Score without docking : " << SmolDock::Score::vina_like_rigid_inter_scoring_func(conf_init,SmolDock::iTransformIdentityInit(),iprot);
 
-    return 0;
+
+
 
 
     SmolDock::PDBWriter pwriter;
@@ -92,12 +105,13 @@ int main() {
     conformerCollector = &collector;
 
 
-    SmolDock::Engine::ConformerRigidDockingEngine docker(3); // Use 10 conformers for docking
+    SmolDock::Engine::ConformerRigidDockingEngine docker(10,
+            &prot,
+            &mol,
+            SmolDock::Score::ScoringFunctionType::VinaRigid,
+            1244); // Use 10 conformers for docking
 
-    docker.setProtein(&prot);
-    docker.setLigand(&mol);
     docker.setDockingBox(SmolDock::Engine::AbstractDockingEngine::DockingBoxSetting::everything);
-    docker.setRandomSeed(3985);
 
     if (!docker.setupDockingEngine()) {
         BOOST_LOG_TRIVIAL(error) << "Error while setting up engine";
@@ -107,7 +121,7 @@ int main() {
 
     docker.runDockingEngine();
 
-    /*
+
     std::shared_ptr<SmolDock::DockingResult> res = docker.getDockingResult();
 
 
@@ -121,7 +135,7 @@ int main() {
     {
         pwriter.addLigand(mol);
     }
-     */
+
 
     pwriter.writePDB("res.pdb");
 

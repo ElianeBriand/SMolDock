@@ -173,7 +173,7 @@ BOOST_AUTO_TEST_SUITE(main_test_suite)
 
         SmolDock::Protein prot;
         // prot.populateFromPDB("1dpx.pdb"); // Lysozyme
-        bool res = prot.populateFromPDB("../DockingTests/COX2_Ibuprofen/3LN1_NoHeme_NoLigand.pdb"); // COX-2
+        bool res = prot.populateFromPDB("../DockingTests/COX2_Ibuprofen/4PH9_COX2_without_Ibuprofen.pdb"); // COX-2
 
         BOOST_CHECK(res);
 

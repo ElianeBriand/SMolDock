@@ -93,13 +93,16 @@ $(document).ready(function(){initNavTree('class_smol_dock_1_1_re_scorer.html',''
 
 <div class="header">
   <div class="summary">
-<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_smol_dock_1_1_re_scorer-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">SmolDock::ReScorer Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>A simple wrapper to get docking scores from various score function for a given ligand-protein configuration.  
+ <a href="class_smol_dock_1_1_re_scorer.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_re_scorer_8h_source.html">ReScorer.h</a>&gt;</code></p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -109,20 +112,21 @@ $(document).ready(function(){initNavTree('class_smol_dock_1_1_re_scorer.html',''
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="class_smol_dock_1_1_re_scorer__coll__graph.png" border="0" usemap="#_smol_dock_1_1_re_scorer_coll__map" alt="Collaboration graph"/></div>
 <map name="_smol_dock_1_1_re_scorer_coll__map" id="_smol_dock_1_1_re_scorer_coll__map">
-<area shape="rect" id="node2" href="namespace_smol_dock.html#struct_smol_dock_1_1i_conformer" title="Internal, fast representation of a given Molecule conformer for efficiency. " alt="" coords="502,667,657,745"/>
-<area shape="rect" id="node15" href="namespace_smol_dock.html#struct_smol_dock_1_1i_protein" title="Internal, fast representation of Protein for efficiency. " alt="" coords="275,653,409,759"/>
-<area shape="rect" id="node4" title="STL class. " alt="" coords="472,153,588,230"/>
-<area shape="rect" id="node17" title="STL class. " alt="" coords="102,153,225,230"/>
-<area shape="rect" id="node7" href="class_smol_dock_1_1_molecule.html" title="Class representing &quot;rich&quot; molecule. " alt="" coords="932,557,1139,855"/>
-<area shape="rect" id="node8" href="class_smol_dock_1_1_structure.html" title="{SmolDock::Structure\n||}" alt="" coords="777,351,921,429"/>
-<area shape="rect" id="node13" href="class_smol_dock_1_1_protein.html" title="Class representing &quot;rich&quot; protein. " alt="" coords="719,638,869,774"/>
-<area shape="rect" id="node10" title="STL class. " alt="" coords="1353,351,1433,429"/>
-<area shape="rect" id="node11" title="STL class. " alt="" coords="1329,145,1456,237"/>
+<area shape="rect" id="node2" href="namespace_smol_dock.html#struct_smol_dock_1_1i_conformer" title="Internal, fast representation of a given Molecule conformer for efficiency. " alt="" coords="1109,697,1263,774"/>
+<area shape="rect" id="node3" href="namespace_smol_dock.html#struct_smol_dock_1_1i_translation" title="Represents a translation. " alt="" coords="945,337,1104,443"/>
+<area shape="rect" id="node17" href="namespace_smol_dock.html#struct_smol_dock_1_1i_protein" title="Internal, fast representation of Protein for efficiency. " alt="" coords="1337,682,1472,789"/>
+<area shape="rect" id="node5" title="STL class. " alt="" coords="1144,153,1260,230"/>
+<area shape="rect" id="node19" title="STL class. " alt="" coords="1485,153,1607,230"/>
+<area shape="rect" id="node9" href="class_smol_dock_1_1_molecule.html" title="Class representing &quot;rich&quot; molecule. " alt="" coords="323,557,529,913"/>
+<area shape="rect" id="node10" href="class_smol_dock_1_1_structure.html" title="{SmolDock::Structure\n||}" alt="" coords="541,351,685,429"/>
+<area shape="rect" id="node15" href="class_smol_dock_1_1_protein.html" title="Class representing &quot;rich&quot; protein. " alt="" coords="670,623,819,847"/>
+<area shape="rect" id="node12" title="STL class. " alt="" coords="29,351,109,429"/>
+<area shape="rect" id="node13" title="STL class. " alt="" coords="5,145,132,237"/>
 </map>
 </div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
-Private Member Functions</h2></td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
 <tr class="memitem:ae77b0b4b724627836a85359936ae63a1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_smol_dock_1_1_re_scorer.html#ae77b0b4b724627836a85359936ae63a1">ReScorer</a> (<a class="el" href="class_smol_dock_1_1_protein.html">Protein</a> &amp;prot, <a class="el" href="class_smol_dock_1_1_molecule.html">Molecule</a> &amp;mol, std::function&lt; double(const <a class="el" href="namespace_smol_dock.html#struct_smol_dock_1_1i_conformer">iConformer</a> &amp;, const <a class="el" href="namespace_smol_dock.html#struct_smol_dock_1_1i_transform">iTransform</a> &amp;, const <a class="el" href="namespace_smol_dock.html#struct_smol_dock_1_1i_protein">iProtein</a> &amp;)&gt; &amp;scorFunc)</td></tr>
 <tr class="separator:ae77b0b4b724627836a85359936ae63a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a102b6af24e4f5dc420c2bdfba5a792f0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_smol_dock_1_1_re_scorer.html#a102b6af24e4f5dc420c2bdfba5a792f0">prepare</a> ()</td></tr>
@@ -144,17 +148,15 @@ Private Attributes</h2></td></tr>
 <tr class="separator:ac8cf11ff4b1e73fea599b6eba7d05ad0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="_re_scorer_8h_source.html#l00014">14</a> of file <a class="el" href="_re_scorer_8h_source.html">ReScorer.h</a>.</p>
+<div class="textblock"><p>A simple wrapper to get docking scores from various score function for a given ligand-protein configuration. </p>
+
+<p class="definition">Definition at line <a class="el" href="_re_scorer_8h_source.html#l00015">15</a> of file <a class="el" href="_re_scorer_8h_source.html">ReScorer.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ae77b0b4b724627836a85359936ae63a1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae77b0b4b724627836a85359936ae63a1">&#9670;&nbsp;</a></span>ReScorer()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">SmolDock::ReScorer::ReScorer </td>
@@ -180,18 +182,10 @@ Private Attributes</h2></td></tr>
           <td></td><td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_re_scorer_8cpp_source.html#l00008">8</a> of file <a class="el" href="_re_scorer_8cpp_source.html">ReScorer.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;                                                                                                                :</div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;            <a class="code" href="class_smol_dock_1_1_re_scorer.html#ab3d128591e75a32b1d6152bb3b4d3ea4">protein</a>(prot), <a class="code" href="class_smol_dock_1_1_re_scorer.html#acfa92e136e1a1681477539bd14bed734">molecule</a>(mol),</div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;            <a class="code" href="class_smol_dock_1_1_re_scorer.html#aa23484f98a480115afdd978a83f9091f">scoringFunction</a>(scorFunc){</div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    }</div><div class="ttc" id="class_smol_dock_1_1_re_scorer_html_acfa92e136e1a1681477539bd14bed734"><div class="ttname"><a href="class_smol_dock_1_1_re_scorer.html#acfa92e136e1a1681477539bd14bed734">SmolDock::ReScorer::molecule</a></div><div class="ttdeci">Molecule &amp; molecule</div><div class="ttdef"><b>Definition:</b> <a href="_re_scorer_8h_source.html#l00021">ReScorer.h:21</a></div></div>
-<div class="ttc" id="class_smol_dock_1_1_re_scorer_html_ab3d128591e75a32b1d6152bb3b4d3ea4"><div class="ttname"><a href="class_smol_dock_1_1_re_scorer.html#ab3d128591e75a32b1d6152bb3b4d3ea4">SmolDock::ReScorer::protein</a></div><div class="ttdeci">Protein &amp; protein</div><div class="ttdef"><b>Definition:</b> <a href="_re_scorer_8h_source.html#l00020">ReScorer.h:20</a></div></div>
-<div class="ttc" id="class_smol_dock_1_1_re_scorer_html_aa23484f98a480115afdd978a83f9091f"><div class="ttname"><a href="class_smol_dock_1_1_re_scorer.html#aa23484f98a480115afdd978a83f9091f">SmolDock::ReScorer::scoringFunction</a></div><div class="ttdeci">std::function&lt; double(const iConformer &amp;, const iTransform &amp;, const iProtein &amp;)&gt; &amp; scoringFunction</div><div class="ttdef"><b>Definition:</b> <a href="_re_scorer_8h_source.html#l00022">ReScorer.h:22</a></div></div>
-</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="_re_scorer_8cpp_source.html#l00011">11</a> of file <a class="el" href="_re_scorer_8cpp_source.html">ReScorer.cpp</a>.</p>
+
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -200,9 +194,6 @@ Private Attributes</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">double SmolDock::ReScorer::getScore </td>
@@ -211,29 +202,31 @@ Private Attributes</h2></td></tr>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_re_scorer_8cpp_source.html#l00022">22</a> of file <a class="el" href="_re_scorer_8cpp_source.html">ReScorer.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_re_scorer_8cpp_source.html#l00025">25</a> of file <a class="el" href="_re_scorer_8cpp_source.html">ReScorer.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_re_scorer_8h_source.html#l00025">iconformer</a>, <a class="el" href="_re_scorer_8h_source.html#l00024">iprotein</a>, <a class="el" href="i_transform_8h_source.html#l00072">SmolDock::iTransformIdentityInit()</a>, and <a class="el" href="_re_scorer_8h_source.html#l00022">scoringFunction</a>.</p>
-<div class="fragment"><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;                              {</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="class_smol_dock_1_1_re_scorer.html#aa23484f98a480115afdd978a83f9091f">scoringFunction</a>(this-&gt;<a class="code" href="class_smol_dock_1_1_re_scorer.html#ac8cf11ff4b1e73fea599b6eba7d05ad0">iconformer</a>, <a class="code" href="namespace_smol_dock.html#a3974d1e3a6f729a7ca05b97996ca2079">iTransformIdentityInit</a>(), this-&gt;<a class="code" href="class_smol_dock_1_1_re_scorer.html#a415f9b1b65c644dc042cb14131af1c10">iprotein</a>);</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    }</div><div class="ttc" id="namespace_smol_dock_html_a3974d1e3a6f729a7ca05b97996ca2079"><div class="ttname"><a href="namespace_smol_dock.html#a3974d1e3a6f729a7ca05b97996ca2079">SmolDock::iTransformIdentityInit</a></div><div class="ttdeci">iTransform iTransformIdentityInit()</div><div class="ttdoc">Returns a neutral transform. </div><div class="ttdef"><b>Definition:</b> <a href="i_transform_8h_source.html#l00072">iTransform.h:72</a></div></div>
-<div class="ttc" id="class_smol_dock_1_1_re_scorer_html_a415f9b1b65c644dc042cb14131af1c10"><div class="ttname"><a href="class_smol_dock_1_1_re_scorer.html#a415f9b1b65c644dc042cb14131af1c10">SmolDock::ReScorer::iprotein</a></div><div class="ttdeci">iProtein iprotein</div><div class="ttdef"><b>Definition:</b> <a href="_re_scorer_8h_source.html#l00024">ReScorer.h:24</a></div></div>
-<div class="ttc" id="class_smol_dock_1_1_re_scorer_html_ac8cf11ff4b1e73fea599b6eba7d05ad0"><div class="ttname"><a href="class_smol_dock_1_1_re_scorer.html#ac8cf11ff4b1e73fea599b6eba7d05ad0">SmolDock::ReScorer::iconformer</a></div><div class="ttdeci">iConformer iconformer</div><div class="ttdef"><b>Definition:</b> <a href="_re_scorer_8h_source.html#l00025">ReScorer.h:25</a></div></div>
-<div class="ttc" id="class_smol_dock_1_1_re_scorer_html_aa23484f98a480115afdd978a83f9091f"><div class="ttname"><a href="class_smol_dock_1_1_re_scorer.html#aa23484f98a480115afdd978a83f9091f">SmolDock::ReScorer::scoringFunction</a></div><div class="ttdeci">std::function&lt; double(const iConformer &amp;, const iTransform &amp;, const iProtein &amp;)&gt; &amp; scoringFunction</div><div class="ttdef"><b>Definition:</b> <a href="_re_scorer_8h_source.html#l00022">ReScorer.h:22</a></div></div>
-</div><!-- fragment --><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<p class="reference">References <a class="el" href="_re_scorer_8h_source.html#l00027">iconformer</a>, <a class="el" href="_re_scorer_8h_source.html#l00026">iprotein</a>, <a class="el" href="_internals_utility_functions_8h_source.html#l00026">SmolDock::iTransformIdentityInit()</a>, and <a class="el" href="_re_scorer_8h_source.html#l00024">scoringFunction</a>.</p>
+<div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="class_smol_dock_1_1_re_scorer_a4f372ac345e57254d9b00672f169d2fd_cgraph.png" border="0" usemap="#class_smol_dock_1_1_re_scorer_a4f372ac345e57254d9b00672f169d2fd_cgraph" alt=""/></div>
 <map name="class_smol_dock_1_1_re_scorer_a4f372ac345e57254d9b00672f169d2fd_cgraph" id="class_smol_dock_1_1_re_scorer_a4f372ac345e57254d9b00672f169d2fd_cgraph">
-<area shape="rect" id="node2" href="namespace_smol_dock.html#a3974d1e3a6f729a7ca05b97996ca2079" title="Returns a neutral transform. " alt="" coords="200,13,415,39"/>
+<area shape="rect" id="node2" href="namespace_smol_dock.html#a3974d1e3a6f729a7ca05b97996ca2079" title="Holds a gradient for the score function with regard to an iTransform. " alt="" coords="200,13,415,39"/>
 <area shape="rect" id="node3" href="namespace_smol_dock.html#a44a91384d128c3beb5c57ec507dddb6e" title="SmolDock::iQuaternionIdentityInit" alt="" coords="463,13,681,39"/>
+</map>
+</div>
+<div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="class_smol_dock_1_1_re_scorer_a4f372ac345e57254d9b00672f169d2fd_icgraph.png" border="0" usemap="#class_smol_dock_1_1_re_scorer_a4f372ac345e57254d9b00672f169d2fd_icgraph" alt=""/></div>
+<map name="class_smol_dock_1_1_re_scorer_a4f372ac345e57254d9b00672f169d2fd_icgraph" id="class_smol_dock_1_1_re_scorer_a4f372ac345e57254d9b00672f169d2fd_icgraph">
+<area shape="rect" id="node2" href="_py_utilities_8h.html#a48b6c8c5377d2e7c99f7084ea93aa77b" title="export_Utilities" alt="" coords="200,13,309,39"/>
+<area shape="rect" id="node3" href="_smoldock_python_bindings_8cpp.html#a9002869529fdb857c7ffa4a170c4f3ef" title="BOOST_PYTHON_MODULE" alt="" coords="357,13,552,39"/>
 </map>
 </div>
 
@@ -244,9 +237,6 @@ Private Attributes</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">bool SmolDock::ReScorer::prepare </td>
@@ -255,33 +245,34 @@ Private Attributes</h2></td></tr>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_re_scorer_8cpp_source.html#l00015">15</a> of file <a class="el" href="_re_scorer_8cpp_source.html">ReScorer.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_re_scorer_8cpp_source.html#l00018">18</a> of file <a class="el" href="_re_scorer_8cpp_source.html">ReScorer.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_molecule_8cpp_source.html#l00381">SmolDock::Molecule::getInitialConformer()</a>, <a class="el" href="_protein_8cpp_source.html#l00159">SmolDock::Protein::getiProtein()</a>, <a class="el" href="_re_scorer_8h_source.html#l00025">iconformer</a>, <a class="el" href="_re_scorer_8h_source.html#l00024">iprotein</a>, <a class="el" href="_re_scorer_8h_source.html#l00021">molecule</a>, and <a class="el" href="_re_scorer_8h_source.html#l00020">protein</a>.</p>
-<div class="fragment"><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;                           {</div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        this-&gt;<a class="code" href="class_smol_dock_1_1_re_scorer.html#a415f9b1b65c644dc042cb14131af1c10">iprotein</a> = this-&gt;<a class="code" href="class_smol_dock_1_1_re_scorer.html#ab3d128591e75a32b1d6152bb3b4d3ea4">protein</a>.<a class="code" href="class_smol_dock_1_1_protein.html#a68856c725dbe91f5ccec59e8fa8306b2">getiProtein</a>();</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        this-&gt;<a class="code" href="class_smol_dock_1_1_re_scorer.html#ac8cf11ff4b1e73fea599b6eba7d05ad0">iconformer</a> = this-&gt;<a class="code" href="class_smol_dock_1_1_re_scorer.html#acfa92e136e1a1681477539bd14bed734">molecule</a>.<a class="code" href="class_smol_dock_1_1_molecule.html#a9aba4607923da552cf15847567c77603">getInitialConformer</a>();</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    }</div><div class="ttc" id="class_smol_dock_1_1_re_scorer_html_acfa92e136e1a1681477539bd14bed734"><div class="ttname"><a href="class_smol_dock_1_1_re_scorer.html#acfa92e136e1a1681477539bd14bed734">SmolDock::ReScorer::molecule</a></div><div class="ttdeci">Molecule &amp; molecule</div><div class="ttdef"><b>Definition:</b> <a href="_re_scorer_8h_source.html#l00021">ReScorer.h:21</a></div></div>
-<div class="ttc" id="class_smol_dock_1_1_re_scorer_html_a415f9b1b65c644dc042cb14131af1c10"><div class="ttname"><a href="class_smol_dock_1_1_re_scorer.html#a415f9b1b65c644dc042cb14131af1c10">SmolDock::ReScorer::iprotein</a></div><div class="ttdeci">iProtein iprotein</div><div class="ttdef"><b>Definition:</b> <a href="_re_scorer_8h_source.html#l00024">ReScorer.h:24</a></div></div>
-<div class="ttc" id="class_smol_dock_1_1_molecule_html_a9aba4607923da552cf15847567c77603"><div class="ttname"><a href="class_smol_dock_1_1_molecule.html#a9aba4607923da552cf15847567c77603">SmolDock::Molecule::getInitialConformer</a></div><div class="ttdeci">iConformer getInitialConformer()</div><div class="ttdoc">Obtain the conformer that was either loaded from file or generated when populating the Molecule...</div><div class="ttdef"><b>Definition:</b> <a href="_molecule_8cpp_source.html#l00381">Molecule.cpp:381</a></div></div>
-<div class="ttc" id="class_smol_dock_1_1_re_scorer_html_ac8cf11ff4b1e73fea599b6eba7d05ad0"><div class="ttname"><a href="class_smol_dock_1_1_re_scorer.html#ac8cf11ff4b1e73fea599b6eba7d05ad0">SmolDock::ReScorer::iconformer</a></div><div class="ttdeci">iConformer iconformer</div><div class="ttdef"><b>Definition:</b> <a href="_re_scorer_8h_source.html#l00025">ReScorer.h:25</a></div></div>
-<div class="ttc" id="class_smol_dock_1_1_re_scorer_html_ab3d128591e75a32b1d6152bb3b4d3ea4"><div class="ttname"><a href="class_smol_dock_1_1_re_scorer.html#ab3d128591e75a32b1d6152bb3b4d3ea4">SmolDock::ReScorer::protein</a></div><div class="ttdeci">Protein &amp; protein</div><div class="ttdef"><b>Definition:</b> <a href="_re_scorer_8h_source.html#l00020">ReScorer.h:20</a></div></div>
-<div class="ttc" id="class_smol_dock_1_1_protein_html_a68856c725dbe91f5ccec59e8fa8306b2"><div class="ttname"><a href="class_smol_dock_1_1_protein.html#a68856c725dbe91f5ccec59e8fa8306b2">SmolDock::Protein::getiProtein</a></div><div class="ttdeci">iProtein getiProtein()</div><div class="ttdoc">Return an iProtein object for use in docking engine. </div><div class="ttdef"><b>Definition:</b> <a href="_protein_8cpp_source.html#l00159">Protein.cpp:159</a></div></div>
-</div><!-- fragment --><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+<p class="reference">References <a class="el" href="_molecule_8cpp_source.html#l00378">SmolDock::Molecule::getInitialConformer()</a>, <a class="el" href="_protein_8cpp_source.html#l00203">SmolDock::Protein::getiProtein()</a>, <a class="el" href="_re_scorer_8h_source.html#l00027">iconformer</a>, <a class="el" href="_re_scorer_8h_source.html#l00026">iprotein</a>, <a class="el" href="_re_scorer_8h_source.html#l00023">molecule</a>, and <a class="el" href="_re_scorer_8h_source.html#l00022">protein</a>.</p>
+<div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="class_smol_dock_1_1_re_scorer_a102b6af24e4f5dc420c2bdfba5a792f0_cgraph.png" border="0" usemap="#class_smol_dock_1_1_re_scorer_a102b6af24e4f5dc420c2bdfba5a792f0_cgraph" alt=""/></div>
 <map name="class_smol_dock_1_1_re_scorer_a102b6af24e4f5dc420c2bdfba5a792f0_cgraph" id="class_smol_dock_1_1_re_scorer_a102b6af24e4f5dc420c2bdfba5a792f0_cgraph">
-<area shape="rect" id="node2" href="class_smol_dock_1_1_molecule.html#a9aba4607923da552cf15847567c77603" title="Obtain the conformer that was either loaded from file or generated when populating the Molecule..." alt="" coords="200,35,343,76"/>
-<area shape="rect" id="node5" href="class_smol_dock_1_1_protein.html#a68856c725dbe91f5ccec59e8fa8306b2" title="Return an iProtein object for use in docking engine. " alt="" coords="201,100,341,141"/>
-<area shape="rect" id="node3" href="namespace_smol_dock.html#a9c3abf1e37dc4fe013df80997dedb20b" title="SmolDock::atomTypeToAtomic\lRadius" alt="" coords="391,5,596,47"/>
-<area shape="rect" id="node4" href="namespace_smol_dock.html#ae559278f4b66ec9a09ddfaebb224f897" title="SmolDock::stringToAtomType" alt="" coords="394,71,593,98"/>
+<area shape="rect" id="node2" href="class_smol_dock_1_1_molecule.html#ab5fc86fa1ac97374e7d8d339404568e9" title="Obtain the conformer that was either loaded from file or generated when populating the Molecule..." alt="" coords="200,35,343,76"/>
+<area shape="rect" id="node6" href="class_smol_dock_1_1_protein.html#a2cccfc64e088ed1846d15c6909c9379f" title="Return an iProtein object for use in docking engine. " alt="" coords="201,100,341,141"/>
+<area shape="rect" id="node3" href="class_smol_dock_1_1_molecule.html#a5247ebed094d5593a5a704c0c2919c0c" title="SmolDock::Molecule\l::generateIConformerForGiven\lRDKitConformerID" alt="" coords="391,27,589,83"/>
+<area shape="rect" id="node4" href="namespace_smol_dock.html#a9c3abf1e37dc4fe013df80997dedb20b" title="SmolDock::atomTypeToAtomic\lRadius" alt="" coords="637,5,843,47"/>
+<area shape="rect" id="node5" href="namespace_smol_dock.html#ae559278f4b66ec9a09ddfaebb224f897" title="SmolDock::stringToAtomType" alt="" coords="641,71,839,98"/>
+</map>
+</div>
+<div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="class_smol_dock_1_1_re_scorer_a102b6af24e4f5dc420c2bdfba5a792f0_icgraph.png" border="0" usemap="#class_smol_dock_1_1_re_scorer_a102b6af24e4f5dc420c2bdfba5a792f0_icgraph" alt=""/></div>
+<map name="class_smol_dock_1_1_re_scorer_a102b6af24e4f5dc420c2bdfba5a792f0_icgraph" id="class_smol_dock_1_1_re_scorer_a102b6af24e4f5dc420c2bdfba5a792f0_icgraph">
+<area shape="rect" id="node2" href="_py_utilities_8h.html#a48b6c8c5377d2e7c99f7084ea93aa77b" title="export_Utilities" alt="" coords="200,13,309,39"/>
+<area shape="rect" id="node3" href="_smoldock_python_bindings_8cpp.html#a9002869529fdb857c7ffa4a170c4f3ef" title="BOOST_PYTHON_MODULE" alt="" coords="357,13,552,39"/>
 </map>
 </div>
 
@@ -308,7 +299,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_re_scorer_8h_source.html#l00025">25</a> of file <a class="el" href="_re_scorer_8h_source.html">ReScorer.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_re_scorer_8h_source.html#l00027">27</a> of file <a class="el" href="_re_scorer_8h_source.html">ReScorer.h</a>.</p>
 
 </div>
 </div>
@@ -332,7 +323,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_re_scorer_8h_source.html#l00024">24</a> of file <a class="el" href="_re_scorer_8h_source.html">ReScorer.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_re_scorer_8h_source.html#l00026">26</a> of file <a class="el" href="_re_scorer_8h_source.html">ReScorer.h</a>.</p>
 
 </div>
 </div>
@@ -356,7 +347,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_re_scorer_8h_source.html#l00021">21</a> of file <a class="el" href="_re_scorer_8h_source.html">ReScorer.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_re_scorer_8h_source.html#l00023">23</a> of file <a class="el" href="_re_scorer_8h_source.html">ReScorer.h</a>.</p>
 
 </div>
 </div>
@@ -380,7 +371,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_re_scorer_8h_source.html#l00020">20</a> of file <a class="el" href="_re_scorer_8h_source.html">ReScorer.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_re_scorer_8h_source.html#l00022">22</a> of file <a class="el" href="_re_scorer_8h_source.html">ReScorer.h</a>.</p>
 
 </div>
 </div>
@@ -404,7 +395,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_re_scorer_8h_source.html#l00022">22</a> of file <a class="el" href="_re_scorer_8h_source.html">ReScorer.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_re_scorer_8h_source.html#l00024">24</a> of file <a class="el" href="_re_scorer_8h_source.html">ReScorer.h</a>.</p>
 
 </div>
 </div>

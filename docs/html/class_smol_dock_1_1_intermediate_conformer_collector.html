@@ -109,12 +109,12 @@ $(document).ready(function(){initNavTree('class_smol_dock_1_1_intermediate_confo
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="class_smol_dock_1_1_intermediate_conformer_collector__coll__graph.png" border="0" usemap="#_smol_dock_1_1_intermediate_conformer_collector_coll__map" alt="Collaboration graph"/></div>
 <map name="_smol_dock_1_1_intermediate_conformer_collector_coll__map" id="_smol_dock_1_1_intermediate_conformer_collector_coll__map">
-<area shape="rect" id="node2" href="class_smol_dock_1_1_molecule.html" title="Class representing &quot;rich&quot; molecule. " alt="" coords="203,484,410,781"/>
-<area shape="rect" id="node3" href="class_smol_dock_1_1_structure.html" title="{SmolDock::Structure\n||}" alt="" coords="234,322,378,399"/>
-<area shape="rect" id="node5" title="STL class. " alt="" coords="63,153,179,230"/>
-<area shape="rect" id="node7" title="STL class. " alt="" coords="608,322,688,399"/>
-<area shape="rect" id="node8" title="STL class. " alt="" coords="584,145,711,237"/>
-<area shape="rect" id="node10" href="class_smol_dock_1_1_p_d_b_writer.html" title="A PDB file writer for ligands. " alt="" coords="105,999,260,1091"/>
+<area shape="rect" id="node2" href="class_smol_dock_1_1_molecule.html" title="Class representing &quot;rich&quot; molecule. " alt="" coords="206,484,412,840"/>
+<area shape="rect" id="node3" href="class_smol_dock_1_1_structure.html" title="{SmolDock::Structure\n||}" alt="" coords="237,322,381,399"/>
+<area shape="rect" id="node5" title="STL class. " alt="" coords="66,153,182,230"/>
+<area shape="rect" id="node7" title="STL class. " alt="" coords="610,322,690,399"/>
+<area shape="rect" id="node8" title="STL class. " alt="" coords="587,145,714,237"/>
+<area shape="rect" id="node10" href="class_smol_dock_1_1_p_d_b_writer.html" title="A PDB file writer for ligands. " alt="" coords="108,1057,262,1149"/>
 </map>
 </div>
 <table class="memberdecls">
@@ -163,9 +163,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="_intermediate_conformer_collector_8cpp_source.html#l00019">19</a> of file <a class="el" href="_intermediate_conformer_collector_8cpp_source.html">IntermediateConformerCollector.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;                                                                                                     :</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <a class="code" href="class_smol_dock_1_1_intermediate_conformer_collector.html#af4af1651349015597a2582237817db51">molecule</a>(mol),<a class="code" href="class_smol_dock_1_1_intermediate_conformer_collector.html#a2fc9343d0d285bef646d6ae5da619ad6">writer</a>(pdbwriter){</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    }</div><div class="ttc" id="class_smol_dock_1_1_intermediate_conformer_collector_html_af4af1651349015597a2582237817db51"><div class="ttname"><a href="class_smol_dock_1_1_intermediate_conformer_collector.html#af4af1651349015597a2582237817db51">SmolDock::IntermediateConformerCollector::molecule</a></div><div class="ttdeci">Molecule * molecule</div><div class="ttdef"><b>Definition:</b> <a href="_intermediate_conformer_collector_8h_source.html#l00019">IntermediateConformerCollector.h:19</a></div></div>
-<div class="ttc" id="class_smol_dock_1_1_intermediate_conformer_collector_html_a2fc9343d0d285bef646d6ae5da619ad6"><div class="ttname"><a href="class_smol_dock_1_1_intermediate_conformer_collector.html#a2fc9343d0d285bef646d6ae5da619ad6">SmolDock::IntermediateConformerCollector::writer</a></div><div class="ttdeci">PDBWriter * writer</div><div class="ttdef"><b>Definition:</b> <a href="_intermediate_conformer_collector_8h_source.html#l00020">IntermediateConformerCollector.h:20</a></div></div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -187,13 +185,8 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="_intermediate_conformer_collector_8cpp_source.html#l00013">13</a> of file <a class="el" href="_intermediate_conformer_collector_8cpp_source.html">IntermediateConformerCollector.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_p_d_b_writer_8cpp_source.html#l00077">SmolDock::PDBWriter::addLigand()</a>, <a class="el" href="_molecule_8cpp_source.html#l00336">SmolDock::Molecule::deepcopy()</a>, <a class="el" href="_intermediate_conformer_collector_8h_source.html#l00019">molecule</a>, <a class="el" href="_molecule_8cpp_source.html#l00324">SmolDock::Molecule::updateAtomPositionsFromiConformer()</a>, and <a class="el" href="_intermediate_conformer_collector_8h_source.html#l00020">writer</a>.</p>
-<div class="fragment"><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;                                                                           {</div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        Molecule intermediate_res = this-&gt;<a class="code" href="class_smol_dock_1_1_intermediate_conformer_collector.html#af4af1651349015597a2582237817db51">molecule</a>-&gt;<a class="code" href="class_smol_dock_1_1_molecule.html#a70156ffc4081eb92f9dc4e2c70096c84">deepcopy</a>();</div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        intermediate_res.<a class="code" href="class_smol_dock_1_1_molecule.html#af6263934134836e9ce66d2254b6b6801">updateAtomPositionsFromiConformer</a>(conformer);</div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        <a class="code" href="class_smol_dock_1_1_intermediate_conformer_collector.html#a2fc9343d0d285bef646d6ae5da619ad6">writer</a>-&gt;<a class="code" href="class_smol_dock_1_1_p_d_b_writer.html#a74fc5d4cb9bbe5c8f0362366178dbff0">addLigand</a>(intermediate_res);</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    }</div><div class="ttc" id="class_smol_dock_1_1_p_d_b_writer_html_a74fc5d4cb9bbe5c8f0362366178dbff0"><div class="ttname"><a href="class_smol_dock_1_1_p_d_b_writer.html#a74fc5d4cb9bbe5c8f0362366178dbff0">SmolDock::PDBWriter::addLigand</a></div><div class="ttdeci">void addLigand(const Molecule &amp;ligand)</div><div class="ttdoc">Add a ligand to be exported as PDB. </div><div class="ttdef"><b>Definition:</b> <a href="_p_d_b_writer_8cpp_source.html#l00077">PDBWriter.cpp:77</a></div></div>
-<div class="ttc" id="class_smol_dock_1_1_intermediate_conformer_collector_html_af4af1651349015597a2582237817db51"><div class="ttname"><a href="class_smol_dock_1_1_intermediate_conformer_collector.html#af4af1651349015597a2582237817db51">SmolDock::IntermediateConformerCollector::molecule</a></div><div class="ttdeci">Molecule * molecule</div><div class="ttdef"><b>Definition:</b> <a href="_intermediate_conformer_collector_8h_source.html#l00019">IntermediateConformerCollector.h:19</a></div></div>
-<div class="ttc" id="class_smol_dock_1_1_molecule_html_a70156ffc4081eb92f9dc4e2c70096c84"><div class="ttname"><a href="class_smol_dock_1_1_molecule.html#a70156ffc4081eb92f9dc4e2c70096c84">SmolDock::Molecule::deepcopy</a></div><div class="ttdeci">Molecule deepcopy()</div><div class="ttdoc">Make a copy of the Molecule object where the underlying Atom and Bond are new objects instead of refe...</div><div class="ttdef"><b>Definition:</b> <a href="_molecule_8cpp_source.html#l00336">Molecule.cpp:336</a></div></div>
-<div class="ttc" id="class_smol_dock_1_1_intermediate_conformer_collector_html_a2fc9343d0d285bef646d6ae5da619ad6"><div class="ttname"><a href="class_smol_dock_1_1_intermediate_conformer_collector.html#a2fc9343d0d285bef646d6ae5da619ad6">SmolDock::IntermediateConformerCollector::writer</a></div><div class="ttdeci">PDBWriter * writer</div><div class="ttdef"><b>Definition:</b> <a href="_intermediate_conformer_collector_8h_source.html#l00020">IntermediateConformerCollector.h:20</a></div></div>
-<div class="ttc" id="class_smol_dock_1_1_molecule_html_af6263934134836e9ce66d2254b6b6801"><div class="ttname"><a href="class_smol_dock_1_1_molecule.html#af6263934134836e9ce66d2254b6b6801">SmolDock::Molecule::updateAtomPositionsFromiConformer</a></div><div class="ttdeci">bool updateAtomPositionsFromiConformer(const iConformer &amp;conformer)</div><div class="ttdef"><b>Definition:</b> <a href="_molecule_8cpp_source.html#l00324">Molecule.cpp:324</a></div></div>
-</div><!-- fragment --><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<p class="reference">References <a class="el" href="_p_d_b_writer_8cpp_source.html#l00084">SmolDock::PDBWriter::addLigand()</a>, <a class="el" href="_molecule_8cpp_source.html#l00332">SmolDock::Molecule::deepcopy()</a>, <a class="el" href="_intermediate_conformer_collector_8h_source.html#l00019">molecule</a>, <a class="el" href="_molecule_8cpp_source.html#l00320">SmolDock::Molecule::updateAtomPositionsFromiConformer()</a>, and <a class="el" href="_intermediate_conformer_collector_8h_source.html#l00020">writer</a>.</p>
+<div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
@@ -204,19 +197,6 @@ Private Attributes</h2></td></tr>
 <area shape="rect" id="node3" href="class_smol_dock_1_1_molecule.html#a70156ffc4081eb92f9dc4e2c70096c84" title="Make a copy of the Molecule object where the underlying Atom and Bond are new objects instead of refe..." alt="" coords="299,71,442,112"/>
 <area shape="rect" id="node5" href="class_smol_dock_1_1_molecule.html#af6263934134836e9ce66d2254b6b6801" title="SmolDock::Molecule\l::updateAtomPositionsFromi\lConformer" alt="" coords="277,137,464,193"/>
 <area shape="rect" id="node4" href="class_smol_dock_1_1_bond.html#a4ebf28309120c880429f205edf67b9f8" title="Set the type of the bond. " alt="" coords="512,78,719,105"/>
-</map>
-</div>
-<div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-2-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="class_smol_dock_1_1_intermediate_conformer_collector_a1d878b323a17e56169fb4fad4f92a742_icgraph.png" border="0" usemap="#class_smol_dock_1_1_intermediate_conformer_collector_a1d878b323a17e56169fb4fad4f92a742_icgraph" alt=""/></div>
-<map name="class_smol_dock_1_1_intermediate_conformer_collector_a1d878b323a17e56169fb4fad4f92a742_icgraph" id="class_smol_dock_1_1_intermediate_conformer_collector_a1d878b323a17e56169fb4fad4f92a742_icgraph">
-<area shape="rect" id="node2" href="class_smol_dock_1_1_gradient_descent_line_search.html#a8bc11fdd0f47562e773df6dff62dc82a" title="SmolDock::GradientDescent\lLineSearch::optimize" alt="" coords="292,5,481,47"/>
-<area shape="rect" id="node5" href="class_smol_dock_1_1_gradient_descent_line_search.html#a04d6d79864edd42fb3e6729b6d402398" title="SmolDock::GradientDescent\lLineSearch::setStartingConformer" alt="" coords="277,71,496,112"/>
-<area shape="rect" id="node3" href="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine.html#a7bee39278168cb4d7ee6558b3a3d3bb4" title="Run the docking. " alt="" coords="544,39,799,80"/>
-<area shape="rect" id="node4" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="847,46,897,73"/>
 </map>
 </div>
 

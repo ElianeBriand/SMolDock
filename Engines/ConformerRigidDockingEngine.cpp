@@ -23,11 +23,11 @@
 #include <thread>
 
 
-
 #include "ConformerRigidDockingEngine.h"
 #include "Internals/iConformer.h"
+#include "Internals/InternalsUtilityFunctions.h"
 #include <Engines/ScoringFunctions/VinaLikeScoringFunction.h>
-
+#include <Engines/LocalOptimizers/L_BFGS.h>
 #include "Utilities/TimingsLog.h"
 
 #include <GraphMol/RDKitBase.h>
@@ -45,72 +45,65 @@
 #include <DataStructs/ExplicitBitVect.h>
 
 #undef BOOST_LOG
+
 #include <boost/log/trivial.hpp>
 
 #include <boost/accumulators/accumulators.hpp>
 #include <boost/accumulators/statistics/stats.hpp>
 #include <boost/accumulators/statistics/mean.hpp>
 #include <boost/accumulators/statistics/moment.hpp>
+#include <Engines/GlobalHeuristics/RandomRestart.h>
 
 
 namespace SmolDock {
     namespace Engine {
 
 
-        ConformerRigidDockingEngine::ConformerRigidDockingEngine(unsigned int conformer_num) {
-            this->conformer_num = conformer_num;
-            assert(conformer_num > 0);
+        ConformerRigidDockingEngine::ConformerRigidDockingEngine(unsigned int conformer_num_,
+                                                                                  Protein* protein,
+                                                                                  Molecule* ligand,
+                                                                                  Score::ScoringFunctionType scFuncType,
+                                                                                  unsigned int seed):
+        conformer_num(conformer_num_),
+        orig_protein(protein),
+        orig_ligand(ligand),
+        scoringFuncType(scFuncType),
+        random_seed(seed),
+        rnd_generator(random_seed)
+        {
+
 
             scores.reserve(this->conformer_num);
             final_iConformer.reserve(this->conformer_num);
         }
 
-        bool ConformerRigidDockingEngine::setProtein(Protein *p) {
-            this->orig_protein = p;
-            return true;
-        }
-
-        bool ConformerRigidDockingEngine::setLigand(Molecule *m) {
-            this->orig_ligand = m;
-
-            // Getting a handle on the RWMol
-            // this->rwmol = this->orig_ligand->getInternalRWMol();
-
-
-            return true;
-        }
 
         bool ConformerRigidDockingEngine::setupDockingEngine() {
 
             record_timings(begin_setup);
 
             std::uniform_int_distribution<> dis_int(0, std::numeric_limits<int>::max());
-            std::uniform_real_distribution<double> dis_real_position(-20.0, 20.0);
+            std::uniform_real_distribution<double> dis_real_position(-100.0, 100.0);
 
             record_timings(begin_conformersgen);
 
             int seed = dis_int(this->rnd_generator);
             BOOST_LOG_TRIVIAL(debug) << "Seed : " << seed;
-            this->orig_ligand->generateConformers(this->viConformers, this->conformer_num, seed);
+            this->orig_ligand->generateConformers(this->viConformers, this->conformer_num, true, seed);
 
             record_timings(end_conformersgen);
 
             this->protein = this->orig_protein->getiProtein();
 
-            /*
 
+/*
             for(iConformer& conformer: this->viConformers)
             {
-                iTransform starting_pos_tr = iTransformIdentityInit();
-                starting_pos_tr.transl.x = this->protein.center_x + dis_real_position(this->rnd_generator);
-                starting_pos_tr.transl.y = this->protein.center_y + dis_real_position(this->rnd_generator);
-                starting_pos_tr.transl.z = this->protein.center_z + dis_real_position(this->rnd_generator);
-                applyTransformInPlace(conformer,starting_pos_tr);
+
             }
-            */
+*/
 
             record_timings(end_iprotgen);
-
 
 
             record_timings(end_setup);
@@ -118,17 +111,19 @@ namespace SmolDock {
 
 #ifdef SMOLDOCK_VERBOSE_DEBUG
             auto total_setup_duration = static_cast< std::chrono::duration<double> >(end_setup - begin_setup).count();
-            auto duration_conformergen = static_cast< std::chrono::duration<double> >(end_conformersgen - begin_conformersgen).count();
-            auto duration_iprot = static_cast< std::chrono::duration<double> >(end_iprotgen - end_conformersgen).count();
+            auto duration_conformergen = static_cast< std::chrono::duration<double> >(end_conformersgen -
+                                                                                      begin_conformersgen).count();
+            auto duration_iprot = static_cast< std::chrono::duration<double> >(end_iprotgen -
+                                                                               end_conformersgen).count();
 
             BOOST_LOG_TRIVIAL(debug) << "Timings ConformerRigidDockingEngine setup"
-                                <<"\n      TOTAL: "
-                                  << total_setup_duration << "s"
-                                  << "\n      Conformer: "
-                                  << duration_conformergen
-                                  <<"s [n=" << this->conformer_num << "->" << this->viConformers.size() << "] "
-                                  << duration_conformergen/this->conformer_num << "s each"
-                                  << "\n      iProt: " << duration_iprot << "s";
+                                     << "\n      TOTAL: "
+                                     << total_setup_duration << "s"
+                                     << "\n      Conformer: "
+                                     << duration_conformergen
+                                     << "s [n=" << this->conformer_num << "->" << this->viConformers.size() << "] "
+                                     << duration_conformergen / this->conformer_num << "s each"
+                                     << "\n      iProt: " << duration_iprot << "s";
 #endif
             BOOST_LOG_TRIVIAL(info) << "Conformer docking engine: ready";
             return true;
@@ -138,27 +133,52 @@ namespace SmolDock {
             using namespace boost::accumulators;
             accumulator_set<double, stats<tag::mean, tag::moment<2> > > acc_score;
             accumulator_set<double, stats<tag::mean, tag::moment<2> > > acc_duration;
-            accumulator_set<double, stats<tag::mean, tag::moment<2> > > acc_iteration;
 
-
+            std::uniform_int_distribution<unsigned int> dis_uint(0, std::numeric_limits<unsigned int>::max());
 
 
             record_timings(begin_docking);
 
-            for(auto& conformer : this->viConformers)
-            {
+            for (auto &conformer : this->viConformers) {
 
 
                 record_timings(begin_docking_this_conformer);
 
-                GradientDescentLineSearch gradOptimizer(Score::vina_like_rigid_inter_scoring_func);
-                gradOptimizer.setProtein(&(this->protein));
-                gradOptimizer.setStartingConformer(&conformer);
 
-                gradOptimizer.optimize();
 
-                double score = gradOptimizer.getScore();
-                iConformer result = gradOptimizer.getFinalConformer();
+
+                iTransform starting_pos_tr = iTransformIdentityInit();
+                starting_pos_tr.transl = conformer.centroidNormalizingTransform;
+
+                // Remove this for production
+                // This is to test the local optimizer by shaking up the initial position
+                starting_pos_tr.transl.x += -1.0;
+                starting_pos_tr.transl.y += 1.0;
+                starting_pos_tr.rota.s += 1.0;
+                starting_pos_tr.rota.u += 1.0;
+                starting_pos_tr.rota.v += 1.0;
+                starting_pos_tr.rota.t += 1.0;
+                normalizeQuaternionInPlace(starting_pos_tr.rota);
+
+                std::unique_ptr<Score::ScoringFunction> vinalike = scoringFunctionFactory(scoringFuncType,
+                        conformer,
+                        this->protein,
+                        starting_pos_tr,
+                        1e-3);
+
+                Optimizer::L_BFGS lbfgs(vinalike.get());
+
+                Heuristics::RandomRestart heur(vinalike.get(), &lbfgs, dis_uint(this->rnd_generator));
+
+                heur.search();
+
+                auto rawResultMatrix = heur.getResultMatrix();
+                double score = vinalike->Evaluate(rawResultMatrix);
+                iConformer result = vinalike->getConformerForParamMatrix(rawResultMatrix);
+
+                double direct_score = Score::vina_like_rigid_inter_scoring_func(conformer, starting_pos_tr,
+                                                                                this->protein);
+                BOOST_LOG_TRIVIAL(debug) << "Score after L-BFGS: " << score << " (from: " << direct_score << ")";
 
 
                 this->scores.push_back(score);
@@ -166,18 +186,19 @@ namespace SmolDock {
 
                 record_timings(end_docking_this_conformer);
 
-                acc_iteration(gradOptimizer.getIterationNumber());
                 acc_score(score);
                 acc_duration(
-                        static_cast< std::chrono::duration<double> >(end_docking_this_conformer - begin_docking_this_conformer).count()
-                        );
+                        static_cast< std::chrono::duration<double> >(end_docking_this_conformer -
+                                                                     begin_docking_this_conformer).count()
+                );
 
             }
 
             record_timings(end_docking);
 
 #ifdef SMOLDOCK_VERBOSE_DEBUG
-            auto total_docking_duration = static_cast< std::chrono::duration<double> >(end_docking - begin_docking).count();
+            auto total_docking_duration = static_cast< std::chrono::duration<double> >(end_docking -
+                                                                                       begin_docking).count();
 
             BOOST_LOG_TRIVIAL(debug) << "Timings ConformerRigidDockingEngine docking runs"
                                      << "\n      TOTAL: " << total_docking_duration << "s"
@@ -186,13 +207,10 @@ namespace SmolDock {
 #endif
 
             BOOST_LOG_TRIVIAL(info) << "Results:";
-            BOOST_LOG_TRIVIAL(info) << "   Iteration Mean: " << mean(acc_iteration);
-            BOOST_LOG_TRIVIAL(info) << "   Iteration StdDev: " << std::sqrt(moment<2>(acc_iteration));
             BOOST_LOG_TRIVIAL(info) << "   Score Mean: " << mean(acc_score);
             BOOST_LOG_TRIVIAL(info) << "   Score StdDev: " << std::sqrt(moment<2>(acc_score));
             BOOST_LOG_TRIVIAL(info) << "   Scores: ";
-            for(auto& score: scores)
-            {
+            for (auto &score: scores) {
                 BOOST_LOG_TRIVIAL(info) << "      " << score;
             }
 
@@ -200,8 +218,7 @@ namespace SmolDock {
 
         std::shared_ptr<DockingResult> ConformerRigidDockingEngine::getDockingResult() {
             auto ret = std::make_shared<DockingResult>();
-            for(const auto& confr : this->final_iConformer)
-            {
+            for (const auto &confr : this->final_iConformer) {
                 Molecule finalLigand = this->orig_ligand->deepcopy();
                 finalLigand.updateAtomPositionsFromiConformer(confr);
                 ret->ligandPoses.emplace_back(finalLigand);
@@ -221,10 +238,6 @@ namespace SmolDock {
         }
 
 
-        void ConformerRigidDockingEngine::setRandomSeed(int seed) {
-            this->random_seed = seed;
-            this->rnd_generator.seed(this->random_seed);
-        }
 
 
     }
