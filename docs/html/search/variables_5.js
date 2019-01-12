@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['heteroatoms',['heteroatoms',['../class_smol_dock_1_1_protein.html#a86e77c7079be2b4d3e1a8e3e53a4ce02',1,'SmolDock::Protein']]]
+  ['globalheuristic',['globalHeuristic',['../class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine.html#a564f81759cb41bf5d17a54a2e5f50c0a',1,'SmolDock::Engine::ConformerRigidDockingEngine']]]
 ];

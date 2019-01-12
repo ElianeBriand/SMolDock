@@ -1,0 +1,166 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_l___b_f_g_s_8h" kind="file" language="C++">
+    <compoundname>L_BFGS.h</compoundname>
+    <includes refid="_scoring_function_interface_8h" local="no">Engines/ScoringFunctions/ScoringFunctionInterface.h</includes>
+    <includes refid="_optimizer_interface_8h" local="yes">OptimizerInterface.h</includes>
+    <includedby refid="_conformer_rigid_docking_engine_8cpp" local="no">ConformerRigidDockingEngine.cpp</includedby>
+    <includedby refid="_l___b_f_g_s_8cpp" local="yes">L_BFGS.cpp</includedby>
+    <includedby refid="_optimizer_factory_8cpp" local="yes">OptimizerFactory.cpp</includedby>
+    <incdepgraph>
+      <node id="892">
+        <label>OptimizerInterface.h</label>
+        <link refid="_optimizer_interface_8h"/>
+        <childnode refid="884" relation="include">
+        </childnode>
+      </node>
+      <node id="890">
+        <label>cmath</label>
+      </node>
+      <node id="891">
+        <label>cassert</label>
+      </node>
+      <node id="883">
+        <label>Engines/ScoringFunctions/ScoringFunctionInterface.h</label>
+        <link refid="_scoring_function_interface_8h"/>
+        <childnode refid="884" relation="include">
+        </childnode>
+        <childnode refid="885" relation="include">
+        </childnode>
+      </node>
+      <node id="885">
+        <label>Engines/Internals/iConformer.h</label>
+        <link refid="i_conformer_8h"/>
+        <childnode refid="886" relation="include">
+        </childnode>
+        <childnode refid="887" relation="include">
+        </childnode>
+        <childnode refid="888" relation="include">
+        </childnode>
+      </node>
+      <node id="884">
+        <label>armadillo</label>
+      </node>
+      <node id="888">
+        <label>iTransform.h</label>
+        <link refid="i_transform_8h"/>
+        <childnode refid="886" relation="include">
+        </childnode>
+        <childnode refid="887" relation="include">
+        </childnode>
+        <childnode refid="889" relation="include">
+        </childnode>
+        <childnode refid="890" relation="include">
+        </childnode>
+        <childnode refid="891" relation="include">
+        </childnode>
+      </node>
+      <node id="886">
+        <label>vector</label>
+      </node>
+      <node id="889">
+        <label>array</label>
+      </node>
+      <node id="882">
+        <label>L_BFGS.h</label>
+        <link refid="_l___b_f_g_s_8h"/>
+        <childnode refid="883" relation="include">
+        </childnode>
+        <childnode refid="892" relation="include">
+        </childnode>
+      </node>
+      <node id="887">
+        <label>memory</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="894">
+        <label>ConformerRigidDockingEngine.cpp</label>
+        <link refid="_conformer_rigid_docking_engine_8cpp"/>
+      </node>
+      <node id="896">
+        <label>OptimizerFactory.cpp</label>
+        <link refid="_optimizer_factory_8cpp"/>
+      </node>
+      <node id="893">
+        <label>L_BFGS.h</label>
+        <link refid="_l___b_f_g_s_8h"/>
+        <childnode refid="894" relation="include">
+        </childnode>
+        <childnode refid="895" relation="include">
+        </childnode>
+        <childnode refid="896" relation="include">
+        </childnode>
+      </node>
+      <node id="895">
+        <label>L_BFGS.cpp</label>
+        <link refid="_l___b_f_g_s_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_smol_dock_1_1_optimizer_1_1_l___b_f_g_s" prot="public">SmolDock::Optimizer::L_BFGS</innerclass>
+    <innernamespace refid="namespace_smol_dock_1_1_optimizer">SmolDock::Optimizer</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2018<sp/>Eliane<sp/>Briand</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>SmolDock.</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>SmolDock<sp/>is<sp/>free<sp/>software:<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or<sp/>modify</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>it<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>as<sp/>published<sp/>by</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>the<sp/>Free<sp/>Software<sp/>Foundation,<sp/>either<sp/>version<sp/>3<sp/>of<sp/>the<sp/>License,<sp/>or</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>(at<sp/>your<sp/>option)<sp/>any<sp/>later<sp/>version.</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>SmolDock<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>but<sp/>WITHOUT<sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE.<sp/><sp/>See<sp/>the</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>for<sp/>more<sp/>details.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>along<sp/>with<sp/>SmolDock.<sp/><sp/>If<sp/>not,<sp/>see<sp/>&lt;https://www.gnu.org/licenses/&gt;.</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>SMOLDOCK_L_BFGS_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SMOLDOCK_L_BFGS_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_scoring_function_interface_8h" kindref="compound">Engines/ScoringFunctions/ScoringFunctionInterface.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_optimizer_interface_8h" kindref="compound">OptimizerInterface.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_smol_dock_1_1_optimizer" kindref="compound">SmolDock::Optimizer</ref><sp/>{</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29" refid="class_smol_dock_1_1_optimizer_1_1_l___b_f_g_s" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_smol_dock_1_1_optimizer_1_1_l___b_f_g_s" kindref="compound">L_BFGS</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_optimizer_1_1_optimizer" kindref="compound">Optimizer</ref><sp/>{</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_optimizer_1_1_l___b_f_g_s_1a0df667e4e5b369f20fa0f4de11ed7836" kindref="member">L_BFGS</ref>(<ref refid="class_smol_dock_1_1_score_1_1_scoring_function" kindref="compound">Score::ScoringFunction</ref><sp/>*scoringFunc_,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>maxIteration_<sp/>=<sp/>100);</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_optimizer_1_1_l___b_f_g_s_1af820a1b5e625482458e4917620200e8c" kindref="member">optimize</ref>(arma::mat<sp/>startingPoint)<sp/></highlight><highlight class="keyword">final</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>arma::mat<sp/><ref refid="class_smol_dock_1_1_optimizer_1_1_l___b_f_g_s_1a7155407cb5df962be30e1fd44c82bb87" kindref="member">getRawResultMatrix</ref>()<sp/></highlight><highlight class="keyword">final</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_optimizer_1_1_l___b_f_g_s_1ae6e836e829ea1f79f9e69e9c2bee26f8" kindref="member">getScore</ref>()<sp/></highlight><highlight class="keyword">final</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_optimizer_1_1_l___b_f_g_s_1a127e9b5a557d6f8f0af58d581fa5b6ac" kindref="member">~L_BFGS</ref>()<sp/></highlight><highlight class="keyword">final</highlight><highlight class="normal"><sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="44" refid="class_smol_dock_1_1_optimizer_1_1_l___b_f_g_s_1ad517eac106ffad742e71e9191f3f82c4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_score_1_1_scoring_function" kindref="compound">Score::ScoringFunction</ref><sp/>*<ref refid="class_smol_dock_1_1_optimizer_1_1_l___b_f_g_s_1ad517eac106ffad742e71e9191f3f82c4" kindref="member">scoringFunction</ref>;</highlight></codeline>
+<codeline lineno="45" refid="class_smol_dock_1_1_optimizer_1_1_l___b_f_g_s_1ab6d9dfa86c156e2999cde60fa48688bf" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_optimizer_1_1_l___b_f_g_s_1ab6d9dfa86c156e2999cde60fa48688bf" kindref="member">maxIteration</ref>;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48" refid="class_smol_dock_1_1_optimizer_1_1_l___b_f_g_s_1a63a3f0b953614d1dfd8ea7ba59d92efc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>arma::mat<sp/><ref refid="class_smol_dock_1_1_optimizer_1_1_l___b_f_g_s_1a63a3f0b953614d1dfd8ea7ba59d92efc" kindref="member">result</ref>;</highlight></codeline>
+<codeline lineno="49" refid="class_smol_dock_1_1_optimizer_1_1_l___b_f_g_s_1ab4ff4104e0300008225d26b195e24ad8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_optimizer_1_1_l___b_f_g_s_1ab4ff4104e0300008225d26b195e24ad8" kindref="member">score</ref>;</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//SMOLDOCK_L_BFGS_H</highlight></codeline>
+    </programlisting>
+    <location file="Engines/LocalOptimizers/L_BFGS.h"/>
+  </compounddef>
+</doxygen>

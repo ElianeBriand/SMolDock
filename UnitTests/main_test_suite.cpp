@@ -55,7 +55,6 @@ BOOST_AUTO_TEST_SUITE(main_test_suite)
     BOOST_AUTO_TEST_CASE(molecule_class_tests) {
 
 
-
         SmolDock::Molecule mol2;
         mol2.populateFromSMILES("COCO");
 
@@ -94,7 +93,7 @@ BOOST_AUTO_TEST_SUITE(main_test_suite)
 
 
         SmolDock::iConformer conformer1;
-        bool res1 = mol1.generateConformer(conformer1, 234);
+        bool res1 = mol1.generateConformer(conformer1, true, 234);
 
         BOOST_CHECK(res1);
 
@@ -103,37 +102,37 @@ BOOST_AUTO_TEST_SUITE(main_test_suite)
 
         std::vector<SmolDock::iConformer> vecConformer;
         unsigned int desired_num_conformer = 20;
-        unsigned int res2 = mol1.generateConformers(vecConformer, desired_num_conformer, 234);
+        unsigned int res2 = mol1.generateConformers(vecConformer, desired_num_conformer, true, 234);
 
         auto end_conformersgen = std::chrono::system_clock::now();
 
 
         BOOST_CHECK(res2 == desired_num_conformer);
 
-        auto duration_second = static_cast< std::chrono::duration<double> >(end_conformersgen - start_conformersgen).count();
+        auto duration_second = static_cast< std::chrono::duration<double> >(end_conformersgen -
+                                                                            start_conformersgen).count();
         std::cout << "[ ] Conformer generation took "
                   << duration_second
                   << "s for "
                   << res2 << " of " << desired_num_conformer << " generated." << std::endl;
 
-        BOOST_CHECK(duration_second < 1); // we hope to be faster (for ibuprofen, consistently < 2ms) but 50ms/conformer is our "something is broken" alert level
+        BOOST_CHECK(duration_second <
+                    1); // we hope to be faster (for ibuprofen, consistently < 2ms) but 50ms/conformer is our "something is broken" alert level
 
 
 
         // We check that the conformers are (at least superficially) differents
         bool coordinate_test_tripped = false;
-        for(int i = 0; i < vecConformer.size()-1; i++)
-        {
-            SmolDock::iConformer& conformer1 = vecConformer.at(i);
-            SmolDock::iConformer& conformer2 = vecConformer.at(i+1);
+        for (unsigned int i = 0; i < vecConformer.size() - 1; i++) {
+            SmolDock::iConformer &conformer1 = vecConformer.at(i);
+            SmolDock::iConformer &conformer2 = vecConformer.at(i + 1);
 
-            for(int j = 0; j < conformer1.x.size(); j++)
-            {
-                if(conformer1.x[j] == conformer2.x[j])
+            for (int j = 0; j < conformer1.x.size(); j++) {
+                if (conformer1.x[j] == conformer2.x[j])
                     coordinate_test_tripped = true;
-                if(conformer1.y[j] == conformer2.y[j])
+                if (conformer1.y[j] == conformer2.y[j])
                     coordinate_test_tripped = true;
-                if(conformer1.z[j] == conformer2.z[j])
+                if (conformer1.z[j] == conformer2.z[j])
                     coordinate_test_tripped = true;
             }
         }
@@ -141,22 +140,21 @@ BOOST_AUTO_TEST_SUITE(main_test_suite)
         BOOST_CHECK(coordinate_test_tripped == false);
 
         std::vector<SmolDock::iConformer> vecConformer2;
-        mol1.generateConformers(vecConformer2, desired_num_conformer, 234); // Same seed, same everything --> are they the same conformers ?
+        mol1.generateConformers(vecConformer2, desired_num_conformer,
+                                ,true,234); // Same seed, same everything --> are they the same conformers ?
 
         // We check that the conformers are the same
         bool sameconformer_test_tripped = false;
-        for(int i = 0; i < vecConformer.size(); i++)
-        {
-            SmolDock::iConformer& conformer1 = vecConformer.at(i);
-            SmolDock::iConformer& conformer2 = vecConformer2.at(i);
+        for (int i = 0; i < vecConformer.size(); i++) {
+            SmolDock::iConformer &conformer1 = vecConformer.at(i);
+            SmolDock::iConformer &conformer2 = vecConformer2.at(i);
 
-            for(int j = 0; j < conformer1.x.size(); j++)
-            {
-                if(conformer1.x[j] != conformer2.x[j])
+            for (int j = 0; j < conformer1.x.size(); j++) {
+                if (conformer1.x[j] != conformer2.x[j])
                     sameconformer_test_tripped = true;
-                if(conformer1.y[j] != conformer2.y[j])
+                if (conformer1.y[j] != conformer2.y[j])
                     sameconformer_test_tripped = true;
-                if(conformer1.z[j] != conformer2.z[j])
+                if (conformer1.z[j] != conformer2.z[j])
                     sameconformer_test_tripped = true;
             }
         }
@@ -188,10 +186,9 @@ BOOST_AUTO_TEST_SUITE(main_test_suite)
 
         std::vector<SmolDock::iConformer> vecConformer;
         unsigned int desired_num_conformer = 3;
-        mol1.generateConformers(vecConformer, desired_num_conformer, 234);
+        mol1.generateConformers(vecConformer, desired_num_conformer, true, 234);
 
-        for(auto& conformer: vecConformer)
-        {
+        for (auto &conformer: vecConformer) {
             BOOST_CHECK(conformer.x.size() == conformer.y.size());
             BOOST_CHECK(conformer.x.size() == conformer.z.size());
 
@@ -199,7 +196,6 @@ BOOST_AUTO_TEST_SUITE(main_test_suite)
             BOOST_CHECK(conformer.type.size() == conformer.variant.size());
             BOOST_CHECK(conformer.x.size() == conformer.atomicRadius.size());
         }
-
 
 
     }

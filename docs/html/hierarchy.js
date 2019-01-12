@@ -9,6 +9,7 @@ var hierarchy =
     [ "SmolDock::Atom", "class_smol_dock_1_1_atom.html", null ],
     [ "SmolDock::DockingResult", "namespace_smol_dock.html#class_smol_dock_1_1_docking_result", null ],
     [ "SmolDock::DockingResultPrinter", "class_smol_dock_1_1_docking_result_printer.html", null ],
+    [ "dummyClassA", "_py_engine_8cpp.html#classdummy_class_a", null ],
     [ "enable_shared_from_this", null, [
       [ "SmolDock::Bond", "class_smol_dock_1_1_bond.html", null ]
     ] ],

@@ -30,7 +30,7 @@ namespace SmolDock {
 
     Atom::Atom(AtomType t) : type(t) {
         this->AtomID = nextAtomID;
-        nextAtomID++;
+        this->nextAtomID++;
 
         this->atomicRadius = atomTypeToAtomicRadius(t);
 
@@ -51,8 +51,9 @@ namespace SmolDock {
                                });
         if (it != Atom::AtomTypeLabel.end()) {
             return std::get<1>(*it);
-        }else{
-            BOOST_LOG_TRIVIAL(error) << "Encountered unknown atom AtomType while converting to string: " << static_cast<unsigned char>(t);
+        } else {
+            BOOST_LOG_TRIVIAL(error) << "Encountered unknown atom AtomType while converting to string: "
+                                     << static_cast<unsigned char>(t);
             return std::string("");
         }
     }
@@ -64,8 +65,9 @@ namespace SmolDock {
                                });
         if (it != Atom::AtomTypeLabel.end()) {
             return std::get<2>(*it);
-        }else{
-            BOOST_LOG_TRIVIAL(error) << "Encountered unknown atom AtomType while converting to symbol string: " << static_cast<unsigned char>(t);
+        } else {
+            BOOST_LOG_TRIVIAL(error) << "Encountered unknown atom AtomType while converting to symbol string: "
+                                     << static_cast<unsigned char>(t);
             return std::string("");
         }
     }
@@ -78,7 +80,8 @@ namespace SmolDock {
         if (it != Atom::AtomTypeLabel.end()) {
             return std::get<0>(*it);
         } else {
-            BOOST_LOG_TRIVIAL(error) << "Encountered unknown atom symbol_or_name while converting from string: " << symbol_or_name;
+            BOOST_LOG_TRIVIAL(error) << "Encountered unknown atom symbol_or_name while converting from string: "
+                                     << symbol_or_name;
             return Atom::AtomType::unknown;
         }
     }
@@ -90,8 +93,9 @@ namespace SmolDock {
                                });
         if (it != Atom::AtomTypeLabel.end()) {
             return std::get<3>(*it);
-        }else{
-            BOOST_LOG_TRIVIAL(error) << "Encountered unknown AtomType while finding atomic radius: " << static_cast<unsigned char>(t);
+        } else {
+            BOOST_LOG_TRIVIAL(error) << "Encountered unknown AtomType while finding atomic radius: "
+                                     << static_cast<unsigned char>(t);
             return 0;
         }
     }
@@ -118,14 +122,14 @@ namespace SmolDock {
     // Guestimated atomic raddi from https://www.researchgate.net/figure/Atomic-radii-used-in-Vina-and-Vinardo-scoring-functions-CA-are-aromatic-carbons-Values_fig12_303027182
     // TODO : get real values for atomic radii
     std::set<std::tuple<Atom::AtomType, std::string, std::string, double> > Atom::AtomTypeLabel = {
-            {Atom::AtomType::unknown,  "unknown",  "?", 0.0},
-            {Atom::AtomType::hydrogen, "hydrogen", "H", 0.3},
-            {Atom::AtomType::carbon,   "carbon",   "C", 1.9},
-            {Atom::AtomType::oxygen,   "oxygen",   "O", 1.7},
-            {Atom::AtomType::nitrogen, "nitrogen", "N", 1.8},
-            {Atom::AtomType::sulfur,   "sulfur",   "S", 2.0},
-            {Atom::AtomType::chlorine, "chlorine", "CL", 1.8},
-            {Atom::AtomType::phosporus, "phosphorus", "P", 2.1}
+            {Atom::AtomType::unknown,   "unknown",    "?",  0.0},
+            {Atom::AtomType::hydrogen,  "hydrogen",   "H",  0.3},
+            {Atom::AtomType::carbon,    "carbon",     "C",  1.9},
+            {Atom::AtomType::oxygen,    "oxygen",     "O",  1.7},
+            {Atom::AtomType::nitrogen,  "nitrogen",   "N",  1.8},
+            {Atom::AtomType::sulfur,    "sulfur",     "S",  2.0},
+            {Atom::AtomType::chlorine,  "chlorine",   "CL", 1.8},
+            {Atom::AtomType::phosporus, "phosphorus", "P",  2.1}
     };
 
 
@@ -168,24 +172,20 @@ namespace SmolDock {
     }
 
 
-
     void Atom::setAtomType(Atom::AtomType t) {
         this->type = t;
     }
 
-    Atom::AtomVariant Atom::getAtomVariant()
-    {
+    Atom::AtomVariant Atom::getAtomVariant() {
         return this->variant;
     }
 
-    void Atom::setAtomVariant(AtomVariant v)
-    {
+    void Atom::setAtomVariant(AtomVariant v) {
         this->variant = v;
     }
 
 
-    void Atom::setAtomID(unsigned int id)
-    {
+    void Atom::setAtomID(unsigned int id) {
         this->AtomID = id;
     }
 
@@ -217,7 +217,6 @@ namespace SmolDock {
     std::string Atom::getAtomSymbol() {
         return "";
     }
-
 
 
 }

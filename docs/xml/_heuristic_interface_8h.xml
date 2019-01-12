@@ -1,0 +1,102 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_heuristic_interface_8h" kind="file" language="C++">
+    <compoundname>HeuristicInterface.h</compoundname>
+    <includedby refid="_heuristic_factory_8h" local="yes">HeuristicFactory.h</includedby>
+    <includedby refid="_random_restart_8h" local="yes">RandomRestart.h</includedby>
+    <invincdepgraph>
+      <node id="587">
+        <label>ConformerRigidDockingEngine.h</label>
+        <link refid="_conformer_rigid_docking_engine_8h"/>
+        <childnode refid="588" relation="include">
+        </childnode>
+        <childnode refid="589" relation="include">
+        </childnode>
+        <childnode refid="590" relation="include">
+        </childnode>
+      </node>
+      <node id="585">
+        <label>HeuristicInterface.h</label>
+        <link refid="_heuristic_interface_8h"/>
+        <childnode refid="586" relation="include">
+        </childnode>
+        <childnode refid="592" relation="include">
+        </childnode>
+      </node>
+      <node id="589">
+        <label>main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+      <node id="593">
+        <label>RandomRestart.cpp</label>
+        <link refid="_random_restart_8cpp"/>
+      </node>
+      <node id="588">
+        <label>ConformerRigidDockingEngine.cpp</label>
+        <link refid="_conformer_rigid_docking_engine_8cpp"/>
+      </node>
+      <node id="591">
+        <label>HeuristicFactory.cpp</label>
+        <link refid="_heuristic_factory_8cpp"/>
+      </node>
+      <node id="592">
+        <label>RandomRestart.h</label>
+        <link refid="_random_restart_8h"/>
+        <childnode refid="588" relation="include">
+        </childnode>
+        <childnode refid="591" relation="include">
+        </childnode>
+        <childnode refid="593" relation="include">
+        </childnode>
+      </node>
+      <node id="590">
+        <label>PyEngine.cpp</label>
+        <link refid="_py_engine_8cpp"/>
+      </node>
+      <node id="586">
+        <label>HeuristicFactory.h</label>
+        <link refid="_heuristic_factory_8h"/>
+        <childnode refid="587" relation="include">
+        </childnode>
+        <childnode refid="591" relation="include">
+        </childnode>
+        <childnode refid="590" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_smol_dock_1_1_heuristics_1_1_global_heuristic" prot="public">SmolDock::Heuristics::GlobalHeuristic</innerclass>
+    <innernamespace refid="namespace_smol_dock_1_1_heuristics">SmolDock::Heuristics</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Created<sp/>by<sp/>eliane<sp/>on<sp/>08/01/19.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>SMOLDOCK_HEURISTICINTERFACE_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SMOLDOCK_HEURISTICINTERFACE_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_smol_dock_1_1_heuristics" kindref="compound">SmolDock::Heuristics</ref><sp/>{</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10" refid="class_smol_dock_1_1_heuristics_1_1_global_heuristic" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_smol_dock_1_1_heuristics_1_1_global_heuristic" kindref="compound">GlobalHeuristic</ref><sp/>{</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_heuristics_1_1_global_heuristic_1acd4f8bbe6334ba93dcd4ea1d2a8c0d38" kindref="member">search</ref>()<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>arma::mat<sp/><ref refid="class_smol_dock_1_1_heuristics_1_1_global_heuristic_1a1abc970d50c981e4df49833d4e7f0551" kindref="member">getResultMatrix</ref>()<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_heuristics_1_1_global_heuristic_1a93c9f12a7d218837e6e5441ae5daebc1" kindref="member">~GlobalHeuristic</ref>()<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//SMOLDOCK_HEURISTICINTERFACE_H</highlight></codeline>
+    </programlisting>
+    <location file="Engines/GlobalHeuristics/HeuristicInterface.h"/>
+  </compounddef>
+</doxygen>

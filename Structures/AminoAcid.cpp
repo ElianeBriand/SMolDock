@@ -69,7 +69,7 @@ namespace SmolDock {
                                });
         if (it != AminoAcid::AAShorthandSet.end()) {
             return std::get<1>(*it);
-        }else{
+        } else {
             return "";
         }
     }
@@ -104,15 +104,13 @@ namespace SmolDock {
     }
 
 
-
-    bool AminoAcid::filliProtein(iProtein& prot, bool skipHydrogen)
-    {
-        for(auto& atom: this->atoms) {
-            if(skipHydrogen && atom->getAtomType() == Atom::AtomType::hydrogen)
+    bool AminoAcid::filliProtein(iProtein &prot, bool skipHydrogen) {
+        for (auto &atom: this->atoms) {
+            if (skipHydrogen && atom->getAtomType() == Atom::AtomType::hydrogen)
                 continue;
 
             prot.type.push_back(atom->getAtomicNumber());
-            prot.variant.push_back((unsigned int)atom->getAtomVariant()); // Not implemented
+            prot.variant.push_back((unsigned int) atom->getAtomVariant()); // Not implemented
 
 
             auto pos = atom->getAtomPosition();

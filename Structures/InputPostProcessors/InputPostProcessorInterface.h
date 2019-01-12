@@ -34,7 +34,7 @@ namespace SmolDock::InputPostProcessor {
          *
          * \param atom An atom of the ligand
          */
-        virtual void processAtomFromLigand(SmolDock::Atom& atom) = 0;
+        virtual void processAtomFromLigand(SmolDock::Atom &atom) = 0;
 
         //! Modify the given atom of the protein
         /*!
@@ -44,7 +44,9 @@ namespace SmolDock::InputPostProcessor {
          * \param atom An atom of the protein
          * \param residue The amino acid containing such atom
          */
-        virtual void processAtomFromProtein(SmolDock::Atom& atom, SmolDock::AminoAcid& residue) = 0;
+        virtual void processAtomFromProtein(SmolDock::Atom &atom, SmolDock::AminoAcid &residue) = 0;
+
+        virtual ~InputPostProcessor() = default;
     };
 
 }

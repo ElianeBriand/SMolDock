@@ -31,33 +31,273 @@
     <includes local="no">boost/accumulators/statistics/moment.hpp</includes>
     <includes refid="_random_restart_8h" local="no">Engines/GlobalHeuristics/RandomRestart.h</includes>
     <incdepgraph>
-      <node id="239">
+      <node id="255">
         <label>../Structures/Protein.h</label>
         <link refid="_protein_8h"/>
-        <childnode refid="240" relation="include">
+        <childnode refid="246" relation="include">
         </childnode>
-        <childnode refid="232" relation="include">
+        <childnode refid="236" relation="include">
+        </childnode>
+        <childnode refid="256" relation="include">
+        </childnode>
+        <childnode refid="257" relation="include">
+        </childnode>
+        <childnode refid="258" relation="include">
+        </childnode>
+        <childnode refid="259" relation="include">
+        </childnode>
+        <childnode refid="260" relation="include">
+        </childnode>
+        <childnode refid="262" relation="include">
+        </childnode>
+        <childnode refid="270" relation="include">
+        </childnode>
+        <childnode refid="267" relation="include">
+        </childnode>
+      </node>
+      <node id="239">
+        <label>ConformerRigidDockingEngine.h</label>
+        <link refid="_conformer_rigid_docking_engine_8h"/>
+        <childnode refid="240" relation="include">
         </childnode>
         <childnode refid="241" relation="include">
         </childnode>
         <childnode refid="242" relation="include">
         </childnode>
+        <childnode refid="252" relation="include">
+        </childnode>
+        <childnode refid="254" relation="include">
+        </childnode>
+        <childnode refid="255" relation="include">
+        </childnode>
+        <childnode refid="272" relation="include">
+        </childnode>
+        <childnode refid="280" relation="include">
+        </childnode>
+        <childnode refid="282" relation="include">
+        </childnode>
+      </node>
+      <node id="256">
+        <label>ESBTL/default.h</label>
+      </node>
+      <node id="242">
+        <label>Engines/LocalOptimizers/OptimizerFactory.h</label>
+        <link refid="_optimizer_factory_8h"/>
+        <childnode refid="236" relation="include">
+        </childnode>
         <childnode refid="243" relation="include">
         </childnode>
+        <childnode refid="251" relation="include">
+        </childnode>
+      </node>
+      <node id="281">
+        <label>functional</label>
+      </node>
+      <node id="240">
+        <label>GraphMol/RWMol.h</label>
+      </node>
+      <node id="274">
+        <label>GraphMol/MolOps.h</label>
+      </node>
+      <node id="253">
+        <label>HeuristicInterface.h</label>
+        <link refid="_heuristic_interface_8h"/>
+      </node>
+      <node id="277">
+        <label>GraphMol/Substruct/SubstructMatch.h</label>
+      </node>
+      <node id="251">
+        <label>OptimizerInterface.h</label>
+        <link refid="_optimizer_interface_8h"/>
         <childnode refid="244" relation="include">
+        </childnode>
+      </node>
+      <node id="290">
+        <label>GraphMol/ChemReactions/ReactionParser.h</label>
+      </node>
+      <node id="249">
+        <label>cmath</label>
+      </node>
+      <node id="250">
+        <label>cassert</label>
+      </node>
+      <node id="294">
+        <label>DataStructs/ExplicitBitVect.h</label>
+      </node>
+      <node id="278">
+        <label>GraphMol/DistGeomHelpers/Embedder.h</label>
+      </node>
+      <node id="262">
+        <label>Structures/InputPostProcessors/InputPostProcessorInterface.h</label>
+        <link refid="_input_post_processor_interface_8h"/>
+        <childnode refid="263" relation="include">
+        </childnode>
+      </node>
+      <node id="291">
+        <label>GraphMol/ChemReactions/ReactionRunner.h</label>
+      </node>
+      <node id="268">
+        <label>string</label>
+      </node>
+      <node id="259">
+        <label>ESBTL/compressed_ifstream.h</label>
+      </node>
+      <node id="243">
+        <label>Engines/ScoringFunctions/ScoringFunctionInterface.h</label>
+        <link refid="_scoring_function_interface_8h"/>
+        <childnode refid="244" relation="include">
+        </childnode>
+        <childnode refid="245" relation="include">
+        </childnode>
+      </node>
+      <node id="263">
+        <label>Structures/Atom.h</label>
+        <link refid="_atom_8h"/>
+        <childnode refid="246" relation="include">
+        </childnode>
+        <childnode refid="236" relation="include">
+        </childnode>
+        <childnode refid="264" relation="include">
+        </childnode>
+        <childnode refid="265" relation="include">
+        </childnode>
+        <childnode refid="266" relation="include">
+        </childnode>
+        <childnode refid="267" relation="include">
+        </childnode>
+      </node>
+      <node id="261">
+        <label>map</label>
+      </node>
+      <node id="299">
+        <label>boost/accumulators/statistics/moment.hpp</label>
+      </node>
+      <node id="245">
+        <label>Engines/Internals/iConformer.h</label>
+        <link refid="i_conformer_8h"/>
+        <childnode refid="246" relation="include">
+        </childnode>
+        <childnode refid="236" relation="include">
+        </childnode>
+        <childnode refid="247" relation="include">
+        </childnode>
+      </node>
+      <node id="244">
+        <label>armadillo</label>
+      </node>
+      <node id="295">
+        <label>boost/log/trivial.hpp</label>
+      </node>
+      <node id="289">
+        <label>GraphMol/ChemReactions/ReactionPickler.h</label>
+      </node>
+      <node id="280">
+        <label>Engines/LocalOptimizers/GradientDescentLineSearch.h</label>
+        <link refid="_gradient_descent_line_search_8h"/>
+        <childnode refid="281" relation="include">
+        </childnode>
+        <childnode refid="244" relation="include">
+        </childnode>
+        <childnode refid="251" relation="include">
+        </childnode>
+        <childnode refid="243" relation="include">
         </childnode>
         <childnode refid="245" relation="include">
         </childnode>
         <childnode refid="247" relation="include">
         </childnode>
-        <childnode refid="255" relation="include">
-        </childnode>
-        <childnode refid="252" relation="include">
+        <childnode refid="260" relation="include">
         </childnode>
       </node>
+      <node id="279">
+        <label>Bond.h</label>
+        <link refid="_bond_8h"/>
+        <childnode refid="236" relation="include">
+        </childnode>
+        <childnode refid="263" relation="include">
+        </childnode>
+      </node>
+      <node id="298">
+        <label>boost/accumulators/statistics/mean.hpp</label>
+      </node>
+      <node id="257">
+        <label>ESBTL/atom_classifier.h</label>
+      </node>
+      <node id="241">
+        <label>random</label>
+      </node>
+      <node id="267">
+        <label>AminoAcid.h</label>
+        <link refid="_amino_acid_8h"/>
+        <childnode refid="268" relation="include">
+        </childnode>
+        <childnode refid="246" relation="include">
+        </childnode>
+        <childnode refid="264" relation="include">
+        </childnode>
+        <childnode refid="265" relation="include">
+        </childnode>
+        <childnode refid="269" relation="include">
+        </childnode>
+        <childnode refid="236" relation="include">
+        </childnode>
+        <childnode refid="260" relation="include">
+        </childnode>
+      </node>
+      <node id="254">
+        <label>AbstractDockingEngine.h</label>
+        <link refid="_abstract_docking_engine_8h"/>
+        <childnode refid="255" relation="include">
+        </childnode>
+        <childnode refid="271" relation="include">
+        </childnode>
+        <childnode refid="272" relation="include">
+        </childnode>
+      </node>
+      <node id="271">
+        <label>../Structures/Results/DockingResult.h</label>
+        <link refid="_docking_result_8h"/>
+        <childnode refid="246" relation="include">
+        </childnode>
+        <childnode refid="272" relation="include">
+        </childnode>
+      </node>
+      <node id="269">
+        <label>tuple</label>
+      </node>
+      <node id="260">
+        <label>Engines/Internals/iProtein.h</label>
+        <link refid="i_protein_8h"/>
+        <childnode refid="246" relation="include">
+        </childnode>
+        <childnode refid="236" relation="include">
+        </childnode>
+        <childnode refid="261" relation="include">
+        </childnode>
+      </node>
+      <node id="247">
+        <label>iTransform.h</label>
+        <link refid="i_transform_8h"/>
+        <childnode refid="246" relation="include">
+        </childnode>
+        <childnode refid="236" relation="include">
+        </childnode>
+        <childnode refid="248" relation="include">
+        </childnode>
+        <childnode refid="249" relation="include">
+        </childnode>
+        <childnode refid="250" relation="include">
+        </childnode>
+      </node>
+      <node id="246">
+        <label>vector</label>
+      </node>
+      <node id="296">
+        <label>boost/accumulators/accumulators.hpp</label>
+      </node>
       <node id="235">
-        <label>ConformerRigidDockingEngine.h</label>
-        <link refid="_conformer_rigid_docking_engine_8h"/>
+        <label>ConformerRigidDockingEngine.cpp</label>
+        <link refid="_conformer_rigid_docking_engine_8cpp"/>
         <childnode refid="236" relation="include">
         </childnode>
         <childnode refid="237" relation="include">
@@ -66,253 +306,7 @@
         </childnode>
         <childnode refid="239" relation="include">
         </childnode>
-        <childnode refid="257" relation="include">
-        </childnode>
-        <childnode refid="270" relation="include">
-        </childnode>
-        <childnode refid="275" relation="include">
-        </childnode>
-      </node>
-      <node id="241">
-        <label>ESBTL/default.h</label>
-      </node>
-      <node id="271">
-        <label>functional</label>
-      </node>
-      <node id="236">
-        <label>GraphMol/RWMol.h</label>
-      </node>
-      <node id="259">
-        <label>GraphMol/MolOps.h</label>
-      </node>
-      <node id="294">
-        <label>HeuristicInterface.h</label>
-        <link refid="_heuristic_interface_8h"/>
-      </node>
-      <node id="262">
-        <label>GraphMol/Substruct/SubstructMatch.h</label>
-      </node>
-      <node id="273">
-        <label>OptimizerInterface.h</label>
-        <link refid="_optimizer_interface_8h"/>
-        <childnode refid="272" relation="include">
-        </childnode>
-      </node>
-      <node id="283">
-        <label>GraphMol/ChemReactions/ReactionParser.h</label>
-      </node>
-      <node id="268">
-        <label>cmath</label>
-      </node>
-      <node id="269">
-        <label>cassert</label>
-      </node>
-      <node id="287">
-        <label>DataStructs/ExplicitBitVect.h</label>
-      </node>
-      <node id="263">
-        <label>GraphMol/DistGeomHelpers/Embedder.h</label>
-      </node>
-      <node id="247">
-        <label>Structures/InputPostProcessors/InputPostProcessorInterface.h</label>
-        <link refid="_input_post_processor_interface_8h"/>
-        <childnode refid="248" relation="include">
-        </childnode>
-      </node>
-      <node id="284">
-        <label>GraphMol/ChemReactions/ReactionRunner.h</label>
-      </node>
-      <node id="253">
-        <label>string</label>
-      </node>
-      <node id="244">
-        <label>ESBTL/compressed_ifstream.h</label>
-      </node>
-      <node id="274">
-        <label>Engines/ScoringFunctions/ScoringFunctionInterface.h</label>
-        <link refid="_scoring_function_interface_8h"/>
-        <childnode refid="272" relation="include">
-        </childnode>
-        <childnode refid="265" relation="include">
-        </childnode>
-      </node>
-      <node id="248">
-        <label>Structures/Atom.h</label>
-        <link refid="_atom_8h"/>
-        <childnode refid="240" relation="include">
-        </childnode>
-        <childnode refid="232" relation="include">
-        </childnode>
-        <childnode refid="249" relation="include">
-        </childnode>
-        <childnode refid="250" relation="include">
-        </childnode>
-        <childnode refid="251" relation="include">
-        </childnode>
-        <childnode refid="252" relation="include">
-        </childnode>
-      </node>
-      <node id="246">
-        <label>map</label>
-      </node>
-      <node id="292">
-        <label>boost/accumulators/statistics/moment.hpp</label>
-      </node>
-      <node id="265">
-        <label>../Engines/Internals/iConformer.h</label>
-        <link refid="i_conformer_8h"/>
-        <childnode refid="240" relation="include">
-        </childnode>
-        <childnode refid="232" relation="include">
-        </childnode>
-        <childnode refid="266" relation="include">
-        </childnode>
-      </node>
-      <node id="272">
-        <label>armadillo</label>
-      </node>
-      <node id="288">
-        <label>boost/log/trivial.hpp</label>
-      </node>
-      <node id="282">
-        <label>GraphMol/ChemReactions/ReactionPickler.h</label>
-      </node>
-      <node id="270">
-        <label>Engines/LocalOptimizers/GradientDescentLineSearch.h</label>
-        <link refid="_gradient_descent_line_search_8h"/>
-        <childnode refid="271" relation="include">
-        </childnode>
-        <childnode refid="272" relation="include">
-        </childnode>
-        <childnode refid="273" relation="include">
-        </childnode>
-        <childnode refid="274" relation="include">
-        </childnode>
-        <childnode refid="265" relation="include">
-        </childnode>
-        <childnode refid="266" relation="include">
-        </childnode>
         <childnode refid="245" relation="include">
-        </childnode>
-      </node>
-      <node id="264">
-        <label>Bond.h</label>
-        <link refid="_bond_8h"/>
-        <childnode refid="232" relation="include">
-        </childnode>
-        <childnode refid="248" relation="include">
-        </childnode>
-      </node>
-      <node id="291">
-        <label>boost/accumulators/statistics/mean.hpp</label>
-      </node>
-      <node id="242">
-        <label>ESBTL/atom_classifier.h</label>
-      </node>
-      <node id="237">
-        <label>random</label>
-      </node>
-      <node id="252">
-        <label>AminoAcid.h</label>
-        <link refid="_amino_acid_8h"/>
-        <childnode refid="253" relation="include">
-        </childnode>
-        <childnode refid="240" relation="include">
-        </childnode>
-        <childnode refid="249" relation="include">
-        </childnode>
-        <childnode refid="250" relation="include">
-        </childnode>
-        <childnode refid="254" relation="include">
-        </childnode>
-        <childnode refid="232" relation="include">
-        </childnode>
-        <childnode refid="245" relation="include">
-        </childnode>
-      </node>
-      <node id="238">
-        <label>AbstractDockingEngine.h</label>
-        <link refid="_abstract_docking_engine_8h"/>
-        <childnode refid="239" relation="include">
-        </childnode>
-        <childnode refid="256" relation="include">
-        </childnode>
-        <childnode refid="257" relation="include">
-        </childnode>
-      </node>
-      <node id="256">
-        <label>../Structures/Results/DockingResult.h</label>
-        <link refid="_docking_result_8h"/>
-        <childnode refid="240" relation="include">
-        </childnode>
-        <childnode refid="257" relation="include">
-        </childnode>
-      </node>
-      <node id="254">
-        <label>tuple</label>
-      </node>
-      <node id="245">
-        <label>Engines/Internals/iProtein.h</label>
-        <link refid="i_protein_8h"/>
-        <childnode refid="240" relation="include">
-        </childnode>
-        <childnode refid="232" relation="include">
-        </childnode>
-        <childnode refid="246" relation="include">
-        </childnode>
-      </node>
-      <node id="266">
-        <label>iTransform.h</label>
-        <link refid="i_transform_8h"/>
-        <childnode refid="240" relation="include">
-        </childnode>
-        <childnode refid="232" relation="include">
-        </childnode>
-        <childnode refid="267" relation="include">
-        </childnode>
-        <childnode refid="268" relation="include">
-        </childnode>
-        <childnode refid="269" relation="include">
-        </childnode>
-      </node>
-      <node id="240">
-        <label>vector</label>
-      </node>
-      <node id="289">
-        <label>boost/accumulators/accumulators.hpp</label>
-      </node>
-      <node id="231">
-        <label>ConformerRigidDockingEngine.cpp</label>
-        <link refid="_conformer_rigid_docking_engine_8cpp"/>
-        <childnode refid="232" relation="include">
-        </childnode>
-        <childnode refid="233" relation="include">
-        </childnode>
-        <childnode refid="234" relation="include">
-        </childnode>
-        <childnode refid="235" relation="include">
-        </childnode>
-        <childnode refid="265" relation="include">
-        </childnode>
-        <childnode refid="276" relation="include">
-        </childnode>
-        <childnode refid="277" relation="include">
-        </childnode>
-        <childnode refid="278" relation="include">
-        </childnode>
-        <childnode refid="279" relation="include">
-        </childnode>
-        <childnode refid="258" relation="include">
-        </childnode>
-        <childnode refid="236" relation="include">
-        </childnode>
-        <childnode refid="259" relation="include">
-        </childnode>
-        <childnode refid="280" relation="include">
-        </childnode>
-        <childnode refid="281" relation="include">
-        </childnode>
-        <childnode refid="282" relation="include">
         </childnode>
         <childnode refid="283" relation="include">
         </childnode>
@@ -322,9 +316,11 @@
         </childnode>
         <childnode refid="286" relation="include">
         </childnode>
-        <childnode refid="261" relation="include">
+        <childnode refid="273" relation="include">
         </childnode>
-        <childnode refid="262" relation="include">
+        <childnode refid="240" relation="include">
+        </childnode>
+        <childnode refid="274" relation="include">
         </childnode>
         <childnode refid="287" relation="include">
         </childnode>
@@ -340,145 +336,175 @@
         </childnode>
         <childnode refid="293" relation="include">
         </childnode>
-      </node>
-      <node id="280">
-        <label>GraphMol/Fingerprints/Fingerprints.h</label>
-      </node>
-      <node id="267">
-        <label>array</label>
-      </node>
-      <node id="279">
-        <label>Utilities/TimingsLog.h</label>
-        <link refid="_timings_log_8h"/>
-        <childnode refid="233" relation="include">
+        <childnode refid="276" relation="include">
         </childnode>
-      </node>
-      <node id="261">
-        <label>GraphMol/SmilesParse/SmilesParse.h</label>
-      </node>
-      <node id="255">
-        <label>Structure.h</label>
-        <link refid="_structure_8h"/>
-      </node>
-      <node id="257">
-        <label>Structures/Molecule.h</label>
-        <link refid="_molecule_8h"/>
-        <childnode refid="240" relation="include">
-        </childnode>
-        <childnode refid="258" relation="include">
-        </childnode>
-        <childnode refid="236" relation="include">
-        </childnode>
-        <childnode refid="259" relation="include">
-        </childnode>
-        <childnode refid="260" relation="include">
-        </childnode>
-        <childnode refid="261" relation="include">
-        </childnode>
-        <childnode refid="262" relation="include">
-        </childnode>
-        <childnode refid="263" relation="include">
-        </childnode>
-        <childnode refid="247" relation="include">
-        </childnode>
-        <childnode refid="255" relation="include">
-        </childnode>
-        <childnode refid="248" relation="include">
-        </childnode>
-        <childnode refid="264" relation="include">
-        </childnode>
-        <childnode refid="265" relation="include">
-        </childnode>
-      </node>
-      <node id="258">
-        <label>GraphMol/RDKitBase.h</label>
-      </node>
-      <node id="285">
-        <label>GraphMol/ChemReactions/PreprocessRxn.h</label>
-      </node>
-      <node id="286">
-        <label>GraphMol/ChemReactions/SanitizeRxn.h</label>
-      </node>
-      <node id="278">
-        <label>Engines/LocalOptimizers/L_BFGS.h</label>
-        <link refid="_l___b_f_g_s_8h"/>
-        <childnode refid="274" relation="include">
-        </childnode>
-        <childnode refid="273" relation="include">
-        </childnode>
-      </node>
-      <node id="251">
-        <label>iostream</label>
-      </node>
-      <node id="275">
-        <label>Engines/ScoringFunctions/ScoringFunctionFactory.h</label>
-        <link refid="_scoring_function_factory_8h"/>
-        <childnode refid="232" relation="include">
-        </childnode>
-        <childnode refid="245" relation="include">
-        </childnode>
-        <childnode refid="274" relation="include">
-        </childnode>
-      </node>
-      <node id="276">
-        <label>Internals/InternalsUtilityFunctions.h</label>
-        <link refid="_internals_utility_functions_8h"/>
-        <childnode refid="265" relation="include">
-        </childnode>
-        <childnode refid="266" relation="include">
-        </childnode>
-      </node>
-      <node id="233">
-        <label>chrono</label>
-      </node>
-      <node id="277">
-        <label>Engines/ScoringFunctions/VinaLikeScoringFunction.h</label>
-        <link refid="_vina_like_scoring_function_8h"/>
-        <childnode refid="265" relation="include">
-        </childnode>
-        <childnode refid="245" relation="include">
-        </childnode>
-        <childnode refid="266" relation="include">
-        </childnode>
-        <childnode refid="274" relation="include">
-        </childnode>
-        <childnode refid="257" relation="include">
-        </childnode>
-        <childnode refid="239" relation="include">
-        </childnode>
-      </node>
-      <node id="290">
-        <label>boost/accumulators/statistics/stats.hpp</label>
-      </node>
-      <node id="234">
-        <label>thread</label>
-      </node>
-      <node id="293">
-        <label>Engines/GlobalHeuristics/RandomRestart.h</label>
-        <link refid="_random_restart_8h"/>
-        <childnode refid="274" relation="include">
-        </childnode>
-        <childnode refid="273" relation="include">
+        <childnode refid="277" relation="include">
         </childnode>
         <childnode refid="294" relation="include">
         </childnode>
+        <childnode refid="295" relation="include">
+        </childnode>
+        <childnode refid="296" relation="include">
+        </childnode>
+        <childnode refid="297" relation="include">
+        </childnode>
+        <childnode refid="298" relation="include">
+        </childnode>
+        <childnode refid="299" relation="include">
+        </childnode>
+        <childnode refid="300" relation="include">
+        </childnode>
       </node>
-      <node id="249">
+      <node id="287">
+        <label>GraphMol/Fingerprints/Fingerprints.h</label>
+      </node>
+      <node id="248">
+        <label>array</label>
+      </node>
+      <node id="286">
+        <label>Utilities/TimingsLog.h</label>
+        <link refid="_timings_log_8h"/>
+        <childnode refid="237" relation="include">
+        </childnode>
+      </node>
+      <node id="276">
+        <label>GraphMol/SmilesParse/SmilesParse.h</label>
+      </node>
+      <node id="270">
+        <label>Structure.h</label>
+        <link refid="_structure_8h"/>
+      </node>
+      <node id="272">
+        <label>Structures/Molecule.h</label>
+        <link refid="_molecule_8h"/>
+        <childnode refid="246" relation="include">
+        </childnode>
+        <childnode refid="273" relation="include">
+        </childnode>
+        <childnode refid="240" relation="include">
+        </childnode>
+        <childnode refid="274" relation="include">
+        </childnode>
+        <childnode refid="275" relation="include">
+        </childnode>
+        <childnode refid="276" relation="include">
+        </childnode>
+        <childnode refid="277" relation="include">
+        </childnode>
+        <childnode refid="278" relation="include">
+        </childnode>
+        <childnode refid="262" relation="include">
+        </childnode>
+        <childnode refid="270" relation="include">
+        </childnode>
+        <childnode refid="263" relation="include">
+        </childnode>
+        <childnode refid="279" relation="include">
+        </childnode>
+        <childnode refid="245" relation="include">
+        </childnode>
+      </node>
+      <node id="273">
+        <label>GraphMol/RDKitBase.h</label>
+      </node>
+      <node id="292">
+        <label>GraphMol/ChemReactions/PreprocessRxn.h</label>
+      </node>
+      <node id="293">
+        <label>GraphMol/ChemReactions/SanitizeRxn.h</label>
+      </node>
+      <node id="285">
+        <label>Engines/LocalOptimizers/L_BFGS.h</label>
+        <link refid="_l___b_f_g_s_8h"/>
+        <childnode refid="243" relation="include">
+        </childnode>
+        <childnode refid="251" relation="include">
+        </childnode>
+      </node>
+      <node id="266">
+        <label>iostream</label>
+      </node>
+      <node id="282">
+        <label>Engines/ScoringFunctions/ScoringFunctionFactory.h</label>
+        <link refid="_scoring_function_factory_8h"/>
+        <childnode refid="236" relation="include">
+        </childnode>
+        <childnode refid="260" relation="include">
+        </childnode>
+        <childnode refid="243" relation="include">
+        </childnode>
+      </node>
+      <node id="283">
+        <label>Internals/InternalsUtilityFunctions.h</label>
+        <link refid="_internals_utility_functions_8h"/>
+        <childnode refid="245" relation="include">
+        </childnode>
+        <childnode refid="247" relation="include">
+        </childnode>
+      </node>
+      <node id="237">
+        <label>chrono</label>
+      </node>
+      <node id="284">
+        <label>Engines/ScoringFunctions/VinaLikeScoringFunction.h</label>
+        <link refid="_vina_like_scoring_function_8h"/>
+        <childnode refid="245" relation="include">
+        </childnode>
+        <childnode refid="260" relation="include">
+        </childnode>
+        <childnode refid="247" relation="include">
+        </childnode>
+        <childnode refid="243" relation="include">
+        </childnode>
+        <childnode refid="272" relation="include">
+        </childnode>
+        <childnode refid="255" relation="include">
+        </childnode>
+      </node>
+      <node id="297">
+        <label>boost/accumulators/statistics/stats.hpp</label>
+      </node>
+      <node id="238">
+        <label>thread</label>
+      </node>
+      <node id="300">
+        <label>Engines/GlobalHeuristics/RandomRestart.h</label>
+        <link refid="_random_restart_8h"/>
+        <childnode refid="243" relation="include">
+        </childnode>
+        <childnode refid="251" relation="include">
+        </childnode>
+        <childnode refid="253" relation="include">
+        </childnode>
+      </node>
+      <node id="264">
         <label>set</label>
       </node>
-      <node id="250">
+      <node id="265">
         <label>algorithm</label>
       </node>
-      <node id="281">
+      <node id="288">
         <label>GraphMol/ChemReactions/Reaction.h</label>
       </node>
-      <node id="243">
+      <node id="258">
         <label>ESBTL/weighted_atom_iterator.h</label>
       </node>
-      <node id="232">
+      <node id="252">
+        <label>Engines/GlobalHeuristics/HeuristicFactory.h</label>
+        <link refid="_heuristic_factory_8h"/>
+        <childnode refid="236" relation="include">
+        </childnode>
+        <childnode refid="243" relation="include">
+        </childnode>
+        <childnode refid="251" relation="include">
+        </childnode>
+        <childnode refid="253" relation="include">
+        </childnode>
+      </node>
+      <node id="236">
         <label>memory</label>
       </node>
-      <node id="260">
+      <node id="275">
         <label>GraphMol/FileParsers/FileParsers.h</label>
       </node>
     </incdepgraph>
@@ -550,190 +576,195 @@
 <codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">Engine<sp/>{</highlight></codeline>
 <codeline lineno="60"><highlight class="normal"></highlight></codeline>
 <codeline lineno="61"><highlight class="normal"></highlight></codeline>
-<codeline lineno="62" refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a27a2069ffd4fa0bacb4f026ca7f8021d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a27a2069ffd4fa0bacb4f026ca7f8021d" kindref="member">ConformerRigidDockingEngine::ConformerRigidDockingEngine</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>conformer_num_,</highlight></codeline>
-<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_protein" kindref="compound">Protein</ref>*<sp/>protein,</highlight></codeline>
-<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_molecule" kindref="compound">Molecule</ref>*<sp/>ligand,</highlight></codeline>
-<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespace_smol_dock_1_1_score_1a7d8761ef06699c5fc8793056bc903911" kindref="member">Score::ScoringFunctionType</ref><sp/>scFuncType,</highlight></codeline>
-<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>seed):</highlight></codeline>
-<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>conformer_num(conformer_num_),</highlight></codeline>
-<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>orig_protein(protein),</highlight></codeline>
-<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>orig_ligand(ligand),</highlight></codeline>
-<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>scoringFuncType(scFuncType),</highlight></codeline>
-<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>random_seed(seed),</highlight></codeline>
-<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rnd_generator(random_seed)</highlight></codeline>
-<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="74"><highlight class="normal"></highlight></codeline>
-<codeline lineno="75"><highlight class="normal"></highlight></codeline>
-<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a3ebcfe47e865aad0c91105a58996d22e" kindref="member">scores</ref>.reserve(this-&gt;<ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a022a37cb30a640404c634aace67ebea1" kindref="member">conformer_num</ref>);</highlight></codeline>
-<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a4ea3d83dced816021dc9e1a39d0f197d" kindref="member">final_iConformer</ref>.reserve(this-&gt;<ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a022a37cb30a640404c634aace67ebea1" kindref="member">conformer_num</ref>);</highlight></codeline>
-<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62" refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a1e6272d1b16cc39012b2166edfbfeca1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a1e6272d1b16cc39012b2166edfbfeca1" kindref="member">ConformerRigidDockingEngine::ConformerRigidDockingEngine</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>conformer_num_,</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_protein" kindref="compound">Protein</ref>*<sp/>protein,</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_molecule" kindref="compound">Molecule</ref>*<sp/>ligand,</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespace_smol_dock_1_1_score_1a7d8761ef06699c5fc8793056bc903911" kindref="member">Score::ScoringFunctionType</ref><sp/>scFuncType,</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespace_smol_dock_1_1_heuristics_1acab108fbb064edb33166af7fdfb77a72" kindref="member">Heuristics::GlobalHeuristicType</ref><sp/>heurType,</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespace_smol_dock_1_1_optimizer_1a7ed1dc6878a606b8dcca7558383650ce" kindref="member">Optimizer::LocalOptimizerType</ref><sp/>localOptimizerType_,</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>seed)<sp/>:</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>conformer_num(conformer_num_),</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>orig_protein(protein),</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>orig_ligand(ligand),</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>scoringFuncType(scFuncType),</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>heuristicType(heurType),</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>localOptimizerType(localOptimizerType_),</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rnd_generator(seed)<sp/>{</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_LOG_TRIVIAL(debug)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;ConformerRigidDockingEngine:seed<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>seed;</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::uniform_real_distribution&lt;double&gt;<sp/>dis_real_position(-100.0,<sp/>100.0);</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_LOG_TRIVIAL(debug)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;ConformerRigidDockingEngine:GenNbr<sp/>:<sp/><sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>dis_real_position(this-&gt;<ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a9bc1d216cf102c383444cb6f9955dfaa" kindref="member">rnd_generator</ref>);</highlight></codeline>
 <codeline lineno="80"><highlight class="normal"></highlight></codeline>
-<codeline lineno="81" refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a3abc1a2cdbb3f1b9f545f863f9ec5e43" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a3abc1a2cdbb3f1b9f545f863f9ec5e43" kindref="member">ConformerRigidDockingEngine::setupDockingEngine</ref>()<sp/>{</highlight></codeline>
-<codeline lineno="82"><highlight class="normal"></highlight></codeline>
-<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_timings_log_8h_1a62116d86cc873a334e6356d259772681" kindref="member">record_timings</ref>(begin_setup);</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a3ebcfe47e865aad0c91105a58996d22e" kindref="member">scores</ref>.reserve(this-&gt;<ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a022a37cb30a640404c634aace67ebea1" kindref="member">conformer_num</ref>);</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a4ea3d83dced816021dc9e1a39d0f197d" kindref="member">final_iConformer</ref>.reserve(this-&gt;<ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a022a37cb30a640404c634aace67ebea1" kindref="member">conformer_num</ref>);</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="84"><highlight class="normal"></highlight></codeline>
-<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::uniform_int_distribution&lt;&gt;<sp/>dis_int(0,<sp/>std::numeric_limits&lt;int&gt;::max());</highlight></codeline>
-<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::uniform_real_distribution&lt;double&gt;<sp/>dis_real_position(-100.0,<sp/>100.0);</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="86" refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a3abc1a2cdbb3f1b9f545f863f9ec5e43" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a3abc1a2cdbb3f1b9f545f863f9ec5e43" kindref="member">ConformerRigidDockingEngine::setupDockingEngine</ref>()<sp/>{</highlight></codeline>
 <codeline lineno="87"><highlight class="normal"></highlight></codeline>
-<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_timings_log_8h_1a62116d86cc873a334e6356d259772681" kindref="member">record_timings</ref>(begin_conformersgen);</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_timings_log_8h_1a62116d86cc873a334e6356d259772681" kindref="member">record_timings</ref>(begin_setup);</highlight></codeline>
 <codeline lineno="89"><highlight class="normal"></highlight></codeline>
-<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>seed<sp/>=<sp/>dis_int(this-&gt;<ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a9bc1d216cf102c383444cb6f9955dfaa" kindref="member">rnd_generator</ref>);</highlight></codeline>
-<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_LOG_TRIVIAL(debug)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Seed<sp/>:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>seed;</highlight></codeline>
-<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1af3d543e92676f9d66a5a3d0ccc0cd5a9" kindref="member">orig_ligand</ref>-&gt;<ref refid="class_smol_dock_1_1_molecule_1a1cce96a4a5296ab42ae3ab06fbc374a1" kindref="member">generateConformers</ref>(this-&gt;<ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a1db0509172face64ab20380bea166765" kindref="member">viConformers</ref>,<sp/>this-&gt;<ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a022a37cb30a640404c634aace67ebea1" kindref="member">conformer_num</ref>,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">,<sp/>seed);</highlight></codeline>
-<codeline lineno="93"><highlight class="normal"></highlight></codeline>
-<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_timings_log_8h_1a62116d86cc873a334e6356d259772681" kindref="member">record_timings</ref>(end_conformersgen);</highlight></codeline>
-<codeline lineno="95"><highlight class="normal"></highlight></codeline>
-<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a1dc7396f84093bfca59c2d8accc9ed8c" kindref="member">protein</ref><sp/>=<sp/>this-&gt;<ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1adc3f28b5b4af09c54eb73d9f445dbd2d" kindref="member">orig_protein</ref>-&gt;<ref refid="class_smol_dock_1_1_protein_1a2cccfc64e088ed1846d15c6909c9379f" kindref="member">getiProtein</ref>();</highlight></codeline>
-<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::uniform_int_distribution&lt;&gt;<sp/>dis_int(0,<sp/>std::numeric_limits&lt;int&gt;::max());</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::uniform_real_distribution&lt;double&gt;<sp/>dis_real_position(-100.0,<sp/>100.0);</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_timings_log_8h_1a62116d86cc873a334e6356d259772681" kindref="member">record_timings</ref>(begin_conformersgen);</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1af3d543e92676f9d66a5a3d0ccc0cd5a9" kindref="member">orig_ligand</ref>-&gt;<ref refid="class_smol_dock_1_1_molecule_1a1cce96a4a5296ab42ae3ab06fbc374a1" kindref="member">generateConformers</ref>(this-&gt;<ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a1db0509172face64ab20380bea166765" kindref="member">viConformers</ref>,<sp/>this-&gt;<ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a022a37cb30a640404c634aace67ebea1" kindref="member">conformer_num</ref>,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">,<sp/>dis_int(this-&gt;<ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a9bc1d216cf102c383444cb6f9955dfaa" kindref="member">rnd_generator</ref>));</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_timings_log_8h_1a62116d86cc873a334e6356d259772681" kindref="member">record_timings</ref>(end_conformersgen);</highlight></codeline>
 <codeline lineno="98"><highlight class="normal"></highlight></codeline>
-<codeline lineno="99"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
-<codeline lineno="100"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>for(iConformer&amp;<sp/>conformer:<sp/>this-&gt;viConformers)</highlight></codeline>
-<codeline lineno="101"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="102"><highlight class="comment"></highlight></codeline>
-<codeline lineno="103"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="104"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="105"><highlight class="normal"></highlight></codeline>
-<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_timings_log_8h_1a62116d86cc873a334e6356d259772681" kindref="member">record_timings</ref>(end_iprotgen);</highlight></codeline>
-<codeline lineno="107"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a1dc7396f84093bfca59c2d8accc9ed8c" kindref="member">protein</ref><sp/>=<sp/>this-&gt;<ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1adc3f28b5b4af09c54eb73d9f445dbd2d" kindref="member">orig_protein</ref>-&gt;<ref refid="class_smol_dock_1_1_protein_1a2cccfc64e088ed1846d15c6909c9379f" kindref="member">getiProtein</ref>();</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="103"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>for(iConformer&amp;<sp/>conformer:<sp/>this-&gt;viConformers)</highlight></codeline>
+<codeline lineno="104"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="105"><highlight class="comment"></highlight></codeline>
+<codeline lineno="106"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="107"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="108"><highlight class="normal"></highlight></codeline>
-<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_timings_log_8h_1a62116d86cc873a334e6356d259772681" kindref="member">record_timings</ref>(end_setup);</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_timings_log_8h_1a62116d86cc873a334e6356d259772681" kindref="member">record_timings</ref>(end_iprotgen);</highlight></codeline>
 <codeline lineno="110"><highlight class="normal"></highlight></codeline>
 <codeline lineno="111"><highlight class="normal"></highlight></codeline>
-<codeline lineno="112"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>SMOLDOCK_VERBOSE_DEBUG</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>total_setup_duration<sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal"><sp/>std::chrono::duration&lt;double&gt;<sp/></highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(end_setup<sp/>-<sp/>begin_setup).count();</highlight></codeline>
-<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>duration_conformergen<sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal"><sp/>std::chrono::duration&lt;double&gt;<sp/></highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(end_conformersgen<sp/>-</highlight></codeline>
-<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>begin_conformersgen).count();</highlight></codeline>
-<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>duration_iprot<sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal"><sp/>std::chrono::duration&lt;double&gt;<sp/></highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(end_iprotgen<sp/>-</highlight></codeline>
-<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>end_conformersgen).count();</highlight></codeline>
-<codeline lineno="118"><highlight class="normal"></highlight></codeline>
-<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_LOG_TRIVIAL(debug)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Timings<sp/>ConformerRigidDockingEngine<sp/>setup&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\n<sp/><sp/><sp/><sp/><sp/><sp/>TOTAL:<sp/>&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/>total_setup_duration<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;s&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\n<sp/><sp/><sp/><sp/><sp/><sp/>Conformer:<sp/>&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/>duration_conformergen</highlight></codeline>
-<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;s<sp/>[n=&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>this-&gt;<ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a022a37cb30a640404c634aace67ebea1" kindref="member">conformer_num</ref><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;-&gt;&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>this-&gt;<ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a1db0509172face64ab20380bea166765" kindref="member">viConformers</ref>.size()<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;]<sp/>&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/>duration_conformergen<sp/>/<sp/>this-&gt;<ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a022a37cb30a640404c634aace67ebea1" kindref="member">conformer_num</ref><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;s<sp/>each&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\n<sp/><sp/><sp/><sp/><sp/><sp/>iProt:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>duration_iprot<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;s&quot;</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="127"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_LOG_TRIVIAL(info)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Conformer<sp/>docking<sp/>engine:<sp/>ready&quot;</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="131"><highlight class="normal"></highlight></codeline>
-<codeline lineno="132" refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a7bee39278168cb4d7ee6558b3a3d3bb4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a7bee39278168cb4d7ee6558b3a3d3bb4" kindref="member">ConformerRigidDockingEngine::runDockingEngine</ref>()<sp/>{</highlight></codeline>
-<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal">boost::accumulators;</highlight></codeline>
-<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>accumulator_set&lt;double,<sp/>stats&lt;tag::mean,<sp/>tag::moment&lt;2&gt;<sp/>&gt;<sp/>&gt;<sp/>acc_score;</highlight></codeline>
-<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>accumulator_set&lt;double,<sp/>stats&lt;tag::mean,<sp/>tag::moment&lt;2&gt;<sp/>&gt;<sp/>&gt;<sp/>acc_duration;</highlight></codeline>
-<codeline lineno="136"><highlight class="normal"></highlight></codeline>
-<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::uniform_int_distribution&lt;unsigned<sp/>int&gt;<sp/>dis_uint(0,<sp/>std::numeric_limits&lt;unsigned<sp/>int&gt;::max());</highlight></codeline>
-<codeline lineno="138"><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_timings_log_8h_1a62116d86cc873a334e6356d259772681" kindref="member">record_timings</ref>(end_setup);</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>SMOLDOCK_VERBOSE_DEBUG</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>total_setup_duration<sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal"><sp/>std::chrono::duration&lt;double&gt;<sp/></highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(end_setup<sp/>-<sp/>begin_setup).count();</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>duration_conformergen<sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal"><sp/>std::chrono::duration&lt;double&gt;<sp/></highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(end_conformersgen<sp/>-</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>begin_conformersgen).count();</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>duration_iprot<sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal"><sp/>std::chrono::duration&lt;double&gt;<sp/></highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(end_iprotgen<sp/>-</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>end_conformersgen).count();</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_LOG_TRIVIAL(debug)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Timings<sp/>ConformerRigidDockingEngine<sp/>setup&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\n<sp/><sp/><sp/><sp/><sp/><sp/>TOTAL:<sp/>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/>total_setup_duration<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;s&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\n<sp/><sp/><sp/><sp/><sp/><sp/>Conformer:<sp/>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/>duration_conformergen</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;s<sp/>[n=&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>this-&gt;<ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a022a37cb30a640404c634aace67ebea1" kindref="member">conformer_num</ref><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;-&gt;&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>this-&gt;<ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a1db0509172face64ab20380bea166765" kindref="member">viConformers</ref>.size()<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;]<sp/>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/>duration_conformergen<sp/>/<sp/>this-&gt;<ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a022a37cb30a640404c634aace67ebea1" kindref="member">conformer_num</ref><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;s<sp/>each&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\n<sp/><sp/><sp/><sp/><sp/><sp/>iProt:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>duration_iprot<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;s&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_LOG_TRIVIAL(info)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Conformer<sp/>docking<sp/>engine:<sp/>ready&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"></highlight></codeline>
+<codeline lineno="135" refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a7bee39278168cb4d7ee6558b3a3d3bb4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a7bee39278168cb4d7ee6558b3a3d3bb4" kindref="member">ConformerRigidDockingEngine::runDockingEngine</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal">boost::accumulators;</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>accumulator_set&lt;double,<sp/>stats&lt;tag::mean,<sp/>tag::moment&lt;2&gt;<sp/>&gt;<sp/>&gt;<sp/>acc_score;</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>accumulator_set&lt;double,<sp/>stats&lt;tag::mean,<sp/>tag::moment&lt;2&gt;<sp/>&gt;<sp/>&gt;<sp/>acc_duration;</highlight></codeline>
 <codeline lineno="139"><highlight class="normal"></highlight></codeline>
-<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_timings_log_8h_1a62116d86cc873a334e6356d259772681" kindref="member">record_timings</ref>(begin_docking);</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::uniform_int_distribution&lt;unsigned<sp/>int&gt;<sp/>dis_uint(0,<sp/>std::numeric_limits&lt;unsigned<sp/>int&gt;::max());</highlight></codeline>
 <codeline lineno="141"><highlight class="normal"></highlight></codeline>
-<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>&amp;conformer<sp/>:<sp/>this-&gt;<ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a1db0509172face64ab20380bea166765" kindref="member">viConformers</ref>)<sp/>{</highlight></codeline>
-<codeline lineno="143"><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_timings_log_8h_1a62116d86cc873a334e6356d259772681" kindref="member">record_timings</ref>(begin_docking);</highlight></codeline>
 <codeline lineno="144"><highlight class="normal"></highlight></codeline>
-<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_timings_log_8h_1a62116d86cc873a334e6356d259772681" kindref="member">record_timings</ref>(begin_docking_this_conformer);</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>&amp;conformer<sp/>:<sp/>this-&gt;<ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a1db0509172face64ab20380bea166765" kindref="member">viConformers</ref>)<sp/>{</highlight></codeline>
 <codeline lineno="146"><highlight class="normal"></highlight></codeline>
 <codeline lineno="147"><highlight class="normal"></highlight></codeline>
-<codeline lineno="148"><highlight class="normal"></highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_timings_log_8h_1a62116d86cc873a334e6356d259772681" kindref="member">record_timings</ref>(begin_docking_this_conformer);</highlight></codeline>
 <codeline lineno="149"><highlight class="normal"></highlight></codeline>
-<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_smol_dock_1_1i_transform" kindref="compound">iTransform</ref><sp/>starting_pos_tr<sp/>=<sp/><ref refid="namespace_smol_dock_1a3974d1e3a6f729a7ca05b97996ca2079" kindref="member">iTransformIdentityInit</ref>();</highlight></codeline>
-<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>starting_pos_tr.<ref refid="struct_smol_dock_1_1i_transform_1ab0039729b08d423b6e0414cec1b893e7" kindref="member">transl</ref><sp/>=<sp/>conformer.centroidNormalizingTransform;</highlight></codeline>
-<codeline lineno="152"><highlight class="normal"></highlight></codeline>
-<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Remove<sp/>this<sp/>for<sp/>production</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>This<sp/>is<sp/>to<sp/>test<sp/>the<sp/>local<sp/>optimizer<sp/>by<sp/>shaking<sp/>up<sp/>the<sp/>initial<sp/>position</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>starting_pos_tr.<ref refid="struct_smol_dock_1_1i_transform_1ab0039729b08d423b6e0414cec1b893e7" kindref="member">transl</ref>.<ref refid="struct_smol_dock_1_1i_translation_1a74a60efc8b2463b7ea1ca1e824a4ed28" kindref="member">x</ref><sp/>+=<sp/>-1.0;</highlight></codeline>
-<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>starting_pos_tr.<ref refid="struct_smol_dock_1_1i_transform_1ab0039729b08d423b6e0414cec1b893e7" kindref="member">transl</ref>.<ref refid="struct_smol_dock_1_1i_translation_1a5362a54675ecc6bac99325c69521fbb5" kindref="member">y</ref><sp/>+=<sp/>1.0;</highlight></codeline>
-<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>starting_pos_tr.<ref refid="struct_smol_dock_1_1i_transform_1a31861b55dc94ec0172ce602cd2a4a54f" kindref="member">rota</ref>.<ref refid="struct_smol_dock_1_1i_quaternion_1a07d95036803eb2a4ef32627df95043ad" kindref="member">s</ref><sp/>+=<sp/>1.0;</highlight></codeline>
-<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>starting_pos_tr.<ref refid="struct_smol_dock_1_1i_transform_1a31861b55dc94ec0172ce602cd2a4a54f" kindref="member">rota</ref>.<ref refid="struct_smol_dock_1_1i_quaternion_1a3692d71434fede9771686a73240e6ba7" kindref="member">u</ref><sp/>+=<sp/>1.0;</highlight></codeline>
-<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>starting_pos_tr.<ref refid="struct_smol_dock_1_1i_transform_1a31861b55dc94ec0172ce602cd2a4a54f" kindref="member">rota</ref>.<ref refid="struct_smol_dock_1_1i_quaternion_1a97a15d15b2fae3ec29c2fdb2388f5e5b" kindref="member">v</ref><sp/>+=<sp/>1.0;</highlight></codeline>
-<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>starting_pos_tr.<ref refid="struct_smol_dock_1_1i_transform_1a31861b55dc94ec0172ce602cd2a4a54f" kindref="member">rota</ref>.<ref refid="struct_smol_dock_1_1i_quaternion_1a1ff0d5e99369aa47273864dfea352c05" kindref="member">t</ref><sp/>+=<sp/>1.0;</highlight></codeline>
-<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespace_smol_dock_1aeef66e92064c4a5e5102102342542853" kindref="member">normalizeQuaternionInPlace</ref>(starting_pos_tr.<ref refid="struct_smol_dock_1_1i_transform_1a31861b55dc94ec0172ce602cd2a4a54f" kindref="member">rota</ref>);</highlight></codeline>
-<codeline lineno="162"><highlight class="normal"></highlight></codeline>
-<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::unique_ptr&lt;Score::ScoringFunction&gt;<sp/>vinalike<sp/>=<sp/><ref refid="namespace_smol_dock_1_1_score_1af914f3a629ac463d825d7cc7b1ec95cd" kindref="member">scoringFunctionFactory</ref>(<ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1ab58e856743bf2e8612185902f8ae233a" kindref="member">scoringFuncType</ref>,</highlight></codeline>
-<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>conformer,</highlight></codeline>
-<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a1dc7396f84093bfca59c2d8accc9ed8c" kindref="member">protein</ref>,</highlight></codeline>
-<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>starting_pos_tr,</highlight></codeline>
-<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1e-3);</highlight></codeline>
-<codeline lineno="168"><highlight class="normal"></highlight></codeline>
-<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_optimizer_1_1_l___b_f_g_s" kindref="compound">Optimizer::L_BFGS</ref><sp/>lbfgs(vinalike.get());</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"></highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_smol_dock_1_1i_transform" kindref="compound">iTransform</ref><sp/>starting_pos_tr<sp/>=<sp/><ref refid="namespace_smol_dock_1a3974d1e3a6f729a7ca05b97996ca2079" kindref="member">iTransformIdentityInit</ref>();</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>starting_pos_tr.<ref refid="struct_smol_dock_1_1i_transform_1ab0039729b08d423b6e0414cec1b893e7" kindref="member">transl</ref><sp/>=<sp/>conformer.centroidNormalizingTransform;</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"></highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Remove<sp/>this<sp/>for<sp/>production</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>This<sp/>is<sp/>to<sp/>test<sp/>the<sp/>local<sp/>optimizer<sp/>by<sp/>shaking<sp/>up<sp/>the<sp/>initial<sp/>position</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>starting_pos_tr.<ref refid="struct_smol_dock_1_1i_transform_1ab0039729b08d423b6e0414cec1b893e7" kindref="member">transl</ref>.<ref refid="struct_smol_dock_1_1i_translation_1a74a60efc8b2463b7ea1ca1e824a4ed28" kindref="member">x</ref><sp/>+=<sp/>-1.0;</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>starting_pos_tr.<ref refid="struct_smol_dock_1_1i_transform_1ab0039729b08d423b6e0414cec1b893e7" kindref="member">transl</ref>.<ref refid="struct_smol_dock_1_1i_translation_1a5362a54675ecc6bac99325c69521fbb5" kindref="member">y</ref><sp/>+=<sp/>1.0;</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>starting_pos_tr.<ref refid="struct_smol_dock_1_1i_transform_1a31861b55dc94ec0172ce602cd2a4a54f" kindref="member">rota</ref>.<ref refid="struct_smol_dock_1_1i_quaternion_1a07d95036803eb2a4ef32627df95043ad" kindref="member">s</ref><sp/>+=<sp/>1.0;</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>starting_pos_tr.<ref refid="struct_smol_dock_1_1i_transform_1a31861b55dc94ec0172ce602cd2a4a54f" kindref="member">rota</ref>.<ref refid="struct_smol_dock_1_1i_quaternion_1a3692d71434fede9771686a73240e6ba7" kindref="member">u</ref><sp/>+=<sp/>1.0;</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>starting_pos_tr.<ref refid="struct_smol_dock_1_1i_transform_1a31861b55dc94ec0172ce602cd2a4a54f" kindref="member">rota</ref>.<ref refid="struct_smol_dock_1_1i_quaternion_1a97a15d15b2fae3ec29c2fdb2388f5e5b" kindref="member">v</ref><sp/>+=<sp/>1.0;</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>starting_pos_tr.<ref refid="struct_smol_dock_1_1i_transform_1a31861b55dc94ec0172ce602cd2a4a54f" kindref="member">rota</ref>.<ref refid="struct_smol_dock_1_1i_quaternion_1a1ff0d5e99369aa47273864dfea352c05" kindref="member">t</ref><sp/>+=<sp/>1.0;</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespace_smol_dock_1aeef66e92064c4a5e5102102342542853" kindref="member">normalizeQuaternionInPlace</ref>(starting_pos_tr.<ref refid="struct_smol_dock_1_1i_transform_1a31861b55dc94ec0172ce602cd2a4a54f" kindref="member">rota</ref>);</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"></highlight></codeline>
+<codeline lineno="164"><highlight class="normal"></highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1ace88252dde52d3e8ec652e703a8c7bdf" kindref="member">scoringFunction</ref><sp/>=<sp/><ref refid="namespace_smol_dock_1_1_score_1acda93ea4444f7dacda77b03c0b278336" kindref="member">scoringFunctionFactory</ref>(this-&gt;<ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1ab58e856743bf2e8612185902f8ae233a" kindref="member">scoringFuncType</ref>,</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>conformer,</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a1dc7396f84093bfca59c2d8accc9ed8c" kindref="member">protein</ref>,</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>starting_pos_tr,</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1e-3);</highlight></codeline>
 <codeline lineno="170"><highlight class="normal"></highlight></codeline>
-<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_heuristics_1_1_random_restart" kindref="compound">Heuristics::RandomRestart</ref><sp/>heur(vinalike.get(),<sp/>&amp;lbfgs,<sp/>dis_uint(this-&gt;<ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a9bc1d216cf102c383444cb6f9955dfaa" kindref="member">rnd_generator</ref>));</highlight></codeline>
-<codeline lineno="172"><highlight class="normal"></highlight></codeline>
-<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>heur.<ref refid="class_smol_dock_1_1_heuristics_1_1_random_restart_1abfa7882757c070d876d94090520cef92" kindref="member">search</ref>();</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a55216b76286aae8cdb9ce8f4bf005dc7" kindref="member">localOptimizer</ref><sp/>=<sp/><ref refid="namespace_smol_dock_1_1_optimizer_1a62f48a1e91b51c0d7c9152d1eeaba538" kindref="member">optimizerFactory</ref>(this-&gt;<ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a912745c6f3177cdc1c688ff874c5d410" kindref="member">localOptimizerType</ref>,</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1ace88252dde52d3e8ec652e703a8c7bdf" kindref="member">scoringFunction</ref>.get(),</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1e-3);</highlight></codeline>
 <codeline lineno="174"><highlight class="normal"></highlight></codeline>
-<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>rawResultMatrix<sp/>=<sp/>heur.getResultMatrix();</highlight></codeline>
-<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>score<sp/>=<sp/>vinalike-&gt;Evaluate(rawResultMatrix);</highlight></codeline>
-<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_smol_dock_1_1i_conformer" kindref="compound">iConformer</ref><sp/>result<sp/>=<sp/>vinalike-&gt;getConformerForParamMatrix(rawResultMatrix);</highlight></codeline>
-<codeline lineno="178"><highlight class="normal"></highlight></codeline>
-<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>direct_score<sp/>=<sp/><ref refid="namespace_smol_dock_1_1_score_1ac205731c7b0098c2900d9d16fff1a93b" kindref="member">Score::vina_like_rigid_inter_scoring_func</ref>(conformer,<sp/>starting_pos_tr,</highlight></codeline>
-<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a1dc7396f84093bfca59c2d8accc9ed8c" kindref="member">protein</ref>);</highlight></codeline>
-<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_LOG_TRIVIAL(debug)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Score<sp/>after<sp/>L-BFGS:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>score<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>(from:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>direct_score<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;)&quot;</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="182"><highlight class="normal"></highlight></codeline>
-<codeline lineno="183"><highlight class="normal"></highlight></codeline>
-<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a3ebcfe47e865aad0c91105a58996d22e" kindref="member">scores</ref>.push_back(score);</highlight></codeline>
-<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a4ea3d83dced816021dc9e1a39d0f197d" kindref="member">final_iConformer</ref>.push_back(result);</highlight></codeline>
-<codeline lineno="186"><highlight class="normal"></highlight></codeline>
-<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_timings_log_8h_1a62116d86cc873a334e6356d259772681" kindref="member">record_timings</ref>(end_docking_this_conformer);</highlight></codeline>
-<codeline lineno="188"><highlight class="normal"></highlight></codeline>
-<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>acc_score(score);</highlight></codeline>
-<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>acc_duration(</highlight></codeline>
-<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal"><sp/>std::chrono::duration&lt;double&gt;<sp/></highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(end_docking_this_conformer<sp/>-</highlight></codeline>
-<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>begin_docking_this_conformer).count()</highlight></codeline>
-<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>);</highlight></codeline>
-<codeline lineno="194"><highlight class="normal"></highlight></codeline>
-<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="196"><highlight class="normal"></highlight></codeline>
-<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_timings_log_8h_1a62116d86cc873a334e6356d259772681" kindref="member">record_timings</ref>(end_docking);</highlight></codeline>
-<codeline lineno="198"><highlight class="normal"></highlight></codeline>
-<codeline lineno="199"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>SMOLDOCK_VERBOSE_DEBUG</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>total_docking_duration<sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal"><sp/>std::chrono::duration&lt;double&gt;<sp/></highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(end_docking<sp/>-</highlight></codeline>
-<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>begin_docking).count();</highlight></codeline>
-<codeline lineno="202"><highlight class="normal"></highlight></codeline>
-<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_LOG_TRIVIAL(debug)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Timings<sp/>ConformerRigidDockingEngine<sp/>docking<sp/>runs&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\n<sp/><sp/><sp/><sp/><sp/><sp/>TOTAL:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>total_docking_duration<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;s&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\n<sp/><sp/><sp/><sp/><sp/><sp/>Mean<sp/>per<sp/>conformer:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>mean(acc_duration)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;s&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\n<sp/><sp/><sp/><sp/><sp/><sp/>StdDev<sp/>per<sp/>conformer:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::sqrt(moment&lt;2&gt;(acc_duration))<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;s&quot;</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="207"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="208"><highlight class="normal"></highlight></codeline>
-<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_LOG_TRIVIAL(info)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Results:&quot;</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_LOG_TRIVIAL(info)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/><sp/>Score<sp/>Mean:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>mean(acc_score);</highlight></codeline>
-<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_LOG_TRIVIAL(info)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/><sp/>Score<sp/>StdDev:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::sqrt(moment&lt;2&gt;(acc_score));</highlight></codeline>
-<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_LOG_TRIVIAL(info)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/><sp/>Scores:<sp/>&quot;</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>&amp;score:<sp/><ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a3ebcfe47e865aad0c91105a58996d22e" kindref="member">scores</ref>)<sp/>{</highlight></codeline>
-<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_LOG_TRIVIAL(info)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/><sp/><sp/><sp/><sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>score;</highlight></codeline>
-<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="216"><highlight class="normal"></highlight></codeline>
-<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="218"><highlight class="normal"></highlight></codeline>
-<codeline lineno="219" refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a52fa8c276c911df08d4dd8d6744ae540" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::shared_ptr&lt;DockingResult&gt;<sp/><ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a52fa8c276c911df08d4dd8d6744ae540" kindref="member">ConformerRigidDockingEngine::getDockingResult</ref>()<sp/>{</highlight></codeline>
-<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>ret<sp/>=<sp/>std::make_shared&lt;DockingResult&gt;();</highlight></codeline>
-<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>&amp;confr<sp/>:<sp/>this-&gt;<ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a4ea3d83dced816021dc9e1a39d0f197d" kindref="member">final_iConformer</ref>)<sp/>{</highlight></codeline>
-<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_molecule" kindref="compound">Molecule</ref><sp/>finalLigand<sp/>=<sp/>this-&gt;<ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1af3d543e92676f9d66a5a3d0ccc0cd5a9" kindref="member">orig_ligand</ref>-&gt;<ref refid="class_smol_dock_1_1_molecule_1a70156ffc4081eb92f9dc4e2c70096c84" kindref="member">deepcopy</ref>();</highlight></codeline>
-<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>finalLigand.<ref refid="class_smol_dock_1_1_molecule_1af6263934134836e9ce66d2254b6b6801" kindref="member">updateAtomPositionsFromiConformer</ref>(confr);</highlight></codeline>
-<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ret-&gt;ligandPoses.emplace_back(finalLigand);</highlight></codeline>
-<codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="226"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>ret;</highlight></codeline>
-<codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="228"><highlight class="normal"></highlight></codeline>
-<codeline lineno="229"><highlight class="normal"></highlight></codeline>
-<codeline lineno="230" refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1acd3b7345ecae8f0c92ca0168b794eac3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1acd3b7345ecae8f0c92ca0168b794eac3" kindref="member">ConformerRigidDockingEngine::setDockingBox</ref>(<ref refid="class_smol_dock_1_1_engine_1_1_abstract_docking_engine_1aca703508a3ce31d577d3ec108020789b" kindref="member">AbstractDockingEngine::DockingBoxSetting</ref><sp/>setting)<sp/>{</highlight></codeline>
-<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(setting<sp/>!=<sp/><ref refid="class_smol_dock_1_1_engine_1_1_abstract_docking_engine_1aca703508a3ce31d577d3ec108020789ba312db69f5bf4447dfe3c58983083b54f" kindref="member">DockingBoxSetting::everything</ref>)<sp/>{</highlight></codeline>
-<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;[!]<sp/>DockingBoxSetting<sp/>(that<sp/>is<sp/>not<sp/>DockingBoxSetting::everything)<sp/>is<sp/>not<sp/>yet<sp/>implemented.&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
-<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;[<sp/>]<sp/>Running<sp/>as<sp/>if<sp/>DockingBoxSetting::everything<sp/>was<sp/>passed&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
-<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="236"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="238"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="239"><highlight class="normal"></highlight></codeline>
-<codeline lineno="240"><highlight class="normal"></highlight></codeline>
-<codeline lineno="241"><highlight class="normal"></highlight></codeline>
-<codeline lineno="242"><highlight class="normal"></highlight></codeline>
-<codeline lineno="243"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="244"><highlight class="normal"></highlight></codeline>
-<codeline lineno="245"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"></highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a564f81759cb41bf5d17a54a2e5f50c0a" kindref="member">globalHeuristic</ref><sp/>=<sp/><ref refid="namespace_smol_dock_1_1_heuristics_1a30612bd88fe0508b7306b60c678a68a9" kindref="member">globalHeuristicFactory</ref>(<ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a8d0751b77afc3f1b91c0259af0d80d92" kindref="member">heuristicType</ref>,<sp/>this-&gt;<ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1ace88252dde52d3e8ec652e703a8c7bdf" kindref="member">scoringFunction</ref>.get(),</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a55216b76286aae8cdb9ce8f4bf005dc7" kindref="member">localOptimizer</ref>.get(),</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dis_uint(this-&gt;<ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a9bc1d216cf102c383444cb6f9955dfaa" kindref="member">rnd_generator</ref>));</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"></highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;globalHeuristic-&gt;search();</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"></highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>rawResultMatrix<sp/>=<sp/>this-&gt;globalHeuristic-&gt;getResultMatrix();</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>score<sp/>=<sp/>this-&gt;<ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1ace88252dde52d3e8ec652e703a8c7bdf" kindref="member">scoringFunction</ref>-&gt;Evaluate(rawResultMatrix);</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_smol_dock_1_1i_conformer" kindref="compound">iConformer</ref><sp/>result<sp/>=<sp/>this-&gt;<ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1ace88252dde52d3e8ec652e703a8c7bdf" kindref="member">scoringFunction</ref>-&gt;getConformerForParamMatrix(rawResultMatrix);</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"></highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>direct_score<sp/>=<sp/><ref refid="namespace_smol_dock_1_1_score_1ac205731c7b0098c2900d9d16fff1a93b" kindref="member">Score::vina_like_rigid_inter_scoring_func</ref>(conformer,<sp/>starting_pos_tr,</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a1dc7396f84093bfca59c2d8accc9ed8c" kindref="member">protein</ref>);</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_LOG_TRIVIAL(debug)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Score<sp/>after<sp/>L-BFGS:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>score<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>(from:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>direct_score<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;)&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"></highlight></codeline>
+<codeline lineno="190"><highlight class="normal"></highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a3ebcfe47e865aad0c91105a58996d22e" kindref="member">scores</ref>.push_back(score);</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a4ea3d83dced816021dc9e1a39d0f197d" kindref="member">final_iConformer</ref>.push_back(result);</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"></highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_timings_log_8h_1a62116d86cc873a334e6356d259772681" kindref="member">record_timings</ref>(end_docking_this_conformer);</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"></highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>acc_score(score);</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>acc_duration(</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal"><sp/>std::chrono::duration&lt;double&gt;<sp/></highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(end_docking_this_conformer<sp/>-</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>begin_docking_this_conformer).count()</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>);</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"></highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"></highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_timings_log_8h_1a62116d86cc873a334e6356d259772681" kindref="member">record_timings</ref>(end_docking);</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"></highlight></codeline>
+<codeline lineno="206"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>SMOLDOCK_VERBOSE_DEBUG</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>total_docking_duration<sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal"><sp/>std::chrono::duration&lt;double&gt;<sp/></highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(end_docking<sp/>-</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>begin_docking).count();</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"></highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_LOG_TRIVIAL(debug)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Timings<sp/>ConformerRigidDockingEngine<sp/>docking<sp/>runs&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\n<sp/><sp/><sp/><sp/><sp/><sp/>TOTAL:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>total_docking_duration<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;s&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\n<sp/><sp/><sp/><sp/><sp/><sp/>Mean<sp/>per<sp/>conformer:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>mean(acc_duration)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;s&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\n<sp/><sp/><sp/><sp/><sp/><sp/>StdDev<sp/>per<sp/>conformer:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::sqrt(moment&lt;2&gt;(acc_duration))<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;s&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="215"><highlight class="normal"></highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_LOG_TRIVIAL(info)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Results:&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_LOG_TRIVIAL(info)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/><sp/>Score<sp/>Mean:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>mean(acc_score);</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_LOG_TRIVIAL(info)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/><sp/>Score<sp/>StdDev:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::sqrt(moment&lt;2&gt;(acc_score));</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_LOG_TRIVIAL(info)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/><sp/>Scores:<sp/>&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>&amp;score:<sp/><ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a3ebcfe47e865aad0c91105a58996d22e" kindref="member">scores</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_LOG_TRIVIAL(info)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/><sp/><sp/><sp/><sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>score;</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"></highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"></highlight></codeline>
+<codeline lineno="226" refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a52fa8c276c911df08d4dd8d6744ae540" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::shared_ptr&lt;DockingResult&gt;<sp/><ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a52fa8c276c911df08d4dd8d6744ae540" kindref="member">ConformerRigidDockingEngine::getDockingResult</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>ret<sp/>=<sp/>std::make_shared&lt;DockingResult&gt;();</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>&amp;confr<sp/>:<sp/>this-&gt;<ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a4ea3d83dced816021dc9e1a39d0f197d" kindref="member">final_iConformer</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_molecule" kindref="compound">Molecule</ref><sp/>finalLigand<sp/>=<sp/>this-&gt;<ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1af3d543e92676f9d66a5a3d0ccc0cd5a9" kindref="member">orig_ligand</ref>-&gt;<ref refid="class_smol_dock_1_1_molecule_1a70156ffc4081eb92f9dc4e2c70096c84" kindref="member">deepcopy</ref>();</highlight></codeline>
+<codeline lineno="230"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>finalLigand.<ref refid="class_smol_dock_1_1_molecule_1af6263934134836e9ce66d2254b6b6801" kindref="member">updateAtomPositionsFromiConformer</ref>(confr);</highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ret-&gt;ligandPoses.emplace_back(finalLigand);</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>ret;</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"></highlight></codeline>
+<codeline lineno="236"><highlight class="normal"></highlight></codeline>
+<codeline lineno="237" refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1acd3b7345ecae8f0c92ca0168b794eac3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1acd3b7345ecae8f0c92ca0168b794eac3" kindref="member">ConformerRigidDockingEngine::setDockingBox</ref>(<ref refid="class_smol_dock_1_1_engine_1_1_abstract_docking_engine_1aca703508a3ce31d577d3ec108020789b" kindref="member">AbstractDockingEngine::DockingBoxSetting</ref><sp/>setting)<sp/>{</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(setting<sp/>!=<sp/><ref refid="class_smol_dock_1_1_engine_1_1_abstract_docking_engine_1aca703508a3ce31d577d3ec108020789ba312db69f5bf4447dfe3c58983083b54f" kindref="member">DockingBoxSetting::everything</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="239"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;[!]<sp/>DockingBoxSetting<sp/>(that<sp/>is<sp/>not<sp/>DockingBoxSetting::everything)<sp/>is<sp/>not<sp/>yet<sp/>implemented.&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="241"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;[<sp/>]<sp/>Running<sp/>as<sp/>if<sp/>DockingBoxSetting::everything<sp/>was<sp/>passed&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="242"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"></highlight></codeline>
+<codeline lineno="247"><highlight class="normal"></highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="249"><highlight class="normal"></highlight></codeline>
+<codeline lineno="250"><highlight class="normal">}</highlight></codeline>
     </programlisting>
     <location file="Engines/ConformerRigidDockingEngine.cpp"/>
   </compounddef>

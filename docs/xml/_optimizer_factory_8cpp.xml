@@ -1,0 +1,160 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_optimizer_factory_8cpp" kind="file" language="C++">
+    <compoundname>OptimizerFactory.cpp</compoundname>
+    <includes refid="_optimizer_factory_8h" local="yes">OptimizerFactory.h</includes>
+    <includes refid="_l___b_f_g_s_8h" local="yes">L_BFGS.h</includes>
+    <includes refid="_gradient_descent_line_search_8h" local="yes">GradientDescentLineSearch.h</includes>
+    <incdepgraph>
+      <node id="1132">
+        <label>OptimizerFactory.h</label>
+        <link refid="_optimizer_factory_8h"/>
+        <childnode refid="1133" relation="include">
+        </childnode>
+        <childnode refid="1134" relation="include">
+        </childnode>
+        <childnode refid="1142" relation="include">
+        </childnode>
+      </node>
+      <node id="1145">
+        <label>functional</label>
+      </node>
+      <node id="1142">
+        <label>OptimizerInterface.h</label>
+        <link refid="_optimizer_interface_8h"/>
+        <childnode refid="1135" relation="include">
+        </childnode>
+      </node>
+      <node id="1140">
+        <label>cmath</label>
+      </node>
+      <node id="1141">
+        <label>cassert</label>
+      </node>
+      <node id="1134">
+        <label>Engines/ScoringFunctions/ScoringFunctionInterface.h</label>
+        <link refid="_scoring_function_interface_8h"/>
+        <childnode refid="1135" relation="include">
+        </childnode>
+        <childnode refid="1136" relation="include">
+        </childnode>
+      </node>
+      <node id="1147">
+        <label>map</label>
+      </node>
+      <node id="1136">
+        <label>Engines/Internals/iConformer.h</label>
+        <link refid="i_conformer_8h"/>
+        <childnode refid="1137" relation="include">
+        </childnode>
+        <childnode refid="1133" relation="include">
+        </childnode>
+        <childnode refid="1138" relation="include">
+        </childnode>
+      </node>
+      <node id="1135">
+        <label>armadillo</label>
+      </node>
+      <node id="1144">
+        <label>GradientDescentLineSearch.h</label>
+        <link refid="_gradient_descent_line_search_8h"/>
+        <childnode refid="1145" relation="include">
+        </childnode>
+        <childnode refid="1135" relation="include">
+        </childnode>
+        <childnode refid="1142" relation="include">
+        </childnode>
+        <childnode refid="1134" relation="include">
+        </childnode>
+        <childnode refid="1136" relation="include">
+        </childnode>
+        <childnode refid="1138" relation="include">
+        </childnode>
+        <childnode refid="1146" relation="include">
+        </childnode>
+      </node>
+      <node id="1146">
+        <label>Engines/Internals/iProtein.h</label>
+        <link refid="i_protein_8h"/>
+        <childnode refid="1137" relation="include">
+        </childnode>
+        <childnode refid="1133" relation="include">
+        </childnode>
+        <childnode refid="1147" relation="include">
+        </childnode>
+      </node>
+      <node id="1138">
+        <label>iTransform.h</label>
+        <link refid="i_transform_8h"/>
+        <childnode refid="1137" relation="include">
+        </childnode>
+        <childnode refid="1133" relation="include">
+        </childnode>
+        <childnode refid="1139" relation="include">
+        </childnode>
+        <childnode refid="1140" relation="include">
+        </childnode>
+        <childnode refid="1141" relation="include">
+        </childnode>
+      </node>
+      <node id="1137">
+        <label>vector</label>
+      </node>
+      <node id="1139">
+        <label>array</label>
+      </node>
+      <node id="1131">
+        <label>OptimizerFactory.cpp</label>
+        <link refid="_optimizer_factory_8cpp"/>
+        <childnode refid="1132" relation="include">
+        </childnode>
+        <childnode refid="1143" relation="include">
+        </childnode>
+        <childnode refid="1144" relation="include">
+        </childnode>
+      </node>
+      <node id="1143">
+        <label>L_BFGS.h</label>
+        <link refid="_l___b_f_g_s_8h"/>
+        <childnode refid="1134" relation="include">
+        </childnode>
+        <childnode refid="1142" relation="include">
+        </childnode>
+      </node>
+      <node id="1133">
+        <label>memory</label>
+      </node>
+    </incdepgraph>
+    <innernamespace refid="namespace_smol_dock_1_1_optimizer">SmolDock::Optimizer</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Created<sp/>by<sp/>eliane<sp/>on<sp/>09/01/19.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_optimizer_factory_8h" kindref="compound">OptimizerFactory.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_l___b_f_g_s_8h" kindref="compound">L_BFGS.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_gradient_descent_line_search_8h" kindref="compound">GradientDescentLineSearch.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_smol_dock_1_1_optimizer" kindref="compound">SmolDock::Optimizer</ref><sp/>{</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12" refid="namespace_smol_dock_1_1_optimizer_1a62f48a1e91b51c0d7c9152d1eeaba538" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Optimizer&gt;<sp/><ref refid="namespace_smol_dock_1_1_optimizer_1a62f48a1e91b51c0d7c9152d1eeaba538" kindref="member">optimizerFactory</ref>(<ref refid="namespace_smol_dock_1_1_optimizer_1a7ed1dc6878a606b8dcca7558383650ce" kindref="member">LocalOptimizerType</ref><sp/>t,<sp/><ref refid="class_smol_dock_1_1_score_1_1_scoring_function" kindref="compound">Score::ScoringFunction</ref>*<sp/>scorFunc,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>differential_epsilon<sp/>)</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(t<sp/>==<sp/><ref refid="namespace_smol_dock_1_1_optimizer_1a7ed1dc6878a606b8dcca7558383650cea2bd34449cf1656ea5ea723145f03c127" kindref="member">LocalOptimizerType::L_BFGS</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>std::make_shared&lt;L_BFGS&gt;(scorFunc,<sp/>differential_epsilon);</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(t<sp/>==<sp/><ref refid="namespace_smol_dock_1_1_optimizer_1a7ed1dc6878a606b8dcca7558383650cea51a88107a34b56214c993f7fc3d9c4a8" kindref="member">LocalOptimizerType::GradientDescentLineSearch</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>std::make_shared&lt;GradientDescentLineSearch&gt;(scorFunc,<sp/>differential_epsilon);</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="Engines/LocalOptimizers/OptimizerFactory.cpp"/>
+  </compounddef>
+</doxygen>

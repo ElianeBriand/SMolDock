@@ -60,18 +60,24 @@ namespace SmolDock {
 
 
         ConformerRigidDockingEngine::ConformerRigidDockingEngine(unsigned int conformer_num_,
-                                                                                  Protein* protein,
-                                                                                  Molecule* ligand,
-                                                                                  Score::ScoringFunctionType scFuncType,
-                                                                                  unsigned int seed):
-        conformer_num(conformer_num_),
-        orig_protein(protein),
-        orig_ligand(ligand),
-        scoringFuncType(scFuncType),
-        random_seed(seed),
-        rnd_generator(random_seed)
-        {
+                                                                 Protein* protein,
+                                                                 Molecule* ligand,
+                                                                 Score::ScoringFunctionType scFuncType,
+                                                                 Heuristics::GlobalHeuristicType heurType,
+                                                                 Optimizer::LocalOptimizerType localOptimizerType_,
+                                                                 unsigned int seed) :
+                conformer_num(conformer_num_),
+                orig_protein(protein),
+                orig_ligand(ligand),
+                scoringFuncType(scFuncType),
+                heuristicType(heurType),
+                localOptimizerType(localOptimizerType_),
+                rnd_generator(seed) {
 
+            BOOST_LOG_TRIVIAL(debug) << "ConformerRigidDockingEngine:seed " << seed;
+            std::uniform_real_distribution<double> dis_real_position(-100.0, 100.0);
+            BOOST_LOG_TRIVIAL(debug) << "ConformerRigidDockingEngine:GenNbr :  "
+                                     << dis_real_position(this->rnd_generator);
 
             scores.reserve(this->conformer_num);
             final_iConformer.reserve(this->conformer_num);
@@ -87,9 +93,8 @@ namespace SmolDock {
 
             record_timings(begin_conformersgen);
 
-            int seed = dis_int(this->rnd_generator);
-            BOOST_LOG_TRIVIAL(debug) << "Seed : " << seed;
-            this->orig_ligand->generateConformers(this->viConformers, this->conformer_num, true, seed);
+            this->orig_ligand->generateConformers(this->viConformers, this->conformer_num, true,
+                                                  dis_int(this->rnd_generator));
 
             record_timings(end_conformersgen);
 
@@ -145,8 +150,6 @@ namespace SmolDock {
                 record_timings(begin_docking_this_conformer);
 
 
-
-
                 iTransform starting_pos_tr = iTransformIdentityInit();
                 starting_pos_tr.transl = conformer.centroidNormalizingTransform;
 
@@ -160,21 +163,27 @@ namespace SmolDock {
                 starting_pos_tr.rota.t += 1.0;
                 normalizeQuaternionInPlace(starting_pos_tr.rota);
 
-                std::unique_ptr<Score::ScoringFunction> vinalike = scoringFunctionFactory(scoringFuncType,
-                        conformer,
-                        this->protein,
-                        starting_pos_tr,
-                        1e-3);
 
-                Optimizer::L_BFGS lbfgs(vinalike.get());
+                this->scoringFunction = scoringFunctionFactory(this->scoringFuncType,
+                                                               conformer,
+                                                               this->protein,
+                                                               starting_pos_tr,
+                                                               1e-3);
 
-                Heuristics::RandomRestart heur(vinalike.get(), &lbfgs, dis_uint(this->rnd_generator));
+                this->localOptimizer = optimizerFactory(this->localOptimizerType,
+                                                        this->scoringFunction.get(),
+                                                        1e-3);
 
-                heur.search();
 
-                auto rawResultMatrix = heur.getResultMatrix();
-                double score = vinalike->Evaluate(rawResultMatrix);
-                iConformer result = vinalike->getConformerForParamMatrix(rawResultMatrix);
+                this->globalHeuristic = globalHeuristicFactory(heuristicType, this->scoringFunction.get(),
+                                                               this->localOptimizer.get(),
+                                                               dis_uint(this->rnd_generator));
+
+                this->globalHeuristic->search();
+
+                auto rawResultMatrix = this->globalHeuristic->getResultMatrix();
+                double score = this->scoringFunction->Evaluate(rawResultMatrix);
+                iConformer result = this->scoringFunction->getConformerForParamMatrix(rawResultMatrix);
 
                 double direct_score = Score::vina_like_rigid_inter_scoring_func(conformer, starting_pos_tr,
                                                                                 this->protein);
@@ -236,8 +245,6 @@ namespace SmolDock {
             }
             return true;
         }
-
-
 
 
     }

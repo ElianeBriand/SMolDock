@@ -54,7 +54,9 @@ namespace SmolDock {
      */
     class Molecule : Structure {
         friend class MoleculeTraversal;
+
         friend class UnitTestHelper;
+
         friend class PDBWriter;
 
     public:
@@ -71,7 +73,7 @@ namespace SmolDock {
          * \sa populateFromPDB()
         */
         bool populateFromSMILES(const std::string &smiles, unsigned int seed = 36754,
-                std::vector<InputPostProcessor::InputPostProcessor*> postProcessors = {} );
+                                std::vector<std::shared_ptr<InputPostProcessor::InputPostProcessor> > postProcessors = {});
         //! Populate atoms and bonds from a PDB file. Additionally, a SMILES string can be used for bond order hint.
         /*!
          *
@@ -87,8 +89,9 @@ namespace SmolDock {
          * \return whether the parsing and initial conformer generation was successful.
          * \sa populateFromSMILES()
         */
-        bool populateFromPDB(const std::string& filename,const std::string& smiles_hint = "", unsigned int seed = 36754,
-                std::vector<InputPostProcessor::InputPostProcessor*> postProcessors = {} );
+        bool
+        populateFromPDB(const std::string &filename, const std::string &smiles_hint = "", unsigned int seed = 36754,
+                        std::vector<std::shared_ptr<InputPostProcessor::InputPostProcessor> > postProcessors = {});
 
 
         //! Return the number of atom in the Molecule, Hydrogen excepted
@@ -128,7 +131,9 @@ namespace SmolDock {
          * \return Returns the number of conformer actually generated. May be 0.
          * \sa generateConformer()
         */
-        unsigned int generateConformers(std::vector<iConformer>& viConformers, unsigned int num,bool centroidNormalization = false, int seed = 367454);
+        unsigned int
+        generateConformers(std::vector<iConformer> &viConformers, unsigned int num, bool centroidNormalization = false,
+                           int seed = 367454);
 
         //! Get the 3-letter residue code used for this molecule in PDB file
         /*!
@@ -143,9 +148,9 @@ namespace SmolDock {
          * \return A 3-letter residue name string
          * \sa setResidueName()
         */
-        void setResidueName(const std::string& res_name);
+        void setResidueName(const std::string &res_name);
 
-        bool updateAtomPositionsFromiConformer(const iConformer& conformer);
+        bool updateAtomPositionsFromiConformer(const iConformer &conformer);
 
         //! Make a copy of the Molecule object where the underlying Atom and Bond are new objects instead of references to
         /*!
@@ -171,13 +176,13 @@ namespace SmolDock {
         std::string residue_name = "LIG";
 
         //! Use this if using RDKit RWMol as entry.
-        bool populateInternalAtomAndBondFromRWMol(unsigned int seed, std::vector<InputPostProcessor::InputPostProcessor*> postProcessors);
+        bool populateInternalAtomAndBondFromRWMol(unsigned int seed,
+                                                  std::vector<std::shared_ptr<InputPostProcessor::InputPostProcessor> > postProcessors);
 
         int initial_conformer_id = -1;
 
-        iConformer generateIConformerForGivenRDKitConformerID(unsigned int id, bool centroidNormalization = false) const;
-
-
+        iConformer
+        generateIConformerForGivenRDKitConformerID(unsigned int id, bool centroidNormalization = false) const;
 
 
         unsigned int numberOfRotatableBonds = 0;

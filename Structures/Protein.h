@@ -26,7 +26,6 @@
 #include <memory>
 
 
-
 #include <ESBTL/default.h>
 #include <ESBTL/atom_classifier.h>
 #include <ESBTL/weighted_atom_iterator.h>
@@ -48,7 +47,7 @@ namespace SmolDock {
     class Protein : Structure {
 
     public:
-        Protein() = default;
+        Protein();
 
         //! Populate Protein from a PDB file.
         /*!
@@ -59,7 +58,8 @@ namespace SmolDock {
          * \param postProcessors A vector of pointer to post-processors object that will be applied to the protein
          * \return whether the parsing was successful.
         */
-        bool populateFromPDB(const std::string &filename, std::vector<InputPostProcessor::InputPostProcessor*> postProcessors = {} );
+        bool populateFromPDB(const std::string &filename,
+                             std::vector<std::shared_ptr<InputPostProcessor::InputPostProcessor> > postProcessors = {});
 
         //! Return an iProtein object for use in docking engine
         /*!

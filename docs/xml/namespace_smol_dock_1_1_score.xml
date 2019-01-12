@@ -107,25 +107,25 @@
       </memberdef>
       </sectiondef>
       <sectiondef kind="func">
-      <memberdef kind="function" id="namespace_smol_dock_1_1_score_1af914f3a629ac463d825d7cc7b1ec95cd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>std::unique_ptr&lt; <ref refid="class_smol_dock_1_1_score_1_1_scoring_function" kindref="compound">ScoringFunction</ref> &gt;</type>
-        <definition>std::unique_ptr&lt; ScoringFunction &gt; SmolDock::Score::scoringFunctionFactory</definition>
-        <argsstring>(ScoringFunctionType t, iConformer conformer, iProtein protein, iTransform transform, double differential_upsilon)</argsstring>
+      <memberdef kind="function" id="namespace_smol_dock_1_1_score_1acda93ea4444f7dacda77b03c0b278336" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::shared_ptr&lt; <ref refid="class_smol_dock_1_1_score_1_1_scoring_function" kindref="compound">ScoringFunction</ref> &gt;</type>
+        <definition>std::shared_ptr&lt; ScoringFunction &gt; SmolDock::Score::scoringFunctionFactory</definition>
+        <argsstring>(ScoringFunctionType t, const iConformer &amp;conformer, const iProtein &amp;protein, const iTransform &amp;transform, double differential_upsilon)</argsstring>
         <name>scoringFunctionFactory</name>
         <param>
           <type><ref refid="namespace_smol_dock_1_1_score_1a7d8761ef06699c5fc8793056bc903911" kindref="member">ScoringFunctionType</ref></type>
           <declname>t</declname>
         </param>
         <param>
-          <type><ref refid="struct_smol_dock_1_1i_conformer" kindref="compound">iConformer</ref></type>
+          <type>const <ref refid="struct_smol_dock_1_1i_conformer" kindref="compound">iConformer</ref> &amp;</type>
           <declname>conformer</declname>
         </param>
         <param>
-          <type><ref refid="struct_smol_dock_1_1i_protein" kindref="compound">iProtein</ref></type>
+          <type>const <ref refid="struct_smol_dock_1_1i_protein" kindref="compound">iProtein</ref> &amp;</type>
           <declname>protein</declname>
         </param>
         <param>
-          <type><ref refid="struct_smol_dock_1_1i_transform" kindref="compound">iTransform</ref></type>
+          <type>const <ref refid="struct_smol_dock_1_1i_transform" kindref="compound">iTransform</ref> &amp;</type>
           <declname>transform</declname>
         </param>
         <param>
@@ -140,7 +140,7 @@
         </inbodydescription>
         <location file="Engines/ScoringFunctions/ScoringFunctionFactory.cpp" line="11" column="1" bodyfile="Engines/ScoringFunctions/ScoringFunctionFactory.cpp" bodystart="11" bodyend="18"/>
         <references refid="namespace_smol_dock_1_1_score_1a7d8761ef06699c5fc8793056bc903911a28bb0a5655ac4c67901e014f39619947">VinaRigid</references>
-        <referencedby refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a7bee39278168cb4d7ee6558b3a3d3bb4" compoundref="_conformer_rigid_docking_engine_8cpp" startline="132" endline="217">SmolDock::Engine::ConformerRigidDockingEngine::runDockingEngine</referencedby>
+        <referencedby refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a7bee39278168cb4d7ee6558b3a3d3bb4" compoundref="_conformer_rigid_docking_engine_8cpp" startline="135" endline="224">SmolDock::Engine::ConformerRigidDockingEngine::runDockingEngine</referencedby>
       </memberdef>
       <memberdef kind="function" id="namespace_smol_dock_1_1_score_1adae31ea0b0f6630cdad8c85e9802ed9d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
@@ -388,8 +388,8 @@
         <references refid="struct_smol_dock_1_1i_vect_1a013cdafb950199deb4511843ff389e73" compoundref="i_transform_8h" startline="31">SmolDock::iVect::z</references>
         <references refid="struct_smol_dock_1_1i_protein_1ab95306577aa2d8bdd268504b44d046ad" compoundref="i_protein_8h" startline="39">SmolDock::iProtein::z</references>
         <references refid="struct_smol_dock_1_1i_conformer_1a5c1fc6f9bad31ec2731337e9ba1e9a0f" compoundref="i_conformer_8h" startline="48">SmolDock::iConformer::z</references>
-        <referencedby refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a7bee39278168cb4d7ee6558b3a3d3bb4" compoundref="_conformer_rigid_docking_engine_8cpp" startline="132" endline="217">SmolDock::Engine::ConformerRigidDockingEngine::runDockingEngine</referencedby>
-        <referencedby refid="main_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4" compoundref="main_8cpp" startline="45" endline="154">main</referencedby>
+        <referencedby refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a7bee39278168cb4d7ee6558b3a3d3bb4" compoundref="_conformer_rigid_docking_engine_8cpp" startline="135" endline="224">SmolDock::Engine::ConformerRigidDockingEngine::runDockingEngine</referencedby>
+        <referencedby refid="main_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4" compoundref="main_8cpp" startline="45" endline="155">main</referencedby>
         <referencedby refid="namespace_smol_dock_1_1_wrapper_1afc6fe0925036a67cbd9856c1077296ca" compoundref="_py_scoring_functions_8cpp" startline="41" endline="47">SmolDock::Wrapper::getScoringFunc</referencedby>
         <referencedby refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1ab89f08da2f4f79abfe9130b3593c3522" compoundref="_vina_like_scoring_function_8cpp" startline="225" endline="234">SmolDock::Score::VinaLikeRigidScoringFunction::Evaluate</referencedby>
         <referencedby refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1a574511b3c12769902e2c0366d4d3db96" compoundref="_vina_like_scoring_function_8cpp" startline="236" endline="294">SmolDock::Score::VinaLikeRigidScoringFunction::EvaluateWithGradient</referencedby>

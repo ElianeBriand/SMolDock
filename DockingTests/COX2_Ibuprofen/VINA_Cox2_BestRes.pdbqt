@@ -1,0 +1,32 @@
+REMARK  4 active torsions:
+REMARK  status: ('A' for Active; 'I' for Inactive)
+REMARK    1  A    between atoms: C1_1  and  C6_6 
+REMARK    2  A    between atoms: C11_11  and  C2_2 
+REMARK    3  A    between atoms: C2_2  and  C3_3 
+REMARK    4  A    between atoms: C6_6  and  C8_8 
+ROOT
+HETATM    1  C1  IBP B 601      16.750  26.232  24.396  1.00 29.03     0.189 C 
+HETATM    2  O1  IBP B 601      16.228  27.298  24.897  1.00 29.40    -0.647 OA
+HETATM    3  O2  IBP B 601      17.852  25.760  24.816  1.00 26.61    -0.647 OA
+ENDROOT
+BRANCH   1   4
+HETATM    4  C6  IBP B 601      16.052  25.488  23.280  1.00 22.26     0.110 C 
+HETATM    5  C7  IBP B 601      16.961  24.474  22.615  1.00 26.57     0.016 C 
+BRANCH   4   6
+HETATM    6  C8  IBP B 601      14.728  24.897  23.729  1.00 25.96    -0.012 A 
+HETATM    7  C13 IBP B 601      14.478  24.525  25.049  1.00 22.96    -0.004 A 
+HETATM    8  C12 IBP B 601      13.232  23.976  25.361  1.00 22.28    -0.005 A 
+HETATM    9  C11 IBP B 601      12.240  23.797  24.413  1.00 29.37    -0.022 A 
+HETATM   10  C10 IBP B 601      12.507  24.161  23.092  1.00 26.92    -0.005 A 
+HETATM   11  C9  IBP B 601      13.741  24.703  22.774  1.00 24.90    -0.004 A 
+BRANCH   9  12
+HETATM   12  C2  IBP B 601      10.886  23.189  24.782  1.00 23.90     0.026 C 
+BRANCH  12  13
+HETATM   13  C3  IBP B 601      10.885  22.592  26.181  1.00 23.93     0.004 C 
+HETATM   14  C4  IBP B 601       9.586  22.961  26.898  1.00 24.36     0.000 C 
+HETATM   15  C5  IBP B 601      10.909  21.078  26.056  1.00 25.40     0.000 C 
+ENDBRANCH  12  13
+ENDBRANCH   9  12
+ENDBRANCH   4   6
+ENDBRANCH   1   4
+TORSDOF 4

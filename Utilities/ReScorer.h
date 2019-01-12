@@ -14,14 +14,17 @@ namespace SmolDock {
     //! A simple wrapper to get docking scores from various score function for a given ligand-protein configuration
     class ReScorer {
     public:
-        ReScorer(Protein &prot, Molecule &mol, std::function<double(const iConformer &, const iTransform &, const iProtein &)>& scorFunc);
+        ReScorer(Protein &prot, Molecule &mol,
+                 std::function<double(const iConformer &, const iTransform &, const iProtein &)> &scorFunc);
 
         bool prepare();
+
         double getScore();
+
     private:
         Protein &protein;
         Molecule &molecule;
-        std::function<double(const iConformer &, const iTransform &, const iProtein &)>& scoringFunction;
+        std::function<double(const iConformer &, const iTransform &, const iProtein &)> &scoringFunction;
 
         iProtein iprotein;
         iConformer iconformer;

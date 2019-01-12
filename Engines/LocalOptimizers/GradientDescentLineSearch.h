@@ -21,7 +21,7 @@ namespace SmolDock::Optimizer {
 
     class GradientDescentLineSearch : public Optimizer {
     public:
-        explicit GradientDescentLineSearch(Score::ScoringFunction *scoringFunc_, double differentialUpsilon = 1e-3);
+        explicit GradientDescentLineSearch(Score::ScoringFunction* scoringFunc_, double differentialUpsilon = 1e-3);
 
         bool optimize(arma::mat startingPoint) final;
 
@@ -32,8 +32,10 @@ namespace SmolDock::Optimizer {
 
         unsigned int getIterationNumber();
 
+        ~GradientDescentLineSearch() final = default;
+
     private:
-        Score::ScoringFunction *scoringFunction;
+        Score::ScoringFunction* scoringFunction;
         double differential_epsilon;
         unsigned int paramVectorDimension;
         arma::mat result;

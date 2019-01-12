@@ -1,0 +1,358 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_py_scoring_functions_8cpp" kind="file" language="C++">
+    <compoundname>PyScoringFunctions.cpp</compoundname>
+    <includes local="no">boost/python.hpp</includes>
+    <includes local="no">boost/numpy.hpp</includes>
+    <includes refid="_py_scoring_functions_8h" local="yes">PyScoringFunctions.h</includes>
+    <includes refid="_vina_like_scoring_function_8h" local="no">Engines/ScoringFunctions/VinaLikeScoringFunction.h</includes>
+    <incdepgraph>
+      <node id="1462">
+        <label>Structures/Protein.h</label>
+        <link refid="_protein_8h"/>
+        <childnode refid="1434" relation="include">
+        </childnode>
+        <childnode refid="1435" relation="include">
+        </childnode>
+        <childnode refid="1463" relation="include">
+        </childnode>
+        <childnode refid="1464" relation="include">
+        </childnode>
+        <childnode refid="1465" relation="include">
+        </childnode>
+        <childnode refid="1466" relation="include">
+        </childnode>
+        <childnode refid="1440" relation="include">
+        </childnode>
+        <childnode refid="1452" relation="include">
+        </childnode>
+        <childnode refid="1460" relation="include">
+        </childnode>
+        <childnode refid="1457" relation="include">
+        </childnode>
+      </node>
+      <node id="1463">
+        <label>ESBTL/default.h</label>
+      </node>
+      <node id="1446">
+        <label>GraphMol/RWMol.h</label>
+      </node>
+      <node id="1447">
+        <label>GraphMol/MolOps.h</label>
+      </node>
+      <node id="1450">
+        <label>GraphMol/Substruct/SubstructMatch.h</label>
+      </node>
+      <node id="1438">
+        <label>cmath</label>
+      </node>
+      <node id="1439">
+        <label>cassert</label>
+      </node>
+      <node id="1451">
+        <label>GraphMol/DistGeomHelpers/Embedder.h</label>
+      </node>
+      <node id="1452">
+        <label>Structures/InputPostProcessors/InputPostProcessorInterface.h</label>
+        <link refid="_input_post_processor_interface_8h"/>
+        <childnode refid="1453" relation="include">
+        </childnode>
+      </node>
+      <node id="1458">
+        <label>string</label>
+      </node>
+      <node id="1466">
+        <label>ESBTL/compressed_ifstream.h</label>
+      </node>
+      <node id="1442">
+        <label>ScoringFunctionInterface.h</label>
+        <link refid="_scoring_function_interface_8h"/>
+        <childnode refid="1443" relation="include">
+        </childnode>
+        <childnode refid="1433" relation="include">
+        </childnode>
+      </node>
+      <node id="1453">
+        <label>Structures/Atom.h</label>
+        <link refid="_atom_8h"/>
+        <childnode refid="1434" relation="include">
+        </childnode>
+        <childnode refid="1435" relation="include">
+        </childnode>
+        <childnode refid="1454" relation="include">
+        </childnode>
+        <childnode refid="1455" relation="include">
+        </childnode>
+        <childnode refid="1456" relation="include">
+        </childnode>
+        <childnode refid="1457" relation="include">
+        </childnode>
+      </node>
+      <node id="1441">
+        <label>map</label>
+      </node>
+      <node id="1430">
+        <label>boost/numpy.hpp</label>
+      </node>
+      <node id="1433">
+        <label>Engines/Internals/iConformer.h</label>
+        <link refid="i_conformer_8h"/>
+        <childnode refid="1434" relation="include">
+        </childnode>
+        <childnode refid="1435" relation="include">
+        </childnode>
+        <childnode refid="1436" relation="include">
+        </childnode>
+      </node>
+      <node id="1431">
+        <label>PyScoringFunctions.h</label>
+        <link refid="_py_scoring_functions_8h"/>
+      </node>
+      <node id="1443">
+        <label>armadillo</label>
+      </node>
+      <node id="1461">
+        <label>Bond.h</label>
+        <link refid="_bond_8h"/>
+        <childnode refid="1435" relation="include">
+        </childnode>
+        <childnode refid="1453" relation="include">
+        </childnode>
+      </node>
+      <node id="1464">
+        <label>ESBTL/atom_classifier.h</label>
+      </node>
+      <node id="1457">
+        <label>AminoAcid.h</label>
+        <link refid="_amino_acid_8h"/>
+        <childnode refid="1458" relation="include">
+        </childnode>
+        <childnode refid="1434" relation="include">
+        </childnode>
+        <childnode refid="1454" relation="include">
+        </childnode>
+        <childnode refid="1455" relation="include">
+        </childnode>
+        <childnode refid="1459" relation="include">
+        </childnode>
+        <childnode refid="1435" relation="include">
+        </childnode>
+        <childnode refid="1440" relation="include">
+        </childnode>
+      </node>
+      <node id="1459">
+        <label>tuple</label>
+      </node>
+      <node id="1440">
+        <label>Engines/Internals/iProtein.h</label>
+        <link refid="i_protein_8h"/>
+        <childnode refid="1434" relation="include">
+        </childnode>
+        <childnode refid="1435" relation="include">
+        </childnode>
+        <childnode refid="1441" relation="include">
+        </childnode>
+      </node>
+      <node id="1429">
+        <label>boost/python.hpp</label>
+      </node>
+      <node id="1436">
+        <label>iTransform.h</label>
+        <link refid="i_transform_8h"/>
+        <childnode refid="1434" relation="include">
+        </childnode>
+        <childnode refid="1435" relation="include">
+        </childnode>
+        <childnode refid="1437" relation="include">
+        </childnode>
+        <childnode refid="1438" relation="include">
+        </childnode>
+        <childnode refid="1439" relation="include">
+        </childnode>
+      </node>
+      <node id="1434">
+        <label>vector</label>
+      </node>
+      <node id="1437">
+        <label>array</label>
+      </node>
+      <node id="1449">
+        <label>GraphMol/SmilesParse/SmilesParse.h</label>
+      </node>
+      <node id="1460">
+        <label>Structure.h</label>
+        <link refid="_structure_8h"/>
+      </node>
+      <node id="1444">
+        <label>Structures/Molecule.h</label>
+        <link refid="_molecule_8h"/>
+        <childnode refid="1434" relation="include">
+        </childnode>
+        <childnode refid="1445" relation="include">
+        </childnode>
+        <childnode refid="1446" relation="include">
+        </childnode>
+        <childnode refid="1447" relation="include">
+        </childnode>
+        <childnode refid="1448" relation="include">
+        </childnode>
+        <childnode refid="1449" relation="include">
+        </childnode>
+        <childnode refid="1450" relation="include">
+        </childnode>
+        <childnode refid="1451" relation="include">
+        </childnode>
+        <childnode refid="1452" relation="include">
+        </childnode>
+        <childnode refid="1460" relation="include">
+        </childnode>
+        <childnode refid="1453" relation="include">
+        </childnode>
+        <childnode refid="1461" relation="include">
+        </childnode>
+        <childnode refid="1433" relation="include">
+        </childnode>
+      </node>
+      <node id="1445">
+        <label>GraphMol/RDKitBase.h</label>
+      </node>
+      <node id="1456">
+        <label>iostream</label>
+      </node>
+      <node id="1432">
+        <label>Engines/ScoringFunctions/VinaLikeScoringFunction.h</label>
+        <link refid="_vina_like_scoring_function_8h"/>
+        <childnode refid="1433" relation="include">
+        </childnode>
+        <childnode refid="1440" relation="include">
+        </childnode>
+        <childnode refid="1436" relation="include">
+        </childnode>
+        <childnode refid="1442" relation="include">
+        </childnode>
+        <childnode refid="1444" relation="include">
+        </childnode>
+        <childnode refid="1462" relation="include">
+        </childnode>
+      </node>
+      <node id="1428">
+        <label>PyScoringFunctions.cpp</label>
+        <link refid="_py_scoring_functions_8cpp"/>
+        <childnode refid="1429" relation="include">
+        </childnode>
+        <childnode refid="1430" relation="include">
+        </childnode>
+        <childnode refid="1431" relation="include">
+        </childnode>
+        <childnode refid="1432" relation="include">
+        </childnode>
+      </node>
+      <node id="1454">
+        <label>set</label>
+      </node>
+      <node id="1455">
+        <label>algorithm</label>
+      </node>
+      <node id="1465">
+        <label>ESBTL/weighted_atom_iterator.h</label>
+      </node>
+      <node id="1435">
+        <label>memory</label>
+      </node>
+      <node id="1448">
+        <label>GraphMol/FileParsers/FileParsers.h</label>
+      </node>
+    </incdepgraph>
+    <innernamespace refid="namespace_smol_dock_1_1_wrapper">SmolDock::Wrapper</innernamespace>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_py_scoring_functions_8cpp_1a2ede6b770a3e6131986d822ec5842b63" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void export_ScoringFunctions</definition>
+        <argsstring>()</argsstring>
+        <name>export_ScoringFunctions</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Frontends/Python/PyScoringFunctions.cpp" line="52" column="1" bodyfile="Frontends/Python/PyScoringFunctions.cpp" bodystart="52" bodyend="66"/>
+        <references refid="namespace_smol_dock_1_1_wrapper_1afc6fe0925036a67cbd9856c1077296ca" compoundref="_py_scoring_functions_8cpp" startline="41" endline="47">SmolDock::Wrapper::getScoringFunc</references>
+        <referencedby refid="_smoldock_python_bindings_8cpp_1a9002869529fdb857c7ffa4a170c4f3ef" compoundref="_smoldock_python_bindings_8cpp" startline="39" endline="79">BOOST_PYTHON_MODULE</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2018<sp/>Eliane<sp/>Briand</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>SmolDock.</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>SmolDock<sp/>is<sp/>free<sp/>software:<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or<sp/>modify</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>it<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>as<sp/>published<sp/>by</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>the<sp/>Free<sp/>Software<sp/>Foundation,<sp/>either<sp/>version<sp/>3<sp/>of<sp/>the<sp/>License,<sp/>or</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>(at<sp/>your<sp/>option)<sp/>any<sp/>later<sp/>version.</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>SmolDock<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>but<sp/>WITHOUT<sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE.<sp/><sp/>See<sp/>the</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>for<sp/>more<sp/>details.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>along<sp/>with<sp/>SmolDock.<sp/><sp/>If<sp/>not,<sp/>see<sp/>&lt;https://www.gnu.org/licenses/&gt;.</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/python.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/numpy.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_py_scoring_functions_8h" kindref="compound">PyScoringFunctions.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_vina_like_scoring_function_8h" kindref="compound">Engines/ScoringFunctions/VinaLikeScoringFunction.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">p<sp/>=<sp/>boost::python;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">np<sp/>=<sp/>boost::numpy;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_smol_dock" kindref="compound">sd</ref><sp/>=<sp/><ref refid="namespace_smol_dock" kindref="compound">SmolDock</ref>;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34" refid="namespace_smol_dock_1_1_wrapper" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_smol_dock_1_1_wrapper" kindref="compound">SmolDock::Wrapper</ref><sp/>{</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36" refid="namespace_smol_dock_1_1_wrapper_1a309113da58ce167f3e4280f1e64b7966" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">enum<sp/>class</highlight><highlight class="normal"><sp/><ref refid="namespace_smol_dock_1_1_wrapper_1a309113da58ce167f3e4280f1e64b7966" kindref="member">ScoringFunctionEnum</ref><sp/>{</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespace_smol_dock_1_1_wrapper_1a309113da58ce167f3e4280f1e64b7966aa618164cb1361917b852a79699b7bb2d" kindref="member">VinaLike</ref></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/>std::function&lt;double(const<sp/>sd::iConformer<sp/>&amp;,<sp/>const<sp/>sd::iTransform<sp/>&amp;,<sp/>const<sp/>sd::iProtein<sp/>&amp;)&gt;</highlight></codeline>
+<codeline lineno="41" refid="namespace_smol_dock_1_1_wrapper_1afc6fe0925036a67cbd9856c1077296ca" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespace_smol_dock_1_1_wrapper_1afc6fe0925036a67cbd9856c1077296ca" kindref="member">getScoringFunc</ref>(<ref refid="namespace_smol_dock_1_1_wrapper_1a309113da58ce167f3e4280f1e64b7966" kindref="member">ScoringFunctionEnum</ref><sp/>which)<sp/>{</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(which<sp/>==<sp/><ref refid="namespace_smol_dock_1_1_wrapper_1a309113da58ce167f3e4280f1e64b7966aa618164cb1361917b852a79699b7bb2d" kindref="member">ScoringFunctionEnum::VinaLike</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespace_smol_dock_1_1_score_1ac205731c7b0098c2900d9d16fff1a93b" kindref="member">sd::Score::vina_like_rigid_inter_scoring_func</ref>;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespace_smol_dock_1_1_score_1ac205731c7b0098c2900d9d16fff1a93b" kindref="member">sd::Score::vina_like_rigid_inter_scoring_func</ref>;<sp/></highlight><highlight class="comment">//<sp/>By<sp/>default<sp/>return<sp/>Vina<sp/>like</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52" refid="_py_scoring_functions_8h_1a2ede6b770a3e6131986d822ec5842b63" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_py_scoring_functions_8cpp_1a2ede6b770a3e6131986d822ec5842b63" kindref="member">export_ScoringFunctions</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>p::class_&lt;<sp/>std::function&lt;double(const<sp/>sd::iConformer<sp/>&amp;,<sp/>const<sp/>sd::iTransform<sp/>&amp;,<sp/>const<sp/>sd::iProtein<sp/>&amp;)&gt;<sp/>&gt;(</highlight><highlight class="stringliteral">&quot;ScoringFunction&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//.def(&quot;populateFromPDB&quot;,<sp/>&amp;sd::Molecule::populateFromPDB)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//.def(&quot;set&quot;,<sp/>&amp;World::set)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//.add_property(&quot;rovalue&quot;,<sp/>&amp;Num::get)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//.add_property(&quot;value&quot;,<sp/>&amp;Num::get,<sp/>&amp;Num::set);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>;</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>p::def(</highlight><highlight class="stringliteral">&quot;getScoringFunc&quot;</highlight><highlight class="normal">,<sp/>&amp;<ref refid="namespace_smol_dock_1_1_wrapper_1afc6fe0925036a67cbd9856c1077296ca" kindref="member">sd::Wrapper::getScoringFunc</ref>);</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/>p::enum_&lt;sd::Wrapper::ScoringFunctionEnum&gt;(</highlight><highlight class="stringliteral">&quot;ScoringFuncType&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.value(</highlight><highlight class="stringliteral">&quot;VinaLike&quot;</highlight><highlight class="normal">,<sp/>sd::Wrapper::ScoringFunctionEnum::VinaLike)</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>;</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="Frontends/Python/PyScoringFunctions.cpp"/>
+  </compounddef>
+</doxygen>

@@ -11,13 +11,12 @@ find_package(PythonLibs ${PY_VERSION} REQUIRED)
 
 include_directories(${Boost_INCLUDE_DIRS})
 
-SET (CMAKE_CXX_FLAGS                "-Wall")
-SET (CMAKE_CXX_COMPILER             "clang++")
-SET (CMAKE_CXX_FLAGS_DEBUG          "-g")
-SET (CMAKE_CXX_FLAGS_MINSIZEREL     "-Os -DNDEBUG")
-SET (CMAKE_CXX_FLAGS_RELEASE        "-O3 -march=native -DNDEBUG")
-SET (CMAKE_CXX_FLAGS_RELWITHDEBINFO "-O3 -march=native -g ")
-
+SET(CMAKE_CXX_FLAGS "-Wall")
+SET(CMAKE_CXX_COMPILER "/usr/lib64/llvm/6/bin/clang++")
+SET(CMAKE_CXX_FLAGS_DEBUG "-g")
+SET(CMAKE_CXX_FLAGS_MINSIZEREL "-Os -DNDEBUG")
+SET(CMAKE_CXX_FLAGS_RELEASE "-O3 -march=native -DNDEBUG")
+SET(CMAKE_CXX_FLAGS_RELWITHDEBINFO "-O3 -march=native -g ")
 
 
 ######## RDKIT SETUP ######
@@ -29,7 +28,7 @@ include_directories(${RDKIT_ROOT}/Code/)
 LINK_DIRECTORIES(${RDKIT_ROOT}/lib/staticlib)
 LINK_DIRECTORIES(${RDKIT_ROOT}/lib)
 
-set(RDKIT_LINKAGE_LIST RDKitStatic pthread RDKitStatic RDKitForceField_static RDKitForceFieldHelpers_static)
+set(RDKIT_LINKAGE_LIST RDKitStatic RDKitStatic RDKitForceFieldHelpers_static RDKitForceField_static)
 ######## END OF RDKIT ######
 
 
@@ -47,14 +46,6 @@ include_directories(.)
 
 
 include_directories(${PYTHON_INCLUDE_DIRS})
-
-add_library(gsl STATIC IMPORTED)
-set_property(TARGET gsl PROPERTY
-        IMPORTED_LOCATION /usr/lib/libgsl.a)
-
-add_library(gslcblas STATIC IMPORTED)
-set_property(TARGET gslcblas PROPERTY
-        IMPORTED_LOCATION /usr/lib/libgslcblas.a)
 
 set(SOURCE_LIST Structures/Structure.cpp
         Structures/Structure.h
@@ -109,25 +100,39 @@ set(SOURCE_LIST Structures/Structure.cpp
         Engines/LocalOptimizers/LocalOptimizerUtilityFunctions.h
         Engines/GlobalHeuristics/RandomRestart.cpp
         Engines/GlobalHeuristics/RandomRestart.h
-        Engines/GlobalHeuristics/HeuristicInterface.h Engines/ScoringFunctions/ScoringFunctionFactory.cpp Engines/ScoringFunctions/ScoringFunctionFactory.h)
+        Engines/GlobalHeuristics/HeuristicInterface.h
+        Engines/ScoringFunctions/ScoringFunctionFactory.cpp
+        Engines/ScoringFunctions/ScoringFunctionFactory.h
+        Engines/LocalOptimizers/OptimizerFactory.cpp
+        Engines/LocalOptimizers/OptimizerFactory.h
+        Engines/GlobalHeuristics/HeuristicFactory.cpp
+        Engines/GlobalHeuristics/HeuristicFactory.h)
 
-set(PY_EXPORT_SOURCE_LIST Frontends/Python/PyStructures.cpp Frontends/Python/PyStructures.h Frontends/Python/PySTLWrapper.cpp Frontends/Python/PySTLWrapper.h Frontends/Python/PyUtilities.cpp Frontends/Python/PyUtilities.h Frontends/Python/PyScoringFunctions.cpp Frontends/Python/PyScoringFunctions.h)
+set(PY_EXPORT_SOURCE_LIST Frontends/Python/PyStructures.cpp
+        Frontends/Python/PyStructures.h
+        Frontends/Python/PySTLWrapper.cpp
+        Frontends/Python/PySTLWrapper.h
+        Frontends/Python/PyUtilities.cpp
+        Frontends/Python/PyUtilities.h
+        Frontends/Python/PyScoringFunctions.cpp
+        Frontends/Python/PyScoringFunctions.h
+        Frontends/Python/PyEngine.cpp
+        Frontends/Python/PyEngine.h)
 
 ADD_LIBRARY(smoldock_object OBJECT ${SOURCE_LIST})
 set_target_properties(smoldock_object PROPERTIES LINK_FLAGS " -static  ")
 target_compile_definitions(smoldock_object PUBLIC ARMA_DONT_USE_WRAPPER)
+#target_compile_definitions(smoldock_object PUBLIC BOOST_LOG_DYN_LINK)
 
-ADD_LIBRARY(libsmoldock STATIC ${SOURCE_LIST} )
+
+ADD_LIBRARY(libsmoldock STATIC ${SOURCE_LIST})
 set_target_properties(libsmoldock PROPERTIES COMPILE_FLAGS " -fPIC ")
-set_target_properties(libsmoldock PROPERTIES LINK_FLAGS " -static -v -Wl,--no-undefined -Wl,--as-needed ")
+set_target_properties(libsmoldock PROPERTIES LINK_FLAGS " -static -v -fPIC -Wl,--no-undefined -Wl,--as-needed  ")
 set_target_properties(libsmoldock PROPERTIES PREFIX "lib")
 set_target_properties(libsmoldock PROPERTIES OUTPUT_NAME "smoldock")
-TARGET_LINK_LIBRARIES(libsmoldock ${RDKIT_LINKAGE_LIST})
-target_link_libraries(libsmoldock gsl gslcblas boost_log boost_log_setup boost_system boost_log boost_system boost_filesystem boost_date_time boost_thread boost_regex pthread)
-target_link_libraries(libsmoldock Vc)
-target_link_libraries(libsmoldock blas lapack gfortran quadmath)
 target_compile_definitions(libsmoldock PUBLIC BOOST_LOG_DYN_LINK)
-target_compile_definitions(smoldock_object PUBLIC ARMA_DONT_USE_WRAPPER)
+target_compile_definitions(libsmoldock PUBLIC ARMA_DONT_USE_WRAPPER)
+
 
 ### Remove this for prod build
 add_compile_definitions(SMOLDOCK_VERBOSE_DEBUG)
@@ -136,18 +141,16 @@ add_compile_definitions(SMOLDOCK_VERBOSE_DEBUG)
 #add_compile_definitions(BOOST_LOG_DYN_LINK BOOST_TEST_DYN_LINK)
 
 add_executable(smoldock Frontends/main.cpp $<TARGET_OBJECTS:smoldock_object>)
+#target_compile_definitions(smoldock PUBLIC BOOST_LOG_DYN_LINK)
 
 # Comment this out if you do NOT want to build a static executable
-set_target_properties(smoldock PROPERTIES LINK_FLAGS " -Wl,--no-undefined  -Wl,--as-needed  -static  ")
+set_target_properties(smoldock PROPERTIES LINK_FLAGS " -Wl,--no-undefined -Wl,--as-needed  -static   ")
 
 
 TARGET_LINK_LIBRARIES(smoldock ${RDKIT_LINKAGE_LIST})
-
-
-target_link_libraries(smoldock gsl gslcblas boost_log boost_log_setup boost_system boost_log boost_system boost_filesystem boost_date_time boost_thread boost_regex pthread)
+target_link_libraries(smoldock boost_log boost_log_setup boost_system boost_log boost_system boost_filesystem boost_date_time boost_thread boost_regex pthread)
 target_link_libraries(smoldock Vc)
 target_link_libraries(smoldock blas lapack gfortran quadmath)
-
 
 
 # For Intel VTune/Profiler tools, you need this if you generate a static executable
@@ -158,15 +161,26 @@ target_link_libraries(smoldock blas lapack gfortran quadmath)
 #target_link_options(smoldock PRIVATE "-u_pthread_cleanup_pop" "-upthread_attr_setstacksize" "-upthread_cancel" "-u_pthread_cleanup_push")
 #target_link_options(smoldock PRIVATE "-upthread_mutex_lock" "-upthread_mutex_trylock" "-upthread_spin_lock" "-upthread_spin_trylock")
 
-add_library(PySmolDock MODULE  Frontends/SmoldockPythonBindings.cpp ${PY_EXPORT_SOURCE_LIST} )
+add_library(PySmolDock MODULE Frontends/SmoldockPythonBindings.cpp ${PY_EXPORT_SOURCE_LIST})
 set_target_properties(PySmolDock PROPERTIES COMPILE_FLAGS " -fPIC ")
-set_target_properties(PySmolDock PROPERTIES LINK_FLAGS " -Wl,--no-undefined  -Wl,--as-needed ")
+set_target_properties(PySmolDock PROPERTIES LINK_FLAGS " -shared  -Wl,--no-undefined  -Wl,--as-needed -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.0/  ")
 set_target_properties(PySmolDock PROPERTIES PREFIX "")
 set_target_properties(PySmolDock PROPERTIES OUTPUT_NAME "PySmolDock")
 
 # link
-target_link_libraries(PySmolDock libsmoldock boost_numpy boost_python-3.6-mt python3.6m boost_log_setup boost_log boost_date_time)
+target_link_libraries(PySmolDock -Wl,-Bstatic libsmoldock)
+target_link_libraries(PySmolDock -Wl,-Bdynamic -Wl,-lboost_log_setup -Wl,-lboost_log -Wl,-lboost_system -Wl,-lboost_numpy -Wl,-lpython3.6m -Wl,-lboost_thread -Wl,-lboost_python-3.6-mt -Wl,-lboost_filesystem)
+TARGET_LINK_LIBRARIES(PySmolDock -Wl,-Bstatic -Wl,-lRDKitStatic -Wl,-lRDKitForceFieldHelpers_static -Wl,-lRDKitForceField_static)
+target_link_libraries(PySmolDock -Wl,-Bstatic -Wl,-lboost_date_time -Wl,-lboost_regex -Wl,-lboost_date_time)
+target_link_libraries(PySmolDock -Wl,-Bstatic -Wl,-lVc)
+target_link_libraries(PySmolDock -Wl,-Bstatic -Wl,-llapack -Wl,-lblas -Wl,-l:libquadmath.a)
+target_link_libraries(PySmolDock -Wl,-Bdynamic -Wl,-lgfortran)
+target_link_libraries(PySmolDock -Wl,-Bstatic -Wl,-lgcc)
+target_link_libraries(PySmolDock -Wl,-Bdynamic -Wl,-lpthread -Wl,-ldl)
 
+
+target_compile_definitions(PySmolDock PUBLIC BOOST_LOG_DYN_LINK)
+target_compile_definitions(PySmolDock PUBLIC ARMA_DONT_USE_WRAPPER)
 
 
 ###############################################################################################################
@@ -185,10 +199,10 @@ add_executable(complete_test_suite ${TEST_SOURCE_LIST} $<TARGET_OBJECTS:smoldock
 set_target_properties(complete_test_suite PROPERTIES LINK_FLAGS " -static  ")
 
 
-
 TARGET_LINK_LIBRARIES(complete_test_suite ${RDKIT_LINKAGE_LIST})
-
-target_link_libraries(complete_test_suite gsl gslcblas boost_log boost_log_setup  boost_system boost_system boost_filesystem boost_date_time boost_thread boost_regex )
+target_link_libraries(complete_test_suite ${Boost_LIBRARIES} boost_unit_test_framework)
+target_link_libraries(complete_test_suite boost_log boost_log_setup boost_system boost_log boost_system boost_filesystem boost_date_time boost_thread boost_regex pthread)
 target_link_libraries(complete_test_suite Vc)
 target_link_libraries(complete_test_suite blas lapack gfortran quadmath)
-target_link_libraries(complete_test_suite ${Boost_LIBRARIES} boost_unit_test_framework)
+
+

@@ -4,6 +4,8 @@
     <compoundname>ConformerRigidDockingEngine.h</compoundname>
     <includes local="no">GraphMol/RWMol.h</includes>
     <includes local="no">random</includes>
+    <includes refid="_optimizer_factory_8h" local="no">Engines/LocalOptimizers/OptimizerFactory.h</includes>
+    <includes refid="_heuristic_factory_8h" local="no">Engines/GlobalHeuristics/HeuristicFactory.h</includes>
     <includes refid="_abstract_docking_engine_8h" local="yes">AbstractDockingEngine.h</includes>
     <includes refid="_protein_8h" local="yes">../Structures/Protein.h</includes>
     <includes refid="_molecule_8h" local="yes">../Structures/Molecule.h</includes>
@@ -11,247 +13,16 @@
     <includes refid="_scoring_function_factory_8h" local="yes">Engines/ScoringFunctions/ScoringFunctionFactory.h</includes>
     <includedby refid="_conformer_rigid_docking_engine_8cpp" local="yes">ConformerRigidDockingEngine.cpp</includedby>
     <includedby refid="main_8cpp" local="yes">main.cpp</includedby>
+    <includedby refid="_py_engine_8cpp" local="no">PyEngine.cpp</includedby>
     <incdepgraph>
-      <node id="300">
+      <node id="319">
         <label>../Structures/Protein.h</label>
         <link refid="_protein_8h"/>
-        <childnode refid="301" relation="include">
-        </childnode>
-        <childnode refid="302" relation="include">
-        </childnode>
-        <childnode refid="303" relation="include">
-        </childnode>
-        <childnode refid="304" relation="include">
-        </childnode>
-        <childnode refid="305" relation="include">
+        <childnode refid="310" relation="include">
         </childnode>
         <childnode refid="306" relation="include">
         </childnode>
-        <childnode refid="307" relation="include">
-        </childnode>
-        <childnode refid="309" relation="include">
-        </childnode>
-        <childnode refid="317" relation="include">
-        </childnode>
-        <childnode refid="314" relation="include">
-        </childnode>
-      </node>
-      <node id="296">
-        <label>ConformerRigidDockingEngine.h</label>
-        <link refid="_conformer_rigid_docking_engine_8h"/>
-        <childnode refid="297" relation="include">
-        </childnode>
-        <childnode refid="298" relation="include">
-        </childnode>
-        <childnode refid="299" relation="include">
-        </childnode>
-        <childnode refid="300" relation="include">
-        </childnode>
-        <childnode refid="319" relation="include">
-        </childnode>
-        <childnode refid="332" relation="include">
-        </childnode>
-        <childnode refid="337" relation="include">
-        </childnode>
-      </node>
-      <node id="303">
-        <label>ESBTL/default.h</label>
-      </node>
-      <node id="333">
-        <label>functional</label>
-      </node>
-      <node id="297">
-        <label>GraphMol/RWMol.h</label>
-      </node>
-      <node id="321">
-        <label>GraphMol/MolOps.h</label>
-      </node>
-      <node id="324">
-        <label>GraphMol/Substruct/SubstructMatch.h</label>
-      </node>
-      <node id="335">
-        <label>OptimizerInterface.h</label>
-        <link refid="_optimizer_interface_8h"/>
-        <childnode refid="334" relation="include">
-        </childnode>
-      </node>
-      <node id="330">
-        <label>cmath</label>
-      </node>
-      <node id="331">
-        <label>cassert</label>
-      </node>
-      <node id="325">
-        <label>GraphMol/DistGeomHelpers/Embedder.h</label>
-      </node>
-      <node id="309">
-        <label>Structures/InputPostProcessors/InputPostProcessorInterface.h</label>
-        <link refid="_input_post_processor_interface_8h"/>
-        <childnode refid="310" relation="include">
-        </childnode>
-      </node>
-      <node id="315">
-        <label>string</label>
-      </node>
-      <node id="306">
-        <label>ESBTL/compressed_ifstream.h</label>
-      </node>
-      <node id="336">
-        <label>Engines/ScoringFunctions/ScoringFunctionInterface.h</label>
-        <link refid="_scoring_function_interface_8h"/>
-        <childnode refid="334" relation="include">
-        </childnode>
-        <childnode refid="327" relation="include">
-        </childnode>
-      </node>
-      <node id="310">
-        <label>Structures/Atom.h</label>
-        <link refid="_atom_8h"/>
-        <childnode refid="301" relation="include">
-        </childnode>
-        <childnode refid="302" relation="include">
-        </childnode>
-        <childnode refid="311" relation="include">
-        </childnode>
-        <childnode refid="312" relation="include">
-        </childnode>
-        <childnode refid="313" relation="include">
-        </childnode>
-        <childnode refid="314" relation="include">
-        </childnode>
-      </node>
-      <node id="308">
-        <label>map</label>
-      </node>
-      <node id="327">
-        <label>../Engines/Internals/iConformer.h</label>
-        <link refid="i_conformer_8h"/>
-        <childnode refid="301" relation="include">
-        </childnode>
-        <childnode refid="302" relation="include">
-        </childnode>
-        <childnode refid="328" relation="include">
-        </childnode>
-      </node>
-      <node id="334">
-        <label>armadillo</label>
-      </node>
-      <node id="332">
-        <label>Engines/LocalOptimizers/GradientDescentLineSearch.h</label>
-        <link refid="_gradient_descent_line_search_8h"/>
-        <childnode refid="333" relation="include">
-        </childnode>
-        <childnode refid="334" relation="include">
-        </childnode>
-        <childnode refid="335" relation="include">
-        </childnode>
-        <childnode refid="336" relation="include">
-        </childnode>
-        <childnode refid="327" relation="include">
-        </childnode>
-        <childnode refid="328" relation="include">
-        </childnode>
-        <childnode refid="307" relation="include">
-        </childnode>
-      </node>
-      <node id="326">
-        <label>Bond.h</label>
-        <link refid="_bond_8h"/>
-        <childnode refid="302" relation="include">
-        </childnode>
-        <childnode refid="310" relation="include">
-        </childnode>
-      </node>
-      <node id="304">
-        <label>ESBTL/atom_classifier.h</label>
-      </node>
-      <node id="298">
-        <label>random</label>
-      </node>
-      <node id="314">
-        <label>AminoAcid.h</label>
-        <link refid="_amino_acid_8h"/>
-        <childnode refid="315" relation="include">
-        </childnode>
-        <childnode refid="301" relation="include">
-        </childnode>
-        <childnode refid="311" relation="include">
-        </childnode>
-        <childnode refid="312" relation="include">
-        </childnode>
-        <childnode refid="316" relation="include">
-        </childnode>
-        <childnode refid="302" relation="include">
-        </childnode>
-        <childnode refid="307" relation="include">
-        </childnode>
-      </node>
-      <node id="299">
-        <label>AbstractDockingEngine.h</label>
-        <link refid="_abstract_docking_engine_8h"/>
-        <childnode refid="300" relation="include">
-        </childnode>
-        <childnode refid="318" relation="include">
-        </childnode>
-        <childnode refid="319" relation="include">
-        </childnode>
-      </node>
-      <node id="318">
-        <label>../Structures/Results/DockingResult.h</label>
-        <link refid="_docking_result_8h"/>
-        <childnode refid="301" relation="include">
-        </childnode>
-        <childnode refid="319" relation="include">
-        </childnode>
-      </node>
-      <node id="316">
-        <label>tuple</label>
-      </node>
-      <node id="307">
-        <label>Engines/Internals/iProtein.h</label>
-        <link refid="i_protein_8h"/>
-        <childnode refid="301" relation="include">
-        </childnode>
-        <childnode refid="302" relation="include">
-        </childnode>
-        <childnode refid="308" relation="include">
-        </childnode>
-      </node>
-      <node id="328">
-        <label>iTransform.h</label>
-        <link refid="i_transform_8h"/>
-        <childnode refid="301" relation="include">
-        </childnode>
-        <childnode refid="302" relation="include">
-        </childnode>
-        <childnode refid="329" relation="include">
-        </childnode>
-        <childnode refid="330" relation="include">
-        </childnode>
-        <childnode refid="331" relation="include">
-        </childnode>
-      </node>
-      <node id="301">
-        <label>vector</label>
-      </node>
-      <node id="329">
-        <label>array</label>
-      </node>
-      <node id="323">
-        <label>GraphMol/SmilesParse/SmilesParse.h</label>
-      </node>
-      <node id="317">
-        <label>Structure.h</label>
-        <link refid="_structure_8h"/>
-      </node>
-      <node id="319">
-        <label>Structures/Molecule.h</label>
-        <link refid="_molecule_8h"/>
-        <childnode refid="301" relation="include">
-        </childnode>
         <childnode refid="320" relation="include">
-        </childnode>
-        <childnode refid="297" relation="include">
         </childnode>
         <childnode refid="321" relation="include">
         </childnode>
@@ -261,67 +32,335 @@
         </childnode>
         <childnode refid="324" relation="include">
         </childnode>
-        <childnode refid="325" relation="include">
+        <childnode refid="326" relation="include">
+        </childnode>
+        <childnode refid="334" relation="include">
+        </childnode>
+        <childnode refid="331" relation="include">
+        </childnode>
+      </node>
+      <node id="302">
+        <label>ConformerRigidDockingEngine.h</label>
+        <link refid="_conformer_rigid_docking_engine_8h"/>
+        <childnode refid="303" relation="include">
+        </childnode>
+        <childnode refid="304" relation="include">
+        </childnode>
+        <childnode refid="305" relation="include">
+        </childnode>
+        <childnode refid="316" relation="include">
+        </childnode>
+        <childnode refid="318" relation="include">
+        </childnode>
+        <childnode refid="319" relation="include">
+        </childnode>
+        <childnode refid="336" relation="include">
+        </childnode>
+        <childnode refid="344" relation="include">
+        </childnode>
+        <childnode refid="346" relation="include">
+        </childnode>
+      </node>
+      <node id="320">
+        <label>ESBTL/default.h</label>
+      </node>
+      <node id="305">
+        <label>Engines/LocalOptimizers/OptimizerFactory.h</label>
+        <link refid="_optimizer_factory_8h"/>
+        <childnode refid="306" relation="include">
+        </childnode>
+        <childnode refid="307" relation="include">
+        </childnode>
+        <childnode refid="315" relation="include">
+        </childnode>
+      </node>
+      <node id="345">
+        <label>functional</label>
+      </node>
+      <node id="303">
+        <label>GraphMol/RWMol.h</label>
+      </node>
+      <node id="338">
+        <label>GraphMol/MolOps.h</label>
+      </node>
+      <node id="317">
+        <label>HeuristicInterface.h</label>
+        <link refid="_heuristic_interface_8h"/>
+      </node>
+      <node id="341">
+        <label>GraphMol/Substruct/SubstructMatch.h</label>
+      </node>
+      <node id="315">
+        <label>OptimizerInterface.h</label>
+        <link refid="_optimizer_interface_8h"/>
+        <childnode refid="308" relation="include">
+        </childnode>
+      </node>
+      <node id="313">
+        <label>cmath</label>
+      </node>
+      <node id="314">
+        <label>cassert</label>
+      </node>
+      <node id="342">
+        <label>GraphMol/DistGeomHelpers/Embedder.h</label>
+      </node>
+      <node id="326">
+        <label>Structures/InputPostProcessors/InputPostProcessorInterface.h</label>
+        <link refid="_input_post_processor_interface_8h"/>
+        <childnode refid="327" relation="include">
+        </childnode>
+      </node>
+      <node id="332">
+        <label>string</label>
+      </node>
+      <node id="323">
+        <label>ESBTL/compressed_ifstream.h</label>
+      </node>
+      <node id="307">
+        <label>Engines/ScoringFunctions/ScoringFunctionInterface.h</label>
+        <link refid="_scoring_function_interface_8h"/>
+        <childnode refid="308" relation="include">
         </childnode>
         <childnode refid="309" relation="include">
         </childnode>
-        <childnode refid="317" relation="include">
-        </childnode>
+      </node>
+      <node id="327">
+        <label>Structures/Atom.h</label>
+        <link refid="_atom_8h"/>
         <childnode refid="310" relation="include">
         </childnode>
-        <childnode refid="326" relation="include">
+        <childnode refid="306" relation="include">
+        </childnode>
+        <childnode refid="328" relation="include">
+        </childnode>
+        <childnode refid="329" relation="include">
+        </childnode>
+        <childnode refid="330" relation="include">
+        </childnode>
+        <childnode refid="331" relation="include">
+        </childnode>
+      </node>
+      <node id="325">
+        <label>map</label>
+      </node>
+      <node id="309">
+        <label>Engines/Internals/iConformer.h</label>
+        <link refid="i_conformer_8h"/>
+        <childnode refid="310" relation="include">
+        </childnode>
+        <childnode refid="306" relation="include">
+        </childnode>
+        <childnode refid="311" relation="include">
+        </childnode>
+      </node>
+      <node id="308">
+        <label>armadillo</label>
+      </node>
+      <node id="344">
+        <label>Engines/LocalOptimizers/GradientDescentLineSearch.h</label>
+        <link refid="_gradient_descent_line_search_8h"/>
+        <childnode refid="345" relation="include">
+        </childnode>
+        <childnode refid="308" relation="include">
+        </childnode>
+        <childnode refid="315" relation="include">
+        </childnode>
+        <childnode refid="307" relation="include">
+        </childnode>
+        <childnode refid="309" relation="include">
+        </childnode>
+        <childnode refid="311" relation="include">
+        </childnode>
+        <childnode refid="324" relation="include">
+        </childnode>
+      </node>
+      <node id="343">
+        <label>Bond.h</label>
+        <link refid="_bond_8h"/>
+        <childnode refid="306" relation="include">
         </childnode>
         <childnode refid="327" relation="include">
         </childnode>
       </node>
-      <node id="320">
-        <label>GraphMol/RDKitBase.h</label>
+      <node id="321">
+        <label>ESBTL/atom_classifier.h</label>
       </node>
-      <node id="313">
-        <label>iostream</label>
+      <node id="304">
+        <label>random</label>
       </node>
-      <node id="337">
-        <label>Engines/ScoringFunctions/ScoringFunctionFactory.h</label>
-        <link refid="_scoring_function_factory_8h"/>
-        <childnode refid="302" relation="include">
+      <node id="331">
+        <label>AminoAcid.h</label>
+        <link refid="_amino_acid_8h"/>
+        <childnode refid="332" relation="include">
         </childnode>
-        <childnode refid="307" relation="include">
+        <childnode refid="310" relation="include">
+        </childnode>
+        <childnode refid="328" relation="include">
+        </childnode>
+        <childnode refid="329" relation="include">
+        </childnode>
+        <childnode refid="333" relation="include">
+        </childnode>
+        <childnode refid="306" relation="include">
+        </childnode>
+        <childnode refid="324" relation="include">
+        </childnode>
+      </node>
+      <node id="318">
+        <label>AbstractDockingEngine.h</label>
+        <link refid="_abstract_docking_engine_8h"/>
+        <childnode refid="319" relation="include">
+        </childnode>
+        <childnode refid="335" relation="include">
         </childnode>
         <childnode refid="336" relation="include">
         </childnode>
       </node>
+      <node id="335">
+        <label>../Structures/Results/DockingResult.h</label>
+        <link refid="_docking_result_8h"/>
+        <childnode refid="310" relation="include">
+        </childnode>
+        <childnode refid="336" relation="include">
+        </childnode>
+      </node>
+      <node id="333">
+        <label>tuple</label>
+      </node>
+      <node id="324">
+        <label>Engines/Internals/iProtein.h</label>
+        <link refid="i_protein_8h"/>
+        <childnode refid="310" relation="include">
+        </childnode>
+        <childnode refid="306" relation="include">
+        </childnode>
+        <childnode refid="325" relation="include">
+        </childnode>
+      </node>
       <node id="311">
-        <label>set</label>
+        <label>iTransform.h</label>
+        <link refid="i_transform_8h"/>
+        <childnode refid="310" relation="include">
+        </childnode>
+        <childnode refid="306" relation="include">
+        </childnode>
+        <childnode refid="312" relation="include">
+        </childnode>
+        <childnode refid="313" relation="include">
+        </childnode>
+        <childnode refid="314" relation="include">
+        </childnode>
+      </node>
+      <node id="310">
+        <label>vector</label>
       </node>
       <node id="312">
-        <label>algorithm</label>
+        <label>array</label>
       </node>
-      <node id="305">
-        <label>ESBTL/weighted_atom_iterator.h</label>
+      <node id="340">
+        <label>GraphMol/SmilesParse/SmilesParse.h</label>
       </node>
-      <node id="302">
-        <label>memory</label>
+      <node id="334">
+        <label>Structure.h</label>
+        <link refid="_structure_8h"/>
       </node>
-      <node id="322">
-        <label>GraphMol/FileParsers/FileParsers.h</label>
-      </node>
-    </incdepgraph>
-    <invincdepgraph>
-      <node id="338">
-        <label>ConformerRigidDockingEngine.h</label>
-        <link refid="_conformer_rigid_docking_engine_8h"/>
+      <node id="336">
+        <label>Structures/Molecule.h</label>
+        <link refid="_molecule_8h"/>
+        <childnode refid="310" relation="include">
+        </childnode>
+        <childnode refid="337" relation="include">
+        </childnode>
+        <childnode refid="303" relation="include">
+        </childnode>
+        <childnode refid="338" relation="include">
+        </childnode>
         <childnode refid="339" relation="include">
         </childnode>
         <childnode refid="340" relation="include">
         </childnode>
+        <childnode refid="341" relation="include">
+        </childnode>
+        <childnode refid="342" relation="include">
+        </childnode>
+        <childnode refid="326" relation="include">
+        </childnode>
+        <childnode refid="334" relation="include">
+        </childnode>
+        <childnode refid="327" relation="include">
+        </childnode>
+        <childnode refid="343" relation="include">
+        </childnode>
+        <childnode refid="309" relation="include">
+        </childnode>
       </node>
-      <node id="340">
+      <node id="337">
+        <label>GraphMol/RDKitBase.h</label>
+      </node>
+      <node id="330">
+        <label>iostream</label>
+      </node>
+      <node id="346">
+        <label>Engines/ScoringFunctions/ScoringFunctionFactory.h</label>
+        <link refid="_scoring_function_factory_8h"/>
+        <childnode refid="306" relation="include">
+        </childnode>
+        <childnode refid="324" relation="include">
+        </childnode>
+        <childnode refid="307" relation="include">
+        </childnode>
+      </node>
+      <node id="328">
+        <label>set</label>
+      </node>
+      <node id="329">
+        <label>algorithm</label>
+      </node>
+      <node id="322">
+        <label>ESBTL/weighted_atom_iterator.h</label>
+      </node>
+      <node id="316">
+        <label>Engines/GlobalHeuristics/HeuristicFactory.h</label>
+        <link refid="_heuristic_factory_8h"/>
+        <childnode refid="306" relation="include">
+        </childnode>
+        <childnode refid="307" relation="include">
+        </childnode>
+        <childnode refid="315" relation="include">
+        </childnode>
+        <childnode refid="317" relation="include">
+        </childnode>
+      </node>
+      <node id="306">
+        <label>memory</label>
+      </node>
+      <node id="339">
+        <label>GraphMol/FileParsers/FileParsers.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="347">
+        <label>ConformerRigidDockingEngine.h</label>
+        <link refid="_conformer_rigid_docking_engine_8h"/>
+        <childnode refid="348" relation="include">
+        </childnode>
+        <childnode refid="349" relation="include">
+        </childnode>
+        <childnode refid="350" relation="include">
+        </childnode>
+      </node>
+      <node id="349">
         <label>main.cpp</label>
         <link refid="main_8cpp"/>
       </node>
-      <node id="339">
+      <node id="348">
         <label>ConformerRigidDockingEngine.cpp</label>
         <link refid="_conformer_rigid_docking_engine_8cpp"/>
+      </node>
+      <node id="350">
+        <label>PyEngine.cpp</label>
+        <link refid="_py_engine_8cpp"/>
       </node>
     </invincdepgraph>
     <innerclass refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine" prot="public">SmolDock::Engine::ConformerRigidDockingEngine</innerclass>
@@ -356,75 +395,82 @@
 <codeline lineno="23"><highlight class="normal"></highlight></codeline>
 <codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;GraphMol/RWMol.h&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;random&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="26"><highlight class="normal"></highlight></codeline>
-<codeline lineno="27"><highlight class="normal"></highlight></codeline>
-<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_abstract_docking_engine_8h" kindref="compound">AbstractDockingEngine.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../Structures/Protein.h&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../Structures/Molecule.h&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="31"><highlight class="normal"></highlight></codeline>
-<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_gradient_descent_line_search_8h" kindref="compound">Engines/LocalOptimizers/GradientDescentLineSearch.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_optimizer_factory_8h" kindref="compound">Engines/LocalOptimizers/OptimizerFactory.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_heuristic_factory_8h" kindref="compound">Engines/GlobalHeuristics/HeuristicFactory.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_abstract_docking_engine_8h" kindref="compound">AbstractDockingEngine.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../Structures/Protein.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../Structures/Molecule.h&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="33"><highlight class="normal"></highlight></codeline>
-<codeline lineno="34"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_scoring_function_factory_8h" kindref="compound">Engines/ScoringFunctions/ScoringFunctionFactory.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_gradient_descent_line_search_8h" kindref="compound">Engines/LocalOptimizers/GradientDescentLineSearch.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="35"><highlight class="normal"></highlight></codeline>
-<codeline lineno="36"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_smol_dock_1_1_engine" kindref="compound">SmolDock::Engine</ref><sp/>{</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_scoring_function_factory_8h" kindref="compound">Engines/ScoringFunctions/ScoringFunctionFactory.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="37"><highlight class="normal"></highlight></codeline>
-<codeline lineno="39"></codeline>
-<codeline lineno="45" refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine" kindref="compound">ConformerRigidDockingEngine</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_engine_1_1_abstract_docking_engine" kindref="compound">AbstractDockingEngine</ref><sp/>{</highlight></codeline>
-<codeline lineno="46"><highlight class="normal"></highlight></codeline>
-<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_smol_dock_1_1_engine" kindref="compound">SmolDock::Engine</ref><sp/>{</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"></codeline>
+<codeline lineno="47" refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine" kindref="compound">ConformerRigidDockingEngine</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_engine_1_1_abstract_docking_engine" kindref="compound">AbstractDockingEngine</ref><sp/>{</highlight></codeline>
 <codeline lineno="48"><highlight class="normal"></highlight></codeline>
-<codeline lineno="50"></codeline>
-<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a27a2069ffd4fa0bacb4f026ca7f8021d" kindref="member">ConformerRigidDockingEngine</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a022a37cb30a640404c634aace67ebea1" kindref="member">conformer_num</ref>,</highlight></codeline>
-<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_protein" kindref="compound">Protein</ref>*<sp/><ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a1dc7396f84093bfca59c2d8accc9ed8c" kindref="member">protein</ref>,</highlight></codeline>
-<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_molecule" kindref="compound">Molecule</ref>*<sp/>ligand,</highlight></codeline>
-<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespace_smol_dock_1_1_score_1a7d8761ef06699c5fc8793056bc903911" kindref="member">Score::ScoringFunctionType</ref><sp/>scFuncType,</highlight></codeline>
-<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>seed);</highlight></codeline>
-<codeline lineno="58"><highlight class="normal"></highlight></codeline>
-<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>///<sp/>Parameters<sp/>/////////////</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1acd3b7345ecae8f0c92ca0168b794eac3" kindref="member">setDockingBox</ref>(<ref refid="class_smol_dock_1_1_engine_1_1_abstract_docking_engine_1aca703508a3ce31d577d3ec108020789b" kindref="member">DockingBoxSetting</ref><sp/>setting)<sp/></highlight><highlight class="keyword">final</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a1e6272d1b16cc39012b2166edfbfeca1" kindref="member">ConformerRigidDockingEngine</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a022a37cb30a640404c634aace67ebea1" kindref="member">conformer_num</ref>,</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_protein" kindref="compound">Protein</ref>*<sp/><ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a1dc7396f84093bfca59c2d8accc9ed8c" kindref="member">protein</ref>,</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_molecule" kindref="compound">Molecule</ref>*<sp/>ligand,</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespace_smol_dock_1_1_score_1a7d8761ef06699c5fc8793056bc903911" kindref="member">Score::ScoringFunctionType</ref><sp/>scFuncType,</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespace_smol_dock_1_1_heuristics_1acab108fbb064edb33166af7fdfb77a72" kindref="member">Heuristics::GlobalHeuristicType</ref><sp/>heurType,</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespace_smol_dock_1_1_optimizer_1a7ed1dc6878a606b8dcca7558383650ce" kindref="member">Optimizer::LocalOptimizerType</ref><sp/>localOptimizerType_,</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>seed);</highlight></codeline>
 <codeline lineno="62"><highlight class="normal"></highlight></codeline>
-<codeline lineno="63"><highlight class="normal"></highlight></codeline>
-<codeline lineno="64"><highlight class="normal"></highlight></codeline>
-<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>///<sp/>Actions<sp/>/////////////</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a3abc1a2cdbb3f1b9f545f863f9ec5e43" kindref="member">setupDockingEngine</ref>()<sp/></highlight><highlight class="keyword">final</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>///<sp/>Parameters<sp/>/////////////</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1acd3b7345ecae8f0c92ca0168b794eac3" kindref="member">setDockingBox</ref>(<ref refid="class_smol_dock_1_1_engine_1_1_abstract_docking_engine_1aca703508a3ce31d577d3ec108020789b" kindref="member">DockingBoxSetting</ref><sp/>setting)<sp/></highlight><highlight class="keyword">final</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
 <codeline lineno="67"><highlight class="normal"></highlight></codeline>
-<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a7bee39278168cb4d7ee6558b3a3d3bb4" kindref="member">runDockingEngine</ref>()<sp/></highlight><highlight class="keyword">final</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="69"><highlight class="normal"></highlight></codeline>
-<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>///<sp/>Results<sp/>/////////////</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::shared_ptr&lt;DockingResult&gt;<sp/><ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a52fa8c276c911df08d4dd8d6744ae540" kindref="member">getDockingResult</ref>()<sp/></highlight><highlight class="keyword">final</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>///<sp/>Actions<sp/>/////////////</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a3abc1a2cdbb3f1b9f545f863f9ec5e43" kindref="member">setupDockingEngine</ref>()<sp/></highlight><highlight class="keyword">final</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a7bee39278168cb4d7ee6558b3a3d3bb4" kindref="member">runDockingEngine</ref>()<sp/></highlight><highlight class="keyword">final</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="73"><highlight class="normal"></highlight></codeline>
-<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="75"><highlight class="normal"></highlight></codeline>
-<codeline lineno="76" refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a022a37cb30a640404c634aace67ebea1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a022a37cb30a640404c634aace67ebea1" kindref="member">conformer_num</ref>;</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>///<sp/>Results<sp/>/////////////</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::shared_ptr&lt;DockingResult&gt;<sp/><ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a52fa8c276c911df08d4dd8d6744ae540" kindref="member">getDockingResult</ref>()<sp/></highlight><highlight class="keyword">final</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
 <codeline lineno="77"><highlight class="normal"></highlight></codeline>
-<codeline lineno="78" refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1adc3f28b5b4af09c54eb73d9f445dbd2d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_protein" kindref="compound">Protein</ref><sp/>*<ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1adc3f28b5b4af09c54eb73d9f445dbd2d" kindref="member">orig_protein</ref>;</highlight></codeline>
-<codeline lineno="79" refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1af3d543e92676f9d66a5a3d0ccc0cd5a9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_molecule" kindref="compound">Molecule</ref><sp/>*<ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1af3d543e92676f9d66a5a3d0ccc0cd5a9" kindref="member">orig_ligand</ref>;</highlight></codeline>
-<codeline lineno="80"><highlight class="normal"></highlight></codeline>
-<codeline lineno="81" refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1ab58e856743bf2e8612185902f8ae233a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespace_smol_dock_1_1_score_1a7d8761ef06699c5fc8793056bc903911" kindref="member">Score::ScoringFunctionType</ref><sp/><ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1ab58e856743bf2e8612185902f8ae233a" kindref="member">scoringFuncType</ref>;</highlight></codeline>
-<codeline lineno="82" refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a733e397779ddd24cdf8781d4a23cf361" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::unique_ptr&lt;Score::ScoringFunction&gt;<sp/><ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a733e397779ddd24cdf8781d4a23cf361" kindref="member">scoringFunction</ref>;</highlight></codeline>
-<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80" refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a022a37cb30a640404c634aace67ebea1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a022a37cb30a640404c634aace67ebea1" kindref="member">conformer_num</ref>;</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82" refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1adc3f28b5b4af09c54eb73d9f445dbd2d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_protein" kindref="compound">Protein</ref><sp/>*<ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1adc3f28b5b4af09c54eb73d9f445dbd2d" kindref="member">orig_protein</ref>;</highlight></codeline>
+<codeline lineno="83" refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1af3d543e92676f9d66a5a3d0ccc0cd5a9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_molecule" kindref="compound">Molecule</ref><sp/>*<ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1af3d543e92676f9d66a5a3d0ccc0cd5a9" kindref="member">orig_ligand</ref>;</highlight></codeline>
 <codeline lineno="84"><highlight class="normal"></highlight></codeline>
-<codeline lineno="85" refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a046b6f9d1c856e1b38034388a8fb5f9f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a046b6f9d1c856e1b38034388a8fb5f9f" kindref="member">random_seed</ref><sp/>=<sp/>1;</highlight></codeline>
-<codeline lineno="86" refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a9bc1d216cf102c383444cb6f9955dfaa" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::mt19937<sp/><ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a9bc1d216cf102c383444cb6f9955dfaa" kindref="member">rnd_generator</ref>;</highlight></codeline>
-<codeline lineno="87"><highlight class="normal"></highlight></codeline>
-<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//std::shared_ptr&lt;RDKit::RWMol&gt;<sp/>rwmol;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="89"><highlight class="normal"></highlight></codeline>
-<codeline lineno="90" refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a1db0509172face64ab20380bea166765" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::vector&lt;iConformer&gt;<sp/><ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a1db0509172face64ab20380bea166765" kindref="member">viConformers</ref>;</highlight></codeline>
-<codeline lineno="91"><highlight class="normal"></highlight></codeline>
-<codeline lineno="92" refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a1dc7396f84093bfca59c2d8accc9ed8c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_smol_dock_1_1i_protein" kindref="compound">iProtein</ref><sp/><ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a1dc7396f84093bfca59c2d8accc9ed8c" kindref="member">protein</ref>;</highlight></codeline>
-<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85" refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1ab58e856743bf2e8612185902f8ae233a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespace_smol_dock_1_1_score_1a7d8761ef06699c5fc8793056bc903911" kindref="member">Score::ScoringFunctionType</ref><sp/><ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1ab58e856743bf2e8612185902f8ae233a" kindref="member">scoringFuncType</ref>;</highlight></codeline>
+<codeline lineno="86" refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a8d0751b77afc3f1b91c0259af0d80d92" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespace_smol_dock_1_1_heuristics_1acab108fbb064edb33166af7fdfb77a72" kindref="member">Heuristics::GlobalHeuristicType</ref><sp/><ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a8d0751b77afc3f1b91c0259af0d80d92" kindref="member">heuristicType</ref>;</highlight></codeline>
+<codeline lineno="87" refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a912745c6f3177cdc1c688ff874c5d410" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespace_smol_dock_1_1_optimizer_1a7ed1dc6878a606b8dcca7558383650ce" kindref="member">Optimizer::LocalOptimizerType</ref><sp/><ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a912745c6f3177cdc1c688ff874c5d410" kindref="member">localOptimizerType</ref>;</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="89" refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1ace88252dde52d3e8ec652e703a8c7bdf" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Score::ScoringFunction&gt;<sp/><ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1ace88252dde52d3e8ec652e703a8c7bdf" kindref="member">scoringFunction</ref>;</highlight></codeline>
+<codeline lineno="90" refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a564f81759cb41bf5d17a54a2e5f50c0a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Heuristics::GlobalHeuristic&gt;<sp/><ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a564f81759cb41bf5d17a54a2e5f50c0a" kindref="member">globalHeuristic</ref>;</highlight></codeline>
+<codeline lineno="91" refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a55216b76286aae8cdb9ce8f4bf005dc7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Optimizer::Optimizer&gt;<sp/><ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a55216b76286aae8cdb9ce8f4bf005dc7" kindref="member">localOptimizer</ref>;</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93" refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a9bc1d216cf102c383444cb6f9955dfaa" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::mt19937<sp/><ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a9bc1d216cf102c383444cb6f9955dfaa" kindref="member">rnd_generator</ref>;</highlight></codeline>
 <codeline lineno="94"><highlight class="normal"></highlight></codeline>
-<codeline lineno="95"><highlight class="normal"></highlight></codeline>
-<codeline lineno="96" refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a3ebcfe47e865aad0c91105a58996d22e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::vector&lt;double&gt;<sp/><ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a3ebcfe47e865aad0c91105a58996d22e" kindref="member">scores</ref>;</highlight></codeline>
-<codeline lineno="97" refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a4ea3d83dced816021dc9e1a39d0f197d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::vector&lt;iConformer&gt;<sp/><ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a4ea3d83dced816021dc9e1a39d0f197d" kindref="member">final_iConformer</ref>;</highlight></codeline>
-<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
-<codeline lineno="99"><highlight class="normal"></highlight></codeline>
-<codeline lineno="100"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//std::shared_ptr&lt;RDKit::RWMol&gt;<sp/>rwmol;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight></codeline>
+<codeline lineno="97" refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a1db0509172face64ab20380bea166765" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::vector&lt;iConformer&gt;<sp/><ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a1db0509172face64ab20380bea166765" kindref="member">viConformers</ref>;</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99" refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a1dc7396f84093bfca59c2d8accc9ed8c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_smol_dock_1_1i_protein" kindref="compound">iProtein</ref><sp/><ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a1dc7396f84093bfca59c2d8accc9ed8c" kindref="member">protein</ref>;</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight></codeline>
 <codeline lineno="101"><highlight class="normal"></highlight></codeline>
 <codeline lineno="102"><highlight class="normal"></highlight></codeline>
-<codeline lineno="103"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//SMOLDOCK_CONFORMERRIGIDDOCKINGENGINE_H</highlight></codeline>
+<codeline lineno="103" refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a3ebcfe47e865aad0c91105a58996d22e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::vector&lt;double&gt;<sp/><ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a3ebcfe47e865aad0c91105a58996d22e" kindref="member">scores</ref>;</highlight></codeline>
+<codeline lineno="104" refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a4ea3d83dced816021dc9e1a39d0f197d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::vector&lt;iConformer&gt;<sp/><ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a4ea3d83dced816021dc9e1a39d0f197d" kindref="member">final_iConformer</ref>;</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//SMOLDOCK_CONFORMERRIGIDDOCKINGENGINE_H</highlight></codeline>
     </programlisting>
     <location file="Engines/ConformerRigidDockingEngine.h"/>
   </compounddef>

@@ -5,7 +5,6 @@
 #include "GradientDescentLineSearch.h"
 
 
-
 #include <Engines/ScoringFunctions/VinaLikeScoringFunction.h>
 
 #include <Engines/Internals/InternalsUtilityFunctions.h>
@@ -13,14 +12,14 @@
 #include "LocalOptimizerUtilityFunctions.h"
 
 #undef BOOST_LOG
-#include <boost/log/trivial.hpp>
 
+#include <boost/log/trivial.hpp>
 
 
 namespace SmolDock::Optimizer {
 
 
-    GradientDescentLineSearch::GradientDescentLineSearch(Score::ScoringFunction *scoringFunc_,
+    GradientDescentLineSearch::GradientDescentLineSearch(Score::ScoringFunction* scoringFunc_,
                                                          double differentialUpsilon) :
             scoringFunction(scoringFunc_),
             differential_epsilon(differentialUpsilon),
@@ -32,7 +31,7 @@ namespace SmolDock::Optimizer {
 
     bool GradientDescentLineSearch::optimize(arma::mat startingPoint) {
 
-        arma::mat& paramsToOptimize = startingPoint;
+        arma::mat &paramsToOptimize = startingPoint;
         arma::mat gradient(paramVectorDimension, 1, arma::fill::zeros);
 
         double score_ = this->scoringFunction->EvaluateWithGradient(paramsToOptimize, gradient);

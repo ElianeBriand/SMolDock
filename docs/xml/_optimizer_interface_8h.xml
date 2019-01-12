@@ -1,0 +1,183 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_optimizer_interface_8h" kind="file" language="C++">
+    <compoundname>OptimizerInterface.h</compoundname>
+    <includes local="no">armadillo</includes>
+    <includedby refid="_optimizer_factory_8h" local="yes">OptimizerFactory.h</includedby>
+    <includedby refid="_heuristic_factory_8h" local="no">HeuristicFactory.h</includedby>
+    <includedby refid="_gradient_descent_line_search_8h" local="yes">GradientDescentLineSearch.h</includedby>
+    <includedby refid="_l___b_f_g_s_8h" local="yes">L_BFGS.h</includedby>
+    <includedby refid="_random_restart_8h" local="no">RandomRestart.h</includedby>
+    <incdepgraph>
+      <node id="1166">
+        <label>OptimizerInterface.h</label>
+        <link refid="_optimizer_interface_8h"/>
+        <childnode refid="1167" relation="include">
+        </childnode>
+      </node>
+      <node id="1167">
+        <label>armadillo</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1170">
+        <label>ConformerRigidDockingEngine.h</label>
+        <link refid="_conformer_rigid_docking_engine_8h"/>
+        <childnode refid="1171" relation="include">
+        </childnode>
+        <childnode refid="1172" relation="include">
+        </childnode>
+        <childnode refid="1173" relation="include">
+        </childnode>
+      </node>
+      <node id="1169">
+        <label>OptimizerFactory.h</label>
+        <link refid="_optimizer_factory_8h"/>
+        <childnode refid="1170" relation="include">
+        </childnode>
+        <childnode refid="1174" relation="include">
+        </childnode>
+        <childnode refid="1173" relation="include">
+        </childnode>
+      </node>
+      <node id="1168">
+        <label>OptimizerInterface.h</label>
+        <link refid="_optimizer_interface_8h"/>
+        <childnode refid="1169" relation="include">
+        </childnode>
+        <childnode refid="1175" relation="include">
+        </childnode>
+        <childnode refid="1177" relation="include">
+        </childnode>
+        <childnode refid="1179" relation="include">
+        </childnode>
+        <childnode refid="1181" relation="include">
+        </childnode>
+      </node>
+      <node id="1172">
+        <label>main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+      <node id="1177">
+        <label>GradientDescentLineSearch.h</label>
+        <link refid="_gradient_descent_line_search_8h"/>
+        <childnode refid="1170" relation="include">
+        </childnode>
+        <childnode refid="1178" relation="include">
+        </childnode>
+        <childnode refid="1174" relation="include">
+        </childnode>
+      </node>
+      <node id="1182">
+        <label>RandomRestart.cpp</label>
+        <link refid="_random_restart_8cpp"/>
+      </node>
+      <node id="1171">
+        <label>ConformerRigidDockingEngine.cpp</label>
+        <link refid="_conformer_rigid_docking_engine_8cpp"/>
+      </node>
+      <node id="1178">
+        <label>GradientDescentLineSearch.cpp</label>
+        <link refid="_gradient_descent_line_search_8cpp"/>
+      </node>
+      <node id="1174">
+        <label>OptimizerFactory.cpp</label>
+        <link refid="_optimizer_factory_8cpp"/>
+      </node>
+      <node id="1179">
+        <label>L_BFGS.h</label>
+        <link refid="_l___b_f_g_s_8h"/>
+        <childnode refid="1171" relation="include">
+        </childnode>
+        <childnode refid="1180" relation="include">
+        </childnode>
+        <childnode refid="1174" relation="include">
+        </childnode>
+      </node>
+      <node id="1180">
+        <label>L_BFGS.cpp</label>
+        <link refid="_l___b_f_g_s_8cpp"/>
+      </node>
+      <node id="1176">
+        <label>HeuristicFactory.cpp</label>
+        <link refid="_heuristic_factory_8cpp"/>
+      </node>
+      <node id="1181">
+        <label>RandomRestart.h</label>
+        <link refid="_random_restart_8h"/>
+        <childnode refid="1171" relation="include">
+        </childnode>
+        <childnode refid="1176" relation="include">
+        </childnode>
+        <childnode refid="1182" relation="include">
+        </childnode>
+      </node>
+      <node id="1173">
+        <label>PyEngine.cpp</label>
+        <link refid="_py_engine_8cpp"/>
+      </node>
+      <node id="1175">
+        <label>HeuristicFactory.h</label>
+        <link refid="_heuristic_factory_8h"/>
+        <childnode refid="1170" relation="include">
+        </childnode>
+        <childnode refid="1176" relation="include">
+        </childnode>
+        <childnode refid="1173" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_smol_dock_1_1_optimizer_1_1_optimizer" prot="public">SmolDock::Optimizer::Optimizer</innerclass>
+    <innernamespace refid="namespace_smol_dock_1_1_optimizer">SmolDock::Optimizer</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2018<sp/>Eliane<sp/>Briand</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>SmolDock.</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>SmolDock<sp/>is<sp/>free<sp/>software:<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or<sp/>modify</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>it<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>as<sp/>published<sp/>by</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>the<sp/>Free<sp/>Software<sp/>Foundation,<sp/>either<sp/>version<sp/>3<sp/>of<sp/>the<sp/>License,<sp/>or</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>(at<sp/>your<sp/>option)<sp/>any<sp/>later<sp/>version.</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>SmolDock<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>but<sp/>WITHOUT<sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE.<sp/><sp/>See<sp/>the</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>for<sp/>more<sp/>details.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>along<sp/>with<sp/>SmolDock.<sp/><sp/>If<sp/>not,<sp/>see<sp/>&lt;https://www.gnu.org/licenses/&gt;.</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>SMOLDOCK_OPTIMIZEINTERFACE_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SMOLDOCK_OPTIMIZEINTERFACE_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;armadillo&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_smol_dock_1_1_optimizer" kindref="compound">SmolDock::Optimizer</ref><sp/>{</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29" refid="class_smol_dock_1_1_optimizer_1_1_optimizer" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_smol_dock_1_1_optimizer_1_1_optimizer" kindref="compound">Optimizer</ref><sp/>{</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_optimizer_1_1_optimizer_1a2868a3d9b6855b745d456de57eb1a870" kindref="member">optimize</ref>(arma::mat<sp/>startingPoint)<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>arma::mat<sp/><ref refid="class_smol_dock_1_1_optimizer_1_1_optimizer_1a127349b071842e954d7a89f026685b8f" kindref="member">getRawResultMatrix</ref>()<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_optimizer_1_1_optimizer_1a5165027808dafc096faf1048a48e7c1c" kindref="member">getScore</ref>()<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_optimizer_1_1_optimizer_1a01132a1b9275e1863e80bd18400b1fef" kindref="member">~Optimizer</ref>()<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//SMOLDOCK_OPTIMIZEINTERFACE_H</highlight></codeline>
+    </programlisting>
+    <location file="Engines/LocalOptimizers/OptimizerInterface.h"/>
+  </compounddef>
+</doxygen>

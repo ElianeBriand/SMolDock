@@ -100,10 +100,15 @@ $(document).ready(function(){initNavTree('_smoldock_python_bindings_8cpp.html','
 <div class="contents">
 <div class="textblock"><code>#include &lt;boost/python.hpp&gt;</code><br />
 <code>#include &lt;boost/numpy.hpp&gt;</code><br />
+<code>#include &lt;boost/log/core.hpp&gt;</code><br />
+<code>#include &lt;boost/log/trivial.hpp&gt;</code><br />
+<code>#include &lt;boost/log/expressions.hpp&gt;</code><br />
+<code>#include &lt;boost/log/utility/setup/console.hpp&gt;</code><br />
 <code>#include &quot;<a class="el" href="_py_s_t_l_wrapper_8h_source.html">Python/PySTLWrapper.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_py_structures_8h_source.html">Python/PyStructures.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_py_utilities_8h_source.html">Python/PyUtilities.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_py_scoring_functions_8h_source.html">Python/PyScoringFunctions.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_py_engine_8h_source.html">Python/PyEngine.h</a>&quot;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for SmoldockPythonBindings.cpp:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
@@ -111,10 +116,11 @@ $(document).ready(function(){initNavTree('_smoldock_python_bindings_8cpp.html','
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="_smoldock_python_bindings_8cpp__incl.png" border="0" usemap="#_smoldock_python_bindings_8cpp" alt=""/></div>
 <map name="_smoldock_python_bindings_8cpp" id="_smoldock_python_bindings_8cpp">
-<area shape="rect" id="node4" href="_py_s_t_l_wrapper_8h.html" title="Python/PySTLWrapper.h" alt="" coords="299,80,466,107"/>
-<area shape="rect" id="node5" href="_py_structures_8h.html" title="Python/PyStructures.h" alt="" coords="491,80,645,107"/>
-<area shape="rect" id="node6" href="_py_utilities_8h.html" title="Python/PyUtilities.h" alt="" coords="669,80,808,107"/>
-<area shape="rect" id="node7" href="_py_scoring_functions_8h.html" title="Python/PyScoringFunctions.h" alt="" coords="832,80,1027,107"/>
+<area shape="rect" id="node8" href="_py_s_t_l_wrapper_8h.html" title="Python/PySTLWrapper.h" alt="" coords="982,87,1149,114"/>
+<area shape="rect" id="node9" href="_py_structures_8h.html" title="Python/PyStructures.h" alt="" coords="1173,87,1328,114"/>
+<area shape="rect" id="node10" href="_py_utilities_8h.html" title="Python/PyUtilities.h" alt="" coords="1352,87,1491,114"/>
+<area shape="rect" id="node11" href="_py_scoring_functions_8h.html" title="Python/PyScoringFunctions.h" alt="" coords="1515,87,1709,114"/>
+<area shape="rect" id="node12" href="_py_engine_8h.html" title="Python/PyEngine.h" alt="" coords="1734,87,1869,114"/>
 </map>
 </div>
 </div>
@@ -142,9 +148,9 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_smoldock_python_bindings_8cpp_source.html#l00034">34</a> of file <a class="el" href="_smoldock_python_bindings_8cpp_source.html">SmoldockPythonBindings.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_smoldock_python_bindings_8cpp_source.html#l00039">39</a> of file <a class="el" href="_smoldock_python_bindings_8cpp_source.html">SmoldockPythonBindings.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_py_scoring_functions_8cpp_source.html#l00052">export_ScoringFunctions()</a>, <a class="el" href="_py_s_t_l_wrapper_8cpp_source.html#l00041">export_STLWrapper()</a>, <a class="el" href="_py_structures_8cpp_source.html#l00039">export_Structures()</a>, and <a class="el" href="_py_utilities_8cpp_source.html#l00039">export_Utilities()</a>.</p>
+<p class="reference">References <a class="el" href="_py_engine_8cpp_source.html#l00030">export_Engines()</a>, <a class="el" href="_py_scoring_functions_8cpp_source.html#l00052">export_ScoringFunctions()</a>, <a class="el" href="_py_s_t_l_wrapper_8cpp_source.html#l00048">export_STLWrapper()</a>, <a class="el" href="_py_structures_8cpp_source.html#l00040">export_Structures()</a>, and <a class="el" href="_py_utilities_8cpp_source.html#l00039">export_Utilities()</a>.</p>
 <div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
@@ -152,49 +158,51 @@ Functions</h2></td></tr>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="_smoldock_python_bindings_8cpp_a9002869529fdb857c7ffa4a170c4f3ef_cgraph.png" border="0" usemap="#_smoldock_python_bindings_8cpp_a9002869529fdb857c7ffa4a170c4f3ef_cgraph" alt=""/></div>
 <map name="_smoldock_python_bindings_8cpp_a9002869529fdb857c7ffa4a170c4f3ef_cgraph" id="_smoldock_python_bindings_8cpp_a9002869529fdb857c7ffa4a170c4f3ef_cgraph">
-<area shape="rect" id="node2" href="_py_scoring_functions_8cpp.html#a2ede6b770a3e6131986d822ec5842b63" title="export_ScoringFunctions" alt="" coords="248,325,415,351"/>
-<area shape="rect" id="node15" href="_py_s_t_l_wrapper_8cpp.html#a168320ae6ebe56579c717093cbb24708" title="export_STLWrapper" alt="" coords="262,469,401,495"/>
-<area shape="rect" id="node16" href="_py_structures_8cpp.html#a18cad6e29d14a0da9d2cd9464e7e2356" title="export_Structures" alt="" coords="474,519,599,546"/>
-<area shape="rect" id="node40" href="_py_utilities_8cpp.html#a48b6c8c5377d2e7c99f7084ea93aa77b" title="export_Utilities" alt="" coords="277,827,386,854"/>
-<area shape="rect" id="node3" href="namespace_smol_dock_1_1_wrapper.html#afc6fe0925036a67cbd9856c1077296ca" title="SmolDock::Wrapper::\lgetScoringFunc" alt="" coords="463,132,611,173"/>
-<area shape="rect" id="node4" href="namespace_smol_dock_1_1_score.html#ac205731c7b0098c2900d9d16fff1a93b" title="Compute inter&#45;molecular part of the docking score, according to the Vina scoring function. " alt="" coords="669,71,863,112"/>
-<area shape="rect" id="node5" href="namespace_smol_dock.html#afb62962c202721eaa8aa64d19bd42fdf" title="Returns the norm of the given quaternion. " alt="" coords="939,19,1122,46"/>
-<area shape="rect" id="node6" href="namespace_smol_dock.html#a73bb4756419c2b3361ae4d23b24eee20" title="Apply the provided iTransform to a vector. " alt="" coords="940,71,1121,112"/>
-<area shape="rect" id="node9" href="namespace_smol_dock_1_1_score.html#ac23b7d24b31779cc5cd7d8bd4006fa52" title="SmolDock::Score::scoreFor\lAtomCouple" alt="" coords="939,136,1123,177"/>
-<area shape="rect" id="node7" href="namespace_smol_dock.html#a835c8bf0a7983ba17c48cd10f152726f" title="Apply the rotation given by a quaternion to a vector. " alt="" coords="1213,71,1396,112"/>
-<area shape="rect" id="node8" href="namespace_smol_dock.html#a20628b953f3dec7f26d7c8221a508160" title="Apply the provided translation to a vector. " alt="" coords="1211,5,1398,47"/>
-<area shape="rect" id="node10" href="namespace_smol_dock_1_1_score.html#adae31ea0b0f6630cdad8c85e9802ed9d" title="SmolDock::Score::isHydrophobic" alt="" coords="1197,202,1413,229"/>
-<area shape="rect" id="node11" href="namespace_smol_dock_1_1_score.html#ac5efd92ad2db7d779a491ae233cbb2ec" title="SmolDock::Score::hydrogen\lBondingPossible" alt="" coords="1211,136,1398,177"/>
-<area shape="rect" id="node12" href="namespace_smol_dock_1_1_score.html#a0b455de7380586a1fd535f76499f16f7" title="SmolDock::Score::hydrogen\lDonorAcceptorPair" alt="" coords="1469,136,1656,177"/>
-<area shape="rect" id="node13" href="namespace_smol_dock_1_1_score.html#aada28b98ff116da3300979ddf15dc557" title="SmolDock::Score::isHydrogen\lDonor" alt="" coords="1704,103,1903,144"/>
-<area shape="rect" id="node14" href="namespace_smol_dock_1_1_score.html#afc0ba7560e9104fcef4bc61ff8d461c1" title="SmolDock::Score::isHydrogen\lAcceptor" alt="" coords="1704,168,1903,209"/>
-<area shape="rect" id="node17" href="class_smol_dock_1_1_molecule.html#a70156ffc4081eb92f9dc4e2c70096c84" title="Make a copy of the Molecule object where the underlying Atom and Bond are new objects instead of refe..." alt="" coords="695,283,837,324"/>
-<area shape="rect" id="node19" href="class_smol_dock_1_1_molecule.html#ad10dcbd80a2ac181b3d76fbae3f90ca2" title="Generate a conformer of this molecule. " alt="" coords="695,740,837,781"/>
-<area shape="rect" id="node23" href="class_smol_dock_1_1_molecule.html#ab5fc86fa1ac97374e7d8d339404568e9" title="Obtain the conformer that was either loaded from file or generated when populating the Molecule..." alt="" coords="695,805,837,847"/>
-<area shape="rect" id="node24" href="class_smol_dock_1_1_protein.html#a2cccfc64e088ed1846d15c6909c9379f" title="Return an iProtein object for use in docking engine. " alt="" coords="696,871,836,912"/>
-<area shape="rect" id="node25" href="class_smol_dock_1_1_molecule.html#afe9743bfc4876343b6c63b0aac892f83" title="Get the 3&#45;letter residue code used for this molecule in PDB file. " alt="" coords="695,413,837,455"/>
-<area shape="rect" id="node26" href="class_smol_dock_1_1_molecule.html#a7dc0c882da26261dcd2762429b07a3d4" title="Return the number of atom in the Molecule, Hydrogen excepted. " alt="" coords="695,479,837,520"/>
-<area shape="rect" id="node27" href="class_smol_dock_1_1_molecule.html#a8b1f02ad4e3b2ad991162668a61c2ddc" title="Return the number of bonds in the Molecule. " alt="" coords="695,544,837,585"/>
-<area shape="rect" id="node28" href="class_smol_dock_1_1_protein.html#ab28029d0d4fcf11088a32a132667b78c" title="Populate Protein from a PDB file. " alt="" coords="696,348,836,389"/>
-<area shape="rect" id="node33" href="class_smol_dock_1_1_molecule.html#ac4d8ee94aeb7bd75e50a11ece1546b79" title="Populate atoms and bonds from a PDB file. Additionally, a SMILES string can be used for bond order hi..." alt="" coords="695,609,837,651"/>
-<area shape="rect" id="node37" href="class_smol_dock_1_1_molecule.html#a40ef9fd6a1d62cf31ae054d4acc09841" title="Populate atoms and bonds from SMILES. " alt="" coords="687,675,845,716"/>
-<area shape="rect" id="node38" href="class_smol_dock_1_1_molecule.html#af9eb4a4fe0f1d72c104393b690e8f5cb" title="Set the 3&#45;letter residue code used for this molecule in PDB file. " alt="" coords="695,136,837,177"/>
-<area shape="rect" id="node39" href="class_smol_dock_1_1_molecule.html#af6263934134836e9ce66d2254b6b6801" title="SmolDock::Molecule\l::updateAtomPositionsFromi\lConformer" alt="" coords="673,202,859,258"/>
-<area shape="rect" id="node18" href="class_smol_dock_1_1_bond.html#a4ebf28309120c880429f205edf67b9f8" title="Set the type of the bond. " alt="" coords="927,290,1134,317"/>
-<area shape="rect" id="node20" href="class_smol_dock_1_1_molecule.html#a5247ebed094d5593a5a704c0c2919c0c" title="SmolDock::Molecule\l::generateIConformerForGiven\lRDKitConformerID" alt="" coords="931,773,1130,829"/>
-<area shape="rect" id="node21" href="namespace_smol_dock.html#a9c3abf1e37dc4fe013df80997dedb20b" title="SmolDock::atomTypeToAtomic\lRadius" alt="" coords="1202,757,1407,799"/>
-<area shape="rect" id="node22" href="namespace_smol_dock.html#ae559278f4b66ec9a09ddfaebb224f897" title="SmolDock::stringToAtomType" alt="" coords="1205,823,1404,850"/>
-<area shape="rect" id="node29" href="namespace_smol_dock.html#a788f9308991cdf8fe5af07b27ff0f389" title="SmolDock::stringToResType" alt="" coords="935,349,1126,375"/>
-<area shape="rect" id="node30" href="namespace_smol_dock.html#a2820b77a3fd140cd601c75028ed8dd51" title="SmolDock::assignVariantFlags\lForResidueAtom" alt="" coords="929,400,1132,441"/>
-<area shape="rect" id="node31" href="class_smol_dock_1_1_amino_acid.html#a556f668f759abed9c33c3522106d520b" title="SmolDock::AminoAcid\l::getType" alt="" coords="1227,371,1382,412"/>
-<area shape="rect" id="node32" href="namespace_smol_dock.html#a7980070f5c494cfe044ad9e90e34e3e3" title="SmolDock::resTypeToString" alt="" coords="1211,437,1398,463"/>
-<area shape="rect" id="node34" href="namespace_smol_dock.html#a288ddd3593922bcc17e5feb114841802" title="SmolDock::AssignBondOrder\lFromTemplateSMILES" alt="" coords="934,601,1127,643"/>
-<area shape="rect" id="node35" href="class_smol_dock_1_1_molecule.html#a2bb03cc6894518ac8208ddff1556d6c3" title="Use this if using RDKit RWMol as entry. " alt="" coords="927,667,1134,723"/>
-<area shape="rect" id="node36" href="namespace_smol_dock.html#a43bbd3ed0ad4b1eec9e5ae8d9d99318d" title="SmolDock::assignApolarCarbonFlag" alt="" coords="1188,682,1421,709"/>
-<area shape="rect" id="node41" href="class_smol_dock_1_1_re_scorer.html#a4f372ac345e57254d9b00672f169d2fd" title="SmolDock::ReScorer\l::getScore" alt="" coords="463,915,610,956"/>
-<area shape="rect" id="node44" href="class_smol_dock_1_1_re_scorer.html#a102b6af24e4f5dc420c2bdfba5a792f0" title="SmolDock::ReScorer\l::prepare" alt="" coords="463,820,610,861"/>
-<area shape="rect" id="node42" href="namespace_smol_dock.html#a3974d1e3a6f729a7ca05b97996ca2079" title="Holds a gradient for the score function with regard to an iTransform. " alt="" coords="659,937,873,963"/>
-<area shape="rect" id="node43" href="namespace_smol_dock.html#a44a91384d128c3beb5c57ec507dddb6e" title="SmolDock::iQuaternionIdentityInit" alt="" coords="921,937,1140,963"/>
+<area shape="rect" id="node2" href="_py_engine_8cpp.html#a6ad919c2b94b67a7e9dcd4cdd4201eeb" title="export_Engines" alt="" coords="275,414,387,441"/>
+<area shape="rect" id="node3" href="_py_scoring_functions_8cpp.html#a2ede6b770a3e6131986d822ec5842b63" title="export_ScoringFunctions" alt="" coords="248,465,415,491"/>
+<area shape="rect" id="node16" href="_py_s_t_l_wrapper_8cpp.html#a168320ae6ebe56579c717093cbb24708" title="export_STLWrapper" alt="" coords="262,515,401,542"/>
+<area shape="rect" id="node18" href="_py_structures_8cpp.html#a18cad6e29d14a0da9d2cd9464e7e2356" title="export_Structures" alt="" coords="499,566,624,593"/>
+<area shape="rect" id="node42" href="_py_utilities_8cpp.html#a48b6c8c5377d2e7c99f7084ea93aa77b" title="export_Utilities" alt="" coords="277,890,386,917"/>
+<area shape="rect" id="node4" href="namespace_smol_dock_1_1_wrapper.html#afc6fe0925036a67cbd9856c1077296ca" title="SmolDock::Wrapper::\lgetScoringFunc" alt="" coords="487,276,635,317"/>
+<area shape="rect" id="node5" href="namespace_smol_dock_1_1_score.html#ac205731c7b0098c2900d9d16fff1a93b" title="Compute inter&#45;molecular part of the docking score, according to the Vina scoring function. " alt="" coords="719,133,912,175"/>
+<area shape="rect" id="node6" href="namespace_smol_dock.html#afb62962c202721eaa8aa64d19bd42fdf" title="Returns the norm of the given quaternion. " alt="" coords="989,199,1171,226"/>
+<area shape="rect" id="node7" href="namespace_smol_dock.html#a73bb4756419c2b3361ae4d23b24eee20" title="Apply the provided iTransform to a vector. " alt="" coords="989,68,1171,109"/>
+<area shape="rect" id="node10" href="namespace_smol_dock_1_1_score.html#ac23b7d24b31779cc5cd7d8bd4006fa52" title="SmolDock::Score::scoreFor\lAtomCouple" alt="" coords="988,133,1172,175"/>
+<area shape="rect" id="node8" href="namespace_smol_dock.html#a835c8bf0a7983ba17c48cd10f152726f" title="Apply the rotation given by a quaternion to a vector. " alt="" coords="1263,5,1445,47"/>
+<area shape="rect" id="node9" href="namespace_smol_dock.html#a20628b953f3dec7f26d7c8221a508160" title="Apply the provided translation to a vector. " alt="" coords="1261,71,1447,112"/>
+<area shape="rect" id="node11" href="namespace_smol_dock_1_1_score.html#adae31ea0b0f6630cdad8c85e9802ed9d" title="SmolDock::Score::isHydrophobic" alt="" coords="1246,139,1462,166"/>
+<area shape="rect" id="node12" href="namespace_smol_dock_1_1_score.html#ac5efd92ad2db7d779a491ae233cbb2ec" title="SmolDock::Score::hydrogen\lBondingPossible" alt="" coords="1261,191,1447,232"/>
+<area shape="rect" id="node13" href="namespace_smol_dock_1_1_score.html#a0b455de7380586a1fd535f76499f16f7" title="SmolDock::Score::hydrogen\lDonorAcceptorPair" alt="" coords="1519,191,1705,232"/>
+<area shape="rect" id="node14" href="namespace_smol_dock_1_1_score.html#aada28b98ff116da3300979ddf15dc557" title="SmolDock::Score::isHydrogen\lDonor" alt="" coords="1753,157,1952,199"/>
+<area shape="rect" id="node15" href="namespace_smol_dock_1_1_score.html#afc0ba7560e9104fcef4bc61ff8d461c1" title="SmolDock::Score::isHydrogen\lAcceptor" alt="" coords="1753,223,1952,264"/>
+<area shape="rect" id="node17" href="_py_s_t_l_wrapper_8cpp.html#a20a4fa85d5a46ce8e1567e27ff8483c1" title="getVinaPostProcessorsVector" alt="" coords="463,515,660,542"/>
+<area shape="rect" id="node19" href="class_smol_dock_1_1_molecule.html#a70156ffc4081eb92f9dc4e2c70096c84" title="Make a copy of the Molecule object where the underlying Atom and Bond are new objects instead of refe..." alt="" coords="744,737,887,779"/>
+<area shape="rect" id="node21" href="class_smol_dock_1_1_molecule.html#ad10dcbd80a2ac181b3d76fbae3f90ca2" title="Generate a conformer of this molecule. " alt="" coords="744,803,887,844"/>
+<area shape="rect" id="node25" href="class_smol_dock_1_1_molecule.html#ab5fc86fa1ac97374e7d8d339404568e9" title="Obtain the conformer that was either loaded from file or generated when populating the Molecule..." alt="" coords="744,933,887,975"/>
+<area shape="rect" id="node26" href="class_smol_dock_1_1_protein.html#a2cccfc64e088ed1846d15c6909c9379f" title="Return an iProtein object for use in docking engine. " alt="" coords="745,868,885,909"/>
+<area shape="rect" id="node27" href="class_smol_dock_1_1_molecule.html#afe9743bfc4876343b6c63b0aac892f83" title="Get the 3&#45;letter residue code used for this molecule in PDB file. " alt="" coords="744,199,887,240"/>
+<area shape="rect" id="node28" href="class_smol_dock_1_1_molecule.html#a7dc0c882da26261dcd2762429b07a3d4" title="Return the number of atom in the Molecule, Hydrogen excepted. " alt="" coords="744,264,887,305"/>
+<area shape="rect" id="node29" href="class_smol_dock_1_1_molecule.html#a8b1f02ad4e3b2ad991162668a61c2ddc" title="Return the number of bonds in the Molecule. " alt="" coords="744,329,887,371"/>
+<area shape="rect" id="node30" href="class_smol_dock_1_1_protein.html#a726524247169022a4dfc1328753e39b3" title="Populate Protein from a PDB file. " alt="" coords="745,395,885,436"/>
+<area shape="rect" id="node35" href="class_smol_dock_1_1_molecule.html#a9e3ef6b361a98cfbac69b11979d886da" title="Populate atoms and bonds from a PDB file. Additionally, a SMILES string can be used for bond order hi..." alt="" coords="744,460,887,501"/>
+<area shape="rect" id="node39" href="class_smol_dock_1_1_molecule.html#ae8bf900e52a73637051eee69e60628e6" title="Populate atoms and bonds from SMILES. " alt="" coords="736,525,895,567"/>
+<area shape="rect" id="node40" href="class_smol_dock_1_1_molecule.html#af9eb4a4fe0f1d72c104393b690e8f5cb" title="Set the 3&#45;letter residue code used for this molecule in PDB file. " alt="" coords="744,591,887,632"/>
+<area shape="rect" id="node41" href="class_smol_dock_1_1_molecule.html#af6263934134836e9ce66d2254b6b6801" title="SmolDock::Molecule\l::updateAtomPositionsFromi\lConformer" alt="" coords="722,657,909,713"/>
+<area shape="rect" id="node20" href="class_smol_dock_1_1_bond.html#a4ebf28309120c880429f205edf67b9f8" title="Set the type of the bond. " alt="" coords="977,745,1183,771"/>
+<area shape="rect" id="node22" href="class_smol_dock_1_1_molecule.html#a5247ebed094d5593a5a704c0c2919c0c" title="SmolDock::Molecule\l::generateIConformerForGiven\lRDKitConformerID" alt="" coords="981,857,1179,913"/>
+<area shape="rect" id="node23" href="namespace_smol_dock.html#a9c3abf1e37dc4fe013df80997dedb20b" title="SmolDock::atomTypeToAtomic\lRadius" alt="" coords="1251,893,1457,935"/>
+<area shape="rect" id="node24" href="namespace_smol_dock.html#ae559278f4b66ec9a09ddfaebb224f897" title="SmolDock::stringToAtomType" alt="" coords="1255,842,1453,869"/>
+<area shape="rect" id="node31" href="namespace_smol_dock.html#a788f9308991cdf8fe5af07b27ff0f389" title="SmolDock::stringToResType" alt="" coords="985,343,1175,370"/>
+<area shape="rect" id="node32" href="namespace_smol_dock.html#a2820b77a3fd140cd601c75028ed8dd51" title="SmolDock::assignVariantFlags\lForResidueAtom" alt="" coords="979,395,1181,436"/>
+<area shape="rect" id="node33" href="class_smol_dock_1_1_amino_acid.html#a556f668f759abed9c33c3522106d520b" title="SmolDock::AminoAcid\l::getType" alt="" coords="1277,424,1431,465"/>
+<area shape="rect" id="node34" href="namespace_smol_dock.html#a7980070f5c494cfe044ad9e90e34e3e3" title="SmolDock::resTypeToString" alt="" coords="1261,373,1447,399"/>
+<area shape="rect" id="node36" href="namespace_smol_dock.html#a288ddd3593922bcc17e5feb114841802" title="SmolDock::AssignBondOrder\lFromTemplateSMILES" alt="" coords="983,460,1177,501"/>
+<area shape="rect" id="node37" href="class_smol_dock_1_1_molecule.html#a919f8706ff2f2beb3f7bf8d53f4c3f96" title="Use this if using RDKit RWMol as entry. " alt="" coords="977,526,1183,582"/>
+<area shape="rect" id="node38" href="namespace_smol_dock.html#a43bbd3ed0ad4b1eec9e5ae8d9d99318d" title="SmolDock::assignApolarCarbonFlag" alt="" coords="1237,541,1471,567"/>
+<area shape="rect" id="node43" href="class_smol_dock_1_1_re_scorer.html#a4f372ac345e57254d9b00672f169d2fd" title="SmolDock::ReScorer\l::getScore" alt="" coords="488,977,635,1019"/>
+<area shape="rect" id="node46" href="class_smol_dock_1_1_re_scorer.html#a102b6af24e4f5dc420c2bdfba5a792f0" title="SmolDock::ReScorer\l::prepare" alt="" coords="488,883,635,924"/>
+<area shape="rect" id="node44" href="namespace_smol_dock.html#a3974d1e3a6f729a7ca05b97996ca2079" title="Holds a gradient for the score function with regard to an iTransform. " alt="" coords="708,999,923,1026"/>
+<area shape="rect" id="node45" href="namespace_smol_dock.html#a44a91384d128c3beb5c57ec507dddb6e" title="SmolDock::iQuaternionIdentityInit" alt="" coords="971,999,1189,1026"/>
 </map>
 </div>
 

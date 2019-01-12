@@ -1,0 +1,209 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="class_smol_dock_1_1_optimizer_1_1_l___b_f_g_s" kind="class" language="C++" prot="public">
+    <compoundname>SmolDock::Optimizer::L_BFGS</compoundname>
+    <basecompoundref refid="class_smol_dock_1_1_optimizer_1_1_optimizer" prot="public" virt="non-virtual">SmolDock::Optimizer::Optimizer</basecompoundref>
+    <includes refid="_l___b_f_g_s_8h" local="no">L_BFGS.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_smol_dock_1_1_optimizer_1_1_l___b_f_g_s_1ad517eac106ffad742e71e9191f3f82c4" prot="private" static="no" mutable="no">
+        <type><ref refid="class_smol_dock_1_1_score_1_1_scoring_function" kindref="compound">Score::ScoringFunction</ref> *</type>
+        <definition>Score::ScoringFunction* SmolDock::Optimizer::L_BFGS::scoringFunction</definition>
+        <argsstring></argsstring>
+        <name>scoringFunction</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Engines/LocalOptimizers/L_BFGS.h" line="44" column="1" bodyfile="Engines/LocalOptimizers/L_BFGS.h" bodystart="44" bodyend="-1"/>
+        <referencedby refid="class_smol_dock_1_1_optimizer_1_1_l___b_f_g_s_1af820a1b5e625482458e4917620200e8c" compoundref="_l___b_f_g_s_8cpp" startline="40" endline="62">optimize</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_smol_dock_1_1_optimizer_1_1_l___b_f_g_s_1ab6d9dfa86c156e2999cde60fa48688bf" prot="private" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int SmolDock::Optimizer::L_BFGS::maxIteration</definition>
+        <argsstring></argsstring>
+        <name>maxIteration</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Engines/LocalOptimizers/L_BFGS.h" line="45" column="1" bodyfile="Engines/LocalOptimizers/L_BFGS.h" bodystart="45" bodyend="-1"/>
+        <referencedby refid="class_smol_dock_1_1_optimizer_1_1_l___b_f_g_s_1af820a1b5e625482458e4917620200e8c" compoundref="_l___b_f_g_s_8cpp" startline="40" endline="62">optimize</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_smol_dock_1_1_optimizer_1_1_l___b_f_g_s_1a63a3f0b953614d1dfd8ea7ba59d92efc" prot="private" static="no" mutable="no">
+        <type>arma::mat</type>
+        <definition>arma::mat SmolDock::Optimizer::L_BFGS::result</definition>
+        <argsstring></argsstring>
+        <name>result</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Engines/LocalOptimizers/L_BFGS.h" line="48" column="1" bodyfile="Engines/LocalOptimizers/L_BFGS.h" bodystart="48" bodyend="-1"/>
+        <referencedby refid="class_smol_dock_1_1_optimizer_1_1_l___b_f_g_s_1af820a1b5e625482458e4917620200e8c" compoundref="_l___b_f_g_s_8cpp" startline="40" endline="62">optimize</referencedby>
+        <referencedby refid="class_smol_dock_1_1_optimizer_1_1_l___b_f_g_s_1a7155407cb5df962be30e1fd44c82bb87" compoundref="_l___b_f_g_s_8cpp" startline="64" endline="66">getRawResultMatrix</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_smol_dock_1_1_optimizer_1_1_l___b_f_g_s_1ab4ff4104e0300008225d26b195e24ad8" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double SmolDock::Optimizer::L_BFGS::score</definition>
+        <argsstring></argsstring>
+        <name>score</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Engines/LocalOptimizers/L_BFGS.h" line="49" column="1" bodyfile="Engines/LocalOptimizers/L_BFGS.h" bodystart="49" bodyend="-1"/>
+        <referencedby refid="class_smol_dock_1_1_optimizer_1_1_l___b_f_g_s_1af820a1b5e625482458e4917620200e8c" compoundref="_l___b_f_g_s_8cpp" startline="40" endline="62">optimize</referencedby>
+        <referencedby refid="class_smol_dock_1_1_optimizer_1_1_l___b_f_g_s_1ae6e836e829ea1f79f9e69e9c2bee26f8" compoundref="_l___b_f_g_s_8cpp" startline="68" endline="70">getScore</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_smol_dock_1_1_optimizer_1_1_l___b_f_g_s_1a0df667e4e5b369f20fa0f4de11ed7836" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>SmolDock::Optimizer::L_BFGS::L_BFGS</definition>
+        <argsstring>(Score::ScoringFunction *scoringFunc_, unsigned int maxIteration_=100)</argsstring>
+        <name>L_BFGS</name>
+        <param>
+          <type><ref refid="class_smol_dock_1_1_score_1_1_scoring_function" kindref="compound">Score::ScoringFunction</ref> *</type>
+          <declname>scoringFunc_</declname>
+        </param>
+        <param>
+          <type>unsigned int</type>
+          <declname>maxIteration_</declname>
+          <defval>100</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Engines/LocalOptimizers/L_BFGS.h" line="32" column="1" bodyfile="Engines/LocalOptimizers/L_BFGS.cpp" bodystart="34" bodyend="38"/>
+      </memberdef>
+      <memberdef kind="function" id="class_smol_dock_1_1_optimizer_1_1_l___b_f_g_s_1af820a1b5e625482458e4917620200e8c" prot="public" static="no" const="no" explicit="no" inline="no" final="yes" virt="virtual">
+        <type>bool</type>
+        <definition>bool SmolDock::Optimizer::L_BFGS::optimize</definition>
+        <argsstring>(arma::mat startingPoint) final</argsstring>
+        <name>optimize</name>
+        <reimplements refid="class_smol_dock_1_1_optimizer_1_1_optimizer_1a2868a3d9b6855b745d456de57eb1a870">optimize</reimplements>
+        <param>
+          <type>arma::mat</type>
+          <declname>startingPoint</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+<para><itemizedlist>
+<listitem></listitem></itemizedlist>
+</para>        </inbodydescription>
+        <location file="Engines/LocalOptimizers/L_BFGS.h" line="34" column="1" bodyfile="Engines/LocalOptimizers/L_BFGS.cpp" bodystart="40" bodyend="62"/>
+        <references refid="class_smol_dock_1_1_score_1_1_scoring_function_1a92b9b5f6d23b07740dd9f6718207d31a">SmolDock::Score::ScoringFunction::Evaluate</references>
+        <references refid="namespace_smol_dock_1_1_optimizer_1a7ed1dc6878a606b8dcca7558383650cea2bd34449cf1656ea5ea723145f03c127">SmolDock::Optimizer::L_BFGS</references>
+        <references refid="class_smol_dock_1_1_optimizer_1_1_l___b_f_g_s_1ab6d9dfa86c156e2999cde60fa48688bf" compoundref="_l___b_f_g_s_8h" startline="45">maxIteration</references>
+        <references refid="class_smol_dock_1_1_optimizer_1_1_l___b_f_g_s_1a63a3f0b953614d1dfd8ea7ba59d92efc" compoundref="_l___b_f_g_s_8h" startline="48">result</references>
+        <references refid="class_smol_dock_1_1_optimizer_1_1_l___b_f_g_s_1ab4ff4104e0300008225d26b195e24ad8" compoundref="_l___b_f_g_s_8h" startline="49">score</references>
+        <references refid="class_smol_dock_1_1_optimizer_1_1_l___b_f_g_s_1ad517eac106ffad742e71e9191f3f82c4" compoundref="_l___b_f_g_s_8h" startline="44">scoringFunction</references>
+      </memberdef>
+      <memberdef kind="function" id="class_smol_dock_1_1_optimizer_1_1_l___b_f_g_s_1a7155407cb5df962be30e1fd44c82bb87" prot="public" static="no" const="no" explicit="no" inline="no" final="yes" virt="virtual">
+        <type>arma::mat</type>
+        <definition>arma::mat SmolDock::Optimizer::L_BFGS::getRawResultMatrix</definition>
+        <argsstring>() final</argsstring>
+        <name>getRawResultMatrix</name>
+        <reimplements refid="class_smol_dock_1_1_optimizer_1_1_optimizer_1a127349b071842e954d7a89f026685b8f">getRawResultMatrix</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Engines/LocalOptimizers/L_BFGS.h" line="36" column="1" bodyfile="Engines/LocalOptimizers/L_BFGS.cpp" bodystart="64" bodyend="66"/>
+        <references refid="class_smol_dock_1_1_optimizer_1_1_l___b_f_g_s_1a63a3f0b953614d1dfd8ea7ba59d92efc" compoundref="_l___b_f_g_s_8h" startline="48">result</references>
+      </memberdef>
+      <memberdef kind="function" id="class_smol_dock_1_1_optimizer_1_1_l___b_f_g_s_1ae6e836e829ea1f79f9e69e9c2bee26f8" prot="public" static="no" const="no" explicit="no" inline="no" final="yes" virt="virtual">
+        <type>double</type>
+        <definition>double SmolDock::Optimizer::L_BFGS::getScore</definition>
+        <argsstring>() final</argsstring>
+        <name>getScore</name>
+        <reimplements refid="class_smol_dock_1_1_optimizer_1_1_optimizer_1a5165027808dafc096faf1048a48e7c1c">getScore</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Engines/LocalOptimizers/L_BFGS.h" line="38" column="1" bodyfile="Engines/LocalOptimizers/L_BFGS.cpp" bodystart="68" bodyend="70"/>
+        <references refid="class_smol_dock_1_1_optimizer_1_1_l___b_f_g_s_1ab4ff4104e0300008225d26b195e24ad8" compoundref="_l___b_f_g_s_8h" startline="49">score</references>
+      </memberdef>
+      <memberdef kind="function" id="class_smol_dock_1_1_optimizer_1_1_l___b_f_g_s_1a127e9b5a557d6f8f0af58d581fa5b6ac" prot="public" static="no" const="no" explicit="no" inline="no" final="yes" virt="non-virtual">
+        <type></type>
+        <definition>SmolDock::Optimizer::L_BFGS::~L_BFGS</definition>
+        <argsstring>() final=default</argsstring>
+        <name>~L_BFGS</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Engines/LocalOptimizers/L_BFGS.h" line="40" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="129">
+        <label>SmolDock::Optimizer::L_BFGS</label>
+        <link refid="class_smol_dock_1_1_optimizer_1_1_l___b_f_g_s"/>
+        <childnode refid="130" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="130">
+        <label>SmolDock::Optimizer::Optimizer</label>
+        <link refid="class_smol_dock_1_1_optimizer_1_1_optimizer"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="131">
+        <label>SmolDock::Optimizer::L_BFGS</label>
+        <link refid="class_smol_dock_1_1_optimizer_1_1_l___b_f_g_s"/>
+        <childnode refid="132" relation="public-inheritance">
+        </childnode>
+        <childnode refid="133" relation="usage">
+          <edgelabel>-scoringFunction</edgelabel>
+        </childnode>
+      </node>
+      <node id="133">
+        <label>SmolDock::Score::ScoringFunction</label>
+        <link refid="class_smol_dock_1_1_score_1_1_scoring_function"/>
+      </node>
+      <node id="132">
+        <label>SmolDock::Optimizer::Optimizer</label>
+        <link refid="class_smol_dock_1_1_optimizer_1_1_optimizer"/>
+      </node>
+    </collaborationgraph>
+    <location file="Engines/LocalOptimizers/L_BFGS.h" line="29" column="1" bodyfile="Engines/LocalOptimizers/L_BFGS.h" bodystart="29" bodyend="50"/>
+    <listofallmembers>
+      <member refid="class_smol_dock_1_1_optimizer_1_1_l___b_f_g_s_1a7155407cb5df962be30e1fd44c82bb87" prot="public" virt="virtual"><scope>SmolDock::Optimizer::L_BFGS</scope><name>getRawResultMatrix</name></member>
+      <member refid="class_smol_dock_1_1_optimizer_1_1_l___b_f_g_s_1ae6e836e829ea1f79f9e69e9c2bee26f8" prot="public" virt="virtual"><scope>SmolDock::Optimizer::L_BFGS</scope><name>getScore</name></member>
+      <member refid="class_smol_dock_1_1_optimizer_1_1_l___b_f_g_s_1a0df667e4e5b369f20fa0f4de11ed7836" prot="public" virt="non-virtual"><scope>SmolDock::Optimizer::L_BFGS</scope><name>L_BFGS</name></member>
+      <member refid="class_smol_dock_1_1_optimizer_1_1_l___b_f_g_s_1ab6d9dfa86c156e2999cde60fa48688bf" prot="private" virt="non-virtual"><scope>SmolDock::Optimizer::L_BFGS</scope><name>maxIteration</name></member>
+      <member refid="class_smol_dock_1_1_optimizer_1_1_l___b_f_g_s_1af820a1b5e625482458e4917620200e8c" prot="public" virt="virtual"><scope>SmolDock::Optimizer::L_BFGS</scope><name>optimize</name></member>
+      <member refid="class_smol_dock_1_1_optimizer_1_1_l___b_f_g_s_1a63a3f0b953614d1dfd8ea7ba59d92efc" prot="private" virt="non-virtual"><scope>SmolDock::Optimizer::L_BFGS</scope><name>result</name></member>
+      <member refid="class_smol_dock_1_1_optimizer_1_1_l___b_f_g_s_1ab4ff4104e0300008225d26b195e24ad8" prot="private" virt="non-virtual"><scope>SmolDock::Optimizer::L_BFGS</scope><name>score</name></member>
+      <member refid="class_smol_dock_1_1_optimizer_1_1_l___b_f_g_s_1ad517eac106ffad742e71e9191f3f82c4" prot="private" virt="non-virtual"><scope>SmolDock::Optimizer::L_BFGS</scope><name>scoringFunction</name></member>
+      <member refid="class_smol_dock_1_1_optimizer_1_1_l___b_f_g_s_1a127e9b5a557d6f8f0af58d581fa5b6ac" prot="public" virt="non-virtual"><scope>SmolDock::Optimizer::L_BFGS</scope><name>~L_BFGS</name></member>
+      <member refid="class_smol_dock_1_1_optimizer_1_1_optimizer_1a01132a1b9275e1863e80bd18400b1fef" prot="public" virt="virtual"><scope>SmolDock::Optimizer::L_BFGS</scope><name>~Optimizer</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

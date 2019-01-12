@@ -147,165 +147,165 @@
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
-      <node id="198">
+      <node id="197">
         <label>K</label>
       </node>
-      <node id="184">
+      <node id="183">
         <label>T</label>
       </node>
-      <node id="187">
+      <node id="186">
         <label>SmolDock::Molecule</label>
         <link refid="class_smol_dock_1_1_molecule"/>
-        <childnode refid="188" relation="private-inheritance">
+        <childnode refid="187" relation="private-inheritance">
         </childnode>
-        <childnode refid="189" relation="usage">
+        <childnode refid="188" relation="usage">
           <edgelabel>-bonds</edgelabel>
         </childnode>
-        <childnode refid="190" relation="usage">
+        <childnode refid="189" relation="usage">
           <edgelabel>-smiles</edgelabel>
           <edgelabel>-residue_name</edgelabel>
         </childnode>
-        <childnode refid="192" relation="usage">
+        <childnode refid="191" relation="usage">
           <edgelabel>-atoms</edgelabel>
         </childnode>
       </node>
-      <node id="189">
+      <node id="188">
         <label>std::vector&lt; std::shared_ptr&lt; SmolDock::Bond &gt; &gt;</label>
-        <childnode refid="183" relation="template-instance">
+        <childnode refid="182" relation="template-instance">
           <edgelabel>&lt; std::shared_ptr&lt; SmolDock::Bond &gt; &gt;</edgelabel>
         </childnode>
       </node>
-      <node id="186">
+      <node id="185">
         <label>std::vector&lt; double &gt;</label>
-        <childnode refid="183" relation="template-instance">
+        <childnode refid="182" relation="template-instance">
           <edgelabel>&lt; double &gt;</edgelabel>
         </childnode>
       </node>
-      <node id="183">
+      <node id="182">
         <label>std::vector&lt; T &gt;</label>
-        <childnode refid="184" relation="usage">
+        <childnode refid="183" relation="usage">
           <edgelabel>+elements</edgelabel>
         </childnode>
       </node>
-      <node id="180">
+      <node id="179">
         <label>SmolDock::iConformer</label>
         <link refid="struct_smol_dock_1_1i_conformer"/>
-        <childnode refid="181" relation="usage">
+        <childnode refid="180" relation="usage">
           <edgelabel>+centroidNormalizingTransform</edgelabel>
         </childnode>
-        <childnode refid="182" relation="usage">
+        <childnode refid="181" relation="usage">
           <edgelabel>+variant</edgelabel>
-        </childnode>
-        <childnode refid="185" relation="usage">
-          <edgelabel>+type</edgelabel>
-        </childnode>
-        <childnode refid="186" relation="usage">
-          <edgelabel>+x</edgelabel>
-          <edgelabel>+y</edgelabel>
-          <edgelabel>+z</edgelabel>
-          <edgelabel>+atomicRadius</edgelabel>
-        </childnode>
-      </node>
-      <node id="197">
-        <label>std::map&lt; K, T &gt;</label>
-        <childnode refid="198" relation="usage">
-          <edgelabel>+keys</edgelabel>
         </childnode>
         <childnode refid="184" relation="usage">
-          <edgelabel>+elements</edgelabel>
-        </childnode>
-      </node>
-      <node id="195">
-        <label>SmolDock::iProtein</label>
-        <link refid="struct_smol_dock_1_1i_protein"/>
-        <childnode refid="196" relation="usage">
-          <edgelabel>+AAId_to_AtomPositionInVect</edgelabel>
-        </childnode>
-        <childnode refid="182" relation="usage">
-          <edgelabel>+variant</edgelabel>
-        </childnode>
-        <childnode refid="185" relation="usage">
           <edgelabel>+type</edgelabel>
         </childnode>
-        <childnode refid="186" relation="usage">
+        <childnode refid="185" relation="usage">
           <edgelabel>+x</edgelabel>
           <edgelabel>+y</edgelabel>
           <edgelabel>+z</edgelabel>
           <edgelabel>+atomicRadius</edgelabel>
+        </childnode>
+      </node>
+      <node id="196">
+        <label>std::map&lt; K, T &gt;</label>
+        <childnode refid="197" relation="usage">
+          <edgelabel>+keys</edgelabel>
+        </childnode>
+        <childnode refid="183" relation="usage">
+          <edgelabel>+elements</edgelabel>
         </childnode>
       </node>
       <node id="194">
-        <label>std::vector&lt; std::shared_ptr&lt; SmolDock::AminoAcid &gt; &gt;</label>
-        <childnode refid="183" relation="template-instance">
-          <edgelabel>&lt; std::shared_ptr&lt; SmolDock::AminoAcid &gt; &gt;</edgelabel>
-        </childnode>
-      </node>
-      <node id="188">
-        <label>SmolDock::Structure</label>
-        <link refid="class_smol_dock_1_1_structure"/>
-      </node>
-      <node id="191">
-        <label>std::basic_string&lt; char &gt;</label>
-      </node>
-      <node id="179">
-        <label>SmolDock::ReScorer</label>
-        <link refid="class_smol_dock_1_1_re_scorer"/>
-        <childnode refid="180" relation="usage">
-          <edgelabel>-iconformer</edgelabel>
-        </childnode>
-        <childnode refid="187" relation="usage">
-          <edgelabel>-molecule</edgelabel>
-        </childnode>
-        <childnode refid="193" relation="usage">
-          <edgelabel>-protein</edgelabel>
-        </childnode>
+        <label>SmolDock::iProtein</label>
+        <link refid="struct_smol_dock_1_1i_protein"/>
         <childnode refid="195" relation="usage">
-          <edgelabel>-iprotein</edgelabel>
+          <edgelabel>+AAId_to_AtomPositionInVect</edgelabel>
         </childnode>
-      </node>
-      <node id="182">
-        <label>std::vector&lt; unsigned int &gt;</label>
-        <childnode refid="183" relation="template-instance">
-          <edgelabel>&lt; unsigned int &gt;</edgelabel>
+        <childnode refid="181" relation="usage">
+          <edgelabel>+variant</edgelabel>
+        </childnode>
+        <childnode refid="184" relation="usage">
+          <edgelabel>+type</edgelabel>
+        </childnode>
+        <childnode refid="185" relation="usage">
+          <edgelabel>+x</edgelabel>
+          <edgelabel>+y</edgelabel>
+          <edgelabel>+z</edgelabel>
+          <edgelabel>+atomicRadius</edgelabel>
         </childnode>
       </node>
       <node id="193">
-        <label>SmolDock::Protein</label>
-        <link refid="class_smol_dock_1_1_protein"/>
-        <childnode refid="188" relation="private-inheritance">
+        <label>std::vector&lt; std::shared_ptr&lt; SmolDock::AminoAcid &gt; &gt;</label>
+        <childnode refid="182" relation="template-instance">
+          <edgelabel>&lt; std::shared_ptr&lt; SmolDock::AminoAcid &gt; &gt;</edgelabel>
         </childnode>
-        <childnode refid="194" relation="usage">
-          <edgelabel>-aminoacids</edgelabel>
+      </node>
+      <node id="187">
+        <label>SmolDock::Structure</label>
+        <link refid="class_smol_dock_1_1_structure"/>
+      </node>
+      <node id="190">
+        <label>std::basic_string&lt; char &gt;</label>
+      </node>
+      <node id="178">
+        <label>SmolDock::ReScorer</label>
+        <link refid="class_smol_dock_1_1_re_scorer"/>
+        <childnode refid="179" relation="usage">
+          <edgelabel>-iconformer</edgelabel>
+        </childnode>
+        <childnode refid="186" relation="usage">
+          <edgelabel>-molecule</edgelabel>
         </childnode>
         <childnode refid="192" relation="usage">
-          <edgelabel>-heteroatoms</edgelabel>
+          <edgelabel>-protein</edgelabel>
         </childnode>
-      </node>
-      <node id="185">
-        <label>std::vector&lt; unsigned char &gt;</label>
-        <childnode refid="183" relation="template-instance">
-          <edgelabel>&lt; unsigned char &gt;</edgelabel>
-        </childnode>
-      </node>
-      <node id="192">
-        <label>std::vector&lt; std::shared_ptr&lt; SmolDock::Atom &gt; &gt;</label>
-        <childnode refid="183" relation="template-instance">
-          <edgelabel>&lt; std::shared_ptr&lt; SmolDock::Atom &gt; &gt;</edgelabel>
+        <childnode refid="194" relation="usage">
+          <edgelabel>-iprotein</edgelabel>
         </childnode>
       </node>
       <node id="181">
+        <label>std::vector&lt; unsigned int &gt;</label>
+        <childnode refid="182" relation="template-instance">
+          <edgelabel>&lt; unsigned int &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="192">
+        <label>SmolDock::Protein</label>
+        <link refid="class_smol_dock_1_1_protein"/>
+        <childnode refid="187" relation="private-inheritance">
+        </childnode>
+        <childnode refid="193" relation="usage">
+          <edgelabel>-aminoacids</edgelabel>
+        </childnode>
+        <childnode refid="191" relation="usage">
+          <edgelabel>-heteroatoms</edgelabel>
+        </childnode>
+      </node>
+      <node id="184">
+        <label>std::vector&lt; unsigned char &gt;</label>
+        <childnode refid="182" relation="template-instance">
+          <edgelabel>&lt; unsigned char &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="191">
+        <label>std::vector&lt; std::shared_ptr&lt; SmolDock::Atom &gt; &gt;</label>
+        <childnode refid="182" relation="template-instance">
+          <edgelabel>&lt; std::shared_ptr&lt; SmolDock::Atom &gt; &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="180">
         <label>SmolDock::iTranslation</label>
         <link refid="struct_smol_dock_1_1i_translation"/>
       </node>
-      <node id="196">
+      <node id="195">
         <label>std::map&lt; unsigned int, std::tuple&lt; unsigned long, unsigned long &gt; &gt;</label>
-        <childnode refid="197" relation="template-instance">
+        <childnode refid="196" relation="template-instance">
           <edgelabel>&lt; unsigned int, std::tuple&lt; unsigned long, unsigned long &gt; &gt;</edgelabel>
         </childnode>
       </node>
-      <node id="190">
+      <node id="189">
         <label>std::string</label>
-        <childnode refid="191" relation="public-inheritance">
+        <childnode refid="190" relation="public-inheritance">
         </childnode>
       </node>
     </collaborationgraph>

@@ -10,17 +10,18 @@
 
 namespace SmolDock {
 
-class IntermediateConformerCollector {
-public:
-    IntermediateConformerCollector(Molecule* mol, PDBWriter* pdbwriter);
-    void addiConformer(iConformer conformer);
+    class IntermediateConformerCollector {
+    public:
+        IntermediateConformerCollector(Molecule* mol, PDBWriter* pdbwriter);
 
-private:
-    Molecule* molecule = nullptr;
-    PDBWriter* writer = nullptr;
+        void addiConformer(iConformer conformer);
+
+    private:
+        Molecule* molecule = nullptr;
+        PDBWriter* writer = nullptr;
 
 
-};
+    };
 
 }
 

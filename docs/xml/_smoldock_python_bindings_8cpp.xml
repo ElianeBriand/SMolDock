@@ -4,47 +4,78 @@
     <compoundname>SmoldockPythonBindings.cpp</compoundname>
     <includes local="no">boost/python.hpp</includes>
     <includes local="no">boost/numpy.hpp</includes>
+    <includes local="no">boost/log/core.hpp</includes>
+    <includes local="no">boost/log/trivial.hpp</includes>
+    <includes local="no">boost/log/expressions.hpp</includes>
+    <includes local="no">boost/log/utility/setup/console.hpp</includes>
     <includes refid="_py_s_t_l_wrapper_8h" local="yes">Python/PySTLWrapper.h</includes>
     <includes refid="_py_structures_8h" local="yes">Python/PyStructures.h</includes>
     <includes refid="_py_utilities_8h" local="yes">Python/PyUtilities.h</includes>
     <includes refid="_py_scoring_functions_8h" local="yes">Python/PyScoringFunctions.h</includes>
+    <includes refid="_py_engine_8h" local="yes">Python/PyEngine.h</includes>
     <incdepgraph>
-      <node id="1613">
+      <node id="1789">
         <label>Python/PyStructures.h</label>
         <link refid="_py_structures_8h"/>
       </node>
-      <node id="1612">
+      <node id="1788">
         <label>Python/PySTLWrapper.h</label>
         <link refid="_py_s_t_l_wrapper_8h"/>
       </node>
-      <node id="1611">
+      <node id="1784">
+        <label>boost/log/core.hpp</label>
+      </node>
+      <node id="1787">
+        <label>boost/log/utility/setup/console.hpp</label>
+      </node>
+      <node id="1783">
         <label>boost/numpy.hpp</label>
       </node>
-      <node id="1615">
+      <node id="1791">
         <label>Python/PyScoringFunctions.h</label>
         <link refid="_py_scoring_functions_8h"/>
       </node>
-      <node id="1610">
+      <node id="1785">
+        <label>boost/log/trivial.hpp</label>
+      </node>
+      <node id="1786">
+        <label>boost/log/expressions.hpp</label>
+      </node>
+      <node id="1782">
         <label>boost/python.hpp</label>
       </node>
-      <node id="1614">
+      <node id="1790">
         <label>Python/PyUtilities.h</label>
         <link refid="_py_utilities_8h"/>
       </node>
-      <node id="1609">
+      <node id="1792">
+        <label>Python/PyEngine.h</label>
+        <link refid="_py_engine_8h"/>
+      </node>
+      <node id="1781">
         <label>SmoldockPythonBindings.cpp</label>
         <link refid="_smoldock_python_bindings_8cpp"/>
-        <childnode refid="1610" relation="include">
+        <childnode refid="1782" relation="include">
         </childnode>
-        <childnode refid="1611" relation="include">
+        <childnode refid="1783" relation="include">
         </childnode>
-        <childnode refid="1612" relation="include">
+        <childnode refid="1784" relation="include">
         </childnode>
-        <childnode refid="1613" relation="include">
+        <childnode refid="1785" relation="include">
         </childnode>
-        <childnode refid="1614" relation="include">
+        <childnode refid="1786" relation="include">
         </childnode>
-        <childnode refid="1615" relation="include">
+        <childnode refid="1787" relation="include">
+        </childnode>
+        <childnode refid="1788" relation="include">
+        </childnode>
+        <childnode refid="1789" relation="include">
+        </childnode>
+        <childnode refid="1790" relation="include">
+        </childnode>
+        <childnode refid="1791" relation="include">
+        </childnode>
+        <childnode refid="1792" relation="include">
         </childnode>
       </node>
     </incdepgraph>
@@ -63,10 +94,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Frontends/SmoldockPythonBindings.cpp" line="34" column="1" bodyfile="Frontends/SmoldockPythonBindings.cpp" bodystart="34" bodyend="45"/>
+        <location file="Frontends/SmoldockPythonBindings.cpp" line="39" column="1" bodyfile="Frontends/SmoldockPythonBindings.cpp" bodystart="39" bodyend="79"/>
+        <references refid="_py_engine_8cpp_1a6ad919c2b94b67a7e9dcd4cdd4201eeb" compoundref="_py_engine_8cpp" startline="30" endline="79">export_Engines</references>
         <references refid="_py_scoring_functions_8cpp_1a2ede6b770a3e6131986d822ec5842b63" compoundref="_py_scoring_functions_8cpp" startline="52" endline="66">export_ScoringFunctions</references>
-        <references refid="_py_s_t_l_wrapper_8cpp_1a168320ae6ebe56579c717093cbb24708" compoundref="_py_s_t_l_wrapper_8cpp" startline="41" endline="49">export_STLWrapper</references>
-        <references refid="_py_structures_8cpp_1a18cad6e29d14a0da9d2cd9464e7e2356" compoundref="_py_structures_8cpp" startline="39" endline="88">export_Structures</references>
+        <references refid="_py_s_t_l_wrapper_8cpp_1a168320ae6ebe56579c717093cbb24708" compoundref="_py_s_t_l_wrapper_8cpp" startline="48" endline="58">export_STLWrapper</references>
+        <references refid="_py_structures_8cpp_1a18cad6e29d14a0da9d2cd9464e7e2356" compoundref="_py_structures_8cpp" startline="40" endline="92">export_Structures</references>
         <references refid="_py_utilities_8cpp_1a48b6c8c5377d2e7c99f7084ea93aa77b" compoundref="_py_utilities_8cpp" startline="39" endline="48">export_Utilities</references>
       </memberdef>
       </sectiondef>
@@ -99,27 +131,61 @@
 <codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/python.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/numpy.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="24"><highlight class="normal"></highlight></codeline>
-<codeline lineno="25"><highlight class="normal"></highlight></codeline>
-<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_py_s_t_l_wrapper_8h" kindref="compound">Python/PySTLWrapper.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_py_structures_8h" kindref="compound">Python/PyStructures.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_py_utilities_8h" kindref="compound">Python/PyUtilities.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_py_scoring_functions_8h" kindref="compound">Python/PyScoringFunctions.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="30"><highlight class="normal"></highlight></codeline>
-<codeline lineno="31"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">p<sp/>=<sp/>boost::python;</highlight></codeline>
-<codeline lineno="32"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">np<sp/>=<sp/>boost::numpy;</highlight></codeline>
-<codeline lineno="33"><highlight class="normal"></highlight></codeline>
-<codeline lineno="34" refid="_smoldock_python_bindings_8cpp_1a9002869529fdb857c7ffa4a170c4f3ef" refkind="member"><highlight class="normal"><ref refid="_smoldock_python_bindings_8cpp_1a9002869529fdb857c7ffa4a170c4f3ef" kindref="member">BOOST_PYTHON_MODULE</ref>(PySmolDock)</highlight></codeline>
-<codeline lineno="35"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>Py_Initialize();</highlight></codeline>
-<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>np::initialize();</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/log/core.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/log/trivial.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/log/expressions.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/log/utility/setup/console.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_py_s_t_l_wrapper_8h" kindref="compound">Python/PySTLWrapper.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_py_structures_8h" kindref="compound">Python/PyStructures.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_py_utilities_8h" kindref="compound">Python/PyUtilities.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_py_scoring_functions_8h" kindref="compound">Python/PyScoringFunctions.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_py_engine_8h" kindref="compound">Python/PyEngine.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">p<sp/>=<sp/>boost::python;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">np<sp/>=<sp/>boost::numpy;</highlight></codeline>
 <codeline lineno="38"><highlight class="normal"></highlight></codeline>
-<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_py_s_t_l_wrapper_8cpp_1a168320ae6ebe56579c717093cbb24708" kindref="member">export_STLWrapper</ref>();</highlight></codeline>
-<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_py_structures_8cpp_1a18cad6e29d14a0da9d2cd9464e7e2356" kindref="member">export_Structures</ref>();</highlight></codeline>
-<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_py_utilities_8cpp_1a48b6c8c5377d2e7c99f7084ea93aa77b" kindref="member">export_Utilities</ref>();</highlight></codeline>
-<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_py_scoring_functions_8cpp_1a2ede6b770a3e6131986d822ec5842b63" kindref="member">export_ScoringFunctions</ref>();</highlight></codeline>
-<codeline lineno="43"><highlight class="normal"></highlight></codeline>
-<codeline lineno="44"><highlight class="normal"></highlight></codeline>
-<codeline lineno="45"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="39" refid="_smoldock_python_bindings_8cpp_1a9002869529fdb857c7ffa4a170c4f3ef" refkind="member"><highlight class="normal"><ref refid="_smoldock_python_bindings_8cpp_1a9002869529fdb857c7ffa4a170c4f3ef" kindref="member">BOOST_PYTHON_MODULE</ref>(PySmolDock)</highlight></codeline>
+<codeline lineno="40"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Setting<sp/>up<sp/>the<sp/>logger<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>boost::log::core::get()-&gt;set_filter</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(</highlight></codeline>
+<codeline lineno="44"><highlight class="normal">#ifdef<sp/>NDEBUG</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>boost::log::trivial::severity<sp/>&gt;=<sp/>boost::log::trivial::info</highlight></codeline>
+<codeline lineno="46"><highlight class="normal">#</highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>boost::log::trivial::severity<sp/>&gt;=<sp/>boost::log::trivial::debug</highlight></codeline>
+<codeline lineno="48"><highlight class="normal">#endif</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/>);</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>console_logger<sp/>=<sp/>boost::log::add_console_log(std::cout);</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/>console_logger-&gt;set_formatter([](boost::log::record_view<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>&amp;rec,<sp/>boost::log::formatting_ostream<sp/>&amp;strm)<sp/>{</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(rec[boost::log::trivial::severity]<sp/>==<sp/>boost::log::trivial::trace)<sp/>{</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>strm<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>T<sp/><sp/>&quot;</highlight><highlight class="normal">;<sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>use<sp/>TRACE_LOG();<sp/>macro<sp/>for<sp/>auto<sp/>file:line:function</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(rec[boost::log::trivial::severity]<sp/>==<sp/>boost::log::trivial::debug)<sp/>{</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>strm<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;{D}<sp/>&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(rec[boost::log::trivial::severity]<sp/>==<sp/>boost::log::trivial::info)<sp/>{</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>strm<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/><sp/><sp/>&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(rec[boost::log::trivial::severity]<sp/>==<sp/>boost::log::trivial::warning)<sp/>{</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>strm<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;[!]<sp/>&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(rec[boost::log::trivial::severity]<sp/>&gt;=<sp/>boost::log::trivial::error)<sp/>{</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>strm<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;[E]<sp/>&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>strm<sp/>&lt;&lt;<sp/>rec[boost::log::expressions::smessage];</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/>});</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/>Py_Initialize();</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/>np::initialize();</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_py_s_t_l_wrapper_8cpp_1a168320ae6ebe56579c717093cbb24708" kindref="member">export_STLWrapper</ref>();</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_py_structures_8cpp_1a18cad6e29d14a0da9d2cd9464e7e2356" kindref="member">export_Structures</ref>();</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_py_utilities_8cpp_1a48b6c8c5377d2e7c99f7084ea93aa77b" kindref="member">export_Utilities</ref>();</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_py_scoring_functions_8cpp_1a2ede6b770a3e6131986d822ec5842b63" kindref="member">export_ScoringFunctions</ref>();</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_py_engine_8cpp_1a6ad919c2b94b67a7e9dcd4cdd4201eeb" kindref="member">export_Engines</ref>();</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal">}</highlight></codeline>
     </programlisting>
     <location file="Frontends/SmoldockPythonBindings.cpp"/>
   </compounddef>

@@ -1,0 +1,79 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="class_smol_dock_1_1_heuristics_1_1_global_heuristic" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>SmolDock::Heuristics::GlobalHeuristic</compoundname>
+    <derivedcompoundref refid="class_smol_dock_1_1_heuristics_1_1_random_restart" prot="public" virt="non-virtual">SmolDock::Heuristics::RandomRestart</derivedcompoundref>
+    <includes refid="_heuristic_interface_8h" local="no">HeuristicInterface.h</includes>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_smol_dock_1_1_heuristics_1_1_global_heuristic_1acd4f8bbe6334ba93dcd4ea1d2a8c0d38" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>bool</type>
+        <definition>virtual bool SmolDock::Heuristics::GlobalHeuristic::search</definition>
+        <argsstring>()=0</argsstring>
+        <name>search</name>
+        <reimplementedby refid="class_smol_dock_1_1_heuristics_1_1_random_restart_1abfa7882757c070d876d94090520cef92">search</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Engines/GlobalHeuristics/HeuristicInterface.h" line="13" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_smol_dock_1_1_heuristics_1_1_global_heuristic_1a1abc970d50c981e4df49833d4e7f0551" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>arma::mat</type>
+        <definition>virtual arma::mat SmolDock::Heuristics::GlobalHeuristic::getResultMatrix</definition>
+        <argsstring>()=0</argsstring>
+        <name>getResultMatrix</name>
+        <reimplementedby refid="class_smol_dock_1_1_heuristics_1_1_random_restart_1a2397763517ca92a3552c84963998ab39">getResultMatrix</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Engines/GlobalHeuristics/HeuristicInterface.h" line="15" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_smol_dock_1_1_heuristics_1_1_global_heuristic_1a93c9f12a7d218837e6e5441ae5daebc1" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>virtual SmolDock::Heuristics::GlobalHeuristic::~GlobalHeuristic</definition>
+        <argsstring>()=default</argsstring>
+        <name>~GlobalHeuristic</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Engines/GlobalHeuristics/HeuristicInterface.h" line="17" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="77">
+        <label>SmolDock::Heuristics::RandomRestart</label>
+        <link refid="class_smol_dock_1_1_heuristics_1_1_random_restart"/>
+        <childnode refid="76" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="76">
+        <label>SmolDock::Heuristics::GlobalHeuristic</label>
+        <link refid="class_smol_dock_1_1_heuristics_1_1_global_heuristic"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="78">
+        <label>SmolDock::Heuristics::GlobalHeuristic</label>
+        <link refid="class_smol_dock_1_1_heuristics_1_1_global_heuristic"/>
+      </node>
+    </collaborationgraph>
+    <location file="Engines/GlobalHeuristics/HeuristicInterface.h" line="10" column="1" bodyfile="Engines/GlobalHeuristics/HeuristicInterface.h" bodystart="10" bodyend="19"/>
+    <listofallmembers>
+      <member refid="class_smol_dock_1_1_heuristics_1_1_global_heuristic_1a1abc970d50c981e4df49833d4e7f0551" prot="public" virt="pure-virtual"><scope>SmolDock::Heuristics::GlobalHeuristic</scope><name>getResultMatrix</name></member>
+      <member refid="class_smol_dock_1_1_heuristics_1_1_global_heuristic_1acd4f8bbe6334ba93dcd4ea1d2a8c0d38" prot="public" virt="pure-virtual"><scope>SmolDock::Heuristics::GlobalHeuristic</scope><name>search</name></member>
+      <member refid="class_smol_dock_1_1_heuristics_1_1_global_heuristic_1a93c9f12a7d218837e6e5441ae5daebc1" prot="public" virt="virtual"><scope>SmolDock::Heuristics::GlobalHeuristic</scope><name>~GlobalHeuristic</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

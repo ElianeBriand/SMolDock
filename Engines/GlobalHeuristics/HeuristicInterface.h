@@ -14,6 +14,9 @@ namespace SmolDock::Heuristics {
 
         virtual arma::mat getResultMatrix() = 0;
 
+        virtual ~GlobalHeuristic() = default;
+
+    private:
     };
 
 

@@ -23,8 +23,7 @@ namespace SmolDock {
     extern std::set<std::tuple<AminoAcid::AAType, std::vector<std::tuple<std::string, Atom::AtomVariant> > > > ResidueAtomPropertiesLookupTable_General;
 
 
-
-    }
+}
 
 
 #endif //SMOLDOCK_PDBRESIDUEVARIANTTABLE_H

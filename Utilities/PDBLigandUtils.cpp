@@ -9,7 +9,7 @@ namespace SmolDock {
 
 
     void AssignBondOrderFromTemplateSMILES(std::shared_ptr<RDKit::RWMol> mol, const std::string &smiles) {
-        RDKit::RWMol *attempt_ptr = nullptr;
+        RDKit::RWMol* attempt_ptr = nullptr;
         try {
             /* This can throw */
             attempt_ptr = RDKit::SmilesToMol(smiles);
@@ -77,8 +77,8 @@ namespace SmolDock {
             }
 
 
-
-            bool matching = RDKit::SubstructMatch((RDKit::ROMol) *mol, (RDKit::ROMol) *templatemol_plainstruct, matches);
+            bool matching = RDKit::SubstructMatch((RDKit::ROMol) *mol, (RDKit::ROMol) *templatemol_plainstruct,
+                                                  matches);
             if (!matching) // Cant reconcile even without charges or double bond
             {
                 BOOST_LOG_TRIVIAL(error)

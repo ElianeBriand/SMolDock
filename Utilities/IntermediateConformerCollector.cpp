@@ -8,16 +8,14 @@
 namespace SmolDock {
 
 
-
-
     void IntermediateConformerCollector::addiConformer(iConformer conformer) {
         Molecule intermediate_res = this->molecule->deepcopy();
         intermediate_res.updateAtomPositionsFromiConformer(conformer);
         writer->addLigand(intermediate_res);
     }
 
-    IntermediateConformerCollector::IntermediateConformerCollector(Molecule *mol, PDBWriter *pdbwriter):
-    molecule(mol),writer(pdbwriter){
+    IntermediateConformerCollector::IntermediateConformerCollector(Molecule* mol, PDBWriter* pdbwriter) :
+            molecule(mol), writer(pdbwriter) {
 
     }
 }

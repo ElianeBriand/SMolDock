@@ -9,9 +9,9 @@
 
 namespace SmolDock {
     ReScorer::ReScorer(SmolDock::Protein &prot, SmolDock::Molecule &mol,
-                       std::function<double(const iConformer &, const iTransform &, const iProtein &)>& scorFunc) :
+                       std::function<double(const iConformer &, const iTransform &, const iProtein &)> &scorFunc) :
             protein(prot), molecule(mol),
-            scoringFunction(scorFunc){
+            scoringFunction(scorFunc) {
 
     }
 
@@ -25,7 +25,6 @@ namespace SmolDock {
     double ReScorer::getScore() {
         return scoringFunction(this->iconformer, iTransformIdentityInit(), this->iprotein);
     }
-
 
 
 }

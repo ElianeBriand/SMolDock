@@ -1,168 +1,699 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
-  <compounddef id="_bond_8cpp" kind="file" language="C++">
-    <compoundname>Bond.cpp</compoundname>
-    <includes refid="_bond_8h" local="yes">Bond.h</includes>
-    <incdepgraph>
-      <node id="183">
-        <label>string</label>
-      </node>
-      <node id="177">
-        <label>Atom.h</label>
-        <link refid="_atom_8h"/>
-        <childnode refid="178" relation="include">
-        </childnode>
-        <childnode refid="176" relation="include">
-        </childnode>
-        <childnode refid="179" relation="include">
-        </childnode>
-        <childnode refid="180" relation="include">
-        </childnode>
-        <childnode refid="181" relation="include">
-        </childnode>
-        <childnode refid="182" relation="include">
-        </childnode>
-      </node>
-      <node id="186">
-        <label>map</label>
-      </node>
-      <node id="175">
-        <label>Bond.h</label>
-        <link refid="_bond_8h"/>
-        <childnode refid="176" relation="include">
-        </childnode>
-        <childnode refid="177" relation="include">
-        </childnode>
-      </node>
-      <node id="182">
-        <label>AminoAcid.h</label>
-        <link refid="_amino_acid_8h"/>
-        <childnode refid="183" relation="include">
-        </childnode>
-        <childnode refid="178" relation="include">
-        </childnode>
-        <childnode refid="179" relation="include">
-        </childnode>
-        <childnode refid="180" relation="include">
-        </childnode>
-        <childnode refid="184" relation="include">
-        </childnode>
-        <childnode refid="176" relation="include">
-        </childnode>
-        <childnode refid="185" relation="include">
-        </childnode>
-      </node>
-      <node id="184">
-        <label>tuple</label>
-      </node>
-      <node id="185">
-        <label>Engines/Internals/iProtein.h</label>
-        <link refid="i_protein_8h"/>
-        <childnode refid="178" relation="include">
-        </childnode>
-        <childnode refid="176" relation="include">
-        </childnode>
-        <childnode refid="186" relation="include">
-        </childnode>
-      </node>
-      <node id="178">
-        <label>vector</label>
-      </node>
-      <node id="181">
-        <label>iostream</label>
-      </node>
-      <node id="174">
-        <label>Bond.cpp</label>
-        <link refid="_bond_8cpp"/>
-        <childnode refid="175" relation="include">
-        </childnode>
-      </node>
-      <node id="179">
-        <label>set</label>
-      </node>
-      <node id="180">
-        <label>algorithm</label>
-      </node>
-      <node id="176">
-        <label>memory</label>
-      </node>
-    </incdepgraph>
-    <innernamespace refid="namespace_smol_dock">SmolDock</innernamespace>
-    <briefdescription>
-    </briefdescription>
-    <detaileddescription>
-    </detaileddescription>
-    <programlisting>
-<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
-<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2018<sp/>Eliane<sp/>Briand</highlight></codeline>
-<codeline lineno="3"><highlight class="comment"><sp/>*</highlight></codeline>
-<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>SmolDock.</highlight></codeline>
-<codeline lineno="5"><highlight class="comment"><sp/>*</highlight></codeline>
-<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>SmolDock<sp/>is<sp/>free<sp/>software:<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or<sp/>modify</highlight></codeline>
-<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>it<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>as<sp/>published<sp/>by</highlight></codeline>
-<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>the<sp/>Free<sp/>Software<sp/>Foundation,<sp/>either<sp/>version<sp/>3<sp/>of<sp/>the<sp/>License,<sp/>or</highlight></codeline>
-<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>(at<sp/>your<sp/>option)<sp/>any<sp/>later<sp/>version.</highlight></codeline>
-<codeline lineno="10"><highlight class="comment"><sp/>*</highlight></codeline>
-<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>SmolDock<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,</highlight></codeline>
-<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>but<sp/>WITHOUT<sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of</highlight></codeline>
-<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE.<sp/><sp/>See<sp/>the</highlight></codeline>
-<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>for<sp/>more<sp/>details.</highlight></codeline>
-<codeline lineno="15"><highlight class="comment"><sp/>*</highlight></codeline>
-<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License</highlight></codeline>
-<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>along<sp/>with<sp/>SmolDock.<sp/><sp/>If<sp/>not,<sp/>see<sp/>&lt;https://www.gnu.org/licenses/&gt;.</highlight></codeline>
-<codeline lineno="18"><highlight class="comment"><sp/>*</highlight></codeline>
-<codeline lineno="19"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="20"><highlight class="normal"></highlight></codeline>
-<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_bond_8h" kindref="compound">Bond.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="22"><highlight class="normal"></highlight></codeline>
-<codeline lineno="23"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_smol_dock" kindref="compound">SmolDock</ref><sp/>{</highlight></codeline>
-<codeline lineno="24"><highlight class="normal"></highlight></codeline>
-<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_bond_1acb9a24240df4164e4840611d7df39962" kindref="member">Bond::nextBondID</ref><sp/>=<sp/>0;</highlight></codeline>
-<codeline lineno="26"><highlight class="normal"></highlight></codeline>
-<codeline lineno="27"><highlight class="normal"></highlight></codeline>
-<codeline lineno="28" refid="class_smol_dock_1_1_bond_1a7f046d71521a269171643bdf147d5c80" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_bond_1a7f046d71521a269171643bdf147d5c80" kindref="member">Bond::Bond</ref>(std::shared_ptr&lt;Atom&gt;<sp/>atom_a,<sp/>std::shared_ptr&lt;Atom&gt;<sp/>atom_b)<sp/>{</highlight></codeline>
-<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="class_smol_dock_1_1_bond_1ad909ef34f3b9b10acc221ac6d54e423a" kindref="member">bond_end_a</ref><sp/>=<sp/>std::move(atom_a);</highlight></codeline>
-<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="class_smol_dock_1_1_bond_1adbbc73bd7bc4fc579237321be516ed2f" kindref="member">bond_end_b</ref><sp/>=<sp/>std::move(atom_b);</highlight></codeline>
-<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="32"><highlight class="normal"></highlight></codeline>
-<codeline lineno="33" refid="class_smol_dock_1_1_bond_1ae864507cf1018efa1964e7b77b2d6e4f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_bond_1a7f046d71521a269171643bdf147d5c80" kindref="member">Bond::Bond</ref>(std::shared_ptr&lt;Atom&gt;<sp/>atom_a,<sp/>std::shared_ptr&lt;Atom&gt;<sp/>atom_b,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
-<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="class_smol_dock_1_1_bond_1ad909ef34f3b9b10acc221ac6d54e423a" kindref="member">bond_end_a</ref><sp/>=<sp/>std::move(atom_a);</highlight></codeline>
-<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="class_smol_dock_1_1_bond_1adbbc73bd7bc4fc579237321be516ed2f" kindref="member">bond_end_b</ref><sp/>=<sp/>std::move(atom_b);</highlight></codeline>
-<codeline lineno="36"><highlight class="normal"></highlight></codeline>
-<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_bond_1a6fb49dc80f21a23c8b039f85d3b7b5bf" kindref="member">BondID</ref><sp/>=<sp/>id;</highlight></codeline>
-<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_bond_1a7795dad7005c83f8702d8593eb81b1ff" kindref="member">bondtype</ref><sp/>=<sp/><ref refid="class_smol_dock_1_1_bond_1a6cbf152f682501c998bd06a55400c9cfa0a3db58cd06e63f99bfd2d9e6773f555" kindref="member">defaultbond</ref>;</highlight></codeline>
-<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="40"><highlight class="normal"></highlight></codeline>
-<codeline lineno="41" refid="class_smol_dock_1_1_bond_1a8ca51ba3f2abc758ecd7b4b040681f21" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Atom&gt;<sp/><ref refid="class_smol_dock_1_1_bond_1a8ca51ba3f2abc758ecd7b4b040681f21" kindref="member">Bond::getEndA</ref>()<sp/>{</highlight></codeline>
-<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_bond_1ad909ef34f3b9b10acc221ac6d54e423a" kindref="member">bond_end_a</ref>;</highlight></codeline>
-<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="44"><highlight class="normal"></highlight></codeline>
-<codeline lineno="45" refid="class_smol_dock_1_1_bond_1a0a2feeb4cc88cbb8920ae5e9b142ead5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Atom&gt;<sp/><ref refid="class_smol_dock_1_1_bond_1a0a2feeb4cc88cbb8920ae5e9b142ead5" kindref="member">Bond::getEndB</ref>()<sp/>{</highlight></codeline>
-<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_bond_1adbbc73bd7bc4fc579237321be516ed2f" kindref="member">bond_end_b</ref>;</highlight></codeline>
-<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="48"><highlight class="normal"></highlight></codeline>
-<codeline lineno="49" refid="class_smol_dock_1_1_bond_1a225d51b7edd43bc5aa16984981bc2dfe" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_bond_1a225d51b7edd43bc5aa16984981bc2dfe" kindref="member">Bond::publicizeToAtom</ref>()<sp/>{</highlight></codeline>
-<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Publicize<sp/>the<sp/>bond<sp/>to<sp/>the<sp/>atoms<sp/>involved</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>(allow<sp/>for<sp/>easy<sp/>atom<sp/>based<sp/>molecule<sp/>traversal)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_bond_1ad909ef34f3b9b10acc221ac6d54e423a" kindref="member">bond_end_a</ref>-&gt;bonds.push_back(shared_from_this());</highlight></codeline>
-<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_bond_1adbbc73bd7bc4fc579237321be516ed2f" kindref="member">bond_end_b</ref>-&gt;bonds.push_back(shared_from_this());</highlight></codeline>
-<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="55"><highlight class="normal"></highlight></codeline>
-<codeline lineno="56" refid="class_smol_dock_1_1_bond_1a4ebf28309120c880429f205edf67b9f8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_bond_1a4ebf28309120c880429f205edf67b9f8" kindref="member">Bond::setBondType</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_bond_1a6cbf152f682501c998bd06a55400c9cf" kindref="member">Bond::BondType</ref><sp/>t)<sp/>{</highlight></codeline>
-<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_bond_1a7795dad7005c83f8702d8593eb81b1ff" kindref="member">bondtype</ref><sp/>=<sp/>t;</highlight></codeline>
-<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="59"><highlight class="normal"></highlight></codeline>
-<codeline lineno="60" refid="class_smol_dock_1_1_bond_1a6b8180f0f2b339c521f8a74b2445e8c8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_bond_1a6cbf152f682501c998bd06a55400c9cf" kindref="member">Bond::BondType</ref><sp/><ref refid="class_smol_dock_1_1_bond_1a6b8180f0f2b339c521f8a74b2445e8c8" kindref="member">Bond::getBondType</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_bond_1a7795dad7005c83f8702d8593eb81b1ff" kindref="member">bondtype</ref>;</highlight></codeline>
-<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="63"><highlight class="normal"></highlight></codeline>
-<codeline lineno="64" refid="class_smol_dock_1_1_bond_1a382edad0cb2bd339e3ff676cd232d093" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_bond_1a382edad0cb2bd339e3ff676cd232d093" kindref="member">Bond::getBondID</ref>()<sp/>{</highlight></codeline>
-<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>this-&gt;<ref refid="class_smol_dock_1_1_bond_1a6fb49dc80f21a23c8b039f85d3b7b5bf" kindref="member">BondID</ref>;</highlight></codeline>
-<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="67"><highlight class="normal"></highlight></codeline>
-<codeline lineno="68"><highlight class="normal"></highlight></codeline>
-<codeline lineno="69"><highlight class="normal">}</highlight></codeline>
-    </programlisting>
-    <location file="Structures/Bond.cpp"/>
-  </compounddef>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd"
+         version="1.8.14">
+    <compounddef id="_bond_8cpp" kind="file" language="C++">
+        <compoundname>Bond.cpp</compoundname>
+        <includes refid="_bond_8h" local="yes">Bond.h</includes>
+        <incdepgraph>
+            <node id="186">
+                <label>string</label>
+            </node>
+            <node id="180">
+                <label>Atom.h</label>
+                <link refid="_atom_8h"/>
+                <childnode refid="181" relation="include">
+                </childnode>
+                <childnode refid="179" relation="include">
+                </childnode>
+                <childnode refid="182" relation="include">
+                </childnode>
+                <childnode refid="183" relation="include">
+                </childnode>
+                <childnode refid="184" relation="include">
+                </childnode>
+                <childnode refid="185" relation="include">
+                </childnode>
+            </node>
+            <node id="189">
+                <label>map</label>
+            </node>
+            <node id="178">
+                <label>Bond.h</label>
+                <link refid="_bond_8h"/>
+                <childnode refid="179" relation="include">
+                </childnode>
+                <childnode refid="180" relation="include">
+                </childnode>
+            </node>
+            <node id="185">
+                <label>AminoAcid.h</label>
+                <link refid="_amino_acid_8h"/>
+                <childnode refid="186" relation="include">
+                </childnode>
+                <childnode refid="181" relation="include">
+                </childnode>
+                <childnode refid="182" relation="include">
+                </childnode>
+                <childnode refid="183" relation="include">
+                </childnode>
+                <childnode refid="187" relation="include">
+                </childnode>
+                <childnode refid="179" relation="include">
+                </childnode>
+                <childnode refid="188" relation="include">
+                </childnode>
+            </node>
+            <node id="187">
+                <label>tuple</label>
+            </node>
+            <node id="188">
+                <label>Engines/Internals/iProtein.h</label>
+                <link refid="i_protein_8h"/>
+                <childnode refid="181" relation="include">
+                </childnode>
+                <childnode refid="179" relation="include">
+                </childnode>
+                <childnode refid="189" relation="include">
+                </childnode>
+            </node>
+            <node id="181">
+                <label>vector</label>
+            </node>
+            <node id="184">
+                <label>iostream</label>
+            </node>
+            <node id="177">
+                <label>Bond.cpp</label>
+                <link refid="_bond_8cpp"/>
+                <childnode refid="178" relation="include">
+                </childnode>
+            </node>
+            <node id="182">
+                <label>set</label>
+            </node>
+            <node id="183">
+                <label>algorithm</label>
+            </node>
+            <node id="179">
+                <label>memory</label>
+            </node>
+        </incdepgraph>
+        <innernamespace refid="namespace_smol_dock">SmolDock</innernamespace>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <programlisting>
+            <codeline lineno="1">
+                <highlight class="comment">/*</highlight>
+            </codeline>
+            <codeline lineno="2">
+                <highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2018<sp/>Eliane<sp/>Briand
+                </highlight>
+            </codeline>
+            <codeline lineno="3">
+                <highlight class="comment"><sp/>*
+                </highlight>
+            </codeline>
+            <codeline lineno="4">
+                <highlight class="comment"><sp/>*<sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>SmolDock.
+                </highlight>
+            </codeline>
+            <codeline lineno="5">
+                <highlight class="comment"><sp/>*
+                </highlight>
+            </codeline>
+            <codeline lineno="6">
+                <highlight class="comment"><sp/>*<sp/>SmolDock<sp/>is<sp/>free<sp/>software:<sp/>you<sp/>can<sp/>
+                    redistribute<sp/>it<sp/>and/or<sp/>modify
+                </highlight>
+            </codeline>
+            <codeline lineno="7">
+                <highlight class="comment"><sp/>*<sp/>it<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>GNU<sp/>General
+                    <sp/>Public<sp/>License<sp/>as<sp/>published<sp/>by
+                </highlight>
+            </codeline>
+            <codeline lineno="8">
+                <highlight class="comment"><sp/>*<sp/>the<sp/>Free<sp/>Software<sp/>Foundation,<sp/>either<sp/>version
+                    <sp/>3<sp/>of<sp/>the<sp/>License,<sp/>or
+                </highlight>
+            </codeline>
+            <codeline lineno="9">
+                <highlight class="comment"><sp/>*<sp/>(at<sp/>your<sp/>option)<sp/>any<sp/>later<sp/>version.
+                </highlight>
+            </codeline>
+            <codeline lineno="10">
+                <highlight class="comment"><sp/>*
+                </highlight>
+            </codeline>
+            <codeline lineno="11">
+                <highlight class="comment"><sp/>*<sp/>SmolDock<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that
+                    <sp/>it<sp/>will<sp/>be<sp/>useful,
+                </highlight>
+            </codeline>
+            <codeline lineno="12">
+                <highlight class="comment"><sp/>*<sp/>but<sp/>WITHOUT<sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the
+                    <sp/>implied<sp/>warranty<sp/>of
+                </highlight>
+            </codeline>
+            <codeline lineno="13">
+                <highlight class="comment"><sp/>*<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR
+                    <sp/>PURPOSE.
+                    <sp/>
+                    <sp/>See<sp/>the
+                </highlight>
+            </codeline>
+            <codeline lineno="14">
+                <highlight class="comment"><sp/>*<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>for<sp/>more<sp/>
+                    details.
+                </highlight>
+            </codeline>
+            <codeline lineno="15">
+                <highlight class="comment"><sp/>*
+                </highlight>
+            </codeline>
+            <codeline lineno="16">
+                <highlight class="comment"><sp/>*<sp/>You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>the
+                    <sp/>GNU<sp/>General<sp/>Public<sp/>License
+                </highlight>
+            </codeline>
+            <codeline lineno="17">
+                <highlight class="comment"><sp/>*<sp/>along<sp/>with<sp/>SmolDock.
+                    <sp/>
+                    <sp/>If<sp/>not,<sp/>see<sp/>&lt;https://www.gnu.org/licenses/&gt;.
+                </highlight>
+            </codeline>
+            <codeline lineno="18">
+                <highlight class="comment"><sp/>*
+                </highlight>
+            </codeline>
+            <codeline lineno="19">
+                <highlight class="comment"><sp/>*/
+                </highlight>
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="20">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="21">
+                <highlight class="normal"></highlight>
+                <highlight class="preprocessor">#include<sp/>&quot;<ref refid="_bond_8h" kindref="compound">Bond.h</ref>&quot;
+                </highlight>
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="22">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="23">
+                <highlight class="normal"></highlight>
+                <highlight class="keyword">namespace
+                    <sp/>
+                </highlight>
+                <highlight class="normal">
+                    <ref refid="namespace_smol_dock" kindref="compound">SmolDock</ref>
+                    <sp/>{
+                </highlight>
+            </codeline>
+            <codeline lineno="24">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="25">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">unsigned</highlight>
+                <highlight class="normal">
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">int</highlight>
+                <highlight class="normal">
+                    <sp/>
+                    <ref refid="class_smol_dock_1_1_bond_1acb9a24240df4164e4840611d7df39962" kindref="member">
+                        Bond::nextBondID
+                    </ref>
+                    <sp/>=<sp/>0;
+                </highlight>
+            </codeline>
+            <codeline lineno="26">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="27">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="28" refid="class_smol_dock_1_1_bond_1a7f046d71521a269171643bdf147d5c80" refkind="member">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <ref refid="class_smol_dock_1_1_bond_1a7f046d71521a269171643bdf147d5c80" kindref="member">
+                        Bond::Bond</ref>(std::shared_ptr&lt;Atom&gt;<sp/>atom_a,<sp/>std::shared_ptr&lt;Atom&gt;<sp/>
+                    atom_b)<sp/>{
+                </highlight>
+            </codeline>
+            <codeline lineno="29">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>this-&gt;<ref refid="class_smol_dock_1_1_bond_1ad909ef34f3b9b10acc221ac6d54e423a"
+                                       kindref="member">bond_end_a
+                </ref>
+                    <sp/>=<sp/>std::move(atom_a);
+                </highlight>
+            </codeline>
+            <codeline lineno="30">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>this-&gt;<ref refid="class_smol_dock_1_1_bond_1adbbc73bd7bc4fc579237321be516ed2f"
+                                       kindref="member">bond_end_b
+                </ref>
+                    <sp/>=<sp/>std::move(atom_b);
+                </highlight>
+            </codeline>
+            <codeline lineno="31">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>}
+                </highlight>
+            </codeline>
+            <codeline lineno="32">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="33" refid="class_smol_dock_1_1_bond_1ae864507cf1018efa1964e7b77b2d6e4f" refkind="member">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <ref refid="class_smol_dock_1_1_bond_1a7f046d71521a269171643bdf147d5c80" kindref="member">
+                        Bond::Bond</ref>(std::shared_ptr&lt;Atom&gt;<sp/>atom_a,<sp/>std::shared_ptr&lt;Atom&gt;<sp/>
+                    atom_b,
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">unsigned</highlight>
+                <highlight class="normal">
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">int</highlight>
+                <highlight class="normal">
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">id</highlight>
+                <highlight class="normal">)<sp/>{
+                </highlight>
+            </codeline>
+            <codeline lineno="34">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>this-&gt;<ref refid="class_smol_dock_1_1_bond_1ad909ef34f3b9b10acc221ac6d54e423a"
+                                       kindref="member">bond_end_a
+                </ref>
+                    <sp/>=<sp/>std::move(atom_a);
+                </highlight>
+            </codeline>
+            <codeline lineno="35">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>this-&gt;<ref refid="class_smol_dock_1_1_bond_1adbbc73bd7bc4fc579237321be516ed2f"
+                                       kindref="member">bond_end_b
+                </ref>
+                    <sp/>=<sp/>std::move(atom_b);
+                </highlight>
+            </codeline>
+            <codeline lineno="36">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="37">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <ref refid="class_smol_dock_1_1_bond_1a6fb49dc80f21a23c8b039f85d3b7b5bf" kindref="member">BondID
+                    </ref>
+                    <sp/>=<sp/>id;
+                </highlight>
+            </codeline>
+            <codeline lineno="38">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <ref refid="class_smol_dock_1_1_bond_1a7795dad7005c83f8702d8593eb81b1ff" kindref="member">bondtype
+                    </ref>
+                    <sp/>=
+                    <sp/>
+                    <ref refid="class_smol_dock_1_1_bond_1a6cbf152f682501c998bd06a55400c9cfa0a3db58cd06e63f99bfd2d9e6773f555"
+                         kindref="member">defaultbond</ref>;
+                </highlight>
+            </codeline>
+            <codeline lineno="39">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>}
+                </highlight>
+            </codeline>
+            <codeline lineno="40">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="41" refid="class_smol_dock_1_1_bond_1a8ca51ba3f2abc758ecd7b4b040681f21" refkind="member">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>std::shared_ptr&lt;Atom&gt;<sp/>
+                    <ref refid="class_smol_dock_1_1_bond_1a8ca51ba3f2abc758ecd7b4b040681f21" kindref="member">
+                        Bond::getEndA</ref>()<sp/>{
+                </highlight>
+            </codeline>
+            <codeline lineno="42">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                </highlight>
+                <highlight class="keywordflow">return</highlight>
+                <highlight class="normal">
+                    <sp/>
+                    <ref refid="class_smol_dock_1_1_bond_1ad909ef34f3b9b10acc221ac6d54e423a" kindref="member">
+                        bond_end_a</ref>;
+                </highlight>
+            </codeline>
+            <codeline lineno="43">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>}
+                </highlight>
+            </codeline>
+            <codeline lineno="44">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="45" refid="class_smol_dock_1_1_bond_1a0a2feeb4cc88cbb8920ae5e9b142ead5" refkind="member">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>std::shared_ptr&lt;Atom&gt;<sp/>
+                    <ref refid="class_smol_dock_1_1_bond_1a0a2feeb4cc88cbb8920ae5e9b142ead5" kindref="member">
+                        Bond::getEndB</ref>()<sp/>{
+                </highlight>
+            </codeline>
+            <codeline lineno="46">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                </highlight>
+                <highlight class="keywordflow">return</highlight>
+                <highlight class="normal">
+                    <sp/>
+                    <ref refid="class_smol_dock_1_1_bond_1adbbc73bd7bc4fc579237321be516ed2f" kindref="member">
+                        bond_end_b</ref>;
+                </highlight>
+            </codeline>
+            <codeline lineno="47">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>}
+                </highlight>
+            </codeline>
+            <codeline lineno="48">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="49" refid="class_smol_dock_1_1_bond_1a225d51b7edd43bc5aa16984981bc2dfe" refkind="member">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">void</highlight>
+                <highlight class="normal">
+                    <sp/>
+                    <ref refid="class_smol_dock_1_1_bond_1a225d51b7edd43bc5aa16984981bc2dfe" kindref="member">
+                        Bond::publicizeToAtom</ref>()<sp/>{
+                </highlight>
+            </codeline>
+            <codeline lineno="50">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                </highlight>
+                <highlight class="comment">//<sp/>Publicize<sp/>the<sp/>bond<sp/>to<sp/>the<sp/>atoms<sp/>involved
+                </highlight>
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="51">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                </highlight>
+                <highlight class="comment">//<sp/>(allow<sp/>for<sp/>easy<sp/>atom<sp/>based<sp/>molecule<sp/>traversal)
+                </highlight>
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="52">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <ref refid="class_smol_dock_1_1_bond_1ad909ef34f3b9b10acc221ac6d54e423a" kindref="member">
+                        bond_end_a</ref>-&gt;bonds.push_back(shared_from_this());
+                </highlight>
+            </codeline>
+            <codeline lineno="53">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <ref refid="class_smol_dock_1_1_bond_1adbbc73bd7bc4fc579237321be516ed2f" kindref="member">
+                        bond_end_b</ref>-&gt;bonds.push_back(shared_from_this());
+                </highlight>
+            </codeline>
+            <codeline lineno="54">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>}
+                </highlight>
+            </codeline>
+            <codeline lineno="55">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="56" refid="class_smol_dock_1_1_bond_1a4ebf28309120c880429f205edf67b9f8" refkind="member">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">void</highlight>
+                <highlight class="normal">
+                    <sp/>
+                    <ref refid="class_smol_dock_1_1_bond_1a4ebf28309120c880429f205edf67b9f8" kindref="member">
+                        Bond::setBondType</ref>(
+                </highlight>
+                <highlight class="keyword">const</highlight>
+                <highlight class="normal">
+                    <sp/>
+                    <ref refid="class_smol_dock_1_1_bond_1a6cbf152f682501c998bd06a55400c9cf" kindref="member">
+                        Bond::BondType
+                    </ref>
+                    <sp/>t)<sp/>{
+                </highlight>
+            </codeline>
+            <codeline lineno="57">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <ref refid="class_smol_dock_1_1_bond_1a7795dad7005c83f8702d8593eb81b1ff" kindref="member">bondtype
+                    </ref>
+                    <sp/>=<sp/>t;
+                </highlight>
+            </codeline>
+            <codeline lineno="58">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>}
+                </highlight>
+            </codeline>
+            <codeline lineno="59">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="60" refid="class_smol_dock_1_1_bond_1a6b8180f0f2b339c521f8a74b2445e8c8" refkind="member">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <ref refid="class_smol_dock_1_1_bond_1a6cbf152f682501c998bd06a55400c9cf" kindref="member">
+                        Bond::BondType
+                    </ref>
+                    <sp/>
+                    <ref refid="class_smol_dock_1_1_bond_1a6b8180f0f2b339c521f8a74b2445e8c8" kindref="member">
+                        Bond::getBondType</ref>()
+                </highlight>
+                <highlight class="keyword"><sp/>const
+                    <sp/>
+                </highlight>
+                <highlight class="normal">{</highlight>
+            </codeline>
+            <codeline lineno="61">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                </highlight>
+                <highlight class="keywordflow">return</highlight>
+                <highlight class="normal">
+                    <sp/>
+                    <ref refid="class_smol_dock_1_1_bond_1a7795dad7005c83f8702d8593eb81b1ff" kindref="member">
+                        bondtype</ref>;
+                </highlight>
+            </codeline>
+            <codeline lineno="62">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>}
+                </highlight>
+            </codeline>
+            <codeline lineno="63">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="64" refid="class_smol_dock_1_1_bond_1a382edad0cb2bd339e3ff676cd232d093" refkind="member">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">unsigned</highlight>
+                <highlight class="normal">
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">int</highlight>
+                <highlight class="normal">
+                    <sp/>
+                    <ref refid="class_smol_dock_1_1_bond_1a382edad0cb2bd339e3ff676cd232d093" kindref="member">
+                        Bond::getBondID</ref>()<sp/>{
+                </highlight>
+            </codeline>
+            <codeline lineno="65">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                </highlight>
+                <highlight class="keywordflow">return</highlight>
+                <highlight class="normal"><sp/>this-&gt;<ref
+                        refid="class_smol_dock_1_1_bond_1a6fb49dc80f21a23c8b039f85d3b7b5bf" kindref="member">
+                    BondID</ref>;
+                </highlight>
+            </codeline>
+            <codeline lineno="66">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>}
+                </highlight>
+            </codeline>
+            <codeline lineno="67">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="68">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="69">
+                <highlight class="normal">}</highlight>
+            </codeline>
+        </programlisting>
+        <location file="Structures/Bond.cpp"/>
+    </compounddef>
 </doxygen>

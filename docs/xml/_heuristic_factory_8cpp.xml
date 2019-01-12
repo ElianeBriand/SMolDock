@@ -1,0 +1,129 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_heuristic_factory_8cpp" kind="file" language="C++">
+    <compoundname>HeuristicFactory.cpp</compoundname>
+    <includes refid="_heuristic_factory_8h" local="yes">HeuristicFactory.h</includes>
+    <includes refid="_random_restart_8h" local="yes">RandomRestart.h</includes>
+    <incdepgraph>
+      <node id="563">
+        <label>HeuristicInterface.h</label>
+        <link refid="_heuristic_interface_8h"/>
+      </node>
+      <node id="562">
+        <label>Engines/LocalOptimizers/OptimizerInterface.h</label>
+        <link refid="_optimizer_interface_8h"/>
+        <childnode refid="555" relation="include">
+        </childnode>
+      </node>
+      <node id="560">
+        <label>cmath</label>
+      </node>
+      <node id="561">
+        <label>cassert</label>
+      </node>
+      <node id="554">
+        <label>Engines/ScoringFunctions/ScoringFunctionInterface.h</label>
+        <link refid="_scoring_function_interface_8h"/>
+        <childnode refid="555" relation="include">
+        </childnode>
+        <childnode refid="556" relation="include">
+        </childnode>
+      </node>
+      <node id="556">
+        <label>Engines/Internals/iConformer.h</label>
+        <link refid="i_conformer_8h"/>
+        <childnode refid="557" relation="include">
+        </childnode>
+        <childnode refid="553" relation="include">
+        </childnode>
+        <childnode refid="558" relation="include">
+        </childnode>
+      </node>
+      <node id="555">
+        <label>armadillo</label>
+      </node>
+      <node id="558">
+        <label>iTransform.h</label>
+        <link refid="i_transform_8h"/>
+        <childnode refid="557" relation="include">
+        </childnode>
+        <childnode refid="553" relation="include">
+        </childnode>
+        <childnode refid="559" relation="include">
+        </childnode>
+        <childnode refid="560" relation="include">
+        </childnode>
+        <childnode refid="561" relation="include">
+        </childnode>
+      </node>
+      <node id="557">
+        <label>vector</label>
+      </node>
+      <node id="559">
+        <label>array</label>
+      </node>
+      <node id="551">
+        <label>HeuristicFactory.cpp</label>
+        <link refid="_heuristic_factory_8cpp"/>
+        <childnode refid="552" relation="include">
+        </childnode>
+        <childnode refid="564" relation="include">
+        </childnode>
+      </node>
+      <node id="564">
+        <label>RandomRestart.h</label>
+        <link refid="_random_restart_8h"/>
+        <childnode refid="554" relation="include">
+        </childnode>
+        <childnode refid="562" relation="include">
+        </childnode>
+        <childnode refid="563" relation="include">
+        </childnode>
+      </node>
+      <node id="552">
+        <label>HeuristicFactory.h</label>
+        <link refid="_heuristic_factory_8h"/>
+        <childnode refid="553" relation="include">
+        </childnode>
+        <childnode refid="554" relation="include">
+        </childnode>
+        <childnode refid="562" relation="include">
+        </childnode>
+        <childnode refid="563" relation="include">
+        </childnode>
+      </node>
+      <node id="553">
+        <label>memory</label>
+      </node>
+    </incdepgraph>
+    <innernamespace refid="namespace_smol_dock_1_1_heuristics">SmolDock::Heuristics</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Created<sp/>by<sp/>eliane<sp/>on<sp/>09/01/19.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_heuristic_factory_8h" kindref="compound">HeuristicFactory.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_random_restart_8h" kindref="compound">RandomRestart.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8" refid="namespace_smol_dock_1_1_heuristics" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_smol_dock_1_1_heuristics" kindref="compound">SmolDock::Heuristics</ref><sp/>{</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10" refid="namespace_smol_dock_1_1_heuristics_1a30612bd88fe0508b7306b60c678a68a9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;GlobalHeuristic&gt;<sp/><ref refid="namespace_smol_dock_1_1_heuristics_1a30612bd88fe0508b7306b60c678a68a9" kindref="member">globalHeuristicFactory</ref>(<ref refid="namespace_smol_dock_1_1_heuristics_1acab108fbb064edb33166af7fdfb77a72" kindref="member">GlobalHeuristicType</ref><sp/>t,<sp/><ref refid="class_smol_dock_1_1_score_1_1_scoring_function" kindref="compound">Score::ScoringFunction</ref>*<sp/>scorFunc,</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_optimizer_1_1_optimizer" kindref="compound">Optimizer::Optimizer</ref>*<sp/>localOptimizer,</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>rng_seed)<sp/>{</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(t<sp/>==<sp/><ref refid="namespace_smol_dock_1_1_heuristics_1acab108fbb064edb33166af7fdfb77a72a1e6d08df1b1e06305a25d1b4bddce43d" kindref="member">GlobalHeuristicType::RandomRestart</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>std::make_shared&lt;RandomRestart&gt;(scorFunc,<sp/>localOptimizer,<sp/>rng_seed);</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="Engines/GlobalHeuristics/HeuristicFactory.cpp"/>
+  </compounddef>
+</doxygen>

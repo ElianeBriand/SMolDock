@@ -23,6 +23,8 @@
 
 #include <GraphMol/RWMol.h>
 #include <random>
+#include <Engines/LocalOptimizers/OptimizerFactory.h>
+#include <Engines/GlobalHeuristics/HeuristicFactory.h>
 
 
 #include "AbstractDockingEngine.h"
@@ -51,15 +53,15 @@ namespace SmolDock::Engine {
          * \param conformer_num Number of conformer to generate
         */
         explicit ConformerRigidDockingEngine(unsigned int conformer_num,
-                Protein* protein,
-                Molecule* ligand,
-                Score::ScoringFunctionType scFuncType,
-                unsigned int seed);
+                                             Protein* protein,
+                                             Molecule* ligand,
+                                             Score::ScoringFunctionType scFuncType,
+                                             Heuristics::GlobalHeuristicType heurType,
+                                             Optimizer::LocalOptimizerType localOptimizerType_,
+                                             unsigned int seed);
 
         // /// Parameters /////////////
         bool setDockingBox(DockingBoxSetting setting) final;
-
-
 
 
         // /// Actions /////////////
@@ -75,14 +77,17 @@ namespace SmolDock::Engine {
 
         unsigned int conformer_num;
 
-        Protein *orig_protein;
-        Molecule *orig_ligand;
+        Protein* orig_protein;
+        Molecule* orig_ligand;
 
         Score::ScoringFunctionType scoringFuncType;
-        std::unique_ptr<Score::ScoringFunction> scoringFunction;
+        Heuristics::GlobalHeuristicType heuristicType;
+        Optimizer::LocalOptimizerType localOptimizerType;
 
+        std::shared_ptr<Score::ScoringFunction> scoringFunction;
+        std::shared_ptr<Heuristics::GlobalHeuristic> globalHeuristic;
+        std::shared_ptr<Optimizer::Optimizer> localOptimizer;
 
-        int random_seed = 1;
         std::mt19937 rnd_generator;
 
         //std::shared_ptr<RDKit::RWMol> rwmol;
@@ -90,7 +95,6 @@ namespace SmolDock::Engine {
         std::vector<iConformer> viConformers;
 
         iProtein protein;
-
 
 
         std::vector<double> scores;

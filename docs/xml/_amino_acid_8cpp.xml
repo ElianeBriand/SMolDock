@@ -6,43 +6,41 @@
     <includes refid="_amino_acid_8h" local="yes">AminoAcid.h</includes>
     <includes refid="_atom_8h" local="yes">Atom.h</includes>
     <incdepgraph>
-      <node id="45">
+      <node id="46">
         <label>string</label>
       </node>
-      <node id="53">
+      <node id="54">
         <label>Atom.h</label>
         <link refid="_atom_8h"/>
-        <childnode refid="46" relation="include">
-        </childnode>
-        <childnode refid="50" relation="include">
-        </childnode>
         <childnode refid="47" relation="include">
+        </childnode>
+        <childnode refid="51" relation="include">
         </childnode>
         <childnode refid="48" relation="include">
         </childnode>
-        <childnode refid="43" relation="include">
+        <childnode refid="49" relation="include">
         </childnode>
         <childnode refid="44" relation="include">
         </childnode>
-      </node>
-      <node id="52">
-        <label>map</label>
-      </node>
-      <node id="42">
-        <label>AminoAcid.cpp</label>
-        <link refid="_amino_acid_8cpp"/>
-        <childnode refid="43" relation="include">
-        </childnode>
-        <childnode refid="44" relation="include">
-        </childnode>
-        <childnode refid="53" relation="include">
-        </childnode>
-      </node>
-      <node id="44">
-        <label>AminoAcid.h</label>
-        <link refid="_amino_acid_8h"/>
         <childnode refid="45" relation="include">
         </childnode>
+      </node>
+      <node id="53">
+        <label>map</label>
+      </node>
+      <node id="43">
+        <label>AminoAcid.cpp</label>
+        <link refid="_amino_acid_8cpp"/>
+        <childnode refid="44" relation="include">
+        </childnode>
+        <childnode refid="45" relation="include">
+        </childnode>
+        <childnode refid="54" relation="include">
+        </childnode>
+      </node>
+      <node id="45">
+        <label>AminoAcid.h</label>
+        <link refid="_amino_acid_8h"/>
         <childnode refid="46" relation="include">
         </childnode>
         <childnode refid="47" relation="include">
@@ -55,33 +53,35 @@
         </childnode>
         <childnode refid="51" relation="include">
         </childnode>
-      </node>
-      <node id="49">
-        <label>tuple</label>
-      </node>
-      <node id="51">
-        <label>Engines/Internals/iProtein.h</label>
-        <link refid="i_protein_8h"/>
-        <childnode refid="46" relation="include">
-        </childnode>
-        <childnode refid="50" relation="include">
-        </childnode>
         <childnode refid="52" relation="include">
         </childnode>
       </node>
-      <node id="46">
-        <label>vector</label>
+      <node id="50">
+        <label>tuple</label>
       </node>
-      <node id="43">
-        <label>iostream</label>
+      <node id="52">
+        <label>Engines/Internals/iProtein.h</label>
+        <link refid="i_protein_8h"/>
+        <childnode refid="47" relation="include">
+        </childnode>
+        <childnode refid="51" relation="include">
+        </childnode>
+        <childnode refid="53" relation="include">
+        </childnode>
       </node>
       <node id="47">
-        <label>set</label>
+        <label>vector</label>
+      </node>
+      <node id="44">
+        <label>iostream</label>
       </node>
       <node id="48">
+        <label>set</label>
+      </node>
+      <node id="49">
         <label>algorithm</label>
       </node>
-      <node id="50">
+      <node id="51">
         <label>memory</label>
       </node>
     </incdepgraph>

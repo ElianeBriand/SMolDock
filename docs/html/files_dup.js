@@ -29,6 +29,8 @@ var files_dup =
     [ "GradientDescentLineSearch.h", "_gradient_descent_line_search_8h.html", [
       [ "GradientDescentLineSearch", "class_smol_dock_1_1_optimizer_1_1_gradient_descent_line_search.html", "class_smol_dock_1_1_optimizer_1_1_gradient_descent_line_search" ]
     ] ],
+    [ "HeuristicFactory.cpp", "_heuristic_factory_8cpp.html", "_heuristic_factory_8cpp" ],
+    [ "HeuristicFactory.h", "_heuristic_factory_8h.html", "_heuristic_factory_8h" ],
     [ "HeuristicInterface.h", "_heuristic_interface_8h.html", [
       [ "GlobalHeuristic", "class_smol_dock_1_1_heuristics_1_1_global_heuristic.html", "class_smol_dock_1_1_heuristics_1_1_global_heuristic" ]
     ] ],
@@ -111,6 +113,8 @@ var files_dup =
     [ "Molecule.h", "_molecule_8h.html", [
       [ "Molecule", "class_smol_dock_1_1_molecule.html", "class_smol_dock_1_1_molecule" ]
     ] ],
+    [ "OptimizerFactory.cpp", "_optimizer_factory_8cpp.html", "_optimizer_factory_8cpp" ],
+    [ "OptimizerFactory.h", "_optimizer_factory_8h.html", "_optimizer_factory_8h" ],
     [ "OptimizerInterface.h", "_optimizer_interface_8h.html", [
       [ "Optimizer", "class_smol_dock_1_1_optimizer_1_1_optimizer.html", "class_smol_dock_1_1_optimizer_1_1_optimizer" ]
     ] ],
@@ -126,6 +130,8 @@ var files_dup =
     [ "Protein.h", "_protein_8h.html", [
       [ "Protein", "class_smol_dock_1_1_protein.html", "class_smol_dock_1_1_protein" ]
     ] ],
+    [ "PyEngine.cpp", "_py_engine_8cpp.html", "_py_engine_8cpp" ],
+    [ "PyEngine.h", "_py_engine_8h.html", "_py_engine_8h" ],
     [ "PyScoringFunctions.cpp", "_py_scoring_functions_8cpp.html", "_py_scoring_functions_8cpp" ],
     [ "PyScoringFunctions.h", "_py_scoring_functions_8h.html", "_py_scoring_functions_8h" ],
     [ "PySTLWrapper.cpp", "_py_s_t_l_wrapper_8cpp.html", "_py_s_t_l_wrapper_8cpp" ],

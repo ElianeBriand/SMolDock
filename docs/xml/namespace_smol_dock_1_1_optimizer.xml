@@ -1,0 +1,89 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="namespace_smol_dock_1_1_optimizer" kind="namespace" language="C++">
+    <compoundname>SmolDock::Optimizer</compoundname>
+    <innerclass refid="class_smol_dock_1_1_optimizer_1_1_gradient_descent_line_search" prot="public">SmolDock::Optimizer::GradientDescentLineSearch</innerclass>
+    <innerclass refid="class_smol_dock_1_1_optimizer_1_1_l___b_f_g_s" prot="public">SmolDock::Optimizer::L_BFGS</innerclass>
+    <innerclass refid="class_smol_dock_1_1_optimizer_1_1_optimizer" prot="public">SmolDock::Optimizer::Optimizer</innerclass>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="namespace_smol_dock_1_1_optimizer_1a7ed1dc6878a606b8dcca7558383650ce" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>LocalOptimizerType</name>
+        <enumvalue id="namespace_smol_dock_1_1_optimizer_1a7ed1dc6878a606b8dcca7558383650cea2bd34449cf1656ea5ea723145f03c127" prot="public">
+          <name>L_BFGS</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespace_smol_dock_1_1_optimizer_1a7ed1dc6878a606b8dcca7558383650cea51a88107a34b56214c993f7fc3d9c4a8" prot="public">
+          <name>GradientDescentLineSearch</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Engines/LocalOptimizers/OptimizerFactory.h" line="15" column="1" bodyfile="Engines/LocalOptimizers/OptimizerFactory.h" bodystart="15" bodyend="18"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespace_smol_dock_1_1_optimizer_1a79ed0dc5e1f1a738bd5bb281f09748a7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool SmolDock::Optimizer::hasNonZeroComponent</definition>
+        <argsstring>(const arma::mat &amp;vector)</argsstring>
+        <name>hasNonZeroComponent</name>
+        <param>
+          <type>const arma::mat &amp;</type>
+          <declname>vector</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Engines/LocalOptimizers/LocalOptimizerUtilityFunctions.h" line="10" column="1" bodyfile="Engines/LocalOptimizers/LocalOptimizerUtilityFunctions.h" bodystart="10" bodyend="16"/>
+        <referencedby refid="class_smol_dock_1_1_optimizer_1_1_gradient_descent_line_search_1ae0888f9903112cfbe93af8d5946a52da" compoundref="_gradient_descent_line_search_8cpp" startline="33" endline="114">SmolDock::Optimizer::GradientDescentLineSearch::optimize</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespace_smol_dock_1_1_optimizer_1a62f48a1e91b51c0d7c9152d1eeaba538" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::shared_ptr&lt; <ref refid="class_smol_dock_1_1_optimizer_1_1_optimizer" kindref="compound">Optimizer</ref> &gt;</type>
+        <definition>std::shared_ptr&lt; Optimizer &gt; SmolDock::Optimizer::optimizerFactory</definition>
+        <argsstring>(LocalOptimizerType t, Score::ScoringFunction *scorFunc, double differential_epsilon)</argsstring>
+        <name>optimizerFactory</name>
+        <param>
+          <type><ref refid="namespace_smol_dock_1_1_optimizer_1a7ed1dc6878a606b8dcca7558383650ce" kindref="member">LocalOptimizerType</ref></type>
+          <declname>t</declname>
+        </param>
+        <param>
+          <type><ref refid="class_smol_dock_1_1_score_1_1_scoring_function" kindref="compound">Score::ScoringFunction</ref> *</type>
+          <declname>scorFunc</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>differential_epsilon</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Engines/LocalOptimizers/OptimizerFactory.cpp" line="12" column="1" bodyfile="Engines/LocalOptimizers/OptimizerFactory.cpp" bodystart="12" bodyend="21"/>
+        <references refid="namespace_smol_dock_1_1_optimizer_1a7ed1dc6878a606b8dcca7558383650cea51a88107a34b56214c993f7fc3d9c4a8">GradientDescentLineSearch</references>
+        <references refid="namespace_smol_dock_1_1_optimizer_1a7ed1dc6878a606b8dcca7558383650cea2bd34449cf1656ea5ea723145f03c127">L_BFGS</references>
+        <referencedby refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a7bee39278168cb4d7ee6558b3a3d3bb4" compoundref="_conformer_rigid_docking_engine_8cpp" startline="135" endline="224">SmolDock::Engine::ConformerRigidDockingEngine::runDockingEngine</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Engines/LocalOptimizers/GradientDescentLineSearch.cpp" line="20" column="1"/>
+  </compounddef>
+</doxygen>

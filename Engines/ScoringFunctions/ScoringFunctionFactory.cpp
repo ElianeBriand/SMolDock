@@ -8,10 +8,11 @@
 
 namespace SmolDock::Score {
 
-    std::unique_ptr<ScoringFunction> scoringFunctionFactory(ScoringFunctionType t, iConformer conformer,
-                                                            iProtein protein,iTransform transform, double differential_upsilon) {
+    std::shared_ptr<ScoringFunction> scoringFunctionFactory(ScoringFunctionType t, const iConformer &conformer,
+                                                            const iProtein &protein, const iTransform &transform,
+                                                            double differential_upsilon) {
         if (t == ScoringFunctionType::VinaRigid) {
-            return std::make_unique<VinaLikeRigidScoringFunction>(conformer,protein,transform,differential_upsilon);
+            return std::make_shared<VinaLikeRigidScoringFunction>(conformer, protein, transform, differential_upsilon);
         } else {
             return nullptr;
         }

@@ -34,7 +34,6 @@ namespace SmolDock::Engine {
         MDStyleDockingEngine() = default;
 
 
-
         bool setDockingBox(DockingBoxSetting setting) final;
 
         bool setupDockingEngine() final;

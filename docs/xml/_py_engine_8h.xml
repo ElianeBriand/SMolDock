@@ -1,0 +1,111 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd"
+         version="1.8.14">
+    <compounddef id="_py_engine_8h" kind="file" language="C++">
+        <compoundname>PyEngine.h</compoundname>
+        <includedby refid="_py_engine_8cpp" local="yes">PyEngine.cpp</includedby>
+        <includedby refid="_smoldock_python_bindings_8cpp" local="yes">SmoldockPythonBindings.cpp</includedby>
+        <invincdepgraph>
+            <node id="1425">
+                <label>PyEngine.h</label>
+                <link refid="_py_engine_8h"/>
+                <childnode refid="1426" relation="include">
+                </childnode>
+                <childnode refid="1427" relation="include">
+                </childnode>
+            </node>
+            <node id="1426">
+                <label>PyEngine.cpp</label>
+                <link refid="_py_engine_8cpp"/>
+            </node>
+            <node id="1427">
+                <label>SmoldockPythonBindings.cpp</label>
+                <link refid="_smoldock_python_bindings_8cpp"/>
+            </node>
+        </invincdepgraph>
+        <sectiondef kind="func">
+            <memberdef kind="function" id="_py_engine_8h_1a6ad919c2b94b67a7e9dcd4cdd4201eeb" prot="public" static="no"
+                       const="no" explicit="no" inline="no" virt="non-virtual">
+                <type>void</type>
+                <definition>void export_Engines</definition>
+                <argsstring>()</argsstring>
+                <name>export_Engines</name>
+                <briefdescription>
+                </briefdescription>
+                <detaileddescription>
+                </detaileddescription>
+                <inbodydescription>
+                </inbodydescription>
+                <location file="Frontends/Python/PyEngine.h" line="9" column="1"
+                          bodyfile="Frontends/Python/PyEngine.cpp" bodystart="30" bodyend="79"/>
+                <referencedby refid="_smoldock_python_bindings_8cpp_1a9002869529fdb857c7ffa4a170c4f3ef"
+                              compoundref="_smoldock_python_bindings_8cpp" startline="39" endline="79">
+                    BOOST_PYTHON_MODULE
+                </referencedby>
+            </memberdef>
+        </sectiondef>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <programlisting>
+            <codeline lineno="1">
+                <highlight class="comment">//</highlight>
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="2">
+                <highlight class="normal"></highlight>
+                <highlight class="comment">//<sp/>Created<sp/>by<sp/>eliane<sp/>on<sp/>11/01/19.
+                </highlight>
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="3">
+                <highlight class="normal"></highlight>
+                <highlight class="comment">//</highlight>
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="4">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="5">
+                <highlight class="normal"></highlight>
+                <highlight class="preprocessor">#ifndef<sp/>SMOLDOCK_PYENGINE_H
+                </highlight>
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="6">
+                <highlight class="normal"></highlight>
+                <highlight class="preprocessor">#define<sp/>SMOLDOCK_PYENGINE_H
+                </highlight>
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="7">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="8">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="9">
+                <highlight class="normal"></highlight>
+                <highlight class="keywordtype">void</highlight>
+                <highlight class="normal">
+                    <sp/>
+                    <ref refid="_py_engine_8h_1a6ad919c2b94b67a7e9dcd4cdd4201eeb" kindref="member">export_Engines</ref>
+                    ();
+                </highlight>
+            </codeline>
+            <codeline lineno="10">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="11">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="12">
+                <highlight class="normal"></highlight>
+                <highlight class="preprocessor">#endif<sp/>//SMOLDOCK_PYENGINE_H
+                </highlight>
+            </codeline>
+        </programlisting>
+        <location file="Frontends/Python/PyEngine.h"/>
+    </compounddef>
+</doxygen>

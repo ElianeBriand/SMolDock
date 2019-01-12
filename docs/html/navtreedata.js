@@ -61,8 +61,8 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_abstract_docking_engine_8h.html",
-"class_smol_dock_1_1_atom.html#a57e9a532fd04e1846c0d83edebb9fd41a6124d98749365e3db2c9e5b27ca04db6",
-"functions_m.html"
+"class_smol_dock_1_1_amino_acid.html#a2a83d6290c79b4d2145637a29ebb9d23",
+"class_smol_dock_1_1_score_1_1_scoring_function.html#a92b9b5f6d23b07740dd9f6718207d31a"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

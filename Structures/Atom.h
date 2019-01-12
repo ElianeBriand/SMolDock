@@ -33,9 +33,13 @@
 namespace SmolDock {
 
     class Bond;
+
     class MoleculeTraversal;
+
     class Atom;
+
     class MoleculeTraversal;
+
     enum class PDBResidueVariantAssignationType;
 
     /*!
@@ -47,10 +51,15 @@ namespace SmolDock {
 
         friend Bond;
         friend MoleculeTraversal;
+
         friend class Molecule;
+
         friend class Protein;
-        friend void assignApolarCarbonFlag(std::vector< std::shared_ptr<Atom> >& atomVect);
-        friend void assignVariantFlagsForResidueAtom(AminoAcid& residue, PDBResidueVariantAssignationType assignation_type);
+
+        friend void assignApolarCarbonFlag(std::vector<std::shared_ptr<Atom> > &atomVect);
+
+        friend void
+        assignVariantFlagsForResidueAtom(AminoAcid &residue, PDBResidueVariantAssignationType assignation_type);
 
 
         // Make the value of the enum be the atomic number
@@ -68,7 +77,9 @@ namespace SmolDock {
         };
 
         enum class AtomVariant : unsigned int {
-            apolar = 1 << 0, // Hydrophobic flag (notably, identifies hydrophobic carbon vs partial-charge-carrying carbon for scoring)
+            none = 0,
+            apolar = 1
+                    << 0, // Hydrophobic flag (notably, identifies hydrophobic carbon vs partial-charge-carrying carbon for scoring)
             hydrogenDonor = 1 << 1,
             hydrogenAcceptor = 1 << 2
 
@@ -98,7 +109,9 @@ namespace SmolDock {
 
         // //// Internal type <=> string conversion //////
         friend std::string atomTypeToString(Atom::AtomType t);
+
         friend std::string atomTypeToSymbolString(Atom::AtomType t);
+
         friend Atom::AtomType stringToAtomType(const std::string &symbol_or_name);
 
         // //// Properties matcher helper //////
@@ -125,32 +138,42 @@ namespace SmolDock {
 
 
         AtomType getAtomType();
+
         void setAtomType(AtomType t);
+
         std::string getTypeAsString();
+
         std::string getAtomSymbol();
+
         unsigned char getAtomicNumber();
 
 
         AtomVariant getAtomVariant();
+
         void setAtomVariant(AtomVariant v);
+
         unsigned int getAtomVariantAsUnderlyingType();
 
 
         unsigned int getAtomID();
+
         void setAtomID(unsigned int id);
 
         std::weak_ptr<AminoAcid> getOwningAA();
+
         void setOwningAA(std::shared_ptr<AminoAcid> &aa);
 
         std::tuple<double, double, double> getAtomPosition();
+
         void setAtomPosition(std::tuple<double, double, double> pos);
 
         double getAtomicRadius();
+
         void setAtomicRadius(double r);
 
         int getCharge();
-        void setCharge(int ch);
 
+        void setCharge(int ch);
 
 
     protected:
@@ -159,7 +182,7 @@ namespace SmolDock {
 
     private:
         AtomType type;
-        AtomVariant variant = Atom::AtomVariant{0};
+        AtomVariant variant = Atom::AtomVariant::none;
         int charge = 0;
 
         bool fromResidue = false;
@@ -177,6 +200,7 @@ namespace SmolDock {
     };
 
     std::string atomTypeToString(Atom::AtomType t);
+
     std::string atomTypeToSymbolString(Atom::AtomType t);
 
     Atom::AtomType stringToAtomType(const std::string &symbol_or_name);
@@ -184,8 +208,9 @@ namespace SmolDock {
     double atomTypeToAtomicRadius(Atom::AtomType t);
 
 
-    inline constexpr Atom::AtomVariant operator|(Atom::AtomVariant a, Atom::AtomVariant b)
-    {return static_cast<Atom::AtomVariant>(static_cast<unsigned int>(a) | static_cast<unsigned int>(b));}
+    inline constexpr Atom::AtomVariant operator|(Atom::AtomVariant a, Atom::AtomVariant b) {
+        return static_cast<Atom::AtomVariant>(static_cast<unsigned int>(a) | static_cast<unsigned int>(b));
+    }
 
 }
 

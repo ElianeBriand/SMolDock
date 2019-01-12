@@ -16,7 +16,7 @@
 
 namespace SmolDock {
 
-void AssignBondOrderFromTemplateSMILES(std::shared_ptr<RDKit::RWMol> mol,const std::string& smiles);
+    void AssignBondOrderFromTemplateSMILES(std::shared_ptr<RDKit::RWMol> mol, const std::string &smiles);
 
 }
 #endif //SMOLDOCK_PDBLIGANDUTILS_H

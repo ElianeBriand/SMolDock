@@ -31,14 +31,12 @@
 namespace SmolDock {
 
 
-
     void assignVariantFlagsForResidueAtom(AminoAcid &residue, PDBResidueVariantAssignationType assignation_type) {
 
         std::set<std::tuple<AminoAcid::AAType, std::vector<std::tuple<std::string, Atom::AtomVariant> > > >* ResidueAtomPropertiesLookupTable;
-        if(assignation_type == PDBResidueVariantAssignationType::GeneralPurpose)
-        {
+        if (assignation_type == PDBResidueVariantAssignationType::GeneralPurpose) {
             ResidueAtomPropertiesLookupTable = &ResidueAtomPropertiesLookupTable_General;
-        }else{
+        } else {
             ResidueAtomPropertiesLookupTable = &ResidueAtomPropertiesLookupTable_General;
         }
 
@@ -102,7 +100,8 @@ namespace SmolDock {
                     std::shared_ptr<Atom> endB = bond->getEndB();
 
                     assert((endA.get() == atom.get()) !=
-                           (endB.get() == atom.get())); // Check that the current atom is exactly one of the end (!= is logical XOR for bool)
+                           (endB.get() ==
+                            atom.get())); // Check that the current atom is exactly one of the end (!= is logical XOR for bool)
 
                     std::shared_ptr<Atom> opposite_end;
                     if (endA.get() == atom.get())
@@ -113,13 +112,12 @@ namespace SmolDock {
                         opposite_end = endA;
 
                     Atom::AtomType linked_atom_type = opposite_end->getAtomType();
-                    if ((linked_atom_type != Atom::AtomType::carbon) && (linked_atom_type != Atom::AtomType::hydrogen))
-                    {
+                    if ((linked_atom_type != Atom::AtomType::carbon) &&
+                        (linked_atom_type != Atom::AtomType::hydrogen)) {
                         isLinkedToHeteroatom = true;
                     }
                 }
-                if (!isLinkedToHeteroatom)
-                {
+                if (!isLinkedToHeteroatom) {
                     atom->variant = atom->variant | Atom::AtomVariant::apolar;
                 }
             }

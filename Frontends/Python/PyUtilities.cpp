@@ -37,9 +37,12 @@ namespace sd = SmolDock;
         double getScore();*/
 
 void export_Utilities() {
-    p::class_<sd::ReScorer>("ReScorer", p::init<sd::Protein&, sd::Molecule&,std::function<double(const sd::iConformer &, const sd::iTransform &, const sd::iProtein &)>& >())
-        .def("prepare", &sd::ReScorer::prepare)
-        .def("getScore", &sd::ReScorer::getScore)
+    p::class_<sd::ReScorer>("ReScorer",
+                            p::init<sd::Protein &, sd::Molecule &, std::function<double(const sd::iConformer &,
+                                                                                        const sd::iTransform &,
+                                                                                        const sd::iProtein &)> &>())
+            .def("prepare", &sd::ReScorer::prepare)
+            .def("getScore", &sd::ReScorer::getScore)
         //.def("set", &World::set)
         //.add_property("rovalue", &Num::get)
         //.add_property("value", &Num::get, &Num::set);

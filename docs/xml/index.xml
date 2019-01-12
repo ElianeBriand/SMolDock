@@ -1,602 +1,1672 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.8.14">
-  <compound refid="class_smol_dock_1_1_engine_1_1_abstract_docking_engine" kind="class"><name>SmolDock::Engine::AbstractDockingEngine</name>
-    <member refid="class_smol_dock_1_1_engine_1_1_abstract_docking_engine_1aca703508a3ce31d577d3ec108020789b" kind="enum"><name>DockingBoxSetting</name></member>
-    <member refid="class_smol_dock_1_1_engine_1_1_abstract_docking_engine_1aca703508a3ce31d577d3ec108020789ba312db69f5bf4447dfe3c58983083b54f" kind="enumvalue"><name>everything</name></member>
-    <member refid="class_smol_dock_1_1_engine_1_1_abstract_docking_engine_1aca703508a3ce31d577d3ec108020789ba546fe0111d10555811e641851eaf2dea" kind="enumvalue"><name>solventExposed</name></member>
-    <member refid="class_smol_dock_1_1_engine_1_1_abstract_docking_engine_1a8147cf906368466da87fa439d537bf62" kind="enum"><name>DockingBoxShape</name></member>
-    <member refid="class_smol_dock_1_1_engine_1_1_abstract_docking_engine_1a8147cf906368466da87fa439d537bf62a34248a9bfcbd589d9b5fccb6a0ac6963" kind="enumvalue"><name>sphere</name></member>
-    <member refid="class_smol_dock_1_1_engine_1_1_abstract_docking_engine_1a8147cf906368466da87fa439d537bf62a18a64f7251cfb123aa7c358135d00d10" kind="enumvalue"><name>cube</name></member>
-    <member refid="class_smol_dock_1_1_engine_1_1_abstract_docking_engine_1a169f25051203c912c2b90bf3387baa22" kind="function"><name>setDockingBox</name></member>
-    <member refid="class_smol_dock_1_1_engine_1_1_abstract_docking_engine_1a38d55d9ee6fde7df45b25b772cffbb9f" kind="function"><name>setupDockingEngine</name></member>
-    <member refid="class_smol_dock_1_1_engine_1_1_abstract_docking_engine_1a0f08ef422ed79b3dac0b3144a241abe1" kind="function"><name>runDockingEngine</name></member>
-    <member refid="class_smol_dock_1_1_engine_1_1_abstract_docking_engine_1a2e881d63b0214caf95efa3245446faf3" kind="function"><name>getDockingResult</name></member>
-  </compound>
-  <compound refid="class_smol_dock_1_1_amino_acid" kind="class"><name>SmolDock::AminoAcid</name>
-    <member refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875d" kind="enum"><name>AAType</name></member>
-    <member refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875da7d0832b9f55cfd3f7c79f134de3b76a7" kind="enumvalue"><name>alanine</name></member>
-    <member refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875da9a1407676e926e8c94b54e0864da4546" kind="enumvalue"><name>arginine</name></member>
-    <member refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875da6d1d64af1a6d275bd2995d990072b129" kind="enumvalue"><name>asparagine</name></member>
-    <member refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875da1aa8cabca067057363a0b448f2db84e7" kind="enumvalue"><name>aspartate</name></member>
-    <member refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875da3ec90ee7bdd38cf0f8a68b4bee5eb202" kind="enumvalue"><name>cysteine</name></member>
-    <member refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875da12ea2245c0c7703f3863b9be45a07ae0" kind="enumvalue"><name>glutamate</name></member>
-    <member refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875daf91e23557b10705ecb971f90c17f8777" kind="enumvalue"><name>glutamine</name></member>
-    <member refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875da3a778f248ff123853d5605f084e2e260" kind="enumvalue"><name>glycine</name></member>
-    <member refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875da77d85f9928565a0fe8f709d63982efec" kind="enumvalue"><name>histidine</name></member>
-    <member refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875daf49712f65cf0d21531c38f3083a41066" kind="enumvalue"><name>isoleucine</name></member>
-    <member refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875da8fc32025ca0bd8d2a5a86c407ab4db14" kind="enumvalue"><name>leucine</name></member>
-    <member refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875da183c564fc49647ef130a793d2fc8eb63" kind="enumvalue"><name>lysine</name></member>
-    <member refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875da3d2f71c3aa615f44d4f7c394b4d89d24" kind="enumvalue"><name>methionine</name></member>
-    <member refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875daa74b51b040c4059a99fd0defb7f0d0f6" kind="enumvalue"><name>phenylalanine</name></member>
-    <member refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875da468e37d1ebb2b2d9488ad143d406e419" kind="enumvalue"><name>proline</name></member>
-    <member refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875daa693d5166186d99ae683963032f44119" kind="enumvalue"><name>serine</name></member>
-    <member refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875daa2a6737c3315b2d4391a24a8f672d4d2" kind="enumvalue"><name>threonine</name></member>
-    <member refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875daebd78192c93b932250b270f9ae1f2638" kind="enumvalue"><name>tryptophan</name></member>
-    <member refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875da1b54c05c5fc8eec4986ac75f82af9d65" kind="enumvalue"><name>tyrosine</name></member>
-    <member refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875dae1028fdd9757c76ba244c2521f716113" kind="enumvalue"><name>valine</name></member>
-    <member refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875daac3d9bd0eff79f662bcecac7c2887384" kind="enumvalue"><name>selenocysteine</name></member>
-    <member refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875da8b17b1023d7d4d8093a8cc3bffbc3e62" kind="enumvalue"><name>pyrrolysine</name></member>
-    <member refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875dad390be0ae98a5c4a22ca9b0b7e726f40" kind="enumvalue"><name>heteroatom</name></member>
-    <member refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875daad921d60486366258809553a3db49a4a" kind="enumvalue"><name>unknown</name></member>
-    <member refid="class_smol_dock_1_1_amino_acid_1a2cc8b86817f46f61585ecf591984f8eb" kind="friend"><name>Protein</name></member>
-    <member refid="class_smol_dock_1_1_amino_acid_1a74b6203c0c737ad86fb18da22ec935ff" kind="friend"><name>assignVariantFlagsForResidueAtom</name></member>
-    <member refid="class_smol_dock_1_1_amino_acid_1a114a9d96ae603d1a25779498205cec47" kind="friend"><name>resTypeToString</name></member>
-    <member refid="class_smol_dock_1_1_amino_acid_1a196e09203295c01d2a5fc157ee89f7ee" kind="friend"><name>stringToResType</name></member>
-    <member refid="class_smol_dock_1_1_amino_acid_1a23b1781c86be2991e2f668c07ad78d68" kind="variable"><name>AAShorthandSet</name></member>
-    <member refid="class_smol_dock_1_1_amino_acid_1ae3404d935519af353a5c323ce298e04a" kind="variable"><name>type</name></member>
-    <member refid="class_smol_dock_1_1_amino_acid_1aed11fc710f3993ac1bda7ce5e59e102e" kind="variable"><name>AAId</name></member>
-    <member refid="class_smol_dock_1_1_amino_acid_1ad0349cceaac80ad8a367c8130589dd76" kind="variable"><name>shorthand</name></member>
-    <member refid="class_smol_dock_1_1_amino_acid_1a2a83d6290c79b4d2145637a29ebb9d23" kind="variable"><name>fullName</name></member>
-    <member refid="class_smol_dock_1_1_amino_acid_1acf07ea167386e29d0ea6b5024663aed8" kind="variable"><name>atoms</name></member>
-    <member refid="class_smol_dock_1_1_amino_acid_1a0632e2366d8af52d467bffcde90657f2" kind="function"><name>AminoAcid</name></member>
-    <member refid="class_smol_dock_1_1_amino_acid_1acc14dd7bf81e1580703017427b130838" kind="function"><name>AminoAcid</name></member>
-    <member refid="class_smol_dock_1_1_amino_acid_1a8d76cf7b2a088f713aa507029f03ac20" kind="function"><name>getAAId</name></member>
-    <member refid="class_smol_dock_1_1_amino_acid_1a091349e13f56cc9d28701dcfe8e30d45" kind="function"><name>setAAId</name></member>
-    <member refid="class_smol_dock_1_1_amino_acid_1a8fb908f1ba8496d0cc115d7a0813d027" kind="function"><name>filliProtein</name></member>
-    <member refid="class_smol_dock_1_1_amino_acid_1a556f668f759abed9c33c3522106d520b" kind="function"><name>getType</name></member>
-    <member refid="class_smol_dock_1_1_amino_acid_1acf73c63c5f9f1945d40ae0bc365c5614" kind="function"><name>setType</name></member>
-  </compound>
-  <compound refid="class_smol_dock_1_1_atom" kind="class"><name>SmolDock::Atom</name>
-    <member refid="class_smol_dock_1_1_atom_1a57e9a532fd04e1846c0d83edebb9fd41" kind="enum"><name>AtomType</name></member>
-    <member refid="class_smol_dock_1_1_atom_1a57e9a532fd04e1846c0d83edebb9fd41aad921d60486366258809553a3db49a4a" kind="enumvalue"><name>unknown</name></member>
-    <member refid="class_smol_dock_1_1_atom_1a57e9a532fd04e1846c0d83edebb9fd41ad4ac1478a4d8a4f591d35e3d75f3de65" kind="enumvalue"><name>hydrogen</name></member>
-    <member refid="class_smol_dock_1_1_atom_1a57e9a532fd04e1846c0d83edebb9fd41ae1b832c8857262f1089376030b4298b3" kind="enumvalue"><name>carbon</name></member>
-    <member refid="class_smol_dock_1_1_atom_1a57e9a532fd04e1846c0d83edebb9fd41a6124d98749365e3db2c9e5b27ca04db6" kind="enumvalue"><name>oxygen</name></member>
-    <member refid="class_smol_dock_1_1_atom_1a57e9a532fd04e1846c0d83edebb9fd41a63ebb9250f49340aece8d4ac541eaf61" kind="enumvalue"><name>nitrogen</name></member>
-    <member refid="class_smol_dock_1_1_atom_1a57e9a532fd04e1846c0d83edebb9fd41a3e17873c24bbb0b8ab2dac324dd67b9f" kind="enumvalue"><name>phosporus</name></member>
-    <member refid="class_smol_dock_1_1_atom_1a57e9a532fd04e1846c0d83edebb9fd41a73a9bf52aa8ea9e256ec469dfce6e022" kind="enumvalue"><name>sulfur</name></member>
-    <member refid="class_smol_dock_1_1_atom_1a57e9a532fd04e1846c0d83edebb9fd41af3b7d449c5ca2f53a72210e4381769be" kind="enumvalue"><name>chlorine</name></member>
-    <member refid="class_smol_dock_1_1_atom_1a77191f0919af58d733764e229cb1f973" kind="enum"><name>AtomVariant</name></member>
-    <member refid="class_smol_dock_1_1_atom_1a77191f0919af58d733764e229cb1f973ae5e437761e40c78a4c0929be07a3ab04" kind="enumvalue"><name>apolar</name></member>
-    <member refid="class_smol_dock_1_1_atom_1a77191f0919af58d733764e229cb1f973ade31e8114bf9ba2ec47d55c59f61853d" kind="enumvalue"><name>hydrogenDonor</name></member>
-    <member refid="class_smol_dock_1_1_atom_1a77191f0919af58d733764e229cb1f973ad68216b54381a7b2b87b7924ab0191c4" kind="enumvalue"><name>hydrogenAcceptor</name></member>
-    <member refid="class_smol_dock_1_1_atom_1ade04f26c3314bee1144e0704a07e95ea" kind="variable"><name>Bond</name></member>
-    <member refid="class_smol_dock_1_1_atom_1a90ad0859a5e5a747eecdc79b8bb80561" kind="variable"><name>MoleculeTraversal</name></member>
-    <member refid="class_smol_dock_1_1_atom_1ae0d120b8bbafe454abebd374e2402082" kind="friend"><name>Molecule</name></member>
-    <member refid="class_smol_dock_1_1_atom_1a2cc8b86817f46f61585ecf591984f8eb" kind="friend"><name>Protein</name></member>
-    <member refid="class_smol_dock_1_1_atom_1af4fe090161ac376dcfd99d5eb17c0d4a" kind="friend"><name>assignApolarCarbonFlag</name></member>
-    <member refid="class_smol_dock_1_1_atom_1a74b6203c0c737ad86fb18da22ec935ff" kind="friend"><name>assignVariantFlagsForResidueAtom</name></member>
-    <member refid="class_smol_dock_1_1_atom_1ab7591815a3dc03bab05bcb6d5e2b741a" kind="friend"><name>atomTypeToString</name></member>
-    <member refid="class_smol_dock_1_1_atom_1ac56105f17fd519b4438ef07334e68d60" kind="friend"><name>atomTypeToSymbolString</name></member>
-    <member refid="class_smol_dock_1_1_atom_1abe46f23e1f169949c8d3916b7e0ad38b" kind="friend"><name>stringToAtomType</name></member>
-    <member refid="class_smol_dock_1_1_atom_1ae8f2ceffdf7832e3a57549119e5fc341" kind="friend"><name>atomTypeToAtomicRadius</name></member>
-    <member refid="class_smol_dock_1_1_atom_1af45fc99da6ffbf539ba654c91e1bb752" kind="variable"><name>bonds</name></member>
-    <member refid="class_smol_dock_1_1_atom_1ab3867a9c2c98c5bb43ff4a6b7f1bf856" kind="variable"><name>type</name></member>
-    <member refid="class_smol_dock_1_1_atom_1a0c54fdff29130e870237ba300a4e9d25" kind="variable"><name>variant</name></member>
-    <member refid="class_smol_dock_1_1_atom_1acec4104851702c781abb5f86844cf6b3" kind="variable"><name>charge</name></member>
-    <member refid="class_smol_dock_1_1_atom_1aa19d070c9951c67a4b1d4c5d80f2ee22" kind="variable"><name>fromResidue</name></member>
-    <member refid="class_smol_dock_1_1_atom_1aeb5bd3da13c5e16176931c19bb622d91" kind="variable"><name>residueType</name></member>
-    <member refid="class_smol_dock_1_1_atom_1a79a0e80b2fdb39742cc4de548d73eb63" kind="variable"><name>atomClassInResidue</name></member>
-    <member refid="class_smol_dock_1_1_atom_1a41d894e0b89dfd6e28514617a4a16ecf" kind="variable"><name>owningAA</name></member>
-    <member refid="class_smol_dock_1_1_atom_1a76afdad512e9f593c4445c6407b26597" kind="variable"><name>AtomID</name></member>
-    <member refid="class_smol_dock_1_1_atom_1a02874f0a49c2fb34884d7e40c6b92e9e" kind="variable"><name>x</name></member>
-    <member refid="class_smol_dock_1_1_atom_1a253663ad700e72667d421f4d869798e1" kind="variable"><name>y</name></member>
-    <member refid="class_smol_dock_1_1_atom_1a8f28d43131d21536269e220d6fa43f07" kind="variable"><name>z</name></member>
-    <member refid="class_smol_dock_1_1_atom_1a6d2c1ae04324600154ecd49c1b4a76c5" kind="variable"><name>atomicRadius</name></member>
-    <member refid="class_smol_dock_1_1_atom_1a699bf43dba89827d43019464a2a1507e" kind="variable"><name>nextAtomID</name></member>
-    <member refid="class_smol_dock_1_1_atom_1aed79f9306267e3ddbd9a9b4dade2bbbf" kind="variable"><name>AtomTypeLabel</name></member>
-    <member refid="class_smol_dock_1_1_atom_1a6fdae20edd67e75fa5fab8cbdbb39faf" kind="function"><name>Atom</name></member>
-    <member refid="class_smol_dock_1_1_atom_1a72994dd53d1aa7e9bfb05aecc8a35a52" kind="function"><name>Atom</name></member>
-    <member refid="class_smol_dock_1_1_atom_1a6d8ef00ed712a00a3c6d0827faf6ff9e" kind="function"><name>Atom</name></member>
-    <member refid="class_smol_dock_1_1_atom_1a500f60cb0b8dac0c64bc44187dc90d41" kind="function"><name>Atom</name></member>
-    <member refid="class_smol_dock_1_1_atom_1a6b8315564e06bdc911053320fd3fa1a7" kind="function"><name>getAtomType</name></member>
-    <member refid="class_smol_dock_1_1_atom_1a2adf89fbf4618bd294318062e198db66" kind="function"><name>setAtomType</name></member>
-    <member refid="class_smol_dock_1_1_atom_1a5c58bed07491a0ad9e674d399f2ff888" kind="function"><name>getTypeAsString</name></member>
-    <member refid="class_smol_dock_1_1_atom_1a68b727ae85b17478fe62c339a0590b14" kind="function"><name>getAtomSymbol</name></member>
-    <member refid="class_smol_dock_1_1_atom_1a7cd7a34817ac20e79ede418d6896ff48" kind="function"><name>getAtomicNumber</name></member>
-    <member refid="class_smol_dock_1_1_atom_1a145bc96b3b410ea87a62baeb8b83f127" kind="function"><name>getAtomVariant</name></member>
-    <member refid="class_smol_dock_1_1_atom_1aa538e302c6c9e6cafbb9f0cbefce3a4e" kind="function"><name>setAtomVariant</name></member>
-    <member refid="class_smol_dock_1_1_atom_1a6436039c9775c1662be2c3691c2785a9" kind="function"><name>getAtomVariantAsUnderlyingType</name></member>
-    <member refid="class_smol_dock_1_1_atom_1a62d7246b7a8f3d6aa1aa63c9d5a86ed3" kind="function"><name>getAtomID</name></member>
-    <member refid="class_smol_dock_1_1_atom_1ae4cd5cf6de8ed5b8254270eb2d7ccd81" kind="function"><name>setAtomID</name></member>
-    <member refid="class_smol_dock_1_1_atom_1aeb93666d6868e72e846ecad7b1927b04" kind="function"><name>getOwningAA</name></member>
-    <member refid="class_smol_dock_1_1_atom_1ad4afec1a1299201398d64daaf874857f" kind="function"><name>setOwningAA</name></member>
-    <member refid="class_smol_dock_1_1_atom_1a9b7e3a83a87f3934edb0f15929f923bd" kind="function"><name>getAtomPosition</name></member>
-    <member refid="class_smol_dock_1_1_atom_1ae4b0b82523de139bd84ec27b62faa333" kind="function"><name>setAtomPosition</name></member>
-    <member refid="class_smol_dock_1_1_atom_1a3933f5afa403001d87526a52a0f4c4b5" kind="function"><name>getAtomicRadius</name></member>
-    <member refid="class_smol_dock_1_1_atom_1aba38aa3f004111483f078e97b8e34bd6" kind="function"><name>setAtomicRadius</name></member>
-    <member refid="class_smol_dock_1_1_atom_1af5d8a7887cbd714ad4b728e1b68c0881" kind="function"><name>getCharge</name></member>
-    <member refid="class_smol_dock_1_1_atom_1a16fb238f339c0accd83095ae078040f1" kind="function"><name>setCharge</name></member>
-  </compound>
-  <compound refid="class_smol_dock_1_1_bond" kind="class"><name>SmolDock::Bond</name>
-    <member refid="class_smol_dock_1_1_bond_1a6cbf152f682501c998bd06a55400c9cf" kind="enum"><name>BondType</name></member>
-    <member refid="class_smol_dock_1_1_bond_1a6cbf152f682501c998bd06a55400c9cfaccd9d70d0e74b128e8fdd74b302934f1" kind="enumvalue"><name>singlebond</name></member>
-    <member refid="class_smol_dock_1_1_bond_1a6cbf152f682501c998bd06a55400c9cfa076120e243046998cc8ecff65e716c35" kind="enumvalue"><name>doublebond</name></member>
-    <member refid="class_smol_dock_1_1_bond_1a6cbf152f682501c998bd06a55400c9cfa7381550bb1c4acbc5e3801c17ef7cae3" kind="enumvalue"><name>triplebond</name></member>
-    <member refid="class_smol_dock_1_1_bond_1a6cbf152f682501c998bd06a55400c9cfa0a3db58cd06e63f99bfd2d9e6773f555" kind="enumvalue"><name>defaultbond</name></member>
-    <member refid="class_smol_dock_1_1_bond_1a6cbf152f682501c998bd06a55400c9cfab055cca5ddd5fd7702867dffa64c1f8f" kind="enumvalue"><name>aromatic</name></member>
-    <member refid="class_smol_dock_1_1_bond_1ad909ef34f3b9b10acc221ac6d54e423a" kind="variable"><name>bond_end_a</name></member>
-    <member refid="class_smol_dock_1_1_bond_1adbbc73bd7bc4fc579237321be516ed2f" kind="variable"><name>bond_end_b</name></member>
-    <member refid="class_smol_dock_1_1_bond_1a6fb49dc80f21a23c8b039f85d3b7b5bf" kind="variable"><name>BondID</name></member>
-    <member refid="class_smol_dock_1_1_bond_1a7795dad7005c83f8702d8593eb81b1ff" kind="variable"><name>bondtype</name></member>
-    <member refid="class_smol_dock_1_1_bond_1acb9a24240df4164e4840611d7df39962" kind="variable"><name>nextBondID</name></member>
-    <member refid="class_smol_dock_1_1_bond_1a7f046d71521a269171643bdf147d5c80" kind="function"><name>Bond</name></member>
-    <member refid="class_smol_dock_1_1_bond_1ae864507cf1018efa1964e7b77b2d6e4f" kind="function"><name>Bond</name></member>
-    <member refid="class_smol_dock_1_1_bond_1a382edad0cb2bd339e3ff676cd232d093" kind="function"><name>getBondID</name></member>
-    <member refid="class_smol_dock_1_1_bond_1a8ca51ba3f2abc758ecd7b4b040681f21" kind="function"><name>getEndA</name></member>
-    <member refid="class_smol_dock_1_1_bond_1a0a2feeb4cc88cbb8920ae5e9b142ead5" kind="function"><name>getEndB</name></member>
-    <member refid="class_smol_dock_1_1_bond_1a225d51b7edd43bc5aa16984981bc2dfe" kind="function"><name>publicizeToAtom</name></member>
-    <member refid="class_smol_dock_1_1_bond_1a4ebf28309120c880429f205edf67b9f8" kind="function"><name>setBondType</name></member>
-    <member refid="class_smol_dock_1_1_bond_1a6b8180f0f2b339c521f8a74b2445e8c8" kind="function"><name>getBondType</name></member>
-  </compound>
-  <compound refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine" kind="class"><name>SmolDock::Engine::ConformerRigidDockingEngine</name>
-    <member refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a022a37cb30a640404c634aace67ebea1" kind="variable"><name>conformer_num</name></member>
-    <member refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1adc3f28b5b4af09c54eb73d9f445dbd2d" kind="variable"><name>orig_protein</name></member>
-    <member refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1af3d543e92676f9d66a5a3d0ccc0cd5a9" kind="variable"><name>orig_ligand</name></member>
-    <member refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1ab58e856743bf2e8612185902f8ae233a" kind="variable"><name>scoringFuncType</name></member>
-    <member refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a733e397779ddd24cdf8781d4a23cf361" kind="variable"><name>scoringFunction</name></member>
-    <member refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a046b6f9d1c856e1b38034388a8fb5f9f" kind="variable"><name>random_seed</name></member>
-    <member refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a9bc1d216cf102c383444cb6f9955dfaa" kind="variable"><name>rnd_generator</name></member>
-    <member refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a1db0509172face64ab20380bea166765" kind="variable"><name>viConformers</name></member>
-    <member refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a1dc7396f84093bfca59c2d8accc9ed8c" kind="variable"><name>protein</name></member>
-    <member refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a3ebcfe47e865aad0c91105a58996d22e" kind="variable"><name>scores</name></member>
-    <member refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a4ea3d83dced816021dc9e1a39d0f197d" kind="variable"><name>final_iConformer</name></member>
-    <member refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a27a2069ffd4fa0bacb4f026ca7f8021d" kind="function"><name>ConformerRigidDockingEngine</name></member>
-    <member refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1acd3b7345ecae8f0c92ca0168b794eac3" kind="function"><name>setDockingBox</name></member>
-    <member refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a3abc1a2cdbb3f1b9f545f863f9ec5e43" kind="function"><name>setupDockingEngine</name></member>
-    <member refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a7bee39278168cb4d7ee6558b3a3d3bb4" kind="function"><name>runDockingEngine</name></member>
-    <member refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a52fa8c276c911df08d4dd8d6744ae540" kind="function"><name>getDockingResult</name></member>
-  </compound>
-  <compound refid="class_smol_dock_1_1_docking_result" kind="class"><name>SmolDock::DockingResult</name>
-    <member refid="class_smol_dock_1_1_docking_result_1a13f9ac78867b9834693c7b35d68bf63c" kind="variable"><name>ligandPoses</name></member>
-  </compound>
-  <compound refid="class_smol_dock_1_1_docking_result_printer" kind="class"><name>SmolDock::DockingResultPrinter</name>
-    <member refid="class_smol_dock_1_1_docking_result_printer_1a7bd2f249617b1fcc7be8edb4e73bbd4f" kind="variable"><name>res</name></member>
-    <member refid="class_smol_dock_1_1_docking_result_printer_1a0c4ac739b1ee30a044a8e289c541717f" kind="function"><name>DockingResultPrinter</name></member>
-    <member refid="class_smol_dock_1_1_docking_result_printer_1afb1f0143452d4d8e94555f7f354bb134" kind="function"><name>printToConsole</name></member>
-  </compound>
-  <compound refid="class_smol_dock_1_1_heuristics_1_1_global_heuristic" kind="class"><name>SmolDock::Heuristics::GlobalHeuristic</name>
-    <member refid="class_smol_dock_1_1_heuristics_1_1_global_heuristic_1acd4f8bbe6334ba93dcd4ea1d2a8c0d38" kind="function"><name>search</name></member>
-    <member refid="class_smol_dock_1_1_heuristics_1_1_global_heuristic_1a1abc970d50c981e4df49833d4e7f0551" kind="function"><name>getResultMatrix</name></member>
-  </compound>
-  <compound refid="class_smol_dock_1_1_optimizer_1_1_gradient_descent_line_search" kind="class"><name>SmolDock::Optimizer::GradientDescentLineSearch</name>
-    <member refid="class_smol_dock_1_1_optimizer_1_1_gradient_descent_line_search_1a5a7ea295c87622dc13f80e4315321463" kind="variable"><name>scoringFunction</name></member>
-    <member refid="class_smol_dock_1_1_optimizer_1_1_gradient_descent_line_search_1a0680dc929db0fe521e0820e473b8bcb6" kind="variable"><name>differential_epsilon</name></member>
-    <member refid="class_smol_dock_1_1_optimizer_1_1_gradient_descent_line_search_1a8b335ed348fc56a3f873d7b6520c2e2f" kind="variable"><name>paramVectorDimension</name></member>
-    <member refid="class_smol_dock_1_1_optimizer_1_1_gradient_descent_line_search_1a0515ae128ea249f61272a10250b91fd8" kind="variable"><name>result</name></member>
-    <member refid="class_smol_dock_1_1_optimizer_1_1_gradient_descent_line_search_1a4749cfb31b9b88db96aef6a254078e6d" kind="variable"><name>iterationNumber</name></member>
-    <member refid="class_smol_dock_1_1_optimizer_1_1_gradient_descent_line_search_1a1eafe95f8c30c31960fd7ac4af247fa3" kind="variable"><name>score</name></member>
-    <member refid="class_smol_dock_1_1_optimizer_1_1_gradient_descent_line_search_1abc5e7a2cc3b11c6aa320dbae9b33c816" kind="function"><name>GradientDescentLineSearch</name></member>
-    <member refid="class_smol_dock_1_1_optimizer_1_1_gradient_descent_line_search_1ae0888f9903112cfbe93af8d5946a52da" kind="function"><name>optimize</name></member>
-    <member refid="class_smol_dock_1_1_optimizer_1_1_gradient_descent_line_search_1ae3fdb46d5b28724146c8c496d59b8128" kind="function"><name>getRawResultMatrix</name></member>
-    <member refid="class_smol_dock_1_1_optimizer_1_1_gradient_descent_line_search_1a497ef5405f36f6e5113f83a37d9542b3" kind="function"><name>getScore</name></member>
-    <member refid="class_smol_dock_1_1_optimizer_1_1_gradient_descent_line_search_1a14219d5c7e209f0aeae91966eea06c14" kind="function"><name>getIterationNumber</name></member>
-  </compound>
-  <compound refid="struct_smol_dock_1_1i_conformer" kind="struct"><name>SmolDock::iConformer</name>
-    <member refid="struct_smol_dock_1_1i_conformer_1aabef94f550eef03cf2d4304df78cf403" kind="variable"><name>num_rotatable_bond</name></member>
-    <member refid="struct_smol_dock_1_1i_conformer_1aca79d26663d734bf23b5ed7ddc3dba57" kind="variable"><name>centroidNormalizingTransform</name></member>
-    <member refid="struct_smol_dock_1_1i_conformer_1a45c379f6a880da313bf3519dc415e992" kind="variable"><name>x</name></member>
-    <member refid="struct_smol_dock_1_1i_conformer_1ac3019c0cd62660a4392591dd9519cc9a" kind="variable"><name>y</name></member>
-    <member refid="struct_smol_dock_1_1i_conformer_1a5c1fc6f9bad31ec2731337e9ba1e9a0f" kind="variable"><name>z</name></member>
-    <member refid="struct_smol_dock_1_1i_conformer_1a1dbd8cb4eaa4e5e2f0afcdd1b36dd862" kind="variable"><name>atomicRadius</name></member>
-    <member refid="struct_smol_dock_1_1i_conformer_1add04de1dd457ae228e398ffa9260497d" kind="variable"><name>type</name></member>
-    <member refid="struct_smol_dock_1_1i_conformer_1af56992de619302df905180a481a4d993" kind="variable"><name>variant</name></member>
-  </compound>
-  <compound refid="struct_smol_dock_1_1i_gradient" kind="struct"><name>SmolDock::iGradient</name>
-    <member refid="struct_smol_dock_1_1i_gradient_1a4780b049dba9b298fc9259a9b626b77c" kind="variable"><name>dx</name></member>
-    <member refid="struct_smol_dock_1_1i_gradient_1a4c616a17c5cdd532679cc158dccc6797" kind="variable"><name>dy</name></member>
-    <member refid="struct_smol_dock_1_1i_gradient_1adf3e33454ba5441435ce46894df07a49" kind="variable"><name>dz</name></member>
-    <member refid="struct_smol_dock_1_1i_gradient_1af93eb07f1c8b1f8fe103ed5aa028ce2c" kind="variable"><name>ds</name></member>
-    <member refid="struct_smol_dock_1_1i_gradient_1a5583a237c1d002cba8afcb0b34d7a483" kind="variable"><name>du</name></member>
-    <member refid="struct_smol_dock_1_1i_gradient_1aff52214e33a8a7ec32fac66f0342764d" kind="variable"><name>dv</name></member>
-    <member refid="struct_smol_dock_1_1i_gradient_1a728b006fb9f40f843dcca18768a0618c" kind="variable"><name>dt</name></member>
-  </compound>
-  <compound refid="class_smol_dock_1_1_input_post_processor_1_1_input_post_processor" kind="class"><name>SmolDock::InputPostProcessor::InputPostProcessor</name>
-    <member refid="class_smol_dock_1_1_input_post_processor_1_1_input_post_processor_1a7a81319929595b3082310bf4e67cb0b9" kind="function"><name>processAtomFromLigand</name></member>
-    <member refid="class_smol_dock_1_1_input_post_processor_1_1_input_post_processor_1acad66bf3af5d57ca72656442250e0f35" kind="function"><name>processAtomFromProtein</name></member>
-  </compound>
-  <compound refid="class_smol_dock_1_1_intermediate_conformer_collector" kind="class"><name>SmolDock::IntermediateConformerCollector</name>
-    <member refid="class_smol_dock_1_1_intermediate_conformer_collector_1af4af1651349015597a2582237817db51" kind="variable"><name>molecule</name></member>
-    <member refid="class_smol_dock_1_1_intermediate_conformer_collector_1a2fc9343d0d285bef646d6ae5da619ad6" kind="variable"><name>writer</name></member>
-    <member refid="class_smol_dock_1_1_intermediate_conformer_collector_1ac77973d5bb5a76221e40837b911e5291" kind="function"><name>IntermediateConformerCollector</name></member>
-    <member refid="class_smol_dock_1_1_intermediate_conformer_collector_1a1d878b323a17e56169fb4fad4f92a742" kind="function"><name>addiConformer</name></member>
-  </compound>
-  <compound refid="struct_smol_dock_1_1i_protein" kind="struct"><name>SmolDock::iProtein</name>
-    <member refid="struct_smol_dock_1_1i_protein_1a8e62b22e54589f2727b0743cf58a3551" kind="variable"><name>center_x</name></member>
-    <member refid="struct_smol_dock_1_1i_protein_1a834d2ab9d8580f255616a13a1af785c2" kind="variable"><name>center_y</name></member>
-    <member refid="struct_smol_dock_1_1i_protein_1a8b3ccbb789373d51a3889158167c3c9a" kind="variable"><name>center_z</name></member>
-    <member refid="struct_smol_dock_1_1i_protein_1ae36a5b0f6996e54f9ce1f746a79e23f8" kind="variable"><name>x</name></member>
-    <member refid="struct_smol_dock_1_1i_protein_1a090a371c93db6928cdfef39b0ce3d1fd" kind="variable"><name>y</name></member>
-    <member refid="struct_smol_dock_1_1i_protein_1ab95306577aa2d8bdd268504b44d046ad" kind="variable"><name>z</name></member>
-    <member refid="struct_smol_dock_1_1i_protein_1a56480d9a766ca9a3564ade7b91585f0f" kind="variable"><name>atomicRadius</name></member>
-    <member refid="struct_smol_dock_1_1i_protein_1a8a9cecc0e9750baf8d7074fe64b4331d" kind="variable"><name>type</name></member>
-    <member refid="struct_smol_dock_1_1i_protein_1ac452f5ddb99ed5a703615f9c03337ddd" kind="variable"><name>variant</name></member>
-    <member refid="struct_smol_dock_1_1i_protein_1a0b900dfe18415ab4fc200bc7d8570c80" kind="variable"><name>AAId_to_AtomPositionInVect</name></member>
-  </compound>
-  <compound refid="struct_smol_dock_1_1i_quaternion" kind="struct"><name>SmolDock::iQuaternion</name>
-    <member refid="struct_smol_dock_1_1i_quaternion_1a07d95036803eb2a4ef32627df95043ad" kind="variable"><name>s</name></member>
-    <member refid="struct_smol_dock_1_1i_quaternion_1a3692d71434fede9771686a73240e6ba7" kind="variable"><name>u</name></member>
-    <member refid="struct_smol_dock_1_1i_quaternion_1a97a15d15b2fae3ec29c2fdb2388f5e5b" kind="variable"><name>v</name></member>
-    <member refid="struct_smol_dock_1_1i_quaternion_1a1ff0d5e99369aa47273864dfea352c05" kind="variable"><name>t</name></member>
-  </compound>
-  <compound refid="struct_smol_dock_1_1i_transform" kind="struct"><name>SmolDock::iTransform</name>
-    <member refid="struct_smol_dock_1_1i_transform_1ab0039729b08d423b6e0414cec1b893e7" kind="variable"><name>transl</name></member>
-    <member refid="struct_smol_dock_1_1i_transform_1a31861b55dc94ec0172ce602cd2a4a54f" kind="variable"><name>rota</name></member>
-  </compound>
-  <compound refid="struct_smol_dock_1_1i_translation" kind="struct"><name>SmolDock::iTranslation</name>
-    <member refid="struct_smol_dock_1_1i_translation_1a74a60efc8b2463b7ea1ca1e824a4ed28" kind="variable"><name>x</name></member>
-    <member refid="struct_smol_dock_1_1i_translation_1a5362a54675ecc6bac99325c69521fbb5" kind="variable"><name>y</name></member>
-    <member refid="struct_smol_dock_1_1i_translation_1a2ed07fcfc129a2bf7696b65d481317c5" kind="variable"><name>z</name></member>
-  </compound>
-  <compound refid="struct_smol_dock_1_1i_vect" kind="struct"><name>SmolDock::iVect</name>
-    <member refid="struct_smol_dock_1_1i_vect_1a3ffc7082a3541ad0fadcb1880a6087a8" kind="variable"><name>x</name></member>
-    <member refid="struct_smol_dock_1_1i_vect_1af8165339c1e38179008c4ca49a565fb4" kind="variable"><name>y</name></member>
-    <member refid="struct_smol_dock_1_1i_vect_1a013cdafb950199deb4511843ff389e73" kind="variable"><name>z</name></member>
-  </compound>
-  <compound refid="class_smol_dock_1_1_optimizer_1_1_l___b_f_g_s" kind="class"><name>SmolDock::Optimizer::L_BFGS</name>
-    <member refid="class_smol_dock_1_1_optimizer_1_1_l___b_f_g_s_1ad517eac106ffad742e71e9191f3f82c4" kind="variable"><name>scoringFunction</name></member>
-    <member refid="class_smol_dock_1_1_optimizer_1_1_l___b_f_g_s_1ab6d9dfa86c156e2999cde60fa48688bf" kind="variable"><name>maxIteration</name></member>
-    <member refid="class_smol_dock_1_1_optimizer_1_1_l___b_f_g_s_1a63a3f0b953614d1dfd8ea7ba59d92efc" kind="variable"><name>result</name></member>
-    <member refid="class_smol_dock_1_1_optimizer_1_1_l___b_f_g_s_1ab4ff4104e0300008225d26b195e24ad8" kind="variable"><name>score</name></member>
-    <member refid="class_smol_dock_1_1_optimizer_1_1_l___b_f_g_s_1a0df667e4e5b369f20fa0f4de11ed7836" kind="function"><name>L_BFGS</name></member>
-    <member refid="class_smol_dock_1_1_optimizer_1_1_l___b_f_g_s_1af820a1b5e625482458e4917620200e8c" kind="function"><name>optimize</name></member>
-    <member refid="class_smol_dock_1_1_optimizer_1_1_l___b_f_g_s_1a7155407cb5df962be30e1fd44c82bb87" kind="function"><name>getRawResultMatrix</name></member>
-    <member refid="class_smol_dock_1_1_optimizer_1_1_l___b_f_g_s_1ae6e836e829ea1f79f9e69e9c2bee26f8" kind="function"><name>getScore</name></member>
-  </compound>
-  <compound refid="class_smol_dock_1_1_engine_1_1_m_d_style_docking_engine" kind="class"><name>SmolDock::Engine::MDStyleDockingEngine</name>
-    <member refid="class_smol_dock_1_1_engine_1_1_m_d_style_docking_engine_1ab57bcb44b2a6ab6ab0619ff1f0d7d4a7" kind="function"><name>MDStyleDockingEngine</name></member>
-    <member refid="class_smol_dock_1_1_engine_1_1_m_d_style_docking_engine_1a6de740c49189cf41d2c48f2e8e98e391" kind="function"><name>setDockingBox</name></member>
-    <member refid="class_smol_dock_1_1_engine_1_1_m_d_style_docking_engine_1a47f1e2b66b5fd02861d8aa35395c5434" kind="function"><name>setupDockingEngine</name></member>
-    <member refid="class_smol_dock_1_1_engine_1_1_m_d_style_docking_engine_1a0c4fd010b82335202f1fa05ee35a199c" kind="function"><name>runDockingEngine</name></member>
-    <member refid="class_smol_dock_1_1_engine_1_1_m_d_style_docking_engine_1ad5532459022278236d9afa6d0dd7b544" kind="function"><name>getDockingResult</name></member>
-  </compound>
-  <compound refid="class_smol_dock_1_1_molecule" kind="class"><name>SmolDock::Molecule</name>
-    <member refid="class_smol_dock_1_1_molecule_1a2033be89cdf71e3c8750054d8d19425f" kind="friend"><name>MoleculeTraversal</name></member>
-    <member refid="class_smol_dock_1_1_molecule_1a3cb039460aae8734c10a3588e1d670a2" kind="friend"><name>UnitTestHelper</name></member>
-    <member refid="class_smol_dock_1_1_molecule_1a21986fb82cbece6c57579a68c1bf5f39" kind="friend"><name>PDBWriter</name></member>
-    <member refid="class_smol_dock_1_1_molecule_1a322259625da05c62925c705d8c4fb7c3" kind="variable"><name>atoms</name></member>
-    <member refid="class_smol_dock_1_1_molecule_1a18d9793aa2e080c9cefdc22afd40f314" kind="variable"><name>bonds</name></member>
-    <member refid="class_smol_dock_1_1_molecule_1ad474d416278768d82c07fdf1d915e0f5" kind="variable"><name>rwmol</name></member>
-    <member refid="class_smol_dock_1_1_molecule_1a59288faa4bbacab2959858b398cb459e" kind="variable"><name>smiles</name></member>
-    <member refid="class_smol_dock_1_1_molecule_1ac20346642bc3835228726b2508d8c42f" kind="variable"><name>residue_name</name></member>
-    <member refid="class_smol_dock_1_1_molecule_1a008c28b068bf77dc74cc41926ee24507" kind="variable"><name>initial_conformer_id</name></member>
-    <member refid="class_smol_dock_1_1_molecule_1a7295fbcc507a2d0c8acca492393117bb" kind="variable"><name>numberOfRotatableBonds</name></member>
-    <member refid="class_smol_dock_1_1_molecule_1a3a4a39128d64413d79d857bcbf790163" kind="function"><name>Molecule</name></member>
-    <member refid="class_smol_dock_1_1_molecule_1a40ef9fd6a1d62cf31ae054d4acc09841" kind="function"><name>populateFromSMILES</name></member>
-    <member refid="class_smol_dock_1_1_molecule_1ac4d8ee94aeb7bd75e50a11ece1546b79" kind="function"><name>populateFromPDB</name></member>
-    <member refid="class_smol_dock_1_1_molecule_1a7dc0c882da26261dcd2762429b07a3d4" kind="function"><name>numberOfAtoms</name></member>
-    <member refid="class_smol_dock_1_1_molecule_1a8b1f02ad4e3b2ad991162668a61c2ddc" kind="function"><name>numberOfBonds</name></member>
-    <member refid="class_smol_dock_1_1_molecule_1ab5fc86fa1ac97374e7d8d339404568e9" kind="function"><name>getInitialConformer</name></member>
-    <member refid="class_smol_dock_1_1_molecule_1ad10dcbd80a2ac181b3d76fbae3f90ca2" kind="function"><name>generateConformer</name></member>
-    <member refid="class_smol_dock_1_1_molecule_1a1cce96a4a5296ab42ae3ab06fbc374a1" kind="function"><name>generateConformers</name></member>
-    <member refid="class_smol_dock_1_1_molecule_1afe9743bfc4876343b6c63b0aac892f83" kind="function"><name>getResidueName</name></member>
-    <member refid="class_smol_dock_1_1_molecule_1af9eb4a4fe0f1d72c104393b690e8f5cb" kind="function"><name>setResidueName</name></member>
-    <member refid="class_smol_dock_1_1_molecule_1af6263934134836e9ce66d2254b6b6801" kind="function"><name>updateAtomPositionsFromiConformer</name></member>
-    <member refid="class_smol_dock_1_1_molecule_1a70156ffc4081eb92f9dc4e2c70096c84" kind="function"><name>deepcopy</name></member>
-    <member refid="class_smol_dock_1_1_molecule_1a41216a87fbe541655f267501568e2aa7" kind="function"><name>getNumRotatableBond</name></member>
-    <member refid="class_smol_dock_1_1_molecule_1a2bb03cc6894518ac8208ddff1556d6c3" kind="function"><name>populateInternalAtomAndBondFromRWMol</name></member>
-    <member refid="class_smol_dock_1_1_molecule_1a5247ebed094d5593a5a704c0c2919c0c" kind="function"><name>generateIConformerForGivenRDKitConformerID</name></member>
-  </compound>
-  <compound refid="class_smol_dock_1_1_optimizer_1_1_optimizer" kind="class"><name>SmolDock::Optimizer::Optimizer</name>
-    <member refid="class_smol_dock_1_1_optimizer_1_1_optimizer_1a2868a3d9b6855b745d456de57eb1a870" kind="function"><name>optimize</name></member>
-    <member refid="class_smol_dock_1_1_optimizer_1_1_optimizer_1a127349b071842e954d7a89f026685b8f" kind="function"><name>getRawResultMatrix</name></member>
-    <member refid="class_smol_dock_1_1_optimizer_1_1_optimizer_1a5165027808dafc096faf1048a48e7c1c" kind="function"><name>getScore</name></member>
-  </compound>
-  <compound refid="class_smol_dock_1_1_p_d_b_writer" kind="class"><name>SmolDock::PDBWriter</name>
-    <member refid="class_smol_dock_1_1_p_d_b_writer_1a6b87555fa4218995d083a9b3181494dc" kind="variable"><name>ligand_to_export</name></member>
-    <member refid="class_smol_dock_1_1_p_d_b_writer_1a74fc5d4cb9bbe5c8f0362366178dbff0" kind="function"><name>addLigand</name></member>
-    <member refid="class_smol_dock_1_1_p_d_b_writer_1aaad8350fc387575ed549a1fd8569aad2" kind="function"><name>writePDB</name></member>
-  </compound>
-  <compound refid="class_smol_dock_1_1_protein" kind="class"><name>SmolDock::Protein</name>
-    <member refid="class_smol_dock_1_1_protein_1ae0fe8b9c66bfa8032c93e0d8269fd561" kind="variable"><name>aminoacids</name></member>
-    <member refid="class_smol_dock_1_1_protein_1a86e77c7079be2b4d3e1a8e3e53a4ce02" kind="variable"><name>heteroatoms</name></member>
-    <member refid="class_smol_dock_1_1_protein_1a3409e1f4c5789b7102e3941d030a1fc8" kind="variable"><name>center_x</name></member>
-    <member refid="class_smol_dock_1_1_protein_1a1b1d22d4cf7b2efa592904727cbc4318" kind="variable"><name>center_y</name></member>
-    <member refid="class_smol_dock_1_1_protein_1ae548b55999341c9b36325c79f8731de3" kind="variable"><name>center_z</name></member>
-    <member refid="class_smol_dock_1_1_protein_1ad8a4950285ab8d85a341d05c7fc1b4f5" kind="variable"><name>min_x</name></member>
-    <member refid="class_smol_dock_1_1_protein_1a24f3c87a811bb1ea8c631d1b5191bb7e" kind="variable"><name>min_y</name></member>
-    <member refid="class_smol_dock_1_1_protein_1a01ff02f51f30ffe5c4fec3dbe57bb7db" kind="variable"><name>min_z</name></member>
-    <member refid="class_smol_dock_1_1_protein_1a9e3c8b56b150fb2801f4a4e255f6eda1" kind="variable"><name>max_x</name></member>
-    <member refid="class_smol_dock_1_1_protein_1a65917695fc8db4c6dfcc5f1f6157787b" kind="variable"><name>max_y</name></member>
-    <member refid="class_smol_dock_1_1_protein_1a8892ec123bb38e99930b8c884cff5b79" kind="variable"><name>max_z</name></member>
-    <member refid="class_smol_dock_1_1_protein_1ae9cac74c19d706a93fb1e9d4929127a5" kind="function"><name>Protein</name></member>
-    <member refid="class_smol_dock_1_1_protein_1ab28029d0d4fcf11088a32a132667b78c" kind="function"><name>populateFromPDB</name></member>
-    <member refid="class_smol_dock_1_1_protein_1a2cccfc64e088ed1846d15c6909c9379f" kind="function"><name>getiProtein</name></member>
-  </compound>
-  <compound refid="class_smol_dock_1_1_heuristics_1_1_random_restart" kind="class"><name>SmolDock::Heuristics::RandomRestart</name>
-    <member refid="class_smol_dock_1_1_heuristics_1_1_random_restart_1af92f8f1347adb435fa783c909912af77" kind="variable"><name>scorFunc</name></member>
-    <member refid="class_smol_dock_1_1_heuristics_1_1_random_restart_1a9ef6527f103d63ff12abae06b97fad9c" kind="variable"><name>optimizer</name></member>
-    <member refid="class_smol_dock_1_1_heuristics_1_1_random_restart_1a9f126933a53652c60537d755bcfcad65" kind="variable"><name>rnd_generator</name></member>
-    <member refid="class_smol_dock_1_1_heuristics_1_1_random_restart_1a2ae6f0df0cd563a72a62db5137221065" kind="variable"><name>result</name></member>
-    <member refid="class_smol_dock_1_1_heuristics_1_1_random_restart_1a4e6c878b33b776e4817a1ccc3f582d5f" kind="function"><name>RandomRestart</name></member>
-    <member refid="class_smol_dock_1_1_heuristics_1_1_random_restart_1abfa7882757c070d876d94090520cef92" kind="function"><name>search</name></member>
-    <member refid="class_smol_dock_1_1_heuristics_1_1_random_restart_1abe7b812d2debcc8cd6eed8f24c9805a6" kind="function"><name>getResultMatrix</name></member>
-  </compound>
-  <compound refid="class_smol_dock_1_1_re_scorer" kind="class"><name>SmolDock::ReScorer</name>
-    <member refid="class_smol_dock_1_1_re_scorer_1ab3d128591e75a32b1d6152bb3b4d3ea4" kind="variable"><name>protein</name></member>
-    <member refid="class_smol_dock_1_1_re_scorer_1acfa92e136e1a1681477539bd14bed734" kind="variable"><name>molecule</name></member>
-    <member refid="class_smol_dock_1_1_re_scorer_1aa23484f98a480115afdd978a83f9091f" kind="variable"><name>scoringFunction</name></member>
-    <member refid="class_smol_dock_1_1_re_scorer_1a415f9b1b65c644dc042cb14131af1c10" kind="variable"><name>iprotein</name></member>
-    <member refid="class_smol_dock_1_1_re_scorer_1ac8cf11ff4b1e73fea599b6eba7d05ad0" kind="variable"><name>iconformer</name></member>
-    <member refid="class_smol_dock_1_1_re_scorer_1ae77b0b4b724627836a85359936ae63a1" kind="function"><name>ReScorer</name></member>
-    <member refid="class_smol_dock_1_1_re_scorer_1a102b6af24e4f5dc420c2bdfba5a792f0" kind="function"><name>prepare</name></member>
-    <member refid="class_smol_dock_1_1_re_scorer_1a4f372ac345e57254d9b00672f169d2fd" kind="function"><name>getScore</name></member>
-  </compound>
-  <compound refid="class_smol_dock_1_1_score_1_1_scoring_function" kind="class"><name>SmolDock::Score::ScoringFunction</name>
-    <member refid="class_smol_dock_1_1_score_1_1_scoring_function_1a92b9b5f6d23b07740dd9f6718207d31a" kind="function"><name>Evaluate</name></member>
-    <member refid="class_smol_dock_1_1_score_1_1_scoring_function_1a56e7633750240c7511d5f719c87eeb2f" kind="function"><name>EvaluateWithGradient</name></member>
-    <member refid="class_smol_dock_1_1_score_1_1_scoring_function_1a526926e386e47c0c4bace70b75b54632" kind="function"><name>getDifferentialEpsilon</name></member>
-    <member refid="class_smol_dock_1_1_score_1_1_scoring_function_1a70e93a6f7e50f4a57273b0faf60e8e90" kind="function"><name>getStartingConditions</name></member>
-    <member refid="class_smol_dock_1_1_score_1_1_scoring_function_1a19d85e9febea604032a62624a70adc4e" kind="function"><name>getParamVectorDimension</name></member>
-    <member refid="class_smol_dock_1_1_score_1_1_scoring_function_1ac446224ef6f15aa89c1d3b604fd43a13" kind="function"><name>getConformerForParamMatrix</name></member>
-    <member refid="class_smol_dock_1_1_score_1_1_scoring_function_1a366f1b2ddf8d9b25d09b26e114f08996" kind="function"><name>~ScoringFunction</name></member>
-  </compound>
-  <compound refid="class_smol_dock_1_1_structure" kind="class"><name>SmolDock::Structure</name>
-  </compound>
-  <compound refid="class_smol_dock_1_1_input_post_processor_1_1_vina_compatibility_post_processor" kind="class"><name>SmolDock::InputPostProcessor::VinaCompatibilityPostProcessor</name>
-    <member refid="class_smol_dock_1_1_input_post_processor_1_1_vina_compatibility_post_processor_1a22d855dcd7c0483f587438b8e0c67e57" kind="function"><name>VinaCompatibilityPostProcessor</name></member>
-    <member refid="class_smol_dock_1_1_input_post_processor_1_1_vina_compatibility_post_processor_1acca66db3277201ff3ea5abda18d5a345" kind="function"><name>processAtomFromLigand</name></member>
-    <member refid="class_smol_dock_1_1_input_post_processor_1_1_vina_compatibility_post_processor_1a32e204f2bc8c35192036888be4eb554f" kind="function"><name>processAtomFromProtein</name></member>
-  </compound>
-  <compound refid="class_smol_dock_1_1_engine_1_1_vina_compatible_docking_engine" kind="class"><name>SmolDock::Engine::VinaCompatibleDockingEngine</name>
-  </compound>
-  <compound refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function" kind="class"><name>SmolDock::Score::VinaLikeRigidScoringFunction</name>
-    <member refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1afc848dd44def406206bfa2ac002d00d6" kind="variable"><name>startingConformation</name></member>
-    <member refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1a0e3280c203d37f8eadf1543e06ec9473" kind="variable"><name>prot</name></member>
-    <member refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1ab2b508f61dadc4de3998dcf9f82108aa" kind="variable"><name>initialTransform</name></member>
-    <member refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1ade3afba236d274a7ff1bdff886bdeaca" kind="variable"><name>differential_epsilon</name></member>
-    <member refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1a5972bf8e5a96678d769255137b944afc" kind="function"><name>VinaLikeRigidScoringFunction</name></member>
-    <member refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1ab89f08da2f4f79abfe9130b3593c3522" kind="function"><name>Evaluate</name></member>
-    <member refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1a574511b3c12769902e2c0366d4d3db96" kind="function"><name>EvaluateWithGradient</name></member>
-    <member refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1ad16c38589c65800f164078fcbd929e99" kind="function"><name>getStartingConditions</name></member>
-    <member refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1a2173a0716d2426518a601e1525798fcd" kind="function"><name>getDifferentialEpsilon</name></member>
-    <member refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1a6b173e704b812af5cde72610f1143577" kind="function"><name>getConformerForParamMatrix</name></member>
-    <member refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1ad5633f6ee3c7d72b593e5101730747a2" kind="function"><name>getParamVectorDimension</name></member>
-    <member refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1a9f439356ccbad3407dcb8701037cc902" kind="function"><name>~VinaLikeRigidScoringFunction</name></member>
-    <member refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1a7998fd7ab2237aa8da50d05d553ffec0" kind="function"><name>internalToExternalRepr</name></member>
-    <member refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1a78f389f738bb184be926a272f55baa95" kind="function"><name>externalToInternalRepr</name></member>
-  </compound>
-  <compound refid="namespace_smol_dock" kind="namespace"><name>SmolDock</name>
-    <member refid="namespace_smol_dock_1ab797122db8030eb70bf4d042c897df5e" kind="enum"><name>PDBResidueVariantAssignationType</name></member>
-    <member refid="namespace_smol_dock_1ab797122db8030eb70bf4d042c897df5eab7f023dbb86242b37e451d0b36dde93d" kind="enumvalue"><name>GeneralPurpose</name></member>
-    <member refid="namespace_smol_dock_1a1c9575126d6be4889918032116fd8add" kind="variable"><name>ResidueAtomPropertiesLookupTable_General</name></member>
-    <member refid="namespace_smol_dock_1a44a91384d128c3beb5c57ec507dddb6e" kind="function"><name>iQuaternionIdentityInit</name></member>
-    <member refid="namespace_smol_dock_1a3974d1e3a6f729a7ca05b97996ca2079" kind="function"><name>iTransformIdentityInit</name></member>
-    <member refid="namespace_smol_dock_1a835c8bf0a7983ba17c48cd10f152726f" kind="function"><name>applyRotationInPlace</name></member>
-    <member refid="namespace_smol_dock_1a65d30b0d0a54dad29b43fc9acfbf6570" kind="function"><name>applyRotation</name></member>
-    <member refid="namespace_smol_dock_1a20628b953f3dec7f26d7c8221a508160" kind="function"><name>applyTranslationInPlace</name></member>
-    <member refid="namespace_smol_dock_1a293a24f2936d34c0b73f8ef8b2d8d84b" kind="function"><name>applyTranslation</name></member>
-    <member refid="namespace_smol_dock_1a73bb4756419c2b3361ae4d23b24eee20" kind="function"><name>applyTransformInPlace</name></member>
-    <member refid="namespace_smol_dock_1a19b5383f74c017874f93a6dcc8a1d508" kind="function"><name>applyTransform</name></member>
-    <member refid="namespace_smol_dock_1afd058af9bf8a2fa90a0ec7bf42c31e31" kind="function"><name>applyTransformInPlace</name></member>
-    <member refid="namespace_smol_dock_1afb62962c202721eaa8aa64d19bd42fdf" kind="function"><name>quaternionNorm</name></member>
-    <member refid="namespace_smol_dock_1aba87815fd70c1b451b7ba905790ecef3" kind="function"><name>vectorNorm</name></member>
-    <member refid="namespace_smol_dock_1aeef66e92064c4a5e5102102342542853" kind="function"><name>normalizeQuaternionInPlace</name></member>
-    <member refid="namespace_smol_dock_1addb7785924a5380574728cfd0978d8f0" kind="function"><name>normalizeQuaternion</name></member>
-    <member refid="namespace_smol_dock_1a7980070f5c494cfe044ad9e90e34e3e3" kind="function"><name>resTypeToString</name></member>
-    <member refid="namespace_smol_dock_1a788f9308991cdf8fe5af07b27ff0f389" kind="function"><name>stringToResType</name></member>
-    <member refid="namespace_smol_dock_1adc50d67bf7b33de8b30d90f97c25fb24" kind="function"><name>atomTypeToString</name></member>
-    <member refid="namespace_smol_dock_1abf06ab90cb8bd0858a883be16bb9f563" kind="function"><name>atomTypeToSymbolString</name></member>
-    <member refid="namespace_smol_dock_1ae559278f4b66ec9a09ddfaebb224f897" kind="function"><name>stringToAtomType</name></member>
-    <member refid="namespace_smol_dock_1a9c3abf1e37dc4fe013df80997dedb20b" kind="function"><name>atomTypeToAtomicRadius</name></member>
-    <member refid="namespace_smol_dock_1a5b696009e136f369f88b0ebfc51175bc" kind="function"><name>operator|</name></member>
-    <member refid="namespace_smol_dock_1a2820b77a3fd140cd601c75028ed8dd51" kind="function"><name>assignVariantFlagsForResidueAtom</name></member>
-    <member refid="namespace_smol_dock_1a43bbd3ed0ad4b1eec9e5ae8d9d99318d" kind="function"><name>assignApolarCarbonFlag</name></member>
-    <member refid="namespace_smol_dock_1af232b04c4eb1c52a6ebea14bb1056be0" kind="function"><name>assignApolarCarbonFlag</name></member>
-    <member refid="namespace_smol_dock_1a288ddd3593922bcc17e5feb114841802" kind="function"><name>AssignBondOrderFromTemplateSMILES</name></member>
-  </compound>
-  <compound refid="namespace_smol_dock_1_1_engine" kind="namespace"><name>SmolDock::Engine</name>
-  </compound>
-  <compound refid="namespace_smol_dock_1_1_heuristics" kind="namespace"><name>SmolDock::Heuristics</name>
-  </compound>
-  <compound refid="namespace_smol_dock_1_1_input_post_processor" kind="namespace"><name>SmolDock::InputPostProcessor</name>
-  </compound>
-  <compound refid="namespace_smol_dock_1_1_optimizer" kind="namespace"><name>SmolDock::Optimizer</name>
-    <member refid="namespace_smol_dock_1_1_optimizer_1a79ed0dc5e1f1a738bd5bb281f09748a7" kind="function"><name>hasNonZeroComponent</name></member>
-  </compound>
-  <compound refid="namespace_smol_dock_1_1_score" kind="namespace"><name>SmolDock::Score</name>
-    <member refid="namespace_smol_dock_1_1_score_1a7d8761ef06699c5fc8793056bc903911" kind="enum"><name>ScoringFunctionType</name></member>
-    <member refid="namespace_smol_dock_1_1_score_1a7d8761ef06699c5fc8793056bc903911a28bb0a5655ac4c67901e014f39619947" kind="enumvalue"><name>VinaRigid</name></member>
-    <member refid="namespace_smol_dock_1_1_score_1a96c89e7cf08ae5049b8d04653cb39ad5" kind="variable"><name>score_gauss1</name></member>
-    <member refid="namespace_smol_dock_1_1_score_1a2deab2d99e28d64401794c7acee7c134" kind="variable"><name>score_gauss2</name></member>
-    <member refid="namespace_smol_dock_1_1_score_1aedf87eb6c6107722da5ce81907ea9609" kind="variable"><name>score_repulsion</name></member>
-    <member refid="namespace_smol_dock_1_1_score_1abdea0df8ff6c5330ad0daebbbea89c62" kind="variable"><name>score_hydrophobic</name></member>
-    <member refid="namespace_smol_dock_1_1_score_1a5fcf6b32516650efc62433e4bb791c18" kind="variable"><name>score_hydrogen</name></member>
-    <member refid="namespace_smol_dock_1_1_score_1af914f3a629ac463d825d7cc7b1ec95cd" kind="function"><name>scoringFunctionFactory</name></member>
-    <member refid="namespace_smol_dock_1_1_score_1adae31ea0b0f6630cdad8c85e9802ed9d" kind="function"><name>isHydrophobic</name></member>
-    <member refid="namespace_smol_dock_1_1_score_1afc0ba7560e9104fcef4bc61ff8d461c1" kind="function"><name>isHydrogenAcceptor</name></member>
-    <member refid="namespace_smol_dock_1_1_score_1aada28b98ff116da3300979ddf15dc557" kind="function"><name>isHydrogenDonor</name></member>
-    <member refid="namespace_smol_dock_1_1_score_1a0b455de7380586a1fd535f76499f16f7" kind="function"><name>hydrogenDonorAcceptorPair</name></member>
-    <member refid="namespace_smol_dock_1_1_score_1ac5efd92ad2db7d779a491ae233cbb2ec" kind="function"><name>hydrogenBondingPossible</name></member>
-    <member refid="namespace_smol_dock_1_1_score_1ac23b7d24b31779cc5cd7d8bd4006fa52" kind="function"><name>scoreForAtomCouple</name></member>
-    <member refid="namespace_smol_dock_1_1_score_1ac205731c7b0098c2900d9d16fff1a93b" kind="function"><name>vina_like_rigid_inter_scoring_func</name></member>
-  </compound>
-  <compound refid="namespace_smol_dock_1_1_wrapper" kind="namespace"><name>SmolDock::Wrapper</name>
-    <member refid="namespace_smol_dock_1_1_wrapper_1a309113da58ce167f3e4280f1e64b7966" kind="enum"><name>ScoringFunctionEnum</name></member>
-    <member refid="namespace_smol_dock_1_1_wrapper_1a309113da58ce167f3e4280f1e64b7966aa618164cb1361917b852a79699b7bb2d" kind="enumvalue"><name>VinaLike</name></member>
-    <member refid="namespace_smol_dock_1_1_wrapper_1afc6fe0925036a67cbd9856c1077296ca" kind="function"><name>getScoringFunc</name></member>
-  </compound>
-  <compound refid="namespacestd" kind="namespace"><name>std</name>
-  </compound>
-  <compound refid="_abstract_docking_engine_8h" kind="file"><name>AbstractDockingEngine.h</name>
-  </compound>
-  <compound refid="_amino_acid_8cpp" kind="file"><name>AminoAcid.cpp</name>
-  </compound>
-  <compound refid="_amino_acid_8h" kind="file"><name>AminoAcid.h</name>
-  </compound>
-  <compound refid="_atom_8cpp" kind="file"><name>Atom.cpp</name>
-  </compound>
-  <compound refid="_atom_8h" kind="file"><name>Atom.h</name>
-  </compound>
-  <compound refid="_bond_8cpp" kind="file"><name>Bond.cpp</name>
-  </compound>
-  <compound refid="_bond_8h" kind="file"><name>Bond.h</name>
-  </compound>
-  <compound refid="_conformer_rigid_docking_engine_8cpp" kind="file"><name>ConformerRigidDockingEngine.cpp</name>
-  </compound>
-  <compound refid="_conformer_rigid_docking_engine_8h" kind="file"><name>ConformerRigidDockingEngine.h</name>
-  </compound>
-  <compound refid="_docking_result_8cpp" kind="file"><name>DockingResult.cpp</name>
-  </compound>
-  <compound refid="_docking_result_8h" kind="file"><name>DockingResult.h</name>
-  </compound>
-  <compound refid="_docking_result_printer_8cpp" kind="file"><name>DockingResultPrinter.cpp</name>
-  </compound>
-  <compound refid="_docking_result_printer_8h" kind="file"><name>DockingResultPrinter.h</name>
-  </compound>
-  <compound refid="_gradient_descent_line_search_8cpp" kind="file"><name>GradientDescentLineSearch.cpp</name>
-  </compound>
-  <compound refid="_gradient_descent_line_search_8h" kind="file"><name>GradientDescentLineSearch.h</name>
-  </compound>
-  <compound refid="_heuristic_interface_8h" kind="file"><name>HeuristicInterface.h</name>
-  </compound>
-  <compound refid="i_conformer_8h" kind="file"><name>iConformer.h</name>
-  </compound>
-  <compound refid="_input_post_processor_interface_8h" kind="file"><name>InputPostProcessorInterface.h</name>
-  </compound>
-  <compound refid="_intermediate_conformer_collector_8cpp" kind="file"><name>IntermediateConformerCollector.cpp</name>
-  </compound>
-  <compound refid="_intermediate_conformer_collector_8h" kind="file"><name>IntermediateConformerCollector.h</name>
-  </compound>
-  <compound refid="_internals_utility_functions_8h" kind="file"><name>InternalsUtilityFunctions.h</name>
-  </compound>
-  <compound refid="i_protein_8h" kind="file"><name>iProtein.h</name>
-  </compound>
-  <compound refid="i_transform_8h" kind="file"><name>iTransform.h</name>
-  </compound>
-  <compound refid="_l___b_f_g_s_8cpp" kind="file"><name>L_BFGS.cpp</name>
-  </compound>
-  <compound refid="_l___b_f_g_s_8h" kind="file"><name>L_BFGS.h</name>
-  </compound>
-  <compound refid="_local_optimizer_utility_functions_8h" kind="file"><name>LocalOptimizerUtilityFunctions.h</name>
-  </compound>
-  <compound refid="main_8cpp" kind="file"><name>main.cpp</name>
-    <member refid="main_8cpp_1aed1cc446d8c31ec6ad4dae32bbbcc42a" kind="variable"><name>conformerCollector</name></member>
-    <member refid="main_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4" kind="function"><name>main</name></member>
-  </compound>
-  <compound refid="_m_d_style_docking_engine_8cpp" kind="file"><name>MDStyleDockingEngine.cpp</name>
-  </compound>
-  <compound refid="_m_d_style_docking_engine_8h" kind="file"><name>MDStyleDockingEngine.h</name>
-  </compound>
-  <compound refid="_molecule_8cpp" kind="file"><name>Molecule.cpp</name>
-  </compound>
-  <compound refid="_molecule_8h" kind="file"><name>Molecule.h</name>
-  </compound>
-  <compound refid="_optimizer_interface_8h" kind="file"><name>OptimizerInterface.h</name>
-  </compound>
-  <compound refid="_p_d_b_ligand_utils_8cpp" kind="file"><name>PDBLigandUtils.cpp</name>
-  </compound>
-  <compound refid="_p_d_b_ligand_utils_8h" kind="file"><name>PDBLigandUtils.h</name>
-  </compound>
-  <compound refid="_p_d_b_residue_variant_table_8cpp" kind="file"><name>PDBResidueVariantTable.cpp</name>
-  </compound>
-  <compound refid="_p_d_b_residue_variant_table_8h" kind="file"><name>PDBResidueVariantTable.h</name>
-  </compound>
-  <compound refid="_p_d_b_writer_8cpp" kind="file"><name>PDBWriter.cpp</name>
-  </compound>
-  <compound refid="_p_d_b_writer_8h" kind="file"><name>PDBWriter.h</name>
-  </compound>
-  <compound refid="_protein_8cpp" kind="file"><name>Protein.cpp</name>
-  </compound>
-  <compound refid="_protein_8h" kind="file"><name>Protein.h</name>
-  </compound>
-  <compound refid="_py_scoring_functions_8cpp" kind="file"><name>PyScoringFunctions.cpp</name>
-    <member refid="_py_scoring_functions_8cpp_1a2ede6b770a3e6131986d822ec5842b63" kind="function"><name>export_ScoringFunctions</name></member>
-  </compound>
-  <compound refid="_py_scoring_functions_8h" kind="file"><name>PyScoringFunctions.h</name>
-    <member refid="_py_scoring_functions_8h_1a2ede6b770a3e6131986d822ec5842b63" kind="function"><name>export_ScoringFunctions</name></member>
-  </compound>
-  <compound refid="_py_s_t_l_wrapper_8cpp" kind="file"><name>PySTLWrapper.cpp</name>
-    <member refid="_py_s_t_l_wrapper_8cpp_1a168320ae6ebe56579c717093cbb24708" kind="function"><name>export_STLWrapper</name></member>
-  </compound>
-  <compound refid="_py_s_t_l_wrapper_8h" kind="file"><name>PySTLWrapper.h</name>
-    <member refid="_py_s_t_l_wrapper_8h_1a168320ae6ebe56579c717093cbb24708" kind="function"><name>export_STLWrapper</name></member>
-  </compound>
-  <compound refid="_py_structures_8cpp" kind="file"><name>PyStructures.cpp</name>
-    <member refid="_py_structures_8cpp_1a18cad6e29d14a0da9d2cd9464e7e2356" kind="function"><name>export_Structures</name></member>
-  </compound>
-  <compound refid="_py_structures_8h" kind="file"><name>PyStructures.h</name>
-    <member refid="_py_structures_8h_1a18cad6e29d14a0da9d2cd9464e7e2356" kind="function"><name>export_Structures</name></member>
-  </compound>
-  <compound refid="_py_utilities_8cpp" kind="file"><name>PyUtilities.cpp</name>
-    <member refid="_py_utilities_8cpp_1a48b6c8c5377d2e7c99f7084ea93aa77b" kind="function"><name>export_Utilities</name></member>
-  </compound>
-  <compound refid="_py_utilities_8h" kind="file"><name>PyUtilities.h</name>
-    <member refid="_py_utilities_8h_1a48b6c8c5377d2e7c99f7084ea93aa77b" kind="function"><name>export_Utilities</name></member>
-  </compound>
-  <compound refid="_random_restart_8cpp" kind="file"><name>RandomRestart.cpp</name>
-  </compound>
-  <compound refid="_random_restart_8h" kind="file"><name>RandomRestart.h</name>
-  </compound>
-  <compound refid="_re_scorer_8cpp" kind="file"><name>ReScorer.cpp</name>
-  </compound>
-  <compound refid="_re_scorer_8h" kind="file"><name>ReScorer.h</name>
-  </compound>
-  <compound refid="_scoring_function_factory_8cpp" kind="file"><name>ScoringFunctionFactory.cpp</name>
-  </compound>
-  <compound refid="_scoring_function_factory_8h" kind="file"><name>ScoringFunctionFactory.h</name>
-  </compound>
-  <compound refid="_scoring_function_interface_8h" kind="file"><name>ScoringFunctionInterface.h</name>
-  </compound>
-  <compound refid="_smoldock_python_bindings_8cpp" kind="file"><name>SmoldockPythonBindings.cpp</name>
-    <member refid="_smoldock_python_bindings_8cpp_1a9002869529fdb857c7ffa4a170c4f3ef" kind="function"><name>BOOST_PYTHON_MODULE</name></member>
-  </compound>
-  <compound refid="_structure_8cpp" kind="file"><name>Structure.cpp</name>
-  </compound>
-  <compound refid="_structure_8h" kind="file"><name>Structure.h</name>
-  </compound>
-  <compound refid="_timings_log_8h" kind="file"><name>TimingsLog.h</name>
-    <member refid="_timings_log_8h_1a62116d86cc873a334e6356d259772681" kind="define"><name>record_timings</name></member>
-    <member refid="_timings_log_8h_1ae97e25a2ccc8698724613c0235decbfd" kind="define"><name>TRACE_LOG</name></member>
-  </compound>
-  <compound refid="_variant_flag_assignation_8cpp" kind="file"><name>VariantFlagAssignation.cpp</name>
-  </compound>
-  <compound refid="_variant_flag_assignation_8h" kind="file"><name>VariantFlagAssignation.h</name>
-  </compound>
-  <compound refid="_vina_compatibility_post_processor_8cpp" kind="file"><name>VinaCompatibilityPostProcessor.cpp</name>
-  </compound>
-  <compound refid="_vina_compatibility_post_processor_8h" kind="file"><name>VinaCompatibilityPostProcessor.h</name>
-  </compound>
-  <compound refid="_vina_compatible_docking_engine_8cpp" kind="file"><name>VinaCompatibleDockingEngine.cpp</name>
-  </compound>
-  <compound refid="_vina_compatible_docking_engine_8h" kind="file"><name>VinaCompatibleDockingEngine.h</name>
-  </compound>
-  <compound refid="_vina_like_scoring_function_8cpp" kind="file"><name>VinaLikeScoringFunction.cpp</name>
-  </compound>
-  <compound refid="_vina_like_scoring_function_8h" kind="file"><name>VinaLikeScoringFunction.h</name>
-  </compound>
-  <compound refid="dir_8dea5fe76307a117414e482b7178e69f" kind="dir"><name>Common</name>
-  </compound>
-  <compound refid="dir_3b692a38eb3defa157937dbd02adffca" kind="dir"><name>Engines</name>
-  </compound>
-  <compound refid="dir_d3f782666cc280dff880300cc44797c9" kind="dir"><name>Frontends</name>
-  </compound>
-  <compound refid="dir_c03857b6a24786b6ba40826a301e1243" kind="dir"><name>GlobalHeuristics</name>
-  </compound>
-  <compound refid="dir_0cf716b3898b0d1f79a9b5f304b1f333" kind="dir"><name>InputPostProcessors</name>
-  </compound>
-  <compound refid="dir_238e222dc7cada3799d91028ff67fcc5" kind="dir"><name>Internals</name>
-  </compound>
-  <compound refid="dir_7792eeab349244a7e7018da0fe5032c6" kind="dir"><name>LocalOptimizers</name>
-  </compound>
-  <compound refid="dir_d92d867e4a5dae8af52667338145b6e4" kind="dir"><name>Python</name>
-  </compound>
-  <compound refid="dir_e31d196e87a16ac78d16cd78ed204c3b" kind="dir"><name>Results</name>
-  </compound>
-  <compound refid="dir_3650502fa8aa3e7e7737709300d35155" kind="dir"><name>ScoringFunctions</name>
-  </compound>
-  <compound refid="dir_29b6d8349828f3fd4c784faff1564e9a" kind="dir"><name>Structures</name>
-  </compound>
-  <compound refid="dir_b05a5fa85f84bfc9013183c9d87f9a36" kind="dir"><name>Utilities</name>
-  </compound>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd"
+              version="1.8.14">
+    <compound refid="class_smol_dock_1_1_engine_1_1_abstract_docking_engine" kind="class">
+        <name>SmolDock::Engine::AbstractDockingEngine</name>
+        <member refid="class_smol_dock_1_1_engine_1_1_abstract_docking_engine_1aca703508a3ce31d577d3ec108020789b"
+                kind="enum">
+            <name>DockingBoxSetting</name>
+        </member>
+        <member refid="class_smol_dock_1_1_engine_1_1_abstract_docking_engine_1aca703508a3ce31d577d3ec108020789ba312db69f5bf4447dfe3c58983083b54f"
+                kind="enumvalue">
+            <name>everything</name>
+        </member>
+        <member refid="class_smol_dock_1_1_engine_1_1_abstract_docking_engine_1aca703508a3ce31d577d3ec108020789ba546fe0111d10555811e641851eaf2dea"
+                kind="enumvalue">
+            <name>solventExposed</name>
+        </member>
+        <member refid="class_smol_dock_1_1_engine_1_1_abstract_docking_engine_1a8147cf906368466da87fa439d537bf62"
+                kind="enum">
+            <name>DockingBoxShape</name>
+        </member>
+        <member refid="class_smol_dock_1_1_engine_1_1_abstract_docking_engine_1a8147cf906368466da87fa439d537bf62a34248a9bfcbd589d9b5fccb6a0ac6963"
+                kind="enumvalue">
+            <name>sphere</name>
+        </member>
+        <member refid="class_smol_dock_1_1_engine_1_1_abstract_docking_engine_1a8147cf906368466da87fa439d537bf62a18a64f7251cfb123aa7c358135d00d10"
+                kind="enumvalue">
+            <name>cube</name>
+        </member>
+        <member refid="class_smol_dock_1_1_engine_1_1_abstract_docking_engine_1a169f25051203c912c2b90bf3387baa22"
+                kind="function">
+            <name>setDockingBox</name>
+        </member>
+        <member refid="class_smol_dock_1_1_engine_1_1_abstract_docking_engine_1a38d55d9ee6fde7df45b25b772cffbb9f"
+                kind="function">
+            <name>setupDockingEngine</name>
+        </member>
+        <member refid="class_smol_dock_1_1_engine_1_1_abstract_docking_engine_1a0f08ef422ed79b3dac0b3144a241abe1"
+                kind="function">
+            <name>runDockingEngine</name>
+        </member>
+        <member refid="class_smol_dock_1_1_engine_1_1_abstract_docking_engine_1a2e881d63b0214caf95efa3245446faf3"
+                kind="function">
+            <name>getDockingResult</name>
+        </member>
+    </compound>
+    <compound refid="class_smol_dock_1_1_amino_acid" kind="class">
+        <name>SmolDock::AminoAcid</name>
+        <member refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875d" kind="enum">
+            <name>AAType</name>
+        </member>
+        <member refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875da7d0832b9f55cfd3f7c79f134de3b76a7"
+                kind="enumvalue">
+            <name>alanine</name>
+        </member>
+        <member refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875da9a1407676e926e8c94b54e0864da4546"
+                kind="enumvalue">
+            <name>arginine</name>
+        </member>
+        <member refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875da6d1d64af1a6d275bd2995d990072b129"
+                kind="enumvalue">
+            <name>asparagine</name>
+        </member>
+        <member refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875da1aa8cabca067057363a0b448f2db84e7"
+                kind="enumvalue">
+            <name>aspartate</name>
+        </member>
+        <member refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875da3ec90ee7bdd38cf0f8a68b4bee5eb202"
+                kind="enumvalue">
+            <name>cysteine</name>
+        </member>
+        <member refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875da12ea2245c0c7703f3863b9be45a07ae0"
+                kind="enumvalue">
+            <name>glutamate</name>
+        </member>
+        <member refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875daf91e23557b10705ecb971f90c17f8777"
+                kind="enumvalue">
+            <name>glutamine</name>
+        </member>
+        <member refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875da3a778f248ff123853d5605f084e2e260"
+                kind="enumvalue">
+            <name>glycine</name>
+        </member>
+        <member refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875da77d85f9928565a0fe8f709d63982efec"
+                kind="enumvalue">
+            <name>histidine</name>
+        </member>
+        <member refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875daf49712f65cf0d21531c38f3083a41066"
+                kind="enumvalue">
+            <name>isoleucine</name>
+        </member>
+        <member refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875da8fc32025ca0bd8d2a5a86c407ab4db14"
+                kind="enumvalue">
+            <name>leucine</name>
+        </member>
+        <member refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875da183c564fc49647ef130a793d2fc8eb63"
+                kind="enumvalue">
+            <name>lysine</name>
+        </member>
+        <member refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875da3d2f71c3aa615f44d4f7c394b4d89d24"
+                kind="enumvalue">
+            <name>methionine</name>
+        </member>
+        <member refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875daa74b51b040c4059a99fd0defb7f0d0f6"
+                kind="enumvalue">
+            <name>phenylalanine</name>
+        </member>
+        <member refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875da468e37d1ebb2b2d9488ad143d406e419"
+                kind="enumvalue">
+            <name>proline</name>
+        </member>
+        <member refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875daa693d5166186d99ae683963032f44119"
+                kind="enumvalue">
+            <name>serine</name>
+        </member>
+        <member refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875daa2a6737c3315b2d4391a24a8f672d4d2"
+                kind="enumvalue">
+            <name>threonine</name>
+        </member>
+        <member refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875daebd78192c93b932250b270f9ae1f2638"
+                kind="enumvalue">
+            <name>tryptophan</name>
+        </member>
+        <member refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875da1b54c05c5fc8eec4986ac75f82af9d65"
+                kind="enumvalue">
+            <name>tyrosine</name>
+        </member>
+        <member refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875dae1028fdd9757c76ba244c2521f716113"
+                kind="enumvalue">
+            <name>valine</name>
+        </member>
+        <member refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875daac3d9bd0eff79f662bcecac7c2887384"
+                kind="enumvalue">
+            <name>selenocysteine</name>
+        </member>
+        <member refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875da8b17b1023d7d4d8093a8cc3bffbc3e62"
+                kind="enumvalue">
+            <name>pyrrolysine</name>
+        </member>
+        <member refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875dad390be0ae98a5c4a22ca9b0b7e726f40"
+                kind="enumvalue">
+            <name>heteroatom</name>
+        </member>
+        <member refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875daad921d60486366258809553a3db49a4a"
+                kind="enumvalue">
+            <name>unknown</name>
+        </member>
+        <member refid="class_smol_dock_1_1_amino_acid_1a2cc8b86817f46f61585ecf591984f8eb" kind="friend">
+            <name>Protein</name>
+        </member>
+        <member refid="class_smol_dock_1_1_amino_acid_1a74b6203c0c737ad86fb18da22ec935ff" kind="friend">
+            <name>assignVariantFlagsForResidueAtom</name>
+        </member>
+        <member refid="class_smol_dock_1_1_amino_acid_1a114a9d96ae603d1a25779498205cec47" kind="friend">
+            <name>resTypeToString</name>
+        </member>
+        <member refid="class_smol_dock_1_1_amino_acid_1a196e09203295c01d2a5fc157ee89f7ee" kind="friend">
+            <name>stringToResType</name>
+        </member>
+        <member refid="class_smol_dock_1_1_amino_acid_1a23b1781c86be2991e2f668c07ad78d68" kind="variable">
+            <name>AAShorthandSet</name>
+        </member>
+        <member refid="class_smol_dock_1_1_amino_acid_1ae3404d935519af353a5c323ce298e04a" kind="variable">
+            <name>type</name>
+        </member>
+        <member refid="class_smol_dock_1_1_amino_acid_1aed11fc710f3993ac1bda7ce5e59e102e" kind="variable">
+            <name>AAId</name>
+        </member>
+        <member refid="class_smol_dock_1_1_amino_acid_1ad0349cceaac80ad8a367c8130589dd76" kind="variable">
+            <name>shorthand</name>
+        </member>
+        <member refid="class_smol_dock_1_1_amino_acid_1a2a83d6290c79b4d2145637a29ebb9d23" kind="variable">
+            <name>fullName</name>
+        </member>
+        <member refid="class_smol_dock_1_1_amino_acid_1acf07ea167386e29d0ea6b5024663aed8" kind="variable">
+            <name>atoms</name>
+        </member>
+        <member refid="class_smol_dock_1_1_amino_acid_1a0632e2366d8af52d467bffcde90657f2" kind="function">
+            <name>AminoAcid</name>
+        </member>
+        <member refid="class_smol_dock_1_1_amino_acid_1acc14dd7bf81e1580703017427b130838" kind="function">
+            <name>AminoAcid</name>
+        </member>
+        <member refid="class_smol_dock_1_1_amino_acid_1a8d76cf7b2a088f713aa507029f03ac20" kind="function">
+            <name>getAAId</name>
+        </member>
+        <member refid="class_smol_dock_1_1_amino_acid_1a091349e13f56cc9d28701dcfe8e30d45" kind="function">
+            <name>setAAId</name>
+        </member>
+        <member refid="class_smol_dock_1_1_amino_acid_1a8fb908f1ba8496d0cc115d7a0813d027" kind="function">
+            <name>filliProtein</name>
+        </member>
+        <member refid="class_smol_dock_1_1_amino_acid_1a556f668f759abed9c33c3522106d520b" kind="function">
+            <name>getType</name>
+        </member>
+        <member refid="class_smol_dock_1_1_amino_acid_1acf73c63c5f9f1945d40ae0bc365c5614" kind="function">
+            <name>setType</name>
+        </member>
+    </compound>
+    <compound refid="class_smol_dock_1_1_atom" kind="class">
+        <name>SmolDock::Atom</name>
+        <member refid="class_smol_dock_1_1_atom_1a57e9a532fd04e1846c0d83edebb9fd41" kind="enum">
+            <name>AtomType</name>
+        </member>
+        <member refid="class_smol_dock_1_1_atom_1a57e9a532fd04e1846c0d83edebb9fd41aad921d60486366258809553a3db49a4a"
+                kind="enumvalue">
+            <name>unknown</name>
+        </member>
+        <member refid="class_smol_dock_1_1_atom_1a57e9a532fd04e1846c0d83edebb9fd41ad4ac1478a4d8a4f591d35e3d75f3de65"
+                kind="enumvalue">
+            <name>hydrogen</name>
+        </member>
+        <member refid="class_smol_dock_1_1_atom_1a57e9a532fd04e1846c0d83edebb9fd41ae1b832c8857262f1089376030b4298b3"
+                kind="enumvalue">
+            <name>carbon</name>
+        </member>
+        <member refid="class_smol_dock_1_1_atom_1a57e9a532fd04e1846c0d83edebb9fd41a6124d98749365e3db2c9e5b27ca04db6"
+                kind="enumvalue">
+            <name>oxygen</name>
+        </member>
+        <member refid="class_smol_dock_1_1_atom_1a57e9a532fd04e1846c0d83edebb9fd41a63ebb9250f49340aece8d4ac541eaf61"
+                kind="enumvalue">
+            <name>nitrogen</name>
+        </member>
+        <member refid="class_smol_dock_1_1_atom_1a57e9a532fd04e1846c0d83edebb9fd41a3e17873c24bbb0b8ab2dac324dd67b9f"
+                kind="enumvalue">
+            <name>phosporus</name>
+        </member>
+        <member refid="class_smol_dock_1_1_atom_1a57e9a532fd04e1846c0d83edebb9fd41a73a9bf52aa8ea9e256ec469dfce6e022"
+                kind="enumvalue">
+            <name>sulfur</name>
+        </member>
+        <member refid="class_smol_dock_1_1_atom_1a57e9a532fd04e1846c0d83edebb9fd41af3b7d449c5ca2f53a72210e4381769be"
+                kind="enumvalue">
+            <name>chlorine</name>
+        </member>
+        <member refid="class_smol_dock_1_1_atom_1a77191f0919af58d733764e229cb1f973" kind="enum">
+            <name>AtomVariant</name>
+        </member>
+        <member refid="class_smol_dock_1_1_atom_1a77191f0919af58d733764e229cb1f973ae5e437761e40c78a4c0929be07a3ab04"
+                kind="enumvalue">
+            <name>apolar</name>
+        </member>
+        <member refid="class_smol_dock_1_1_atom_1a77191f0919af58d733764e229cb1f973ade31e8114bf9ba2ec47d55c59f61853d"
+                kind="enumvalue">
+            <name>hydrogenDonor</name>
+        </member>
+        <member refid="class_smol_dock_1_1_atom_1a77191f0919af58d733764e229cb1f973ad68216b54381a7b2b87b7924ab0191c4"
+                kind="enumvalue">
+            <name>hydrogenAcceptor</name>
+        </member>
+        <member refid="class_smol_dock_1_1_atom_1ade04f26c3314bee1144e0704a07e95ea" kind="variable">
+            <name>Bond</name>
+        </member>
+        <member refid="class_smol_dock_1_1_atom_1a90ad0859a5e5a747eecdc79b8bb80561" kind="variable">
+            <name>MoleculeTraversal</name>
+        </member>
+        <member refid="class_smol_dock_1_1_atom_1ae0d120b8bbafe454abebd374e2402082" kind="friend">
+            <name>Molecule</name>
+        </member>
+        <member refid="class_smol_dock_1_1_atom_1a2cc8b86817f46f61585ecf591984f8eb" kind="friend">
+            <name>Protein</name>
+        </member>
+        <member refid="class_smol_dock_1_1_atom_1af4fe090161ac376dcfd99d5eb17c0d4a" kind="friend">
+            <name>assignApolarCarbonFlag</name>
+        </member>
+        <member refid="class_smol_dock_1_1_atom_1a74b6203c0c737ad86fb18da22ec935ff" kind="friend">
+            <name>assignVariantFlagsForResidueAtom</name>
+        </member>
+        <member refid="class_smol_dock_1_1_atom_1ab7591815a3dc03bab05bcb6d5e2b741a" kind="friend">
+            <name>atomTypeToString</name>
+        </member>
+        <member refid="class_smol_dock_1_1_atom_1ac56105f17fd519b4438ef07334e68d60" kind="friend">
+            <name>atomTypeToSymbolString</name>
+        </member>
+        <member refid="class_smol_dock_1_1_atom_1abe46f23e1f169949c8d3916b7e0ad38b" kind="friend">
+            <name>stringToAtomType</name>
+        </member>
+        <member refid="class_smol_dock_1_1_atom_1ae8f2ceffdf7832e3a57549119e5fc341" kind="friend">
+            <name>atomTypeToAtomicRadius</name>
+        </member>
+        <member refid="class_smol_dock_1_1_atom_1af45fc99da6ffbf539ba654c91e1bb752" kind="variable">
+            <name>bonds</name>
+        </member>
+        <member refid="class_smol_dock_1_1_atom_1ab3867a9c2c98c5bb43ff4a6b7f1bf856" kind="variable">
+            <name>type</name>
+        </member>
+        <member refid="class_smol_dock_1_1_atom_1a0c54fdff29130e870237ba300a4e9d25" kind="variable">
+            <name>variant</name>
+        </member>
+        <member refid="class_smol_dock_1_1_atom_1acec4104851702c781abb5f86844cf6b3" kind="variable">
+            <name>charge</name>
+        </member>
+        <member refid="class_smol_dock_1_1_atom_1aa19d070c9951c67a4b1d4c5d80f2ee22" kind="variable">
+            <name>fromResidue</name>
+        </member>
+        <member refid="class_smol_dock_1_1_atom_1aeb5bd3da13c5e16176931c19bb622d91" kind="variable">
+            <name>residueType</name>
+        </member>
+        <member refid="class_smol_dock_1_1_atom_1a79a0e80b2fdb39742cc4de548d73eb63" kind="variable">
+            <name>atomClassInResidue</name>
+        </member>
+        <member refid="class_smol_dock_1_1_atom_1a41d894e0b89dfd6e28514617a4a16ecf" kind="variable">
+            <name>owningAA</name>
+        </member>
+        <member refid="class_smol_dock_1_1_atom_1a76afdad512e9f593c4445c6407b26597" kind="variable">
+            <name>AtomID</name>
+        </member>
+        <member refid="class_smol_dock_1_1_atom_1a02874f0a49c2fb34884d7e40c6b92e9e" kind="variable">
+            <name>x</name>
+        </member>
+        <member refid="class_smol_dock_1_1_atom_1a253663ad700e72667d421f4d869798e1" kind="variable">
+            <name>y</name>
+        </member>
+        <member refid="class_smol_dock_1_1_atom_1a8f28d43131d21536269e220d6fa43f07" kind="variable">
+            <name>z</name>
+        </member>
+        <member refid="class_smol_dock_1_1_atom_1a6d2c1ae04324600154ecd49c1b4a76c5" kind="variable">
+            <name>atomicRadius</name>
+        </member>
+        <member refid="class_smol_dock_1_1_atom_1a699bf43dba89827d43019464a2a1507e" kind="variable">
+            <name>nextAtomID</name>
+        </member>
+        <member refid="class_smol_dock_1_1_atom_1aed79f9306267e3ddbd9a9b4dade2bbbf" kind="variable">
+            <name>AtomTypeLabel</name>
+        </member>
+        <member refid="class_smol_dock_1_1_atom_1a6fdae20edd67e75fa5fab8cbdbb39faf" kind="function">
+            <name>Atom</name>
+        </member>
+        <member refid="class_smol_dock_1_1_atom_1a72994dd53d1aa7e9bfb05aecc8a35a52" kind="function">
+            <name>Atom</name>
+        </member>
+        <member refid="class_smol_dock_1_1_atom_1a6d8ef00ed712a00a3c6d0827faf6ff9e" kind="function">
+            <name>Atom</name>
+        </member>
+        <member refid="class_smol_dock_1_1_atom_1a500f60cb0b8dac0c64bc44187dc90d41" kind="function">
+            <name>Atom</name>
+        </member>
+        <member refid="class_smol_dock_1_1_atom_1a6b8315564e06bdc911053320fd3fa1a7" kind="function">
+            <name>getAtomType</name>
+        </member>
+        <member refid="class_smol_dock_1_1_atom_1a2adf89fbf4618bd294318062e198db66" kind="function">
+            <name>setAtomType</name>
+        </member>
+        <member refid="class_smol_dock_1_1_atom_1a5c58bed07491a0ad9e674d399f2ff888" kind="function">
+            <name>getTypeAsString</name>
+        </member>
+        <member refid="class_smol_dock_1_1_atom_1a68b727ae85b17478fe62c339a0590b14" kind="function">
+            <name>getAtomSymbol</name>
+        </member>
+        <member refid="class_smol_dock_1_1_atom_1a7cd7a34817ac20e79ede418d6896ff48" kind="function">
+            <name>getAtomicNumber</name>
+        </member>
+        <member refid="class_smol_dock_1_1_atom_1a145bc96b3b410ea87a62baeb8b83f127" kind="function">
+            <name>getAtomVariant</name>
+        </member>
+        <member refid="class_smol_dock_1_1_atom_1aa538e302c6c9e6cafbb9f0cbefce3a4e" kind="function">
+            <name>setAtomVariant</name>
+        </member>
+        <member refid="class_smol_dock_1_1_atom_1a6436039c9775c1662be2c3691c2785a9" kind="function">
+            <name>getAtomVariantAsUnderlyingType</name>
+        </member>
+        <member refid="class_smol_dock_1_1_atom_1a62d7246b7a8f3d6aa1aa63c9d5a86ed3" kind="function">
+            <name>getAtomID</name>
+        </member>
+        <member refid="class_smol_dock_1_1_atom_1ae4cd5cf6de8ed5b8254270eb2d7ccd81" kind="function">
+            <name>setAtomID</name>
+        </member>
+        <member refid="class_smol_dock_1_1_atom_1aeb93666d6868e72e846ecad7b1927b04" kind="function">
+            <name>getOwningAA</name>
+        </member>
+        <member refid="class_smol_dock_1_1_atom_1ad4afec1a1299201398d64daaf874857f" kind="function">
+            <name>setOwningAA</name>
+        </member>
+        <member refid="class_smol_dock_1_1_atom_1a9b7e3a83a87f3934edb0f15929f923bd" kind="function">
+            <name>getAtomPosition</name>
+        </member>
+        <member refid="class_smol_dock_1_1_atom_1ae4b0b82523de139bd84ec27b62faa333" kind="function">
+            <name>setAtomPosition</name>
+        </member>
+        <member refid="class_smol_dock_1_1_atom_1a3933f5afa403001d87526a52a0f4c4b5" kind="function">
+            <name>getAtomicRadius</name>
+        </member>
+        <member refid="class_smol_dock_1_1_atom_1aba38aa3f004111483f078e97b8e34bd6" kind="function">
+            <name>setAtomicRadius</name>
+        </member>
+        <member refid="class_smol_dock_1_1_atom_1af5d8a7887cbd714ad4b728e1b68c0881" kind="function">
+            <name>getCharge</name>
+        </member>
+        <member refid="class_smol_dock_1_1_atom_1a16fb238f339c0accd83095ae078040f1" kind="function">
+            <name>setCharge</name>
+        </member>
+    </compound>
+    <compound refid="class_smol_dock_1_1_bond" kind="class">
+        <name>SmolDock::Bond</name>
+        <member refid="class_smol_dock_1_1_bond_1a6cbf152f682501c998bd06a55400c9cf" kind="enum">
+            <name>BondType</name>
+        </member>
+        <member refid="class_smol_dock_1_1_bond_1a6cbf152f682501c998bd06a55400c9cfaccd9d70d0e74b128e8fdd74b302934f1"
+                kind="enumvalue">
+            <name>singlebond</name>
+        </member>
+        <member refid="class_smol_dock_1_1_bond_1a6cbf152f682501c998bd06a55400c9cfa076120e243046998cc8ecff65e716c35"
+                kind="enumvalue">
+            <name>doublebond</name>
+        </member>
+        <member refid="class_smol_dock_1_1_bond_1a6cbf152f682501c998bd06a55400c9cfa7381550bb1c4acbc5e3801c17ef7cae3"
+                kind="enumvalue">
+            <name>triplebond</name>
+        </member>
+        <member refid="class_smol_dock_1_1_bond_1a6cbf152f682501c998bd06a55400c9cfa0a3db58cd06e63f99bfd2d9e6773f555"
+                kind="enumvalue">
+            <name>defaultbond</name>
+        </member>
+        <member refid="class_smol_dock_1_1_bond_1a6cbf152f682501c998bd06a55400c9cfab055cca5ddd5fd7702867dffa64c1f8f"
+                kind="enumvalue">
+            <name>aromatic</name>
+        </member>
+        <member refid="class_smol_dock_1_1_bond_1ad909ef34f3b9b10acc221ac6d54e423a" kind="variable">
+            <name>bond_end_a</name>
+        </member>
+        <member refid="class_smol_dock_1_1_bond_1adbbc73bd7bc4fc579237321be516ed2f" kind="variable">
+            <name>bond_end_b</name>
+        </member>
+        <member refid="class_smol_dock_1_1_bond_1a6fb49dc80f21a23c8b039f85d3b7b5bf" kind="variable">
+            <name>BondID</name>
+        </member>
+        <member refid="class_smol_dock_1_1_bond_1a7795dad7005c83f8702d8593eb81b1ff" kind="variable">
+            <name>bondtype</name>
+        </member>
+        <member refid="class_smol_dock_1_1_bond_1acb9a24240df4164e4840611d7df39962" kind="variable">
+            <name>nextBondID</name>
+        </member>
+        <member refid="class_smol_dock_1_1_bond_1a7f046d71521a269171643bdf147d5c80" kind="function">
+            <name>Bond</name>
+        </member>
+        <member refid="class_smol_dock_1_1_bond_1ae864507cf1018efa1964e7b77b2d6e4f" kind="function">
+            <name>Bond</name>
+        </member>
+        <member refid="class_smol_dock_1_1_bond_1a382edad0cb2bd339e3ff676cd232d093" kind="function">
+            <name>getBondID</name>
+        </member>
+        <member refid="class_smol_dock_1_1_bond_1a8ca51ba3f2abc758ecd7b4b040681f21" kind="function">
+            <name>getEndA</name>
+        </member>
+        <member refid="class_smol_dock_1_1_bond_1a0a2feeb4cc88cbb8920ae5e9b142ead5" kind="function">
+            <name>getEndB</name>
+        </member>
+        <member refid="class_smol_dock_1_1_bond_1a225d51b7edd43bc5aa16984981bc2dfe" kind="function">
+            <name>publicizeToAtom</name>
+        </member>
+        <member refid="class_smol_dock_1_1_bond_1a4ebf28309120c880429f205edf67b9f8" kind="function">
+            <name>setBondType</name>
+        </member>
+        <member refid="class_smol_dock_1_1_bond_1a6b8180f0f2b339c521f8a74b2445e8c8" kind="function">
+            <name>getBondType</name>
+        </member>
+    </compound>
+    <compound refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine" kind="class">
+        <name>SmolDock::Engine::ConformerRigidDockingEngine</name>
+        <member refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a022a37cb30a640404c634aace67ebea1"
+                kind="variable">
+            <name>conformer_num</name>
+        </member>
+        <member refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1adc3f28b5b4af09c54eb73d9f445dbd2d"
+                kind="variable">
+            <name>orig_protein</name>
+        </member>
+        <member refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1af3d543e92676f9d66a5a3d0ccc0cd5a9"
+                kind="variable">
+            <name>orig_ligand</name>
+        </member>
+        <member refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1ab58e856743bf2e8612185902f8ae233a"
+                kind="variable">
+            <name>scoringFuncType</name>
+        </member>
+        <member refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a8d0751b77afc3f1b91c0259af0d80d92"
+                kind="variable">
+            <name>heuristicType</name>
+        </member>
+        <member refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a912745c6f3177cdc1c688ff874c5d410"
+                kind="variable">
+            <name>localOptimizerType</name>
+        </member>
+        <member refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1ace88252dde52d3e8ec652e703a8c7bdf"
+                kind="variable">
+            <name>scoringFunction</name>
+        </member>
+        <member refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a564f81759cb41bf5d17a54a2e5f50c0a"
+                kind="variable">
+            <name>globalHeuristic</name>
+        </member>
+        <member refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a55216b76286aae8cdb9ce8f4bf005dc7"
+                kind="variable">
+            <name>localOptimizer</name>
+        </member>
+        <member refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a9bc1d216cf102c383444cb6f9955dfaa"
+                kind="variable">
+            <name>rnd_generator</name>
+        </member>
+        <member refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a1db0509172face64ab20380bea166765"
+                kind="variable">
+            <name>viConformers</name>
+        </member>
+        <member refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a1dc7396f84093bfca59c2d8accc9ed8c"
+                kind="variable">
+            <name>protein</name>
+        </member>
+        <member refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a3ebcfe47e865aad0c91105a58996d22e"
+                kind="variable">
+            <name>scores</name>
+        </member>
+        <member refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a4ea3d83dced816021dc9e1a39d0f197d"
+                kind="variable">
+            <name>final_iConformer</name>
+        </member>
+        <member refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a1e6272d1b16cc39012b2166edfbfeca1"
+                kind="function">
+            <name>ConformerRigidDockingEngine</name>
+        </member>
+        <member refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1acd3b7345ecae8f0c92ca0168b794eac3"
+                kind="function">
+            <name>setDockingBox</name>
+        </member>
+        <member refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a3abc1a2cdbb3f1b9f545f863f9ec5e43"
+                kind="function">
+            <name>setupDockingEngine</name>
+        </member>
+        <member refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a7bee39278168cb4d7ee6558b3a3d3bb4"
+                kind="function">
+            <name>runDockingEngine</name>
+        </member>
+        <member refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a52fa8c276c911df08d4dd8d6744ae540"
+                kind="function">
+            <name>getDockingResult</name>
+        </member>
+    </compound>
+    <compound refid="class_smol_dock_1_1_docking_result" kind="class">
+        <name>SmolDock::DockingResult</name>
+        <member refid="class_smol_dock_1_1_docking_result_1a13f9ac78867b9834693c7b35d68bf63c" kind="variable">
+            <name>ligandPoses</name>
+        </member>
+    </compound>
+    <compound refid="class_smol_dock_1_1_docking_result_printer" kind="class">
+        <name>SmolDock::DockingResultPrinter</name>
+        <member refid="class_smol_dock_1_1_docking_result_printer_1a7bd2f249617b1fcc7be8edb4e73bbd4f" kind="variable">
+            <name>res</name>
+        </member>
+        <member refid="class_smol_dock_1_1_docking_result_printer_1a0c4ac739b1ee30a044a8e289c541717f" kind="function">
+            <name>DockingResultPrinter</name>
+        </member>
+        <member refid="class_smol_dock_1_1_docking_result_printer_1afb1f0143452d4d8e94555f7f354bb134" kind="function">
+            <name>printToConsole</name>
+        </member>
+    </compound>
+    <compound refid="classdummy_class_a" kind="class">
+        <name>dummyClassA</name>
+    </compound>
+    <compound refid="class_smol_dock_1_1_heuristics_1_1_global_heuristic" kind="class">
+        <name>SmolDock::Heuristics::GlobalHeuristic</name>
+        <member refid="class_smol_dock_1_1_heuristics_1_1_global_heuristic_1acd4f8bbe6334ba93dcd4ea1d2a8c0d38"
+                kind="function">
+            <name>search</name>
+        </member>
+        <member refid="class_smol_dock_1_1_heuristics_1_1_global_heuristic_1a1abc970d50c981e4df49833d4e7f0551"
+                kind="function">
+            <name>getResultMatrix</name>
+        </member>
+        <member refid="class_smol_dock_1_1_heuristics_1_1_global_heuristic_1a93c9f12a7d218837e6e5441ae5daebc1"
+                kind="function">
+            <name>~GlobalHeuristic</name>
+        </member>
+    </compound>
+    <compound refid="class_smol_dock_1_1_optimizer_1_1_gradient_descent_line_search" kind="class">
+        <name>SmolDock::Optimizer::GradientDescentLineSearch</name>
+        <member refid="class_smol_dock_1_1_optimizer_1_1_gradient_descent_line_search_1a5a7ea295c87622dc13f80e4315321463"
+                kind="variable">
+            <name>scoringFunction</name>
+        </member>
+        <member refid="class_smol_dock_1_1_optimizer_1_1_gradient_descent_line_search_1a0680dc929db0fe521e0820e473b8bcb6"
+                kind="variable">
+            <name>differential_epsilon</name>
+        </member>
+        <member refid="class_smol_dock_1_1_optimizer_1_1_gradient_descent_line_search_1a8b335ed348fc56a3f873d7b6520c2e2f"
+                kind="variable">
+            <name>paramVectorDimension</name>
+        </member>
+        <member refid="class_smol_dock_1_1_optimizer_1_1_gradient_descent_line_search_1a0515ae128ea249f61272a10250b91fd8"
+                kind="variable">
+            <name>result</name>
+        </member>
+        <member refid="class_smol_dock_1_1_optimizer_1_1_gradient_descent_line_search_1a4749cfb31b9b88db96aef6a254078e6d"
+                kind="variable">
+            <name>iterationNumber</name>
+        </member>
+        <member refid="class_smol_dock_1_1_optimizer_1_1_gradient_descent_line_search_1a1eafe95f8c30c31960fd7ac4af247fa3"
+                kind="variable">
+            <name>score</name>
+        </member>
+        <member refid="class_smol_dock_1_1_optimizer_1_1_gradient_descent_line_search_1abc5e7a2cc3b11c6aa320dbae9b33c816"
+                kind="function">
+            <name>GradientDescentLineSearch</name>
+        </member>
+        <member refid="class_smol_dock_1_1_optimizer_1_1_gradient_descent_line_search_1ae0888f9903112cfbe93af8d5946a52da"
+                kind="function">
+            <name>optimize</name>
+        </member>
+        <member refid="class_smol_dock_1_1_optimizer_1_1_gradient_descent_line_search_1ae3fdb46d5b28724146c8c496d59b8128"
+                kind="function">
+            <name>getRawResultMatrix</name>
+        </member>
+        <member refid="class_smol_dock_1_1_optimizer_1_1_gradient_descent_line_search_1a497ef5405f36f6e5113f83a37d9542b3"
+                kind="function">
+            <name>getScore</name>
+        </member>
+        <member refid="class_smol_dock_1_1_optimizer_1_1_gradient_descent_line_search_1a14219d5c7e209f0aeae91966eea06c14"
+                kind="function">
+            <name>getIterationNumber</name>
+        </member>
+        <member refid="class_smol_dock_1_1_optimizer_1_1_gradient_descent_line_search_1a0e938531a0165204a0b94965d67fbfe9"
+                kind="function">
+            <name>~GradientDescentLineSearch</name>
+        </member>
+    </compound>
+    <compound refid="struct_smol_dock_1_1i_conformer" kind="struct">
+        <name>SmolDock::iConformer</name>
+        <member refid="struct_smol_dock_1_1i_conformer_1aabef94f550eef03cf2d4304df78cf403" kind="variable">
+            <name>num_rotatable_bond</name>
+        </member>
+        <member refid="struct_smol_dock_1_1i_conformer_1aca79d26663d734bf23b5ed7ddc3dba57" kind="variable">
+            <name>centroidNormalizingTransform</name>
+        </member>
+        <member refid="struct_smol_dock_1_1i_conformer_1a45c379f6a880da313bf3519dc415e992" kind="variable">
+            <name>x</name>
+        </member>
+        <member refid="struct_smol_dock_1_1i_conformer_1ac3019c0cd62660a4392591dd9519cc9a" kind="variable">
+            <name>y</name>
+        </member>
+        <member refid="struct_smol_dock_1_1i_conformer_1a5c1fc6f9bad31ec2731337e9ba1e9a0f" kind="variable">
+            <name>z</name>
+        </member>
+        <member refid="struct_smol_dock_1_1i_conformer_1a1dbd8cb4eaa4e5e2f0afcdd1b36dd862" kind="variable">
+            <name>atomicRadius</name>
+        </member>
+        <member refid="struct_smol_dock_1_1i_conformer_1add04de1dd457ae228e398ffa9260497d" kind="variable">
+            <name>type</name>
+        </member>
+        <member refid="struct_smol_dock_1_1i_conformer_1af56992de619302df905180a481a4d993" kind="variable">
+            <name>variant</name>
+        </member>
+    </compound>
+    <compound refid="struct_smol_dock_1_1i_gradient" kind="struct">
+        <name>SmolDock::iGradient</name>
+        <member refid="struct_smol_dock_1_1i_gradient_1a4780b049dba9b298fc9259a9b626b77c" kind="variable">
+            <name>dx</name>
+        </member>
+        <member refid="struct_smol_dock_1_1i_gradient_1a4c616a17c5cdd532679cc158dccc6797" kind="variable">
+            <name>dy</name>
+        </member>
+        <member refid="struct_smol_dock_1_1i_gradient_1adf3e33454ba5441435ce46894df07a49" kind="variable">
+            <name>dz</name>
+        </member>
+        <member refid="struct_smol_dock_1_1i_gradient_1af93eb07f1c8b1f8fe103ed5aa028ce2c" kind="variable">
+            <name>ds</name>
+        </member>
+        <member refid="struct_smol_dock_1_1i_gradient_1a5583a237c1d002cba8afcb0b34d7a483" kind="variable">
+            <name>du</name>
+        </member>
+        <member refid="struct_smol_dock_1_1i_gradient_1aff52214e33a8a7ec32fac66f0342764d" kind="variable">
+            <name>dv</name>
+        </member>
+        <member refid="struct_smol_dock_1_1i_gradient_1a728b006fb9f40f843dcca18768a0618c" kind="variable">
+            <name>dt</name>
+        </member>
+    </compound>
+    <compound refid="class_smol_dock_1_1_input_post_processor_1_1_input_post_processor" kind="class">
+        <name>SmolDock::InputPostProcessor::InputPostProcessor</name>
+        <member refid="class_smol_dock_1_1_input_post_processor_1_1_input_post_processor_1a7a81319929595b3082310bf4e67cb0b9"
+                kind="function">
+            <name>processAtomFromLigand</name>
+        </member>
+        <member refid="class_smol_dock_1_1_input_post_processor_1_1_input_post_processor_1acad66bf3af5d57ca72656442250e0f35"
+                kind="function">
+            <name>processAtomFromProtein</name>
+        </member>
+        <member refid="class_smol_dock_1_1_input_post_processor_1_1_input_post_processor_1a732ea99c1fda259e309a9afaca986d4a"
+                kind="function">
+            <name>~InputPostProcessor</name>
+        </member>
+    </compound>
+    <compound refid="class_smol_dock_1_1_intermediate_conformer_collector" kind="class">
+        <name>SmolDock::IntermediateConformerCollector</name>
+        <member refid="class_smol_dock_1_1_intermediate_conformer_collector_1af4af1651349015597a2582237817db51"
+                kind="variable">
+            <name>molecule</name>
+        </member>
+        <member refid="class_smol_dock_1_1_intermediate_conformer_collector_1a2fc9343d0d285bef646d6ae5da619ad6"
+                kind="variable">
+            <name>writer</name>
+        </member>
+        <member refid="class_smol_dock_1_1_intermediate_conformer_collector_1ac77973d5bb5a76221e40837b911e5291"
+                kind="function">
+            <name>IntermediateConformerCollector</name>
+        </member>
+        <member refid="class_smol_dock_1_1_intermediate_conformer_collector_1a1d878b323a17e56169fb4fad4f92a742"
+                kind="function">
+            <name>addiConformer</name>
+        </member>
+    </compound>
+    <compound refid="struct_smol_dock_1_1i_protein" kind="struct">
+        <name>SmolDock::iProtein</name>
+        <member refid="struct_smol_dock_1_1i_protein_1a8e62b22e54589f2727b0743cf58a3551" kind="variable">
+            <name>center_x</name>
+        </member>
+        <member refid="struct_smol_dock_1_1i_protein_1a834d2ab9d8580f255616a13a1af785c2" kind="variable">
+            <name>center_y</name>
+        </member>
+        <member refid="struct_smol_dock_1_1i_protein_1a8b3ccbb789373d51a3889158167c3c9a" kind="variable">
+            <name>center_z</name>
+        </member>
+        <member refid="struct_smol_dock_1_1i_protein_1ae36a5b0f6996e54f9ce1f746a79e23f8" kind="variable">
+            <name>x</name>
+        </member>
+        <member refid="struct_smol_dock_1_1i_protein_1a090a371c93db6928cdfef39b0ce3d1fd" kind="variable">
+            <name>y</name>
+        </member>
+        <member refid="struct_smol_dock_1_1i_protein_1ab95306577aa2d8bdd268504b44d046ad" kind="variable">
+            <name>z</name>
+        </member>
+        <member refid="struct_smol_dock_1_1i_protein_1a56480d9a766ca9a3564ade7b91585f0f" kind="variable">
+            <name>atomicRadius</name>
+        </member>
+        <member refid="struct_smol_dock_1_1i_protein_1a8a9cecc0e9750baf8d7074fe64b4331d" kind="variable">
+            <name>type</name>
+        </member>
+        <member refid="struct_smol_dock_1_1i_protein_1ac452f5ddb99ed5a703615f9c03337ddd" kind="variable">
+            <name>variant</name>
+        </member>
+        <member refid="struct_smol_dock_1_1i_protein_1a0b900dfe18415ab4fc200bc7d8570c80" kind="variable">
+            <name>AAId_to_AtomPositionInVect</name>
+        </member>
+    </compound>
+    <compound refid="struct_smol_dock_1_1i_quaternion" kind="struct">
+        <name>SmolDock::iQuaternion</name>
+        <member refid="struct_smol_dock_1_1i_quaternion_1a07d95036803eb2a4ef32627df95043ad" kind="variable">
+            <name>s</name>
+        </member>
+        <member refid="struct_smol_dock_1_1i_quaternion_1a3692d71434fede9771686a73240e6ba7" kind="variable">
+            <name>u</name>
+        </member>
+        <member refid="struct_smol_dock_1_1i_quaternion_1a97a15d15b2fae3ec29c2fdb2388f5e5b" kind="variable">
+            <name>v</name>
+        </member>
+        <member refid="struct_smol_dock_1_1i_quaternion_1a1ff0d5e99369aa47273864dfea352c05" kind="variable">
+            <name>t</name>
+        </member>
+    </compound>
+    <compound refid="struct_smol_dock_1_1i_transform" kind="struct">
+        <name>SmolDock::iTransform</name>
+        <member refid="struct_smol_dock_1_1i_transform_1ab0039729b08d423b6e0414cec1b893e7" kind="variable">
+            <name>transl</name>
+        </member>
+        <member refid="struct_smol_dock_1_1i_transform_1a31861b55dc94ec0172ce602cd2a4a54f" kind="variable">
+            <name>rota</name>
+        </member>
+    </compound>
+    <compound refid="struct_smol_dock_1_1i_translation" kind="struct">
+        <name>SmolDock::iTranslation</name>
+        <member refid="struct_smol_dock_1_1i_translation_1a74a60efc8b2463b7ea1ca1e824a4ed28" kind="variable">
+            <name>x</name>
+        </member>
+        <member refid="struct_smol_dock_1_1i_translation_1a5362a54675ecc6bac99325c69521fbb5" kind="variable">
+            <name>y</name>
+        </member>
+        <member refid="struct_smol_dock_1_1i_translation_1a2ed07fcfc129a2bf7696b65d481317c5" kind="variable">
+            <name>z</name>
+        </member>
+    </compound>
+    <compound refid="struct_smol_dock_1_1i_vect" kind="struct">
+        <name>SmolDock::iVect</name>
+        <member refid="struct_smol_dock_1_1i_vect_1a3ffc7082a3541ad0fadcb1880a6087a8" kind="variable">
+            <name>x</name>
+        </member>
+        <member refid="struct_smol_dock_1_1i_vect_1af8165339c1e38179008c4ca49a565fb4" kind="variable">
+            <name>y</name>
+        </member>
+        <member refid="struct_smol_dock_1_1i_vect_1a013cdafb950199deb4511843ff389e73" kind="variable">
+            <name>z</name>
+        </member>
+    </compound>
+    <compound refid="class_smol_dock_1_1_optimizer_1_1_l___b_f_g_s" kind="class">
+        <name>SmolDock::Optimizer::L_BFGS</name>
+        <member refid="class_smol_dock_1_1_optimizer_1_1_l___b_f_g_s_1ad517eac106ffad742e71e9191f3f82c4"
+                kind="variable">
+            <name>scoringFunction</name>
+        </member>
+        <member refid="class_smol_dock_1_1_optimizer_1_1_l___b_f_g_s_1ab6d9dfa86c156e2999cde60fa48688bf"
+                kind="variable">
+            <name>maxIteration</name>
+        </member>
+        <member refid="class_smol_dock_1_1_optimizer_1_1_l___b_f_g_s_1a63a3f0b953614d1dfd8ea7ba59d92efc"
+                kind="variable">
+            <name>result</name>
+        </member>
+        <member refid="class_smol_dock_1_1_optimizer_1_1_l___b_f_g_s_1ab4ff4104e0300008225d26b195e24ad8"
+                kind="variable">
+            <name>score</name>
+        </member>
+        <member refid="class_smol_dock_1_1_optimizer_1_1_l___b_f_g_s_1a0df667e4e5b369f20fa0f4de11ed7836"
+                kind="function">
+            <name>L_BFGS</name>
+        </member>
+        <member refid="class_smol_dock_1_1_optimizer_1_1_l___b_f_g_s_1af820a1b5e625482458e4917620200e8c"
+                kind="function">
+            <name>optimize</name>
+        </member>
+        <member refid="class_smol_dock_1_1_optimizer_1_1_l___b_f_g_s_1a7155407cb5df962be30e1fd44c82bb87"
+                kind="function">
+            <name>getRawResultMatrix</name>
+        </member>
+        <member refid="class_smol_dock_1_1_optimizer_1_1_l___b_f_g_s_1ae6e836e829ea1f79f9e69e9c2bee26f8"
+                kind="function">
+            <name>getScore</name>
+        </member>
+        <member refid="class_smol_dock_1_1_optimizer_1_1_l___b_f_g_s_1a127e9b5a557d6f8f0af58d581fa5b6ac"
+                kind="function">
+            <name>~L_BFGS</name>
+        </member>
+    </compound>
+    <compound refid="class_smol_dock_1_1_engine_1_1_m_d_style_docking_engine" kind="class">
+        <name>SmolDock::Engine::MDStyleDockingEngine</name>
+        <member refid="class_smol_dock_1_1_engine_1_1_m_d_style_docking_engine_1ab57bcb44b2a6ab6ab0619ff1f0d7d4a7"
+                kind="function">
+            <name>MDStyleDockingEngine</name>
+        </member>
+        <member refid="class_smol_dock_1_1_engine_1_1_m_d_style_docking_engine_1a6de740c49189cf41d2c48f2e8e98e391"
+                kind="function">
+            <name>setDockingBox</name>
+        </member>
+        <member refid="class_smol_dock_1_1_engine_1_1_m_d_style_docking_engine_1a47f1e2b66b5fd02861d8aa35395c5434"
+                kind="function">
+            <name>setupDockingEngine</name>
+        </member>
+        <member refid="class_smol_dock_1_1_engine_1_1_m_d_style_docking_engine_1a0c4fd010b82335202f1fa05ee35a199c"
+                kind="function">
+            <name>runDockingEngine</name>
+        </member>
+        <member refid="class_smol_dock_1_1_engine_1_1_m_d_style_docking_engine_1ad5532459022278236d9afa6d0dd7b544"
+                kind="function">
+            <name>getDockingResult</name>
+        </member>
+    </compound>
+    <compound refid="class_smol_dock_1_1_molecule" kind="class">
+        <name>SmolDock::Molecule</name>
+        <member refid="class_smol_dock_1_1_molecule_1a2033be89cdf71e3c8750054d8d19425f" kind="friend">
+            <name>MoleculeTraversal</name>
+        </member>
+        <member refid="class_smol_dock_1_1_molecule_1a3cb039460aae8734c10a3588e1d670a2" kind="friend">
+            <name>UnitTestHelper</name>
+        </member>
+        <member refid="class_smol_dock_1_1_molecule_1a21986fb82cbece6c57579a68c1bf5f39" kind="friend">
+            <name>PDBWriter</name>
+        </member>
+        <member refid="class_smol_dock_1_1_molecule_1a322259625da05c62925c705d8c4fb7c3" kind="variable">
+            <name>atoms</name>
+        </member>
+        <member refid="class_smol_dock_1_1_molecule_1a18d9793aa2e080c9cefdc22afd40f314" kind="variable">
+            <name>bonds</name>
+        </member>
+        <member refid="class_smol_dock_1_1_molecule_1ad474d416278768d82c07fdf1d915e0f5" kind="variable">
+            <name>rwmol</name>
+        </member>
+        <member refid="class_smol_dock_1_1_molecule_1a59288faa4bbacab2959858b398cb459e" kind="variable">
+            <name>smiles</name>
+        </member>
+        <member refid="class_smol_dock_1_1_molecule_1ac20346642bc3835228726b2508d8c42f" kind="variable">
+            <name>residue_name</name>
+        </member>
+        <member refid="class_smol_dock_1_1_molecule_1a008c28b068bf77dc74cc41926ee24507" kind="variable">
+            <name>initial_conformer_id</name>
+        </member>
+        <member refid="class_smol_dock_1_1_molecule_1a7295fbcc507a2d0c8acca492393117bb" kind="variable">
+            <name>numberOfRotatableBonds</name>
+        </member>
+        <member refid="class_smol_dock_1_1_molecule_1a3a4a39128d64413d79d857bcbf790163" kind="function">
+            <name>Molecule</name>
+        </member>
+        <member refid="class_smol_dock_1_1_molecule_1ae8bf900e52a73637051eee69e60628e6" kind="function">
+            <name>populateFromSMILES</name>
+        </member>
+        <member refid="class_smol_dock_1_1_molecule_1a9e3ef6b361a98cfbac69b11979d886da" kind="function">
+            <name>populateFromPDB</name>
+        </member>
+        <member refid="class_smol_dock_1_1_molecule_1a7dc0c882da26261dcd2762429b07a3d4" kind="function">
+            <name>numberOfAtoms</name>
+        </member>
+        <member refid="class_smol_dock_1_1_molecule_1a8b1f02ad4e3b2ad991162668a61c2ddc" kind="function">
+            <name>numberOfBonds</name>
+        </member>
+        <member refid="class_smol_dock_1_1_molecule_1ab5fc86fa1ac97374e7d8d339404568e9" kind="function">
+            <name>getInitialConformer</name>
+        </member>
+        <member refid="class_smol_dock_1_1_molecule_1ad10dcbd80a2ac181b3d76fbae3f90ca2" kind="function">
+            <name>generateConformer</name>
+        </member>
+        <member refid="class_smol_dock_1_1_molecule_1a1cce96a4a5296ab42ae3ab06fbc374a1" kind="function">
+            <name>generateConformers</name>
+        </member>
+        <member refid="class_smol_dock_1_1_molecule_1afe9743bfc4876343b6c63b0aac892f83" kind="function">
+            <name>getResidueName</name>
+        </member>
+        <member refid="class_smol_dock_1_1_molecule_1af9eb4a4fe0f1d72c104393b690e8f5cb" kind="function">
+            <name>setResidueName</name>
+        </member>
+        <member refid="class_smol_dock_1_1_molecule_1af6263934134836e9ce66d2254b6b6801" kind="function">
+            <name>updateAtomPositionsFromiConformer</name>
+        </member>
+        <member refid="class_smol_dock_1_1_molecule_1a70156ffc4081eb92f9dc4e2c70096c84" kind="function">
+            <name>deepcopy</name>
+        </member>
+        <member refid="class_smol_dock_1_1_molecule_1a41216a87fbe541655f267501568e2aa7" kind="function">
+            <name>getNumRotatableBond</name>
+        </member>
+        <member refid="class_smol_dock_1_1_molecule_1a919f8706ff2f2beb3f7bf8d53f4c3f96" kind="function">
+            <name>populateInternalAtomAndBondFromRWMol</name>
+        </member>
+        <member refid="class_smol_dock_1_1_molecule_1a5247ebed094d5593a5a704c0c2919c0c" kind="function">
+            <name>generateIConformerForGivenRDKitConformerID</name>
+        </member>
+    </compound>
+    <compound refid="class_smol_dock_1_1_optimizer_1_1_optimizer" kind="class">
+        <name>SmolDock::Optimizer::Optimizer</name>
+        <member refid="class_smol_dock_1_1_optimizer_1_1_optimizer_1a2868a3d9b6855b745d456de57eb1a870" kind="function">
+            <name>optimize</name>
+        </member>
+        <member refid="class_smol_dock_1_1_optimizer_1_1_optimizer_1a127349b071842e954d7a89f026685b8f" kind="function">
+            <name>getRawResultMatrix</name>
+        </member>
+        <member refid="class_smol_dock_1_1_optimizer_1_1_optimizer_1a5165027808dafc096faf1048a48e7c1c" kind="function">
+            <name>getScore</name>
+        </member>
+        <member refid="class_smol_dock_1_1_optimizer_1_1_optimizer_1a01132a1b9275e1863e80bd18400b1fef" kind="function">
+            <name>~Optimizer</name>
+        </member>
+    </compound>
+    <compound refid="class_smol_dock_1_1_p_d_b_writer" kind="class">
+        <name>SmolDock::PDBWriter</name>
+        <member refid="class_smol_dock_1_1_p_d_b_writer_1a6b87555fa4218995d083a9b3181494dc" kind="variable">
+            <name>ligand_to_export</name>
+        </member>
+        <member refid="class_smol_dock_1_1_p_d_b_writer_1a74fc5d4cb9bbe5c8f0362366178dbff0" kind="function">
+            <name>addLigand</name>
+        </member>
+        <member refid="class_smol_dock_1_1_p_d_b_writer_1aaad8350fc387575ed549a1fd8569aad2" kind="function">
+            <name>writePDB</name>
+        </member>
+    </compound>
+    <compound refid="class_smol_dock_1_1_protein" kind="class">
+        <name>SmolDock::Protein</name>
+        <member refid="class_smol_dock_1_1_protein_1ae0fe8b9c66bfa8032c93e0d8269fd561" kind="variable">
+            <name>aminoacids</name>
+        </member>
+        <member refid="class_smol_dock_1_1_protein_1a86e77c7079be2b4d3e1a8e3e53a4ce02" kind="variable">
+            <name>heteroatoms</name>
+        </member>
+        <member refid="class_smol_dock_1_1_protein_1a3409e1f4c5789b7102e3941d030a1fc8" kind="variable">
+            <name>center_x</name>
+        </member>
+        <member refid="class_smol_dock_1_1_protein_1a1b1d22d4cf7b2efa592904727cbc4318" kind="variable">
+            <name>center_y</name>
+        </member>
+        <member refid="class_smol_dock_1_1_protein_1ae548b55999341c9b36325c79f8731de3" kind="variable">
+            <name>center_z</name>
+        </member>
+        <member refid="class_smol_dock_1_1_protein_1ad8a4950285ab8d85a341d05c7fc1b4f5" kind="variable">
+            <name>min_x</name>
+        </member>
+        <member refid="class_smol_dock_1_1_protein_1a24f3c87a811bb1ea8c631d1b5191bb7e" kind="variable">
+            <name>min_y</name>
+        </member>
+        <member refid="class_smol_dock_1_1_protein_1a01ff02f51f30ffe5c4fec3dbe57bb7db" kind="variable">
+            <name>min_z</name>
+        </member>
+        <member refid="class_smol_dock_1_1_protein_1a9e3c8b56b150fb2801f4a4e255f6eda1" kind="variable">
+            <name>max_x</name>
+        </member>
+        <member refid="class_smol_dock_1_1_protein_1a65917695fc8db4c6dfcc5f1f6157787b" kind="variable">
+            <name>max_y</name>
+        </member>
+        <member refid="class_smol_dock_1_1_protein_1a8892ec123bb38e99930b8c884cff5b79" kind="variable">
+            <name>max_z</name>
+        </member>
+        <member refid="class_smol_dock_1_1_protein_1a20351fef4b88812de1baa0c4eb74642a" kind="function">
+            <name>Protein</name>
+        </member>
+        <member refid="class_smol_dock_1_1_protein_1a726524247169022a4dfc1328753e39b3" kind="function">
+            <name>populateFromPDB</name>
+        </member>
+        <member refid="class_smol_dock_1_1_protein_1a2cccfc64e088ed1846d15c6909c9379f" kind="function">
+            <name>getiProtein</name>
+        </member>
+    </compound>
+    <compound refid="class_smol_dock_1_1_heuristics_1_1_random_restart" kind="class">
+        <name>SmolDock::Heuristics::RandomRestart</name>
+        <member refid="class_smol_dock_1_1_heuristics_1_1_random_restart_1af92f8f1347adb435fa783c909912af77"
+                kind="variable">
+            <name>scorFunc</name>
+        </member>
+        <member refid="class_smol_dock_1_1_heuristics_1_1_random_restart_1a9ef6527f103d63ff12abae06b97fad9c"
+                kind="variable">
+            <name>optimizer</name>
+        </member>
+        <member refid="class_smol_dock_1_1_heuristics_1_1_random_restart_1a9f126933a53652c60537d755bcfcad65"
+                kind="variable">
+            <name>rnd_generator</name>
+        </member>
+        <member refid="class_smol_dock_1_1_heuristics_1_1_random_restart_1a2ae6f0df0cd563a72a62db5137221065"
+                kind="variable">
+            <name>result</name>
+        </member>
+        <member refid="class_smol_dock_1_1_heuristics_1_1_random_restart_1a4e6c878b33b776e4817a1ccc3f582d5f"
+                kind="function">
+            <name>RandomRestart</name>
+        </member>
+        <member refid="class_smol_dock_1_1_heuristics_1_1_random_restart_1abfa7882757c070d876d94090520cef92"
+                kind="function">
+            <name>search</name>
+        </member>
+        <member refid="class_smol_dock_1_1_heuristics_1_1_random_restart_1a2397763517ca92a3552c84963998ab39"
+                kind="function">
+            <name>getResultMatrix</name>
+        </member>
+        <member refid="class_smol_dock_1_1_heuristics_1_1_random_restart_1a086a8662594c721b0daa7259b673d415"
+                kind="function">
+            <name>~RandomRestart</name>
+        </member>
+    </compound>
+    <compound refid="class_smol_dock_1_1_re_scorer" kind="class">
+        <name>SmolDock::ReScorer</name>
+        <member refid="class_smol_dock_1_1_re_scorer_1ab3d128591e75a32b1d6152bb3b4d3ea4" kind="variable">
+            <name>protein</name>
+        </member>
+        <member refid="class_smol_dock_1_1_re_scorer_1acfa92e136e1a1681477539bd14bed734" kind="variable">
+            <name>molecule</name>
+        </member>
+        <member refid="class_smol_dock_1_1_re_scorer_1aa23484f98a480115afdd978a83f9091f" kind="variable">
+            <name>scoringFunction</name>
+        </member>
+        <member refid="class_smol_dock_1_1_re_scorer_1a415f9b1b65c644dc042cb14131af1c10" kind="variable">
+            <name>iprotein</name>
+        </member>
+        <member refid="class_smol_dock_1_1_re_scorer_1ac8cf11ff4b1e73fea599b6eba7d05ad0" kind="variable">
+            <name>iconformer</name>
+        </member>
+        <member refid="class_smol_dock_1_1_re_scorer_1ae77b0b4b724627836a85359936ae63a1" kind="function">
+            <name>ReScorer</name>
+        </member>
+        <member refid="class_smol_dock_1_1_re_scorer_1a102b6af24e4f5dc420c2bdfba5a792f0" kind="function">
+            <name>prepare</name>
+        </member>
+        <member refid="class_smol_dock_1_1_re_scorer_1a4f372ac345e57254d9b00672f169d2fd" kind="function">
+            <name>getScore</name>
+        </member>
+    </compound>
+    <compound refid="class_smol_dock_1_1_score_1_1_scoring_function" kind="class">
+        <name>SmolDock::Score::ScoringFunction</name>
+        <member refid="class_smol_dock_1_1_score_1_1_scoring_function_1a92b9b5f6d23b07740dd9f6718207d31a"
+                kind="function">
+            <name>Evaluate</name>
+        </member>
+        <member refid="class_smol_dock_1_1_score_1_1_scoring_function_1a56e7633750240c7511d5f719c87eeb2f"
+                kind="function">
+            <name>EvaluateWithGradient</name>
+        </member>
+        <member refid="class_smol_dock_1_1_score_1_1_scoring_function_1a526926e386e47c0c4bace70b75b54632"
+                kind="function">
+            <name>getDifferentialEpsilon</name>
+        </member>
+        <member refid="class_smol_dock_1_1_score_1_1_scoring_function_1a70e93a6f7e50f4a57273b0faf60e8e90"
+                kind="function">
+            <name>getStartingConditions</name>
+        </member>
+        <member refid="class_smol_dock_1_1_score_1_1_scoring_function_1a19d85e9febea604032a62624a70adc4e"
+                kind="function">
+            <name>getParamVectorDimension</name>
+        </member>
+        <member refid="class_smol_dock_1_1_score_1_1_scoring_function_1ac446224ef6f15aa89c1d3b604fd43a13"
+                kind="function">
+            <name>getConformerForParamMatrix</name>
+        </member>
+        <member refid="class_smol_dock_1_1_score_1_1_scoring_function_1a366f1b2ddf8d9b25d09b26e114f08996"
+                kind="function">
+            <name>~ScoringFunction</name>
+        </member>
+    </compound>
+    <compound refid="class_smol_dock_1_1_structure" kind="class">
+        <name>SmolDock::Structure</name>
+    </compound>
+    <compound refid="class_smol_dock_1_1_input_post_processor_1_1_vina_compatibility_post_processor" kind="class">
+        <name>SmolDock::InputPostProcessor::VinaCompatibilityPostProcessor</name>
+        <member refid="class_smol_dock_1_1_input_post_processor_1_1_vina_compatibility_post_processor_1a22d855dcd7c0483f587438b8e0c67e57"
+                kind="function">
+            <name>VinaCompatibilityPostProcessor</name>
+        </member>
+        <member refid="class_smol_dock_1_1_input_post_processor_1_1_vina_compatibility_post_processor_1acca66db3277201ff3ea5abda18d5a345"
+                kind="function">
+            <name>processAtomFromLigand</name>
+        </member>
+        <member refid="class_smol_dock_1_1_input_post_processor_1_1_vina_compatibility_post_processor_1a32e204f2bc8c35192036888be4eb554f"
+                kind="function">
+            <name>processAtomFromProtein</name>
+        </member>
+        <member refid="class_smol_dock_1_1_input_post_processor_1_1_vina_compatibility_post_processor_1a3408845c9ec89aed7121507d1a82101e"
+                kind="function">
+            <name>~VinaCompatibilityPostProcessor</name>
+        </member>
+    </compound>
+    <compound refid="class_smol_dock_1_1_engine_1_1_vina_compatible_docking_engine" kind="class">
+        <name>SmolDock::Engine::VinaCompatibleDockingEngine</name>
+    </compound>
+    <compound refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function" kind="class">
+        <name>SmolDock::Score::VinaLikeRigidScoringFunction</name>
+        <member refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1afc848dd44def406206bfa2ac002d00d6"
+                kind="variable">
+            <name>startingConformation</name>
+        </member>
+        <member refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1a0e3280c203d37f8eadf1543e06ec9473"
+                kind="variable">
+            <name>prot</name>
+        </member>
+        <member refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1ab2b508f61dadc4de3998dcf9f82108aa"
+                kind="variable">
+            <name>initialTransform</name>
+        </member>
+        <member refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1ade3afba236d274a7ff1bdff886bdeaca"
+                kind="variable">
+            <name>differential_epsilon</name>
+        </member>
+        <member refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1a5972bf8e5a96678d769255137b944afc"
+                kind="function">
+            <name>VinaLikeRigidScoringFunction</name>
+        </member>
+        <member refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1ab89f08da2f4f79abfe9130b3593c3522"
+                kind="function">
+            <name>Evaluate</name>
+        </member>
+        <member refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1a574511b3c12769902e2c0366d4d3db96"
+                kind="function">
+            <name>EvaluateWithGradient</name>
+        </member>
+        <member refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1ad16c38589c65800f164078fcbd929e99"
+                kind="function">
+            <name>getStartingConditions</name>
+        </member>
+        <member refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1a2173a0716d2426518a601e1525798fcd"
+                kind="function">
+            <name>getDifferentialEpsilon</name>
+        </member>
+        <member refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1a6b173e704b812af5cde72610f1143577"
+                kind="function">
+            <name>getConformerForParamMatrix</name>
+        </member>
+        <member refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1ad5633f6ee3c7d72b593e5101730747a2"
+                kind="function">
+            <name>getParamVectorDimension</name>
+        </member>
+        <member refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1a9f439356ccbad3407dcb8701037cc902"
+                kind="function">
+            <name>~VinaLikeRigidScoringFunction</name>
+        </member>
+        <member refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1a7998fd7ab2237aa8da50d05d553ffec0"
+                kind="function">
+            <name>internalToExternalRepr</name>
+        </member>
+        <member refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1a78f389f738bb184be926a272f55baa95"
+                kind="function">
+            <name>externalToInternalRepr</name>
+        </member>
+    </compound>
+    <compound refid="namespace_smol_dock" kind="namespace">
+        <name>SmolDock</name>
+        <member refid="namespace_smol_dock_1ab797122db8030eb70bf4d042c897df5e" kind="enum">
+            <name>PDBResidueVariantAssignationType</name>
+        </member>
+        <member refid="namespace_smol_dock_1ab797122db8030eb70bf4d042c897df5eab7f023dbb86242b37e451d0b36dde93d"
+                kind="enumvalue">
+            <name>GeneralPurpose</name>
+        </member>
+        <member refid="namespace_smol_dock_1a1c9575126d6be4889918032116fd8add" kind="variable">
+            <name>ResidueAtomPropertiesLookupTable_General</name>
+        </member>
+        <member refid="namespace_smol_dock_1a44a91384d128c3beb5c57ec507dddb6e" kind="function">
+            <name>iQuaternionIdentityInit</name>
+        </member>
+        <member refid="namespace_smol_dock_1a3974d1e3a6f729a7ca05b97996ca2079" kind="function">
+            <name>iTransformIdentityInit</name>
+        </member>
+        <member refid="namespace_smol_dock_1a835c8bf0a7983ba17c48cd10f152726f" kind="function">
+            <name>applyRotationInPlace</name>
+        </member>
+        <member refid="namespace_smol_dock_1a65d30b0d0a54dad29b43fc9acfbf6570" kind="function">
+            <name>applyRotation</name>
+        </member>
+        <member refid="namespace_smol_dock_1a20628b953f3dec7f26d7c8221a508160" kind="function">
+            <name>applyTranslationInPlace</name>
+        </member>
+        <member refid="namespace_smol_dock_1a293a24f2936d34c0b73f8ef8b2d8d84b" kind="function">
+            <name>applyTranslation</name>
+        </member>
+        <member refid="namespace_smol_dock_1a73bb4756419c2b3361ae4d23b24eee20" kind="function">
+            <name>applyTransformInPlace</name>
+        </member>
+        <member refid="namespace_smol_dock_1a19b5383f74c017874f93a6dcc8a1d508" kind="function">
+            <name>applyTransform</name>
+        </member>
+        <member refid="namespace_smol_dock_1afd058af9bf8a2fa90a0ec7bf42c31e31" kind="function">
+            <name>applyTransformInPlace</name>
+        </member>
+        <member refid="namespace_smol_dock_1afb62962c202721eaa8aa64d19bd42fdf" kind="function">
+            <name>quaternionNorm</name>
+        </member>
+        <member refid="namespace_smol_dock_1aba87815fd70c1b451b7ba905790ecef3" kind="function">
+            <name>vectorNorm</name>
+        </member>
+        <member refid="namespace_smol_dock_1aeef66e92064c4a5e5102102342542853" kind="function">
+            <name>normalizeQuaternionInPlace</name>
+        </member>
+        <member refid="namespace_smol_dock_1addb7785924a5380574728cfd0978d8f0" kind="function">
+            <name>normalizeQuaternion</name>
+        </member>
+        <member refid="namespace_smol_dock_1a7980070f5c494cfe044ad9e90e34e3e3" kind="function">
+            <name>resTypeToString</name>
+        </member>
+        <member refid="namespace_smol_dock_1a788f9308991cdf8fe5af07b27ff0f389" kind="function">
+            <name>stringToResType</name>
+        </member>
+        <member refid="namespace_smol_dock_1adc50d67bf7b33de8b30d90f97c25fb24" kind="function">
+            <name>atomTypeToString</name>
+        </member>
+        <member refid="namespace_smol_dock_1abf06ab90cb8bd0858a883be16bb9f563" kind="function">
+            <name>atomTypeToSymbolString</name>
+        </member>
+        <member refid="namespace_smol_dock_1ae559278f4b66ec9a09ddfaebb224f897" kind="function">
+            <name>stringToAtomType</name>
+        </member>
+        <member refid="namespace_smol_dock_1a9c3abf1e37dc4fe013df80997dedb20b" kind="function">
+            <name>atomTypeToAtomicRadius</name>
+        </member>
+        <member refid="namespace_smol_dock_1a5b696009e136f369f88b0ebfc51175bc" kind="function">
+            <name>operator|</name>
+        </member>
+        <member refid="namespace_smol_dock_1a2820b77a3fd140cd601c75028ed8dd51" kind="function">
+            <name>assignVariantFlagsForResidueAtom</name>
+        </member>
+        <member refid="namespace_smol_dock_1a43bbd3ed0ad4b1eec9e5ae8d9d99318d" kind="function">
+            <name>assignApolarCarbonFlag</name>
+        </member>
+        <member refid="namespace_smol_dock_1af232b04c4eb1c52a6ebea14bb1056be0" kind="function">
+            <name>assignApolarCarbonFlag</name>
+        </member>
+        <member refid="namespace_smol_dock_1a288ddd3593922bcc17e5feb114841802" kind="function">
+            <name>AssignBondOrderFromTemplateSMILES</name>
+        </member>
+    </compound>
+    <compound refid="namespace_smol_dock_1_1_engine" kind="namespace">
+        <name>SmolDock::Engine</name>
+    </compound>
+    <compound refid="namespace_smol_dock_1_1_heuristics" kind="namespace">
+        <name>SmolDock::Heuristics</name>
+        <member refid="namespace_smol_dock_1_1_heuristics_1acab108fbb064edb33166af7fdfb77a72" kind="enum">
+            <name>GlobalHeuristicType</name>
+        </member>
+        <member refid="namespace_smol_dock_1_1_heuristics_1acab108fbb064edb33166af7fdfb77a72a1e6d08df1b1e06305a25d1b4bddce43d"
+                kind="enumvalue">
+            <name>RandomRestart</name>
+        </member>
+        <member refid="namespace_smol_dock_1_1_heuristics_1a30612bd88fe0508b7306b60c678a68a9" kind="function">
+            <name>globalHeuristicFactory</name>
+        </member>
+    </compound>
+    <compound refid="namespace_smol_dock_1_1_input_post_processor" kind="namespace">
+        <name>SmolDock::InputPostProcessor</name>
+    </compound>
+    <compound refid="namespace_smol_dock_1_1_optimizer" kind="namespace">
+        <name>SmolDock::Optimizer</name>
+        <member refid="namespace_smol_dock_1_1_optimizer_1a7ed1dc6878a606b8dcca7558383650ce" kind="enum">
+            <name>LocalOptimizerType</name>
+        </member>
+        <member refid="namespace_smol_dock_1_1_optimizer_1a7ed1dc6878a606b8dcca7558383650cea2bd34449cf1656ea5ea723145f03c127"
+                kind="enumvalue">
+            <name>L_BFGS</name>
+        </member>
+        <member refid="namespace_smol_dock_1_1_optimizer_1a7ed1dc6878a606b8dcca7558383650cea51a88107a34b56214c993f7fc3d9c4a8"
+                kind="enumvalue">
+            <name>GradientDescentLineSearch</name>
+        </member>
+        <member refid="namespace_smol_dock_1_1_optimizer_1a79ed0dc5e1f1a738bd5bb281f09748a7" kind="function">
+            <name>hasNonZeroComponent</name>
+        </member>
+        <member refid="namespace_smol_dock_1_1_optimizer_1a62f48a1e91b51c0d7c9152d1eeaba538" kind="function">
+            <name>optimizerFactory</name>
+        </member>
+    </compound>
+    <compound refid="namespace_smol_dock_1_1_score" kind="namespace">
+        <name>SmolDock::Score</name>
+        <member refid="namespace_smol_dock_1_1_score_1a7d8761ef06699c5fc8793056bc903911" kind="enum">
+            <name>ScoringFunctionType</name>
+        </member>
+        <member refid="namespace_smol_dock_1_1_score_1a7d8761ef06699c5fc8793056bc903911a28bb0a5655ac4c67901e014f39619947"
+                kind="enumvalue">
+            <name>VinaRigid</name>
+        </member>
+        <member refid="namespace_smol_dock_1_1_score_1a96c89e7cf08ae5049b8d04653cb39ad5" kind="variable">
+            <name>score_gauss1</name>
+        </member>
+        <member refid="namespace_smol_dock_1_1_score_1a2deab2d99e28d64401794c7acee7c134" kind="variable">
+            <name>score_gauss2</name>
+        </member>
+        <member refid="namespace_smol_dock_1_1_score_1aedf87eb6c6107722da5ce81907ea9609" kind="variable">
+            <name>score_repulsion</name>
+        </member>
+        <member refid="namespace_smol_dock_1_1_score_1abdea0df8ff6c5330ad0daebbbea89c62" kind="variable">
+            <name>score_hydrophobic</name>
+        </member>
+        <member refid="namespace_smol_dock_1_1_score_1a5fcf6b32516650efc62433e4bb791c18" kind="variable">
+            <name>score_hydrogen</name>
+        </member>
+        <member refid="namespace_smol_dock_1_1_score_1acda93ea4444f7dacda77b03c0b278336" kind="function">
+            <name>scoringFunctionFactory</name>
+        </member>
+        <member refid="namespace_smol_dock_1_1_score_1adae31ea0b0f6630cdad8c85e9802ed9d" kind="function">
+            <name>isHydrophobic</name>
+        </member>
+        <member refid="namespace_smol_dock_1_1_score_1afc0ba7560e9104fcef4bc61ff8d461c1" kind="function">
+            <name>isHydrogenAcceptor</name>
+        </member>
+        <member refid="namespace_smol_dock_1_1_score_1aada28b98ff116da3300979ddf15dc557" kind="function">
+            <name>isHydrogenDonor</name>
+        </member>
+        <member refid="namespace_smol_dock_1_1_score_1a0b455de7380586a1fd535f76499f16f7" kind="function">
+            <name>hydrogenDonorAcceptorPair</name>
+        </member>
+        <member refid="namespace_smol_dock_1_1_score_1ac5efd92ad2db7d779a491ae233cbb2ec" kind="function">
+            <name>hydrogenBondingPossible</name>
+        </member>
+        <member refid="namespace_smol_dock_1_1_score_1ac23b7d24b31779cc5cd7d8bd4006fa52" kind="function">
+            <name>scoreForAtomCouple</name>
+        </member>
+        <member refid="namespace_smol_dock_1_1_score_1ac205731c7b0098c2900d9d16fff1a93b" kind="function">
+            <name>vina_like_rigid_inter_scoring_func</name>
+        </member>
+    </compound>
+    <compound refid="namespace_smol_dock_1_1_wrapper" kind="namespace">
+        <name>SmolDock::Wrapper</name>
+        <member refid="namespace_smol_dock_1_1_wrapper_1a309113da58ce167f3e4280f1e64b7966" kind="enum">
+            <name>ScoringFunctionEnum</name>
+        </member>
+        <member refid="namespace_smol_dock_1_1_wrapper_1a309113da58ce167f3e4280f1e64b7966aa618164cb1361917b852a79699b7bb2d"
+                kind="enumvalue">
+            <name>VinaLike</name>
+        </member>
+        <member refid="namespace_smol_dock_1_1_wrapper_1afc6fe0925036a67cbd9856c1077296ca" kind="function">
+            <name>getScoringFunc</name>
+        </member>
+    </compound>
+    <compound refid="namespacestd" kind="namespace">
+        <name>std</name>
+    </compound>
+    <compound refid="_abstract_docking_engine_8h" kind="file">
+        <name>AbstractDockingEngine.h</name>
+    </compound>
+    <compound refid="_amino_acid_8cpp" kind="file">
+        <name>AminoAcid.cpp</name>
+    </compound>
+    <compound refid="_amino_acid_8h" kind="file">
+        <name>AminoAcid.h</name>
+    </compound>
+    <compound refid="_atom_8cpp" kind="file">
+        <name>Atom.cpp</name>
+    </compound>
+    <compound refid="_atom_8h" kind="file">
+        <name>Atom.h</name>
+    </compound>
+    <compound refid="_bond_8cpp" kind="file">
+        <name>Bond.cpp</name>
+    </compound>
+    <compound refid="_bond_8h" kind="file">
+        <name>Bond.h</name>
+    </compound>
+    <compound refid="_conformer_rigid_docking_engine_8cpp" kind="file">
+        <name>ConformerRigidDockingEngine.cpp</name>
+    </compound>
+    <compound refid="_conformer_rigid_docking_engine_8h" kind="file">
+        <name>ConformerRigidDockingEngine.h</name>
+    </compound>
+    <compound refid="_docking_result_8cpp" kind="file">
+        <name>DockingResult.cpp</name>
+    </compound>
+    <compound refid="_docking_result_8h" kind="file">
+        <name>DockingResult.h</name>
+    </compound>
+    <compound refid="_docking_result_printer_8cpp" kind="file">
+        <name>DockingResultPrinter.cpp</name>
+    </compound>
+    <compound refid="_docking_result_printer_8h" kind="file">
+        <name>DockingResultPrinter.h</name>
+    </compound>
+    <compound refid="_gradient_descent_line_search_8cpp" kind="file">
+        <name>GradientDescentLineSearch.cpp</name>
+    </compound>
+    <compound refid="_gradient_descent_line_search_8h" kind="file">
+        <name>GradientDescentLineSearch.h</name>
+    </compound>
+    <compound refid="_heuristic_factory_8cpp" kind="file">
+        <name>HeuristicFactory.cpp</name>
+    </compound>
+    <compound refid="_heuristic_factory_8h" kind="file">
+        <name>HeuristicFactory.h</name>
+    </compound>
+    <compound refid="_heuristic_interface_8h" kind="file">
+        <name>HeuristicInterface.h</name>
+    </compound>
+    <compound refid="i_conformer_8h" kind="file">
+        <name>iConformer.h</name>
+    </compound>
+    <compound refid="_input_post_processor_interface_8h" kind="file">
+        <name>InputPostProcessorInterface.h</name>
+    </compound>
+    <compound refid="_intermediate_conformer_collector_8cpp" kind="file">
+        <name>IntermediateConformerCollector.cpp</name>
+    </compound>
+    <compound refid="_intermediate_conformer_collector_8h" kind="file">
+        <name>IntermediateConformerCollector.h</name>
+    </compound>
+    <compound refid="_internals_utility_functions_8h" kind="file">
+        <name>InternalsUtilityFunctions.h</name>
+    </compound>
+    <compound refid="i_protein_8h" kind="file">
+        <name>iProtein.h</name>
+    </compound>
+    <compound refid="i_transform_8h" kind="file">
+        <name>iTransform.h</name>
+    </compound>
+    <compound refid="_l___b_f_g_s_8cpp" kind="file">
+        <name>L_BFGS.cpp</name>
+    </compound>
+    <compound refid="_l___b_f_g_s_8h" kind="file">
+        <name>L_BFGS.h</name>
+    </compound>
+    <compound refid="_local_optimizer_utility_functions_8h" kind="file">
+        <name>LocalOptimizerUtilityFunctions.h</name>
+    </compound>
+    <compound refid="main_8cpp" kind="file">
+        <name>main.cpp</name>
+        <member refid="main_8cpp_1aed1cc446d8c31ec6ad4dae32bbbcc42a" kind="variable">
+            <name>conformerCollector</name>
+        </member>
+        <member refid="main_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4" kind="function">
+            <name>main</name>
+        </member>
+    </compound>
+    <compound refid="_m_d_style_docking_engine_8cpp" kind="file">
+        <name>MDStyleDockingEngine.cpp</name>
+    </compound>
+    <compound refid="_m_d_style_docking_engine_8h" kind="file">
+        <name>MDStyleDockingEngine.h</name>
+    </compound>
+    <compound refid="_molecule_8cpp" kind="file">
+        <name>Molecule.cpp</name>
+    </compound>
+    <compound refid="_molecule_8h" kind="file">
+        <name>Molecule.h</name>
+    </compound>
+    <compound refid="_optimizer_factory_8cpp" kind="file">
+        <name>OptimizerFactory.cpp</name>
+    </compound>
+    <compound refid="_optimizer_factory_8h" kind="file">
+        <name>OptimizerFactory.h</name>
+    </compound>
+    <compound refid="_optimizer_interface_8h" kind="file">
+        <name>OptimizerInterface.h</name>
+    </compound>
+    <compound refid="_p_d_b_ligand_utils_8cpp" kind="file">
+        <name>PDBLigandUtils.cpp</name>
+    </compound>
+    <compound refid="_p_d_b_ligand_utils_8h" kind="file">
+        <name>PDBLigandUtils.h</name>
+    </compound>
+    <compound refid="_p_d_b_residue_variant_table_8cpp" kind="file">
+        <name>PDBResidueVariantTable.cpp</name>
+    </compound>
+    <compound refid="_p_d_b_residue_variant_table_8h" kind="file">
+        <name>PDBResidueVariantTable.h</name>
+    </compound>
+    <compound refid="_p_d_b_writer_8cpp" kind="file">
+        <name>PDBWriter.cpp</name>
+    </compound>
+    <compound refid="_p_d_b_writer_8h" kind="file">
+        <name>PDBWriter.h</name>
+    </compound>
+    <compound refid="_protein_8cpp" kind="file">
+        <name>Protein.cpp</name>
+    </compound>
+    <compound refid="_protein_8h" kind="file">
+        <name>Protein.h</name>
+    </compound>
+    <compound refid="_py_engine_8cpp" kind="file">
+        <name>PyEngine.cpp</name>
+        <member refid="_py_engine_8cpp_1a6ad919c2b94b67a7e9dcd4cdd4201eeb" kind="function">
+            <name>export_Engines</name>
+        </member>
+    </compound>
+    <compound refid="_py_engine_8h" kind="file">
+        <name>PyEngine.h</name>
+        <member refid="_py_engine_8h_1a6ad919c2b94b67a7e9dcd4cdd4201eeb" kind="function">
+            <name>export_Engines</name>
+        </member>
+    </compound>
+    <compound refid="_py_scoring_functions_8cpp" kind="file">
+        <name>PyScoringFunctions.cpp</name>
+        <member refid="_py_scoring_functions_8cpp_1a2ede6b770a3e6131986d822ec5842b63" kind="function">
+            <name>export_ScoringFunctions</name>
+        </member>
+    </compound>
+    <compound refid="_py_scoring_functions_8h" kind="file">
+        <name>PyScoringFunctions.h</name>
+        <member refid="_py_scoring_functions_8h_1a2ede6b770a3e6131986d822ec5842b63" kind="function">
+            <name>export_ScoringFunctions</name>
+        </member>
+    </compound>
+    <compound refid="_py_s_t_l_wrapper_8cpp" kind="file">
+        <name>PySTLWrapper.cpp</name>
+        <member refid="_py_s_t_l_wrapper_8cpp_1a20a4fa85d5a46ce8e1567e27ff8483c1" kind="function">
+            <name>getVinaPostProcessorsVector</name>
+        </member>
+        <member refid="_py_s_t_l_wrapper_8cpp_1a168320ae6ebe56579c717093cbb24708" kind="function">
+            <name>export_STLWrapper</name>
+        </member>
+    </compound>
+    <compound refid="_py_s_t_l_wrapper_8h" kind="file">
+        <name>PySTLWrapper.h</name>
+        <member refid="_py_s_t_l_wrapper_8h_1a168320ae6ebe56579c717093cbb24708" kind="function">
+            <name>export_STLWrapper</name>
+        </member>
+    </compound>
+    <compound refid="_py_structures_8cpp" kind="file">
+        <name>PyStructures.cpp</name>
+        <member refid="_py_structures_8cpp_1a18cad6e29d14a0da9d2cd9464e7e2356" kind="function">
+            <name>export_Structures</name>
+        </member>
+    </compound>
+    <compound refid="_py_structures_8h" kind="file">
+        <name>PyStructures.h</name>
+        <member refid="_py_structures_8h_1a18cad6e29d14a0da9d2cd9464e7e2356" kind="function">
+            <name>export_Structures</name>
+        </member>
+    </compound>
+    <compound refid="_py_utilities_8cpp" kind="file">
+        <name>PyUtilities.cpp</name>
+        <member refid="_py_utilities_8cpp_1a48b6c8c5377d2e7c99f7084ea93aa77b" kind="function">
+            <name>export_Utilities</name>
+        </member>
+    </compound>
+    <compound refid="_py_utilities_8h" kind="file">
+        <name>PyUtilities.h</name>
+        <member refid="_py_utilities_8h_1a48b6c8c5377d2e7c99f7084ea93aa77b" kind="function">
+            <name>export_Utilities</name>
+        </member>
+    </compound>
+    <compound refid="_random_restart_8cpp" kind="file">
+        <name>RandomRestart.cpp</name>
+    </compound>
+    <compound refid="_random_restart_8h" kind="file">
+        <name>RandomRestart.h</name>
+    </compound>
+    <compound refid="_re_scorer_8cpp" kind="file">
+        <name>ReScorer.cpp</name>
+    </compound>
+    <compound refid="_re_scorer_8h" kind="file">
+        <name>ReScorer.h</name>
+    </compound>
+    <compound refid="_scoring_function_factory_8cpp" kind="file">
+        <name>ScoringFunctionFactory.cpp</name>
+    </compound>
+    <compound refid="_scoring_function_factory_8h" kind="file">
+        <name>ScoringFunctionFactory.h</name>
+    </compound>
+    <compound refid="_scoring_function_interface_8h" kind="file">
+        <name>ScoringFunctionInterface.h</name>
+    </compound>
+    <compound refid="_smoldock_python_bindings_8cpp" kind="file">
+        <name>SmoldockPythonBindings.cpp</name>
+        <member refid="_smoldock_python_bindings_8cpp_1a9002869529fdb857c7ffa4a170c4f3ef" kind="function">
+            <name>BOOST_PYTHON_MODULE</name>
+        </member>
+    </compound>
+    <compound refid="_structure_8cpp" kind="file">
+        <name>Structure.cpp</name>
+    </compound>
+    <compound refid="_structure_8h" kind="file">
+        <name>Structure.h</name>
+    </compound>
+    <compound refid="_timings_log_8h" kind="file">
+        <name>TimingsLog.h</name>
+        <member refid="_timings_log_8h_1a62116d86cc873a334e6356d259772681" kind="define">
+            <name>record_timings</name>
+        </member>
+        <member refid="_timings_log_8h_1ae97e25a2ccc8698724613c0235decbfd" kind="define">
+            <name>TRACE_LOG</name>
+        </member>
+    </compound>
+    <compound refid="_variant_flag_assignation_8cpp" kind="file">
+        <name>VariantFlagAssignation.cpp</name>
+    </compound>
+    <compound refid="_variant_flag_assignation_8h" kind="file">
+        <name>VariantFlagAssignation.h</name>
+    </compound>
+    <compound refid="_vina_compatibility_post_processor_8cpp" kind="file">
+        <name>VinaCompatibilityPostProcessor.cpp</name>
+    </compound>
+    <compound refid="_vina_compatibility_post_processor_8h" kind="file">
+        <name>VinaCompatibilityPostProcessor.h</name>
+    </compound>
+    <compound refid="_vina_compatible_docking_engine_8cpp" kind="file">
+        <name>VinaCompatibleDockingEngine.cpp</name>
+    </compound>
+    <compound refid="_vina_compatible_docking_engine_8h" kind="file">
+        <name>VinaCompatibleDockingEngine.h</name>
+    </compound>
+    <compound refid="_vina_like_scoring_function_8cpp" kind="file">
+        <name>VinaLikeScoringFunction.cpp</name>
+    </compound>
+    <compound refid="_vina_like_scoring_function_8h" kind="file">
+        <name>VinaLikeScoringFunction.h</name>
+    </compound>
+    <compound refid="dir_8dea5fe76307a117414e482b7178e69f" kind="dir">
+        <name>Common</name>
+    </compound>
+    <compound refid="dir_3b692a38eb3defa157937dbd02adffca" kind="dir">
+        <name>Engines</name>
+    </compound>
+    <compound refid="dir_d3f782666cc280dff880300cc44797c9" kind="dir">
+        <name>Frontends</name>
+    </compound>
+    <compound refid="dir_c03857b6a24786b6ba40826a301e1243" kind="dir">
+        <name>GlobalHeuristics</name>
+    </compound>
+    <compound refid="dir_0cf716b3898b0d1f79a9b5f304b1f333" kind="dir">
+        <name>InputPostProcessors</name>
+    </compound>
+    <compound refid="dir_238e222dc7cada3799d91028ff67fcc5" kind="dir">
+        <name>Internals</name>
+    </compound>
+    <compound refid="dir_7792eeab349244a7e7018da0fe5032c6" kind="dir">
+        <name>LocalOptimizers</name>
+    </compound>
+    <compound refid="dir_d92d867e4a5dae8af52667338145b6e4" kind="dir">
+        <name>Python</name>
+    </compound>
+    <compound refid="dir_e31d196e87a16ac78d16cd78ed204c3b" kind="dir">
+        <name>Results</name>
+    </compound>
+    <compound refid="dir_3650502fa8aa3e7e7737709300d35155" kind="dir">
+        <name>ScoringFunctions</name>
+    </compound>
+    <compound refid="dir_29b6d8349828f3fd4c784faff1564e9a" kind="dir">
+        <name>Structures</name>
+    </compound>
+    <compound refid="dir_b05a5fa85f84bfc9013183c9d87f9a36" kind="dir">
+        <name>Utilities</name>
+    </compound>
 </doxygenindex>

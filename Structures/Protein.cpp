@@ -38,7 +38,8 @@
 
 namespace SmolDock {
 
-    bool Protein::populateFromPDB(const std::string &filename, std::vector<InputPostProcessor::InputPostProcessor*> postProcessors) {
+    bool Protein::populateFromPDB(const std::string &filename,
+                                  std::vector<std::shared_ptr<InputPostProcessor::InputPostProcessor> > postProcessors) {
 
 
 
@@ -76,7 +77,7 @@ namespace SmolDock {
             unsigned int total_nb_model = 0, total_nb_chain = 0, total_nb_atom = 0, total_nb_hetatm = 0, total_nb_residue = 0;
 
             using namespace boost::accumulators;
-            accumulator_set<double, stats<tag::mean, tag::count, tag::min, tag::max > > acc_x, acc_y, acc_z;
+            accumulator_set<double, stats<tag::mean, tag::count, tag::min, tag::max> > acc_x, acc_y, acc_z;
 
 
             //Iterate over all models in the first system
@@ -109,7 +110,7 @@ namespace SmolDock {
 
                         // else : It's a normal residue
                         auto current_residue = this->aminoacids.emplace_back(
-                                std::shared_ptr<AminoAcid>(new AminoAcid(it_res->residue_name()))
+                                std::make_shared<AminoAcid>(it_res->residue_name())
                         );
 
                         current_residue->setAAId(total_nb_residue);
@@ -118,7 +119,8 @@ namespace SmolDock {
                         for (ESBTL::Default_system::Residue::Atoms_const_iterator it_atm = it_res->atoms_begin();
                              it_atm != it_res->atoms_end(); ++it_atm) {
 
-                            assert(it_atm->is_hetatm() == 0); // We expect heteroatoms to have been taken care of previously
+                            assert(it_atm->is_hetatm() ==
+                                   0); // We expect heteroatoms to have been taken care of previously
 
 
                             total_nb_atom++;
@@ -136,23 +138,20 @@ namespace SmolDock {
                             acc_z(it_atm->z());
 
 
-
                         }
 
-                        assignVariantFlagsForResidueAtom(*current_residue, PDBResidueVariantAssignationType::GeneralPurpose);
+                        assignVariantFlagsForResidueAtom(*current_residue,
+                                                         PDBResidueVariantAssignationType::GeneralPurpose);
 
                     }
                 }
 
 
                 // Post processing
-                for(InputPostProcessor::InputPostProcessor* pprocessor : postProcessors )
-                {
-                    for(auto& residue: aminoacids)
-                    {
-                        for(auto& atom: residue->atoms)
-                        {
-                            pprocessor->processAtomFromProtein(*atom,*residue);
+                for (auto pprocessor : postProcessors) {
+                    for (auto &residue: aminoacids) {
+                        for (auto &atom: residue->atoms) {
+                            pprocessor->processAtomFromProtein(*atom, *residue);
                         }
                     }
                 }
@@ -171,19 +170,21 @@ namespace SmolDock {
                 this->max_z = max(acc_z);
 
 
-                BOOST_LOG_TRIVIAL(info) << "Loaded protein : " << filename << "\n    --> " << total_nb_model << " models, "
-                          << total_nb_chain << " chains, " << total_nb_residue << " residues, "
-                          << total_nb_atom << " atoms (" << total_nb_hetatm << " heteroatoms)";
+                BOOST_LOG_TRIVIAL(info) << "Loaded protein : " << filename << "\n    --> " << total_nb_model
+                                        << " models, "
+                                        << total_nb_chain << " chains, " << total_nb_residue << " residues, "
+                                        << total_nb_atom << " atoms (" << total_nb_hetatm << " heteroatoms)";
 
 #ifdef SMOLDOCK_VERBOSE_DEBUG
                 BOOST_LOG_TRIVIAL(debug) << "Protein centered on : ("
-                          << this->center_x << ", " << this->center_y << ", " <<   this->center_z << ") [n=" <<
-                          count(acc_x) << "]";
+                                         << this->center_x << ", " << this->center_y << ", " << this->center_z
+                                         << ") [n=" <<
+                                         count(acc_x) << "]";
 #endif
 
             }
         } else {
-            BOOST_LOG_TRIVIAL(error) << "Could not load protein PDB file: " << filename ;
+            BOOST_LOG_TRIVIAL(error) << "Could not load protein PDB file: " << filename;
             return false;
         }
 
@@ -219,8 +220,7 @@ namespace SmolDock {
         prot.center_z = this->center_z;
 
 
-        for(auto& residue: this->aminoacids)
-        {
+        for (auto &residue: this->aminoacids) {
             unsigned long size_before = prot.x.size();
             residue->filliProtein(prot, true /* Skip hydrogen */);
             unsigned long size_after = prot.x.size();
@@ -250,6 +250,8 @@ namespace SmolDock {
 
         return prot;
     }
+
+    Protein::Protein() = default;
 
 
 }

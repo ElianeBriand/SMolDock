@@ -1,0 +1,110 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="class_smol_dock_1_1_optimizer_1_1_optimizer" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>SmolDock::Optimizer::Optimizer</compoundname>
+    <derivedcompoundref refid="class_smol_dock_1_1_optimizer_1_1_gradient_descent_line_search" prot="public" virt="non-virtual">SmolDock::Optimizer::GradientDescentLineSearch</derivedcompoundref>
+    <derivedcompoundref refid="class_smol_dock_1_1_optimizer_1_1_l___b_f_g_s" prot="public" virt="non-virtual">SmolDock::Optimizer::L_BFGS</derivedcompoundref>
+    <includes refid="_optimizer_interface_8h" local="no">OptimizerInterface.h</includes>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_smol_dock_1_1_optimizer_1_1_optimizer_1a2868a3d9b6855b745d456de57eb1a870" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>bool</type>
+        <definition>virtual bool SmolDock::Optimizer::Optimizer::optimize</definition>
+        <argsstring>(arma::mat startingPoint)=0</argsstring>
+        <name>optimize</name>
+        <reimplementedby refid="class_smol_dock_1_1_optimizer_1_1_gradient_descent_line_search_1ae0888f9903112cfbe93af8d5946a52da">optimize</reimplementedby>
+        <reimplementedby refid="class_smol_dock_1_1_optimizer_1_1_l___b_f_g_s_1af820a1b5e625482458e4917620200e8c">optimize</reimplementedby>
+        <param>
+          <type>arma::mat</type>
+          <declname>startingPoint</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Engines/LocalOptimizers/OptimizerInterface.h" line="31" column="1"/>
+        <referencedby refid="class_smol_dock_1_1_heuristics_1_1_random_restart_1abfa7882757c070d876d94090520cef92" compoundref="_random_restart_8cpp" startline="25" endline="56">SmolDock::Heuristics::RandomRestart::search</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_smol_dock_1_1_optimizer_1_1_optimizer_1a127349b071842e954d7a89f026685b8f" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>arma::mat</type>
+        <definition>virtual arma::mat SmolDock::Optimizer::Optimizer::getRawResultMatrix</definition>
+        <argsstring>()=0</argsstring>
+        <name>getRawResultMatrix</name>
+        <reimplementedby refid="class_smol_dock_1_1_optimizer_1_1_gradient_descent_line_search_1ae3fdb46d5b28724146c8c496d59b8128">getRawResultMatrix</reimplementedby>
+        <reimplementedby refid="class_smol_dock_1_1_optimizer_1_1_l___b_f_g_s_1a7155407cb5df962be30e1fd44c82bb87">getRawResultMatrix</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Engines/LocalOptimizers/OptimizerInterface.h" line="33" column="1"/>
+        <referencedby refid="class_smol_dock_1_1_heuristics_1_1_random_restart_1abfa7882757c070d876d94090520cef92" compoundref="_random_restart_8cpp" startline="25" endline="56">SmolDock::Heuristics::RandomRestart::search</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_smol_dock_1_1_optimizer_1_1_optimizer_1a5165027808dafc096faf1048a48e7c1c" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>double</type>
+        <definition>virtual double SmolDock::Optimizer::Optimizer::getScore</definition>
+        <argsstring>()=0</argsstring>
+        <name>getScore</name>
+        <reimplementedby refid="class_smol_dock_1_1_optimizer_1_1_gradient_descent_line_search_1a497ef5405f36f6e5113f83a37d9542b3">getScore</reimplementedby>
+        <reimplementedby refid="class_smol_dock_1_1_optimizer_1_1_l___b_f_g_s_1ae6e836e829ea1f79f9e69e9c2bee26f8">getScore</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Engines/LocalOptimizers/OptimizerInterface.h" line="35" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_smol_dock_1_1_optimizer_1_1_optimizer_1a01132a1b9275e1863e80bd18400b1fef" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>virtual SmolDock::Optimizer::Optimizer::~Optimizer</definition>
+        <argsstring>()=default</argsstring>
+        <name>~Optimizer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Engines/LocalOptimizers/OptimizerInterface.h" line="37" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="150">
+        <label>SmolDock::Optimizer::L_BFGS</label>
+        <link refid="class_smol_dock_1_1_optimizer_1_1_l___b_f_g_s"/>
+        <childnode refid="148" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="149">
+        <label>SmolDock::Optimizer::GradientDescentLineSearch</label>
+        <link refid="class_smol_dock_1_1_optimizer_1_1_gradient_descent_line_search"/>
+        <childnode refid="148" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="148">
+        <label>SmolDock::Optimizer::Optimizer</label>
+        <link refid="class_smol_dock_1_1_optimizer_1_1_optimizer"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="151">
+        <label>SmolDock::Optimizer::Optimizer</label>
+        <link refid="class_smol_dock_1_1_optimizer_1_1_optimizer"/>
+      </node>
+    </collaborationgraph>
+    <location file="Engines/LocalOptimizers/OptimizerInterface.h" line="29" column="1" bodyfile="Engines/LocalOptimizers/OptimizerInterface.h" bodystart="29" bodyend="38"/>
+    <listofallmembers>
+      <member refid="class_smol_dock_1_1_optimizer_1_1_optimizer_1a127349b071842e954d7a89f026685b8f" prot="public" virt="pure-virtual"><scope>SmolDock::Optimizer::Optimizer</scope><name>getRawResultMatrix</name></member>
+      <member refid="class_smol_dock_1_1_optimizer_1_1_optimizer_1a5165027808dafc096faf1048a48e7c1c" prot="public" virt="pure-virtual"><scope>SmolDock::Optimizer::Optimizer</scope><name>getScore</name></member>
+      <member refid="class_smol_dock_1_1_optimizer_1_1_optimizer_1a2868a3d9b6855b745d456de57eb1a870" prot="public" virt="pure-virtual"><scope>SmolDock::Optimizer::Optimizer</scope><name>optimize</name></member>
+      <member refid="class_smol_dock_1_1_optimizer_1_1_optimizer_1a01132a1b9275e1863e80bd18400b1fef" prot="public" virt="virtual"><scope>SmolDock::Optimizer::Optimizer</scope><name>~Optimizer</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -13,8 +13,14 @@
 namespace SmolDock::Heuristics {
 
 
-    RandomRestart::RandomRestart(Score::ScoringFunction* scorFunc_, Optimizer::Optimizer* optimizer_, unsigned int seed_) :
+    RandomRestart::RandomRestart(Score::ScoringFunction* scorFunc_, Optimizer::Optimizer* optimizer_,
+                                 unsigned int seed_) :
             scorFunc(scorFunc_), optimizer(optimizer_), rnd_generator(seed_) {
+        BOOST_LOG_TRIVIAL(debug) << "RandomRestart:seed " << seed_;
+        std::uniform_real_distribution<double> dis_real_position(-100.0, 100.0);
+        BOOST_LOG_TRIVIAL(debug) << "RandomRestart:GenNbr :  " << dis_real_position(this->rnd_generator);
+
+
     }
 
     bool RandomRestart::search() {
@@ -22,17 +28,13 @@ namespace SmolDock::Heuristics {
         arma::mat startingCondition = scorFunc->getStartingConditions();
 
 
-
         double score_;
         unsigned int iteration_count = 0;
-        while(true)
-        {
+        while (true) {
             score_ = scorFunc->Evaluate(startingCondition);
-            if(score_ == 0)
-            {
+            if (score_ == 0) {
                 std::uniform_real_distribution<double> dis_real_position(-100.0, 100.0);
-                for(unsigned int i = 0; i < startingCondition.n_rows;i++)
-                {
+                for (unsigned int i = 0; i < startingCondition.n_rows; i++) {
                     startingCondition[i] = dis_real_position(this->rnd_generator);
                 }
                 iteration_count++;

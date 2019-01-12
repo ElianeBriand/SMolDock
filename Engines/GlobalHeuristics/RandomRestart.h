@@ -12,14 +12,16 @@
 
 namespace SmolDock::Heuristics {
 
-    class RandomRestart : GlobalHeuristic {
+    class RandomRestart : public GlobalHeuristic {
     public:
 
         RandomRestart(Score::ScoringFunction* scorFunc_, Optimizer::Optimizer* optimizer_, unsigned int seed_);
 
         bool search() final;
 
-        arma::mat getResultMatrix();
+        arma::mat getResultMatrix() final;
+
+        ~RandomRestart() final = default;
 
     private:
         Score::ScoringFunction* scorFunc;

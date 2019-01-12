@@ -1,0 +1,156 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_random_restart_8h" kind="file" language="C++">
+    <compoundname>RandomRestart.h</compoundname>
+    <includes refid="_scoring_function_interface_8h" local="no">Engines/ScoringFunctions/ScoringFunctionInterface.h</includes>
+    <includes refid="_optimizer_interface_8h" local="no">Engines/LocalOptimizers/OptimizerInterface.h</includes>
+    <includes refid="_heuristic_interface_8h" local="yes">HeuristicInterface.h</includes>
+    <includedby refid="_conformer_rigid_docking_engine_8cpp" local="no">ConformerRigidDockingEngine.cpp</includedby>
+    <includedby refid="_heuristic_factory_8cpp" local="yes">HeuristicFactory.cpp</includedby>
+    <includedby refid="_random_restart_8cpp" local="yes">RandomRestart.cpp</includedby>
+    <incdepgraph>
+      <node id="1619">
+        <label>HeuristicInterface.h</label>
+        <link refid="_heuristic_interface_8h"/>
+      </node>
+      <node id="1618">
+        <label>Engines/LocalOptimizers/OptimizerInterface.h</label>
+        <link refid="_optimizer_interface_8h"/>
+        <childnode refid="1610" relation="include">
+        </childnode>
+      </node>
+      <node id="1616">
+        <label>cmath</label>
+      </node>
+      <node id="1617">
+        <label>cassert</label>
+      </node>
+      <node id="1609">
+        <label>Engines/ScoringFunctions/ScoringFunctionInterface.h</label>
+        <link refid="_scoring_function_interface_8h"/>
+        <childnode refid="1610" relation="include">
+        </childnode>
+        <childnode refid="1611" relation="include">
+        </childnode>
+      </node>
+      <node id="1611">
+        <label>Engines/Internals/iConformer.h</label>
+        <link refid="i_conformer_8h"/>
+        <childnode refid="1612" relation="include">
+        </childnode>
+        <childnode refid="1613" relation="include">
+        </childnode>
+        <childnode refid="1614" relation="include">
+        </childnode>
+      </node>
+      <node id="1610">
+        <label>armadillo</label>
+      </node>
+      <node id="1614">
+        <label>iTransform.h</label>
+        <link refid="i_transform_8h"/>
+        <childnode refid="1612" relation="include">
+        </childnode>
+        <childnode refid="1613" relation="include">
+        </childnode>
+        <childnode refid="1615" relation="include">
+        </childnode>
+        <childnode refid="1616" relation="include">
+        </childnode>
+        <childnode refid="1617" relation="include">
+        </childnode>
+      </node>
+      <node id="1612">
+        <label>vector</label>
+      </node>
+      <node id="1615">
+        <label>array</label>
+      </node>
+      <node id="1608">
+        <label>RandomRestart.h</label>
+        <link refid="_random_restart_8h"/>
+        <childnode refid="1609" relation="include">
+        </childnode>
+        <childnode refid="1618" relation="include">
+        </childnode>
+        <childnode refid="1619" relation="include">
+        </childnode>
+      </node>
+      <node id="1613">
+        <label>memory</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1623">
+        <label>RandomRestart.cpp</label>
+        <link refid="_random_restart_8cpp"/>
+      </node>
+      <node id="1621">
+        <label>ConformerRigidDockingEngine.cpp</label>
+        <link refid="_conformer_rigid_docking_engine_8cpp"/>
+      </node>
+      <node id="1622">
+        <label>HeuristicFactory.cpp</label>
+        <link refid="_heuristic_factory_8cpp"/>
+      </node>
+      <node id="1620">
+        <label>RandomRestart.h</label>
+        <link refid="_random_restart_8h"/>
+        <childnode refid="1621" relation="include">
+        </childnode>
+        <childnode refid="1622" relation="include">
+        </childnode>
+        <childnode refid="1623" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_smol_dock_1_1_heuristics_1_1_random_restart" prot="public">SmolDock::Heuristics::RandomRestart</innerclass>
+    <innernamespace refid="namespace_smol_dock_1_1_heuristics">SmolDock::Heuristics</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Created<sp/>by<sp/>eliane<sp/>on<sp/>08/01/19.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>SMOLDOCK_RANDOMRESTART_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SMOLDOCK_RANDOMRESTART_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_scoring_function_interface_8h" kindref="compound">Engines/ScoringFunctions/ScoringFunctionInterface.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_optimizer_interface_8h" kindref="compound">Engines/LocalOptimizers/OptimizerInterface.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_heuristic_interface_8h" kindref="compound">HeuristicInterface.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_smol_dock_1_1_heuristics" kindref="compound">SmolDock::Heuristics</ref><sp/>{</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15" refid="class_smol_dock_1_1_heuristics_1_1_random_restart" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_smol_dock_1_1_heuristics_1_1_random_restart" kindref="compound">RandomRestart</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_heuristics_1_1_global_heuristic" kindref="compound">GlobalHeuristic</ref><sp/>{</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_heuristics_1_1_random_restart_1a4e6c878b33b776e4817a1ccc3f582d5f" kindref="member">RandomRestart</ref>(<ref refid="class_smol_dock_1_1_score_1_1_scoring_function" kindref="compound">Score::ScoringFunction</ref>*<sp/>scorFunc_,<sp/><ref refid="class_smol_dock_1_1_optimizer_1_1_optimizer" kindref="compound">Optimizer::Optimizer</ref>*<sp/>optimizer_,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>seed_);</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_heuristics_1_1_random_restart_1abfa7882757c070d876d94090520cef92" kindref="member">search</ref>()<sp/></highlight><highlight class="keyword">final</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>arma::mat<sp/><ref refid="class_smol_dock_1_1_heuristics_1_1_random_restart_1a2397763517ca92a3552c84963998ab39" kindref="member">getResultMatrix</ref>()<sp/></highlight><highlight class="keyword">final</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_heuristics_1_1_random_restart_1a086a8662594c721b0daa7259b673d415" kindref="member">~RandomRestart</ref>()<sp/></highlight><highlight class="keyword">final</highlight><highlight class="normal"><sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="27" refid="class_smol_dock_1_1_heuristics_1_1_random_restart_1af92f8f1347adb435fa783c909912af77" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_score_1_1_scoring_function" kindref="compound">Score::ScoringFunction</ref>*<sp/><ref refid="class_smol_dock_1_1_heuristics_1_1_random_restart_1af92f8f1347adb435fa783c909912af77" kindref="member">scorFunc</ref>;</highlight></codeline>
+<codeline lineno="28" refid="class_smol_dock_1_1_heuristics_1_1_random_restart_1a9ef6527f103d63ff12abae06b97fad9c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_optimizer_1_1_optimizer" kindref="compound">Optimizer::Optimizer</ref>*<sp/><ref refid="class_smol_dock_1_1_heuristics_1_1_random_restart_1a9ef6527f103d63ff12abae06b97fad9c" kindref="member">optimizer</ref>;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30" refid="class_smol_dock_1_1_heuristics_1_1_random_restart_1a9f126933a53652c60537d755bcfcad65" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::mt19937<sp/><ref refid="class_smol_dock_1_1_heuristics_1_1_random_restart_1a9f126933a53652c60537d755bcfcad65" kindref="member">rnd_generator</ref>;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32" refid="class_smol_dock_1_1_heuristics_1_1_random_restart_1a2ae6f0df0cd563a72a62db5137221065" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>arma::mat<sp/><ref refid="class_smol_dock_1_1_heuristics_1_1_random_restart_1a2ae6f0df0cd563a72a62db5137221065" kindref="member">result</ref>;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//SMOLDOCK_RANDOMRESTART_H</highlight></codeline>
+    </programlisting>
+    <location file="Engines/GlobalHeuristics/RandomRestart.h"/>
+  </compounddef>
+</doxygen>

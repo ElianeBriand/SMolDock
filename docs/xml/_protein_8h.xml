@@ -1,348 +1,847 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
-  <compounddef id="_protein_8h" kind="file" language="C++">
-    <compoundname>Protein.h</compoundname>
-    <includes local="no">vector</includes>
-    <includes local="no">memory</includes>
-    <includes local="no">ESBTL/default.h</includes>
-    <includes local="no">ESBTL/atom_classifier.h</includes>
-    <includes local="no">ESBTL/weighted_atom_iterator.h</includes>
-    <includes local="no">ESBTL/compressed_ifstream.h</includes>
-    <includes refid="i_protein_8h" local="no">Engines/Internals/iProtein.h</includes>
-    <includes refid="_input_post_processor_interface_8h" local="no">Structures/InputPostProcessors/InputPostProcessorInterface.h</includes>
-    <includes refid="_structure_8h" local="yes">Structure.h</includes>
-    <includes refid="_amino_acid_8h" local="yes">AminoAcid.h</includes>
-    <includedby refid="_abstract_docking_engine_8h" local="yes">AbstractDockingEngine.h</includedby>
-    <includedby refid="_conformer_rigid_docking_engine_8h" local="yes">ConformerRigidDockingEngine.h</includedby>
-    <includedby refid="_vina_like_scoring_function_8h" local="no">VinaLikeScoringFunction.h</includedby>
-    <includedby refid="_m_d_style_docking_engine_8h" local="yes">MDStyleDockingEngine.h</includedby>
-    <includedby refid="_protein_8cpp" local="yes">Protein.cpp</includedby>
-    <includedby refid="_re_scorer_8h" local="no">ReScorer.h</includedby>
-    <includedby refid="main_8cpp" local="yes">main.cpp</includedby>
-    <includedby refid="_py_structures_8cpp" local="no">PyStructures.cpp</includedby>
-    <incdepgraph>
-      <node id="1227">
-        <label>Protein.h</label>
-        <link refid="_protein_8h"/>
-        <childnode refid="1228" relation="include">
-        </childnode>
-        <childnode refid="1229" relation="include">
-        </childnode>
-        <childnode refid="1230" relation="include">
-        </childnode>
-        <childnode refid="1231" relation="include">
-        </childnode>
-        <childnode refid="1232" relation="include">
-        </childnode>
-        <childnode refid="1233" relation="include">
-        </childnode>
-        <childnode refid="1234" relation="include">
-        </childnode>
-        <childnode refid="1236" relation="include">
-        </childnode>
-        <childnode refid="1244" relation="include">
-        </childnode>
-        <childnode refid="1241" relation="include">
-        </childnode>
-      </node>
-      <node id="1230">
-        <label>ESBTL/default.h</label>
-      </node>
-      <node id="1236">
-        <label>Structures/InputPostProcessors/InputPostProcessorInterface.h</label>
-        <link refid="_input_post_processor_interface_8h"/>
-        <childnode refid="1237" relation="include">
-        </childnode>
-      </node>
-      <node id="1242">
-        <label>string</label>
-      </node>
-      <node id="1233">
-        <label>ESBTL/compressed_ifstream.h</label>
-      </node>
-      <node id="1237">
-        <label>Structures/Atom.h</label>
-        <link refid="_atom_8h"/>
-        <childnode refid="1228" relation="include">
-        </childnode>
-        <childnode refid="1229" relation="include">
-        </childnode>
-        <childnode refid="1238" relation="include">
-        </childnode>
-        <childnode refid="1239" relation="include">
-        </childnode>
-        <childnode refid="1240" relation="include">
-        </childnode>
-        <childnode refid="1241" relation="include">
-        </childnode>
-      </node>
-      <node id="1235">
-        <label>map</label>
-      </node>
-      <node id="1231">
-        <label>ESBTL/atom_classifier.h</label>
-      </node>
-      <node id="1241">
-        <label>AminoAcid.h</label>
-        <link refid="_amino_acid_8h"/>
-        <childnode refid="1242" relation="include">
-        </childnode>
-        <childnode refid="1228" relation="include">
-        </childnode>
-        <childnode refid="1238" relation="include">
-        </childnode>
-        <childnode refid="1239" relation="include">
-        </childnode>
-        <childnode refid="1243" relation="include">
-        </childnode>
-        <childnode refid="1229" relation="include">
-        </childnode>
-        <childnode refid="1234" relation="include">
-        </childnode>
-      </node>
-      <node id="1243">
-        <label>tuple</label>
-      </node>
-      <node id="1234">
-        <label>Engines/Internals/iProtein.h</label>
-        <link refid="i_protein_8h"/>
-        <childnode refid="1228" relation="include">
-        </childnode>
-        <childnode refid="1229" relation="include">
-        </childnode>
-        <childnode refid="1235" relation="include">
-        </childnode>
-      </node>
-      <node id="1228">
-        <label>vector</label>
-      </node>
-      <node id="1244">
-        <label>Structure.h</label>
-        <link refid="_structure_8h"/>
-      </node>
-      <node id="1240">
-        <label>iostream</label>
-      </node>
-      <node id="1238">
-        <label>set</label>
-      </node>
-      <node id="1239">
-        <label>algorithm</label>
-      </node>
-      <node id="1232">
-        <label>ESBTL/weighted_atom_iterator.h</label>
-      </node>
-      <node id="1229">
-        <label>memory</label>
-      </node>
-    </incdepgraph>
-    <invincdepgraph>
-      <node id="1245">
-        <label>Protein.h</label>
-        <link refid="_protein_8h"/>
-        <childnode refid="1246" relation="include">
-        </childnode>
-        <childnode refid="1247" relation="include">
-        </childnode>
-        <childnode refid="1254" relation="include">
-        </childnode>
-        <childnode refid="1250" relation="include">
-        </childnode>
-        <childnode refid="1259" relation="include">
-        </childnode>
-        <childnode refid="1260" relation="include">
-        </childnode>
-        <childnode refid="1249" relation="include">
-        </childnode>
-        <childnode refid="1263" relation="include">
-        </childnode>
-      </node>
-      <node id="1247">
-        <label>ConformerRigidDockingEngine.h</label>
-        <link refid="_conformer_rigid_docking_engine_8h"/>
-        <childnode refid="1248" relation="include">
-        </childnode>
-        <childnode refid="1249" relation="include">
-        </childnode>
-      </node>
-      <node id="1263">
-        <label>PyStructures.cpp</label>
-        <link refid="_py_structures_8cpp"/>
-      </node>
-      <node id="1250">
-        <label>MDStyleDockingEngine.h</label>
-        <link refid="_m_d_style_docking_engine_8h"/>
-        <childnode refid="1251" relation="include">
-        </childnode>
-      </node>
-      <node id="1257">
-        <label>VinaLikeScoringFunction.cpp</label>
-        <link refid="_vina_like_scoring_function_8cpp"/>
-      </node>
-      <node id="1253">
-        <label>VinaCompatibleDockingEngine.cpp</label>
-        <link refid="_vina_compatible_docking_engine_8cpp"/>
-      </node>
-      <node id="1261">
-        <label>ReScorer.cpp</label>
-        <link refid="_re_scorer_8cpp"/>
-      </node>
-      <node id="1252">
-        <label>VinaCompatibleDockingEngine.h</label>
-        <link refid="_vina_compatible_docking_engine_8h"/>
-        <childnode refid="1253" relation="include">
-        </childnode>
-      </node>
-      <node id="1251">
-        <label>MDStyleDockingEngine.cpp</label>
-        <link refid="_m_d_style_docking_engine_8cpp"/>
-      </node>
-      <node id="1249">
-        <label>main.cpp</label>
-        <link refid="main_8cpp"/>
-      </node>
-      <node id="1256">
-        <label>ScoringFunctionFactory.cpp</label>
-        <link refid="_scoring_function_factory_8cpp"/>
-      </node>
-      <node id="1260">
-        <label>ReScorer.h</label>
-        <link refid="_re_scorer_8h"/>
-        <childnode refid="1261" relation="include">
-        </childnode>
-        <childnode refid="1262" relation="include">
-        </childnode>
-      </node>
-      <node id="1262">
-        <label>PyUtilities.cpp</label>
-        <link refid="_py_utilities_8cpp"/>
-      </node>
-      <node id="1246">
-        <label>AbstractDockingEngine.h</label>
-        <link refid="_abstract_docking_engine_8h"/>
-        <childnode refid="1247" relation="include">
-        </childnode>
-        <childnode refid="1250" relation="include">
-        </childnode>
-        <childnode refid="1252" relation="include">
-        </childnode>
-      </node>
-      <node id="1248">
-        <label>ConformerRigidDockingEngine.cpp</label>
-        <link refid="_conformer_rigid_docking_engine_8cpp"/>
-      </node>
-      <node id="1255">
-        <label>GradientDescentLineSearch.cpp</label>
-        <link refid="_gradient_descent_line_search_8cpp"/>
-      </node>
-      <node id="1259">
-        <label>Protein.cpp</label>
-        <link refid="_protein_8cpp"/>
-      </node>
-      <node id="1258">
-        <label>PyScoringFunctions.cpp</label>
-        <link refid="_py_scoring_functions_8cpp"/>
-      </node>
-      <node id="1254">
-        <label>VinaLikeScoringFunction.h</label>
-        <link refid="_vina_like_scoring_function_8h"/>
-        <childnode refid="1248" relation="include">
-        </childnode>
-        <childnode refid="1255" relation="include">
-        </childnode>
-        <childnode refid="1256" relation="include">
-        </childnode>
-        <childnode refid="1257" relation="include">
-        </childnode>
-        <childnode refid="1249" relation="include">
-        </childnode>
-        <childnode refid="1258" relation="include">
-        </childnode>
-      </node>
-    </invincdepgraph>
-    <innerclass refid="class_smol_dock_1_1_protein" prot="public">SmolDock::Protein</innerclass>
-    <innernamespace refid="namespace_smol_dock">SmolDock</innernamespace>
-    <briefdescription>
-    </briefdescription>
-    <detaileddescription>
-    </detaileddescription>
-    <programlisting>
-<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
-<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2018<sp/>Eliane<sp/>Briand</highlight></codeline>
-<codeline lineno="3"><highlight class="comment"><sp/>*</highlight></codeline>
-<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>SmolDock.</highlight></codeline>
-<codeline lineno="5"><highlight class="comment"><sp/>*</highlight></codeline>
-<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>SmolDock<sp/>is<sp/>free<sp/>software:<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or<sp/>modify</highlight></codeline>
-<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>it<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>as<sp/>published<sp/>by</highlight></codeline>
-<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>the<sp/>Free<sp/>Software<sp/>Foundation,<sp/>either<sp/>version<sp/>3<sp/>of<sp/>the<sp/>License,<sp/>or</highlight></codeline>
-<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>(at<sp/>your<sp/>option)<sp/>any<sp/>later<sp/>version.</highlight></codeline>
-<codeline lineno="10"><highlight class="comment"><sp/>*</highlight></codeline>
-<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>SmolDock<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,</highlight></codeline>
-<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>but<sp/>WITHOUT<sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of</highlight></codeline>
-<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE.<sp/><sp/>See<sp/>the</highlight></codeline>
-<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>for<sp/>more<sp/>details.</highlight></codeline>
-<codeline lineno="15"><highlight class="comment"><sp/>*</highlight></codeline>
-<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License</highlight></codeline>
-<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>along<sp/>with<sp/>SmolDock.<sp/><sp/>If<sp/>not,<sp/>see<sp/>&lt;https://www.gnu.org/licenses/&gt;.</highlight></codeline>
-<codeline lineno="18"><highlight class="comment"><sp/>*</highlight></codeline>
-<codeline lineno="19"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="20"><highlight class="normal"></highlight></codeline>
-<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>SMOLDOCK_PROTEIN_H</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SMOLDOCK_PROTEIN_H</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="23"><highlight class="normal"></highlight></codeline>
-<codeline lineno="24"><highlight class="normal"></highlight></codeline>
-<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;memory&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="27"><highlight class="normal"></highlight></codeline>
-<codeline lineno="28"><highlight class="normal"></highlight></codeline>
-<codeline lineno="29"><highlight class="normal"></highlight></codeline>
-<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;ESBTL/default.h&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;ESBTL/atom_classifier.h&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;ESBTL/weighted_atom_iterator.h&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="33"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;ESBTL/compressed_ifstream.h&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="34"><highlight class="normal"></highlight></codeline>
-<codeline lineno="35"><highlight class="normal"></highlight></codeline>
-<codeline lineno="36"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="i_protein_8h" kindref="compound">Engines/Internals/iProtein.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="37"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_input_post_processor_interface_8h" kindref="compound">Structures/InputPostProcessors/InputPostProcessorInterface.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="38"><highlight class="normal"></highlight></codeline>
-<codeline lineno="39"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_structure_8h" kindref="compound">Structure.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="40"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_amino_acid_8h" kindref="compound">AminoAcid.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="41"><highlight class="normal"></highlight></codeline>
-<codeline lineno="42"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_smol_dock" kindref="compound">SmolDock</ref><sp/>{</highlight></codeline>
-<codeline lineno="43"><highlight class="normal"></highlight></codeline>
-<codeline lineno="48" refid="class_smol_dock_1_1_protein" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_smol_dock_1_1_protein" kindref="compound">Protein</ref><sp/>:<sp/><ref refid="class_smol_dock_1_1_structure" kindref="compound">Structure</ref><sp/>{</highlight></codeline>
-<codeline lineno="49"><highlight class="normal"></highlight></codeline>
-<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_protein_1ae9cac74c19d706a93fb1e9d4929127a5" kindref="member">Protein</ref>()<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="52"><highlight class="normal"></highlight></codeline>
-<codeline lineno="54"></codeline>
-<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_protein_1ab28029d0d4fcf11088a32a132667b78c" kindref="member">populateFromPDB</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;filename,<sp/>std::vector&lt;InputPostProcessor::InputPostProcessor*&gt;<sp/>postProcessors<sp/>=<sp/>{}<sp/>);</highlight></codeline>
-<codeline lineno="63"><highlight class="normal"></highlight></codeline>
-<codeline lineno="65"></codeline>
-<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_smol_dock_1_1i_protein" kindref="compound">iProtein</ref><sp/><ref refid="class_smol_dock_1_1_protein_1a2cccfc64e088ed1846d15c6909c9379f" kindref="member">getiProtein</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="70"><highlight class="normal"></highlight></codeline>
-<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="72" refid="class_smol_dock_1_1_protein_1ae0fe8b9c66bfa8032c93e0d8269fd561" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::vector&lt;std::shared_ptr&lt;AminoAcid&gt;<sp/>&gt;<sp/><ref refid="class_smol_dock_1_1_protein_1ae0fe8b9c66bfa8032c93e0d8269fd561" kindref="member">aminoacids</ref>;</highlight></codeline>
-<codeline lineno="73" refid="class_smol_dock_1_1_protein_1a86e77c7079be2b4d3e1a8e3e53a4ce02" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::vector&lt;std::shared_ptr&lt;Atom&gt;<sp/>&gt;<sp/><ref refid="class_smol_dock_1_1_protein_1a86e77c7079be2b4d3e1a8e3e53a4ce02" kindref="member">heteroatoms</ref>;</highlight></codeline>
-<codeline lineno="74"><highlight class="normal"></highlight></codeline>
-<codeline lineno="75" refid="class_smol_dock_1_1_protein_1a3409e1f4c5789b7102e3941d030a1fc8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_protein_1a3409e1f4c5789b7102e3941d030a1fc8" kindref="member">center_x</ref><sp/>=<sp/>0;</highlight></codeline>
-<codeline lineno="76" refid="class_smol_dock_1_1_protein_1a1b1d22d4cf7b2efa592904727cbc4318" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_protein_1a1b1d22d4cf7b2efa592904727cbc4318" kindref="member">center_y</ref><sp/>=<sp/>0;</highlight></codeline>
-<codeline lineno="77" refid="class_smol_dock_1_1_protein_1ae548b55999341c9b36325c79f8731de3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_protein_1ae548b55999341c9b36325c79f8731de3" kindref="member">center_z</ref><sp/>=<sp/>0;</highlight></codeline>
-<codeline lineno="78"><highlight class="normal"></highlight></codeline>
-<codeline lineno="79" refid="class_smol_dock_1_1_protein_1ad8a4950285ab8d85a341d05c7fc1b4f5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_protein_1ad8a4950285ab8d85a341d05c7fc1b4f5" kindref="member">min_x</ref><sp/>=<sp/>0;</highlight></codeline>
-<codeline lineno="80" refid="class_smol_dock_1_1_protein_1a24f3c87a811bb1ea8c631d1b5191bb7e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_protein_1a24f3c87a811bb1ea8c631d1b5191bb7e" kindref="member">min_y</ref><sp/>=<sp/>0;</highlight></codeline>
-<codeline lineno="81" refid="class_smol_dock_1_1_protein_1a01ff02f51f30ffe5c4fec3dbe57bb7db" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_protein_1a01ff02f51f30ffe5c4fec3dbe57bb7db" kindref="member">min_z</ref><sp/>=<sp/>0;</highlight></codeline>
-<codeline lineno="82"><highlight class="normal"></highlight></codeline>
-<codeline lineno="83" refid="class_smol_dock_1_1_protein_1a9e3c8b56b150fb2801f4a4e255f6eda1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_protein_1a9e3c8b56b150fb2801f4a4e255f6eda1" kindref="member">max_x</ref><sp/>=<sp/>0;</highlight></codeline>
-<codeline lineno="84" refid="class_smol_dock_1_1_protein_1a65917695fc8db4c6dfcc5f1f6157787b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_protein_1a65917695fc8db4c6dfcc5f1f6157787b" kindref="member">max_y</ref><sp/>=<sp/>0;</highlight></codeline>
-<codeline lineno="85" refid="class_smol_dock_1_1_protein_1a8892ec123bb38e99930b8c884cff5b79" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_protein_1a8892ec123bb38e99930b8c884cff5b79" kindref="member">max_z</ref><sp/>=<sp/>0;</highlight></codeline>
-<codeline lineno="86"><highlight class="normal"></highlight></codeline>
-<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
-<codeline lineno="88"><highlight class="normal"></highlight></codeline>
-<codeline lineno="89"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="90"><highlight class="normal"></highlight></codeline>
-<codeline lineno="91"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//SMOLDOCK_PROTEIN_H</highlight></codeline>
-    </programlisting>
-    <location file="Structures/Protein.h"/>
-  </compounddef>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd"
+         version="1.8.14">
+    <compounddef id="_protein_8h" kind="file" language="C++">
+        <compoundname>Protein.h</compoundname>
+        <includes local="no">vector</includes>
+        <includes local="no">memory</includes>
+        <includes local="no">ESBTL/default.h</includes>
+        <includes local="no">ESBTL/atom_classifier.h</includes>
+        <includes local="no">ESBTL/weighted_atom_iterator.h</includes>
+        <includes local="no">ESBTL/compressed_ifstream.h</includes>
+        <includes refid="i_protein_8h" local="no">Engines/Internals/iProtein.h</includes>
+        <includes refid="_input_post_processor_interface_8h" local="no">
+            Structures/InputPostProcessors/InputPostProcessorInterface.h
+        </includes>
+        <includes refid="_structure_8h" local="yes">Structure.h</includes>
+        <includes refid="_amino_acid_8h" local="yes">AminoAcid.h</includes>
+        <includedby refid="_abstract_docking_engine_8h" local="yes">AbstractDockingEngine.h</includedby>
+        <includedby refid="_conformer_rigid_docking_engine_8h" local="yes">ConformerRigidDockingEngine.h</includedby>
+        <includedby refid="_vina_like_scoring_function_8h" local="no">VinaLikeScoringFunction.h</includedby>
+        <includedby refid="_m_d_style_docking_engine_8h" local="yes">MDStyleDockingEngine.h</includedby>
+        <includedby refid="_protein_8cpp" local="yes">Protein.cpp</includedby>
+        <includedby refid="_re_scorer_8h" local="no">ReScorer.h</includedby>
+        <includedby refid="main_8cpp" local="yes">main.cpp</includedby>
+        <includedby refid="_py_engine_8cpp" local="no">PyEngine.cpp</includedby>
+        <includedby refid="_py_structures_8cpp" local="no">PyStructures.cpp</includedby>
+        <incdepgraph>
+            <node id="1336">
+                <label>Protein.h</label>
+                <link refid="_protein_8h"/>
+                <childnode refid="1337" relation="include">
+                </childnode>
+                <childnode refid="1338" relation="include">
+                </childnode>
+                <childnode refid="1339" relation="include">
+                </childnode>
+                <childnode refid="1340" relation="include">
+                </childnode>
+                <childnode refid="1341" relation="include">
+                </childnode>
+                <childnode refid="1342" relation="include">
+                </childnode>
+                <childnode refid="1343" relation="include">
+                </childnode>
+                <childnode refid="1345" relation="include">
+                </childnode>
+                <childnode refid="1353" relation="include">
+                </childnode>
+                <childnode refid="1350" relation="include">
+                </childnode>
+            </node>
+            <node id="1339">
+                <label>ESBTL/default.h</label>
+            </node>
+            <node id="1345">
+                <label>Structures/InputPostProcessors/InputPostProcessorInterface.h</label>
+                <link refid="_input_post_processor_interface_8h"/>
+                <childnode refid="1346" relation="include">
+                </childnode>
+            </node>
+            <node id="1351">
+                <label>string</label>
+            </node>
+            <node id="1342">
+                <label>ESBTL/compressed_ifstream.h</label>
+            </node>
+            <node id="1346">
+                <label>Structures/Atom.h</label>
+                <link refid="_atom_8h"/>
+                <childnode refid="1337" relation="include">
+                </childnode>
+                <childnode refid="1338" relation="include">
+                </childnode>
+                <childnode refid="1347" relation="include">
+                </childnode>
+                <childnode refid="1348" relation="include">
+                </childnode>
+                <childnode refid="1349" relation="include">
+                </childnode>
+                <childnode refid="1350" relation="include">
+                </childnode>
+            </node>
+            <node id="1344">
+                <label>map</label>
+            </node>
+            <node id="1340">
+                <label>ESBTL/atom_classifier.h</label>
+            </node>
+            <node id="1350">
+                <label>AminoAcid.h</label>
+                <link refid="_amino_acid_8h"/>
+                <childnode refid="1351" relation="include">
+                </childnode>
+                <childnode refid="1337" relation="include">
+                </childnode>
+                <childnode refid="1347" relation="include">
+                </childnode>
+                <childnode refid="1348" relation="include">
+                </childnode>
+                <childnode refid="1352" relation="include">
+                </childnode>
+                <childnode refid="1338" relation="include">
+                </childnode>
+                <childnode refid="1343" relation="include">
+                </childnode>
+            </node>
+            <node id="1352">
+                <label>tuple</label>
+            </node>
+            <node id="1343">
+                <label>Engines/Internals/iProtein.h</label>
+                <link refid="i_protein_8h"/>
+                <childnode refid="1337" relation="include">
+                </childnode>
+                <childnode refid="1338" relation="include">
+                </childnode>
+                <childnode refid="1344" relation="include">
+                </childnode>
+            </node>
+            <node id="1337">
+                <label>vector</label>
+            </node>
+            <node id="1353">
+                <label>Structure.h</label>
+                <link refid="_structure_8h"/>
+            </node>
+            <node id="1349">
+                <label>iostream</label>
+            </node>
+            <node id="1347">
+                <label>set</label>
+            </node>
+            <node id="1348">
+                <label>algorithm</label>
+            </node>
+            <node id="1341">
+                <label>ESBTL/weighted_atom_iterator.h</label>
+            </node>
+            <node id="1338">
+                <label>memory</label>
+            </node>
+        </incdepgraph>
+        <invincdepgraph>
+            <node id="1354">
+                <label>Protein.h</label>
+                <link refid="_protein_8h"/>
+                <childnode refid="1355" relation="include">
+                </childnode>
+                <childnode refid="1356" relation="include">
+                </childnode>
+                <childnode refid="1364" relation="include">
+                </childnode>
+                <childnode refid="1360" relation="include">
+                </childnode>
+                <childnode refid="1369" relation="include">
+                </childnode>
+                <childnode refid="1370" relation="include">
+                </childnode>
+                <childnode refid="1358" relation="include">
+                </childnode>
+                <childnode refid="1359" relation="include">
+                </childnode>
+                <childnode refid="1373" relation="include">
+                </childnode>
+            </node>
+            <node id="1356">
+                <label>ConformerRigidDockingEngine.h</label>
+                <link refid="_conformer_rigid_docking_engine_8h"/>
+                <childnode refid="1357" relation="include">
+                </childnode>
+                <childnode refid="1358" relation="include">
+                </childnode>
+                <childnode refid="1359" relation="include">
+                </childnode>
+            </node>
+            <node id="1373">
+                <label>PyStructures.cpp</label>
+                <link refid="_py_structures_8cpp"/>
+            </node>
+            <node id="1360">
+                <label>MDStyleDockingEngine.h</label>
+                <link refid="_m_d_style_docking_engine_8h"/>
+                <childnode refid="1361" relation="include">
+                </childnode>
+            </node>
+            <node id="1367">
+                <label>VinaLikeScoringFunction.cpp</label>
+                <link refid="_vina_like_scoring_function_8cpp"/>
+            </node>
+            <node id="1363">
+                <label>VinaCompatibleDockingEngine.cpp</label>
+                <link refid="_vina_compatible_docking_engine_8cpp"/>
+            </node>
+            <node id="1371">
+                <label>ReScorer.cpp</label>
+                <link refid="_re_scorer_8cpp"/>
+            </node>
+            <node id="1362">
+                <label>VinaCompatibleDockingEngine.h</label>
+                <link refid="_vina_compatible_docking_engine_8h"/>
+                <childnode refid="1363" relation="include">
+                </childnode>
+            </node>
+            <node id="1361">
+                <label>MDStyleDockingEngine.cpp</label>
+                <link refid="_m_d_style_docking_engine_8cpp"/>
+            </node>
+            <node id="1358">
+                <label>main.cpp</label>
+                <link refid="main_8cpp"/>
+            </node>
+            <node id="1366">
+                <label>ScoringFunctionFactory.cpp</label>
+                <link refid="_scoring_function_factory_8cpp"/>
+            </node>
+            <node id="1370">
+                <label>ReScorer.h</label>
+                <link refid="_re_scorer_8h"/>
+                <childnode refid="1371" relation="include">
+                </childnode>
+                <childnode refid="1372" relation="include">
+                </childnode>
+            </node>
+            <node id="1372">
+                <label>PyUtilities.cpp</label>
+                <link refid="_py_utilities_8cpp"/>
+            </node>
+            <node id="1355">
+                <label>AbstractDockingEngine.h</label>
+                <link refid="_abstract_docking_engine_8h"/>
+                <childnode refid="1356" relation="include">
+                </childnode>
+                <childnode refid="1360" relation="include">
+                </childnode>
+                <childnode refid="1362" relation="include">
+                </childnode>
+            </node>
+            <node id="1357">
+                <label>ConformerRigidDockingEngine.cpp</label>
+                <link refid="_conformer_rigid_docking_engine_8cpp"/>
+            </node>
+            <node id="1365">
+                <label>GradientDescentLineSearch.cpp</label>
+                <link refid="_gradient_descent_line_search_8cpp"/>
+            </node>
+            <node id="1369">
+                <label>Protein.cpp</label>
+                <link refid="_protein_8cpp"/>
+            </node>
+            <node id="1368">
+                <label>PyScoringFunctions.cpp</label>
+                <link refid="_py_scoring_functions_8cpp"/>
+            </node>
+            <node id="1364">
+                <label>VinaLikeScoringFunction.h</label>
+                <link refid="_vina_like_scoring_function_8h"/>
+                <childnode refid="1357" relation="include">
+                </childnode>
+                <childnode refid="1365" relation="include">
+                </childnode>
+                <childnode refid="1366" relation="include">
+                </childnode>
+                <childnode refid="1367" relation="include">
+                </childnode>
+                <childnode refid="1358" relation="include">
+                </childnode>
+                <childnode refid="1368" relation="include">
+                </childnode>
+            </node>
+            <node id="1359">
+                <label>PyEngine.cpp</label>
+                <link refid="_py_engine_8cpp"/>
+            </node>
+        </invincdepgraph>
+        <innerclass refid="class_smol_dock_1_1_protein" prot="public">SmolDock::Protein</innerclass>
+        <innernamespace refid="namespace_smol_dock">SmolDock</innernamespace>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <programlisting>
+            <codeline lineno="1">
+                <highlight class="comment">/*</highlight>
+            </codeline>
+            <codeline lineno="2">
+                <highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2018<sp/>Eliane<sp/>Briand
+                </highlight>
+            </codeline>
+            <codeline lineno="3">
+                <highlight class="comment"><sp/>*
+                </highlight>
+            </codeline>
+            <codeline lineno="4">
+                <highlight class="comment"><sp/>*<sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>SmolDock.
+                </highlight>
+            </codeline>
+            <codeline lineno="5">
+                <highlight class="comment"><sp/>*
+                </highlight>
+            </codeline>
+            <codeline lineno="6">
+                <highlight class="comment"><sp/>*<sp/>SmolDock<sp/>is<sp/>free<sp/>software:<sp/>you<sp/>can<sp/>
+                    redistribute<sp/>it<sp/>and/or<sp/>modify
+                </highlight>
+            </codeline>
+            <codeline lineno="7">
+                <highlight class="comment"><sp/>*<sp/>it<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>GNU<sp/>General
+                    <sp/>Public<sp/>License<sp/>as<sp/>published<sp/>by
+                </highlight>
+            </codeline>
+            <codeline lineno="8">
+                <highlight class="comment"><sp/>*<sp/>the<sp/>Free<sp/>Software<sp/>Foundation,<sp/>either<sp/>version
+                    <sp/>3<sp/>of<sp/>the<sp/>License,<sp/>or
+                </highlight>
+            </codeline>
+            <codeline lineno="9">
+                <highlight class="comment"><sp/>*<sp/>(at<sp/>your<sp/>option)<sp/>any<sp/>later<sp/>version.
+                </highlight>
+            </codeline>
+            <codeline lineno="10">
+                <highlight class="comment"><sp/>*
+                </highlight>
+            </codeline>
+            <codeline lineno="11">
+                <highlight class="comment"><sp/>*<sp/>SmolDock<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that
+                    <sp/>it<sp/>will<sp/>be<sp/>useful,
+                </highlight>
+            </codeline>
+            <codeline lineno="12">
+                <highlight class="comment"><sp/>*<sp/>but<sp/>WITHOUT<sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the
+                    <sp/>implied<sp/>warranty<sp/>of
+                </highlight>
+            </codeline>
+            <codeline lineno="13">
+                <highlight class="comment"><sp/>*<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR
+                    <sp/>PURPOSE.
+                    <sp/>
+                    <sp/>See<sp/>the
+                </highlight>
+            </codeline>
+            <codeline lineno="14">
+                <highlight class="comment"><sp/>*<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>for<sp/>more<sp/>
+                    details.
+                </highlight>
+            </codeline>
+            <codeline lineno="15">
+                <highlight class="comment"><sp/>*
+                </highlight>
+            </codeline>
+            <codeline lineno="16">
+                <highlight class="comment"><sp/>*<sp/>You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>the
+                    <sp/>GNU<sp/>General<sp/>Public<sp/>License
+                </highlight>
+            </codeline>
+            <codeline lineno="17">
+                <highlight class="comment"><sp/>*<sp/>along<sp/>with<sp/>SmolDock.
+                    <sp/>
+                    <sp/>If<sp/>not,<sp/>see<sp/>&lt;https://www.gnu.org/licenses/&gt;.
+                </highlight>
+            </codeline>
+            <codeline lineno="18">
+                <highlight class="comment"><sp/>*
+                </highlight>
+            </codeline>
+            <codeline lineno="19">
+                <highlight class="comment"><sp/>*/
+                </highlight>
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="20">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="21">
+                <highlight class="normal"></highlight>
+                <highlight class="preprocessor">#ifndef<sp/>SMOLDOCK_PROTEIN_H
+                </highlight>
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="22">
+                <highlight class="normal"></highlight>
+                <highlight class="preprocessor">#define<sp/>SMOLDOCK_PROTEIN_H
+                </highlight>
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="23">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="24">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="25">
+                <highlight class="normal"></highlight>
+                <highlight class="preprocessor">#include<sp/>&lt;vector&gt;
+                </highlight>
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="26">
+                <highlight class="normal"></highlight>
+                <highlight class="preprocessor">#include<sp/>&lt;memory&gt;
+                </highlight>
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="27">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="28">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="29">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="30">
+                <highlight class="normal"></highlight>
+                <highlight class="preprocessor">#include<sp/>&lt;ESBTL/default.h&gt;
+                </highlight>
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="31">
+                <highlight class="normal"></highlight>
+                <highlight class="preprocessor">#include<sp/>&lt;ESBTL/atom_classifier.h&gt;
+                </highlight>
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="32">
+                <highlight class="normal"></highlight>
+                <highlight class="preprocessor">#include<sp/>&lt;ESBTL/weighted_atom_iterator.h&gt;
+                </highlight>
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="33">
+                <highlight class="normal"></highlight>
+                <highlight class="preprocessor">#include<sp/>&lt;ESBTL/compressed_ifstream.h&gt;
+                </highlight>
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="34">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="35">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="36">
+                <highlight class="normal"></highlight>
+                <highlight class="preprocessor">#include<sp/>&lt;<ref refid="i_protein_8h" kindref="compound">
+                    Engines/Internals/iProtein.h</ref>&gt;
+                </highlight>
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="37">
+                <highlight class="normal"></highlight>
+                <highlight class="preprocessor">#include<sp/>&lt;<ref refid="_input_post_processor_interface_8h"
+                                                                      kindref="compound">
+                    Structures/InputPostProcessors/InputPostProcessorInterface.h</ref>&gt;
+                </highlight>
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="38">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="39">
+                <highlight class="normal"></highlight>
+                <highlight class="preprocessor">#include<sp/>&quot;<ref refid="_structure_8h" kindref="compound">
+                    Structure.h</ref>&quot;
+                </highlight>
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="40">
+                <highlight class="normal"></highlight>
+                <highlight class="preprocessor">#include<sp/>&quot;<ref refid="_amino_acid_8h" kindref="compound">
+                    AminoAcid.h</ref>&quot;
+                </highlight>
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="41">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="42">
+                <highlight class="normal"></highlight>
+                <highlight class="keyword">namespace
+                    <sp/>
+                </highlight>
+                <highlight class="normal">
+                    <ref refid="namespace_smol_dock" kindref="compound">SmolDock</ref>
+                    <sp/>{
+                </highlight>
+            </codeline>
+            <codeline lineno="43">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="48" refid="class_smol_dock_1_1_protein" refkind="compound">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                </highlight>
+                <highlight class="keyword">class
+                    <sp/>
+                </highlight>
+                <highlight class="normal">
+                    <ref refid="class_smol_dock_1_1_protein" kindref="compound">Protein</ref>
+                    <sp/>:
+                    <sp/>
+                    <ref refid="class_smol_dock_1_1_structure" kindref="compound">Structure</ref>
+                    <sp/>{
+                </highlight>
+            </codeline>
+            <codeline lineno="49">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="50">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                </highlight>
+                <highlight class="keyword">public</highlight>
+                <highlight class="normal">:</highlight>
+            </codeline>
+            <codeline lineno="51">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <ref refid="class_smol_dock_1_1_protein_1a20351fef4b88812de1baa0c4eb74642a" kindref="member">
+                        Protein</ref>();
+                </highlight>
+            </codeline>
+            <codeline lineno="52">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="54"></codeline>
+            <codeline lineno="62">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">bool</highlight>
+                <highlight class="normal">
+                    <sp/>
+                    <ref refid="class_smol_dock_1_1_protein_1a726524247169022a4dfc1328753e39b3" kindref="member">
+                        populateFromPDB</ref>(
+                </highlight>
+                <highlight class="keyword">const</highlight>
+                <highlight class="normal"><sp/>std::string<sp/>&amp;filename,<sp/>std::vector&lt;<sp/>std::shared_ptr&lt;InputPostProcessor::InputPostProcessor&gt;<sp/>&gt;<sp/>
+                    postProcessors<sp/>=<sp/>{}<sp/>);
+                </highlight>
+            </codeline>
+            <codeline lineno="63">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="65"></codeline>
+            <codeline lineno="69">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <ref refid="struct_smol_dock_1_1i_protein" kindref="compound">iProtein</ref>
+                    <sp/>
+                    <ref refid="class_smol_dock_1_1_protein_1a2cccfc64e088ed1846d15c6909c9379f" kindref="member">
+                        getiProtein</ref>()
+                    <sp/>
+                </highlight>
+                <highlight class="keyword">const</highlight>
+                <highlight class="normal">;</highlight>
+            </codeline>
+            <codeline lineno="70">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="71">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                </highlight>
+                <highlight class="keyword">private</highlight>
+                <highlight class="normal">:</highlight>
+            </codeline>
+            <codeline lineno="72" refid="class_smol_dock_1_1_protein_1ae0fe8b9c66bfa8032c93e0d8269fd561"
+                      refkind="member">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>std::vector&lt;std::shared_ptr&lt;AminoAcid&gt;<sp/>&gt;<sp/>
+                    <ref refid="class_smol_dock_1_1_protein_1ae0fe8b9c66bfa8032c93e0d8269fd561" kindref="member">
+                        aminoacids</ref>;
+                </highlight>
+            </codeline>
+            <codeline lineno="73" refid="class_smol_dock_1_1_protein_1a86e77c7079be2b4d3e1a8e3e53a4ce02"
+                      refkind="member">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>std::vector&lt;std::shared_ptr&lt;Atom&gt;<sp/>&gt;<sp/>
+                    <ref refid="class_smol_dock_1_1_protein_1a86e77c7079be2b4d3e1a8e3e53a4ce02" kindref="member">
+                        heteroatoms</ref>;
+                </highlight>
+            </codeline>
+            <codeline lineno="74">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="75" refid="class_smol_dock_1_1_protein_1a3409e1f4c5789b7102e3941d030a1fc8"
+                      refkind="member">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">double</highlight>
+                <highlight class="normal">
+                    <sp/>
+                    <ref refid="class_smol_dock_1_1_protein_1a3409e1f4c5789b7102e3941d030a1fc8" kindref="member">
+                        center_x
+                    </ref>
+                    <sp/>=<sp/>0;
+                </highlight>
+            </codeline>
+            <codeline lineno="76" refid="class_smol_dock_1_1_protein_1a1b1d22d4cf7b2efa592904727cbc4318"
+                      refkind="member">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">double</highlight>
+                <highlight class="normal">
+                    <sp/>
+                    <ref refid="class_smol_dock_1_1_protein_1a1b1d22d4cf7b2efa592904727cbc4318" kindref="member">
+                        center_y
+                    </ref>
+                    <sp/>=<sp/>0;
+                </highlight>
+            </codeline>
+            <codeline lineno="77" refid="class_smol_dock_1_1_protein_1ae548b55999341c9b36325c79f8731de3"
+                      refkind="member">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">double</highlight>
+                <highlight class="normal">
+                    <sp/>
+                    <ref refid="class_smol_dock_1_1_protein_1ae548b55999341c9b36325c79f8731de3" kindref="member">
+                        center_z
+                    </ref>
+                    <sp/>=<sp/>0;
+                </highlight>
+            </codeline>
+            <codeline lineno="78">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="79" refid="class_smol_dock_1_1_protein_1ad8a4950285ab8d85a341d05c7fc1b4f5"
+                      refkind="member">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">double</highlight>
+                <highlight class="normal">
+                    <sp/>
+                    <ref refid="class_smol_dock_1_1_protein_1ad8a4950285ab8d85a341d05c7fc1b4f5" kindref="member">min_x
+                    </ref>
+                    <sp/>=<sp/>0;
+                </highlight>
+            </codeline>
+            <codeline lineno="80" refid="class_smol_dock_1_1_protein_1a24f3c87a811bb1ea8c631d1b5191bb7e"
+                      refkind="member">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">double</highlight>
+                <highlight class="normal">
+                    <sp/>
+                    <ref refid="class_smol_dock_1_1_protein_1a24f3c87a811bb1ea8c631d1b5191bb7e" kindref="member">min_y
+                    </ref>
+                    <sp/>=<sp/>0;
+                </highlight>
+            </codeline>
+            <codeline lineno="81" refid="class_smol_dock_1_1_protein_1a01ff02f51f30ffe5c4fec3dbe57bb7db"
+                      refkind="member">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">double</highlight>
+                <highlight class="normal">
+                    <sp/>
+                    <ref refid="class_smol_dock_1_1_protein_1a01ff02f51f30ffe5c4fec3dbe57bb7db" kindref="member">min_z
+                    </ref>
+                    <sp/>=<sp/>0;
+                </highlight>
+            </codeline>
+            <codeline lineno="82">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="83" refid="class_smol_dock_1_1_protein_1a9e3c8b56b150fb2801f4a4e255f6eda1"
+                      refkind="member">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">double</highlight>
+                <highlight class="normal">
+                    <sp/>
+                    <ref refid="class_smol_dock_1_1_protein_1a9e3c8b56b150fb2801f4a4e255f6eda1" kindref="member">max_x
+                    </ref>
+                    <sp/>=<sp/>0;
+                </highlight>
+            </codeline>
+            <codeline lineno="84" refid="class_smol_dock_1_1_protein_1a65917695fc8db4c6dfcc5f1f6157787b"
+                      refkind="member">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">double</highlight>
+                <highlight class="normal">
+                    <sp/>
+                    <ref refid="class_smol_dock_1_1_protein_1a65917695fc8db4c6dfcc5f1f6157787b" kindref="member">max_y
+                    </ref>
+                    <sp/>=<sp/>0;
+                </highlight>
+            </codeline>
+            <codeline lineno="85" refid="class_smol_dock_1_1_protein_1a8892ec123bb38e99930b8c884cff5b79"
+                      refkind="member">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">double</highlight>
+                <highlight class="normal">
+                    <sp/>
+                    <ref refid="class_smol_dock_1_1_protein_1a8892ec123bb38e99930b8c884cff5b79" kindref="member">max_z
+                    </ref>
+                    <sp/>=<sp/>0;
+                </highlight>
+            </codeline>
+            <codeline lineno="86">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="87">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>};
+                </highlight>
+            </codeline>
+            <codeline lineno="88">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="89">
+                <highlight class="normal">}</highlight>
+            </codeline>
+            <codeline lineno="90">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="91">
+                <highlight class="normal"></highlight>
+                <highlight class="preprocessor">#endif<sp/>//SMOLDOCK_PROTEIN_H
+                </highlight>
+            </codeline>
+        </programlisting>
+        <location file="Structures/Protein.h"/>
+    </compounddef>
 </doxygen>

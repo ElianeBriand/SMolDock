@@ -32,17 +32,19 @@
 #include "Engines/Internals/iProtein.h"
 
 
-
 namespace SmolDock {
 
 
     class Atom;
+
     enum class PDBResidueVariantAssignationType;
 
     class AminoAcid {
 
         friend class Protein;
-        friend void assignVariantFlagsForResidueAtom(AminoAcid& residue, PDBResidueVariantAssignationType assignation_type);
+
+        friend void
+        assignVariantFlagsForResidueAtom(AminoAcid &residue, PDBResidueVariantAssignationType assignation_type);
 
     public:
 
@@ -85,11 +87,13 @@ namespace SmolDock {
 
 
         unsigned int getAAId() const;
+
         void setAAId(unsigned int id);
 
-        bool filliProtein(iProtein& prot, bool skipHydrogen = true);
+        bool filliProtein(iProtein &prot, bool skipHydrogen = true);
 
         AAType getType() const;
+
         void setType(AAType t);
 
     protected:

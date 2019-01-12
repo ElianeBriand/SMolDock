@@ -26,7 +26,6 @@ void export_STLWrapper();
 namespace SmolDock::Wrapper {
 
 
-
 }
 
 

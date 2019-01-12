@@ -121,8 +121,8 @@ Enumerations</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:af914f3a629ac463d825d7cc7b1ec95cd"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="class_smol_dock_1_1_score_1_1_scoring_function.html">ScoringFunction</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_smol_dock_1_1_score.html#af914f3a629ac463d825d7cc7b1ec95cd">scoringFunctionFactory</a> (<a class="el" href="namespace_smol_dock_1_1_score.html#a7d8761ef06699c5fc8793056bc903911">ScoringFunctionType</a> t, <a class="el" href="namespace_smol_dock.html#struct_smol_dock_1_1i_conformer">iConformer</a> conformer, <a class="el" href="namespace_smol_dock.html#struct_smol_dock_1_1i_protein">iProtein</a> protein, <a class="el" href="namespace_smol_dock.html#struct_smol_dock_1_1i_transform">iTransform</a> transform, double differential_upsilon)</td></tr>
-<tr class="separator:af914f3a629ac463d825d7cc7b1ec95cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acda93ea4444f7dacda77b03c0b278336"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="class_smol_dock_1_1_score_1_1_scoring_function.html">ScoringFunction</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_smol_dock_1_1_score.html#acda93ea4444f7dacda77b03c0b278336">scoringFunctionFactory</a> (<a class="el" href="namespace_smol_dock_1_1_score.html#a7d8761ef06699c5fc8793056bc903911">ScoringFunctionType</a> t, const <a class="el" href="namespace_smol_dock.html#struct_smol_dock_1_1i_conformer">iConformer</a> &amp;conformer, const <a class="el" href="namespace_smol_dock.html#struct_smol_dock_1_1i_protein">iProtein</a> &amp;protein, const <a class="el" href="namespace_smol_dock.html#struct_smol_dock_1_1i_transform">iTransform</a> &amp;transform, double differential_upsilon)</td></tr>
+<tr class="separator:acda93ea4444f7dacda77b03c0b278336"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adae31ea0b0f6630cdad8c85e9802ed9d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_smol_dock_1_1_score.html#adae31ea0b0f6630cdad8c85e9802ed9d">isHydrophobic</a> (unsigned char atomicNumber, unsigned int variantFlags)</td></tr>
 <tr class="separator:adae31ea0b0f6630cdad8c85e9802ed9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afc0ba7560e9104fcef4bc61ff8d461c1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_smol_dock_1_1_score.html#afc0ba7560e9104fcef4bc61ff8d461c1">isHydrogenAcceptor</a> (unsigned char atomicNumber, unsigned int atomVariantFlags)</td></tr>
@@ -614,14 +614,14 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="af914f3a629ac463d825d7cc7b1ec95cd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af914f3a629ac463d825d7cc7b1ec95cd">&#9670;&nbsp;</a></span>scoringFunctionFactory()</h2>
+<a id="acda93ea4444f7dacda77b03c0b278336"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acda93ea4444f7dacda77b03c0b278336">&#9670;&nbsp;</a></span>scoringFunctionFactory()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::unique_ptr&lt; <a class="el" href="class_smol_dock_1_1_score_1_1_scoring_function.html">ScoringFunction</a> &gt; SmolDock::Score::scoringFunctionFactory </td>
+          <td class="memname">std::shared_ptr&lt; <a class="el" href="class_smol_dock_1_1_score_1_1_scoring_function.html">ScoringFunction</a> &gt; SmolDock::Score::scoringFunctionFactory </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="namespace_smol_dock_1_1_score.html#a7d8761ef06699c5fc8793056bc903911">ScoringFunctionType</a>&#160;</td>
           <td class="paramname"><em>t</em>, </td>
@@ -629,19 +629,19 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespace_smol_dock.html#struct_smol_dock_1_1i_conformer">iConformer</a>&#160;</td>
+          <td class="paramtype">const <a class="el" href="namespace_smol_dock.html#struct_smol_dock_1_1i_conformer">iConformer</a> &amp;&#160;</td>
           <td class="paramname"><em>conformer</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespace_smol_dock.html#struct_smol_dock_1_1i_protein">iProtein</a>&#160;</td>
+          <td class="paramtype">const <a class="el" href="namespace_smol_dock.html#struct_smol_dock_1_1i_protein">iProtein</a> &amp;&#160;</td>
           <td class="paramname"><em>protein</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespace_smol_dock.html#struct_smol_dock_1_1i_transform">iTransform</a>&#160;</td>
+          <td class="paramtype">const <a class="el" href="namespace_smol_dock.html#struct_smol_dock_1_1i_transform">iTransform</a> &amp;&#160;</td>
           <td class="paramname"><em>transform</em>, </td>
         </tr>
         <tr>
@@ -666,8 +666,8 @@ Variables</h2></td></tr>
 <div id="dynsection-9-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-9-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="namespace_smol_dock_1_1_score_af914f3a629ac463d825d7cc7b1ec95cd_icgraph.png" border="0" usemap="#namespace_smol_dock_1_1_score_af914f3a629ac463d825d7cc7b1ec95cd_icgraph" alt=""/></div>
-<map name="namespace_smol_dock_1_1_score_af914f3a629ac463d825d7cc7b1ec95cd_icgraph" id="namespace_smol_dock_1_1_score_af914f3a629ac463d825d7cc7b1ec95cd_icgraph">
+<div class="center"><img src="namespace_smol_dock_1_1_score_acda93ea4444f7dacda77b03c0b278336_icgraph.png" border="0" usemap="#namespace_smol_dock_1_1_score_acda93ea4444f7dacda77b03c0b278336_icgraph" alt=""/></div>
+<map name="namespace_smol_dock_1_1_score_acda93ea4444f7dacda77b03c0b278336_icgraph" id="namespace_smol_dock_1_1_score_acda93ea4444f7dacda77b03c0b278336_icgraph">
 <area shape="rect" id="node2" href="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine.html#a7bee39278168cb4d7ee6558b3a3d3bb4" title="Run the docking. " alt="" coords="228,5,483,47"/>
 <area shape="rect" id="node3" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="531,13,581,39"/>
 </map>

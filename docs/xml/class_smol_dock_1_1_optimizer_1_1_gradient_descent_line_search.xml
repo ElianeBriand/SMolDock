@@ -1,0 +1,256 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="class_smol_dock_1_1_optimizer_1_1_gradient_descent_line_search" kind="class" language="C++" prot="public">
+    <compoundname>SmolDock::Optimizer::GradientDescentLineSearch</compoundname>
+    <basecompoundref refid="class_smol_dock_1_1_optimizer_1_1_optimizer" prot="public" virt="non-virtual">SmolDock::Optimizer::Optimizer</basecompoundref>
+    <includes refid="_gradient_descent_line_search_8h" local="no">GradientDescentLineSearch.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_smol_dock_1_1_optimizer_1_1_gradient_descent_line_search_1a5a7ea295c87622dc13f80e4315321463" prot="private" static="no" mutable="no">
+        <type><ref refid="class_smol_dock_1_1_score_1_1_scoring_function" kindref="compound">Score::ScoringFunction</ref> *</type>
+        <definition>Score::ScoringFunction* SmolDock::Optimizer::GradientDescentLineSearch::scoringFunction</definition>
+        <argsstring></argsstring>
+        <name>scoringFunction</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Engines/LocalOptimizers/GradientDescentLineSearch.h" line="38" column="1" bodyfile="Engines/LocalOptimizers/GradientDescentLineSearch.h" bodystart="38" bodyend="-1"/>
+        <referencedby refid="class_smol_dock_1_1_optimizer_1_1_gradient_descent_line_search_1ae0888f9903112cfbe93af8d5946a52da" compoundref="_gradient_descent_line_search_8cpp" startline="33" endline="114">optimize</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_smol_dock_1_1_optimizer_1_1_gradient_descent_line_search_1a0680dc929db0fe521e0820e473b8bcb6" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double SmolDock::Optimizer::GradientDescentLineSearch::differential_epsilon</definition>
+        <argsstring></argsstring>
+        <name>differential_epsilon</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Engines/LocalOptimizers/GradientDescentLineSearch.h" line="39" column="1" bodyfile="Engines/LocalOptimizers/GradientDescentLineSearch.h" bodystart="39" bodyend="-1"/>
+        <referencedby refid="class_smol_dock_1_1_optimizer_1_1_gradient_descent_line_search_1ae0888f9903112cfbe93af8d5946a52da" compoundref="_gradient_descent_line_search_8cpp" startline="33" endline="114">optimize</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_smol_dock_1_1_optimizer_1_1_gradient_descent_line_search_1a8b335ed348fc56a3f873d7b6520c2e2f" prot="private" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int SmolDock::Optimizer::GradientDescentLineSearch::paramVectorDimension</definition>
+        <argsstring></argsstring>
+        <name>paramVectorDimension</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Engines/LocalOptimizers/GradientDescentLineSearch.h" line="40" column="1" bodyfile="Engines/LocalOptimizers/GradientDescentLineSearch.h" bodystart="40" bodyend="-1"/>
+        <referencedby refid="class_smol_dock_1_1_optimizer_1_1_gradient_descent_line_search_1ae0888f9903112cfbe93af8d5946a52da" compoundref="_gradient_descent_line_search_8cpp" startline="33" endline="114">optimize</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_smol_dock_1_1_optimizer_1_1_gradient_descent_line_search_1a0515ae128ea249f61272a10250b91fd8" prot="private" static="no" mutable="no">
+        <type>arma::mat</type>
+        <definition>arma::mat SmolDock::Optimizer::GradientDescentLineSearch::result</definition>
+        <argsstring></argsstring>
+        <name>result</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Engines/LocalOptimizers/GradientDescentLineSearch.h" line="41" column="1" bodyfile="Engines/LocalOptimizers/GradientDescentLineSearch.h" bodystart="41" bodyend="-1"/>
+        <referencedby refid="class_smol_dock_1_1_optimizer_1_1_gradient_descent_line_search_1ae0888f9903112cfbe93af8d5946a52da" compoundref="_gradient_descent_line_search_8cpp" startline="33" endline="114">optimize</referencedby>
+        <referencedby refid="class_smol_dock_1_1_optimizer_1_1_gradient_descent_line_search_1ae3fdb46d5b28724146c8c496d59b8128" compoundref="_gradient_descent_line_search_8cpp" startline="121" endline="123">getRawResultMatrix</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_smol_dock_1_1_optimizer_1_1_gradient_descent_line_search_1a4749cfb31b9b88db96aef6a254078e6d" prot="private" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int SmolDock::Optimizer::GradientDescentLineSearch::iterationNumber</definition>
+        <argsstring></argsstring>
+        <name>iterationNumber</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Engines/LocalOptimizers/GradientDescentLineSearch.h" line="43" column="1" bodyfile="Engines/LocalOptimizers/GradientDescentLineSearch.h" bodystart="43" bodyend="-1"/>
+        <referencedby refid="class_smol_dock_1_1_optimizer_1_1_gradient_descent_line_search_1ae0888f9903112cfbe93af8d5946a52da" compoundref="_gradient_descent_line_search_8cpp" startline="33" endline="114">optimize</referencedby>
+        <referencedby refid="class_smol_dock_1_1_optimizer_1_1_gradient_descent_line_search_1a14219d5c7e209f0aeae91966eea06c14" compoundref="_gradient_descent_line_search_8cpp" startline="117" endline="119">getIterationNumber</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_smol_dock_1_1_optimizer_1_1_gradient_descent_line_search_1a1eafe95f8c30c31960fd7ac4af247fa3" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double SmolDock::Optimizer::GradientDescentLineSearch::score</definition>
+        <argsstring></argsstring>
+        <name>score</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Engines/LocalOptimizers/GradientDescentLineSearch.h" line="44" column="1" bodyfile="Engines/LocalOptimizers/GradientDescentLineSearch.h" bodystart="44" bodyend="-1"/>
+        <referencedby refid="class_smol_dock_1_1_optimizer_1_1_gradient_descent_line_search_1ae0888f9903112cfbe93af8d5946a52da" compoundref="_gradient_descent_line_search_8cpp" startline="33" endline="114">optimize</referencedby>
+        <referencedby refid="class_smol_dock_1_1_optimizer_1_1_gradient_descent_line_search_1a497ef5405f36f6e5113f83a37d9542b3" compoundref="_gradient_descent_line_search_8cpp" startline="125" endline="127">getScore</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_smol_dock_1_1_optimizer_1_1_gradient_descent_line_search_1abc5e7a2cc3b11c6aa320dbae9b33c816" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>SmolDock::Optimizer::GradientDescentLineSearch::GradientDescentLineSearch</definition>
+        <argsstring>(Score::ScoringFunction *scoringFunc_, double differentialUpsilon=1e-3)</argsstring>
+        <name>GradientDescentLineSearch</name>
+        <param>
+          <type><ref refid="class_smol_dock_1_1_score_1_1_scoring_function" kindref="compound">Score::ScoringFunction</ref> *</type>
+          <declname>scoringFunc_</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>differentialUpsilon</declname>
+          <defval>1e-3</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Engines/LocalOptimizers/GradientDescentLineSearch.h" line="24" column="1" bodyfile="Engines/LocalOptimizers/GradientDescentLineSearch.cpp" bodystart="23" bodyend="31"/>
+      </memberdef>
+      <memberdef kind="function" id="class_smol_dock_1_1_optimizer_1_1_gradient_descent_line_search_1ae0888f9903112cfbe93af8d5946a52da" prot="public" static="no" const="no" explicit="no" inline="no" final="yes" virt="virtual">
+        <type>bool</type>
+        <definition>bool SmolDock::Optimizer::GradientDescentLineSearch::optimize</definition>
+        <argsstring>(arma::mat startingPoint) final</argsstring>
+        <name>optimize</name>
+        <reimplements refid="class_smol_dock_1_1_optimizer_1_1_optimizer_1a2868a3d9b6855b745d456de57eb1a870">optimize</reimplements>
+        <param>
+          <type>arma::mat</type>
+          <declname>startingPoint</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Engines/LocalOptimizers/GradientDescentLineSearch.h" line="26" column="1" bodyfile="Engines/LocalOptimizers/GradientDescentLineSearch.cpp" bodystart="33" bodyend="114"/>
+        <references refid="class_smol_dock_1_1_optimizer_1_1_gradient_descent_line_search_1a0680dc929db0fe521e0820e473b8bcb6" compoundref="_gradient_descent_line_search_8h" startline="39">differential_epsilon</references>
+        <references refid="class_smol_dock_1_1_score_1_1_scoring_function_1a92b9b5f6d23b07740dd9f6718207d31a">SmolDock::Score::ScoringFunction::Evaluate</references>
+        <references refid="class_smol_dock_1_1_score_1_1_scoring_function_1a56e7633750240c7511d5f719c87eeb2f">SmolDock::Score::ScoringFunction::EvaluateWithGradient</references>
+        <references refid="namespace_smol_dock_1_1_optimizer_1a79ed0dc5e1f1a738bd5bb281f09748a7" compoundref="_local_optimizer_utility_functions_8h" startline="10" endline="16">SmolDock::Optimizer::hasNonZeroComponent</references>
+        <references refid="class_smol_dock_1_1_optimizer_1_1_gradient_descent_line_search_1a4749cfb31b9b88db96aef6a254078e6d" compoundref="_gradient_descent_line_search_8h" startline="43">iterationNumber</references>
+        <references refid="class_smol_dock_1_1_optimizer_1_1_gradient_descent_line_search_1a8b335ed348fc56a3f873d7b6520c2e2f" compoundref="_gradient_descent_line_search_8h" startline="40">paramVectorDimension</references>
+        <references refid="class_smol_dock_1_1_optimizer_1_1_gradient_descent_line_search_1a0515ae128ea249f61272a10250b91fd8" compoundref="_gradient_descent_line_search_8h" startline="41">result</references>
+        <references refid="class_smol_dock_1_1_optimizer_1_1_gradient_descent_line_search_1a1eafe95f8c30c31960fd7ac4af247fa3" compoundref="_gradient_descent_line_search_8h" startline="44">score</references>
+        <references refid="class_smol_dock_1_1_optimizer_1_1_gradient_descent_line_search_1a5a7ea295c87622dc13f80e4315321463" compoundref="_gradient_descent_line_search_8h" startline="38">scoringFunction</references>
+      </memberdef>
+      <memberdef kind="function" id="class_smol_dock_1_1_optimizer_1_1_gradient_descent_line_search_1ae3fdb46d5b28724146c8c496d59b8128" prot="public" static="no" const="no" explicit="no" inline="no" final="yes" virt="virtual">
+        <type>arma::mat</type>
+        <definition>arma::mat SmolDock::Optimizer::GradientDescentLineSearch::getRawResultMatrix</definition>
+        <argsstring>() final</argsstring>
+        <name>getRawResultMatrix</name>
+        <reimplements refid="class_smol_dock_1_1_optimizer_1_1_optimizer_1a127349b071842e954d7a89f026685b8f">getRawResultMatrix</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Engines/LocalOptimizers/GradientDescentLineSearch.h" line="28" column="1" bodyfile="Engines/LocalOptimizers/GradientDescentLineSearch.cpp" bodystart="121" bodyend="123"/>
+        <references refid="class_smol_dock_1_1_optimizer_1_1_gradient_descent_line_search_1a0515ae128ea249f61272a10250b91fd8" compoundref="_gradient_descent_line_search_8h" startline="41">result</references>
+      </memberdef>
+      <memberdef kind="function" id="class_smol_dock_1_1_optimizer_1_1_gradient_descent_line_search_1a497ef5405f36f6e5113f83a37d9542b3" prot="public" static="no" const="no" explicit="no" inline="no" final="yes" virt="virtual">
+        <type>double</type>
+        <definition>double SmolDock::Optimizer::GradientDescentLineSearch::getScore</definition>
+        <argsstring>() final</argsstring>
+        <name>getScore</name>
+        <reimplements refid="class_smol_dock_1_1_optimizer_1_1_optimizer_1a5165027808dafc096faf1048a48e7c1c">getScore</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Engines/LocalOptimizers/GradientDescentLineSearch.h" line="30" column="1" bodyfile="Engines/LocalOptimizers/GradientDescentLineSearch.cpp" bodystart="125" bodyend="127"/>
+        <references refid="class_smol_dock_1_1_optimizer_1_1_gradient_descent_line_search_1a1eafe95f8c30c31960fd7ac4af247fa3" compoundref="_gradient_descent_line_search_8h" startline="44">score</references>
+      </memberdef>
+      <memberdef kind="function" id="class_smol_dock_1_1_optimizer_1_1_gradient_descent_line_search_1a14219d5c7e209f0aeae91966eea06c14" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>unsigned int</type>
+        <definition>unsigned int SmolDock::Optimizer::GradientDescentLineSearch::getIterationNumber</definition>
+        <argsstring>()</argsstring>
+        <name>getIterationNumber</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Engines/LocalOptimizers/GradientDescentLineSearch.h" line="33" column="1" bodyfile="Engines/LocalOptimizers/GradientDescentLineSearch.cpp" bodystart="117" bodyend="119"/>
+        <references refid="class_smol_dock_1_1_optimizer_1_1_gradient_descent_line_search_1a4749cfb31b9b88db96aef6a254078e6d" compoundref="_gradient_descent_line_search_8h" startline="43">iterationNumber</references>
+      </memberdef>
+      <memberdef kind="function" id="class_smol_dock_1_1_optimizer_1_1_gradient_descent_line_search_1a0e938531a0165204a0b94965d67fbfe9" prot="public" static="no" const="no" explicit="no" inline="no" final="yes" virt="non-virtual">
+        <type></type>
+        <definition>SmolDock::Optimizer::GradientDescentLineSearch::~GradientDescentLineSearch</definition>
+        <argsstring>() final=default</argsstring>
+        <name>~GradientDescentLineSearch</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Engines/LocalOptimizers/GradientDescentLineSearch.h" line="35" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="79">
+        <label>SmolDock::Optimizer::GradientDescentLineSearch</label>
+        <link refid="class_smol_dock_1_1_optimizer_1_1_gradient_descent_line_search"/>
+        <childnode refid="80" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="80">
+        <label>SmolDock::Optimizer::Optimizer</label>
+        <link refid="class_smol_dock_1_1_optimizer_1_1_optimizer"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="81">
+        <label>SmolDock::Optimizer::GradientDescentLineSearch</label>
+        <link refid="class_smol_dock_1_1_optimizer_1_1_gradient_descent_line_search"/>
+        <childnode refid="82" relation="public-inheritance">
+        </childnode>
+        <childnode refid="83" relation="usage">
+          <edgelabel>-scoringFunction</edgelabel>
+        </childnode>
+      </node>
+      <node id="83">
+        <label>SmolDock::Score::ScoringFunction</label>
+        <link refid="class_smol_dock_1_1_score_1_1_scoring_function"/>
+      </node>
+      <node id="82">
+        <label>SmolDock::Optimizer::Optimizer</label>
+        <link refid="class_smol_dock_1_1_optimizer_1_1_optimizer"/>
+      </node>
+    </collaborationgraph>
+    <location file="Engines/LocalOptimizers/GradientDescentLineSearch.h" line="22" column="1" bodyfile="Engines/LocalOptimizers/GradientDescentLineSearch.h" bodystart="22" bodyend="47"/>
+    <listofallmembers>
+      <member refid="class_smol_dock_1_1_optimizer_1_1_gradient_descent_line_search_1a0680dc929db0fe521e0820e473b8bcb6" prot="private" virt="non-virtual"><scope>SmolDock::Optimizer::GradientDescentLineSearch</scope><name>differential_epsilon</name></member>
+      <member refid="class_smol_dock_1_1_optimizer_1_1_gradient_descent_line_search_1a14219d5c7e209f0aeae91966eea06c14" prot="public" virt="non-virtual"><scope>SmolDock::Optimizer::GradientDescentLineSearch</scope><name>getIterationNumber</name></member>
+      <member refid="class_smol_dock_1_1_optimizer_1_1_gradient_descent_line_search_1ae3fdb46d5b28724146c8c496d59b8128" prot="public" virt="virtual"><scope>SmolDock::Optimizer::GradientDescentLineSearch</scope><name>getRawResultMatrix</name></member>
+      <member refid="class_smol_dock_1_1_optimizer_1_1_gradient_descent_line_search_1a497ef5405f36f6e5113f83a37d9542b3" prot="public" virt="virtual"><scope>SmolDock::Optimizer::GradientDescentLineSearch</scope><name>getScore</name></member>
+      <member refid="class_smol_dock_1_1_optimizer_1_1_gradient_descent_line_search_1abc5e7a2cc3b11c6aa320dbae9b33c816" prot="public" virt="non-virtual"><scope>SmolDock::Optimizer::GradientDescentLineSearch</scope><name>GradientDescentLineSearch</name></member>
+      <member refid="class_smol_dock_1_1_optimizer_1_1_gradient_descent_line_search_1a4749cfb31b9b88db96aef6a254078e6d" prot="private" virt="non-virtual"><scope>SmolDock::Optimizer::GradientDescentLineSearch</scope><name>iterationNumber</name></member>
+      <member refid="class_smol_dock_1_1_optimizer_1_1_gradient_descent_line_search_1ae0888f9903112cfbe93af8d5946a52da" prot="public" virt="virtual"><scope>SmolDock::Optimizer::GradientDescentLineSearch</scope><name>optimize</name></member>
+      <member refid="class_smol_dock_1_1_optimizer_1_1_gradient_descent_line_search_1a8b335ed348fc56a3f873d7b6520c2e2f" prot="private" virt="non-virtual"><scope>SmolDock::Optimizer::GradientDescentLineSearch</scope><name>paramVectorDimension</name></member>
+      <member refid="class_smol_dock_1_1_optimizer_1_1_gradient_descent_line_search_1a0515ae128ea249f61272a10250b91fd8" prot="private" virt="non-virtual"><scope>SmolDock::Optimizer::GradientDescentLineSearch</scope><name>result</name></member>
+      <member refid="class_smol_dock_1_1_optimizer_1_1_gradient_descent_line_search_1a1eafe95f8c30c31960fd7ac4af247fa3" prot="private" virt="non-virtual"><scope>SmolDock::Optimizer::GradientDescentLineSearch</scope><name>score</name></member>
+      <member refid="class_smol_dock_1_1_optimizer_1_1_gradient_descent_line_search_1a5a7ea295c87622dc13f80e4315321463" prot="private" virt="non-virtual"><scope>SmolDock::Optimizer::GradientDescentLineSearch</scope><name>scoringFunction</name></member>
+      <member refid="class_smol_dock_1_1_optimizer_1_1_gradient_descent_line_search_1a0e938531a0165204a0b94965d67fbfe9" prot="public" virt="non-virtual"><scope>SmolDock::Optimizer::GradientDescentLineSearch</scope><name>~GradientDescentLineSearch</name></member>
+      <member refid="class_smol_dock_1_1_optimizer_1_1_optimizer_1a01132a1b9275e1863e80bd18400b1fef" prot="public" virt="virtual"><scope>SmolDock::Optimizer::GradientDescentLineSearch</scope><name>~Optimizer</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

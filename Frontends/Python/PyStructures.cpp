@@ -31,27 +31,29 @@ namespace np = boost::numpy;
 namespace sd = SmolDock;
 
 BOOST_PYTHON_MEMBER_FUNCTION_OVERLOADS(populateFromPDB_overloads, sd::Molecule::populateFromPDB, 1, 4)
+
 BOOST_PYTHON_MEMBER_FUNCTION_OVERLOADS(populateFromSMILES_overloads, sd::Molecule::populateFromSMILES, 1, 3)
+
 BOOST_PYTHON_MEMBER_FUNCTION_OVERLOADS(generateConformer_overloads, sd::Molecule::generateConformer, 1, 3)
 
+BOOST_PYTHON_MEMBER_FUNCTION_OVERLOADS(prot_populateFromPDB_overloads, sd::Protein::populateFromPDB, 1, 2)
 
 
-void export_Structures()
-{
+void export_Structures() {
     p::class_<sd::Molecule>("Molecule")
             .def("populateFromPDB", &sd::Molecule::populateFromPDB, populateFromPDB_overloads())
             .def("populateFromSMILES", &sd::Molecule::populateFromSMILES, populateFromSMILES_overloads())
             .add_property("numberOfAtoms", &sd::Molecule::numberOfAtoms)
             .add_property("numberOfBonds", &sd::Molecule::numberOfBonds)
             .def("getInitialConformer", &sd::Molecule::getInitialConformer)
-            .def("generateConformer", &sd::Molecule::generateConformer, generateConformer_overloads() )
+            .def("generateConformer", &sd::Molecule::generateConformer, generateConformer_overloads())
             .add_property("residueName", &sd::Molecule::getResidueName, &sd::Molecule::setResidueName)
             .def("updateAtomPositionsFromiConformer", &sd::Molecule::updateAtomPositionsFromiConformer)
             .def("deepcopy", &sd::Molecule::deepcopy)
-            //.def("populateFromPDB", &sd::Molecule::populateFromPDB)
-            //.def("set", &World::set)
-            //.add_property("rovalue", &Num::get)
-            //.add_property("value", &Num::get, &Num::set);
+        //.def("populateFromPDB", &sd::Molecule::populateFromPDB)
+        //.def("set", &World::set)
+        //.add_property("rovalue", &Num::get)
+        //.add_property("value", &Num::get, &Num::set);
             ;
 
     p::class_<sd::iConformer>("iConformer")
@@ -59,8 +61,7 @@ void export_Structures()
             .def_readwrite("y", &sd::iConformer::y)
             .def_readwrite("z", &sd::iConformer::z)
             .def_readwrite("type", &sd::iConformer::type)
-            .def_readwrite("variant", &sd::iConformer::variant)
-            ;
+            .def_readwrite("variant", &sd::iConformer::variant);
 
     p::class_<sd::iProtein>("iProtein")
             .def_readwrite("center_x", &sd::iProtein::center_x)
@@ -71,18 +72,15 @@ void export_Structures()
             .def_readwrite("z", &sd::iProtein::z)
             .def_readwrite("type", &sd::iProtein::type)
             .def_readwrite("variant", &sd::iProtein::variant)
-            .def_readwrite("AAId_to_AtomPositionInVect", &sd::iProtein::AAId_to_AtomPositionInVect)
-            ;
+            .def_readwrite("AAId_to_AtomPositionInVect", &sd::iProtein::AAId_to_AtomPositionInVect);
 
 
-    p::class_<sd::Protein>("Protein")
-            .def("populateFromPDB", &sd::Protein::populateFromPDB)
-            .def("getiProtein", &sd::Protein::getiProtein)
-            ;
+    p::class_<sd::Protein>("Protein", p::init<>())
+            .def("populateFromPDB", &sd::Protein::populateFromPDB, prot_populateFromPDB_overloads())
+            .def("getiProtein", &sd::Protein::getiProtein);
 
     p::class_<sd::DockingResult>("DockingResult")
-            .def_readwrite("ligandPoses", &sd::DockingResult::ligandPoses)
-            ;
+            .def_readwrite("ligandPoses", &sd::DockingResult::ligandPoses);
 
 
 }

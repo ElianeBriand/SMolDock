@@ -50,7 +50,8 @@ namespace SmolDock::Wrapper {
 
 
 void export_ScoringFunctions() {
-    p::class_< std::function<double(const sd::iConformer &, const sd::iTransform &, const sd::iProtein &)> >("ScoringFunction")
+    p::class_<std::function<double(const sd::iConformer &, const sd::iTransform &, const sd::iProtein &)> >(
+            "ScoringFunction")
         //.def("populateFromPDB", &sd::Molecule::populateFromPDB)
         //.def("set", &World::set)
         //.add_property("rovalue", &Num::get)
@@ -59,8 +60,7 @@ void export_ScoringFunctions() {
     p::def("getScoringFunc", &sd::Wrapper::getScoringFunc);
 
     p::enum_<sd::Wrapper::ScoringFunctionEnum>("ScoringFuncType")
-            .value("VinaLike", sd::Wrapper::ScoringFunctionEnum::VinaLike)
-            ;
+            .value("VinaLike", sd::Wrapper::ScoringFunctionEnum::VinaLike);
 
 
 }

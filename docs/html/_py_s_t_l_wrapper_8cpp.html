@@ -104,6 +104,7 @@ $(document).ready(function(){initNavTree('_py_s_t_l_wrapper_8cpp.html','');});
 <code>#include &lt;boost/python/suite/indexing/indexing_suite.hpp&gt;</code><br />
 <code>#include &lt;boost/python/suite/indexing/vector_indexing_suite.hpp&gt;</code><br />
 <code>#include &lt;<a class="el" href="_molecule_8h_source.html">Structures/Molecule.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="_vina_compatibility_post_processor_8h_source.html">Structures/InputPostProcessors/VinaCompatibilityPostProcessor.h</a>&gt;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for PySTLWrapper.cpp:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
@@ -111,16 +112,17 @@ $(document).ready(function(){initNavTree('_py_s_t_l_wrapper_8cpp.html','');});
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="_py_s_t_l_wrapper_8cpp__incl.png" border="0" usemap="#_py_s_t_l_wrapper_8cpp" alt=""/></div>
 <map name="_py_s_t_l_wrapper_8cpp" id="_py_s_t_l_wrapper_8cpp">
-<area shape="rect" id="node2" href="_py_s_t_l_wrapper_8h.html" title="PySTLWrapper.h" alt="" coords="224,95,347,121"/>
-<area shape="rect" id="node7" href="_molecule_8h.html" title="Structures/Molecule.h" alt="" coords="1069,95,1219,121"/>
-<area shape="rect" id="node16" href="_input_post_processor_interface_8h.html" title="Structures/InputPostProcessors\l/InputPostProcessorInterface.h" alt="" coords="573,184,781,225"/>
-<area shape="rect" id="node17" href="_atom_8h.html" title="Structures/Atom.h" alt="" coords="693,273,821,300"/>
-<area shape="rect" id="node27" href="_structure_8h.html" title="Structure.h" alt="" coords="2127,191,2214,218"/>
-<area shape="rect" id="node28" href="_bond_8h.html" title="Bond.h" alt="" coords="806,191,869,218"/>
-<area shape="rect" id="node29" href="i_conformer_8h.html" title="../Engines/Internals\l/iConformer.h" alt="" coords="73,348,207,389"/>
-<area shape="rect" id="node22" href="_amino_acid_8h.html" title="AminoAcid.h" alt="" coords="709,355,805,382"/>
-<area shape="rect" id="node25" href="i_protein_8h.html" title="Engines/Internals/iProtein.h" alt="" coords="385,437,567,464"/>
-<area shape="rect" id="node30" href="i_transform_8h.html" title="iTransform.h" alt="" coords="62,437,157,464"/>
+<area shape="rect" id="node2" href="_py_s_t_l_wrapper_8h.html" title="PySTLWrapper.h" alt="" coords="5,95,128,121"/>
+<area shape="rect" id="node7" href="_molecule_8h.html" title="Structures/Molecule.h" alt="" coords="1375,95,1524,121"/>
+<area shape="rect" id="node34" href="_vina_compatibility_post_processor_8h.html" title="Structures/InputPostProcessors\l/VinaCompatibilityPostProcessor.h" alt="" coords="850,87,1075,129"/>
+<area shape="rect" id="node16" href="_input_post_processor_interface_8h.html" title="Structures/InputPostProcessors\l/InputPostProcessorInterface.h" alt="" coords="668,184,876,225"/>
+<area shape="rect" id="node17" href="_atom_8h.html" title="Structures/Atom.h" alt="" coords="1449,273,1577,300"/>
+<area shape="rect" id="node27" href="_structure_8h.html" title="Structure.h" alt="" coords="2186,191,2273,218"/>
+<area shape="rect" id="node28" href="_bond_8h.html" title="Bond.h" alt="" coords="2297,191,2359,218"/>
+<area shape="rect" id="node29" href="i_conformer_8h.html" title="../Engines/Internals\l/iConformer.h" alt="" coords="1922,348,2057,389"/>
+<area shape="rect" id="node22" href="_amino_acid_8h.html" title="AminoAcid.h" alt="" coords="1465,355,1561,382"/>
+<area shape="rect" id="node25" href="i_protein_8h.html" title="Engines/Internals/iProtein.h" alt="" coords="1129,437,1311,464"/>
+<area shape="rect" id="node30" href="i_transform_8h.html" title="iTransform.h" alt="" coords="1957,437,2051,464"/>
 </map>
 </div>
 </div>
@@ -128,6 +130,8 @@ $(document).ready(function(){initNavTree('_py_s_t_l_wrapper_8cpp.html','');});
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:a20a4fa85d5a46ce8e1567e27ff8483c1"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::shared_ptr&lt; sd::InputPostProcessor::InputPostProcessor &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_py_s_t_l_wrapper_8cpp.html#a20a4fa85d5a46ce8e1567e27ff8483c1">getVinaPostProcessorsVector</a> ()</td></tr>
+<tr class="separator:a20a4fa85d5a46ce8e1567e27ff8483c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a168320ae6ebe56579c717093cbb24708"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_py_s_t_l_wrapper_8cpp.html#a168320ae6ebe56579c717093cbb24708">export_STLWrapper</a> ()</td></tr>
 <tr class="separator:a168320ae6ebe56579c717093cbb24708"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -147,15 +151,57 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_py_s_t_l_wrapper_8cpp_source.html#l00041">41</a> of file <a class="el" href="_py_s_t_l_wrapper_8cpp_source.html">PySTLWrapper.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_py_s_t_l_wrapper_8cpp_source.html#l00048">48</a> of file <a class="el" href="_py_s_t_l_wrapper_8cpp_source.html">PySTLWrapper.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="_py_s_t_l_wrapper_8cpp_source.html#l00040">getVinaPostProcessorsVector()</a>.</p>
 <div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="_py_s_t_l_wrapper_8cpp_a168320ae6ebe56579c717093cbb24708_cgraph.png" border="0" usemap="#_py_s_t_l_wrapper_8cpp_a168320ae6ebe56579c717093cbb24708_cgraph" alt=""/></div>
+<map name="_py_s_t_l_wrapper_8cpp_a168320ae6ebe56579c717093cbb24708_cgraph" id="_py_s_t_l_wrapper_8cpp_a168320ae6ebe56579c717093cbb24708_cgraph">
+<area shape="rect" id="node2" href="_py_s_t_l_wrapper_8cpp.html#a20a4fa85d5a46ce8e1567e27ff8483c1" title="getVinaPostProcessorsVector" alt="" coords="192,5,389,32"/>
+</map>
+</div>
+<div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="_py_s_t_l_wrapper_8cpp_a168320ae6ebe56579c717093cbb24708_icgraph.png" border="0" usemap="#_py_s_t_l_wrapper_8cpp_a168320ae6ebe56579c717093cbb24708_icgraph" alt=""/></div>
 <map name="_py_s_t_l_wrapper_8cpp_a168320ae6ebe56579c717093cbb24708_icgraph" id="_py_s_t_l_wrapper_8cpp_a168320ae6ebe56579c717093cbb24708_icgraph">
 <area shape="rect" id="node2" href="_smoldock_python_bindings_8cpp.html#a9002869529fdb857c7ffa4a170c4f3ef" title="BOOST_PYTHON_MODULE" alt="" coords="192,5,387,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a20a4fa85d5a46ce8e1567e27ff8483c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a20a4fa85d5a46ce8e1567e27ff8483c1">&#9670;&nbsp;</a></span>getVinaPostProcessorsVector()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; std::shared_ptr&lt;sd::InputPostProcessor::InputPostProcessor&gt; &gt; getVinaPostProcessorsVector </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_py_s_t_l_wrapper_8cpp_source.html#l00040">40</a> of file <a class="el" href="_py_s_t_l_wrapper_8cpp_source.html">PySTLWrapper.cpp</a>.</p>
+<div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="_py_s_t_l_wrapper_8cpp_a20a4fa85d5a46ce8e1567e27ff8483c1_icgraph.png" border="0" usemap="#_py_s_t_l_wrapper_8cpp_a20a4fa85d5a46ce8e1567e27ff8483c1_icgraph" alt=""/></div>
+<map name="_py_s_t_l_wrapper_8cpp_a20a4fa85d5a46ce8e1567e27ff8483c1_icgraph" id="_py_s_t_l_wrapper_8cpp_a20a4fa85d5a46ce8e1567e27ff8483c1_icgraph">
+<area shape="rect" id="node2" href="_py_s_t_l_wrapper_8h.html#a168320ae6ebe56579c717093cbb24708" title="export_STLWrapper" alt="" coords="251,5,389,32"/>
+<area shape="rect" id="node3" href="_smoldock_python_bindings_8cpp.html#a9002869529fdb857c7ffa4a170c4f3ef" title="BOOST_PYTHON_MODULE" alt="" coords="437,5,632,32"/>
 </map>
 </div>
 

@@ -1,0 +1,143 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="class_smol_dock_1_1_input_post_processor_1_1_vina_compatibility_post_processor" kind="class" language="C++" prot="public">
+    <compoundname>SmolDock::InputPostProcessor::VinaCompatibilityPostProcessor</compoundname>
+    <basecompoundref refid="class_smol_dock_1_1_input_post_processor_1_1_input_post_processor" prot="public" virt="non-virtual">SmolDock::InputPostProcessor::InputPostProcessor</basecompoundref>
+    <includes refid="_vina_compatibility_post_processor_8h" local="no">VinaCompatibilityPostProcessor.h</includes>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_smol_dock_1_1_input_post_processor_1_1_vina_compatibility_post_processor_1a22d855dcd7c0483f587438b8e0c67e57" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>SmolDock::InputPostProcessor::VinaCompatibilityPostProcessor::VinaCompatibilityPostProcessor</definition>
+        <argsstring>()=default</argsstring>
+        <name>VinaCompatibilityPostProcessor</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Structures/InputPostProcessors/VinaCompatibilityPostProcessor.h" line="16" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_smol_dock_1_1_input_post_processor_1_1_vina_compatibility_post_processor_1acca66db3277201ff3ea5abda18d5a345" prot="public" static="no" const="no" explicit="no" inline="no" final="yes" virt="virtual">
+        <type>void</type>
+        <definition>void SmolDock::InputPostProcessor::VinaCompatibilityPostProcessor::processAtomFromLigand</definition>
+        <argsstring>(SmolDock::Atom &amp;atom) final</argsstring>
+        <name>processAtomFromLigand</name>
+        <reimplements refid="class_smol_dock_1_1_input_post_processor_1_1_input_post_processor_1a7a81319929595b3082310bf4e67cb0b9">processAtomFromLigand</reimplements>
+        <param>
+          <type><ref refid="class_smol_dock_1_1_atom" kindref="compound">SmolDock::Atom</ref> &amp;</type>
+          <declname>atom</declname>
+        </param>
+        <briefdescription>
+<para>Modify the given atom of the ligand. </para>        </briefdescription>
+        <detaileddescription>
+<para>This fonction will be called for every atom of the ligand</para><para>It is garantueed that bonds will have been set and propagated to atoms when this function is called. It can use bonded atom for its determinations.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>atom</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An atom of the ligand </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Structures/InputPostProcessors/VinaCompatibilityPostProcessor.h" line="18" column="1" bodyfile="Structures/InputPostProcessors/VinaCompatibilityPostProcessor.cpp" bodystart="13" bodyend="16"/>
+      </memberdef>
+      <memberdef kind="function" id="class_smol_dock_1_1_input_post_processor_1_1_vina_compatibility_post_processor_1a32e204f2bc8c35192036888be4eb554f" prot="public" static="no" const="no" explicit="no" inline="no" final="yes" virt="virtual">
+        <type>void</type>
+        <definition>void SmolDock::InputPostProcessor::VinaCompatibilityPostProcessor::processAtomFromProtein</definition>
+        <argsstring>(SmolDock::Atom &amp;atom, SmolDock::AminoAcid &amp;residue) final</argsstring>
+        <name>processAtomFromProtein</name>
+        <reimplements refid="class_smol_dock_1_1_input_post_processor_1_1_input_post_processor_1acad66bf3af5d57ca72656442250e0f35">processAtomFromProtein</reimplements>
+        <param>
+          <type><ref refid="class_smol_dock_1_1_atom" kindref="compound">SmolDock::Atom</ref> &amp;</type>
+          <declname>atom</declname>
+        </param>
+        <param>
+          <type><ref refid="class_smol_dock_1_1_amino_acid" kindref="compound">SmolDock::AminoAcid</ref> &amp;</type>
+          <declname>residue</declname>
+        </param>
+        <briefdescription>
+<para>Modify the given atom of the protein. </para>        </briefdescription>
+        <detaileddescription>
+<para>This fonction will be called for every atom of the protein, with the residue it belongs to</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>atom</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An atom of the protein </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>residue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The amino acid containing such atom </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Structures/InputPostProcessors/VinaCompatibilityPostProcessor.h" line="19" column="1" bodyfile="Structures/InputPostProcessors/VinaCompatibilityPostProcessor.cpp" bodystart="18" bodyend="30"/>
+        <references refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875da3ec90ee7bdd38cf0f8a68b4bee5eb202">SmolDock::AminoAcid::cysteine</references>
+        <references refid="class_smol_dock_1_1_atom_1a6b8315564e06bdc911053320fd3fa1a7" compoundref="_atom_8cpp" startline="100" endline="102">SmolDock::Atom::getAtomType</references>
+        <references refid="class_smol_dock_1_1_atom_1a145bc96b3b410ea87a62baeb8b83f127" compoundref="_atom_8cpp" startline="176" endline="179">SmolDock::Atom::getAtomVariant</references>
+        <references refid="class_smol_dock_1_1_amino_acid_1a556f668f759abed9c33c3522106d520b" compoundref="_amino_acid_8cpp" startline="129" endline="131">SmolDock::AminoAcid::getType</references>
+        <references refid="class_smol_dock_1_1_atom_1a77191f0919af58d733764e229cb1f973ad68216b54381a7b2b87b7924ab0191c4">SmolDock::Atom::hydrogenAcceptor</references>
+        <references refid="class_smol_dock_1_1_atom_1a77191f0919af58d733764e229cb1f973ade31e8114bf9ba2ec47d55c59f61853d">SmolDock::Atom::hydrogenDonor</references>
+        <references refid="class_smol_dock_1_1_atom_1aa538e302c6c9e6cafbb9f0cbefce3a4e" compoundref="_atom_8cpp" startline="181" endline="184">SmolDock::Atom::setAtomVariant</references>
+        <references refid="class_smol_dock_1_1_atom_1a57e9a532fd04e1846c0d83edebb9fd41a73a9bf52aa8ea9e256ec469dfce6e022">SmolDock::Atom::sulfur</references>
+      </memberdef>
+      <memberdef kind="function" id="class_smol_dock_1_1_input_post_processor_1_1_vina_compatibility_post_processor_1a3408845c9ec89aed7121507d1a82101e" prot="public" static="no" const="no" explicit="no" inline="no" final="yes" virt="non-virtual">
+        <type></type>
+        <definition>SmolDock::InputPostProcessor::VinaCompatibilityPostProcessor::~VinaCompatibilityPostProcessor</definition>
+        <argsstring>() final=default</argsstring>
+        <name>~VinaCompatibilityPostProcessor</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Structures/InputPostProcessors/VinaCompatibilityPostProcessor.h" line="21" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="205">
+        <label>SmolDock::InputPostProcessor::VinaCompatibilityPostProcessor</label>
+        <link refid="class_smol_dock_1_1_input_post_processor_1_1_vina_compatibility_post_processor"/>
+        <childnode refid="206" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="206">
+        <label>SmolDock::InputPostProcessor::InputPostProcessor</label>
+        <link refid="class_smol_dock_1_1_input_post_processor_1_1_input_post_processor"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="207">
+        <label>SmolDock::InputPostProcessor::VinaCompatibilityPostProcessor</label>
+        <link refid="class_smol_dock_1_1_input_post_processor_1_1_vina_compatibility_post_processor"/>
+        <childnode refid="208" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="208">
+        <label>SmolDock::InputPostProcessor::InputPostProcessor</label>
+        <link refid="class_smol_dock_1_1_input_post_processor_1_1_input_post_processor"/>
+      </node>
+    </collaborationgraph>
+    <location file="Structures/InputPostProcessors/VinaCompatibilityPostProcessor.h" line="13" column="1" bodyfile="Structures/InputPostProcessors/VinaCompatibilityPostProcessor.h" bodystart="13" bodyend="24"/>
+    <listofallmembers>
+      <member refid="class_smol_dock_1_1_input_post_processor_1_1_vina_compatibility_post_processor_1acca66db3277201ff3ea5abda18d5a345" prot="public" virt="virtual"><scope>SmolDock::InputPostProcessor::VinaCompatibilityPostProcessor</scope><name>processAtomFromLigand</name></member>
+      <member refid="class_smol_dock_1_1_input_post_processor_1_1_vina_compatibility_post_processor_1a32e204f2bc8c35192036888be4eb554f" prot="public" virt="virtual"><scope>SmolDock::InputPostProcessor::VinaCompatibilityPostProcessor</scope><name>processAtomFromProtein</name></member>
+      <member refid="class_smol_dock_1_1_input_post_processor_1_1_vina_compatibility_post_processor_1a22d855dcd7c0483f587438b8e0c67e57" prot="public" virt="non-virtual"><scope>SmolDock::InputPostProcessor::VinaCompatibilityPostProcessor</scope><name>VinaCompatibilityPostProcessor</name></member>
+      <member refid="class_smol_dock_1_1_input_post_processor_1_1_input_post_processor_1a732ea99c1fda259e309a9afaca986d4a" prot="public" virt="virtual"><scope>SmolDock::InputPostProcessor::VinaCompatibilityPostProcessor</scope><name>~InputPostProcessor</name></member>
+      <member refid="class_smol_dock_1_1_input_post_processor_1_1_vina_compatibility_post_processor_1a3408845c9ec89aed7121507d1a82101e" prot="public" virt="non-virtual"><scope>SmolDock::InputPostProcessor::VinaCompatibilityPostProcessor</scope><name>~VinaCompatibilityPostProcessor</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

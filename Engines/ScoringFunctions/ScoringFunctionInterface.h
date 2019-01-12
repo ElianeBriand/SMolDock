@@ -12,8 +12,6 @@
 namespace SmolDock::Score {
 
 
-
-
     //! The inferface specification for ScoringFunction object
     class ScoringFunction {
     public:
@@ -35,15 +33,11 @@ namespace SmolDock::Score {
 
 
         virtual ~ScoringFunction() = default;
+
     private:
 
 
     };
-
-
-
-
-
 
 
 }

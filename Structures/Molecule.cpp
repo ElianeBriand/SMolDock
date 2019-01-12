@@ -42,6 +42,7 @@
 #include <boost/accumulators/statistics/count.hpp>
 #include <boost/accumulators/statistics/min.hpp>
 #include <boost/accumulators/statistics/max.hpp>
+#include <utility>
 
 namespace SmolDock {
 
@@ -49,8 +50,8 @@ namespace SmolDock {
 
 
     bool Molecule::populateFromSMILES(const std::string &smiles, unsigned int seed,
-                                      std::vector<InputPostProcessor::InputPostProcessor *> postProcessors) {
-        RDKit::RWMol *a = nullptr;
+                                      std::vector<std::shared_ptr<InputPostProcessor::InputPostProcessor> > postProcessors) {
+        RDKit::RWMol* a = nullptr;
         try {
             /* This can throw */
             a = RDKit::SmilesToMol(smiles);
@@ -69,7 +70,7 @@ namespace SmolDock {
 
         this->rwmol.reset(a);
 
-        if (this->populateInternalAtomAndBondFromRWMol(seed, postProcessors) == false)
+        if (this->populateInternalAtomAndBondFromRWMol(seed, std::move(postProcessors)) == false)
             return false;
 
         this->smiles = smiles;
@@ -112,7 +113,8 @@ namespace SmolDock {
         viConformers.reserve(viConformers.capacity() + conformer_ids.size() + 1);
 
         unsigned int rdkit_first_conformer_id = (*(this->rwmol->beginConformers()))->getId();
-        iConformer conformer_initial = this->generateIConformerForGivenRDKitConformerID(rdkit_first_conformer_id, centroidNormalization);
+        iConformer conformer_initial = this->generateIConformerForGivenRDKitConformerID(rdkit_first_conformer_id,
+                                                                                        centroidNormalization);
         viConformers.push_back(conformer_initial);
 
         //* // FIXME : uncomment this after fixing scoring function, and remove the initial conformer
@@ -135,11 +137,11 @@ namespace SmolDock {
     }
 
     bool Molecule::populateFromPDB(const std::string &filename, const std::string &smiles_hint, unsigned int seed,
-                                   std::vector<InputPostProcessor::InputPostProcessor *> postProcessors) {
+                                   std::vector<std::shared_ptr<InputPostProcessor::InputPostProcessor> > postProcessors) {
 
 
         // Flavor = 1 --> ignore alternate location
-        RDKit::RWMol *mol = RDKit::PDBFileToMol(filename, false, false, 1, true);
+        RDKit::RWMol* mol = RDKit::PDBFileToMol(filename, false, false, 1, true);
 
         if (mol == nullptr) {
             return false;
@@ -167,7 +169,7 @@ namespace SmolDock {
     }
 
     bool Molecule::populateInternalAtomAndBondFromRWMol(unsigned int seed,
-                                                        std::vector<InputPostProcessor::InputPostProcessor *> postProcessors) {
+                                                        std::vector<std::shared_ptr<InputPostProcessor::InputPostProcessor> > postProcessors) {
 
         // We care about Hs only during conformer generation
         // TODO: find out if we need to care at other moments...
@@ -308,7 +310,7 @@ namespace SmolDock {
         assignApolarCarbonFlag(this->atoms);
 
         // Final post processing : calling
-        for (InputPostProcessor::InputPostProcessor *pprocessor : postProcessors) {
+        for (auto pprocessor : postProcessors) {
             for (auto &atom: this->atoms) {
                 pprocessor->processAtomFromLigand(*atom);
             }
@@ -333,10 +335,10 @@ namespace SmolDock {
         Molecule newmol(*this);
 
 
-        std::vector<std::tuple<std::shared_ptr<Atom>, Atom *> > new_old_lookup_table;
+        std::vector<std::tuple<std::shared_ptr<Atom>, Atom*> > new_old_lookup_table;
         newmol.atoms.clear();
         for (auto &ptr: this->atoms) {
-            Atom *newatom_ptr = new Atom(*ptr);
+            Atom* newatom_ptr = new Atom(*ptr);
             newatom_ptr->bonds.clear(); // We will restore it after rebuilding the bonds
             std::shared_ptr<Atom> &inserted = newmol.atoms.emplace_back(newatom_ptr);
             new_old_lookup_table.push_back(
@@ -346,23 +348,23 @@ namespace SmolDock {
 
         newmol.bonds.clear();
         for (auto &ptr: this->bonds) {
-            Atom *endA_ptr = ptr->getEndA().get();
-            Atom *endB_ptr = ptr->getEndB().get();
+            Atom* endA_ptr = ptr->getEndA().get();
+            Atom* endB_ptr = ptr->getEndB().get();
 
             // Find matches in lookup table :
             std::shared_ptr<Atom> endA = std::get<0>(
                     *(std::find_if(std::begin(new_old_lookup_table), std::end(new_old_lookup_table),
-                                   [&](const std::tuple<std::shared_ptr<Atom>, Atom *> &e) {
+                                   [&](const std::tuple<std::shared_ptr<Atom>, Atom*> &e) {
                                        return (std::get<1>(e) == endA_ptr);
                                    })));
 
             std::shared_ptr<Atom> endB = std::get<0>(
                     *(std::find_if(std::begin(new_old_lookup_table), std::end(new_old_lookup_table),
-                                   [&](const std::tuple<std::shared_ptr<Atom>, Atom *> &e) {
+                                   [&](const std::tuple<std::shared_ptr<Atom>, Atom*> &e) {
                                        return (std::get<1>(e) == endB_ptr);
                                    })));
 
-            Bond *newbond = new Bond(endA, endB, ptr->getBondID());
+            Bond* newbond = new Bond(endA, endB, ptr->getBondID());
             newbond->setBondType(ptr->getBondType());
             std::shared_ptr<Bond> &inserted_bond = newmol.bonds.emplace_back(newbond);
             // PublicizeToAtom uses enable_shared_from_this, which means the previous statement, creating a shared_ptr
@@ -377,7 +379,8 @@ namespace SmolDock {
 
     iConformer Molecule::getInitialConformer(bool centroidNormalization) const {
         unsigned int rdkit_first_conformer_id = (*(this->rwmol->beginConformers()))->getId();
-        iConformer conformer = this->generateIConformerForGivenRDKitConformerID(rdkit_first_conformer_id, centroidNormalization);
+        iConformer conformer = this->generateIConformerForGivenRDKitConformerID(rdkit_first_conformer_id,
+                                                                                centroidNormalization);
         return conformer;
     }
 
@@ -398,7 +401,7 @@ namespace SmolDock {
         using namespace boost::accumulators;
         accumulator_set<double, stats<tag::mean, tag::count, tag::min, tag::max> > acc_x, acc_y, acc_z;
 
-        if(centroidNormalization) {
+        if (centroidNormalization) {
             for (auto atom_it = rwmol->beginAtoms(); atom_it != rwmol->endAtoms(); ++atom_it) {
                 const RDGeom::Point3D &position = rdkit_conformer.getAtomPos((*atom_it)->getIdx());
                 acc_x(position.x);
@@ -410,7 +413,7 @@ namespace SmolDock {
             conformer.centroidNormalizingTransform.y = mean(acc_y);
             conformer.centroidNormalizingTransform.z = mean(acc_z);
 
-        }else {
+        } else {
             conformer.centroidNormalizingTransform.x = 0.0;
             conformer.centroidNormalizingTransform.y = 0.0;
             conformer.centroidNormalizingTransform.z = 0.0;
@@ -433,11 +436,11 @@ namespace SmolDock {
 
             const RDGeom::Point3D &position = rdkit_conformer.getAtomPos((*atom_it)->getIdx());
 
-            if(centroidNormalization) {
-                conformer.x.push_back(position.x - conformer.centroidNormalizingTransform.x );
-                conformer.y.push_back(position.y - conformer.centroidNormalizingTransform.y );
-                conformer.z.push_back(position.z - conformer.centroidNormalizingTransform.z );
-            }else{
+            if (centroidNormalization) {
+                conformer.x.push_back(position.x - conformer.centroidNormalizingTransform.x);
+                conformer.y.push_back(position.y - conformer.centroidNormalizingTransform.y);
+                conformer.z.push_back(position.z - conformer.centroidNormalizingTransform.z);
+            } else {
 
                 conformer.x.push_back(position.x);
                 conformer.y.push_back(position.y);
@@ -455,9 +458,6 @@ namespace SmolDock {
     unsigned int Molecule::getNumRotatableBond() {
         return this->numberOfRotatableBonds;
     }
-
-
-
 
 
 }

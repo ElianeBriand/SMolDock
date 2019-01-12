@@ -149,8 +149,8 @@ namespace SmolDock {
         double vina_like_rigid_inter_scoring_func(const iConformer &ligand, const iTransform &transform,
                                                   const iProtein &protein) {
 
-            assert(ligand.x.size() != 0);
-            assert(protein.x.size() != 0);
+            assert(!ligand.x.empty());
+            assert(!protein.x.empty());
             assert(std::abs(quaternionNorm(transform.rota) - 1) < 0.01);
 
 

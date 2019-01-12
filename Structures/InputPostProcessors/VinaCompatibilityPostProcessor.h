@@ -10,13 +10,17 @@
 namespace SmolDock::InputPostProcessor {
 
 
-    class VinaCompatibilityPostProcessor : public InputPostProcessor{
+    class VinaCompatibilityPostProcessor : public InputPostProcessor {
 
     public:
         VinaCompatibilityPostProcessor() = default;
 
-        void processAtomFromLigand(SmolDock::Atom& atom) final;
-        void processAtomFromProtein(SmolDock::Atom& atom, SmolDock::AminoAcid& residue) final;
+        void processAtomFromLigand(SmolDock::Atom &atom) final;
+
+        void processAtomFromProtein(SmolDock::Atom &atom, SmolDock::AminoAcid &residue) final;
+
+        ~VinaCompatibilityPostProcessor() final = default;
+
     private:
 
     };

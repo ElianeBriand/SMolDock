@@ -1,7 +1,7 @@
 var searchData=
 [
   ['scoreforatomcouple',['scoreForAtomCouple',['../namespace_smol_dock_1_1_score.html#ac23b7d24b31779cc5cd7d8bd4006fa52',1,'SmolDock::Score']]],
-  ['scoringfunctionfactory',['scoringFunctionFactory',['../namespace_smol_dock_1_1_score.html#af914f3a629ac463d825d7cc7b1ec95cd',1,'SmolDock::Score']]],
+  ['scoringfunctionfactory',['scoringFunctionFactory',['../namespace_smol_dock_1_1_score.html#acda93ea4444f7dacda77b03c0b278336',1,'SmolDock::Score']]],
   ['search',['search',['../class_smol_dock_1_1_heuristics_1_1_global_heuristic.html#acd4f8bbe6334ba93dcd4ea1d2a8c0d38',1,'SmolDock::Heuristics::GlobalHeuristic::search()'],['../class_smol_dock_1_1_heuristics_1_1_random_restart.html#abfa7882757c070d876d94090520cef92',1,'SmolDock::Heuristics::RandomRestart::search()']]],
   ['setaaid',['setAAId',['../class_smol_dock_1_1_amino_acid.html#a091349e13f56cc9d28701dcfe8e30d45',1,'SmolDock::AminoAcid']]],
   ['setatomicradius',['setAtomicRadius',['../class_smol_dock_1_1_atom.html#aba38aa3f004111483f078e97b8e34bd6',1,'SmolDock::Atom']]],

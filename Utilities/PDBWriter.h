@@ -24,7 +24,7 @@ namespace SmolDock {
         /*!
          * \param ligand Ligand
         */
-        void addLigand(const Molecule& ligand);
+        void addLigand(const Molecule &ligand);
 
         //! Write the added ligand to filename
         /*!

@@ -18,5 +18,4 @@ namespace SmolDock::Optimizer {
 }
 
 
-
 #endif //SMOLDOCK_LOCALOPTIMIZERUTILITYFUNCTIONS_H

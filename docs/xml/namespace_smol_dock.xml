@@ -99,8 +99,8 @@
         <references refid="struct_smol_dock_1_1i_translation_1a74a60efc8b2463b7ea1ca1e824a4ed28" compoundref="i_transform_8h" startline="36">SmolDock::iTranslation::x</references>
         <references refid="struct_smol_dock_1_1i_translation_1a5362a54675ecc6bac99325c69521fbb5" compoundref="i_transform_8h" startline="36">SmolDock::iTranslation::y</references>
         <references refid="struct_smol_dock_1_1i_translation_1a2ed07fcfc129a2bf7696b65d481317c5" compoundref="i_transform_8h" startline="36">SmolDock::iTranslation::z</references>
-        <referencedby refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a7bee39278168cb4d7ee6558b3a3d3bb4" compoundref="_conformer_rigid_docking_engine_8cpp" startline="132" endline="217">SmolDock::Engine::ConformerRigidDockingEngine::runDockingEngine</referencedby>
-        <referencedby refid="main_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4" compoundref="main_8cpp" startline="45" endline="154">main</referencedby>
+        <referencedby refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a7bee39278168cb4d7ee6558b3a3d3bb4" compoundref="_conformer_rigid_docking_engine_8cpp" startline="135" endline="224">SmolDock::Engine::ConformerRigidDockingEngine::runDockingEngine</referencedby>
+        <referencedby refid="main_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4" compoundref="main_8cpp" startline="45" endline="155">main</referencedby>
         <referencedby refid="class_smol_dock_1_1_re_scorer_1a4f372ac345e57254d9b00672f169d2fd" compoundref="_re_scorer_8cpp" startline="25" endline="27">SmolDock::ReScorer::getScore</referencedby>
       </memberdef>
       <memberdef kind="function" id="namespace_smol_dock_1a835c8bf0a7983ba17c48cd10f152726f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
@@ -349,7 +349,7 @@
         <references refid="struct_smol_dock_1_1i_quaternion_1a1ff0d5e99369aa47273864dfea352c05" compoundref="i_transform_8h" startline="26">SmolDock::iQuaternion::t</references>
         <references refid="struct_smol_dock_1_1i_quaternion_1a3692d71434fede9771686a73240e6ba7" compoundref="i_transform_8h" startline="26">SmolDock::iQuaternion::u</references>
         <references refid="struct_smol_dock_1_1i_quaternion_1a97a15d15b2fae3ec29c2fdb2388f5e5b" compoundref="i_transform_8h" startline="26">SmolDock::iQuaternion::v</references>
-        <referencedby refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a7bee39278168cb4d7ee6558b3a3d3bb4" compoundref="_conformer_rigid_docking_engine_8cpp" startline="132" endline="217">SmolDock::Engine::ConformerRigidDockingEngine::runDockingEngine</referencedby>
+        <referencedby refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a7bee39278168cb4d7ee6558b3a3d3bb4" compoundref="_conformer_rigid_docking_engine_8cpp" startline="135" endline="224">SmolDock::Engine::ConformerRigidDockingEngine::runDockingEngine</referencedby>
         <referencedby refid="namespace_smol_dock_1addb7785924a5380574728cfd0978d8f0" compoundref="_internals_utility_functions_8h" startline="124" endline="128">normalizeQuaternion</referencedby>
         <referencedby refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1ab89f08da2f4f79abfe9130b3593c3522" compoundref="_vina_like_scoring_function_8cpp" startline="225" endline="234">SmolDock::Score::VinaLikeRigidScoringFunction::Evaluate</referencedby>
         <referencedby refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1a574511b3c12769902e2c0366d4d3db96" compoundref="_vina_like_scoring_function_8cpp" startline="236" endline="294">SmolDock::Score::VinaLikeRigidScoringFunction::EvaluateWithGradient</referencedby>
@@ -408,7 +408,7 @@
         </inbodydescription>
         <location file="Structures/AminoAcid.cpp" line="77" column="1" bodyfile="Structures/AminoAcid.cpp" bodystart="77" bodyend="91"/>
         <references refid="class_smol_dock_1_1_amino_acid_1a23b1781c86be2991e2f668c07ad78d68" compoundref="_amino_acid_8h" startline="96">SmolDock::AminoAcid::AAShorthandSet</references>
-        <referencedby refid="class_smol_dock_1_1_protein_1ab28029d0d4fcf11088a32a132667b78c" compoundref="_protein_8cpp" startline="41" endline="201">SmolDock::Protein::populateFromPDB</referencedby>
+        <referencedby refid="class_smol_dock_1_1_protein_1a726524247169022a4dfc1328753e39b3" compoundref="_protein_8cpp" startline="41" endline="201">SmolDock::Protein::populateFromPDB</referencedby>
       </memberdef>
       <memberdef kind="function" id="namespace_smol_dock_1adc50d67bf7b33de8b30d90f97c25fb24" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>std::string</type>
@@ -533,7 +533,7 @@
         <references refid="namespace_smol_dock_1a1c9575126d6be4889918032116fd8add" compoundref="_p_d_b_residue_variant_table_8cpp" startline="18">ResidueAtomPropertiesLookupTable_General</references>
         <references refid="namespace_smol_dock_1a7980070f5c494cfe044ad9e90e34e3e3" compoundref="_amino_acid_8cpp" startline="65" endline="75">resTypeToString</references>
         <references refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875daad921d60486366258809553a3db49a4a">SmolDock::AminoAcid::unknown</references>
-        <referencedby refid="class_smol_dock_1_1_protein_1ab28029d0d4fcf11088a32a132667b78c" compoundref="_protein_8cpp" startline="41" endline="201">SmolDock::Protein::populateFromPDB</referencedby>
+        <referencedby refid="class_smol_dock_1_1_protein_1a726524247169022a4dfc1328753e39b3" compoundref="_protein_8cpp" startline="41" endline="201">SmolDock::Protein::populateFromPDB</referencedby>
       </memberdef>
       <memberdef kind="function" id="namespace_smol_dock_1a43bbd3ed0ad4b1eec9e5ae8d9d99318d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -554,7 +554,7 @@
         <references refid="class_smol_dock_1_1_atom_1a77191f0919af58d733764e229cb1f973ae5e437761e40c78a4c0929be07a3ab04">SmolDock::Atom::apolar</references>
         <references refid="class_smol_dock_1_1_atom_1a57e9a532fd04e1846c0d83edebb9fd41ae1b832c8857262f1089376030b4298b3">SmolDock::Atom::carbon</references>
         <references refid="class_smol_dock_1_1_atom_1a57e9a532fd04e1846c0d83edebb9fd41ad4ac1478a4d8a4f591d35e3d75f3de65">SmolDock::Atom::hydrogen</references>
-        <referencedby refid="class_smol_dock_1_1_molecule_1a2bb03cc6894518ac8208ddff1556d6c3" compoundref="_molecule_8cpp" startline="169" endline="318">SmolDock::Molecule::populateInternalAtomAndBondFromRWMol</referencedby>
+        <referencedby refid="class_smol_dock_1_1_molecule_1a919f8706ff2f2beb3f7bf8d53f4c3f96" compoundref="_molecule_8cpp" startline="169" endline="318">SmolDock::Molecule::populateInternalAtomAndBondFromRWMol</referencedby>
       </memberdef>
       <memberdef kind="function" id="namespace_smol_dock_1af232b04c4eb1c52a6ebea14bb1056be0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -593,7 +593,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="Utilities/PDBLigandUtils.cpp" line="11" column="1" bodyfile="Utilities/PDBLigandUtils.cpp" bodystart="11" bodyend="139"/>
-        <referencedby refid="class_smol_dock_1_1_molecule_1ac4d8ee94aeb7bd75e50a11ece1546b79" compoundref="_molecule_8cpp" startline="137" endline="158">SmolDock::Molecule::populateFromPDB</referencedby>
+        <referencedby refid="class_smol_dock_1_1_molecule_1a9e3ef6b361a98cfbac69b11979d886da" compoundref="_molecule_8cpp" startline="137" endline="158">SmolDock::Molecule::populateFromPDB</referencedby>
       </memberdef>
       </sectiondef>
     <briefdescription>

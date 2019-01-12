@@ -33,6 +33,8 @@ namespace SmolDock::Optimizer {
         virtual arma::mat getRawResultMatrix() = 0;
 
         virtual double getScore() = 0;
+
+        virtual ~Optimizer() = default;
     };
 
 }

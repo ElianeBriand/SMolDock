@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['optimizer',['optimizer',['../class_smol_dock_1_1_heuristics_1_1_random_restart.html#a9ef6527f103d63ff12abae06b97fad9c',1,'SmolDock::Heuristics::RandomRestart']]],
-  ['orig_5fligand',['orig_ligand',['../class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine.html#af3d543e92676f9d66a5a3d0ccc0cd5a9',1,'SmolDock::Engine::ConformerRigidDockingEngine']]],
-  ['orig_5fprotein',['orig_protein',['../class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine.html#adc3f28b5b4af09c54eb73d9f445dbd2d',1,'SmolDock::Engine::ConformerRigidDockingEngine']]],
-  ['owningaa',['owningAA',['../class_smol_dock_1_1_atom.html#a41d894e0b89dfd6e28514617a4a16ecf',1,'SmolDock::Atom']]]
+  ['nextatomid',['nextAtomID',['../class_smol_dock_1_1_atom.html#a699bf43dba89827d43019464a2a1507e',1,'SmolDock::Atom']]],
+  ['nextbondid',['nextBondID',['../class_smol_dock_1_1_bond.html#acb9a24240df4164e4840611d7df39962',1,'SmolDock::Bond']]],
+  ['num_5frotatable_5fbond',['num_rotatable_bond',['../namespace_smol_dock.html#aabef94f550eef03cf2d4304df78cf403',1,'SmolDock::iConformer']]],
+  ['numberofrotatablebonds',['numberOfRotatableBonds',['../class_smol_dock_1_1_molecule.html#a7295fbcc507a2d0c8acca492393117bb',1,'SmolDock::Molecule']]]
 ];
