@@ -52,7 +52,7 @@ namespace SmolDock::Optimizer {
         this->result = startingPoint;
         this->score = this->scoringFunction->Evaluate(startingPoint);
 
-        ///*
+        //*
         BOOST_LOG_TRIVIAL(debug) << "LBFGS: x =  " << startingPoint.t();
         BOOST_LOG_TRIVIAL(debug) << "LBFGS: f(x) =  " << this->score;
         //*/

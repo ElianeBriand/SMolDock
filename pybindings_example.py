@@ -3,9 +3,14 @@ import os
 import sys
 
 sys.path.insert(0, os.getcwd() + "/cmake-build-debug")
+sys.path.insert(0, "/home/eliane/Projects/rdkit-withPyBinding/RDKit_build/install/")
 ##
 
+
+
 import PySmolDock as sd
+from rdkit import Chem
+from rdkit.Chem import AllChem
 
 # We can just import PDB file (Post processor is optional)
 receptor = sd.Protein();
@@ -22,13 +27,12 @@ mol1.populateFromPDB("./DockingTests/COX2_Ibuprofen/VINA_Cox2_BestRes.pdb",
                      120,  # Seed for random number generator (important to keep for reproducibility)
                      vinaPP)
 
-vinaRawScore = sd.getScoringFunc(sd.ScoringFuncType.VinaLike)
-resc = sd.ReScorer(receptor, mol1, vinaRawScore)
-resc.prepare()
-a = resc.getScore()
-print("score :" + str(a))
 
-cdengine = sd.Engine.ConformerRigidDockingEngine(10,
+m2 = mol1.getRDKitMol()
+print(m2)
+
+
+cdengine = sd.Engine.ConformerRigidDockingEngine(1,
                                                  receptor,
                                                  mol1,
                                                  sd.ScoringFunctionType.VinaRigid,
@@ -38,3 +42,8 @@ cdengine = sd.Engine.ConformerRigidDockingEngine(10,
 
 cdengine.setupDockingEngine();
 cdengine.runDockingEngine();
+
+dockRes = cdengine.getDockingResult();
+
+for mol in dockRes.ligandPoses:
+    print(Chem.MolToSmiles(mol.getRDKitMol()))

@@ -22,16 +22,18 @@
 #include <boost/python.hpp>
 #include <boost/numpy.hpp>
 
+#include "Python/PySTLWrapper.h"
+#include "Python/PyStructures.h"
+#include "Python/PyUtilities.h"
+#include "Python/PyEngine.h"
+
+#undef BOOST_LOG
 #include <boost/log/core.hpp>
 #include <boost/log/trivial.hpp>
 #include <boost/log/expressions.hpp>
 #include <boost/log/utility/setup/console.hpp>
 
-#include "Python/PySTLWrapper.h"
-#include "Python/PyStructures.h"
-#include "Python/PyUtilities.h"
-#include "Python/PyScoringFunctions.h"
-#include "Python/PyEngine.h"
+
 
 namespace p = boost::python;
 namespace np = boost::numpy;
@@ -65,13 +67,12 @@ BOOST_PYTHON_MODULE (PySmolDock) {
     });
 
 
-    Py_Initialize();
-    np::initialize();
+    //Py_Initialize();
+    //np::initialize();
 
     export_STLWrapper();
     export_Structures();
     export_Utilities();
-    export_ScoringFunctions();
     export_Engines();
 
 

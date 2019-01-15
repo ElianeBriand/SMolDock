@@ -36,23 +36,25 @@ namespace np = boost::numpy;
 
 namespace sd = SmolDock;
 
+namespace SmolDock::Wrapper {
 
-std::vector<std::shared_ptr<sd::InputPostProcessor::InputPostProcessor> > getVinaPostProcessorsVector() {
-    auto vinaPP = std::make_shared<sd::InputPostProcessor::VinaCompatibilityPostProcessor>();
-    std::vector<std::shared_ptr<sd::InputPostProcessor::InputPostProcessor> > postProcessors;
-    postProcessors.push_back(vinaPP);
-    return postProcessors;
+    std::vector<std::shared_ptr<sd::InputPostProcessor::InputPostProcessor> > getVinaPostProcessorsVector() {
+        auto vinaPP = std::make_shared<sd::InputPostProcessor::VinaCompatibilityPostProcessor>();
+        std::vector<std::shared_ptr<sd::InputPostProcessor::InputPostProcessor> > postProcessors;
+        postProcessors.push_back(vinaPP);
+        return postProcessors;
+    }
+
 }
-
 
 void export_STLWrapper() {
     p::class_<std::vector<double> >("DoubleVect")
             .def(p::vector_indexing_suite<std::vector<double> >());
 
     p::class_<std::vector<sd::Molecule> >("MoleculeVect")
-        // .def(p::vector_indexing_suite<std::vector<sd::Molecule> >()) // We need Molecule::operator== to use this
+        .def(p::vector_indexing_suite<std::vector<sd::Molecule> >()) // We need Molecule::operator== to use this
             ;
 
     p::class_<std::vector<std::shared_ptr<sd::InputPostProcessor::InputPostProcessor> > >("PostProcessorsVector");
-    p::def("getVinaPostProcessorsVector", getVinaPostProcessorsVector);
+    p::def("getVinaPostProcessorsVector", sd::Wrapper::getVinaPostProcessorsVector);
 }

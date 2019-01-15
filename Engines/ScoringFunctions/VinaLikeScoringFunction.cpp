@@ -317,6 +317,8 @@ namespace SmolDock {
             assert(x.n_rows == 7);
 
             iTransform tr = this->internalToExternalRepr(x);
+            normalizeQuaternionInPlace(tr.rota); //!< Note that the internal representation arma::mat is not by itself normalized
+                                                 //! (because we always normalize it in the scoring function, so no constraint)
 
             iConformer ret = this->startingConformation;
             applyTransformInPlace(ret, tr);

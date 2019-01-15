@@ -16,10 +16,6 @@ namespace SmolDock::Heuristics {
     RandomRestart::RandomRestart(Score::ScoringFunction* scorFunc_, Optimizer::Optimizer* optimizer_,
                                  unsigned int seed_) :
             scorFunc(scorFunc_), optimizer(optimizer_), rnd_generator(seed_) {
-        BOOST_LOG_TRIVIAL(debug) << "RandomRestart:seed " << seed_;
-        std::uniform_real_distribution<double> dis_real_position(-100.0, 100.0);
-        BOOST_LOG_TRIVIAL(debug) << "RandomRestart:GenNbr :  " << dis_real_position(this->rnd_generator);
-
 
     }
 

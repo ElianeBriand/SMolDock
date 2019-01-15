@@ -74,10 +74,6 @@ namespace SmolDock {
                 localOptimizerType(localOptimizerType_),
                 rnd_generator(seed) {
 
-            BOOST_LOG_TRIVIAL(debug) << "ConformerRigidDockingEngine:seed " << seed;
-            std::uniform_real_distribution<double> dis_real_position(-100.0, 100.0);
-            BOOST_LOG_TRIVIAL(debug) << "ConformerRigidDockingEngine:GenNbr :  "
-                                     << dis_real_position(this->rnd_generator);
 
             scores.reserve(this->conformer_num);
             final_iConformer.reserve(this->conformer_num);

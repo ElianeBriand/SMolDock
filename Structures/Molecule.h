@@ -46,6 +46,10 @@
 #include "Bond.h"
 #include "../Engines/Internals/iConformer.h"
 
+
+
+
+
 namespace SmolDock {
 
     /*!
@@ -53,11 +57,11 @@ namespace SmolDock {
      *
      */
     class Molecule : Structure {
+
         friend class MoleculeTraversal;
-
         friend class UnitTestHelper;
-
         friend class PDBWriter;
+
 
     public:
         Molecule();
@@ -165,11 +169,20 @@ namespace SmolDock {
         unsigned int getNumRotatableBond();
 
 
+        bool operator==(const Molecule& rhs) const;
+        bool operator!=(const Molecule& rhs) const;
+
     private:
+
+        static unsigned int LastMolID;
+        unsigned int molID;
+
         std::vector<std::shared_ptr<Atom> > atoms;
         std::vector<std::shared_ptr<Bond> > bonds;
 
+    public:
         std::shared_ptr<RDKit::RWMol> rwmol;
+    private:
         std::string smiles;
 
 
@@ -186,6 +199,8 @@ namespace SmolDock {
 
 
         unsigned int numberOfRotatableBonds = 0;
+
+        unsigned int updatedConformerID = 0;
     };
 
 }

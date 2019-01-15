@@ -21,6 +21,10 @@
 #ifndef SMOLDOCK_PYSTRUCTURES_H
 #define SMOLDOCK_PYSTRUCTURES_H
 
+#include <GraphMol/RWMol.h>
+
+
 void export_Structures();
+
 
 #endif //SMOLDOCK_PYSTRUCTURES_H

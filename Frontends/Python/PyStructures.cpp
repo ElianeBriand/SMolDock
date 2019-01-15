@@ -18,6 +18,8 @@
  *
  */
 
+#include <memory>
+
 #include <boost/python.hpp>
 #include <boost/numpy.hpp>
 
@@ -39,6 +41,19 @@ BOOST_PYTHON_MEMBER_FUNCTION_OVERLOADS(generateConformer_overloads, sd::Molecule
 BOOST_PYTHON_MEMBER_FUNCTION_OVERLOADS(prot_populateFromPDB_overloads, sd::Protein::populateFromPDB, 1, 2)
 
 
+// Remember, kids : Any function added to a class whose initial argument matches the class (or any base) will act like a member function in Python.
+// Aka definging f(MyClass*, arg1, arg2,) allow you to easily patch-in python-specific member function without altering the C++ class (just adding friend functions)
+
+namespace SmolDock::Wrapper {
+
+    RDKit::ROMol* pywrap_returnROMolFromMol(const SmolDock::Molecule& mol)
+        {
+        auto ret = new RDKit::ROMol(static_cast<RDKit::ROMol>(*mol.rwmol));
+            return ret;
+        }
+
+}
+
 void export_Structures() {
     p::class_<sd::Molecule>("Molecule")
             .def("populateFromPDB", &sd::Molecule::populateFromPDB, populateFromPDB_overloads())
@@ -50,6 +65,7 @@ void export_Structures() {
             .add_property("residueName", &sd::Molecule::getResidueName, &sd::Molecule::setResidueName)
             .def("updateAtomPositionsFromiConformer", &sd::Molecule::updateAtomPositionsFromiConformer)
             .def("deepcopy", &sd::Molecule::deepcopy)
+            .def("getRDKitMol", &sd::Wrapper::pywrap_returnROMolFromMol,p::return_value_policy<p::manage_new_object>())
         //.def("populateFromPDB", &sd::Molecule::populateFromPDB)
         //.def("set", &World::set)
         //.add_property("rovalue", &Num::get)
@@ -79,7 +95,7 @@ void export_Structures() {
             .def("populateFromPDB", &sd::Protein::populateFromPDB, prot_populateFromPDB_overloads())
             .def("getiProtein", &sd::Protein::getiProtein);
 
-    p::class_<sd::DockingResult>("DockingResult")
+    p::class_<sd::DockingResult, std::shared_ptr<sd::DockingResult> >("DockingResult")
             .def_readwrite("ligandPoses", &sd::DockingResult::ligandPoses);
 
 

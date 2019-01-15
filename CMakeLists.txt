@@ -114,8 +114,6 @@ set(PY_EXPORT_SOURCE_LIST Frontends/Python/PyStructures.cpp
         Frontends/Python/PySTLWrapper.h
         Frontends/Python/PyUtilities.cpp
         Frontends/Python/PyUtilities.h
-        Frontends/Python/PyScoringFunctions.cpp
-        Frontends/Python/PyScoringFunctions.h
         Frontends/Python/PyEngine.cpp
         Frontends/Python/PyEngine.h)
 

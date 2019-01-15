@@ -56,6 +56,7 @@ void export_Engines() {
         >())
                 .def("setupDockingEngine", &sd::Engine::ConformerRigidDockingEngine::setupDockingEngine)
                 .def("runDockingEngine", &sd::Engine::ConformerRigidDockingEngine::runDockingEngine)
+                .def("getDockingResult", &sd::Engine::ConformerRigidDockingEngine::getDockingResult)
             /*   .def("populateFromPDB", &sd::Molecule::populateFromPDB, populateFromPDB_overloads())
                .def("populateFromSMILES", &sd::Molecule::populateFromSMILES, populateFromSMILES_overloads())
                .add_property("numberOfAtoms", &sd::Molecule::numberOfAtoms)

@@ -46,7 +46,12 @@
 
 namespace SmolDock {
 
-    Molecule::Molecule() = default;
+    Molecule::Molecule() {
+        Molecule::LastMolID++;
+        this->molID = LastMolID;
+    };
+
+
 
 
     bool Molecule::populateFromSMILES(const std::string &smiles, unsigned int seed,
@@ -320,13 +325,16 @@ namespace SmolDock {
     }
 
     bool Molecule::updateAtomPositionsFromiConformer(const iConformer &conformer) {
-
+        auto first_conformer = rwmol->beginConformers();
+        RDKit::Conformer* newconformer = new RDKit::Conformer(**first_conformer);
         for (int i = 0; i < atoms.size(); ++i) {
             atoms[i]->setAtomPosition(
                     std::make_tuple(conformer.x[i], conformer.y[i], conformer.z[i])
             );
+            newconformer->setAtomPos(i,{conformer.x[i], conformer.y[i], conformer.z[i]});
 
         }
+        this->updatedConformerID = rwmol->addConformer(newconformer,true);
 
         return true;
     }
@@ -457,6 +465,17 @@ namespace SmolDock {
 
     unsigned int Molecule::getNumRotatableBond() {
         return this->numberOfRotatableBonds;
+    }
+
+
+    unsigned int Molecule::LastMolID = 0;
+
+    bool Molecule::operator==(const Molecule &rhs) const {
+        return this->molID == molID;
+    }
+
+    bool Molecule::operator!=(const Molecule &rhs) const {
+        return !(*this == rhs);
     }
 
 

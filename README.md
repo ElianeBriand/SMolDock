@@ -46,6 +46,13 @@ in Docs/build/html.
 
 ## RDKit (linking with pre-built dynamic library)
 
+If you want to be able to export Molecule object to RDKit molecule class, you need to take care that the boost_python 
+library used for building RDKit, and SmolDock are exactly the same version (same exact .so version, even minor version number).
+Otherwise, the internal conversion will not work. Using a different minor version (.so.1.65.0 vs .so.1.65.1) mostly works,
+if you create the appropriate symbolic link, however subtle bug may be introduced (?).
+
+
+
 The main author does not rely on pre-built dynamic library shipped by distributions, because of linker
 problems that may or may not still exist. See next section for building static libs from source, else :
 
