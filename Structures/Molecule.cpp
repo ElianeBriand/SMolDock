@@ -193,6 +193,34 @@ namespace SmolDock {
         // We remove them afterward
         RDKit::MolOps::removeHs((*(this->rwmol)));
 
+        /*
+         * unknown = 0,
+            hydrogen = 1,
+
+            boron  = 5,
+            carbon = 6,
+            nitrogen = 7,
+            oxygen = 8,
+            fluorine = 9,
+
+            magnesium = 12,
+
+            silicon = 14,
+            phosporus = 15,
+            sulfur = 16,
+            chlorine = 17,
+
+            calcium = 20,
+
+            manganese = 25,
+            iron = 26,
+            cobalt = 27,
+
+            bromine = 35,
+
+
+            iodine = 53
+         * */
 
         for (auto atom_it = rwmol->beginAtoms(); atom_it != rwmol->endAtoms(); ++atom_it) {
             std::shared_ptr<Atom> current_atom;
@@ -200,6 +228,9 @@ namespace SmolDock {
             switch ((*atom_it)->getAtomicNum()) {
                 case 1:
                     current_atom = std::make_shared<Atom>(Atom::AtomType::hydrogen, (*atom_it)->getIdx());
+                    break;
+                case 5:
+                    current_atom = std::make_shared<Atom>(Atom::AtomType::boron, (*atom_it)->getIdx());
                     break;
                 case 6:
                     current_atom = std::make_shared<Atom>(Atom::AtomType::carbon, (*atom_it)->getIdx());
@@ -209,6 +240,42 @@ namespace SmolDock {
                     break;
                 case 8:
                     current_atom = std::make_shared<Atom>(Atom::AtomType::oxygen, (*atom_it)->getIdx());
+                    break;
+                case 9:
+                    current_atom = std::make_shared<Atom>(Atom::AtomType::fluorine, (*atom_it)->getIdx());
+                    break;
+                case 12:
+                    current_atom = std::make_shared<Atom>(Atom::AtomType::magnesium, (*atom_it)->getIdx());
+                    break;
+                case 14:
+                    current_atom = std::make_shared<Atom>(Atom::AtomType::silicon, (*atom_it)->getIdx());
+                    break;
+                case 15:
+                    current_atom = std::make_shared<Atom>(Atom::AtomType::phosporus, (*atom_it)->getIdx());
+                    break;
+                case 16:
+                    current_atom = std::make_shared<Atom>(Atom::AtomType::sulfur, (*atom_it)->getIdx());
+                    break;
+                case 17:
+                    current_atom = std::make_shared<Atom>(Atom::AtomType::chlorine, (*atom_it)->getIdx());
+                    break;
+                case 20:
+                    current_atom = std::make_shared<Atom>(Atom::AtomType::calcium, (*atom_it)->getIdx());
+                    break;
+                case 25:
+                    current_atom = std::make_shared<Atom>(Atom::AtomType::manganese, (*atom_it)->getIdx());
+                    break;
+                case 26:
+                    current_atom = std::make_shared<Atom>(Atom::AtomType::iron, (*atom_it)->getIdx());
+                    break;
+                case 27:
+                    current_atom = std::make_shared<Atom>(Atom::AtomType::cobalt, (*atom_it)->getIdx());
+                    break;
+                case 35:
+                    current_atom = std::make_shared<Atom>(Atom::AtomType::bromine, (*atom_it)->getIdx());
+                    break;
+                case 53:
+                    current_atom = std::make_shared<Atom>(Atom::AtomType::iodine, (*atom_it)->getIdx());
                     break;
                 default:
                     BOOST_LOG_TRIVIAL(error) << "Unsupported atom type";
@@ -471,7 +538,7 @@ namespace SmolDock {
     unsigned int Molecule::LastMolID = 0;
 
     bool Molecule::operator==(const Molecule &rhs) const {
-        return this->molID == molID;
+        return this->molID == rhs.molID;
     }
 
     bool Molecule::operator!=(const Molecule &rhs) const {

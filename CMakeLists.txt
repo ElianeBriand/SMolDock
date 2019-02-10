@@ -106,7 +106,7 @@ set(SOURCE_LIST Structures/Structure.cpp
         Engines/LocalOptimizers/OptimizerFactory.cpp
         Engines/LocalOptimizers/OptimizerFactory.h
         Engines/GlobalHeuristics/HeuristicFactory.cpp
-        Engines/GlobalHeuristics/HeuristicFactory.h)
+        Engines/GlobalHeuristics/HeuristicFactory.h Engines/PoseRefiner.cpp Engines/PoseRefiner.h Engines/GlobalHeuristics/OnlyLocal.cpp Engines/GlobalHeuristics/OnlyLocal.h)
 
 set(PY_EXPORT_SOURCE_LIST Frontends/Python/PyStructures.cpp
         Frontends/Python/PyStructures.h
@@ -132,8 +132,6 @@ target_compile_definitions(libsmoldock PUBLIC BOOST_LOG_DYN_LINK)
 target_compile_definitions(libsmoldock PUBLIC ARMA_DONT_USE_WRAPPER)
 
 
-### Remove this for prod build
-add_compile_definitions(SMOLDOCK_VERBOSE_DEBUG)
 
 # You need this if you do NOT generate a static executable
 #add_compile_definitions(BOOST_LOG_DYN_LINK BOOST_TEST_DYN_LINK)
@@ -149,6 +147,20 @@ TARGET_LINK_LIBRARIES(smoldock ${RDKIT_LINKAGE_LIST})
 target_link_libraries(smoldock boost_log boost_log_setup boost_system boost_log boost_system boost_filesystem boost_date_time boost_thread boost_regex pthread)
 target_link_libraries(smoldock Vc)
 target_link_libraries(smoldock blas lapack gfortran quadmath)
+
+
+
+add_executable(vina_refiner Frontends/vina_refiner.cpp $<TARGET_OBJECTS:smoldock_object>)
+#target_compile_definitions(smoldock PUBLIC BOOST_LOG_DYN_LINK)
+
+# Comment this out if you do NOT want to build a static executable
+set_target_properties(vina_refiner PROPERTIES LINK_FLAGS " -Wl,--no-undefined -Wl,--as-needed  -static   ")
+
+
+TARGET_LINK_LIBRARIES(vina_refiner ${RDKIT_LINKAGE_LIST})
+target_link_libraries(vina_refiner boost_log boost_program_options boost_log_setup boost_system boost_log boost_system boost_filesystem boost_date_time boost_thread boost_regex pthread)
+target_link_libraries(vina_refiner Vc)
+target_link_libraries(vina_refiner blas lapack gfortran quadmath)
 
 
 # For Intel VTune/Profiler tools, you need this if you generate a static executable
@@ -179,6 +191,19 @@ target_link_libraries(PySmolDock -Wl,-Bdynamic -Wl,-lpthread -Wl,-ldl)
 
 target_compile_definitions(PySmolDock PUBLIC BOOST_LOG_DYN_LINK)
 target_compile_definitions(PySmolDock PUBLIC ARMA_DONT_USE_WRAPPER)
+
+
+### Remove this for prod build
+
+IF(CMAKE_BUILD_TYPE MATCHES DEBUG)
+    target_compile_definitions(libsmoldock PUBLIC SMOLDOCK_VERBOSE_DEBUG)
+    target_compile_definitions(smoldock PUBLIC SMOLDOCK_VERBOSE_DEBUG)
+    target_compile_definitions(vina_refiner PUBLIC SMOLDOCK_VERBOSE_DEBUG)
+    target_compile_definitions(PySmolDock PUBLIC SMOLDOCK_VERBOSE_DEBUG)
+    target_compile_definitions(smoldock_object PUBLIC SMOLDOCK_VERBOSE_DEBUG)
+ENDIF(CMAKE_BUILD_TYPE MATCHES DEBUG)
+
+
 
 
 ###############################################################################################################

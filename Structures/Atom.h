@@ -67,13 +67,29 @@ namespace SmolDock {
             unknown = 0,
             hydrogen = 1,
 
+            boron  = 5,
             carbon = 6,
-            oxygen = 8,
             nitrogen = 7,
+            oxygen = 8,
+            fluorine = 9,
 
+            magnesium = 12,
+
+            silicon = 14,
             phosporus = 15,
             sulfur = 16,
-            chlorine = 17
+            chlorine = 17,
+
+            calcium = 20,
+
+            manganese = 25,
+            iron = 26,
+            cobalt = 27,
+
+            bromine = 35,
+
+
+            iodine = 53
         };
 
         enum class AtomVariant : unsigned int {

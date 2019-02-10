@@ -25,8 +25,31 @@ vinaPP = sd.getVinaPostProcessorsVector()  # Enhanced similarity to Vina behavio
 receptor.populateFromPDB("./DockingTests/COX2_Ibuprofen/4PH9_COX2_without_Ibuprofen.pdb", vinaPP)
 ```
 
+## Input post processors
+
+These objects allow the exact reproduction of specific behaviour of various program. For example, the Vina post processors
+make it so cysteine sulfur are not considered hydrogen bond acceptor, a behaviour of the vina program (whereas SmolDock consider it so by default).
+
+If you need to closely emmulate atom typing behaviour, you may want to use/write input post processors.
 
 # Importing ligand
+
+```python
+# For ligand, we have many option, like populateFromSMILES.
+# This shows importing from PDB
+# (due to limitation of the PDB format, smiles is needed for corrent bond order)
+# As above, post processor (vinaPP) is not mandatory
+mol1 = sd.Molecule()
+mol1.populateFromPDB("./DockingTests/COX2_Ibuprofen/VINA_Cox2_BestRes.pdb",
+                     "CC(C)Cc1ccc(cc1)[C@H](C)C(=O)O",  # SMILES hint for bond order
+                     120,  # Seed for random number generator (important to keep for reproducibility)
+                     vinaPP)
+```
+
+We can also ```mol1.populateFromSMILES(string smiles)``` but we then rely on RDKit conformer generator for starting 3D conformation.
+This may or may not be fine for you application. Importing from PDB allow you to specify exact starting 3D coordinate.
+
+
 
 # Export ligand as RDKit molecule
 
@@ -54,7 +77,7 @@ Mostly you can ignore this. It may occur when loading other boost_python module 
 wich allow interoperability (SmolDock can create python RDKit object from C++ RDKit object) but leads to conflicts as bindings
 for common STL containers are contained in both python module.
 
-# No python class registered for ...
+## No python class registered for ...
 ```
 TypeError: No Python class registered for C++ class RDKit::ROMol
 ```

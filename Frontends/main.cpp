@@ -22,18 +22,19 @@
 #include <memory>
 
 
-#include "Structures/Molecule.h"
-#include "Structures/Protein.h"
-#include "Utilities/DockingResultPrinter.h"
-#include "Engines/ConformerRigidDockingEngine.h"
-#include "Engines/ScoringFunctions/VinaLikeScoringFunction.h"
-#include <Engines/Internals/InternalsUtilityFunctions.h>
 
 
 #include <boost/log/core.hpp>
 #include <boost/log/trivial.hpp>
 #include <boost/log/expressions.hpp>
 #include <boost/log/utility/setup/console.hpp>
+
+#include "Structures/Molecule.h"
+#include "Structures/Protein.h"
+#include "Utilities/DockingResultPrinter.h"
+#include "Engines/ConformerRigidDockingEngine.h"
+#include "Engines/ScoringFunctions/VinaLikeScoringFunction.h"
+#include <Engines/Internals/InternalsUtilityFunctions.h>
 
 #include <Utilities/IntermediateConformerCollector.h>
 #include <Structures/InputPostProcessors/VinaCompatibilityPostProcessor.h>

@@ -58,7 +58,6 @@
 namespace SmolDock {
     namespace Engine {
 
-
         ConformerRigidDockingEngine::ConformerRigidDockingEngine(unsigned int conformer_num_,
                                                                  Protein* protein,
                                                                  Molecule* ligand,
@@ -192,10 +191,13 @@ namespace SmolDock {
                 record_timings(end_docking_this_conformer);
 
                 acc_score(score);
+
+#ifdef SMOLDOCK_VERBOSE_DEBUG
                 acc_duration(
                         static_cast< std::chrono::duration<double> >(end_docking_this_conformer -
                                                                      begin_docking_this_conformer).count()
                 );
+#endif
 
             }
 

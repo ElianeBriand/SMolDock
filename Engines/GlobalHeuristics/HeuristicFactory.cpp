@@ -4,6 +4,7 @@
 
 #include "HeuristicFactory.h"
 #include "RandomRestart.h"
+#include "OnlyLocal.h"
 
 namespace SmolDock::Heuristics {
 
@@ -13,6 +14,8 @@ namespace SmolDock::Heuristics {
 
         if (t == GlobalHeuristicType::RandomRestart) {
             return std::make_shared<RandomRestart>(scorFunc, localOptimizer, rng_seed);
+        }else if (t == GlobalHeuristicType::OnlyLocal) {
+            return std::make_shared<OnlyLocal>(scorFunc, localOptimizer, rng_seed);
         } else {
             return nullptr;
         }

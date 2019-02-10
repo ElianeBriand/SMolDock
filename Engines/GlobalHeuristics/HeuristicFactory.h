@@ -15,7 +15,8 @@
 namespace SmolDock::Heuristics {
 
     enum class GlobalHeuristicType {
-        RandomRestart
+        RandomRestart,
+        OnlyLocal
     };
 
     std::shared_ptr<GlobalHeuristic> globalHeuristicFactory(GlobalHeuristicType t,
