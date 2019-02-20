@@ -12,10 +12,14 @@
 
 namespace SmolDock::Heuristics {
 
+
     class RandomRestart : public GlobalHeuristic {
     public:
 
-        RandomRestart(Score::ScoringFunction* scorFunc_, Optimizer::Optimizer* optimizer_, unsigned int seed_);
+        struct Parameters;
+
+        RandomRestart(Score::ScoringFunction *scorFunc_, Optimizer::Optimizer *optimizer_, unsigned int seed_,
+                      RandomRestart::Parameters params_);
 
         bool search() final;
 
@@ -23,13 +27,22 @@ namespace SmolDock::Heuristics {
 
         ~RandomRestart() final = default;
 
+
+        struct Parameters {
+
+            double proteinMaxRadius = 100.0;
+
+        };
+
     private:
         Score::ScoringFunction* scorFunc;
         Optimizer::Optimizer* optimizer;
 
-        std::mt19937 rnd_generator;
+        std::mt19937 rndGenerator;
 
         arma::mat result;
+
+        Parameters params;
 
     };
 

@@ -14,38 +14,37 @@ namespace SmolDock::Heuristics {
 
 
     RandomRestart::RandomRestart(Score::ScoringFunction* scorFunc_, Optimizer::Optimizer* optimizer_,
-                                 unsigned int seed_) :
-            scorFunc(scorFunc_), optimizer(optimizer_), rnd_generator(seed_) {
+                                 unsigned int seed_, RandomRestart::Parameters params_) :
+            scorFunc(scorFunc_), optimizer(optimizer_), rndGenerator(seed_), params(params_) {
 
     }
 
     bool RandomRestart::search() {
 
-        arma::mat startingCondition = scorFunc->getStartingConditions();
+        arma::mat currentState = scorFunc->getStartingConditions();
+        double score_ = scorFunc->Evaluate(currentState);
+        unsigned int restart_count = 0;
 
+        while (score_ == 0) {
+            restart_count++;
+            std::uniform_real_distribution<double> randomRestartDistribution(-this->params.proteinMaxRadius,
+                                                                             this->params.proteinMaxRadius); // TODO replace with protein max radius
 
-        double score_;
-        unsigned int iteration_count = 0;
-        while (true) {
-            score_ = scorFunc->Evaluate(startingCondition);
-            if (score_ == 0) {
-                std::uniform_real_distribution<double> dis_real_position(-100.0, 100.0);
-                for (unsigned int i = 0; i < startingCondition.n_rows; i++) {
-                    startingCondition[i] = dis_real_position(this->rnd_generator);
-                }
-                iteration_count++;
-                continue;
-            } else {
-                optimizer->optimize(startingCondition);
-                this->result = optimizer->getRawResultMatrix();
-                break;
+            for (unsigned int i = 0; i < currentState.n_rows; i++) {
+                currentState[i] = randomRestartDistribution(this->rndGenerator);
             }
+
+            score_ = scorFunc->Evaluate(currentState);
         }
 
-        BOOST_LOG_TRIVIAL(debug) << "RandomRestart: " << iteration_count << " restarts";
+        optimizer->optimize(currentState);
+        score_ = optimizer->getScore();
+        this->result = optimizer->getRawResultMatrix();
+
+        BOOST_LOG_TRIVIAL(debug) << "RandomRestart: " << restart_count << " restarts";
 
 
-        return false;
+        return true;
     }
 
     arma::mat RandomRestart::getResultMatrix() {

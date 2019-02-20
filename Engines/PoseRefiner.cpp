@@ -41,9 +41,13 @@ namespace SmolDock::Engine {
                                                 1e-5);
 
 
+        Heuristics::HeuristicParameters hParams = Heuristics::heuristicParametersFactory(
+                Heuristics::GlobalHeuristicType::OnlyLocal);
+
         this->globalHeuristic = globalHeuristicFactory(Heuristics::GlobalHeuristicType::OnlyLocal, this->scoringFunction.get(),
                                                        this->localOptimizer.get(),
-                                                       dis_uint(this->rnd_generator));
+                                                       dis_uint(this->rnd_generator),
+                                                       hParams);
 
 
 

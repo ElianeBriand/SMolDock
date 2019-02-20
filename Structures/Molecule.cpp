@@ -117,10 +117,13 @@ namespace SmolDock {
 
         viConformers.reserve(viConformers.capacity() + conformer_ids.size() + 1);
 
+/*
+
         unsigned int rdkit_first_conformer_id = (*(this->rwmol->beginConformers()))->getId();
         iConformer conformer_initial = this->generateIConformerForGivenRDKitConformerID(rdkit_first_conformer_id,
                                                                                         centroidNormalization);
         viConformers.push_back(conformer_initial);
+*/
 
         //* // FIXME : uncomment this after fixing scoring function, and remove the initial conformer
         for (int i : conformer_ids) {
@@ -394,7 +397,7 @@ namespace SmolDock {
     bool Molecule::updateAtomPositionsFromiConformer(const iConformer &conformer) {
         auto first_conformer = rwmol->beginConformers();
         RDKit::Conformer* newconformer = new RDKit::Conformer(**first_conformer);
-        for (int i = 0; i < atoms.size(); ++i) {
+        for (unsigned int i = 0; i < atoms.size(); ++i) {
             atoms[i]->setAtomPosition(
                     std::make_tuple(conformer.x[i], conformer.y[i], conformer.z[i])
             );

@@ -99,6 +99,7 @@ namespace SmolDock::Engine {
 
         std::vector<double> scores;
         std::vector<iConformer> final_iConformer;
+
     };
 
 }
