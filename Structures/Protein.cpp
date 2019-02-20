@@ -19,6 +19,7 @@
  */
 
 #include <memory>
+#include <cmath>
 #include <boost/log/trivial.hpp>
 
 #include <boost/accumulators/accumulators.hpp>
@@ -78,7 +79,7 @@ namespace SmolDock {
 
             using namespace boost::accumulators;
             accumulator_set<double, stats<tag::mean, tag::count, tag::min, tag::max> > acc_x, acc_y, acc_z;
-
+            accumulator_set<double, stats<tag::mean, tag::max> > acc_distance;
 
             //Iterate over all models in the first system
             for (ESBTL::Default_system::Models_iterator
@@ -132,7 +133,9 @@ namespace SmolDock {
 
                             current_atom->setAtomPosition(std::make_tuple(it_atm->x(), it_atm->y(), it_atm->z()));
 
-
+                            double distance = std::sqrt(
+                                    std::pow(it_atm->x(), 2) + std::pow(it_atm->y(), 2) + std::pow(it_atm->z(), 2));
+                            acc_distance(distance);
                             acc_x(it_atm->x());
                             acc_y(it_atm->y());
                             acc_z(it_atm->z());
@@ -168,6 +171,8 @@ namespace SmolDock {
                 this->max_x = max(acc_x);
                 this->max_y = max(acc_y);
                 this->max_z = max(acc_z);
+
+                this->max_distance_to_center = max(acc_distance);
 
 
                 BOOST_LOG_TRIVIAL(info) << "Loaded protein : " << filename << "\n    --> " << total_nb_model
@@ -249,6 +254,10 @@ namespace SmolDock {
         }
 
         return prot;
+    }
+
+    double Protein::getMaxRadius() const {
+        return this->max_distance_to_center;
     }
 
     Protein::Protein() = default;

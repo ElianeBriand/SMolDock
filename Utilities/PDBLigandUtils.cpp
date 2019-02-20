@@ -52,26 +52,26 @@ namespace SmolDock {
             // We make a copy on which we will remove all double bond/charges/... to compare
             std::shared_ptr<RDKit::RWMol> templatemol_plainstruct(new RDKit::RWMol(*templatemol));
             // Set all bonds to single, non-aromatic
-            for (int i = 0; i < mol->getNumBonds(); i++) {
+            for (unsigned int i = 0; i < mol->getNumBonds(); i++) {
                 auto bond = mol->getBondWithIdx(i);
                 bond->setIsAromatic(false);
                 bond->setBondType(RDKit::Bond::BondType::SINGLE);
             }
 
             // Also in templatemol_plainstruct
-            for (int i = 0; i < templatemol_plainstruct->getNumBonds(); i++) {
+            for (unsigned int i = 0; i < templatemol_plainstruct->getNumBonds(); i++) {
                 auto bond = templatemol_plainstruct->getBondWithIdx(i);
                 bond->setIsAromatic(false);
                 bond->setBondType(RDKit::Bond::BondType::SINGLE);
             }
 
             // Remove all charges
-            for (int i = 0; i < mol->getNumAtoms(); i++) {
+            for (unsigned int i = 0; i < mol->getNumAtoms(); i++) {
                 auto atom = mol->getAtomWithIdx(i);
                 atom->setFormalCharge(0);
             }
 
-            for (int i = 0; i < templatemol_plainstruct->getNumAtoms(); i++) {
+            for (unsigned int i = 0; i < templatemol_plainstruct->getNumAtoms(); i++) {
                 auto atom = templatemol_plainstruct->getAtomWithIdx(i);
                 atom->setFormalCharge(0);
             }
@@ -114,7 +114,7 @@ namespace SmolDock {
             bond_to_edit->setIsAromatic(template_bond->getIsAromatic());
         }
 
-        for (int i = 0; i < templatemol->getNumAtoms(); i++) {
+        for (unsigned int i = 0; i < templatemol->getNumAtoms(); i++) {
             auto template_atom = templatemol->getAtomWithIdx(i);
 
             int idx_atom_to_edit = std::get<1>(*(std::find_if(matches.begin(), matches.end(),

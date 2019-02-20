@@ -12,10 +12,14 @@
 
 namespace SmolDock::Heuristics {
 
+
     class OnlyLocal  : public GlobalHeuristic{
     public:
 
-        OnlyLocal(Score::ScoringFunction* scorFunc_, Optimizer::Optimizer* optimizer_, unsigned int seed_);
+        struct Parameters;
+
+        OnlyLocal(Score::ScoringFunction *scorFunc_, Optimizer::Optimizer *optimizer_, unsigned int seed_,
+                  OnlyLocal::Parameters params_);
 
         bool search() final;
 
@@ -23,6 +27,10 @@ namespace SmolDock::Heuristics {
 
         ~OnlyLocal() final = default;
 
+
+        struct Parameters {
+
+        };
     private:
         Score::ScoringFunction* scorFunc;
         Optimizer::Optimizer* optimizer;
@@ -30,6 +38,8 @@ namespace SmolDock::Heuristics {
         std::mt19937 rnd_generator;
 
         arma::mat result;
+
+        Parameters params;
     };
 
 }

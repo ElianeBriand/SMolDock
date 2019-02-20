@@ -169,19 +169,36 @@ namespace SmolDock {
                                                         this->scoringFunction.get(),
                                                         1e-3);
 
+                Heuristics::HeuristicParameters hParams = Heuristics::heuristicParametersFactory(heuristicType);
+
+                if (heuristicType == Heuristics::GlobalHeuristicType::IteratedLocalSearch) {
+                    double protRadius = this->orig_protein->getMaxRadius();
+                    std::get<Heuristics::IteratedLocalSearch::Parameters>(hParams).proteinMaxRadius = protRadius;
+                }
+
+                if (heuristicType == Heuristics::GlobalHeuristicType::RandomRestart) {
+                    double protRadius = this->orig_protein->getMaxRadius();
+                    std::get<Heuristics::RandomRestart::Parameters>(hParams).proteinMaxRadius = protRadius;
+                }
+
 
                 this->globalHeuristic = globalHeuristicFactory(heuristicType, this->scoringFunction.get(),
                                                                this->localOptimizer.get(),
-                                                               dis_uint(this->rnd_generator));
+                                                               dis_uint(this->rnd_generator),
+                                                               hParams
+                );
 
                 this->globalHeuristic->search();
 
                 auto rawResultMatrix = this->globalHeuristic->getResultMatrix();
                 double score = this->scoringFunction->Evaluate(rawResultMatrix);
+
+
                 iConformer result = this->scoringFunction->getConformerForParamMatrix(rawResultMatrix);
 
                 double direct_score = Score::vina_like_rigid_inter_scoring_func(conformer, starting_pos_tr,
                                                                                 this->protein);
+
                 BOOST_LOG_TRIVIAL(debug) << "Score after L-BFGS: " << score << " (from: " << direct_score << ")";
 
 

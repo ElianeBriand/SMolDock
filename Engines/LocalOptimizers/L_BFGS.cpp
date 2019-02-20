@@ -42,9 +42,9 @@ namespace SmolDock::Optimizer {
 
         ens::L_BFGS lbfgs;
         lbfgs.MaxIterations() = this->maxIteration;
-        lbfgs.MinGradientNorm() = 1e-5;
-        lbfgs.Factr() = 1e-6;
-        lbfgs.MinStep() = 1e-7;
+        lbfgs.MinGradientNorm() = 1e-4;
+        lbfgs.Factr() = 1e-4;
+        lbfgs.MinStep() = 1e-4;
 
         lbfgs.Optimize(*this->scoringFunction, startingPoint);
 

@@ -68,6 +68,8 @@ namespace SmolDock {
         */
         iProtein getiProtein() const;
 
+        double getMaxRadius() const;
+
     private:
         std::vector<std::shared_ptr<AminoAcid> > aminoacids;
         std::vector<std::shared_ptr<Atom> > heteroatoms;
@@ -83,6 +85,8 @@ namespace SmolDock {
         double max_x = 0;
         double max_y = 0;
         double max_z = 0;
+
+        double max_distance_to_center = 0;
 
     };
 

@@ -51,7 +51,7 @@ int main() {
     boost::log::core::get()->set_filter
             (
 #ifdef NDEBUG
-            boost::log::trivial::severity >= boost::log::trivial::info
+            boost::log::trivial::severity >= boost::log::trivial::debug
 #else
             boost::log::trivial::severity >= boost::log::trivial::debug
 #endif
@@ -118,7 +118,7 @@ int main() {
                                                          &prot,
                                                          &mol,
                                                          SmolDock::Score::ScoringFunctionType::VinaRigid, /* Scoring function */
-                                                         SmolDock::Heuristics::GlobalHeuristicType::RandomRestart, /* Global heuristic */
+                                                         SmolDock::Heuristics::GlobalHeuristicType::IteratedLocalSearch, /* Global heuristic */
                                                          SmolDock::Optimizer::LocalOptimizerType::L_BFGS, /* Local optimizer */
                                                          1244 /* Random seed */);
 
@@ -142,8 +142,8 @@ int main() {
     }
 
 
-    for (auto &mol: res->ligandPoses) {
-        pwriter.addLigand(mol);
+    for (auto &mol1: res->ligandPoses) {
+        pwriter.addLigand(mol1);
     }
 
 
