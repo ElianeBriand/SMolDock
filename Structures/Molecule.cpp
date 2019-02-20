@@ -26,6 +26,10 @@
 #include "Utilities/PDBLigandUtils.h"
 
 #include <GraphMol/Descriptors/Lipinski.h>
+#include <GraphMol/FileParsers/MolSupplier.h>
+#include <GraphMol/FileParsers/MolWriters.h>
+#include <GraphMol/DistGeomHelpers/Embedder.h>
+#include <GraphMol/ForceFieldHelpers/MMFF/MMFF.h>
 
 #include <ESBTL/default.h>
 #include <ESBTL/atom_classifier.h>
@@ -89,6 +93,7 @@ namespace SmolDock {
         // Hydrogen added for conformer gen
         RDKit::MolOps::addHs(*rwmol);
         int conformer_id = RDKit::DGeomHelpers::EmbedMolecule(*rwmol, 10, seed, false);
+        RDKit::MMFF::MMFFOptimizeMolecule( *rwmol , 1000 , "MMFF94s", 10.0, conformer_id);
         RDKit::MolOps::removeHs(*rwmol);
 
         if (conformer_id == -1) // Failed to generate
@@ -103,7 +108,7 @@ namespace SmolDock {
     Molecule::generateConformers(std::vector<iConformer> &viConformers, unsigned int num, bool centroidNormalization,
                                  int seed) {
 
-        RDKit::MolOps::addHs(*rwmol);
+        RDKit::MolOps::addHs(*this->rwmol);
         std::vector<int> conformer_ids = RDKit::DGeomHelpers::EmbedMultipleConfs(*rwmol, // Molecule
                                                                                  num, // Num of conformer
                                                                                  30, // Max attempts
@@ -124,6 +129,7 @@ namespace SmolDock {
 
         //* // FIXME : uncomment this after fixing scoring function, and remove the initial conformer
         for (int i : conformer_ids) {
+            RDKit::MMFF::MMFFOptimizeMolecule( *rwmol , 1000 , "MMFF94s", 10.0, i);
             iConformer conformer = this->generateIConformerForGivenRDKitConformerID(i, centroidNormalization);
             viConformers.push_back(conformer);
         }
@@ -141,7 +147,7 @@ namespace SmolDock {
         return bonds.size();
     }
 
-    bool Molecule::populateFromPDB(const std::string &filename, const std::string &smiles_hint, unsigned int seed,
+    bool Molecule::populateFromPDBFile(const std::string &filename, const std::string &smiles_hint, unsigned int seed,
                                    std::vector<std::shared_ptr<InputPostProcessor::InputPostProcessor> > postProcessors) {
 
 
@@ -157,6 +163,42 @@ namespace SmolDock {
         if (smiles_hint != "") {
             AssignBondOrderFromTemplateSMILES(this->rwmol, smiles_hint);
         }
+
+        if (this->populateInternalAtomAndBondFromRWMol(seed, postProcessors) == false)
+            return false;
+
+        return true;
+    }
+
+    bool Molecule::populateFromMolFile(const std::string &filename, unsigned int seed,
+                                       std::vector<std::shared_ptr<InputPostProcessor::InputPostProcessor> > postProcessors) {
+
+
+        RDKit::RWMol* mol = RDKit::MolFileToMol(filename, true, true);
+
+        if (mol == nullptr) {
+            return false;
+        }
+
+        this->rwmol.reset(mol);
+
+        if (this->populateInternalAtomAndBondFromRWMol(seed, postProcessors) == false)
+            return false;
+
+        return true;
+    }
+
+    bool Molecule::populateFromMol2File(const std::string &filename, unsigned int seed,
+                                       std::vector<std::shared_ptr<InputPostProcessor::InputPostProcessor> > postProcessors) {
+
+
+        RDKit::RWMol* mol = RDKit::Mol2FileToMol(filename, true, true);
+
+        if (mol == nullptr) {
+            return false;
+        }
+
+        this->rwmol.reset(mol);
 
         if (this->populateInternalAtomAndBondFromRWMol(seed, postProcessors) == false)
             return false;
@@ -184,6 +226,7 @@ namespace SmolDock {
         if (this->rwmol->getNumConformers() == 0) // We need to generate the first conformer
         {
             this->initial_conformer_id = RDKit::DGeomHelpers::EmbedMolecule(*rwmol, 1000, seed, true);
+            RDKit::MMFF::MMFFOptimizeMolecule( *rwmol , 1000 , "MMFF94s", 10.0, this->initial_conformer_id );
         } else { // Else we will just use the first
             this->initial_conformer_id = (*(this->rwmol->beginConformers()))->getId();
         }
@@ -193,99 +236,33 @@ namespace SmolDock {
         // We remove them afterward
         RDKit::MolOps::removeHs((*(this->rwmol)));
 
-        /*
-         * unknown = 0,
-            hydrogen = 1,
+        if(! this->rwmol->hasProp("_Name"))
+        {
+            this->rwmol->setProp( "_Name" , "ligand" );
+        }
 
-            boron  = 5,
-            carbon = 6,
-            nitrogen = 7,
-            oxygen = 8,
-            fluorine = 9,
-
-            magnesium = 12,
-
-            silicon = 14,
-            phosporus = 15,
-            sulfur = 16,
-            chlorine = 17,
-
-            calcium = 20,
-
-            manganese = 25,
-            iron = 26,
-            cobalt = 27,
-
-            bromine = 35,
-
-
-            iodine = 53
-         * */
 
         for (auto atom_it = rwmol->beginAtoms(); atom_it != rwmol->endAtoms(); ++atom_it) {
             std::shared_ptr<Atom> current_atom;
             // TODO : refactor this using the std::set of type-name-properties
-            switch ((*atom_it)->getAtomicNum()) {
-                case 1:
-                    current_atom = std::make_shared<Atom>(Atom::AtomType::hydrogen, (*atom_it)->getIdx());
-                    break;
-                case 5:
-                    current_atom = std::make_shared<Atom>(Atom::AtomType::boron, (*atom_it)->getIdx());
-                    break;
-                case 6:
-                    current_atom = std::make_shared<Atom>(Atom::AtomType::carbon, (*atom_it)->getIdx());
-                    break;
-                case 7:
-                    current_atom = std::make_shared<Atom>(Atom::AtomType::nitrogen, (*atom_it)->getIdx());
-                    break;
-                case 8:
-                    current_atom = std::make_shared<Atom>(Atom::AtomType::oxygen, (*atom_it)->getIdx());
-                    break;
-                case 9:
-                    current_atom = std::make_shared<Atom>(Atom::AtomType::fluorine, (*atom_it)->getIdx());
-                    break;
-                case 12:
-                    current_atom = std::make_shared<Atom>(Atom::AtomType::magnesium, (*atom_it)->getIdx());
-                    break;
-                case 14:
-                    current_atom = std::make_shared<Atom>(Atom::AtomType::silicon, (*atom_it)->getIdx());
-                    break;
-                case 15:
-                    current_atom = std::make_shared<Atom>(Atom::AtomType::phosporus, (*atom_it)->getIdx());
-                    break;
-                case 16:
-                    current_atom = std::make_shared<Atom>(Atom::AtomType::sulfur, (*atom_it)->getIdx());
-                    break;
-                case 17:
-                    current_atom = std::make_shared<Atom>(Atom::AtomType::chlorine, (*atom_it)->getIdx());
-                    break;
-                case 20:
-                    current_atom = std::make_shared<Atom>(Atom::AtomType::calcium, (*atom_it)->getIdx());
-                    break;
-                case 25:
-                    current_atom = std::make_shared<Atom>(Atom::AtomType::manganese, (*atom_it)->getIdx());
-                    break;
-                case 26:
-                    current_atom = std::make_shared<Atom>(Atom::AtomType::iron, (*atom_it)->getIdx());
-                    break;
-                case 27:
-                    current_atom = std::make_shared<Atom>(Atom::AtomType::cobalt, (*atom_it)->getIdx());
-                    break;
-                case 35:
-                    current_atom = std::make_shared<Atom>(Atom::AtomType::bromine, (*atom_it)->getIdx());
-                    break;
-                case 53:
-                    current_atom = std::make_shared<Atom>(Atom::AtomType::iodine, (*atom_it)->getIdx());
-                    break;
-                default:
-                    BOOST_LOG_TRIVIAL(error) << "Unsupported atom type";
-                    BOOST_LOG_TRIVIAL(error) << "Atomic num = " << (*atom_it)->getAtomicNum();
-                    return false;
-                    // break;
+
+            Atom::AtomType atomicNumToFind = static_cast<Atom::AtomType>((*atom_it)->getAtomicNum());
+
+            auto it = std::find_if(Atom::AtomTypeLabel.begin(), Atom::AtomTypeLabel.end(),
+                                   [atomicNumToFind](const std::tuple<Atom::AtomType, std::string, std::string, double> &e) {
+                                       return std::get<0>(e) == atomicNumToFind;
+                                   });
+
+            if (it == Atom::AtomTypeLabel.end()) {
+                BOOST_LOG_TRIVIAL(error) << "Unsupported atom type";
+                BOOST_LOG_TRIVIAL(error) << "Atomic num = " << (*atom_it)->getAtomicNum();
+                return false;
             }
+
+            current_atom = std::make_shared<Atom>(std::get<0>(*it), (*atom_it)->getIdx());
+
             const RDGeom::Point3D &position = starting_conformer.getAtomPos((*atom_it)->getIdx());
             current_atom->setAtomPosition(std::make_tuple(position.x, position.y, position.z));
-
 
             atoms.push_back(current_atom);
         }
@@ -374,6 +351,83 @@ namespace SmolDock {
         }
 
         this->numberOfRotatableBonds = RDKit::Descriptors::calcNumRotatableBonds((RDKit::ROMol) (*this->rwmol));
+
+
+        unsigned int numAliphaticRing = RDKit::Descriptors::calcNumAliphaticRings((RDKit::ROMol) (*this->rwmol));
+        if(numAliphaticRing > 0)
+        {
+            BOOST_LOG_TRIVIAL(error) << "Non-rigid (ie, non-aromatic) rings are unsupported yet";
+            BOOST_LOG_TRIVIAL(error) << "  Found " << numAliphaticRing << " aliphatic ring(s)";
+            BOOST_LOG_TRIVIAL(error) << "  Processing will continue but correctness is not guaranteed";
+        }
+
+
+
+
+        // rotatable bond SMARTS from RdKit source (Lipinski.cpp)
+        std::string strict_pattern =
+                "[!$(*#*)&!D1&!$(C(F)(F)F)&!$(C(Cl)(Cl)Cl)&!$(C(Br)(Br)Br)&!$(C([CH3])("
+                "[CH3])[CH3])&!$([CD3](=[N,O,S])-!@[#7,O,S!D1])&!$([#7,O,S!D1]-!@[CD3]="
+                "[N,O,S])&!$([CD3](=[N+])-!@[#7!D1])&!$([#7!D1]-!@[CD3]=[N+])]-!@[!$(*#"
+                "*)&!D1&!$(C(F)(F)F)&!$(C(Cl)(Cl)Cl)&!$(C(Br)(Br)Br)&!$(C([CH3])([CH3])"
+                "[CH3])]";
+
+        std::shared_ptr<RDKit::RWMol> rotatableBondPatt(RDKit::SmartsToMol(strict_pattern));
+
+        std::vector< RDKit::MatchVectType > matchsRotBonds;
+
+        if( RDKit::SubstructMatch(static_cast<const RDKit::ROMol&>(*this->rwmol), *rotatableBondPatt , matchsRotBonds ) ) {
+            BOOST_LOG_TRIVIAL(debug) << "Rotatable bond(s) found";
+        }
+
+        assert(matchsRotBonds.size() == this->numberOfRotatableBonds);
+
+        for( unsigned int i = 0 ; i < matchsRotBonds.size() ; ++i ) {
+            if(matchsRotBonds[i].size() < 2)
+            {
+                BOOST_LOG_TRIVIAL(error) << "Rotatable bond pattern matching yielded 1 end only ??";
+                continue;
+            }
+            unsigned int atom1Index = matchsRotBonds[i][0].second;
+            unsigned int atom2Index = matchsRotBonds[i][1].second;
+            const RDKit::Atom* atomMatched1 = this->rwmol->getAtomWithIdx(atom1Index);
+            const RDKit::Atom* atomMatched2 = this->rwmol->getAtomWithIdx(atom2Index);
+
+            assert(atomMatched1 != nullptr);
+            assert(atomMatched2 != nullptr);
+
+            BOOST_LOG_TRIVIAL(debug) << "Rotatable bond found : " << atomMatched1->getSymbol() << "-"<< atomMatched2->getSymbol();
+
+            auto itFoundBond = std::find_if(std::begin(this->bonds), std::end(this->bonds),
+                                   [atom1Index,atom2Index](const std::shared_ptr<Bond>& e) {
+                                        // We might get endA and endB in either order
+                                       return ((e->getEndA()->getAtomID() == atom1Index) && (e->getEndB()->getAtomID() == atom2Index))
+                                           || ((e->getEndB()->getAtomID() == atom1Index) && (e->getEndA()->getAtomID() == atom2Index));
+                                   });
+            if (itFoundBond == std::end(this->bonds)) {
+                BOOST_LOG_TRIVIAL(error) << "Rotatable bond not found in Molecule::bonds (but present in RDKit::RWMol) ?";
+                return false;
+            }
+
+            this->rotatableBonds.emplace_back( std::make_tuple(*itFoundBond, atom1Index,atom2Index) );
+
+            // TODO: while either side of the bond can be designated as "the part that rotate"
+            // it would be useful to designate the smallest one, so as to do less math
+            // or do some kind of tree traversal to rationalize all this "subsection to rotate" business
+            // (this will help very much for quaternion, as they compose)
+            RDKit::ROMol::ADJ_ITER nbr , end_nbr;
+            boost::tie( nbr , end_nbr ) = this->rwmol->getAtomNeighbors( atomMatched1 );
+            while( nbr != end_nbr ) {
+                const RDKit::Atom *nbr_atom = (*this->rwmol)[*nbr].get();
+                std::cout << nbr_atom->getIdx() << " : " << nbr_atom->getAtomicNum() << std::endl;
+                ++nbr;
+            }
+
+
+        }
+
+
+
 
 
         // Post processing to assign variant
@@ -543,6 +597,24 @@ namespace SmolDock {
 
     bool Molecule::operator!=(const Molecule &rhs) const {
         return !(*this == rhs);
+    }
+
+    std::string Molecule::writeToMolBlock() {
+        std::string molBlock = RDKit::MolToMolBlock( *(this->rwmol) );
+        return molBlock;
+    }
+
+    bool Molecule::writeToMolFile(const std::string &filename, bool overwrite) {
+        std::ofstream molFile;
+
+        std::string filecontent = this->writeToMolBlock();
+
+        molFile.open(filename);
+        molFile << filecontent << std::endl;
+        molFile.close();
+
+        BOOST_LOG_TRIVIAL(info) << "Wrote ligand to mol file : " << filename;
+        return false;
     }
 
 

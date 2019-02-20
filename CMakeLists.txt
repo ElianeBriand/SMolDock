@@ -12,7 +12,7 @@ find_package(PythonLibs ${PY_VERSION} REQUIRED)
 include_directories(${Boost_INCLUDE_DIRS})
 
 SET(CMAKE_CXX_FLAGS "-Wall")
-SET(CMAKE_CXX_COMPILER "/usr/lib64/llvm/6/bin/clang++")
+SET(CMAKE_CXX_COMPILER "clang++")
 SET(CMAKE_CXX_FLAGS_DEBUG "-g")
 SET(CMAKE_CXX_FLAGS_MINSIZEREL "-Os -DNDEBUG")
 SET(CMAKE_CXX_FLAGS_RELEASE "-O3 -march=native -DNDEBUG")
@@ -106,7 +106,11 @@ set(SOURCE_LIST Structures/Structure.cpp
         Engines/LocalOptimizers/OptimizerFactory.cpp
         Engines/LocalOptimizers/OptimizerFactory.h
         Engines/GlobalHeuristics/HeuristicFactory.cpp
-        Engines/GlobalHeuristics/HeuristicFactory.h Engines/PoseRefiner.cpp Engines/PoseRefiner.h Engines/GlobalHeuristics/OnlyLocal.cpp Engines/GlobalHeuristics/OnlyLocal.h)
+        Engines/GlobalHeuristics/HeuristicFactory.h
+        Engines/PoseRefiner.cpp
+        Engines/PoseRefiner.h
+        Engines/GlobalHeuristics/OnlyLocal.cpp
+        Engines/GlobalHeuristics/OnlyLocal.h)
 
 set(PY_EXPORT_SOURCE_LIST Frontends/Python/PyStructures.cpp
         Frontends/Python/PyStructures.h
@@ -195,13 +199,13 @@ target_compile_definitions(PySmolDock PUBLIC ARMA_DONT_USE_WRAPPER)
 
 ### Remove this for prod build
 
-IF(CMAKE_BUILD_TYPE MATCHES DEBUG)
+IF(CMAKE_BUILD_TYPE MATCHES Debug)
     target_compile_definitions(libsmoldock PUBLIC SMOLDOCK_VERBOSE_DEBUG)
     target_compile_definitions(smoldock PUBLIC SMOLDOCK_VERBOSE_DEBUG)
     target_compile_definitions(vina_refiner PUBLIC SMOLDOCK_VERBOSE_DEBUG)
     target_compile_definitions(PySmolDock PUBLIC SMOLDOCK_VERBOSE_DEBUG)
     target_compile_definitions(smoldock_object PUBLIC SMOLDOCK_VERBOSE_DEBUG)
-ENDIF(CMAKE_BUILD_TYPE MATCHES DEBUG)
+ENDIF(CMAKE_BUILD_TYPE MATCHES Debug)
 
 
 

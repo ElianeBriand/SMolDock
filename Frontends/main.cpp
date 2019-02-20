@@ -24,10 +24,7 @@
 
 
 
-#include <boost/log/core.hpp>
-#include <boost/log/trivial.hpp>
-#include <boost/log/expressions.hpp>
-#include <boost/log/utility/setup/console.hpp>
+
 
 #include "Structures/Molecule.h"
 #include "Structures/Protein.h"
@@ -38,6 +35,11 @@
 
 #include <Utilities/IntermediateConformerCollector.h>
 #include <Structures/InputPostProcessors/VinaCompatibilityPostProcessor.h>
+
+#include <boost/log/core.hpp>
+#include <boost/log/trivial.hpp>
+#include <boost/log/expressions.hpp>
+#include <boost/log/utility/setup/console.hpp>
 
 SmolDock::IntermediateConformerCollector* conformerCollector;
 
@@ -78,18 +80,26 @@ int main() {
     std::vector<std::shared_ptr<SmolDock::InputPostProcessor::InputPostProcessor>> postProcessors;
     postProcessors.push_back(std::make_shared<SmolDock::InputPostProcessor::VinaCompatibilityPostProcessor>());
 
+    bool succeeded = true;
+
     SmolDock::Protein prot;
     // prot.populateFromPDB("1dpx.pdb"); // Lysozyme
-    prot.populateFromPDB("../DockingTests/COX2_Ibuprofen/4PH9_COX2_without_Ibuprofen.pdb", postProcessors); // COX-2
+    succeeded = prot.populateFromPDB("../DockingTests/COX2_Ibuprofen/4PH9_COX2_without_Ibuprofen.pdb", postProcessors); // COX-2
     //prot.populateFromPDB("../DockingTests/Tripeptide/Tripeptide.pdb"); // A random tripeptide
 
     SmolDock::Molecule mol;
     //mol.populateFromSMILES("CC(C)Cc1ccc(cc1)[C@@H](C)C(=O)O"); // Ibuprofen
-    mol.populateFromPDB("../DockingTests/COX2_Ibuprofen/VINA_Cox2_BestRes.pdb",
-                        "CC(C)Cc1ccc(cc1)[C@H](C)C(=O)O", /* SMILES hint for bond order*/
-                        120 /* seed */,
-                        postProcessors);
+    succeeded = mol.populateFromMol2File("../DockingTests/COX2_Ibuprofen/VINA_Cox2_BestRes_Charged.mol2", 120, postProcessors);
+//    succeeded = mol.populateFromPDBFile("../DockingTests/COX2_Ibuprofen/VINA_Cox2_BestRes.pdb",
+//                        "CC(C)Cc1ccc(cc1)[C@H](C)C(=O)O", /* SMILES hint for bond order*/
+//                        120 /* seed */,
+//                        postProcessors);
 
+
+    if(!succeeded){
+        BOOST_LOG_TRIVIAL(error) << "Error while loading input files";
+        return 2;
+    }
 
     SmolDock::iConformer conf_init = mol.getInitialConformer();
     SmolDock::iProtein iprot = prot.getiProtein();

@@ -78,6 +78,19 @@ namespace SmolDock {
         */
         bool populateFromSMILES(const std::string &smiles, unsigned int seed = 36754,
                                 std::vector<std::shared_ptr<InputPostProcessor::InputPostProcessor> > postProcessors = {});
+
+
+        bool populateFromMolFile(const std::string &filename, unsigned int seed = 36754,
+                                 std::vector<std::shared_ptr<InputPostProcessor::InputPostProcessor> > postProcessors = {});
+
+        bool populateFromMol2File(const std::string &filename, unsigned int seed = 36754,
+                                 std::vector<std::shared_ptr<InputPostProcessor::InputPostProcessor> > postProcessors = {});
+
+
+        std::string writeToMolBlock();
+
+        bool writeToMolFile(const std::string &filename, bool overwrite = false);
+
         //! Populate atoms and bonds from a PDB file. Additionally, a SMILES string can be used for bond order hint.
         /*!
          *
@@ -94,7 +107,7 @@ namespace SmolDock {
          * \sa populateFromSMILES()
         */
         bool
-        populateFromPDB(const std::string &filename, const std::string &smiles_hint = "", unsigned int seed = 36754,
+        populateFromPDBFile(const std::string &filename, const std::string &smiles_hint = "", unsigned int seed = 36754,
                         std::vector<std::shared_ptr<InputPostProcessor::InputPostProcessor> > postProcessors = {});
 
 
@@ -179,6 +192,9 @@ namespace SmolDock {
 
         std::vector<std::shared_ptr<Atom> > atoms;
         std::vector<std::shared_ptr<Bond> > bonds;
+
+        // unsigned int, unsigned int : idx of end atom in RWMol
+        std::vector<std::tuple<std::shared_ptr<Bond>, unsigned int, unsigned int> > rotatableBonds;
 
     public:
         std::shared_ptr<RDKit::RWMol> rwmol;

@@ -29,6 +29,10 @@ namespace SmolDock {
         tr.transl.y = 0.0;
         tr.transl.z = 0.0;
         tr.rota = iQuaternionIdentityInit();
+        for(iQuaternion& bondQuat : tr.bondRotations)
+        {
+            bondQuat = iQuaternionIdentityInit();
+        }
         return tr;
     }
 

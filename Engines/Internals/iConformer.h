@@ -49,6 +49,11 @@ namespace SmolDock {
         std::vector<double> atomicRadius;
         std::vector<unsigned char> type;
         std::vector<unsigned int> variant;
+
+        std::vector<unsigned int> bondEnds1Index;
+        std::vector<unsigned int> bondEnds2Index;
+
+
     };
 
 }

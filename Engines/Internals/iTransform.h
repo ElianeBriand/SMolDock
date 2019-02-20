@@ -42,8 +42,11 @@ namespace SmolDock {
      * \sa iTranslation, iQuaternion
     */
     struct iTransform {
+        // Global component
         iTranslation transl;
         iQuaternion rota;
+
+        std::vector<iQuaternion> bondRotations;
     };
 
     /*!

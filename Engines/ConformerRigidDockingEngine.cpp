@@ -150,12 +150,12 @@ namespace SmolDock {
 
                 // Remove this for production
                 // This is to test the local optimizer by shaking up the initial position
-                starting_pos_tr.transl.x += -1.0;
-                starting_pos_tr.transl.y += 1.0;
-                starting_pos_tr.rota.s += 1.0;
-                starting_pos_tr.rota.u += 1.0;
-                starting_pos_tr.rota.v += 1.0;
-                starting_pos_tr.rota.t += 1.0;
+//                starting_pos_tr.transl.x += -1.0;
+//                starting_pos_tr.transl.y += 1.0;
+//                starting_pos_tr.rota.s += 1.0;
+//                starting_pos_tr.rota.u += 1.0;
+//                starting_pos_tr.rota.v += 1.0;
+//                starting_pos_tr.rota.t += 1.0;
                 normalizeQuaternionInPlace(starting_pos_tr.rota);
 
 

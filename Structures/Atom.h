@@ -192,6 +192,8 @@ namespace SmolDock {
         void setCharge(int ch);
 
 
+        static std::set<std::tuple<Atom::AtomType, std::string, std::string, double> > AtomTypeLabel;
+
     protected:
         // Bonds involving this atom
         std::vector<std::weak_ptr<Bond> > bonds;
@@ -212,7 +214,7 @@ namespace SmolDock {
         double x, y, z;
         double atomicRadius;
 
-        static std::set<std::tuple<Atom::AtomType, std::string, std::string, double> > AtomTypeLabel;
+
     };
 
     std::string atomTypeToString(Atom::AtomType t);
