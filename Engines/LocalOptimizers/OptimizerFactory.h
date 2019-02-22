@@ -18,7 +18,7 @@ namespace SmolDock::Optimizer {
     };
 
     std::shared_ptr<Optimizer>
-    optimizerFactory(LocalOptimizerType t, Score::ScoringFunction* scorFunc, double differential_epsilon);
+    optimizerFactory(LocalOptimizerType t, Score::ScoringFunction *scorFunc, double differential_epsilon);
 
 
 }

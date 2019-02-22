@@ -99,6 +99,9 @@ namespace SmolDock {
     protected:
         static std::set<std::tuple<AminoAcid::AAType, std::string, std::string> > AAShorthandSet;
 
+        std::array<double, 3> centroid;
+        double maxDistanceFromCentroid;
+
 
     private:
         AAType type;

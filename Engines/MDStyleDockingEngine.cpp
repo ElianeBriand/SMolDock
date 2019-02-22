@@ -38,7 +38,7 @@ namespace SmolDock::Engine {
 
 
     bool MDStyleDockingEngine::setDockingBox(AbstractDockingEngine::DockingBoxSetting setting) {
-        if (setting != DockingBoxSetting::everything) {
+        if (setting.type != DockingBoxSetting::Type::everything) {
             std::cout << "[!] DockingBoxSetting (that is not DockingBoxSetting::everything) is not yet implemented."
                       << std::endl;
             std::cout << "[ ] Running as if DockingBoxSetting::everything was passed" << std::endl;

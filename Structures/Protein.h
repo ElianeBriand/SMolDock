@@ -68,6 +68,8 @@ namespace SmolDock {
         */
         iProtein getiProtein() const;
 
+        iProtein getPartialiProtein_sphere(std::array<double, 3> center, double radius, double margin) const;
+
         double getMaxRadius() const;
 
     private:

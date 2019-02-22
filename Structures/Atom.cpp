@@ -114,7 +114,6 @@ namespace SmolDock {
     }
 
 
-
     // Guestimated atomic raddi from https://www.researchgate.net/figure/Atomic-radii-used-in-Vina-and-Vinardo-scoring-functions-CA-are-aromatic-carbons-Values_fig12_303027182
     // TODO : get real values for atomic radii
     std::set<std::tuple<Atom::AtomType, std::string, std::string, double> > Atom::AtomTypeLabel = {
@@ -126,16 +125,16 @@ namespace SmolDock {
             {Atom::AtomType::sulfur,    "sulfur",     "S",  2.0},
             {Atom::AtomType::chlorine,  "chlorine",   "CL", 1.8},
             {Atom::AtomType::phosporus, "phosphorus", "P",  2.1},
-            {Atom::AtomType::fluorine, "fluorine", "F",  1.5},
-            {Atom::AtomType::bromine, "bromine", "C",  2.0},
-            {Atom::AtomType::iodine, "iodine", "I",  2.2},
-            {Atom::AtomType::iron, "iron", "FE",  6.5}, // Change this
-            {Atom::AtomType::cobalt, "cobalt", "CO",  6.5}, // Change this
-            {Atom::AtomType::cobalt, "manganese", "MN",  7.0}, // Change this
-            {Atom::AtomType::calcium, "calcium", "CA",  7.9}, // Change this
-            {Atom::AtomType::magnesium, "magnesium", "MG",  7.9}, // Change this
-            {Atom::AtomType::silicon, "silicon", "SI",  1.1}, // Change this
-            {Atom::AtomType::boron, "boron", "B",  1.6}, // Change this
+            {Atom::AtomType::fluorine,  "fluorine",   "F",  1.5},
+            {Atom::AtomType::bromine,   "bromine",    "C",  2.0},
+            {Atom::AtomType::iodine,    "iodine",     "I",  2.2},
+            {Atom::AtomType::iron,      "iron",       "FE", 6.5}, // Change this
+            {Atom::AtomType::cobalt,    "cobalt",     "CO", 6.5}, // Change this
+            {Atom::AtomType::cobalt,    "manganese",  "MN", 7.0}, // Change this
+            {Atom::AtomType::calcium,   "calcium",    "CA", 7.9}, // Change this
+            {Atom::AtomType::magnesium, "magnesium",  "MG", 7.9}, // Change this
+            {Atom::AtomType::silicon,   "silicon",    "SI", 1.1}, // Change this
+            {Atom::AtomType::boron,     "boron",      "B",  1.6}, // Change this
     };
 
 

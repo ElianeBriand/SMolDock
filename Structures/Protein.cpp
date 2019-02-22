@@ -116,6 +116,9 @@ namespace SmolDock {
 
                         current_residue->setAAId(total_nb_residue);
 
+                        accumulator_set<double, stats<tag::mean, tag::count, tag::min, tag::max> > acc_res_x, acc_res_y, acc_res_z;
+                        accumulator_set<double, stats<tag::mean, tag::max> > acc_res_distance;
+
                         // Iterate over atoms in the residue
                         for (ESBTL::Default_system::Residue::Atoms_const_iterator it_atm = it_res->atoms_begin();
                              it_atm != it_res->atoms_end(); ++it_atm) {
@@ -141,7 +144,30 @@ namespace SmolDock {
                             acc_z(it_atm->z());
 
 
+                            acc_res_x(it_atm->x());
+                            acc_res_y(it_atm->y());
+                            acc_res_z(it_atm->z());
+
+
                         }
+
+
+                        current_residue->centroid[0] = mean(acc_res_x);
+                        current_residue->centroid[1] = mean(acc_res_y);
+                        current_residue->centroid[2] = mean(acc_res_z);
+
+                        for (ESBTL::Default_system::Residue::Atoms_const_iterator it_atm = it_res->atoms_begin();
+                             it_atm != it_res->atoms_end(); ++it_atm) {
+                            double distance_to_centroid = std::sqrt(
+                                    std::pow(current_residue->centroid[0] - it_atm->x(), 2) +
+                                    std::pow(current_residue->centroid[1] - it_atm->y(), 2) +
+                                    std::pow(current_residue->centroid[2] - it_atm->z(), 2));
+                            acc_res_distance(distance_to_centroid);
+
+                        }
+
+                        current_residue->maxDistanceFromCentroid = max(acc_res_distance);
+
 
                         assignVariantFlagsForResidueAtom(*current_residue,
                                                          PDBResidueVariantAssignationType::GeneralPurpose);
@@ -207,22 +233,13 @@ namespace SmolDock {
     }
 
     iProtein Protein::getiProtein() const {
-        /*
-         *     struct iProtein {
-        //! Pseudo-center of protein as a mean of each atom coordinate
-        double center_x,center_y,center_z;
-        unsigned long size;
-        std::vector<double> x,y,z;
-        std::vector<unsigned char> type;
-        //! Map the AAId of residues to the corresponding position of the atoms in the vector
-        std::map<unsigned int, std::tuple<unsigned long,unsigned long> > AAId_to_AtomPositionInVect;
-    };
-         */
         iProtein prot;
 
         prot.center_x = this->center_x;
         prot.center_y = this->center_y;
         prot.center_z = this->center_z;
+
+        prot.radius = this->max_distance_to_center;
 
 
         for (auto &residue: this->aminoacids) {
@@ -258,6 +275,59 @@ namespace SmolDock {
 
     double Protein::getMaxRadius() const {
         return this->max_distance_to_center;
+    }
+
+    iProtein Protein::getPartialiProtein_sphere(std::array<double, 3> center, double radius, double margin) const {
+        iProtein prot;
+
+        prot.radius = radius;
+
+        prot.center_x = center[0];
+        prot.center_y = center[1];
+        prot.center_z = center[2];
+
+
+        for (auto &residue: this->aminoacids) {
+
+            double distanceToGivenCenter = std::sqrt(
+                    std::pow(residue->centroid[0] - center[0], 2) +
+                    std::pow(residue->centroid[1] - center[1], 2) +
+                    std::pow(residue->centroid[2] - center[2], 2));
+
+            if (distanceToGivenCenter > (radius + margin)) {
+                continue;
+            }
+
+
+            unsigned long size_before = prot.x.size();
+            residue->filliProtein(prot, true /* Skip hydrogen */);
+            unsigned long size_after = prot.x.size();
+
+            // Visual demo :
+            //
+            // index
+            //
+            // size 0
+            //
+            // index    0   1
+            //         [A] [A]   For residue A : <begin_idx, end_idx> = <0,1> = <size_before, size_after -1>
+            // size 0 > 1 > 2
+            //
+            // index    0   1   2   3   4
+            //         [A] [A] [B] [B] [B] For residue B : <begin_idx, end_idx> = <2,4> = <size_before, size_after -1>
+            // size 0 > 1 > 2 > 3 > 4 > 5
+            //
+            // The size_before gives us the index of the first atom that belongs to this residue
+            // The size_after lags behind by one.
+            // This works even if there is only one atom added (then begin_idx = end_idx = size_before = size_after-1)
+            // However there is an edge case : when the residue has no atom, this is incorrect, so :
+            assert(size_after > size_before); // At least one atom added
+
+            prot.AAId_to_AtomPositionInVect[residue->getAAId()] = std::make_tuple(size_before, size_after - 1);
+        }
+
+        return prot;
+        return iProtein();
     }
 
     Protein::Protein() = default;

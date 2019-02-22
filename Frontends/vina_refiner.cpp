@@ -42,7 +42,7 @@
 namespace po = boost::program_options;
 
 
-int main(int argc, char* argv[]) {
+int main(int argc, char *argv[]) {
 
     /* Setting up the logger */
     boost::log::core::get()->set_filter
@@ -83,12 +83,11 @@ int main(int argc, char* argv[]) {
     po::options_description desc("Supported options");
     desc.add_options()
             ("help", "help message")
-            ("receptor", po::value< std::string >(), "input receptor PDB file")
-            ("ligand", po::value< std::string >(), "input ligand PDB file")
-            ("output", po::value< std::string >(), "output PDB file for ligand conformation")
-            ("log", po::value< std::string >(), "write log to file (in addition to standard output)")
-            ("force", "overwrite output file if it already exist")
-            ;
+            ("receptor", po::value<std::string>(), "input receptor PDB file")
+            ("ligand", po::value<std::string>(), "input ligand PDB file")
+            ("output", po::value<std::string>(), "output PDB file for ligand conformation")
+            ("log", po::value<std::string>(), "write log to file (in addition to standard output)")
+            ("force", "overwrite output file if it already exist");
 
     po::variables_map vm;
     po::store(po::parse_command_line(argc, argv, desc), vm);
@@ -100,44 +99,42 @@ int main(int argc, char* argv[]) {
     }
 
     bool argument_error = false;
-    if (vm.count("receptor") == 0)
-    {
+    if (vm.count("receptor") == 0) {
         argument_error = true;
-        BOOST_LOG_TRIVIAL(error) << "A receptor PDB file path must be provided with option --receptor (see also --help)";
-             //<< vm["include-path"].as< std::string> >() << "\n";
+        BOOST_LOG_TRIVIAL(error)
+            << "A receptor PDB file path must be provided with option --receptor (see also --help)";
+        //<< vm["include-path"].as< std::string> >() << "\n";
     }
 
-    if (vm.count("ligand") == 0)
-    {
+    if (vm.count("ligand") == 0) {
         argument_error = true;
         BOOST_LOG_TRIVIAL(error) << "A ligand PDB file path must be provided with option --ligand (see also --help)";
-             //<< vm["input-file"].as< vector<string> >() << "\n";
-    }
-
-    if (vm.count("output") == 0)
-    {
-        argument_error = true;
-        BOOST_LOG_TRIVIAL(error) << "An output ligand PDB file path must be provided with option --output (see also --help)";
         //<< vm["input-file"].as< vector<string> >() << "\n";
     }
 
-    if(argument_error == true)
+    if (vm.count("output") == 0) {
+        argument_error = true;
+        BOOST_LOG_TRIVIAL(error)
+            << "An output ligand PDB file path must be provided with option --output (see also --help)";
+        //<< vm["input-file"].as< vector<string> >() << "\n";
+    }
+
+    if (argument_error == true)
         return 1;
 
-    std::string path_to_input_receptor = vm["receptor"].as< std::string >();
-    std::string path_to_input_ligand = vm["ligand"].as< std::string >();
-    std::string path_to_output_ligand = vm["output"].as< std::string >();
+    std::string path_to_input_receptor = vm["receptor"].as<std::string>();
+    std::string path_to_input_ligand = vm["ligand"].as<std::string>();
+    std::string path_to_output_ligand = vm["output"].as<std::string>();
 
     bool overwriteFiles = false;
-    if(vm.count("force"))
+    if (vm.count("force"))
         overwriteFiles = true;
 
     bool produceLog = false;
     std::string path_to_log;
-    if (vm.count("log"))
-    {
+    if (vm.count("log")) {
         produceLog = true;
-        path_to_log = vm["log"].as< std::string>();
+        path_to_log = vm["log"].as<std::string>();
         auto file_logger = boost::log::add_file_log
                 (
                         boost::log::keywords::file_name = path_to_log
@@ -162,39 +159,32 @@ int main(int argc, char* argv[]) {
     }
 
 
-
     BOOST_LOG_TRIVIAL(info) << "input receptor path : " << path_to_input_receptor;
     BOOST_LOG_TRIVIAL(info) << "input ligand path   : " << path_to_input_ligand;
     BOOST_LOG_TRIVIAL(info) << "output ligand path  : " << path_to_output_ligand;
-    if(produceLog)
+    if (produceLog)
         BOOST_LOG_TRIVIAL(info) << "log file path       : " << path_to_log;
 
-    if ( !boost::filesystem::exists( path_to_input_receptor ) )
-    {
+    if (!boost::filesystem::exists(path_to_input_receptor)) {
         BOOST_LOG_TRIVIAL(error) << "Receptor file not found : " << path_to_input_receptor;
         return 1;
     }
 
 
-    if ( !boost::filesystem::exists( path_to_input_ligand ) )
-    {
+    if (!boost::filesystem::exists(path_to_input_ligand)) {
         BOOST_LOG_TRIVIAL(error) << "Ligand file not found : " << path_to_input_receptor;
         return 1;
     }
 
 
-    if ( boost::filesystem::exists( path_to_output_ligand ) )
-    {
-        if(overwriteFiles)
+    if (boost::filesystem::exists(path_to_output_ligand)) {
+        if (overwriteFiles)
             BOOST_LOG_TRIVIAL(info) << "Output ligand file already exists, will be overwritten.";
-        else
-        {
+        else {
             BOOST_LOG_TRIVIAL(info) << "Output file already exist, aborting";
             return 1;
         }
     }
-
-
 
 
     std::vector<std::shared_ptr<SmolDock::InputPostProcessor::InputPostProcessor>> postProcessors;
@@ -204,15 +194,14 @@ int main(int argc, char* argv[]) {
     prot.populateFromPDB(path_to_input_receptor, postProcessors); // COX-2
 
     SmolDock::Molecule mol;
-    mol.populateFromPDB(path_to_input_ligand,"", /* No SMILES hint for bond order*/
+    mol.populateFromPDB(path_to_input_ligand, "", /* No SMILES hint for bond order*/
                         120 /* seed */,
                         postProcessors);
 
 
-
-    SmolDock::Engine::PoseRefiner vinaPoseRefiner(&prot,&mol,
-                                          SmolDock::Score::ScoringFunctionType::VinaRigid,
-                                          SmolDock::Optimizer::LocalOptimizerType::L_BFGS,120);
+    SmolDock::Engine::PoseRefiner vinaPoseRefiner(&prot, &mol,
+                                                  SmolDock::Score::ScoringFunctionType::VinaRigid,
+                                                  SmolDock::Optimizer::LocalOptimizerType::L_BFGS, 120);
 
     vinaPoseRefiner.refinePose();
     vinaPoseRefiner.applyToLigand();
@@ -225,9 +214,9 @@ int main(int argc, char* argv[]) {
     SmolDock::PDBWriter w;
     w.addLigand(mol);
 
-    BOOST_LOG_TRIVIAL(info) << "Initial score : " << std::fixed << std::setprecision(6)<< init_score;
-    BOOST_LOG_TRIVIAL(info) << "Final score   : " << std::fixed << std::setprecision(6)<< final_score;
-    BOOST_LOG_TRIVIAL(info) << "Improvement   :  " << std::fixed << std::setprecision(6)<< score_diff;
+    BOOST_LOG_TRIVIAL(info) << "Initial score : " << std::fixed << std::setprecision(6) << init_score;
+    BOOST_LOG_TRIVIAL(info) << "Final score   : " << std::fixed << std::setprecision(6) << final_score;
+    BOOST_LOG_TRIVIAL(info) << "Improvement   :  " << std::fixed << std::setprecision(6) << score_diff;
 
     w.writePDB(path_to_output_ligand);
 

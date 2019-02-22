@@ -13,7 +13,7 @@
 namespace SmolDock::Heuristics {
 
 
-    class OnlyLocal  : public GlobalHeuristic{
+    class OnlyLocal : public GlobalHeuristic {
     public:
 
         struct Parameters;
@@ -32,8 +32,8 @@ namespace SmolDock::Heuristics {
 
         };
     private:
-        Score::ScoringFunction* scorFunc;
-        Optimizer::Optimizer* optimizer;
+        Score::ScoringFunction *scorFunc;
+        Optimizer::Optimizer *optimizer;
 
         std::mt19937 rnd_generator;
 

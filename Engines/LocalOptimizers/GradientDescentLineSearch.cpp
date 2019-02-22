@@ -19,7 +19,7 @@
 namespace SmolDock::Optimizer {
 
 
-    GradientDescentLineSearch::GradientDescentLineSearch(Score::ScoringFunction* scoringFunc_,
+    GradientDescentLineSearch::GradientDescentLineSearch(Score::ScoringFunction *scoringFunc_,
                                                          double differentialUpsilon) :
             scoringFunction(scoringFunc_),
             differential_epsilon(differentialUpsilon),

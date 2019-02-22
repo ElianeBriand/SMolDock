@@ -46,11 +46,10 @@ BOOST_PYTHON_MEMBER_FUNCTION_OVERLOADS(prot_populateFromPDB_overloads, sd::Prote
 
 namespace SmolDock::Wrapper {
 
-    RDKit::ROMol* pywrap_returnROMolFromMol(const SmolDock::Molecule& mol)
-        {
+    RDKit::ROMol *pywrap_returnROMolFromMol(const SmolDock::Molecule &mol) {
         auto ret = new RDKit::ROMol(static_cast<RDKit::ROMol>(*mol.rwmol));
-            return ret;
-        }
+        return ret;
+    }
 
 }
 
@@ -65,7 +64,7 @@ void export_Structures() {
             .add_property("residueName", &sd::Molecule::getResidueName, &sd::Molecule::setResidueName)
             .def("updateAtomPositionsFromiConformer", &sd::Molecule::updateAtomPositionsFromiConformer)
             .def("deepcopy", &sd::Molecule::deepcopy)
-            .def("getRDKitMol", &sd::Wrapper::pywrap_returnROMolFromMol,p::return_value_policy<p::manage_new_object>())
+            .def("getRDKitMol", &sd::Wrapper::pywrap_returnROMolFromMol, p::return_value_policy<p::manage_new_object>())
         //.def("populateFromPDB", &sd::Molecule::populateFromPDB)
         //.def("set", &World::set)
         //.add_property("rovalue", &Num::get)

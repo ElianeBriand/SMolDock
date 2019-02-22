@@ -59,13 +59,15 @@ namespace SmolDock {
     namespace Engine {
 
         ConformerRigidDockingEngine::ConformerRigidDockingEngine(unsigned int conformer_num_,
-                                                                 Protein* protein,
-                                                                 Molecule* ligand,
+                                                                 unsigned int retryPerConformer,
+                                                                 Protein *protein,
+                                                                 Molecule *ligand,
                                                                  Score::ScoringFunctionType scFuncType,
                                                                  Heuristics::GlobalHeuristicType heurType,
                                                                  Optimizer::LocalOptimizerType localOptimizerType_,
                                                                  unsigned int seed) :
                 conformer_num(conformer_num_),
+                retryPerConformer(retryPerConformer),
                 orig_protein(protein),
                 orig_ligand(ligand),
                 scoringFuncType(scFuncType),
@@ -75,7 +77,7 @@ namespace SmolDock {
 
 
             scores.reserve(this->conformer_num);
-            final_iConformer.reserve(this->conformer_num);
+            allGeneratediConformer.reserve(this->conformer_num * this->retryPerConformer);
         }
 
 
@@ -93,15 +95,15 @@ namespace SmolDock {
 
             record_timings(end_conformersgen);
 
-            this->protein = this->orig_protein->getiProtein();
-
-
-/*
-            for(iConformer& conformer: this->viConformers)
-            {
-
+            if (this->dockBoxSettings.type == DockingBoxSetting::Type::centeredAround) {
+                this->protein = this->orig_protein->getPartialiProtein_sphere(this->dockBoxSettings.center,
+                                                                              this->dockBoxSettings.radius, 2.0);
+            } else {
+                this->protein = this->orig_protein->getiProtein();
             }
-*/
+
+            this->fullProtein = this->orig_protein->getiProtein();
+
 
             record_timings(end_iprotgen);
 
@@ -148,16 +150,14 @@ namespace SmolDock {
                 iTransform starting_pos_tr = iTransformIdentityInit();
                 starting_pos_tr.transl = conformer.centroidNormalizingTransform;
 
-                // Remove this for production
-                // This is to test the local optimizer by shaking up the initial position
-//                starting_pos_tr.transl.x += -1.0;
-//                starting_pos_tr.transl.y += 1.0;
-//                starting_pos_tr.rota.s += 1.0;
-//                starting_pos_tr.rota.u += 1.0;
-//                starting_pos_tr.rota.v += 1.0;
-//                starting_pos_tr.rota.t += 1.0;
-                normalizeQuaternionInPlace(starting_pos_tr.rota);
 
+                if (this->dockBoxSettings.type == DockingBoxSetting::Type::centeredAround) {
+                    starting_pos_tr.transl.x += this->dockBoxSettings.center[0];
+                    starting_pos_tr.transl.y += this->dockBoxSettings.center[1];
+                    starting_pos_tr.transl.z += this->dockBoxSettings.center[2];
+                }
+
+                normalizeQuaternionInPlace(starting_pos_tr.rota);
 
                 this->scoringFunction = scoringFunctionFactory(this->scoringFuncType,
                                                                conformer,
@@ -172,42 +172,65 @@ namespace SmolDock {
                 Heuristics::HeuristicParameters hParams = Heuristics::heuristicParametersFactory(heuristicType);
 
                 if (heuristicType == Heuristics::GlobalHeuristicType::IteratedLocalSearch) {
-                    double protRadius = this->orig_protein->getMaxRadius();
-                    std::get<Heuristics::IteratedLocalSearch::Parameters>(hParams).proteinMaxRadius = protRadius;
+
+                    if (this->dockBoxSettings.type == DockingBoxSetting::Type::centeredAround) {
+                        std::get<Heuristics::IteratedLocalSearch::Parameters>(
+                                hParams).proteinMaxRadius = this->dockBoxSettings.radius;
+                    } else {
+                        double protRadius = this->orig_protein->getMaxRadius();
+                        std::get<Heuristics::IteratedLocalSearch::Parameters>(hParams).proteinMaxRadius = protRadius;
+                    }
                 }
 
                 if (heuristicType == Heuristics::GlobalHeuristicType::RandomRestart) {
-                    double protRadius = this->orig_protein->getMaxRadius();
-                    std::get<Heuristics::RandomRestart::Parameters>(hParams).proteinMaxRadius = protRadius;
+                    if (this->dockBoxSettings.type == DockingBoxSetting::Type::centeredAround) {
+                        std::get<Heuristics::RandomRestart::Parameters>(
+                                hParams).proteinMaxRadius = this->dockBoxSettings.radius;
+                    } else {
+                        double protRadius = this->orig_protein->getMaxRadius();
+                        std::get<Heuristics::RandomRestart::Parameters>(hParams).proteinMaxRadius = protRadius;
+                    }
                 }
 
 
-                this->globalHeuristic = globalHeuristicFactory(heuristicType, this->scoringFunction.get(),
-                                                               this->localOptimizer.get(),
-                                                               dis_uint(this->rnd_generator),
-                                                               hParams
-                );
+                for (unsigned int retryNum = 0; retryNum < this->retryPerConformer; retryNum++) {
 
-                this->globalHeuristic->search();
+                    this->globalHeuristic = globalHeuristicFactory(heuristicType, this->scoringFunction.get(),
+                                                                   this->localOptimizer.get(),
+                                                                   dis_uint(this->rnd_generator) + retryNum,
+                                                                   hParams);
 
-                auto rawResultMatrix = this->globalHeuristic->getResultMatrix();
-                double score = this->scoringFunction->Evaluate(rawResultMatrix);
+                    this->globalHeuristic->search();
 
-
-                iConformer result = this->scoringFunction->getConformerForParamMatrix(rawResultMatrix);
-
-                double direct_score = Score::vina_like_rigid_inter_scoring_func(conformer, starting_pos_tr,
-                                                                                this->protein);
-
-                BOOST_LOG_TRIVIAL(debug) << "Score after L-BFGS: " << score << " (from: " << direct_score << ")";
+                    auto rawResultMatrix = this->globalHeuristic->getResultMatrix();
+                    double score = this->scoringFunction->Evaluate(rawResultMatrix);
 
 
-                this->scores.push_back(score);
-                this->final_iConformer.push_back(result);
+                    iConformer result = this->scoringFunction->getConformerForParamMatrix(rawResultMatrix);
+
+                    double starting_score = Score::vina_like_rigid_inter_scoring_func(conformer, starting_pos_tr,
+                                                                                      this->protein);
+
+                    double real_score = Score::vina_like_rigid_inter_scoring_func(result, iTransformIdentityInit(),
+                                                                                  this->fullProtein);
+
+                    BOOST_LOG_TRIVIAL(debug) << "Starting score : " << starting_score;
+                    BOOST_LOG_TRIVIAL(debug) << "Score after L-BFGS: " << score;
+                    BOOST_LOG_TRIVIAL(debug) << "Real score (full prot): " << real_score;
+
+                    if (score != 0.0) {
+                        this->startingScores.push_back(starting_score);
+                        this->localScores.push_back(score);
+                        this->scores.push_back(real_score);
+                        this->allGeneratediConformer.push_back(result);
+                        acc_score(real_score);
+                    }
+
+                }
+
 
                 record_timings(end_docking_this_conformer);
 
-                acc_score(score);
 
 #ifdef SMOLDOCK_VERBOSE_DEBUG
                 acc_duration(
@@ -234,15 +257,25 @@ namespace SmolDock {
             BOOST_LOG_TRIVIAL(info) << "   Score Mean: " << mean(acc_score);
             BOOST_LOG_TRIVIAL(info) << "   Score StdDev: " << std::sqrt(moment<2>(acc_score));
             BOOST_LOG_TRIVIAL(info) << "   Scores: ";
-            for (auto &score: scores) {
-                BOOST_LOG_TRIVIAL(info) << "      " << score;
+            for (unsigned int i = 0; i < this->scores.size(); i++) {
+                BOOST_LOG_TRIVIAL(info) << "      " << this->startingScores[i] << " -> " << this->localScores[i]
+                                        << " -> " << this->scores[i];
+            }
+
+            BOOST_LOG_TRIVIAL(info) << "   Best scores : ";
+            for (unsigned int i = 0; i < this->scores.size(); i++) {
+                if (!(this->scores[i] < (mean(acc_score) - std::sqrt(moment<2>(acc_score)))))
+                    continue;
+                BOOST_LOG_TRIVIAL(info) << "      " << this->startingScores[i] << " -> " << this->localScores[i]
+                                        << " -> " << this->scores[i];
+                this->bestiConformer.push_back(this->allGeneratediConformer[i]);
             }
 
         }
 
         std::shared_ptr<DockingResult> ConformerRigidDockingEngine::getDockingResult() {
             auto ret = std::make_shared<DockingResult>();
-            for (const auto &confr : this->final_iConformer) {
+            for (const auto &confr : this->bestiConformer) {
                 Molecule finalLigand = this->orig_ligand->deepcopy();
                 finalLigand.updateAtomPositionsFromiConformer(confr);
                 ret->ligandPoses.emplace_back(finalLigand);
@@ -252,10 +285,13 @@ namespace SmolDock {
 
 
         bool ConformerRigidDockingEngine::setDockingBox(AbstractDockingEngine::DockingBoxSetting setting) {
-            if (setting != DockingBoxSetting::everything) {
-                std::cout << "[!] DockingBoxSetting (that is not DockingBoxSetting::everything) is not yet implemented."
-                          << std::endl;
-                std::cout << "[ ] Running as if DockingBoxSetting::everything was passed" << std::endl;
+            this->dockBoxSettings = setting;
+
+            if (!(setting.type == DockingBoxSetting::Type::everything ||
+                  setting.type == DockingBoxSetting::Type::centeredAround)) {
+                BOOST_LOG_TRIVIAL(error) << "The passed DockingBoxSetting is not yet implemented.";
+                BOOST_LOG_TRIVIAL(error) << "Running as if DockingBoxSetting::everything was passed";
+                this->dockBoxSettings.type = DockingBoxSetting::Type::everything;
                 return false;
             }
             return true;

@@ -9,14 +9,14 @@
 namespace SmolDock::Engine {
 
 
-    PoseRefiner::PoseRefiner(Protein* protein, Molecule* ligand, Score::ScoringFunctionType scFuncType,
+    PoseRefiner::PoseRefiner(Protein *protein, Molecule *ligand, Score::ScoringFunctionType scFuncType,
                              Optimizer::LocalOptimizerType localOptimizerType_,
-                             unsigned int seed):
+                             unsigned int seed) :
             orig_protein(protein),
             orig_ligand(ligand),
             scoringFuncType(scFuncType),
             localOptimizerType(localOptimizerType_),
-            rnd_generator(seed){
+            rnd_generator(seed) {
 
     }
 
@@ -44,11 +44,11 @@ namespace SmolDock::Engine {
         Heuristics::HeuristicParameters hParams = Heuristics::heuristicParametersFactory(
                 Heuristics::GlobalHeuristicType::OnlyLocal);
 
-        this->globalHeuristic = globalHeuristicFactory(Heuristics::GlobalHeuristicType::OnlyLocal, this->scoringFunction.get(),
+        this->globalHeuristic = globalHeuristicFactory(Heuristics::GlobalHeuristicType::OnlyLocal,
+                                                       this->scoringFunction.get(),
                                                        this->localOptimizer.get(),
                                                        dis_uint(this->rnd_generator),
                                                        hParams);
-
 
 
         arma::mat startingCond = this->scoringFunction->getStartingConditions();
@@ -61,7 +61,6 @@ namespace SmolDock::Engine {
 
         this->final_score = this->scoringFunction->Evaluate(rawResultMatrix);
         this->result = this->scoringFunction->getConformerForParamMatrix(rawResultMatrix);
-
 
 
         return true;

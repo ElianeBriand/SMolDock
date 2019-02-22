@@ -47,9 +47,6 @@
 #include "../Engines/Internals/iConformer.h"
 
 
-
-
-
 namespace SmolDock {
 
     /*!
@@ -59,7 +56,9 @@ namespace SmolDock {
     class Molecule : Structure {
 
         friend class MoleculeTraversal;
+
         friend class UnitTestHelper;
+
         friend class PDBWriter;
 
 
@@ -84,7 +83,7 @@ namespace SmolDock {
                                  std::vector<std::shared_ptr<InputPostProcessor::InputPostProcessor> > postProcessors = {});
 
         bool populateFromMol2File(const std::string &filename, unsigned int seed = 36754,
-                                 std::vector<std::shared_ptr<InputPostProcessor::InputPostProcessor> > postProcessors = {});
+                                  std::vector<std::shared_ptr<InputPostProcessor::InputPostProcessor> > postProcessors = {});
 
 
         std::string writeToMolBlock();
@@ -108,7 +107,7 @@ namespace SmolDock {
         */
         bool
         populateFromPDBFile(const std::string &filename, const std::string &smiles_hint = "", unsigned int seed = 36754,
-                        std::vector<std::shared_ptr<InputPostProcessor::InputPostProcessor> > postProcessors = {});
+                            std::vector<std::shared_ptr<InputPostProcessor::InputPostProcessor> > postProcessors = {});
 
 
         //! Return the number of atom in the Molecule, Hydrogen excepted
@@ -182,8 +181,9 @@ namespace SmolDock {
         unsigned int getNumRotatableBond();
 
 
-        bool operator==(const Molecule& rhs) const;
-        bool operator!=(const Molecule& rhs) const;
+        bool operator==(const Molecule &rhs) const;
+
+        bool operator!=(const Molecule &rhs) const;
 
     private:
 
@@ -193,8 +193,8 @@ namespace SmolDock {
         std::vector<std::shared_ptr<Atom> > atoms;
         std::vector<std::shared_ptr<Bond> > bonds;
 
-        // unsigned int, unsigned int : idx of end atom in RWMol
-        std::vector<std::tuple<std::shared_ptr<Bond>, unsigned int, unsigned int> > rotatableBonds;
+        // unsigned int, unsigned int : idx of end atom in RWMol, vector<unsigned int> : atom idx rotated by such bonds
+        std::vector<std::tuple<std::shared_ptr<Bond>, unsigned int, unsigned int, std::vector<unsigned int> > > rotatableBonds;
 
     public:
         std::shared_ptr<RDKit::RWMol> rwmol;

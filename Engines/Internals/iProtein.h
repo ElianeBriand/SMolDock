@@ -35,6 +35,7 @@ namespace SmolDock {
     struct iProtein {
         //! Pseudo-center of protein as a mean of each atom coordinate
         double center_x, center_y, center_z;
+        double radius;
 
         std::vector<double> x, y, z;
         std::vector<double> atomicRadius;

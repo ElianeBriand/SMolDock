@@ -11,15 +11,15 @@ namespace SmolDock::Heuristics {
 
     HeuristicParameters emptyParameters;
 
-    std::shared_ptr<GlobalHeuristic> globalHeuristicFactory(GlobalHeuristicType t, Score::ScoringFunction* scorFunc,
-                                                            Optimizer::Optimizer* localOptimizer,
+    std::shared_ptr<GlobalHeuristic> globalHeuristicFactory(GlobalHeuristicType t, Score::ScoringFunction *scorFunc,
+                                                            Optimizer::Optimizer *localOptimizer,
                                                             unsigned int rng_seed,
                                                             HeuristicParameters parameters) {
 
         if (t == GlobalHeuristicType::RandomRestart) {
             return std::make_shared<RandomRestart>(scorFunc, localOptimizer, rng_seed,
                                                    std::get<RandomRestart::Parameters>(parameters));
-        }else if (t == GlobalHeuristicType::OnlyLocal) {
+        } else if (t == GlobalHeuristicType::OnlyLocal) {
             return std::make_shared<OnlyLocal>(scorFunc, localOptimizer, rng_seed,
                                                std::get<OnlyLocal::Parameters>(parameters));
         } else if (t == GlobalHeuristicType::IteratedLocalSearch) {

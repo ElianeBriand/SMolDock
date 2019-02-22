@@ -28,11 +28,11 @@
 #include "Python/PyEngine.h"
 
 #undef BOOST_LOG
+
 #include <boost/log/core.hpp>
 #include <boost/log/trivial.hpp>
 #include <boost/log/expressions.hpp>
 #include <boost/log/utility/setup/console.hpp>
-
 
 
 namespace p = boost::python;

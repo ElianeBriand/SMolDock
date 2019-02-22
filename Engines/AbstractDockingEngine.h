@@ -39,15 +39,29 @@ namespace SmolDock {
         class AbstractDockingEngine {
         public:
 
-            enum class DockingBoxSetting {
-                everything,
-                solventExposed
+            struct DockingBoxSetting {
+
+                enum class Type {
+                    everything,
+                    solventExposed,
+                    centeredAround
+                };
+
+                enum class Shape {
+                    sphere,
+                    cube
+                };
+
+                Type type;
+
+                std::array<double, 3> center;
+
+                double radius;
+
+
             };
 
-            enum class DockingBoxShape {
-                sphere,
-                cube
-            };
+
 
             // /// Parameters /////////////
 

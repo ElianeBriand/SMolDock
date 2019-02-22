@@ -22,10 +22,6 @@
 #include <memory>
 
 
-
-
-
-
 #include "Structures/Molecule.h"
 #include "Structures/Protein.h"
 #include "Utilities/DockingResultPrinter.h"
@@ -41,7 +37,7 @@
 #include <boost/log/expressions.hpp>
 #include <boost/log/utility/setup/console.hpp>
 
-SmolDock::IntermediateConformerCollector* conformerCollector;
+SmolDock::IntermediateConformerCollector *conformerCollector;
 
 
 int main() {
@@ -84,29 +80,34 @@ int main() {
 
     SmolDock::Protein prot;
     // prot.populateFromPDB("1dpx.pdb"); // Lysozyme
-    succeeded = prot.populateFromPDB("../DockingTests/COX2_Ibuprofen/4PH9_COX2_without_Ibuprofen.pdb", postProcessors); // COX-2
+    succeeded = prot.populateFromPDB("../DockingTests/COX2_Ibuprofen/4PH9_COX2_without_Ibuprofen.pdb",
+                                     postProcessors); // COX-2
     //prot.populateFromPDB("../DockingTests/Tripeptide/Tripeptide.pdb"); // A random tripeptide
 
     SmolDock::Molecule mol;
     //mol.populateFromSMILES("CC(C)Cc1ccc(cc1)[C@@H](C)C(=O)O"); // Ibuprofen
-    succeeded = mol.populateFromMol2File("../DockingTests/COX2_Ibuprofen/VINA_Cox2_BestRes_Charged.mol2", 120, postProcessors);
+    succeeded = mol.populateFromMol2File("../DockingTests/COX2_Ibuprofen/VINA_Cox2_BestRes_Charged.mol2", 120,
+                                         postProcessors);
 //    succeeded = mol.populateFromPDBFile("../DockingTests/COX2_Ibuprofen/VINA_Cox2_BestRes.pdb",
 //                        "CC(C)Cc1ccc(cc1)[C@H](C)C(=O)O", /* SMILES hint for bond order*/
 //                        120 /* seed */,
 //                        postProcessors);
 
 
-    if(!succeeded){
+
+    if (!succeeded) {
         BOOST_LOG_TRIVIAL(error) << "Error while loading input files";
         return 2;
     }
 
     SmolDock::iConformer conf_init = mol.getInitialConformer();
     SmolDock::iProtein iprot = prot.getiProtein();
+
+    double scoreWithoutDocking = SmolDock::Score::vina_like_rigid_inter_scoring_func(conf_init,
+                                                                                     SmolDock::iTransformIdentityInit(),
+                                                                                     iprot);
     BOOST_LOG_TRIVIAL(debug) << "Score without docking : "
-                             << SmolDock::Score::vina_like_rigid_inter_scoring_func(conf_init,
-                                                                                    SmolDock::iTransformIdentityInit(),
-                                                                                    iprot);
+                             << scoreWithoutDocking;
 
 
     SmolDock::PDBWriter pwriter;
@@ -114,7 +115,8 @@ int main() {
     conformerCollector = &collector;
 
 
-    SmolDock::Engine::ConformerRigidDockingEngine docker(10, /* Number of conformer */
+    SmolDock::Engine::ConformerRigidDockingEngine docker(20, /* Number of conformer */
+                                                         10, /* Retry per conformer */
                                                          &prot,
                                                          &mol,
                                                          SmolDock::Score::ScoringFunctionType::VinaRigid, /* Scoring function */
@@ -122,7 +124,13 @@ int main() {
                                                          SmolDock::Optimizer::LocalOptimizerType::L_BFGS, /* Local optimizer */
                                                          1244 /* Random seed */);
 
-    //docker.setDockingBox(SmolDock::Engine::AbstractDockingEngine::DockingBoxSetting::everything);
+
+    SmolDock::Engine::AbstractDockingEngine::DockingBoxSetting setting;
+    setting.type = SmolDock::Engine::AbstractDockingEngine::DockingBoxSetting::Type::centeredAround;
+    setting.center = {10.0, 22.0, 25.0};
+    setting.radius = 10.0;
+
+    docker.setDockingBox(setting);
 
     if (!docker.setupDockingEngine()) {
         BOOST_LOG_TRIVIAL(error) << "Error while setting up engine";
@@ -131,6 +139,9 @@ int main() {
 
 
     docker.runDockingEngine();
+
+    BOOST_LOG_TRIVIAL(debug) << "Reminder : Score without docking : "
+                             << scoreWithoutDocking;
 
 
     std::shared_ptr<SmolDock::DockingResult> res = docker.getDockingResult();

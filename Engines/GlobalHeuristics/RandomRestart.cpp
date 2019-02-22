@@ -13,7 +13,7 @@
 namespace SmolDock::Heuristics {
 
 
-    RandomRestart::RandomRestart(Score::ScoringFunction* scorFunc_, Optimizer::Optimizer* optimizer_,
+    RandomRestart::RandomRestart(Score::ScoringFunction *scorFunc_, Optimizer::Optimizer *optimizer_,
                                  unsigned int seed_, RandomRestart::Parameters params_) :
             scorFunc(scorFunc_), optimizer(optimizer_), rndGenerator(seed_), params(params_) {
 

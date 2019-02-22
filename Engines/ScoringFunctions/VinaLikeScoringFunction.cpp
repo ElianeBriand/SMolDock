@@ -170,6 +170,16 @@ namespace SmolDock {
                     iVect LigPosition = {ligand.x[idxLig], ligand.y[idxLig], ligand.z[idxLig]};
                     applyTransformInPlace(LigPosition, transform);
 
+                    double distanceToProteinCenter = std::sqrt(
+                            std::pow(LigPosition.x - protein.center_x, 2) +
+                            std::pow(LigPosition.y - protein.center_y, 2) +
+                            std::pow(LigPosition.z - protein.center_z, 2));
+
+                    if (distanceToProteinCenter > (protein.radius - 1)) {
+                        score_raw += std::pow((distanceToProteinCenter - protein.radius), 4) + 10;
+                        continue;
+                    }
+
 
                     double x_diff_sq = std::pow(LigPosition.x - protein.x[idxProt], 2);
                     double y_diff_sq = std::pow(LigPosition.y - protein.y[idxProt], 2);
@@ -317,8 +327,9 @@ namespace SmolDock {
             assert(x.n_rows == 7);
 
             iTransform tr = this->internalToExternalRepr(x);
-            normalizeQuaternionInPlace(tr.rota); //!< Note that the internal representation arma::mat is not by itself normalized
-                                                 //! (because we always normalize it in the scoring function, so no constraint)
+            normalizeQuaternionInPlace(
+                    tr.rota); //!< Note that the internal representation arma::mat is not by itself normalized
+            //! (because we always normalize it in the scoring function, so no constraint)
 
             iConformer ret = this->startingConformation;
             applyTransformInPlace(ret, tr);

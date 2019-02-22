@@ -35,6 +35,8 @@ namespace SmolDock::Heuristics {
         unsigned int restart_count = 0;
         unsigned int metropolis_count = 0;
 
+        unsigned int allowedMetropolisRestartCount = 5;
+
         while (score_ == 0) {
             restart_count++;
             std::uniform_real_distribution<double> randomRestartDistribution(-this->params.proteinMaxRadius,
@@ -62,10 +64,10 @@ namespace SmolDock::Heuristics {
 
             metropolis_count++;
             oldScore = score_;
-            temperature = temperature_constant / std::log(1 + metropolis_count);
+            temperature = temperature_constant * std::pow(0.9, 1 + metropolis_count);
             BOOST_LOG_TRIVIAL(debug) << "IteratedLocalSearch: Temperature = " << temperature;
 
-            std::uniform_real_distribution<double> perturbationDistribution(-4.0, +4.0);
+            std::uniform_real_distribution<double> perturbationDistribution(-2.0, +2.0);
             for (unsigned int i = 0; i < currentState.n_rows; i++) {
                 currentState[i] += perturbationDistribution(this->rndGenerator);
             }
@@ -75,7 +77,14 @@ namespace SmolDock::Heuristics {
             currentState = optimizer->getRawResultMatrix();
 
             if (score_ == 0 && oldScore == 0) {
-                break; // we are stuck
+                if (bestScore == 0 || allowedMetropolisRestartCount <= 0)
+                    break;
+                currentState = bestState;
+                optimizer->optimize(currentState);
+                score_ = optimizer->getScore();
+                currentState = optimizer->getRawResultMatrix();
+                allowedMetropolisRestartCount--;
+                continue; // restart from good result
             }
 
 

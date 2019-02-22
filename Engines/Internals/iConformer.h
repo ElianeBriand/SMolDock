@@ -52,7 +52,7 @@ namespace SmolDock {
 
         std::vector<unsigned int> bondEnds1Index;
         std::vector<unsigned int> bondEnds2Index;
-
+        std::vector<std::vector<unsigned int> > rotatableGroups;
 
     };
 

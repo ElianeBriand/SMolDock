@@ -53,8 +53,9 @@ namespace SmolDock::Engine {
          * \param conformer_num Number of conformer to generate
         */
         explicit ConformerRigidDockingEngine(unsigned int conformer_num,
-                                             Protein* protein,
-                                             Molecule* ligand,
+                                             unsigned int retryPerConformer,
+                                             Protein *protein,
+                                             Molecule *ligand,
                                              Score::ScoringFunctionType scFuncType,
                                              Heuristics::GlobalHeuristicType heurType,
                                              Optimizer::LocalOptimizerType localOptimizerType_,
@@ -76,9 +77,10 @@ namespace SmolDock::Engine {
     private:
 
         unsigned int conformer_num;
+        unsigned int retryPerConformer;
 
-        Protein* orig_protein;
-        Molecule* orig_ligand;
+        Protein *orig_protein;
+        Molecule *orig_ligand;
 
         Score::ScoringFunctionType scoringFuncType;
         Heuristics::GlobalHeuristicType heuristicType;
@@ -96,9 +98,17 @@ namespace SmolDock::Engine {
 
         iProtein protein;
 
+        iProtein fullProtein;
+
+        DockingBoxSetting dockBoxSettings;
+
 
         std::vector<double> scores;
-        std::vector<iConformer> final_iConformer;
+        std::vector<double> localScores;
+        std::vector<double> startingScores;
+
+        std::vector<iConformer> allGeneratediConformer;
+        std::vector<iConformer> bestiConformer;
 
     };
 

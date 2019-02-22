@@ -67,7 +67,7 @@ namespace SmolDock {
             unknown = 0,
             hydrogen = 1,
 
-            boron  = 5,
+            boron = 5,
             carbon = 6,
             nitrogen = 7,
             oxygen = 8,

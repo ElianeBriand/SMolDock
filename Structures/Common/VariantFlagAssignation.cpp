@@ -33,7 +33,7 @@ namespace SmolDock {
 
     void assignVariantFlagsForResidueAtom(AminoAcid &residue, PDBResidueVariantAssignationType assignation_type) {
 
-        std::set<std::tuple<AminoAcid::AAType, std::vector<std::tuple<std::string, Atom::AtomVariant> > > >* ResidueAtomPropertiesLookupTable;
+        std::set<std::tuple<AminoAcid::AAType, std::vector<std::tuple<std::string, Atom::AtomVariant> > > > *ResidueAtomPropertiesLookupTable;
         if (assignation_type == PDBResidueVariantAssignationType::GeneralPurpose) {
             ResidueAtomPropertiesLookupTable = &ResidueAtomPropertiesLookupTable_General;
         } else {
