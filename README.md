@@ -136,7 +136,9 @@ Then library magic :
 
       cd ../lib
       for libfilename in *.a; do ar -x $libfilename; done
-      ar -qc libRDKitStatic.a *.o
+      mkdir obj
+      cp *.o obj
+      ar cr libRDKitStatic.a *.o
       mkdir staticlib
       cp libRDKitStatic.a staticlib
 
@@ -163,3 +165,25 @@ The main author is able to create fully statically linked binary using this CMak
 ## Vc
 
 Edit CMakeLists.txt with your Vc install path (search for `VC SETUP`). You can grab it from GitHub.
+
+## Boost build
+
+If the need arise to have static linking of boost into the python module, this may prove useful to build boost with -fPIC
+even for static libraries :
+
+
+    BOOST_ROOT
+    ./bootstrap.sh --prefix=/home/builder/local/
+
+    ./b2 --prefix=/home/builder/local/ --build-type=complete --build-dir=/home/builder/boost_1_69_0/build/ --layout=tagged cxxflags=" -fPIC " cflags=" -fPIC " --ignore-site-config
+
+## Boost build
+
+If the need arise to have static linking of boost into the python module, this may prove useful to build boost with -fPIC
+even for static libraries :
+
+
+    BOOST_ROOT
+    ./bootstrap.sh --prefix=/home/builder/local/
+
+    ./b2 --prefix=/home/builder/local/ --build-type=complete --build-dir=/home/builder/boost_1_69_0/build/ --layout=tagged cxxflags=" -fPIC " cflags=" -fPIC " --ignore-site-config

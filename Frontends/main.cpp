@@ -29,7 +29,7 @@
 #include "Engines/ScoringFunctions/VinaLikeScoringFunction.h"
 #include <Engines/Internals/InternalsUtilityFunctions.h>
 
-#include <Utilities/IntermediateConformerCollector.h>
+#include <Utilities/PDBWriter.h>
 #include <Structures/InputPostProcessors/VinaCompatibilityPostProcessor.h>
 
 #include <boost/log/core.hpp>
@@ -37,7 +37,6 @@
 #include <boost/log/expressions.hpp>
 #include <boost/log/utility/setup/console.hpp>
 
-SmolDock::IntermediateConformerCollector *conformerCollector;
 
 
 int main() {
@@ -111,8 +110,6 @@ int main() {
 
 
     SmolDock::PDBWriter pwriter;
-    SmolDock::IntermediateConformerCollector collector(&mol, &pwriter);
-    conformerCollector = &collector;
 
 
     SmolDock::Engine::ConformerRigidDockingEngine docker(20, /* Number of conformer */

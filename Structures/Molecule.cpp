@@ -558,7 +558,8 @@ namespace SmolDock {
         conformer.x.insert(conformer.x.begin(), num_atoms, 0.0);
         conformer.y.insert(conformer.y.begin(), num_atoms, 0.0);
         conformer.z.insert(conformer.z.begin(), num_atoms, 0.0);
-        conformer.type.insert(conformer.type.begin(), num_atoms, 0.0);
+        conformer.variant.insert(conformer.variant.begin(), num_atoms, 0);
+        conformer.type.insert(conformer.type.begin(), num_atoms, 0);
         conformer.atomicRadius.insert(conformer.atomicRadius.begin(), num_atoms, 0.0);
 
         conformer.num_rotatable_bond = this->numberOfRotatableBonds;
@@ -616,6 +617,9 @@ namespace SmolDock {
                 std::exit(3);
             }
             std::shared_ptr<Atom> current_Atom = *current_Atom_it;
+
+            assert(current_Atom != nullptr);
+
             conformer.type[(*atom_it)->getIdx()] = static_cast<unsigned char>((*atom_it)->getAtomicNum());
             conformer.variant[(*atom_it)->getIdx()] = static_cast<unsigned int>(current_Atom->variant);
 

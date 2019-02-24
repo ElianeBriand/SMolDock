@@ -32,7 +32,7 @@ namespace np = boost::numpy;
 
 namespace sd = SmolDock;
 
-BOOST_PYTHON_MEMBER_FUNCTION_OVERLOADS(populateFromPDB_overloads, sd::Molecule::populateFromPDB, 1, 4)
+BOOST_PYTHON_MEMBER_FUNCTION_OVERLOADS(populateFromPDBFile_overloads, sd::Molecule::populateFromPDBFile, 1, 4)
 
 BOOST_PYTHON_MEMBER_FUNCTION_OVERLOADS(populateFromSMILES_overloads, sd::Molecule::populateFromSMILES, 1, 3)
 
@@ -55,7 +55,7 @@ namespace SmolDock::Wrapper {
 
 void export_Structures() {
     p::class_<sd::Molecule>("Molecule")
-            .def("populateFromPDB", &sd::Molecule::populateFromPDB, populateFromPDB_overloads())
+            .def("populateFromPDB", &sd::Molecule::populateFromPDBFile, populateFromPDBFile_overloads())
             .def("populateFromSMILES", &sd::Molecule::populateFromSMILES, populateFromSMILES_overloads())
             .add_property("numberOfAtoms", &sd::Molecule::numberOfAtoms)
             .add_property("numberOfBonds", &sd::Molecule::numberOfBonds)

@@ -46,6 +46,8 @@
 #define BOOST_TEST_MODULE main_test_module
 #define BOOST_TEST_MAIN
 
+#define BOOST_TEST_DYN_LINK
+
 #include <boost/test/unit_test.hpp>
 #include <Structures/Protein.h>
 
@@ -140,7 +142,7 @@ BOOST_AUTO_TEST_SUITE(main_test_suite)
         BOOST_CHECK(coordinate_test_tripped == false);
 
         std::vector<SmolDock::iConformer> vecConformer2;
-        mol1.generateConformers(vecConformer2, desired_num_conformer,
+        mol1.generateConformers(vecConformer2, desired_num_conformer
                                 ,true,234); // Same seed, same everything --> are they the same conformers ?
 
         // We check that the conformers are the same

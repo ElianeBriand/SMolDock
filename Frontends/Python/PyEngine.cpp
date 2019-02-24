@@ -47,6 +47,7 @@ void export_Engines() {
         void runDockingEngine() final;*/
         p::class_<sd::Engine::ConformerRigidDockingEngine>("ConformerRigidDockingEngine", p::init<
                 unsigned int,
+                unsigned int,
                 sd::Protein *,
                 sd::Molecule *,
                 sd::Score::ScoringFunctionType,

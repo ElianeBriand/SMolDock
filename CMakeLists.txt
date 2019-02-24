@@ -10,6 +10,7 @@ set(PY_VERSION 3.6)
 find_package(PythonLibs ${PY_VERSION} REQUIRED)
 
 include_directories(${Boost_INCLUDE_DIRS})
+add_compile_definitions(BOOST_ALLOW_DEPRECATED_HEADERS)
 
 SET(CMAKE_CXX_FLAGS "-Wall")
 SET(CMAKE_CXX_COMPILER "clang++")
@@ -110,7 +111,14 @@ set(SOURCE_LIST Structures/Structure.cpp
         Engines/PoseRefiner.cpp
         Engines/PoseRefiner.h
         Engines/GlobalHeuristics/OnlyLocal.cpp
-        Engines/GlobalHeuristics/OnlyLocal.h)
+        Engines/GlobalHeuristics/OnlyLocal.h
+        Engines/GlobalHeuristics/IteratedLocalSearch.cpp
+        Engines/GlobalHeuristics/IteratedLocalSearch.h
+        Engines/GlobalHeuristics/SimulatedAnnealing.cpp
+        Engines/GlobalHeuristics/SimulatedAnnealing.h
+        Engines/GlobalHeuristics/Utilities/MetropolisHastings.cpp
+        Engines/GlobalHeuristics/Utilities/MetropolisHastings.h
+        )
 
 set(PY_EXPORT_SOURCE_LIST Frontends/Python/PyStructures.cpp
         Frontends/Python/PyStructures.h
@@ -127,44 +135,78 @@ target_compile_definitions(smoldock_object PUBLIC ARMA_DONT_USE_WRAPPER)
 #target_compile_definitions(smoldock_object PUBLIC BOOST_LOG_DYN_LINK)
 
 
-ADD_LIBRARY(libsmoldock STATIC ${SOURCE_LIST})
+
+add_custom_command(
+        OUTPUT partially_linked_smoldock.o
+        COMMAND ld -Ur $<TARGET_OBJECTS:smoldock_object>   -o partially_linked_smoldock.o -Bstatic -L${RDKIT_ROOT}/lib -L /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.0/ -L /usr/lib -llapack  -lblas -lgfortran -lquadmath  -lgfortran   -lRDKitStatic -lRDKitForceFieldHelpers_static -lRDKitForceField_static -lRDKitStatic -L${Boost_LIBRARY_DIRS} -lboost_log -lboost_log_setup  -lboost_system -lboost_log -lboost_system -lboost_filesystem -lboost_date_time -lboost_thread -lboost_regex
+        DEPENDS $<TARGET_OBJECTS:smoldock_object>
+        COMMAND_EXPAND_LISTS
+)
+
+
+
+ADD_LIBRARY(libsmoldock STATIC partially_linked_smoldock.o)
+set_target_properties(libsmoldock PROPERTIES LINKER_LANGUAGE CXX)
 set_target_properties(libsmoldock PROPERTIES COMPILE_FLAGS " -fPIC ")
-set_target_properties(libsmoldock PROPERTIES LINK_FLAGS " -static -v -fPIC -Wl,--no-undefined -Wl,--as-needed  ")
+set_target_properties(libsmoldock PROPERTIES LINK_FLAGS " -static -v -fPIC -Wl,--no-undefined  ")
 set_target_properties(libsmoldock PROPERTIES PREFIX "lib")
 set_target_properties(libsmoldock PROPERTIES OUTPUT_NAME "smoldock")
-target_compile_definitions(libsmoldock PUBLIC BOOST_LOG_DYN_LINK)
 target_compile_definitions(libsmoldock PUBLIC ARMA_DONT_USE_WRAPPER)
+add_dependencies(libsmoldock smoldock_object)
 
-
+ADD_LIBRARY(libsmoldockPIC SHARED ${SOURCE_LIST})
+set_target_properties(libsmoldockPIC PROPERTIES COMPILE_FLAGS " -fPIC ")
+set_target_properties(libsmoldockPIC PROPERTIES LINKER_LANGUAGE CXX)
+set_target_properties(libsmoldockPIC PROPERTIES LINK_FLAGS "  -shared  -fPIC   ")
+set_target_properties(libsmoldockPIC PROPERTIES PREFIX "lib")
+set_target_properties(libsmoldockPIC PROPERTIES OUTPUT_NAME "smoldockPIC")
+target_compile_definitions(libsmoldockPIC PUBLIC BOOST_LOG_DYN_LINK)
+target_compile_definitions(libsmoldockPIC PUBLIC ARMA_DONT_USE_WRAPPER)
+target_link_libraries(libsmoldockPIC -Wl,-Bdynamic -Wl,-lboost_regex  -Wl,-lboost_filesystem)
+target_link_libraries(libsmoldockPIC -Wl,-Bdynamic  -Wl,-lboost_log   -Wl,-lboost_system  -Wl,-lboost_thread  )
+target_link_libraries(libsmoldockPIC -Wl,-Bdynamic -Wl,-lboost_numpy -Wl,-lboost_python-3.6-mt  -Wl,-lpython3.6m)
+TARGET_LINK_LIBRARIES(libsmoldockPIC -Wl,-Bstatic -Wl,-lRDKitStatic -Wl,-lRDKitForceFieldHelpers_static -Wl,-lRDKitForceField_static)
+target_link_libraries(libsmoldockPIC -Wl,-Bstatic -Wl,-lboost_date_time  -Wl,-lboost_date_time)
+target_link_libraries(libsmoldockPIC -Wl,-Bstatic -Wl,-lVc)
+target_link_libraries(libsmoldockPIC -Wl,-Bstatic -Wl,-llapack -Wl,-lblas -Wl,-l:libquadmath.a)
+target_link_libraries(libsmoldockPIC -Wl,-Bdynamic -Wl,-lgfortran)
+target_link_libraries(libsmoldockPIC -Wl,-Bdynamic -Wl,-L/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.0/ -Wl,-lgcc)
+target_link_libraries(libsmoldockPIC -Wl,-Bdynamic -Wl,-lpthread -Wl,-ldl)
 
 # You need this if you do NOT generate a static executable
 #add_compile_definitions(BOOST_LOG_DYN_LINK BOOST_TEST_DYN_LINK)
 
-add_executable(smoldock Frontends/main.cpp $<TARGET_OBJECTS:smoldock_object>)
-#target_compile_definitions(smoldock PUBLIC BOOST_LOG_DYN_LINK)
-
-# Comment this out if you do NOT want to build a static executable
-set_target_properties(smoldock PROPERTIES LINK_FLAGS " -Wl,--no-undefined -Wl,--as-needed  -static   ")
-
-
-TARGET_LINK_LIBRARIES(smoldock ${RDKIT_LINKAGE_LIST})
-target_link_libraries(smoldock boost_log boost_log_setup boost_system boost_log boost_system boost_filesystem boost_date_time boost_thread boost_regex pthread)
-target_link_libraries(smoldock Vc)
-target_link_libraries(smoldock blas lapack gfortran quadmath)
 
 
 
-add_executable(vina_refiner Frontends/vina_refiner.cpp $<TARGET_OBJECTS:smoldock_object>)
-#target_compile_definitions(smoldock PUBLIC BOOST_LOG_DYN_LINK)
+add_executable(smoldock Frontends/main.cpp)
+set_target_properties(smoldock PROPERTIES LINK_FLAGS " -Wl,--no-undefined -Wl,--as-needed -static    ")
+TARGET_LINK_LIBRARIES(smoldock libsmoldock)
+TARGET_LINK_LIBRARIES(smoldock pthread)
+target_link_libraries(smoldock boost_log)
+#target_link_libraries(smoldock Vc)
 
-# Comment this out if you do NOT want to build a static executable
+add_executable(smoldock_dyn Frontends/main.cpp)
+set_target_properties(smoldock_dyn PROPERTIES LINK_FLAGS " -Wl,--no-undefined -Wl,--as-needed     ")
+TARGET_LINK_LIBRARIES(smoldock_dyn libsmoldock)
+TARGET_LINK_LIBRARIES(smoldock_dyn pthread)
+target_link_libraries(smoldock_dyn -Wl,-Bstatic boost_log -Wl,-Bdynamic)
+#target_link_libraries(smoldock_dyn Vc)
+
+
+add_executable(vina_refiner Frontends/vina_refiner.cpp)
 set_target_properties(vina_refiner PROPERTIES LINK_FLAGS " -Wl,--no-undefined -Wl,--as-needed  -static   ")
+TARGET_LINK_LIBRARIES(vina_refiner libsmoldock)
+TARGET_LINK_LIBRARIES(vina_refiner pthread)
+target_link_libraries(vina_refiner boost_log)
+#target_link_libraries(vina_refiner Vc)
 
-
-TARGET_LINK_LIBRARIES(vina_refiner ${RDKIT_LINKAGE_LIST})
-target_link_libraries(vina_refiner boost_log boost_program_options boost_log_setup boost_system boost_log boost_system boost_filesystem boost_date_time boost_thread boost_regex pthread)
-target_link_libraries(vina_refiner Vc)
-target_link_libraries(vina_refiner blas lapack gfortran quadmath)
+add_executable(smoldockCLI Frontends/cli_interface.cpp)
+set_target_properties(smoldockCLI PROPERTIES LINK_FLAGS " -Wl,--no-undefined -Wl,--as-needed  -static   ")
+TARGET_LINK_LIBRARIES(smoldockCLI libsmoldock)
+TARGET_LINK_LIBRARIES(smoldockCLI pthread)
+target_link_libraries(smoldockCLI boost_log)
+#target_link_libraries(smoldockCLI Vc)
 
 
 # For Intel VTune/Profiler tools, you need this if you generate a static executable
@@ -177,26 +219,13 @@ target_link_libraries(vina_refiner blas lapack gfortran quadmath)
 
 add_library(PySmolDock MODULE Frontends/SmoldockPythonBindings.cpp ${PY_EXPORT_SOURCE_LIST})
 set_target_properties(PySmolDock PROPERTIES COMPILE_FLAGS " -fPIC ")
-set_target_properties(PySmolDock PROPERTIES LINK_FLAGS " -shared  -Wl,--no-undefined  -Wl,--as-needed -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.0/  ")
+set_target_properties(PySmolDock PROPERTIES LINK_FLAGS " -shared -Wl,-nostdlib -Wl,-L./ -Wl,-lsmoldockPIC -Wl,-Bshareable")
 set_target_properties(PySmolDock PROPERTIES PREFIX "")
 set_target_properties(PySmolDock PROPERTIES OUTPUT_NAME "PySmolDock")
-
-# link
-target_link_libraries(PySmolDock -Wl,-Bstatic libsmoldock)
-target_link_libraries(PySmolDock -Wl,-Bdynamic -Wl,-lboost_log_setup -Wl,-lboost_log -Wl,-lboost_system -Wl,-lboost_numpy -Wl,-lpython3.6m -Wl,-lboost_thread -Wl,-lboost_python-3.6-mt -Wl,-lboost_filesystem)
-TARGET_LINK_LIBRARIES(PySmolDock -Wl,-Bstatic -Wl,-lRDKitStatic -Wl,-lRDKitForceFieldHelpers_static -Wl,-lRDKitForceField_static)
-target_link_libraries(PySmolDock -Wl,-Bstatic -Wl,-lboost_date_time -Wl,-lboost_regex -Wl,-lboost_date_time)
-target_link_libraries(PySmolDock -Wl,-Bstatic -Wl,-lVc)
-target_link_libraries(PySmolDock -Wl,-Bstatic -Wl,-llapack -Wl,-lblas -Wl,-l:libquadmath.a)
-target_link_libraries(PySmolDock -Wl,-Bdynamic -Wl,-lgfortran)
-target_link_libraries(PySmolDock -Wl,-Bstatic -Wl,-lgcc)
-target_link_libraries(PySmolDock -Wl,-Bdynamic -Wl,-lpthread -Wl,-ldl)
-
-
 target_compile_definitions(PySmolDock PUBLIC BOOST_LOG_DYN_LINK)
 target_compile_definitions(PySmolDock PUBLIC ARMA_DONT_USE_WRAPPER)
-
-
+target_link_libraries(PySmolDock )
+add_dependencies(PySmolDock libsmoldockPIC)
 ### Remove this for prod build
 
 IF(CMAKE_BUILD_TYPE MATCHES Debug)
@@ -220,16 +249,14 @@ set(TEST_SOURCE_LIST
         UnitTests/engine_test_suite.cpp)
 
 
-add_executable(complete_test_suite ${TEST_SOURCE_LIST} $<TARGET_OBJECTS:smoldock_object>)
+add_executable(complete_test_suite ${TEST_SOURCE_LIST})
 
 # Comment this out if you do NOT want to build a static executable
-set_target_properties(complete_test_suite PROPERTIES LINK_FLAGS " -static  ")
-
-
-TARGET_LINK_LIBRARIES(complete_test_suite ${RDKIT_LINKAGE_LIST})
-target_link_libraries(complete_test_suite ${Boost_LIBRARIES} boost_unit_test_framework)
-target_link_libraries(complete_test_suite boost_log boost_log_setup boost_system boost_log boost_system boost_filesystem boost_date_time boost_thread boost_regex pthread)
-target_link_libraries(complete_test_suite Vc)
-target_link_libraries(complete_test_suite blas lapack gfortran quadmath)
+set_target_properties(complete_test_suite PROPERTIES LINK_FLAGS "   ")
+TARGET_LINK_LIBRARIES(complete_test_suite libsmoldock)
+TARGET_LINK_LIBRARIES(complete_test_suite pthread)
+target_link_libraries(complete_test_suite boost_log)
+target_link_libraries(complete_test_suite ${Boost_LIBRARIES} -Wl,-Bdynamic boost_unit_test_framework )
+#target_link_libraries(complete_test_suite Vc)
 
 
