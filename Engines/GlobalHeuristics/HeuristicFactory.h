@@ -17,16 +17,21 @@
 #include "RandomRestart.h"
 #include "OnlyLocal.h"
 #include "IteratedLocalSearch.h"
+#include "SimulatedAnnealing.h"
 
 namespace SmolDock::Heuristics {
 
     enum class GlobalHeuristicType {
         RandomRestart,
         OnlyLocal,
-        IteratedLocalSearch
+        IteratedLocalSearch,
+        SimulatedAnnealing
     };
 
-    using HeuristicParameters = std::variant<OnlyLocal::Parameters, RandomRestart::Parameters, IteratedLocalSearch::Parameters>;
+    using HeuristicParameters = std::variant<OnlyLocal::Parameters,
+            RandomRestart::Parameters,
+            IteratedLocalSearch::Parameters,
+            SimulatedAnnealing::Parameters>;
 
     extern HeuristicParameters emptyParameters;
 

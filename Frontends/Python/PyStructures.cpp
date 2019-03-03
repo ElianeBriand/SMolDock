@@ -32,17 +32,21 @@ namespace np = boost::numpy;
 
 namespace sd = SmolDock;
 
+// Class: Molecule
 BOOST_PYTHON_MEMBER_FUNCTION_OVERLOADS(populateFromPDBFile_overloads, sd::Molecule::populateFromPDBFile, 1, 4)
-
 BOOST_PYTHON_MEMBER_FUNCTION_OVERLOADS(populateFromSMILES_overloads, sd::Molecule::populateFromSMILES, 1, 3)
-
 BOOST_PYTHON_MEMBER_FUNCTION_OVERLOADS(generateConformer_overloads, sd::Molecule::generateConformer, 1, 3)
 
+BOOST_PYTHON_MEMBER_FUNCTION_OVERLOADS(populateFromMolFile_overloads, sd::Molecule::populateFromMolFile, 1, 3)
+
+BOOST_PYTHON_MEMBER_FUNCTION_OVERLOADS(populateFromMol2File_overloads, sd::Molecule::populateFromMol2File, 1, 3)
+
+// Class: Protein
 BOOST_PYTHON_MEMBER_FUNCTION_OVERLOADS(prot_populateFromPDB_overloads, sd::Protein::populateFromPDB, 1, 2)
 
 
-// Remember, kids : Any function added to a class whose initial argument matches the class (or any base) will act like a member function in Python.
-// Aka definging f(MyClass*, arg1, arg2,) allow you to easily patch-in python-specific member function without altering the C++ class (just adding friend functions)
+// Remember : Any function added to a class whose initial argument matches the class (or any base) will act like a member function in Python.
+// Aka defining f(MyClass*, arg1, arg2,) allow you to easily patch-in python-specific member function without altering the C++ class (just adding friend functions)
 
 namespace SmolDock::Wrapper {
 
@@ -53,10 +57,19 @@ namespace SmolDock::Wrapper {
 
 }
 
+/*        bool populateFromMolFile(const std::string &filename, unsigned int seed = 36754,
+                                 std::vector<std::shared_ptr<InputPostProcessor::InputPostProcessor> > postProcessors = {});
+
+        bool populateFromMol2File(const std::string &filename, unsigned int seed = 36754,
+                                  std::vector<std::shared_ptr<InputPostProcessor::InputPostProcessor> > postProcessors = {});
+*/
+
 void export_Structures() {
     p::class_<sd::Molecule>("Molecule")
             .def("populateFromPDB", &sd::Molecule::populateFromPDBFile, populateFromPDBFile_overloads())
             .def("populateFromSMILES", &sd::Molecule::populateFromSMILES, populateFromSMILES_overloads())
+            .def("populateFromMol", &sd::Molecule::populateFromMolFile, populateFromMolFile_overloads())
+            .def("populateFromMol2", &sd::Molecule::populateFromMol2File, populateFromMol2File_overloads())
             .add_property("numberOfAtoms", &sd::Molecule::numberOfAtoms)
             .add_property("numberOfBonds", &sd::Molecule::numberOfBonds)
             .def("getInitialConformer", &sd::Molecule::getInitialConformer)

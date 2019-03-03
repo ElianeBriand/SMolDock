@@ -25,13 +25,49 @@ namespace sd = SmolDock;
 class dummyClassA {
 };
 
+p::tuple wrap_centerarray_getter(sd::Engine::AbstractDockingEngine::DockingBoxSetting &thisobj) {
+    p::list a;
+    a.append(thisobj.center.at(0));
+    a.append(thisobj.center.at(1));
+    a.append(thisobj.center.at(2));
+    return p::tuple(a);
+}
+
+void wrap_centerarray_setter(sd::Engine::AbstractDockingEngine::DockingBoxSetting &thisobj, p::tuple center) {
+    unsigned int tuple_len = p::extract<unsigned int>(center.attr("__len__")());
+    if (tuple_len == 3) {
+        thisobj.center[0] = p::extract<double>(center[0]);
+        thisobj.center[1] = p::extract<double>(center[1]);
+        thisobj.center[2] = p::extract<double>(center[2]);
+    }
+}
+
+
 
 void export_Engines() {
+
+    p::class_<sd::Engine::AbstractDockingEngine::DockingBoxSetting>("DockingBoxSetting")
+            .def_readwrite("type", &sd::Engine::AbstractDockingEngine::DockingBoxSetting::type)
+            .def_readwrite("radius", &sd::Engine::AbstractDockingEngine::DockingBoxSetting::radius)
+            .add_property("center", &wrap_centerarray_getter, &wrap_centerarray_setter);
+
+    p::enum_<sd::Engine::AbstractDockingEngine::DockingBoxSetting::Type>("DockingBoxType")
+            .value("everything", sd::Engine::AbstractDockingEngine::DockingBoxSetting::Type::everything)
+                    //.value("solventExposed", sd::Engine::AbstractDockingEngine::DockingBoxSetting::Type::solventExposed)
+            .value("centeredAround", sd::Engine::AbstractDockingEngine::DockingBoxSetting::Type::centeredAround);
+
+    p::enum_<sd::Engine::AbstractDockingEngine::DockingBoxSetting::Shape>("DockingBoxShape")
+            .value("sphere", sd::Engine::AbstractDockingEngine::DockingBoxSetting::Shape::sphere)
+            .value("cube", sd::Engine::AbstractDockingEngine::DockingBoxSetting::Shape::cube);
+
     p::enum_<sd::Score::ScoringFunctionType>("ScoringFunctionType")
             .value("VinaRigid", sd::Score::ScoringFunctionType::VinaRigid);
 
     p::enum_<sd::Heuristics::GlobalHeuristicType>("GlobalHeuristicType")
-            .value("RandomRestart", sd::Heuristics::GlobalHeuristicType::RandomRestart);
+            .value("RandomRestart", sd::Heuristics::GlobalHeuristicType::RandomRestart)
+            .value("IteratedLocalSearch", sd::Heuristics::GlobalHeuristicType::IteratedLocalSearch)
+            .value("OnlyLocal", sd::Heuristics::GlobalHeuristicType::OnlyLocal)
+            .value("SimulatedAnnealing", sd::Heuristics::GlobalHeuristicType::SimulatedAnnealing);
 
     p::enum_<sd::Optimizer::LocalOptimizerType>("LocalOptimizerType")
             .value("L_BFGS", sd::Optimizer::LocalOptimizerType::L_BFGS)

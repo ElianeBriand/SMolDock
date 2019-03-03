@@ -24,6 +24,7 @@
 #include "PyUtilities.h"
 
 #include <Utilities/ReScorer.h>
+#include <Utilities/PDBWriter.h>
 
 
 namespace p = boost::python;
@@ -38,15 +39,19 @@ namespace sd = SmolDock;
 
 void export_Utilities() {
     p::class_<sd::ReScorer>("ReScorer",
-                            p::init<sd::Protein &, sd::Molecule &, std::function<double(const sd::iConformer &,
-                                                                                        const sd::iTransform &,
-                                                                                        const sd::iProtein &)> &>())
+                            p::init<sd::Protein &, sd::Molecule &, sd::Score::ScoringFunctionType>())
             .def("prepare", &sd::ReScorer::prepare)
             .def("getScore", &sd::ReScorer::getScore)
         //.def("set", &World::set)
         //.add_property("rovalue", &Num::get)
         //.add_property("value", &Num::get, &Num::set);
             ;
+
+    p::class_<sd::PDBWriter>("PDBWriter")
+            .def("addLigand", &sd::PDBWriter::addLigand)
+            .def("writePDB", &sd::PDBWriter::writePDB);
+
+
 
 }
 

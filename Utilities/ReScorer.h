@@ -8,14 +8,13 @@
 #include <Structures/Protein.h>
 #include <Structures/Molecule.h>
 #include <Engines/Internals/iTransform.h>
-
+#include <Engines/ScoringFunctions/ScoringFunctionFactory.h>
 namespace SmolDock {
 
     //! A simple wrapper to get docking scores from various score function for a given ligand-protein configuration
     class ReScorer {
     public:
-        ReScorer(Protein &prot, Molecule &mol,
-                 std::function<double(const iConformer &, const iTransform &, const iProtein &)> &scorFunc);
+        ReScorer(Protein &prot, Molecule &mol, Score::ScoringFunctionType scorFuncType);
 
         bool prepare();
 
@@ -24,10 +23,15 @@ namespace SmolDock {
     private:
         Protein &protein;
         Molecule &molecule;
-        std::function<double(const iConformer &, const iTransform &, const iProtein &)> &scoringFunction;
+        Score::ScoringFunctionType scoringFunctionType;
+
+        std::shared_ptr<Score::ScoringFunction> scoringFunction;
 
         iProtein iprotein;
         iConformer iconformer;
+        iTransform itransform;
+
+        bool prepared = false;
     };
 
 }

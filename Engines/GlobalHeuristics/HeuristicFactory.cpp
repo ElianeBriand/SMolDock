@@ -6,6 +6,7 @@
 #include "RandomRestart.h"
 #include "OnlyLocal.h"
 #include "IteratedLocalSearch.h"
+#include "SimulatedAnnealing.h"
 
 namespace SmolDock::Heuristics {
 
@@ -25,6 +26,9 @@ namespace SmolDock::Heuristics {
         } else if (t == GlobalHeuristicType::IteratedLocalSearch) {
             return std::make_shared<IteratedLocalSearch>(scorFunc, localOptimizer, rng_seed,
                                                          std::get<IteratedLocalSearch::Parameters>(parameters));
+        } else if (t == GlobalHeuristicType::SimulatedAnnealing) {
+            return std::make_shared<SimulatedAnnealing>(scorFunc, localOptimizer, rng_seed,
+                                                        std::get<SimulatedAnnealing::Parameters>(parameters));
         } else {
             return nullptr;
         }
@@ -37,6 +41,8 @@ namespace SmolDock::Heuristics {
             return HeuristicParameters(std::in_place_type_t<OnlyLocal::Parameters>());
         } else if (t == GlobalHeuristicType::IteratedLocalSearch) {
             return HeuristicParameters(std::in_place_type_t<IteratedLocalSearch::Parameters>());
+        } else if (t == GlobalHeuristicType::SimulatedAnnealing) {
+            return HeuristicParameters(std::in_place_type_t<SimulatedAnnealing::Parameters>());
         } else {
             return emptyParameters;
         }
