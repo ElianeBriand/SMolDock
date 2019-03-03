@@ -118,7 +118,7 @@ set(SOURCE_LIST Structures/Structure.cpp
         Engines/GlobalHeuristics/SimulatedAnnealing.h
         Engines/GlobalHeuristics/Utilities/MetropolisHastings.cpp
         Engines/GlobalHeuristics/Utilities/MetropolisHastings.h
-        )
+        Utilities/Version.cpp Utilities/Version.h)
 
 set(PY_EXPORT_SOURCE_LIST Frontends/Python/PyStructures.cpp
         Frontends/Python/PyStructures.h

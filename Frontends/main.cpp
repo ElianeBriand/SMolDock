@@ -32,6 +32,8 @@
 #include <Utilities/PDBWriter.h>
 #include <Structures/InputPostProcessors/VinaCompatibilityPostProcessor.h>
 
+#include <Utilities/Version.h>
+
 #include <boost/log/core.hpp>
 #include <boost/log/trivial.hpp>
 #include <boost/log/expressions.hpp>
@@ -70,7 +72,7 @@ int main() {
     });
 
 
-    BOOST_LOG_TRIVIAL(info) << "SmolDock v0.1";
+    BOOST_LOG_TRIVIAL(info) << "SmolDock " << SmolDock::getVersionString();
 
     std::vector<std::shared_ptr<SmolDock::InputPostProcessor::InputPostProcessor>> postProcessors;
     postProcessors.push_back(std::make_shared<SmolDock::InputPostProcessor::VinaCompatibilityPostProcessor>());
