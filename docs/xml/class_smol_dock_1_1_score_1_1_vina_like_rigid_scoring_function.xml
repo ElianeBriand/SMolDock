@@ -3,7 +3,7 @@
   <compounddef id="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function" kind="class" language="C++" prot="public">
     <compoundname>SmolDock::Score::VinaLikeRigidScoringFunction</compoundname>
     <basecompoundref refid="class_smol_dock_1_1_score_1_1_scoring_function" prot="public" virt="non-virtual">SmolDock::Score::ScoringFunction</basecompoundref>
-    <includes refid="_vina_like_scoring_function_8h" local="no">VinaLikeScoringFunction.h</includes>
+    <includes refid="_vina_like_rigid_scoring_function_8h" local="no">VinaLikeRigidScoringFunction.h</includes>
       <sectiondef kind="private-attrib">
       <memberdef kind="variable" id="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1afc848dd44def406206bfa2ac002d00d6" prot="private" static="no" mutable="no">
         <type><ref refid="struct_smol_dock_1_1i_conformer" kindref="compound">iConformer</ref></type>
@@ -16,10 +16,10 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Engines/ScoringFunctions/VinaLikeScoringFunction.h" line="115" column="1" bodyfile="Engines/ScoringFunctions/VinaLikeScoringFunction.h" bodystart="115" bodyend="-1"/>
-        <referencedby refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1ab89f08da2f4f79abfe9130b3593c3522" compoundref="_vina_like_scoring_function_8cpp" startline="225" endline="234">Evaluate</referencedby>
-        <referencedby refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1a574511b3c12769902e2c0366d4d3db96" compoundref="_vina_like_scoring_function_8cpp" startline="236" endline="294">EvaluateWithGradient</referencedby>
-        <referencedby refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1a6b173e704b812af5cde72610f1143577" compoundref="_vina_like_scoring_function_8cpp" startline="316" endline="325">getConformerForParamMatrix</referencedby>
+        <location file="Engines/ScoringFunctions/VinaLikeRigidScoringFunction.h" line="115" column="1" bodyfile="Engines/ScoringFunctions/VinaLikeRigidScoringFunction.h" bodystart="115" bodyend="-1"/>
+        <referencedby refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1ab89f08da2f4f79abfe9130b3593c3522" compoundref="_vina_like_rigid_scoring_function_8cpp" startline="119" endline="128">Evaluate</referencedby>
+        <referencedby refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1a574511b3c12769902e2c0366d4d3db96" compoundref="_vina_like_rigid_scoring_function_8cpp" startline="130" endline="209">EvaluateWithGradient</referencedby>
+        <referencedby refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1a6b173e704b812af5cde72610f1143577" compoundref="_vina_like_rigid_scoring_function_8cpp" startline="231" endline="243">getConformerForParamMatrix</referencedby>
       </memberdef>
       <memberdef kind="variable" id="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1a0e3280c203d37f8eadf1543e06ec9473" prot="private" static="no" mutable="no">
         <type>const <ref refid="struct_smol_dock_1_1i_protein" kindref="compound">iProtein</ref> &amp;</type>
@@ -32,9 +32,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Engines/ScoringFunctions/VinaLikeScoringFunction.h" line="116" column="1" bodyfile="Engines/ScoringFunctions/VinaLikeScoringFunction.h" bodystart="116" bodyend="-1"/>
-        <referencedby refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1ab89f08da2f4f79abfe9130b3593c3522" compoundref="_vina_like_scoring_function_8cpp" startline="225" endline="234">Evaluate</referencedby>
-        <referencedby refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1a574511b3c12769902e2c0366d4d3db96" compoundref="_vina_like_scoring_function_8cpp" startline="236" endline="294">EvaluateWithGradient</referencedby>
+        <location file="Engines/ScoringFunctions/VinaLikeRigidScoringFunction.h" line="116" column="1" bodyfile="Engines/ScoringFunctions/VinaLikeRigidScoringFunction.h" bodystart="116" bodyend="-1"/>
+        <referencedby refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1ab89f08da2f4f79abfe9130b3593c3522" compoundref="_vina_like_rigid_scoring_function_8cpp" startline="119" endline="128">Evaluate</referencedby>
+        <referencedby refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1a574511b3c12769902e2c0366d4d3db96" compoundref="_vina_like_rigid_scoring_function_8cpp" startline="130" endline="209">EvaluateWithGradient</referencedby>
       </memberdef>
       <memberdef kind="variable" id="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1ab2b508f61dadc4de3998dcf9f82108aa" prot="private" static="no" mutable="no">
         <type>const <ref refid="struct_smol_dock_1_1i_transform" kindref="compound">iTransform</ref></type>
@@ -47,8 +47,8 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Engines/ScoringFunctions/VinaLikeScoringFunction.h" line="117" column="1" bodyfile="Engines/ScoringFunctions/VinaLikeScoringFunction.h" bodystart="117" bodyend="-1"/>
-        <referencedby refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1ad16c38589c65800f164078fcbd929e99" compoundref="_vina_like_scoring_function_8cpp" startline="312" endline="314">getStartingConditions</referencedby>
+        <location file="Engines/ScoringFunctions/VinaLikeRigidScoringFunction.h" line="117" column="1" bodyfile="Engines/ScoringFunctions/VinaLikeRigidScoringFunction.h" bodystart="117" bodyend="-1"/>
+        <referencedby refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1ad16c38589c65800f164078fcbd929e99" compoundref="_vina_like_rigid_scoring_function_8cpp" startline="227" endline="229">getStartingConditions</referencedby>
       </memberdef>
       <memberdef kind="variable" id="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1ade3afba236d274a7ff1bdff886bdeaca" prot="private" static="no" mutable="no">
         <type>double</type>
@@ -61,9 +61,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Engines/ScoringFunctions/VinaLikeScoringFunction.h" line="118" column="1" bodyfile="Engines/ScoringFunctions/VinaLikeScoringFunction.h" bodystart="118" bodyend="-1"/>
-        <referencedby refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1a574511b3c12769902e2c0366d4d3db96" compoundref="_vina_like_scoring_function_8cpp" startline="236" endline="294">EvaluateWithGradient</referencedby>
-        <referencedby refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1a2173a0716d2426518a601e1525798fcd" compoundref="_vina_like_scoring_function_8cpp" startline="308" endline="310">getDifferentialEpsilon</referencedby>
+        <location file="Engines/ScoringFunctions/VinaLikeRigidScoringFunction.h" line="118" column="1" bodyfile="Engines/ScoringFunctions/VinaLikeRigidScoringFunction.h" bodystart="118" bodyend="-1"/>
+        <referencedby refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1a574511b3c12769902e2c0366d4d3db96" compoundref="_vina_like_rigid_scoring_function_8cpp" startline="130" endline="209">EvaluateWithGradient</referencedby>
+        <referencedby refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1a2173a0716d2426518a601e1525798fcd" compoundref="_vina_like_rigid_scoring_function_8cpp" startline="223" endline="225">getDifferentialEpsilon</referencedby>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -95,7 +95,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Engines/ScoringFunctions/VinaLikeScoringFunction.h" line="57" column="1" bodyfile="Engines/ScoringFunctions/VinaLikeScoringFunction.cpp" bodystart="297" bodyend="305"/>
+        <location file="Engines/ScoringFunctions/VinaLikeRigidScoringFunction.h" line="57" column="1" bodyfile="Engines/ScoringFunctions/VinaLikeRigidScoringFunction.cpp" bodystart="212" bodyend="220"/>
       </memberdef>
       <memberdef kind="function" id="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1ab89f08da2f4f79abfe9130b3593c3522" prot="public" static="no" const="no" explicit="no" inline="no" final="yes" virt="virtual">
         <type>double</type>
@@ -113,13 +113,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Engines/ScoringFunctions/VinaLikeScoringFunction.h" line="63" column="1" bodyfile="Engines/ScoringFunctions/VinaLikeScoringFunction.cpp" bodystart="225" bodyend="234"/>
-        <references refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1a7998fd7ab2237aa8da50d05d553ffec0" compoundref="_vina_like_scoring_function_8h" startline="83" endline="98">internalToExternalRepr</references>
-        <references refid="namespace_smol_dock_1aeef66e92064c4a5e5102102342542853" compoundref="_internals_utility_functions_8h" startline="111" endline="121">SmolDock::normalizeQuaternionInPlace</references>
-        <references refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1a0e3280c203d37f8eadf1543e06ec9473" compoundref="_vina_like_scoring_function_8h" startline="116">prot</references>
-        <references refid="struct_smol_dock_1_1i_transform_1a31861b55dc94ec0172ce602cd2a4a54f" compoundref="i_transform_8h" startline="46">SmolDock::iTransform::rota</references>
-        <references refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1afc848dd44def406206bfa2ac002d00d6" compoundref="_vina_like_scoring_function_8h" startline="115">startingConformation</references>
-        <references refid="namespace_smol_dock_1_1_score_1ac205731c7b0098c2900d9d16fff1a93b" compoundref="_vina_like_scoring_function_8cpp" startline="149" endline="223">SmolDock::Score::vina_like_rigid_inter_scoring_func</references>
+        <location file="Engines/ScoringFunctions/VinaLikeRigidScoringFunction.h" line="63" column="1" bodyfile="Engines/ScoringFunctions/VinaLikeRigidScoringFunction.cpp" bodystart="119" bodyend="128"/>
+        <references refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1a7998fd7ab2237aa8da50d05d553ffec0" compoundref="_vina_like_rigid_scoring_function_8h" startline="83" endline="98">internalToExternalRepr</references>
+        <references refid="namespace_smol_dock_1a05fa7c1e1e1323710cbf76fad3030c3d" compoundref="_internals_utility_functions_8h" startline="99" endline="101">SmolDock::normalizeQuaternionInPlace</references>
+        <references refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1a0e3280c203d37f8eadf1543e06ec9473" compoundref="_vina_like_rigid_scoring_function_8h" startline="116">prot</references>
+        <references refid="struct_smol_dock_1_1i_transform_1a8234938f815b9f74cc2d3289d4696dfb" compoundref="i_transform_8h" startline="33">SmolDock::iTransform::rota</references>
+        <references refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1afc848dd44def406206bfa2ac002d00d6" compoundref="_vina_like_rigid_scoring_function_8h" startline="115">startingConformation</references>
+        <references refid="namespace_smol_dock_1_1_score_1ac205731c7b0098c2900d9d16fff1a93b" compoundref="_vina_like_rigid_scoring_function_8cpp" startline="40" endline="117">SmolDock::Score::vina_like_rigid_inter_scoring_func</references>
       </memberdef>
       <memberdef kind="function" id="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1a574511b3c12769902e2c0366d4d3db96" prot="public" static="no" const="no" explicit="no" inline="no" final="yes" virt="virtual">
         <type>double</type>
@@ -141,22 +141,15 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Engines/ScoringFunctions/VinaLikeScoringFunction.h" line="65" column="1" bodyfile="Engines/ScoringFunctions/VinaLikeScoringFunction.cpp" bodystart="236" bodyend="294"/>
-        <references refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1ade3afba236d274a7ff1bdff886bdeaca" compoundref="_vina_like_scoring_function_8h" startline="118">differential_epsilon</references>
-        <references refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1a7998fd7ab2237aa8da50d05d553ffec0" compoundref="_vina_like_scoring_function_8h" startline="83" endline="98">internalToExternalRepr</references>
-        <references refid="namespace_smol_dock_1aeef66e92064c4a5e5102102342542853" compoundref="_internals_utility_functions_8h" startline="111" endline="121">SmolDock::normalizeQuaternionInPlace</references>
-        <references refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1a0e3280c203d37f8eadf1543e06ec9473" compoundref="_vina_like_scoring_function_8h" startline="116">prot</references>
-        <references refid="struct_smol_dock_1_1i_transform_1a31861b55dc94ec0172ce602cd2a4a54f" compoundref="i_transform_8h" startline="46">SmolDock::iTransform::rota</references>
-        <references refid="struct_smol_dock_1_1i_quaternion_1a07d95036803eb2a4ef32627df95043ad" compoundref="i_transform_8h" startline="25">SmolDock::iQuaternion::s</references>
-        <references refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1afc848dd44def406206bfa2ac002d00d6" compoundref="_vina_like_scoring_function_8h" startline="115">startingConformation</references>
-        <references refid="struct_smol_dock_1_1i_quaternion_1a1ff0d5e99369aa47273864dfea352c05" compoundref="i_transform_8h" startline="26">SmolDock::iQuaternion::t</references>
-        <references refid="struct_smol_dock_1_1i_transform_1ab0039729b08d423b6e0414cec1b893e7" compoundref="i_transform_8h" startline="45">SmolDock::iTransform::transl</references>
-        <references refid="struct_smol_dock_1_1i_quaternion_1a3692d71434fede9771686a73240e6ba7" compoundref="i_transform_8h" startline="26">SmolDock::iQuaternion::u</references>
-        <references refid="struct_smol_dock_1_1i_quaternion_1a97a15d15b2fae3ec29c2fdb2388f5e5b" compoundref="i_transform_8h" startline="26">SmolDock::iQuaternion::v</references>
-        <references refid="namespace_smol_dock_1_1_score_1ac205731c7b0098c2900d9d16fff1a93b" compoundref="_vina_like_scoring_function_8cpp" startline="149" endline="223">SmolDock::Score::vina_like_rigid_inter_scoring_func</references>
-        <references refid="struct_smol_dock_1_1i_translation_1a74a60efc8b2463b7ea1ca1e824a4ed28" compoundref="i_transform_8h" startline="36">SmolDock::iTranslation::x</references>
-        <references refid="struct_smol_dock_1_1i_translation_1a5362a54675ecc6bac99325c69521fbb5" compoundref="i_transform_8h" startline="36">SmolDock::iTranslation::y</references>
-        <references refid="struct_smol_dock_1_1i_translation_1a2ed07fcfc129a2bf7696b65d481317c5" compoundref="i_transform_8h" startline="36">SmolDock::iTranslation::z</references>
+        <location file="Engines/ScoringFunctions/VinaLikeRigidScoringFunction.h" line="65" column="1" bodyfile="Engines/ScoringFunctions/VinaLikeRigidScoringFunction.cpp" bodystart="130" bodyend="209"/>
+        <references refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1ade3afba236d274a7ff1bdff886bdeaca" compoundref="_vina_like_rigid_scoring_function_8h" startline="118">differential_epsilon</references>
+        <references refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1a7998fd7ab2237aa8da50d05d553ffec0" compoundref="_vina_like_rigid_scoring_function_8h" startline="83" endline="98">internalToExternalRepr</references>
+        <references refid="namespace_smol_dock_1a05fa7c1e1e1323710cbf76fad3030c3d" compoundref="_internals_utility_functions_8h" startline="99" endline="101">SmolDock::normalizeQuaternionInPlace</references>
+        <references refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1a0e3280c203d37f8eadf1543e06ec9473" compoundref="_vina_like_rigid_scoring_function_8h" startline="116">prot</references>
+        <references refid="struct_smol_dock_1_1i_transform_1a8234938f815b9f74cc2d3289d4696dfb" compoundref="i_transform_8h" startline="33">SmolDock::iTransform::rota</references>
+        <references refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1afc848dd44def406206bfa2ac002d00d6" compoundref="_vina_like_rigid_scoring_function_8h" startline="115">startingConformation</references>
+        <references refid="struct_smol_dock_1_1i_transform_1ae79de47f6741ab7c3a97498fe0c589d3" compoundref="i_transform_8h" startline="32">SmolDock::iTransform::transl</references>
+        <references refid="namespace_smol_dock_1_1_score_1ac205731c7b0098c2900d9d16fff1a93b" compoundref="_vina_like_rigid_scoring_function_8cpp" startline="40" endline="117">SmolDock::Score::vina_like_rigid_inter_scoring_func</references>
       </memberdef>
       <memberdef kind="function" id="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1ad16c38589c65800f164078fcbd929e99" prot="public" static="no" const="yes" explicit="no" inline="no" final="yes" virt="virtual">
         <type>arma::mat</type>
@@ -170,9 +163,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Engines/ScoringFunctions/VinaLikeScoringFunction.h" line="67" column="1" bodyfile="Engines/ScoringFunctions/VinaLikeScoringFunction.cpp" bodystart="312" bodyend="314"/>
-        <references refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1a78f389f738bb184be926a272f55baa95" compoundref="_vina_like_scoring_function_8h" startline="100" endline="113">externalToInternalRepr</references>
-        <references refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1ab2b508f61dadc4de3998dcf9f82108aa" compoundref="_vina_like_scoring_function_8h" startline="117">initialTransform</references>
+        <location file="Engines/ScoringFunctions/VinaLikeRigidScoringFunction.h" line="67" column="1" bodyfile="Engines/ScoringFunctions/VinaLikeRigidScoringFunction.cpp" bodystart="227" bodyend="229"/>
+        <references refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1a78f389f738bb184be926a272f55baa95" compoundref="_vina_like_rigid_scoring_function_8h" startline="100" endline="113">externalToInternalRepr</references>
+        <references refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1ab2b508f61dadc4de3998dcf9f82108aa" compoundref="_vina_like_rigid_scoring_function_8h" startline="117">initialTransform</references>
       </memberdef>
       <memberdef kind="function" id="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1a2173a0716d2426518a601e1525798fcd" prot="public" static="no" const="yes" explicit="no" inline="no" final="yes" virt="virtual">
         <type>double</type>
@@ -186,8 +179,8 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Engines/ScoringFunctions/VinaLikeScoringFunction.h" line="70" column="1" bodyfile="Engines/ScoringFunctions/VinaLikeScoringFunction.cpp" bodystart="308" bodyend="310"/>
-        <references refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1ade3afba236d274a7ff1bdff886bdeaca" compoundref="_vina_like_scoring_function_8h" startline="118">differential_epsilon</references>
+        <location file="Engines/ScoringFunctions/VinaLikeRigidScoringFunction.h" line="70" column="1" bodyfile="Engines/ScoringFunctions/VinaLikeRigidScoringFunction.cpp" bodystart="223" bodyend="225"/>
+        <references refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1ade3afba236d274a7ff1bdff886bdeaca" compoundref="_vina_like_rigid_scoring_function_8h" startline="118">differential_epsilon</references>
       </memberdef>
       <memberdef kind="function" id="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1a6b173e704b812af5cde72610f1143577" prot="public" static="no" const="no" explicit="no" inline="no" final="yes" virt="virtual">
         <type><ref refid="struct_smol_dock_1_1i_conformer" kindref="compound">iConformer</ref></type>
@@ -204,11 +197,13 @@
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
-        </inbodydescription>
-        <location file="Engines/ScoringFunctions/VinaLikeScoringFunction.h" line="73" column="1" bodyfile="Engines/ScoringFunctions/VinaLikeScoringFunction.cpp" bodystart="316" bodyend="325"/>
-        <references refid="namespace_smol_dock_1a73bb4756419c2b3361ae4d23b24eee20" compoundref="_internals_utility_functions_8h" startline="72" endline="75">SmolDock::applyTransformInPlace</references>
-        <references refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1a7998fd7ab2237aa8da50d05d553ffec0" compoundref="_vina_like_scoring_function_8h" startline="83" endline="98">internalToExternalRepr</references>
-        <references refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1afc848dd44def406206bfa2ac002d00d6" compoundref="_vina_like_scoring_function_8h" startline="115">startingConformation</references>
+<para>&lt; Note that the internal representation arma::mat is not by itself normalized (because we always normalize it in the scoring function, so no constraint) </para>        </inbodydescription>
+        <location file="Engines/ScoringFunctions/VinaLikeRigidScoringFunction.h" line="73" column="1" bodyfile="Engines/ScoringFunctions/VinaLikeRigidScoringFunction.cpp" bodystart="231" bodyend="243"/>
+        <references refid="namespace_smol_dock_1aea0b5b0a06c4650f4ca502a3f1da6e98" compoundref="_internals_utility_functions_8h" startline="158" endline="161">SmolDock::applyRigidTransformInPlace</references>
+        <references refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1a7998fd7ab2237aa8da50d05d553ffec0" compoundref="_vina_like_rigid_scoring_function_8h" startline="83" endline="98">internalToExternalRepr</references>
+        <references refid="namespace_smol_dock_1a05fa7c1e1e1323710cbf76fad3030c3d" compoundref="_internals_utility_functions_8h" startline="99" endline="101">SmolDock::normalizeQuaternionInPlace</references>
+        <references refid="struct_smol_dock_1_1i_transform_1a8234938f815b9f74cc2d3289d4696dfb" compoundref="i_transform_8h" startline="33">SmolDock::iTransform::rota</references>
+        <references refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1afc848dd44def406206bfa2ac002d00d6" compoundref="_vina_like_rigid_scoring_function_8h" startline="115">startingConformation</references>
       </memberdef>
       <memberdef kind="function" id="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1ad5633f6ee3c7d72b593e5101730747a2" prot="public" static="no" const="yes" explicit="no" inline="no" final="yes" virt="virtual">
         <type>unsigned int</type>
@@ -222,7 +217,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Engines/ScoringFunctions/VinaLikeScoringFunction.h" line="75" column="1" bodyfile="Engines/ScoringFunctions/VinaLikeScoringFunction.cpp" bodystart="327" bodyend="329"/>
+        <location file="Engines/ScoringFunctions/VinaLikeRigidScoringFunction.h" line="75" column="1" bodyfile="Engines/ScoringFunctions/VinaLikeRigidScoringFunction.cpp" bodystart="245" bodyend="247"/>
       </memberdef>
       <memberdef kind="function" id="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1a9f439356ccbad3407dcb8701037cc902" prot="public" static="no" const="no" explicit="no" inline="no" final="yes" virt="non-virtual">
         <type></type>
@@ -235,7 +230,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Engines/ScoringFunctions/VinaLikeScoringFunction.h" line="78" column="1"/>
+        <location file="Engines/ScoringFunctions/VinaLikeRigidScoringFunction.h" line="78" column="1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-func">
@@ -254,19 +249,12 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Engines/ScoringFunctions/VinaLikeScoringFunction.h" line="83" column="1" bodyfile="Engines/ScoringFunctions/VinaLikeScoringFunction.h" bodystart="83" bodyend="98"/>
-        <references refid="struct_smol_dock_1_1i_transform_1a31861b55dc94ec0172ce602cd2a4a54f" compoundref="i_transform_8h" startline="46">SmolDock::iTransform::rota</references>
-        <references refid="struct_smol_dock_1_1i_quaternion_1a07d95036803eb2a4ef32627df95043ad" compoundref="i_transform_8h" startline="25">SmolDock::iQuaternion::s</references>
-        <references refid="struct_smol_dock_1_1i_quaternion_1a1ff0d5e99369aa47273864dfea352c05" compoundref="i_transform_8h" startline="26">SmolDock::iQuaternion::t</references>
-        <references refid="struct_smol_dock_1_1i_transform_1ab0039729b08d423b6e0414cec1b893e7" compoundref="i_transform_8h" startline="45">SmolDock::iTransform::transl</references>
-        <references refid="struct_smol_dock_1_1i_quaternion_1a3692d71434fede9771686a73240e6ba7" compoundref="i_transform_8h" startline="26">SmolDock::iQuaternion::u</references>
-        <references refid="struct_smol_dock_1_1i_quaternion_1a97a15d15b2fae3ec29c2fdb2388f5e5b" compoundref="i_transform_8h" startline="26">SmolDock::iQuaternion::v</references>
-        <references refid="struct_smol_dock_1_1i_translation_1a74a60efc8b2463b7ea1ca1e824a4ed28" compoundref="i_transform_8h" startline="36">SmolDock::iTranslation::x</references>
-        <references refid="struct_smol_dock_1_1i_translation_1a5362a54675ecc6bac99325c69521fbb5" compoundref="i_transform_8h" startline="36">SmolDock::iTranslation::y</references>
-        <references refid="struct_smol_dock_1_1i_translation_1a2ed07fcfc129a2bf7696b65d481317c5" compoundref="i_transform_8h" startline="36">SmolDock::iTranslation::z</references>
-        <referencedby refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1ab89f08da2f4f79abfe9130b3593c3522" compoundref="_vina_like_scoring_function_8cpp" startline="225" endline="234">Evaluate</referencedby>
-        <referencedby refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1a574511b3c12769902e2c0366d4d3db96" compoundref="_vina_like_scoring_function_8cpp" startline="236" endline="294">EvaluateWithGradient</referencedby>
-        <referencedby refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1a6b173e704b812af5cde72610f1143577" compoundref="_vina_like_scoring_function_8cpp" startline="316" endline="325">getConformerForParamMatrix</referencedby>
+        <location file="Engines/ScoringFunctions/VinaLikeRigidScoringFunction.h" line="83" column="1" bodyfile="Engines/ScoringFunctions/VinaLikeRigidScoringFunction.h" bodystart="83" bodyend="98"/>
+        <references refid="struct_smol_dock_1_1i_transform_1a8234938f815b9f74cc2d3289d4696dfb" compoundref="i_transform_8h" startline="33">SmolDock::iTransform::rota</references>
+        <references refid="struct_smol_dock_1_1i_transform_1ae79de47f6741ab7c3a97498fe0c589d3" compoundref="i_transform_8h" startline="32">SmolDock::iTransform::transl</references>
+        <referencedby refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1ab89f08da2f4f79abfe9130b3593c3522" compoundref="_vina_like_rigid_scoring_function_8cpp" startline="119" endline="128">Evaluate</referencedby>
+        <referencedby refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1a574511b3c12769902e2c0366d4d3db96" compoundref="_vina_like_rigid_scoring_function_8cpp" startline="130" endline="209">EvaluateWithGradient</referencedby>
+        <referencedby refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1a6b173e704b812af5cde72610f1143577" compoundref="_vina_like_rigid_scoring_function_8cpp" startline="231" endline="243">getConformerForParamMatrix</referencedby>
       </memberdef>
       <memberdef kind="function" id="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1a78f389f738bb184be926a272f55baa95" prot="private" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>arma::mat</type>
@@ -283,17 +271,10 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Engines/ScoringFunctions/VinaLikeScoringFunction.h" line="100" column="1" bodyfile="Engines/ScoringFunctions/VinaLikeScoringFunction.h" bodystart="100" bodyend="113"/>
-        <references refid="struct_smol_dock_1_1i_transform_1a31861b55dc94ec0172ce602cd2a4a54f" compoundref="i_transform_8h" startline="46">SmolDock::iTransform::rota</references>
-        <references refid="struct_smol_dock_1_1i_quaternion_1a07d95036803eb2a4ef32627df95043ad" compoundref="i_transform_8h" startline="25">SmolDock::iQuaternion::s</references>
-        <references refid="struct_smol_dock_1_1i_quaternion_1a1ff0d5e99369aa47273864dfea352c05" compoundref="i_transform_8h" startline="26">SmolDock::iQuaternion::t</references>
-        <references refid="struct_smol_dock_1_1i_transform_1ab0039729b08d423b6e0414cec1b893e7" compoundref="i_transform_8h" startline="45">SmolDock::iTransform::transl</references>
-        <references refid="struct_smol_dock_1_1i_quaternion_1a3692d71434fede9771686a73240e6ba7" compoundref="i_transform_8h" startline="26">SmolDock::iQuaternion::u</references>
-        <references refid="struct_smol_dock_1_1i_quaternion_1a97a15d15b2fae3ec29c2fdb2388f5e5b" compoundref="i_transform_8h" startline="26">SmolDock::iQuaternion::v</references>
-        <references refid="struct_smol_dock_1_1i_translation_1a74a60efc8b2463b7ea1ca1e824a4ed28" compoundref="i_transform_8h" startline="36">SmolDock::iTranslation::x</references>
-        <references refid="struct_smol_dock_1_1i_translation_1a5362a54675ecc6bac99325c69521fbb5" compoundref="i_transform_8h" startline="36">SmolDock::iTranslation::y</references>
-        <references refid="struct_smol_dock_1_1i_translation_1a2ed07fcfc129a2bf7696b65d481317c5" compoundref="i_transform_8h" startline="36">SmolDock::iTranslation::z</references>
-        <referencedby refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1ad16c38589c65800f164078fcbd929e99" compoundref="_vina_like_scoring_function_8cpp" startline="312" endline="314">getStartingConditions</referencedby>
+        <location file="Engines/ScoringFunctions/VinaLikeRigidScoringFunction.h" line="100" column="1" bodyfile="Engines/ScoringFunctions/VinaLikeRigidScoringFunction.h" bodystart="100" bodyend="113"/>
+        <references refid="struct_smol_dock_1_1i_transform_1a8234938f815b9f74cc2d3289d4696dfb" compoundref="i_transform_8h" startline="33">SmolDock::iTransform::rota</references>
+        <references refid="struct_smol_dock_1_1i_transform_1ae79de47f6741ab7c3a97498fe0c589d3" compoundref="i_transform_8h" startline="32">SmolDock::iTransform::transl</references>
+        <referencedby refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1ad16c38589c65800f164078fcbd929e99" compoundref="_vina_like_rigid_scoring_function_8cpp" startline="227" endline="229">getStartingConditions</referencedby>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -301,140 +282,140 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="213">
+      <node id="295">
         <label>SmolDock::Score::VinaLikeRigidScoringFunction</label>
         <link refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function"/>
-        <childnode refid="214" relation="public-inheritance">
+        <childnode refid="296" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="214">
+      <node id="296">
         <label>SmolDock::Score::ScoringFunction</label>
         <link refid="class_smol_dock_1_1_score_1_1_scoring_function"/>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="229">
+      <node id="310">
         <label>K</label>
       </node>
-      <node id="221">
+      <node id="303">
         <label>T</label>
       </node>
-      <node id="223">
+      <node id="305">
         <label>std::vector&lt; double &gt;</label>
-        <childnode refid="220" relation="template-instance">
+        <childnode refid="302" relation="template-instance">
           <edgelabel>&lt; double &gt;</edgelabel>
         </childnode>
       </node>
-      <node id="220">
+      <node id="302">
         <label>std::vector&lt; T &gt;</label>
-        <childnode refid="221" relation="usage">
+        <childnode refid="303" relation="usage">
           <edgelabel>+elements</edgelabel>
         </childnode>
       </node>
-      <node id="217">
+      <node id="299">
         <label>SmolDock::iConformer</label>
         <link refid="struct_smol_dock_1_1i_conformer"/>
-        <childnode refid="218" relation="usage">
-          <edgelabel>+centroidNormalizingTransform</edgelabel>
+        <childnode refid="300" relation="usage">
+          <edgelabel>+rotatableGroups</edgelabel>
         </childnode>
-        <childnode refid="219" relation="usage">
+        <childnode refid="301" relation="usage">
+          <edgelabel>+bondEnds2Index</edgelabel>
+          <edgelabel>+bondEnds1Index</edgelabel>
           <edgelabel>+variant</edgelabel>
         </childnode>
-        <childnode refid="222" relation="usage">
+        <childnode refid="304" relation="usage">
           <edgelabel>+type</edgelabel>
         </childnode>
-        <childnode refid="223" relation="usage">
+        <childnode refid="305" relation="usage">
           <edgelabel>+x</edgelabel>
           <edgelabel>+y</edgelabel>
           <edgelabel>+z</edgelabel>
           <edgelabel>+atomicRadius</edgelabel>
         </childnode>
       </node>
-      <node id="215">
+      <node id="297">
         <label>SmolDock::Score::VinaLikeRigidScoringFunction</label>
         <link refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function"/>
-        <childnode refid="216" relation="public-inheritance">
+        <childnode refid="298" relation="public-inheritance">
         </childnode>
-        <childnode refid="217" relation="usage">
+        <childnode refid="299" relation="usage">
           <edgelabel>-startingConformation</edgelabel>
         </childnode>
-        <childnode refid="224" relation="usage">
+        <childnode refid="306" relation="usage">
           <edgelabel>-initialTransform</edgelabel>
         </childnode>
-        <childnode refid="226" relation="usage">
+        <childnode refid="307" relation="usage">
           <edgelabel>-prot</edgelabel>
         </childnode>
       </node>
-      <node id="228">
+      <node id="309">
         <label>std::map&lt; K, T &gt;</label>
-        <childnode refid="229" relation="usage">
+        <childnode refid="310" relation="usage">
           <edgelabel>+keys</edgelabel>
         </childnode>
-        <childnode refid="221" relation="usage">
+        <childnode refid="303" relation="usage">
           <edgelabel>+elements</edgelabel>
         </childnode>
       </node>
-      <node id="225">
-        <label>SmolDock::iQuaternion</label>
-        <link refid="struct_smol_dock_1_1i_quaternion"/>
-      </node>
-      <node id="226">
+      <node id="307">
         <label>SmolDock::iProtein</label>
         <link refid="struct_smol_dock_1_1i_protein"/>
-        <childnode refid="227" relation="usage">
+        <childnode refid="308" relation="usage">
           <edgelabel>+AAId_to_AtomPositionInVect</edgelabel>
         </childnode>
-        <childnode refid="219" relation="usage">
+        <childnode refid="301" relation="usage">
           <edgelabel>+variant</edgelabel>
         </childnode>
-        <childnode refid="222" relation="usage">
+        <childnode refid="304" relation="usage">
           <edgelabel>+type</edgelabel>
         </childnode>
-        <childnode refid="223" relation="usage">
+        <childnode refid="305" relation="usage">
           <edgelabel>+x</edgelabel>
           <edgelabel>+y</edgelabel>
           <edgelabel>+z</edgelabel>
           <edgelabel>+atomicRadius</edgelabel>
         </childnode>
       </node>
-      <node id="216">
+      <node id="298">
         <label>SmolDock::Score::ScoringFunction</label>
         <link refid="class_smol_dock_1_1_score_1_1_scoring_function"/>
       </node>
-      <node id="224">
-        <label>SmolDock::iTransform</label>
-        <link refid="struct_smol_dock_1_1i_transform"/>
-        <childnode refid="218" relation="usage">
-          <edgelabel>+transl</edgelabel>
+      <node id="300">
+        <label>std::vector&lt; std::vector&lt; unsigned int &gt; &gt;</label>
+        <childnode refid="301" relation="usage">
+          <edgelabel>+elements</edgelabel>
         </childnode>
-        <childnode refid="225" relation="usage">
-          <edgelabel>+rota</edgelabel>
+        <childnode refid="302" relation="template-instance">
+          <edgelabel>&lt; std::vector&lt; unsigned int &gt; &gt;</edgelabel>
         </childnode>
       </node>
-      <node id="219">
+      <node id="306">
+        <label>SmolDock::iTransform</label>
+        <link refid="struct_smol_dock_1_1i_transform"/>
+        <childnode refid="305" relation="usage">
+          <edgelabel>+bondRotationsAngles</edgelabel>
+        </childnode>
+      </node>
+      <node id="301">
         <label>std::vector&lt; unsigned int &gt;</label>
-        <childnode refid="220" relation="template-instance">
+        <childnode refid="302" relation="template-instance">
           <edgelabel>&lt; unsigned int &gt;</edgelabel>
         </childnode>
       </node>
-      <node id="222">
+      <node id="304">
         <label>std::vector&lt; unsigned char &gt;</label>
-        <childnode refid="220" relation="template-instance">
+        <childnode refid="302" relation="template-instance">
           <edgelabel>&lt; unsigned char &gt;</edgelabel>
         </childnode>
       </node>
-      <node id="218">
-        <label>SmolDock::iTranslation</label>
-        <link refid="struct_smol_dock_1_1i_translation"/>
-      </node>
-      <node id="227">
+      <node id="308">
         <label>std::map&lt; unsigned int, std::tuple&lt; unsigned long, unsigned long &gt; &gt;</label>
-        <childnode refid="228" relation="template-instance">
+        <childnode refid="309" relation="template-instance">
           <edgelabel>&lt; unsigned int, std::tuple&lt; unsigned long, unsigned long &gt; &gt;</edgelabel>
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="Engines/ScoringFunctions/VinaLikeScoringFunction.h" line="53" column="1" bodyfile="Engines/ScoringFunctions/VinaLikeScoringFunction.h" bodystart="53" bodyend="121"/>
+    <location file="Engines/ScoringFunctions/VinaLikeRigidScoringFunction.h" line="53" column="1" bodyfile="Engines/ScoringFunctions/VinaLikeRigidScoringFunction.h" bodystart="53" bodyend="121"/>
     <listofallmembers>
       <member refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1ade3afba236d274a7ff1bdff886bdeaca" prot="private" virt="non-virtual"><scope>SmolDock::Score::VinaLikeRigidScoringFunction</scope><name>differential_epsilon</name></member>
       <member refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1ab89f08da2f4f79abfe9130b3593c3522" prot="public" virt="virtual"><scope>SmolDock::Score::VinaLikeRigidScoringFunction</scope><name>Evaluate</name></member>

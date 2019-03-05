@@ -185,6 +185,8 @@ namespace SmolDock {
 
         bool operator!=(const Molecule &rhs) const;
 
+        unsigned int applyAtomVariant(std::string smarts_pattern,Atom::AtomVariant variant);
+
     private:
 
         static unsigned int LastMolID;
@@ -203,6 +205,10 @@ namespace SmolDock {
 
 
         std::string residue_name = "LIG";
+
+        // Mapping between atomIdx in the RDKit RWmol, and the atoms vector of this class
+        std::map<int,int> RDKitAtomIdxToAtomsPosInVector;
+        std::map<int,int> atomsPosInVectorToRDKitAtomIdx;
 
         //! Use this if using RDKit RWMol as entry.
         bool populateInternalAtomAndBondFromRWMol(unsigned int seed,

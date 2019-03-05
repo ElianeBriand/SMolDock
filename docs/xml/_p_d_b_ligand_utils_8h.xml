@@ -12,60 +12,60 @@
     <includedby refid="_molecule_8cpp" local="yes">Molecule.cpp</includedby>
     <includedby refid="_p_d_b_ligand_utils_8cpp" local="yes">PDBLigandUtils.cpp</includedby>
     <incdepgraph>
-      <node id="1197">
+      <node id="1534">
         <label>GraphMol/RWMol.h</label>
       </node>
-      <node id="1198">
+      <node id="1535">
         <label>GraphMol/MolOps.h</label>
       </node>
-      <node id="1201">
+      <node id="1538">
         <label>GraphMol/Substruct/SubstructMatch.h</label>
       </node>
-      <node id="1194">
+      <node id="1531">
         <label>PDBLigandUtils.h</label>
         <link refid="_p_d_b_ligand_utils_8h"/>
-        <childnode refid="1195" relation="include">
+        <childnode refid="1532" relation="include">
         </childnode>
-        <childnode refid="1196" relation="include">
+        <childnode refid="1533" relation="include">
         </childnode>
-        <childnode refid="1197" relation="include">
+        <childnode refid="1534" relation="include">
         </childnode>
-        <childnode refid="1198" relation="include">
+        <childnode refid="1535" relation="include">
         </childnode>
-        <childnode refid="1199" relation="include">
+        <childnode refid="1536" relation="include">
         </childnode>
-        <childnode refid="1200" relation="include">
+        <childnode refid="1537" relation="include">
         </childnode>
-        <childnode refid="1201" relation="include">
+        <childnode refid="1538" relation="include">
         </childnode>
       </node>
-      <node id="1199">
+      <node id="1536">
         <label>GraphMol/SmilesParse/SmilesParse.h</label>
       </node>
-      <node id="1196">
+      <node id="1533">
         <label>GraphMol/RDKitBase.h</label>
       </node>
-      <node id="1200">
+      <node id="1537">
         <label>GraphMol/SmilesParse/SmilesWrite.h</label>
       </node>
-      <node id="1195">
+      <node id="1532">
         <label>memory</label>
       </node>
     </incdepgraph>
     <invincdepgraph>
-      <node id="1202">
+      <node id="1539">
         <label>PDBLigandUtils.h</label>
         <link refid="_p_d_b_ligand_utils_8h"/>
-        <childnode refid="1203" relation="include">
+        <childnode refid="1540" relation="include">
         </childnode>
-        <childnode refid="1204" relation="include">
+        <childnode refid="1541" relation="include">
         </childnode>
       </node>
-      <node id="1204">
+      <node id="1541">
         <label>PDBLigandUtils.cpp</label>
         <link refid="_p_d_b_ligand_utils_8cpp"/>
       </node>
-      <node id="1203">
+      <node id="1540">
         <label>Molecule.cpp</label>
         <link refid="_molecule_8cpp"/>
       </node>
@@ -94,7 +94,7 @@
 <codeline lineno="16"><highlight class="normal"></highlight></codeline>
 <codeline lineno="17"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_smol_dock" kindref="compound">SmolDock</ref><sp/>{</highlight></codeline>
 <codeline lineno="18"><highlight class="normal"></highlight></codeline>
-<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespace_smol_dock_1a288ddd3593922bcc17e5feb114841802" kindref="member">AssignBondOrderFromTemplateSMILES</ref>(std::shared_ptr&lt;RDKit::RWMol&gt;<sp/>mol,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>smiles);</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespace_smol_dock_1a288ddd3593922bcc17e5feb114841802" kindref="member">AssignBondOrderFromTemplateSMILES</ref>(std::shared_ptr&lt;RDKit::RWMol&gt;<sp/>mol,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;smiles);</highlight></codeline>
 <codeline lineno="20"><highlight class="normal"></highlight></codeline>
 <codeline lineno="21"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//SMOLDOCK_PDBLIGANDUTILS_H</highlight></codeline>

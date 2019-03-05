@@ -4,6 +4,7 @@
     <compoundname>SmolDock::Heuristics::RandomRestart</compoundname>
     <basecompoundref refid="class_smol_dock_1_1_heuristics_1_1_global_heuristic" prot="public" virt="non-virtual">SmolDock::Heuristics::GlobalHeuristic</basecompoundref>
     <includes refid="_random_restart_8h" local="no">RandomRestart.h</includes>
+    <innerclass refid="struct_smol_dock_1_1_heuristics_1_1_random_restart_1_1_parameters" prot="public">SmolDock::Heuristics::RandomRestart::Parameters</innerclass>
       <sectiondef kind="private-attrib">
       <memberdef kind="variable" id="class_smol_dock_1_1_heuristics_1_1_random_restart_1af92f8f1347adb435fa783c909912af77" prot="private" static="no" mutable="no">
         <type><ref refid="class_smol_dock_1_1_score_1_1_scoring_function" kindref="compound">Score::ScoringFunction</ref> *</type>
@@ -16,8 +17,8 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Engines/GlobalHeuristics/RandomRestart.h" line="27" column="1" bodyfile="Engines/GlobalHeuristics/RandomRestart.h" bodystart="27" bodyend="-1"/>
-        <referencedby refid="class_smol_dock_1_1_heuristics_1_1_random_restart_1abfa7882757c070d876d94090520cef92" compoundref="_random_restart_8cpp" startline="25" endline="56">search</referencedby>
+        <location file="Engines/GlobalHeuristics/RandomRestart.h" line="38" column="1" bodyfile="Engines/GlobalHeuristics/RandomRestart.h" bodystart="38" bodyend="-1"/>
+        <referencedby refid="class_smol_dock_1_1_heuristics_1_1_random_restart_1abfa7882757c070d876d94090520cef92" compoundref="_random_restart_8cpp" startline="22" endline="64">search</referencedby>
       </memberdef>
       <memberdef kind="variable" id="class_smol_dock_1_1_heuristics_1_1_random_restart_1a9ef6527f103d63ff12abae06b97fad9c" prot="private" static="no" mutable="no">
         <type><ref refid="class_smol_dock_1_1_optimizer_1_1_optimizer" kindref="compound">Optimizer::Optimizer</ref> *</type>
@@ -30,23 +31,22 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Engines/GlobalHeuristics/RandomRestart.h" line="28" column="1" bodyfile="Engines/GlobalHeuristics/RandomRestart.h" bodystart="28" bodyend="-1"/>
-        <referencedby refid="class_smol_dock_1_1_heuristics_1_1_random_restart_1abfa7882757c070d876d94090520cef92" compoundref="_random_restart_8cpp" startline="25" endline="56">search</referencedby>
+        <location file="Engines/GlobalHeuristics/RandomRestart.h" line="39" column="1" bodyfile="Engines/GlobalHeuristics/RandomRestart.h" bodystart="39" bodyend="-1"/>
+        <referencedby refid="class_smol_dock_1_1_heuristics_1_1_random_restart_1abfa7882757c070d876d94090520cef92" compoundref="_random_restart_8cpp" startline="22" endline="64">search</referencedby>
       </memberdef>
-      <memberdef kind="variable" id="class_smol_dock_1_1_heuristics_1_1_random_restart_1a9f126933a53652c60537d755bcfcad65" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="class_smol_dock_1_1_heuristics_1_1_random_restart_1a1eb7cffead1079b4e80ea7857e65a3e4" prot="private" static="no" mutable="no">
         <type>std::mt19937</type>
-        <definition>std::mt19937 SmolDock::Heuristics::RandomRestart::rnd_generator</definition>
+        <definition>std::mt19937 SmolDock::Heuristics::RandomRestart::rndGenerator</definition>
         <argsstring></argsstring>
-        <name>rnd_generator</name>
+        <name>rndGenerator</name>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Engines/GlobalHeuristics/RandomRestart.h" line="30" column="1" bodyfile="Engines/GlobalHeuristics/RandomRestart.h" bodystart="30" bodyend="-1"/>
-        <referencedby refid="class_smol_dock_1_1_heuristics_1_1_random_restart_1a4e6c878b33b776e4817a1ccc3f582d5f" compoundref="_random_restart_8cpp" startline="16" endline="23">RandomRestart</referencedby>
-        <referencedby refid="class_smol_dock_1_1_heuristics_1_1_random_restart_1abfa7882757c070d876d94090520cef92" compoundref="_random_restart_8cpp" startline="25" endline="56">search</referencedby>
+        <location file="Engines/GlobalHeuristics/RandomRestart.h" line="41" column="1" bodyfile="Engines/GlobalHeuristics/RandomRestart.h" bodystart="41" bodyend="-1"/>
+        <referencedby refid="class_smol_dock_1_1_heuristics_1_1_random_restart_1abfa7882757c070d876d94090520cef92" compoundref="_random_restart_8cpp" startline="22" endline="64">search</referencedby>
       </memberdef>
       <memberdef kind="variable" id="class_smol_dock_1_1_heuristics_1_1_random_restart_1a2ae6f0df0cd563a72a62db5137221065" prot="private" static="no" mutable="no">
         <type>arma::mat</type>
@@ -59,16 +59,30 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Engines/GlobalHeuristics/RandomRestart.h" line="32" column="1" bodyfile="Engines/GlobalHeuristics/RandomRestart.h" bodystart="32" bodyend="-1"/>
-        <referencedby refid="class_smol_dock_1_1_heuristics_1_1_random_restart_1abfa7882757c070d876d94090520cef92" compoundref="_random_restart_8cpp" startline="25" endline="56">search</referencedby>
-        <referencedby refid="class_smol_dock_1_1_heuristics_1_1_random_restart_1a2397763517ca92a3552c84963998ab39" compoundref="_random_restart_8cpp" startline="58" endline="60">getResultMatrix</referencedby>
+        <location file="Engines/GlobalHeuristics/RandomRestart.h" line="43" column="1" bodyfile="Engines/GlobalHeuristics/RandomRestart.h" bodystart="43" bodyend="-1"/>
+        <referencedby refid="class_smol_dock_1_1_heuristics_1_1_random_restart_1abfa7882757c070d876d94090520cef92" compoundref="_random_restart_8cpp" startline="22" endline="64">search</referencedby>
+        <referencedby refid="class_smol_dock_1_1_heuristics_1_1_random_restart_1a2397763517ca92a3552c84963998ab39" compoundref="_random_restart_8cpp" startline="66" endline="68">getResultMatrix</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_smol_dock_1_1_heuristics_1_1_random_restart_1ae8048a1f9c2a54b940977412b47b3fb5" prot="private" static="no" mutable="no">
+        <type><ref refid="struct_smol_dock_1_1_heuristics_1_1_random_restart_1_1_parameters" kindref="compound">Parameters</ref></type>
+        <definition>Parameters SmolDock::Heuristics::RandomRestart::params</definition>
+        <argsstring></argsstring>
+        <name>params</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Engines/GlobalHeuristics/RandomRestart.h" line="45" column="1" bodyfile="Engines/GlobalHeuristics/RandomRestart.h" bodystart="45" bodyend="-1"/>
+        <referencedby refid="class_smol_dock_1_1_heuristics_1_1_random_restart_1abfa7882757c070d876d94090520cef92" compoundref="_random_restart_8cpp" startline="22" endline="64">search</referencedby>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
-      <memberdef kind="function" id="class_smol_dock_1_1_heuristics_1_1_random_restart_1a4e6c878b33b776e4817a1ccc3f582d5f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="class_smol_dock_1_1_heuristics_1_1_random_restart_1ab0a1bc411be39519af39f2b044de921d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
         <definition>SmolDock::Heuristics::RandomRestart::RandomRestart</definition>
-        <argsstring>(Score::ScoringFunction *scorFunc_, Optimizer::Optimizer *optimizer_, unsigned int seed_)</argsstring>
+        <argsstring>(Score::ScoringFunction *scorFunc_, Optimizer::Optimizer *optimizer_, unsigned int seed_, RandomRestart::Parameters params_)</argsstring>
         <name>RandomRestart</name>
         <param>
           <type><ref refid="class_smol_dock_1_1_score_1_1_scoring_function" kindref="compound">Score::ScoringFunction</ref> *</type>
@@ -82,14 +96,17 @@
           <type>unsigned int</type>
           <declname>seed_</declname>
         </param>
+        <param>
+          <type><ref refid="struct_smol_dock_1_1_heuristics_1_1_random_restart_1_1_parameters" kindref="compound">RandomRestart::Parameters</ref></type>
+          <declname>params_</declname>
+        </param>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Engines/GlobalHeuristics/RandomRestart.h" line="18" column="1" bodyfile="Engines/GlobalHeuristics/RandomRestart.cpp" bodystart="16" bodyend="23"/>
-        <references refid="class_smol_dock_1_1_heuristics_1_1_random_restart_1a9f126933a53652c60537d755bcfcad65" compoundref="_random_restart_8h" startline="30">rnd_generator</references>
+        <location file="Engines/GlobalHeuristics/RandomRestart.h" line="21" column="1" bodyfile="Engines/GlobalHeuristics/RandomRestart.cpp" bodystart="16" bodyend="20"/>
       </memberdef>
       <memberdef kind="function" id="class_smol_dock_1_1_heuristics_1_1_random_restart_1abfa7882757c070d876d94090520cef92" prot="public" static="no" const="no" explicit="no" inline="no" final="yes" virt="virtual">
         <type>bool</type>
@@ -103,15 +120,18 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Engines/GlobalHeuristics/RandomRestart.h" line="20" column="1" bodyfile="Engines/GlobalHeuristics/RandomRestart.cpp" bodystart="25" bodyend="56"/>
+        <location file="Engines/GlobalHeuristics/RandomRestart.h" line="24" column="1" bodyfile="Engines/GlobalHeuristics/RandomRestart.cpp" bodystart="22" bodyend="64"/>
         <references refid="class_smol_dock_1_1_score_1_1_scoring_function_1a92b9b5f6d23b07740dd9f6718207d31a">SmolDock::Score::ScoringFunction::Evaluate</references>
         <references refid="class_smol_dock_1_1_optimizer_1_1_optimizer_1a127349b071842e954d7a89f026685b8f">SmolDock::Optimizer::Optimizer::getRawResultMatrix</references>
+        <references refid="class_smol_dock_1_1_optimizer_1_1_optimizer_1a5165027808dafc096faf1048a48e7c1c">SmolDock::Optimizer::Optimizer::getScore</references>
         <references refid="class_smol_dock_1_1_score_1_1_scoring_function_1a70e93a6f7e50f4a57273b0faf60e8e90">SmolDock::Score::ScoringFunction::getStartingConditions</references>
         <references refid="class_smol_dock_1_1_optimizer_1_1_optimizer_1a2868a3d9b6855b745d456de57eb1a870">SmolDock::Optimizer::Optimizer::optimize</references>
-        <references refid="class_smol_dock_1_1_heuristics_1_1_random_restart_1a9ef6527f103d63ff12abae06b97fad9c" compoundref="_random_restart_8h" startline="28">optimizer</references>
-        <references refid="class_smol_dock_1_1_heuristics_1_1_random_restart_1a2ae6f0df0cd563a72a62db5137221065" compoundref="_random_restart_8h" startline="32">result</references>
-        <references refid="class_smol_dock_1_1_heuristics_1_1_random_restart_1a9f126933a53652c60537d755bcfcad65" compoundref="_random_restart_8h" startline="30">rnd_generator</references>
-        <references refid="class_smol_dock_1_1_heuristics_1_1_random_restart_1af92f8f1347adb435fa783c909912af77" compoundref="_random_restart_8h" startline="27">scorFunc</references>
+        <references refid="class_smol_dock_1_1_heuristics_1_1_random_restart_1a9ef6527f103d63ff12abae06b97fad9c" compoundref="_random_restart_8h" startline="39">optimizer</references>
+        <references refid="class_smol_dock_1_1_heuristics_1_1_random_restart_1ae8048a1f9c2a54b940977412b47b3fb5" compoundref="_random_restart_8h" startline="45">params</references>
+        <references refid="struct_smol_dock_1_1_heuristics_1_1_random_restart_1_1_parameters_1a832aa45d90da0e99e4697fbbe1613701" compoundref="_random_restart_8h" startline="33">SmolDock::Heuristics::RandomRestart::Parameters::proteinMaxRadius</references>
+        <references refid="class_smol_dock_1_1_heuristics_1_1_random_restart_1a2ae6f0df0cd563a72a62db5137221065" compoundref="_random_restart_8h" startline="43">result</references>
+        <references refid="class_smol_dock_1_1_heuristics_1_1_random_restart_1a1eb7cffead1079b4e80ea7857e65a3e4" compoundref="_random_restart_8h" startline="41">rndGenerator</references>
+        <references refid="class_smol_dock_1_1_heuristics_1_1_random_restart_1af92f8f1347adb435fa783c909912af77" compoundref="_random_restart_8h" startline="38">scorFunc</references>
       </memberdef>
       <memberdef kind="function" id="class_smol_dock_1_1_heuristics_1_1_random_restart_1a2397763517ca92a3552c84963998ab39" prot="public" static="no" const="no" explicit="no" inline="no" final="yes" virt="virtual">
         <type>arma::mat</type>
@@ -125,8 +145,8 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Engines/GlobalHeuristics/RandomRestart.h" line="22" column="1" bodyfile="Engines/GlobalHeuristics/RandomRestart.cpp" bodystart="58" bodyend="60"/>
-        <references refid="class_smol_dock_1_1_heuristics_1_1_random_restart_1a2ae6f0df0cd563a72a62db5137221065" compoundref="_random_restart_8h" startline="32">result</references>
+        <location file="Engines/GlobalHeuristics/RandomRestart.h" line="26" column="1" bodyfile="Engines/GlobalHeuristics/RandomRestart.cpp" bodystart="66" bodyend="68"/>
+        <references refid="class_smol_dock_1_1_heuristics_1_1_random_restart_1a2ae6f0df0cd563a72a62db5137221065" compoundref="_random_restart_8h" startline="43">result</references>
       </memberdef>
       <memberdef kind="function" id="class_smol_dock_1_1_heuristics_1_1_random_restart_1a086a8662594c721b0daa7259b673d415" prot="public" static="no" const="no" explicit="no" inline="no" final="yes" virt="non-virtual">
         <type></type>
@@ -139,7 +159,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Engines/GlobalHeuristics/RandomRestart.h" line="24" column="1"/>
+        <location file="Engines/GlobalHeuristics/RandomRestart.h" line="28" column="1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -147,50 +167,58 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="171">
+      <node id="239">
         <label>SmolDock::Heuristics::RandomRestart</label>
         <link refid="class_smol_dock_1_1_heuristics_1_1_random_restart"/>
-        <childnode refid="172" relation="public-inheritance">
+        <childnode refid="240" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="172">
+      <node id="240">
         <label>SmolDock::Heuristics::GlobalHeuristic</label>
         <link refid="class_smol_dock_1_1_heuristics_1_1_global_heuristic"/>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="176">
+      <node id="245">
+        <label>SmolDock::Heuristics::RandomRestart::Parameters</label>
+        <link refid="struct_smol_dock_1_1_heuristics_1_1_random_restart_1_1_parameters"/>
+      </node>
+      <node id="244">
         <label>SmolDock::Score::ScoringFunction</label>
         <link refid="class_smol_dock_1_1_score_1_1_scoring_function"/>
       </node>
-      <node id="173">
+      <node id="241">
         <label>SmolDock::Heuristics::RandomRestart</label>
         <link refid="class_smol_dock_1_1_heuristics_1_1_random_restart"/>
-        <childnode refid="174" relation="public-inheritance">
+        <childnode refid="242" relation="public-inheritance">
         </childnode>
-        <childnode refid="175" relation="usage">
+        <childnode refid="243" relation="usage">
           <edgelabel>-optimizer</edgelabel>
         </childnode>
-        <childnode refid="176" relation="usage">
+        <childnode refid="244" relation="usage">
           <edgelabel>-scorFunc</edgelabel>
         </childnode>
+        <childnode refid="245" relation="usage">
+          <edgelabel>-params</edgelabel>
+        </childnode>
       </node>
-      <node id="174">
+      <node id="242">
         <label>SmolDock::Heuristics::GlobalHeuristic</label>
         <link refid="class_smol_dock_1_1_heuristics_1_1_global_heuristic"/>
       </node>
-      <node id="175">
+      <node id="243">
         <label>SmolDock::Optimizer::Optimizer</label>
         <link refid="class_smol_dock_1_1_optimizer_1_1_optimizer"/>
       </node>
     </collaborationgraph>
-    <location file="Engines/GlobalHeuristics/RandomRestart.h" line="15" column="1" bodyfile="Engines/GlobalHeuristics/RandomRestart.h" bodystart="15" bodyend="34"/>
+    <location file="Engines/GlobalHeuristics/RandomRestart.h" line="16" column="1" bodyfile="Engines/GlobalHeuristics/RandomRestart.h" bodystart="16" bodyend="47"/>
     <listofallmembers>
       <member refid="class_smol_dock_1_1_heuristics_1_1_random_restart_1a2397763517ca92a3552c84963998ab39" prot="public" virt="virtual"><scope>SmolDock::Heuristics::RandomRestart</scope><name>getResultMatrix</name></member>
       <member refid="class_smol_dock_1_1_heuristics_1_1_random_restart_1a9ef6527f103d63ff12abae06b97fad9c" prot="private" virt="non-virtual"><scope>SmolDock::Heuristics::RandomRestart</scope><name>optimizer</name></member>
-      <member refid="class_smol_dock_1_1_heuristics_1_1_random_restart_1a4e6c878b33b776e4817a1ccc3f582d5f" prot="public" virt="non-virtual"><scope>SmolDock::Heuristics::RandomRestart</scope><name>RandomRestart</name></member>
+      <member refid="class_smol_dock_1_1_heuristics_1_1_random_restart_1ae8048a1f9c2a54b940977412b47b3fb5" prot="private" virt="non-virtual"><scope>SmolDock::Heuristics::RandomRestart</scope><name>params</name></member>
+      <member refid="class_smol_dock_1_1_heuristics_1_1_random_restart_1ab0a1bc411be39519af39f2b044de921d" prot="public" virt="non-virtual"><scope>SmolDock::Heuristics::RandomRestart</scope><name>RandomRestart</name></member>
       <member refid="class_smol_dock_1_1_heuristics_1_1_random_restart_1a2ae6f0df0cd563a72a62db5137221065" prot="private" virt="non-virtual"><scope>SmolDock::Heuristics::RandomRestart</scope><name>result</name></member>
-      <member refid="class_smol_dock_1_1_heuristics_1_1_random_restart_1a9f126933a53652c60537d755bcfcad65" prot="private" virt="non-virtual"><scope>SmolDock::Heuristics::RandomRestart</scope><name>rnd_generator</name></member>
+      <member refid="class_smol_dock_1_1_heuristics_1_1_random_restart_1a1eb7cffead1079b4e80ea7857e65a3e4" prot="private" virt="non-virtual"><scope>SmolDock::Heuristics::RandomRestart</scope><name>rndGenerator</name></member>
       <member refid="class_smol_dock_1_1_heuristics_1_1_random_restart_1af92f8f1347adb435fa783c909912af77" prot="private" virt="non-virtual"><scope>SmolDock::Heuristics::RandomRestart</scope><name>scorFunc</name></member>
       <member refid="class_smol_dock_1_1_heuristics_1_1_random_restart_1abfa7882757c070d876d94090520cef92" prot="public" virt="virtual"><scope>SmolDock::Heuristics::RandomRestart</scope><name>search</name></member>
       <member refid="class_smol_dock_1_1_heuristics_1_1_global_heuristic_1a93c9f12a7d218837e6e5441ae5daebc1" prot="public" virt="virtual"><scope>SmolDock::Heuristics::RandomRestart</scope><name>~GlobalHeuristic</name></member>

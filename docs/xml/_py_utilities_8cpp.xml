@@ -6,243 +6,289 @@
     <includes local="no">boost/numpy.hpp</includes>
     <includes refid="_py_utilities_8h" local="yes">PyUtilities.h</includes>
     <includes refid="_re_scorer_8h" local="no">Utilities/ReScorer.h</includes>
+    <includes refid="_p_d_b_writer_8h" local="no">Utilities/PDBWriter.h</includes>
     <incdepgraph>
-      <node id="1556">
+      <node id="1975">
         <label>Structures/Protein.h</label>
         <link refid="_protein_8h"/>
-        <childnode refid="1557" relation="include">
+        <childnode refid="1976" relation="include">
         </childnode>
-        <childnode refid="1558" relation="include">
+        <childnode refid="1977" relation="include">
         </childnode>
-        <childnode refid="1559" relation="include">
+        <childnode refid="1978" relation="include">
         </childnode>
-        <childnode refid="1560" relation="include">
+        <childnode refid="1979" relation="include">
         </childnode>
-        <childnode refid="1561" relation="include">
+        <childnode refid="1980" relation="include">
         </childnode>
-        <childnode refid="1562" relation="include">
+        <childnode refid="1981" relation="include">
         </childnode>
-        <childnode refid="1563" relation="include">
+        <childnode refid="1982" relation="include">
         </childnode>
-        <childnode refid="1565" relation="include">
+        <childnode refid="1984" relation="include">
         </childnode>
-        <childnode refid="1573" relation="include">
+        <childnode refid="1992" relation="include">
         </childnode>
-        <childnode refid="1570" relation="include">
+        <childnode refid="1989" relation="include">
         </childnode>
       </node>
-      <node id="1559">
+      <node id="1978">
         <label>ESBTL/default.h</label>
       </node>
-      <node id="1576">
+      <node id="1995">
         <label>GraphMol/RWMol.h</label>
       </node>
-      <node id="1577">
+      <node id="1996">
         <label>GraphMol/MolOps.h</label>
       </node>
-      <node id="1580">
+      <node id="1999">
         <label>GraphMol/Substruct/SubstructMatch.h</label>
       </node>
-      <node id="1586">
+      <node id="2005">
         <label>cmath</label>
       </node>
-      <node id="1587">
+      <node id="2006">
         <label>cassert</label>
       </node>
-      <node id="1581">
+      <node id="2007">
+        <label>Eigen/Core</label>
+      </node>
+      <node id="2000">
         <label>GraphMol/DistGeomHelpers/Embedder.h</label>
       </node>
-      <node id="1565">
+      <node id="1984">
         <label>Structures/InputPostProcessors/InputPostProcessorInterface.h</label>
         <link refid="_input_post_processor_interface_8h"/>
-        <childnode refid="1566" relation="include">
+        <childnode refid="1985" relation="include">
         </childnode>
       </node>
-      <node id="1571">
+      <node id="1990">
         <label>string</label>
       </node>
-      <node id="1562">
+      <node id="1981">
         <label>ESBTL/compressed_ifstream.h</label>
       </node>
-      <node id="1566">
+      <node id="2010">
+        <label>ScoringFunctionInterface.h</label>
+        <link refid="_scoring_function_interface_8h"/>
+        <childnode refid="2011" relation="include">
+        </childnode>
+        <childnode refid="2002" relation="include">
+        </childnode>
+      </node>
+      <node id="1985">
         <label>Structures/Atom.h</label>
         <link refid="_atom_8h"/>
-        <childnode refid="1557" relation="include">
+        <childnode refid="1976" relation="include">
         </childnode>
-        <childnode refid="1558" relation="include">
+        <childnode refid="1977" relation="include">
         </childnode>
-        <childnode refid="1567" relation="include">
+        <childnode refid="1986" relation="include">
         </childnode>
-        <childnode refid="1568" relation="include">
+        <childnode refid="1987" relation="include">
         </childnode>
-        <childnode refid="1569" relation="include">
+        <childnode refid="1988" relation="include">
         </childnode>
-        <childnode refid="1570" relation="include">
+        <childnode refid="1989" relation="include">
         </childnode>
       </node>
-      <node id="1564">
+      <node id="1983">
         <label>map</label>
       </node>
-      <node id="1553">
+      <node id="1972">
         <label>boost/numpy.hpp</label>
       </node>
-      <node id="1583">
+      <node id="2002">
         <label>../Engines/Internals/iConformer.h</label>
         <link refid="i_conformer_8h"/>
-        <childnode refid="1557" relation="include">
+        <childnode refid="1976" relation="include">
         </childnode>
-        <childnode refid="1558" relation="include">
+        <childnode refid="1977" relation="include">
         </childnode>
-        <childnode refid="1584" relation="include">
+        <childnode refid="2003" relation="include">
         </childnode>
       </node>
-      <node id="1582">
+      <node id="2011">
+        <label>armadillo</label>
+      </node>
+      <node id="2001">
         <label>Bond.h</label>
         <link refid="_bond_8h"/>
-        <childnode refid="1558" relation="include">
+        <childnode refid="1977" relation="include">
         </childnode>
-        <childnode refid="1566" relation="include">
+        <childnode refid="1985" relation="include">
         </childnode>
       </node>
-      <node id="1555">
+      <node id="1974">
         <label>Utilities/ReScorer.h</label>
         <link refid="_re_scorer_8h"/>
-        <childnode refid="1556" relation="include">
+        <childnode refid="1975" relation="include">
         </childnode>
-        <childnode refid="1574" relation="include">
+        <childnode refid="1993" relation="include">
         </childnode>
-        <childnode refid="1584" relation="include">
+        <childnode refid="2003" relation="include">
+        </childnode>
+        <childnode refid="2009" relation="include">
         </childnode>
       </node>
-      <node id="1560">
+      <node id="1979">
         <label>ESBTL/atom_classifier.h</label>
       </node>
-      <node id="1570">
+      <node id="2008">
+        <label>Eigen/Dense</label>
+      </node>
+      <node id="1989">
         <label>AminoAcid.h</label>
         <link refid="_amino_acid_8h"/>
-        <childnode refid="1571" relation="include">
+        <childnode refid="1990" relation="include">
         </childnode>
-        <childnode refid="1557" relation="include">
+        <childnode refid="1976" relation="include">
         </childnode>
-        <childnode refid="1567" relation="include">
+        <childnode refid="1986" relation="include">
         </childnode>
-        <childnode refid="1568" relation="include">
+        <childnode refid="1987" relation="include">
         </childnode>
-        <childnode refid="1572" relation="include">
+        <childnode refid="1991" relation="include">
         </childnode>
-        <childnode refid="1558" relation="include">
+        <childnode refid="1977" relation="include">
         </childnode>
-        <childnode refid="1563" relation="include">
+        <childnode refid="1982" relation="include">
         </childnode>
       </node>
-      <node id="1551">
+      <node id="1970">
         <label>PyUtilities.cpp</label>
         <link refid="_py_utilities_8cpp"/>
-        <childnode refid="1552" relation="include">
+        <childnode refid="1971" relation="include">
         </childnode>
-        <childnode refid="1553" relation="include">
+        <childnode refid="1972" relation="include">
         </childnode>
-        <childnode refid="1554" relation="include">
+        <childnode refid="1973" relation="include">
         </childnode>
-        <childnode refid="1555" relation="include">
+        <childnode refid="1974" relation="include">
+        </childnode>
+        <childnode refid="2012" relation="include">
         </childnode>
       </node>
-      <node id="1572">
+      <node id="1991">
         <label>tuple</label>
       </node>
-      <node id="1563">
+      <node id="1982">
         <label>Engines/Internals/iProtein.h</label>
         <link refid="i_protein_8h"/>
-        <childnode refid="1557" relation="include">
+        <childnode refid="1976" relation="include">
         </childnode>
-        <childnode refid="1558" relation="include">
+        <childnode refid="1977" relation="include">
         </childnode>
-        <childnode refid="1564" relation="include">
+        <childnode refid="1983" relation="include">
         </childnode>
       </node>
-      <node id="1552">
+      <node id="1971">
         <label>boost/python.hpp</label>
       </node>
-      <node id="1584">
+      <node id="2003">
         <label>iTransform.h</label>
         <link refid="i_transform_8h"/>
-        <childnode refid="1557" relation="include">
+        <childnode refid="1976" relation="include">
         </childnode>
-        <childnode refid="1558" relation="include">
+        <childnode refid="1977" relation="include">
         </childnode>
-        <childnode refid="1585" relation="include">
+        <childnode refid="2004" relation="include">
         </childnode>
-        <childnode refid="1586" relation="include">
+        <childnode refid="2005" relation="include">
         </childnode>
-        <childnode refid="1587" relation="include">
+        <childnode refid="2006" relation="include">
+        </childnode>
+        <childnode refid="2007" relation="include">
+        </childnode>
+        <childnode refid="2008" relation="include">
         </childnode>
       </node>
-      <node id="1554">
+      <node id="1973">
         <label>PyUtilities.h</label>
         <link refid="_py_utilities_8h"/>
       </node>
-      <node id="1557">
+      <node id="1976">
         <label>vector</label>
       </node>
-      <node id="1585">
+      <node id="2004">
         <label>array</label>
       </node>
-      <node id="1579">
+      <node id="1998">
         <label>GraphMol/SmilesParse/SmilesParse.h</label>
       </node>
-      <node id="1573">
+      <node id="1992">
         <label>Structure.h</label>
         <link refid="_structure_8h"/>
       </node>
-      <node id="1574">
+      <node id="1993">
         <label>Structures/Molecule.h</label>
         <link refid="_molecule_8h"/>
-        <childnode refid="1557" relation="include">
+        <childnode refid="1976" relation="include">
         </childnode>
-        <childnode refid="1575" relation="include">
+        <childnode refid="1994" relation="include">
         </childnode>
-        <childnode refid="1576" relation="include">
+        <childnode refid="1995" relation="include">
         </childnode>
-        <childnode refid="1577" relation="include">
+        <childnode refid="1996" relation="include">
         </childnode>
-        <childnode refid="1578" relation="include">
+        <childnode refid="1997" relation="include">
         </childnode>
-        <childnode refid="1579" relation="include">
+        <childnode refid="1998" relation="include">
         </childnode>
-        <childnode refid="1580" relation="include">
+        <childnode refid="1999" relation="include">
         </childnode>
-        <childnode refid="1581" relation="include">
+        <childnode refid="2000" relation="include">
         </childnode>
-        <childnode refid="1565" relation="include">
+        <childnode refid="1984" relation="include">
         </childnode>
-        <childnode refid="1573" relation="include">
+        <childnode refid="1992" relation="include">
         </childnode>
-        <childnode refid="1566" relation="include">
+        <childnode refid="1985" relation="include">
         </childnode>
-        <childnode refid="1582" relation="include">
+        <childnode refid="2001" relation="include">
         </childnode>
-        <childnode refid="1583" relation="include">
+        <childnode refid="2002" relation="include">
         </childnode>
       </node>
-      <node id="1575">
+      <node id="1994">
         <label>GraphMol/RDKitBase.h</label>
       </node>
-      <node id="1569">
+      <node id="1988">
         <label>iostream</label>
       </node>
-      <node id="1567">
+      <node id="2012">
+        <label>Utilities/PDBWriter.h</label>
+        <link refid="_p_d_b_writer_8h"/>
+        <childnode refid="1990" relation="include">
+        </childnode>
+        <childnode refid="1976" relation="include">
+        </childnode>
+        <childnode refid="1993" relation="include">
+        </childnode>
+      </node>
+      <node id="2009">
+        <label>Engines/ScoringFunctions/ScoringFunctionFactory.h</label>
+        <link refid="_scoring_function_factory_8h"/>
+        <childnode refid="1977" relation="include">
+        </childnode>
+        <childnode refid="1982" relation="include">
+        </childnode>
+        <childnode refid="2010" relation="include">
+        </childnode>
+      </node>
+      <node id="1986">
         <label>set</label>
       </node>
-      <node id="1568">
+      <node id="1987">
         <label>algorithm</label>
       </node>
-      <node id="1561">
+      <node id="1980">
         <label>ESBTL/weighted_atom_iterator.h</label>
       </node>
-      <node id="1558">
+      <node id="1977">
         <label>memory</label>
       </node>
-      <node id="1578">
+      <node id="1997">
         <label>GraphMol/FileParsers/FileParsers.h</label>
       </node>
     </incdepgraph>
@@ -258,10 +304,12 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Frontends/Python/PyUtilities.cpp" line="39" column="1" bodyfile="Frontends/Python/PyUtilities.cpp" bodystart="39" bodyend="48"/>
-        <references refid="class_smol_dock_1_1_re_scorer_1a4f372ac345e57254d9b00672f169d2fd" compoundref="_re_scorer_8cpp" startline="25" endline="27">SmolDock::ReScorer::getScore</references>
-        <references refid="class_smol_dock_1_1_re_scorer_1a102b6af24e4f5dc420c2bdfba5a792f0" compoundref="_re_scorer_8cpp" startline="18" endline="23">SmolDock::ReScorer::prepare</references>
-        <referencedby refid="_smoldock_python_bindings_8cpp_1a9002869529fdb857c7ffa4a170c4f3ef" compoundref="_smoldock_python_bindings_8cpp" startline="39" endline="79">BOOST_PYTHON_MODULE</referencedby>
+        <location file="Frontends/Python/PyUtilities.cpp" line="40" column="1" bodyfile="Frontends/Python/PyUtilities.cpp" bodystart="40" bodyend="56"/>
+        <references refid="class_smol_dock_1_1_p_d_b_writer_1a74fc5d4cb9bbe5c8f0362366178dbff0" compoundref="_p_d_b_writer_8cpp" startline="82" endline="84">SmolDock::PDBWriter::addLigand</references>
+        <references refid="class_smol_dock_1_1_re_scorer_1a4f372ac345e57254d9b00672f169d2fd" compoundref="_re_scorer_8cpp" startline="35" endline="43">SmolDock::ReScorer::getScore</references>
+        <references refid="class_smol_dock_1_1_re_scorer_1a102b6af24e4f5dc420c2bdfba5a792f0" compoundref="_re_scorer_8cpp" startline="22" endline="33">SmolDock::ReScorer::prepare</references>
+        <references refid="class_smol_dock_1_1_p_d_b_writer_1aaad8350fc387575ed549a1fd8569aad2" compoundref="_p_d_b_writer_8cpp" startline="21" endline="80">SmolDock::PDBWriter::writePDB</references>
+        <referencedby refid="_smoldock_python_bindings_8cpp_1a9002869529fdb857c7ffa4a170c4f3ef" compoundref="_smoldock_python_bindings_8cpp" startline="41" endline="79">BOOST_PYTHON_MODULE</referencedby>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -295,29 +343,37 @@
 <codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_py_utilities_8h" kindref="compound">PyUtilities.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="25"><highlight class="normal"></highlight></codeline>
 <codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_re_scorer_8h" kindref="compound">Utilities/ReScorer.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_p_d_b_writer_8h" kindref="compound">Utilities/PDBWriter.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="28"><highlight class="normal"></highlight></codeline>
-<codeline lineno="29"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">p<sp/>=<sp/>boost::python;</highlight></codeline>
-<codeline lineno="30"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">np<sp/>=<sp/>boost::numpy;</highlight></codeline>
-<codeline lineno="31"><highlight class="normal"></highlight></codeline>
-<codeline lineno="32"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_smol_dock" kindref="compound">sd</ref><sp/>=<sp/><ref refid="namespace_smol_dock" kindref="compound">SmolDock</ref>;</highlight></codeline>
-<codeline lineno="33"><highlight class="normal"></highlight></codeline>
-<codeline lineno="34"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ReScorer(Protein<sp/>&amp;prot,<sp/>Molecule<sp/>&amp;mol,<sp/>std::function&lt;double(const<sp/>iConformer<sp/>&amp;,<sp/>const<sp/>iTransform<sp/>&amp;,<sp/>const<sp/>iProtein<sp/>&amp;)&gt;&amp;<sp/>scorFunc);</highlight></codeline>
-<codeline lineno="35"><highlight class="comment"></highlight></codeline>
-<codeline lineno="36"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bool<sp/>prepare();</highlight></codeline>
-<codeline lineno="37"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>double<sp/>getScore();*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="38"><highlight class="normal"></highlight></codeline>
-<codeline lineno="39" refid="_py_utilities_8h_1a48b6c8c5377d2e7c99f7084ea93aa77b" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_py_utilities_8cpp_1a48b6c8c5377d2e7c99f7084ea93aa77b" kindref="member">export_Utilities</ref>()<sp/>{</highlight></codeline>
-<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/>p::class_&lt;sd::ReScorer&gt;(</highlight><highlight class="stringliteral">&quot;ReScorer&quot;</highlight><highlight class="normal">,<sp/>p::init&lt;sd::Protein&amp;,<sp/>sd::Molecule&amp;,std::function&lt;double(const<sp/>sd::iConformer<sp/>&amp;,<sp/>const<sp/>sd::iTransform<sp/>&amp;,<sp/>const<sp/>sd::iProtein<sp/>&amp;)&gt;&amp;<sp/>&gt;())</highlight></codeline>
-<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.def(</highlight><highlight class="stringliteral">&quot;prepare&quot;</highlight><highlight class="normal">,<sp/>&amp;<ref refid="class_smol_dock_1_1_re_scorer_1a102b6af24e4f5dc420c2bdfba5a792f0" kindref="member">sd::ReScorer::prepare</ref>)</highlight></codeline>
-<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.def(</highlight><highlight class="stringliteral">&quot;getScore&quot;</highlight><highlight class="normal">,<sp/>&amp;<ref refid="class_smol_dock_1_1_re_scorer_1a4f372ac345e57254d9b00672f169d2fd" kindref="member">sd::ReScorer::getScore</ref>)</highlight></codeline>
-<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//.def(&quot;set&quot;,<sp/>&amp;World::set)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//.add_property(&quot;rovalue&quot;,<sp/>&amp;Num::get)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//.add_property(&quot;value&quot;,<sp/>&amp;Num::get,<sp/>&amp;Num::set);</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>;</highlight></codeline>
-<codeline lineno="47"><highlight class="normal"></highlight></codeline>
-<codeline lineno="48"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">p<sp/>=<sp/>boost::python;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">np<sp/>=<sp/>boost::numpy;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_smol_dock" kindref="compound">sd</ref><sp/>=<sp/><ref refid="namespace_smol_dock" kindref="compound">SmolDock</ref>;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ReScorer(Protein<sp/>&amp;prot,<sp/>Molecule<sp/>&amp;mol,<sp/>std::function&lt;double(const<sp/>iConformer<sp/>&amp;,<sp/>const<sp/>iTransform<sp/>&amp;,<sp/>const<sp/>iProtein<sp/>&amp;)&gt;&amp;<sp/>scorFunc);</highlight></codeline>
+<codeline lineno="36"><highlight class="comment"></highlight></codeline>
+<codeline lineno="37"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bool<sp/>prepare();</highlight></codeline>
+<codeline lineno="38"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>double<sp/>getScore();*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40" refid="_py_utilities_8h_1a48b6c8c5377d2e7c99f7084ea93aa77b" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_py_utilities_8cpp_1a48b6c8c5377d2e7c99f7084ea93aa77b" kindref="member">export_Utilities</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/>p::class_&lt;sd::ReScorer&gt;(</highlight><highlight class="stringliteral">&quot;ReScorer&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>p::init&lt;sd::Protein<sp/>&amp;,<sp/>sd::Molecule<sp/>&amp;,<sp/>sd::Score::ScoringFunctionType&gt;())</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.def(</highlight><highlight class="stringliteral">&quot;prepare&quot;</highlight><highlight class="normal">,<sp/>&amp;<ref refid="class_smol_dock_1_1_re_scorer_1a102b6af24e4f5dc420c2bdfba5a792f0" kindref="member">sd::ReScorer::prepare</ref>)</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.def(</highlight><highlight class="stringliteral">&quot;getScore&quot;</highlight><highlight class="normal">,<sp/>&amp;<ref refid="class_smol_dock_1_1_re_scorer_1a4f372ac345e57254d9b00672f169d2fd" kindref="member">sd::ReScorer::getScore</ref>)</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//.def(&quot;set&quot;,<sp/>&amp;World::set)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//.add_property(&quot;rovalue&quot;,<sp/>&amp;Num::get)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//.add_property(&quot;value&quot;,<sp/>&amp;Num::get,<sp/>&amp;Num::set);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>;</highlight></codeline>
 <codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>p::class_&lt;sd::PDBWriter&gt;(</highlight><highlight class="stringliteral">&quot;PDBWriter&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.def(</highlight><highlight class="stringliteral">&quot;addLigand&quot;</highlight><highlight class="normal">,<sp/>&amp;<ref refid="class_smol_dock_1_1_p_d_b_writer_1a74fc5d4cb9bbe5c8f0362366178dbff0" kindref="member">sd::PDBWriter::addLigand</ref>)</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.def(</highlight><highlight class="stringliteral">&quot;writePDB&quot;</highlight><highlight class="normal">,<sp/>&amp;<ref refid="class_smol_dock_1_1_p_d_b_writer_1aaad8350fc387575ed549a1fd8569aad2" kindref="member">sd::PDBWriter::writePDB</ref>);</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
     </programlisting>
     <location file="Frontends/Python/PyUtilities.cpp"/>
   </compounddef>

@@ -94,19 +94,17 @@ $(document).ready(function(){initNavTree('_vina_like_scoring_function_8cpp.html'
 <div class="header">
   <div class="summary">
 <a href="#namespaces">Namespaces</a> &#124;
-<a href="#func-members">Functions</a> &#124;
-<a href="#var-members">Variables</a>  </div>
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">VinaLikeScoringFunction.cpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="_vina_like_scoring_function_8h_source.html">VinaLikeScoringFunction.h</a>&quot;</code><br />
-<code>#include &lt;boost/log/trivial.hpp&gt;</code><br />
-<code>#include &lt;cmath&gt;</code><br />
-<code>#include &lt;cassert&gt;</code><br />
-<code>#include &lt;iomanip&gt;</code><br />
+<code>#include &lt;exception&gt;</code><br />
 <code>#include &lt;<a class="el" href="_atom_8h_source.html">Structures/Atom.h</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="_internals_utility_functions_8h_source.html">Engines/Internals/InternalsUtilityFunctions.h</a>&gt;</code><br />
+<code>#include &lt;boost/log/trivial.hpp&gt;</code><br />
+<code>#include &quot;<a class="el" href="_vina_like_common_8h_source.html">VinaLikeCommon.h</a>&quot;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for VinaLikeScoringFunction.cpp:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
@@ -114,19 +112,20 @@ $(document).ready(function(){initNavTree('_vina_like_scoring_function_8cpp.html'
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="_vina_like_scoring_function_8cpp__incl.png" border="0" usemap="#_vina_like_scoring_function_8cpp" alt=""/></div>
 <map name="_vina_like_scoring_function_8cpp" id="_vina_like_scoring_function_8cpp">
-<area shape="rect" id="node2" href="_vina_like_scoring_function_8h.html" title="VinaLikeScoringFunction.h" alt="" coords="2645,80,2822,107"/>
-<area shape="rect" id="node23" href="_atom_8h.html" title="Structures/Atom.h" alt="" coords="1541,333,1669,360"/>
-<area shape="rect" id="node39" href="_internals_utility_functions_8h.html" title="Engines/Internals/Internals\lUtilityFunctions.h" alt="" coords="3025,155,3202,196"/>
-<area shape="rect" id="node3" href="i_conformer_8h.html" title="Engines/Internals/iConformer.h" alt="" coords="2759,251,2961,278"/>
-<area shape="rect" id="node6" href="i_transform_8h.html" title="iTransform.h" alt="" coords="3050,333,3145,360"/>
-<area shape="rect" id="node10" href="i_protein_8h.html" title="Engines/Internals/iProtein.h" alt="" coords="2167,483,2350,509"/>
-<area shape="rect" id="node12" href="_scoring_function_interface_8h.html" title="ScoringFunctionInterface.h" alt="" coords="2771,162,2949,189"/>
-<area shape="rect" id="node14" href="_molecule_8h.html" title="Structures/Molecule.h" alt="" coords="1027,162,1176,189"/>
-<area shape="rect" id="node32" href="_protein_8h.html" title="Structures/Protein.h" alt="" coords="2036,162,2175,189"/>
-<area shape="rect" id="node22" href="_input_post_processor_interface_8h.html" title="Structures/InputPostProcessors\l/InputPostProcessorInterface.h" alt="" coords="1529,244,1737,285"/>
-<area shape="rect" id="node30" href="_structure_8h.html" title="Structure.h" alt="" coords="1418,251,1505,278"/>
-<area shape="rect" id="node31" href="_bond_8h.html" title="Bond.h" alt="" coords="1331,251,1394,278"/>
-<area shape="rect" id="node27" href="_amino_acid_8h.html" title="AminoAcid.h" alt="" coords="1876,408,1972,435"/>
+<area shape="rect" id="node2" href="_vina_like_scoring_function_8h.html" title="VinaLikeScoringFunction.h" alt="" coords="2820,80,2997,107"/>
+<area shape="rect" id="node25" href="_atom_8h.html" title="Structures/Atom.h" alt="" coords="1798,333,1926,360"/>
+<area shape="rect" id="node40" href="_internals_utility_functions_8h.html" title="Engines/Internals/Internals\lUtilityFunctions.h" alt="" coords="3208,155,3385,196"/>
+<area shape="rect" id="node42" href="_vina_like_common_8h.html" title="VinaLikeCommon.h" alt="" coords="3449,251,3585,278"/>
+<area shape="rect" id="node3" href="i_conformer_8h.html" title="Engines/Internals/iConformer.h" alt="" coords="2918,251,3121,278"/>
+<area shape="rect" id="node6" href="i_transform_8h.html" title="iTransform.h" alt="" coords="3127,333,3221,360"/>
+<area shape="rect" id="node12" href="i_protein_8h.html" title="Engines/Internals/iProtein.h" alt="" coords="2663,483,2845,509"/>
+<area shape="rect" id="node14" href="_scoring_function_interface_8h.html" title="ScoringFunctionInterface.h" alt="" coords="2819,162,2998,189"/>
+<area shape="rect" id="node16" href="_molecule_8h.html" title="Structures/Molecule.h" alt="" coords="1093,162,1242,189"/>
+<area shape="rect" id="node34" href="_protein_8h.html" title="Structures/Protein.h" alt="" coords="2082,162,2221,189"/>
+<area shape="rect" id="node24" href="_input_post_processor_interface_8h.html" title="Structures/InputPostProcessors\l/InputPostProcessorInterface.h" alt="" coords="1429,244,1637,285"/>
+<area shape="rect" id="node32" href="_structure_8h.html" title="Structure.h" alt="" coords="1712,251,1799,278"/>
+<area shape="rect" id="node33" href="_bond_8h.html" title="Bond.h" alt="" coords="5,251,68,278"/>
+<area shape="rect" id="node29" href="_amino_acid_8h.html" title="AminoAcid.h" alt="" coords="1977,408,2073,435"/>
 </map>
 </div>
 </div>
@@ -134,43 +133,14 @@ $(document).ready(function(){initNavTree('_vina_like_scoring_function_8cpp.html'
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
-<tr class="memitem:namespace_smol_dock"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_smol_dock.html">SmolDock</a></td></tr>
-<tr class="memdesc:namespace_smol_dock"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global namespace for <a class="el" href="namespace_smol_dock.html" title="Global namespace for SmolDock. ">SmolDock</a>. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:namespace_smol_dock_1_1_score"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_smol_dock_1_1_score.html">SmolDock::Score</a></td></tr>
 <tr class="memdesc:namespace_smol_dock_1_1_score"><td class="mdescLeft">&#160;</td><td class="mdescRight">Free-standing docking score functions. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:adae31ea0b0f6630cdad8c85e9802ed9d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_smol_dock_1_1_score.html#adae31ea0b0f6630cdad8c85e9802ed9d">SmolDock::Score::isHydrophobic</a> (unsigned char atomicNumber, unsigned int variantFlags)</td></tr>
-<tr class="separator:adae31ea0b0f6630cdad8c85e9802ed9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afc0ba7560e9104fcef4bc61ff8d461c1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_smol_dock_1_1_score.html#afc0ba7560e9104fcef4bc61ff8d461c1">SmolDock::Score::isHydrogenAcceptor</a> (unsigned char atomicNumber, unsigned int atomVariantFlags)</td></tr>
-<tr class="separator:afc0ba7560e9104fcef4bc61ff8d461c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aada28b98ff116da3300979ddf15dc557"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_smol_dock_1_1_score.html#aada28b98ff116da3300979ddf15dc557">SmolDock::Score::isHydrogenDonor</a> (unsigned char atomicNumber, unsigned int atomVariantFlags)</td></tr>
-<tr class="separator:aada28b98ff116da3300979ddf15dc557"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0b455de7380586a1fd535f76499f16f7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_smol_dock_1_1_score.html#a0b455de7380586a1fd535f76499f16f7">SmolDock::Score::hydrogenDonorAcceptorPair</a> (unsigned char atomicNumber1, unsigned int atom1VariantFlags, unsigned char atomicNumber2, unsigned int atom2VariantFlags)</td></tr>
-<tr class="separator:a0b455de7380586a1fd535f76499f16f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac5efd92ad2db7d779a491ae233cbb2ec"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_smol_dock_1_1_score.html#ac5efd92ad2db7d779a491ae233cbb2ec">SmolDock::Score::hydrogenBondingPossible</a> (unsigned char atomicNumber1, unsigned int atom1VariantFlags, unsigned char atomicNumber2, unsigned int atom2VariantFlags)</td></tr>
-<tr class="separator:ac5efd92ad2db7d779a491ae233cbb2ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac23b7d24b31779cc5cd7d8bd4006fa52"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_smol_dock_1_1_score.html#ac23b7d24b31779cc5cd7d8bd4006fa52">SmolDock::Score::scoreForAtomCouple</a> (double distance, unsigned char atom1AtomicNumber, unsigned int atom1AtomVariant, unsigned char atom2AtomicNumber, unsigned int atom2AtomVariant)</td></tr>
-<tr class="separator:ac23b7d24b31779cc5cd7d8bd4006fa52"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac205731c7b0098c2900d9d16fff1a93b"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_smol_dock_1_1_score.html#ac205731c7b0098c2900d9d16fff1a93b">SmolDock::Score::vina_like_rigid_inter_scoring_func</a> (const iConformer &amp;conformer, const iTransform &amp;transform, const iProtein &amp;protein)</td></tr>
-<tr class="memdesc:ac205731c7b0098c2900d9d16fff1a93b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute inter-molecular part of the docking score, according to the Vina scoring function.  <a href="namespace_smol_dock_1_1_score.html#ac205731c7b0098c2900d9d16fff1a93b">More...</a><br /></td></tr>
-<tr class="separator:ac205731c7b0098c2900d9d16fff1a93b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
-Variables</h2></td></tr>
-<tr class="memitem:a96c89e7cf08ae5049b8d04653cb39ad5"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_smol_dock_1_1_score.html#a96c89e7cf08ae5049b8d04653cb39ad5">SmolDock::Score::score_gauss1</a> = 0</td></tr>
-<tr class="separator:a96c89e7cf08ae5049b8d04653cb39ad5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2deab2d99e28d64401794c7acee7c134"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_smol_dock_1_1_score.html#a2deab2d99e28d64401794c7acee7c134">SmolDock::Score::score_gauss2</a> = 0</td></tr>
-<tr class="separator:a2deab2d99e28d64401794c7acee7c134"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aedf87eb6c6107722da5ce81907ea9609"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_smol_dock_1_1_score.html#aedf87eb6c6107722da5ce81907ea9609">SmolDock::Score::score_repulsion</a> = 0</td></tr>
-<tr class="separator:aedf87eb6c6107722da5ce81907ea9609"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abdea0df8ff6c5330ad0daebbbea89c62"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_smol_dock_1_1_score.html#abdea0df8ff6c5330ad0daebbbea89c62">SmolDock::Score::score_hydrophobic</a> = 0</td></tr>
-<tr class="separator:abdea0df8ff6c5330ad0daebbbea89c62"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5fcf6b32516650efc62433e4bb791c18"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_smol_dock_1_1_score.html#a5fcf6b32516650efc62433e4bb791c18">SmolDock::Score::score_hydrogen</a> = 0</td></tr>
-<tr class="separator:a5fcf6b32516650efc62433e4bb791c18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af7f12c4b8451b856342af3afdbcadce8"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_smol_dock_1_1_score.html#af7f12c4b8451b856342af3afdbcadce8">SmolDock::Score::VinaLikeIntermolecularScoringFunction</a> (const iConformer &amp;ligand_, const iTransform &amp;transform, const iProtein &amp;protein)</td></tr>
+<tr class="separator:af7f12c4b8451b856342af3afdbcadce8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->

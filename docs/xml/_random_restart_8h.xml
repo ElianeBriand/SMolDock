@@ -5,106 +5,176 @@
     <includes refid="_scoring_function_interface_8h" local="no">Engines/ScoringFunctions/ScoringFunctionInterface.h</includes>
     <includes refid="_optimizer_interface_8h" local="no">Engines/LocalOptimizers/OptimizerInterface.h</includes>
     <includes refid="_heuristic_interface_8h" local="yes">HeuristicInterface.h</includes>
+    <includedby refid="_heuristic_factory_8h" local="yes">HeuristicFactory.h</includedby>
     <includedby refid="_conformer_rigid_docking_engine_8cpp" local="no">ConformerRigidDockingEngine.cpp</includedby>
     <includedby refid="_heuristic_factory_8cpp" local="yes">HeuristicFactory.cpp</includedby>
     <includedby refid="_random_restart_8cpp" local="yes">RandomRestart.cpp</includedby>
     <incdepgraph>
-      <node id="1619">
+      <node id="2048">
         <label>HeuristicInterface.h</label>
         <link refid="_heuristic_interface_8h"/>
       </node>
-      <node id="1618">
+      <node id="2047">
         <label>Engines/LocalOptimizers/OptimizerInterface.h</label>
         <link refid="_optimizer_interface_8h"/>
-        <childnode refid="1610" relation="include">
+        <childnode refid="2037" relation="include">
         </childnode>
       </node>
-      <node id="1616">
+      <node id="2043">
         <label>cmath</label>
       </node>
-      <node id="1617">
+      <node id="2044">
         <label>cassert</label>
       </node>
-      <node id="1609">
+      <node id="2045">
+        <label>Eigen/Core</label>
+      </node>
+      <node id="2036">
         <label>Engines/ScoringFunctions/ScoringFunctionInterface.h</label>
         <link refid="_scoring_function_interface_8h"/>
-        <childnode refid="1610" relation="include">
+        <childnode refid="2037" relation="include">
         </childnode>
-        <childnode refid="1611" relation="include">
+        <childnode refid="2038" relation="include">
         </childnode>
       </node>
-      <node id="1611">
+      <node id="2038">
         <label>Engines/Internals/iConformer.h</label>
         <link refid="i_conformer_8h"/>
-        <childnode refid="1612" relation="include">
+        <childnode refid="2039" relation="include">
         </childnode>
-        <childnode refid="1613" relation="include">
+        <childnode refid="2040" relation="include">
         </childnode>
-        <childnode refid="1614" relation="include">
+        <childnode refid="2041" relation="include">
         </childnode>
       </node>
-      <node id="1610">
+      <node id="2037">
         <label>armadillo</label>
       </node>
-      <node id="1614">
+      <node id="2046">
+        <label>Eigen/Dense</label>
+      </node>
+      <node id="2041">
         <label>iTransform.h</label>
         <link refid="i_transform_8h"/>
-        <childnode refid="1612" relation="include">
+        <childnode refid="2039" relation="include">
         </childnode>
-        <childnode refid="1613" relation="include">
+        <childnode refid="2040" relation="include">
         </childnode>
-        <childnode refid="1615" relation="include">
+        <childnode refid="2042" relation="include">
         </childnode>
-        <childnode refid="1616" relation="include">
+        <childnode refid="2043" relation="include">
         </childnode>
-        <childnode refid="1617" relation="include">
+        <childnode refid="2044" relation="include">
+        </childnode>
+        <childnode refid="2045" relation="include">
+        </childnode>
+        <childnode refid="2046" relation="include">
         </childnode>
       </node>
-      <node id="1612">
+      <node id="2039">
         <label>vector</label>
       </node>
-      <node id="1615">
+      <node id="2042">
         <label>array</label>
       </node>
-      <node id="1608">
+      <node id="2035">
         <label>RandomRestart.h</label>
         <link refid="_random_restart_8h"/>
-        <childnode refid="1609" relation="include">
+        <childnode refid="2036" relation="include">
         </childnode>
-        <childnode refid="1618" relation="include">
+        <childnode refid="2047" relation="include">
         </childnode>
-        <childnode refid="1619" relation="include">
+        <childnode refid="2048" relation="include">
         </childnode>
       </node>
-      <node id="1613">
+      <node id="2040">
         <label>memory</label>
       </node>
     </incdepgraph>
     <invincdepgraph>
-      <node id="1623">
+      <node id="2051">
+        <label>ConformerRigidDockingEngine.h</label>
+        <link refid="_conformer_rigid_docking_engine_8h"/>
+        <childnode refid="2052" relation="include">
+        </childnode>
+        <childnode refid="2053" relation="include">
+        </childnode>
+        <childnode refid="2054" relation="include">
+        </childnode>
+        <childnode refid="2055" relation="include">
+        </childnode>
+      </node>
+      <node id="2057">
+        <label>PoseRefiner.h</label>
+        <link refid="_pose_refiner_8h"/>
+        <childnode refid="2058" relation="include">
+        </childnode>
+        <childnode refid="2053" relation="include">
+        </childnode>
+        <childnode refid="2059" relation="include">
+        </childnode>
+      </node>
+      <node id="2059">
+        <label>vina_refiner.cpp</label>
+        <link refid="vina__refiner_8cpp"/>
+      </node>
+      <node id="2053">
+        <label>cli_interface.cpp</label>
+        <link refid="cli__interface_8cpp"/>
+      </node>
+      <node id="2054">
+        <label>main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+      <node id="2058">
+        <label>PoseRefiner.cpp</label>
+        <link refid="_pose_refiner_8cpp"/>
+      </node>
+      <node id="2060">
         <label>RandomRestart.cpp</label>
         <link refid="_random_restart_8cpp"/>
       </node>
-      <node id="1621">
+      <node id="2052">
         <label>ConformerRigidDockingEngine.cpp</label>
         <link refid="_conformer_rigid_docking_engine_8cpp"/>
       </node>
-      <node id="1622">
+      <node id="2056">
         <label>HeuristicFactory.cpp</label>
         <link refid="_heuristic_factory_8cpp"/>
       </node>
-      <node id="1620">
+      <node id="2049">
         <label>RandomRestart.h</label>
         <link refid="_random_restart_8h"/>
-        <childnode refid="1621" relation="include">
+        <childnode refid="2050" relation="include">
         </childnode>
-        <childnode refid="1622" relation="include">
+        <childnode refid="2052" relation="include">
         </childnode>
-        <childnode refid="1623" relation="include">
+        <childnode refid="2056" relation="include">
+        </childnode>
+        <childnode refid="2060" relation="include">
+        </childnode>
+      </node>
+      <node id="2055">
+        <label>PyEngine.cpp</label>
+        <link refid="_py_engine_8cpp"/>
+      </node>
+      <node id="2050">
+        <label>HeuristicFactory.h</label>
+        <link refid="_heuristic_factory_8h"/>
+        <childnode refid="2051" relation="include">
+        </childnode>
+        <childnode refid="2050" relation="include">
+        </childnode>
+        <childnode refid="2056" relation="include">
+        </childnode>
+        <childnode refid="2057" relation="include">
+        </childnode>
+        <childnode refid="2055" relation="include">
         </childnode>
       </node>
     </invincdepgraph>
     <innerclass refid="class_smol_dock_1_1_heuristics_1_1_random_restart" prot="public">SmolDock::Heuristics::RandomRestart</innerclass>
+    <innerclass refid="struct_smol_dock_1_1_heuristics_1_1_random_restart_1_1_parameters" prot="public">SmolDock::Heuristics::RandomRestart::Parameters</innerclass>
     <innernamespace refid="namespace_smol_dock_1_1_heuristics">SmolDock::Heuristics</innernamespace>
     <briefdescription>
     </briefdescription>
@@ -125,31 +195,44 @@
 <codeline lineno="12"><highlight class="normal"></highlight></codeline>
 <codeline lineno="13"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_smol_dock_1_1_heuristics" kindref="compound">SmolDock::Heuristics</ref><sp/>{</highlight></codeline>
 <codeline lineno="14"><highlight class="normal"></highlight></codeline>
-<codeline lineno="15" refid="class_smol_dock_1_1_heuristics_1_1_random_restart" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_smol_dock_1_1_heuristics_1_1_random_restart" kindref="compound">RandomRestart</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_heuristics_1_1_global_heuristic" kindref="compound">GlobalHeuristic</ref><sp/>{</highlight></codeline>
-<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="17"><highlight class="normal"></highlight></codeline>
-<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_heuristics_1_1_random_restart_1a4e6c878b33b776e4817a1ccc3f582d5f" kindref="member">RandomRestart</ref>(<ref refid="class_smol_dock_1_1_score_1_1_scoring_function" kindref="compound">Score::ScoringFunction</ref>*<sp/>scorFunc_,<sp/><ref refid="class_smol_dock_1_1_optimizer_1_1_optimizer" kindref="compound">Optimizer::Optimizer</ref>*<sp/>optimizer_,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>seed_);</highlight></codeline>
-<codeline lineno="19"><highlight class="normal"></highlight></codeline>
-<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_heuristics_1_1_random_restart_1abfa7882757c070d876d94090520cef92" kindref="member">search</ref>()<sp/></highlight><highlight class="keyword">final</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="21"><highlight class="normal"></highlight></codeline>
-<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>arma::mat<sp/><ref refid="class_smol_dock_1_1_heuristics_1_1_random_restart_1a2397763517ca92a3552c84963998ab39" kindref="member">getResultMatrix</ref>()<sp/></highlight><highlight class="keyword">final</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16" refid="class_smol_dock_1_1_heuristics_1_1_random_restart" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_smol_dock_1_1_heuristics_1_1_random_restart" kindref="compound">RandomRestart</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_heuristics_1_1_global_heuristic" kindref="compound">GlobalHeuristic</ref><sp/>{</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_smol_dock_1_1_heuristics_1_1_random_restart_1_1_parameters" kindref="compound">Parameters</ref>;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_heuristics_1_1_random_restart_1ab0a1bc411be39519af39f2b044de921d" kindref="member">RandomRestart</ref>(<ref refid="class_smol_dock_1_1_score_1_1_scoring_function" kindref="compound">Score::ScoringFunction</ref>*<sp/>scorFunc_,<sp/><ref refid="class_smol_dock_1_1_optimizer_1_1_optimizer" kindref="compound">Optimizer::Optimizer</ref>*<sp/>optimizer_,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>seed_,</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_smol_dock_1_1_heuristics_1_1_random_restart_1_1_parameters" kindref="compound">RandomRestart::Parameters</ref><sp/>params_);</highlight></codeline>
 <codeline lineno="23"><highlight class="normal"></highlight></codeline>
-<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_heuristics_1_1_random_restart_1a086a8662594c721b0daa7259b673d415" kindref="member">~RandomRestart</ref>()<sp/></highlight><highlight class="keyword">final</highlight><highlight class="normal"><sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_heuristics_1_1_random_restart_1abfa7882757c070d876d94090520cef92" kindref="member">search</ref>()<sp/></highlight><highlight class="keyword">final</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="25"><highlight class="normal"></highlight></codeline>
-<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="27" refid="class_smol_dock_1_1_heuristics_1_1_random_restart_1af92f8f1347adb435fa783c909912af77" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_score_1_1_scoring_function" kindref="compound">Score::ScoringFunction</ref>*<sp/><ref refid="class_smol_dock_1_1_heuristics_1_1_random_restart_1af92f8f1347adb435fa783c909912af77" kindref="member">scorFunc</ref>;</highlight></codeline>
-<codeline lineno="28" refid="class_smol_dock_1_1_heuristics_1_1_random_restart_1a9ef6527f103d63ff12abae06b97fad9c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_optimizer_1_1_optimizer" kindref="compound">Optimizer::Optimizer</ref>*<sp/><ref refid="class_smol_dock_1_1_heuristics_1_1_random_restart_1a9ef6527f103d63ff12abae06b97fad9c" kindref="member">optimizer</ref>;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>arma::mat<sp/><ref refid="class_smol_dock_1_1_heuristics_1_1_random_restart_1a2397763517ca92a3552c84963998ab39" kindref="member">getResultMatrix</ref>()<sp/></highlight><highlight class="keyword">final</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_heuristics_1_1_random_restart_1a086a8662594c721b0daa7259b673d415" kindref="member">~RandomRestart</ref>()<sp/></highlight><highlight class="keyword">final</highlight><highlight class="normal"><sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="29"><highlight class="normal"></highlight></codeline>
-<codeline lineno="30" refid="class_smol_dock_1_1_heuristics_1_1_random_restart_1a9f126933a53652c60537d755bcfcad65" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::mt19937<sp/><ref refid="class_smol_dock_1_1_heuristics_1_1_random_restart_1a9f126933a53652c60537d755bcfcad65" kindref="member">rnd_generator</ref>;</highlight></codeline>
-<codeline lineno="31"><highlight class="normal"></highlight></codeline>
-<codeline lineno="32" refid="class_smol_dock_1_1_heuristics_1_1_random_restart_1a2ae6f0df0cd563a72a62db5137221065" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>arma::mat<sp/><ref refid="class_smol_dock_1_1_heuristics_1_1_random_restart_1a2ae6f0df0cd563a72a62db5137221065" kindref="member">result</ref>;</highlight></codeline>
-<codeline lineno="33"><highlight class="normal"></highlight></codeline>
-<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
-<codeline lineno="35"><highlight class="normal"></highlight></codeline>
-<codeline lineno="36"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="37"><highlight class="normal"></highlight></codeline>
-<codeline lineno="38"><highlight class="normal"></highlight></codeline>
-<codeline lineno="39"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//SMOLDOCK_RANDOMRESTART_H</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31" refid="struct_smol_dock_1_1_heuristics_1_1_random_restart_1_1_parameters" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_smol_dock_1_1_heuristics_1_1_random_restart_1_1_parameters" kindref="compound">Parameters</ref><sp/>{</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33" refid="struct_smol_dock_1_1_heuristics_1_1_random_restart_1_1_parameters_1a832aa45d90da0e99e4697fbbe1613701" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="struct_smol_dock_1_1_heuristics_1_1_random_restart_1_1_parameters_1a832aa45d90da0e99e4697fbbe1613701" kindref="member">proteinMaxRadius</ref><sp/>=<sp/>100.0;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="38" refid="class_smol_dock_1_1_heuristics_1_1_random_restart_1af92f8f1347adb435fa783c909912af77" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_score_1_1_scoring_function" kindref="compound">Score::ScoringFunction</ref>*<sp/><ref refid="class_smol_dock_1_1_heuristics_1_1_random_restart_1af92f8f1347adb435fa783c909912af77" kindref="member">scorFunc</ref>;</highlight></codeline>
+<codeline lineno="39" refid="class_smol_dock_1_1_heuristics_1_1_random_restart_1a9ef6527f103d63ff12abae06b97fad9c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_optimizer_1_1_optimizer" kindref="compound">Optimizer::Optimizer</ref>*<sp/><ref refid="class_smol_dock_1_1_heuristics_1_1_random_restart_1a9ef6527f103d63ff12abae06b97fad9c" kindref="member">optimizer</ref>;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41" refid="class_smol_dock_1_1_heuristics_1_1_random_restart_1a1eb7cffead1079b4e80ea7857e65a3e4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::mt19937<sp/><ref refid="class_smol_dock_1_1_heuristics_1_1_random_restart_1a1eb7cffead1079b4e80ea7857e65a3e4" kindref="member">rndGenerator</ref>;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43" refid="class_smol_dock_1_1_heuristics_1_1_random_restart_1a2ae6f0df0cd563a72a62db5137221065" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>arma::mat<sp/><ref refid="class_smol_dock_1_1_heuristics_1_1_random_restart_1a2ae6f0df0cd563a72a62db5137221065" kindref="member">result</ref>;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45" refid="class_smol_dock_1_1_heuristics_1_1_random_restart_1ae8048a1f9c2a54b940977412b47b3fb5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_smol_dock_1_1_heuristics_1_1_random_restart_1_1_parameters" kindref="compound">Parameters</ref><sp/><ref refid="class_smol_dock_1_1_heuristics_1_1_random_restart_1ae8048a1f9c2a54b940977412b47b3fb5" kindref="member">params</ref>;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//SMOLDOCK_RANDOMRESTART_H</highlight></codeline>
     </programlisting>
     <location file="Engines/GlobalHeuristics/RandomRestart.h"/>
   </compounddef>

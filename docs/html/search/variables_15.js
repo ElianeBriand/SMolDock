@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['z',['z',['../namespace_smol_dock.html#a5c1fc6f9bad31ec2731337e9ba1e9a0f',1,'SmolDock::iConformer::z()'],['../namespace_smol_dock.html#ab95306577aa2d8bdd268504b44d046ad',1,'SmolDock::iProtein::z()'],['../namespace_smol_dock.html#a013cdafb950199deb4511843ff389e73',1,'SmolDock::iVect::z()'],['../namespace_smol_dock.html#a2ed07fcfc129a2bf7696b65d481317c5',1,'SmolDock::iTranslation::z()'],['../class_smol_dock_1_1_atom.html#a8f28d43131d21536269e220d6fa43f07',1,'SmolDock::Atom::z()']]]
+  ['y',['y',['../namespace_smol_dock.html#ac3019c0cd62660a4392591dd9519cc9a',1,'SmolDock::iConformer::y()'],['../namespace_smol_dock.html#a090a371c93db6928cdfef39b0ce3d1fd',1,'SmolDock::iProtein::y()'],['../class_smol_dock_1_1_atom.html#a253663ad700e72667d421f4d869798e1',1,'SmolDock::Atom::y()']]]
 ];

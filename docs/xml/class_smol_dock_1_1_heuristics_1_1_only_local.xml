@@ -1,0 +1,221 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="class_smol_dock_1_1_heuristics_1_1_only_local" kind="class" language="C++" prot="public">
+    <compoundname>SmolDock::Heuristics::OnlyLocal</compoundname>
+    <basecompoundref refid="class_smol_dock_1_1_heuristics_1_1_global_heuristic" prot="public" virt="non-virtual">SmolDock::Heuristics::GlobalHeuristic</basecompoundref>
+    <includes refid="_only_local_8h" local="no">OnlyLocal.h</includes>
+    <innerclass refid="struct_smol_dock_1_1_heuristics_1_1_only_local_1_1_parameters" prot="public">SmolDock::Heuristics::OnlyLocal::Parameters</innerclass>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_smol_dock_1_1_heuristics_1_1_only_local_1a7f18c8af6ee27310e2341e0cc1a8529b" prot="private" static="no" mutable="no">
+        <type><ref refid="class_smol_dock_1_1_score_1_1_scoring_function" kindref="compound">Score::ScoringFunction</ref> *</type>
+        <definition>Score::ScoringFunction* SmolDock::Heuristics::OnlyLocal::scorFunc</definition>
+        <argsstring></argsstring>
+        <name>scorFunc</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Engines/GlobalHeuristics/OnlyLocal.h" line="35" column="1" bodyfile="Engines/GlobalHeuristics/OnlyLocal.h" bodystart="35" bodyend="-1"/>
+        <referencedby refid="class_smol_dock_1_1_heuristics_1_1_only_local_1a4557f55ce09405eff013c07214cb4e10" compoundref="_only_local_8cpp" startline="16" endline="24">search</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_smol_dock_1_1_heuristics_1_1_only_local_1a799fc4eada0912b57cc0f60bc772b945" prot="private" static="no" mutable="no">
+        <type><ref refid="class_smol_dock_1_1_optimizer_1_1_optimizer" kindref="compound">Optimizer::Optimizer</ref> *</type>
+        <definition>Optimizer::Optimizer* SmolDock::Heuristics::OnlyLocal::optimizer</definition>
+        <argsstring></argsstring>
+        <name>optimizer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Engines/GlobalHeuristics/OnlyLocal.h" line="36" column="1" bodyfile="Engines/GlobalHeuristics/OnlyLocal.h" bodystart="36" bodyend="-1"/>
+        <referencedby refid="class_smol_dock_1_1_heuristics_1_1_only_local_1a4557f55ce09405eff013c07214cb4e10" compoundref="_only_local_8cpp" startline="16" endline="24">search</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_smol_dock_1_1_heuristics_1_1_only_local_1a0a7c7b99d3d2fc5a48dbc3b9540ab6fe" prot="private" static="no" mutable="no">
+        <type>std::mt19937</type>
+        <definition>std::mt19937 SmolDock::Heuristics::OnlyLocal::rnd_generator</definition>
+        <argsstring></argsstring>
+        <name>rnd_generator</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Engines/GlobalHeuristics/OnlyLocal.h" line="38" column="1" bodyfile="Engines/GlobalHeuristics/OnlyLocal.h" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_smol_dock_1_1_heuristics_1_1_only_local_1a2ae787af32e4efddc2b93f9555d88156" prot="private" static="no" mutable="no">
+        <type>arma::mat</type>
+        <definition>arma::mat SmolDock::Heuristics::OnlyLocal::result</definition>
+        <argsstring></argsstring>
+        <name>result</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Engines/GlobalHeuristics/OnlyLocal.h" line="40" column="1" bodyfile="Engines/GlobalHeuristics/OnlyLocal.h" bodystart="40" bodyend="-1"/>
+        <referencedby refid="class_smol_dock_1_1_heuristics_1_1_only_local_1a4557f55ce09405eff013c07214cb4e10" compoundref="_only_local_8cpp" startline="16" endline="24">search</referencedby>
+        <referencedby refid="class_smol_dock_1_1_heuristics_1_1_only_local_1a94ab260025c6a850836f8645c6ac33d8" compoundref="_only_local_8cpp" startline="26" endline="28">getResultMatrix</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_smol_dock_1_1_heuristics_1_1_only_local_1a4af03c95928dcbb60a7711edcf107b69" prot="private" static="no" mutable="no">
+        <type><ref refid="struct_smol_dock_1_1_heuristics_1_1_only_local_1_1_parameters" kindref="compound">Parameters</ref></type>
+        <definition>Parameters SmolDock::Heuristics::OnlyLocal::params</definition>
+        <argsstring></argsstring>
+        <name>params</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Engines/GlobalHeuristics/OnlyLocal.h" line="42" column="1" bodyfile="Engines/GlobalHeuristics/OnlyLocal.h" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_smol_dock_1_1_heuristics_1_1_only_local_1a6c4cb616e0b2edac9da6eca641c5d00a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>SmolDock::Heuristics::OnlyLocal::OnlyLocal</definition>
+        <argsstring>(Score::ScoringFunction *scorFunc_, Optimizer::Optimizer *optimizer_, unsigned int seed_, OnlyLocal::Parameters params_)</argsstring>
+        <name>OnlyLocal</name>
+        <param>
+          <type><ref refid="class_smol_dock_1_1_score_1_1_scoring_function" kindref="compound">Score::ScoringFunction</ref> *</type>
+          <declname>scorFunc_</declname>
+        </param>
+        <param>
+          <type><ref refid="class_smol_dock_1_1_optimizer_1_1_optimizer" kindref="compound">Optimizer::Optimizer</ref> *</type>
+          <declname>optimizer_</declname>
+        </param>
+        <param>
+          <type>unsigned int</type>
+          <declname>seed_</declname>
+        </param>
+        <param>
+          <type><ref refid="struct_smol_dock_1_1_heuristics_1_1_only_local_1_1_parameters" kindref="compound">OnlyLocal::Parameters</ref></type>
+          <declname>params_</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Engines/GlobalHeuristics/OnlyLocal.h" line="21" column="1" bodyfile="Engines/GlobalHeuristics/OnlyLocal.cpp" bodystart="10" bodyend="14"/>
+      </memberdef>
+      <memberdef kind="function" id="class_smol_dock_1_1_heuristics_1_1_only_local_1a4557f55ce09405eff013c07214cb4e10" prot="public" static="no" const="no" explicit="no" inline="no" final="yes" virt="virtual">
+        <type>bool</type>
+        <definition>bool SmolDock::Heuristics::OnlyLocal::search</definition>
+        <argsstring>() final</argsstring>
+        <name>search</name>
+        <reimplements refid="class_smol_dock_1_1_heuristics_1_1_global_heuristic_1acd4f8bbe6334ba93dcd4ea1d2a8c0d38">search</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Engines/GlobalHeuristics/OnlyLocal.h" line="24" column="1" bodyfile="Engines/GlobalHeuristics/OnlyLocal.cpp" bodystart="16" bodyend="24"/>
+        <references refid="class_smol_dock_1_1_optimizer_1_1_optimizer_1a127349b071842e954d7a89f026685b8f">SmolDock::Optimizer::Optimizer::getRawResultMatrix</references>
+        <references refid="class_smol_dock_1_1_score_1_1_scoring_function_1a70e93a6f7e50f4a57273b0faf60e8e90">SmolDock::Score::ScoringFunction::getStartingConditions</references>
+        <references refid="class_smol_dock_1_1_optimizer_1_1_optimizer_1a2868a3d9b6855b745d456de57eb1a870">SmolDock::Optimizer::Optimizer::optimize</references>
+        <references refid="class_smol_dock_1_1_heuristics_1_1_only_local_1a799fc4eada0912b57cc0f60bc772b945" compoundref="_only_local_8h" startline="36">optimizer</references>
+        <references refid="class_smol_dock_1_1_heuristics_1_1_only_local_1a2ae787af32e4efddc2b93f9555d88156" compoundref="_only_local_8h" startline="40">result</references>
+        <references refid="class_smol_dock_1_1_heuristics_1_1_only_local_1a7f18c8af6ee27310e2341e0cc1a8529b" compoundref="_only_local_8h" startline="35">scorFunc</references>
+      </memberdef>
+      <memberdef kind="function" id="class_smol_dock_1_1_heuristics_1_1_only_local_1a94ab260025c6a850836f8645c6ac33d8" prot="public" static="no" const="no" explicit="no" inline="no" final="yes" virt="virtual">
+        <type>arma::mat</type>
+        <definition>arma::mat SmolDock::Heuristics::OnlyLocal::getResultMatrix</definition>
+        <argsstring>() final</argsstring>
+        <name>getResultMatrix</name>
+        <reimplements refid="class_smol_dock_1_1_heuristics_1_1_global_heuristic_1a1abc970d50c981e4df49833d4e7f0551">getResultMatrix</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Engines/GlobalHeuristics/OnlyLocal.h" line="26" column="1" bodyfile="Engines/GlobalHeuristics/OnlyLocal.cpp" bodystart="26" bodyend="28"/>
+        <references refid="class_smol_dock_1_1_heuristics_1_1_only_local_1a2ae787af32e4efddc2b93f9555d88156" compoundref="_only_local_8h" startline="40">result</references>
+      </memberdef>
+      <memberdef kind="function" id="class_smol_dock_1_1_heuristics_1_1_only_local_1a2957eb23313b1a478e55ff59ae32cc9a" prot="public" static="no" const="no" explicit="no" inline="no" final="yes" virt="non-virtual">
+        <type></type>
+        <definition>SmolDock::Heuristics::OnlyLocal::~OnlyLocal</definition>
+        <argsstring>() final=default</argsstring>
+        <name>~OnlyLocal</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Engines/GlobalHeuristics/OnlyLocal.h" line="28" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="174">
+        <label>SmolDock::Heuristics::OnlyLocal</label>
+        <link refid="class_smol_dock_1_1_heuristics_1_1_only_local"/>
+        <childnode refid="175" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="175">
+        <label>SmolDock::Heuristics::GlobalHeuristic</label>
+        <link refid="class_smol_dock_1_1_heuristics_1_1_global_heuristic"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="179">
+        <label>SmolDock::Score::ScoringFunction</label>
+        <link refid="class_smol_dock_1_1_score_1_1_scoring_function"/>
+      </node>
+      <node id="180">
+        <label>SmolDock::Heuristics::OnlyLocal::Parameters</label>
+        <link refid="struct_smol_dock_1_1_heuristics_1_1_only_local_1_1_parameters"/>
+      </node>
+      <node id="176">
+        <label>SmolDock::Heuristics::OnlyLocal</label>
+        <link refid="class_smol_dock_1_1_heuristics_1_1_only_local"/>
+        <childnode refid="177" relation="public-inheritance">
+        </childnode>
+        <childnode refid="178" relation="usage">
+          <edgelabel>-optimizer</edgelabel>
+        </childnode>
+        <childnode refid="179" relation="usage">
+          <edgelabel>-scorFunc</edgelabel>
+        </childnode>
+        <childnode refid="180" relation="usage">
+          <edgelabel>-params</edgelabel>
+        </childnode>
+      </node>
+      <node id="177">
+        <label>SmolDock::Heuristics::GlobalHeuristic</label>
+        <link refid="class_smol_dock_1_1_heuristics_1_1_global_heuristic"/>
+      </node>
+      <node id="178">
+        <label>SmolDock::Optimizer::Optimizer</label>
+        <link refid="class_smol_dock_1_1_optimizer_1_1_optimizer"/>
+      </node>
+    </collaborationgraph>
+    <location file="Engines/GlobalHeuristics/OnlyLocal.h" line="16" column="1" bodyfile="Engines/GlobalHeuristics/OnlyLocal.h" bodystart="16" bodyend="43"/>
+    <listofallmembers>
+      <member refid="class_smol_dock_1_1_heuristics_1_1_only_local_1a94ab260025c6a850836f8645c6ac33d8" prot="public" virt="virtual"><scope>SmolDock::Heuristics::OnlyLocal</scope><name>getResultMatrix</name></member>
+      <member refid="class_smol_dock_1_1_heuristics_1_1_only_local_1a6c4cb616e0b2edac9da6eca641c5d00a" prot="public" virt="non-virtual"><scope>SmolDock::Heuristics::OnlyLocal</scope><name>OnlyLocal</name></member>
+      <member refid="class_smol_dock_1_1_heuristics_1_1_only_local_1a799fc4eada0912b57cc0f60bc772b945" prot="private" virt="non-virtual"><scope>SmolDock::Heuristics::OnlyLocal</scope><name>optimizer</name></member>
+      <member refid="class_smol_dock_1_1_heuristics_1_1_only_local_1a4af03c95928dcbb60a7711edcf107b69" prot="private" virt="non-virtual"><scope>SmolDock::Heuristics::OnlyLocal</scope><name>params</name></member>
+      <member refid="class_smol_dock_1_1_heuristics_1_1_only_local_1a2ae787af32e4efddc2b93f9555d88156" prot="private" virt="non-virtual"><scope>SmolDock::Heuristics::OnlyLocal</scope><name>result</name></member>
+      <member refid="class_smol_dock_1_1_heuristics_1_1_only_local_1a0a7c7b99d3d2fc5a48dbc3b9540ab6fe" prot="private" virt="non-virtual"><scope>SmolDock::Heuristics::OnlyLocal</scope><name>rnd_generator</name></member>
+      <member refid="class_smol_dock_1_1_heuristics_1_1_only_local_1a7f18c8af6ee27310e2341e0cc1a8529b" prot="private" virt="non-virtual"><scope>SmolDock::Heuristics::OnlyLocal</scope><name>scorFunc</name></member>
+      <member refid="class_smol_dock_1_1_heuristics_1_1_only_local_1a4557f55ce09405eff013c07214cb4e10" prot="public" virt="virtual"><scope>SmolDock::Heuristics::OnlyLocal</scope><name>search</name></member>
+      <member refid="class_smol_dock_1_1_heuristics_1_1_global_heuristic_1a93c9f12a7d218837e6e5441ae5daebc1" prot="public" virt="virtual"><scope>SmolDock::Heuristics::OnlyLocal</scope><name>~GlobalHeuristic</name></member>
+      <member refid="class_smol_dock_1_1_heuristics_1_1_only_local_1a2957eb23313b1a478e55ff59ae32cc9a" prot="public" virt="non-virtual"><scope>SmolDock::Heuristics::OnlyLocal</scope><name>~OnlyLocal</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

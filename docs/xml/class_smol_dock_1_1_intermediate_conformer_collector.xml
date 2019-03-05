@@ -16,8 +16,8 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Utilities/IntermediateConformerCollector.h" line="19" column="1" bodyfile="Utilities/IntermediateConformerCollector.h" bodystart="19" bodyend="-1"/>
-        <referencedby refid="class_smol_dock_1_1_intermediate_conformer_collector_1a1d878b323a17e56169fb4fad4f92a742" compoundref="_intermediate_conformer_collector_8cpp" startline="13" endline="17">addiConformer</referencedby>
+        <location file="Utilities/IntermediateConformerCollector.h" line="20" column="1" bodyfile="Utilities/IntermediateConformerCollector.h" bodystart="20" bodyend="-1"/>
+        <referencedby refid="class_smol_dock_1_1_intermediate_conformer_collector_1a1d878b323a17e56169fb4fad4f92a742" compoundref="_intermediate_conformer_collector_8cpp" startline="11" endline="15">addiConformer</referencedby>
       </memberdef>
       <memberdef kind="variable" id="class_smol_dock_1_1_intermediate_conformer_collector_1a2fc9343d0d285bef646d6ae5da619ad6" prot="private" static="no" mutable="no">
         <type><ref refid="class_smol_dock_1_1_p_d_b_writer" kindref="compound">PDBWriter</ref> *</type>
@@ -31,8 +31,8 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Utilities/IntermediateConformerCollector.h" line="20" column="1" bodyfile="Utilities/IntermediateConformerCollector.h" bodystart="20" bodyend="-1"/>
-        <referencedby refid="class_smol_dock_1_1_intermediate_conformer_collector_1a1d878b323a17e56169fb4fad4f92a742" compoundref="_intermediate_conformer_collector_8cpp" startline="13" endline="17">addiConformer</referencedby>
+        <location file="Utilities/IntermediateConformerCollector.h" line="21" column="1" bodyfile="Utilities/IntermediateConformerCollector.h" bodystart="21" bodyend="-1"/>
+        <referencedby refid="class_smol_dock_1_1_intermediate_conformer_collector_1a1d878b323a17e56169fb4fad4f92a742" compoundref="_intermediate_conformer_collector_8cpp" startline="11" endline="15">addiConformer</referencedby>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -55,7 +55,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Utilities/IntermediateConformerCollector.h" line="15" column="1" bodyfile="Utilities/IntermediateConformerCollector.cpp" bodystart="19" bodyend="22"/>
+        <location file="Utilities/IntermediateConformerCollector.h" line="15" column="1" bodyfile="Utilities/IntermediateConformerCollector.cpp" bodystart="17" bodyend="20"/>
       </memberdef>
       <memberdef kind="function" id="class_smol_dock_1_1_intermediate_conformer_collector_1a1d878b323a17e56169fb4fad4f92a742" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -72,12 +72,12 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Utilities/IntermediateConformerCollector.h" line="16" column="1" bodyfile="Utilities/IntermediateConformerCollector.cpp" bodystart="13" bodyend="17"/>
-        <references refid="class_smol_dock_1_1_p_d_b_writer_1a74fc5d4cb9bbe5c8f0362366178dbff0" compoundref="_p_d_b_writer_8cpp" startline="84" endline="86">SmolDock::PDBWriter::addLigand</references>
-        <references refid="class_smol_dock_1_1_molecule_1a70156ffc4081eb92f9dc4e2c70096c84" compoundref="_molecule_8cpp" startline="332" endline="376">SmolDock::Molecule::deepcopy</references>
-        <references refid="class_smol_dock_1_1_intermediate_conformer_collector_1af4af1651349015597a2582237817db51" compoundref="_intermediate_conformer_collector_8h" startline="19">molecule</references>
-        <references refid="class_smol_dock_1_1_molecule_1af6263934134836e9ce66d2254b6b6801" compoundref="_molecule_8cpp" startline="320" endline="330">SmolDock::Molecule::updateAtomPositionsFromiConformer</references>
-        <references refid="class_smol_dock_1_1_intermediate_conformer_collector_1a2fc9343d0d285bef646d6ae5da619ad6" compoundref="_intermediate_conformer_collector_8h" startline="20">writer</references>
+        <location file="Utilities/IntermediateConformerCollector.h" line="17" column="1" bodyfile="Utilities/IntermediateConformerCollector.cpp" bodystart="11" bodyend="15"/>
+        <references refid="class_smol_dock_1_1_p_d_b_writer_1a74fc5d4cb9bbe5c8f0362366178dbff0" compoundref="_p_d_b_writer_8cpp" startline="82" endline="84">SmolDock::PDBWriter::addLigand</references>
+        <references refid="class_smol_dock_1_1_molecule_1a70156ffc4081eb92f9dc4e2c70096c84" compoundref="_molecule_8cpp" startline="502" endline="546">SmolDock::Molecule::deepcopy</references>
+        <references refid="class_smol_dock_1_1_intermediate_conformer_collector_1af4af1651349015597a2582237817db51" compoundref="_intermediate_conformer_collector_8h" startline="20">molecule</references>
+        <references refid="class_smol_dock_1_1_molecule_1af6263934134836e9ce66d2254b6b6801" compoundref="_molecule_8cpp" startline="487" endline="500">SmolDock::Molecule::updateAtomPositionsFromiConformer</references>
+        <references refid="class_smol_dock_1_1_intermediate_conformer_collector_1a2fc9343d0d285bef646d6ae5da619ad6" compoundref="_intermediate_conformer_collector_8h" startline="21">writer</references>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -85,83 +85,114 @@
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
-      <node id="103">
+      <node id="119">
+        <label>K</label>
+      </node>
+      <node id="120">
         <label>T</label>
       </node>
-      <node id="99">
+      <node id="115">
         <label>SmolDock::Molecule</label>
         <link refid="class_smol_dock_1_1_molecule"/>
-        <childnode refid="100" relation="private-inheritance">
+        <childnode refid="116" relation="private-inheritance">
         </childnode>
-        <childnode refid="101" relation="usage">
+        <childnode refid="117" relation="usage">
+          <edgelabel>-RDKitAtomIdxToAtomsPosInVector</edgelabel>
+          <edgelabel>-atomsPosInVectorToRDKitAtomIdx</edgelabel>
+        </childnode>
+        <childnode refid="121" relation="usage">
           <edgelabel>-bonds</edgelabel>
         </childnode>
-        <childnode refid="104" relation="usage">
+        <childnode refid="123" relation="usage">
           <edgelabel>-smiles</edgelabel>
           <edgelabel>-residue_name</edgelabel>
         </childnode>
-        <childnode refid="106" relation="usage">
+        <childnode refid="125" relation="usage">
+          <edgelabel>-rotatableBonds</edgelabel>
+        </childnode>
+        <childnode refid="126" relation="usage">
           <edgelabel>-atoms</edgelabel>
         </childnode>
       </node>
-      <node id="101">
+      <node id="121">
         <label>std::vector&lt; std::shared_ptr&lt; SmolDock::Bond &gt; &gt;</label>
-        <childnode refid="102" relation="template-instance">
+        <childnode refid="122" relation="template-instance">
           <edgelabel>&lt; std::shared_ptr&lt; SmolDock::Bond &gt; &gt;</edgelabel>
         </childnode>
       </node>
-      <node id="102">
+      <node id="122">
         <label>std::vector&lt; T &gt;</label>
-        <childnode refid="103" relation="usage">
+        <childnode refid="120" relation="usage">
           <edgelabel>+elements</edgelabel>
         </childnode>
       </node>
-      <node id="107">
+      <node id="127">
         <label>SmolDock::PDBWriter</label>
         <link refid="class_smol_dock_1_1_p_d_b_writer"/>
-        <childnode refid="108" relation="usage">
+        <childnode refid="128" relation="usage">
           <edgelabel>-ligand_to_export</edgelabel>
         </childnode>
       </node>
-      <node id="100">
+      <node id="118">
+        <label>std::map&lt; K, T &gt;</label>
+        <childnode refid="119" relation="usage">
+          <edgelabel>+keys</edgelabel>
+        </childnode>
+        <childnode refid="120" relation="usage">
+          <edgelabel>+elements</edgelabel>
+        </childnode>
+      </node>
+      <node id="117">
+        <label>std::map&lt; int, int &gt;</label>
+        <childnode refid="118" relation="template-instance">
+          <edgelabel>&lt; int, int &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="116">
         <label>SmolDock::Structure</label>
         <link refid="class_smol_dock_1_1_structure"/>
       </node>
-      <node id="105">
+      <node id="124">
         <label>std::basic_string&lt; char &gt;</label>
       </node>
-      <node id="108">
+      <node id="125">
+        <label>std::vector&lt; std::tuple&lt; std::shared_ptr&lt; SmolDock::Bond &gt;, unsigned int, unsigned int, std::vector&lt; unsigned int &gt; &gt; &gt;</label>
+        <childnode refid="122" relation="template-instance">
+          <edgelabel>&lt; std::tuple&lt; std::shared_ptr&lt; SmolDock::Bond &gt;, unsigned int, unsigned int, std::vector&lt; unsigned int &gt; &gt; &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="128">
         <label>std::vector&lt; SmolDock::Molecule &gt;</label>
-        <childnode refid="99" relation="usage">
+        <childnode refid="115" relation="usage">
           <edgelabel>+elements</edgelabel>
         </childnode>
-        <childnode refid="102" relation="template-instance">
+        <childnode refid="122" relation="template-instance">
           <edgelabel>&lt; SmolDock::Molecule &gt;</edgelabel>
         </childnode>
       </node>
-      <node id="106">
+      <node id="126">
         <label>std::vector&lt; std::shared_ptr&lt; SmolDock::Atom &gt; &gt;</label>
-        <childnode refid="102" relation="template-instance">
+        <childnode refid="122" relation="template-instance">
           <edgelabel>&lt; std::shared_ptr&lt; SmolDock::Atom &gt; &gt;</edgelabel>
         </childnode>
       </node>
-      <node id="98">
+      <node id="114">
         <label>SmolDock::IntermediateConformerCollector</label>
         <link refid="class_smol_dock_1_1_intermediate_conformer_collector"/>
-        <childnode refid="99" relation="usage">
+        <childnode refid="115" relation="usage">
           <edgelabel>-molecule</edgelabel>
         </childnode>
-        <childnode refid="107" relation="usage">
+        <childnode refid="127" relation="usage">
           <edgelabel>-writer</edgelabel>
         </childnode>
       </node>
-      <node id="104">
+      <node id="123">
         <label>std::string</label>
-        <childnode refid="105" relation="public-inheritance">
+        <childnode refid="124" relation="public-inheritance">
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="Utilities/IntermediateConformerCollector.h" line="13" column="1" bodyfile="Utilities/IntermediateConformerCollector.h" bodystart="13" bodyend="23"/>
+    <location file="Utilities/IntermediateConformerCollector.h" line="13" column="1" bodyfile="Utilities/IntermediateConformerCollector.h" bodystart="13" bodyend="24"/>
     <listofallmembers>
       <member refid="class_smol_dock_1_1_intermediate_conformer_collector_1a1d878b323a17e56169fb4fad4f92a742" prot="public" virt="non-virtual"><scope>SmolDock::IntermediateConformerCollector</scope><name>addiConformer</name></member>
       <member refid="class_smol_dock_1_1_intermediate_conformer_collector_1ac77973d5bb5a76221e40837b911e5291" prot="public" virt="non-virtual"><scope>SmolDock::IntermediateConformerCollector</scope><name>IntermediateConformerCollector</name></member>

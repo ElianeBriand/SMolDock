@@ -16,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Structures/Molecule.h" line="56" column="1" bodyfile="Structures/Molecule.h" bodystart="56" bodyend="-1"/>
+        <location file="Structures/Molecule.h" line="58" column="1" bodyfile="Structures/Molecule.h" bodystart="58" bodyend="-1"/>
       </memberdef>
       <memberdef kind="friend" id="class_smol_dock_1_1_molecule_1a3cb039460aae8734c10a3588e1d670a2" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>friend class</type>
@@ -29,7 +29,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Structures/Molecule.h" line="57" column="1" bodyfile="Structures/Molecule.h" bodystart="57" bodyend="-1"/>
+        <location file="Structures/Molecule.h" line="60" column="1" bodyfile="Structures/Molecule.h" bodystart="60" bodyend="-1"/>
       </memberdef>
       <memberdef kind="friend" id="class_smol_dock_1_1_molecule_1a21986fb82cbece6c57579a68c1bf5f39" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>friend class</type>
@@ -42,10 +42,42 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Structures/Molecule.h" line="58" column="1" bodyfile="Structures/Molecule.h" bodystart="58" bodyend="-1"/>
+        <location file="Structures/Molecule.h" line="62" column="1" bodyfile="Structures/Molecule.h" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="class_smol_dock_1_1_molecule_1aaba5e4e8b9e4dd9e336deeaf61a896b4" prot="private" static="yes" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int SmolDock::Molecule::LastMolID</definition>
+        <argsstring></argsstring>
+        <name>LastMolID</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Structures/Molecule.h" line="192" column="1" bodyfile="Structures/Molecule.h" bodystart="192" bodyend="-1"/>
+        <referencedby refid="class_smol_dock_1_1_molecule_1a3a4a39128d64413d79d857bcbf790163" compoundref="_molecule_8cpp" startline="66" endline="69">Molecule</referencedby>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_smol_dock_1_1_molecule_1a02a8ccc1f027a298ccf54deff19e4da0" prot="private" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int SmolDock::Molecule::molID</definition>
+        <argsstring></argsstring>
+        <name>molID</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Structures/Molecule.h" line="193" column="1" bodyfile="Structures/Molecule.h" bodystart="193" bodyend="-1"/>
+        <referencedby refid="class_smol_dock_1_1_molecule_1a3a4a39128d64413d79d857bcbf790163" compoundref="_molecule_8cpp" startline="66" endline="69">Molecule</referencedby>
+        <referencedby refid="class_smol_dock_1_1_molecule_1a6f051b6387277624b024809ddad96925" compoundref="_molecule_8cpp" startline="658" endline="660">operator==</referencedby>
+      </memberdef>
       <memberdef kind="variable" id="class_smol_dock_1_1_molecule_1a322259625da05c62925c705d8c4fb7c3" prot="private" static="no" mutable="no">
         <type>std::vector&lt; std::shared_ptr&lt; <ref refid="class_smol_dock_1_1_atom" kindref="compound">Atom</ref> &gt; &gt;</type>
         <definition>std::vector&lt;std::shared_ptr&lt;Atom&gt; &gt; SmolDock::Molecule::atoms</definition>
@@ -57,12 +89,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Structures/Molecule.h" line="164" column="1" bodyfile="Structures/Molecule.h" bodystart="164" bodyend="-1"/>
-        <referencedby refid="class_smol_dock_1_1_molecule_1a7dc0c882da26261dcd2762429b07a3d4" compoundref="_molecule_8cpp" startline="129" endline="131">numberOfAtoms</referencedby>
-        <referencedby refid="class_smol_dock_1_1_molecule_1a919f8706ff2f2beb3f7bf8d53f4c3f96" compoundref="_molecule_8cpp" startline="169" endline="318">populateInternalAtomAndBondFromRWMol</referencedby>
-        <referencedby refid="class_smol_dock_1_1_molecule_1af6263934134836e9ce66d2254b6b6801" compoundref="_molecule_8cpp" startline="320" endline="330">updateAtomPositionsFromiConformer</referencedby>
-        <referencedby refid="class_smol_dock_1_1_molecule_1a70156ffc4081eb92f9dc4e2c70096c84" compoundref="_molecule_8cpp" startline="332" endline="376">deepcopy</referencedby>
-        <referencedby refid="class_smol_dock_1_1_molecule_1a5247ebed094d5593a5a704c0c2919c0c" compoundref="_molecule_8cpp" startline="384" endline="453">generateIConformerForGivenRDKitConformerID</referencedby>
+        <location file="Structures/Molecule.h" line="195" column="1" bodyfile="Structures/Molecule.h" bodystart="195" bodyend="-1"/>
+        <referencedby refid="class_smol_dock_1_1_molecule_1a7dc0c882da26261dcd2762429b07a3d4" compoundref="_molecule_8cpp" startline="150" endline="152">numberOfAtoms</referencedby>
+        <referencedby refid="class_smol_dock_1_1_molecule_1a919f8706ff2f2beb3f7bf8d53f4c3f96" compoundref="_molecule_8cpp" startline="226" endline="485">populateInternalAtomAndBondFromRWMol</referencedby>
+        <referencedby refid="class_smol_dock_1_1_molecule_1af6263934134836e9ce66d2254b6b6801" compoundref="_molecule_8cpp" startline="487" endline="500">updateAtomPositionsFromiConformer</referencedby>
+        <referencedby refid="class_smol_dock_1_1_molecule_1a70156ffc4081eb92f9dc4e2c70096c84" compoundref="_molecule_8cpp" startline="502" endline="546">deepcopy</referencedby>
+        <referencedby refid="class_smol_dock_1_1_molecule_1a5247ebed094d5593a5a704c0c2919c0c" compoundref="_molecule_8cpp" startline="555" endline="649">generateIConformerForGivenRDKitConformerID</referencedby>
+        <referencedby refid="class_smol_dock_1_1_molecule_1abefbb48c0b7647491cf7c45fa2dfd6b5" compoundref="_molecule_8cpp" startline="684" endline="732">applyAtomVariant</referencedby>
       </memberdef>
       <memberdef kind="variable" id="class_smol_dock_1_1_molecule_1a18d9793aa2e080c9cefdc22afd40f314" prot="private" static="no" mutable="no">
         <type>std::vector&lt; std::shared_ptr&lt; <ref refid="class_smol_dock_1_1_bond" kindref="compound">Bond</ref> &gt; &gt;</type>
@@ -75,31 +108,25 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Structures/Molecule.h" line="165" column="1" bodyfile="Structures/Molecule.h" bodystart="165" bodyend="-1"/>
-        <referencedby refid="class_smol_dock_1_1_molecule_1a8b1f02ad4e3b2ad991162668a61c2ddc" compoundref="_molecule_8cpp" startline="133" endline="135">numberOfBonds</referencedby>
-        <referencedby refid="class_smol_dock_1_1_molecule_1a919f8706ff2f2beb3f7bf8d53f4c3f96" compoundref="_molecule_8cpp" startline="169" endline="318">populateInternalAtomAndBondFromRWMol</referencedby>
-        <referencedby refid="class_smol_dock_1_1_molecule_1a70156ffc4081eb92f9dc4e2c70096c84" compoundref="_molecule_8cpp" startline="332" endline="376">deepcopy</referencedby>
+        <location file="Structures/Molecule.h" line="196" column="1" bodyfile="Structures/Molecule.h" bodystart="196" bodyend="-1"/>
+        <referencedby refid="class_smol_dock_1_1_molecule_1a8b1f02ad4e3b2ad991162668a61c2ddc" compoundref="_molecule_8cpp" startline="154" endline="156">numberOfBonds</referencedby>
+        <referencedby refid="class_smol_dock_1_1_molecule_1a919f8706ff2f2beb3f7bf8d53f4c3f96" compoundref="_molecule_8cpp" startline="226" endline="485">populateInternalAtomAndBondFromRWMol</referencedby>
+        <referencedby refid="class_smol_dock_1_1_molecule_1a70156ffc4081eb92f9dc4e2c70096c84" compoundref="_molecule_8cpp" startline="502" endline="546">deepcopy</referencedby>
       </memberdef>
-      <memberdef kind="variable" id="class_smol_dock_1_1_molecule_1ad474d416278768d82c07fdf1d915e0f5" prot="private" static="no" mutable="no">
-        <type>std::shared_ptr&lt; RDKit::RWMol &gt;</type>
-        <definition>std::shared_ptr&lt;RDKit::RWMol&gt; SmolDock::Molecule::rwmol</definition>
+      <memberdef kind="variable" id="class_smol_dock_1_1_molecule_1af7e227faf9e5032b62c1968e4623f268" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; std::tuple&lt; std::shared_ptr&lt; <ref refid="class_smol_dock_1_1_bond" kindref="compound">Bond</ref> &gt;, unsigned int, unsigned int, std::vector&lt; unsigned int &gt; &gt; &gt;</type>
+        <definition>std::vector&lt;std::tuple&lt;std::shared_ptr&lt;Bond&gt;, unsigned int, unsigned int, std::vector&lt;unsigned int&gt; &gt; &gt; SmolDock::Molecule::rotatableBonds</definition>
         <argsstring></argsstring>
-        <name>rwmol</name>
+        <name>rotatableBonds</name>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Structures/Molecule.h" line="167" column="1" bodyfile="Structures/Molecule.h" bodystart="167" bodyend="-1"/>
-        <referencedby refid="class_smol_dock_1_1_molecule_1ae8bf900e52a73637051eee69e60628e6" compoundref="_molecule_8cpp" startline="51" endline="78">populateFromSMILES</referencedby>
-        <referencedby refid="class_smol_dock_1_1_molecule_1ad10dcbd80a2ac181b3d76fbae3f90ca2" compoundref="_molecule_8cpp" startline="81" endline="94">generateConformer</referencedby>
-        <referencedby refid="class_smol_dock_1_1_molecule_1a1cce96a4a5296ab42ae3ab06fbc374a1" compoundref="_molecule_8cpp" startline="97" endline="127">generateConformers</referencedby>
-        <referencedby refid="class_smol_dock_1_1_molecule_1a9e3ef6b361a98cfbac69b11979d886da" compoundref="_molecule_8cpp" startline="137" endline="158">populateFromPDB</referencedby>
-        <referencedby refid="class_smol_dock_1_1_molecule_1a919f8706ff2f2beb3f7bf8d53f4c3f96" compoundref="_molecule_8cpp" startline="169" endline="318">populateInternalAtomAndBondFromRWMol</referencedby>
-        <referencedby refid="class_smol_dock_1_1_molecule_1a70156ffc4081eb92f9dc4e2c70096c84" compoundref="_molecule_8cpp" startline="332" endline="376">deepcopy</referencedby>
-        <referencedby refid="class_smol_dock_1_1_molecule_1ab5fc86fa1ac97374e7d8d339404568e9" compoundref="_molecule_8cpp" startline="378" endline="382">getInitialConformer</referencedby>
-        <referencedby refid="class_smol_dock_1_1_molecule_1a5247ebed094d5593a5a704c0c2919c0c" compoundref="_molecule_8cpp" startline="384" endline="453">generateIConformerForGivenRDKitConformerID</referencedby>
+        <location file="Structures/Molecule.h" line="199" column="1" bodyfile="Structures/Molecule.h" bodystart="199" bodyend="-1"/>
+        <referencedby refid="class_smol_dock_1_1_molecule_1a919f8706ff2f2beb3f7bf8d53f4c3f96" compoundref="_molecule_8cpp" startline="226" endline="485">populateInternalAtomAndBondFromRWMol</referencedby>
+        <referencedby refid="class_smol_dock_1_1_molecule_1a5247ebed094d5593a5a704c0c2919c0c" compoundref="_molecule_8cpp" startline="555" endline="649">generateIConformerForGivenRDKitConformerID</referencedby>
       </memberdef>
       <memberdef kind="variable" id="class_smol_dock_1_1_molecule_1a59288faa4bbacab2959858b398cb459e" prot="private" static="no" mutable="no">
         <type>std::string</type>
@@ -112,8 +139,8 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Structures/Molecule.h" line="168" column="1" bodyfile="Structures/Molecule.h" bodystart="168" bodyend="-1"/>
-        <referencedby refid="class_smol_dock_1_1_molecule_1ae8bf900e52a73637051eee69e60628e6" compoundref="_molecule_8cpp" startline="51" endline="78">populateFromSMILES</referencedby>
+        <location file="Structures/Molecule.h" line="204" column="1" bodyfile="Structures/Molecule.h" bodystart="204" bodyend="-1"/>
+        <referencedby refid="class_smol_dock_1_1_molecule_1ae8bf900e52a73637051eee69e60628e6" compoundref="_molecule_8cpp" startline="72" endline="99">populateFromSMILES</referencedby>
       </memberdef>
       <memberdef kind="variable" id="class_smol_dock_1_1_molecule_1ac20346642bc3835228726b2508d8c42f" prot="private" static="no" mutable="no">
         <type>std::string</type>
@@ -127,9 +154,39 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Structures/Molecule.h" line="171" column="1" bodyfile="Structures/Molecule.h" bodystart="171" bodyend="-1"/>
-        <referencedby refid="class_smol_dock_1_1_molecule_1afe9743bfc4876343b6c63b0aac892f83" compoundref="_molecule_8cpp" startline="160" endline="162">getResidueName</referencedby>
-        <referencedby refid="class_smol_dock_1_1_molecule_1af9eb4a4fe0f1d72c104393b690e8f5cb" compoundref="_molecule_8cpp" startline="164" endline="167">setResidueName</referencedby>
+        <location file="Structures/Molecule.h" line="207" column="1" bodyfile="Structures/Molecule.h" bodystart="207" bodyend="-1"/>
+        <referencedby refid="class_smol_dock_1_1_molecule_1afe9743bfc4876343b6c63b0aac892f83" compoundref="_molecule_8cpp" startline="217" endline="219">getResidueName</referencedby>
+        <referencedby refid="class_smol_dock_1_1_molecule_1af9eb4a4fe0f1d72c104393b690e8f5cb" compoundref="_molecule_8cpp" startline="221" endline="224">setResidueName</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_smol_dock_1_1_molecule_1a7d79422a5cabf8321268b982c38923ed" prot="private" static="no" mutable="no">
+        <type>std::map&lt; int, int &gt;</type>
+        <definition>std::map&lt;int,int&gt; SmolDock::Molecule::RDKitAtomIdxToAtomsPosInVector</definition>
+        <argsstring></argsstring>
+        <name>RDKitAtomIdxToAtomsPosInVector</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Structures/Molecule.h" line="210" column="1" bodyfile="Structures/Molecule.h" bodystart="210" bodyend="-1"/>
+        <referencedby refid="class_smol_dock_1_1_molecule_1a919f8706ff2f2beb3f7bf8d53f4c3f96" compoundref="_molecule_8cpp" startline="226" endline="485">populateInternalAtomAndBondFromRWMol</referencedby>
+        <referencedby refid="class_smol_dock_1_1_molecule_1a5247ebed094d5593a5a704c0c2919c0c" compoundref="_molecule_8cpp" startline="555" endline="649">generateIConformerForGivenRDKitConformerID</referencedby>
+        <referencedby refid="class_smol_dock_1_1_molecule_1abefbb48c0b7647491cf7c45fa2dfd6b5" compoundref="_molecule_8cpp" startline="684" endline="732">applyAtomVariant</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_smol_dock_1_1_molecule_1a7dd1cc0a273ae62d091723b451b8fb19" prot="private" static="no" mutable="no">
+        <type>std::map&lt; int, int &gt;</type>
+        <definition>std::map&lt;int,int&gt; SmolDock::Molecule::atomsPosInVectorToRDKitAtomIdx</definition>
+        <argsstring></argsstring>
+        <name>atomsPosInVectorToRDKitAtomIdx</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Structures/Molecule.h" line="211" column="1" bodyfile="Structures/Molecule.h" bodystart="211" bodyend="-1"/>
+        <referencedby refid="class_smol_dock_1_1_molecule_1a919f8706ff2f2beb3f7bf8d53f4c3f96" compoundref="_molecule_8cpp" startline="226" endline="485">populateInternalAtomAndBondFromRWMol</referencedby>
       </memberdef>
       <memberdef kind="variable" id="class_smol_dock_1_1_molecule_1a008c28b068bf77dc74cc41926ee24507" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -143,8 +200,8 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Structures/Molecule.h" line="176" column="1" bodyfile="Structures/Molecule.h" bodystart="176" bodyend="-1"/>
-        <referencedby refid="class_smol_dock_1_1_molecule_1a919f8706ff2f2beb3f7bf8d53f4c3f96" compoundref="_molecule_8cpp" startline="169" endline="318">populateInternalAtomAndBondFromRWMol</referencedby>
+        <location file="Structures/Molecule.h" line="217" column="1" bodyfile="Structures/Molecule.h" bodystart="217" bodyend="-1"/>
+        <referencedby refid="class_smol_dock_1_1_molecule_1a919f8706ff2f2beb3f7bf8d53f4c3f96" compoundref="_molecule_8cpp" startline="226" endline="485">populateInternalAtomAndBondFromRWMol</referencedby>
       </memberdef>
       <memberdef kind="variable" id="class_smol_dock_1_1_molecule_1a7295fbcc507a2d0c8acca492393117bb" prot="private" static="no" mutable="no">
         <type>unsigned int</type>
@@ -158,10 +215,54 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Structures/Molecule.h" line="183" column="1" bodyfile="Structures/Molecule.h" bodystart="183" bodyend="-1"/>
-        <referencedby refid="class_smol_dock_1_1_molecule_1a919f8706ff2f2beb3f7bf8d53f4c3f96" compoundref="_molecule_8cpp" startline="169" endline="318">populateInternalAtomAndBondFromRWMol</referencedby>
-        <referencedby refid="class_smol_dock_1_1_molecule_1a5247ebed094d5593a5a704c0c2919c0c" compoundref="_molecule_8cpp" startline="384" endline="453">generateIConformerForGivenRDKitConformerID</referencedby>
-        <referencedby refid="class_smol_dock_1_1_molecule_1a41216a87fbe541655f267501568e2aa7" compoundref="_molecule_8cpp" startline="455" endline="457">getNumRotatableBond</referencedby>
+        <location file="Structures/Molecule.h" line="223" column="1" bodyfile="Structures/Molecule.h" bodystart="223" bodyend="-1"/>
+        <referencedby refid="class_smol_dock_1_1_molecule_1a919f8706ff2f2beb3f7bf8d53f4c3f96" compoundref="_molecule_8cpp" startline="226" endline="485">populateInternalAtomAndBondFromRWMol</referencedby>
+        <referencedby refid="class_smol_dock_1_1_molecule_1a5247ebed094d5593a5a704c0c2919c0c" compoundref="_molecule_8cpp" startline="555" endline="649">generateIConformerForGivenRDKitConformerID</referencedby>
+        <referencedby refid="class_smol_dock_1_1_molecule_1a41216a87fbe541655f267501568e2aa7" compoundref="_molecule_8cpp" startline="651" endline="653">getNumRotatableBond</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_smol_dock_1_1_molecule_1ab5d560b5e32304a9056bbecc3f0bebee" prot="private" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int SmolDock::Molecule::updatedConformerID</definition>
+        <argsstring></argsstring>
+        <name>updatedConformerID</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Structures/Molecule.h" line="225" column="1" bodyfile="Structures/Molecule.h" bodystart="225" bodyend="-1"/>
+        <referencedby refid="class_smol_dock_1_1_molecule_1af6263934134836e9ce66d2254b6b6801" compoundref="_molecule_8cpp" startline="487" endline="500">updateAtomPositionsFromiConformer</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_smol_dock_1_1_molecule_1ad474d416278768d82c07fdf1d915e0f5" prot="public" static="no" mutable="no">
+        <type>std::shared_ptr&lt; RDKit::RWMol &gt;</type>
+        <definition>std::shared_ptr&lt;RDKit::RWMol&gt; SmolDock::Molecule::rwmol</definition>
+        <argsstring></argsstring>
+        <name>rwmol</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Structures/Molecule.h" line="202" column="1" bodyfile="Structures/Molecule.h" bodystart="202" bodyend="-1"/>
+        <referencedby refid="class_smol_dock_1_1_molecule_1ae8bf900e52a73637051eee69e60628e6" compoundref="_molecule_8cpp" startline="72" endline="99">populateFromSMILES</referencedby>
+        <referencedby refid="class_smol_dock_1_1_molecule_1ad10dcbd80a2ac181b3d76fbae3f90ca2" compoundref="_molecule_8cpp" startline="102" endline="116">generateConformer</referencedby>
+        <referencedby refid="class_smol_dock_1_1_molecule_1a1cce96a4a5296ab42ae3ab06fbc374a1" compoundref="_molecule_8cpp" startline="119" endline="148">generateConformers</referencedby>
+        <referencedby refid="class_smol_dock_1_1_molecule_1a457193a63a1c732d4f5da772c108b5ee" compoundref="_molecule_8cpp" startline="158" endline="179">populateFromPDBFile</referencedby>
+        <referencedby refid="class_smol_dock_1_1_molecule_1ade1395768e7d42f8dc0762334eaeed42" compoundref="_molecule_8cpp" startline="181" endline="197">populateFromMolFile</referencedby>
+        <referencedby refid="class_smol_dock_1_1_molecule_1a8b4b9a154f2139757c0d33bb962a45ea" compoundref="_molecule_8cpp" startline="199" endline="215">populateFromMol2File</referencedby>
+        <referencedby refid="class_smol_dock_1_1_molecule_1a919f8706ff2f2beb3f7bf8d53f4c3f96" compoundref="_molecule_8cpp" startline="226" endline="485">populateInternalAtomAndBondFromRWMol</referencedby>
+        <referencedby refid="class_smol_dock_1_1_molecule_1af6263934134836e9ce66d2254b6b6801" compoundref="_molecule_8cpp" startline="487" endline="500">updateAtomPositionsFromiConformer</referencedby>
+        <referencedby refid="class_smol_dock_1_1_molecule_1a70156ffc4081eb92f9dc4e2c70096c84" compoundref="_molecule_8cpp" startline="502" endline="546">deepcopy</referencedby>
+        <referencedby refid="class_smol_dock_1_1_molecule_1ab5fc86fa1ac97374e7d8d339404568e9" compoundref="_molecule_8cpp" startline="548" endline="553">getInitialConformer</referencedby>
+        <referencedby refid="class_smol_dock_1_1_molecule_1a5247ebed094d5593a5a704c0c2919c0c" compoundref="_molecule_8cpp" startline="555" endline="649">generateIConformerForGivenRDKitConformerID</referencedby>
+        <referencedby refid="class_smol_dock_1_1_molecule_1a46a5d767bd2ae8cefd06049c67de1617" compoundref="_molecule_8cpp" startline="666" endline="669">writeToMolBlock</referencedby>
+        <referencedby refid="class_smol_dock_1_1_molecule_1abefbb48c0b7647491cf7c45fa2dfd6b5" compoundref="_molecule_8cpp" startline="684" endline="732">applyAtomVariant</referencedby>
+        <referencedby refid="namespace_smol_dock_1_1_wrapper_1a30936f94bd814e22c37d7b60b68ef8d9" compoundref="_py_structures_8cpp" startline="53" endline="56">SmolDock::Wrapper::pywrap_returnROMolFromMol</referencedby>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -176,7 +277,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Structures/Molecule.h" line="61" column="1"/>
+        <location file="Structures/Molecule.h" line="66" column="1" bodyfile="Structures/Molecule.cpp" bodystart="66" bodyend="69"/>
+        <references refid="class_smol_dock_1_1_molecule_1aaba5e4e8b9e4dd9e336deeaf61a896b4" compoundref="_molecule_8h" startline="192">LastMolID</references>
+        <references refid="class_smol_dock_1_1_molecule_1a02a8ccc1f027a298ccf54deff19e4da0" compoundref="_molecule_8h" startline="193">molID</references>
       </memberdef>
       <memberdef kind="function" id="class_smol_dock_1_1_molecule_1ae8bf900e52a73637051eee69e60628e6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -216,21 +319,121 @@
 </parameteritem>
 </parameterlist>
 <simplesect kind="return"><para>whether the parsing and initial conformer generation was successful. </para></simplesect>
-<simplesect kind="see"><para><ref refid="class_smol_dock_1_1_molecule_1a9e3ef6b361a98cfbac69b11979d886da" kindref="member">populateFromPDB()</ref> </para></simplesect>
+<simplesect kind="see"><para>populateFromPDB() </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Structures/Molecule.h" line="73" column="1" bodyfile="Structures/Molecule.cpp" bodystart="51" bodyend="78"/>
-        <references refid="class_smol_dock_1_1_molecule_1a919f8706ff2f2beb3f7bf8d53f4c3f96" compoundref="_molecule_8cpp" startline="169" endline="318">populateInternalAtomAndBondFromRWMol</references>
-        <references refid="class_smol_dock_1_1_molecule_1ad474d416278768d82c07fdf1d915e0f5" compoundref="_molecule_8h" startline="167">rwmol</references>
-        <references refid="class_smol_dock_1_1_molecule_1a59288faa4bbacab2959858b398cb459e" compoundref="_molecule_8h" startline="168">smiles</references>
-        <referencedby refid="_py_structures_8h_1a18cad6e29d14a0da9d2cd9464e7e2356" compoundref="_py_structures_8cpp" startline="40" endline="92">export_Structures</referencedby>
+        <location file="Structures/Molecule.h" line="78" column="1" bodyfile="Structures/Molecule.cpp" bodystart="72" bodyend="99"/>
+        <references refid="class_smol_dock_1_1_molecule_1a919f8706ff2f2beb3f7bf8d53f4c3f96" compoundref="_molecule_8cpp" startline="226" endline="485">populateInternalAtomAndBondFromRWMol</references>
+        <references refid="class_smol_dock_1_1_molecule_1ad474d416278768d82c07fdf1d915e0f5" compoundref="_molecule_8h" startline="202">rwmol</references>
+        <references refid="class_smol_dock_1_1_molecule_1a59288faa4bbacab2959858b398cb459e" compoundref="_molecule_8h" startline="204">smiles</references>
+        <referencedby refid="_py_structures_8h_1a18cad6e29d14a0da9d2cd9464e7e2356" compoundref="_py_structures_8cpp" startline="67" endline="114">export_Structures</referencedby>
       </memberdef>
-      <memberdef kind="function" id="class_smol_dock_1_1_molecule_1a9e3ef6b361a98cfbac69b11979d886da" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="class_smol_dock_1_1_molecule_1ade1395768e7d42f8dc0762334eaeed42" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
-        <definition>bool SmolDock::Molecule::populateFromPDB</definition>
+        <definition>bool SmolDock::Molecule::populateFromMolFile</definition>
+        <argsstring>(const std::string &amp;filename, unsigned int seed=36754, std::vector&lt; std::shared_ptr&lt; InputPostProcessor::InputPostProcessor &gt; &gt; postProcessors={})</argsstring>
+        <name>populateFromMolFile</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>filename</declname>
+        </param>
+        <param>
+          <type>unsigned int</type>
+          <declname>seed</declname>
+          <defval>36754</defval>
+        </param>
+        <param>
+          <type>std::vector&lt; std::shared_ptr&lt; <ref refid="class_smol_dock_1_1_input_post_processor_1_1_input_post_processor" kindref="compound">InputPostProcessor::InputPostProcessor</ref> &gt; &gt;</type>
+          <declname>postProcessors</declname>
+          <defval>{}</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Structures/Molecule.h" line="82" column="1" bodyfile="Structures/Molecule.cpp" bodystart="181" bodyend="197"/>
+        <references refid="class_smol_dock_1_1_molecule_1a919f8706ff2f2beb3f7bf8d53f4c3f96" compoundref="_molecule_8cpp" startline="226" endline="485">populateInternalAtomAndBondFromRWMol</references>
+        <references refid="class_smol_dock_1_1_molecule_1ad474d416278768d82c07fdf1d915e0f5" compoundref="_molecule_8h" startline="202">rwmol</references>
+        <referencedby refid="cli__interface_8cpp_1a0ddf1224851353fc92bfbff6f499fa97" compoundref="cli__interface_8cpp" startline="47" endline="265">main</referencedby>
+        <referencedby refid="_py_structures_8h_1a18cad6e29d14a0da9d2cd9464e7e2356" compoundref="_py_structures_8cpp" startline="67" endline="114">export_Structures</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_smol_dock_1_1_molecule_1a8b4b9a154f2139757c0d33bb962a45ea" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool SmolDock::Molecule::populateFromMol2File</definition>
+        <argsstring>(const std::string &amp;filename, unsigned int seed=36754, std::vector&lt; std::shared_ptr&lt; InputPostProcessor::InputPostProcessor &gt; &gt; postProcessors={})</argsstring>
+        <name>populateFromMol2File</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>filename</declname>
+        </param>
+        <param>
+          <type>unsigned int</type>
+          <declname>seed</declname>
+          <defval>36754</defval>
+        </param>
+        <param>
+          <type>std::vector&lt; std::shared_ptr&lt; <ref refid="class_smol_dock_1_1_input_post_processor_1_1_input_post_processor" kindref="compound">InputPostProcessor::InputPostProcessor</ref> &gt; &gt;</type>
+          <declname>postProcessors</declname>
+          <defval>{}</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Structures/Molecule.h" line="85" column="1" bodyfile="Structures/Molecule.cpp" bodystart="199" bodyend="215"/>
+        <references refid="class_smol_dock_1_1_molecule_1a919f8706ff2f2beb3f7bf8d53f4c3f96" compoundref="_molecule_8cpp" startline="226" endline="485">populateInternalAtomAndBondFromRWMol</references>
+        <references refid="class_smol_dock_1_1_molecule_1ad474d416278768d82c07fdf1d915e0f5" compoundref="_molecule_8h" startline="202">rwmol</references>
+        <referencedby refid="cli__interface_8cpp_1a0ddf1224851353fc92bfbff6f499fa97" compoundref="cli__interface_8cpp" startline="47" endline="265">main</referencedby>
+        <referencedby refid="_py_structures_8h_1a18cad6e29d14a0da9d2cd9464e7e2356" compoundref="_py_structures_8cpp" startline="67" endline="114">export_Structures</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_smol_dock_1_1_molecule_1a46a5d767bd2ae8cefd06049c67de1617" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string SmolDock::Molecule::writeToMolBlock</definition>
+        <argsstring>()</argsstring>
+        <name>writeToMolBlock</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Structures/Molecule.h" line="89" column="1" bodyfile="Structures/Molecule.cpp" bodystart="666" bodyend="669"/>
+        <references refid="class_smol_dock_1_1_molecule_1ad474d416278768d82c07fdf1d915e0f5" compoundref="_molecule_8h" startline="202">rwmol</references>
+        <referencedby refid="class_smol_dock_1_1_molecule_1ad8adfe01a02d8d9b3dbd76c7b18a729e" compoundref="_molecule_8cpp" startline="671" endline="682">writeToMolFile</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_smol_dock_1_1_molecule_1ad8adfe01a02d8d9b3dbd76c7b18a729e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool SmolDock::Molecule::writeToMolFile</definition>
+        <argsstring>(const std::string &amp;filename, bool overwrite=false)</argsstring>
+        <name>writeToMolFile</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>filename</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>overwrite</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Structures/Molecule.h" line="91" column="1" bodyfile="Structures/Molecule.cpp" bodystart="671" bodyend="682"/>
+        <references refid="class_smol_dock_1_1_molecule_1a46a5d767bd2ae8cefd06049c67de1617" compoundref="_molecule_8cpp" startline="666" endline="669">writeToMolBlock</references>
+      </memberdef>
+      <memberdef kind="function" id="class_smol_dock_1_1_molecule_1a457193a63a1c732d4f5da772c108b5ee" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool SmolDock::Molecule::populateFromPDBFile</definition>
         <argsstring>(const std::string &amp;filename, const std::string &amp;smiles_hint=&quot;&quot;, unsigned int seed=36754, std::vector&lt; std::shared_ptr&lt; InputPostProcessor::InputPostProcessor &gt; &gt; postProcessors={})</argsstring>
-        <name>populateFromPDB</name>
+        <name>populateFromPDBFile</name>
         <param>
           <type>const std::string &amp;</type>
           <declname>filename</declname>
@@ -273,12 +476,11 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Structures/Molecule.h" line="90" column="1" bodyfile="Structures/Molecule.cpp" bodystart="137" bodyend="158"/>
+        <location file="Structures/Molecule.h" line="109" column="1" bodyfile="Structures/Molecule.cpp" bodystart="158" bodyend="179"/>
         <references refid="namespace_smol_dock_1a288ddd3593922bcc17e5feb114841802" compoundref="_p_d_b_ligand_utils_8cpp" startline="11" endline="139">SmolDock::AssignBondOrderFromTemplateSMILES</references>
-        <references refid="class_smol_dock_1_1_molecule_1a919f8706ff2f2beb3f7bf8d53f4c3f96" compoundref="_molecule_8cpp" startline="169" endline="318">populateInternalAtomAndBondFromRWMol</references>
-        <references refid="class_smol_dock_1_1_molecule_1ad474d416278768d82c07fdf1d915e0f5" compoundref="_molecule_8h" startline="167">rwmol</references>
-        <referencedby refid="main_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4" compoundref="main_8cpp" startline="45" endline="155">main</referencedby>
-        <referencedby refid="_py_structures_8h_1a18cad6e29d14a0da9d2cd9464e7e2356" compoundref="_py_structures_8cpp" startline="40" endline="92">export_Structures</referencedby>
+        <references refid="class_smol_dock_1_1_molecule_1a919f8706ff2f2beb3f7bf8d53f4c3f96" compoundref="_molecule_8cpp" startline="226" endline="485">populateInternalAtomAndBondFromRWMol</references>
+        <references refid="class_smol_dock_1_1_molecule_1ad474d416278768d82c07fdf1d915e0f5" compoundref="_molecule_8h" startline="202">rwmol</references>
+        <referencedby refid="_py_structures_8h_1a18cad6e29d14a0da9d2cd9464e7e2356" compoundref="_py_structures_8cpp" startline="67" endline="114">export_Structures</referencedby>
       </memberdef>
       <memberdef kind="function" id="class_smol_dock_1_1_molecule_1a7dc0c882da26261dcd2762429b07a3d4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>unsigned int</type>
@@ -291,9 +493,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Structures/Molecule.h" line="95" column="1" bodyfile="Structures/Molecule.cpp" bodystart="129" bodyend="131"/>
-        <references refid="class_smol_dock_1_1_molecule_1a322259625da05c62925c705d8c4fb7c3" compoundref="_molecule_8h" startline="164">atoms</references>
-        <referencedby refid="_py_structures_8h_1a18cad6e29d14a0da9d2cd9464e7e2356" compoundref="_py_structures_8cpp" startline="40" endline="92">export_Structures</referencedby>
+        <location file="Structures/Molecule.h" line="114" column="1" bodyfile="Structures/Molecule.cpp" bodystart="150" bodyend="152"/>
+        <references refid="class_smol_dock_1_1_molecule_1a322259625da05c62925c705d8c4fb7c3" compoundref="_molecule_8h" startline="195">atoms</references>
+        <referencedby refid="_py_structures_8h_1a18cad6e29d14a0da9d2cd9464e7e2356" compoundref="_py_structures_8cpp" startline="67" endline="114">export_Structures</referencedby>
       </memberdef>
       <memberdef kind="function" id="class_smol_dock_1_1_molecule_1a8b1f02ad4e3b2ad991162668a61c2ddc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>unsigned int</type>
@@ -306,9 +508,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Structures/Molecule.h" line="98" column="1" bodyfile="Structures/Molecule.cpp" bodystart="133" bodyend="135"/>
-        <references refid="class_smol_dock_1_1_molecule_1a18d9793aa2e080c9cefdc22afd40f314" compoundref="_molecule_8h" startline="165">bonds</references>
-        <referencedby refid="_py_structures_8h_1a18cad6e29d14a0da9d2cd9464e7e2356" compoundref="_py_structures_8cpp" startline="40" endline="92">export_Structures</referencedby>
+        <location file="Structures/Molecule.h" line="117" column="1" bodyfile="Structures/Molecule.cpp" bodystart="154" bodyend="156"/>
+        <references refid="class_smol_dock_1_1_molecule_1a18d9793aa2e080c9cefdc22afd40f314" compoundref="_molecule_8h" startline="196">bonds</references>
+        <referencedby refid="_py_structures_8h_1a18cad6e29d14a0da9d2cd9464e7e2356" compoundref="_py_structures_8cpp" startline="67" endline="114">export_Structures</referencedby>
       </memberdef>
       <memberdef kind="function" id="class_smol_dock_1_1_molecule_1ab5fc86fa1ac97374e7d8d339404568e9" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="struct_smol_dock_1_1i_conformer" kindref="compound">iConformer</ref></type>
@@ -336,12 +538,13 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Structures/Molecule.h" line="110" column="1" bodyfile="Structures/Molecule.cpp" bodystart="378" bodyend="382"/>
-        <references refid="class_smol_dock_1_1_molecule_1a5247ebed094d5593a5a704c0c2919c0c" compoundref="_molecule_8cpp" startline="384" endline="453">generateIConformerForGivenRDKitConformerID</references>
-        <references refid="class_smol_dock_1_1_molecule_1ad474d416278768d82c07fdf1d915e0f5" compoundref="_molecule_8h" startline="167">rwmol</references>
-        <referencedby refid="main_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4" compoundref="main_8cpp" startline="45" endline="155">main</referencedby>
-        <referencedby refid="_py_structures_8h_1a18cad6e29d14a0da9d2cd9464e7e2356" compoundref="_py_structures_8cpp" startline="40" endline="92">export_Structures</referencedby>
-        <referencedby refid="class_smol_dock_1_1_re_scorer_1a102b6af24e4f5dc420c2bdfba5a792f0" compoundref="_re_scorer_8cpp" startline="18" endline="23">SmolDock::ReScorer::prepare</referencedby>
+        <location file="Structures/Molecule.h" line="129" column="1" bodyfile="Structures/Molecule.cpp" bodystart="548" bodyend="553"/>
+        <references refid="class_smol_dock_1_1_molecule_1a5247ebed094d5593a5a704c0c2919c0c" compoundref="_molecule_8cpp" startline="555" endline="649">generateIConformerForGivenRDKitConformerID</references>
+        <references refid="class_smol_dock_1_1_molecule_1ad474d416278768d82c07fdf1d915e0f5" compoundref="_molecule_8h" startline="202">rwmol</references>
+        <referencedby refid="main_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4" compoundref="main_8cpp" startline="45" endline="174">main</referencedby>
+        <referencedby refid="class_smol_dock_1_1_engine_1_1_pose_refiner_1a8d5a30801f618205c115a52b7fa363ce" compoundref="_pose_refiner_8cpp" startline="23" endline="67">SmolDock::Engine::PoseRefiner::refinePose</referencedby>
+        <referencedby refid="_py_structures_8h_1a18cad6e29d14a0da9d2cd9464e7e2356" compoundref="_py_structures_8cpp" startline="67" endline="114">export_Structures</referencedby>
+        <referencedby refid="class_smol_dock_1_1_re_scorer_1a102b6af24e4f5dc420c2bdfba5a792f0" compoundref="_re_scorer_8cpp" startline="22" endline="33">SmolDock::ReScorer::prepare</referencedby>
       </memberdef>
       <memberdef kind="function" id="class_smol_dock_1_1_molecule_1ad10dcbd80a2ac181b3d76fbae3f90ca2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -392,10 +595,10 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Structures/Molecule.h" line="120" column="1" bodyfile="Structures/Molecule.cpp" bodystart="81" bodyend="94"/>
-        <references refid="class_smol_dock_1_1_molecule_1a5247ebed094d5593a5a704c0c2919c0c" compoundref="_molecule_8cpp" startline="384" endline="453">generateIConformerForGivenRDKitConformerID</references>
-        <references refid="class_smol_dock_1_1_molecule_1ad474d416278768d82c07fdf1d915e0f5" compoundref="_molecule_8h" startline="167">rwmol</references>
-        <referencedby refid="_py_structures_8h_1a18cad6e29d14a0da9d2cd9464e7e2356" compoundref="_py_structures_8cpp" startline="40" endline="92">export_Structures</referencedby>
+        <location file="Structures/Molecule.h" line="139" column="1" bodyfile="Structures/Molecule.cpp" bodystart="102" bodyend="116"/>
+        <references refid="class_smol_dock_1_1_molecule_1a5247ebed094d5593a5a704c0c2919c0c" compoundref="_molecule_8cpp" startline="555" endline="649">generateIConformerForGivenRDKitConformerID</references>
+        <references refid="class_smol_dock_1_1_molecule_1ad474d416278768d82c07fdf1d915e0f5" compoundref="_molecule_8h" startline="202">rwmol</references>
+        <referencedby refid="_py_structures_8h_1a18cad6e29d14a0da9d2cd9464e7e2356" compoundref="_py_structures_8cpp" startline="67" endline="114">export_Structures</referencedby>
       </memberdef>
       <memberdef kind="function" id="class_smol_dock_1_1_molecule_1a1cce96a4a5296ab42ae3ab06fbc374a1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>unsigned int</type>
@@ -457,10 +660,10 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Structures/Molecule.h" line="131" column="1" bodyfile="Structures/Molecule.cpp" bodystart="97" bodyend="127"/>
-        <references refid="class_smol_dock_1_1_molecule_1a5247ebed094d5593a5a704c0c2919c0c" compoundref="_molecule_8cpp" startline="384" endline="453">generateIConformerForGivenRDKitConformerID</references>
-        <references refid="class_smol_dock_1_1_molecule_1ad474d416278768d82c07fdf1d915e0f5" compoundref="_molecule_8h" startline="167">rwmol</references>
-        <referencedby refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a3abc1a2cdbb3f1b9f545f863f9ec5e43" compoundref="_conformer_rigid_docking_engine_8cpp" startline="86" endline="133">SmolDock::Engine::ConformerRigidDockingEngine::setupDockingEngine</referencedby>
+        <location file="Structures/Molecule.h" line="151" column="1" bodyfile="Structures/Molecule.cpp" bodystart="119" bodyend="148"/>
+        <references refid="class_smol_dock_1_1_molecule_1a5247ebed094d5593a5a704c0c2919c0c" compoundref="_molecule_8cpp" startline="555" endline="649">generateIConformerForGivenRDKitConformerID</references>
+        <references refid="class_smol_dock_1_1_molecule_1ad474d416278768d82c07fdf1d915e0f5" compoundref="_molecule_8h" startline="202">rwmol</references>
+        <referencedby refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a3abc1a2cdbb3f1b9f545f863f9ec5e43" compoundref="_conformer_rigid_docking_engine_8cpp" startline="84" endline="132">SmolDock::Engine::ConformerRigidDockingEngine::setupDockingEngine</referencedby>
       </memberdef>
       <memberdef kind="function" id="class_smol_dock_1_1_molecule_1afe9743bfc4876343b6c63b0aac892f83" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>std::string</type>
@@ -475,9 +678,9 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Structures/Molecule.h" line="138" column="1" bodyfile="Structures/Molecule.cpp" bodystart="160" bodyend="162"/>
-        <references refid="class_smol_dock_1_1_molecule_1ac20346642bc3835228726b2508d8c42f" compoundref="_molecule_8h" startline="171">residue_name</references>
-        <referencedby refid="_py_structures_8h_1a18cad6e29d14a0da9d2cd9464e7e2356" compoundref="_py_structures_8cpp" startline="40" endline="92">export_Structures</referencedby>
+        <location file="Structures/Molecule.h" line="159" column="1" bodyfile="Structures/Molecule.cpp" bodystart="217" bodyend="219"/>
+        <references refid="class_smol_dock_1_1_molecule_1ac20346642bc3835228726b2508d8c42f" compoundref="_molecule_8h" startline="207">residue_name</references>
+        <referencedby refid="_py_structures_8h_1a18cad6e29d14a0da9d2cd9464e7e2356" compoundref="_py_structures_8cpp" startline="67" endline="114">export_Structures</referencedby>
       </memberdef>
       <memberdef kind="function" id="class_smol_dock_1_1_molecule_1af9eb4a4fe0f1d72c104393b690e8f5cb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -504,9 +707,9 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Structures/Molecule.h" line="146" column="1" bodyfile="Structures/Molecule.cpp" bodystart="164" bodyend="167"/>
-        <references refid="class_smol_dock_1_1_molecule_1ac20346642bc3835228726b2508d8c42f" compoundref="_molecule_8h" startline="171">residue_name</references>
-        <referencedby refid="_py_structures_8h_1a18cad6e29d14a0da9d2cd9464e7e2356" compoundref="_py_structures_8cpp" startline="40" endline="92">export_Structures</referencedby>
+        <location file="Structures/Molecule.h" line="167" column="1" bodyfile="Structures/Molecule.cpp" bodystart="221" bodyend="224"/>
+        <references refid="class_smol_dock_1_1_molecule_1ac20346642bc3835228726b2508d8c42f" compoundref="_molecule_8h" startline="207">residue_name</references>
+        <referencedby refid="_py_structures_8h_1a18cad6e29d14a0da9d2cd9464e7e2356" compoundref="_py_structures_8cpp" startline="67" endline="114">export_Structures</referencedby>
       </memberdef>
       <memberdef kind="function" id="class_smol_dock_1_1_molecule_1af6263934134836e9ce66d2254b6b6801" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -523,14 +726,17 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Structures/Molecule.h" line="148" column="1" bodyfile="Structures/Molecule.cpp" bodystart="320" bodyend="330"/>
-        <references refid="class_smol_dock_1_1_molecule_1a322259625da05c62925c705d8c4fb7c3" compoundref="_molecule_8h" startline="164">atoms</references>
+        <location file="Structures/Molecule.h" line="169" column="1" bodyfile="Structures/Molecule.cpp" bodystart="487" bodyend="500"/>
+        <references refid="class_smol_dock_1_1_molecule_1a322259625da05c62925c705d8c4fb7c3" compoundref="_molecule_8h" startline="195">atoms</references>
+        <references refid="class_smol_dock_1_1_molecule_1ad474d416278768d82c07fdf1d915e0f5" compoundref="_molecule_8h" startline="202">rwmol</references>
+        <references refid="class_smol_dock_1_1_molecule_1ab5d560b5e32304a9056bbecc3f0bebee" compoundref="_molecule_8h" startline="225">updatedConformerID</references>
         <references refid="struct_smol_dock_1_1i_conformer_1a45c379f6a880da313bf3519dc415e992" compoundref="i_conformer_8h" startline="48">SmolDock::iConformer::x</references>
         <references refid="struct_smol_dock_1_1i_conformer_1ac3019c0cd62660a4392591dd9519cc9a" compoundref="i_conformer_8h" startline="48">SmolDock::iConformer::y</references>
         <references refid="struct_smol_dock_1_1i_conformer_1a5c1fc6f9bad31ec2731337e9ba1e9a0f" compoundref="i_conformer_8h" startline="48">SmolDock::iConformer::z</references>
-        <referencedby refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a52fa8c276c911df08d4dd8d6744ae540" compoundref="_conformer_rigid_docking_engine_8cpp" startline="226" endline="234">SmolDock::Engine::ConformerRigidDockingEngine::getDockingResult</referencedby>
-        <referencedby refid="class_smol_dock_1_1_intermediate_conformer_collector_1a1d878b323a17e56169fb4fad4f92a742" compoundref="_intermediate_conformer_collector_8cpp" startline="13" endline="17">SmolDock::IntermediateConformerCollector::addiConformer</referencedby>
-        <referencedby refid="_py_structures_8h_1a18cad6e29d14a0da9d2cd9464e7e2356" compoundref="_py_structures_8cpp" startline="40" endline="92">export_Structures</referencedby>
+        <referencedby refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a52fa8c276c911df08d4dd8d6744ae540" compoundref="_conformer_rigid_docking_engine_8cpp" startline="296" endline="304">SmolDock::Engine::ConformerRigidDockingEngine::getDockingResult</referencedby>
+        <referencedby refid="class_smol_dock_1_1_intermediate_conformer_collector_1a1d878b323a17e56169fb4fad4f92a742" compoundref="_intermediate_conformer_collector_8cpp" startline="11" endline="15">SmolDock::IntermediateConformerCollector::addiConformer</referencedby>
+        <referencedby refid="class_smol_dock_1_1_engine_1_1_pose_refiner_1aa3540fee1090d946ad7b809452b967fb" compoundref="_pose_refiner_8cpp" startline="81" endline="84">SmolDock::Engine::PoseRefiner::applyToLigand</referencedby>
+        <referencedby refid="_py_structures_8h_1a18cad6e29d14a0da9d2cd9464e7e2356" compoundref="_py_structures_8cpp" startline="67" endline="114">export_Structures</referencedby>
       </memberdef>
       <memberdef kind="function" id="class_smol_dock_1_1_molecule_1a70156ffc4081eb92f9dc4e2c70096c84" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="class_smol_dock_1_1_molecule" kindref="compound">Molecule</ref></type>
@@ -544,15 +750,15 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Structures/Molecule.h" line="154" column="1" bodyfile="Structures/Molecule.cpp" bodystart="332" bodyend="376"/>
-        <references refid="class_smol_dock_1_1_molecule_1a322259625da05c62925c705d8c4fb7c3" compoundref="_molecule_8h" startline="164">atoms</references>
-        <references refid="class_smol_dock_1_1_atom_1af45fc99da6ffbf539ba654c91e1bb752" compoundref="_atom_8h" startline="158">SmolDock::Atom::bonds</references>
-        <references refid="class_smol_dock_1_1_molecule_1a18d9793aa2e080c9cefdc22afd40f314" compoundref="_molecule_8h" startline="165">bonds</references>
-        <references refid="class_smol_dock_1_1_molecule_1ad474d416278768d82c07fdf1d915e0f5" compoundref="_molecule_8h" startline="167">rwmol</references>
+        <location file="Structures/Molecule.h" line="175" column="1" bodyfile="Structures/Molecule.cpp" bodystart="502" bodyend="546"/>
+        <references refid="class_smol_dock_1_1_molecule_1a322259625da05c62925c705d8c4fb7c3" compoundref="_molecule_8h" startline="195">atoms</references>
+        <references refid="class_smol_dock_1_1_molecule_1a18d9793aa2e080c9cefdc22afd40f314" compoundref="_molecule_8h" startline="196">bonds</references>
+        <references refid="class_smol_dock_1_1_atom_1af45fc99da6ffbf539ba654c91e1bb752" compoundref="_atom_8h" startline="206">SmolDock::Atom::bonds</references>
+        <references refid="class_smol_dock_1_1_molecule_1ad474d416278768d82c07fdf1d915e0f5" compoundref="_molecule_8h" startline="202">rwmol</references>
         <references refid="class_smol_dock_1_1_bond_1a4ebf28309120c880429f205edf67b9f8" compoundref="_bond_8cpp" startline="56" endline="58">SmolDock::Bond::setBondType</references>
-        <referencedby refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a52fa8c276c911df08d4dd8d6744ae540" compoundref="_conformer_rigid_docking_engine_8cpp" startline="226" endline="234">SmolDock::Engine::ConformerRigidDockingEngine::getDockingResult</referencedby>
-        <referencedby refid="class_smol_dock_1_1_intermediate_conformer_collector_1a1d878b323a17e56169fb4fad4f92a742" compoundref="_intermediate_conformer_collector_8cpp" startline="13" endline="17">SmolDock::IntermediateConformerCollector::addiConformer</referencedby>
-        <referencedby refid="_py_structures_8h_1a18cad6e29d14a0da9d2cd9464e7e2356" compoundref="_py_structures_8cpp" startline="40" endline="92">export_Structures</referencedby>
+        <referencedby refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a52fa8c276c911df08d4dd8d6744ae540" compoundref="_conformer_rigid_docking_engine_8cpp" startline="296" endline="304">SmolDock::Engine::ConformerRigidDockingEngine::getDockingResult</referencedby>
+        <referencedby refid="class_smol_dock_1_1_intermediate_conformer_collector_1a1d878b323a17e56169fb4fad4f92a742" compoundref="_intermediate_conformer_collector_8cpp" startline="11" endline="15">SmolDock::IntermediateConformerCollector::addiConformer</referencedby>
+        <referencedby refid="_py_structures_8h_1a18cad6e29d14a0da9d2cd9464e7e2356" compoundref="_py_structures_8cpp" startline="67" endline="114">export_Structures</referencedby>
       </memberdef>
       <memberdef kind="function" id="class_smol_dock_1_1_molecule_1a41216a87fbe541655f267501568e2aa7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>unsigned int</type>
@@ -566,8 +772,69 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Structures/Molecule.h" line="160" column="1" bodyfile="Structures/Molecule.cpp" bodystart="455" bodyend="457"/>
-        <references refid="class_smol_dock_1_1_molecule_1a7295fbcc507a2d0c8acca492393117bb" compoundref="_molecule_8h" startline="183">numberOfRotatableBonds</references>
+        <location file="Structures/Molecule.h" line="181" column="1" bodyfile="Structures/Molecule.cpp" bodystart="651" bodyend="653"/>
+        <references refid="class_smol_dock_1_1_molecule_1a7295fbcc507a2d0c8acca492393117bb" compoundref="_molecule_8h" startline="223">numberOfRotatableBonds</references>
+      </memberdef>
+      <memberdef kind="function" id="class_smol_dock_1_1_molecule_1a6f051b6387277624b024809ddad96925" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool SmolDock::Molecule::operator==</definition>
+        <argsstring>(const Molecule &amp;rhs) const</argsstring>
+        <name>operator==</name>
+        <param>
+          <type>const <ref refid="class_smol_dock_1_1_molecule" kindref="compound">Molecule</ref> &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Structures/Molecule.h" line="184" column="1" bodyfile="Structures/Molecule.cpp" bodystart="658" bodyend="660"/>
+        <references refid="class_smol_dock_1_1_molecule_1a02a8ccc1f027a298ccf54deff19e4da0" compoundref="_molecule_8h" startline="193">molID</references>
+      </memberdef>
+      <memberdef kind="function" id="class_smol_dock_1_1_molecule_1ab287150aa9425d6c43bb3836d027a02b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool SmolDock::Molecule::operator!=</definition>
+        <argsstring>(const Molecule &amp;rhs) const</argsstring>
+        <name>operator!=</name>
+        <param>
+          <type>const <ref refid="class_smol_dock_1_1_molecule" kindref="compound">Molecule</ref> &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Structures/Molecule.h" line="186" column="1" bodyfile="Structures/Molecule.cpp" bodystart="662" bodyend="664"/>
+      </memberdef>
+      <memberdef kind="function" id="class_smol_dock_1_1_molecule_1abefbb48c0b7647491cf7c45fa2dfd6b5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>unsigned int</type>
+        <definition>unsigned int SmolDock::Molecule::applyAtomVariant</definition>
+        <argsstring>(std::string smarts_pattern, Atom::AtomVariant variant)</argsstring>
+        <name>applyAtomVariant</name>
+        <param>
+          <type>std::string</type>
+          <declname>smarts_pattern</declname>
+        </param>
+        <param>
+          <type><ref refid="class_smol_dock_1_1_atom_1a77191f0919af58d733764e229cb1f973" kindref="member">Atom::AtomVariant</ref></type>
+          <declname>variant</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Structures/Molecule.h" line="188" column="1" bodyfile="Structures/Molecule.cpp" bodystart="684" bodyend="732"/>
+        <references refid="class_smol_dock_1_1_molecule_1a322259625da05c62925c705d8c4fb7c3" compoundref="_molecule_8h" startline="195">atoms</references>
+        <references refid="namespace_smol_dock_1a506cf373a9b0185cffe654280332e312" compoundref="_atom_8h" startline="244" endline="276">SmolDock::atomVariantToString</references>
+        <references refid="class_smol_dock_1_1_molecule_1a7d79422a5cabf8321268b982c38923ed" compoundref="_molecule_8h" startline="210">RDKitAtomIdxToAtomsPosInVector</references>
+        <references refid="class_smol_dock_1_1_molecule_1ad474d416278768d82c07fdf1d915e0f5" compoundref="_molecule_8h" startline="202">rwmol</references>
+        <referencedby refid="main_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4" compoundref="main_8cpp" startline="45" endline="174">main</referencedby>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-func">
@@ -590,19 +857,21 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Structures/Molecule.h" line="174" column="1" bodyfile="Structures/Molecule.cpp" bodystart="169" bodyend="318"/>
-        <references refid="namespace_smol_dock_1a43bbd3ed0ad4b1eec9e5ae8d9d99318d" compoundref="_variant_flag_assignation_8cpp" startline="89" endline="127">SmolDock::assignApolarCarbonFlag</references>
-        <references refid="class_smol_dock_1_1_molecule_1a322259625da05c62925c705d8c4fb7c3" compoundref="_molecule_8h" startline="164">atoms</references>
-        <references refid="class_smol_dock_1_1_molecule_1a18d9793aa2e080c9cefdc22afd40f314" compoundref="_molecule_8h" startline="165">bonds</references>
-        <references refid="class_smol_dock_1_1_atom_1a57e9a532fd04e1846c0d83edebb9fd41ae1b832c8857262f1089376030b4298b3">SmolDock::Atom::carbon</references>
-        <references refid="class_smol_dock_1_1_atom_1a57e9a532fd04e1846c0d83edebb9fd41ad4ac1478a4d8a4f591d35e3d75f3de65">SmolDock::Atom::hydrogen</references>
-        <references refid="class_smol_dock_1_1_molecule_1a008c28b068bf77dc74cc41926ee24507" compoundref="_molecule_8h" startline="176">initial_conformer_id</references>
-        <references refid="class_smol_dock_1_1_atom_1a57e9a532fd04e1846c0d83edebb9fd41a63ebb9250f49340aece8d4ac541eaf61">SmolDock::Atom::nitrogen</references>
-        <references refid="class_smol_dock_1_1_molecule_1a7295fbcc507a2d0c8acca492393117bb" compoundref="_molecule_8h" startline="183">numberOfRotatableBonds</references>
-        <references refid="class_smol_dock_1_1_atom_1a57e9a532fd04e1846c0d83edebb9fd41a6124d98749365e3db2c9e5b27ca04db6">SmolDock::Atom::oxygen</references>
-        <references refid="class_smol_dock_1_1_molecule_1ad474d416278768d82c07fdf1d915e0f5" compoundref="_molecule_8h" startline="167">rwmol</references>
-        <referencedby refid="class_smol_dock_1_1_molecule_1ae8bf900e52a73637051eee69e60628e6" compoundref="_molecule_8cpp" startline="51" endline="78">populateFromSMILES</referencedby>
-        <referencedby refid="class_smol_dock_1_1_molecule_1a9e3ef6b361a98cfbac69b11979d886da" compoundref="_molecule_8cpp" startline="137" endline="158">populateFromPDB</referencedby>
+        <location file="Structures/Molecule.h" line="214" column="1" bodyfile="Structures/Molecule.cpp" bodystart="226" bodyend="485"/>
+        <references refid="namespace_smol_dock_1a43bbd3ed0ad4b1eec9e5ae8d9d99318d" compoundref="_variant_flag_assignation_8cpp" startline="87" endline="125">SmolDock::assignApolarCarbonFlag</references>
+        <references refid="class_smol_dock_1_1_molecule_1a322259625da05c62925c705d8c4fb7c3" compoundref="_molecule_8h" startline="195">atoms</references>
+        <references refid="class_smol_dock_1_1_molecule_1a7dd1cc0a273ae62d091723b451b8fb19" compoundref="_molecule_8h" startline="211">atomsPosInVectorToRDKitAtomIdx</references>
+        <references refid="class_smol_dock_1_1_atom_1aed79f9306267e3ddbd9a9b4dade2bbbf" compoundref="_atom_8h" startline="202">SmolDock::Atom::AtomTypeLabel</references>
+        <references refid="class_smol_dock_1_1_molecule_1a18d9793aa2e080c9cefdc22afd40f314" compoundref="_molecule_8h" startline="196">bonds</references>
+        <references refid="class_smol_dock_1_1_molecule_1a008c28b068bf77dc74cc41926ee24507" compoundref="_molecule_8h" startline="217">initial_conformer_id</references>
+        <references refid="class_smol_dock_1_1_molecule_1a7295fbcc507a2d0c8acca492393117bb" compoundref="_molecule_8h" startline="223">numberOfRotatableBonds</references>
+        <references refid="class_smol_dock_1_1_molecule_1a7d79422a5cabf8321268b982c38923ed" compoundref="_molecule_8h" startline="210">RDKitAtomIdxToAtomsPosInVector</references>
+        <references refid="class_smol_dock_1_1_molecule_1af7e227faf9e5032b62c1968e4623f268" compoundref="_molecule_8h" startline="199">rotatableBonds</references>
+        <references refid="class_smol_dock_1_1_molecule_1ad474d416278768d82c07fdf1d915e0f5" compoundref="_molecule_8h" startline="202">rwmol</references>
+        <referencedby refid="class_smol_dock_1_1_molecule_1ae8bf900e52a73637051eee69e60628e6" compoundref="_molecule_8cpp" startline="72" endline="99">populateFromSMILES</referencedby>
+        <referencedby refid="class_smol_dock_1_1_molecule_1a457193a63a1c732d4f5da772c108b5ee" compoundref="_molecule_8cpp" startline="158" endline="179">populateFromPDBFile</referencedby>
+        <referencedby refid="class_smol_dock_1_1_molecule_1ade1395768e7d42f8dc0762334eaeed42" compoundref="_molecule_8cpp" startline="181" endline="197">populateFromMolFile</referencedby>
+        <referencedby refid="class_smol_dock_1_1_molecule_1a8b4b9a154f2139757c0d33bb962a45ea" compoundref="_molecule_8cpp" startline="199" endline="215">populateFromMol2File</referencedby>
       </memberdef>
       <memberdef kind="function" id="class_smol_dock_1_1_molecule_1a5247ebed094d5593a5a704c0c2919c0c" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="struct_smol_dock_1_1i_conformer" kindref="compound">iConformer</ref></type>
@@ -624,26 +893,28 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Structures/Molecule.h" line="178" column="1" bodyfile="Structures/Molecule.cpp" bodystart="384" bodyend="453"/>
+        <location file="Structures/Molecule.h" line="220" column="1" bodyfile="Structures/Molecule.cpp" bodystart="555" bodyend="649"/>
         <references refid="struct_smol_dock_1_1i_conformer_1a1dbd8cb4eaa4e5e2f0afcdd1b36dd862" compoundref="i_conformer_8h" startline="49">SmolDock::iConformer::atomicRadius</references>
-        <references refid="class_smol_dock_1_1_molecule_1a322259625da05c62925c705d8c4fb7c3" compoundref="_molecule_8h" startline="164">atoms</references>
-        <references refid="namespace_smol_dock_1a9c3abf1e37dc4fe013df80997dedb20b" compoundref="_atom_8cpp" startline="86" endline="97">SmolDock::atomTypeToAtomicRadius</references>
-        <references refid="struct_smol_dock_1_1i_conformer_1aca79d26663d734bf23b5ed7ddc3dba57" compoundref="i_conformer_8h" startline="42">SmolDock::iConformer::centroidNormalizingTransform</references>
+        <references refid="class_smol_dock_1_1_molecule_1a322259625da05c62925c705d8c4fb7c3" compoundref="_molecule_8h" startline="195">atoms</references>
+        <references refid="namespace_smol_dock_1a9c3abf1e37dc4fe013df80997dedb20b" compoundref="_atom_8cpp" startline="89" endline="101">SmolDock::atomTypeToAtomicRadius</references>
+        <references refid="struct_smol_dock_1_1i_conformer_1ac88e2d09609c3b4d66ca517a0fc5f184" compoundref="i_conformer_8h" startline="53">SmolDock::iConformer::bondEnds1Index</references>
+        <references refid="struct_smol_dock_1_1i_conformer_1ae40696d245431ced83de5f20464bab08" compoundref="i_conformer_8h" startline="54">SmolDock::iConformer::bondEnds2Index</references>
+        <references refid="struct_smol_dock_1_1i_conformer_1a96caa4158ad18d445835710ea0df91d3" compoundref="i_conformer_8h" startline="42">SmolDock::iConformer::centroidNormalizingTransform</references>
         <references refid="struct_smol_dock_1_1i_conformer_1aabef94f550eef03cf2d4304df78cf403" compoundref="i_conformer_8h" startline="40">SmolDock::iConformer::num_rotatable_bond</references>
-        <references refid="class_smol_dock_1_1_molecule_1a7295fbcc507a2d0c8acca492393117bb" compoundref="_molecule_8h" startline="183">numberOfRotatableBonds</references>
-        <references refid="class_smol_dock_1_1_molecule_1ad474d416278768d82c07fdf1d915e0f5" compoundref="_molecule_8h" startline="167">rwmol</references>
-        <references refid="namespace_smol_dock_1ae559278f4b66ec9a09ddfaebb224f897" compoundref="_atom_8cpp" startline="73" endline="84">SmolDock::stringToAtomType</references>
+        <references refid="class_smol_dock_1_1_molecule_1a7295fbcc507a2d0c8acca492393117bb" compoundref="_molecule_8h" startline="223">numberOfRotatableBonds</references>
+        <references refid="class_smol_dock_1_1_molecule_1a7d79422a5cabf8321268b982c38923ed" compoundref="_molecule_8h" startline="210">RDKitAtomIdxToAtomsPosInVector</references>
+        <references refid="class_smol_dock_1_1_molecule_1af7e227faf9e5032b62c1968e4623f268" compoundref="_molecule_8h" startline="199">rotatableBonds</references>
+        <references refid="struct_smol_dock_1_1i_conformer_1a9676e4f30ba2425d948cc11ed88b1c59" compoundref="i_conformer_8h" startline="55">SmolDock::iConformer::rotatableGroups</references>
+        <references refid="class_smol_dock_1_1_molecule_1ad474d416278768d82c07fdf1d915e0f5" compoundref="_molecule_8h" startline="202">rwmol</references>
+        <references refid="namespace_smol_dock_1ae559278f4b66ec9a09ddfaebb224f897" compoundref="_atom_8cpp" startline="75" endline="87">SmolDock::stringToAtomType</references>
         <references refid="struct_smol_dock_1_1i_conformer_1add04de1dd457ae228e398ffa9260497d" compoundref="i_conformer_8h" startline="50">SmolDock::iConformer::type</references>
         <references refid="struct_smol_dock_1_1i_conformer_1af56992de619302df905180a481a4d993" compoundref="i_conformer_8h" startline="51">SmolDock::iConformer::variant</references>
-        <references refid="struct_smol_dock_1_1i_translation_1a74a60efc8b2463b7ea1ca1e824a4ed28" compoundref="i_transform_8h" startline="36">SmolDock::iTranslation::x</references>
         <references refid="struct_smol_dock_1_1i_conformer_1a45c379f6a880da313bf3519dc415e992" compoundref="i_conformer_8h" startline="48">SmolDock::iConformer::x</references>
-        <references refid="struct_smol_dock_1_1i_translation_1a5362a54675ecc6bac99325c69521fbb5" compoundref="i_transform_8h" startline="36">SmolDock::iTranslation::y</references>
         <references refid="struct_smol_dock_1_1i_conformer_1ac3019c0cd62660a4392591dd9519cc9a" compoundref="i_conformer_8h" startline="48">SmolDock::iConformer::y</references>
-        <references refid="struct_smol_dock_1_1i_translation_1a2ed07fcfc129a2bf7696b65d481317c5" compoundref="i_transform_8h" startline="36">SmolDock::iTranslation::z</references>
         <references refid="struct_smol_dock_1_1i_conformer_1a5c1fc6f9bad31ec2731337e9ba1e9a0f" compoundref="i_conformer_8h" startline="48">SmolDock::iConformer::z</references>
-        <referencedby refid="class_smol_dock_1_1_molecule_1ad10dcbd80a2ac181b3d76fbae3f90ca2" compoundref="_molecule_8cpp" startline="81" endline="94">generateConformer</referencedby>
-        <referencedby refid="class_smol_dock_1_1_molecule_1a1cce96a4a5296ab42ae3ab06fbc374a1" compoundref="_molecule_8cpp" startline="97" endline="127">generateConformers</referencedby>
-        <referencedby refid="class_smol_dock_1_1_molecule_1ab5fc86fa1ac97374e7d8d339404568e9" compoundref="_molecule_8cpp" startline="378" endline="382">getInitialConformer</referencedby>
+        <referencedby refid="class_smol_dock_1_1_molecule_1ad10dcbd80a2ac181b3d76fbae3f90ca2" compoundref="_molecule_8cpp" startline="102" endline="116">generateConformer</referencedby>
+        <referencedby refid="class_smol_dock_1_1_molecule_1a1cce96a4a5296ab42ae3ab06fbc374a1" compoundref="_molecule_8cpp" startline="119" endline="148">generateConformers</referencedby>
+        <referencedby refid="class_smol_dock_1_1_molecule_1ab5fc86fa1ac97374e7d8d339404568e9" compoundref="_molecule_8cpp" startline="548" endline="553">getInitialConformer</referencedby>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -651,71 +922,104 @@
     <detaileddescription>
 <para>Contains all extended attributes and functions. </para>    </detaileddescription>
     <inheritancegraph>
-      <node id="138">
+      <node id="160">
         <label>SmolDock::Molecule</label>
         <link refid="class_smol_dock_1_1_molecule"/>
-        <childnode refid="139" relation="private-inheritance">
+        <childnode refid="161" relation="private-inheritance">
         </childnode>
       </node>
-      <node id="139">
+      <node id="161">
         <label>SmolDock::Structure</label>
         <link refid="class_smol_dock_1_1_structure"/>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="144">
+      <node id="166">
+        <label>K</label>
+      </node>
+      <node id="167">
         <label>T</label>
       </node>
-      <node id="140">
+      <node id="162">
         <label>SmolDock::Molecule</label>
         <link refid="class_smol_dock_1_1_molecule"/>
-        <childnode refid="141" relation="private-inheritance">
+        <childnode refid="163" relation="private-inheritance">
         </childnode>
-        <childnode refid="142" relation="usage">
+        <childnode refid="164" relation="usage">
+          <edgelabel>-RDKitAtomIdxToAtomsPosInVector</edgelabel>
+          <edgelabel>-atomsPosInVectorToRDKitAtomIdx</edgelabel>
+        </childnode>
+        <childnode refid="168" relation="usage">
           <edgelabel>-bonds</edgelabel>
         </childnode>
-        <childnode refid="145" relation="usage">
+        <childnode refid="170" relation="usage">
           <edgelabel>-smiles</edgelabel>
           <edgelabel>-residue_name</edgelabel>
         </childnode>
-        <childnode refid="147" relation="usage">
+        <childnode refid="172" relation="usage">
+          <edgelabel>-rotatableBonds</edgelabel>
+        </childnode>
+        <childnode refid="173" relation="usage">
           <edgelabel>-atoms</edgelabel>
         </childnode>
       </node>
-      <node id="142">
+      <node id="168">
         <label>std::vector&lt; std::shared_ptr&lt; SmolDock::Bond &gt; &gt;</label>
-        <childnode refid="143" relation="template-instance">
+        <childnode refid="169" relation="template-instance">
           <edgelabel>&lt; std::shared_ptr&lt; SmolDock::Bond &gt; &gt;</edgelabel>
         </childnode>
       </node>
-      <node id="143">
+      <node id="169">
         <label>std::vector&lt; T &gt;</label>
-        <childnode refid="144" relation="usage">
+        <childnode refid="167" relation="usage">
           <edgelabel>+elements</edgelabel>
         </childnode>
       </node>
-      <node id="141">
+      <node id="165">
+        <label>std::map&lt; K, T &gt;</label>
+        <childnode refid="166" relation="usage">
+          <edgelabel>+keys</edgelabel>
+        </childnode>
+        <childnode refid="167" relation="usage">
+          <edgelabel>+elements</edgelabel>
+        </childnode>
+      </node>
+      <node id="164">
+        <label>std::map&lt; int, int &gt;</label>
+        <childnode refid="165" relation="template-instance">
+          <edgelabel>&lt; int, int &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="163">
         <label>SmolDock::Structure</label>
         <link refid="class_smol_dock_1_1_structure"/>
       </node>
-      <node id="146">
+      <node id="171">
         <label>std::basic_string&lt; char &gt;</label>
       </node>
-      <node id="147">
+      <node id="172">
+        <label>std::vector&lt; std::tuple&lt; std::shared_ptr&lt; SmolDock::Bond &gt;, unsigned int, unsigned int, std::vector&lt; unsigned int &gt; &gt; &gt;</label>
+        <childnode refid="169" relation="template-instance">
+          <edgelabel>&lt; std::tuple&lt; std::shared_ptr&lt; SmolDock::Bond &gt;, unsigned int, unsigned int, std::vector&lt; unsigned int &gt; &gt; &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="173">
         <label>std::vector&lt; std::shared_ptr&lt; SmolDock::Atom &gt; &gt;</label>
-        <childnode refid="143" relation="template-instance">
+        <childnode refid="169" relation="template-instance">
           <edgelabel>&lt; std::shared_ptr&lt; SmolDock::Atom &gt; &gt;</edgelabel>
         </childnode>
       </node>
-      <node id="145">
+      <node id="170">
         <label>std::string</label>
-        <childnode refid="146" relation="public-inheritance">
+        <childnode refid="171" relation="public-inheritance">
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="Structures/Molecule.h" line="55" column="1" bodyfile="Structures/Molecule.h" bodystart="55" bodyend="184"/>
+    <location file="Structures/Molecule.h" line="56" column="1" bodyfile="Structures/Molecule.h" bodystart="56" bodyend="226"/>
     <listofallmembers>
+      <member refid="class_smol_dock_1_1_molecule_1abefbb48c0b7647491cf7c45fa2dfd6b5" prot="public" virt="non-virtual"><scope>SmolDock::Molecule</scope><name>applyAtomVariant</name></member>
       <member refid="class_smol_dock_1_1_molecule_1a322259625da05c62925c705d8c4fb7c3" prot="private" virt="non-virtual"><scope>SmolDock::Molecule</scope><name>atoms</name></member>
+      <member refid="class_smol_dock_1_1_molecule_1a7dd1cc0a273ae62d091723b451b8fb19" prot="private" virt="non-virtual"><scope>SmolDock::Molecule</scope><name>atomsPosInVectorToRDKitAtomIdx</name></member>
       <member refid="class_smol_dock_1_1_molecule_1a18d9793aa2e080c9cefdc22afd40f314" prot="private" virt="non-virtual"><scope>SmolDock::Molecule</scope><name>bonds</name></member>
       <member refid="class_smol_dock_1_1_molecule_1a70156ffc4081eb92f9dc4e2c70096c84" prot="public" virt="non-virtual"><scope>SmolDock::Molecule</scope><name>deepcopy</name></member>
       <member refid="class_smol_dock_1_1_molecule_1ad10dcbd80a2ac181b3d76fbae3f90ca2" prot="public" virt="non-virtual"><scope>SmolDock::Molecule</scope><name>generateConformer</name></member>
@@ -725,21 +1029,32 @@
       <member refid="class_smol_dock_1_1_molecule_1a41216a87fbe541655f267501568e2aa7" prot="public" virt="non-virtual"><scope>SmolDock::Molecule</scope><name>getNumRotatableBond</name></member>
       <member refid="class_smol_dock_1_1_molecule_1afe9743bfc4876343b6c63b0aac892f83" prot="public" virt="non-virtual"><scope>SmolDock::Molecule</scope><name>getResidueName</name></member>
       <member refid="class_smol_dock_1_1_molecule_1a008c28b068bf77dc74cc41926ee24507" prot="private" virt="non-virtual"><scope>SmolDock::Molecule</scope><name>initial_conformer_id</name></member>
+      <member refid="class_smol_dock_1_1_molecule_1aaba5e4e8b9e4dd9e336deeaf61a896b4" prot="private" virt="non-virtual"><scope>SmolDock::Molecule</scope><name>LastMolID</name></member>
       <member refid="class_smol_dock_1_1_molecule_1a3a4a39128d64413d79d857bcbf790163" prot="public" virt="non-virtual"><scope>SmolDock::Molecule</scope><name>Molecule</name></member>
       <member refid="class_smol_dock_1_1_molecule_1a2033be89cdf71e3c8750054d8d19425f" prot="private" virt="non-virtual"><scope>SmolDock::Molecule</scope><name>MoleculeTraversal</name></member>
+      <member refid="class_smol_dock_1_1_molecule_1a02a8ccc1f027a298ccf54deff19e4da0" prot="private" virt="non-virtual"><scope>SmolDock::Molecule</scope><name>molID</name></member>
       <member refid="class_smol_dock_1_1_molecule_1a7dc0c882da26261dcd2762429b07a3d4" prot="public" virt="non-virtual"><scope>SmolDock::Molecule</scope><name>numberOfAtoms</name></member>
       <member refid="class_smol_dock_1_1_molecule_1a8b1f02ad4e3b2ad991162668a61c2ddc" prot="public" virt="non-virtual"><scope>SmolDock::Molecule</scope><name>numberOfBonds</name></member>
       <member refid="class_smol_dock_1_1_molecule_1a7295fbcc507a2d0c8acca492393117bb" prot="private" virt="non-virtual"><scope>SmolDock::Molecule</scope><name>numberOfRotatableBonds</name></member>
+      <member refid="class_smol_dock_1_1_molecule_1ab287150aa9425d6c43bb3836d027a02b" prot="public" virt="non-virtual"><scope>SmolDock::Molecule</scope><name>operator!=</name></member>
+      <member refid="class_smol_dock_1_1_molecule_1a6f051b6387277624b024809ddad96925" prot="public" virt="non-virtual"><scope>SmolDock::Molecule</scope><name>operator==</name></member>
       <member refid="class_smol_dock_1_1_molecule_1a21986fb82cbece6c57579a68c1bf5f39" prot="private" virt="non-virtual"><scope>SmolDock::Molecule</scope><name>PDBWriter</name></member>
-      <member refid="class_smol_dock_1_1_molecule_1a9e3ef6b361a98cfbac69b11979d886da" prot="public" virt="non-virtual"><scope>SmolDock::Molecule</scope><name>populateFromPDB</name></member>
+      <member refid="class_smol_dock_1_1_molecule_1a8b4b9a154f2139757c0d33bb962a45ea" prot="public" virt="non-virtual"><scope>SmolDock::Molecule</scope><name>populateFromMol2File</name></member>
+      <member refid="class_smol_dock_1_1_molecule_1ade1395768e7d42f8dc0762334eaeed42" prot="public" virt="non-virtual"><scope>SmolDock::Molecule</scope><name>populateFromMolFile</name></member>
+      <member refid="class_smol_dock_1_1_molecule_1a457193a63a1c732d4f5da772c108b5ee" prot="public" virt="non-virtual"><scope>SmolDock::Molecule</scope><name>populateFromPDBFile</name></member>
       <member refid="class_smol_dock_1_1_molecule_1ae8bf900e52a73637051eee69e60628e6" prot="public" virt="non-virtual"><scope>SmolDock::Molecule</scope><name>populateFromSMILES</name></member>
       <member refid="class_smol_dock_1_1_molecule_1a919f8706ff2f2beb3f7bf8d53f4c3f96" prot="private" virt="non-virtual"><scope>SmolDock::Molecule</scope><name>populateInternalAtomAndBondFromRWMol</name></member>
+      <member refid="class_smol_dock_1_1_molecule_1a7d79422a5cabf8321268b982c38923ed" prot="private" virt="non-virtual"><scope>SmolDock::Molecule</scope><name>RDKitAtomIdxToAtomsPosInVector</name></member>
       <member refid="class_smol_dock_1_1_molecule_1ac20346642bc3835228726b2508d8c42f" prot="private" virt="non-virtual"><scope>SmolDock::Molecule</scope><name>residue_name</name></member>
-      <member refid="class_smol_dock_1_1_molecule_1ad474d416278768d82c07fdf1d915e0f5" prot="private" virt="non-virtual"><scope>SmolDock::Molecule</scope><name>rwmol</name></member>
+      <member refid="class_smol_dock_1_1_molecule_1af7e227faf9e5032b62c1968e4623f268" prot="private" virt="non-virtual"><scope>SmolDock::Molecule</scope><name>rotatableBonds</name></member>
+      <member refid="class_smol_dock_1_1_molecule_1ad474d416278768d82c07fdf1d915e0f5" prot="public" virt="non-virtual"><scope>SmolDock::Molecule</scope><name>rwmol</name></member>
       <member refid="class_smol_dock_1_1_molecule_1af9eb4a4fe0f1d72c104393b690e8f5cb" prot="public" virt="non-virtual"><scope>SmolDock::Molecule</scope><name>setResidueName</name></member>
       <member refid="class_smol_dock_1_1_molecule_1a59288faa4bbacab2959858b398cb459e" prot="private" virt="non-virtual"><scope>SmolDock::Molecule</scope><name>smiles</name></member>
       <member refid="class_smol_dock_1_1_molecule_1a3cb039460aae8734c10a3588e1d670a2" prot="private" virt="non-virtual"><scope>SmolDock::Molecule</scope><name>UnitTestHelper</name></member>
       <member refid="class_smol_dock_1_1_molecule_1af6263934134836e9ce66d2254b6b6801" prot="public" virt="non-virtual"><scope>SmolDock::Molecule</scope><name>updateAtomPositionsFromiConformer</name></member>
+      <member refid="class_smol_dock_1_1_molecule_1ab5d560b5e32304a9056bbecc3f0bebee" prot="private" virt="non-virtual"><scope>SmolDock::Molecule</scope><name>updatedConformerID</name></member>
+      <member refid="class_smol_dock_1_1_molecule_1a46a5d767bd2ae8cefd06049c67de1617" prot="public" virt="non-virtual"><scope>SmolDock::Molecule</scope><name>writeToMolBlock</name></member>
+      <member refid="class_smol_dock_1_1_molecule_1ad8adfe01a02d8d9b3dbd76c7b18a729e" prot="public" virt="non-virtual"><scope>SmolDock::Molecule</scope><name>writeToMolFile</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

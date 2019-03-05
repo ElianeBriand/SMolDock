@@ -24,7 +24,10 @@
         <inbodydescription>
         </inbodydescription>
         <location file="Engines/LocalOptimizers/OptimizerInterface.h" line="31" column="1"/>
-        <referencedby refid="class_smol_dock_1_1_heuristics_1_1_random_restart_1abfa7882757c070d876d94090520cef92" compoundref="_random_restart_8cpp" startline="25" endline="56">SmolDock::Heuristics::RandomRestart::search</referencedby>
+        <referencedby refid="class_smol_dock_1_1_heuristics_1_1_iterated_local_search_1ad7c6bf8bf2c8d3cde6cb6b1184ca5c4e" compoundref="_iterated_local_search_8cpp" startline="23" endline="135">SmolDock::Heuristics::IteratedLocalSearch::search</referencedby>
+        <referencedby refid="class_smol_dock_1_1_heuristics_1_1_only_local_1a4557f55ce09405eff013c07214cb4e10" compoundref="_only_local_8cpp" startline="16" endline="24">SmolDock::Heuristics::OnlyLocal::search</referencedby>
+        <referencedby refid="class_smol_dock_1_1_heuristics_1_1_random_restart_1abfa7882757c070d876d94090520cef92" compoundref="_random_restart_8cpp" startline="22" endline="64">SmolDock::Heuristics::RandomRestart::search</referencedby>
+        <referencedby refid="class_smol_dock_1_1_heuristics_1_1_simulated_annealing_1a1a354ad6f5b9055013ed27575450498f" compoundref="_simulated_annealing_8cpp" startline="23" endline="44">SmolDock::Heuristics::SimulatedAnnealing::search</referencedby>
       </memberdef>
       <memberdef kind="function" id="class_smol_dock_1_1_optimizer_1_1_optimizer_1a127349b071842e954d7a89f026685b8f" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type>arma::mat</type>
@@ -40,7 +43,10 @@
         <inbodydescription>
         </inbodydescription>
         <location file="Engines/LocalOptimizers/OptimizerInterface.h" line="33" column="1"/>
-        <referencedby refid="class_smol_dock_1_1_heuristics_1_1_random_restart_1abfa7882757c070d876d94090520cef92" compoundref="_random_restart_8cpp" startline="25" endline="56">SmolDock::Heuristics::RandomRestart::search</referencedby>
+        <referencedby refid="class_smol_dock_1_1_heuristics_1_1_iterated_local_search_1ad7c6bf8bf2c8d3cde6cb6b1184ca5c4e" compoundref="_iterated_local_search_8cpp" startline="23" endline="135">SmolDock::Heuristics::IteratedLocalSearch::search</referencedby>
+        <referencedby refid="class_smol_dock_1_1_heuristics_1_1_only_local_1a4557f55ce09405eff013c07214cb4e10" compoundref="_only_local_8cpp" startline="16" endline="24">SmolDock::Heuristics::OnlyLocal::search</referencedby>
+        <referencedby refid="class_smol_dock_1_1_heuristics_1_1_random_restart_1abfa7882757c070d876d94090520cef92" compoundref="_random_restart_8cpp" startline="22" endline="64">SmolDock::Heuristics::RandomRestart::search</referencedby>
+        <referencedby refid="class_smol_dock_1_1_heuristics_1_1_simulated_annealing_1a1a354ad6f5b9055013ed27575450498f" compoundref="_simulated_annealing_8cpp" startline="23" endline="44">SmolDock::Heuristics::SimulatedAnnealing::search</referencedby>
       </memberdef>
       <memberdef kind="function" id="class_smol_dock_1_1_optimizer_1_1_optimizer_1a5165027808dafc096faf1048a48e7c1c" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type>double</type>
@@ -56,6 +62,9 @@
         <inbodydescription>
         </inbodydescription>
         <location file="Engines/LocalOptimizers/OptimizerInterface.h" line="35" column="1"/>
+        <referencedby refid="class_smol_dock_1_1_heuristics_1_1_iterated_local_search_1ad7c6bf8bf2c8d3cde6cb6b1184ca5c4e" compoundref="_iterated_local_search_8cpp" startline="23" endline="135">SmolDock::Heuristics::IteratedLocalSearch::search</referencedby>
+        <referencedby refid="class_smol_dock_1_1_heuristics_1_1_random_restart_1abfa7882757c070d876d94090520cef92" compoundref="_random_restart_8cpp" startline="22" endline="64">SmolDock::Heuristics::RandomRestart::search</referencedby>
+        <referencedby refid="class_smol_dock_1_1_heuristics_1_1_simulated_annealing_1a1a354ad6f5b9055013ed27575450498f" compoundref="_simulated_annealing_8cpp" startline="23" endline="44">SmolDock::Heuristics::SimulatedAnnealing::search</referencedby>
       </memberdef>
       <memberdef kind="function" id="class_smol_dock_1_1_optimizer_1_1_optimizer_1a01132a1b9275e1863e80bd18400b1fef" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type></type>
@@ -76,25 +85,25 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="150">
+      <node id="183">
         <label>SmolDock::Optimizer::L_BFGS</label>
         <link refid="class_smol_dock_1_1_optimizer_1_1_l___b_f_g_s"/>
-        <childnode refid="148" relation="public-inheritance">
+        <childnode refid="181" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="149">
+      <node id="182">
         <label>SmolDock::Optimizer::GradientDescentLineSearch</label>
         <link refid="class_smol_dock_1_1_optimizer_1_1_gradient_descent_line_search"/>
-        <childnode refid="148" relation="public-inheritance">
+        <childnode refid="181" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="148">
+      <node id="181">
         <label>SmolDock::Optimizer::Optimizer</label>
         <link refid="class_smol_dock_1_1_optimizer_1_1_optimizer"/>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="151">
+      <node id="184">
         <label>SmolDock::Optimizer::Optimizer</label>
         <link refid="class_smol_dock_1_1_optimizer_1_1_optimizer"/>
       </node>

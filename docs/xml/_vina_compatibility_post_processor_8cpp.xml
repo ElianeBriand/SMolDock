@@ -4,90 +4,90 @@
     <compoundname>VinaCompatibilityPostProcessor.cpp</compoundname>
     <includes refid="_vina_compatibility_post_processor_8h" local="yes">VinaCompatibilityPostProcessor.h</includes>
     <incdepgraph>
-      <node id="1872">
+      <node id="2469">
         <label>InputPostProcessorInterface.h</label>
         <link refid="_input_post_processor_interface_8h"/>
-        <childnode refid="1873" relation="include">
+        <childnode refid="2470" relation="include">
         </childnode>
       </node>
-      <node id="1880">
+      <node id="2477">
         <label>string</label>
       </node>
-      <node id="1873">
+      <node id="2470">
         <label>Structures/Atom.h</label>
         <link refid="_atom_8h"/>
-        <childnode refid="1874" relation="include">
+        <childnode refid="2471" relation="include">
         </childnode>
-        <childnode refid="1875" relation="include">
+        <childnode refid="2472" relation="include">
         </childnode>
-        <childnode refid="1876" relation="include">
+        <childnode refid="2473" relation="include">
         </childnode>
-        <childnode refid="1877" relation="include">
+        <childnode refid="2474" relation="include">
         </childnode>
-        <childnode refid="1878" relation="include">
+        <childnode refid="2475" relation="include">
         </childnode>
-        <childnode refid="1879" relation="include">
+        <childnode refid="2476" relation="include">
         </childnode>
       </node>
-      <node id="1883">
+      <node id="2480">
         <label>map</label>
       </node>
-      <node id="1879">
+      <node id="2476">
         <label>AminoAcid.h</label>
         <link refid="_amino_acid_8h"/>
-        <childnode refid="1880" relation="include">
+        <childnode refid="2477" relation="include">
         </childnode>
-        <childnode refid="1874" relation="include">
+        <childnode refid="2471" relation="include">
         </childnode>
-        <childnode refid="1876" relation="include">
+        <childnode refid="2473" relation="include">
         </childnode>
-        <childnode refid="1877" relation="include">
+        <childnode refid="2474" relation="include">
         </childnode>
-        <childnode refid="1881" relation="include">
+        <childnode refid="2478" relation="include">
         </childnode>
-        <childnode refid="1875" relation="include">
+        <childnode refid="2472" relation="include">
         </childnode>
-        <childnode refid="1882" relation="include">
+        <childnode refid="2479" relation="include">
         </childnode>
       </node>
-      <node id="1881">
+      <node id="2478">
         <label>tuple</label>
       </node>
-      <node id="1882">
+      <node id="2479">
         <label>Engines/Internals/iProtein.h</label>
         <link refid="i_protein_8h"/>
-        <childnode refid="1874" relation="include">
+        <childnode refid="2471" relation="include">
         </childnode>
-        <childnode refid="1875" relation="include">
+        <childnode refid="2472" relation="include">
         </childnode>
-        <childnode refid="1883" relation="include">
+        <childnode refid="2480" relation="include">
         </childnode>
       </node>
-      <node id="1874">
+      <node id="2471">
         <label>vector</label>
       </node>
-      <node id="1878">
+      <node id="2475">
         <label>iostream</label>
       </node>
-      <node id="1876">
+      <node id="2473">
         <label>set</label>
       </node>
-      <node id="1871">
+      <node id="2468">
         <label>VinaCompatibilityPostProcessor.h</label>
         <link refid="_vina_compatibility_post_processor_8h"/>
-        <childnode refid="1872" relation="include">
+        <childnode refid="2469" relation="include">
         </childnode>
       </node>
-      <node id="1870">
+      <node id="2467">
         <label>VinaCompatibilityPostProcessor.cpp</label>
         <link refid="_vina_compatibility_post_processor_8cpp"/>
-        <childnode refid="1871" relation="include">
+        <childnode refid="2468" relation="include">
         </childnode>
       </node>
-      <node id="1877">
+      <node id="2474">
         <label>algorithm</label>
       </node>
-      <node id="1875">
+      <node id="2472">
         <label>memory</label>
       </node>
     </incdepgraph>
@@ -107,27 +107,24 @@
 <codeline lineno="8"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_smol_dock_1_1_input_post_processor" kindref="compound">SmolDock::InputPostProcessor</ref><sp/>{</highlight></codeline>
 <codeline lineno="9"><highlight class="normal"></highlight></codeline>
 <codeline lineno="10"><highlight class="normal"></highlight></codeline>
-<codeline lineno="11"><highlight class="normal"></highlight></codeline>
-<codeline lineno="12"><highlight class="normal"></highlight></codeline>
-<codeline lineno="13" refid="class_smol_dock_1_1_input_post_processor_1_1_vina_compatibility_post_processor_1acca66db3277201ff3ea5abda18d5a345" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_input_post_processor_1_1_vina_compatibility_post_processor_1acca66db3277201ff3ea5abda18d5a345" kindref="member">VinaCompatibilityPostProcessor::processAtomFromLigand</ref>(<ref refid="class_smol_dock_1_1_atom" kindref="compound">SmolDock::Atom</ref><sp/>&amp;atom)<sp/>{</highlight></codeline>
-<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>We<sp/>have<sp/>no<sp/>special<sp/>ligand-related<sp/>work-arounds</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11" refid="class_smol_dock_1_1_input_post_processor_1_1_vina_compatibility_post_processor_1acca66db3277201ff3ea5abda18d5a345" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_input_post_processor_1_1_vina_compatibility_post_processor_1acca66db3277201ff3ea5abda18d5a345" kindref="member">VinaCompatibilityPostProcessor::processAtomFromLigand</ref>(<ref refid="class_smol_dock_1_1_atom" kindref="compound">SmolDock::Atom</ref><sp/>&amp;atom)<sp/>{</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>We<sp/>have<sp/>no<sp/>special<sp/>ligand-related<sp/>work-arounds</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="15"><highlight class="normal"></highlight></codeline>
-<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="16" refid="class_smol_dock_1_1_input_post_processor_1_1_vina_compatibility_post_processor_1a32e204f2bc8c35192036888be4eb554f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_input_post_processor_1_1_vina_compatibility_post_processor_1a32e204f2bc8c35192036888be4eb554f" kindref="member">VinaCompatibilityPostProcessor::processAtomFromProtein</ref>(<ref refid="class_smol_dock_1_1_atom" kindref="compound">SmolDock::Atom</ref><sp/>&amp;atom,<sp/><ref refid="class_smol_dock_1_1_amino_acid" kindref="compound">SmolDock::AminoAcid</ref><sp/>&amp;residue)<sp/>{</highlight></codeline>
 <codeline lineno="17"><highlight class="normal"></highlight></codeline>
-<codeline lineno="18" refid="class_smol_dock_1_1_input_post_processor_1_1_vina_compatibility_post_processor_1a32e204f2bc8c35192036888be4eb554f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_input_post_processor_1_1_vina_compatibility_post_processor_1a32e204f2bc8c35192036888be4eb554f" kindref="member">VinaCompatibilityPostProcessor::processAtomFromProtein</ref>(<ref refid="class_smol_dock_1_1_atom" kindref="compound">SmolDock::Atom</ref><sp/>&amp;atom,<sp/><ref refid="class_smol_dock_1_1_amino_acid" kindref="compound">SmolDock::AminoAcid</ref><sp/>&amp;residue)<sp/>{</highlight></codeline>
-<codeline lineno="19"><highlight class="normal"></highlight></codeline>
-<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Vina<sp/>follow<sp/>X-score<sp/>convention<sp/>and<sp/>do<sp/>not<sp/>consider<sp/>sulfur<sp/>as<sp/>acceptor<sp/>or<sp/>donor</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>(We<sp/>add<sp/>this<sp/>at<sp/>the<sp/>PDB<sp/>ATOM<sp/>name<sp/>variant<sp/>assignation<sp/>stage<sp/>:<sp/>SmolDock::assignVariantFlagsForResidueAtom)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">((residue.<ref refid="class_smol_dock_1_1_amino_acid_1a556f668f759abed9c33c3522106d520b" kindref="member">getType</ref>()<sp/>==<sp/><ref refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875da3ec90ee7bdd38cf0f8a68b4bee5eb202" kindref="member">AminoAcid::AAType::cysteine</ref>)</highlight></codeline>
-<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;&amp;<sp/>(atom.<ref refid="class_smol_dock_1_1_atom_1a6b8315564e06bdc911053320fd3fa1a7" kindref="member">getAtomType</ref>()<sp/>==<sp/><ref refid="class_smol_dock_1_1_atom_1a57e9a532fd04e1846c0d83edebb9fd41a73a9bf52aa8ea9e256ec469dfce6e022" kindref="member">Atom::AtomType::sulfur</ref>))</highlight></codeline>
-<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>atomvar<sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(atom.<ref refid="class_smol_dock_1_1_atom_1a145bc96b3b410ea87a62baeb8b83f127" kindref="member">getAtomVariant</ref>());</highlight></codeline>
-<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>newatomvar<sp/>=<sp/>atomvar<sp/>&amp;<sp/>~(</highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(<ref refid="class_smol_dock_1_1_atom_1a77191f0919af58d733764e229cb1f973ade31e8114bf9ba2ec47d55c59f61853d" kindref="member">Atom::AtomVariant::hydrogenDonor</ref>));</highlight></codeline>
-<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>newatomvar<sp/>&amp;=<sp/>~(</highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(<ref refid="class_smol_dock_1_1_atom_1a77191f0919af58d733764e229cb1f973ad68216b54381a7b2b87b7924ab0191c4" kindref="member">Atom::AtomVariant::hydrogenAcceptor</ref>));</highlight></codeline>
-<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>atom.<ref refid="class_smol_dock_1_1_atom_1aa538e302c6c9e6cafbb9f0cbefce3a4e" kindref="member">setAtomVariant</ref>(static_cast&lt;Atom::AtomVariant&gt;(newatomvar));</highlight></codeline>
-<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="31"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Vina<sp/>follow<sp/>X-score<sp/>convention<sp/>and<sp/>do<sp/>not<sp/>consider<sp/>sulfur<sp/>as<sp/>acceptor<sp/>or<sp/>donor</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>(We<sp/>add<sp/>this<sp/>at<sp/>the<sp/>PDB<sp/>ATOM<sp/>name<sp/>variant<sp/>assignation<sp/>stage<sp/>:<sp/>SmolDock::assignVariantFlagsForResidueAtom)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((residue.<ref refid="class_smol_dock_1_1_amino_acid_1a556f668f759abed9c33c3522106d520b" kindref="member">getType</ref>()<sp/>==<sp/><ref refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875da3ec90ee7bdd38cf0f8a68b4bee5eb202" kindref="member">AminoAcid::AAType::cysteine</ref>)</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;&amp;<sp/>(atom.<ref refid="class_smol_dock_1_1_atom_1a6b8315564e06bdc911053320fd3fa1a7" kindref="member">getAtomType</ref>()<sp/>==<sp/><ref refid="class_smol_dock_1_1_atom_1a57e9a532fd04e1846c0d83edebb9fd41a73a9bf52aa8ea9e256ec469dfce6e022" kindref="member">Atom::AtomType::sulfur</ref>))<sp/>{</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>atomvar<sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(atom.<ref refid="class_smol_dock_1_1_atom_1a145bc96b3b410ea87a62baeb8b83f127" kindref="member">getAtomVariant</ref>());</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>newatomvar<sp/>=<sp/>atomvar<sp/>&amp;<sp/>~(</highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(<ref refid="class_smol_dock_1_1_atom_1a77191f0919af58d733764e229cb1f973ade31e8114bf9ba2ec47d55c59f61853d" kindref="member">Atom::AtomVariant::hydrogenDonor</ref>));</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>newatomvar<sp/>&amp;=<sp/>~(</highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(<ref refid="class_smol_dock_1_1_atom_1a77191f0919af58d733764e229cb1f973ad68216b54381a7b2b87b7924ab0191c4" kindref="member">Atom::AtomVariant::hydrogenAcceptor</ref>));</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>atom.<ref refid="class_smol_dock_1_1_atom_1aa538e302c6c9e6cafbb9f0cbefce3a4e" kindref="member">setAtomVariant</ref>(static_cast&lt;Atom::AtomVariant&gt;(newatomvar));</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="28"><highlight class="normal">}</highlight></codeline>
     </programlisting>
     <location file="Structures/InputPostProcessors/VinaCompatibilityPostProcessor.cpp"/>
   </compounddef>

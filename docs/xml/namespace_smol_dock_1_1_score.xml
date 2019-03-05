@@ -4,6 +4,7 @@
     <compoundname>SmolDock::Score</compoundname>
     <innerclass refid="class_smol_dock_1_1_score_1_1_scoring_function" prot="public">SmolDock::Score::ScoringFunction</innerclass>
     <innerclass refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function" prot="public">SmolDock::Score::VinaLikeRigidScoringFunction</innerclass>
+    <innerclass refid="class_smol_dock_1_1_score_1_1_vina_like_scoring_function" prot="public">SmolDock::Score::VinaLikeScoringFunction</innerclass>
       <sectiondef kind="enum">
       <memberdef kind="enum" id="namespace_smol_dock_1_1_score_1a7d8761ef06699c5fc8793056bc903911" prot="public" static="no" strong="yes">
         <type></type>
@@ -15,95 +16,20 @@
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
+        <enumvalue id="namespace_smol_dock_1_1_score_1a7d8761ef06699c5fc8793056bc903911ac31991e242b85fe1ed7c5d487d6b08f9" prot="public">
+          <name>Vina</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Engines/ScoringFunctions/ScoringFunctionFactory.h" line="17" column="1" bodyfile="Engines/ScoringFunctions/ScoringFunctionFactory.h" bodystart="17" bodyend="19"/>
-      </memberdef>
-      </sectiondef>
-      <sectiondef kind="var">
-      <memberdef kind="variable" id="namespace_smol_dock_1_1_score_1a96c89e7cf08ae5049b8d04653cb39ad5" prot="public" static="no" mutable="no">
-        <type>double</type>
-        <definition>double SmolDock::Score::score_gauss1</definition>
-        <argsstring></argsstring>
-        <name>score_gauss1</name>
-        <initializer>= 0</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="Engines/ScoringFunctions/VinaLikeScoringFunction.cpp" line="87" column="1" bodyfile="Engines/ScoringFunctions/VinaLikeScoringFunction.cpp" bodystart="87" bodyend="-1"/>
-        <referencedby refid="namespace_smol_dock_1_1_score_1ac23b7d24b31779cc5cd7d8bd4006fa52" compoundref="_vina_like_scoring_function_8cpp" startline="94" endline="146">scoreForAtomCouple</referencedby>
-        <referencedby refid="namespace_smol_dock_1_1_score_1ac205731c7b0098c2900d9d16fff1a93b" compoundref="_vina_like_scoring_function_8cpp" startline="149" endline="223">vina_like_rigid_inter_scoring_func</referencedby>
-      </memberdef>
-      <memberdef kind="variable" id="namespace_smol_dock_1_1_score_1a2deab2d99e28d64401794c7acee7c134" prot="public" static="no" mutable="no">
-        <type>double</type>
-        <definition>double SmolDock::Score::score_gauss2</definition>
-        <argsstring></argsstring>
-        <name>score_gauss2</name>
-        <initializer>= 0</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="Engines/ScoringFunctions/VinaLikeScoringFunction.cpp" line="88" column="1" bodyfile="Engines/ScoringFunctions/VinaLikeScoringFunction.cpp" bodystart="88" bodyend="-1"/>
-        <referencedby refid="namespace_smol_dock_1_1_score_1ac23b7d24b31779cc5cd7d8bd4006fa52" compoundref="_vina_like_scoring_function_8cpp" startline="94" endline="146">scoreForAtomCouple</referencedby>
-        <referencedby refid="namespace_smol_dock_1_1_score_1ac205731c7b0098c2900d9d16fff1a93b" compoundref="_vina_like_scoring_function_8cpp" startline="149" endline="223">vina_like_rigid_inter_scoring_func</referencedby>
-      </memberdef>
-      <memberdef kind="variable" id="namespace_smol_dock_1_1_score_1aedf87eb6c6107722da5ce81907ea9609" prot="public" static="no" mutable="no">
-        <type>double</type>
-        <definition>double SmolDock::Score::score_repulsion</definition>
-        <argsstring></argsstring>
-        <name>score_repulsion</name>
-        <initializer>= 0</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="Engines/ScoringFunctions/VinaLikeScoringFunction.cpp" line="89" column="1" bodyfile="Engines/ScoringFunctions/VinaLikeScoringFunction.cpp" bodystart="89" bodyend="-1"/>
-        <referencedby refid="namespace_smol_dock_1_1_score_1ac23b7d24b31779cc5cd7d8bd4006fa52" compoundref="_vina_like_scoring_function_8cpp" startline="94" endline="146">scoreForAtomCouple</referencedby>
-        <referencedby refid="namespace_smol_dock_1_1_score_1ac205731c7b0098c2900d9d16fff1a93b" compoundref="_vina_like_scoring_function_8cpp" startline="149" endline="223">vina_like_rigid_inter_scoring_func</referencedby>
-      </memberdef>
-      <memberdef kind="variable" id="namespace_smol_dock_1_1_score_1abdea0df8ff6c5330ad0daebbbea89c62" prot="public" static="no" mutable="no">
-        <type>double</type>
-        <definition>double SmolDock::Score::score_hydrophobic</definition>
-        <argsstring></argsstring>
-        <name>score_hydrophobic</name>
-        <initializer>= 0</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="Engines/ScoringFunctions/VinaLikeScoringFunction.cpp" line="90" column="1" bodyfile="Engines/ScoringFunctions/VinaLikeScoringFunction.cpp" bodystart="90" bodyend="-1"/>
-        <referencedby refid="namespace_smol_dock_1_1_score_1ac23b7d24b31779cc5cd7d8bd4006fa52" compoundref="_vina_like_scoring_function_8cpp" startline="94" endline="146">scoreForAtomCouple</referencedby>
-        <referencedby refid="namespace_smol_dock_1_1_score_1ac205731c7b0098c2900d9d16fff1a93b" compoundref="_vina_like_scoring_function_8cpp" startline="149" endline="223">vina_like_rigid_inter_scoring_func</referencedby>
-      </memberdef>
-      <memberdef kind="variable" id="namespace_smol_dock_1_1_score_1a5fcf6b32516650efc62433e4bb791c18" prot="public" static="no" mutable="no">
-        <type>double</type>
-        <definition>double SmolDock::Score::score_hydrogen</definition>
-        <argsstring></argsstring>
-        <name>score_hydrogen</name>
-        <initializer>= 0</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="Engines/ScoringFunctions/VinaLikeScoringFunction.cpp" line="91" column="1" bodyfile="Engines/ScoringFunctions/VinaLikeScoringFunction.cpp" bodystart="91" bodyend="-1"/>
-        <referencedby refid="namespace_smol_dock_1_1_score_1ac23b7d24b31779cc5cd7d8bd4006fa52" compoundref="_vina_like_scoring_function_8cpp" startline="94" endline="146">scoreForAtomCouple</referencedby>
-        <referencedby refid="namespace_smol_dock_1_1_score_1ac205731c7b0098c2900d9d16fff1a93b" compoundref="_vina_like_scoring_function_8cpp" startline="149" endline="223">vina_like_rigid_inter_scoring_func</referencedby>
+        <location file="Engines/ScoringFunctions/ScoringFunctionFactory.h" line="17" column="1" bodyfile="Engines/ScoringFunctions/ScoringFunctionFactory.h" bodystart="17" bodyend="20"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="func">
@@ -138,9 +64,12 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Engines/ScoringFunctions/ScoringFunctionFactory.cpp" line="11" column="1" bodyfile="Engines/ScoringFunctions/ScoringFunctionFactory.cpp" bodystart="11" bodyend="18"/>
+        <location file="Engines/ScoringFunctions/ScoringFunctionFactory.cpp" line="12" column="1" bodyfile="Engines/ScoringFunctions/ScoringFunctionFactory.cpp" bodystart="12" bodyend="22"/>
+        <references refid="namespace_smol_dock_1_1_score_1a7d8761ef06699c5fc8793056bc903911ac31991e242b85fe1ed7c5d487d6b08f9">Vina</references>
         <references refid="namespace_smol_dock_1_1_score_1a7d8761ef06699c5fc8793056bc903911a28bb0a5655ac4c67901e014f39619947">VinaRigid</references>
-        <referencedby refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a7bee39278168cb4d7ee6558b3a3d3bb4" compoundref="_conformer_rigid_docking_engine_8cpp" startline="135" endline="224">SmolDock::Engine::ConformerRigidDockingEngine::runDockingEngine</referencedby>
+        <referencedby refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a7bee39278168cb4d7ee6558b3a3d3bb4" compoundref="_conformer_rigid_docking_engine_8cpp" startline="134" endline="294">SmolDock::Engine::ConformerRigidDockingEngine::runDockingEngine</referencedby>
+        <referencedby refid="class_smol_dock_1_1_engine_1_1_pose_refiner_1a8d5a30801f618205c115a52b7fa363ce" compoundref="_pose_refiner_8cpp" startline="23" endline="67">SmolDock::Engine::PoseRefiner::refinePose</referencedby>
+        <referencedby refid="class_smol_dock_1_1_re_scorer_1a102b6af24e4f5dc420c2bdfba5a792f0" compoundref="_re_scorer_8cpp" startline="22" endline="33">SmolDock::ReScorer::prepare</referencedby>
       </memberdef>
       <memberdef kind="function" id="namespace_smol_dock_1_1_score_1adae31ea0b0f6630cdad8c85e9802ed9d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
@@ -161,9 +90,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Engines/ScoringFunctions/VinaLikeScoringFunction.cpp" line="44" column="1" bodyfile="Engines/ScoringFunctions/VinaLikeScoringFunction.cpp" bodystart="44" bodyend="50"/>
+        <location file="Engines/ScoringFunctions/VinaLikeCommon.h" line="24" column="1" bodyfile="Engines/ScoringFunctions/VinaLikeCommon.h" bodystart="24" bodyend="30"/>
         <references refid="class_smol_dock_1_1_atom_1a77191f0919af58d733764e229cb1f973ae5e437761e40c78a4c0929be07a3ab04">SmolDock::Atom::apolar</references>
-        <referencedby refid="namespace_smol_dock_1_1_score_1ac23b7d24b31779cc5cd7d8bd4006fa52" compoundref="_vina_like_scoring_function_8cpp" startline="94" endline="146">scoreForAtomCouple</referencedby>
+        <referencedby refid="namespace_smol_dock_1_1_score_1ac23b7d24b31779cc5cd7d8bd4006fa52" compoundref="_vina_like_common_8h" startline="70" endline="127">scoreForAtomCouple</referencedby>
       </memberdef>
       <memberdef kind="function" id="namespace_smol_dock_1_1_score_1afc0ba7560e9104fcef4bc61ff8d461c1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
@@ -184,9 +113,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Engines/ScoringFunctions/VinaLikeScoringFunction.cpp" line="53" column="1" bodyfile="Engines/ScoringFunctions/VinaLikeScoringFunction.cpp" bodystart="53" bodyend="57"/>
+        <location file="Engines/ScoringFunctions/VinaLikeCommon.h" line="33" column="1" bodyfile="Engines/ScoringFunctions/VinaLikeCommon.h" bodystart="33" bodyend="37"/>
         <references refid="class_smol_dock_1_1_atom_1a77191f0919af58d733764e229cb1f973ad68216b54381a7b2b87b7924ab0191c4">SmolDock::Atom::hydrogenAcceptor</references>
-        <referencedby refid="namespace_smol_dock_1_1_score_1a0b455de7380586a1fd535f76499f16f7" compoundref="_vina_like_scoring_function_8cpp" startline="65" endline="69">hydrogenDonorAcceptorPair</referencedby>
+        <referencedby refid="namespace_smol_dock_1_1_score_1a0b455de7380586a1fd535f76499f16f7" compoundref="_vina_like_common_8h" startline="45" endline="49">hydrogenDonorAcceptorPair</referencedby>
       </memberdef>
       <memberdef kind="function" id="namespace_smol_dock_1_1_score_1aada28b98ff116da3300979ddf15dc557" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
@@ -207,9 +136,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Engines/ScoringFunctions/VinaLikeScoringFunction.cpp" line="59" column="1" bodyfile="Engines/ScoringFunctions/VinaLikeScoringFunction.cpp" bodystart="59" bodyend="63"/>
+        <location file="Engines/ScoringFunctions/VinaLikeCommon.h" line="39" column="1" bodyfile="Engines/ScoringFunctions/VinaLikeCommon.h" bodystart="39" bodyend="43"/>
         <references refid="class_smol_dock_1_1_atom_1a77191f0919af58d733764e229cb1f973ade31e8114bf9ba2ec47d55c59f61853d">SmolDock::Atom::hydrogenDonor</references>
-        <referencedby refid="namespace_smol_dock_1_1_score_1a0b455de7380586a1fd535f76499f16f7" compoundref="_vina_like_scoring_function_8cpp" startline="65" endline="69">hydrogenDonorAcceptorPair</referencedby>
+        <referencedby refid="namespace_smol_dock_1_1_score_1a0b455de7380586a1fd535f76499f16f7" compoundref="_vina_like_common_8h" startline="45" endline="49">hydrogenDonorAcceptorPair</referencedby>
       </memberdef>
       <memberdef kind="function" id="namespace_smol_dock_1_1_score_1a0b455de7380586a1fd535f76499f16f7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
@@ -238,10 +167,10 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Engines/ScoringFunctions/VinaLikeScoringFunction.cpp" line="65" column="1" bodyfile="Engines/ScoringFunctions/VinaLikeScoringFunction.cpp" bodystart="65" bodyend="69"/>
-        <references refid="namespace_smol_dock_1_1_score_1afc0ba7560e9104fcef4bc61ff8d461c1" compoundref="_vina_like_scoring_function_8cpp" startline="53" endline="57">isHydrogenAcceptor</references>
-        <references refid="namespace_smol_dock_1_1_score_1aada28b98ff116da3300979ddf15dc557" compoundref="_vina_like_scoring_function_8cpp" startline="59" endline="63">isHydrogenDonor</references>
-        <referencedby refid="namespace_smol_dock_1_1_score_1ac5efd92ad2db7d779a491ae233cbb2ec" compoundref="_vina_like_scoring_function_8cpp" startline="71" endline="75">hydrogenBondingPossible</referencedby>
+        <location file="Engines/ScoringFunctions/VinaLikeCommon.h" line="45" column="1" bodyfile="Engines/ScoringFunctions/VinaLikeCommon.h" bodystart="45" bodyend="49"/>
+        <references refid="namespace_smol_dock_1_1_score_1afc0ba7560e9104fcef4bc61ff8d461c1" compoundref="_vina_like_common_8h" startline="33" endline="37">isHydrogenAcceptor</references>
+        <references refid="namespace_smol_dock_1_1_score_1aada28b98ff116da3300979ddf15dc557" compoundref="_vina_like_common_8h" startline="39" endline="43">isHydrogenDonor</references>
+        <referencedby refid="namespace_smol_dock_1_1_score_1ac5efd92ad2db7d779a491ae233cbb2ec" compoundref="_vina_like_common_8h" startline="51" endline="55">hydrogenBondingPossible</referencedby>
       </memberdef>
       <memberdef kind="function" id="namespace_smol_dock_1_1_score_1ac5efd92ad2db7d779a491ae233cbb2ec" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
@@ -270,9 +199,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Engines/ScoringFunctions/VinaLikeScoringFunction.cpp" line="71" column="1" bodyfile="Engines/ScoringFunctions/VinaLikeScoringFunction.cpp" bodystart="71" bodyend="75"/>
-        <references refid="namespace_smol_dock_1_1_score_1a0b455de7380586a1fd535f76499f16f7" compoundref="_vina_like_scoring_function_8cpp" startline="65" endline="69">hydrogenDonorAcceptorPair</references>
-        <referencedby refid="namespace_smol_dock_1_1_score_1ac23b7d24b31779cc5cd7d8bd4006fa52" compoundref="_vina_like_scoring_function_8cpp" startline="94" endline="146">scoreForAtomCouple</referencedby>
+        <location file="Engines/ScoringFunctions/VinaLikeCommon.h" line="51" column="1" bodyfile="Engines/ScoringFunctions/VinaLikeCommon.h" bodystart="51" bodyend="55"/>
+        <references refid="namespace_smol_dock_1_1_score_1a0b455de7380586a1fd535f76499f16f7" compoundref="_vina_like_common_8h" startline="45" endline="49">hydrogenDonorAcceptorPair</references>
+        <referencedby refid="namespace_smol_dock_1_1_score_1ac23b7d24b31779cc5cd7d8bd4006fa52" compoundref="_vina_like_common_8h" startline="70" endline="127">scoreForAtomCouple</referencedby>
       </memberdef>
       <memberdef kind="function" id="namespace_smol_dock_1_1_score_1ac23b7d24b31779cc5cd7d8bd4006fa52" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>double</type>
@@ -305,15 +234,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Engines/ScoringFunctions/VinaLikeScoringFunction.cpp" line="94" column="1" bodyfile="Engines/ScoringFunctions/VinaLikeScoringFunction.cpp" bodystart="94" bodyend="146"/>
-        <references refid="namespace_smol_dock_1_1_score_1ac5efd92ad2db7d779a491ae233cbb2ec" compoundref="_vina_like_scoring_function_8cpp" startline="71" endline="75">hydrogenBondingPossible</references>
-        <references refid="namespace_smol_dock_1_1_score_1adae31ea0b0f6630cdad8c85e9802ed9d" compoundref="_vina_like_scoring_function_8cpp" startline="44" endline="50">isHydrophobic</references>
-        <references refid="namespace_smol_dock_1_1_score_1a96c89e7cf08ae5049b8d04653cb39ad5" compoundref="_vina_like_scoring_function_8cpp" startline="87">score_gauss1</references>
-        <references refid="namespace_smol_dock_1_1_score_1a2deab2d99e28d64401794c7acee7c134" compoundref="_vina_like_scoring_function_8cpp" startline="88">score_gauss2</references>
-        <references refid="namespace_smol_dock_1_1_score_1a5fcf6b32516650efc62433e4bb791c18" compoundref="_vina_like_scoring_function_8cpp" startline="91">score_hydrogen</references>
-        <references refid="namespace_smol_dock_1_1_score_1abdea0df8ff6c5330ad0daebbbea89c62" compoundref="_vina_like_scoring_function_8cpp" startline="90">score_hydrophobic</references>
-        <references refid="namespace_smol_dock_1_1_score_1aedf87eb6c6107722da5ce81907ea9609" compoundref="_vina_like_scoring_function_8cpp" startline="89">score_repulsion</references>
-        <referencedby refid="namespace_smol_dock_1_1_score_1ac205731c7b0098c2900d9d16fff1a93b" compoundref="_vina_like_scoring_function_8cpp" startline="149" endline="223">vina_like_rigid_inter_scoring_func</referencedby>
+        <location file="Engines/ScoringFunctions/VinaLikeCommon.h" line="70" column="1" bodyfile="Engines/ScoringFunctions/VinaLikeCommon.h" bodystart="70" bodyend="127"/>
+        <references refid="namespace_smol_dock_1_1_score_1ac5efd92ad2db7d779a491ae233cbb2ec" compoundref="_vina_like_common_8h" startline="51" endline="55">hydrogenBondingPossible</references>
+        <references refid="namespace_smol_dock_1_1_score_1adae31ea0b0f6630cdad8c85e9802ed9d" compoundref="_vina_like_common_8h" startline="24" endline="30">isHydrophobic</references>
+        <referencedby refid="namespace_smol_dock_1_1_score_1ac205731c7b0098c2900d9d16fff1a93b" compoundref="_vina_like_rigid_scoring_function_8cpp" startline="40" endline="117">vina_like_rigid_inter_scoring_func</referencedby>
+        <referencedby refid="namespace_smol_dock_1_1_score_1af7f12c4b8451b856342af3afdbcadce8" compoundref="_vina_like_scoring_function_8cpp" startline="20" endline="82">VinaLikeIntermolecularScoringFunction</referencedby>
       </memberdef>
       <memberdef kind="function" id="namespace_smol_dock_1_1_score_1ac205731c7b0098c2900d9d16fff1a93b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>double</type>
@@ -362,43 +287,86 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Engines/ScoringFunctions/VinaLikeScoringFunction.cpp" line="149" column="1" bodyfile="Engines/ScoringFunctions/VinaLikeScoringFunction.cpp" bodystart="149" bodyend="223"/>
-        <references refid="namespace_smol_dock_1a73bb4756419c2b3361ae4d23b24eee20" compoundref="_internals_utility_functions_8h" startline="72" endline="75">SmolDock::applyTransformInPlace</references>
-        <references refid="struct_smol_dock_1_1i_protein_1a56480d9a766ca9a3564ade7b91585f0f" compoundref="i_protein_8h" startline="40">SmolDock::iProtein::atomicRadius</references>
+        <location file="Engines/ScoringFunctions/VinaLikeRigidScoringFunction.cpp" line="40" column="1" bodyfile="Engines/ScoringFunctions/VinaLikeRigidScoringFunction.cpp" bodystart="40" bodyend="117"/>
+        <references refid="namespace_smol_dock_1aea0b5b0a06c4650f4ca502a3f1da6e98" compoundref="_internals_utility_functions_8h" startline="158" endline="161">SmolDock::applyRigidTransformInPlace</references>
+        <references refid="struct_smol_dock_1_1i_protein_1a56480d9a766ca9a3564ade7b91585f0f" compoundref="i_protein_8h" startline="41">SmolDock::iProtein::atomicRadius</references>
         <references refid="struct_smol_dock_1_1i_conformer_1a1dbd8cb4eaa4e5e2f0afcdd1b36dd862" compoundref="i_conformer_8h" startline="49">SmolDock::iConformer::atomicRadius</references>
+        <references refid="struct_smol_dock_1_1i_protein_1a8e62b22e54589f2727b0743cf58a3551" compoundref="i_protein_8h" startline="37">SmolDock::iProtein::center_x</references>
+        <references refid="struct_smol_dock_1_1i_protein_1a834d2ab9d8580f255616a13a1af785c2" compoundref="i_protein_8h" startline="37">SmolDock::iProtein::center_y</references>
+        <references refid="struct_smol_dock_1_1i_protein_1a8b3ccbb789373d51a3889158167c3c9a" compoundref="i_protein_8h" startline="37">SmolDock::iProtein::center_z</references>
         <references refid="struct_smol_dock_1_1i_conformer_1aabef94f550eef03cf2d4304df78cf403" compoundref="i_conformer_8h" startline="40">SmolDock::iConformer::num_rotatable_bond</references>
-        <references refid="namespace_smol_dock_1afb62962c202721eaa8aa64d19bd42fdf" compoundref="_internals_utility_functions_8h" startline="97" endline="101">SmolDock::quaternionNorm</references>
-        <references refid="struct_smol_dock_1_1i_transform_1a31861b55dc94ec0172ce602cd2a4a54f" compoundref="i_transform_8h" startline="46">SmolDock::iTransform::rota</references>
-        <references refid="namespace_smol_dock_1_1_score_1a96c89e7cf08ae5049b8d04653cb39ad5" compoundref="_vina_like_scoring_function_8cpp" startline="87">score_gauss1</references>
-        <references refid="namespace_smol_dock_1_1_score_1a2deab2d99e28d64401794c7acee7c134" compoundref="_vina_like_scoring_function_8cpp" startline="88">score_gauss2</references>
-        <references refid="namespace_smol_dock_1_1_score_1a5fcf6b32516650efc62433e4bb791c18" compoundref="_vina_like_scoring_function_8cpp" startline="91">score_hydrogen</references>
-        <references refid="namespace_smol_dock_1_1_score_1abdea0df8ff6c5330ad0daebbbea89c62" compoundref="_vina_like_scoring_function_8cpp" startline="90">score_hydrophobic</references>
-        <references refid="namespace_smol_dock_1_1_score_1aedf87eb6c6107722da5ce81907ea9609" compoundref="_vina_like_scoring_function_8cpp" startline="89">score_repulsion</references>
-        <references refid="namespace_smol_dock_1_1_score_1ac23b7d24b31779cc5cd7d8bd4006fa52" compoundref="_vina_like_scoring_function_8cpp" startline="94" endline="146">scoreForAtomCouple</references>
-        <references refid="struct_smol_dock_1_1i_protein_1a8a9cecc0e9750baf8d7074fe64b4331d" compoundref="i_protein_8h" startline="41">SmolDock::iProtein::type</references>
+        <references refid="struct_smol_dock_1_1i_protein_1a8d25c2921468821768f2bd81574d3bc8" compoundref="i_protein_8h" startline="38">SmolDock::iProtein::radius</references>
+        <references refid="struct_smol_dock_1_1i_transform_1a8234938f815b9f74cc2d3289d4696dfb" compoundref="i_transform_8h" startline="33">SmolDock::iTransform::rota</references>
+        <references refid="namespace_smol_dock_1_1_score_1ac23b7d24b31779cc5cd7d8bd4006fa52" compoundref="_vina_like_common_8h" startline="70" endline="127">scoreForAtomCouple</references>
+        <references refid="struct_smol_dock_1_1i_protein_1a8a9cecc0e9750baf8d7074fe64b4331d" compoundref="i_protein_8h" startline="42">SmolDock::iProtein::type</references>
         <references refid="struct_smol_dock_1_1i_conformer_1add04de1dd457ae228e398ffa9260497d" compoundref="i_conformer_8h" startline="50">SmolDock::iConformer::type</references>
-        <references refid="struct_smol_dock_1_1i_protein_1ac452f5ddb99ed5a703615f9c03337ddd" compoundref="i_protein_8h" startline="42">SmolDock::iProtein::variant</references>
+        <references refid="struct_smol_dock_1_1i_protein_1ac452f5ddb99ed5a703615f9c03337ddd" compoundref="i_protein_8h" startline="43">SmolDock::iProtein::variant</references>
         <references refid="struct_smol_dock_1_1i_conformer_1af56992de619302df905180a481a4d993" compoundref="i_conformer_8h" startline="51">SmolDock::iConformer::variant</references>
-        <references refid="struct_smol_dock_1_1i_vect_1a3ffc7082a3541ad0fadcb1880a6087a8" compoundref="i_transform_8h" startline="31">SmolDock::iVect::x</references>
-        <references refid="struct_smol_dock_1_1i_protein_1ae36a5b0f6996e54f9ce1f746a79e23f8" compoundref="i_protein_8h" startline="39">SmolDock::iProtein::x</references>
+        <references refid="struct_smol_dock_1_1i_protein_1ae36a5b0f6996e54f9ce1f746a79e23f8" compoundref="i_protein_8h" startline="40">SmolDock::iProtein::x</references>
         <references refid="struct_smol_dock_1_1i_conformer_1a45c379f6a880da313bf3519dc415e992" compoundref="i_conformer_8h" startline="48">SmolDock::iConformer::x</references>
-        <references refid="struct_smol_dock_1_1i_vect_1af8165339c1e38179008c4ca49a565fb4" compoundref="i_transform_8h" startline="31">SmolDock::iVect::y</references>
-        <references refid="struct_smol_dock_1_1i_protein_1a090a371c93db6928cdfef39b0ce3d1fd" compoundref="i_protein_8h" startline="39">SmolDock::iProtein::y</references>
+        <references refid="struct_smol_dock_1_1i_protein_1a090a371c93db6928cdfef39b0ce3d1fd" compoundref="i_protein_8h" startline="40">SmolDock::iProtein::y</references>
         <references refid="struct_smol_dock_1_1i_conformer_1ac3019c0cd62660a4392591dd9519cc9a" compoundref="i_conformer_8h" startline="48">SmolDock::iConformer::y</references>
-        <references refid="struct_smol_dock_1_1i_vect_1a013cdafb950199deb4511843ff389e73" compoundref="i_transform_8h" startline="31">SmolDock::iVect::z</references>
-        <references refid="struct_smol_dock_1_1i_protein_1ab95306577aa2d8bdd268504b44d046ad" compoundref="i_protein_8h" startline="39">SmolDock::iProtein::z</references>
+        <references refid="struct_smol_dock_1_1i_protein_1ab95306577aa2d8bdd268504b44d046ad" compoundref="i_protein_8h" startline="40">SmolDock::iProtein::z</references>
         <references refid="struct_smol_dock_1_1i_conformer_1a5c1fc6f9bad31ec2731337e9ba1e9a0f" compoundref="i_conformer_8h" startline="48">SmolDock::iConformer::z</references>
-        <referencedby refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a7bee39278168cb4d7ee6558b3a3d3bb4" compoundref="_conformer_rigid_docking_engine_8cpp" startline="135" endline="224">SmolDock::Engine::ConformerRigidDockingEngine::runDockingEngine</referencedby>
-        <referencedby refid="main_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4" compoundref="main_8cpp" startline="45" endline="155">main</referencedby>
-        <referencedby refid="namespace_smol_dock_1_1_wrapper_1afc6fe0925036a67cbd9856c1077296ca" compoundref="_py_scoring_functions_8cpp" startline="41" endline="47">SmolDock::Wrapper::getScoringFunc</referencedby>
-        <referencedby refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1ab89f08da2f4f79abfe9130b3593c3522" compoundref="_vina_like_scoring_function_8cpp" startline="225" endline="234">SmolDock::Score::VinaLikeRigidScoringFunction::Evaluate</referencedby>
-        <referencedby refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1a574511b3c12769902e2c0366d4d3db96" compoundref="_vina_like_scoring_function_8cpp" startline="236" endline="294">SmolDock::Score::VinaLikeRigidScoringFunction::EvaluateWithGradient</referencedby>
+        <referencedby refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a7bee39278168cb4d7ee6558b3a3d3bb4" compoundref="_conformer_rigid_docking_engine_8cpp" startline="134" endline="294">SmolDock::Engine::ConformerRigidDockingEngine::runDockingEngine</referencedby>
+        <referencedby refid="main_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4" compoundref="main_8cpp" startline="45" endline="174">main</referencedby>
+        <referencedby refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1ab89f08da2f4f79abfe9130b3593c3522" compoundref="_vina_like_rigid_scoring_function_8cpp" startline="119" endline="128">SmolDock::Score::VinaLikeRigidScoringFunction::Evaluate</referencedby>
+        <referencedby refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1a574511b3c12769902e2c0366d4d3db96" compoundref="_vina_like_rigid_scoring_function_8cpp" startline="130" endline="209">SmolDock::Score::VinaLikeRigidScoringFunction::EvaluateWithGradient</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespace_smol_dock_1_1_score_1af7f12c4b8451b856342af3afdbcadce8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double SmolDock::Score::VinaLikeIntermolecularScoringFunction</definition>
+        <argsstring>(const iConformer &amp;ligand_, const iTransform &amp;transform, const iProtein &amp;protein)</argsstring>
+        <name>VinaLikeIntermolecularScoringFunction</name>
+        <param>
+          <type>const <ref refid="struct_smol_dock_1_1i_conformer" kindref="compound">iConformer</ref> &amp;</type>
+          <declname>ligand_</declname>
+        </param>
+        <param>
+          <type>const <ref refid="struct_smol_dock_1_1i_transform" kindref="compound">iTransform</ref> &amp;</type>
+          <declname>transform</declname>
+        </param>
+        <param>
+          <type>const <ref refid="struct_smol_dock_1_1i_protein" kindref="compound">iProtein</ref> &amp;</type>
+          <declname>protein</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Engines/ScoringFunctions/VinaLikeScoringFunction.cpp" line="20" column="1" bodyfile="Engines/ScoringFunctions/VinaLikeScoringFunction.cpp" bodystart="20" bodyend="82"/>
+        <references refid="namespace_smol_dock_1a1843982e01fb9a9b852c5f64363a158c" compoundref="_internals_utility_functions_8h" startline="103" endline="154">SmolDock::applyBondRotationInPlace</references>
+        <references refid="namespace_smol_dock_1aea0b5b0a06c4650f4ca502a3f1da6e98" compoundref="_internals_utility_functions_8h" startline="158" endline="161">SmolDock::applyRigidTransformInPlace</references>
+        <references refid="struct_smol_dock_1_1i_protein_1a56480d9a766ca9a3564ade7b91585f0f" compoundref="i_protein_8h" startline="41">SmolDock::iProtein::atomicRadius</references>
+        <references refid="struct_smol_dock_1_1i_conformer_1a1dbd8cb4eaa4e5e2f0afcdd1b36dd862" compoundref="i_conformer_8h" startline="49">SmolDock::iConformer::atomicRadius</references>
+        <references refid="struct_smol_dock_1_1i_transform_1aa71e9b254a08dfc310a6430056f05964" compoundref="i_transform_8h" startline="35">SmolDock::iTransform::bondRotationsAngles</references>
+        <references refid="struct_smol_dock_1_1i_protein_1a8e62b22e54589f2727b0743cf58a3551" compoundref="i_protein_8h" startline="37">SmolDock::iProtein::center_x</references>
+        <references refid="struct_smol_dock_1_1i_protein_1a834d2ab9d8580f255616a13a1af785c2" compoundref="i_protein_8h" startline="37">SmolDock::iProtein::center_y</references>
+        <references refid="struct_smol_dock_1_1i_protein_1a8b3ccbb789373d51a3889158167c3c9a" compoundref="i_protein_8h" startline="37">SmolDock::iProtein::center_z</references>
+        <references refid="struct_smol_dock_1_1i_conformer_1aabef94f550eef03cf2d4304df78cf403" compoundref="i_conformer_8h" startline="40">SmolDock::iConformer::num_rotatable_bond</references>
+        <references refid="struct_smol_dock_1_1i_protein_1a8d25c2921468821768f2bd81574d3bc8" compoundref="i_protein_8h" startline="38">SmolDock::iProtein::radius</references>
+        <references refid="struct_smol_dock_1_1i_transform_1a8234938f815b9f74cc2d3289d4696dfb" compoundref="i_transform_8h" startline="33">SmolDock::iTransform::rota</references>
+        <references refid="namespace_smol_dock_1_1_score_1ac23b7d24b31779cc5cd7d8bd4006fa52" compoundref="_vina_like_common_8h" startline="70" endline="127">scoreForAtomCouple</references>
+        <references refid="struct_smol_dock_1_1i_protein_1a8a9cecc0e9750baf8d7074fe64b4331d" compoundref="i_protein_8h" startline="42">SmolDock::iProtein::type</references>
+        <references refid="struct_smol_dock_1_1i_conformer_1add04de1dd457ae228e398ffa9260497d" compoundref="i_conformer_8h" startline="50">SmolDock::iConformer::type</references>
+        <references refid="struct_smol_dock_1_1i_protein_1ac452f5ddb99ed5a703615f9c03337ddd" compoundref="i_protein_8h" startline="43">SmolDock::iProtein::variant</references>
+        <references refid="struct_smol_dock_1_1i_conformer_1af56992de619302df905180a481a4d993" compoundref="i_conformer_8h" startline="51">SmolDock::iConformer::variant</references>
+        <references refid="struct_smol_dock_1_1i_protein_1ae36a5b0f6996e54f9ce1f746a79e23f8" compoundref="i_protein_8h" startline="40">SmolDock::iProtein::x</references>
+        <references refid="struct_smol_dock_1_1i_conformer_1a45c379f6a880da313bf3519dc415e992" compoundref="i_conformer_8h" startline="48">SmolDock::iConformer::x</references>
+        <references refid="struct_smol_dock_1_1i_protein_1a090a371c93db6928cdfef39b0ce3d1fd" compoundref="i_protein_8h" startline="40">SmolDock::iProtein::y</references>
+        <references refid="struct_smol_dock_1_1i_conformer_1ac3019c0cd62660a4392591dd9519cc9a" compoundref="i_conformer_8h" startline="48">SmolDock::iConformer::y</references>
+        <references refid="struct_smol_dock_1_1i_protein_1ab95306577aa2d8bdd268504b44d046ad" compoundref="i_protein_8h" startline="40">SmolDock::iProtein::z</references>
+        <references refid="struct_smol_dock_1_1i_conformer_1a5c1fc6f9bad31ec2731337e9ba1e9a0f" compoundref="i_conformer_8h" startline="48">SmolDock::iConformer::z</references>
+        <referencedby refid="class_smol_dock_1_1_score_1_1_vina_like_scoring_function_1a5b2eaf1db8e2e0b98ee1f199be96a406" compoundref="_vina_like_scoring_function_8cpp" startline="107" endline="117">SmolDock::Score::VinaLikeScoringFunction::Evaluate</referencedby>
+        <referencedby refid="class_smol_dock_1_1_score_1_1_vina_like_scoring_function_1adc45f52c75b9c1d96edcdb3caf27160c" compoundref="_vina_like_scoring_function_8cpp" startline="119" endline="210">SmolDock::Score::VinaLikeScoringFunction::EvaluateWithGradient</referencedby>
       </memberdef>
       </sectiondef>
     <briefdescription>
 <para>Free-standing docking score functions. </para>    </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="Engines/ScoringFunctions/ScoringFunctionFactory.cpp" line="9" column="1"/>
+    <location file="Engines/ScoringFunctions/ScoringFunctionFactory.cpp" line="10" column="1"/>
   </compounddef>
 </doxygen>

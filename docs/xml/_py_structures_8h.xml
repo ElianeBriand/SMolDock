@@ -2,15 +2,27 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
   <compounddef id="_py_structures_8h" kind="file" language="C++">
     <compoundname>PyStructures.h</compoundname>
+    <includes local="no">GraphMol/RWMol.h</includes>
     <includedby refid="_smoldock_python_bindings_8cpp" local="yes">SmoldockPythonBindings.cpp</includedby>
-    <invincdepgraph>
-      <node id="1549">
+    <incdepgraph>
+      <node id="1966">
         <label>PyStructures.h</label>
         <link refid="_py_structures_8h"/>
-        <childnode refid="1550" relation="include">
+        <childnode refid="1967" relation="include">
         </childnode>
       </node>
-      <node id="1550">
+      <node id="1967">
+        <label>GraphMol/RWMol.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1968">
+        <label>PyStructures.h</label>
+        <link refid="_py_structures_8h"/>
+        <childnode refid="1969" relation="include">
+        </childnode>
+      </node>
+      <node id="1969">
         <label>SmoldockPythonBindings.cpp</label>
         <link refid="_smoldock_python_bindings_8cpp"/>
       </node>
@@ -27,35 +39,38 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Frontends/Python/PyStructures.h" line="24" column="1" bodyfile="Frontends/Python/PyStructures.cpp" bodystart="40" bodyend="92"/>
-        <references refid="struct_smol_dock_1_1i_protein_1a0b900dfe18415ab4fc200bc7d8570c80" compoundref="i_protein_8h" startline="45">SmolDock::iProtein::AAId_to_AtomPositionInVect</references>
+        <location file="Frontends/Python/PyStructures.h" line="27" column="1" bodyfile="Frontends/Python/PyStructures.cpp" bodystart="67" bodyend="114"/>
+        <references refid="struct_smol_dock_1_1i_protein_1a0b900dfe18415ab4fc200bc7d8570c80" compoundref="i_protein_8h" startline="46">SmolDock::iProtein::AAId_to_AtomPositionInVect</references>
         <references refid="struct_smol_dock_1_1i_protein_1a8e62b22e54589f2727b0743cf58a3551" compoundref="i_protein_8h" startline="37">SmolDock::iProtein::center_x</references>
         <references refid="struct_smol_dock_1_1i_protein_1a834d2ab9d8580f255616a13a1af785c2" compoundref="i_protein_8h" startline="37">SmolDock::iProtein::center_y</references>
         <references refid="struct_smol_dock_1_1i_protein_1a8b3ccbb789373d51a3889158167c3c9a" compoundref="i_protein_8h" startline="37">SmolDock::iProtein::center_z</references>
-        <references refid="class_smol_dock_1_1_molecule_1a70156ffc4081eb92f9dc4e2c70096c84" compoundref="_molecule_8cpp" startline="332" endline="376">SmolDock::Molecule::deepcopy</references>
-        <references refid="class_smol_dock_1_1_molecule_1ad10dcbd80a2ac181b3d76fbae3f90ca2" compoundref="_molecule_8cpp" startline="81" endline="94">SmolDock::Molecule::generateConformer</references>
-        <references refid="class_smol_dock_1_1_molecule_1ab5fc86fa1ac97374e7d8d339404568e9" compoundref="_molecule_8cpp" startline="378" endline="382">SmolDock::Molecule::getInitialConformer</references>
-        <references refid="class_smol_dock_1_1_protein_1a2cccfc64e088ed1846d15c6909c9379f" compoundref="_protein_8cpp" startline="203" endline="252">SmolDock::Protein::getiProtein</references>
-        <references refid="class_smol_dock_1_1_molecule_1afe9743bfc4876343b6c63b0aac892f83" compoundref="_molecule_8cpp" startline="160" endline="162">SmolDock::Molecule::getResidueName</references>
+        <references refid="class_smol_dock_1_1_molecule_1a70156ffc4081eb92f9dc4e2c70096c84" compoundref="_molecule_8cpp" startline="502" endline="546">SmolDock::Molecule::deepcopy</references>
+        <references refid="class_smol_dock_1_1_molecule_1ad10dcbd80a2ac181b3d76fbae3f90ca2" compoundref="_molecule_8cpp" startline="102" endline="116">SmolDock::Molecule::generateConformer</references>
+        <references refid="class_smol_dock_1_1_molecule_1ab5fc86fa1ac97374e7d8d339404568e9" compoundref="_molecule_8cpp" startline="548" endline="553">SmolDock::Molecule::getInitialConformer</references>
+        <references refid="class_smol_dock_1_1_protein_1a2cccfc64e088ed1846d15c6909c9379f" compoundref="_protein_8cpp" startline="235" endline="274">SmolDock::Protein::getiProtein</references>
+        <references refid="class_smol_dock_1_1_molecule_1afe9743bfc4876343b6c63b0aac892f83" compoundref="_molecule_8cpp" startline="217" endline="219">SmolDock::Molecule::getResidueName</references>
         <references refid="class_smol_dock_1_1_docking_result_1a13f9ac78867b9834693c7b35d68bf63c" compoundref="_docking_result_8h" startline="33">SmolDock::DockingResult::ligandPoses</references>
-        <references refid="class_smol_dock_1_1_molecule_1a7dc0c882da26261dcd2762429b07a3d4" compoundref="_molecule_8cpp" startline="129" endline="131">SmolDock::Molecule::numberOfAtoms</references>
-        <references refid="class_smol_dock_1_1_molecule_1a8b1f02ad4e3b2ad991162668a61c2ddc" compoundref="_molecule_8cpp" startline="133" endline="135">SmolDock::Molecule::numberOfBonds</references>
-        <references refid="class_smol_dock_1_1_protein_1a726524247169022a4dfc1328753e39b3" compoundref="_protein_8cpp" startline="41" endline="201">SmolDock::Protein::populateFromPDB</references>
-        <references refid="class_smol_dock_1_1_molecule_1a9e3ef6b361a98cfbac69b11979d886da" compoundref="_molecule_8cpp" startline="137" endline="158">SmolDock::Molecule::populateFromPDB</references>
-        <references refid="class_smol_dock_1_1_molecule_1ae8bf900e52a73637051eee69e60628e6" compoundref="_molecule_8cpp" startline="51" endline="78">SmolDock::Molecule::populateFromSMILES</references>
-        <references refid="class_smol_dock_1_1_molecule_1af9eb4a4fe0f1d72c104393b690e8f5cb" compoundref="_molecule_8cpp" startline="164" endline="167">SmolDock::Molecule::setResidueName</references>
-        <references refid="struct_smol_dock_1_1i_protein_1a8a9cecc0e9750baf8d7074fe64b4331d" compoundref="i_protein_8h" startline="41">SmolDock::iProtein::type</references>
+        <references refid="class_smol_dock_1_1_molecule_1a7dc0c882da26261dcd2762429b07a3d4" compoundref="_molecule_8cpp" startline="150" endline="152">SmolDock::Molecule::numberOfAtoms</references>
+        <references refid="class_smol_dock_1_1_molecule_1a8b1f02ad4e3b2ad991162668a61c2ddc" compoundref="_molecule_8cpp" startline="154" endline="156">SmolDock::Molecule::numberOfBonds</references>
+        <references refid="class_smol_dock_1_1_molecule_1a8b4b9a154f2139757c0d33bb962a45ea" compoundref="_molecule_8cpp" startline="199" endline="215">SmolDock::Molecule::populateFromMol2File</references>
+        <references refid="class_smol_dock_1_1_molecule_1ade1395768e7d42f8dc0762334eaeed42" compoundref="_molecule_8cpp" startline="181" endline="197">SmolDock::Molecule::populateFromMolFile</references>
+        <references refid="class_smol_dock_1_1_protein_1a726524247169022a4dfc1328753e39b3" compoundref="_protein_8cpp" startline="42" endline="233">SmolDock::Protein::populateFromPDB</references>
+        <references refid="class_smol_dock_1_1_molecule_1a457193a63a1c732d4f5da772c108b5ee" compoundref="_molecule_8cpp" startline="158" endline="179">SmolDock::Molecule::populateFromPDBFile</references>
+        <references refid="class_smol_dock_1_1_molecule_1ae8bf900e52a73637051eee69e60628e6" compoundref="_molecule_8cpp" startline="72" endline="99">SmolDock::Molecule::populateFromSMILES</references>
+        <references refid="namespace_smol_dock_1_1_wrapper_1a30936f94bd814e22c37d7b60b68ef8d9" compoundref="_py_structures_8cpp" startline="53" endline="56">SmolDock::Wrapper::pywrap_returnROMolFromMol</references>
+        <references refid="class_smol_dock_1_1_molecule_1af9eb4a4fe0f1d72c104393b690e8f5cb" compoundref="_molecule_8cpp" startline="221" endline="224">SmolDock::Molecule::setResidueName</references>
+        <references refid="struct_smol_dock_1_1i_protein_1a8a9cecc0e9750baf8d7074fe64b4331d" compoundref="i_protein_8h" startline="42">SmolDock::iProtein::type</references>
         <references refid="struct_smol_dock_1_1i_conformer_1add04de1dd457ae228e398ffa9260497d" compoundref="i_conformer_8h" startline="50">SmolDock::iConformer::type</references>
-        <references refid="class_smol_dock_1_1_molecule_1af6263934134836e9ce66d2254b6b6801" compoundref="_molecule_8cpp" startline="320" endline="330">SmolDock::Molecule::updateAtomPositionsFromiConformer</references>
-        <references refid="struct_smol_dock_1_1i_protein_1ac452f5ddb99ed5a703615f9c03337ddd" compoundref="i_protein_8h" startline="42">SmolDock::iProtein::variant</references>
+        <references refid="class_smol_dock_1_1_molecule_1af6263934134836e9ce66d2254b6b6801" compoundref="_molecule_8cpp" startline="487" endline="500">SmolDock::Molecule::updateAtomPositionsFromiConformer</references>
+        <references refid="struct_smol_dock_1_1i_protein_1ac452f5ddb99ed5a703615f9c03337ddd" compoundref="i_protein_8h" startline="43">SmolDock::iProtein::variant</references>
         <references refid="struct_smol_dock_1_1i_conformer_1af56992de619302df905180a481a4d993" compoundref="i_conformer_8h" startline="51">SmolDock::iConformer::variant</references>
-        <references refid="struct_smol_dock_1_1i_protein_1ae36a5b0f6996e54f9ce1f746a79e23f8" compoundref="i_protein_8h" startline="39">SmolDock::iProtein::x</references>
+        <references refid="struct_smol_dock_1_1i_protein_1ae36a5b0f6996e54f9ce1f746a79e23f8" compoundref="i_protein_8h" startline="40">SmolDock::iProtein::x</references>
         <references refid="struct_smol_dock_1_1i_conformer_1a45c379f6a880da313bf3519dc415e992" compoundref="i_conformer_8h" startline="48">SmolDock::iConformer::x</references>
-        <references refid="struct_smol_dock_1_1i_protein_1a090a371c93db6928cdfef39b0ce3d1fd" compoundref="i_protein_8h" startline="39">SmolDock::iProtein::y</references>
+        <references refid="struct_smol_dock_1_1i_protein_1a090a371c93db6928cdfef39b0ce3d1fd" compoundref="i_protein_8h" startline="40">SmolDock::iProtein::y</references>
         <references refid="struct_smol_dock_1_1i_conformer_1ac3019c0cd62660a4392591dd9519cc9a" compoundref="i_conformer_8h" startline="48">SmolDock::iConformer::y</references>
-        <references refid="struct_smol_dock_1_1i_protein_1ab95306577aa2d8bdd268504b44d046ad" compoundref="i_protein_8h" startline="39">SmolDock::iProtein::z</references>
+        <references refid="struct_smol_dock_1_1i_protein_1ab95306577aa2d8bdd268504b44d046ad" compoundref="i_protein_8h" startline="40">SmolDock::iProtein::z</references>
         <references refid="struct_smol_dock_1_1i_conformer_1a5c1fc6f9bad31ec2731337e9ba1e9a0f" compoundref="i_conformer_8h" startline="48">SmolDock::iConformer::z</references>
-        <referencedby refid="_smoldock_python_bindings_8cpp_1a9002869529fdb857c7ffa4a170c4f3ef" compoundref="_smoldock_python_bindings_8cpp" startline="39" endline="79">BOOST_PYTHON_MODULE</referencedby>
+        <referencedby refid="_smoldock_python_bindings_8cpp_1a9002869529fdb857c7ffa4a170c4f3ef" compoundref="_smoldock_python_bindings_8cpp" startline="41" endline="79">BOOST_PYTHON_MODULE</referencedby>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -86,9 +101,13 @@
 <codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>SMOLDOCK_PYSTRUCTURES_H</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SMOLDOCK_PYSTRUCTURES_H</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="23"><highlight class="normal"></highlight></codeline>
-<codeline lineno="24"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_py_structures_8h_1a18cad6e29d14a0da9d2cd9464e7e2356" kindref="member">export_Structures</ref>();</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;GraphMol/RWMol.h&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="25"><highlight class="normal"></highlight></codeline>
-<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//SMOLDOCK_PYSTRUCTURES_H</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_py_structures_8h_1a18cad6e29d14a0da9d2cd9464e7e2356" kindref="member">export_Structures</ref>();</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//SMOLDOCK_PYSTRUCTURES_H</highlight></codeline>
     </programlisting>
     <location file="Frontends/Python/PyStructures.h"/>
   </compounddef>

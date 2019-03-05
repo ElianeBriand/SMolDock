@@ -94,8 +94,10 @@ $(document).ready(function(){initNavTree('namespace_smol_dock_1_1_heuristics.htm
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
+<a href="#typedef-members">Typedefs</a> &#124;
 <a href="#enum-members">Enumerations</a> &#124;
-<a href="#func-members">Functions</a>  </div>
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">SmolDock::Heuristics Namespace Reference</div>  </div>
 </div><!--header-->
@@ -105,20 +107,60 @@ $(document).ready(function(){initNavTree('namespace_smol_dock_1_1_heuristics.htm
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_smol_dock_1_1_heuristics_1_1_global_heuristic.html">GlobalHeuristic</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_smol_dock_1_1_heuristics_1_1_iterated_local_search.html">IteratedLocalSearch</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_smol_dock_1_1_heuristics_1_1_only_local.html">OnlyLocal</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_smol_dock_1_1_heuristics_1_1_random_restart.html">RandomRestart</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_smol_dock_1_1_heuristics_1_1_simulated_annealing.html">SimulatedAnnealing</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:a8aa3caa2a4fda3fdd187e2254997538d"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_smol_dock_1_1_heuristics.html#a8aa3caa2a4fda3fdd187e2254997538d">HeuristicParameters</a> = std::variant&lt; <a class="el" href="class_smol_dock_1_1_heuristics_1_1_only_local.html#struct_smol_dock_1_1_heuristics_1_1_only_local_1_1_parameters">OnlyLocal::Parameters</a>, <a class="el" href="class_smol_dock_1_1_heuristics_1_1_random_restart.html#struct_smol_dock_1_1_heuristics_1_1_random_restart_1_1_parameters">RandomRestart::Parameters</a>, <a class="el" href="class_smol_dock_1_1_heuristics_1_1_iterated_local_search.html#struct_smol_dock_1_1_heuristics_1_1_iterated_local_search_1_1_parameters">IteratedLocalSearch::Parameters</a>, <a class="el" href="class_smol_dock_1_1_heuristics_1_1_simulated_annealing.html#struct_smol_dock_1_1_heuristics_1_1_simulated_annealing_1_1_parameters">SimulatedAnnealing::Parameters</a> &gt;</td></tr>
+<tr class="separator:a8aa3caa2a4fda3fdd187e2254997538d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Enumerations</h2></td></tr>
-<tr class="memitem:acab108fbb064edb33166af7fdfb77a72"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_smol_dock_1_1_heuristics.html#acab108fbb064edb33166af7fdfb77a72">GlobalHeuristicType</a> { <a class="el" href="namespace_smol_dock_1_1_heuristics.html#acab108fbb064edb33166af7fdfb77a72a1e6d08df1b1e06305a25d1b4bddce43d">GlobalHeuristicType::RandomRestart</a>
+<tr class="memitem:acab108fbb064edb33166af7fdfb77a72"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_smol_dock_1_1_heuristics.html#acab108fbb064edb33166af7fdfb77a72">GlobalHeuristicType</a> { <a class="el" href="namespace_smol_dock_1_1_heuristics.html#acab108fbb064edb33166af7fdfb77a72a1e6d08df1b1e06305a25d1b4bddce43d">GlobalHeuristicType::RandomRestart</a>, 
+<a class="el" href="namespace_smol_dock_1_1_heuristics.html#acab108fbb064edb33166af7fdfb77a72a809a739dbd749d3629f62894ad86c959">GlobalHeuristicType::OnlyLocal</a>, 
+<a class="el" href="namespace_smol_dock_1_1_heuristics.html#acab108fbb064edb33166af7fdfb77a72a13f26643ef34bdb4a20b83277d6b8f84">GlobalHeuristicType::IteratedLocalSearch</a>, 
+<a class="el" href="namespace_smol_dock_1_1_heuristics.html#acab108fbb064edb33166af7fdfb77a72a9e54e50d057e08825382c09877dede7f">GlobalHeuristicType::SimulatedAnnealing</a>
  }</td></tr>
 <tr class="separator:acab108fbb064edb33166af7fdfb77a72"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a30612bd88fe0508b7306b60c678a68a9"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="class_smol_dock_1_1_heuristics_1_1_global_heuristic.html">GlobalHeuristic</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_smol_dock_1_1_heuristics.html#a30612bd88fe0508b7306b60c678a68a9">globalHeuristicFactory</a> (<a class="el" href="namespace_smol_dock_1_1_heuristics.html#acab108fbb064edb33166af7fdfb77a72">GlobalHeuristicType</a> t, <a class="el" href="class_smol_dock_1_1_score_1_1_scoring_function.html">Score::ScoringFunction</a> *scorFunc, <a class="el" href="class_smol_dock_1_1_optimizer_1_1_optimizer.html">Optimizer::Optimizer</a> *localOptimizer, unsigned int rng_seed)</td></tr>
-<tr class="separator:a30612bd88fe0508b7306b60c678a68a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1553e62465ebc5cbe1f8a925afb9fe63"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="class_smol_dock_1_1_heuristics_1_1_global_heuristic.html">GlobalHeuristic</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_smol_dock_1_1_heuristics.html#a1553e62465ebc5cbe1f8a925afb9fe63">globalHeuristicFactory</a> (<a class="el" href="namespace_smol_dock_1_1_heuristics.html#acab108fbb064edb33166af7fdfb77a72">GlobalHeuristicType</a> t, <a class="el" href="class_smol_dock_1_1_score_1_1_scoring_function.html">Score::ScoringFunction</a> *scorFunc, <a class="el" href="class_smol_dock_1_1_optimizer_1_1_optimizer.html">Optimizer::Optimizer</a> *localOptimizer, unsigned int rng_seed, <a class="el" href="namespace_smol_dock_1_1_heuristics.html#a8aa3caa2a4fda3fdd187e2254997538d">HeuristicParameters</a> parameters)</td></tr>
+<tr class="separator:a1553e62465ebc5cbe1f8a925afb9fe63"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad94c3b458eeb9b9b65d027a2a2daed3f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_smol_dock_1_1_heuristics.html#a8aa3caa2a4fda3fdd187e2254997538d">HeuristicParameters</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_smol_dock_1_1_heuristics.html#ad94c3b458eeb9b9b65d027a2a2daed3f">heuristicParametersFactory</a> (<a class="el" href="namespace_smol_dock_1_1_heuristics.html#acab108fbb064edb33166af7fdfb77a72">GlobalHeuristicType</a> t)</td></tr>
+<tr class="separator:ad94c3b458eeb9b9b65d027a2a2daed3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd19e47afa27af28165f6a978d81699b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_smol_dock_1_1_heuristics.html#afd19e47afa27af28165f6a978d81699b">MetropolisAccept</a> (double oldScore, double newScore, double temperature, std::mt19937 &amp;rndGenerator)</td></tr>
+<tr class="separator:afd19e47afa27af28165f6a978d81699b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:ab292120d1fc7875acd900b6b3bc74216"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_smol_dock_1_1_heuristics.html#a8aa3caa2a4fda3fdd187e2254997538d">HeuristicParameters</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_smol_dock_1_1_heuristics.html#ab292120d1fc7875acd900b6b3bc74216">emptyParameters</a></td></tr>
+<tr class="separator:ab292120d1fc7875acd900b6b3bc74216"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Typedef Documentation</h2>
+<a id="a8aa3caa2a4fda3fdd187e2254997538d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8aa3caa2a4fda3fdd187e2254997538d">&#9670;&nbsp;</a></span>HeuristicParameters</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespace_smol_dock_1_1_heuristics.html#a8aa3caa2a4fda3fdd187e2254997538d">SmolDock::Heuristics::HeuristicParameters</a> = typedef std::variant&lt;<a class="el" href="class_smol_dock_1_1_heuristics_1_1_only_local.html#struct_smol_dock_1_1_heuristics_1_1_only_local_1_1_parameters">OnlyLocal::Parameters</a>, <a class="el" href="class_smol_dock_1_1_heuristics_1_1_random_restart.html#struct_smol_dock_1_1_heuristics_1_1_random_restart_1_1_parameters">RandomRestart::Parameters</a>, <a class="el" href="class_smol_dock_1_1_heuristics_1_1_iterated_local_search.html#struct_smol_dock_1_1_heuristics_1_1_iterated_local_search_1_1_parameters">IteratedLocalSearch::Parameters</a>, <a class="el" href="class_smol_dock_1_1_heuristics_1_1_simulated_annealing.html#struct_smol_dock_1_1_heuristics_1_1_simulated_annealing_1_1_parameters">SimulatedAnnealing::Parameters</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_heuristic_factory_8h_source.html#l00034">34</a> of file <a class="el" href="_heuristic_factory_8h_source.html">HeuristicFactory.h</a>.</p>
+
+</div>
+</div>
 <h2 class="groupheader">Enumeration Type Documentation</h2>
 <a id="acab108fbb064edb33166af7fdfb77a72"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#acab108fbb064edb33166af7fdfb77a72">&#9670;&nbsp;</a></span>GlobalHeuristicType</h2>
@@ -141,15 +183,18 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="acab108fbb064edb33166af7fdfb77a72a1e6d08df1b1e06305a25d1b4bddce43d"></a>RandomRestart&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="acab108fbb064edb33166af7fdfb77a72a809a739dbd749d3629f62894ad86c959"></a>OnlyLocal&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="acab108fbb064edb33166af7fdfb77a72a13f26643ef34bdb4a20b83277d6b8f84"></a>IteratedLocalSearch&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="acab108fbb064edb33166af7fdfb77a72a9e54e50d057e08825382c09877dede7f"></a>SimulatedAnnealing&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="_heuristic_factory_8h_source.html#l00017">17</a> of file <a class="el" href="_heuristic_factory_8h_source.html">HeuristicFactory.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_heuristic_factory_8h_source.html#l00024">24</a> of file <a class="el" href="_heuristic_factory_8h_source.html">HeuristicFactory.h</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a30612bd88fe0508b7306b60c678a68a9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a30612bd88fe0508b7306b60c678a68a9">&#9670;&nbsp;</a></span>globalHeuristicFactory()</h2>
+<a id="a1553e62465ebc5cbe1f8a925afb9fe63"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1553e62465ebc5cbe1f8a925afb9fe63">&#9670;&nbsp;</a></span>globalHeuristicFactory()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -176,7 +221,13 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">unsigned int&#160;</td>
-          <td class="paramname"><em>rng_seed</em>&#160;</td>
+          <td class="paramname"><em>rng_seed</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespace_smol_dock_1_1_heuristics.html#a8aa3caa2a4fda3fdd187e2254997538d">HeuristicParameters</a>&#160;</td>
+          <td class="paramname"><em>parameters</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -186,20 +237,126 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_heuristic_factory_8cpp_source.html#l00010">10</a> of file <a class="el" href="_heuristic_factory_8cpp_source.html">HeuristicFactory.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_heuristic_factory_8cpp_source.html#l00015">15</a> of file <a class="el" href="_heuristic_factory_8cpp_source.html">HeuristicFactory.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="namespace_smol_dock_1_1_heuristics.html#acab108fbb064edb33166af7fdfb77a72a1e6d08df1b1e06305a25d1b4bddce43d">RandomRestart</a>.</p>
+<p class="reference">References <a class="el" href="namespace_smol_dock_1_1_heuristics.html#acab108fbb064edb33166af7fdfb77a72a13f26643ef34bdb4a20b83277d6b8f84">IteratedLocalSearch</a>, <a class="el" href="namespace_smol_dock_1_1_heuristics.html#acab108fbb064edb33166af7fdfb77a72a809a739dbd749d3629f62894ad86c959">OnlyLocal</a>, <a class="el" href="namespace_smol_dock_1_1_heuristics.html#acab108fbb064edb33166af7fdfb77a72a1e6d08df1b1e06305a25d1b4bddce43d">RandomRestart</a>, and <a class="el" href="namespace_smol_dock_1_1_heuristics.html#acab108fbb064edb33166af7fdfb77a72a9e54e50d057e08825382c09877dede7f">SimulatedAnnealing</a>.</p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="namespace_smol_dock_1_1_heuristics_a30612bd88fe0508b7306b60c678a68a9_icgraph.png" border="0" usemap="#namespace_smol_dock_1_1_heuristics_a30612bd88fe0508b7306b60c678a68a9_icgraph" alt=""/></div>
-<map name="namespace_smol_dock_1_1_heuristics_a30612bd88fe0508b7306b60c678a68a9_icgraph" id="namespace_smol_dock_1_1_heuristics_a30612bd88fe0508b7306b60c678a68a9_icgraph">
+<div class="center"><img src="namespace_smol_dock_1_1_heuristics_a1553e62465ebc5cbe1f8a925afb9fe63_icgraph.png" border="0" usemap="#namespace_smol_dock_1_1_heuristics_a1553e62465ebc5cbe1f8a925afb9fe63_icgraph" alt=""/></div>
+<map name="namespace_smol_dock_1_1_heuristics_a1553e62465ebc5cbe1f8a925afb9fe63_icgraph" id="namespace_smol_dock_1_1_heuristics_a1553e62465ebc5cbe1f8a925afb9fe63_icgraph">
 <area shape="rect" id="node2" href="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine.html#a7bee39278168cb4d7ee6558b3a3d3bb4" title="Run the docking. " alt="" coords="213,5,468,47"/>
-<area shape="rect" id="node3" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="516,13,567,39"/>
+<area shape="rect" id="node4" href="class_smol_dock_1_1_engine_1_1_pose_refiner.html#a8d5a30801f618205c115a52b7fa363ce" title="SmolDock::Engine::PoseRefiner\l::refinePose" alt="" coords="235,71,446,112"/>
+<area shape="rect" id="node3" href="cli__interface_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="516,13,567,39"/>
+<area shape="rect" id="node5" href="vina__refiner_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="516,78,567,105"/>
 </map>
 </div>
+
+</div>
+</div>
+<a id="ad94c3b458eeb9b9b65d027a2a2daed3f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad94c3b458eeb9b9b65d027a2a2daed3f">&#9670;&nbsp;</a></span>heuristicParametersFactory()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespace_smol_dock_1_1_heuristics.html#a8aa3caa2a4fda3fdd187e2254997538d">HeuristicParameters</a> SmolDock::Heuristics::heuristicParametersFactory </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespace_smol_dock_1_1_heuristics.html#acab108fbb064edb33166af7fdfb77a72">GlobalHeuristicType</a>&#160;</td>
+          <td class="paramname"><em>t</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_heuristic_factory_8cpp_source.html#l00037">37</a> of file <a class="el" href="_heuristic_factory_8cpp_source.html">HeuristicFactory.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="_heuristic_factory_8cpp_source.html#l00013">emptyParameters</a>, <a class="el" href="namespace_smol_dock_1_1_heuristics.html#acab108fbb064edb33166af7fdfb77a72a13f26643ef34bdb4a20b83277d6b8f84">IteratedLocalSearch</a>, <a class="el" href="namespace_smol_dock_1_1_heuristics.html#acab108fbb064edb33166af7fdfb77a72a809a739dbd749d3629f62894ad86c959">OnlyLocal</a>, <a class="el" href="namespace_smol_dock_1_1_heuristics.html#acab108fbb064edb33166af7fdfb77a72a1e6d08df1b1e06305a25d1b4bddce43d">RandomRestart</a>, and <a class="el" href="namespace_smol_dock_1_1_heuristics.html#acab108fbb064edb33166af7fdfb77a72a9e54e50d057e08825382c09877dede7f">SimulatedAnnealing</a>.</p>
+<div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="namespace_smol_dock_1_1_heuristics_ad94c3b458eeb9b9b65d027a2a2daed3f_icgraph.png" border="0" usemap="#namespace_smol_dock_1_1_heuristics_ad94c3b458eeb9b9b65d027a2a2daed3f_icgraph" alt=""/></div>
+<map name="namespace_smol_dock_1_1_heuristics_ad94c3b458eeb9b9b65d027a2a2daed3f_icgraph" id="namespace_smol_dock_1_1_heuristics_ad94c3b458eeb9b9b65d027a2a2daed3f_icgraph">
+<area shape="rect" id="node2" href="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine.html#a7bee39278168cb4d7ee6558b3a3d3bb4" title="Run the docking. " alt="" coords="244,5,499,47"/>
+<area shape="rect" id="node4" href="class_smol_dock_1_1_engine_1_1_pose_refiner.html#a8d5a30801f618205c115a52b7fa363ce" title="SmolDock::Engine::PoseRefiner\l::refinePose" alt="" coords="266,71,477,112"/>
+<area shape="rect" id="node3" href="cli__interface_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="547,13,597,39"/>
+<area shape="rect" id="node5" href="vina__refiner_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="547,78,597,105"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="afd19e47afa27af28165f6a978d81699b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd19e47afa27af28165f6a978d81699b">&#9670;&nbsp;</a></span>MetropolisAccept()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool SmolDock::Heuristics::MetropolisAccept </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>oldScore</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>newScore</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>temperature</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::mt19937 &amp;&#160;</td>
+          <td class="paramname"><em>rndGenerator</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_metropolis_hastings_8cpp_source.html#l00010">10</a> of file <a class="el" href="_metropolis_hastings_8cpp_source.html">MetropolisHastings.cpp</a>.</p>
+<div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="namespace_smol_dock_1_1_heuristics_afd19e47afa27af28165f6a978d81699b_icgraph.png" border="0" usemap="#namespace_smol_dock_1_1_heuristics_afd19e47afa27af28165f6a978d81699b_icgraph" alt=""/></div>
+<map name="namespace_smol_dock_1_1_heuristics_afd19e47afa27af28165f6a978d81699b_icgraph" id="namespace_smol_dock_1_1_heuristics_afd19e47afa27af28165f6a978d81699b_icgraph">
+<area shape="rect" id="node2" href="class_smol_dock_1_1_heuristics_1_1_iterated_local_search.html#ad7c6bf8bf2c8d3cde6cb6b1184ca5c4e" title="SmolDock::Heuristics\l::IteratedLocalSearch\l::search" alt="" coords="204,5,355,61"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="ab292120d1fc7875acd900b6b3bc74216"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab292120d1fc7875acd900b6b3bc74216">&#9670;&nbsp;</a></span>emptyParameters</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespace_smol_dock_1_1_heuristics.html#a8aa3caa2a4fda3fdd187e2254997538d">HeuristicParameters</a> SmolDock::Heuristics::emptyParameters</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_heuristic_factory_8cpp_source.html#l00013">13</a> of file <a class="el" href="_heuristic_factory_8cpp_source.html">HeuristicFactory.cpp</a>.</p>
 
 </div>
 </div>

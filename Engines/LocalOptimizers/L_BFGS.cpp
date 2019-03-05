@@ -31,7 +31,7 @@
 namespace SmolDock::Optimizer {
 
 
-    L_BFGS::L_BFGS(Score::ScoringFunction *scoringFunc_, unsigned int maxIteration_) :
+    L_BFGS::L_BFGS(Score::ScoringFunction* scoringFunc_, unsigned int maxIteration_) :
             scoringFunction(scoringFunc_), maxIteration(maxIteration_),
             result(scoringFunc_->getParamVectorDimension(), 1, arma::fill::zeros),
             score(0.0) {
@@ -44,7 +44,7 @@ namespace SmolDock::Optimizer {
         lbfgs.MaxIterations() = this->maxIteration;
         lbfgs.MinGradientNorm() = 1e-4;
         lbfgs.Factr() = 1e-4;
-        lbfgs.MinStep() = 1e-4;
+        lbfgs.MinStep() = 1e-5;
 
         lbfgs.Optimize(*this->scoringFunction, startingPoint);
 

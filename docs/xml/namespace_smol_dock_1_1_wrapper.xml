@@ -2,35 +2,29 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
   <compounddef id="namespace_smol_dock_1_1_wrapper" kind="namespace" language="C++">
     <compoundname>SmolDock::Wrapper</compoundname>
-      <sectiondef kind="enum">
-      <memberdef kind="enum" id="namespace_smol_dock_1_1_wrapper_1a309113da58ce167f3e4280f1e64b7966" prot="public" static="no" strong="yes">
-        <type></type>
-        <name>ScoringFunctionEnum</name>
-        <enumvalue id="namespace_smol_dock_1_1_wrapper_1a309113da58ce167f3e4280f1e64b7966aa618164cb1361917b852a79699b7bb2d" prot="public">
-          <name>VinaLike</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespace_smol_dock_1_1_wrapper_1a8da7125fc8128a615685634f003cd4bc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; std::shared_ptr&lt; sd::InputPostProcessor::InputPostProcessor &gt; &gt;</type>
+        <definition>std::vector&lt;std::shared_ptr&lt;sd::InputPostProcessor::InputPostProcessor&gt; &gt; SmolDock::Wrapper::getVinaPostProcessorsVector</definition>
+        <argsstring>()</argsstring>
+        <name>getVinaPostProcessorsVector</name>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Frontends/Python/PyScoringFunctions.cpp" line="36" column="1" bodyfile="Frontends/Python/PyScoringFunctions.cpp" bodystart="36" bodyend="38"/>
+        <location file="Frontends/Python/PySTLWrapper.cpp" line="41" column="1" bodyfile="Frontends/Python/PySTLWrapper.cpp" bodystart="41" bodyend="46"/>
+        <referencedby refid="_py_s_t_l_wrapper_8h_1a168320ae6ebe56579c717093cbb24708" compoundref="_py_s_t_l_wrapper_8cpp" startline="50" endline="60">export_STLWrapper</referencedby>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="func">
-      <memberdef kind="function" id="namespace_smol_dock_1_1_wrapper_1afc6fe0925036a67cbd9856c1077296ca" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>std::function&lt; double(const <ref refid="struct_smol_dock_1_1i_conformer" kindref="compound">sd::iConformer</ref> &amp;, const <ref refid="struct_smol_dock_1_1i_transform" kindref="compound">sd::iTransform</ref> &amp;, const <ref refid="struct_smol_dock_1_1i_protein" kindref="compound">sd::iProtein</ref> &amp;)&gt;</type>
-        <definition>std::function&lt;double(const sd::iConformer &amp;, const sd::iTransform &amp;, const sd::iProtein &amp;)&gt; SmolDock::Wrapper::getScoringFunc</definition>
-        <argsstring>(ScoringFunctionEnum which)</argsstring>
-        <name>getScoringFunc</name>
+      <memberdef kind="function" id="namespace_smol_dock_1_1_wrapper_1a30936f94bd814e22c37d7b60b68ef8d9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>RDKit::ROMol *</type>
+        <definition>RDKit::ROMol* SmolDock::Wrapper::pywrap_returnROMolFromMol</definition>
+        <argsstring>(const SmolDock::Molecule &amp;mol)</argsstring>
+        <name>pywrap_returnROMolFromMol</name>
         <param>
-          <type><ref refid="namespace_smol_dock_1_1_wrapper_1a309113da58ce167f3e4280f1e64b7966" kindref="member">ScoringFunctionEnum</ref></type>
-          <declname>which</declname>
+          <type>const <ref refid="class_smol_dock_1_1_molecule" kindref="compound">SmolDock::Molecule</ref> &amp;</type>
+          <declname>mol</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -38,16 +32,15 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Frontends/Python/PyScoringFunctions.cpp" line="41" column="1" bodyfile="Frontends/Python/PyScoringFunctions.cpp" bodystart="41" bodyend="47"/>
-        <references refid="namespace_smol_dock_1_1_score_1ac205731c7b0098c2900d9d16fff1a93b" compoundref="_vina_like_scoring_function_8cpp" startline="149" endline="223">SmolDock::Score::vina_like_rigid_inter_scoring_func</references>
-        <references refid="namespace_smol_dock_1_1_wrapper_1a309113da58ce167f3e4280f1e64b7966aa618164cb1361917b852a79699b7bb2d">VinaLike</references>
-        <referencedby refid="_py_scoring_functions_8h_1a2ede6b770a3e6131986d822ec5842b63" compoundref="_py_scoring_functions_8cpp" startline="52" endline="66">export_ScoringFunctions</referencedby>
+        <location file="Frontends/Python/PyStructures.cpp" line="53" column="1" bodyfile="Frontends/Python/PyStructures.cpp" bodystart="53" bodyend="56"/>
+        <references refid="class_smol_dock_1_1_molecule_1ad474d416278768d82c07fdf1d915e0f5" compoundref="_molecule_8h" startline="202">SmolDock::Molecule::rwmol</references>
+        <referencedby refid="_py_structures_8h_1a18cad6e29d14a0da9d2cd9464e7e2356" compoundref="_py_structures_8cpp" startline="67" endline="114">export_Structures</referencedby>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="Frontends/Python/PyScoringFunctions.cpp" line="34" column="1"/>
+    <location file="Frontends/Python/PySTLWrapper.cpp" line="39" column="1"/>
   </compounddef>
 </doxygen>

@@ -15,8 +15,8 @@ namespace SmolDock::Engine {
 
     class PoseRefiner {
     public:
-        PoseRefiner(Protein *protein,
-                    Molecule *ligand,
+        PoseRefiner(Protein* protein,
+                    Molecule* ligand,
                     Score::ScoringFunctionType scFuncType,
                     Optimizer::LocalOptimizerType localOptimizerType_,
                     unsigned int seed);
@@ -32,8 +32,8 @@ namespace SmolDock::Engine {
         bool applyToLigand();
 
     private:
-        Protein *orig_protein;
-        Molecule *orig_ligand;
+        Protein* orig_protein;
+        Molecule* orig_ligand;
 
         Score::ScoringFunctionType scoringFuncType;
         Optimizer::LocalOptimizerType localOptimizerType;

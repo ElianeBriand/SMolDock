@@ -65,7 +65,7 @@
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
-      <memberdef kind="function" id="class_smol_dock_1_1_optimizer_1_1_l___b_f_g_s_1a0df667e4e5b369f20fa0f4de11ed7836" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="class_smol_dock_1_1_optimizer_1_1_l___b_f_g_s_1a0df667e4e5b369f20fa0f4de11ed7836" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
         <type></type>
         <definition>SmolDock::Optimizer::L_BFGS::L_BFGS</definition>
         <argsstring>(Score::ScoringFunction *scoringFunc_, unsigned int maxIteration_=100)</argsstring>
@@ -102,9 +102,7 @@
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
-<para><itemizedlist>
-<listitem></listitem></itemizedlist>
-</para>        </inbodydescription>
+        </inbodydescription>
         <location file="Engines/LocalOptimizers/L_BFGS.h" line="34" column="1" bodyfile="Engines/LocalOptimizers/L_BFGS.cpp" bodystart="40" bodyend="62"/>
         <references refid="class_smol_dock_1_1_score_1_1_scoring_function_1a92b9b5f6d23b07740dd9f6718207d31a">SmolDock::Score::ScoringFunction::Evaluate</references>
         <references refid="namespace_smol_dock_1_1_optimizer_1a7ed1dc6878a606b8dcca7558383650cea2bd34449cf1656ea5ea723145f03c127">SmolDock::Optimizer::L_BFGS</references>
@@ -162,32 +160,32 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="129">
+      <node id="151">
         <label>SmolDock::Optimizer::L_BFGS</label>
         <link refid="class_smol_dock_1_1_optimizer_1_1_l___b_f_g_s"/>
-        <childnode refid="130" relation="public-inheritance">
+        <childnode refid="152" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="130">
+      <node id="152">
         <label>SmolDock::Optimizer::Optimizer</label>
         <link refid="class_smol_dock_1_1_optimizer_1_1_optimizer"/>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="131">
+      <node id="153">
         <label>SmolDock::Optimizer::L_BFGS</label>
         <link refid="class_smol_dock_1_1_optimizer_1_1_l___b_f_g_s"/>
-        <childnode refid="132" relation="public-inheritance">
+        <childnode refid="154" relation="public-inheritance">
         </childnode>
-        <childnode refid="133" relation="usage">
+        <childnode refid="155" relation="usage">
           <edgelabel>-scoringFunction</edgelabel>
         </childnode>
       </node>
-      <node id="133">
+      <node id="155">
         <label>SmolDock::Score::ScoringFunction</label>
         <link refid="class_smol_dock_1_1_score_1_1_scoring_function"/>
       </node>
-      <node id="132">
+      <node id="154">
         <label>SmolDock::Optimizer::Optimizer</label>
         <link refid="class_smol_dock_1_1_optimizer_1_1_optimizer"/>
       </node>

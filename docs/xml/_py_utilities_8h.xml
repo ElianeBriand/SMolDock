@@ -5,19 +5,19 @@
     <includedby refid="_py_utilities_8cpp" local="yes">PyUtilities.cpp</includedby>
     <includedby refid="_smoldock_python_bindings_8cpp" local="yes">SmoldockPythonBindings.cpp</includedby>
     <invincdepgraph>
-      <node id="1591">
+      <node id="2016">
         <label>PyUtilities.cpp</label>
         <link refid="_py_utilities_8cpp"/>
       </node>
-      <node id="1590">
+      <node id="2015">
         <label>PyUtilities.h</label>
         <link refid="_py_utilities_8h"/>
-        <childnode refid="1591" relation="include">
+        <childnode refid="2016" relation="include">
         </childnode>
-        <childnode refid="1592" relation="include">
+        <childnode refid="2017" relation="include">
         </childnode>
       </node>
-      <node id="1592">
+      <node id="2017">
         <label>SmoldockPythonBindings.cpp</label>
         <link refid="_smoldock_python_bindings_8cpp"/>
       </node>
@@ -34,10 +34,12 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Frontends/Python/PyUtilities.h" line="26" column="1" bodyfile="Frontends/Python/PyUtilities.cpp" bodystart="39" bodyend="48"/>
-        <references refid="class_smol_dock_1_1_re_scorer_1a4f372ac345e57254d9b00672f169d2fd" compoundref="_re_scorer_8cpp" startline="25" endline="27">SmolDock::ReScorer::getScore</references>
-        <references refid="class_smol_dock_1_1_re_scorer_1a102b6af24e4f5dc420c2bdfba5a792f0" compoundref="_re_scorer_8cpp" startline="18" endline="23">SmolDock::ReScorer::prepare</references>
-        <referencedby refid="_smoldock_python_bindings_8cpp_1a9002869529fdb857c7ffa4a170c4f3ef" compoundref="_smoldock_python_bindings_8cpp" startline="39" endline="79">BOOST_PYTHON_MODULE</referencedby>
+        <location file="Frontends/Python/PyUtilities.h" line="26" column="1" bodyfile="Frontends/Python/PyUtilities.cpp" bodystart="40" bodyend="56"/>
+        <references refid="class_smol_dock_1_1_p_d_b_writer_1a74fc5d4cb9bbe5c8f0362366178dbff0" compoundref="_p_d_b_writer_8cpp" startline="82" endline="84">SmolDock::PDBWriter::addLigand</references>
+        <references refid="class_smol_dock_1_1_re_scorer_1a4f372ac345e57254d9b00672f169d2fd" compoundref="_re_scorer_8cpp" startline="35" endline="43">SmolDock::ReScorer::getScore</references>
+        <references refid="class_smol_dock_1_1_re_scorer_1a102b6af24e4f5dc420c2bdfba5a792f0" compoundref="_re_scorer_8cpp" startline="22" endline="33">SmolDock::ReScorer::prepare</references>
+        <references refid="class_smol_dock_1_1_p_d_b_writer_1aaad8350fc387575ed549a1fd8569aad2" compoundref="_p_d_b_writer_8cpp" startline="21" endline="80">SmolDock::PDBWriter::writePDB</references>
+        <referencedby refid="_smoldock_python_bindings_8cpp_1a9002869529fdb857c7ffa4a170c4f3ef" compoundref="_smoldock_python_bindings_8cpp" startline="41" endline="79">BOOST_PYTHON_MODULE</referencedby>
       </memberdef>
       </sectiondef>
     <briefdescription>

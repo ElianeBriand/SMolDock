@@ -11,6 +11,8 @@
 #include <cmath>
 #include <cassert>
 
+#include <Eigen/Core>
+#include <Eigen/Dense>
 
 namespace SmolDock {
 
@@ -20,43 +22,17 @@ namespace SmolDock {
      *
      * \sa iTransform
      */
-    struct iQuaternion {
-        // Quaternion :
-        double s; //! Scalar part
-        double u, v, t; //! Vector part
-    };
-
-    //! General purpose 3D-vector type
-    struct iVect {
-        double x, y, z;
-    };
-
-    //! Represents a translation
-    struct iTranslation {
-        double x, y, z;
-    };
-
 
     //! Represents a rotation and translation transform to be applied on ligand/ligand part
     /*!
-     * \sa iTranslation, iQuaternion
+     * \sa iTranslation, Eigen::Quaternion<double>
     */
     struct iTransform {
         // Global component
-        iTranslation transl;
-        iQuaternion rota;
+        Eigen::Translation<double, 3> transl;
+        Eigen::Quaternion<double> rota;
 
-        std::vector<iQuaternion> bondRotations;
-    };
-
-    /*!
-     * \sa iTranslation, iQuaternion
-     */
-    struct iGradient {
-        double dx, dy, dz; //! Translation part
-
-        double ds; //! Scalar quaternion part
-        double du, dv, dt; //! Vector quaternion part
+        std::vector<double> bondRotationsAngles;
     };
 
 

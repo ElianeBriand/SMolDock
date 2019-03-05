@@ -3,6 +3,7 @@
   <compounddef id="class_smol_dock_1_1_score_1_1_scoring_function" kind="class" language="C++" prot="public" abstract="yes">
     <compoundname>SmolDock::Score::ScoringFunction</compoundname>
     <derivedcompoundref refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function" prot="public" virt="non-virtual">SmolDock::Score::VinaLikeRigidScoringFunction</derivedcompoundref>
+    <derivedcompoundref refid="class_smol_dock_1_1_score_1_1_vina_like_scoring_function" prot="public" virt="non-virtual">SmolDock::Score::VinaLikeScoringFunction</derivedcompoundref>
     <includes refid="_scoring_function_interface_8h" local="no">ScoringFunctionInterface.h</includes>
       <sectiondef kind="public-func">
       <memberdef kind="function" id="class_smol_dock_1_1_score_1_1_scoring_function_1a92b9b5f6d23b07740dd9f6718207d31a" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
@@ -10,6 +11,7 @@
         <definition>virtual double SmolDock::Score::ScoringFunction::Evaluate</definition>
         <argsstring>(const arma::mat &amp;x)=0</argsstring>
         <name>Evaluate</name>
+        <reimplementedby refid="class_smol_dock_1_1_score_1_1_vina_like_scoring_function_1a5b2eaf1db8e2e0b98ee1f199be96a406">Evaluate</reimplementedby>
         <reimplementedby refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1ab89f08da2f4f79abfe9130b3593c3522">Evaluate</reimplementedby>
         <param>
           <type>const arma::mat &amp;</type>
@@ -21,16 +23,19 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Engines/ScoringFunctions/ScoringFunctionInterface.h" line="21" column="1"/>
-        <referencedby refid="class_smol_dock_1_1_optimizer_1_1_gradient_descent_line_search_1ae0888f9903112cfbe93af8d5946a52da" compoundref="_gradient_descent_line_search_8cpp" startline="33" endline="114">SmolDock::Optimizer::GradientDescentLineSearch::optimize</referencedby>
+        <location file="Engines/ScoringFunctions/ScoringFunctionInterface.h" line="19" column="1"/>
+        <referencedby refid="class_smol_dock_1_1_optimizer_1_1_gradient_descent_line_search_1ae0888f9903112cfbe93af8d5946a52da" compoundref="_gradient_descent_line_search_8cpp" startline="32" endline="113">SmolDock::Optimizer::GradientDescentLineSearch::optimize</referencedby>
+        <referencedby refid="class_smol_dock_1_1_heuristics_1_1_iterated_local_search_1ad7c6bf8bf2c8d3cde6cb6b1184ca5c4e" compoundref="_iterated_local_search_8cpp" startline="23" endline="135">SmolDock::Heuristics::IteratedLocalSearch::search</referencedby>
         <referencedby refid="class_smol_dock_1_1_optimizer_1_1_l___b_f_g_s_1af820a1b5e625482458e4917620200e8c" compoundref="_l___b_f_g_s_8cpp" startline="40" endline="62">SmolDock::Optimizer::L_BFGS::optimize</referencedby>
-        <referencedby refid="class_smol_dock_1_1_heuristics_1_1_random_restart_1abfa7882757c070d876d94090520cef92" compoundref="_random_restart_8cpp" startline="25" endline="56">SmolDock::Heuristics::RandomRestart::search</referencedby>
+        <referencedby refid="class_smol_dock_1_1_heuristics_1_1_random_restart_1abfa7882757c070d876d94090520cef92" compoundref="_random_restart_8cpp" startline="22" endline="64">SmolDock::Heuristics::RandomRestart::search</referencedby>
+        <referencedby refid="class_smol_dock_1_1_heuristics_1_1_simulated_annealing_1a1a354ad6f5b9055013ed27575450498f" compoundref="_simulated_annealing_8cpp" startline="23" endline="44">SmolDock::Heuristics::SimulatedAnnealing::search</referencedby>
       </memberdef>
       <memberdef kind="function" id="class_smol_dock_1_1_score_1_1_scoring_function_1a56e7633750240c7511d5f719c87eeb2f" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type>double</type>
         <definition>virtual double SmolDock::Score::ScoringFunction::EvaluateWithGradient</definition>
         <argsstring>(const arma::mat &amp;x, arma::mat &amp;gradient)=0</argsstring>
         <name>EvaluateWithGradient</name>
+        <reimplementedby refid="class_smol_dock_1_1_score_1_1_vina_like_scoring_function_1adc45f52c75b9c1d96edcdb3caf27160c">EvaluateWithGradient</reimplementedby>
         <reimplementedby refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1a574511b3c12769902e2c0366d4d3db96">EvaluateWithGradient</reimplementedby>
         <param>
           <type>const arma::mat &amp;</type>
@@ -46,14 +51,15 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Engines/ScoringFunctions/ScoringFunctionInterface.h" line="23" column="1"/>
-        <referencedby refid="class_smol_dock_1_1_optimizer_1_1_gradient_descent_line_search_1ae0888f9903112cfbe93af8d5946a52da" compoundref="_gradient_descent_line_search_8cpp" startline="33" endline="114">SmolDock::Optimizer::GradientDescentLineSearch::optimize</referencedby>
+        <location file="Engines/ScoringFunctions/ScoringFunctionInterface.h" line="21" column="1"/>
+        <referencedby refid="class_smol_dock_1_1_optimizer_1_1_gradient_descent_line_search_1ae0888f9903112cfbe93af8d5946a52da" compoundref="_gradient_descent_line_search_8cpp" startline="32" endline="113">SmolDock::Optimizer::GradientDescentLineSearch::optimize</referencedby>
       </memberdef>
       <memberdef kind="function" id="class_smol_dock_1_1_score_1_1_scoring_function_1a526926e386e47c0c4bace70b75b54632" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
         <type>double</type>
         <definition>virtual double SmolDock::Score::ScoringFunction::getDifferentialEpsilon</definition>
         <argsstring>() const =0</argsstring>
         <name>getDifferentialEpsilon</name>
+        <reimplementedby refid="class_smol_dock_1_1_score_1_1_vina_like_scoring_function_1a9063bb586901ea606f01c2fc8e68b2ee">getDifferentialEpsilon</reimplementedby>
         <reimplementedby refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1a2173a0716d2426518a601e1525798fcd">getDifferentialEpsilon</reimplementedby>
         <briefdescription>
         </briefdescription>
@@ -61,13 +67,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Engines/ScoringFunctions/ScoringFunctionInterface.h" line="26" column="1"/>
+        <location file="Engines/ScoringFunctions/ScoringFunctionInterface.h" line="24" column="1"/>
       </memberdef>
       <memberdef kind="function" id="class_smol_dock_1_1_score_1_1_scoring_function_1a70e93a6f7e50f4a57273b0faf60e8e90" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
         <type>arma::mat</type>
         <definition>virtual arma::mat SmolDock::Score::ScoringFunction::getStartingConditions</definition>
         <argsstring>() const =0</argsstring>
         <name>getStartingConditions</name>
+        <reimplementedby refid="class_smol_dock_1_1_score_1_1_vina_like_scoring_function_1a79981b85f1e66c1866bc5bd5f5d15105">getStartingConditions</reimplementedby>
         <reimplementedby refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1ad16c38589c65800f164078fcbd929e99">getStartingConditions</reimplementedby>
         <briefdescription>
         </briefdescription>
@@ -75,14 +82,18 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Engines/ScoringFunctions/ScoringFunctionInterface.h" line="28" column="1"/>
-        <referencedby refid="class_smol_dock_1_1_heuristics_1_1_random_restart_1abfa7882757c070d876d94090520cef92" compoundref="_random_restart_8cpp" startline="25" endline="56">SmolDock::Heuristics::RandomRestart::search</referencedby>
+        <location file="Engines/ScoringFunctions/ScoringFunctionInterface.h" line="26" column="1"/>
+        <referencedby refid="class_smol_dock_1_1_heuristics_1_1_iterated_local_search_1ad7c6bf8bf2c8d3cde6cb6b1184ca5c4e" compoundref="_iterated_local_search_8cpp" startline="23" endline="135">SmolDock::Heuristics::IteratedLocalSearch::search</referencedby>
+        <referencedby refid="class_smol_dock_1_1_heuristics_1_1_only_local_1a4557f55ce09405eff013c07214cb4e10" compoundref="_only_local_8cpp" startline="16" endline="24">SmolDock::Heuristics::OnlyLocal::search</referencedby>
+        <referencedby refid="class_smol_dock_1_1_heuristics_1_1_random_restart_1abfa7882757c070d876d94090520cef92" compoundref="_random_restart_8cpp" startline="22" endline="64">SmolDock::Heuristics::RandomRestart::search</referencedby>
+        <referencedby refid="class_smol_dock_1_1_heuristics_1_1_simulated_annealing_1a1a354ad6f5b9055013ed27575450498f" compoundref="_simulated_annealing_8cpp" startline="23" endline="44">SmolDock::Heuristics::SimulatedAnnealing::search</referencedby>
       </memberdef>
       <memberdef kind="function" id="class_smol_dock_1_1_score_1_1_scoring_function_1a19d85e9febea604032a62624a70adc4e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
         <type>unsigned int</type>
         <definition>virtual unsigned int SmolDock::Score::ScoringFunction::getParamVectorDimension</definition>
         <argsstring>() const =0</argsstring>
         <name>getParamVectorDimension</name>
+        <reimplementedby refid="class_smol_dock_1_1_score_1_1_vina_like_scoring_function_1ae78fe7c1766805f84d92ed585b4f7255">getParamVectorDimension</reimplementedby>
         <reimplementedby refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1ad5633f6ee3c7d72b593e5101730747a2">getParamVectorDimension</reimplementedby>
         <briefdescription>
         </briefdescription>
@@ -90,13 +101,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Engines/ScoringFunctions/ScoringFunctionInterface.h" line="30" column="1"/>
+        <location file="Engines/ScoringFunctions/ScoringFunctionInterface.h" line="28" column="1"/>
       </memberdef>
       <memberdef kind="function" id="class_smol_dock_1_1_score_1_1_scoring_function_1ac446224ef6f15aa89c1d3b604fd43a13" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type><ref refid="struct_smol_dock_1_1i_conformer" kindref="compound">SmolDock::iConformer</ref></type>
         <definition>virtual SmolDock::iConformer SmolDock::Score::ScoringFunction::getConformerForParamMatrix</definition>
         <argsstring>(const arma::mat &amp;x)=0</argsstring>
         <name>getConformerForParamMatrix</name>
+        <reimplementedby refid="class_smol_dock_1_1_score_1_1_vina_like_scoring_function_1a6c9ffc4bfc5cc3d066f2a2cda2163397">getConformerForParamMatrix</reimplementedby>
         <reimplementedby refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1a6b173e704b812af5cde72610f1143577">getConformerForParamMatrix</reimplementedby>
         <param>
           <type>const arma::mat &amp;</type>
@@ -108,7 +120,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Engines/ScoringFunctions/ScoringFunctionInterface.h" line="34" column="1"/>
+        <location file="Engines/ScoringFunctions/ScoringFunctionInterface.h" line="32" column="1"/>
       </memberdef>
       <memberdef kind="function" id="class_smol_dock_1_1_score_1_1_scoring_function_1a366f1b2ddf8d9b25d09b26e114f08996" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type></type>
@@ -121,7 +133,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Engines/ScoringFunctions/ScoringFunctionInterface.h" line="37" column="1"/>
+        <location file="Engines/ScoringFunctions/ScoringFunctionInterface.h" line="35" column="1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -129,24 +141,30 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="199">
-        <label>SmolDock::Score::VinaLikeRigidScoringFunction</label>
-        <link refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function"/>
-        <childnode refid="198" relation="public-inheritance">
+      <node id="272">
+        <label>SmolDock::Score::VinaLikeScoringFunction</label>
+        <link refid="class_smol_dock_1_1_score_1_1_vina_like_scoring_function"/>
+        <childnode refid="270" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="198">
+      <node id="271">
+        <label>SmolDock::Score::VinaLikeRigidScoringFunction</label>
+        <link refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function"/>
+        <childnode refid="270" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="270">
         <label>SmolDock::Score::ScoringFunction</label>
         <link refid="class_smol_dock_1_1_score_1_1_scoring_function"/>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="200">
+      <node id="273">
         <label>SmolDock::Score::ScoringFunction</label>
         <link refid="class_smol_dock_1_1_score_1_1_scoring_function"/>
       </node>
     </collaborationgraph>
-    <location file="Engines/ScoringFunctions/ScoringFunctionInterface.h" line="18" column="1" bodyfile="Engines/ScoringFunctions/ScoringFunctionInterface.h" bodystart="18" bodyend="41"/>
+    <location file="Engines/ScoringFunctions/ScoringFunctionInterface.h" line="16" column="1" bodyfile="Engines/ScoringFunctions/ScoringFunctionInterface.h" bodystart="16" bodyend="40"/>
     <listofallmembers>
       <member refid="class_smol_dock_1_1_score_1_1_scoring_function_1a92b9b5f6d23b07740dd9f6718207d31a" prot="public" virt="pure-virtual"><scope>SmolDock::Score::ScoringFunction</scope><name>Evaluate</name></member>
       <member refid="class_smol_dock_1_1_score_1_1_scoring_function_1a56e7633750240c7511d5f719c87eeb2f" prot="public" virt="pure-virtual"><scope>SmolDock::Score::ScoringFunction</scope><name>EvaluateWithGradient</name></member>

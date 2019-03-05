@@ -95,8 +95,7 @@ $(document).ready(function(){initNavTree('namespace_smol_dock_1_1_score.html',''
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#enum-members">Enumerations</a> &#124;
-<a href="#func-members">Functions</a> &#124;
-<a href="#var-members">Variables</a>  </div>
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">SmolDock::Score Namespace Reference</div>  </div>
 </div><!--header-->
@@ -112,10 +111,13 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function.html">VinaLikeRigidScoringFunction</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_smol_dock_1_1_score_1_1_vina_like_scoring_function.html">VinaLikeScoringFunction</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Enumerations</h2></td></tr>
-<tr class="memitem:a7d8761ef06699c5fc8793056bc903911"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_smol_dock_1_1_score.html#a7d8761ef06699c5fc8793056bc903911">ScoringFunctionType</a> { <a class="el" href="namespace_smol_dock_1_1_score.html#a7d8761ef06699c5fc8793056bc903911a28bb0a5655ac4c67901e014f39619947">ScoringFunctionType::VinaRigid</a>
+<tr class="memitem:a7d8761ef06699c5fc8793056bc903911"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_smol_dock_1_1_score.html#a7d8761ef06699c5fc8793056bc903911">ScoringFunctionType</a> { <a class="el" href="namespace_smol_dock_1_1_score.html#a7d8761ef06699c5fc8793056bc903911a28bb0a5655ac4c67901e014f39619947">ScoringFunctionType::VinaRigid</a>, 
+<a class="el" href="namespace_smol_dock_1_1_score.html#a7d8761ef06699c5fc8793056bc903911ac31991e242b85fe1ed7c5d487d6b08f9">ScoringFunctionType::Vina</a>
  }</td></tr>
 <tr class="separator:a7d8761ef06699c5fc8793056bc903911"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -138,19 +140,8 @@ Functions</h2></td></tr>
 <tr class="memitem:ac205731c7b0098c2900d9d16fff1a93b"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_smol_dock_1_1_score.html#ac205731c7b0098c2900d9d16fff1a93b">vina_like_rigid_inter_scoring_func</a> (const <a class="el" href="namespace_smol_dock.html#struct_smol_dock_1_1i_conformer">iConformer</a> &amp;conformer, const <a class="el" href="namespace_smol_dock.html#struct_smol_dock_1_1i_transform">iTransform</a> &amp;transform, const <a class="el" href="namespace_smol_dock.html#struct_smol_dock_1_1i_protein">iProtein</a> &amp;protein)</td></tr>
 <tr class="memdesc:ac205731c7b0098c2900d9d16fff1a93b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute inter-molecular part of the docking score, according to the Vina scoring function.  <a href="#ac205731c7b0098c2900d9d16fff1a93b">More...</a><br /></td></tr>
 <tr class="separator:ac205731c7b0098c2900d9d16fff1a93b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
-Variables</h2></td></tr>
-<tr class="memitem:a96c89e7cf08ae5049b8d04653cb39ad5"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_smol_dock_1_1_score.html#a96c89e7cf08ae5049b8d04653cb39ad5">score_gauss1</a> = 0</td></tr>
-<tr class="separator:a96c89e7cf08ae5049b8d04653cb39ad5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2deab2d99e28d64401794c7acee7c134"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_smol_dock_1_1_score.html#a2deab2d99e28d64401794c7acee7c134">score_gauss2</a> = 0</td></tr>
-<tr class="separator:a2deab2d99e28d64401794c7acee7c134"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aedf87eb6c6107722da5ce81907ea9609"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_smol_dock_1_1_score.html#aedf87eb6c6107722da5ce81907ea9609">score_repulsion</a> = 0</td></tr>
-<tr class="separator:aedf87eb6c6107722da5ce81907ea9609"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abdea0df8ff6c5330ad0daebbbea89c62"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_smol_dock_1_1_score.html#abdea0df8ff6c5330ad0daebbbea89c62">score_hydrophobic</a> = 0</td></tr>
-<tr class="separator:abdea0df8ff6c5330ad0daebbbea89c62"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5fcf6b32516650efc62433e4bb791c18"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_smol_dock_1_1_score.html#a5fcf6b32516650efc62433e4bb791c18">score_hydrogen</a> = 0</td></tr>
-<tr class="separator:a5fcf6b32516650efc62433e4bb791c18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af7f12c4b8451b856342af3afdbcadce8"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_smol_dock_1_1_score.html#af7f12c4b8451b856342af3afdbcadce8">VinaLikeIntermolecularScoringFunction</a> (const <a class="el" href="namespace_smol_dock.html#struct_smol_dock_1_1i_conformer">iConformer</a> &amp;ligand_, const <a class="el" href="namespace_smol_dock.html#struct_smol_dock_1_1i_transform">iTransform</a> &amp;transform, const <a class="el" href="namespace_smol_dock.html#struct_smol_dock_1_1i_protein">iProtein</a> &amp;protein)</td></tr>
+<tr class="separator:af7f12c4b8451b856342af3afdbcadce8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Free-standing docking score functions. </p>
@@ -176,6 +167,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a7d8761ef06699c5fc8793056bc903911a28bb0a5655ac4c67901e014f39619947"></a>VinaRigid&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a7d8761ef06699c5fc8793056bc903911ac31991e242b85fe1ed7c5d487d6b08f9"></a>Vina&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
 <p class="definition">Definition at line <a class="el" href="_scoring_function_factory_8h_source.html#l00017">17</a> of file <a class="el" href="_scoring_function_factory_8h_source.html">ScoringFunctionFactory.h</a>.</p>
@@ -229,9 +221,9 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_vina_like_scoring_function_8cpp_source.html#l00071">71</a> of file <a class="el" href="_vina_like_scoring_function_8cpp_source.html">VinaLikeScoringFunction.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_vina_like_common_8h_source.html#l00051">51</a> of file <a class="el" href="_vina_like_common_8h_source.html">VinaLikeCommon.h</a>.</p>
 
-<p class="reference">References <a class="el" href="_vina_like_scoring_function_8cpp_source.html#l00065">hydrogenDonorAcceptorPair()</a>.</p>
+<p class="reference">References <a class="el" href="_vina_like_common_8h_source.html#l00045">hydrogenDonorAcceptorPair()</a>.</p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
@@ -251,15 +243,16 @@ Variables</h2></td></tr>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="namespace_smol_dock_1_1_score_ac5efd92ad2db7d779a491ae233cbb2ec_icgraph.png" border="0" usemap="#namespace_smol_dock_1_1_score_ac5efd92ad2db7d779a491ae233cbb2ec_icgraph" alt=""/></div>
 <map name="namespace_smol_dock_1_1_score_ac5efd92ad2db7d779a491ae233cbb2ec_icgraph" id="namespace_smol_dock_1_1_score_ac5efd92ad2db7d779a491ae233cbb2ec_icgraph">
-<area shape="rect" id="node2" href="namespace_smol_dock_1_1_score.html#ac23b7d24b31779cc5cd7d8bd4006fa52" title="SmolDock::Score::scoreFor\lAtomCouple" alt="" coords="240,123,424,164"/>
-<area shape="rect" id="node3" href="namespace_smol_dock_1_1_score.html#ac205731c7b0098c2900d9d16fff1a93b" title="Compute inter&#45;molecular part of the docking score, according to the Vina scoring function. " alt="" coords="472,123,665,164"/>
-<area shape="rect" id="node4" href="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine.html#a7bee39278168cb4d7ee6558b3a3d3bb4" title="Run the docking. " alt="" coords="713,5,968,47"/>
-<area shape="rect" id="node5" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="1074,42,1125,69"/>
-<area shape="rect" id="node6" href="namespace_smol_dock_1_1_wrapper.html#afc6fe0925036a67cbd9856c1077296ca" title="SmolDock::Wrapper::\lgetScoringFunc" alt="" coords="767,123,915,164"/>
-<area shape="rect" id="node9" href="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function.html#ab89f08da2f4f79abfe9130b3593c3522" title="SmolDock::Score::VinaLike\lRigidScoringFunction::Evaluate" alt="" coords="738,188,943,229"/>
-<area shape="rect" id="node10" href="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function.html#a574511b3c12769902e2c0366d4d3db96" title="SmolDock::Score::VinaLike\lRigidScoringFunction::Evaluate\lWithGradient" alt="" coords="738,254,943,310"/>
-<area shape="rect" id="node7" href="_py_scoring_functions_8h.html#a2ede6b770a3e6131986d822ec5842b63" title="export_ScoringFunctions" alt="" coords="1016,130,1183,157"/>
-<area shape="rect" id="node8" href="_smoldock_python_bindings_8cpp.html#a9002869529fdb857c7ffa4a170c4f3ef" title="BOOST_PYTHON_MODULE" alt="" coords="1231,130,1425,157"/>
+<area shape="rect" id="node2" href="namespace_smol_dock_1_1_score.html#ac23b7d24b31779cc5cd7d8bd4006fa52" title="SmolDock::Score::scoreFor\lAtomCouple" alt="" coords="240,196,424,237"/>
+<area shape="rect" id="node3" href="namespace_smol_dock_1_1_score.html#ac205731c7b0098c2900d9d16fff1a93b" title="Compute inter&#45;molecular part of the docking score, according to the Vina scoring function. " alt="" coords="475,123,668,164"/>
+<area shape="rect" id="node9" href="namespace_smol_dock_1_1_score.html#af7f12c4b8451b856342af3afdbcadce8" title="SmolDock::Score::VinaLike\lIntermolecularScoringFunction" alt="" coords="472,269,671,311"/>
+<area shape="rect" id="node4" href="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine.html#a7bee39278168cb4d7ee6558b3a3d3bb4" title="Run the docking. " alt="" coords="719,5,973,47"/>
+<area shape="rect" id="node6" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="821,71,871,98"/>
+<area shape="rect" id="node7" href="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function.html#ab89f08da2f4f79abfe9130b3593c3522" title="SmolDock::Score::VinaLike\lRigidScoringFunction::Evaluate" alt="" coords="743,123,949,164"/>
+<area shape="rect" id="node8" href="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function.html#a574511b3c12769902e2c0366d4d3db96" title="SmolDock::Score::VinaLike\lRigidScoringFunction::Evaluate\lWithGradient" alt="" coords="743,189,949,245"/>
+<area shape="rect" id="node5" href="cli__interface_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="1021,13,1072,39"/>
+<area shape="rect" id="node10" href="class_smol_dock_1_1_score_1_1_vina_like_scoring_function.html#a5b2eaf1db8e2e0b98ee1f199be96a406" title="SmolDock::Score::VinaLike\lScoringFunction::Evaluate" alt="" coords="755,269,937,311"/>
+<area shape="rect" id="node11" href="class_smol_dock_1_1_score_1_1_vina_like_scoring_function.html#adc45f52c75b9c1d96edcdb3caf27160c" title="SmolDock::Score::VinaLike\lScoringFunction::EvaluateWithGradient" alt="" coords="721,335,971,376"/>
 </map>
 </div>
 
@@ -311,9 +304,9 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_vina_like_scoring_function_8cpp_source.html#l00065">65</a> of file <a class="el" href="_vina_like_scoring_function_8cpp_source.html">VinaLikeScoringFunction.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_vina_like_common_8h_source.html#l00045">45</a> of file <a class="el" href="_vina_like_common_8h_source.html">VinaLikeCommon.h</a>.</p>
 
-<p class="reference">References <a class="el" href="_vina_like_scoring_function_8cpp_source.html#l00053">isHydrogenAcceptor()</a>, and <a class="el" href="_vina_like_scoring_function_8cpp_source.html#l00059">isHydrogenDonor()</a>.</p>
+<p class="reference">References <a class="el" href="_vina_like_common_8h_source.html#l00033">isHydrogenAcceptor()</a>, and <a class="el" href="_vina_like_common_8h_source.html#l00039">isHydrogenDonor()</a>.</p>
 <div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-2-summary" class="dynsummary" style="display:block;">
@@ -332,16 +325,17 @@ Variables</h2></td></tr>
 <div id="dynsection-3-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="namespace_smol_dock_1_1_score_a0b455de7380586a1fd535f76499f16f7_icgraph.png" border="0" usemap="#namespace_smol_dock_1_1_score_a0b455de7380586a1fd535f76499f16f7_icgraph" alt=""/></div>
 <map name="namespace_smol_dock_1_1_score_a0b455de7380586a1fd535f76499f16f7_icgraph" id="namespace_smol_dock_1_1_score_a0b455de7380586a1fd535f76499f16f7_icgraph">
-<area shape="rect" id="node2" href="namespace_smol_dock_1_1_score.html#ac5efd92ad2db7d779a491ae233cbb2ec" title="SmolDock::Score::hydrogen\lBondingPossible" alt="" coords="240,123,427,164"/>
-<area shape="rect" id="node3" href="namespace_smol_dock_1_1_score.html#ac23b7d24b31779cc5cd7d8bd4006fa52" title="SmolDock::Score::scoreFor\lAtomCouple" alt="" coords="475,123,659,164"/>
-<area shape="rect" id="node4" href="namespace_smol_dock_1_1_score.html#ac205731c7b0098c2900d9d16fff1a93b" title="Compute inter&#45;molecular part of the docking score, according to the Vina scoring function. " alt="" coords="707,123,900,164"/>
-<area shape="rect" id="node5" href="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine.html#a7bee39278168cb4d7ee6558b3a3d3bb4" title="Run the docking. " alt="" coords="948,5,1203,47"/>
-<area shape="rect" id="node6" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="1309,42,1359,69"/>
-<area shape="rect" id="node7" href="namespace_smol_dock_1_1_wrapper.html#afc6fe0925036a67cbd9856c1077296ca" title="SmolDock::Wrapper::\lgetScoringFunc" alt="" coords="1001,123,1149,164"/>
-<area shape="rect" id="node10" href="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function.html#ab89f08da2f4f79abfe9130b3593c3522" title="SmolDock::Score::VinaLike\lRigidScoringFunction::Evaluate" alt="" coords="973,188,1178,229"/>
-<area shape="rect" id="node11" href="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function.html#a574511b3c12769902e2c0366d4d3db96" title="SmolDock::Score::VinaLike\lRigidScoringFunction::Evaluate\lWithGradient" alt="" coords="973,254,1178,310"/>
-<area shape="rect" id="node8" href="_py_scoring_functions_8h.html#a2ede6b770a3e6131986d822ec5842b63" title="export_ScoringFunctions" alt="" coords="1251,130,1417,157"/>
-<area shape="rect" id="node9" href="_smoldock_python_bindings_8cpp.html#a9002869529fdb857c7ffa4a170c4f3ef" title="BOOST_PYTHON_MODULE" alt="" coords="1465,130,1660,157"/>
+<area shape="rect" id="node2" href="namespace_smol_dock_1_1_score.html#ac5efd92ad2db7d779a491ae233cbb2ec" title="SmolDock::Score::hydrogen\lBondingPossible" alt="" coords="240,196,427,237"/>
+<area shape="rect" id="node3" href="namespace_smol_dock_1_1_score.html#ac23b7d24b31779cc5cd7d8bd4006fa52" title="SmolDock::Score::scoreFor\lAtomCouple" alt="" coords="475,196,659,237"/>
+<area shape="rect" id="node4" href="namespace_smol_dock_1_1_score.html#ac205731c7b0098c2900d9d16fff1a93b" title="Compute inter&#45;molecular part of the docking score, according to the Vina scoring function. " alt="" coords="709,123,903,164"/>
+<area shape="rect" id="node10" href="namespace_smol_dock_1_1_score.html#af7f12c4b8451b856342af3afdbcadce8" title="SmolDock::Score::VinaLike\lIntermolecularScoringFunction" alt="" coords="707,269,905,311"/>
+<area shape="rect" id="node5" href="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine.html#a7bee39278168cb4d7ee6558b3a3d3bb4" title="Run the docking. " alt="" coords="953,5,1208,47"/>
+<area shape="rect" id="node7" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="1055,71,1106,98"/>
+<area shape="rect" id="node8" href="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function.html#ab89f08da2f4f79abfe9130b3593c3522" title="SmolDock::Score::VinaLike\lRigidScoringFunction::Evaluate" alt="" coords="978,123,1183,164"/>
+<area shape="rect" id="node9" href="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function.html#a574511b3c12769902e2c0366d4d3db96" title="SmolDock::Score::VinaLike\lRigidScoringFunction::Evaluate\lWithGradient" alt="" coords="978,189,1183,245"/>
+<area shape="rect" id="node6" href="cli__interface_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="1256,13,1307,39"/>
+<area shape="rect" id="node11" href="class_smol_dock_1_1_score_1_1_vina_like_scoring_function.html#a5b2eaf1db8e2e0b98ee1f199be96a406" title="SmolDock::Score::VinaLike\lScoringFunction::Evaluate" alt="" coords="989,269,1172,311"/>
+<area shape="rect" id="node12" href="class_smol_dock_1_1_score_1_1_vina_like_scoring_function.html#adc45f52c75b9c1d96edcdb3caf27160c" title="SmolDock::Score::VinaLike\lScoringFunction::EvaluateWithGradient" alt="" coords="955,335,1206,376"/>
 </map>
 </div>
 
@@ -381,7 +375,7 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_vina_like_scoring_function_8cpp_source.html#l00053">53</a> of file <a class="el" href="_vina_like_scoring_function_8cpp_source.html">VinaLikeScoringFunction.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_vina_like_common_8h_source.html#l00033">33</a> of file <a class="el" href="_vina_like_common_8h_source.html">VinaLikeCommon.h</a>.</p>
 
 <p class="reference">References <a class="el" href="class_smol_dock_1_1_atom.html#a77191f0919af58d733764e229cb1f973ad68216b54381a7b2b87b7924ab0191c4">SmolDock::Atom::hydrogenAcceptor</a>.</p>
 <div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -391,17 +385,18 @@ Variables</h2></td></tr>
 <div id="dynsection-4-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="namespace_smol_dock_1_1_score_afc0ba7560e9104fcef4bc61ff8d461c1_icgraph.png" border="0" usemap="#namespace_smol_dock_1_1_score_afc0ba7560e9104fcef4bc61ff8d461c1_icgraph" alt=""/></div>
 <map name="namespace_smol_dock_1_1_score_afc0ba7560e9104fcef4bc61ff8d461c1_icgraph" id="namespace_smol_dock_1_1_score_afc0ba7560e9104fcef4bc61ff8d461c1_icgraph">
-<area shape="rect" id="node2" href="namespace_smol_dock_1_1_score.html#a0b455de7380586a1fd535f76499f16f7" title="SmolDock::Score::hydrogen\lDonorAcceptorPair" alt="" coords="252,123,439,164"/>
-<area shape="rect" id="node3" href="namespace_smol_dock_1_1_score.html#ac5efd92ad2db7d779a491ae233cbb2ec" title="SmolDock::Score::hydrogen\lBondingPossible" alt="" coords="487,123,673,164"/>
-<area shape="rect" id="node4" href="namespace_smol_dock_1_1_score.html#ac23b7d24b31779cc5cd7d8bd4006fa52" title="SmolDock::Score::scoreFor\lAtomCouple" alt="" coords="721,123,905,164"/>
-<area shape="rect" id="node5" href="namespace_smol_dock_1_1_score.html#ac205731c7b0098c2900d9d16fff1a93b" title="Compute inter&#45;molecular part of the docking score, according to the Vina scoring function. " alt="" coords="953,123,1147,164"/>
-<area shape="rect" id="node6" href="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine.html#a7bee39278168cb4d7ee6558b3a3d3bb4" title="Run the docking. " alt="" coords="1195,5,1449,47"/>
-<area shape="rect" id="node7" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="1555,42,1606,69"/>
-<area shape="rect" id="node8" href="namespace_smol_dock_1_1_wrapper.html#afc6fe0925036a67cbd9856c1077296ca" title="SmolDock::Wrapper::\lgetScoringFunc" alt="" coords="1248,123,1396,164"/>
-<area shape="rect" id="node11" href="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function.html#ab89f08da2f4f79abfe9130b3593c3522" title="SmolDock::Score::VinaLike\lRigidScoringFunction::Evaluate" alt="" coords="1219,188,1425,229"/>
-<area shape="rect" id="node12" href="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function.html#a574511b3c12769902e2c0366d4d3db96" title="SmolDock::Score::VinaLike\lRigidScoringFunction::Evaluate\lWithGradient" alt="" coords="1219,254,1425,310"/>
-<area shape="rect" id="node9" href="_py_scoring_functions_8h.html#a2ede6b770a3e6131986d822ec5842b63" title="export_ScoringFunctions" alt="" coords="1497,130,1664,157"/>
-<area shape="rect" id="node10" href="_smoldock_python_bindings_8cpp.html#a9002869529fdb857c7ffa4a170c4f3ef" title="BOOST_PYTHON_MODULE" alt="" coords="1712,130,1907,157"/>
+<area shape="rect" id="node2" href="namespace_smol_dock_1_1_score.html#a0b455de7380586a1fd535f76499f16f7" title="SmolDock::Score::hydrogen\lDonorAcceptorPair" alt="" coords="252,196,439,237"/>
+<area shape="rect" id="node3" href="namespace_smol_dock_1_1_score.html#ac5efd92ad2db7d779a491ae233cbb2ec" title="SmolDock::Score::hydrogen\lBondingPossible" alt="" coords="487,196,673,237"/>
+<area shape="rect" id="node4" href="namespace_smol_dock_1_1_score.html#ac23b7d24b31779cc5cd7d8bd4006fa52" title="SmolDock::Score::scoreFor\lAtomCouple" alt="" coords="721,196,905,237"/>
+<area shape="rect" id="node5" href="namespace_smol_dock_1_1_score.html#ac205731c7b0098c2900d9d16fff1a93b" title="Compute inter&#45;molecular part of the docking score, according to the Vina scoring function. " alt="" coords="956,123,1149,164"/>
+<area shape="rect" id="node11" href="namespace_smol_dock_1_1_score.html#af7f12c4b8451b856342af3afdbcadce8" title="SmolDock::Score::VinaLike\lIntermolecularScoringFunction" alt="" coords="953,269,1152,311"/>
+<area shape="rect" id="node6" href="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine.html#a7bee39278168cb4d7ee6558b3a3d3bb4" title="Run the docking. " alt="" coords="1200,5,1455,47"/>
+<area shape="rect" id="node8" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="1302,71,1353,98"/>
+<area shape="rect" id="node9" href="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function.html#ab89f08da2f4f79abfe9130b3593c3522" title="SmolDock::Score::VinaLike\lRigidScoringFunction::Evaluate" alt="" coords="1225,123,1430,164"/>
+<area shape="rect" id="node10" href="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function.html#a574511b3c12769902e2c0366d4d3db96" title="SmolDock::Score::VinaLike\lRigidScoringFunction::Evaluate\lWithGradient" alt="" coords="1225,189,1430,245"/>
+<area shape="rect" id="node7" href="cli__interface_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="1503,13,1553,39"/>
+<area shape="rect" id="node12" href="class_smol_dock_1_1_score_1_1_vina_like_scoring_function.html#a5b2eaf1db8e2e0b98ee1f199be96a406" title="SmolDock::Score::VinaLike\lScoringFunction::Evaluate" alt="" coords="1236,269,1419,311"/>
+<area shape="rect" id="node13" href="class_smol_dock_1_1_score_1_1_vina_like_scoring_function.html#adc45f52c75b9c1d96edcdb3caf27160c" title="SmolDock::Score::VinaLike\lScoringFunction::EvaluateWithGradient" alt="" coords="1202,335,1453,376"/>
 </map>
 </div>
 
@@ -441,7 +436,7 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_vina_like_scoring_function_8cpp_source.html#l00059">59</a> of file <a class="el" href="_vina_like_scoring_function_8cpp_source.html">VinaLikeScoringFunction.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_vina_like_common_8h_source.html#l00039">39</a> of file <a class="el" href="_vina_like_common_8h_source.html">VinaLikeCommon.h</a>.</p>
 
 <p class="reference">References <a class="el" href="class_smol_dock_1_1_atom.html#a77191f0919af58d733764e229cb1f973ade31e8114bf9ba2ec47d55c59f61853d">SmolDock::Atom::hydrogenDonor</a>.</p>
 <div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -451,17 +446,18 @@ Variables</h2></td></tr>
 <div id="dynsection-5-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="namespace_smol_dock_1_1_score_aada28b98ff116da3300979ddf15dc557_icgraph.png" border="0" usemap="#namespace_smol_dock_1_1_score_aada28b98ff116da3300979ddf15dc557_icgraph" alt=""/></div>
 <map name="namespace_smol_dock_1_1_score_aada28b98ff116da3300979ddf15dc557_icgraph" id="namespace_smol_dock_1_1_score_aada28b98ff116da3300979ddf15dc557_icgraph">
-<area shape="rect" id="node2" href="namespace_smol_dock_1_1_score.html#a0b455de7380586a1fd535f76499f16f7" title="SmolDock::Score::hydrogen\lDonorAcceptorPair" alt="" coords="252,123,439,164"/>
-<area shape="rect" id="node3" href="namespace_smol_dock_1_1_score.html#ac5efd92ad2db7d779a491ae233cbb2ec" title="SmolDock::Score::hydrogen\lBondingPossible" alt="" coords="487,123,673,164"/>
-<area shape="rect" id="node4" href="namespace_smol_dock_1_1_score.html#ac23b7d24b31779cc5cd7d8bd4006fa52" title="SmolDock::Score::scoreFor\lAtomCouple" alt="" coords="721,123,905,164"/>
-<area shape="rect" id="node5" href="namespace_smol_dock_1_1_score.html#ac205731c7b0098c2900d9d16fff1a93b" title="Compute inter&#45;molecular part of the docking score, according to the Vina scoring function. " alt="" coords="953,123,1147,164"/>
-<area shape="rect" id="node6" href="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine.html#a7bee39278168cb4d7ee6558b3a3d3bb4" title="Run the docking. " alt="" coords="1195,5,1449,47"/>
-<area shape="rect" id="node7" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="1555,42,1606,69"/>
-<area shape="rect" id="node8" href="namespace_smol_dock_1_1_wrapper.html#afc6fe0925036a67cbd9856c1077296ca" title="SmolDock::Wrapper::\lgetScoringFunc" alt="" coords="1248,123,1396,164"/>
-<area shape="rect" id="node11" href="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function.html#ab89f08da2f4f79abfe9130b3593c3522" title="SmolDock::Score::VinaLike\lRigidScoringFunction::Evaluate" alt="" coords="1219,188,1425,229"/>
-<area shape="rect" id="node12" href="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function.html#a574511b3c12769902e2c0366d4d3db96" title="SmolDock::Score::VinaLike\lRigidScoringFunction::Evaluate\lWithGradient" alt="" coords="1219,254,1425,310"/>
-<area shape="rect" id="node9" href="_py_scoring_functions_8h.html#a2ede6b770a3e6131986d822ec5842b63" title="export_ScoringFunctions" alt="" coords="1497,130,1664,157"/>
-<area shape="rect" id="node10" href="_smoldock_python_bindings_8cpp.html#a9002869529fdb857c7ffa4a170c4f3ef" title="BOOST_PYTHON_MODULE" alt="" coords="1712,130,1907,157"/>
+<area shape="rect" id="node2" href="namespace_smol_dock_1_1_score.html#a0b455de7380586a1fd535f76499f16f7" title="SmolDock::Score::hydrogen\lDonorAcceptorPair" alt="" coords="252,196,439,237"/>
+<area shape="rect" id="node3" href="namespace_smol_dock_1_1_score.html#ac5efd92ad2db7d779a491ae233cbb2ec" title="SmolDock::Score::hydrogen\lBondingPossible" alt="" coords="487,196,673,237"/>
+<area shape="rect" id="node4" href="namespace_smol_dock_1_1_score.html#ac23b7d24b31779cc5cd7d8bd4006fa52" title="SmolDock::Score::scoreFor\lAtomCouple" alt="" coords="721,196,905,237"/>
+<area shape="rect" id="node5" href="namespace_smol_dock_1_1_score.html#ac205731c7b0098c2900d9d16fff1a93b" title="Compute inter&#45;molecular part of the docking score, according to the Vina scoring function. " alt="" coords="956,123,1149,164"/>
+<area shape="rect" id="node11" href="namespace_smol_dock_1_1_score.html#af7f12c4b8451b856342af3afdbcadce8" title="SmolDock::Score::VinaLike\lIntermolecularScoringFunction" alt="" coords="953,269,1152,311"/>
+<area shape="rect" id="node6" href="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine.html#a7bee39278168cb4d7ee6558b3a3d3bb4" title="Run the docking. " alt="" coords="1200,5,1455,47"/>
+<area shape="rect" id="node8" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="1302,71,1353,98"/>
+<area shape="rect" id="node9" href="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function.html#ab89f08da2f4f79abfe9130b3593c3522" title="SmolDock::Score::VinaLike\lRigidScoringFunction::Evaluate" alt="" coords="1225,123,1430,164"/>
+<area shape="rect" id="node10" href="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function.html#a574511b3c12769902e2c0366d4d3db96" title="SmolDock::Score::VinaLike\lRigidScoringFunction::Evaluate\lWithGradient" alt="" coords="1225,189,1430,245"/>
+<area shape="rect" id="node7" href="cli__interface_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="1503,13,1553,39"/>
+<area shape="rect" id="node12" href="class_smol_dock_1_1_score_1_1_vina_like_scoring_function.html#a5b2eaf1db8e2e0b98ee1f199be96a406" title="SmolDock::Score::VinaLike\lScoringFunction::Evaluate" alt="" coords="1236,269,1419,311"/>
+<area shape="rect" id="node13" href="class_smol_dock_1_1_score_1_1_vina_like_scoring_function.html#adc45f52c75b9c1d96edcdb3caf27160c" title="SmolDock::Score::VinaLike\lScoringFunction::EvaluateWithGradient" alt="" coords="1202,335,1453,376"/>
 </map>
 </div>
 
@@ -501,7 +497,7 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_vina_like_scoring_function_8cpp_source.html#l00044">44</a> of file <a class="el" href="_vina_like_scoring_function_8cpp_source.html">VinaLikeScoringFunction.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_vina_like_common_8h_source.html#l00024">24</a> of file <a class="el" href="_vina_like_common_8h_source.html">VinaLikeCommon.h</a>.</p>
 
 <p class="reference">References <a class="el" href="class_smol_dock_1_1_atom.html#a77191f0919af58d733764e229cb1f973ae5e437761e40c78a4c0929be07a3ab04">SmolDock::Atom::apolar</a>.</p>
 <div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -511,15 +507,16 @@ Variables</h2></td></tr>
 <div id="dynsection-6-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="namespace_smol_dock_1_1_score_adae31ea0b0f6630cdad8c85e9802ed9d_icgraph.png" border="0" usemap="#namespace_smol_dock_1_1_score_adae31ea0b0f6630cdad8c85e9802ed9d_icgraph" alt=""/></div>
 <map name="namespace_smol_dock_1_1_score_adae31ea0b0f6630cdad8c85e9802ed9d_icgraph" id="namespace_smol_dock_1_1_score_adae31ea0b0f6630cdad8c85e9802ed9d_icgraph">
-<area shape="rect" id="node2" href="namespace_smol_dock_1_1_score.html#ac23b7d24b31779cc5cd7d8bd4006fa52" title="SmolDock::Score::scoreFor\lAtomCouple" alt="" coords="269,123,453,164"/>
-<area shape="rect" id="node3" href="namespace_smol_dock_1_1_score.html#ac205731c7b0098c2900d9d16fff1a93b" title="Compute inter&#45;molecular part of the docking score, according to the Vina scoring function. " alt="" coords="501,123,695,164"/>
-<area shape="rect" id="node4" href="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine.html#a7bee39278168cb4d7ee6558b3a3d3bb4" title="Run the docking. " alt="" coords="743,5,997,47"/>
-<area shape="rect" id="node5" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="1103,42,1154,69"/>
-<area shape="rect" id="node6" href="namespace_smol_dock_1_1_wrapper.html#afc6fe0925036a67cbd9856c1077296ca" title="SmolDock::Wrapper::\lgetScoringFunc" alt="" coords="796,123,944,164"/>
-<area shape="rect" id="node9" href="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function.html#ab89f08da2f4f79abfe9130b3593c3522" title="SmolDock::Score::VinaLike\lRigidScoringFunction::Evaluate" alt="" coords="767,188,973,229"/>
-<area shape="rect" id="node10" href="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function.html#a574511b3c12769902e2c0366d4d3db96" title="SmolDock::Score::VinaLike\lRigidScoringFunction::Evaluate\lWithGradient" alt="" coords="767,254,973,310"/>
-<area shape="rect" id="node7" href="_py_scoring_functions_8h.html#a2ede6b770a3e6131986d822ec5842b63" title="export_ScoringFunctions" alt="" coords="1045,130,1212,157"/>
-<area shape="rect" id="node8" href="_smoldock_python_bindings_8cpp.html#a9002869529fdb857c7ffa4a170c4f3ef" title="BOOST_PYTHON_MODULE" alt="" coords="1260,130,1455,157"/>
+<area shape="rect" id="node2" href="namespace_smol_dock_1_1_score.html#ac23b7d24b31779cc5cd7d8bd4006fa52" title="SmolDock::Score::scoreFor\lAtomCouple" alt="" coords="269,196,453,237"/>
+<area shape="rect" id="node3" href="namespace_smol_dock_1_1_score.html#ac205731c7b0098c2900d9d16fff1a93b" title="Compute inter&#45;molecular part of the docking score, according to the Vina scoring function. " alt="" coords="504,123,697,164"/>
+<area shape="rect" id="node9" href="namespace_smol_dock_1_1_score.html#af7f12c4b8451b856342af3afdbcadce8" title="SmolDock::Score::VinaLike\lIntermolecularScoringFunction" alt="" coords="501,269,700,311"/>
+<area shape="rect" id="node4" href="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine.html#a7bee39278168cb4d7ee6558b3a3d3bb4" title="Run the docking. " alt="" coords="748,5,1003,47"/>
+<area shape="rect" id="node6" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="850,71,901,98"/>
+<area shape="rect" id="node7" href="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function.html#ab89f08da2f4f79abfe9130b3593c3522" title="SmolDock::Score::VinaLike\lRigidScoringFunction::Evaluate" alt="" coords="773,123,978,164"/>
+<area shape="rect" id="node8" href="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function.html#a574511b3c12769902e2c0366d4d3db96" title="SmolDock::Score::VinaLike\lRigidScoringFunction::Evaluate\lWithGradient" alt="" coords="773,189,978,245"/>
+<area shape="rect" id="node5" href="cli__interface_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="1051,13,1101,39"/>
+<area shape="rect" id="node10" href="class_smol_dock_1_1_score_1_1_vina_like_scoring_function.html#a5b2eaf1db8e2e0b98ee1f199be96a406" title="SmolDock::Score::VinaLike\lScoringFunction::Evaluate" alt="" coords="784,269,967,311"/>
+<area shape="rect" id="node11" href="class_smol_dock_1_1_score_1_1_vina_like_scoring_function.html#adc45f52c75b9c1d96edcdb3caf27160c" title="SmolDock::Score::VinaLike\lScoringFunction::EvaluateWithGradient" alt="" coords="750,335,1001,376"/>
 </map>
 </div>
 
@@ -577,9 +574,9 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_vina_like_scoring_function_8cpp_source.html#l00094">94</a> of file <a class="el" href="_vina_like_scoring_function_8cpp_source.html">VinaLikeScoringFunction.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_vina_like_common_8h_source.html#l00070">70</a> of file <a class="el" href="_vina_like_common_8h_source.html">VinaLikeCommon.h</a>.</p>
 
-<p class="reference">References <a class="el" href="_vina_like_scoring_function_8cpp_source.html#l00071">hydrogenBondingPossible()</a>, <a class="el" href="_vina_like_scoring_function_8cpp_source.html#l00044">isHydrophobic()</a>, <a class="el" href="_vina_like_scoring_function_8cpp_source.html#l00087">score_gauss1</a>, <a class="el" href="_vina_like_scoring_function_8cpp_source.html#l00088">score_gauss2</a>, <a class="el" href="_vina_like_scoring_function_8cpp_source.html#l00091">score_hydrogen</a>, <a class="el" href="_vina_like_scoring_function_8cpp_source.html#l00090">score_hydrophobic</a>, and <a class="el" href="_vina_like_scoring_function_8cpp_source.html#l00089">score_repulsion</a>.</p>
+<p class="reference">References <a class="el" href="_vina_like_common_8h_source.html#l00051">hydrogenBondingPossible()</a>, and <a class="el" href="_vina_like_common_8h_source.html#l00024">isHydrophobic()</a>.</p>
 <div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-7-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-7-summary" class="dynsummary" style="display:block;">
@@ -601,14 +598,15 @@ Variables</h2></td></tr>
 <div id="dynsection-8-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="namespace_smol_dock_1_1_score_ac23b7d24b31779cc5cd7d8bd4006fa52_icgraph.png" border="0" usemap="#namespace_smol_dock_1_1_score_ac23b7d24b31779cc5cd7d8bd4006fa52_icgraph" alt=""/></div>
 <map name="namespace_smol_dock_1_1_score_ac23b7d24b31779cc5cd7d8bd4006fa52_icgraph" id="namespace_smol_dock_1_1_score_ac23b7d24b31779cc5cd7d8bd4006fa52_icgraph">
-<area shape="rect" id="node2" href="namespace_smol_dock_1_1_score.html#ac205731c7b0098c2900d9d16fff1a93b" title="Compute inter&#45;molecular part of the docking score, according to the Vina scoring function. " alt="" coords="237,123,431,164"/>
-<area shape="rect" id="node3" href="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine.html#a7bee39278168cb4d7ee6558b3a3d3bb4" title="Run the docking. " alt="" coords="479,5,733,47"/>
-<area shape="rect" id="node4" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="839,42,890,69"/>
-<area shape="rect" id="node5" href="namespace_smol_dock_1_1_wrapper.html#afc6fe0925036a67cbd9856c1077296ca" title="SmolDock::Wrapper::\lgetScoringFunc" alt="" coords="532,123,680,164"/>
-<area shape="rect" id="node8" href="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function.html#ab89f08da2f4f79abfe9130b3593c3522" title="SmolDock::Score::VinaLike\lRigidScoringFunction::Evaluate" alt="" coords="503,188,709,229"/>
-<area shape="rect" id="node9" href="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function.html#a574511b3c12769902e2c0366d4d3db96" title="SmolDock::Score::VinaLike\lRigidScoringFunction::Evaluate\lWithGradient" alt="" coords="503,254,709,310"/>
-<area shape="rect" id="node6" href="_py_scoring_functions_8h.html#a2ede6b770a3e6131986d822ec5842b63" title="export_ScoringFunctions" alt="" coords="781,130,948,157"/>
-<area shape="rect" id="node7" href="_smoldock_python_bindings_8cpp.html#a9002869529fdb857c7ffa4a170c4f3ef" title="BOOST_PYTHON_MODULE" alt="" coords="996,130,1191,157"/>
+<area shape="rect" id="node2" href="namespace_smol_dock_1_1_score.html#ac205731c7b0098c2900d9d16fff1a93b" title="Compute inter&#45;molecular part of the docking score, according to the Vina scoring function. " alt="" coords="240,123,433,164"/>
+<area shape="rect" id="node8" href="namespace_smol_dock_1_1_score.html#af7f12c4b8451b856342af3afdbcadce8" title="SmolDock::Score::VinaLike\lIntermolecularScoringFunction" alt="" coords="237,269,436,311"/>
+<area shape="rect" id="node3" href="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine.html#a7bee39278168cb4d7ee6558b3a3d3bb4" title="Run the docking. " alt="" coords="484,5,739,47"/>
+<area shape="rect" id="node5" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="586,71,637,98"/>
+<area shape="rect" id="node6" href="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function.html#ab89f08da2f4f79abfe9130b3593c3522" title="SmolDock::Score::VinaLike\lRigidScoringFunction::Evaluate" alt="" coords="509,123,714,164"/>
+<area shape="rect" id="node7" href="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function.html#a574511b3c12769902e2c0366d4d3db96" title="SmolDock::Score::VinaLike\lRigidScoringFunction::Evaluate\lWithGradient" alt="" coords="509,189,714,245"/>
+<area shape="rect" id="node4" href="cli__interface_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="787,13,837,39"/>
+<area shape="rect" id="node9" href="class_smol_dock_1_1_score_1_1_vina_like_scoring_function.html#a5b2eaf1db8e2e0b98ee1f199be96a406" title="SmolDock::Score::VinaLike\lScoringFunction::Evaluate" alt="" coords="520,269,703,311"/>
+<area shape="rect" id="node10" href="class_smol_dock_1_1_score_1_1_vina_like_scoring_function.html#adc45f52c75b9c1d96edcdb3caf27160c" title="SmolDock::Score::VinaLike\lScoringFunction::EvaluateWithGradient" alt="" coords="486,335,737,376"/>
 </map>
 </div>
 
@@ -658,9 +656,9 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_scoring_function_factory_8cpp_source.html#l00011">11</a> of file <a class="el" href="_scoring_function_factory_8cpp_source.html">ScoringFunctionFactory.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_scoring_function_factory_8cpp_source.html#l00012">12</a> of file <a class="el" href="_scoring_function_factory_8cpp_source.html">ScoringFunctionFactory.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="namespace_smol_dock_1_1_score.html#a7d8761ef06699c5fc8793056bc903911a28bb0a5655ac4c67901e014f39619947">VinaRigid</a>.</p>
+<p class="reference">References <a class="el" href="namespace_smol_dock_1_1_score.html#a7d8761ef06699c5fc8793056bc903911ac31991e242b85fe1ed7c5d487d6b08f9">Vina</a>, and <a class="el" href="namespace_smol_dock_1_1_score.html#a7d8761ef06699c5fc8793056bc903911a28bb0a5655ac4c67901e014f39619947">VinaRigid</a>.</p>
 <div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-9-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-9-summary" class="dynsummary" style="display:block;">
@@ -669,7 +667,12 @@ Variables</h2></td></tr>
 <div class="center"><img src="namespace_smol_dock_1_1_score_acda93ea4444f7dacda77b03c0b278336_icgraph.png" border="0" usemap="#namespace_smol_dock_1_1_score_acda93ea4444f7dacda77b03c0b278336_icgraph" alt=""/></div>
 <map name="namespace_smol_dock_1_1_score_acda93ea4444f7dacda77b03c0b278336_icgraph" id="namespace_smol_dock_1_1_score_acda93ea4444f7dacda77b03c0b278336_icgraph">
 <area shape="rect" id="node2" href="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine.html#a7bee39278168cb4d7ee6558b3a3d3bb4" title="Run the docking. " alt="" coords="228,5,483,47"/>
-<area shape="rect" id="node3" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="531,13,581,39"/>
+<area shape="rect" id="node4" href="class_smol_dock_1_1_engine_1_1_pose_refiner.html#a8d5a30801f618205c115a52b7fa363ce" title="SmolDock::Engine::PoseRefiner\l::refinePose" alt="" coords="250,71,461,112"/>
+<area shape="rect" id="node6" href="class_smol_dock_1_1_re_scorer.html#a102b6af24e4f5dc420c2bdfba5a792f0" title="SmolDock::ReScorer\l::prepare" alt="" coords="282,136,429,177"/>
+<area shape="rect" id="node3" href="cli__interface_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="560,13,611,39"/>
+<area shape="rect" id="node5" href="vina__refiner_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="560,78,611,105"/>
+<area shape="rect" id="node7" href="_py_utilities_8h.html#a48b6c8c5377d2e7c99f7084ea93aa77b" title="export_Utilities" alt="" coords="531,143,640,170"/>
+<area shape="rect" id="node8" href="_smoldock_python_bindings_8cpp.html#a9002869529fdb857c7ffa4a170c4f3ef" title="BOOST_PYTHON_MODULE" alt="" coords="688,143,883,170"/>
 </map>
 </div>
 
@@ -720,9 +723,9 @@ Variables</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>The docking score </dd></dl>
 <dl class="section see"><dt>See also</dt><dd></dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_vina_like_scoring_function_8cpp_source.html#l00149">149</a> of file <a class="el" href="_vina_like_scoring_function_8cpp_source.html">VinaLikeScoringFunction.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_vina_like_rigid_scoring_function_8cpp_source.html#l00040">40</a> of file <a class="el" href="_vina_like_rigid_scoring_function_8cpp_source.html">VinaLikeRigidScoringFunction.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_internals_utility_functions_8h_source.html#l00072">SmolDock::applyTransformInPlace()</a>, <a class="el" href="i_protein_8h_source.html#l00040">SmolDock::iProtein::atomicRadius</a>, <a class="el" href="i_conformer_8h_source.html#l00049">SmolDock::iConformer::atomicRadius</a>, <a class="el" href="i_conformer_8h_source.html#l00040">SmolDock::iConformer::num_rotatable_bond</a>, <a class="el" href="_internals_utility_functions_8h_source.html#l00097">SmolDock::quaternionNorm()</a>, <a class="el" href="i_transform_8h_source.html#l00046">SmolDock::iTransform::rota</a>, <a class="el" href="_vina_like_scoring_function_8cpp_source.html#l00087">score_gauss1</a>, <a class="el" href="_vina_like_scoring_function_8cpp_source.html#l00088">score_gauss2</a>, <a class="el" href="_vina_like_scoring_function_8cpp_source.html#l00091">score_hydrogen</a>, <a class="el" href="_vina_like_scoring_function_8cpp_source.html#l00090">score_hydrophobic</a>, <a class="el" href="_vina_like_scoring_function_8cpp_source.html#l00089">score_repulsion</a>, <a class="el" href="_vina_like_scoring_function_8cpp_source.html#l00094">scoreForAtomCouple()</a>, <a class="el" href="i_protein_8h_source.html#l00041">SmolDock::iProtein::type</a>, <a class="el" href="i_conformer_8h_source.html#l00050">SmolDock::iConformer::type</a>, <a class="el" href="i_protein_8h_source.html#l00042">SmolDock::iProtein::variant</a>, <a class="el" href="i_conformer_8h_source.html#l00051">SmolDock::iConformer::variant</a>, <a class="el" href="i_transform_8h_source.html#l00031">SmolDock::iVect::x</a>, <a class="el" href="i_protein_8h_source.html#l00039">SmolDock::iProtein::x</a>, <a class="el" href="i_conformer_8h_source.html#l00048">SmolDock::iConformer::x</a>, <a class="el" href="i_transform_8h_source.html#l00031">SmolDock::iVect::y</a>, <a class="el" href="i_protein_8h_source.html#l00039">SmolDock::iProtein::y</a>, <a class="el" href="i_conformer_8h_source.html#l00048">SmolDock::iConformer::y</a>, <a class="el" href="i_transform_8h_source.html#l00031">SmolDock::iVect::z</a>, <a class="el" href="i_protein_8h_source.html#l00039">SmolDock::iProtein::z</a>, and <a class="el" href="i_conformer_8h_source.html#l00048">SmolDock::iConformer::z</a>.</p>
+<p class="reference">References <a class="el" href="_internals_utility_functions_8h_source.html#l00158">SmolDock::applyRigidTransformInPlace()</a>, <a class="el" href="i_protein_8h_source.html#l00041">SmolDock::iProtein::atomicRadius</a>, <a class="el" href="i_conformer_8h_source.html#l00049">SmolDock::iConformer::atomicRadius</a>, <a class="el" href="i_protein_8h_source.html#l00037">SmolDock::iProtein::center_x</a>, <a class="el" href="i_protein_8h_source.html#l00037">SmolDock::iProtein::center_y</a>, <a class="el" href="i_protein_8h_source.html#l00037">SmolDock::iProtein::center_z</a>, <a class="el" href="i_conformer_8h_source.html#l00040">SmolDock::iConformer::num_rotatable_bond</a>, <a class="el" href="i_protein_8h_source.html#l00038">SmolDock::iProtein::radius</a>, <a class="el" href="i_transform_8h_source.html#l00033">SmolDock::iTransform::rota</a>, <a class="el" href="_vina_like_common_8h_source.html#l00070">scoreForAtomCouple()</a>, <a class="el" href="i_protein_8h_source.html#l00042">SmolDock::iProtein::type</a>, <a class="el" href="i_conformer_8h_source.html#l00050">SmolDock::iConformer::type</a>, <a class="el" href="i_protein_8h_source.html#l00043">SmolDock::iProtein::variant</a>, <a class="el" href="i_conformer_8h_source.html#l00051">SmolDock::iConformer::variant</a>, <a class="el" href="i_protein_8h_source.html#l00040">SmolDock::iProtein::x</a>, <a class="el" href="i_conformer_8h_source.html#l00048">SmolDock::iConformer::x</a>, <a class="el" href="i_protein_8h_source.html#l00040">SmolDock::iProtein::y</a>, <a class="el" href="i_conformer_8h_source.html#l00048">SmolDock::iConformer::y</a>, <a class="el" href="i_protein_8h_source.html#l00040">SmolDock::iProtein::z</a>, and <a class="el" href="i_conformer_8h_source.html#l00048">SmolDock::iConformer::z</a>.</p>
 <div id="dynsection-10" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-10-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-10-summary" class="dynsummary" style="display:block;">
@@ -730,16 +733,13 @@ Variables</h2></td></tr>
 <div id="dynsection-10-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="namespace_smol_dock_1_1_score_ac205731c7b0098c2900d9d16fff1a93b_cgraph.png" border="0" usemap="#namespace_smol_dock_1_1_score_ac205731c7b0098c2900d9d16fff1a93b_cgraph" alt=""/></div>
 <map name="namespace_smol_dock_1_1_score_ac205731c7b0098c2900d9d16fff1a93b_cgraph" id="namespace_smol_dock_1_1_score_ac205731c7b0098c2900d9d16fff1a93b_cgraph">
-<area shape="rect" id="node2" href="namespace_smol_dock.html#a73bb4756419c2b3361ae4d23b24eee20" title="Apply the provided iTransform to a vector. " alt="" coords="248,57,429,99"/>
-<area shape="rect" id="node5" href="namespace_smol_dock.html#afb62962c202721eaa8aa64d19bd42fdf" title="Returns the norm of the given quaternion. " alt="" coords="247,123,430,150"/>
-<area shape="rect" id="node6" href="namespace_smol_dock_1_1_score.html#ac23b7d24b31779cc5cd7d8bd4006fa52" title="SmolDock::Score::scoreFor\lAtomCouple" alt="" coords="247,175,431,216"/>
-<area shape="rect" id="node3" href="namespace_smol_dock.html#a835c8bf0a7983ba17c48cd10f152726f" title="Apply the rotation given by a quaternion to a vector. " alt="" coords="495,5,678,47"/>
-<area shape="rect" id="node4" href="namespace_smol_dock.html#a20628b953f3dec7f26d7c8221a508160" title="Apply the provided translation to a vector. " alt="" coords="493,71,680,112"/>
-<area shape="rect" id="node7" href="namespace_smol_dock_1_1_score.html#ac5efd92ad2db7d779a491ae233cbb2ec" title="SmolDock::Score::hydrogen\lBondingPossible" alt="" coords="493,161,680,203"/>
-<area shape="rect" id="node11" href="namespace_smol_dock_1_1_score.html#adae31ea0b0f6630cdad8c85e9802ed9d" title="SmolDock::Score::isHydrophobic" alt="" coords="479,227,695,254"/>
-<area shape="rect" id="node8" href="namespace_smol_dock_1_1_score.html#a0b455de7380586a1fd535f76499f16f7" title="SmolDock::Score::hydrogen\lDonorAcceptorPair" alt="" coords="743,161,929,203"/>
-<area shape="rect" id="node9" href="namespace_smol_dock_1_1_score.html#afc0ba7560e9104fcef4bc61ff8d461c1" title="SmolDock::Score::isHydrogen\lAcceptor" alt="" coords="977,128,1176,169"/>
-<area shape="rect" id="node10" href="namespace_smol_dock_1_1_score.html#aada28b98ff116da3300979ddf15dc557" title="SmolDock::Score::isHydrogen\lDonor" alt="" coords="977,193,1176,235"/>
+<area shape="rect" id="node2" href="namespace_smol_dock.html#aea0b5b0a06c4650f4ca502a3f1da6e98" title="Apply the provided iTransform to a vector (only rigid component : translation + global rotation) ..." alt="" coords="247,5,457,47"/>
+<area shape="rect" id="node3" href="namespace_smol_dock_1_1_score.html#ac23b7d24b31779cc5cd7d8bd4006fa52" title="SmolDock::Score::scoreFor\lAtomCouple" alt="" coords="260,71,444,112"/>
+<area shape="rect" id="node4" href="namespace_smol_dock_1_1_score.html#ac5efd92ad2db7d779a491ae233cbb2ec" title="SmolDock::Score::hydrogen\lBondingPossible" alt="" coords="520,41,707,83"/>
+<area shape="rect" id="node8" href="namespace_smol_dock_1_1_score.html#adae31ea0b0f6630cdad8c85e9802ed9d" title="SmolDock::Score::isHydrophobic" alt="" coords="505,107,721,134"/>
+<area shape="rect" id="node5" href="namespace_smol_dock_1_1_score.html#a0b455de7380586a1fd535f76499f16f7" title="SmolDock::Score::hydrogen\lDonorAcceptorPair" alt="" coords="769,41,956,83"/>
+<area shape="rect" id="node6" href="namespace_smol_dock_1_1_score.html#afc0ba7560e9104fcef4bc61ff8d461c1" title="SmolDock::Score::isHydrogen\lAcceptor" alt="" coords="1004,8,1203,49"/>
+<area shape="rect" id="node7" href="namespace_smol_dock_1_1_score.html#aada28b98ff116da3300979ddf15dc557" title="SmolDock::Score::isHydrogen\lDonor" alt="" coords="1004,73,1203,115"/>
 </map>
 </div>
 <div id="dynsection-11" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -750,95 +750,78 @@ Variables</h2></td></tr>
 <div class="center"><img src="namespace_smol_dock_1_1_score_ac205731c7b0098c2900d9d16fff1a93b_icgraph.png" border="0" usemap="#namespace_smol_dock_1_1_score_ac205731c7b0098c2900d9d16fff1a93b_icgraph" alt=""/></div>
 <map name="namespace_smol_dock_1_1_score_ac205731c7b0098c2900d9d16fff1a93b_icgraph" id="namespace_smol_dock_1_1_score_ac205731c7b0098c2900d9d16fff1a93b_icgraph">
 <area shape="rect" id="node2" href="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine.html#a7bee39278168cb4d7ee6558b3a3d3bb4" title="Run the docking. " alt="" coords="247,5,501,47"/>
-<area shape="rect" id="node3" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="607,42,658,69"/>
-<area shape="rect" id="node4" href="namespace_smol_dock_1_1_wrapper.html#afc6fe0925036a67cbd9856c1077296ca" title="SmolDock::Wrapper::\lgetScoringFunc" alt="" coords="300,123,448,164"/>
-<area shape="rect" id="node7" href="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function.html#ab89f08da2f4f79abfe9130b3593c3522" title="SmolDock::Score::VinaLike\lRigidScoringFunction::Evaluate" alt="" coords="271,188,477,229"/>
-<area shape="rect" id="node8" href="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function.html#a574511b3c12769902e2c0366d4d3db96" title="SmolDock::Score::VinaLike\lRigidScoringFunction::Evaluate\lWithGradient" alt="" coords="271,254,477,310"/>
-<area shape="rect" id="node5" href="_py_scoring_functions_8h.html#a2ede6b770a3e6131986d822ec5842b63" title="export_ScoringFunctions" alt="" coords="549,130,716,157"/>
-<area shape="rect" id="node6" href="_smoldock_python_bindings_8cpp.html#a9002869529fdb857c7ffa4a170c4f3ef" title="BOOST_PYTHON_MODULE" alt="" coords="764,130,959,157"/>
+<area shape="rect" id="node4" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="349,71,399,98"/>
+<area shape="rect" id="node5" href="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function.html#ab89f08da2f4f79abfe9130b3593c3522" title="SmolDock::Score::VinaLike\lRigidScoringFunction::Evaluate" alt="" coords="271,123,477,164"/>
+<area shape="rect" id="node6" href="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function.html#a574511b3c12769902e2c0366d4d3db96" title="SmolDock::Score::VinaLike\lRigidScoringFunction::Evaluate\lWithGradient" alt="" coords="271,189,477,245"/>
+<area shape="rect" id="node3" href="cli__interface_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="549,13,600,39"/>
 </map>
 </div>
 
 </div>
 </div>
-<h2 class="groupheader">Variable Documentation</h2>
-<a id="a96c89e7cf08ae5049b8d04653cb39ad5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a96c89e7cf08ae5049b8d04653cb39ad5">&#9670;&nbsp;</a></span>score_gauss1</h2>
+<a id="af7f12c4b8451b856342af3afdbcadce8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af7f12c4b8451b856342af3afdbcadce8">&#9670;&nbsp;</a></span>VinaLikeIntermolecularScoringFunction()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">double SmolDock::Score::score_gauss1 = 0</td>
+          <td class="memname">double SmolDock::Score::VinaLikeIntermolecularScoringFunction </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespace_smol_dock.html#struct_smol_dock_1_1i_conformer">iConformer</a> &amp;&#160;</td>
+          <td class="paramname"><em>ligand_</em>, </td>
         </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_vina_like_scoring_function_8cpp_source.html#l00087">87</a> of file <a class="el" href="_vina_like_scoring_function_8cpp_source.html">VinaLikeScoringFunction.cpp</a>.</p>
-
-</div>
-</div>
-<a id="a2deab2d99e28d64401794c7acee7c134"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2deab2d99e28d64401794c7acee7c134">&#9670;&nbsp;</a></span>score_gauss2</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
         <tr>
-          <td class="memname">double SmolDock::Score::score_gauss2 = 0</td>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="namespace_smol_dock.html#struct_smol_dock_1_1i_transform">iTransform</a> &amp;&#160;</td>
+          <td class="paramname"><em>transform</em>, </td>
         </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_vina_like_scoring_function_8cpp_source.html#l00088">88</a> of file <a class="el" href="_vina_like_scoring_function_8cpp_source.html">VinaLikeScoringFunction.cpp</a>.</p>
-
-</div>
-</div>
-<a id="a5fcf6b32516650efc62433e4bb791c18"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5fcf6b32516650efc62433e4bb791c18">&#9670;&nbsp;</a></span>score_hydrogen</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
         <tr>
-          <td class="memname">double SmolDock::Score::score_hydrogen = 0</td>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="namespace_smol_dock.html#struct_smol_dock_1_1i_protein">iProtein</a> &amp;&#160;</td>
+          <td class="paramname"><em>protein</em>&#160;</td>
         </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_vina_like_scoring_function_8cpp_source.html#l00091">91</a> of file <a class="el" href="_vina_like_scoring_function_8cpp_source.html">VinaLikeScoringFunction.cpp</a>.</p>
-
-</div>
-</div>
-<a id="abdea0df8ff6c5330ad0daebbbea89c62"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abdea0df8ff6c5330ad0daebbbea89c62">&#9670;&nbsp;</a></span>score_hydrophobic</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
         <tr>
-          <td class="memname">double SmolDock::Score::score_hydrophobic = 0</td>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_vina_like_scoring_function_8cpp_source.html#l00090">90</a> of file <a class="el" href="_vina_like_scoring_function_8cpp_source.html">VinaLikeScoringFunction.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_vina_like_scoring_function_8cpp_source.html#l00020">20</a> of file <a class="el" href="_vina_like_scoring_function_8cpp_source.html">VinaLikeScoringFunction.cpp</a>.</p>
 
+<p class="reference">References <a class="el" href="_internals_utility_functions_8h_source.html#l00103">SmolDock::applyBondRotationInPlace()</a>, <a class="el" href="_internals_utility_functions_8h_source.html#l00158">SmolDock::applyRigidTransformInPlace()</a>, <a class="el" href="i_protein_8h_source.html#l00041">SmolDock::iProtein::atomicRadius</a>, <a class="el" href="i_conformer_8h_source.html#l00049">SmolDock::iConformer::atomicRadius</a>, <a class="el" href="i_transform_8h_source.html#l00035">SmolDock::iTransform::bondRotationsAngles</a>, <a class="el" href="i_protein_8h_source.html#l00037">SmolDock::iProtein::center_x</a>, <a class="el" href="i_protein_8h_source.html#l00037">SmolDock::iProtein::center_y</a>, <a class="el" href="i_protein_8h_source.html#l00037">SmolDock::iProtein::center_z</a>, <a class="el" href="i_conformer_8h_source.html#l00040">SmolDock::iConformer::num_rotatable_bond</a>, <a class="el" href="i_protein_8h_source.html#l00038">SmolDock::iProtein::radius</a>, <a class="el" href="i_transform_8h_source.html#l00033">SmolDock::iTransform::rota</a>, <a class="el" href="_vina_like_common_8h_source.html#l00070">scoreForAtomCouple()</a>, <a class="el" href="i_protein_8h_source.html#l00042">SmolDock::iProtein::type</a>, <a class="el" href="i_conformer_8h_source.html#l00050">SmolDock::iConformer::type</a>, <a class="el" href="i_protein_8h_source.html#l00043">SmolDock::iProtein::variant</a>, <a class="el" href="i_conformer_8h_source.html#l00051">SmolDock::iConformer::variant</a>, <a class="el" href="i_protein_8h_source.html#l00040">SmolDock::iProtein::x</a>, <a class="el" href="i_conformer_8h_source.html#l00048">SmolDock::iConformer::x</a>, <a class="el" href="i_protein_8h_source.html#l00040">SmolDock::iProtein::y</a>, <a class="el" href="i_conformer_8h_source.html#l00048">SmolDock::iConformer::y</a>, <a class="el" href="i_protein_8h_source.html#l00040">SmolDock::iProtein::z</a>, and <a class="el" href="i_conformer_8h_source.html#l00048">SmolDock::iConformer::z</a>.</p>
+<div id="dynsection-12" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-12-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-12-summary" class="dynsummary" style="display:block;">
 </div>
+<div id="dynsection-12-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="namespace_smol_dock_1_1_score_af7f12c4b8451b856342af3afdbcadce8_cgraph.png" border="0" usemap="#namespace_smol_dock_1_1_score_af7f12c4b8451b856342af3afdbcadce8_cgraph" alt=""/></div>
+<map name="namespace_smol_dock_1_1_score_af7f12c4b8451b856342af3afdbcadce8_cgraph" id="namespace_smol_dock_1_1_score_af7f12c4b8451b856342af3afdbcadce8_cgraph">
+<area shape="rect" id="node2" href="namespace_smol_dock.html#a1843982e01fb9a9b852c5f64363a158c" title="SmolDock::applyBondRotation\lInPlace" alt="" coords="257,5,458,47"/>
+<area shape="rect" id="node3" href="namespace_smol_dock.html#aea0b5b0a06c4650f4ca502a3f1da6e98" title="Apply the provided iTransform to a vector (only rigid component : translation + global rotation) ..." alt="" coords="252,71,463,112"/>
+<area shape="rect" id="node4" href="namespace_smol_dock_1_1_score.html#ac23b7d24b31779cc5cd7d8bd4006fa52" title="SmolDock::Score::scoreFor\lAtomCouple" alt="" coords="265,136,449,177"/>
+<area shape="rect" id="node5" href="namespace_smol_dock_1_1_score.html#ac5efd92ad2db7d779a491ae233cbb2ec" title="SmolDock::Score::hydrogen\lBondingPossible" alt="" coords="525,107,712,148"/>
+<area shape="rect" id="node9" href="namespace_smol_dock_1_1_score.html#adae31ea0b0f6630cdad8c85e9802ed9d" title="SmolDock::Score::isHydrophobic" alt="" coords="511,173,727,199"/>
+<area shape="rect" id="node6" href="namespace_smol_dock_1_1_score.html#a0b455de7380586a1fd535f76499f16f7" title="SmolDock::Score::hydrogen\lDonorAcceptorPair" alt="" coords="775,107,961,148"/>
+<area shape="rect" id="node7" href="namespace_smol_dock_1_1_score.html#afc0ba7560e9104fcef4bc61ff8d461c1" title="SmolDock::Score::isHydrogen\lAcceptor" alt="" coords="1009,73,1208,115"/>
+<area shape="rect" id="node8" href="namespace_smol_dock_1_1_score.html#aada28b98ff116da3300979ddf15dc557" title="SmolDock::Score::isHydrogen\lDonor" alt="" coords="1009,139,1208,180"/>
+</map>
 </div>
-<a id="aedf87eb6c6107722da5ce81907ea9609"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aedf87eb6c6107722da5ce81907ea9609">&#9670;&nbsp;</a></span>score_repulsion</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">double SmolDock::Score::score_repulsion = 0</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_vina_like_scoring_function_8cpp_source.html#l00089">89</a> of file <a class="el" href="_vina_like_scoring_function_8cpp_source.html">VinaLikeScoringFunction.cpp</a>.</p>
+<div id="dynsection-13" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-13-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-13-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-13-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="namespace_smol_dock_1_1_score_af7f12c4b8451b856342af3afdbcadce8_icgraph.png" border="0" usemap="#namespace_smol_dock_1_1_score_af7f12c4b8451b856342af3afdbcadce8_icgraph" alt=""/></div>
+<map name="namespace_smol_dock_1_1_score_af7f12c4b8451b856342af3afdbcadce8_icgraph" id="namespace_smol_dock_1_1_score_af7f12c4b8451b856342af3afdbcadce8_icgraph">
+<area shape="rect" id="node2" href="class_smol_dock_1_1_score_1_1_vina_like_scoring_function.html#a5b2eaf1db8e2e0b98ee1f199be96a406" title="SmolDock::Score::VinaLike\lScoringFunction::Evaluate" alt="" coords="286,5,469,47"/>
+<area shape="rect" id="node3" href="class_smol_dock_1_1_score_1_1_vina_like_scoring_function.html#adc45f52c75b9c1d96edcdb3caf27160c" title="SmolDock::Score::VinaLike\lScoringFunction::EvaluateWithGradient" alt="" coords="252,71,503,112"/>
+</map>
+</div>
 
 </div>
 </div>

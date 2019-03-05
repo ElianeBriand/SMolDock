@@ -248,7 +248,7 @@ namespace SmolDock {
             this->rwmol->setProp("_Name", "ligand");
         }
 
-
+        unsigned int currentAtomIndexInVector = 0;
         for (auto atom_it = rwmol->beginAtoms(); atom_it != rwmol->endAtoms(); ++atom_it) {
             std::shared_ptr<Atom> current_atom;
             // TODO : refactor this using the std::set of type-name-properties
@@ -273,6 +273,9 @@ namespace SmolDock {
             current_atom->setAtomPosition(std::make_tuple(position.x, position.y, position.z));
 
             atoms.push_back(current_atom);
+            this->RDKitAtomIdxToAtomsPosInVector[(*atom_it)->getIdx()] = currentAtomIndexInVector;
+            this->atomsPosInVectorToRDKitAtomIdx[currentAtomIndexInVector] = (*atom_it)->getIdx();
+            currentAtomIndexInVector++;
         }
 
         for (auto bond_it = rwmol->beginBonds(); bond_it != rwmol->endBonds(); ++bond_it) {
@@ -447,8 +450,8 @@ namespace SmolDock {
                         continue;
                     }
                     atomIdxOfRotatedAtoms.push_back(nbr_atom->getIdx());
-                    // BOOST_LOG_TRIVIAL(debug) << "AdjAtom from " << atom->getIdx() <<"(" <<atom->getSymbol() << ")" <<
-                    // " : " << nbr_atom->getIdx() << " : " << nbr_atom->getSymbol();
+                     //BOOST_LOG_TRIVIAL(debug) << "AdjAtom from " << atom->getIdx() <<"(" <<atom->getSymbol() << ")" <<
+                    //" : " << nbr_atom->getIdx() << " : " << nbr_atom->getSymbol();
                     exploreAdj(nbr_atom, avoidThisAtom, avoidThisOtherAtom);
                     ++nbr;
                 }
@@ -595,28 +598,18 @@ namespace SmolDock {
                 acc_z(position.z);
             }
 
-            conformer.centroidNormalizingTransform.x = mean(acc_x);
-            conformer.centroidNormalizingTransform.y = mean(acc_y);
-            conformer.centroidNormalizingTransform.z = mean(acc_z);
+            conformer.centroidNormalizingTransform = Eigen::Translation<double, 3>(mean(acc_x), mean(acc_y), mean(acc_z));
 
         } else {
-            conformer.centroidNormalizingTransform.x = 0.0;
-            conformer.centroidNormalizingTransform.y = 0.0;
-            conformer.centroidNormalizingTransform.z = 0.0;
+            conformer.centroidNormalizingTransform = Eigen::Translation<double, 3>(0.0, 0.0, 0.0);
         }
 
         for (auto atom_it = rwmol->beginAtoms(); atom_it != rwmol->endAtoms(); ++atom_it) {
 
             // Find the corresponding Atom in this->atoms
-            auto current_Atom_it = (std::find_if(std::begin(this->atoms), std::end(this->atoms),
-                                                 [&](const std::shared_ptr<Atom> &e) {
-                                                     return e->getAtomID() == (*atom_it)->getIdx();
-                                                 }));
-            if (current_Atom_it == std::end(this->atoms)) {
-                BOOST_LOG_TRIVIAL(error) << "Cannot find current atom";
-                std::exit(3);
-            }
-            std::shared_ptr<Atom> current_Atom = *current_Atom_it;
+            int atomIdx = (*atom_it)->getIdx();
+            unsigned int atomsVectorIdx = this->RDKitAtomIdxToAtomsPosInVector.at(atomIdx);
+            std::shared_ptr<Atom> current_Atom = this->atoms[atomsVectorIdx];
 
             assert(current_Atom != nullptr);
 
@@ -626,9 +619,9 @@ namespace SmolDock {
             const RDGeom::Point3D &position = rdkit_conformer.getAtomPos((*atom_it)->getIdx());
 
             if (centroidNormalization) {
-                conformer.x[(*atom_it)->getIdx()] = (position.x - conformer.centroidNormalizingTransform.x);
-                conformer.y[(*atom_it)->getIdx()] = (position.y - conformer.centroidNormalizingTransform.y);
-                conformer.z[(*atom_it)->getIdx()] = (position.z - conformer.centroidNormalizingTransform.z);
+                conformer.x[(*atom_it)->getIdx()] = (position.x - conformer.centroidNormalizingTransform.x());
+                conformer.y[(*atom_it)->getIdx()] = (position.y - conformer.centroidNormalizingTransform.y());
+                conformer.z[(*atom_it)->getIdx()] = (position.z - conformer.centroidNormalizingTransform.z());
             } else {
 
                 conformer.x[(*atom_it)->getIdx()] = position.x;
@@ -686,6 +679,56 @@ namespace SmolDock {
 
         BOOST_LOG_TRIVIAL(info) << "Wrote ligand to mol file : " << filename;
         return false;
+    }
+
+    unsigned int Molecule::applyAtomVariant(std::string smarts_pattern, Atom::AtomVariant variant) {
+        std::shared_ptr<RDKit::RWMol> flaggingPattern(RDKit::SmartsToMol(smarts_pattern));
+
+        std::vector<RDKit::MatchVectType> matchFlagged;
+
+        RDKit::SubstructMatch(static_cast<const RDKit::ROMol &>(*this->rwmol), *flaggingPattern,
+                              matchFlagged);
+
+        if(matchFlagged.size() == 0)
+            return 0;
+
+        int queryAtomToBeFlaggedIdx = -1;
+        RDKit::ROMol::VERTEX_ITER it , end;
+        boost::tie( it , end ) = flaggingPattern->getVertices();
+        while( it != end ) {
+            const RDKit::Atom* atom = (*flaggingPattern)[*it];
+            int atomMapNum = atom->getAtomMapNum();
+            if(atomMapNum == 1)
+            {
+                queryAtomToBeFlaggedIdx = *it;
+                break; // We found the atom which has SMARTS atom map 1, eg [C:1]ON, then C is matched
+            }
+            ++it;
+        }
+
+        unsigned int num_matched_atoms = 0;
+        for (unsigned int i = 0; i < matchFlagged.size(); ++i) {
+            for(unsigned int j = 0; j< matchFlagged[i].size(); ++j) {
+
+                int queryIdx = std::get<0>(matchFlagged[i][j]);
+                int atomIdx = std::get<1>(matchFlagged[i][j]);
+                int vectorPos = this->RDKitAtomIdxToAtomsPosInVector[atomIdx];
+
+
+                if (queryIdx == queryAtomToBeFlaggedIdx) // We flag
+                {
+                    Atom::AtomVariant var = this->atoms[vectorPos]->getAtomVariant();
+                    var = var | variant;
+                    this->atoms[vectorPos]->setAtomVariant(var);
+
+                    num_matched_atoms++;
+                }
+            }
+
+        }
+        BOOST_LOG_TRIVIAL(info) << num_matched_atoms << " atoms were flagged with [" << atomVariantToString(variant) << "]";
+        BOOST_LOG_TRIVIAL(debug) << "   Matching SMARTS : " << smarts_pattern;
+        return num_matched_atoms;
     }
 
 

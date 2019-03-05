@@ -15,7 +15,8 @@ namespace SmolDock::Score {
 
 
     enum class ScoringFunctionType {
-        VinaRigid
+        VinaRigid,
+        Vina
     };
 
     std::shared_ptr<ScoringFunction> scoringFunctionFactory(ScoringFunctionType t, const iConformer &conformer,

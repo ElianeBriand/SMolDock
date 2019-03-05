@@ -112,7 +112,7 @@ $(document).ready(function(){initNavTree('class_smol_dock_1_1_protein.html','');
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="class_smol_dock_1_1_protein__inherit__graph.png" border="0" usemap="#_smol_dock_1_1_protein_inherit__map" alt="Inheritance graph"/></div>
 <map name="_smol_dock_1_1_protein_inherit__map" id="_smol_dock_1_1_protein_inherit__map">
-<area shape="rect" id="node2" href="class_smol_dock_1_1_structure.html" title="{SmolDock::Structure\n||}" alt="" coords="8,5,152,83"/>
+<area shape="rect" id="node2" href="class_smol_dock_1_1_structure.html" title="{SmolDock::Structure\n||}" alt="" coords="19,5,163,83"/>
 </map>
 </div>
 <div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -137,6 +137,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a2cccfc64e088ed1846d15c6909c9379f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_smol_dock.html#struct_smol_dock_1_1i_protein">iProtein</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_smol_dock_1_1_protein.html#a2cccfc64e088ed1846d15c6909c9379f">getiProtein</a> () const</td></tr>
 <tr class="memdesc:a2cccfc64e088ed1846d15c6909c9379f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return an <a class="el" href="namespace_smol_dock.html#struct_smol_dock_1_1i_protein" title="Internal, fast representation of Protein for efficiency. ">iProtein</a> object for use in docking engine.  <a href="#a2cccfc64e088ed1846d15c6909c9379f">More...</a><br /></td></tr>
 <tr class="separator:a2cccfc64e088ed1846d15c6909c9379f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a672e4bbde8b035f2ca2f5ecff764449f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_smol_dock.html#struct_smol_dock_1_1i_protein">iProtein</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_smol_dock_1_1_protein.html#a672e4bbde8b035f2ca2f5ecff764449f">getPartialiProtein_sphere</a> (std::array&lt; double, 3 &gt; center, double radius, double margin) const</td></tr>
+<tr class="separator:a672e4bbde8b035f2ca2f5ecff764449f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22dc0941f232c61ba79a37df44c7014b"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_smol_dock_1_1_protein.html#a22dc0941f232c61ba79a37df44c7014b">getMaxRadius</a> () const</td></tr>
+<tr class="separator:a22dc0941f232c61ba79a37df44c7014b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -162,12 +166,14 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a65917695fc8db4c6dfcc5f1f6157787b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8892ec123bb38e99930b8c884cff5b79"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_smol_dock_1_1_protein.html#a8892ec123bb38e99930b8c884cff5b79">max_z</a> = 0</td></tr>
 <tr class="separator:a8892ec123bb38e99930b8c884cff5b79"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7d19464a2328c6c7aee125ea1704583"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_smol_dock_1_1_protein.html#ab7d19464a2328c6c7aee125ea1704583">max_distance_to_center</a> = 0</td></tr>
+<tr class="separator:ab7d19464a2328c6c7aee125ea1704583"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class representing "rich" protein. </p>
 <p>Contains all extended attributes and functions. </p>
 
-<p class="definition">Definition at line <a class="el" href="_protein_8h_source.html#l00048">48</a> of file <a class="el" href="_protein_8h_source.html">Protein.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_protein_8h_source.html#l00047">47</a> of file <a class="el" href="_protein_8h_source.html">Protein.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a20351fef4b88812de1baa0c4eb74642a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a20351fef4b88812de1baa0c4eb74642a">&#9670;&nbsp;</a></span>Protein()</h2>
@@ -213,9 +219,9 @@ Private Attributes</h2></td></tr>
 <p>Return an <a class="el" href="namespace_smol_dock.html#struct_smol_dock_1_1i_protein" title="Internal, fast representation of Protein for efficiency. ">iProtein</a> object for use in docking engine. </p>
 <dl class="section return"><dt>Returns</dt><dd>the equivalent <a class="el" href="namespace_smol_dock.html#struct_smol_dock_1_1i_protein" title="Internal, fast representation of Protein for efficiency. ">iProtein</a> object </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_protein_8cpp_source.html#l00203">203</a> of file <a class="el" href="_protein_8cpp_source.html">Protein.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_protein_8cpp_source.html#l00235">235</a> of file <a class="el" href="_protein_8cpp_source.html">Protein.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="i_protein_8h_source.html#l00045">SmolDock::iProtein::AAId_to_AtomPositionInVect</a>, <a class="el" href="_protein_8h_source.html#l00072">aminoacids</a>, <a class="el" href="i_protein_8h_source.html#l00037">SmolDock::iProtein::center_x</a>, <a class="el" href="_protein_8h_source.html#l00075">center_x</a>, <a class="el" href="i_protein_8h_source.html#l00037">SmolDock::iProtein::center_y</a>, <a class="el" href="_protein_8h_source.html#l00076">center_y</a>, <a class="el" href="i_protein_8h_source.html#l00037">SmolDock::iProtein::center_z</a>, <a class="el" href="_protein_8h_source.html#l00077">center_z</a>, and <a class="el" href="i_protein_8h_source.html#l00039">SmolDock::iProtein::x</a>.</p>
+<p class="reference">References <a class="el" href="i_protein_8h_source.html#l00046">SmolDock::iProtein::AAId_to_AtomPositionInVect</a>, <a class="el" href="_protein_8h_source.html#l00076">aminoacids</a>, <a class="el" href="i_protein_8h_source.html#l00037">SmolDock::iProtein::center_x</a>, <a class="el" href="_protein_8h_source.html#l00079">center_x</a>, <a class="el" href="i_protein_8h_source.html#l00037">SmolDock::iProtein::center_y</a>, <a class="el" href="_protein_8h_source.html#l00080">center_y</a>, <a class="el" href="i_protein_8h_source.html#l00037">SmolDock::iProtein::center_z</a>, <a class="el" href="_protein_8h_source.html#l00081">center_z</a>, <a class="el" href="_protein_8h_source.html#l00091">max_distance_to_center</a>, <a class="el" href="i_protein_8h_source.html#l00038">SmolDock::iProtein::radius</a>, and <a class="el" href="i_protein_8h_source.html#l00040">SmolDock::iProtein::x</a>.</p>
 <div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-2-summary" class="dynsummary" style="display:block;">
@@ -224,11 +230,95 @@ Private Attributes</h2></td></tr>
 <div class="center"><img src="class_smol_dock_1_1_protein_a2cccfc64e088ed1846d15c6909c9379f_icgraph.png" border="0" usemap="#class_smol_dock_1_1_protein_a2cccfc64e088ed1846d15c6909c9379f_icgraph" alt=""/></div>
 <map name="class_smol_dock_1_1_protein_a2cccfc64e088ed1846d15c6909c9379f_icgraph" id="class_smol_dock_1_1_protein_a2cccfc64e088ed1846d15c6909c9379f_icgraph">
 <area shape="rect" id="node2" href="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine.html#a3abc1a2cdbb3f1b9f545f863f9ec5e43" title="Prepare the engine for docking. " alt="" coords="193,5,421,61"/>
-<area shape="rect" id="node3" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="507,85,557,112"/>
-<area shape="rect" id="node4" href="_py_structures_8h.html#a18cad6e29d14a0da9d2cd9464e7e2356" title="export_Structures" alt="" coords="469,137,595,164"/>
-<area shape="rect" id="node6" href="class_smol_dock_1_1_re_scorer.html#a102b6af24e4f5dc420c2bdfba5a792f0" title="SmolDock::ReScorer\l::prepare" alt="" coords="234,187,381,229"/>
-<area shape="rect" id="node5" href="_smoldock_python_bindings_8cpp.html#a9002869529fdb857c7ffa4a170c4f3ef" title="BOOST_PYTHON_MODULE" alt="" coords="643,167,837,193"/>
-<area shape="rect" id="node7" href="_py_utilities_8h.html#a48b6c8c5377d2e7c99f7084ea93aa77b" title="export_Utilities" alt="" coords="477,192,587,219"/>
+<area shape="rect" id="node4" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="282,85,333,112"/>
+<area shape="rect" id="node5" href="class_smol_dock_1_1_engine_1_1_pose_refiner.html#a8d5a30801f618205c115a52b7fa363ce" title="SmolDock::Engine::PoseRefiner\l::refinePose" alt="" coords="202,137,413,178"/>
+<area shape="rect" id="node7" href="_py_structures_8h.html#a18cad6e29d14a0da9d2cd9464e7e2356" title="export_Structures" alt="" coords="469,207,595,233"/>
+<area shape="rect" id="node9" href="class_smol_dock_1_1_re_scorer.html#a102b6af24e4f5dc420c2bdfba5a792f0" title="SmolDock::ReScorer\l::prepare" alt="" coords="234,254,381,295"/>
+<area shape="rect" id="node3" href="cli__interface_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="507,20,557,47"/>
+<area shape="rect" id="node6" href="vina__refiner_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="507,144,557,171"/>
+<area shape="rect" id="node8" href="_smoldock_python_bindings_8cpp.html#a9002869529fdb857c7ffa4a170c4f3ef" title="BOOST_PYTHON_MODULE" alt="" coords="643,233,837,260"/>
+<area shape="rect" id="node10" href="_py_utilities_8h.html#a48b6c8c5377d2e7c99f7084ea93aa77b" title="export_Utilities" alt="" coords="477,259,587,285"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a22dc0941f232c61ba79a37df44c7014b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22dc0941f232c61ba79a37df44c7014b">&#9670;&nbsp;</a></span>getMaxRadius()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double SmolDock::Protein::getMaxRadius </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_protein_8cpp_source.html#l00276">276</a> of file <a class="el" href="_protein_8cpp_source.html">Protein.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="_protein_8h_source.html#l00091">max_distance_to_center</a>.</p>
+<div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="class_smol_dock_1_1_protein_a22dc0941f232c61ba79a37df44c7014b_icgraph.png" border="0" usemap="#class_smol_dock_1_1_protein_a22dc0941f232c61ba79a37df44c7014b_icgraph" alt=""/></div>
+<map name="class_smol_dock_1_1_protein_a22dc0941f232c61ba79a37df44c7014b_icgraph" id="class_smol_dock_1_1_protein_a22dc0941f232c61ba79a37df44c7014b_icgraph">
+<area shape="rect" id="node2" href="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine.html#a7bee39278168cb4d7ee6558b3a3d3bb4" title="Run the docking. " alt="" coords="193,5,448,47"/>
+<area shape="rect" id="node3" href="cli__interface_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="496,13,547,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a672e4bbde8b035f2ca2f5ecff764449f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a672e4bbde8b035f2ca2f5ecff764449f">&#9670;&nbsp;</a></span>getPartialiProtein_sphere()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespace_smol_dock.html#struct_smol_dock_1_1i_protein">iProtein</a> SmolDock::Protein::getPartialiProtein_sphere </td>
+          <td>(</td>
+          <td class="paramtype">std::array&lt; double, 3 &gt;&#160;</td>
+          <td class="paramname"><em>center</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>radius</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>margin</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_protein_8cpp_source.html#l00280">280</a> of file <a class="el" href="_protein_8cpp_source.html">Protein.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="i_protein_8h_source.html#l00046">SmolDock::iProtein::AAId_to_AtomPositionInVect</a>, <a class="el" href="_protein_8h_source.html#l00076">aminoacids</a>, <a class="el" href="i_protein_8h_source.html#l00037">SmolDock::iProtein::center_x</a>, <a class="el" href="i_protein_8h_source.html#l00037">SmolDock::iProtein::center_y</a>, <a class="el" href="i_protein_8h_source.html#l00037">SmolDock::iProtein::center_z</a>, <a class="el" href="i_protein_8h_source.html#l00038">SmolDock::iProtein::radius</a>, and <a class="el" href="i_protein_8h_source.html#l00040">SmolDock::iProtein::x</a>.</p>
+<div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="class_smol_dock_1_1_protein_a672e4bbde8b035f2ca2f5ecff764449f_icgraph.png" border="0" usemap="#class_smol_dock_1_1_protein_a672e4bbde8b035f2ca2f5ecff764449f_icgraph" alt=""/></div>
+<map name="class_smol_dock_1_1_protein_a672e4bbde8b035f2ca2f5ecff764449f_icgraph" id="class_smol_dock_1_1_protein_a672e4bbde8b035f2ca2f5ecff764449f_icgraph">
+<area shape="rect" id="node2" href="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine.html#a3abc1a2cdbb3f1b9f545f863f9ec5e43" title="Prepare the engine for docking. " alt="" coords="220,5,448,61"/>
+<area shape="rect" id="node3" href="cli__interface_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="496,20,547,47"/>
 </map>
 </div>
 
@@ -271,14 +361,14 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>whether the parsing was successful. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_protein_8cpp_source.html#l00041">41</a> of file <a class="el" href="_protein_8cpp_source.html">Protein.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_protein_8cpp_source.html#l00042">42</a> of file <a class="el" href="_protein_8cpp_source.html">Protein.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_protein_8h_source.html#l00072">aminoacids</a>, <a class="el" href="_variant_flag_assignation_8cpp_source.html#l00035">SmolDock::assignVariantFlagsForResidueAtom()</a>, <a class="el" href="_protein_8h_source.html#l00075">center_x</a>, <a class="el" href="_protein_8h_source.html#l00076">center_y</a>, <a class="el" href="_protein_8h_source.html#l00077">center_z</a>, <a class="el" href="namespace_smol_dock.html#ab797122db8030eb70bf4d042c897df5eab7f023dbb86242b37e451d0b36dde93d">SmolDock::GeneralPurpose</a>, <a class="el" href="_protein_8h_source.html#l00073">heteroatoms</a>, <a class="el" href="_protein_8h_source.html#l00083">max_x</a>, <a class="el" href="_protein_8h_source.html#l00084">max_y</a>, <a class="el" href="_protein_8h_source.html#l00085">max_z</a>, <a class="el" href="_protein_8h_source.html#l00079">min_x</a>, <a class="el" href="_protein_8h_source.html#l00080">min_y</a>, <a class="el" href="_protein_8h_source.html#l00081">min_z</a>, <a class="el" href="_amino_acid_8cpp_source.html#l00077">SmolDock::stringToResType()</a>, and <a class="el" href="class_smol_dock_1_1_amino_acid.html#a08692b12e7f53812c5258bd8b805875daad921d60486366258809553a3db49a4a">SmolDock::AminoAcid::unknown</a>.</p>
-<div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+<p class="reference">References <a class="el" href="_protein_8h_source.html#l00076">aminoacids</a>, <a class="el" href="_variant_flag_assignation_8cpp_source.html#l00034">SmolDock::assignVariantFlagsForResidueAtom()</a>, <a class="el" href="_protein_8h_source.html#l00079">center_x</a>, <a class="el" href="_protein_8h_source.html#l00080">center_y</a>, <a class="el" href="_protein_8h_source.html#l00081">center_z</a>, <a class="el" href="namespace_smol_dock.html#ab797122db8030eb70bf4d042c897df5eab7f023dbb86242b37e451d0b36dde93d">SmolDock::GeneralPurpose</a>, <a class="el" href="_protein_8h_source.html#l00077">heteroatoms</a>, <a class="el" href="_protein_8h_source.html#l00091">max_distance_to_center</a>, <a class="el" href="_protein_8h_source.html#l00087">max_x</a>, <a class="el" href="_protein_8h_source.html#l00088">max_y</a>, <a class="el" href="_protein_8h_source.html#l00089">max_z</a>, <a class="el" href="_protein_8h_source.html#l00083">min_x</a>, <a class="el" href="_protein_8h_source.html#l00084">min_y</a>, <a class="el" href="_protein_8h_source.html#l00085">min_z</a>, <a class="el" href="_amino_acid_8cpp_source.html#l00077">SmolDock::stringToResType()</a>, and <a class="el" href="class_smol_dock_1_1_amino_acid.html#a08692b12e7f53812c5258bd8b805875daad921d60486366258809553a3db49a4a">SmolDock::AminoAcid::unknown</a>.</p>
+<div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-5-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div id="dynsection-5-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="class_smol_dock_1_1_protein_a726524247169022a4dfc1328753e39b3_cgraph.png" border="0" usemap="#class_smol_dock_1_1_protein_a726524247169022a4dfc1328753e39b3_cgraph" alt=""/></div>
 <map name="class_smol_dock_1_1_protein_a726524247169022a4dfc1328753e39b3_cgraph" id="class_smol_dock_1_1_protein_a726524247169022a4dfc1328753e39b3_cgraph">
 <area shape="rect" id="node2" href="namespace_smol_dock.html#a2820b77a3fd140cd601c75028ed8dd51" title="SmolDock::assignVariantFlags\lForResidueAtom" alt="" coords="193,35,396,76"/>
@@ -287,14 +377,14 @@ Private Attributes</h2></td></tr>
 <area shape="rect" id="node4" href="namespace_smol_dock.html#a7980070f5c494cfe044ad9e90e34e3e3" title="SmolDock::resTypeToString" alt="" coords="444,71,631,98"/>
 </map>
 </div>
-<div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+<div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-6-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-4-content" class="dyncontent" style="display:none;">
+<div id="dynsection-6-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="class_smol_dock_1_1_protein_a726524247169022a4dfc1328753e39b3_icgraph.png" border="0" usemap="#class_smol_dock_1_1_protein_a726524247169022a4dfc1328753e39b3_icgraph" alt=""/></div>
 <map name="class_smol_dock_1_1_protein_a726524247169022a4dfc1328753e39b3_icgraph" id="class_smol_dock_1_1_protein_a726524247169022a4dfc1328753e39b3_icgraph">
-<area shape="rect" id="node2" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="231,5,281,32"/>
+<area shape="rect" id="node2" href="cli__interface_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="231,5,281,32"/>
 <area shape="rect" id="node3" href="_py_structures_8h.html#a18cad6e29d14a0da9d2cd9464e7e2356" title="export_Structures" alt="" coords="193,56,319,83"/>
 <area shape="rect" id="node4" href="_smoldock_python_bindings_8cpp.html#a9002869529fdb857c7ffa4a170c4f3ef" title="BOOST_PYTHON_MODULE" alt="" coords="367,56,561,83"/>
 </map>
@@ -323,7 +413,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_protein_8h_source.html#l00072">72</a> of file <a class="el" href="_protein_8h_source.html">Protein.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_protein_8h_source.html#l00076">76</a> of file <a class="el" href="_protein_8h_source.html">Protein.h</a>.</p>
 
 </div>
 </div>
@@ -347,7 +437,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_protein_8h_source.html#l00075">75</a> of file <a class="el" href="_protein_8h_source.html">Protein.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_protein_8h_source.html#l00079">79</a> of file <a class="el" href="_protein_8h_source.html">Protein.h</a>.</p>
 
 </div>
 </div>
@@ -371,7 +461,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_protein_8h_source.html#l00076">76</a> of file <a class="el" href="_protein_8h_source.html">Protein.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_protein_8h_source.html#l00080">80</a> of file <a class="el" href="_protein_8h_source.html">Protein.h</a>.</p>
 
 </div>
 </div>
@@ -395,7 +485,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_protein_8h_source.html#l00077">77</a> of file <a class="el" href="_protein_8h_source.html">Protein.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_protein_8h_source.html#l00081">81</a> of file <a class="el" href="_protein_8h_source.html">Protein.h</a>.</p>
 
 </div>
 </div>
@@ -419,7 +509,31 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_protein_8h_source.html#l00073">73</a> of file <a class="el" href="_protein_8h_source.html">Protein.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_protein_8h_source.html#l00077">77</a> of file <a class="el" href="_protein_8h_source.html">Protein.h</a>.</p>
+
+</div>
+</div>
+<a id="ab7d19464a2328c6c7aee125ea1704583"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab7d19464a2328c6c7aee125ea1704583">&#9670;&nbsp;</a></span>max_distance_to_center</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double SmolDock::Protein::max_distance_to_center = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_protein_8h_source.html#l00091">91</a> of file <a class="el" href="_protein_8h_source.html">Protein.h</a>.</p>
 
 </div>
 </div>
@@ -443,7 +557,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_protein_8h_source.html#l00083">83</a> of file <a class="el" href="_protein_8h_source.html">Protein.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_protein_8h_source.html#l00087">87</a> of file <a class="el" href="_protein_8h_source.html">Protein.h</a>.</p>
 
 </div>
 </div>
@@ -467,7 +581,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_protein_8h_source.html#l00084">84</a> of file <a class="el" href="_protein_8h_source.html">Protein.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_protein_8h_source.html#l00088">88</a> of file <a class="el" href="_protein_8h_source.html">Protein.h</a>.</p>
 
 </div>
 </div>
@@ -491,7 +605,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_protein_8h_source.html#l00085">85</a> of file <a class="el" href="_protein_8h_source.html">Protein.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_protein_8h_source.html#l00089">89</a> of file <a class="el" href="_protein_8h_source.html">Protein.h</a>.</p>
 
 </div>
 </div>
@@ -515,7 +629,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_protein_8h_source.html#l00079">79</a> of file <a class="el" href="_protein_8h_source.html">Protein.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_protein_8h_source.html#l00083">83</a> of file <a class="el" href="_protein_8h_source.html">Protein.h</a>.</p>
 
 </div>
 </div>
@@ -539,7 +653,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_protein_8h_source.html#l00080">80</a> of file <a class="el" href="_protein_8h_source.html">Protein.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_protein_8h_source.html#l00084">84</a> of file <a class="el" href="_protein_8h_source.html">Protein.h</a>.</p>
 
 </div>
 </div>
@@ -563,7 +677,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_protein_8h_source.html#l00081">81</a> of file <a class="el" href="_protein_8h_source.html">Protein.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_protein_8h_source.html#l00085">85</a> of file <a class="el" href="_protein_8h_source.html">Protein.h</a>.</p>
 
 </div>
 </div>

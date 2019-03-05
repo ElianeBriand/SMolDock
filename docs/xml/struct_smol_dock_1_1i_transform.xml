@@ -4,9 +4,9 @@
     <compoundname>SmolDock::iTransform</compoundname>
     <includes refid="i_transform_8h" local="no">iTransform.h</includes>
       <sectiondef kind="public-attrib">
-      <memberdef kind="variable" id="struct_smol_dock_1_1i_transform_1ab0039729b08d423b6e0414cec1b893e7" prot="public" static="no" mutable="no">
-        <type><ref refid="struct_smol_dock_1_1i_translation" kindref="compound">iTranslation</ref></type>
-        <definition>iTranslation SmolDock::iTransform::transl</definition>
+      <memberdef kind="variable" id="struct_smol_dock_1_1i_transform_1ae79de47f6741ab7c3a97498fe0c589d3" prot="public" static="no" mutable="no">
+        <type>Eigen::Translation&lt; double, 3 &gt;</type>
+        <definition>Eigen::Translation&lt;double, 3&gt; SmolDock::iTransform::transl</definition>
         <argsstring></argsstring>
         <name>transl</name>
         <briefdescription>
@@ -15,17 +15,21 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Engines/Internals/iTransform.h" line="45" column="1" bodyfile="Engines/Internals/iTransform.h" bodystart="45" bodyend="-1"/>
-        <referencedby refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a7bee39278168cb4d7ee6558b3a3d3bb4" compoundref="_conformer_rigid_docking_engine_8cpp" startline="135" endline="224">SmolDock::Engine::ConformerRigidDockingEngine::runDockingEngine</referencedby>
-        <referencedby refid="namespace_smol_dock_1a3974d1e3a6f729a7ca05b97996ca2079" compoundref="_internals_utility_functions_8h" startline="26" endline="33">SmolDock::iTransformIdentityInit</referencedby>
-        <referencedby refid="namespace_smol_dock_1a73bb4756419c2b3361ae4d23b24eee20" compoundref="_internals_utility_functions_8h" startline="72" endline="75">SmolDock::applyTransformInPlace</referencedby>
-        <referencedby refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1a574511b3c12769902e2c0366d4d3db96" compoundref="_vina_like_scoring_function_8cpp" startline="236" endline="294">SmolDock::Score::VinaLikeRigidScoringFunction::EvaluateWithGradient</referencedby>
-        <referencedby refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1a7998fd7ab2237aa8da50d05d553ffec0" compoundref="_vina_like_scoring_function_8h" startline="83" endline="98">SmolDock::Score::VinaLikeRigidScoringFunction::internalToExternalRepr</referencedby>
-        <referencedby refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1a78f389f738bb184be926a272f55baa95" compoundref="_vina_like_scoring_function_8h" startline="100" endline="113">SmolDock::Score::VinaLikeRigidScoringFunction::externalToInternalRepr</referencedby>
+        <location file="Engines/Internals/iTransform.h" line="32" column="1" bodyfile="Engines/Internals/iTransform.h" bodystart="32" bodyend="-1"/>
+        <referencedby refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a7bee39278168cb4d7ee6558b3a3d3bb4" compoundref="_conformer_rigid_docking_engine_8cpp" startline="134" endline="294">SmolDock::Engine::ConformerRigidDockingEngine::runDockingEngine</referencedby>
+        <referencedby refid="namespace_smol_dock_1a3974d1e3a6f729a7ca05b97996ca2079" compoundref="_internals_utility_functions_8h" startline="46" endline="56">SmolDock::iTransformIdentityInit</referencedby>
+        <referencedby refid="namespace_smol_dock_1aea0b5b0a06c4650f4ca502a3f1da6e98" compoundref="_internals_utility_functions_8h" startline="158" endline="161">SmolDock::applyRigidTransformInPlace</referencedby>
+        <referencedby refid="class_smol_dock_1_1_engine_1_1_pose_refiner_1a8d5a30801f618205c115a52b7fa363ce" compoundref="_pose_refiner_8cpp" startline="23" endline="67">SmolDock::Engine::PoseRefiner::refinePose</referencedby>
+        <referencedby refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1a574511b3c12769902e2c0366d4d3db96" compoundref="_vina_like_rigid_scoring_function_8cpp" startline="130" endline="209">SmolDock::Score::VinaLikeRigidScoringFunction::EvaluateWithGradient</referencedby>
+        <referencedby refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1a7998fd7ab2237aa8da50d05d553ffec0" compoundref="_vina_like_rigid_scoring_function_8h" startline="83" endline="98">SmolDock::Score::VinaLikeRigidScoringFunction::internalToExternalRepr</referencedby>
+        <referencedby refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1a78f389f738bb184be926a272f55baa95" compoundref="_vina_like_rigid_scoring_function_8h" startline="100" endline="113">SmolDock::Score::VinaLikeRigidScoringFunction::externalToInternalRepr</referencedby>
+        <referencedby refid="class_smol_dock_1_1_score_1_1_vina_like_scoring_function_1adc45f52c75b9c1d96edcdb3caf27160c" compoundref="_vina_like_scoring_function_8cpp" startline="119" endline="210">SmolDock::Score::VinaLikeScoringFunction::EvaluateWithGradient</referencedby>
+        <referencedby refid="class_smol_dock_1_1_score_1_1_vina_like_scoring_function_1a0dcb6ed38cd8f88b995fb862453e7d0f" compoundref="_vina_like_scoring_function_8h" startline="50" endline="69">SmolDock::Score::VinaLikeScoringFunction::internalToExternalRepr</referencedby>
+        <referencedby refid="class_smol_dock_1_1_score_1_1_vina_like_scoring_function_1a97cb87260424d70f368caa48445825b7" compoundref="_vina_like_scoring_function_8h" startline="71" endline="88">SmolDock::Score::VinaLikeScoringFunction::externalToInternalRepr</referencedby>
       </memberdef>
-      <memberdef kind="variable" id="struct_smol_dock_1_1i_transform_1a31861b55dc94ec0172ce602cd2a4a54f" prot="public" static="no" mutable="no">
-        <type><ref refid="struct_smol_dock_1_1i_quaternion" kindref="compound">iQuaternion</ref></type>
-        <definition>iQuaternion SmolDock::iTransform::rota</definition>
+      <memberdef kind="variable" id="struct_smol_dock_1_1i_transform_1a8234938f815b9f74cc2d3289d4696dfb" prot="public" static="no" mutable="no">
+        <type>Eigen::Quaternion&lt; double &gt;</type>
+        <definition>Eigen::Quaternion&lt;double&gt; SmolDock::iTransform::rota</definition>
         <argsstring></argsstring>
         <name>rota</name>
         <briefdescription>
@@ -34,46 +38,79 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Engines/Internals/iTransform.h" line="46" column="1" bodyfile="Engines/Internals/iTransform.h" bodystart="46" bodyend="-1"/>
-        <referencedby refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a7bee39278168cb4d7ee6558b3a3d3bb4" compoundref="_conformer_rigid_docking_engine_8cpp" startline="135" endline="224">SmolDock::Engine::ConformerRigidDockingEngine::runDockingEngine</referencedby>
-        <referencedby refid="namespace_smol_dock_1a3974d1e3a6f729a7ca05b97996ca2079" compoundref="_internals_utility_functions_8h" startline="26" endline="33">SmolDock::iTransformIdentityInit</referencedby>
-        <referencedby refid="namespace_smol_dock_1a73bb4756419c2b3361ae4d23b24eee20" compoundref="_internals_utility_functions_8h" startline="72" endline="75">SmolDock::applyTransformInPlace</referencedby>
-        <referencedby refid="namespace_smol_dock_1_1_score_1ac205731c7b0098c2900d9d16fff1a93b" compoundref="_vina_like_scoring_function_8cpp" startline="149" endline="223">SmolDock::Score::vina_like_rigid_inter_scoring_func</referencedby>
-        <referencedby refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1ab89f08da2f4f79abfe9130b3593c3522" compoundref="_vina_like_scoring_function_8cpp" startline="225" endline="234">SmolDock::Score::VinaLikeRigidScoringFunction::Evaluate</referencedby>
-        <referencedby refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1a574511b3c12769902e2c0366d4d3db96" compoundref="_vina_like_scoring_function_8cpp" startline="236" endline="294">SmolDock::Score::VinaLikeRigidScoringFunction::EvaluateWithGradient</referencedby>
-        <referencedby refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1a7998fd7ab2237aa8da50d05d553ffec0" compoundref="_vina_like_scoring_function_8h" startline="83" endline="98">SmolDock::Score::VinaLikeRigidScoringFunction::internalToExternalRepr</referencedby>
-        <referencedby refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1a78f389f738bb184be926a272f55baa95" compoundref="_vina_like_scoring_function_8h" startline="100" endline="113">SmolDock::Score::VinaLikeRigidScoringFunction::externalToInternalRepr</referencedby>
+        <location file="Engines/Internals/iTransform.h" line="33" column="1" bodyfile="Engines/Internals/iTransform.h" bodystart="33" bodyend="-1"/>
+        <referencedby refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a7bee39278168cb4d7ee6558b3a3d3bb4" compoundref="_conformer_rigid_docking_engine_8cpp" startline="134" endline="294">SmolDock::Engine::ConformerRigidDockingEngine::runDockingEngine</referencedby>
+        <referencedby refid="namespace_smol_dock_1a3974d1e3a6f729a7ca05b97996ca2079" compoundref="_internals_utility_functions_8h" startline="46" endline="56">SmolDock::iTransformIdentityInit</referencedby>
+        <referencedby refid="namespace_smol_dock_1aea0b5b0a06c4650f4ca502a3f1da6e98" compoundref="_internals_utility_functions_8h" startline="158" endline="161">SmolDock::applyRigidTransformInPlace</referencedby>
+        <referencedby refid="namespace_smol_dock_1_1_score_1ac205731c7b0098c2900d9d16fff1a93b" compoundref="_vina_like_rigid_scoring_function_8cpp" startline="40" endline="117">SmolDock::Score::vina_like_rigid_inter_scoring_func</referencedby>
+        <referencedby refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1ab89f08da2f4f79abfe9130b3593c3522" compoundref="_vina_like_rigid_scoring_function_8cpp" startline="119" endline="128">SmolDock::Score::VinaLikeRigidScoringFunction::Evaluate</referencedby>
+        <referencedby refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1a574511b3c12769902e2c0366d4d3db96" compoundref="_vina_like_rigid_scoring_function_8cpp" startline="130" endline="209">SmolDock::Score::VinaLikeRigidScoringFunction::EvaluateWithGradient</referencedby>
+        <referencedby refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1a6b173e704b812af5cde72610f1143577" compoundref="_vina_like_rigid_scoring_function_8cpp" startline="231" endline="243">SmolDock::Score::VinaLikeRigidScoringFunction::getConformerForParamMatrix</referencedby>
+        <referencedby refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1a7998fd7ab2237aa8da50d05d553ffec0" compoundref="_vina_like_rigid_scoring_function_8h" startline="83" endline="98">SmolDock::Score::VinaLikeRigidScoringFunction::internalToExternalRepr</referencedby>
+        <referencedby refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1a78f389f738bb184be926a272f55baa95" compoundref="_vina_like_rigid_scoring_function_8h" startline="100" endline="113">SmolDock::Score::VinaLikeRigidScoringFunction::externalToInternalRepr</referencedby>
+        <referencedby refid="namespace_smol_dock_1_1_score_1af7f12c4b8451b856342af3afdbcadce8" compoundref="_vina_like_scoring_function_8cpp" startline="20" endline="82">SmolDock::Score::VinaLikeIntermolecularScoringFunction</referencedby>
+        <referencedby refid="class_smol_dock_1_1_score_1_1_vina_like_scoring_function_1a5b2eaf1db8e2e0b98ee1f199be96a406" compoundref="_vina_like_scoring_function_8cpp" startline="107" endline="117">SmolDock::Score::VinaLikeScoringFunction::Evaluate</referencedby>
+        <referencedby refid="class_smol_dock_1_1_score_1_1_vina_like_scoring_function_1adc45f52c75b9c1d96edcdb3caf27160c" compoundref="_vina_like_scoring_function_8cpp" startline="119" endline="210">SmolDock::Score::VinaLikeScoringFunction::EvaluateWithGradient</referencedby>
+        <referencedby refid="class_smol_dock_1_1_score_1_1_vina_like_scoring_function_1a6c9ffc4bfc5cc3d066f2a2cda2163397" compoundref="_vina_like_scoring_function_8cpp" startline="221" endline="232">SmolDock::Score::VinaLikeScoringFunction::getConformerForParamMatrix</referencedby>
+        <referencedby refid="class_smol_dock_1_1_score_1_1_vina_like_scoring_function_1a0dcb6ed38cd8f88b995fb862453e7d0f" compoundref="_vina_like_scoring_function_8h" startline="50" endline="69">SmolDock::Score::VinaLikeScoringFunction::internalToExternalRepr</referencedby>
+        <referencedby refid="class_smol_dock_1_1_score_1_1_vina_like_scoring_function_1a97cb87260424d70f368caa48445825b7" compoundref="_vina_like_scoring_function_8h" startline="71" endline="88">SmolDock::Score::VinaLikeScoringFunction::externalToInternalRepr</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="struct_smol_dock_1_1i_transform_1aa71e9b254a08dfc310a6430056f05964" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; double &gt;</type>
+        <definition>std::vector&lt;double&gt; SmolDock::iTransform::bondRotationsAngles</definition>
+        <argsstring></argsstring>
+        <name>bondRotationsAngles</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Engines/Internals/iTransform.h" line="35" column="1" bodyfile="Engines/Internals/iTransform.h" bodystart="35" bodyend="-1"/>
+        <referencedby refid="namespace_smol_dock_1a3974d1e3a6f729a7ca05b97996ca2079" compoundref="_internals_utility_functions_8h" startline="46" endline="56">SmolDock::iTransformIdentityInit</referencedby>
+        <referencedby refid="namespace_smol_dock_1a1843982e01fb9a9b852c5f64363a158c" compoundref="_internals_utility_functions_8h" startline="103" endline="154">SmolDock::applyBondRotationInPlace</referencedby>
+        <referencedby refid="namespace_smol_dock_1_1_score_1af7f12c4b8451b856342af3afdbcadce8" compoundref="_vina_like_scoring_function_8cpp" startline="20" endline="82">SmolDock::Score::VinaLikeIntermolecularScoringFunction</referencedby>
+        <referencedby refid="class_smol_dock_1_1_score_1_1_vina_like_scoring_function_1a1b8a8d8b607a9b8a0a56e8616d412b92" compoundref="_vina_like_scoring_function_8cpp" startline="85" endline="104">SmolDock::Score::VinaLikeScoringFunction::VinaLikeScoringFunction</referencedby>
+        <referencedby refid="class_smol_dock_1_1_score_1_1_vina_like_scoring_function_1adc45f52c75b9c1d96edcdb3caf27160c" compoundref="_vina_like_scoring_function_8cpp" startline="119" endline="210">SmolDock::Score::VinaLikeScoringFunction::EvaluateWithGradient</referencedby>
+        <referencedby refid="class_smol_dock_1_1_score_1_1_vina_like_scoring_function_1a0dcb6ed38cd8f88b995fb862453e7d0f" compoundref="_vina_like_scoring_function_8h" startline="50" endline="69">SmolDock::Score::VinaLikeScoringFunction::internalToExternalRepr</referencedby>
+        <referencedby refid="class_smol_dock_1_1_score_1_1_vina_like_scoring_function_1a97cb87260424d70f368caa48445825b7" compoundref="_vina_like_scoring_function_8h" startline="71" endline="88">SmolDock::Score::VinaLikeScoringFunction::externalToInternalRepr</referencedby>
       </memberdef>
       </sectiondef>
     <briefdescription>
-<para>Represents a rotation and translation transform to be applied on ligand/ligand part. </para>    </briefdescription>
+<para>Represents a rotation. </para>    </briefdescription>
     <detaileddescription>
-<para><simplesect kind="see"><para><ref refid="struct_smol_dock_1_1i_translation" kindref="compound">iTranslation</ref>, <ref refid="struct_smol_dock_1_1i_quaternion" kindref="compound">iQuaternion</ref> </para></simplesect>
+<para><simplesect kind="see"><para>iTransformRepresents a rotation and translation transform to be applied on ligand/ligand part</para></simplesect>
+<simplesect kind="see"><para>iTranslation, Eigen::Quaternion&lt;double&gt; </para></simplesect>
 </para>    </detaileddescription>
     <collaborationgraph>
-      <node id="124">
-        <label>SmolDock::iQuaternion</label>
-        <link refid="struct_smol_dock_1_1i_quaternion"/>
+      <node id="150">
+        <label>T</label>
       </node>
-      <node id="122">
+      <node id="148">
+        <label>std::vector&lt; double &gt;</label>
+        <childnode refid="149" relation="template-instance">
+          <edgelabel>&lt; double &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="149">
+        <label>std::vector&lt; T &gt;</label>
+        <childnode refid="150" relation="usage">
+          <edgelabel>+elements</edgelabel>
+        </childnode>
+      </node>
+      <node id="147">
         <label>SmolDock::iTransform</label>
         <link refid="struct_smol_dock_1_1i_transform"/>
-        <childnode refid="123" relation="usage">
-          <edgelabel>+transl</edgelabel>
+        <childnode refid="148" relation="usage">
+          <edgelabel>+bondRotationsAngles</edgelabel>
         </childnode>
-        <childnode refid="124" relation="usage">
-          <edgelabel>+rota</edgelabel>
-        </childnode>
-      </node>
-      <node id="123">
-        <label>SmolDock::iTranslation</label>
-        <link refid="struct_smol_dock_1_1i_translation"/>
       </node>
     </collaborationgraph>
-    <location file="Engines/Internals/iTransform.h" line="44" column="1" bodyfile="Engines/Internals/iTransform.h" bodystart="44" bodyend="47"/>
+    <location file="Engines/Internals/iTransform.h" line="30" column="1" bodyfile="Engines/Internals/iTransform.h" bodystart="30" bodyend="36"/>
     <listofallmembers>
-      <member refid="struct_smol_dock_1_1i_transform_1a31861b55dc94ec0172ce602cd2a4a54f" prot="public" virt="non-virtual"><scope>SmolDock::iTransform</scope><name>rota</name></member>
-      <member refid="struct_smol_dock_1_1i_transform_1ab0039729b08d423b6e0414cec1b893e7" prot="public" virt="non-virtual"><scope>SmolDock::iTransform</scope><name>transl</name></member>
+      <member refid="struct_smol_dock_1_1i_transform_1aa71e9b254a08dfc310a6430056f05964" prot="public" virt="non-virtual"><scope>SmolDock::iTransform</scope><name>bondRotationsAngles</name></member>
+      <member refid="struct_smol_dock_1_1i_transform_1a8234938f815b9f74cc2d3289d4696dfb" prot="public" virt="non-virtual"><scope>SmolDock::iTransform</scope><name>rota</name></member>
+      <member refid="struct_smol_dock_1_1i_transform_1ae79de47f6741ab7c3a97498fe0c589d3" prot="public" virt="non-virtual"><scope>SmolDock::iTransform</scope><name>transl</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

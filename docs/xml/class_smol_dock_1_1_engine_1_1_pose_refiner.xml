@@ -1,0 +1,533 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="class_smol_dock_1_1_engine_1_1_pose_refiner" kind="class" language="C++" prot="public">
+    <compoundname>SmolDock::Engine::PoseRefiner</compoundname>
+    <includes refid="_pose_refiner_8h" local="no">PoseRefiner.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_smol_dock_1_1_engine_1_1_pose_refiner_1af5da788c9fec71c273593d3177dbedbc" prot="private" static="no" mutable="no">
+        <type><ref refid="class_smol_dock_1_1_protein" kindref="compound">Protein</ref> *</type>
+        <definition>Protein* SmolDock::Engine::PoseRefiner::orig_protein</definition>
+        <argsstring></argsstring>
+        <name>orig_protein</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Engines/PoseRefiner.h" line="35" column="1" bodyfile="Engines/PoseRefiner.h" bodystart="35" bodyend="-1"/>
+        <referencedby refid="class_smol_dock_1_1_engine_1_1_pose_refiner_1a8d5a30801f618205c115a52b7fa363ce" compoundref="_pose_refiner_8cpp" startline="23" endline="67">refinePose</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_smol_dock_1_1_engine_1_1_pose_refiner_1a39290572e47e4b9c9f6626030006e30c" prot="private" static="no" mutable="no">
+        <type><ref refid="class_smol_dock_1_1_molecule" kindref="compound">Molecule</ref> *</type>
+        <definition>Molecule* SmolDock::Engine::PoseRefiner::orig_ligand</definition>
+        <argsstring></argsstring>
+        <name>orig_ligand</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Engines/PoseRefiner.h" line="36" column="1" bodyfile="Engines/PoseRefiner.h" bodystart="36" bodyend="-1"/>
+        <referencedby refid="class_smol_dock_1_1_engine_1_1_pose_refiner_1a8d5a30801f618205c115a52b7fa363ce" compoundref="_pose_refiner_8cpp" startline="23" endline="67">refinePose</referencedby>
+        <referencedby refid="class_smol_dock_1_1_engine_1_1_pose_refiner_1aa3540fee1090d946ad7b809452b967fb" compoundref="_pose_refiner_8cpp" startline="81" endline="84">applyToLigand</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_smol_dock_1_1_engine_1_1_pose_refiner_1a0c4e64c857db01e1c46147a1e1f8be97" prot="private" static="no" mutable="no">
+        <type><ref refid="namespace_smol_dock_1_1_score_1a7d8761ef06699c5fc8793056bc903911" kindref="member">Score::ScoringFunctionType</ref></type>
+        <definition>Score::ScoringFunctionType SmolDock::Engine::PoseRefiner::scoringFuncType</definition>
+        <argsstring></argsstring>
+        <name>scoringFuncType</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Engines/PoseRefiner.h" line="38" column="1" bodyfile="Engines/PoseRefiner.h" bodystart="38" bodyend="-1"/>
+        <referencedby refid="class_smol_dock_1_1_engine_1_1_pose_refiner_1a8d5a30801f618205c115a52b7fa363ce" compoundref="_pose_refiner_8cpp" startline="23" endline="67">refinePose</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_smol_dock_1_1_engine_1_1_pose_refiner_1a5dceea145b74349999e503dedd6b098d" prot="private" static="no" mutable="no">
+        <type><ref refid="namespace_smol_dock_1_1_optimizer_1a7ed1dc6878a606b8dcca7558383650ce" kindref="member">Optimizer::LocalOptimizerType</ref></type>
+        <definition>Optimizer::LocalOptimizerType SmolDock::Engine::PoseRefiner::localOptimizerType</definition>
+        <argsstring></argsstring>
+        <name>localOptimizerType</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Engines/PoseRefiner.h" line="39" column="1" bodyfile="Engines/PoseRefiner.h" bodystart="39" bodyend="-1"/>
+        <referencedby refid="class_smol_dock_1_1_engine_1_1_pose_refiner_1a8d5a30801f618205c115a52b7fa363ce" compoundref="_pose_refiner_8cpp" startline="23" endline="67">refinePose</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_smol_dock_1_1_engine_1_1_pose_refiner_1ae487f56c3348df65174bb1523b8f1e5f" prot="private" static="no" mutable="no">
+        <type>std::shared_ptr&lt; <ref refid="class_smol_dock_1_1_score_1_1_scoring_function" kindref="compound">Score::ScoringFunction</ref> &gt;</type>
+        <definition>std::shared_ptr&lt;Score::ScoringFunction&gt; SmolDock::Engine::PoseRefiner::scoringFunction</definition>
+        <argsstring></argsstring>
+        <name>scoringFunction</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Engines/PoseRefiner.h" line="41" column="1" bodyfile="Engines/PoseRefiner.h" bodystart="41" bodyend="-1"/>
+        <referencedby refid="class_smol_dock_1_1_engine_1_1_pose_refiner_1a8d5a30801f618205c115a52b7fa363ce" compoundref="_pose_refiner_8cpp" startline="23" endline="67">refinePose</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_smol_dock_1_1_engine_1_1_pose_refiner_1ac60dcc3f0ad3d31cef23bd91da9f909b" prot="private" static="no" mutable="no">
+        <type>std::shared_ptr&lt; <ref refid="class_smol_dock_1_1_heuristics_1_1_global_heuristic" kindref="compound">Heuristics::GlobalHeuristic</ref> &gt;</type>
+        <definition>std::shared_ptr&lt;Heuristics::GlobalHeuristic&gt; SmolDock::Engine::PoseRefiner::globalHeuristic</definition>
+        <argsstring></argsstring>
+        <name>globalHeuristic</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Engines/PoseRefiner.h" line="42" column="1" bodyfile="Engines/PoseRefiner.h" bodystart="42" bodyend="-1"/>
+        <referencedby refid="class_smol_dock_1_1_engine_1_1_pose_refiner_1a8d5a30801f618205c115a52b7fa363ce" compoundref="_pose_refiner_8cpp" startline="23" endline="67">refinePose</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_smol_dock_1_1_engine_1_1_pose_refiner_1a650caac772b2caf263ae1102cc94a216" prot="private" static="no" mutable="no">
+        <type>std::shared_ptr&lt; <ref refid="class_smol_dock_1_1_optimizer_1_1_optimizer" kindref="compound">Optimizer::Optimizer</ref> &gt;</type>
+        <definition>std::shared_ptr&lt;Optimizer::Optimizer&gt; SmolDock::Engine::PoseRefiner::localOptimizer</definition>
+        <argsstring></argsstring>
+        <name>localOptimizer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Engines/PoseRefiner.h" line="43" column="1" bodyfile="Engines/PoseRefiner.h" bodystart="43" bodyend="-1"/>
+        <referencedby refid="class_smol_dock_1_1_engine_1_1_pose_refiner_1a8d5a30801f618205c115a52b7fa363ce" compoundref="_pose_refiner_8cpp" startline="23" endline="67">refinePose</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_smol_dock_1_1_engine_1_1_pose_refiner_1ac1961d9ad3f288f6d68e357bbe1c5af5" prot="private" static="no" mutable="no">
+        <type>std::mt19937</type>
+        <definition>std::mt19937 SmolDock::Engine::PoseRefiner::rnd_generator</definition>
+        <argsstring></argsstring>
+        <name>rnd_generator</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Engines/PoseRefiner.h" line="45" column="1" bodyfile="Engines/PoseRefiner.h" bodystart="45" bodyend="-1"/>
+        <referencedby refid="class_smol_dock_1_1_engine_1_1_pose_refiner_1a8d5a30801f618205c115a52b7fa363ce" compoundref="_pose_refiner_8cpp" startline="23" endline="67">refinePose</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_smol_dock_1_1_engine_1_1_pose_refiner_1ad7049bad45d59f5229fcaee500779959" prot="private" static="no" mutable="no">
+        <type><ref refid="struct_smol_dock_1_1i_protein" kindref="compound">iProtein</ref></type>
+        <definition>iProtein SmolDock::Engine::PoseRefiner::protein</definition>
+        <argsstring></argsstring>
+        <name>protein</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Engines/PoseRefiner.h" line="47" column="1" bodyfile="Engines/PoseRefiner.h" bodystart="47" bodyend="-1"/>
+        <referencedby refid="class_smol_dock_1_1_engine_1_1_pose_refiner_1a8d5a30801f618205c115a52b7fa363ce" compoundref="_pose_refiner_8cpp" startline="23" endline="67">refinePose</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_smol_dock_1_1_engine_1_1_pose_refiner_1a60508380c60d07f934d4603ad1d53a07" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double SmolDock::Engine::PoseRefiner::initial_score</definition>
+        <argsstring></argsstring>
+        <name>initial_score</name>
+        <initializer>= 0.0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Engines/PoseRefiner.h" line="49" column="1" bodyfile="Engines/PoseRefiner.h" bodystart="49" bodyend="-1"/>
+        <referencedby refid="class_smol_dock_1_1_engine_1_1_pose_refiner_1a8d5a30801f618205c115a52b7fa363ce" compoundref="_pose_refiner_8cpp" startline="23" endline="67">refinePose</referencedby>
+        <referencedby refid="class_smol_dock_1_1_engine_1_1_pose_refiner_1af87cc75d9b71845a512fe1736496b613" compoundref="_pose_refiner_8cpp" startline="69" endline="71">getInitialScore</referencedby>
+        <referencedby refid="class_smol_dock_1_1_engine_1_1_pose_refiner_1a84b259d63ab80e27434c37a1677dfccc" compoundref="_pose_refiner_8cpp" startline="77" endline="79">getScoreDifference</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_smol_dock_1_1_engine_1_1_pose_refiner_1ad5077b2313f8b40316273731d4e5cc12" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double SmolDock::Engine::PoseRefiner::final_score</definition>
+        <argsstring></argsstring>
+        <name>final_score</name>
+        <initializer>= 0.0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Engines/PoseRefiner.h" line="50" column="1" bodyfile="Engines/PoseRefiner.h" bodystart="50" bodyend="-1"/>
+        <referencedby refid="class_smol_dock_1_1_engine_1_1_pose_refiner_1a8d5a30801f618205c115a52b7fa363ce" compoundref="_pose_refiner_8cpp" startline="23" endline="67">refinePose</referencedby>
+        <referencedby refid="class_smol_dock_1_1_engine_1_1_pose_refiner_1aabe50fbc68235800e443038cf6341556" compoundref="_pose_refiner_8cpp" startline="73" endline="75">getFinalScore</referencedby>
+        <referencedby refid="class_smol_dock_1_1_engine_1_1_pose_refiner_1a84b259d63ab80e27434c37a1677dfccc" compoundref="_pose_refiner_8cpp" startline="77" endline="79">getScoreDifference</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_smol_dock_1_1_engine_1_1_pose_refiner_1a33bbd00364da27a740dc8666a0b7a567" prot="private" static="no" mutable="no">
+        <type><ref refid="struct_smol_dock_1_1i_conformer" kindref="compound">iConformer</ref></type>
+        <definition>iConformer SmolDock::Engine::PoseRefiner::result</definition>
+        <argsstring></argsstring>
+        <name>result</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Engines/PoseRefiner.h" line="52" column="1" bodyfile="Engines/PoseRefiner.h" bodystart="52" bodyend="-1"/>
+        <referencedby refid="class_smol_dock_1_1_engine_1_1_pose_refiner_1a8d5a30801f618205c115a52b7fa363ce" compoundref="_pose_refiner_8cpp" startline="23" endline="67">refinePose</referencedby>
+        <referencedby refid="class_smol_dock_1_1_engine_1_1_pose_refiner_1aa3540fee1090d946ad7b809452b967fb" compoundref="_pose_refiner_8cpp" startline="81" endline="84">applyToLigand</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_smol_dock_1_1_engine_1_1_pose_refiner_1aa570d34e339215ec891e72e23fb7a3c4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>SmolDock::Engine::PoseRefiner::PoseRefiner</definition>
+        <argsstring>(Protein *protein, Molecule *ligand, Score::ScoringFunctionType scFuncType, Optimizer::LocalOptimizerType localOptimizerType_, unsigned int seed)</argsstring>
+        <name>PoseRefiner</name>
+        <param>
+          <type><ref refid="class_smol_dock_1_1_protein" kindref="compound">Protein</ref> *</type>
+          <declname>protein</declname>
+        </param>
+        <param>
+          <type><ref refid="class_smol_dock_1_1_molecule" kindref="compound">Molecule</ref> *</type>
+          <declname>ligand</declname>
+        </param>
+        <param>
+          <type><ref refid="namespace_smol_dock_1_1_score_1a7d8761ef06699c5fc8793056bc903911" kindref="member">Score::ScoringFunctionType</ref></type>
+          <declname>scFuncType</declname>
+        </param>
+        <param>
+          <type><ref refid="namespace_smol_dock_1_1_optimizer_1a7ed1dc6878a606b8dcca7558383650ce" kindref="member">Optimizer::LocalOptimizerType</ref></type>
+          <declname>localOptimizerType_</declname>
+        </param>
+        <param>
+          <type>unsigned int</type>
+          <declname>seed</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Engines/PoseRefiner.h" line="18" column="1" bodyfile="Engines/PoseRefiner.cpp" bodystart="12" bodyend="21"/>
+      </memberdef>
+      <memberdef kind="function" id="class_smol_dock_1_1_engine_1_1_pose_refiner_1a8d5a30801f618205c115a52b7fa363ce" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool SmolDock::Engine::PoseRefiner::refinePose</definition>
+        <argsstring>()</argsstring>
+        <name>refinePose</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Engines/PoseRefiner.h" line="24" column="1" bodyfile="Engines/PoseRefiner.cpp" bodystart="23" bodyend="67"/>
+        <references refid="struct_smol_dock_1_1i_conformer_1a96caa4158ad18d445835710ea0df91d3" compoundref="i_conformer_8h" startline="42">SmolDock::iConformer::centroidNormalizingTransform</references>
+        <references refid="class_smol_dock_1_1_engine_1_1_pose_refiner_1ad5077b2313f8b40316273731d4e5cc12" compoundref="_pose_refiner_8h" startline="50">final_score</references>
+        <references refid="class_smol_dock_1_1_molecule_1ab5fc86fa1ac97374e7d8d339404568e9" compoundref="_molecule_8cpp" startline="548" endline="553">SmolDock::Molecule::getInitialConformer</references>
+        <references refid="class_smol_dock_1_1_protein_1a2cccfc64e088ed1846d15c6909c9379f" compoundref="_protein_8cpp" startline="235" endline="274">SmolDock::Protein::getiProtein</references>
+        <references refid="class_smol_dock_1_1_engine_1_1_pose_refiner_1ac60dcc3f0ad3d31cef23bd91da9f909b" compoundref="_pose_refiner_8h" startline="42">globalHeuristic</references>
+        <references refid="namespace_smol_dock_1_1_heuristics_1a1553e62465ebc5cbe1f8a925afb9fe63" compoundref="_heuristic_factory_8cpp" startline="15" endline="35">SmolDock::Heuristics::globalHeuristicFactory</references>
+        <references refid="namespace_smol_dock_1_1_heuristics_1ad94c3b458eeb9b9b65d027a2a2daed3f" compoundref="_heuristic_factory_8cpp" startline="37" endline="49">SmolDock::Heuristics::heuristicParametersFactory</references>
+        <references refid="class_smol_dock_1_1_engine_1_1_pose_refiner_1a60508380c60d07f934d4603ad1d53a07" compoundref="_pose_refiner_8h" startline="49">initial_score</references>
+        <references refid="namespace_smol_dock_1a3974d1e3a6f729a7ca05b97996ca2079" compoundref="_internals_utility_functions_8h" startline="46" endline="56">SmolDock::iTransformIdentityInit</references>
+        <references refid="class_smol_dock_1_1_engine_1_1_pose_refiner_1a650caac772b2caf263ae1102cc94a216" compoundref="_pose_refiner_8h" startline="43">localOptimizer</references>
+        <references refid="class_smol_dock_1_1_engine_1_1_pose_refiner_1a5dceea145b74349999e503dedd6b098d" compoundref="_pose_refiner_8h" startline="39">localOptimizerType</references>
+        <references refid="namespace_smol_dock_1_1_heuristics_1acab108fbb064edb33166af7fdfb77a72a809a739dbd749d3629f62894ad86c959">SmolDock::Heuristics::OnlyLocal</references>
+        <references refid="namespace_smol_dock_1_1_optimizer_1a62f48a1e91b51c0d7c9152d1eeaba538" compoundref="_optimizer_factory_8cpp" startline="13" endline="21">SmolDock::Optimizer::optimizerFactory</references>
+        <references refid="class_smol_dock_1_1_engine_1_1_pose_refiner_1a39290572e47e4b9c9f6626030006e30c" compoundref="_pose_refiner_8h" startline="36">orig_ligand</references>
+        <references refid="class_smol_dock_1_1_engine_1_1_pose_refiner_1af5da788c9fec71c273593d3177dbedbc" compoundref="_pose_refiner_8h" startline="35">orig_protein</references>
+        <references refid="class_smol_dock_1_1_engine_1_1_pose_refiner_1ad7049bad45d59f5229fcaee500779959" compoundref="_pose_refiner_8h" startline="47">protein</references>
+        <references refid="class_smol_dock_1_1_engine_1_1_pose_refiner_1a33bbd00364da27a740dc8666a0b7a567" compoundref="_pose_refiner_8h" startline="52">result</references>
+        <references refid="class_smol_dock_1_1_engine_1_1_pose_refiner_1ac1961d9ad3f288f6d68e357bbe1c5af5" compoundref="_pose_refiner_8h" startline="45">rnd_generator</references>
+        <references refid="class_smol_dock_1_1_engine_1_1_pose_refiner_1ae487f56c3348df65174bb1523b8f1e5f" compoundref="_pose_refiner_8h" startline="41">scoringFunction</references>
+        <references refid="namespace_smol_dock_1_1_score_1acda93ea4444f7dacda77b03c0b278336" compoundref="_scoring_function_factory_8cpp" startline="12" endline="22">SmolDock::Score::scoringFunctionFactory</references>
+        <references refid="class_smol_dock_1_1_engine_1_1_pose_refiner_1a0c4e64c857db01e1c46147a1e1f8be97" compoundref="_pose_refiner_8h" startline="38">scoringFuncType</references>
+        <references refid="struct_smol_dock_1_1i_transform_1ae79de47f6741ab7c3a97498fe0c589d3" compoundref="i_transform_8h" startline="32">SmolDock::iTransform::transl</references>
+        <referencedby refid="vina__refiner_8cpp_1a0ddf1224851353fc92bfbff6f499fa97" compoundref="vina__refiner_8cpp" startline="45" endline="224">main</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_smol_dock_1_1_engine_1_1_pose_refiner_1af87cc75d9b71845a512fe1736496b613" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double SmolDock::Engine::PoseRefiner::getInitialScore</definition>
+        <argsstring>()</argsstring>
+        <name>getInitialScore</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Engines/PoseRefiner.h" line="26" column="1" bodyfile="Engines/PoseRefiner.cpp" bodystart="69" bodyend="71"/>
+        <references refid="class_smol_dock_1_1_engine_1_1_pose_refiner_1a60508380c60d07f934d4603ad1d53a07" compoundref="_pose_refiner_8h" startline="49">initial_score</references>
+        <referencedby refid="vina__refiner_8cpp_1a0ddf1224851353fc92bfbff6f499fa97" compoundref="vina__refiner_8cpp" startline="45" endline="224">main</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_smol_dock_1_1_engine_1_1_pose_refiner_1aabe50fbc68235800e443038cf6341556" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double SmolDock::Engine::PoseRefiner::getFinalScore</definition>
+        <argsstring>()</argsstring>
+        <name>getFinalScore</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Engines/PoseRefiner.h" line="28" column="1" bodyfile="Engines/PoseRefiner.cpp" bodystart="73" bodyend="75"/>
+        <references refid="class_smol_dock_1_1_engine_1_1_pose_refiner_1ad5077b2313f8b40316273731d4e5cc12" compoundref="_pose_refiner_8h" startline="50">final_score</references>
+        <referencedby refid="vina__refiner_8cpp_1a0ddf1224851353fc92bfbff6f499fa97" compoundref="vina__refiner_8cpp" startline="45" endline="224">main</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_smol_dock_1_1_engine_1_1_pose_refiner_1a84b259d63ab80e27434c37a1677dfccc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double SmolDock::Engine::PoseRefiner::getScoreDifference</definition>
+        <argsstring>()</argsstring>
+        <name>getScoreDifference</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Engines/PoseRefiner.h" line="30" column="1" bodyfile="Engines/PoseRefiner.cpp" bodystart="77" bodyend="79"/>
+        <references refid="class_smol_dock_1_1_engine_1_1_pose_refiner_1ad5077b2313f8b40316273731d4e5cc12" compoundref="_pose_refiner_8h" startline="50">final_score</references>
+        <references refid="class_smol_dock_1_1_engine_1_1_pose_refiner_1a60508380c60d07f934d4603ad1d53a07" compoundref="_pose_refiner_8h" startline="49">initial_score</references>
+        <referencedby refid="vina__refiner_8cpp_1a0ddf1224851353fc92bfbff6f499fa97" compoundref="vina__refiner_8cpp" startline="45" endline="224">main</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_smol_dock_1_1_engine_1_1_pose_refiner_1aa3540fee1090d946ad7b809452b967fb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool SmolDock::Engine::PoseRefiner::applyToLigand</definition>
+        <argsstring>()</argsstring>
+        <name>applyToLigand</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Engines/PoseRefiner.h" line="32" column="1" bodyfile="Engines/PoseRefiner.cpp" bodystart="81" bodyend="84"/>
+        <references refid="class_smol_dock_1_1_engine_1_1_pose_refiner_1a39290572e47e4b9c9f6626030006e30c" compoundref="_pose_refiner_8h" startline="36">orig_ligand</references>
+        <references refid="class_smol_dock_1_1_engine_1_1_pose_refiner_1a33bbd00364da27a740dc8666a0b7a567" compoundref="_pose_refiner_8h" startline="52">result</references>
+        <references refid="class_smol_dock_1_1_molecule_1af6263934134836e9ce66d2254b6b6801" compoundref="_molecule_8cpp" startline="487" endline="500">SmolDock::Molecule::updateAtomPositionsFromiConformer</references>
+        <referencedby refid="vina__refiner_8cpp_1a0ddf1224851353fc92bfbff6f499fa97" compoundref="vina__refiner_8cpp" startline="45" endline="224">main</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="221">
+        <label>K</label>
+      </node>
+      <node id="214">
+        <label>T</label>
+      </node>
+      <node id="217">
+        <label>SmolDock::Molecule</label>
+        <link refid="class_smol_dock_1_1_molecule"/>
+        <childnode refid="218" relation="private-inheritance">
+        </childnode>
+        <childnode refid="219" relation="usage">
+          <edgelabel>-RDKitAtomIdxToAtomsPosInVector</edgelabel>
+          <edgelabel>-atomsPosInVectorToRDKitAtomIdx</edgelabel>
+        </childnode>
+        <childnode refid="222" relation="usage">
+          <edgelabel>-bonds</edgelabel>
+        </childnode>
+        <childnode refid="223" relation="usage">
+          <edgelabel>-smiles</edgelabel>
+          <edgelabel>-residue_name</edgelabel>
+        </childnode>
+        <childnode refid="225" relation="usage">
+          <edgelabel>-rotatableBonds</edgelabel>
+        </childnode>
+        <childnode refid="226" relation="usage">
+          <edgelabel>-atoms</edgelabel>
+        </childnode>
+      </node>
+      <node id="222">
+        <label>std::vector&lt; std::shared_ptr&lt; SmolDock::Bond &gt; &gt;</label>
+        <childnode refid="213" relation="template-instance">
+          <edgelabel>&lt; std::shared_ptr&lt; SmolDock::Bond &gt; &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="216">
+        <label>std::vector&lt; double &gt;</label>
+        <childnode refid="213" relation="template-instance">
+          <edgelabel>&lt; double &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="213">
+        <label>std::vector&lt; T &gt;</label>
+        <childnode refid="214" relation="usage">
+          <edgelabel>+elements</edgelabel>
+        </childnode>
+      </node>
+      <node id="210">
+        <label>SmolDock::iConformer</label>
+        <link refid="struct_smol_dock_1_1i_conformer"/>
+        <childnode refid="211" relation="usage">
+          <edgelabel>+rotatableGroups</edgelabel>
+        </childnode>
+        <childnode refid="212" relation="usage">
+          <edgelabel>+bondEnds2Index</edgelabel>
+          <edgelabel>+bondEnds1Index</edgelabel>
+          <edgelabel>+variant</edgelabel>
+        </childnode>
+        <childnode refid="215" relation="usage">
+          <edgelabel>+type</edgelabel>
+        </childnode>
+        <childnode refid="216" relation="usage">
+          <edgelabel>+x</edgelabel>
+          <edgelabel>+y</edgelabel>
+          <edgelabel>+z</edgelabel>
+          <edgelabel>+atomicRadius</edgelabel>
+        </childnode>
+      </node>
+      <node id="220">
+        <label>std::map&lt; K, T &gt;</label>
+        <childnode refid="221" relation="usage">
+          <edgelabel>+keys</edgelabel>
+        </childnode>
+        <childnode refid="214" relation="usage">
+          <edgelabel>+elements</edgelabel>
+        </childnode>
+      </node>
+      <node id="229">
+        <label>SmolDock::iProtein</label>
+        <link refid="struct_smol_dock_1_1i_protein"/>
+        <childnode refid="230" relation="usage">
+          <edgelabel>+AAId_to_AtomPositionInVect</edgelabel>
+        </childnode>
+        <childnode refid="212" relation="usage">
+          <edgelabel>+variant</edgelabel>
+        </childnode>
+        <childnode refid="215" relation="usage">
+          <edgelabel>+type</edgelabel>
+        </childnode>
+        <childnode refid="216" relation="usage">
+          <edgelabel>+x</edgelabel>
+          <edgelabel>+y</edgelabel>
+          <edgelabel>+z</edgelabel>
+          <edgelabel>+atomicRadius</edgelabel>
+        </childnode>
+      </node>
+      <node id="228">
+        <label>std::vector&lt; std::shared_ptr&lt; SmolDock::AminoAcid &gt; &gt;</label>
+        <childnode refid="213" relation="template-instance">
+          <edgelabel>&lt; std::shared_ptr&lt; SmolDock::AminoAcid &gt; &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="219">
+        <label>std::map&lt; int, int &gt;</label>
+        <childnode refid="220" relation="template-instance">
+          <edgelabel>&lt; int, int &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="218">
+        <label>SmolDock::Structure</label>
+        <link refid="class_smol_dock_1_1_structure"/>
+      </node>
+      <node id="211">
+        <label>std::vector&lt; std::vector&lt; unsigned int &gt; &gt;</label>
+        <childnode refid="212" relation="usage">
+          <edgelabel>+elements</edgelabel>
+        </childnode>
+        <childnode refid="213" relation="template-instance">
+          <edgelabel>&lt; std::vector&lt; unsigned int &gt; &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="209">
+        <label>SmolDock::Engine::PoseRefiner</label>
+        <link refid="class_smol_dock_1_1_engine_1_1_pose_refiner"/>
+        <childnode refid="210" relation="usage">
+          <edgelabel>-result</edgelabel>
+        </childnode>
+        <childnode refid="217" relation="usage">
+          <edgelabel>-orig_ligand</edgelabel>
+        </childnode>
+        <childnode refid="227" relation="usage">
+          <edgelabel>-orig_protein</edgelabel>
+        </childnode>
+        <childnode refid="229" relation="usage">
+          <edgelabel>-protein</edgelabel>
+        </childnode>
+      </node>
+      <node id="224">
+        <label>std::basic_string&lt; char &gt;</label>
+      </node>
+      <node id="212">
+        <label>std::vector&lt; unsigned int &gt;</label>
+        <childnode refid="213" relation="template-instance">
+          <edgelabel>&lt; unsigned int &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="227">
+        <label>SmolDock::Protein</label>
+        <link refid="class_smol_dock_1_1_protein"/>
+        <childnode refid="218" relation="private-inheritance">
+        </childnode>
+        <childnode refid="228" relation="usage">
+          <edgelabel>-aminoacids</edgelabel>
+        </childnode>
+        <childnode refid="226" relation="usage">
+          <edgelabel>-heteroatoms</edgelabel>
+        </childnode>
+      </node>
+      <node id="215">
+        <label>std::vector&lt; unsigned char &gt;</label>
+        <childnode refid="213" relation="template-instance">
+          <edgelabel>&lt; unsigned char &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="225">
+        <label>std::vector&lt; std::tuple&lt; std::shared_ptr&lt; SmolDock::Bond &gt;, unsigned int, unsigned int, std::vector&lt; unsigned int &gt; &gt; &gt;</label>
+        <childnode refid="213" relation="template-instance">
+          <edgelabel>&lt; std::tuple&lt; std::shared_ptr&lt; SmolDock::Bond &gt;, unsigned int, unsigned int, std::vector&lt; unsigned int &gt; &gt; &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="226">
+        <label>std::vector&lt; std::shared_ptr&lt; SmolDock::Atom &gt; &gt;</label>
+        <childnode refid="213" relation="template-instance">
+          <edgelabel>&lt; std::shared_ptr&lt; SmolDock::Atom &gt; &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="230">
+        <label>std::map&lt; unsigned int, std::tuple&lt; unsigned long, unsigned long &gt; &gt;</label>
+        <childnode refid="220" relation="template-instance">
+          <edgelabel>&lt; unsigned int, std::tuple&lt; unsigned long, unsigned long &gt; &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="223">
+        <label>std::string</label>
+        <childnode refid="224" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Engines/PoseRefiner.h" line="16" column="1" bodyfile="Engines/PoseRefiner.h" bodystart="16" bodyend="53"/>
+    <listofallmembers>
+      <member refid="class_smol_dock_1_1_engine_1_1_pose_refiner_1aa3540fee1090d946ad7b809452b967fb" prot="public" virt="non-virtual"><scope>SmolDock::Engine::PoseRefiner</scope><name>applyToLigand</name></member>
+      <member refid="class_smol_dock_1_1_engine_1_1_pose_refiner_1ad5077b2313f8b40316273731d4e5cc12" prot="private" virt="non-virtual"><scope>SmolDock::Engine::PoseRefiner</scope><name>final_score</name></member>
+      <member refid="class_smol_dock_1_1_engine_1_1_pose_refiner_1aabe50fbc68235800e443038cf6341556" prot="public" virt="non-virtual"><scope>SmolDock::Engine::PoseRefiner</scope><name>getFinalScore</name></member>
+      <member refid="class_smol_dock_1_1_engine_1_1_pose_refiner_1af87cc75d9b71845a512fe1736496b613" prot="public" virt="non-virtual"><scope>SmolDock::Engine::PoseRefiner</scope><name>getInitialScore</name></member>
+      <member refid="class_smol_dock_1_1_engine_1_1_pose_refiner_1a84b259d63ab80e27434c37a1677dfccc" prot="public" virt="non-virtual"><scope>SmolDock::Engine::PoseRefiner</scope><name>getScoreDifference</name></member>
+      <member refid="class_smol_dock_1_1_engine_1_1_pose_refiner_1ac60dcc3f0ad3d31cef23bd91da9f909b" prot="private" virt="non-virtual"><scope>SmolDock::Engine::PoseRefiner</scope><name>globalHeuristic</name></member>
+      <member refid="class_smol_dock_1_1_engine_1_1_pose_refiner_1a60508380c60d07f934d4603ad1d53a07" prot="private" virt="non-virtual"><scope>SmolDock::Engine::PoseRefiner</scope><name>initial_score</name></member>
+      <member refid="class_smol_dock_1_1_engine_1_1_pose_refiner_1a650caac772b2caf263ae1102cc94a216" prot="private" virt="non-virtual"><scope>SmolDock::Engine::PoseRefiner</scope><name>localOptimizer</name></member>
+      <member refid="class_smol_dock_1_1_engine_1_1_pose_refiner_1a5dceea145b74349999e503dedd6b098d" prot="private" virt="non-virtual"><scope>SmolDock::Engine::PoseRefiner</scope><name>localOptimizerType</name></member>
+      <member refid="class_smol_dock_1_1_engine_1_1_pose_refiner_1a39290572e47e4b9c9f6626030006e30c" prot="private" virt="non-virtual"><scope>SmolDock::Engine::PoseRefiner</scope><name>orig_ligand</name></member>
+      <member refid="class_smol_dock_1_1_engine_1_1_pose_refiner_1af5da788c9fec71c273593d3177dbedbc" prot="private" virt="non-virtual"><scope>SmolDock::Engine::PoseRefiner</scope><name>orig_protein</name></member>
+      <member refid="class_smol_dock_1_1_engine_1_1_pose_refiner_1aa570d34e339215ec891e72e23fb7a3c4" prot="public" virt="non-virtual"><scope>SmolDock::Engine::PoseRefiner</scope><name>PoseRefiner</name></member>
+      <member refid="class_smol_dock_1_1_engine_1_1_pose_refiner_1ad7049bad45d59f5229fcaee500779959" prot="private" virt="non-virtual"><scope>SmolDock::Engine::PoseRefiner</scope><name>protein</name></member>
+      <member refid="class_smol_dock_1_1_engine_1_1_pose_refiner_1a8d5a30801f618205c115a52b7fa363ce" prot="public" virt="non-virtual"><scope>SmolDock::Engine::PoseRefiner</scope><name>refinePose</name></member>
+      <member refid="class_smol_dock_1_1_engine_1_1_pose_refiner_1a33bbd00364da27a740dc8666a0b7a567" prot="private" virt="non-virtual"><scope>SmolDock::Engine::PoseRefiner</scope><name>result</name></member>
+      <member refid="class_smol_dock_1_1_engine_1_1_pose_refiner_1ac1961d9ad3f288f6d68e357bbe1c5af5" prot="private" virt="non-virtual"><scope>SmolDock::Engine::PoseRefiner</scope><name>rnd_generator</name></member>
+      <member refid="class_smol_dock_1_1_engine_1_1_pose_refiner_1ae487f56c3348df65174bb1523b8f1e5f" prot="private" virt="non-virtual"><scope>SmolDock::Engine::PoseRefiner</scope><name>scoringFunction</name></member>
+      <member refid="class_smol_dock_1_1_engine_1_1_pose_refiner_1a0c4e64c857db01e1c46147a1e1f8be97" prot="private" virt="non-virtual"><scope>SmolDock::Engine::PoseRefiner</scope><name>scoringFuncType</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

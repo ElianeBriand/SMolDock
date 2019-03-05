@@ -1,0 +1,229 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="class_smol_dock_1_1_heuristics_1_1_iterated_local_search" kind="class" language="C++" prot="public">
+    <compoundname>SmolDock::Heuristics::IteratedLocalSearch</compoundname>
+    <basecompoundref refid="class_smol_dock_1_1_heuristics_1_1_global_heuristic" prot="public" virt="non-virtual">SmolDock::Heuristics::GlobalHeuristic</basecompoundref>
+    <includes refid="_iterated_local_search_8h" local="no">IteratedLocalSearch.h</includes>
+    <innerclass refid="struct_smol_dock_1_1_heuristics_1_1_iterated_local_search_1_1_parameters" prot="public">SmolDock::Heuristics::IteratedLocalSearch::Parameters</innerclass>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_smol_dock_1_1_heuristics_1_1_iterated_local_search_1ae8f2f50ee12c9835eb8f37ae0e2629ce" prot="private" static="no" mutable="no">
+        <type><ref refid="class_smol_dock_1_1_score_1_1_scoring_function" kindref="compound">Score::ScoringFunction</ref> *</type>
+        <definition>Score::ScoringFunction* SmolDock::Heuristics::IteratedLocalSearch::scorFunc</definition>
+        <argsstring></argsstring>
+        <name>scorFunc</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Engines/GlobalHeuristics/IteratedLocalSearch.h" line="36" column="1" bodyfile="Engines/GlobalHeuristics/IteratedLocalSearch.h" bodystart="36" bodyend="-1"/>
+        <referencedby refid="class_smol_dock_1_1_heuristics_1_1_iterated_local_search_1ad7c6bf8bf2c8d3cde6cb6b1184ca5c4e" compoundref="_iterated_local_search_8cpp" startline="23" endline="135">search</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_smol_dock_1_1_heuristics_1_1_iterated_local_search_1a84b407d019fecd61b163d2cf341438f1" prot="private" static="no" mutable="no">
+        <type><ref refid="class_smol_dock_1_1_optimizer_1_1_optimizer" kindref="compound">Optimizer::Optimizer</ref> *</type>
+        <definition>Optimizer::Optimizer* SmolDock::Heuristics::IteratedLocalSearch::optimizer</definition>
+        <argsstring></argsstring>
+        <name>optimizer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Engines/GlobalHeuristics/IteratedLocalSearch.h" line="37" column="1" bodyfile="Engines/GlobalHeuristics/IteratedLocalSearch.h" bodystart="37" bodyend="-1"/>
+        <referencedby refid="class_smol_dock_1_1_heuristics_1_1_iterated_local_search_1ad7c6bf8bf2c8d3cde6cb6b1184ca5c4e" compoundref="_iterated_local_search_8cpp" startline="23" endline="135">search</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_smol_dock_1_1_heuristics_1_1_iterated_local_search_1af9e5f24199fc9f66c32d3907079e1e2f" prot="private" static="no" mutable="no">
+        <type>std::mt19937</type>
+        <definition>std::mt19937 SmolDock::Heuristics::IteratedLocalSearch::rndGenerator</definition>
+        <argsstring></argsstring>
+        <name>rndGenerator</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Engines/GlobalHeuristics/IteratedLocalSearch.h" line="39" column="1" bodyfile="Engines/GlobalHeuristics/IteratedLocalSearch.h" bodystart="39" bodyend="-1"/>
+        <referencedby refid="class_smol_dock_1_1_heuristics_1_1_iterated_local_search_1ad7c6bf8bf2c8d3cde6cb6b1184ca5c4e" compoundref="_iterated_local_search_8cpp" startline="23" endline="135">search</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_smol_dock_1_1_heuristics_1_1_iterated_local_search_1a787c250be5cd5f817552e6fbc219c2ec" prot="private" static="no" mutable="no">
+        <type>arma::mat</type>
+        <definition>arma::mat SmolDock::Heuristics::IteratedLocalSearch::result</definition>
+        <argsstring></argsstring>
+        <name>result</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Engines/GlobalHeuristics/IteratedLocalSearch.h" line="41" column="1" bodyfile="Engines/GlobalHeuristics/IteratedLocalSearch.h" bodystart="41" bodyend="-1"/>
+        <referencedby refid="class_smol_dock_1_1_heuristics_1_1_iterated_local_search_1ad7c6bf8bf2c8d3cde6cb6b1184ca5c4e" compoundref="_iterated_local_search_8cpp" startline="23" endline="135">search</referencedby>
+        <referencedby refid="class_smol_dock_1_1_heuristics_1_1_iterated_local_search_1accf03ea78392f1ee429a3de0703f6957" compoundref="_iterated_local_search_8cpp" startline="137" endline="139">getResultMatrix</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_smol_dock_1_1_heuristics_1_1_iterated_local_search_1abe6936830c78c71c40e50e6d19d9691a" prot="private" static="no" mutable="no">
+        <type><ref refid="struct_smol_dock_1_1_heuristics_1_1_iterated_local_search_1_1_parameters" kindref="compound">Parameters</ref></type>
+        <definition>Parameters SmolDock::Heuristics::IteratedLocalSearch::params</definition>
+        <argsstring></argsstring>
+        <name>params</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Engines/GlobalHeuristics/IteratedLocalSearch.h" line="43" column="1" bodyfile="Engines/GlobalHeuristics/IteratedLocalSearch.h" bodystart="43" bodyend="-1"/>
+        <referencedby refid="class_smol_dock_1_1_heuristics_1_1_iterated_local_search_1ad7c6bf8bf2c8d3cde6cb6b1184ca5c4e" compoundref="_iterated_local_search_8cpp" startline="23" endline="135">search</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_smol_dock_1_1_heuristics_1_1_iterated_local_search_1acf91e92645798204d8d149084ce88c78" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>SmolDock::Heuristics::IteratedLocalSearch::IteratedLocalSearch</definition>
+        <argsstring>(Score::ScoringFunction *scorFunc_, Optimizer::Optimizer *optimizer_, unsigned int seed_, IteratedLocalSearch::Parameters params_)</argsstring>
+        <name>IteratedLocalSearch</name>
+        <param>
+          <type><ref refid="class_smol_dock_1_1_score_1_1_scoring_function" kindref="compound">Score::ScoringFunction</ref> *</type>
+          <declname>scorFunc_</declname>
+        </param>
+        <param>
+          <type><ref refid="class_smol_dock_1_1_optimizer_1_1_optimizer" kindref="compound">Optimizer::Optimizer</ref> *</type>
+          <declname>optimizer_</declname>
+        </param>
+        <param>
+          <type>unsigned int</type>
+          <declname>seed_</declname>
+        </param>
+        <param>
+          <type><ref refid="struct_smol_dock_1_1_heuristics_1_1_iterated_local_search_1_1_parameters" kindref="compound">IteratedLocalSearch::Parameters</ref></type>
+          <declname>params_</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Engines/GlobalHeuristics/IteratedLocalSearch.h" line="20" column="1" bodyfile="Engines/GlobalHeuristics/IteratedLocalSearch.cpp" bodystart="17" bodyend="21"/>
+      </memberdef>
+      <memberdef kind="function" id="class_smol_dock_1_1_heuristics_1_1_iterated_local_search_1ad7c6bf8bf2c8d3cde6cb6b1184ca5c4e" prot="public" static="no" const="no" explicit="no" inline="no" final="yes" virt="virtual">
+        <type>bool</type>
+        <definition>bool SmolDock::Heuristics::IteratedLocalSearch::search</definition>
+        <argsstring>() final</argsstring>
+        <name>search</name>
+        <reimplements refid="class_smol_dock_1_1_heuristics_1_1_global_heuristic_1acd4f8bbe6334ba93dcd4ea1d2a8c0d38">search</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Engines/GlobalHeuristics/IteratedLocalSearch.h" line="23" column="1" bodyfile="Engines/GlobalHeuristics/IteratedLocalSearch.cpp" bodystart="23" bodyend="135"/>
+        <references refid="class_smol_dock_1_1_score_1_1_scoring_function_1a92b9b5f6d23b07740dd9f6718207d31a">SmolDock::Score::ScoringFunction::Evaluate</references>
+        <references refid="class_smol_dock_1_1_optimizer_1_1_optimizer_1a127349b071842e954d7a89f026685b8f">SmolDock::Optimizer::Optimizer::getRawResultMatrix</references>
+        <references refid="class_smol_dock_1_1_optimizer_1_1_optimizer_1a5165027808dafc096faf1048a48e7c1c">SmolDock::Optimizer::Optimizer::getScore</references>
+        <references refid="class_smol_dock_1_1_score_1_1_scoring_function_1a70e93a6f7e50f4a57273b0faf60e8e90">SmolDock::Score::ScoringFunction::getStartingConditions</references>
+        <references refid="namespace_smol_dock_1_1_heuristics_1afd19e47afa27af28165f6a978d81699b" compoundref="_metropolis_hastings_8cpp" startline="10" endline="23">SmolDock::Heuristics::MetropolisAccept</references>
+        <references refid="class_smol_dock_1_1_optimizer_1_1_optimizer_1a2868a3d9b6855b745d456de57eb1a870">SmolDock::Optimizer::Optimizer::optimize</references>
+        <references refid="class_smol_dock_1_1_heuristics_1_1_iterated_local_search_1a84b407d019fecd61b163d2cf341438f1" compoundref="_iterated_local_search_8h" startline="37">optimizer</references>
+        <references refid="class_smol_dock_1_1_heuristics_1_1_iterated_local_search_1abe6936830c78c71c40e50e6d19d9691a" compoundref="_iterated_local_search_8h" startline="43">params</references>
+        <references refid="struct_smol_dock_1_1_heuristics_1_1_iterated_local_search_1_1_parameters_1afabde5a3f6980b204febf77a3841ac50" compoundref="_iterated_local_search_8h" startline="31">SmolDock::Heuristics::IteratedLocalSearch::Parameters::proteinMaxRadius</references>
+        <references refid="class_smol_dock_1_1_heuristics_1_1_iterated_local_search_1a787c250be5cd5f817552e6fbc219c2ec" compoundref="_iterated_local_search_8h" startline="41">result</references>
+        <references refid="class_smol_dock_1_1_heuristics_1_1_iterated_local_search_1af9e5f24199fc9f66c32d3907079e1e2f" compoundref="_iterated_local_search_8h" startline="39">rndGenerator</references>
+        <references refid="class_smol_dock_1_1_heuristics_1_1_iterated_local_search_1ae8f2f50ee12c9835eb8f37ae0e2629ce" compoundref="_iterated_local_search_8h" startline="36">scorFunc</references>
+      </memberdef>
+      <memberdef kind="function" id="class_smol_dock_1_1_heuristics_1_1_iterated_local_search_1accf03ea78392f1ee429a3de0703f6957" prot="public" static="no" const="no" explicit="no" inline="no" final="yes" virt="virtual">
+        <type>arma::mat</type>
+        <definition>arma::mat SmolDock::Heuristics::IteratedLocalSearch::getResultMatrix</definition>
+        <argsstring>() final</argsstring>
+        <name>getResultMatrix</name>
+        <reimplements refid="class_smol_dock_1_1_heuristics_1_1_global_heuristic_1a1abc970d50c981e4df49833d4e7f0551">getResultMatrix</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Engines/GlobalHeuristics/IteratedLocalSearch.h" line="25" column="1" bodyfile="Engines/GlobalHeuristics/IteratedLocalSearch.cpp" bodystart="137" bodyend="139"/>
+        <references refid="class_smol_dock_1_1_heuristics_1_1_iterated_local_search_1a787c250be5cd5f817552e6fbc219c2ec" compoundref="_iterated_local_search_8h" startline="41">result</references>
+      </memberdef>
+      <memberdef kind="function" id="class_smol_dock_1_1_heuristics_1_1_iterated_local_search_1adfa54a2e899e5f668afdda53182dc4c2" prot="public" static="no" const="no" explicit="no" inline="no" final="yes" virt="non-virtual">
+        <type></type>
+        <definition>SmolDock::Heuristics::IteratedLocalSearch::~IteratedLocalSearch</definition>
+        <argsstring>() final=default</argsstring>
+        <name>~IteratedLocalSearch</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Engines/GlobalHeuristics/IteratedLocalSearch.h" line="27" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="140">
+        <label>SmolDock::Heuristics::GlobalHeuristic</label>
+        <link refid="class_smol_dock_1_1_heuristics_1_1_global_heuristic"/>
+      </node>
+      <node id="139">
+        <label>SmolDock::Heuristics::IteratedLocalSearch</label>
+        <link refid="class_smol_dock_1_1_heuristics_1_1_iterated_local_search"/>
+        <childnode refid="140" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="145">
+        <label>SmolDock::Heuristics::IteratedLocalSearch::Parameters</label>
+        <link refid="struct_smol_dock_1_1_heuristics_1_1_iterated_local_search_1_1_parameters"/>
+      </node>
+      <node id="144">
+        <label>SmolDock::Score::ScoringFunction</label>
+        <link refid="class_smol_dock_1_1_score_1_1_scoring_function"/>
+      </node>
+      <node id="142">
+        <label>SmolDock::Heuristics::GlobalHeuristic</label>
+        <link refid="class_smol_dock_1_1_heuristics_1_1_global_heuristic"/>
+      </node>
+      <node id="141">
+        <label>SmolDock::Heuristics::IteratedLocalSearch</label>
+        <link refid="class_smol_dock_1_1_heuristics_1_1_iterated_local_search"/>
+        <childnode refid="142" relation="public-inheritance">
+        </childnode>
+        <childnode refid="143" relation="usage">
+          <edgelabel>-optimizer</edgelabel>
+        </childnode>
+        <childnode refid="144" relation="usage">
+          <edgelabel>-scorFunc</edgelabel>
+        </childnode>
+        <childnode refid="145" relation="usage">
+          <edgelabel>-params</edgelabel>
+        </childnode>
+      </node>
+      <node id="143">
+        <label>SmolDock::Optimizer::Optimizer</label>
+        <link refid="class_smol_dock_1_1_optimizer_1_1_optimizer"/>
+      </node>
+    </collaborationgraph>
+    <location file="Engines/GlobalHeuristics/IteratedLocalSearch.h" line="16" column="1" bodyfile="Engines/GlobalHeuristics/IteratedLocalSearch.h" bodystart="16" bodyend="45"/>
+    <listofallmembers>
+      <member refid="class_smol_dock_1_1_heuristics_1_1_iterated_local_search_1accf03ea78392f1ee429a3de0703f6957" prot="public" virt="virtual"><scope>SmolDock::Heuristics::IteratedLocalSearch</scope><name>getResultMatrix</name></member>
+      <member refid="class_smol_dock_1_1_heuristics_1_1_iterated_local_search_1acf91e92645798204d8d149084ce88c78" prot="public" virt="non-virtual"><scope>SmolDock::Heuristics::IteratedLocalSearch</scope><name>IteratedLocalSearch</name></member>
+      <member refid="class_smol_dock_1_1_heuristics_1_1_iterated_local_search_1a84b407d019fecd61b163d2cf341438f1" prot="private" virt="non-virtual"><scope>SmolDock::Heuristics::IteratedLocalSearch</scope><name>optimizer</name></member>
+      <member refid="class_smol_dock_1_1_heuristics_1_1_iterated_local_search_1abe6936830c78c71c40e50e6d19d9691a" prot="private" virt="non-virtual"><scope>SmolDock::Heuristics::IteratedLocalSearch</scope><name>params</name></member>
+      <member refid="class_smol_dock_1_1_heuristics_1_1_iterated_local_search_1a787c250be5cd5f817552e6fbc219c2ec" prot="private" virt="non-virtual"><scope>SmolDock::Heuristics::IteratedLocalSearch</scope><name>result</name></member>
+      <member refid="class_smol_dock_1_1_heuristics_1_1_iterated_local_search_1af9e5f24199fc9f66c32d3907079e1e2f" prot="private" virt="non-virtual"><scope>SmolDock::Heuristics::IteratedLocalSearch</scope><name>rndGenerator</name></member>
+      <member refid="class_smol_dock_1_1_heuristics_1_1_iterated_local_search_1ae8f2f50ee12c9835eb8f37ae0e2629ce" prot="private" virt="non-virtual"><scope>SmolDock::Heuristics::IteratedLocalSearch</scope><name>scorFunc</name></member>
+      <member refid="class_smol_dock_1_1_heuristics_1_1_iterated_local_search_1ad7c6bf8bf2c8d3cde6cb6b1184ca5c4e" prot="public" virt="virtual"><scope>SmolDock::Heuristics::IteratedLocalSearch</scope><name>search</name></member>
+      <member refid="class_smol_dock_1_1_heuristics_1_1_global_heuristic_1a93c9f12a7d218837e6e5441ae5daebc1" prot="public" virt="virtual"><scope>SmolDock::Heuristics::IteratedLocalSearch</scope><name>~GlobalHeuristic</name></member>
+      <member refid="class_smol_dock_1_1_heuristics_1_1_iterated_local_search_1adfa54a2e899e5f668afdda53182dc4c2" prot="public" virt="non-virtual"><scope>SmolDock::Heuristics::IteratedLocalSearch</scope><name>~IteratedLocalSearch</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

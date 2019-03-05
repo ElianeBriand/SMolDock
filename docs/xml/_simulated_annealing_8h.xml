@@ -1,0 +1,229 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_simulated_annealing_8h" kind="file" language="C++">
+    <compoundname>SimulatedAnnealing.h</compoundname>
+    <includes refid="_scoring_function_interface_8h" local="no">Engines/ScoringFunctions/ScoringFunctionInterface.h</includes>
+    <includes refid="_optimizer_interface_8h" local="no">Engines/LocalOptimizers/OptimizerInterface.h</includes>
+    <includes refid="_heuristic_interface_8h" local="yes">HeuristicInterface.h</includes>
+    <includedby refid="_heuristic_factory_8h" local="yes">HeuristicFactory.h</includedby>
+    <includedby refid="_heuristic_factory_8cpp" local="yes">HeuristicFactory.cpp</includedby>
+    <includedby refid="_simulated_annealing_8cpp" local="yes">SimulatedAnnealing.cpp</includedby>
+    <incdepgraph>
+      <node id="2292">
+        <label>HeuristicInterface.h</label>
+        <link refid="_heuristic_interface_8h"/>
+      </node>
+      <node id="2291">
+        <label>Engines/LocalOptimizers/OptimizerInterface.h</label>
+        <link refid="_optimizer_interface_8h"/>
+        <childnode refid="2281" relation="include">
+        </childnode>
+      </node>
+      <node id="2287">
+        <label>cmath</label>
+      </node>
+      <node id="2288">
+        <label>cassert</label>
+      </node>
+      <node id="2289">
+        <label>Eigen/Core</label>
+      </node>
+      <node id="2280">
+        <label>Engines/ScoringFunctions/ScoringFunctionInterface.h</label>
+        <link refid="_scoring_function_interface_8h"/>
+        <childnode refid="2281" relation="include">
+        </childnode>
+        <childnode refid="2282" relation="include">
+        </childnode>
+      </node>
+      <node id="2282">
+        <label>Engines/Internals/iConformer.h</label>
+        <link refid="i_conformer_8h"/>
+        <childnode refid="2283" relation="include">
+        </childnode>
+        <childnode refid="2284" relation="include">
+        </childnode>
+        <childnode refid="2285" relation="include">
+        </childnode>
+      </node>
+      <node id="2281">
+        <label>armadillo</label>
+      </node>
+      <node id="2290">
+        <label>Eigen/Dense</label>
+      </node>
+      <node id="2285">
+        <label>iTransform.h</label>
+        <link refid="i_transform_8h"/>
+        <childnode refid="2283" relation="include">
+        </childnode>
+        <childnode refid="2284" relation="include">
+        </childnode>
+        <childnode refid="2286" relation="include">
+        </childnode>
+        <childnode refid="2287" relation="include">
+        </childnode>
+        <childnode refid="2288" relation="include">
+        </childnode>
+        <childnode refid="2289" relation="include">
+        </childnode>
+        <childnode refid="2290" relation="include">
+        </childnode>
+      </node>
+      <node id="2283">
+        <label>vector</label>
+      </node>
+      <node id="2286">
+        <label>array</label>
+      </node>
+      <node id="2279">
+        <label>SimulatedAnnealing.h</label>
+        <link refid="_simulated_annealing_8h"/>
+        <childnode refid="2280" relation="include">
+        </childnode>
+        <childnode refid="2291" relation="include">
+        </childnode>
+        <childnode refid="2292" relation="include">
+        </childnode>
+      </node>
+      <node id="2284">
+        <label>memory</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2295">
+        <label>ConformerRigidDockingEngine.h</label>
+        <link refid="_conformer_rigid_docking_engine_8h"/>
+        <childnode refid="2296" relation="include">
+        </childnode>
+        <childnode refid="2297" relation="include">
+        </childnode>
+        <childnode refid="2298" relation="include">
+        </childnode>
+        <childnode refid="2299" relation="include">
+        </childnode>
+      </node>
+      <node id="2301">
+        <label>PoseRefiner.h</label>
+        <link refid="_pose_refiner_8h"/>
+        <childnode refid="2302" relation="include">
+        </childnode>
+        <childnode refid="2297" relation="include">
+        </childnode>
+        <childnode refid="2303" relation="include">
+        </childnode>
+      </node>
+      <node id="2303">
+        <label>vina_refiner.cpp</label>
+        <link refid="vina__refiner_8cpp"/>
+      </node>
+      <node id="2297">
+        <label>cli_interface.cpp</label>
+        <link refid="cli__interface_8cpp"/>
+      </node>
+      <node id="2304">
+        <label>SimulatedAnnealing.cpp</label>
+        <link refid="_simulated_annealing_8cpp"/>
+      </node>
+      <node id="2298">
+        <label>main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+      <node id="2302">
+        <label>PoseRefiner.cpp</label>
+        <link refid="_pose_refiner_8cpp"/>
+      </node>
+      <node id="2296">
+        <label>ConformerRigidDockingEngine.cpp</label>
+        <link refid="_conformer_rigid_docking_engine_8cpp"/>
+      </node>
+      <node id="2300">
+        <label>HeuristicFactory.cpp</label>
+        <link refid="_heuristic_factory_8cpp"/>
+      </node>
+      <node id="2299">
+        <label>PyEngine.cpp</label>
+        <link refid="_py_engine_8cpp"/>
+      </node>
+      <node id="2293">
+        <label>SimulatedAnnealing.h</label>
+        <link refid="_simulated_annealing_8h"/>
+        <childnode refid="2294" relation="include">
+        </childnode>
+        <childnode refid="2300" relation="include">
+        </childnode>
+        <childnode refid="2304" relation="include">
+        </childnode>
+      </node>
+      <node id="2294">
+        <label>HeuristicFactory.h</label>
+        <link refid="_heuristic_factory_8h"/>
+        <childnode refid="2295" relation="include">
+        </childnode>
+        <childnode refid="2294" relation="include">
+        </childnode>
+        <childnode refid="2300" relation="include">
+        </childnode>
+        <childnode refid="2301" relation="include">
+        </childnode>
+        <childnode refid="2299" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_smol_dock_1_1_heuristics_1_1_simulated_annealing" prot="public">SmolDock::Heuristics::SimulatedAnnealing</innerclass>
+    <innerclass refid="struct_smol_dock_1_1_heuristics_1_1_simulated_annealing_1_1_parameters" prot="public">SmolDock::Heuristics::SimulatedAnnealing::Parameters</innerclass>
+    <innernamespace refid="namespace_smol_dock_1_1_heuristics">SmolDock::Heuristics</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Created<sp/>by<sp/>briand<sp/>on<sp/>2/22/19.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>SMOLDOCK_SIMULATEDANNEALING_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SMOLDOCK_SIMULATEDANNEALING_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_scoring_function_interface_8h" kindref="compound">Engines/ScoringFunctions/ScoringFunctionInterface.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_optimizer_interface_8h" kindref="compound">Engines/LocalOptimizers/OptimizerInterface.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_heuristic_interface_8h" kindref="compound">HeuristicInterface.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_smol_dock_1_1_heuristics" kindref="compound">SmolDock::Heuristics</ref><sp/>{</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16" refid="class_smol_dock_1_1_heuristics_1_1_simulated_annealing" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_smol_dock_1_1_heuristics_1_1_simulated_annealing" kindref="compound">SimulatedAnnealing</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_heuristics_1_1_global_heuristic" kindref="compound">GlobalHeuristic</ref><sp/>{</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_smol_dock_1_1_heuristics_1_1_simulated_annealing_1_1_parameters" kindref="compound">Parameters</ref>;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_heuristics_1_1_simulated_annealing_1af4f599e7be249487f22ae292d02fad2a" kindref="member">SimulatedAnnealing</ref>(<ref refid="class_smol_dock_1_1_score_1_1_scoring_function" kindref="compound">Score::ScoringFunction</ref>*<sp/>scorFunc_,<sp/><ref refid="class_smol_dock_1_1_optimizer_1_1_optimizer" kindref="compound">Optimizer::Optimizer</ref>*<sp/>optimizer_,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>seed_,</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_smol_dock_1_1_heuristics_1_1_simulated_annealing_1_1_parameters" kindref="compound">SimulatedAnnealing::Parameters</ref><sp/>params_);</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_heuristics_1_1_simulated_annealing_1a1a354ad6f5b9055013ed27575450498f" kindref="member">search</ref>()<sp/></highlight><highlight class="keyword">final</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>arma::mat<sp/><ref refid="class_smol_dock_1_1_heuristics_1_1_simulated_annealing_1aa1f98c673ff2152a626b3a718a6ab5d8" kindref="member">getResultMatrix</ref>()<sp/></highlight><highlight class="keyword">final</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_heuristics_1_1_simulated_annealing_1a730bcd9c7e96d84e76aa4834f59f6ba0" kindref="member">~SimulatedAnnealing</ref>()<sp/></highlight><highlight class="keyword">final</highlight><highlight class="normal"><sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29" refid="struct_smol_dock_1_1_heuristics_1_1_simulated_annealing_1_1_parameters" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_smol_dock_1_1_heuristics_1_1_simulated_annealing_1_1_parameters" kindref="compound">Parameters</ref><sp/>{</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="34" refid="class_smol_dock_1_1_heuristics_1_1_simulated_annealing_1ac78308e5708ae4d3a0702412357fabb3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_score_1_1_scoring_function" kindref="compound">Score::ScoringFunction</ref>*<sp/><ref refid="class_smol_dock_1_1_heuristics_1_1_simulated_annealing_1ac78308e5708ae4d3a0702412357fabb3" kindref="member">scorFunc</ref>;</highlight></codeline>
+<codeline lineno="35" refid="class_smol_dock_1_1_heuristics_1_1_simulated_annealing_1a6631fed330929644b4d902c78b9efaac" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_optimizer_1_1_optimizer" kindref="compound">Optimizer::Optimizer</ref>*<sp/><ref refid="class_smol_dock_1_1_heuristics_1_1_simulated_annealing_1a6631fed330929644b4d902c78b9efaac" kindref="member">optimizer</ref>;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37" refid="class_smol_dock_1_1_heuristics_1_1_simulated_annealing_1a3aa9f639cc1886fb8b738b14b460a46b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::mt19937<sp/><ref refid="class_smol_dock_1_1_heuristics_1_1_simulated_annealing_1a3aa9f639cc1886fb8b738b14b460a46b" kindref="member">rndGenerator</ref>;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39" refid="class_smol_dock_1_1_heuristics_1_1_simulated_annealing_1a88af0098ecfa96362e1135e2f0332b53" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>arma::mat<sp/><ref refid="class_smol_dock_1_1_heuristics_1_1_simulated_annealing_1a88af0098ecfa96362e1135e2f0332b53" kindref="member">result</ref>;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41" refid="class_smol_dock_1_1_heuristics_1_1_simulated_annealing_1adf7f58c5f5664ddea02fa6e906622356" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_smol_dock_1_1_heuristics_1_1_simulated_annealing_1_1_parameters" kindref="compound">Parameters</ref><sp/><ref refid="class_smol_dock_1_1_heuristics_1_1_simulated_annealing_1adf7f58c5f5664ddea02fa6e906622356" kindref="member">params</ref>;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//SMOLDOCK_SIMULATEDANNEALING_H</highlight></codeline>
+    </programlisting>
+    <location file="Engines/GlobalHeuristics/SimulatedAnnealing.h"/>
+  </compounddef>
+</doxygen>

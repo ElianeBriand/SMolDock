@@ -3,17 +3,32 @@ var class_smol_dock_1_1_atom =
     [ "AtomType", "class_smol_dock_1_1_atom.html#a57e9a532fd04e1846c0d83edebb9fd41", [
       [ "unknown", "class_smol_dock_1_1_atom.html#a57e9a532fd04e1846c0d83edebb9fd41aad921d60486366258809553a3db49a4a", null ],
       [ "hydrogen", "class_smol_dock_1_1_atom.html#a57e9a532fd04e1846c0d83edebb9fd41ad4ac1478a4d8a4f591d35e3d75f3de65", null ],
+      [ "boron", "class_smol_dock_1_1_atom.html#a57e9a532fd04e1846c0d83edebb9fd41a057f2c3be5a2ab1d3e942e9433cefeac", null ],
       [ "carbon", "class_smol_dock_1_1_atom.html#a57e9a532fd04e1846c0d83edebb9fd41ae1b832c8857262f1089376030b4298b3", null ],
-      [ "oxygen", "class_smol_dock_1_1_atom.html#a57e9a532fd04e1846c0d83edebb9fd41a6124d98749365e3db2c9e5b27ca04db6", null ],
       [ "nitrogen", "class_smol_dock_1_1_atom.html#a57e9a532fd04e1846c0d83edebb9fd41a63ebb9250f49340aece8d4ac541eaf61", null ],
+      [ "oxygen", "class_smol_dock_1_1_atom.html#a57e9a532fd04e1846c0d83edebb9fd41a6124d98749365e3db2c9e5b27ca04db6", null ],
+      [ "fluorine", "class_smol_dock_1_1_atom.html#a57e9a532fd04e1846c0d83edebb9fd41ae35eb1830c7204b1859958817893bdeb", null ],
+      [ "magnesium", "class_smol_dock_1_1_atom.html#a57e9a532fd04e1846c0d83edebb9fd41aed2a8925c61b97c80e9f78f1ff0625ac", null ],
+      [ "silicon", "class_smol_dock_1_1_atom.html#a57e9a532fd04e1846c0d83edebb9fd41a2d612a8a156e7fe967c3b971975d067d", null ],
       [ "phosporus", "class_smol_dock_1_1_atom.html#a57e9a532fd04e1846c0d83edebb9fd41a3e17873c24bbb0b8ab2dac324dd67b9f", null ],
       [ "sulfur", "class_smol_dock_1_1_atom.html#a57e9a532fd04e1846c0d83edebb9fd41a73a9bf52aa8ea9e256ec469dfce6e022", null ],
-      [ "chlorine", "class_smol_dock_1_1_atom.html#a57e9a532fd04e1846c0d83edebb9fd41af3b7d449c5ca2f53a72210e4381769be", null ]
+      [ "chlorine", "class_smol_dock_1_1_atom.html#a57e9a532fd04e1846c0d83edebb9fd41af3b7d449c5ca2f53a72210e4381769be", null ],
+      [ "calcium", "class_smol_dock_1_1_atom.html#a57e9a532fd04e1846c0d83edebb9fd41ae7956178e76c787c0a2407864ff39d67", null ],
+      [ "manganese", "class_smol_dock_1_1_atom.html#a57e9a532fd04e1846c0d83edebb9fd41a50861e7d3006ffb2d89925d0227a8853", null ],
+      [ "iron", "class_smol_dock_1_1_atom.html#a57e9a532fd04e1846c0d83edebb9fd41abcd31c714bca2c41ffca31bd03003311", null ],
+      [ "cobalt", "class_smol_dock_1_1_atom.html#a57e9a532fd04e1846c0d83edebb9fd41aa6b3f1c744304a3ee2ec20446f690f45", null ],
+      [ "bromine", "class_smol_dock_1_1_atom.html#a57e9a532fd04e1846c0d83edebb9fd41a3d88be9e5c3e2ea6b901637c8bf698a4", null ],
+      [ "iodine", "class_smol_dock_1_1_atom.html#a57e9a532fd04e1846c0d83edebb9fd41a178a0768b3449ece2ed3e08921c6d937", null ]
     ] ],
     [ "AtomVariant", "class_smol_dock_1_1_atom.html#a77191f0919af58d733764e229cb1f973", [
+      [ "none", "class_smol_dock_1_1_atom.html#a77191f0919af58d733764e229cb1f973a334c4a4c42fdb79d7ebc3e73b517e6f8", null ],
       [ "apolar", "class_smol_dock_1_1_atom.html#a77191f0919af58d733764e229cb1f973ae5e437761e40c78a4c0929be07a3ab04", null ],
       [ "hydrogenDonor", "class_smol_dock_1_1_atom.html#a77191f0919af58d733764e229cb1f973ade31e8114bf9ba2ec47d55c59f61853d", null ],
-      [ "hydrogenAcceptor", "class_smol_dock_1_1_atom.html#a77191f0919af58d733764e229cb1f973ad68216b54381a7b2b87b7924ab0191c4", null ]
+      [ "hydrogenAcceptor", "class_smol_dock_1_1_atom.html#a77191f0919af58d733764e229cb1f973ad68216b54381a7b2b87b7924ab0191c4", null ],
+      [ "covalentReversibleAcceptor", "class_smol_dock_1_1_atom.html#a77191f0919af58d733764e229cb1f973a6a50e19bded8541479615e7e0b08f734", null ],
+      [ "customAtomFlag1", "class_smol_dock_1_1_atom.html#a77191f0919af58d733764e229cb1f973abedbe1ed5af8463f77c924722c90552e", null ],
+      [ "customAtomFlag2", "class_smol_dock_1_1_atom.html#a77191f0919af58d733764e229cb1f973abf7f4d3ed23c104fc86bb42e5ba94fe9", null ],
+      [ "customAtomFlag3", "class_smol_dock_1_1_atom.html#a77191f0919af58d733764e229cb1f973adafa4b20b70b01a5b12ff9db5e260d7d", null ]
     ] ],
     [ "Atom", "class_smol_dock_1_1_atom.html#a6fdae20edd67e75fa5fab8cbdbb39faf", null ],
     [ "Atom", "class_smol_dock_1_1_atom.html#a72994dd53d1aa7e9bfb05aecc8a35a52", null ],

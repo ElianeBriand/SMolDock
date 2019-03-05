@@ -4,111 +4,125 @@
     <compoundname>VinaCompatibilityPostProcessor.h</compoundname>
     <includes refid="_input_post_processor_interface_8h" local="yes">InputPostProcessorInterface.h</includes>
     <includedby refid="_vina_compatibility_post_processor_8cpp" local="yes">VinaCompatibilityPostProcessor.cpp</includedby>
+    <includedby refid="cli__interface_8cpp" local="yes">cli_interface.cpp</includedby>
     <includedby refid="main_8cpp" local="no">main.cpp</includedby>
     <includedby refid="_py_s_t_l_wrapper_8cpp" local="no">PySTLWrapper.cpp</includedby>
+    <includedby refid="vina__refiner_8cpp" local="yes">vina_refiner.cpp</includedby>
     <incdepgraph>
-      <node id="1886">
+      <node id="2483">
         <label>InputPostProcessorInterface.h</label>
         <link refid="_input_post_processor_interface_8h"/>
-        <childnode refid="1887" relation="include">
+        <childnode refid="2484" relation="include">
         </childnode>
       </node>
-      <node id="1894">
+      <node id="2491">
         <label>string</label>
       </node>
-      <node id="1887">
+      <node id="2484">
         <label>Structures/Atom.h</label>
         <link refid="_atom_8h"/>
-        <childnode refid="1888" relation="include">
+        <childnode refid="2485" relation="include">
         </childnode>
-        <childnode refid="1889" relation="include">
+        <childnode refid="2486" relation="include">
         </childnode>
-        <childnode refid="1890" relation="include">
+        <childnode refid="2487" relation="include">
         </childnode>
-        <childnode refid="1891" relation="include">
+        <childnode refid="2488" relation="include">
         </childnode>
-        <childnode refid="1892" relation="include">
+        <childnode refid="2489" relation="include">
         </childnode>
-        <childnode refid="1893" relation="include">
+        <childnode refid="2490" relation="include">
         </childnode>
       </node>
-      <node id="1897">
+      <node id="2494">
         <label>map</label>
       </node>
-      <node id="1893">
+      <node id="2490">
         <label>AminoAcid.h</label>
         <link refid="_amino_acid_8h"/>
-        <childnode refid="1894" relation="include">
+        <childnode refid="2491" relation="include">
         </childnode>
-        <childnode refid="1888" relation="include">
+        <childnode refid="2485" relation="include">
         </childnode>
-        <childnode refid="1890" relation="include">
+        <childnode refid="2487" relation="include">
         </childnode>
-        <childnode refid="1891" relation="include">
+        <childnode refid="2488" relation="include">
         </childnode>
-        <childnode refid="1895" relation="include">
+        <childnode refid="2492" relation="include">
         </childnode>
-        <childnode refid="1889" relation="include">
+        <childnode refid="2486" relation="include">
         </childnode>
-        <childnode refid="1896" relation="include">
+        <childnode refid="2493" relation="include">
         </childnode>
       </node>
-      <node id="1895">
+      <node id="2492">
         <label>tuple</label>
       </node>
-      <node id="1896">
+      <node id="2493">
         <label>Engines/Internals/iProtein.h</label>
         <link refid="i_protein_8h"/>
-        <childnode refid="1888" relation="include">
+        <childnode refid="2485" relation="include">
         </childnode>
-        <childnode refid="1889" relation="include">
+        <childnode refid="2486" relation="include">
         </childnode>
-        <childnode refid="1897" relation="include">
+        <childnode refid="2494" relation="include">
         </childnode>
       </node>
-      <node id="1888">
+      <node id="2485">
         <label>vector</label>
       </node>
-      <node id="1892">
+      <node id="2489">
         <label>iostream</label>
       </node>
-      <node id="1890">
+      <node id="2487">
         <label>set</label>
       </node>
-      <node id="1885">
+      <node id="2482">
         <label>VinaCompatibilityPostProcessor.h</label>
         <link refid="_vina_compatibility_post_processor_8h"/>
-        <childnode refid="1886" relation="include">
+        <childnode refid="2483" relation="include">
         </childnode>
       </node>
-      <node id="1891">
+      <node id="2488">
         <label>algorithm</label>
       </node>
-      <node id="1889">
+      <node id="2486">
         <label>memory</label>
       </node>
     </incdepgraph>
     <invincdepgraph>
-      <node id="1901">
+      <node id="2500">
+        <label>vina_refiner.cpp</label>
+        <link refid="vina__refiner_8cpp"/>
+      </node>
+      <node id="2497">
+        <label>cli_interface.cpp</label>
+        <link refid="cli__interface_8cpp"/>
+      </node>
+      <node id="2499">
         <label>PySTLWrapper.cpp</label>
         <link refid="_py_s_t_l_wrapper_8cpp"/>
       </node>
-      <node id="1900">
+      <node id="2498">
         <label>main.cpp</label>
         <link refid="main_8cpp"/>
       </node>
-      <node id="1899">
+      <node id="2496">
         <label>VinaCompatibilityPostProcessor.cpp</label>
         <link refid="_vina_compatibility_post_processor_8cpp"/>
       </node>
-      <node id="1898">
+      <node id="2495">
         <label>VinaCompatibilityPostProcessor.h</label>
         <link refid="_vina_compatibility_post_processor_8h"/>
-        <childnode refid="1899" relation="include">
+        <childnode refid="2496" relation="include">
         </childnode>
-        <childnode refid="1900" relation="include">
+        <childnode refid="2497" relation="include">
         </childnode>
-        <childnode refid="1901" relation="include">
+        <childnode refid="2498" relation="include">
+        </childnode>
+        <childnode refid="2499" relation="include">
+        </childnode>
+        <childnode refid="2500" relation="include">
         </childnode>
       </node>
     </invincdepgraph>
@@ -131,23 +145,25 @@
 <codeline lineno="10"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_smol_dock_1_1_input_post_processor" kindref="compound">SmolDock::InputPostProcessor</ref><sp/>{</highlight></codeline>
 <codeline lineno="11"><highlight class="normal"></highlight></codeline>
 <codeline lineno="12"><highlight class="normal"></highlight></codeline>
-<codeline lineno="13" refid="class_smol_dock_1_1_input_post_processor_1_1_vina_compatibility_post_processor" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_smol_dock_1_1_input_post_processor_1_1_vina_compatibility_post_processor" kindref="compound">VinaCompatibilityPostProcessor</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_input_post_processor_1_1_input_post_processor" kindref="compound">InputPostProcessor</ref>{</highlight></codeline>
+<codeline lineno="13" refid="class_smol_dock_1_1_input_post_processor_1_1_vina_compatibility_post_processor" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_smol_dock_1_1_input_post_processor_1_1_vina_compatibility_post_processor" kindref="compound">VinaCompatibilityPostProcessor</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_input_post_processor_1_1_input_post_processor" kindref="compound">InputPostProcessor</ref><sp/>{</highlight></codeline>
 <codeline lineno="14"><highlight class="normal"></highlight></codeline>
 <codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
 <codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_input_post_processor_1_1_vina_compatibility_post_processor_1a22d855dcd7c0483f587438b8e0c67e57" kindref="member">VinaCompatibilityPostProcessor</ref>()<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="17"><highlight class="normal"></highlight></codeline>
-<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_input_post_processor_1_1_vina_compatibility_post_processor_1acca66db3277201ff3ea5abda18d5a345" kindref="member">processAtomFromLigand</ref>(<ref refid="class_smol_dock_1_1_atom" kindref="compound">SmolDock::Atom</ref>&amp;<sp/>atom)<sp/></highlight><highlight class="keyword">final</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_input_post_processor_1_1_vina_compatibility_post_processor_1a32e204f2bc8c35192036888be4eb554f" kindref="member">processAtomFromProtein</ref>(<ref refid="class_smol_dock_1_1_atom" kindref="compound">SmolDock::Atom</ref>&amp;<sp/>atom,<sp/><ref refid="class_smol_dock_1_1_amino_acid" kindref="compound">SmolDock::AminoAcid</ref>&amp;<sp/>residue)<sp/></highlight><highlight class="keyword">final</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="20"><highlight class="normal"></highlight></codeline>
-<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_input_post_processor_1_1_vina_compatibility_post_processor_1a3408845c9ec89aed7121507d1a82101e" kindref="member">~VinaCompatibilityPostProcessor</ref>()<sp/></highlight><highlight class="keyword">final</highlight><highlight class="normal"><sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_input_post_processor_1_1_vina_compatibility_post_processor_1acca66db3277201ff3ea5abda18d5a345" kindref="member">processAtomFromLigand</ref>(<ref refid="class_smol_dock_1_1_atom" kindref="compound">SmolDock::Atom</ref><sp/>&amp;atom)<sp/></highlight><highlight class="keyword">final</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_input_post_processor_1_1_vina_compatibility_post_processor_1a32e204f2bc8c35192036888be4eb554f" kindref="member">processAtomFromProtein</ref>(<ref refid="class_smol_dock_1_1_atom" kindref="compound">SmolDock::Atom</ref><sp/>&amp;atom,<sp/><ref refid="class_smol_dock_1_1_amino_acid" kindref="compound">SmolDock::AminoAcid</ref><sp/>&amp;residue)<sp/></highlight><highlight class="keyword">final</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_input_post_processor_1_1_vina_compatibility_post_processor_1a3408845c9ec89aed7121507d1a82101e" kindref="member">~VinaCompatibilityPostProcessor</ref>()<sp/></highlight><highlight class="keyword">final</highlight><highlight class="normal"><sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="23"><highlight class="normal"></highlight></codeline>
-<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
 <codeline lineno="25"><highlight class="normal"></highlight></codeline>
-<codeline lineno="26"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
 <codeline lineno="27"><highlight class="normal"></highlight></codeline>
-<codeline lineno="28"><highlight class="normal"></highlight></codeline>
-<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//SMOLDOCK_VINACOMPATIBILITYPOSTPROCESSOR_H</highlight></codeline>
+<codeline lineno="28"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//SMOLDOCK_VINACOMPATIBILITYPOSTPROCESSOR_H</highlight></codeline>
     </programlisting>
     <location file="Structures/InputPostProcessors/VinaCompatibilityPostProcessor.h"/>
   </compounddef>

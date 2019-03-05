@@ -40,7 +40,9 @@ var class_smol_dock_1_1_amino_acid =
     [ "AAId", "class_smol_dock_1_1_amino_acid.html#aed11fc710f3993ac1bda7ce5e59e102e", null ],
     [ "AAShorthandSet", "class_smol_dock_1_1_amino_acid.html#a23b1781c86be2991e2f668c07ad78d68", null ],
     [ "atoms", "class_smol_dock_1_1_amino_acid.html#acf07ea167386e29d0ea6b5024663aed8", null ],
+    [ "centroid", "class_smol_dock_1_1_amino_acid.html#a5a50e8f55f8d8ac9218d5df83a8dd003", null ],
     [ "fullName", "class_smol_dock_1_1_amino_acid.html#a2a83d6290c79b4d2145637a29ebb9d23", null ],
+    [ "maxDistanceFromCentroid", "class_smol_dock_1_1_amino_acid.html#a132a227aef713fad84dbf94a064b33bf", null ],
     [ "shorthand", "class_smol_dock_1_1_amino_acid.html#ad0349cceaac80ad8a367c8130589dd76", null ],
     [ "type", "class_smol_dock_1_1_amino_acid.html#ae3404d935519af353a5c323ce298e04a", null ]
 ];

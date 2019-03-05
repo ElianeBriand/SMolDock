@@ -61,7 +61,8 @@ void export_Engines() {
             .value("cube", sd::Engine::AbstractDockingEngine::DockingBoxSetting::Shape::cube);
 
     p::enum_<sd::Score::ScoringFunctionType>("ScoringFunctionType")
-            .value("VinaRigid", sd::Score::ScoringFunctionType::VinaRigid);
+            .value("VinaRigid", sd::Score::ScoringFunctionType::VinaRigid)
+            .value("Vina", sd::Score::ScoringFunctionType::Vina);
 
     p::enum_<sd::Heuristics::GlobalHeuristicType>("GlobalHeuristicType")
             .value("RandomRestart", sd::Heuristics::GlobalHeuristicType::RandomRestart)
@@ -94,6 +95,7 @@ void export_Engines() {
                 .def("setupDockingEngine", &sd::Engine::ConformerRigidDockingEngine::setupDockingEngine)
                 .def("runDockingEngine", &sd::Engine::ConformerRigidDockingEngine::runDockingEngine)
                 .def("getDockingResult", &sd::Engine::ConformerRigidDockingEngine::getDockingResult)
+                .def("setDockingBox", &sd::Engine::ConformerRigidDockingEngine::setDockingBox)
             /*   .def("populateFromPDB", &sd::Molecule::populateFromPDB, populateFromPDB_overloads())
                .def("populateFromSMILES", &sd::Molecule::populateFromSMILES, populateFromSMILES_overloads())
                .add_property("numberOfAtoms", &sd::Molecule::numberOfAtoms)

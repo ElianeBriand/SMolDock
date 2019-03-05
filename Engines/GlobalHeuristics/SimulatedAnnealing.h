@@ -17,7 +17,7 @@ namespace SmolDock::Heuristics {
     public:
         struct Parameters;
 
-        SimulatedAnnealing(Score::ScoringFunction *scorFunc_, Optimizer::Optimizer *optimizer_, unsigned int seed_,
+        SimulatedAnnealing(Score::ScoringFunction* scorFunc_, Optimizer::Optimizer* optimizer_, unsigned int seed_,
                            SimulatedAnnealing::Parameters params_);
 
         bool search() final;
@@ -31,8 +31,8 @@ namespace SmolDock::Heuristics {
         };
 
     private:
-        Score::ScoringFunction *scorFunc;
-        Optimizer::Optimizer *optimizer;
+        Score::ScoringFunction* scorFunc;
+        Optimizer::Optimizer* optimizer;
 
         std::mt19937 rndGenerator;
 

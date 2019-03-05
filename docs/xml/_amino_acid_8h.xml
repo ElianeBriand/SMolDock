@@ -1,1636 +1,606 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd"
-         version="1.8.14">
-    <compounddef id="_amino_acid_8h" kind="file" language="C++">
-        <compoundname>AminoAcid.h</compoundname>
-        <includes local="no">string</includes>
-        <includes local="no">vector</includes>
-        <includes local="no">set</includes>
-        <includes local="no">algorithm</includes>
-        <includes local="no">tuple</includes>
-        <includes local="no">memory</includes>
-        <includes refid="i_protein_8h" local="yes">Engines/Internals/iProtein.h</includes>
-        <includedby refid="_atom_8h" local="yes">Atom.h</includedby>
-        <includedby refid="_protein_8h" local="yes">Protein.h</includedby>
-        <includedby refid="_amino_acid_8cpp" local="yes">AminoAcid.cpp</includedby>
-        <includedby refid="_p_d_b_residue_variant_table_8h" local="no">PDBResidueVariantTable.h</includedby>
-        <incdepgraph>
-            <node id="57">
-                <label>string</label>
-            </node>
-            <node id="64">
-                <label>map</label>
-            </node>
-            <node id="56">
-                <label>AminoAcid.h</label>
-                <link refid="_amino_acid_8h"/>
-                <childnode refid="57" relation="include">
-                </childnode>
-                <childnode refid="58" relation="include">
-                </childnode>
-                <childnode refid="59" relation="include">
-                </childnode>
-                <childnode refid="60" relation="include">
-                </childnode>
-                <childnode refid="61" relation="include">
-                </childnode>
-                <childnode refid="62" relation="include">
-                </childnode>
-                <childnode refid="63" relation="include">
-                </childnode>
-            </node>
-            <node id="61">
-                <label>tuple</label>
-            </node>
-            <node id="63">
-                <label>Engines/Internals/iProtein.h</label>
-                <link refid="i_protein_8h"/>
-                <childnode refid="58" relation="include">
-                </childnode>
-                <childnode refid="62" relation="include">
-                </childnode>
-                <childnode refid="64" relation="include">
-                </childnode>
-            </node>
-            <node id="58">
-                <label>vector</label>
-            </node>
-            <node id="59">
-                <label>set</label>
-            </node>
-            <node id="60">
-                <label>algorithm</label>
-            </node>
-            <node id="62">
-                <label>memory</label>
-            </node>
-        </incdepgraph>
-        <invincdepgraph>
-            <node id="68">
-                <label>Protein.h</label>
-                <link refid="_protein_8h"/>
-                <childnode refid="69" relation="include">
-                </childnode>
-                <childnode refid="70" relation="include">
-                </childnode>
-                <childnode refid="78" relation="include">
-                </childnode>
-                <childnode refid="74" relation="include">
-                </childnode>
-                <childnode refid="83" relation="include">
-                </childnode>
-                <childnode refid="84" relation="include">
-                </childnode>
-                <childnode refid="72" relation="include">
-                </childnode>
-                <childnode refid="73" relation="include">
-                </childnode>
-                <childnode refid="87" relation="include">
-                </childnode>
-            </node>
-            <node id="70">
-                <label>ConformerRigidDockingEngine.h</label>
-                <link refid="_conformer_rigid_docking_engine_8h"/>
-                <childnode refid="71" relation="include">
-                </childnode>
-                <childnode refid="72" relation="include">
-                </childnode>
-                <childnode refid="73" relation="include">
-                </childnode>
-            </node>
-            <node id="87">
-                <label>PyStructures.cpp</label>
-                <link refid="_py_structures_8cpp"/>
-            </node>
-            <node id="74">
-                <label>MDStyleDockingEngine.h</label>
-                <link refid="_m_d_style_docking_engine_8h"/>
-                <childnode refid="75" relation="include">
-                </childnode>
-            </node>
-            <node id="94">
-                <label>IntermediateConformerCollector.h</label>
-                <link refid="_intermediate_conformer_collector_8h"/>
-                <childnode refid="95" relation="include">
-                </childnode>
-                <childnode refid="72" relation="include">
-                </childnode>
-            </node>
-            <node id="103">
-                <label>VariantFlagAssignation.cpp</label>
-                <link refid="_variant_flag_assignation_8cpp"/>
-            </node>
-            <node id="105">
-                <label>Atom.cpp</label>
-                <link refid="_atom_8cpp"/>
-            </node>
-            <node id="97">
-                <label>PDBWriter.cpp</label>
-                <link refid="_p_d_b_writer_8cpp"/>
-            </node>
-            <node id="81">
-                <label>VinaLikeScoringFunction.cpp</label>
-                <link refid="_vina_like_scoring_function_8cpp"/>
-            </node>
-            <node id="98">
-                <label>PySTLWrapper.cpp</label>
-                <link refid="_py_s_t_l_wrapper_8cpp"/>
-            </node>
-            <node id="77">
-                <label>VinaCompatibleDockingEngine.cpp</label>
-                <link refid="_vina_compatible_docking_engine_8cpp"/>
-            </node>
-            <node id="67">
-                <label>InputPostProcessorInterface.h</label>
-                <link refid="_input_post_processor_interface_8h"/>
-                <childnode refid="68" relation="include">
-                </childnode>
-                <childnode refid="88" relation="include">
-                </childnode>
-                <childnode refid="99" relation="include">
-                </childnode>
-            </node>
-            <node id="85">
-                <label>ReScorer.cpp</label>
-                <link refid="_re_scorer_8cpp"/>
-            </node>
-            <node id="66">
-                <label>Atom.h</label>
-                <link refid="_atom_8h"/>
-                <childnode refid="67" relation="include">
-                </childnode>
-                <childnode refid="88" relation="include">
-                </childnode>
-                <childnode refid="101" relation="include">
-                </childnode>
-                <childnode refid="81" relation="include">
-                </childnode>
-                <childnode refid="104" relation="include">
-                </childnode>
-                <childnode refid="105" relation="include">
-                </childnode>
-                <childnode refid="106" relation="include">
-                </childnode>
-                <childnode refid="108" relation="include">
-                </childnode>
-                <childnode refid="93" relation="include">
-                </childnode>
-                <childnode refid="83" relation="include">
-                </childnode>
-            </node>
-            <node id="76">
-                <label>VinaCompatibleDockingEngine.h</label>
-                <link refid="_vina_compatible_docking_engine_8h"/>
-                <childnode refid="77" relation="include">
-                </childnode>
-            </node>
-            <node id="75">
-                <label>MDStyleDockingEngine.cpp</label>
-                <link refid="_m_d_style_docking_engine_8cpp"/>
-            </node>
-            <node id="72">
-                <label>main.cpp</label>
-                <link refid="main_8cpp"/>
-            </node>
-            <node id="93">
-                <label>Molecule.cpp</label>
-                <link refid="_molecule_8cpp"/>
-            </node>
-            <node id="106">
-                <label>PDBResidueVariantTable.h</label>
-                <link refid="_p_d_b_residue_variant_table_8h"/>
-                <childnode refid="107" relation="include">
-                </childnode>
-                <childnode refid="108" relation="include">
-                </childnode>
-                <childnode refid="103" relation="include">
-                </childnode>
-                <childnode refid="83" relation="include">
-                </childnode>
-            </node>
-            <node id="101">
-                <label>Bond.h</label>
-                <link refid="_bond_8h"/>
-                <childnode refid="88" relation="include">
-                </childnode>
-                <childnode refid="102" relation="include">
-                </childnode>
-                <childnode refid="103" relation="include">
-                </childnode>
-            </node>
-            <node id="80">
-                <label>ScoringFunctionFactory.cpp</label>
-                <link refid="_scoring_function_factory_8cpp"/>
-            </node>
-            <node id="84">
-                <label>ReScorer.h</label>
-                <link refid="_re_scorer_8h"/>
-                <childnode refid="85" relation="include">
-                </childnode>
-                <childnode refid="86" relation="include">
-                </childnode>
-            </node>
-            <node id="104">
-                <label>AminoAcid.cpp</label>
-                <link refid="_amino_acid_8cpp"/>
-            </node>
-            <node id="107">
-                <label>PDBResidueVariantTable.cpp</label>
-                <link refid="_p_d_b_residue_variant_table_8cpp"/>
-            </node>
-            <node id="65">
-                <label>AminoAcid.h</label>
-                <link refid="_amino_acid_8h"/>
-                <childnode refid="66" relation="include">
-                </childnode>
-                <childnode refid="68" relation="include">
-                </childnode>
-                <childnode refid="104" relation="include">
-                </childnode>
-                <childnode refid="106" relation="include">
-                </childnode>
-            </node>
-            <node id="86">
-                <label>PyUtilities.cpp</label>
-                <link refid="_py_utilities_8cpp"/>
-            </node>
-            <node id="69">
-                <label>AbstractDockingEngine.h</label>
-                <link refid="_abstract_docking_engine_8h"/>
-                <childnode refid="70" relation="include">
-                </childnode>
-                <childnode refid="74" relation="include">
-                </childnode>
-                <childnode refid="76" relation="include">
-                </childnode>
-            </node>
-            <node id="89">
-                <label>DockingResult.h</label>
-                <link refid="_docking_result_8h"/>
-                <childnode refid="69" relation="include">
-                </childnode>
-                <childnode refid="90" relation="include">
-                </childnode>
-                <childnode refid="91" relation="include">
-                </childnode>
-                <childnode refid="73" relation="include">
-                </childnode>
-                <childnode refid="87" relation="include">
-                </childnode>
-            </node>
-            <node id="71">
-                <label>ConformerRigidDockingEngine.cpp</label>
-                <link refid="_conformer_rigid_docking_engine_8cpp"/>
-            </node>
-            <node id="79">
-                <label>GradientDescentLineSearch.cpp</label>
-                <link refid="_gradient_descent_line_search_8cpp"/>
-            </node>
-            <node id="92">
-                <label>DockingResultPrinter.cpp</label>
-                <link refid="_docking_result_printer_8cpp"/>
-            </node>
-            <node id="88">
-                <label>Molecule.h</label>
-                <link refid="_molecule_8h"/>
-                <childnode refid="89" relation="include">
-                </childnode>
-                <childnode refid="69" relation="include">
-                </childnode>
-                <childnode refid="70" relation="include">
-                </childnode>
-                <childnode refid="78" relation="include">
-                </childnode>
-                <childnode refid="74" relation="include">
-                </childnode>
-                <childnode refid="93" relation="include">
-                </childnode>
-                <childnode refid="94" relation="include">
-                </childnode>
-                <childnode refid="96" relation="include">
-                </childnode>
-                <childnode refid="84" relation="include">
-                </childnode>
-                <childnode refid="72" relation="include">
-                </childnode>
-                <childnode refid="73" relation="include">
-                </childnode>
-                <childnode refid="98" relation="include">
-                </childnode>
-                <childnode refid="87" relation="include">
-                </childnode>
-            </node>
-            <node id="95">
-                <label>IntermediateConformerCollector.cpp</label>
-                <link refid="_intermediate_conformer_collector_8cpp"/>
-            </node>
-            <node id="108">
-                <label>VariantFlagAssignation.h</label>
-                <link refid="_variant_flag_assignation_8h"/>
-                <childnode refid="103" relation="include">
-                </childnode>
-                <childnode refid="83" relation="include">
-                </childnode>
-            </node>
-            <node id="96">
-                <label>PDBWriter.h</label>
-                <link refid="_p_d_b_writer_8h"/>
-                <childnode refid="94" relation="include">
-                </childnode>
-                <childnode refid="97" relation="include">
-                </childnode>
-            </node>
-            <node id="91">
-                <label>DockingResultPrinter.h</label>
-                <link refid="_docking_result_printer_8h"/>
-                <childnode refid="92" relation="include">
-                </childnode>
-                <childnode refid="72" relation="include">
-                </childnode>
-            </node>
-            <node id="83">
-                <label>Protein.cpp</label>
-                <link refid="_protein_8cpp"/>
-            </node>
-            <node id="102">
-                <label>Bond.cpp</label>
-                <link refid="_bond_8cpp"/>
-            </node>
-            <node id="82">
-                <label>PyScoringFunctions.cpp</label>
-                <link refid="_py_scoring_functions_8cpp"/>
-            </node>
-            <node id="78">
-                <label>VinaLikeScoringFunction.h</label>
-                <link refid="_vina_like_scoring_function_8h"/>
-                <childnode refid="71" relation="include">
-                </childnode>
-                <childnode refid="79" relation="include">
-                </childnode>
-                <childnode refid="80" relation="include">
-                </childnode>
-                <childnode refid="81" relation="include">
-                </childnode>
-                <childnode refid="72" relation="include">
-                </childnode>
-                <childnode refid="82" relation="include">
-                </childnode>
-            </node>
-            <node id="90">
-                <label>DockingResult.cpp</label>
-                <link refid="_docking_result_8cpp"/>
-            </node>
-            <node id="73">
-                <label>PyEngine.cpp</label>
-                <link refid="_py_engine_8cpp"/>
-            </node>
-            <node id="100">
-                <label>VinaCompatibilityPostProcessor.cpp</label>
-                <link refid="_vina_compatibility_post_processor_8cpp"/>
-            </node>
-            <node id="99">
-                <label>VinaCompatibilityPostProcessor.h</label>
-                <link refid="_vina_compatibility_post_processor_8h"/>
-                <childnode refid="100" relation="include">
-                </childnode>
-                <childnode refid="72" relation="include">
-                </childnode>
-                <childnode refid="98" relation="include">
-                </childnode>
-            </node>
-        </invincdepgraph>
-        <innerclass refid="class_smol_dock_1_1_amino_acid" prot="public">SmolDock::AminoAcid</innerclass>
-        <innernamespace refid="namespace_smol_dock">SmolDock</innernamespace>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <programlisting>
-            <codeline lineno="1">
-                <highlight class="comment">/*</highlight>
-            </codeline>
-            <codeline lineno="2">
-                <highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2018<sp/>Eliane<sp/>Briand
-                </highlight>
-            </codeline>
-            <codeline lineno="3">
-                <highlight class="comment"><sp/>*
-                </highlight>
-            </codeline>
-            <codeline lineno="4">
-                <highlight class="comment"><sp/>*<sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>SmolDock.
-                </highlight>
-            </codeline>
-            <codeline lineno="5">
-                <highlight class="comment"><sp/>*
-                </highlight>
-            </codeline>
-            <codeline lineno="6">
-                <highlight class="comment"><sp/>*<sp/>SmolDock<sp/>is<sp/>free<sp/>software:<sp/>you<sp/>can<sp/>
-                    redistribute<sp/>it<sp/>and/or<sp/>modify
-                </highlight>
-            </codeline>
-            <codeline lineno="7">
-                <highlight class="comment"><sp/>*<sp/>it<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>GNU<sp/>General
-                    <sp/>Public<sp/>License<sp/>as<sp/>published<sp/>by
-                </highlight>
-            </codeline>
-            <codeline lineno="8">
-                <highlight class="comment"><sp/>*<sp/>the<sp/>Free<sp/>Software<sp/>Foundation,<sp/>either<sp/>version
-                    <sp/>3<sp/>of<sp/>the<sp/>License,<sp/>or
-                </highlight>
-            </codeline>
-            <codeline lineno="9">
-                <highlight class="comment"><sp/>*<sp/>(at<sp/>your<sp/>option)<sp/>any<sp/>later<sp/>version.
-                </highlight>
-            </codeline>
-            <codeline lineno="10">
-                <highlight class="comment"><sp/>*
-                </highlight>
-            </codeline>
-            <codeline lineno="11">
-                <highlight class="comment"><sp/>*<sp/>SmolDock<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that
-                    <sp/>it<sp/>will<sp/>be<sp/>useful,
-                </highlight>
-            </codeline>
-            <codeline lineno="12">
-                <highlight class="comment"><sp/>*<sp/>but<sp/>WITHOUT<sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the
-                    <sp/>implied<sp/>warranty<sp/>of
-                </highlight>
-            </codeline>
-            <codeline lineno="13">
-                <highlight class="comment"><sp/>*<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR
-                    <sp/>PURPOSE.
-                    <sp/>
-                    <sp/>See<sp/>the
-                </highlight>
-            </codeline>
-            <codeline lineno="14">
-                <highlight class="comment"><sp/>*<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>for<sp/>more<sp/>
-                    details.
-                </highlight>
-            </codeline>
-            <codeline lineno="15">
-                <highlight class="comment"><sp/>*
-                </highlight>
-            </codeline>
-            <codeline lineno="16">
-                <highlight class="comment"><sp/>*<sp/>You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>the
-                    <sp/>GNU<sp/>General<sp/>Public<sp/>License
-                </highlight>
-            </codeline>
-            <codeline lineno="17">
-                <highlight class="comment"><sp/>*<sp/>along<sp/>with<sp/>SmolDock.
-                    <sp/>
-                    <sp/>If<sp/>not,<sp/>see<sp/>&lt;https://www.gnu.org/licenses/&gt;.
-                </highlight>
-            </codeline>
-            <codeline lineno="18">
-                <highlight class="comment"><sp/>*
-                </highlight>
-            </codeline>
-            <codeline lineno="19">
-                <highlight class="comment"><sp/>*/
-                </highlight>
-                <highlight class="normal"></highlight>
-            </codeline>
-            <codeline lineno="20">
-                <highlight class="normal"></highlight>
-            </codeline>
-            <codeline lineno="21">
-                <highlight class="normal"></highlight>
-                <highlight class="preprocessor">#ifndef<sp/>SMOLDOCK_AMINOACID_H
-                </highlight>
-                <highlight class="normal"></highlight>
-            </codeline>
-            <codeline lineno="22">
-                <highlight class="normal"></highlight>
-                <highlight class="preprocessor">#define<sp/>SMOLDOCK_AMINOACID_H
-                </highlight>
-                <highlight class="normal"></highlight>
-            </codeline>
-            <codeline lineno="23">
-                <highlight class="normal"></highlight>
-            </codeline>
-            <codeline lineno="24">
-                <highlight class="normal"></highlight>
-            </codeline>
-            <codeline lineno="25">
-                <highlight class="normal"></highlight>
-                <highlight class="preprocessor">#include<sp/>&lt;string&gt;
-                </highlight>
-                <highlight class="normal"></highlight>
-            </codeline>
-            <codeline lineno="26">
-                <highlight class="normal"></highlight>
-                <highlight class="preprocessor">#include<sp/>&lt;vector&gt;
-                </highlight>
-                <highlight class="normal"></highlight>
-            </codeline>
-            <codeline lineno="27">
-                <highlight class="normal"></highlight>
-                <highlight class="preprocessor">#include<sp/>&lt;set&gt;
-                </highlight>
-                <highlight class="normal"></highlight>
-            </codeline>
-            <codeline lineno="28">
-                <highlight class="normal"></highlight>
-                <highlight class="preprocessor">#include<sp/>&lt;algorithm&gt;
-                </highlight>
-                <highlight class="normal"></highlight>
-            </codeline>
-            <codeline lineno="29">
-                <highlight class="normal"></highlight>
-                <highlight class="preprocessor">#include<sp/>&lt;tuple&gt;
-                </highlight>
-                <highlight class="normal"></highlight>
-            </codeline>
-            <codeline lineno="30">
-                <highlight class="normal"></highlight>
-                <highlight class="preprocessor">#include<sp/>&lt;memory&gt;
-                </highlight>
-                <highlight class="normal"></highlight>
-            </codeline>
-            <codeline lineno="31">
-                <highlight class="normal"></highlight>
-            </codeline>
-            <codeline lineno="32">
-                <highlight class="normal"></highlight>
-                <highlight class="preprocessor">#include<sp/>&quot;<ref refid="i_protein_8h" kindref="compound">
-                    Engines/Internals/iProtein.h</ref>&quot;
-                </highlight>
-                <highlight class="normal"></highlight>
-            </codeline>
-            <codeline lineno="33">
-                <highlight class="normal"></highlight>
-            </codeline>
-            <codeline lineno="34">
-                <highlight class="normal"></highlight>
-            </codeline>
-            <codeline lineno="35">
-                <highlight class="normal"></highlight>
-            </codeline>
-            <codeline lineno="36">
-                <highlight class="normal"></highlight>
-                <highlight class="keyword">namespace
-                    <sp/>
-                </highlight>
-                <highlight class="normal">
-                    <ref refid="namespace_smol_dock" kindref="compound">SmolDock</ref>
-                    <sp/>{
-                </highlight>
-            </codeline>
-            <codeline lineno="37">
-                <highlight class="normal"></highlight>
-            </codeline>
-            <codeline lineno="38">
-                <highlight class="normal"></highlight>
-            </codeline>
-            <codeline lineno="39">
-                <highlight class="normal">
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                </highlight>
-                <highlight class="keyword">class
-                    <sp/>
-                </highlight>
-                <highlight class="normal">Atom;</highlight>
-            </codeline>
-            <codeline lineno="40">
-                <highlight class="normal">
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                </highlight>
-                <highlight class="keyword">enum<sp/>class
-                </highlight>
-                <highlight class="normal">
-                    <sp/>
-                    <ref refid="namespace_smol_dock_1ab797122db8030eb70bf4d042c897df5e" kindref="member">
-                        PDBResidueVariantAssignationType</ref>;
-                </highlight>
-            </codeline>
-            <codeline lineno="41">
-                <highlight class="normal"></highlight>
-            </codeline>
-            <codeline lineno="42" refid="class_smol_dock_1_1_amino_acid" refkind="compound">
-                <highlight class="normal">
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                </highlight>
-                <highlight class="keyword">class
-                    <sp/>
-                </highlight>
-                <highlight class="normal">
-                    <ref refid="class_smol_dock_1_1_amino_acid" kindref="compound">AminoAcid</ref>
-                    <sp/>{
-                </highlight>
-            </codeline>
-            <codeline lineno="43">
-                <highlight class="normal"></highlight>
-            </codeline>
-            <codeline lineno="44" refid="class_smol_dock_1_1_amino_acid_1a2cc8b86817f46f61585ecf591984f8eb"
-                      refkind="member">
-                <highlight class="normal">
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                </highlight>
-                <highlight class="keyword">friend</highlight>
-                <highlight class="normal">
-                    <sp/>
-                </highlight>
-                <highlight class="keyword">class
-                    <sp/>
-                </highlight>
-                <highlight class="normal"><ref refid="class_smol_dock_1_1_protein" kindref="compound">Protein</ref>;
-                </highlight>
-            </codeline>
-            <codeline lineno="45">
-                <highlight class="normal">
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                </highlight>
-                <highlight class="keyword">friend</highlight>
-                <highlight class="normal">
-                    <sp/>
-                </highlight>
-                <highlight class="keywordtype">void</highlight>
-                <highlight class="normal">
-                    <sp/>
-                    <ref refid="class_smol_dock_1_1_amino_acid_1a74b6203c0c737ad86fb18da22ec935ff" kindref="member">
-                        assignVariantFlagsForResidueAtom</ref>(<ref refid="class_smol_dock_1_1_amino_acid"
-                                                                    kindref="compound">AminoAcid</ref>&amp;<sp/>residue,
-                    <sp/>
-                    <ref refid="namespace_smol_dock_1ab797122db8030eb70bf4d042c897df5e" kindref="member">
-                        PDBResidueVariantAssignationType
-                    </ref>
-                    <sp/>assignation_type);
-                </highlight>
-            </codeline>
-            <codeline lineno="46">
-                <highlight class="normal"></highlight>
-            </codeline>
-            <codeline lineno="47">
-                <highlight class="normal">
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                </highlight>
-                <highlight class="keyword">public</highlight>
-                <highlight class="normal">:</highlight>
-            </codeline>
-            <codeline lineno="48">
-                <highlight class="normal"></highlight>
-            </codeline>
-            <codeline lineno="49" refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875d"
-                      refkind="member">
-                <highlight class="normal">
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                </highlight>
-                <highlight class="keyword">enum<sp/>class
-                </highlight>
-                <highlight class="normal">
-                    <sp/>
-                    <ref refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875d" kindref="member">
-                        AAType
-                    </ref>
-                    <sp/>{
-                </highlight>
-            </codeline>
-            <codeline lineno="50">
-                <highlight class="normal">
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <ref refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875da7d0832b9f55cfd3f7c79f134de3b76a7"
-                         kindref="member">alanine</ref>,
-                </highlight>
-            </codeline>
-            <codeline lineno="51">
-                <highlight class="normal">
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <ref refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875da9a1407676e926e8c94b54e0864da4546"
-                         kindref="member">arginine</ref>,
-                </highlight>
-            </codeline>
-            <codeline lineno="52">
-                <highlight class="normal">
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <ref refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875da6d1d64af1a6d275bd2995d990072b129"
-                         kindref="member">asparagine</ref>,
-                </highlight>
-            </codeline>
-            <codeline lineno="53">
-                <highlight class="normal">
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <ref refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875da1aa8cabca067057363a0b448f2db84e7"
-                         kindref="member">aspartate</ref>,
-                </highlight>
-            </codeline>
-            <codeline lineno="54">
-                <highlight class="normal">
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <ref refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875da3ec90ee7bdd38cf0f8a68b4bee5eb202"
-                         kindref="member">cysteine</ref>,
-                </highlight>
-            </codeline>
-            <codeline lineno="55">
-                <highlight class="normal">
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <ref refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875da12ea2245c0c7703f3863b9be45a07ae0"
-                         kindref="member">glutamate</ref>,
-                </highlight>
-            </codeline>
-            <codeline lineno="56">
-                <highlight class="normal">
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <ref refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875daf91e23557b10705ecb971f90c17f8777"
-                         kindref="member">glutamine</ref>,
-                </highlight>
-            </codeline>
-            <codeline lineno="57">
-                <highlight class="normal">
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <ref refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875da3a778f248ff123853d5605f084e2e260"
-                         kindref="member">glycine</ref>,
-                </highlight>
-            </codeline>
-            <codeline lineno="58">
-                <highlight class="normal">
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <ref refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875da77d85f9928565a0fe8f709d63982efec"
-                         kindref="member">histidine</ref>,
-                </highlight>
-            </codeline>
-            <codeline lineno="59">
-                <highlight class="normal">
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <ref refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875daf49712f65cf0d21531c38f3083a41066"
-                         kindref="member">isoleucine</ref>,
-                </highlight>
-            </codeline>
-            <codeline lineno="60">
-                <highlight class="normal">
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <ref refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875da8fc32025ca0bd8d2a5a86c407ab4db14"
-                         kindref="member">leucine</ref>,
-                </highlight>
-            </codeline>
-            <codeline lineno="61">
-                <highlight class="normal">
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <ref refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875da183c564fc49647ef130a793d2fc8eb63"
-                         kindref="member">lysine</ref>,
-                </highlight>
-            </codeline>
-            <codeline lineno="62">
-                <highlight class="normal">
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <ref refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875da3d2f71c3aa615f44d4f7c394b4d89d24"
-                         kindref="member">methionine</ref>,
-                </highlight>
-            </codeline>
-            <codeline lineno="63">
-                <highlight class="normal">
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <ref refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875daa74b51b040c4059a99fd0defb7f0d0f6"
-                         kindref="member">phenylalanine</ref>,
-                </highlight>
-            </codeline>
-            <codeline lineno="64">
-                <highlight class="normal">
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <ref refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875da468e37d1ebb2b2d9488ad143d406e419"
-                         kindref="member">proline</ref>,
-                </highlight>
-            </codeline>
-            <codeline lineno="65">
-                <highlight class="normal">
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <ref refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875daa693d5166186d99ae683963032f44119"
-                         kindref="member">serine</ref>,
-                </highlight>
-            </codeline>
-            <codeline lineno="66">
-                <highlight class="normal">
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <ref refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875daa2a6737c3315b2d4391a24a8f672d4d2"
-                         kindref="member">threonine</ref>,
-                </highlight>
-            </codeline>
-            <codeline lineno="67">
-                <highlight class="normal">
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <ref refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875daebd78192c93b932250b270f9ae1f2638"
-                         kindref="member">tryptophan</ref>,
-                </highlight>
-            </codeline>
-            <codeline lineno="68">
-                <highlight class="normal">
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <ref refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875da1b54c05c5fc8eec4986ac75f82af9d65"
-                         kindref="member">tyrosine</ref>,
-                </highlight>
-            </codeline>
-            <codeline lineno="69">
-                <highlight class="normal">
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <ref refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875dae1028fdd9757c76ba244c2521f716113"
-                         kindref="member">valine</ref>,
-                </highlight>
-            </codeline>
-            <codeline lineno="70">
-                <highlight class="normal">
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <ref refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875daac3d9bd0eff79f662bcecac7c2887384"
-                         kindref="member">selenocysteine</ref>,
-                </highlight>
-            </codeline>
-            <codeline lineno="71">
-                <highlight class="normal">
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <ref refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875da8b17b1023d7d4d8093a8cc3bffbc3e62"
-                         kindref="member">pyrrolysine</ref>,
-                </highlight>
-            </codeline>
-            <codeline lineno="72">
-                <highlight class="normal">
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <ref refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875dad390be0ae98a5c4a22ca9b0b7e726f40"
-                         kindref="member">heteroatom</ref>,
-                    <sp/>
-                </highlight>
-                <highlight class="comment">/*<sp/>Used<sp/>for<sp/>convenience<sp/>*/
-                </highlight>
-                <highlight class="normal"></highlight>
-            </codeline>
-            <codeline lineno="73">
-                <highlight class="normal">
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <ref refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875daad921d60486366258809553a3db49a4a"
-                         kindref="member">unknown
-                    </ref>
-                </highlight>
-            </codeline>
-            <codeline lineno="74">
-                <highlight class="normal">
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>};
-                </highlight>
-            </codeline>
-            <codeline lineno="75">
-                <highlight class="normal"></highlight>
-            </codeline>
-            <codeline lineno="77">
-                <highlight class="normal">
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                </highlight>
-                <highlight class="keyword">friend</highlight>
-                <highlight class="normal"><sp/>std::string
-                    <sp/>
-                    <ref refid="class_smol_dock_1_1_amino_acid_1a114a9d96ae603d1a25779498205cec47" kindref="member">
-                        resTypeToString</ref>(
-                    <ref refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875d" kindref="member">
-                        AminoAcid::AAType
-                    </ref>
-                    <sp/>t);
-                </highlight>
-            </codeline>
-            <codeline lineno="78">
-                <highlight class="normal"></highlight>
-            </codeline>
-            <codeline lineno="79">
-                <highlight class="normal">
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                </highlight>
-                <highlight class="keyword">friend</highlight>
-                <highlight class="normal">
-                    <sp/>
-                    <ref refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875d" kindref="member">
-                        AminoAcid::AAType
-                    </ref>
-                    <sp/>
-                    <ref refid="class_smol_dock_1_1_amino_acid_1a196e09203295c01d2a5fc157ee89f7ee" kindref="member">
-                        stringToResType</ref>(
-                </highlight>
-                <highlight class="keyword">const</highlight>
-                <highlight class="normal"><sp/>std::string<sp/>&amp;shorthand_or_name);
-                </highlight>
-            </codeline>
-            <codeline lineno="80">
-                <highlight class="normal"></highlight>
-            </codeline>
-            <codeline lineno="81">
-                <highlight class="normal"></highlight>
-            </codeline>
-            <codeline lineno="82">
-                <highlight class="normal">
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                </highlight>
-                <highlight class="keyword">explicit</highlight>
-                <highlight class="normal">
-                    <sp/>
-                    <ref refid="class_smol_dock_1_1_amino_acid_1a0632e2366d8af52d467bffcde90657f2" kindref="member">
-                        AminoAcid</ref>(
-                </highlight>
-                <highlight class="keyword">const</highlight>
-                <highlight class="normal"><sp/>std::string<sp/>&amp;AA3LettersShorthand);
-                </highlight>
-            </codeline>
-            <codeline lineno="83">
-                <highlight class="normal"></highlight>
-            </codeline>
-            <codeline lineno="84">
-                <highlight class="normal">
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                </highlight>
-                <highlight class="keyword">explicit</highlight>
-                <highlight class="normal">
-                    <sp/>
-                    <ref refid="class_smol_dock_1_1_amino_acid_1a0632e2366d8af52d467bffcde90657f2" kindref="member">
-                        AminoAcid</ref>(
-                </highlight>
-                <highlight class="keyword">const</highlight>
-                <highlight class="normal">
-                    <sp/>
-                    <ref refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875d" kindref="member">
-                        AminoAcid::AAType
-                    </ref>
-                    <sp/>&amp;<ref refid="class_smol_dock_1_1_amino_acid_1ae3404d935519af353a5c323ce298e04a"
-                                   kindref="member">type</ref>);
-                </highlight>
-            </codeline>
-            <codeline lineno="85">
-                <highlight class="normal"></highlight>
-            </codeline>
-            <codeline lineno="86">
-                <highlight class="normal"></highlight>
-            </codeline>
-            <codeline lineno="87">
-                <highlight class="normal">
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                </highlight>
-                <highlight class="keywordtype">unsigned</highlight>
-                <highlight class="normal">
-                    <sp/>
-                </highlight>
-                <highlight class="keywordtype">int</highlight>
-                <highlight class="normal">
-                    <sp/>
-                    <ref refid="class_smol_dock_1_1_amino_acid_1a8d76cf7b2a088f713aa507029f03ac20" kindref="member">
-                        getAAId</ref>()
-                    <sp/>
-                </highlight>
-                <highlight class="keyword">const</highlight>
-                <highlight class="normal">;</highlight>
-            </codeline>
-            <codeline lineno="88">
-                <highlight class="normal">
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                </highlight>
-                <highlight class="keywordtype">void</highlight>
-                <highlight class="normal">
-                    <sp/>
-                    <ref refid="class_smol_dock_1_1_amino_acid_1a091349e13f56cc9d28701dcfe8e30d45" kindref="member">
-                        setAAId</ref>(
-                </highlight>
-                <highlight class="keywordtype">unsigned</highlight>
-                <highlight class="normal">
-                    <sp/>
-                </highlight>
-                <highlight class="keywordtype">int</highlight>
-                <highlight class="normal">
-                    <sp/>
-                </highlight>
-                <highlight class="keywordtype">id</highlight>
-                <highlight class="normal">);</highlight>
-            </codeline>
-            <codeline lineno="89">
-                <highlight class="normal"></highlight>
-            </codeline>
-            <codeline lineno="90">
-                <highlight class="normal">
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                </highlight>
-                <highlight class="keywordtype">bool</highlight>
-                <highlight class="normal">
-                    <sp/>
-                    <ref refid="class_smol_dock_1_1_amino_acid_1a8fb908f1ba8496d0cc115d7a0813d027" kindref="member">
-                        filliProtein</ref>(<ref refid="struct_smol_dock_1_1i_protein" kindref="compound">iProtein</ref>&amp;<sp/>
-                    prot,
-                    <sp/>
-                </highlight>
-                <highlight class="keywordtype">bool</highlight>
-                <highlight class="normal"><sp/>skipHydrogen<sp/>=
-                    <sp/>
-                </highlight>
-                <highlight class="keyword">true</highlight>
-                <highlight class="normal">);</highlight>
-            </codeline>
-            <codeline lineno="91">
-                <highlight class="normal"></highlight>
-            </codeline>
-            <codeline lineno="92">
-                <highlight class="normal">
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <ref refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875d" kindref="member">
-                        AAType
-                    </ref>
-                    <sp/>
-                    <ref refid="class_smol_dock_1_1_amino_acid_1a556f668f759abed9c33c3522106d520b" kindref="member">
-                        getType</ref>()
-                    <sp/>
-                </highlight>
-                <highlight class="keyword">const</highlight>
-                <highlight class="normal">;</highlight>
-            </codeline>
-            <codeline lineno="93">
-                <highlight class="normal">
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                </highlight>
-                <highlight class="keywordtype">void</highlight>
-                <highlight class="normal">
-                    <sp/>
-                    <ref refid="class_smol_dock_1_1_amino_acid_1acf73c63c5f9f1945d40ae0bc365c5614" kindref="member">
-                        setType</ref>(
-                    <ref refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875d" kindref="member">
-                        AAType
-                    </ref>
-                    <sp/>t);
-                </highlight>
-            </codeline>
-            <codeline lineno="94">
-                <highlight class="normal"></highlight>
-            </codeline>
-            <codeline lineno="95">
-                <highlight class="normal">
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                </highlight>
-                <highlight class="keyword">protected</highlight>
-                <highlight class="normal">:</highlight>
-            </codeline>
-            <codeline lineno="96" refid="class_smol_dock_1_1_amino_acid_1a23b1781c86be2991e2f668c07ad78d68"
-                      refkind="member">
-                <highlight class="normal">
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                </highlight>
-                <highlight class="keyword">static</highlight>
-                <highlight class="normal"><sp/>std::set&lt;std::tuple&lt;AminoAcid::AAType,<sp/>std::string,<sp/>
-                    std::string&gt;<sp/>&gt;<sp/>
-                    <ref refid="class_smol_dock_1_1_amino_acid_1a23b1781c86be2991e2f668c07ad78d68" kindref="member">
-                        AAShorthandSet</ref>;
-                </highlight>
-            </codeline>
-            <codeline lineno="97">
-                <highlight class="normal"></highlight>
-            </codeline>
-            <codeline lineno="98">
-                <highlight class="normal"></highlight>
-            </codeline>
-            <codeline lineno="99">
-                <highlight class="normal">
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                </highlight>
-                <highlight class="keyword">private</highlight>
-                <highlight class="normal">:</highlight>
-            </codeline>
-            <codeline lineno="100" refid="class_smol_dock_1_1_amino_acid_1ae3404d935519af353a5c323ce298e04a"
-                      refkind="member">
-                <highlight class="normal">
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <ref refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875d" kindref="member">
-                        AAType
-                    </ref>
-                    <sp/>
-                    <ref refid="class_smol_dock_1_1_amino_acid_1ae3404d935519af353a5c323ce298e04a" kindref="member">
-                        type</ref>;
-                </highlight>
-            </codeline>
-            <codeline lineno="101">
-                <highlight class="normal"></highlight>
-            </codeline>
-            <codeline lineno="102" refid="class_smol_dock_1_1_amino_acid_1aed11fc710f3993ac1bda7ce5e59e102e"
-                      refkind="member">
-                <highlight class="normal">
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                </highlight>
-                <highlight class="keywordtype">unsigned</highlight>
-                <highlight class="normal">
-                    <sp/>
-                </highlight>
-                <highlight class="keywordtype">int</highlight>
-                <highlight class="normal">
-                    <sp/>
-                    <ref refid="class_smol_dock_1_1_amino_acid_1aed11fc710f3993ac1bda7ce5e59e102e" kindref="member">
-                        AAId</ref>;
-                </highlight>
-            </codeline>
-            <codeline lineno="103">
-                <highlight class="normal"></highlight>
-            </codeline>
-            <codeline lineno="104" refid="class_smol_dock_1_1_amino_acid_1ad0349cceaac80ad8a367c8130589dd76"
-                      refkind="member">
-                <highlight class="normal">
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>std::string
-                    <sp/>
-                    <ref refid="class_smol_dock_1_1_amino_acid_1ad0349cceaac80ad8a367c8130589dd76" kindref="member">
-                        shorthand</ref>;
-                </highlight>
-            </codeline>
-            <codeline lineno="105" refid="class_smol_dock_1_1_amino_acid_1a2a83d6290c79b4d2145637a29ebb9d23"
-                      refkind="member">
-                <highlight class="normal">
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>std::string
-                    <sp/>
-                    <ref refid="class_smol_dock_1_1_amino_acid_1a2a83d6290c79b4d2145637a29ebb9d23" kindref="member">
-                        fullName</ref>;
-                </highlight>
-            </codeline>
-            <codeline lineno="106">
-                <highlight class="normal"></highlight>
-            </codeline>
-            <codeline lineno="107" refid="class_smol_dock_1_1_amino_acid_1acf07ea167386e29d0ea6b5024663aed8"
-                      refkind="member">
-                <highlight class="normal">
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>std::vector&lt;std::shared_ptr&lt;Atom&gt;<sp/>&gt;<sp/>
-                    <ref refid="class_smol_dock_1_1_amino_acid_1acf07ea167386e29d0ea6b5024663aed8" kindref="member">
-                        atoms</ref>;
-                </highlight>
-            </codeline>
-            <codeline lineno="108">
-                <highlight class="normal"></highlight>
-            </codeline>
-            <codeline lineno="109">
-                <highlight class="normal"></highlight>
-            </codeline>
-            <codeline lineno="110">
-                <highlight class="normal">
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>};
-                </highlight>
-            </codeline>
-            <codeline lineno="111">
-                <highlight class="normal"></highlight>
-            </codeline>
-            <codeline lineno="112">
-                <highlight class="normal">
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>std::string
-                    <sp/>
-                    <ref refid="namespace_smol_dock_1a7980070f5c494cfe044ad9e90e34e3e3" kindref="member">
-                        resTypeToString</ref>(
-                    <ref refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875d" kindref="member">
-                        AminoAcid::AAType
-                    </ref>
-                    <sp/>t);
-                </highlight>
-            </codeline>
-            <codeline lineno="113">
-                <highlight class="normal"></highlight>
-            </codeline>
-            <codeline lineno="114">
-                <highlight class="normal">
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <ref refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875d" kindref="member">
-                        AminoAcid::AAType
-                    </ref>
-                    <sp/>
-                    <ref refid="namespace_smol_dock_1a788f9308991cdf8fe5af07b27ff0f389" kindref="member">
-                        stringToResType</ref>(
-                </highlight>
-                <highlight class="keyword">const</highlight>
-                <highlight class="normal"><sp/>std::string<sp/>&amp;shorthand_or_name);
-                </highlight>
-            </codeline>
-            <codeline lineno="115">
-                <highlight class="normal"></highlight>
-            </codeline>
-            <codeline lineno="116">
-                <highlight class="normal">}</highlight>
-            </codeline>
-            <codeline lineno="117">
-                <highlight class="normal"></highlight>
-            </codeline>
-            <codeline lineno="118">
-                <highlight class="normal"></highlight>
-            </codeline>
-            <codeline lineno="119">
-                <highlight class="normal"></highlight>
-                <highlight class="preprocessor">#endif<sp/>//SMOLDOCK_AMINOACID_H
-                </highlight>
-            </codeline>
-        </programlisting>
-        <location file="Structures/AminoAcid.h"/>
-    </compounddef>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_amino_acid_8h" kind="file" language="C++">
+    <compoundname>AminoAcid.h</compoundname>
+    <includes local="no">string</includes>
+    <includes local="no">vector</includes>
+    <includes local="no">set</includes>
+    <includes local="no">algorithm</includes>
+    <includes local="no">tuple</includes>
+    <includes local="no">memory</includes>
+    <includes refid="i_protein_8h" local="yes">Engines/Internals/iProtein.h</includes>
+    <includedby refid="_atom_8h" local="yes">Atom.h</includedby>
+    <includedby refid="_protein_8h" local="yes">Protein.h</includedby>
+    <includedby refid="_amino_acid_8cpp" local="yes">AminoAcid.cpp</includedby>
+    <includedby refid="_p_d_b_residue_variant_table_8h" local="no">PDBResidueVariantTable.h</includedby>
+    <incdepgraph>
+      <node id="60">
+        <label>string</label>
+      </node>
+      <node id="67">
+        <label>map</label>
+      </node>
+      <node id="59">
+        <label>AminoAcid.h</label>
+        <link refid="_amino_acid_8h"/>
+        <childnode refid="60" relation="include">
+        </childnode>
+        <childnode refid="61" relation="include">
+        </childnode>
+        <childnode refid="62" relation="include">
+        </childnode>
+        <childnode refid="63" relation="include">
+        </childnode>
+        <childnode refid="64" relation="include">
+        </childnode>
+        <childnode refid="65" relation="include">
+        </childnode>
+        <childnode refid="66" relation="include">
+        </childnode>
+      </node>
+      <node id="64">
+        <label>tuple</label>
+      </node>
+      <node id="66">
+        <label>Engines/Internals/iProtein.h</label>
+        <link refid="i_protein_8h"/>
+        <childnode refid="61" relation="include">
+        </childnode>
+        <childnode refid="65" relation="include">
+        </childnode>
+        <childnode refid="67" relation="include">
+        </childnode>
+      </node>
+      <node id="61">
+        <label>vector</label>
+      </node>
+      <node id="62">
+        <label>set</label>
+      </node>
+      <node id="63">
+        <label>algorithm</label>
+      </node>
+      <node id="65">
+        <label>memory</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="71">
+        <label>Protein.h</label>
+        <link refid="_protein_8h"/>
+        <childnode refid="72" relation="include">
+        </childnode>
+        <childnode refid="73" relation="include">
+        </childnode>
+        <childnode refid="82" relation="include">
+        </childnode>
+        <childnode refid="78" relation="include">
+        </childnode>
+        <childnode refid="86" relation="include">
+        </childnode>
+        <childnode refid="89" relation="include">
+        </childnode>
+        <childnode refid="91" relation="include">
+        </childnode>
+        <childnode refid="92" relation="include">
+        </childnode>
+        <childnode refid="75" relation="include">
+        </childnode>
+        <childnode refid="76" relation="include">
+        </childnode>
+        <childnode refid="77" relation="include">
+        </childnode>
+        <childnode refid="95" relation="include">
+        </childnode>
+        <childnode refid="88" relation="include">
+        </childnode>
+      </node>
+      <node id="73">
+        <label>ConformerRigidDockingEngine.h</label>
+        <link refid="_conformer_rigid_docking_engine_8h"/>
+        <childnode refid="74" relation="include">
+        </childnode>
+        <childnode refid="75" relation="include">
+        </childnode>
+        <childnode refid="76" relation="include">
+        </childnode>
+        <childnode refid="77" relation="include">
+        </childnode>
+      </node>
+      <node id="95">
+        <label>PyStructures.cpp</label>
+        <link refid="_py_structures_8cpp"/>
+      </node>
+      <node id="78">
+        <label>MDStyleDockingEngine.h</label>
+        <link refid="_m_d_style_docking_engine_8h"/>
+        <childnode refid="79" relation="include">
+        </childnode>
+      </node>
+      <node id="102">
+        <label>IntermediateConformerCollector.h</label>
+        <link refid="_intermediate_conformer_collector_8h"/>
+        <childnode refid="103" relation="include">
+        </childnode>
+      </node>
+      <node id="111">
+        <label>VariantFlagAssignation.cpp</label>
+        <link refid="_variant_flag_assignation_8cpp"/>
+      </node>
+      <node id="114">
+        <label>Atom.cpp</label>
+        <link refid="_atom_8cpp"/>
+      </node>
+      <node id="86">
+        <label>PoseRefiner.h</label>
+        <link refid="_pose_refiner_8h"/>
+        <childnode refid="87" relation="include">
+        </childnode>
+        <childnode refid="75" relation="include">
+        </childnode>
+        <childnode refid="88" relation="include">
+        </childnode>
+      </node>
+      <node id="105">
+        <label>PDBWriter.cpp</label>
+        <link refid="_p_d_b_writer_8cpp"/>
+      </node>
+      <node id="88">
+        <label>vina_refiner.cpp</label>
+        <link refid="vina__refiner_8cpp"/>
+      </node>
+      <node id="90">
+        <label>VinaLikeScoringFunction.cpp</label>
+        <link refid="_vina_like_scoring_function_8cpp"/>
+      </node>
+      <node id="75">
+        <label>cli_interface.cpp</label>
+        <link refid="cli__interface_8cpp"/>
+      </node>
+      <node id="106">
+        <label>PySTLWrapper.cpp</label>
+        <link refid="_py_s_t_l_wrapper_8cpp"/>
+      </node>
+      <node id="81">
+        <label>VinaCompatibleDockingEngine.cpp</label>
+        <link refid="_vina_compatible_docking_engine_8cpp"/>
+      </node>
+      <node id="70">
+        <label>InputPostProcessorInterface.h</label>
+        <link refid="_input_post_processor_interface_8h"/>
+        <childnode refid="71" relation="include">
+        </childnode>
+        <childnode refid="96" relation="include">
+        </childnode>
+        <childnode refid="107" relation="include">
+        </childnode>
+      </node>
+      <node id="93">
+        <label>ReScorer.cpp</label>
+        <link refid="_re_scorer_8cpp"/>
+      </node>
+      <node id="69">
+        <label>Atom.h</label>
+        <link refid="_atom_8h"/>
+        <childnode refid="70" relation="include">
+        </childnode>
+        <childnode refid="96" relation="include">
+        </childnode>
+        <childnode refid="109" relation="include">
+        </childnode>
+        <childnode refid="112" relation="include">
+        </childnode>
+        <childnode refid="85" relation="include">
+        </childnode>
+        <childnode refid="90" relation="include">
+        </childnode>
+        <childnode refid="113" relation="include">
+        </childnode>
+        <childnode refid="114" relation="include">
+        </childnode>
+        <childnode refid="115" relation="include">
+        </childnode>
+        <childnode refid="117" relation="include">
+        </childnode>
+        <childnode refid="101" relation="include">
+        </childnode>
+        <childnode refid="91" relation="include">
+        </childnode>
+        <childnode refid="76" relation="include">
+        </childnode>
+      </node>
+      <node id="80">
+        <label>VinaCompatibleDockingEngine.h</label>
+        <link refid="_vina_compatible_docking_engine_8h"/>
+        <childnode refid="81" relation="include">
+        </childnode>
+      </node>
+      <node id="79">
+        <label>MDStyleDockingEngine.cpp</label>
+        <link refid="_m_d_style_docking_engine_8cpp"/>
+      </node>
+      <node id="76">
+        <label>main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+      <node id="101">
+        <label>Molecule.cpp</label>
+        <link refid="_molecule_8cpp"/>
+      </node>
+      <node id="115">
+        <label>PDBResidueVariantTable.h</label>
+        <link refid="_p_d_b_residue_variant_table_8h"/>
+        <childnode refid="116" relation="include">
+        </childnode>
+        <childnode refid="117" relation="include">
+        </childnode>
+        <childnode refid="111" relation="include">
+        </childnode>
+        <childnode refid="91" relation="include">
+        </childnode>
+      </node>
+      <node id="109">
+        <label>Bond.h</label>
+        <link refid="_bond_8h"/>
+        <childnode refid="96" relation="include">
+        </childnode>
+        <childnode refid="110" relation="include">
+        </childnode>
+        <childnode refid="111" relation="include">
+        </childnode>
+      </node>
+      <node id="84">
+        <label>ScoringFunctionFactory.cpp</label>
+        <link refid="_scoring_function_factory_8cpp"/>
+      </node>
+      <node id="92">
+        <label>ReScorer.h</label>
+        <link refid="_re_scorer_8h"/>
+        <childnode refid="93" relation="include">
+        </childnode>
+        <childnode refid="94" relation="include">
+        </childnode>
+      </node>
+      <node id="113">
+        <label>AminoAcid.cpp</label>
+        <link refid="_amino_acid_8cpp"/>
+      </node>
+      <node id="116">
+        <label>PDBResidueVariantTable.cpp</label>
+        <link refid="_p_d_b_residue_variant_table_8cpp"/>
+      </node>
+      <node id="68">
+        <label>AminoAcid.h</label>
+        <link refid="_amino_acid_8h"/>
+        <childnode refid="69" relation="include">
+        </childnode>
+        <childnode refid="71" relation="include">
+        </childnode>
+        <childnode refid="113" relation="include">
+        </childnode>
+        <childnode refid="115" relation="include">
+        </childnode>
+      </node>
+      <node id="94">
+        <label>PyUtilities.cpp</label>
+        <link refid="_py_utilities_8cpp"/>
+      </node>
+      <node id="112">
+        <label>VinaLikeCommon.h</label>
+        <link refid="_vina_like_common_8h"/>
+        <childnode refid="85" relation="include">
+        </childnode>
+        <childnode refid="90" relation="include">
+        </childnode>
+      </node>
+      <node id="87">
+        <label>PoseRefiner.cpp</label>
+        <link refid="_pose_refiner_8cpp"/>
+      </node>
+      <node id="72">
+        <label>AbstractDockingEngine.h</label>
+        <link refid="_abstract_docking_engine_8h"/>
+        <childnode refid="73" relation="include">
+        </childnode>
+        <childnode refid="78" relation="include">
+        </childnode>
+        <childnode refid="80" relation="include">
+        </childnode>
+      </node>
+      <node id="97">
+        <label>DockingResult.h</label>
+        <link refid="_docking_result_8h"/>
+        <childnode refid="72" relation="include">
+        </childnode>
+        <childnode refid="98" relation="include">
+        </childnode>
+        <childnode refid="99" relation="include">
+        </childnode>
+        <childnode refid="77" relation="include">
+        </childnode>
+        <childnode refid="95" relation="include">
+        </childnode>
+      </node>
+      <node id="74">
+        <label>ConformerRigidDockingEngine.cpp</label>
+        <link refid="_conformer_rigid_docking_engine_8cpp"/>
+      </node>
+      <node id="83">
+        <label>GradientDescentLineSearch.cpp</label>
+        <link refid="_gradient_descent_line_search_8cpp"/>
+      </node>
+      <node id="100">
+        <label>DockingResultPrinter.cpp</label>
+        <link refid="_docking_result_printer_8cpp"/>
+      </node>
+      <node id="96">
+        <label>Molecule.h</label>
+        <link refid="_molecule_8h"/>
+        <childnode refid="97" relation="include">
+        </childnode>
+        <childnode refid="72" relation="include">
+        </childnode>
+        <childnode refid="73" relation="include">
+        </childnode>
+        <childnode refid="82" relation="include">
+        </childnode>
+        <childnode refid="78" relation="include">
+        </childnode>
+        <childnode refid="86" relation="include">
+        </childnode>
+        <childnode refid="89" relation="include">
+        </childnode>
+        <childnode refid="101" relation="include">
+        </childnode>
+        <childnode refid="102" relation="include">
+        </childnode>
+        <childnode refid="104" relation="include">
+        </childnode>
+        <childnode refid="92" relation="include">
+        </childnode>
+        <childnode refid="75" relation="include">
+        </childnode>
+        <childnode refid="76" relation="include">
+        </childnode>
+        <childnode refid="77" relation="include">
+        </childnode>
+        <childnode refid="106" relation="include">
+        </childnode>
+        <childnode refid="95" relation="include">
+        </childnode>
+        <childnode refid="88" relation="include">
+        </childnode>
+      </node>
+      <node id="103">
+        <label>IntermediateConformerCollector.cpp</label>
+        <link refid="_intermediate_conformer_collector_8cpp"/>
+      </node>
+      <node id="117">
+        <label>VariantFlagAssignation.h</label>
+        <link refid="_variant_flag_assignation_8h"/>
+        <childnode refid="111" relation="include">
+        </childnode>
+        <childnode refid="91" relation="include">
+        </childnode>
+      </node>
+      <node id="104">
+        <label>PDBWriter.h</label>
+        <link refid="_p_d_b_writer_8h"/>
+        <childnode refid="102" relation="include">
+        </childnode>
+        <childnode refid="105" relation="include">
+        </childnode>
+        <childnode refid="75" relation="include">
+        </childnode>
+        <childnode refid="76" relation="include">
+        </childnode>
+        <childnode refid="94" relation="include">
+        </childnode>
+        <childnode refid="88" relation="include">
+        </childnode>
+      </node>
+      <node id="99">
+        <label>DockingResultPrinter.h</label>
+        <link refid="_docking_result_printer_8h"/>
+        <childnode refid="100" relation="include">
+        </childnode>
+        <childnode refid="76" relation="include">
+        </childnode>
+      </node>
+      <node id="91">
+        <label>Protein.cpp</label>
+        <link refid="_protein_8cpp"/>
+      </node>
+      <node id="110">
+        <label>Bond.cpp</label>
+        <link refid="_bond_8cpp"/>
+      </node>
+      <node id="85">
+        <label>VinaLikeRigidScoringFunction.cpp</label>
+        <link refid="_vina_like_rigid_scoring_function_8cpp"/>
+      </node>
+      <node id="89">
+        <label>VinaLikeScoringFunction.h</label>
+        <link refid="_vina_like_scoring_function_8h"/>
+        <childnode refid="84" relation="include">
+        </childnode>
+        <childnode refid="90" relation="include">
+        </childnode>
+      </node>
+      <node id="98">
+        <label>DockingResult.cpp</label>
+        <link refid="_docking_result_8cpp"/>
+      </node>
+      <node id="77">
+        <label>PyEngine.cpp</label>
+        <link refid="_py_engine_8cpp"/>
+      </node>
+      <node id="108">
+        <label>VinaCompatibilityPostProcessor.cpp</label>
+        <link refid="_vina_compatibility_post_processor_8cpp"/>
+      </node>
+      <node id="107">
+        <label>VinaCompatibilityPostProcessor.h</label>
+        <link refid="_vina_compatibility_post_processor_8h"/>
+        <childnode refid="108" relation="include">
+        </childnode>
+        <childnode refid="75" relation="include">
+        </childnode>
+        <childnode refid="76" relation="include">
+        </childnode>
+        <childnode refid="106" relation="include">
+        </childnode>
+        <childnode refid="88" relation="include">
+        </childnode>
+      </node>
+      <node id="82">
+        <label>VinaLikeRigidScoringFunction.h</label>
+        <link refid="_vina_like_rigid_scoring_function_8h"/>
+        <childnode refid="74" relation="include">
+        </childnode>
+        <childnode refid="83" relation="include">
+        </childnode>
+        <childnode refid="84" relation="include">
+        </childnode>
+        <childnode refid="85" relation="include">
+        </childnode>
+        <childnode refid="76" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_smol_dock_1_1_amino_acid" prot="public">SmolDock::AminoAcid</innerclass>
+    <innernamespace refid="namespace_smol_dock">SmolDock</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2018<sp/>Eliane<sp/>Briand</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>SmolDock.</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>SmolDock<sp/>is<sp/>free<sp/>software:<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or<sp/>modify</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>it<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>as<sp/>published<sp/>by</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>the<sp/>Free<sp/>Software<sp/>Foundation,<sp/>either<sp/>version<sp/>3<sp/>of<sp/>the<sp/>License,<sp/>or</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>(at<sp/>your<sp/>option)<sp/>any<sp/>later<sp/>version.</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>SmolDock<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>but<sp/>WITHOUT<sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE.<sp/><sp/>See<sp/>the</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>for<sp/>more<sp/>details.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>along<sp/>with<sp/>SmolDock.<sp/><sp/>If<sp/>not,<sp/>see<sp/>&lt;https://www.gnu.org/licenses/&gt;.</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>SMOLDOCK_AMINOACID_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SMOLDOCK_AMINOACID_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;set&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;algorithm&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;tuple&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;memory&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="i_protein_8h" kindref="compound">Engines/Internals/iProtein.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_smol_dock" kindref="compound">SmolDock</ref><sp/>{</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">Atom;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">enum<sp/>class</highlight><highlight class="normal"><sp/><ref refid="namespace_smol_dock_1ab797122db8030eb70bf4d042c897df5e" kindref="member">PDBResidueVariantAssignationType</ref>;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42" refid="class_smol_dock_1_1_amino_acid" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_smol_dock_1_1_amino_acid" kindref="compound">AminoAcid</ref><sp/>{</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44" refid="class_smol_dock_1_1_amino_acid_1a2cc8b86817f46f61585ecf591984f8eb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">friend</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_smol_dock_1_1_protein" kindref="compound">Protein</ref>;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">friend</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_amino_acid_1a74b6203c0c737ad86fb18da22ec935ff" kindref="member">assignVariantFlagsForResidueAtom</ref>(<ref refid="class_smol_dock_1_1_amino_acid" kindref="compound">AminoAcid</ref><sp/>&amp;residue,<sp/><ref refid="namespace_smol_dock_1ab797122db8030eb70bf4d042c897df5e" kindref="member">PDBResidueVariantAssignationType</ref><sp/>assignation_type);</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51" refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">enum<sp/>class</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875d" kindref="member">AAType</ref><sp/>{</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875da7d0832b9f55cfd3f7c79f134de3b76a7" kindref="member">alanine</ref>,</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875da9a1407676e926e8c94b54e0864da4546" kindref="member">arginine</ref>,</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875da6d1d64af1a6d275bd2995d990072b129" kindref="member">asparagine</ref>,</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875da1aa8cabca067057363a0b448f2db84e7" kindref="member">aspartate</ref>,</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875da3ec90ee7bdd38cf0f8a68b4bee5eb202" kindref="member">cysteine</ref>,</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875da12ea2245c0c7703f3863b9be45a07ae0" kindref="member">glutamate</ref>,</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875daf91e23557b10705ecb971f90c17f8777" kindref="member">glutamine</ref>,</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875da3a778f248ff123853d5605f084e2e260" kindref="member">glycine</ref>,</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875da77d85f9928565a0fe8f709d63982efec" kindref="member">histidine</ref>,</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875daf49712f65cf0d21531c38f3083a41066" kindref="member">isoleucine</ref>,</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875da8fc32025ca0bd8d2a5a86c407ab4db14" kindref="member">leucine</ref>,</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875da183c564fc49647ef130a793d2fc8eb63" kindref="member">lysine</ref>,</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875da3d2f71c3aa615f44d4f7c394b4d89d24" kindref="member">methionine</ref>,</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875daa74b51b040c4059a99fd0defb7f0d0f6" kindref="member">phenylalanine</ref>,</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875da468e37d1ebb2b2d9488ad143d406e419" kindref="member">proline</ref>,</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875daa693d5166186d99ae683963032f44119" kindref="member">serine</ref>,</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875daa2a6737c3315b2d4391a24a8f672d4d2" kindref="member">threonine</ref>,</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875daebd78192c93b932250b270f9ae1f2638" kindref="member">tryptophan</ref>,</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875da1b54c05c5fc8eec4986ac75f82af9d65" kindref="member">tyrosine</ref>,</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875dae1028fdd9757c76ba244c2521f716113" kindref="member">valine</ref>,</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875daac3d9bd0eff79f662bcecac7c2887384" kindref="member">selenocysteine</ref>,</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875da8b17b1023d7d4d8093a8cc3bffbc3e62" kindref="member">pyrrolysine</ref>,</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875dad390be0ae98a5c4a22ca9b0b7e726f40" kindref="member">heteroatom</ref>,<sp/></highlight><highlight class="comment">/*<sp/>Used<sp/>for<sp/>convenience<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875daad921d60486366258809553a3db49a4a" kindref="member">unknown</ref></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">friend</highlight><highlight class="normal"><sp/>std::string<sp/><ref refid="class_smol_dock_1_1_amino_acid_1a114a9d96ae603d1a25779498205cec47" kindref="member">resTypeToString</ref>(<ref refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875d" kindref="member">AminoAcid::AAType</ref><sp/>t);</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">friend</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875d" kindref="member">AminoAcid::AAType</ref><sp/><ref refid="class_smol_dock_1_1_amino_acid_1a196e09203295c01d2a5fc157ee89f7ee" kindref="member">stringToResType</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;shorthand_or_name);</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_amino_acid_1a0632e2366d8af52d467bffcde90657f2" kindref="member">AminoAcid</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;AA3LettersShorthand);</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_amino_acid_1a0632e2366d8af52d467bffcde90657f2" kindref="member">AminoAcid</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875d" kindref="member">AminoAcid::AAType</ref><sp/>&amp;<ref refid="class_smol_dock_1_1_amino_acid_1ae3404d935519af353a5c323ce298e04a" kindref="member">type</ref>);</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_amino_acid_1a8d76cf7b2a088f713aa507029f03ac20" kindref="member">getAAId</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_amino_acid_1a091349e13f56cc9d28701dcfe8e30d45" kindref="member">setAAId</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_amino_acid_1a8fb908f1ba8496d0cc115d7a0813d027" kindref="member">filliProtein</ref>(<ref refid="struct_smol_dock_1_1i_protein" kindref="compound">iProtein</ref><sp/>&amp;prot,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>skipHydrogen<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875d" kindref="member">AAType</ref><sp/><ref refid="class_smol_dock_1_1_amino_acid_1a556f668f759abed9c33c3522106d520b" kindref="member">getType</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_amino_acid_1acf73c63c5f9f1945d40ae0bc365c5614" kindref="member">setType</ref>(<ref refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875d" kindref="member">AAType</ref><sp/>t);</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="100" refid="class_smol_dock_1_1_amino_acid_1a23b1781c86be2991e2f668c07ad78d68" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>std::set&lt;std::tuple&lt;AminoAcid::AAType,<sp/>std::string,<sp/>std::string&gt;<sp/>&gt;<sp/><ref refid="class_smol_dock_1_1_amino_acid_1a23b1781c86be2991e2f668c07ad78d68" kindref="member">AAShorthandSet</ref>;</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight></codeline>
+<codeline lineno="102" refid="class_smol_dock_1_1_amino_acid_1a5a50e8f55f8d8ac9218d5df83a8dd003" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::array&lt;double,<sp/>3&gt;<sp/><ref refid="class_smol_dock_1_1_amino_acid_1a5a50e8f55f8d8ac9218d5df83a8dd003" kindref="member">centroid</ref>;</highlight></codeline>
+<codeline lineno="103" refid="class_smol_dock_1_1_amino_acid_1a132a227aef713fad84dbf94a064b33bf" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_amino_acid_1a132a227aef713fad84dbf94a064b33bf" kindref="member">maxDistanceFromCentroid</ref>;</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="107" refid="class_smol_dock_1_1_amino_acid_1ae3404d935519af353a5c323ce298e04a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875d" kindref="member">AAType</ref><sp/><ref refid="class_smol_dock_1_1_amino_acid_1ae3404d935519af353a5c323ce298e04a" kindref="member">type</ref>;</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight></codeline>
+<codeline lineno="109" refid="class_smol_dock_1_1_amino_acid_1aed11fc710f3993ac1bda7ce5e59e102e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_amino_acid_1aed11fc710f3993ac1bda7ce5e59e102e" kindref="member">AAId</ref>;</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight></codeline>
+<codeline lineno="111" refid="class_smol_dock_1_1_amino_acid_1ad0349cceaac80ad8a367c8130589dd76" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="class_smol_dock_1_1_amino_acid_1ad0349cceaac80ad8a367c8130589dd76" kindref="member">shorthand</ref>;</highlight></codeline>
+<codeline lineno="112" refid="class_smol_dock_1_1_amino_acid_1a2a83d6290c79b4d2145637a29ebb9d23" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="class_smol_dock_1_1_amino_acid_1a2a83d6290c79b4d2145637a29ebb9d23" kindref="member">fullName</ref>;</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight></codeline>
+<codeline lineno="114" refid="class_smol_dock_1_1_amino_acid_1acf07ea167386e29d0ea6b5024663aed8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::vector&lt;std::shared_ptr&lt;Atom&gt;<sp/>&gt;<sp/><ref refid="class_smol_dock_1_1_amino_acid_1acf07ea167386e29d0ea6b5024663aed8" kindref="member">atoms</ref>;</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="namespace_smol_dock_1a7980070f5c494cfe044ad9e90e34e3e3" kindref="member">resTypeToString</ref>(<ref refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875d" kindref="member">AminoAcid::AAType</ref><sp/>t);</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875d" kindref="member">AminoAcid::AAType</ref><sp/><ref refid="namespace_smol_dock_1a788f9308991cdf8fe5af07b27ff0f389" kindref="member">stringToResType</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;shorthand_or_name);</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//SMOLDOCK_AMINOACID_H</highlight></codeline>
+    </programlisting>
+    <location file="Structures/AminoAcid.h"/>
+  </compounddef>
 </doxygen>

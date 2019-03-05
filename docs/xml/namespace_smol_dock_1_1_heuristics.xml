@@ -3,7 +3,10 @@
   <compounddef id="namespace_smol_dock_1_1_heuristics" kind="namespace" language="C++">
     <compoundname>SmolDock::Heuristics</compoundname>
     <innerclass refid="class_smol_dock_1_1_heuristics_1_1_global_heuristic" prot="public">SmolDock::Heuristics::GlobalHeuristic</innerclass>
+    <innerclass refid="class_smol_dock_1_1_heuristics_1_1_iterated_local_search" prot="public">SmolDock::Heuristics::IteratedLocalSearch</innerclass>
+    <innerclass refid="class_smol_dock_1_1_heuristics_1_1_only_local" prot="public">SmolDock::Heuristics::OnlyLocal</innerclass>
     <innerclass refid="class_smol_dock_1_1_heuristics_1_1_random_restart" prot="public">SmolDock::Heuristics::RandomRestart</innerclass>
+    <innerclass refid="class_smol_dock_1_1_heuristics_1_1_simulated_annealing" prot="public">SmolDock::Heuristics::SimulatedAnnealing</innerclass>
       <sectiondef kind="enum">
       <memberdef kind="enum" id="namespace_smol_dock_1_1_heuristics_1acab108fbb064edb33166af7fdfb77a72" prot="public" static="no" strong="yes">
         <type></type>
@@ -15,20 +18,72 @@
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
+        <enumvalue id="namespace_smol_dock_1_1_heuristics_1acab108fbb064edb33166af7fdfb77a72a809a739dbd749d3629f62894ad86c959" prot="public">
+          <name>OnlyLocal</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespace_smol_dock_1_1_heuristics_1acab108fbb064edb33166af7fdfb77a72a13f26643ef34bdb4a20b83277d6b8f84" prot="public">
+          <name>IteratedLocalSearch</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespace_smol_dock_1_1_heuristics_1acab108fbb064edb33166af7fdfb77a72a9e54e50d057e08825382c09877dede7f" prot="public">
+          <name>SimulatedAnnealing</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Engines/GlobalHeuristics/HeuristicFactory.h" line="17" column="1" bodyfile="Engines/GlobalHeuristics/HeuristicFactory.h" bodystart="17" bodyend="19"/>
+        <location file="Engines/GlobalHeuristics/HeuristicFactory.h" line="24" column="1" bodyfile="Engines/GlobalHeuristics/HeuristicFactory.h" bodystart="24" bodyend="29"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="namespace_smol_dock_1_1_heuristics_1a8aa3caa2a4fda3fdd187e2254997538d" prot="public" static="no">
+        <type>std::variant&lt; <ref refid="struct_smol_dock_1_1_heuristics_1_1_only_local_1_1_parameters" kindref="compound">OnlyLocal::Parameters</ref>, <ref refid="struct_smol_dock_1_1_heuristics_1_1_random_restart_1_1_parameters" kindref="compound">RandomRestart::Parameters</ref>, <ref refid="struct_smol_dock_1_1_heuristics_1_1_iterated_local_search_1_1_parameters" kindref="compound">IteratedLocalSearch::Parameters</ref>, <ref refid="struct_smol_dock_1_1_heuristics_1_1_simulated_annealing_1_1_parameters" kindref="compound">SimulatedAnnealing::Parameters</ref> &gt;</type>
+        <definition>using SmolDock::Heuristics::HeuristicParameters = typedef std::variant&lt;OnlyLocal::Parameters, RandomRestart::Parameters, IteratedLocalSearch::Parameters, SimulatedAnnealing::Parameters&gt;</definition>
+        <argsstring></argsstring>
+        <name>HeuristicParameters</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Engines/GlobalHeuristics/HeuristicFactory.h" line="31" column="1" bodyfile="Engines/GlobalHeuristics/HeuristicFactory.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="namespace_smol_dock_1_1_heuristics_1ab292120d1fc7875acd900b6b3bc74216" prot="public" static="no" mutable="no">
+        <type><ref refid="namespace_smol_dock_1_1_heuristics_1a8aa3caa2a4fda3fdd187e2254997538d" kindref="member">HeuristicParameters</ref></type>
+        <definition>HeuristicParameters SmolDock::Heuristics::emptyParameters</definition>
+        <argsstring></argsstring>
+        <name>emptyParameters</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Engines/GlobalHeuristics/HeuristicFactory.cpp" line="13" column="1" bodyfile="Engines/GlobalHeuristics/HeuristicFactory.cpp" bodystart="13" bodyend="-1"/>
+        <referencedby refid="namespace_smol_dock_1_1_heuristics_1ad94c3b458eeb9b9b65d027a2a2daed3f" compoundref="_heuristic_factory_8cpp" startline="37" endline="49">heuristicParametersFactory</referencedby>
       </memberdef>
       </sectiondef>
       <sectiondef kind="func">
-      <memberdef kind="function" id="namespace_smol_dock_1_1_heuristics_1a30612bd88fe0508b7306b60c678a68a9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespace_smol_dock_1_1_heuristics_1a1553e62465ebc5cbe1f8a925afb9fe63" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>std::shared_ptr&lt; <ref refid="class_smol_dock_1_1_heuristics_1_1_global_heuristic" kindref="compound">GlobalHeuristic</ref> &gt;</type>
         <definition>std::shared_ptr&lt; GlobalHeuristic &gt; SmolDock::Heuristics::globalHeuristicFactory</definition>
-        <argsstring>(GlobalHeuristicType t, Score::ScoringFunction *scorFunc, Optimizer::Optimizer *localOptimizer, unsigned int rng_seed)</argsstring>
+        <argsstring>(GlobalHeuristicType t, Score::ScoringFunction *scorFunc, Optimizer::Optimizer *localOptimizer, unsigned int rng_seed, HeuristicParameters parameters)</argsstring>
         <name>globalHeuristicFactory</name>
         <param>
           <type><ref refid="namespace_smol_dock_1_1_heuristics_1acab108fbb064edb33166af7fdfb77a72" kindref="member">GlobalHeuristicType</ref></type>
@@ -46,21 +101,83 @@
           <type>unsigned int</type>
           <declname>rng_seed</declname>
         </param>
+        <param>
+          <type><ref refid="namespace_smol_dock_1_1_heuristics_1a8aa3caa2a4fda3fdd187e2254997538d" kindref="member">HeuristicParameters</ref></type>
+          <declname>parameters</declname>
+        </param>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Engines/GlobalHeuristics/HeuristicFactory.cpp" line="10" column="1" bodyfile="Engines/GlobalHeuristics/HeuristicFactory.cpp" bodystart="10" bodyend="19"/>
+        <location file="Engines/GlobalHeuristics/HeuristicFactory.cpp" line="15" column="1" bodyfile="Engines/GlobalHeuristics/HeuristicFactory.cpp" bodystart="15" bodyend="35"/>
+        <references refid="namespace_smol_dock_1_1_heuristics_1acab108fbb064edb33166af7fdfb77a72a13f26643ef34bdb4a20b83277d6b8f84">IteratedLocalSearch</references>
+        <references refid="namespace_smol_dock_1_1_heuristics_1acab108fbb064edb33166af7fdfb77a72a809a739dbd749d3629f62894ad86c959">OnlyLocal</references>
         <references refid="namespace_smol_dock_1_1_heuristics_1acab108fbb064edb33166af7fdfb77a72a1e6d08df1b1e06305a25d1b4bddce43d">RandomRestart</references>
-        <referencedby refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a7bee39278168cb4d7ee6558b3a3d3bb4" compoundref="_conformer_rigid_docking_engine_8cpp" startline="135" endline="224">SmolDock::Engine::ConformerRigidDockingEngine::runDockingEngine</referencedby>
+        <references refid="namespace_smol_dock_1_1_heuristics_1acab108fbb064edb33166af7fdfb77a72a9e54e50d057e08825382c09877dede7f">SimulatedAnnealing</references>
+        <referencedby refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a7bee39278168cb4d7ee6558b3a3d3bb4" compoundref="_conformer_rigid_docking_engine_8cpp" startline="134" endline="294">SmolDock::Engine::ConformerRigidDockingEngine::runDockingEngine</referencedby>
+        <referencedby refid="class_smol_dock_1_1_engine_1_1_pose_refiner_1a8d5a30801f618205c115a52b7fa363ce" compoundref="_pose_refiner_8cpp" startline="23" endline="67">SmolDock::Engine::PoseRefiner::refinePose</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespace_smol_dock_1_1_heuristics_1ad94c3b458eeb9b9b65d027a2a2daed3f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespace_smol_dock_1_1_heuristics_1a8aa3caa2a4fda3fdd187e2254997538d" kindref="member">HeuristicParameters</ref></type>
+        <definition>HeuristicParameters SmolDock::Heuristics::heuristicParametersFactory</definition>
+        <argsstring>(GlobalHeuristicType t)</argsstring>
+        <name>heuristicParametersFactory</name>
+        <param>
+          <type><ref refid="namespace_smol_dock_1_1_heuristics_1acab108fbb064edb33166af7fdfb77a72" kindref="member">GlobalHeuristicType</ref></type>
+          <declname>t</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Engines/GlobalHeuristics/HeuristicFactory.cpp" line="37" column="1" bodyfile="Engines/GlobalHeuristics/HeuristicFactory.cpp" bodystart="37" bodyend="49"/>
+        <references refid="namespace_smol_dock_1_1_heuristics_1ab292120d1fc7875acd900b6b3bc74216" compoundref="_heuristic_factory_8cpp" startline="13">emptyParameters</references>
+        <references refid="namespace_smol_dock_1_1_heuristics_1acab108fbb064edb33166af7fdfb77a72a13f26643ef34bdb4a20b83277d6b8f84">IteratedLocalSearch</references>
+        <references refid="namespace_smol_dock_1_1_heuristics_1acab108fbb064edb33166af7fdfb77a72a809a739dbd749d3629f62894ad86c959">OnlyLocal</references>
+        <references refid="namespace_smol_dock_1_1_heuristics_1acab108fbb064edb33166af7fdfb77a72a1e6d08df1b1e06305a25d1b4bddce43d">RandomRestart</references>
+        <references refid="namespace_smol_dock_1_1_heuristics_1acab108fbb064edb33166af7fdfb77a72a9e54e50d057e08825382c09877dede7f">SimulatedAnnealing</references>
+        <referencedby refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a7bee39278168cb4d7ee6558b3a3d3bb4" compoundref="_conformer_rigid_docking_engine_8cpp" startline="134" endline="294">SmolDock::Engine::ConformerRigidDockingEngine::runDockingEngine</referencedby>
+        <referencedby refid="class_smol_dock_1_1_engine_1_1_pose_refiner_1a8d5a30801f618205c115a52b7fa363ce" compoundref="_pose_refiner_8cpp" startline="23" endline="67">SmolDock::Engine::PoseRefiner::refinePose</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespace_smol_dock_1_1_heuristics_1afd19e47afa27af28165f6a978d81699b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool SmolDock::Heuristics::MetropolisAccept</definition>
+        <argsstring>(double oldScore, double newScore, double temperature, std::mt19937 &amp;rndGenerator)</argsstring>
+        <name>MetropolisAccept</name>
+        <param>
+          <type>double</type>
+          <declname>oldScore</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>newScore</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>temperature</declname>
+        </param>
+        <param>
+          <type>std::mt19937 &amp;</type>
+          <declname>rndGenerator</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Engines/GlobalHeuristics/Utilities/MetropolisHastings.h" line="13" column="1" bodyfile="Engines/GlobalHeuristics/Utilities/MetropolisHastings.cpp" bodystart="10" bodyend="23"/>
+        <referencedby refid="class_smol_dock_1_1_heuristics_1_1_iterated_local_search_1ad7c6bf8bf2c8d3cde6cb6b1184ca5c4e" compoundref="_iterated_local_search_8cpp" startline="23" endline="135">SmolDock::Heuristics::IteratedLocalSearch::search</referencedby>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="Engines/GlobalHeuristics/HeuristicFactory.cpp" line="8" column="1"/>
+    <location file="Engines/GlobalHeuristics/HeuristicFactory.cpp" line="11" column="1"/>
   </compounddef>
 </doxygen>

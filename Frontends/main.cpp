@@ -24,9 +24,10 @@
 
 #include "Structures/Molecule.h"
 #include "Structures/Protein.h"
+#include "Structures/Atom.h"
 #include "Utilities/DockingResultPrinter.h"
 #include "Engines/ConformerRigidDockingEngine.h"
-#include "Engines/ScoringFunctions/VinaLikeScoringFunction.h"
+#include "Engines/ScoringFunctions/VinaLikeRigidScoringFunction.h"
 #include <Engines/Internals/InternalsUtilityFunctions.h>
 
 #include <Utilities/PDBWriter.h>
@@ -89,10 +90,9 @@ int main() {
     //mol.populateFromSMILES("CC(C)Cc1ccc(cc1)[C@@H](C)C(=O)O"); // Ibuprofen
     succeeded = mol.populateFromMol2File("../DockingTests/COX2_Ibuprofen/VINA_Cox2_BestRes_Charged.mol2", 120,
                                          postProcessors);
-//    succeeded = mol.populateFromPDBFile("../DockingTests/COX2_Ibuprofen/VINA_Cox2_BestRes.pdb",
-//                        "CC(C)Cc1ccc(cc1)[C@H](C)C(=O)O", /* SMILES hint for bond order*/
-//                        120 /* seed */,
-//                        postProcessors);
+
+    mol.applyAtomVariant("[C:1](=O)C", SmolDock::Atom::AtomVariant::covalentReversibleAcceptor);
+
 
 
 
@@ -114,12 +114,12 @@ int main() {
     SmolDock::PDBWriter pwriter;
 
 
-    SmolDock::Engine::ConformerRigidDockingEngine docker(20, /* Number of conformer */
+    SmolDock::Engine::ConformerRigidDockingEngine docker(10, /* Number of conformer */
                                                          10, /* Retry per conformer */
                                                          &prot,
                                                          &mol,
-                                                         SmolDock::Score::ScoringFunctionType::VinaRigid, /* Scoring function */
-                                                         SmolDock::Heuristics::GlobalHeuristicType::IteratedLocalSearch, /* Global heuristic */
+                                                         SmolDock::Score::ScoringFunctionType::Vina, /* Scoring function */
+                                                         SmolDock::Heuristics::GlobalHeuristicType::SimulatedAnnealing, /* Global heuristic */
                                                          SmolDock::Optimizer::LocalOptimizerType::L_BFGS, /* Local optimizer */
                                                          1244 /* Random seed */);
 

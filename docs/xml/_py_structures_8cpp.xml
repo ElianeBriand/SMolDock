@@ -2,247 +2,261 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
   <compounddef id="_py_structures_8cpp" kind="file" language="C++">
     <compoundname>PyStructures.cpp</compoundname>
+    <includes local="no">memory</includes>
     <includes local="no">boost/python.hpp</includes>
     <includes local="no">boost/numpy.hpp</includes>
     <includes refid="_molecule_8h" local="no">Structures/Molecule.h</includes>
     <includes refid="_protein_8h" local="no">Structures/Protein.h</includes>
     <includes refid="_docking_result_8h" local="no">Structures/Results/DockingResult.h</includes>
     <incdepgraph>
-      <node id="1541">
+      <node id="1959">
         <label>Structures/Protein.h</label>
         <link refid="_protein_8h"/>
-        <childnode refid="1515" relation="include">
+        <childnode refid="1932" relation="include">
         </childnode>
-        <childnode refid="1525" relation="include">
+        <childnode refid="1928" relation="include">
         </childnode>
-        <childnode refid="1542" relation="include">
+        <childnode refid="1960" relation="include">
         </childnode>
-        <childnode refid="1543" relation="include">
+        <childnode refid="1961" relation="include">
         </childnode>
-        <childnode refid="1544" relation="include">
+        <childnode refid="1962" relation="include">
         </childnode>
-        <childnode refid="1545" relation="include">
+        <childnode refid="1963" relation="include">
         </childnode>
-        <childnode refid="1532" relation="include">
+        <childnode refid="1948" relation="include">
         </childnode>
-        <childnode refid="1523" relation="include">
+        <childnode refid="1940" relation="include">
         </childnode>
-        <childnode refid="1534" relation="include">
+        <childnode refid="1950" relation="include">
         </childnode>
-        <childnode refid="1529" relation="include">
+        <childnode refid="1945" relation="include">
         </childnode>
       </node>
-      <node id="1542">
+      <node id="1960">
         <label>ESBTL/default.h</label>
       </node>
-      <node id="1511">
+      <node id="1927">
         <label>PyStructures.cpp</label>
         <link refid="_py_structures_8cpp"/>
-        <childnode refid="1512" relation="include">
+        <childnode refid="1928" relation="include">
         </childnode>
-        <childnode refid="1513" relation="include">
+        <childnode refid="1929" relation="include">
         </childnode>
-        <childnode refid="1514" relation="include">
+        <childnode refid="1930" relation="include">
         </childnode>
-        <childnode refid="1541" relation="include">
+        <childnode refid="1931" relation="include">
         </childnode>
-        <childnode refid="1546" relation="include">
+        <childnode refid="1959" relation="include">
+        </childnode>
+        <childnode refid="1964" relation="include">
         </childnode>
       </node>
-      <node id="1517">
+      <node id="1934">
         <label>GraphMol/RWMol.h</label>
       </node>
-      <node id="1518">
+      <node id="1935">
         <label>GraphMol/MolOps.h</label>
       </node>
-      <node id="1521">
+      <node id="1938">
         <label>GraphMol/Substruct/SubstructMatch.h</label>
       </node>
-      <node id="1539">
+      <node id="1955">
         <label>cmath</label>
       </node>
-      <node id="1540">
+      <node id="1956">
         <label>cassert</label>
       </node>
-      <node id="1522">
+      <node id="1957">
+        <label>Eigen/Core</label>
+      </node>
+      <node id="1939">
         <label>GraphMol/DistGeomHelpers/Embedder.h</label>
       </node>
-      <node id="1523">
+      <node id="1940">
         <label>Structures/InputPostProcessors/InputPostProcessorInterface.h</label>
         <link refid="_input_post_processor_interface_8h"/>
-        <childnode refid="1524" relation="include">
+        <childnode refid="1941" relation="include">
         </childnode>
       </node>
-      <node id="1530">
+      <node id="1946">
         <label>string</label>
       </node>
-      <node id="1545">
+      <node id="1963">
         <label>ESBTL/compressed_ifstream.h</label>
       </node>
-      <node id="1524">
+      <node id="1941">
         <label>Structures/Atom.h</label>
         <link refid="_atom_8h"/>
-        <childnode refid="1515" relation="include">
+        <childnode refid="1932" relation="include">
         </childnode>
-        <childnode refid="1525" relation="include">
+        <childnode refid="1928" relation="include">
         </childnode>
-        <childnode refid="1526" relation="include">
+        <childnode refid="1942" relation="include">
         </childnode>
-        <childnode refid="1527" relation="include">
+        <childnode refid="1943" relation="include">
         </childnode>
-        <childnode refid="1528" relation="include">
+        <childnode refid="1944" relation="include">
         </childnode>
-        <childnode refid="1529" relation="include">
+        <childnode refid="1945" relation="include">
         </childnode>
       </node>
-      <node id="1533">
+      <node id="1949">
         <label>map</label>
       </node>
-      <node id="1513">
+      <node id="1930">
         <label>boost/numpy.hpp</label>
       </node>
-      <node id="1536">
+      <node id="1952">
         <label>../Engines/Internals/iConformer.h</label>
         <link refid="i_conformer_8h"/>
-        <childnode refid="1515" relation="include">
+        <childnode refid="1932" relation="include">
         </childnode>
-        <childnode refid="1525" relation="include">
+        <childnode refid="1928" relation="include">
         </childnode>
-        <childnode refid="1537" relation="include">
+        <childnode refid="1953" relation="include">
         </childnode>
       </node>
-      <node id="1535">
+      <node id="1951">
         <label>Bond.h</label>
         <link refid="_bond_8h"/>
-        <childnode refid="1525" relation="include">
+        <childnode refid="1928" relation="include">
         </childnode>
-        <childnode refid="1524" relation="include">
+        <childnode refid="1941" relation="include">
         </childnode>
       </node>
-      <node id="1543">
+      <node id="1961">
         <label>ESBTL/atom_classifier.h</label>
       </node>
-      <node id="1529">
+      <node id="1958">
+        <label>Eigen/Dense</label>
+      </node>
+      <node id="1945">
         <label>AminoAcid.h</label>
         <link refid="_amino_acid_8h"/>
-        <childnode refid="1530" relation="include">
+        <childnode refid="1946" relation="include">
         </childnode>
-        <childnode refid="1515" relation="include">
+        <childnode refid="1932" relation="include">
         </childnode>
-        <childnode refid="1526" relation="include">
+        <childnode refid="1942" relation="include">
         </childnode>
-        <childnode refid="1527" relation="include">
+        <childnode refid="1943" relation="include">
         </childnode>
-        <childnode refid="1531" relation="include">
+        <childnode refid="1947" relation="include">
         </childnode>
-        <childnode refid="1525" relation="include">
+        <childnode refid="1928" relation="include">
         </childnode>
-        <childnode refid="1532" relation="include">
+        <childnode refid="1948" relation="include">
         </childnode>
       </node>
-      <node id="1546">
+      <node id="1964">
         <label>Structures/Results/DockingResult.h</label>
         <link refid="_docking_result_8h"/>
-        <childnode refid="1515" relation="include">
+        <childnode refid="1932" relation="include">
         </childnode>
-        <childnode refid="1514" relation="include">
+        <childnode refid="1931" relation="include">
         </childnode>
       </node>
-      <node id="1531">
+      <node id="1947">
         <label>tuple</label>
       </node>
-      <node id="1532">
+      <node id="1948">
         <label>Engines/Internals/iProtein.h</label>
         <link refid="i_protein_8h"/>
-        <childnode refid="1515" relation="include">
+        <childnode refid="1932" relation="include">
         </childnode>
-        <childnode refid="1525" relation="include">
+        <childnode refid="1928" relation="include">
         </childnode>
-        <childnode refid="1533" relation="include">
+        <childnode refid="1949" relation="include">
         </childnode>
       </node>
-      <node id="1512">
+      <node id="1929">
         <label>boost/python.hpp</label>
       </node>
-      <node id="1537">
+      <node id="1953">
         <label>iTransform.h</label>
         <link refid="i_transform_8h"/>
-        <childnode refid="1515" relation="include">
+        <childnode refid="1932" relation="include">
         </childnode>
-        <childnode refid="1525" relation="include">
+        <childnode refid="1928" relation="include">
         </childnode>
-        <childnode refid="1538" relation="include">
+        <childnode refid="1954" relation="include">
         </childnode>
-        <childnode refid="1539" relation="include">
+        <childnode refid="1955" relation="include">
         </childnode>
-        <childnode refid="1540" relation="include">
+        <childnode refid="1956" relation="include">
+        </childnode>
+        <childnode refid="1957" relation="include">
+        </childnode>
+        <childnode refid="1958" relation="include">
         </childnode>
       </node>
-      <node id="1515">
+      <node id="1932">
         <label>vector</label>
       </node>
-      <node id="1538">
+      <node id="1954">
         <label>array</label>
       </node>
-      <node id="1520">
+      <node id="1937">
         <label>GraphMol/SmilesParse/SmilesParse.h</label>
       </node>
-      <node id="1534">
+      <node id="1950">
         <label>Structure.h</label>
         <link refid="_structure_8h"/>
       </node>
-      <node id="1514">
+      <node id="1931">
         <label>Structures/Molecule.h</label>
         <link refid="_molecule_8h"/>
-        <childnode refid="1515" relation="include">
+        <childnode refid="1932" relation="include">
         </childnode>
-        <childnode refid="1516" relation="include">
+        <childnode refid="1933" relation="include">
         </childnode>
-        <childnode refid="1517" relation="include">
+        <childnode refid="1934" relation="include">
         </childnode>
-        <childnode refid="1518" relation="include">
+        <childnode refid="1935" relation="include">
         </childnode>
-        <childnode refid="1519" relation="include">
+        <childnode refid="1936" relation="include">
         </childnode>
-        <childnode refid="1520" relation="include">
+        <childnode refid="1937" relation="include">
         </childnode>
-        <childnode refid="1521" relation="include">
+        <childnode refid="1938" relation="include">
         </childnode>
-        <childnode refid="1522" relation="include">
+        <childnode refid="1939" relation="include">
         </childnode>
-        <childnode refid="1523" relation="include">
+        <childnode refid="1940" relation="include">
         </childnode>
-        <childnode refid="1534" relation="include">
+        <childnode refid="1950" relation="include">
         </childnode>
-        <childnode refid="1524" relation="include">
+        <childnode refid="1941" relation="include">
         </childnode>
-        <childnode refid="1535" relation="include">
+        <childnode refid="1951" relation="include">
         </childnode>
-        <childnode refid="1536" relation="include">
+        <childnode refid="1952" relation="include">
         </childnode>
       </node>
-      <node id="1516">
+      <node id="1933">
         <label>GraphMol/RDKitBase.h</label>
       </node>
-      <node id="1528">
+      <node id="1944">
         <label>iostream</label>
       </node>
-      <node id="1526">
+      <node id="1942">
         <label>set</label>
       </node>
-      <node id="1527">
+      <node id="1943">
         <label>algorithm</label>
       </node>
-      <node id="1544">
+      <node id="1962">
         <label>ESBTL/weighted_atom_iterator.h</label>
       </node>
-      <node id="1525">
+      <node id="1928">
         <label>memory</label>
       </node>
-      <node id="1519">
+      <node id="1936">
         <label>GraphMol/FileParsers/FileParsers.h</label>
       </node>
     </incdepgraph>
+    <innernamespace refid="namespace_smol_dock_1_1_wrapper">SmolDock::Wrapper</innernamespace>
       <sectiondef kind="func">
       <memberdef kind="function" id="_py_structures_8cpp_1a18cad6e29d14a0da9d2cd9464e7e2356" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -255,35 +269,38 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Frontends/Python/PyStructures.cpp" line="40" column="1" bodyfile="Frontends/Python/PyStructures.cpp" bodystart="40" bodyend="92"/>
-        <references refid="struct_smol_dock_1_1i_protein_1a0b900dfe18415ab4fc200bc7d8570c80" compoundref="i_protein_8h" startline="45">SmolDock::iProtein::AAId_to_AtomPositionInVect</references>
+        <location file="Frontends/Python/PyStructures.cpp" line="67" column="1" bodyfile="Frontends/Python/PyStructures.cpp" bodystart="67" bodyend="114"/>
+        <references refid="struct_smol_dock_1_1i_protein_1a0b900dfe18415ab4fc200bc7d8570c80" compoundref="i_protein_8h" startline="46">SmolDock::iProtein::AAId_to_AtomPositionInVect</references>
         <references refid="struct_smol_dock_1_1i_protein_1a8e62b22e54589f2727b0743cf58a3551" compoundref="i_protein_8h" startline="37">SmolDock::iProtein::center_x</references>
         <references refid="struct_smol_dock_1_1i_protein_1a834d2ab9d8580f255616a13a1af785c2" compoundref="i_protein_8h" startline="37">SmolDock::iProtein::center_y</references>
         <references refid="struct_smol_dock_1_1i_protein_1a8b3ccbb789373d51a3889158167c3c9a" compoundref="i_protein_8h" startline="37">SmolDock::iProtein::center_z</references>
-        <references refid="class_smol_dock_1_1_molecule_1a70156ffc4081eb92f9dc4e2c70096c84" compoundref="_molecule_8cpp" startline="332" endline="376">SmolDock::Molecule::deepcopy</references>
-        <references refid="class_smol_dock_1_1_molecule_1ad10dcbd80a2ac181b3d76fbae3f90ca2" compoundref="_molecule_8cpp" startline="81" endline="94">SmolDock::Molecule::generateConformer</references>
-        <references refid="class_smol_dock_1_1_molecule_1ab5fc86fa1ac97374e7d8d339404568e9" compoundref="_molecule_8cpp" startline="378" endline="382">SmolDock::Molecule::getInitialConformer</references>
-        <references refid="class_smol_dock_1_1_protein_1a2cccfc64e088ed1846d15c6909c9379f" compoundref="_protein_8cpp" startline="203" endline="252">SmolDock::Protein::getiProtein</references>
-        <references refid="class_smol_dock_1_1_molecule_1afe9743bfc4876343b6c63b0aac892f83" compoundref="_molecule_8cpp" startline="160" endline="162">SmolDock::Molecule::getResidueName</references>
+        <references refid="class_smol_dock_1_1_molecule_1a70156ffc4081eb92f9dc4e2c70096c84" compoundref="_molecule_8cpp" startline="502" endline="546">SmolDock::Molecule::deepcopy</references>
+        <references refid="class_smol_dock_1_1_molecule_1ad10dcbd80a2ac181b3d76fbae3f90ca2" compoundref="_molecule_8cpp" startline="102" endline="116">SmolDock::Molecule::generateConformer</references>
+        <references refid="class_smol_dock_1_1_molecule_1ab5fc86fa1ac97374e7d8d339404568e9" compoundref="_molecule_8cpp" startline="548" endline="553">SmolDock::Molecule::getInitialConformer</references>
+        <references refid="class_smol_dock_1_1_protein_1a2cccfc64e088ed1846d15c6909c9379f" compoundref="_protein_8cpp" startline="235" endline="274">SmolDock::Protein::getiProtein</references>
+        <references refid="class_smol_dock_1_1_molecule_1afe9743bfc4876343b6c63b0aac892f83" compoundref="_molecule_8cpp" startline="217" endline="219">SmolDock::Molecule::getResidueName</references>
         <references refid="class_smol_dock_1_1_docking_result_1a13f9ac78867b9834693c7b35d68bf63c" compoundref="_docking_result_8h" startline="33">SmolDock::DockingResult::ligandPoses</references>
-        <references refid="class_smol_dock_1_1_molecule_1a7dc0c882da26261dcd2762429b07a3d4" compoundref="_molecule_8cpp" startline="129" endline="131">SmolDock::Molecule::numberOfAtoms</references>
-        <references refid="class_smol_dock_1_1_molecule_1a8b1f02ad4e3b2ad991162668a61c2ddc" compoundref="_molecule_8cpp" startline="133" endline="135">SmolDock::Molecule::numberOfBonds</references>
-        <references refid="class_smol_dock_1_1_protein_1a726524247169022a4dfc1328753e39b3" compoundref="_protein_8cpp" startline="41" endline="201">SmolDock::Protein::populateFromPDB</references>
-        <references refid="class_smol_dock_1_1_molecule_1a9e3ef6b361a98cfbac69b11979d886da" compoundref="_molecule_8cpp" startline="137" endline="158">SmolDock::Molecule::populateFromPDB</references>
-        <references refid="class_smol_dock_1_1_molecule_1ae8bf900e52a73637051eee69e60628e6" compoundref="_molecule_8cpp" startline="51" endline="78">SmolDock::Molecule::populateFromSMILES</references>
-        <references refid="class_smol_dock_1_1_molecule_1af9eb4a4fe0f1d72c104393b690e8f5cb" compoundref="_molecule_8cpp" startline="164" endline="167">SmolDock::Molecule::setResidueName</references>
-        <references refid="struct_smol_dock_1_1i_protein_1a8a9cecc0e9750baf8d7074fe64b4331d" compoundref="i_protein_8h" startline="41">SmolDock::iProtein::type</references>
+        <references refid="class_smol_dock_1_1_molecule_1a7dc0c882da26261dcd2762429b07a3d4" compoundref="_molecule_8cpp" startline="150" endline="152">SmolDock::Molecule::numberOfAtoms</references>
+        <references refid="class_smol_dock_1_1_molecule_1a8b1f02ad4e3b2ad991162668a61c2ddc" compoundref="_molecule_8cpp" startline="154" endline="156">SmolDock::Molecule::numberOfBonds</references>
+        <references refid="class_smol_dock_1_1_molecule_1a8b4b9a154f2139757c0d33bb962a45ea" compoundref="_molecule_8cpp" startline="199" endline="215">SmolDock::Molecule::populateFromMol2File</references>
+        <references refid="class_smol_dock_1_1_molecule_1ade1395768e7d42f8dc0762334eaeed42" compoundref="_molecule_8cpp" startline="181" endline="197">SmolDock::Molecule::populateFromMolFile</references>
+        <references refid="class_smol_dock_1_1_protein_1a726524247169022a4dfc1328753e39b3" compoundref="_protein_8cpp" startline="42" endline="233">SmolDock::Protein::populateFromPDB</references>
+        <references refid="class_smol_dock_1_1_molecule_1a457193a63a1c732d4f5da772c108b5ee" compoundref="_molecule_8cpp" startline="158" endline="179">SmolDock::Molecule::populateFromPDBFile</references>
+        <references refid="class_smol_dock_1_1_molecule_1ae8bf900e52a73637051eee69e60628e6" compoundref="_molecule_8cpp" startline="72" endline="99">SmolDock::Molecule::populateFromSMILES</references>
+        <references refid="namespace_smol_dock_1_1_wrapper_1a30936f94bd814e22c37d7b60b68ef8d9" compoundref="_py_structures_8cpp" startline="53" endline="56">SmolDock::Wrapper::pywrap_returnROMolFromMol</references>
+        <references refid="class_smol_dock_1_1_molecule_1af9eb4a4fe0f1d72c104393b690e8f5cb" compoundref="_molecule_8cpp" startline="221" endline="224">SmolDock::Molecule::setResidueName</references>
+        <references refid="struct_smol_dock_1_1i_protein_1a8a9cecc0e9750baf8d7074fe64b4331d" compoundref="i_protein_8h" startline="42">SmolDock::iProtein::type</references>
         <references refid="struct_smol_dock_1_1i_conformer_1add04de1dd457ae228e398ffa9260497d" compoundref="i_conformer_8h" startline="50">SmolDock::iConformer::type</references>
-        <references refid="class_smol_dock_1_1_molecule_1af6263934134836e9ce66d2254b6b6801" compoundref="_molecule_8cpp" startline="320" endline="330">SmolDock::Molecule::updateAtomPositionsFromiConformer</references>
-        <references refid="struct_smol_dock_1_1i_protein_1ac452f5ddb99ed5a703615f9c03337ddd" compoundref="i_protein_8h" startline="42">SmolDock::iProtein::variant</references>
+        <references refid="class_smol_dock_1_1_molecule_1af6263934134836e9ce66d2254b6b6801" compoundref="_molecule_8cpp" startline="487" endline="500">SmolDock::Molecule::updateAtomPositionsFromiConformer</references>
+        <references refid="struct_smol_dock_1_1i_protein_1ac452f5ddb99ed5a703615f9c03337ddd" compoundref="i_protein_8h" startline="43">SmolDock::iProtein::variant</references>
         <references refid="struct_smol_dock_1_1i_conformer_1af56992de619302df905180a481a4d993" compoundref="i_conformer_8h" startline="51">SmolDock::iConformer::variant</references>
-        <references refid="struct_smol_dock_1_1i_protein_1ae36a5b0f6996e54f9ce1f746a79e23f8" compoundref="i_protein_8h" startline="39">SmolDock::iProtein::x</references>
+        <references refid="struct_smol_dock_1_1i_protein_1ae36a5b0f6996e54f9ce1f746a79e23f8" compoundref="i_protein_8h" startline="40">SmolDock::iProtein::x</references>
         <references refid="struct_smol_dock_1_1i_conformer_1a45c379f6a880da313bf3519dc415e992" compoundref="i_conformer_8h" startline="48">SmolDock::iConformer::x</references>
-        <references refid="struct_smol_dock_1_1i_protein_1a090a371c93db6928cdfef39b0ce3d1fd" compoundref="i_protein_8h" startline="39">SmolDock::iProtein::y</references>
+        <references refid="struct_smol_dock_1_1i_protein_1a090a371c93db6928cdfef39b0ce3d1fd" compoundref="i_protein_8h" startline="40">SmolDock::iProtein::y</references>
         <references refid="struct_smol_dock_1_1i_conformer_1ac3019c0cd62660a4392591dd9519cc9a" compoundref="i_conformer_8h" startline="48">SmolDock::iConformer::y</references>
-        <references refid="struct_smol_dock_1_1i_protein_1ab95306577aa2d8bdd268504b44d046ad" compoundref="i_protein_8h" startline="39">SmolDock::iProtein::z</references>
+        <references refid="struct_smol_dock_1_1i_protein_1ab95306577aa2d8bdd268504b44d046ad" compoundref="i_protein_8h" startline="40">SmolDock::iProtein::z</references>
         <references refid="struct_smol_dock_1_1i_conformer_1a5c1fc6f9bad31ec2731337e9ba1e9a0f" compoundref="i_conformer_8h" startline="48">SmolDock::iConformer::z</references>
-        <referencedby refid="_smoldock_python_bindings_8cpp_1a9002869529fdb857c7ffa4a170c4f3ef" compoundref="_smoldock_python_bindings_8cpp" startline="39" endline="79">BOOST_PYTHON_MODULE</referencedby>
+        <referencedby refid="_smoldock_python_bindings_8cpp_1a9002869529fdb857c7ffa4a170c4f3ef" compoundref="_smoldock_python_bindings_8cpp" startline="41" endline="79">BOOST_PYTHON_MODULE</referencedby>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -311,78 +328,100 @@
 <codeline lineno="18"><highlight class="comment"><sp/>*</highlight></codeline>
 <codeline lineno="19"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="20"><highlight class="normal"></highlight></codeline>
-<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/python.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/numpy.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="23"><highlight class="normal"></highlight></codeline>
-<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_molecule_8h" kindref="compound">Structures/Molecule.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_protein_8h" kindref="compound">Structures/Protein.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_docking_result_8h" kindref="compound">Structures/Results/DockingResult.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="27"><highlight class="normal"></highlight></codeline>
-<codeline lineno="28"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">p<sp/>=<sp/>boost::python;</highlight></codeline>
-<codeline lineno="29"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">np<sp/>=<sp/>boost::numpy;</highlight></codeline>
-<codeline lineno="30"><highlight class="normal"></highlight></codeline>
-<codeline lineno="31"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_smol_dock" kindref="compound">sd</ref><sp/>=<sp/><ref refid="namespace_smol_dock" kindref="compound">SmolDock</ref>;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;memory&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/python.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/numpy.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_molecule_8h" kindref="compound">Structures/Molecule.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_protein_8h" kindref="compound">Structures/Protein.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_docking_result_8h" kindref="compound">Structures/Results/DockingResult.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">p<sp/>=<sp/>boost::python;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">np<sp/>=<sp/>boost::numpy;</highlight></codeline>
 <codeline lineno="32"><highlight class="normal"></highlight></codeline>
-<codeline lineno="33"><highlight class="normal">BOOST_PYTHON_MEMBER_FUNCTION_OVERLOADS(populateFromPDB_overloads,<sp/><ref refid="class_smol_dock_1_1_molecule_1a9e3ef6b361a98cfbac69b11979d886da" kindref="member">sd::Molecule::populateFromPDB</ref>,<sp/>1,<sp/>4)</highlight></codeline>
-<codeline lineno="34"><highlight class="normal">BOOST_PYTHON_MEMBER_FUNCTION_OVERLOADS(populateFromSMILES_overloads,<sp/><ref refid="namespace_smol_dock" kindref="compound">sd</ref>::Molecule::populateFromSMILES,<sp/>1,<sp/>3)</highlight></codeline>
-<codeline lineno="35"><highlight class="normal">BOOST_PYTHON_MEMBER_FUNCTION_OVERLOADS(generateConformer_overloads,<sp/><ref refid="namespace_smol_dock" kindref="compound">sd</ref>::Molecule::generateConformer,<sp/>1,<sp/>3)</highlight></codeline>
-<codeline lineno="36"><highlight class="normal"></highlight></codeline>
-<codeline lineno="37"><highlight class="normal">BOOST_PYTHON_MEMBER_FUNCTION_OVERLOADS(prot_populateFromPDB_overloads,<sp/><ref refid="namespace_smol_dock" kindref="compound">sd</ref>::Protein::populateFromPDB,<sp/>1,<sp/>2)</highlight></codeline>
-<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_smol_dock" kindref="compound">sd</ref><sp/>=<sp/><ref refid="namespace_smol_dock" kindref="compound">SmolDock</ref>;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Class:<sp/>Molecule</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal">BOOST_PYTHON_MEMBER_FUNCTION_OVERLOADS(populateFromPDBFile_overloads,<sp/><ref refid="class_smol_dock_1_1_molecule_1a457193a63a1c732d4f5da772c108b5ee" kindref="member">sd::Molecule::populateFromPDBFile</ref>,<sp/>1,<sp/>4)</highlight></codeline>
+<codeline lineno="37"><highlight class="normal">BOOST_PYTHON_MEMBER_FUNCTION_OVERLOADS(populateFromSMILES_overloads,<sp/><ref refid="namespace_smol_dock" kindref="compound">sd</ref>::Molecule::populateFromSMILES,<sp/>1,<sp/>3)</highlight></codeline>
+<codeline lineno="38"><highlight class="normal">BOOST_PYTHON_MEMBER_FUNCTION_OVERLOADS(generateConformer_overloads,<sp/><ref refid="namespace_smol_dock" kindref="compound">sd</ref>::Molecule::generateConformer,<sp/>1,<sp/>3)</highlight></codeline>
 <codeline lineno="39"><highlight class="normal"></highlight></codeline>
-<codeline lineno="40" refid="_py_structures_8h_1a18cad6e29d14a0da9d2cd9464e7e2356" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_py_structures_8cpp_1a18cad6e29d14a0da9d2cd9464e7e2356" kindref="member">export_Structures</ref>()</highlight></codeline>
-<codeline lineno="41"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>p::class_&lt;sd::Molecule&gt;(</highlight><highlight class="stringliteral">&quot;Molecule&quot;</highlight><highlight class="normal">)</highlight></codeline>
-<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.def(</highlight><highlight class="stringliteral">&quot;populateFromPDB&quot;</highlight><highlight class="normal">,<sp/>&amp;<ref refid="class_smol_dock_1_1_molecule_1a9e3ef6b361a98cfbac69b11979d886da" kindref="member">sd::Molecule::populateFromPDB</ref>,<sp/>populateFromPDB_overloads())</highlight></codeline>
-<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.def(</highlight><highlight class="stringliteral">&quot;populateFromSMILES&quot;</highlight><highlight class="normal">,<sp/>&amp;<ref refid="class_smol_dock_1_1_molecule_1ae8bf900e52a73637051eee69e60628e6" kindref="member">sd::Molecule::populateFromSMILES</ref>,<sp/>populateFromSMILES_overloads())</highlight></codeline>
-<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.add_property(</highlight><highlight class="stringliteral">&quot;numberOfAtoms&quot;</highlight><highlight class="normal">,<sp/>&amp;<ref refid="class_smol_dock_1_1_molecule_1a7dc0c882da26261dcd2762429b07a3d4" kindref="member">sd::Molecule::numberOfAtoms</ref>)</highlight></codeline>
-<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.add_property(</highlight><highlight class="stringliteral">&quot;numberOfBonds&quot;</highlight><highlight class="normal">,<sp/>&amp;<ref refid="class_smol_dock_1_1_molecule_1a8b1f02ad4e3b2ad991162668a61c2ddc" kindref="member">sd::Molecule::numberOfBonds</ref>)</highlight></codeline>
-<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.def(</highlight><highlight class="stringliteral">&quot;getInitialConformer&quot;</highlight><highlight class="normal">,<sp/>&amp;<ref refid="class_smol_dock_1_1_molecule_1ab5fc86fa1ac97374e7d8d339404568e9" kindref="member">sd::Molecule::getInitialConformer</ref>)</highlight></codeline>
-<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.def(</highlight><highlight class="stringliteral">&quot;generateConformer&quot;</highlight><highlight class="normal">,<sp/>&amp;<ref refid="class_smol_dock_1_1_molecule_1ad10dcbd80a2ac181b3d76fbae3f90ca2" kindref="member">sd::Molecule::generateConformer</ref>,<sp/>generateConformer_overloads()<sp/>)</highlight></codeline>
-<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.add_property(</highlight><highlight class="stringliteral">&quot;residueName&quot;</highlight><highlight class="normal">,<sp/>&amp;<ref refid="class_smol_dock_1_1_molecule_1afe9743bfc4876343b6c63b0aac892f83" kindref="member">sd::Molecule::getResidueName</ref>,<sp/>&amp;<ref refid="class_smol_dock_1_1_molecule_1af9eb4a4fe0f1d72c104393b690e8f5cb" kindref="member">sd::Molecule::setResidueName</ref>)</highlight></codeline>
-<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.def(</highlight><highlight class="stringliteral">&quot;updateAtomPositionsFromiConformer&quot;</highlight><highlight class="normal">,<sp/>&amp;<ref refid="class_smol_dock_1_1_molecule_1af6263934134836e9ce66d2254b6b6801" kindref="member">sd::Molecule::updateAtomPositionsFromiConformer</ref>)</highlight></codeline>
-<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.def(</highlight><highlight class="stringliteral">&quot;deepcopy&quot;</highlight><highlight class="normal">,<sp/>&amp;<ref refid="class_smol_dock_1_1_molecule_1a70156ffc4081eb92f9dc4e2c70096c84" kindref="member">sd::Molecule::deepcopy</ref>)</highlight></codeline>
-<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//.def(&quot;populateFromPDB&quot;,<sp/>&amp;sd::Molecule::populateFromPDB)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//.def(&quot;set&quot;,<sp/>&amp;World::set)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//.add_property(&quot;rovalue&quot;,<sp/>&amp;Num::get)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//.add_property(&quot;value&quot;,<sp/>&amp;Num::get,<sp/>&amp;Num::set);</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal">BOOST_PYTHON_MEMBER_FUNCTION_OVERLOADS(populateFromMolFile_overloads,<sp/><ref refid="namespace_smol_dock" kindref="compound">sd</ref>::Molecule::populateFromMolFile,<sp/>1,<sp/>3)</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal">BOOST_PYTHON_MEMBER_FUNCTION_OVERLOADS(populateFromMol2File_overloads,<sp/><ref refid="namespace_smol_dock" kindref="compound">sd</ref>::Molecule::populateFromMol2File,<sp/>1,<sp/>3)</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Class:<sp/>Protein</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal">BOOST_PYTHON_MEMBER_FUNCTION_OVERLOADS(prot_populateFromPDB_overloads,<sp/><ref refid="namespace_smol_dock" kindref="compound">sd</ref>::Protein::populateFromPDB,<sp/>1,<sp/>2)</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Remember<sp/>:<sp/>Any<sp/>function<sp/>added<sp/>to<sp/>a<sp/>class<sp/>whose<sp/>initial<sp/>argument<sp/>matches<sp/>the<sp/>class<sp/>(or<sp/>any<sp/>base)<sp/>will<sp/>act<sp/>like<sp/>a<sp/>member<sp/>function<sp/>in<sp/>Python.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Aka<sp/>defining<sp/>f(MyClass*,<sp/>arg1,<sp/>arg2,)<sp/>allow<sp/>you<sp/>to<sp/>easily<sp/>patch-in<sp/>python-specific<sp/>member<sp/>function<sp/>without<sp/>altering<sp/>the<sp/>C++<sp/>class<sp/>(just<sp/>adding<sp/>friend<sp/>functions)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal">namespace<sp/><ref refid="namespace_smol_dock" kindref="compound">SmolDock</ref>::Wrapper<sp/>{</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53" refid="namespace_smol_dock_1_1_wrapper_1a30936f94bd814e22c37d7b60b68ef8d9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>RDKit::ROMol<sp/>*<ref refid="namespace_smol_dock_1_1_wrapper_1a30936f94bd814e22c37d7b60b68ef8d9" kindref="member">pywrap_returnROMolFromMol</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_molecule" kindref="compound">SmolDock::Molecule</ref><sp/>&amp;mol)<sp/>{</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>ret<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>RDKit::ROMol(static_cast&lt;RDKit::ROMol&gt;(*mol.<ref refid="class_smol_dock_1_1_molecule_1ad474d416278768d82c07fdf1d915e0f5" kindref="member">rwmol</ref>));</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>ret;</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="57"><highlight class="normal"></highlight></codeline>
-<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/>p::class_&lt;sd::iConformer&gt;(</highlight><highlight class="stringliteral">&quot;iConformer&quot;</highlight><highlight class="normal">)</highlight></codeline>
-<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.def_readwrite(</highlight><highlight class="stringliteral">&quot;x&quot;</highlight><highlight class="normal">,<sp/>&amp;<ref refid="struct_smol_dock_1_1i_conformer_1a45c379f6a880da313bf3519dc415e992" kindref="member">sd::iConformer::x</ref>)</highlight></codeline>
-<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.def_readwrite(</highlight><highlight class="stringliteral">&quot;y&quot;</highlight><highlight class="normal">,<sp/>&amp;<ref refid="struct_smol_dock_1_1i_conformer_1ac3019c0cd62660a4392591dd9519cc9a" kindref="member">sd::iConformer::y</ref>)</highlight></codeline>
-<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.def_readwrite(</highlight><highlight class="stringliteral">&quot;z&quot;</highlight><highlight class="normal">,<sp/>&amp;<ref refid="struct_smol_dock_1_1i_conformer_1a5c1fc6f9bad31ec2731337e9ba1e9a0f" kindref="member">sd::iConformer::z</ref>)</highlight></codeline>
-<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.def_readwrite(</highlight><highlight class="stringliteral">&quot;type&quot;</highlight><highlight class="normal">,<sp/>&amp;<ref refid="struct_smol_dock_1_1i_conformer_1add04de1dd457ae228e398ffa9260497d" kindref="member">sd::iConformer::type</ref>)</highlight></codeline>
-<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.def_readwrite(</highlight><highlight class="stringliteral">&quot;variant&quot;</highlight><highlight class="normal">,<sp/>&amp;<ref refid="struct_smol_dock_1_1i_conformer_1af56992de619302df905180a481a4d993" kindref="member">sd::iConformer::variant</ref>)</highlight></codeline>
-<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>;</highlight></codeline>
-<codeline lineno="65"><highlight class="normal"></highlight></codeline>
-<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/>p::class_&lt;sd::iProtein&gt;(</highlight><highlight class="stringliteral">&quot;iProtein&quot;</highlight><highlight class="normal">)</highlight></codeline>
-<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.def_readwrite(</highlight><highlight class="stringliteral">&quot;center_x&quot;</highlight><highlight class="normal">,<sp/>&amp;<ref refid="struct_smol_dock_1_1i_protein_1a8e62b22e54589f2727b0743cf58a3551" kindref="member">sd::iProtein::center_x</ref>)</highlight></codeline>
-<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.def_readwrite(</highlight><highlight class="stringliteral">&quot;center_y&quot;</highlight><highlight class="normal">,<sp/>&amp;<ref refid="struct_smol_dock_1_1i_protein_1a834d2ab9d8580f255616a13a1af785c2" kindref="member">sd::iProtein::center_y</ref>)</highlight></codeline>
-<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.def_readwrite(</highlight><highlight class="stringliteral">&quot;center_z&quot;</highlight><highlight class="normal">,<sp/>&amp;<ref refid="struct_smol_dock_1_1i_protein_1a8b3ccbb789373d51a3889158167c3c9a" kindref="member">sd::iProtein::center_z</ref>)</highlight></codeline>
-<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.def_readwrite(</highlight><highlight class="stringliteral">&quot;x&quot;</highlight><highlight class="normal">,<sp/>&amp;<ref refid="struct_smol_dock_1_1i_protein_1ae36a5b0f6996e54f9ce1f746a79e23f8" kindref="member">sd::iProtein::x</ref>)</highlight></codeline>
-<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.def_readwrite(</highlight><highlight class="stringliteral">&quot;y&quot;</highlight><highlight class="normal">,<sp/>&amp;<ref refid="struct_smol_dock_1_1i_protein_1a090a371c93db6928cdfef39b0ce3d1fd" kindref="member">sd::iProtein::y</ref>)</highlight></codeline>
-<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.def_readwrite(</highlight><highlight class="stringliteral">&quot;z&quot;</highlight><highlight class="normal">,<sp/>&amp;<ref refid="struct_smol_dock_1_1i_protein_1ab95306577aa2d8bdd268504b44d046ad" kindref="member">sd::iProtein::z</ref>)</highlight></codeline>
-<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.def_readwrite(</highlight><highlight class="stringliteral">&quot;type&quot;</highlight><highlight class="normal">,<sp/>&amp;<ref refid="struct_smol_dock_1_1i_protein_1a8a9cecc0e9750baf8d7074fe64b4331d" kindref="member">sd::iProtein::type</ref>)</highlight></codeline>
-<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.def_readwrite(</highlight><highlight class="stringliteral">&quot;variant&quot;</highlight><highlight class="normal">,<sp/>&amp;<ref refid="struct_smol_dock_1_1i_protein_1ac452f5ddb99ed5a703615f9c03337ddd" kindref="member">sd::iProtein::variant</ref>)</highlight></codeline>
-<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.def_readwrite(</highlight><highlight class="stringliteral">&quot;AAId_to_AtomPositionInVect&quot;</highlight><highlight class="normal">,<sp/>&amp;<ref refid="struct_smol_dock_1_1i_protein_1a0b900dfe18415ab4fc200bc7d8570c80" kindref="member">sd::iProtein::AAId_to_AtomPositionInVect</ref>)</highlight></codeline>
-<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>;</highlight></codeline>
-<codeline lineno="77"><highlight class="normal"></highlight></codeline>
-<codeline lineno="78"><highlight class="normal"></highlight></codeline>
-<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/>p::class_&lt;sd::Protein&gt;(</highlight><highlight class="stringliteral">&quot;Protein&quot;</highlight><highlight class="normal">,<sp/>p::init&lt;&gt;())</highlight></codeline>
-<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.def(</highlight><highlight class="stringliteral">&quot;populateFromPDB&quot;</highlight><highlight class="normal">,<sp/>&amp;<ref refid="class_smol_dock_1_1_protein_1a726524247169022a4dfc1328753e39b3" kindref="member">sd::Protein::populateFromPDB</ref>,<sp/>prot_populateFromPDB_overloads()<sp/>)</highlight></codeline>
-<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.def(</highlight><highlight class="stringliteral">&quot;getiProtein&quot;</highlight><highlight class="normal">,<sp/>&amp;<ref refid="class_smol_dock_1_1_protein_1a2cccfc64e088ed1846d15c6909c9379f" kindref="member">sd::Protein::getiProtein</ref>)</highlight></codeline>
-<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>;</highlight></codeline>
-<codeline lineno="83"><highlight class="normal"></highlight></codeline>
-<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/>p::class_&lt;sd::DockingResult&gt;(</highlight><highlight class="stringliteral">&quot;DockingResult&quot;</highlight><highlight class="normal">)</highlight></codeline>
-<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.def_readwrite(</highlight><highlight class="stringliteral">&quot;ligandPoses&quot;</highlight><highlight class="normal">,<sp/>&amp;<ref refid="class_smol_dock_1_1_docking_result_1a13f9ac78867b9834693c7b35d68bf63c" kindref="member">sd::DockingResult::ligandPoses</ref>)</highlight></codeline>
-<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>;</highlight></codeline>
-<codeline lineno="87"><highlight class="normal"></highlight></codeline>
-<codeline lineno="88"><highlight class="normal"></highlight></codeline>
-<codeline lineno="89"><highlight class="normal"></highlight></codeline>
-<codeline lineno="90"><highlight class="normal"></highlight></codeline>
-<codeline lineno="91"><highlight class="normal"></highlight></codeline>
-<codeline lineno="92"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="58"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bool<sp/>populateFromMolFile(const<sp/>std::string<sp/>&amp;filename,<sp/>unsigned<sp/>int<sp/>seed<sp/>=<sp/>36754,</highlight></codeline>
+<codeline lineno="61"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::vector&lt;std::shared_ptr&lt;InputPostProcessor::InputPostProcessor&gt;<sp/>&gt;<sp/>postProcessors<sp/>=<sp/>{});</highlight></codeline>
+<codeline lineno="62"><highlight class="comment"></highlight></codeline>
+<codeline lineno="63"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bool<sp/>populateFromMol2File(const<sp/>std::string<sp/>&amp;filename,<sp/>unsigned<sp/>int<sp/>seed<sp/>=<sp/>36754,</highlight></codeline>
+<codeline lineno="64"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::vector&lt;std::shared_ptr&lt;InputPostProcessor::InputPostProcessor&gt;<sp/>&gt;<sp/>postProcessors<sp/>=<sp/>{});</highlight></codeline>
+<codeline lineno="65"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67" refid="_py_structures_8h_1a18cad6e29d14a0da9d2cd9464e7e2356" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_py_structures_8cpp_1a18cad6e29d14a0da9d2cd9464e7e2356" kindref="member">export_Structures</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/>p::class_&lt;sd::Molecule&gt;(</highlight><highlight class="stringliteral">&quot;Molecule&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.def(</highlight><highlight class="stringliteral">&quot;populateFromPDB&quot;</highlight><highlight class="normal">,<sp/>&amp;<ref refid="class_smol_dock_1_1_molecule_1a457193a63a1c732d4f5da772c108b5ee" kindref="member">sd::Molecule::populateFromPDBFile</ref>,<sp/>populateFromPDBFile_overloads())</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.def(</highlight><highlight class="stringliteral">&quot;populateFromSMILES&quot;</highlight><highlight class="normal">,<sp/>&amp;<ref refid="class_smol_dock_1_1_molecule_1ae8bf900e52a73637051eee69e60628e6" kindref="member">sd::Molecule::populateFromSMILES</ref>,<sp/>populateFromSMILES_overloads())</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.def(</highlight><highlight class="stringliteral">&quot;populateFromMol&quot;</highlight><highlight class="normal">,<sp/>&amp;<ref refid="class_smol_dock_1_1_molecule_1ade1395768e7d42f8dc0762334eaeed42" kindref="member">sd::Molecule::populateFromMolFile</ref>,<sp/>populateFromMolFile_overloads())</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.def(</highlight><highlight class="stringliteral">&quot;populateFromMol2&quot;</highlight><highlight class="normal">,<sp/>&amp;<ref refid="class_smol_dock_1_1_molecule_1a8b4b9a154f2139757c0d33bb962a45ea" kindref="member">sd::Molecule::populateFromMol2File</ref>,<sp/>populateFromMol2File_overloads())</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.add_property(</highlight><highlight class="stringliteral">&quot;numberOfAtoms&quot;</highlight><highlight class="normal">,<sp/>&amp;<ref refid="class_smol_dock_1_1_molecule_1a7dc0c882da26261dcd2762429b07a3d4" kindref="member">sd::Molecule::numberOfAtoms</ref>)</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.add_property(</highlight><highlight class="stringliteral">&quot;numberOfBonds&quot;</highlight><highlight class="normal">,<sp/>&amp;<ref refid="class_smol_dock_1_1_molecule_1a8b1f02ad4e3b2ad991162668a61c2ddc" kindref="member">sd::Molecule::numberOfBonds</ref>)</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.def(</highlight><highlight class="stringliteral">&quot;getInitialConformer&quot;</highlight><highlight class="normal">,<sp/>&amp;<ref refid="class_smol_dock_1_1_molecule_1ab5fc86fa1ac97374e7d8d339404568e9" kindref="member">sd::Molecule::getInitialConformer</ref>)</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.def(</highlight><highlight class="stringliteral">&quot;generateConformer&quot;</highlight><highlight class="normal">,<sp/>&amp;<ref refid="class_smol_dock_1_1_molecule_1ad10dcbd80a2ac181b3d76fbae3f90ca2" kindref="member">sd::Molecule::generateConformer</ref>,<sp/>generateConformer_overloads())</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.add_property(</highlight><highlight class="stringliteral">&quot;residueName&quot;</highlight><highlight class="normal">,<sp/>&amp;<ref refid="class_smol_dock_1_1_molecule_1afe9743bfc4876343b6c63b0aac892f83" kindref="member">sd::Molecule::getResidueName</ref>,<sp/>&amp;<ref refid="class_smol_dock_1_1_molecule_1af9eb4a4fe0f1d72c104393b690e8f5cb" kindref="member">sd::Molecule::setResidueName</ref>)</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.def(</highlight><highlight class="stringliteral">&quot;updateAtomPositionsFromiConformer&quot;</highlight><highlight class="normal">,<sp/>&amp;<ref refid="class_smol_dock_1_1_molecule_1af6263934134836e9ce66d2254b6b6801" kindref="member">sd::Molecule::updateAtomPositionsFromiConformer</ref>)</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.def(</highlight><highlight class="stringliteral">&quot;deepcopy&quot;</highlight><highlight class="normal">,<sp/>&amp;<ref refid="class_smol_dock_1_1_molecule_1a70156ffc4081eb92f9dc4e2c70096c84" kindref="member">sd::Molecule::deepcopy</ref>)</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.def(</highlight><highlight class="stringliteral">&quot;getRDKitMol&quot;</highlight><highlight class="normal">,<sp/>&amp;<ref refid="namespace_smol_dock_1_1_wrapper_1a30936f94bd814e22c37d7b60b68ef8d9" kindref="member">sd::Wrapper::pywrap_returnROMolFromMol</ref>,<sp/>p::return_value_policy&lt;p::manage_new_object&gt;())</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//.def(&quot;populateFromPDB&quot;,<sp/>&amp;sd::Molecule::populateFromPDB)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//.def(&quot;set&quot;,<sp/>&amp;World::set)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//.add_property(&quot;rovalue&quot;,<sp/>&amp;Num::get)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//.add_property(&quot;value&quot;,<sp/>&amp;Num::get,<sp/>&amp;Num::set);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>;</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/>p::class_&lt;sd::iConformer&gt;(</highlight><highlight class="stringliteral">&quot;iConformer&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.def_readwrite(</highlight><highlight class="stringliteral">&quot;x&quot;</highlight><highlight class="normal">,<sp/>&amp;<ref refid="struct_smol_dock_1_1i_conformer_1a45c379f6a880da313bf3519dc415e992" kindref="member">sd::iConformer::x</ref>)</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.def_readwrite(</highlight><highlight class="stringliteral">&quot;y&quot;</highlight><highlight class="normal">,<sp/>&amp;<ref refid="struct_smol_dock_1_1i_conformer_1ac3019c0cd62660a4392591dd9519cc9a" kindref="member">sd::iConformer::y</ref>)</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.def_readwrite(</highlight><highlight class="stringliteral">&quot;z&quot;</highlight><highlight class="normal">,<sp/>&amp;<ref refid="struct_smol_dock_1_1i_conformer_1a5c1fc6f9bad31ec2731337e9ba1e9a0f" kindref="member">sd::iConformer::z</ref>)</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.def_readwrite(</highlight><highlight class="stringliteral">&quot;type&quot;</highlight><highlight class="normal">,<sp/>&amp;<ref refid="struct_smol_dock_1_1i_conformer_1add04de1dd457ae228e398ffa9260497d" kindref="member">sd::iConformer::type</ref>)</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.def_readwrite(</highlight><highlight class="stringliteral">&quot;variant&quot;</highlight><highlight class="normal">,<sp/>&amp;<ref refid="struct_smol_dock_1_1i_conformer_1af56992de619302df905180a481a4d993" kindref="member">sd::iConformer::variant</ref>);</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/>p::class_&lt;sd::iProtein&gt;(</highlight><highlight class="stringliteral">&quot;iProtein&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.def_readwrite(</highlight><highlight class="stringliteral">&quot;center_x&quot;</highlight><highlight class="normal">,<sp/>&amp;<ref refid="struct_smol_dock_1_1i_protein_1a8e62b22e54589f2727b0743cf58a3551" kindref="member">sd::iProtein::center_x</ref>)</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.def_readwrite(</highlight><highlight class="stringliteral">&quot;center_y&quot;</highlight><highlight class="normal">,<sp/>&amp;<ref refid="struct_smol_dock_1_1i_protein_1a834d2ab9d8580f255616a13a1af785c2" kindref="member">sd::iProtein::center_y</ref>)</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.def_readwrite(</highlight><highlight class="stringliteral">&quot;center_z&quot;</highlight><highlight class="normal">,<sp/>&amp;<ref refid="struct_smol_dock_1_1i_protein_1a8b3ccbb789373d51a3889158167c3c9a" kindref="member">sd::iProtein::center_z</ref>)</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.def_readwrite(</highlight><highlight class="stringliteral">&quot;x&quot;</highlight><highlight class="normal">,<sp/>&amp;<ref refid="struct_smol_dock_1_1i_protein_1ae36a5b0f6996e54f9ce1f746a79e23f8" kindref="member">sd::iProtein::x</ref>)</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.def_readwrite(</highlight><highlight class="stringliteral">&quot;y&quot;</highlight><highlight class="normal">,<sp/>&amp;<ref refid="struct_smol_dock_1_1i_protein_1a090a371c93db6928cdfef39b0ce3d1fd" kindref="member">sd::iProtein::y</ref>)</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.def_readwrite(</highlight><highlight class="stringliteral">&quot;z&quot;</highlight><highlight class="normal">,<sp/>&amp;<ref refid="struct_smol_dock_1_1i_protein_1ab95306577aa2d8bdd268504b44d046ad" kindref="member">sd::iProtein::z</ref>)</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.def_readwrite(</highlight><highlight class="stringliteral">&quot;type&quot;</highlight><highlight class="normal">,<sp/>&amp;<ref refid="struct_smol_dock_1_1i_protein_1a8a9cecc0e9750baf8d7074fe64b4331d" kindref="member">sd::iProtein::type</ref>)</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.def_readwrite(</highlight><highlight class="stringliteral">&quot;variant&quot;</highlight><highlight class="normal">,<sp/>&amp;<ref refid="struct_smol_dock_1_1i_protein_1ac452f5ddb99ed5a703615f9c03337ddd" kindref="member">sd::iProtein::variant</ref>)</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.def_readwrite(</highlight><highlight class="stringliteral">&quot;AAId_to_AtomPositionInVect&quot;</highlight><highlight class="normal">,<sp/>&amp;<ref refid="struct_smol_dock_1_1i_protein_1a0b900dfe18415ab4fc200bc7d8570c80" kindref="member">sd::iProtein::AAId_to_AtomPositionInVect</ref>);</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/>p::class_&lt;sd::Protein&gt;(</highlight><highlight class="stringliteral">&quot;Protein&quot;</highlight><highlight class="normal">,<sp/>p::init&lt;&gt;())</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.def(</highlight><highlight class="stringliteral">&quot;populateFromPDB&quot;</highlight><highlight class="normal">,<sp/>&amp;<ref refid="class_smol_dock_1_1_protein_1a726524247169022a4dfc1328753e39b3" kindref="member">sd::Protein::populateFromPDB</ref>,<sp/>prot_populateFromPDB_overloads())</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.def(</highlight><highlight class="stringliteral">&quot;getiProtein&quot;</highlight><highlight class="normal">,<sp/>&amp;<ref refid="class_smol_dock_1_1_protein_1a2cccfc64e088ed1846d15c6909c9379f" kindref="member">sd::Protein::getiProtein</ref>);</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/>p::class_&lt;sd::DockingResult,<sp/>std::shared_ptr&lt;sd::DockingResult&gt;<sp/>&gt;(</highlight><highlight class="stringliteral">&quot;DockingResult&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.def_readwrite(</highlight><highlight class="stringliteral">&quot;ligandPoses&quot;</highlight><highlight class="normal">,<sp/>&amp;<ref refid="class_smol_dock_1_1_docking_result_1a13f9ac78867b9834693c7b35d68bf63c" kindref="member">sd::DockingResult::ligandPoses</ref>);</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal">}</highlight></codeline>
     </programlisting>
     <location file="Frontends/Python/PyStructures.cpp"/>
   </compounddef>

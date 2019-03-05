@@ -6,58 +6,7 @@
     <derivedcompoundref refid="class_smol_dock_1_1_engine_1_1_m_d_style_docking_engine" prot="private" virt="non-virtual">SmolDock::Engine::MDStyleDockingEngine</derivedcompoundref>
     <derivedcompoundref refid="class_smol_dock_1_1_engine_1_1_vina_compatible_docking_engine" prot="private" virt="non-virtual">SmolDock::Engine::VinaCompatibleDockingEngine</derivedcompoundref>
     <includes refid="_abstract_docking_engine_8h" local="no">AbstractDockingEngine.h</includes>
-      <sectiondef kind="public-type">
-      <memberdef kind="enum" id="class_smol_dock_1_1_engine_1_1_abstract_docking_engine_1aca703508a3ce31d577d3ec108020789b" prot="public" static="no" strong="yes">
-        <type></type>
-        <name>DockingBoxSetting</name>
-        <enumvalue id="class_smol_dock_1_1_engine_1_1_abstract_docking_engine_1aca703508a3ce31d577d3ec108020789ba312db69f5bf4447dfe3c58983083b54f" prot="public">
-          <name>everything</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="class_smol_dock_1_1_engine_1_1_abstract_docking_engine_1aca703508a3ce31d577d3ec108020789ba546fe0111d10555811e641851eaf2dea" prot="public">
-          <name>solventExposed</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="Engines/AbstractDockingEngine.h" line="42" column="1" bodyfile="Engines/AbstractDockingEngine.h" bodystart="42" bodyend="45"/>
-      </memberdef>
-      <memberdef kind="enum" id="class_smol_dock_1_1_engine_1_1_abstract_docking_engine_1a8147cf906368466da87fa439d537bf62" prot="public" static="no" strong="yes">
-        <type></type>
-        <name>DockingBoxShape</name>
-        <enumvalue id="class_smol_dock_1_1_engine_1_1_abstract_docking_engine_1a8147cf906368466da87fa439d537bf62a34248a9bfcbd589d9b5fccb6a0ac6963" prot="public">
-          <name>sphere</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="class_smol_dock_1_1_engine_1_1_abstract_docking_engine_1a8147cf906368466da87fa439d537bf62a18a64f7251cfb123aa7c358135d00d10" prot="public">
-          <name>cube</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="Engines/AbstractDockingEngine.h" line="47" column="1" bodyfile="Engines/AbstractDockingEngine.h" bodystart="47" bodyend="50"/>
-      </memberdef>
-      </sectiondef>
+    <innerclass refid="struct_smol_dock_1_1_engine_1_1_abstract_docking_engine_1_1_docking_box_setting" prot="public">SmolDock::Engine::AbstractDockingEngine::DockingBoxSetting</innerclass>
       <sectiondef kind="public-func">
       <memberdef kind="function" id="class_smol_dock_1_1_engine_1_1_abstract_docking_engine_1a169f25051203c912c2b90bf3387baa22" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type>bool</type>
@@ -67,7 +16,7 @@
         <reimplementedby refid="class_smol_dock_1_1_engine_1_1_m_d_style_docking_engine_1a6de740c49189cf41d2c48f2e8e98e391">setDockingBox</reimplementedby>
         <reimplementedby refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1acd3b7345ecae8f0c92ca0168b794eac3">setDockingBox</reimplementedby>
         <param>
-          <type><ref refid="class_smol_dock_1_1_engine_1_1_abstract_docking_engine_1aca703508a3ce31d577d3ec108020789b" kindref="member">DockingBoxSetting</ref></type>
+          <type><ref refid="struct_smol_dock_1_1_engine_1_1_abstract_docking_engine_1_1_docking_box_setting" kindref="compound">DockingBoxSetting</ref></type>
           <declname>setting</declname>
         </param>
         <briefdescription>
@@ -86,7 +35,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Engines/AbstractDockingEngine.h" line="63" column="1"/>
+        <location file="Engines/AbstractDockingEngine.h" line="77" column="1"/>
       </memberdef>
       <memberdef kind="function" id="class_smol_dock_1_1_engine_1_1_abstract_docking_engine_1a38d55d9ee6fde7df45b25b772cffbb9f" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type>bool</type>
@@ -103,7 +52,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Engines/AbstractDockingEngine.h" line="78" column="1"/>
+        <location file="Engines/AbstractDockingEngine.h" line="92" column="1"/>
       </memberdef>
       <memberdef kind="function" id="class_smol_dock_1_1_engine_1_1_abstract_docking_engine_1a0f08ef422ed79b3dac0b3144a241abe1" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type>void</type>
@@ -120,7 +69,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Engines/AbstractDockingEngine.h" line="92" column="1"/>
+        <location file="Engines/AbstractDockingEngine.h" line="106" column="1"/>
       </memberdef>
       <memberdef kind="function" id="class_smol_dock_1_1_engine_1_1_abstract_docking_engine_1a2e881d63b0214caf95efa3245446faf3" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type>std::shared_ptr&lt; <ref refid="class_smol_dock_1_1_docking_result" kindref="compound">DockingResult</ref> &gt;</type>
@@ -137,7 +86,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Engines/AbstractDockingEngine.h" line="106" column="1"/>
+        <location file="Engines/AbstractDockingEngine.h" line="120" column="1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -174,10 +123,8 @@
         <link refid="class_smol_dock_1_1_engine_1_1_abstract_docking_engine"/>
       </node>
     </collaborationgraph>
-    <location file="Engines/AbstractDockingEngine.h" line="39" column="1" bodyfile="Engines/AbstractDockingEngine.h" bodystart="39" bodyend="107"/>
+    <location file="Engines/AbstractDockingEngine.h" line="39" column="1" bodyfile="Engines/AbstractDockingEngine.h" bodystart="39" bodyend="121"/>
     <listofallmembers>
-      <member refid="class_smol_dock_1_1_engine_1_1_abstract_docking_engine_1aca703508a3ce31d577d3ec108020789b" prot="public" virt="non-virtual"><scope>SmolDock::Engine::AbstractDockingEngine</scope><name>DockingBoxSetting</name></member>
-      <member refid="class_smol_dock_1_1_engine_1_1_abstract_docking_engine_1a8147cf906368466da87fa439d537bf62" prot="public" virt="non-virtual"><scope>SmolDock::Engine::AbstractDockingEngine</scope><name>DockingBoxShape</name></member>
       <member refid="class_smol_dock_1_1_engine_1_1_abstract_docking_engine_1a2e881d63b0214caf95efa3245446faf3" prot="public" virt="pure-virtual"><scope>SmolDock::Engine::AbstractDockingEngine</scope><name>getDockingResult</name></member>
       <member refid="class_smol_dock_1_1_engine_1_1_abstract_docking_engine_1a0f08ef422ed79b3dac0b3144a241abe1" prot="public" virt="pure-virtual"><scope>SmolDock::Engine::AbstractDockingEngine</scope><name>runDockingEngine</name></member>
       <member refid="class_smol_dock_1_1_engine_1_1_abstract_docking_engine_1a169f25051203c912c2b90bf3387baa22" prot="public" virt="pure-virtual"><scope>SmolDock::Engine::AbstractDockingEngine</scope><name>setDockingBox</name></member>

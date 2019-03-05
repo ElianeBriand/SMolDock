@@ -1,0 +1,223 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="class_smol_dock_1_1_heuristics_1_1_simulated_annealing" kind="class" language="C++" prot="public">
+    <compoundname>SmolDock::Heuristics::SimulatedAnnealing</compoundname>
+    <basecompoundref refid="class_smol_dock_1_1_heuristics_1_1_global_heuristic" prot="public" virt="non-virtual">SmolDock::Heuristics::GlobalHeuristic</basecompoundref>
+    <includes refid="_simulated_annealing_8h" local="no">SimulatedAnnealing.h</includes>
+    <innerclass refid="struct_smol_dock_1_1_heuristics_1_1_simulated_annealing_1_1_parameters" prot="public">SmolDock::Heuristics::SimulatedAnnealing::Parameters</innerclass>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_smol_dock_1_1_heuristics_1_1_simulated_annealing_1ac78308e5708ae4d3a0702412357fabb3" prot="private" static="no" mutable="no">
+        <type><ref refid="class_smol_dock_1_1_score_1_1_scoring_function" kindref="compound">Score::ScoringFunction</ref> *</type>
+        <definition>Score::ScoringFunction* SmolDock::Heuristics::SimulatedAnnealing::scorFunc</definition>
+        <argsstring></argsstring>
+        <name>scorFunc</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Engines/GlobalHeuristics/SimulatedAnnealing.h" line="34" column="1" bodyfile="Engines/GlobalHeuristics/SimulatedAnnealing.h" bodystart="34" bodyend="-1"/>
+        <referencedby refid="class_smol_dock_1_1_heuristics_1_1_simulated_annealing_1a1a354ad6f5b9055013ed27575450498f" compoundref="_simulated_annealing_8cpp" startline="23" endline="44">search</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_smol_dock_1_1_heuristics_1_1_simulated_annealing_1a6631fed330929644b4d902c78b9efaac" prot="private" static="no" mutable="no">
+        <type><ref refid="class_smol_dock_1_1_optimizer_1_1_optimizer" kindref="compound">Optimizer::Optimizer</ref> *</type>
+        <definition>Optimizer::Optimizer* SmolDock::Heuristics::SimulatedAnnealing::optimizer</definition>
+        <argsstring></argsstring>
+        <name>optimizer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Engines/GlobalHeuristics/SimulatedAnnealing.h" line="35" column="1" bodyfile="Engines/GlobalHeuristics/SimulatedAnnealing.h" bodystart="35" bodyend="-1"/>
+        <referencedby refid="class_smol_dock_1_1_heuristics_1_1_simulated_annealing_1a1a354ad6f5b9055013ed27575450498f" compoundref="_simulated_annealing_8cpp" startline="23" endline="44">search</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_smol_dock_1_1_heuristics_1_1_simulated_annealing_1a3aa9f639cc1886fb8b738b14b460a46b" prot="private" static="no" mutable="no">
+        <type>std::mt19937</type>
+        <definition>std::mt19937 SmolDock::Heuristics::SimulatedAnnealing::rndGenerator</definition>
+        <argsstring></argsstring>
+        <name>rndGenerator</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Engines/GlobalHeuristics/SimulatedAnnealing.h" line="37" column="1" bodyfile="Engines/GlobalHeuristics/SimulatedAnnealing.h" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_smol_dock_1_1_heuristics_1_1_simulated_annealing_1a88af0098ecfa96362e1135e2f0332b53" prot="private" static="no" mutable="no">
+        <type>arma::mat</type>
+        <definition>arma::mat SmolDock::Heuristics::SimulatedAnnealing::result</definition>
+        <argsstring></argsstring>
+        <name>result</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Engines/GlobalHeuristics/SimulatedAnnealing.h" line="39" column="1" bodyfile="Engines/GlobalHeuristics/SimulatedAnnealing.h" bodystart="39" bodyend="-1"/>
+        <referencedby refid="class_smol_dock_1_1_heuristics_1_1_simulated_annealing_1a1a354ad6f5b9055013ed27575450498f" compoundref="_simulated_annealing_8cpp" startline="23" endline="44">search</referencedby>
+        <referencedby refid="class_smol_dock_1_1_heuristics_1_1_simulated_annealing_1aa1f98c673ff2152a626b3a718a6ab5d8" compoundref="_simulated_annealing_8cpp" startline="46" endline="48">getResultMatrix</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_smol_dock_1_1_heuristics_1_1_simulated_annealing_1adf7f58c5f5664ddea02fa6e906622356" prot="private" static="no" mutable="no">
+        <type><ref refid="struct_smol_dock_1_1_heuristics_1_1_simulated_annealing_1_1_parameters" kindref="compound">Parameters</ref></type>
+        <definition>Parameters SmolDock::Heuristics::SimulatedAnnealing::params</definition>
+        <argsstring></argsstring>
+        <name>params</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Engines/GlobalHeuristics/SimulatedAnnealing.h" line="41" column="1" bodyfile="Engines/GlobalHeuristics/SimulatedAnnealing.h" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_smol_dock_1_1_heuristics_1_1_simulated_annealing_1af4f599e7be249487f22ae292d02fad2a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>SmolDock::Heuristics::SimulatedAnnealing::SimulatedAnnealing</definition>
+        <argsstring>(Score::ScoringFunction *scorFunc_, Optimizer::Optimizer *optimizer_, unsigned int seed_, SimulatedAnnealing::Parameters params_)</argsstring>
+        <name>SimulatedAnnealing</name>
+        <param>
+          <type><ref refid="class_smol_dock_1_1_score_1_1_scoring_function" kindref="compound">Score::ScoringFunction</ref> *</type>
+          <declname>scorFunc_</declname>
+        </param>
+        <param>
+          <type><ref refid="class_smol_dock_1_1_optimizer_1_1_optimizer" kindref="compound">Optimizer::Optimizer</ref> *</type>
+          <declname>optimizer_</declname>
+        </param>
+        <param>
+          <type>unsigned int</type>
+          <declname>seed_</declname>
+        </param>
+        <param>
+          <type><ref refid="struct_smol_dock_1_1_heuristics_1_1_simulated_annealing_1_1_parameters" kindref="compound">SimulatedAnnealing::Parameters</ref></type>
+          <declname>params_</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Engines/GlobalHeuristics/SimulatedAnnealing.h" line="20" column="1" bodyfile="Engines/GlobalHeuristics/SimulatedAnnealing.cpp" bodystart="17" bodyend="21"/>
+      </memberdef>
+      <memberdef kind="function" id="class_smol_dock_1_1_heuristics_1_1_simulated_annealing_1a1a354ad6f5b9055013ed27575450498f" prot="public" static="no" const="no" explicit="no" inline="no" final="yes" virt="virtual">
+        <type>bool</type>
+        <definition>bool SmolDock::Heuristics::SimulatedAnnealing::search</definition>
+        <argsstring>() final</argsstring>
+        <name>search</name>
+        <reimplements refid="class_smol_dock_1_1_heuristics_1_1_global_heuristic_1acd4f8bbe6334ba93dcd4ea1d2a8c0d38">search</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Engines/GlobalHeuristics/SimulatedAnnealing.h" line="23" column="1" bodyfile="Engines/GlobalHeuristics/SimulatedAnnealing.cpp" bodystart="23" bodyend="44"/>
+        <references refid="class_smol_dock_1_1_score_1_1_scoring_function_1a92b9b5f6d23b07740dd9f6718207d31a">SmolDock::Score::ScoringFunction::Evaluate</references>
+        <references refid="class_smol_dock_1_1_optimizer_1_1_optimizer_1a127349b071842e954d7a89f026685b8f">SmolDock::Optimizer::Optimizer::getRawResultMatrix</references>
+        <references refid="class_smol_dock_1_1_optimizer_1_1_optimizer_1a5165027808dafc096faf1048a48e7c1c">SmolDock::Optimizer::Optimizer::getScore</references>
+        <references refid="class_smol_dock_1_1_score_1_1_scoring_function_1a70e93a6f7e50f4a57273b0faf60e8e90">SmolDock::Score::ScoringFunction::getStartingConditions</references>
+        <references refid="class_smol_dock_1_1_optimizer_1_1_optimizer_1a2868a3d9b6855b745d456de57eb1a870">SmolDock::Optimizer::Optimizer::optimize</references>
+        <references refid="class_smol_dock_1_1_heuristics_1_1_simulated_annealing_1a6631fed330929644b4d902c78b9efaac" compoundref="_simulated_annealing_8h" startline="35">optimizer</references>
+        <references refid="class_smol_dock_1_1_heuristics_1_1_simulated_annealing_1a88af0098ecfa96362e1135e2f0332b53" compoundref="_simulated_annealing_8h" startline="39">result</references>
+        <references refid="class_smol_dock_1_1_heuristics_1_1_simulated_annealing_1ac78308e5708ae4d3a0702412357fabb3" compoundref="_simulated_annealing_8h" startline="34">scorFunc</references>
+      </memberdef>
+      <memberdef kind="function" id="class_smol_dock_1_1_heuristics_1_1_simulated_annealing_1aa1f98c673ff2152a626b3a718a6ab5d8" prot="public" static="no" const="no" explicit="no" inline="no" final="yes" virt="virtual">
+        <type>arma::mat</type>
+        <definition>arma::mat SmolDock::Heuristics::SimulatedAnnealing::getResultMatrix</definition>
+        <argsstring>() final</argsstring>
+        <name>getResultMatrix</name>
+        <reimplements refid="class_smol_dock_1_1_heuristics_1_1_global_heuristic_1a1abc970d50c981e4df49833d4e7f0551">getResultMatrix</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Engines/GlobalHeuristics/SimulatedAnnealing.h" line="25" column="1" bodyfile="Engines/GlobalHeuristics/SimulatedAnnealing.cpp" bodystart="46" bodyend="48"/>
+        <references refid="class_smol_dock_1_1_heuristics_1_1_simulated_annealing_1a88af0098ecfa96362e1135e2f0332b53" compoundref="_simulated_annealing_8h" startline="39">result</references>
+      </memberdef>
+      <memberdef kind="function" id="class_smol_dock_1_1_heuristics_1_1_simulated_annealing_1a730bcd9c7e96d84e76aa4834f59f6ba0" prot="public" static="no" const="no" explicit="no" inline="no" final="yes" virt="non-virtual">
+        <type></type>
+        <definition>SmolDock::Heuristics::SimulatedAnnealing::~SimulatedAnnealing</definition>
+        <argsstring>() final=default</argsstring>
+        <name>~SimulatedAnnealing</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Engines/GlobalHeuristics/SimulatedAnnealing.h" line="27" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="275">
+        <label>SmolDock::Heuristics::GlobalHeuristic</label>
+        <link refid="class_smol_dock_1_1_heuristics_1_1_global_heuristic"/>
+      </node>
+      <node id="274">
+        <label>SmolDock::Heuristics::SimulatedAnnealing</label>
+        <link refid="class_smol_dock_1_1_heuristics_1_1_simulated_annealing"/>
+        <childnode refid="275" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="279">
+        <label>SmolDock::Score::ScoringFunction</label>
+        <link refid="class_smol_dock_1_1_score_1_1_scoring_function"/>
+      </node>
+      <node id="280">
+        <label>SmolDock::Heuristics::SimulatedAnnealing::Parameters</label>
+        <link refid="struct_smol_dock_1_1_heuristics_1_1_simulated_annealing_1_1_parameters"/>
+      </node>
+      <node id="277">
+        <label>SmolDock::Heuristics::GlobalHeuristic</label>
+        <link refid="class_smol_dock_1_1_heuristics_1_1_global_heuristic"/>
+      </node>
+      <node id="276">
+        <label>SmolDock::Heuristics::SimulatedAnnealing</label>
+        <link refid="class_smol_dock_1_1_heuristics_1_1_simulated_annealing"/>
+        <childnode refid="277" relation="public-inheritance">
+        </childnode>
+        <childnode refid="278" relation="usage">
+          <edgelabel>-optimizer</edgelabel>
+        </childnode>
+        <childnode refid="279" relation="usage">
+          <edgelabel>-scorFunc</edgelabel>
+        </childnode>
+        <childnode refid="280" relation="usage">
+          <edgelabel>-params</edgelabel>
+        </childnode>
+      </node>
+      <node id="278">
+        <label>SmolDock::Optimizer::Optimizer</label>
+        <link refid="class_smol_dock_1_1_optimizer_1_1_optimizer"/>
+      </node>
+    </collaborationgraph>
+    <location file="Engines/GlobalHeuristics/SimulatedAnnealing.h" line="16" column="1" bodyfile="Engines/GlobalHeuristics/SimulatedAnnealing.h" bodystart="16" bodyend="42"/>
+    <listofallmembers>
+      <member refid="class_smol_dock_1_1_heuristics_1_1_simulated_annealing_1aa1f98c673ff2152a626b3a718a6ab5d8" prot="public" virt="virtual"><scope>SmolDock::Heuristics::SimulatedAnnealing</scope><name>getResultMatrix</name></member>
+      <member refid="class_smol_dock_1_1_heuristics_1_1_simulated_annealing_1a6631fed330929644b4d902c78b9efaac" prot="private" virt="non-virtual"><scope>SmolDock::Heuristics::SimulatedAnnealing</scope><name>optimizer</name></member>
+      <member refid="class_smol_dock_1_1_heuristics_1_1_simulated_annealing_1adf7f58c5f5664ddea02fa6e906622356" prot="private" virt="non-virtual"><scope>SmolDock::Heuristics::SimulatedAnnealing</scope><name>params</name></member>
+      <member refid="class_smol_dock_1_1_heuristics_1_1_simulated_annealing_1a88af0098ecfa96362e1135e2f0332b53" prot="private" virt="non-virtual"><scope>SmolDock::Heuristics::SimulatedAnnealing</scope><name>result</name></member>
+      <member refid="class_smol_dock_1_1_heuristics_1_1_simulated_annealing_1a3aa9f639cc1886fb8b738b14b460a46b" prot="private" virt="non-virtual"><scope>SmolDock::Heuristics::SimulatedAnnealing</scope><name>rndGenerator</name></member>
+      <member refid="class_smol_dock_1_1_heuristics_1_1_simulated_annealing_1ac78308e5708ae4d3a0702412357fabb3" prot="private" virt="non-virtual"><scope>SmolDock::Heuristics::SimulatedAnnealing</scope><name>scorFunc</name></member>
+      <member refid="class_smol_dock_1_1_heuristics_1_1_simulated_annealing_1a1a354ad6f5b9055013ed27575450498f" prot="public" virt="virtual"><scope>SmolDock::Heuristics::SimulatedAnnealing</scope><name>search</name></member>
+      <member refid="class_smol_dock_1_1_heuristics_1_1_simulated_annealing_1af4f599e7be249487f22ae292d02fad2a" prot="public" virt="non-virtual"><scope>SmolDock::Heuristics::SimulatedAnnealing</scope><name>SimulatedAnnealing</name></member>
+      <member refid="class_smol_dock_1_1_heuristics_1_1_global_heuristic_1a93c9f12a7d218837e6e5441ae5daebc1" prot="public" virt="virtual"><scope>SmolDock::Heuristics::SimulatedAnnealing</scope><name>~GlobalHeuristic</name></member>
+      <member refid="class_smol_dock_1_1_heuristics_1_1_simulated_annealing_1a730bcd9c7e96d84e76aa4834f59f6ba0" prot="public" virt="non-virtual"><scope>SmolDock::Heuristics::SimulatedAnnealing</scope><name>~SimulatedAnnealing</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

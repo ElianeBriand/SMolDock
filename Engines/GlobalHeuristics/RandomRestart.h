@@ -18,7 +18,7 @@ namespace SmolDock::Heuristics {
 
         struct Parameters;
 
-        RandomRestart(Score::ScoringFunction *scorFunc_, Optimizer::Optimizer *optimizer_, unsigned int seed_,
+        RandomRestart(Score::ScoringFunction* scorFunc_, Optimizer::Optimizer* optimizer_, unsigned int seed_,
                       RandomRestart::Parameters params_);
 
         bool search() final;
@@ -35,8 +35,8 @@ namespace SmolDock::Heuristics {
         };
 
     private:
-        Score::ScoringFunction *scorFunc;
-        Optimizer::Optimizer *optimizer;
+        Score::ScoringFunction* scorFunc;
+        Optimizer::Optimizer* optimizer;
 
         std::mt19937 rndGenerator;
 

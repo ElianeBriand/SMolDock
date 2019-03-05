@@ -54,8 +54,8 @@ namespace SmolDock::Engine {
         */
         explicit ConformerRigidDockingEngine(unsigned int conformer_num,
                                              unsigned int retryPerConformer,
-                                             Protein *protein,
-                                             Molecule *ligand,
+                                             Protein* protein,
+                                             Molecule* ligand,
                                              Score::ScoringFunctionType scFuncType,
                                              Heuristics::GlobalHeuristicType heurType,
                                              Optimizer::LocalOptimizerType localOptimizerType_,
@@ -79,16 +79,16 @@ namespace SmolDock::Engine {
         unsigned int conformer_num;
         unsigned int retryPerConformer;
 
-        Protein *orig_protein;
-        Molecule *orig_ligand;
+        Protein* orig_protein;
+        Molecule* orig_ligand;
 
         Score::ScoringFunctionType scoringFuncType;
         Heuristics::GlobalHeuristicType heuristicType;
         Optimizer::LocalOptimizerType localOptimizerType;
 
-        std::shared_ptr<Score::ScoringFunction> scoringFunction;
-        std::shared_ptr<Heuristics::GlobalHeuristic> globalHeuristic;
-        std::shared_ptr<Optimizer::Optimizer> localOptimizer;
+        //std::shared_ptr<Score::ScoringFunction> scoringFunction;
+        //std::shared_ptr<Heuristics::GlobalHeuristic> globalHeuristic;
+        //std::shared_ptr<Optimizer::Optimizer> localOptimizer;
 
         std::mt19937 rnd_generator;
 

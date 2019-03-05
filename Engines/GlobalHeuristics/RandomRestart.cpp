@@ -13,7 +13,7 @@
 namespace SmolDock::Heuristics {
 
 
-    RandomRestart::RandomRestart(Score::ScoringFunction *scorFunc_, Optimizer::Optimizer *optimizer_,
+    RandomRestart::RandomRestart(Score::ScoringFunction* scorFunc_, Optimizer::Optimizer* optimizer_,
                                  unsigned int seed_, RandomRestart::Parameters params_) :
             scorFunc(scorFunc_), optimizer(optimizer_), rndGenerator(seed_), params(params_) {
 
@@ -22,16 +22,32 @@ namespace SmolDock::Heuristics {
     bool RandomRestart::search() {
 
         arma::mat currentState = scorFunc->getStartingConditions();
-        double score_ = scorFunc->Evaluate(currentState);
+        arma::mat statingState = currentState;
+        double score_ = 0.0; //scorFunc->Evaluate(currentState);
         unsigned int restart_count = 0;
 
-        while (score_ == 0) {
+        while (score_ == 0 || score_ > 10.0) {
             restart_count++;
-            std::uniform_real_distribution<double> randomRestartDistribution(-this->params.proteinMaxRadius,
-                                                                             this->params.proteinMaxRadius); // TODO replace with protein max radius
+            std::uniform_real_distribution<double> randomRestartTranslationDistribution(-this->params.proteinMaxRadius,
+                                                                                        this->params.proteinMaxRadius);
+            std::uniform_real_distribution<double> randomRestartQuatDistribution(-3, +3);
+            std::uniform_real_distribution<double> randomRestartRotDistribution(-180.0 * (3.14 / 180),
+                                                                                +180.0 * (3.14 / 180));
 
-            for (unsigned int i = 0; i < currentState.n_rows; i++) {
-                currentState[i] = randomRestartDistribution(this->rndGenerator);
+
+            for (unsigned int i = 0; i < 3; i++) {
+                double perturbation = randomRestartTranslationDistribution(this->rndGenerator);
+                currentState[i] = statingState[i] + perturbation;
+            }
+
+            for (unsigned int i = 3; i < 8; i++) {
+                double perturbation = randomRestartQuatDistribution(this->rndGenerator);
+                currentState[i] = statingState[i] + perturbation;
+            }
+
+            for (unsigned int i = 8; i < currentState.n_rows; i++) {
+                double perturbation = randomRestartRotDistribution(this->rndGenerator);
+                currentState[i] = statingState[i] + perturbation;
             }
 
             score_ = scorFunc->Evaluate(currentState);

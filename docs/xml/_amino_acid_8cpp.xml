@@ -6,47 +6,41 @@
     <includes refid="_amino_acid_8h" local="yes">AminoAcid.h</includes>
     <includes refid="_atom_8h" local="yes">Atom.h</includes>
     <incdepgraph>
-      <node id="46">
+      <node id="49">
         <label>string</label>
       </node>
-      <node id="54">
+      <node id="57">
         <label>Atom.h</label>
         <link refid="_atom_8h"/>
-        <childnode refid="47" relation="include">
-        </childnode>
-        <childnode refid="51" relation="include">
-        </childnode>
-        <childnode refid="48" relation="include">
-        </childnode>
-        <childnode refid="49" relation="include">
-        </childnode>
-        <childnode refid="44" relation="include">
-        </childnode>
-        <childnode refid="45" relation="include">
-        </childnode>
-      </node>
-      <node id="53">
-        <label>map</label>
-      </node>
-      <node id="43">
-        <label>AminoAcid.cpp</label>
-        <link refid="_amino_acid_8cpp"/>
-        <childnode refid="44" relation="include">
-        </childnode>
-        <childnode refid="45" relation="include">
+        <childnode refid="50" relation="include">
         </childnode>
         <childnode refid="54" relation="include">
         </childnode>
-      </node>
-      <node id="45">
-        <label>AminoAcid.h</label>
-        <link refid="_amino_acid_8h"/>
-        <childnode refid="46" relation="include">
+        <childnode refid="51" relation="include">
+        </childnode>
+        <childnode refid="52" relation="include">
         </childnode>
         <childnode refid="47" relation="include">
         </childnode>
         <childnode refid="48" relation="include">
         </childnode>
+      </node>
+      <node id="56">
+        <label>map</label>
+      </node>
+      <node id="46">
+        <label>AminoAcid.cpp</label>
+        <link refid="_amino_acid_8cpp"/>
+        <childnode refid="47" relation="include">
+        </childnode>
+        <childnode refid="48" relation="include">
+        </childnode>
+        <childnode refid="57" relation="include">
+        </childnode>
+      </node>
+      <node id="48">
+        <label>AminoAcid.h</label>
+        <link refid="_amino_acid_8h"/>
         <childnode refid="49" relation="include">
         </childnode>
         <childnode refid="50" relation="include">
@@ -55,33 +49,39 @@
         </childnode>
         <childnode refid="52" relation="include">
         </childnode>
-      </node>
-      <node id="50">
-        <label>tuple</label>
-      </node>
-      <node id="52">
-        <label>Engines/Internals/iProtein.h</label>
-        <link refid="i_protein_8h"/>
-        <childnode refid="47" relation="include">
-        </childnode>
-        <childnode refid="51" relation="include">
-        </childnode>
         <childnode refid="53" relation="include">
         </childnode>
+        <childnode refid="54" relation="include">
+        </childnode>
+        <childnode refid="55" relation="include">
+        </childnode>
       </node>
-      <node id="47">
+      <node id="53">
+        <label>tuple</label>
+      </node>
+      <node id="55">
+        <label>Engines/Internals/iProtein.h</label>
+        <link refid="i_protein_8h"/>
+        <childnode refid="50" relation="include">
+        </childnode>
+        <childnode refid="54" relation="include">
+        </childnode>
+        <childnode refid="56" relation="include">
+        </childnode>
+      </node>
+      <node id="50">
         <label>vector</label>
       </node>
-      <node id="44">
+      <node id="47">
         <label>iostream</label>
       </node>
-      <node id="48">
+      <node id="51">
         <label>set</label>
       </node>
-      <node id="49">
+      <node id="52">
         <label>algorithm</label>
       </node>
-      <node id="51">
+      <node id="54">
         <label>memory</label>
       </node>
     </incdepgraph>
@@ -162,7 +162,7 @@
 <codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>});</highlight></codeline>
 <codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(it<sp/>!=<sp/><ref refid="class_smol_dock_1_1_amino_acid_1a23b1781c86be2991e2f668c07ad78d68" kindref="member">AminoAcid::AAShorthandSet</ref>.end())<sp/>{</highlight></codeline>
 <codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>std::get&lt;1&gt;(*it);</highlight></codeline>
-<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight><highlight class="keywordflow">else</highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
 <codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
@@ -197,39 +197,37 @@
 <codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="105"><highlight class="normal"></highlight></codeline>
 <codeline lineno="106"><highlight class="normal"></highlight></codeline>
-<codeline lineno="107"><highlight class="normal"></highlight></codeline>
-<codeline lineno="108" refid="class_smol_dock_1_1_amino_acid_1a8fb908f1ba8496d0cc115d7a0813d027" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_amino_acid_1a8fb908f1ba8496d0cc115d7a0813d027" kindref="member">AminoAcid::filliProtein</ref>(<ref refid="struct_smol_dock_1_1i_protein" kindref="compound">iProtein</ref>&amp;<sp/>prot,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>skipHydrogen)</highlight></codeline>
-<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>atom:<sp/>this-&gt;<ref refid="class_smol_dock_1_1_amino_acid_1acf07ea167386e29d0ea6b5024663aed8" kindref="member">atoms</ref>)<sp/>{</highlight></codeline>
-<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(skipHydrogen<sp/>&amp;&amp;<sp/>atom-&gt;getAtomType()<sp/>==<sp/><ref refid="class_smol_dock_1_1_atom_1a57e9a532fd04e1846c0d83edebb9fd41ad4ac1478a4d8a4f591d35e3d75f3de65" kindref="member">Atom::AtomType::hydrogen</ref>)</highlight></codeline>
-<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">continue</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="113"><highlight class="normal"></highlight></codeline>
-<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>prot.<ref refid="struct_smol_dock_1_1i_protein_1a8a9cecc0e9750baf8d7074fe64b4331d" kindref="member">type</ref>.push_back(atom-&gt;getAtomicNumber());</highlight></codeline>
-<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>prot.<ref refid="struct_smol_dock_1_1i_protein_1ac452f5ddb99ed5a703615f9c03337ddd" kindref="member">variant</ref>.push_back((</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">)atom-&gt;getAtomVariant());<sp/></highlight><highlight class="comment">//<sp/>Not<sp/>implemented</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="116"><highlight class="normal"></highlight></codeline>
-<codeline lineno="117"><highlight class="normal"></highlight></codeline>
-<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>pos<sp/>=<sp/>atom-&gt;getAtomPosition();</highlight></codeline>
-<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>prot.<ref refid="struct_smol_dock_1_1i_protein_1ae36a5b0f6996e54f9ce1f746a79e23f8" kindref="member">x</ref>.push_back(std::get&lt;0&gt;(pos));</highlight></codeline>
-<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>prot.<ref refid="struct_smol_dock_1_1i_protein_1a090a371c93db6928cdfef39b0ce3d1fd" kindref="member">y</ref>.push_back(std::get&lt;1&gt;(pos));</highlight></codeline>
-<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>prot.<ref refid="struct_smol_dock_1_1i_protein_1ab95306577aa2d8bdd268504b44d046ad" kindref="member">z</ref>.push_back(std::get&lt;2&gt;(pos));</highlight></codeline>
+<codeline lineno="107" refid="class_smol_dock_1_1_amino_acid_1a8fb908f1ba8496d0cc115d7a0813d027" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_amino_acid_1a8fb908f1ba8496d0cc115d7a0813d027" kindref="member">AminoAcid::filliProtein</ref>(<ref refid="struct_smol_dock_1_1i_protein" kindref="compound">iProtein</ref><sp/>&amp;prot,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>skipHydrogen)<sp/>{</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>&amp;atom:<sp/>this-&gt;<ref refid="class_smol_dock_1_1_amino_acid_1acf07ea167386e29d0ea6b5024663aed8" kindref="member">atoms</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(skipHydrogen<sp/>&amp;&amp;<sp/>atom-&gt;getAtomType()<sp/>==<sp/><ref refid="class_smol_dock_1_1_atom_1a57e9a532fd04e1846c0d83edebb9fd41ad4ac1478a4d8a4f591d35e3d75f3de65" kindref="member">Atom::AtomType::hydrogen</ref>)</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">continue</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>prot.<ref refid="struct_smol_dock_1_1i_protein_1a8a9cecc0e9750baf8d7074fe64b4331d" kindref="member">type</ref>.push_back(atom-&gt;getAtomicNumber());</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>prot.<ref refid="struct_smol_dock_1_1i_protein_1ac452f5ddb99ed5a703615f9c03337ddd" kindref="member">variant</ref>.push_back((</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">)<sp/>atom-&gt;getAtomVariant());<sp/></highlight><highlight class="comment">//<sp/>Not<sp/>implemented</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>pos<sp/>=<sp/>atom-&gt;getAtomPosition();</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>prot.<ref refid="struct_smol_dock_1_1i_protein_1ae36a5b0f6996e54f9ce1f746a79e23f8" kindref="member">x</ref>.push_back(std::get&lt;0&gt;(pos));</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>prot.<ref refid="struct_smol_dock_1_1i_protein_1a090a371c93db6928cdfef39b0ce3d1fd" kindref="member">y</ref>.push_back(std::get&lt;1&gt;(pos));</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>prot.<ref refid="struct_smol_dock_1_1i_protein_1ab95306577aa2d8bdd268504b44d046ad" kindref="member">z</ref>.push_back(std::get&lt;2&gt;(pos));</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>prot.<ref refid="struct_smol_dock_1_1i_protein_1a56480d9a766ca9a3564ade7b91585f0f" kindref="member">atomicRadius</ref>.push_back(atom-&gt;getAtomicRadius());</highlight></codeline>
 <codeline lineno="122"><highlight class="normal"></highlight></codeline>
-<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>prot.<ref refid="struct_smol_dock_1_1i_protein_1a56480d9a766ca9a3564ade7b91585f0f" kindref="member">atomicRadius</ref>.push_back(atom-&gt;getAtomicRadius());</highlight></codeline>
-<codeline lineno="124"><highlight class="normal"></highlight></codeline>
-<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="128"><highlight class="normal"></highlight></codeline>
-<codeline lineno="129" refid="class_smol_dock_1_1_amino_acid_1a556f668f759abed9c33c3522106d520b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875d" kindref="member">AminoAcid::AAType</ref><sp/><ref refid="class_smol_dock_1_1_amino_acid_1a556f668f759abed9c33c3522106d520b" kindref="member">AminoAcid::getType</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>this-&gt;<ref refid="class_smol_dock_1_1_amino_acid_1ae3404d935519af353a5c323ce298e04a" kindref="member">type</ref>;</highlight></codeline>
-<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="132"><highlight class="normal"></highlight></codeline>
-<codeline lineno="133" refid="class_smol_dock_1_1_amino_acid_1acf73c63c5f9f1945d40ae0bc365c5614" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_amino_acid_1acf73c63c5f9f1945d40ae0bc365c5614" kindref="member">AminoAcid::setType</ref>(<ref refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875d" kindref="member">AminoAcid::AAType</ref><sp/>t)<sp/>{</highlight></codeline>
-<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="class_smol_dock_1_1_amino_acid_1ae3404d935519af353a5c323ce298e04a" kindref="member">type</ref><sp/>=<sp/>t;</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight></codeline>
+<codeline lineno="127" refid="class_smol_dock_1_1_amino_acid_1a556f668f759abed9c33c3522106d520b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875d" kindref="member">AminoAcid::AAType</ref><sp/><ref refid="class_smol_dock_1_1_amino_acid_1a556f668f759abed9c33c3522106d520b" kindref="member">AminoAcid::getType</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>this-&gt;<ref refid="class_smol_dock_1_1_amino_acid_1ae3404d935519af353a5c323ce298e04a" kindref="member">type</ref>;</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"></highlight></codeline>
+<codeline lineno="131" refid="class_smol_dock_1_1_amino_acid_1acf73c63c5f9f1945d40ae0bc365c5614" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_amino_acid_1acf73c63c5f9f1945d40ae0bc365c5614" kindref="member">AminoAcid::setType</ref>(<ref refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875d" kindref="member">AminoAcid::AAType</ref><sp/>t)<sp/>{</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="class_smol_dock_1_1_amino_acid_1ae3404d935519af353a5c323ce298e04a" kindref="member">type</ref><sp/>=<sp/>t;</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="135"><highlight class="normal"></highlight></codeline>
-<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="137"><highlight class="normal"></highlight></codeline>
-<codeline lineno="138"><highlight class="normal"></highlight></codeline>
-<codeline lineno="139"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal">}</highlight></codeline>
     </programlisting>
     <location file="Structures/AminoAcid.cpp"/>
   </compounddef>

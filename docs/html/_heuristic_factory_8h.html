@@ -94,6 +94,7 @@ $(document).ready(function(){initNavTree('_heuristic_factory_8h.html','');});
 <div class="header">
   <div class="summary">
 <a href="#namespaces">Namespaces</a> &#124;
+<a href="#typedef-members">Typedefs</a> &#124;
 <a href="#enum-members">Enumerations</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
@@ -101,9 +102,15 @@ $(document).ready(function(){initNavTree('_heuristic_factory_8h.html','');});
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;memory&gt;</code><br />
+<code>#include &lt;variant&gt;</code><br />
 <code>#include &lt;<a class="el" href="_scoring_function_interface_8h_source.html">Engines/ScoringFunctions/ScoringFunctionInterface.h</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="_optimizer_interface_8h_source.html">Engines/LocalOptimizers/OptimizerInterface.h</a>&gt;</code><br />
 <code>#include &quot;<a class="el" href="_heuristic_interface_8h_source.html">HeuristicInterface.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_heuristic_factory_8h_source.html">HeuristicFactory.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_random_restart_8h_source.html">RandomRestart.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_only_local_8h_source.html">OnlyLocal.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_iterated_local_search_8h_source.html">IteratedLocalSearch.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_simulated_annealing_8h_source.html">SimulatedAnnealing.h</a>&quot;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for HeuristicFactory.h:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
@@ -111,11 +118,15 @@ $(document).ready(function(){initNavTree('_heuristic_factory_8h.html','');});
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="_heuristic_factory_8h__incl.png" border="0" usemap="#_heuristic_factory_8h" alt=""/></div>
 <map name="_heuristic_factory_8h" id="_heuristic_factory_8h">
-<area shape="rect" id="node3" href="_scoring_function_interface_8h.html" title="Engines/ScoringFunctions\l/ScoringFunctionInterface.h" alt="" coords="5,80,188,121"/>
-<area shape="rect" id="node11" href="_optimizer_interface_8h.html" title="Engines/LocalOptimizers\l/OptimizerInterface.h" alt="" coords="212,80,379,121"/>
-<area shape="rect" id="node12" href="_heuristic_interface_8h.html" title="HeuristicInterface.h" alt="" coords="454,87,590,114"/>
-<area shape="rect" id="node5" href="i_conformer_8h.html" title="Engines/Internals/iConformer.h" alt="" coords="13,169,215,196"/>
-<area shape="rect" id="node7" href="i_transform_8h.html" title="iTransform.h" alt="" coords="127,244,221,271"/>
+<area shape="rect" id="node4" href="_scoring_function_interface_8h.html" title="Engines/ScoringFunctions\l/ScoringFunctionInterface.h" alt="" coords="150,156,333,197"/>
+<area shape="rect" id="node14" href="_optimizer_interface_8h.html" title="Engines/LocalOptimizers\l/OptimizerInterface.h" alt="" coords="357,156,523,197"/>
+<area shape="rect" id="node15" href="_heuristic_interface_8h.html" title="HeuristicInterface.h" alt="" coords="548,163,684,190"/>
+<area shape="rect" id="node16" href="_random_restart_8h.html" title="RandomRestart.h" alt="" coords="635,81,760,108"/>
+<area shape="rect" id="node17" href="_only_local_8h.html" title="OnlyLocal.h" alt="" coords="123,81,213,108"/>
+<area shape="rect" id="node18" href="_iterated_local_search_8h.html" title="IteratedLocalSearch.h" alt="" coords="237,81,387,108"/>
+<area shape="rect" id="node19" href="_simulated_annealing_8h.html" title="SimulatedAnnealing.h" alt="" coords="411,81,559,108"/>
+<area shape="rect" id="node6" href="i_conformer_8h.html" title="Engines/Internals/iConformer.h" alt="" coords="96,245,299,272"/>
+<area shape="rect" id="node8" href="i_transform_8h.html" title="iTransform.h" alt="" coords="243,320,338,347"/>
 </map>
 </div>
 </div><div class="textblock"><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -125,11 +136,15 @@ $(document).ready(function(){initNavTree('_heuristic_factory_8h.html','');});
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="_heuristic_factory_8h__dep__incl.png" border="0" usemap="#_heuristic_factory_8hdep" alt=""/></div>
 <map name="_heuristic_factory_8hdep" id="_heuristic_factory_8hdep">
-<area shape="rect" id="node2" href="_conformer_rigid_docking_engine_8h.html" title="ConformerRigidDockingEngine.h" alt="" coords="179,80,391,107"/>
-<area shape="rect" id="node5" href="_py_engine_8cpp.html" title="PyEngine.cpp" alt="" coords="370,155,473,181"/>
-<area shape="rect" id="node6" href="_heuristic_factory_8cpp.html" title="HeuristicFactory.cpp" alt="" coords="466,80,609,107"/>
-<area shape="rect" id="node3" href="_conformer_rigid_docking_engine_8cpp.html" title="ConformerRigidDockingEngine.cpp" alt="" coords="5,155,232,181"/>
-<area shape="rect" id="node4" href="main_8cpp.html" title="main.cpp" alt="" coords="256,155,331,181"/>
+<area shape="rect" id="node2" href="_conformer_rigid_docking_engine_8h.html" title="ConformerRigidDockingEngine.h" alt="" coords="508,81,720,108"/>
+<area shape="rect" id="node6" href="_py_engine_8cpp.html" title="PyEngine.cpp" alt="" coords="779,156,881,182"/>
+<area shape="rect" id="node7" href="_heuristic_factory_8cpp.html" title="HeuristicFactory.cpp" alt="" coords="795,81,937,108"/>
+<area shape="rect" id="node8" href="_pose_refiner_8h.html" title="PoseRefiner.h" alt="" coords="224,81,329,108"/>
+<area shape="rect" id="node3" href="_conformer_rigid_docking_engine_8cpp.html" title="ConformerRigidDockingEngine.cpp" alt="" coords="429,156,655,182"/>
+<area shape="rect" id="node4" href="cli__interface_8cpp.html" title="cli_interface.cpp" alt="" coords="287,156,405,182"/>
+<area shape="rect" id="node5" href="main_8cpp.html" title="main.cpp" alt="" coords="679,156,754,182"/>
+<area shape="rect" id="node9" href="_pose_refiner_8cpp.html" title="PoseRefiner.cpp" alt="" coords="5,156,124,182"/>
+<area shape="rect" id="node10" href="vina__refiner_8cpp.html" title="vina_refiner.cpp" alt="" coords="149,156,263,182"/>
 </map>
 </div>
 </div>
@@ -140,16 +155,26 @@ Namespaces</h2></td></tr>
 <tr class="memitem:namespace_smol_dock_1_1_heuristics"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_smol_dock_1_1_heuristics.html">SmolDock::Heuristics</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:a8aa3caa2a4fda3fdd187e2254997538d"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_smol_dock_1_1_heuristics.html#a8aa3caa2a4fda3fdd187e2254997538d">SmolDock::Heuristics::HeuristicParameters</a> = std::variant&lt; OnlyLocal::Parameters, RandomRestart::Parameters, IteratedLocalSearch::Parameters, SimulatedAnnealing::Parameters &gt;</td></tr>
+<tr class="separator:a8aa3caa2a4fda3fdd187e2254997538d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Enumerations</h2></td></tr>
-<tr class="memitem:acab108fbb064edb33166af7fdfb77a72"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_smol_dock_1_1_heuristics.html#acab108fbb064edb33166af7fdfb77a72">SmolDock::Heuristics::GlobalHeuristicType</a> { <a class="el" href="namespace_smol_dock_1_1_heuristics.html#acab108fbb064edb33166af7fdfb77a72a1e6d08df1b1e06305a25d1b4bddce43d">SmolDock::Heuristics::GlobalHeuristicType::RandomRestart</a>
+<tr class="memitem:acab108fbb064edb33166af7fdfb77a72"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_smol_dock_1_1_heuristics.html#acab108fbb064edb33166af7fdfb77a72">SmolDock::Heuristics::GlobalHeuristicType</a> { <a class="el" href="namespace_smol_dock_1_1_heuristics.html#acab108fbb064edb33166af7fdfb77a72a1e6d08df1b1e06305a25d1b4bddce43d">SmolDock::Heuristics::GlobalHeuristicType::RandomRestart</a>, 
+<a class="el" href="namespace_smol_dock_1_1_heuristics.html#acab108fbb064edb33166af7fdfb77a72a809a739dbd749d3629f62894ad86c959">SmolDock::Heuristics::GlobalHeuristicType::OnlyLocal</a>, 
+<a class="el" href="namespace_smol_dock_1_1_heuristics.html#acab108fbb064edb33166af7fdfb77a72a13f26643ef34bdb4a20b83277d6b8f84">SmolDock::Heuristics::GlobalHeuristicType::IteratedLocalSearch</a>, 
+<a class="el" href="namespace_smol_dock_1_1_heuristics.html#acab108fbb064edb33166af7fdfb77a72a9e54e50d057e08825382c09877dede7f">SmolDock::Heuristics::GlobalHeuristicType::SimulatedAnnealing</a>
  }</td></tr>
 <tr class="separator:acab108fbb064edb33166af7fdfb77a72"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a30612bd88fe0508b7306b60c678a68a9"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; GlobalHeuristic &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_smol_dock_1_1_heuristics.html#a30612bd88fe0508b7306b60c678a68a9">SmolDock::Heuristics::globalHeuristicFactory</a> (GlobalHeuristicType t, Score::ScoringFunction *scorFunc, Optimizer::Optimizer *localOptimizer, unsigned int rng_seed)</td></tr>
-<tr class="separator:a30612bd88fe0508b7306b60c678a68a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1553e62465ebc5cbe1f8a925afb9fe63"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; GlobalHeuristic &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_smol_dock_1_1_heuristics.html#a1553e62465ebc5cbe1f8a925afb9fe63">SmolDock::Heuristics::globalHeuristicFactory</a> (GlobalHeuristicType t, Score::ScoringFunction *scorFunc, Optimizer::Optimizer *localOptimizer, unsigned int rng_seed, HeuristicParameters parameters)</td></tr>
+<tr class="separator:a1553e62465ebc5cbe1f8a925afb9fe63"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad94c3b458eeb9b9b65d027a2a2daed3f"><td class="memItemLeft" align="right" valign="top">HeuristicParameters&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_smol_dock_1_1_heuristics.html#ad94c3b458eeb9b9b65d027a2a2daed3f">SmolDock::Heuristics::heuristicParametersFactory</a> (GlobalHeuristicType t)</td></tr>
+<tr class="separator:ad94c3b458eeb9b9b65d027a2a2daed3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->
