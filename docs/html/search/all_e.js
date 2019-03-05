@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['quaternionnorm',['quaternionNorm',['../namespace_smol_dock.html#afb62962c202721eaa8aa64d19bd42fdf',1,'SmolDock']]]
+  ['quaternionidentityinit',['QuaternionIdentityInit',['../namespace_smol_dock.html#a4b9f944b7ca507663d00cc948f0b90c7',1,'SmolDock']]]
 ];

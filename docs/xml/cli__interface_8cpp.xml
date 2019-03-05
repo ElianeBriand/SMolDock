@@ -1,0 +1,817 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="cli__interface_8cpp" kind="file" language="C++">
+    <compoundname>cli_interface.cpp</compoundname>
+    <includes local="no">iostream</includes>
+    <includes local="no">memory</includes>
+    <includes local="no">string</includes>
+    <includes refid="_molecule_8h" local="yes">Structures/Molecule.h</includes>
+    <includes refid="_protein_8h" local="yes">Structures/Protein.h</includes>
+    <includes refid="_pose_refiner_8h" local="yes">Engines/PoseRefiner.h</includes>
+    <includes refid="_vina_compatibility_post_processor_8h" local="yes">Structures/InputPostProcessors/VinaCompatibilityPostProcessor.h</includes>
+    <includes refid="_conformer_rigid_docking_engine_8h" local="yes">Engines/ConformerRigidDockingEngine.h</includes>
+    <includes local="no">boost/log/core.hpp</includes>
+    <includes local="no">boost/log/trivial.hpp</includes>
+    <includes local="no">boost/log/expressions.hpp</includes>
+    <includes local="no">boost/log/utility/setup/console.hpp</includes>
+    <includes local="no">boost/log/sinks/text_file_backend.hpp</includes>
+    <includes local="no">boost/log/utility/setup/file.hpp</includes>
+    <includes local="no">boost/filesystem.hpp</includes>
+    <includes local="no">boost/program_options.hpp</includes>
+    <includes refid="_p_d_b_writer_8h" local="no">Utilities/PDBWriter.h</includes>
+    <incdepgraph>
+      <node id="285">
+        <label>Structures/Protein.h</label>
+        <link refid="_protein_8h"/>
+        <childnode refid="260" relation="include">
+        </childnode>
+        <childnode refid="257" relation="include">
+        </childnode>
+        <childnode refid="286" relation="include">
+        </childnode>
+        <childnode refid="287" relation="include">
+        </childnode>
+        <childnode refid="288" relation="include">
+        </childnode>
+        <childnode refid="289" relation="include">
+        </childnode>
+        <childnode refid="274" relation="include">
+        </childnode>
+        <childnode refid="268" relation="include">
+        </childnode>
+        <childnode refid="276" relation="include">
+        </childnode>
+        <childnode refid="272" relation="include">
+        </childnode>
+      </node>
+      <node id="304">
+        <label>Engines/ConformerRigidDockingEngine.h</label>
+        <link refid="_conformer_rigid_docking_engine_8h"/>
+        <childnode refid="262" relation="include">
+        </childnode>
+        <childnode refid="305" relation="include">
+        </childnode>
+        <childnode refid="302" relation="include">
+        </childnode>
+        <childnode refid="294" relation="include">
+        </childnode>
+        <childnode refid="306" relation="include">
+        </childnode>
+        <childnode refid="285" relation="include">
+        </childnode>
+        <childnode refid="259" relation="include">
+        </childnode>
+        <childnode refid="308" relation="include">
+        </childnode>
+        <childnode refid="291" relation="include">
+        </childnode>
+      </node>
+      <node id="286">
+        <label>ESBTL/default.h</label>
+      </node>
+      <node id="302">
+        <label>Engines/LocalOptimizers/OptimizerFactory.h</label>
+        <link refid="_optimizer_factory_8h"/>
+        <childnode refid="257" relation="include">
+        </childnode>
+        <childnode refid="292" relation="include">
+        </childnode>
+        <childnode refid="296" relation="include">
+        </childnode>
+      </node>
+      <node id="309">
+        <label>functional</label>
+      </node>
+      <node id="262">
+        <label>GraphMol/RWMol.h</label>
+      </node>
+      <node id="263">
+        <label>GraphMol/MolOps.h</label>
+      </node>
+      <node id="297">
+        <label>HeuristicInterface.h</label>
+        <link refid="_heuristic_interface_8h"/>
+      </node>
+      <node id="300">
+        <label>IteratedLocalSearch.h</label>
+        <link refid="_iterated_local_search_8h"/>
+        <childnode refid="292" relation="include">
+        </childnode>
+        <childnode refid="296" relation="include">
+        </childnode>
+        <childnode refid="297" relation="include">
+        </childnode>
+      </node>
+      <node id="266">
+        <label>GraphMol/Substruct/SubstructMatch.h</label>
+      </node>
+      <node id="296">
+        <label>Engines/LocalOptimizers/OptimizerInterface.h</label>
+        <link refid="_optimizer_interface_8h"/>
+        <childnode refid="293" relation="include">
+        </childnode>
+      </node>
+      <node id="290">
+        <label>Engines/PoseRefiner.h</label>
+        <link refid="_pose_refiner_8h"/>
+        <childnode refid="285" relation="include">
+        </childnode>
+        <childnode refid="259" relation="include">
+        </childnode>
+        <childnode refid="291" relation="include">
+        </childnode>
+        <childnode refid="294" relation="include">
+        </childnode>
+        <childnode refid="302" relation="include">
+        </childnode>
+      </node>
+      <node id="295">
+        <label>variant</label>
+      </node>
+      <node id="310">
+        <label>boost/log/core.hpp</label>
+      </node>
+      <node id="281">
+        <label>cmath</label>
+      </node>
+      <node id="255">
+        <label>cli_interface.cpp</label>
+        <link refid="cli__interface_8cpp"/>
+        <childnode refid="256" relation="include">
+        </childnode>
+        <childnode refid="257" relation="include">
+        </childnode>
+        <childnode refid="258" relation="include">
+        </childnode>
+        <childnode refid="259" relation="include">
+        </childnode>
+        <childnode refid="285" relation="include">
+        </childnode>
+        <childnode refid="290" relation="include">
+        </childnode>
+        <childnode refid="303" relation="include">
+        </childnode>
+        <childnode refid="304" relation="include">
+        </childnode>
+        <childnode refid="310" relation="include">
+        </childnode>
+        <childnode refid="311" relation="include">
+        </childnode>
+        <childnode refid="312" relation="include">
+        </childnode>
+        <childnode refid="313" relation="include">
+        </childnode>
+        <childnode refid="314" relation="include">
+        </childnode>
+        <childnode refid="315" relation="include">
+        </childnode>
+        <childnode refid="316" relation="include">
+        </childnode>
+        <childnode refid="317" relation="include">
+        </childnode>
+        <childnode refid="318" relation="include">
+        </childnode>
+      </node>
+      <node id="282">
+        <label>cassert</label>
+      </node>
+      <node id="283">
+        <label>Eigen/Core</label>
+      </node>
+      <node id="267">
+        <label>GraphMol/DistGeomHelpers/Embedder.h</label>
+      </node>
+      <node id="268">
+        <label>Structures/InputPostProcessors/InputPostProcessorInterface.h</label>
+        <link refid="_input_post_processor_interface_8h"/>
+        <childnode refid="269" relation="include">
+        </childnode>
+      </node>
+      <node id="258">
+        <label>string</label>
+      </node>
+      <node id="289">
+        <label>ESBTL/compressed_ifstream.h</label>
+      </node>
+      <node id="292">
+        <label>ScoringFunctionInterface.h</label>
+        <link refid="_scoring_function_interface_8h"/>
+        <childnode refid="293" relation="include">
+        </childnode>
+        <childnode refid="278" relation="include">
+        </childnode>
+      </node>
+      <node id="269">
+        <label>Structures/Atom.h</label>
+        <link refid="_atom_8h"/>
+        <childnode refid="260" relation="include">
+        </childnode>
+        <childnode refid="257" relation="include">
+        </childnode>
+        <childnode refid="270" relation="include">
+        </childnode>
+        <childnode refid="271" relation="include">
+        </childnode>
+        <childnode refid="256" relation="include">
+        </childnode>
+        <childnode refid="272" relation="include">
+        </childnode>
+      </node>
+      <node id="275">
+        <label>map</label>
+      </node>
+      <node id="313">
+        <label>boost/log/utility/setup/console.hpp</label>
+      </node>
+      <node id="278">
+        <label>../Engines/Internals/iConformer.h</label>
+        <link refid="i_conformer_8h"/>
+        <childnode refid="260" relation="include">
+        </childnode>
+        <childnode refid="257" relation="include">
+        </childnode>
+        <childnode refid="279" relation="include">
+        </childnode>
+      </node>
+      <node id="293">
+        <label>armadillo</label>
+      </node>
+      <node id="311">
+        <label>boost/log/trivial.hpp</label>
+      </node>
+      <node id="317">
+        <label>boost/program_options.hpp</label>
+      </node>
+      <node id="308">
+        <label>Engines/LocalOptimizers/GradientDescentLineSearch.h</label>
+        <link refid="_gradient_descent_line_search_8h"/>
+        <childnode refid="309" relation="include">
+        </childnode>
+        <childnode refid="293" relation="include">
+        </childnode>
+        <childnode refid="296" relation="include">
+        </childnode>
+        <childnode refid="292" relation="include">
+        </childnode>
+        <childnode refid="278" relation="include">
+        </childnode>
+        <childnode refid="279" relation="include">
+        </childnode>
+        <childnode refid="274" relation="include">
+        </childnode>
+      </node>
+      <node id="277">
+        <label>Bond.h</label>
+        <link refid="_bond_8h"/>
+        <childnode refid="257" relation="include">
+        </childnode>
+        <childnode refid="269" relation="include">
+        </childnode>
+      </node>
+      <node id="312">
+        <label>boost/log/expressions.hpp</label>
+      </node>
+      <node id="287">
+        <label>ESBTL/atom_classifier.h</label>
+      </node>
+      <node id="305">
+        <label>random</label>
+      </node>
+      <node id="284">
+        <label>Eigen/Dense</label>
+      </node>
+      <node id="272">
+        <label>AminoAcid.h</label>
+        <link refid="_amino_acid_8h"/>
+        <childnode refid="258" relation="include">
+        </childnode>
+        <childnode refid="260" relation="include">
+        </childnode>
+        <childnode refid="270" relation="include">
+        </childnode>
+        <childnode refid="271" relation="include">
+        </childnode>
+        <childnode refid="273" relation="include">
+        </childnode>
+        <childnode refid="257" relation="include">
+        </childnode>
+        <childnode refid="274" relation="include">
+        </childnode>
+      </node>
+      <node id="306">
+        <label>AbstractDockingEngine.h</label>
+        <link refid="_abstract_docking_engine_8h"/>
+        <childnode refid="285" relation="include">
+        </childnode>
+        <childnode refid="307" relation="include">
+        </childnode>
+        <childnode refid="259" relation="include">
+        </childnode>
+      </node>
+      <node id="299">
+        <label>OnlyLocal.h</label>
+        <link refid="_only_local_8h"/>
+        <childnode refid="292" relation="include">
+        </childnode>
+        <childnode refid="296" relation="include">
+        </childnode>
+        <childnode refid="297" relation="include">
+        </childnode>
+      </node>
+      <node id="307">
+        <label>../Structures/Results/DockingResult.h</label>
+        <link refid="_docking_result_8h"/>
+        <childnode refid="260" relation="include">
+        </childnode>
+        <childnode refid="259" relation="include">
+        </childnode>
+      </node>
+      <node id="273">
+        <label>tuple</label>
+      </node>
+      <node id="274">
+        <label>Engines/Internals/iProtein.h</label>
+        <link refid="i_protein_8h"/>
+        <childnode refid="260" relation="include">
+        </childnode>
+        <childnode refid="257" relation="include">
+        </childnode>
+        <childnode refid="275" relation="include">
+        </childnode>
+      </node>
+      <node id="279">
+        <label>iTransform.h</label>
+        <link refid="i_transform_8h"/>
+        <childnode refid="260" relation="include">
+        </childnode>
+        <childnode refid="257" relation="include">
+        </childnode>
+        <childnode refid="280" relation="include">
+        </childnode>
+        <childnode refid="281" relation="include">
+        </childnode>
+        <childnode refid="282" relation="include">
+        </childnode>
+        <childnode refid="283" relation="include">
+        </childnode>
+        <childnode refid="284" relation="include">
+        </childnode>
+      </node>
+      <node id="314">
+        <label>boost/log/sinks/text_file_backend.hpp</label>
+      </node>
+      <node id="260">
+        <label>vector</label>
+      </node>
+      <node id="316">
+        <label>boost/filesystem.hpp</label>
+      </node>
+      <node id="280">
+        <label>array</label>
+      </node>
+      <node id="265">
+        <label>GraphMol/SmilesParse/SmilesParse.h</label>
+      </node>
+      <node id="276">
+        <label>Structure.h</label>
+        <link refid="_structure_8h"/>
+      </node>
+      <node id="259">
+        <label>Structures/Molecule.h</label>
+        <link refid="_molecule_8h"/>
+        <childnode refid="260" relation="include">
+        </childnode>
+        <childnode refid="261" relation="include">
+        </childnode>
+        <childnode refid="262" relation="include">
+        </childnode>
+        <childnode refid="263" relation="include">
+        </childnode>
+        <childnode refid="264" relation="include">
+        </childnode>
+        <childnode refid="265" relation="include">
+        </childnode>
+        <childnode refid="266" relation="include">
+        </childnode>
+        <childnode refid="267" relation="include">
+        </childnode>
+        <childnode refid="268" relation="include">
+        </childnode>
+        <childnode refid="276" relation="include">
+        </childnode>
+        <childnode refid="269" relation="include">
+        </childnode>
+        <childnode refid="277" relation="include">
+        </childnode>
+        <childnode refid="278" relation="include">
+        </childnode>
+      </node>
+      <node id="261">
+        <label>GraphMol/RDKitBase.h</label>
+      </node>
+      <node id="256">
+        <label>iostream</label>
+      </node>
+      <node id="318">
+        <label>Utilities/PDBWriter.h</label>
+        <link refid="_p_d_b_writer_8h"/>
+        <childnode refid="258" relation="include">
+        </childnode>
+        <childnode refid="260" relation="include">
+        </childnode>
+        <childnode refid="259" relation="include">
+        </childnode>
+      </node>
+      <node id="291">
+        <label>Engines/ScoringFunctions/ScoringFunctionFactory.h</label>
+        <link refid="_scoring_function_factory_8h"/>
+        <childnode refid="257" relation="include">
+        </childnode>
+        <childnode refid="274" relation="include">
+        </childnode>
+        <childnode refid="292" relation="include">
+        </childnode>
+      </node>
+      <node id="315">
+        <label>boost/log/utility/setup/file.hpp</label>
+      </node>
+      <node id="298">
+        <label>RandomRestart.h</label>
+        <link refid="_random_restart_8h"/>
+        <childnode refid="292" relation="include">
+        </childnode>
+        <childnode refid="296" relation="include">
+        </childnode>
+        <childnode refid="297" relation="include">
+        </childnode>
+      </node>
+      <node id="301">
+        <label>SimulatedAnnealing.h</label>
+        <link refid="_simulated_annealing_8h"/>
+        <childnode refid="292" relation="include">
+        </childnode>
+        <childnode refid="296" relation="include">
+        </childnode>
+        <childnode refid="297" relation="include">
+        </childnode>
+      </node>
+      <node id="270">
+        <label>set</label>
+      </node>
+      <node id="303">
+        <label>Structures/InputPostProcessors/VinaCompatibilityPostProcessor.h</label>
+        <link refid="_vina_compatibility_post_processor_8h"/>
+        <childnode refid="268" relation="include">
+        </childnode>
+      </node>
+      <node id="271">
+        <label>algorithm</label>
+      </node>
+      <node id="288">
+        <label>ESBTL/weighted_atom_iterator.h</label>
+      </node>
+      <node id="294">
+        <label>Engines/GlobalHeuristics/HeuristicFactory.h</label>
+        <link refid="_heuristic_factory_8h"/>
+        <childnode refid="257" relation="include">
+        </childnode>
+        <childnode refid="295" relation="include">
+        </childnode>
+        <childnode refid="292" relation="include">
+        </childnode>
+        <childnode refid="296" relation="include">
+        </childnode>
+        <childnode refid="297" relation="include">
+        </childnode>
+        <childnode refid="294" relation="include">
+        </childnode>
+        <childnode refid="298" relation="include">
+        </childnode>
+        <childnode refid="299" relation="include">
+        </childnode>
+        <childnode refid="300" relation="include">
+        </childnode>
+        <childnode refid="301" relation="include">
+        </childnode>
+      </node>
+      <node id="257">
+        <label>memory</label>
+      </node>
+      <node id="264">
+        <label>GraphMol/FileParsers/FileParsers.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="cli__interface_8cpp_1a0ddf1224851353fc92bfbff6f499fa97" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int main</definition>
+        <argsstring>(int argc, char *argv[])</argsstring>
+        <name>main</name>
+        <param>
+          <type>int</type>
+          <declname>argc</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>argv</declname>
+          <array>[]</array>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Frontends/cli_interface.cpp" line="47" column="1" bodyfile="Frontends/cli_interface.cpp" bodystart="47" bodyend="265"/>
+        <references refid="class_smol_dock_1_1_p_d_b_writer_1a74fc5d4cb9bbe5c8f0362366178dbff0" compoundref="_p_d_b_writer_8cpp" startline="82" endline="84">SmolDock::PDBWriter::addLigand</references>
+        <references refid="struct_smol_dock_1_1_engine_1_1_abstract_docking_engine_1_1_docking_box_setting_1a4a537e0468058541b8927cd0de59a374" compoundref="_abstract_docking_engine_8h" startline="57">SmolDock::Engine::AbstractDockingEngine::DockingBoxSetting::center</references>
+        <references refid="struct_smol_dock_1_1_engine_1_1_abstract_docking_engine_1_1_docking_box_setting_1a47b735f56917ea0ad447cb93ad936296a2f22af249c004da8890325a974b68020">SmolDock::Engine::AbstractDockingEngine::DockingBoxSetting::centeredAround</references>
+        <references refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a52fa8c276c911df08d4dd8d6744ae540" compoundref="_conformer_rigid_docking_engine_8cpp" startline="296" endline="304">SmolDock::Engine::ConformerRigidDockingEngine::getDockingResult</references>
+        <references refid="namespace_smol_dock_1_1_heuristics_1acab108fbb064edb33166af7fdfb77a72a13f26643ef34bdb4a20b83277d6b8f84">SmolDock::Heuristics::IteratedLocalSearch</references>
+        <references refid="namespace_smol_dock_1_1_optimizer_1a7ed1dc6878a606b8dcca7558383650cea2bd34449cf1656ea5ea723145f03c127">SmolDock::Optimizer::L_BFGS</references>
+        <references refid="class_smol_dock_1_1_molecule_1a8b4b9a154f2139757c0d33bb962a45ea" compoundref="_molecule_8cpp" startline="199" endline="215">SmolDock::Molecule::populateFromMol2File</references>
+        <references refid="class_smol_dock_1_1_molecule_1ade1395768e7d42f8dc0762334eaeed42" compoundref="_molecule_8cpp" startline="181" endline="197">SmolDock::Molecule::populateFromMolFile</references>
+        <references refid="class_smol_dock_1_1_protein_1a726524247169022a4dfc1328753e39b3" compoundref="_protein_8cpp" startline="42" endline="233">SmolDock::Protein::populateFromPDB</references>
+        <references refid="struct_smol_dock_1_1_engine_1_1_abstract_docking_engine_1_1_docking_box_setting_1adf683589681815227ac801b4ea1c454d" compoundref="_abstract_docking_engine_8h" startline="59">SmolDock::Engine::AbstractDockingEngine::DockingBoxSetting::radius</references>
+        <references refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a7bee39278168cb4d7ee6558b3a3d3bb4" compoundref="_conformer_rigid_docking_engine_8cpp" startline="134" endline="294">SmolDock::Engine::ConformerRigidDockingEngine::runDockingEngine</references>
+        <references refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1acd3b7345ecae8f0c92ca0168b794eac3" compoundref="_conformer_rigid_docking_engine_8cpp" startline="307" endline="318">SmolDock::Engine::ConformerRigidDockingEngine::setDockingBox</references>
+        <references refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a3abc1a2cdbb3f1b9f545f863f9ec5e43" compoundref="_conformer_rigid_docking_engine_8cpp" startline="84" endline="132">SmolDock::Engine::ConformerRigidDockingEngine::setupDockingEngine</references>
+        <references refid="struct_smol_dock_1_1_engine_1_1_abstract_docking_engine_1_1_docking_box_setting_1a6e49255548fddaa601b5f3ed816d7618" compoundref="_abstract_docking_engine_8h" startline="55">SmolDock::Engine::AbstractDockingEngine::DockingBoxSetting::type</references>
+        <references refid="namespace_smol_dock_1_1_score_1a7d8761ef06699c5fc8793056bc903911a28bb0a5655ac4c67901e014f39619947">SmolDock::Score::VinaRigid</references>
+        <references refid="class_smol_dock_1_1_p_d_b_writer_1aaad8350fc387575ed549a1fd8569aad2" compoundref="_p_d_b_writer_8cpp" startline="21" endline="80">SmolDock::PDBWriter::writePDB</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2019<sp/>Eliane<sp/>Briand</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>SmolDock.</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>SmolDock<sp/>is<sp/>free<sp/>software:<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or<sp/>modify</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>it<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>as<sp/>published<sp/>by</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>the<sp/>Free<sp/>Software<sp/>Foundation,<sp/>either<sp/>version<sp/>3<sp/>of<sp/>the<sp/>License,<sp/>or</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>(at<sp/>your<sp/>option)<sp/>any<sp/>later<sp/>version.</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>SmolDock<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>but<sp/>WITHOUT<sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE.<sp/><sp/>See<sp/>the</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>for<sp/>more<sp/>details.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>along<sp/>with<sp/>SmolDock.<sp/><sp/>If<sp/>not,<sp/>see<sp/>&lt;https://www.gnu.org/licenses/&gt;.</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;iostream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;memory&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_molecule_8h" kindref="compound">Structures/Molecule.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_protein_8h" kindref="compound">Structures/Protein.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_pose_refiner_8h" kindref="compound">Engines/PoseRefiner.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_vina_compatibility_post_processor_8h" kindref="compound">Structures/InputPostProcessors/VinaCompatibilityPostProcessor.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_conformer_rigid_docking_engine_8h" kindref="compound">Engines/ConformerRigidDockingEngine.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/log/core.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/log/trivial.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/log/expressions.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/log/utility/setup/console.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/log/sinks/text_file_backend.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/log/utility/setup/file.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/filesystem.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/program_options.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_p_d_b_writer_8h" kindref="compound">Utilities/PDBWriter.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">po<sp/>=<sp/>boost::program_options;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47" refid="cli__interface_8cpp_1a0ddf1224851353fc92bfbff6f499fa97" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="cli__interface_8cpp_1a0ddf1224851353fc92bfbff6f499fa97" kindref="member">main</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>argc,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*argv[])<sp/>{</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Setting<sp/>up<sp/>the<sp/>logger<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>boost::log::core::get()-&gt;set_filter</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(</highlight></codeline>
+<codeline lineno="52"><highlight class="normal">#ifdef<sp/>NDEBUG</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>boost::log::trivial::severity<sp/>&gt;=<sp/>boost::log::trivial::info</highlight></codeline>
+<codeline lineno="54"><highlight class="normal">#</highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>boost::log::trivial::severity<sp/>&gt;=<sp/>boost::log::trivial::debug</highlight></codeline>
+<codeline lineno="56"><highlight class="normal">#endif</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/>);</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>console_logger<sp/>=<sp/>boost::log::add_console_log(std::cout);</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>console_logger-&gt;set_formatter([](boost::log::record_view<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>&amp;rec,<sp/>boost::log::formatting_ostream<sp/>&amp;strm)<sp/>{</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(rec[boost::log::trivial::severity]<sp/>==<sp/>boost::log::trivial::trace)<sp/>{</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>strm<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>T<sp/><sp/>&quot;</highlight><highlight class="normal">;<sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>use<sp/>TRACE_LOG();<sp/>macro<sp/>for<sp/>auto<sp/>file:line:function</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(rec[boost::log::trivial::severity]<sp/>==<sp/>boost::log::trivial::debug)<sp/>{</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>strm<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;{D}<sp/>&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(rec[boost::log::trivial::severity]<sp/>==<sp/>boost::log::trivial::info)<sp/>{</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>strm<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/><sp/><sp/>&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(rec[boost::log::trivial::severity]<sp/>==<sp/>boost::log::trivial::warning)<sp/>{</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>strm<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;[!]<sp/>&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(rec[boost::log::trivial::severity]<sp/>&gt;=<sp/>boost::log::trivial::error)<sp/>{</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>strm<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;[E]<sp/>&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>strm<sp/>&lt;&lt;<sp/>rec[boost::log::expressions::smessage];</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/>});</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/>BOOST_LOG_TRIVIAL(info)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;SmolDock<sp/>v0.1&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/>BOOST_LOG_TRIVIAL(info)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Copyright<sp/>(C)<sp/>2019<sp/><sp/>Eliane<sp/>Briand&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/>BOOST_LOG_TRIVIAL(info)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/><sp/><sp/>This<sp/>program<sp/>comes<sp/>with<sp/>ABSOLUTELY<sp/>NO<sp/>WARRANTY.&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/>BOOST_LOG_TRIVIAL(info)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/><sp/><sp/>This<sp/>is<sp/>free<sp/>software,<sp/>and<sp/>you<sp/>are<sp/>welcome<sp/>to<sp/>redistribute<sp/>it.&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/>BOOST_LOG_TRIVIAL(info)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/><sp/><sp/>You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>version<sp/>3&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/>BOOST_LOG_TRIVIAL(info)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/><sp/><sp/>along<sp/>with<sp/>this<sp/>program.<sp/><sp/>If<sp/>not,<sp/>see<sp/>&lt;https://www.gnu.org/licenses/&gt;.\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/>po::options_description<sp/>desc(</highlight><highlight class="stringliteral">&quot;Supported<sp/>options&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/>desc.add_options()</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(</highlight><highlight class="stringliteral">&quot;help&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;help<sp/>message&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(</highlight><highlight class="stringliteral">&quot;receptor&quot;</highlight><highlight class="normal">,<sp/>po::value&lt;std::string&gt;(),<sp/></highlight><highlight class="stringliteral">&quot;input<sp/>receptor<sp/>PDB<sp/>file&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(</highlight><highlight class="stringliteral">&quot;ligand&quot;</highlight><highlight class="normal">,<sp/>po::value&lt;std::string&gt;(),<sp/></highlight><highlight class="stringliteral">&quot;input<sp/>ligand<sp/>mol<sp/>or<sp/>mol2<sp/>file&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(</highlight><highlight class="stringliteral">&quot;output&quot;</highlight><highlight class="normal">,<sp/>po::value&lt;std::string&gt;(),<sp/></highlight><highlight class="stringliteral">&quot;output<sp/>PDB<sp/>file<sp/>for<sp/>ligand<sp/>conformation&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(</highlight><highlight class="stringliteral">&quot;log&quot;</highlight><highlight class="normal">,<sp/>po::value&lt;std::string&gt;(),<sp/></highlight><highlight class="stringliteral">&quot;write<sp/>log<sp/>to<sp/>file<sp/>(in<sp/>addition<sp/>to<sp/>standard<sp/>output)&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(</highlight><highlight class="stringliteral">&quot;force&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;overwrite<sp/>output<sp/>file<sp/>if<sp/>it<sp/>already<sp/>exist&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/>po::variables_map<sp/>vm;</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/>po::store(po::parse_command_line(argc,<sp/>argv,<sp/>desc),<sp/>vm);</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/>po::notify(vm);</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(vm.count(</highlight><highlight class="stringliteral">&quot;help&quot;</highlight><highlight class="normal">))<sp/>{</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_LOG_TRIVIAL(info)<sp/>&lt;&lt;<sp/>desc<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>1;</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>argument_error<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(vm.count(</highlight><highlight class="stringliteral">&quot;receptor&quot;</highlight><highlight class="normal">)<sp/>==<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>argument_error<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_LOG_TRIVIAL(error)</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;A<sp/>receptor<sp/>PDB<sp/>file<sp/>path<sp/>must<sp/>be<sp/>provided<sp/>with<sp/>option<sp/>--receptor<sp/>(see<sp/>also<sp/>--help)&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//&lt;&lt;<sp/>vm[&quot;include-path&quot;].as&lt;<sp/>std::string&gt;<sp/>&gt;()<sp/>&lt;&lt;<sp/>&quot;\n&quot;;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(vm.count(</highlight><highlight class="stringliteral">&quot;ligand&quot;</highlight><highlight class="normal">)<sp/>==<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>argument_error<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_LOG_TRIVIAL(error)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;A<sp/>ligand<sp/>mol<sp/>or<sp/>mol2<sp/>file<sp/>path<sp/>must<sp/>be<sp/>provided<sp/>with<sp/>option<sp/>--ligand<sp/>(see<sp/>also<sp/>--help)&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//&lt;&lt;<sp/>vm[&quot;input-file&quot;].as&lt;<sp/>vector&lt;string&gt;<sp/>&gt;()<sp/>&lt;&lt;<sp/>&quot;\n&quot;;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(vm.count(</highlight><highlight class="stringliteral">&quot;output&quot;</highlight><highlight class="normal">)<sp/>==<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>argument_error<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_LOG_TRIVIAL(error)</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;An<sp/>output<sp/>ligand<sp/>PDB<sp/>file<sp/>path<sp/>must<sp/>be<sp/>provided<sp/>with<sp/>option<sp/>--output<sp/>(see<sp/>also<sp/>--help)&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//&lt;&lt;<sp/>vm[&quot;input-file&quot;].as&lt;<sp/>vector&lt;string&gt;<sp/>&gt;()<sp/>&lt;&lt;<sp/>&quot;\n&quot;;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(argument_error<sp/>==<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>1;</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>path_to_input_receptor<sp/>=<sp/>vm[</highlight><highlight class="stringliteral">&quot;receptor&quot;</highlight><highlight class="normal">].as&lt;std::string&gt;();</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>path_to_input_ligand<sp/>=<sp/>vm[</highlight><highlight class="stringliteral">&quot;ligand&quot;</highlight><highlight class="normal">].as&lt;std::string&gt;();</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>path_to_output_ligand<sp/>=<sp/>vm[</highlight><highlight class="stringliteral">&quot;output&quot;</highlight><highlight class="normal">].as&lt;std::string&gt;();</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>overwriteFiles<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(vm.count(</highlight><highlight class="stringliteral">&quot;force&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>overwriteFiles<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>produceLog<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>path_to_log;</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(vm.count(</highlight><highlight class="stringliteral">&quot;log&quot;</highlight><highlight class="normal">))<sp/>{</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>produceLog<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>path_to_log<sp/>=<sp/>vm[</highlight><highlight class="stringliteral">&quot;log&quot;</highlight><highlight class="normal">].as&lt;std::string&gt;();</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>file_logger<sp/>=<sp/>boost::log::add_file_log</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>boost::log::keywords::file_name<sp/>=<sp/>path_to_log</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>);</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"></highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>file_logger-&gt;set_formatter([](boost::log::record_view<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>&amp;rec,<sp/>boost::log::formatting_ostream<sp/>&amp;strm)<sp/>{</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(rec[boost::log::trivial::severity]<sp/>==<sp/>boost::log::trivial::trace)<sp/>{</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>strm<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>T<sp/><sp/>&quot;</highlight><highlight class="normal">;<sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>use<sp/>TRACE_LOG();<sp/>macro<sp/>for<sp/>auto<sp/>file:line:function</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(rec[boost::log::trivial::severity]<sp/>==<sp/>boost::log::trivial::debug)<sp/>{</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>strm<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;{D}<sp/>&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(rec[boost::log::trivial::severity]<sp/>==<sp/>boost::log::trivial::info)<sp/>{</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>strm<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/><sp/><sp/>&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(rec[boost::log::trivial::severity]<sp/>==<sp/>boost::log::trivial::warning)<sp/>{</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>strm<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;[!]<sp/>&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(rec[boost::log::trivial::severity]<sp/>&gt;=<sp/>boost::log::trivial::error)<sp/>{</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>strm<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;[E]<sp/>&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"></highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>strm<sp/>&lt;&lt;<sp/>rec[boost::log::expressions::smessage];</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>});</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"></highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"></highlight></codeline>
+<codeline lineno="163"><highlight class="normal"></highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/>BOOST_LOG_TRIVIAL(info)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;input<sp/>receptor<sp/>path<sp/>:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>path_to_input_receptor;</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/>BOOST_LOG_TRIVIAL(info)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;input<sp/>ligand<sp/>path<sp/><sp/><sp/>:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>path_to_input_ligand;</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/>BOOST_LOG_TRIVIAL(info)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;output<sp/>ligand<sp/>path<sp/><sp/>:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>path_to_output_ligand;</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(produceLog)</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_LOG_TRIVIAL(info)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;log<sp/>file<sp/>path<sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>path_to_log;</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"></highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!boost::filesystem::exists(path_to_input_receptor)<sp/>||<sp/>!boost::filesystem::is_regular_file(path_to_input_receptor))<sp/>{</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_LOG_TRIVIAL(error)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Receptor<sp/>file<sp/>not<sp/>found<sp/>(or<sp/>not<sp/>a<sp/>file)<sp/>:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>path_to_input_receptor;</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>1;</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"></highlight></codeline>
+<codeline lineno="175"><highlight class="normal"></highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!boost::filesystem::exists(path_to_input_ligand)<sp/>||<sp/>!boost::filesystem::is_regular_file(path_to_input_ligand))<sp/>{</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_LOG_TRIVIAL(error)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Ligand<sp/>file<sp/>not<sp/>found<sp/>(or<sp/>not<sp/>a<sp/>file)<sp/>:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>path_to_input_receptor;</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>1;</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"></highlight></codeline>
+<codeline lineno="181"><highlight class="normal"></highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(boost::filesystem::exists(path_to_output_ligand))<sp/>{</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(overwriteFiles)</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_LOG_TRIVIAL(info)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Output<sp/>ligand<sp/>file<sp/>already<sp/>exists,<sp/>will<sp/>be<sp/>overwritten.&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_LOG_TRIVIAL(info)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Output<sp/>file<sp/>already<sp/>exist,<sp/>aborting&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>1;</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"></highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/>boost::filesystem::path<sp/>pathOutput(path_to_output_ligand);</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/>boost::filesystem::path<sp/>pathReceptor(path_to_input_receptor);</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/>boost::filesystem::path<sp/>pathLigand(path_to_input_ligand);</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"></highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;std::shared_ptr&lt;SmolDock::InputPostProcessor::InputPostProcessor&gt;&gt;<sp/>postProcessors;</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/>postProcessors.push_back(std::make_shared&lt;SmolDock::InputPostProcessor::VinaCompatibilityPostProcessor&gt;());</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"></highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_protein" kindref="compound">SmolDock::Protein</ref><sp/>prot;</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/>prot.<ref refid="class_smol_dock_1_1_protein_1a726524247169022a4dfc1328753e39b3" kindref="member">populateFromPDB</ref>(path_to_input_receptor,<sp/>postProcessors);<sp/></highlight><highlight class="comment">//<sp/>COX-2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="200"><highlight class="normal"></highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_molecule" kindref="compound">SmolDock::Molecule</ref><sp/>mol;</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"></highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(pathLigand.extension()<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;.mol&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mol.<ref refid="class_smol_dock_1_1_molecule_1ade1395768e7d42f8dc0762334eaeed42" kindref="member">populateFromMolFile</ref>(pathLigand.string(),</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>120<sp/></highlight><highlight class="comment">/*<sp/>seed<sp/>*/</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>postProcessors);</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(pathLigand.extension()<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;.mol2&quot;</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mol.<ref refid="class_smol_dock_1_1_molecule_1a8b4b9a154f2139757c0d33bb962a45ea" kindref="member">populateFromMol2File</ref>(pathLigand.string(),</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>120<sp/></highlight><highlight class="comment">/*<sp/>seed<sp/>*/</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>postProcessors);</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_LOG_TRIVIAL(error)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Unsupported<sp/>ligand<sp/>file<sp/>extension<sp/>\&quot;&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>pathLigand.extension()<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\&quot;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_LOG_TRIVIAL(info)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Supported<sp/>extension<sp/>:<sp/>mol<sp/>mol2&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"></highlight></codeline>
+<codeline lineno="217"><highlight class="normal"></highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine" kindref="compound">SmolDock::Engine::ConformerRigidDockingEngine</ref><sp/>docker(20,<sp/></highlight><highlight class="comment">/*<sp/>Number<sp/>of<sp/>conformer<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>10,<sp/></highlight><highlight class="comment">/*<sp/>Retry<sp/>per<sp/>conformer<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;prot,</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;mol,</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespace_smol_dock_1_1_score_1a7d8761ef06699c5fc8793056bc903911a28bb0a5655ac4c67901e014f39619947" kindref="member">SmolDock::Score::ScoringFunctionType::VinaRigid</ref>,<sp/></highlight><highlight class="comment">/*<sp/>Scoring<sp/>function<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespace_smol_dock_1_1_heuristics_1acab108fbb064edb33166af7fdfb77a72a13f26643ef34bdb4a20b83277d6b8f84" kindref="member">SmolDock::Heuristics::GlobalHeuristicType::IteratedLocalSearch</ref>,<sp/></highlight><highlight class="comment">/*<sp/>Global<sp/>heuristic<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespace_smol_dock_1_1_optimizer_1a7ed1dc6878a606b8dcca7558383650cea2bd34449cf1656ea5ea723145f03c127" kindref="member">SmolDock::Optimizer::LocalOptimizerType::L_BFGS</ref>,<sp/></highlight><highlight class="comment">/*<sp/>Local<sp/>optimizer<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1244<sp/></highlight><highlight class="comment">/*<sp/>Random<sp/>seed<sp/>*/</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="226"><highlight class="normal"></highlight></codeline>
+<codeline lineno="227"><highlight class="normal"></highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_smol_dock_1_1_engine_1_1_abstract_docking_engine_1_1_docking_box_setting" kindref="compound">SmolDock::Engine::AbstractDockingEngine::DockingBoxSetting</ref><sp/>setting;</highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/>setting.<ref refid="struct_smol_dock_1_1_engine_1_1_abstract_docking_engine_1_1_docking_box_setting_1a6e49255548fddaa601b5f3ed816d7618" kindref="member">type</ref><sp/>=<sp/><ref refid="struct_smol_dock_1_1_engine_1_1_abstract_docking_engine_1_1_docking_box_setting_1a47b735f56917ea0ad447cb93ad936296a2f22af249c004da8890325a974b68020" kindref="member">SmolDock::Engine::AbstractDockingEngine::DockingBoxSetting::Type::centeredAround</ref>;</highlight></codeline>
+<codeline lineno="230"><highlight class="normal"><sp/><sp/><sp/><sp/>setting.<ref refid="struct_smol_dock_1_1_engine_1_1_abstract_docking_engine_1_1_docking_box_setting_1a4a537e0468058541b8927cd0de59a374" kindref="member">center</ref><sp/>=<sp/>{10.0,<sp/>22.0,<sp/>25.0};</highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/>setting.<ref refid="struct_smol_dock_1_1_engine_1_1_abstract_docking_engine_1_1_docking_box_setting_1adf683589681815227ac801b4ea1c454d" kindref="member">radius</ref><sp/>=<sp/>10.0;</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"></highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/>docker.<ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1acd3b7345ecae8f0c92ca0168b794eac3" kindref="member">setDockingBox</ref>(setting);</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"></highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!docker.<ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a3abc1a2cdbb3f1b9f545f863f9ec5e43" kindref="member">setupDockingEngine</ref>())<sp/>{</highlight></codeline>
+<codeline lineno="236"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_LOG_TRIVIAL(error)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Error<sp/>while<sp/>setting<sp/>up<sp/>engine&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>2;</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="239"><highlight class="normal"></highlight></codeline>
+<codeline lineno="240"><highlight class="normal"></highlight></codeline>
+<codeline lineno="241"><highlight class="normal"><sp/><sp/><sp/><sp/>docker.<ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a7bee39278168cb4d7ee6558b3a3d3bb4" kindref="member">runDockingEngine</ref>();</highlight></codeline>
+<codeline lineno="242"><highlight class="normal"></highlight></codeline>
+<codeline lineno="243"><highlight class="normal"></highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;SmolDock::DockingResult&gt;<sp/>res<sp/>=<sp/>docker.<ref refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a52fa8c276c911df08d4dd8d6744ae540" kindref="member">getDockingResult</ref>();</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"></highlight></codeline>
+<codeline lineno="246"><highlight class="normal"></highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(res-&gt;ligandPoses.empty())<sp/>{</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_LOG_TRIVIAL(error)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;No<sp/>result<sp/>to<sp/>export&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="249"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>3;</highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="251"><highlight class="normal"></highlight></codeline>
+<codeline lineno="252"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_p_d_b_writer" kindref="compound">SmolDock::PDBWriter</ref><sp/>pwriter;</highlight></codeline>
+<codeline lineno="253"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>&amp;mol1:<sp/>res-&gt;ligandPoses)<sp/>{</highlight></codeline>
+<codeline lineno="254"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pwriter.<ref refid="class_smol_dock_1_1_p_d_b_writer_1a74fc5d4cb9bbe5c8f0362366178dbff0" kindref="member">addLigand</ref>(mol1);</highlight></codeline>
+<codeline lineno="255"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="256"><highlight class="normal"></highlight></codeline>
+<codeline lineno="257"><highlight class="normal"></highlight></codeline>
+<codeline lineno="258"><highlight class="normal"><sp/><sp/><sp/><sp/>pwriter.<ref refid="class_smol_dock_1_1_p_d_b_writer_1aaad8350fc387575ed549a1fd8569aad2" kindref="member">writePDB</ref>(path_to_output_ligand);</highlight></codeline>
+<codeline lineno="259"><highlight class="normal"></highlight></codeline>
+<codeline lineno="260"><highlight class="normal"></highlight></codeline>
+<codeline lineno="261"><highlight class="normal"><sp/><sp/><sp/><sp/>BOOST_LOG_TRIVIAL(info)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Done.&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="262"><highlight class="normal"></highlight></codeline>
+<codeline lineno="263"><highlight class="normal"></highlight></codeline>
+<codeline lineno="264"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="265"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="Frontends/cli_interface.cpp"/>
+  </compounddef>
+</doxygen>

@@ -5,211 +5,214 @@
     <includes refid="_molecule_8h" local="no">Structures/Molecule.h</includes>
     <includes refid="_p_d_b_writer_8h" local="yes">PDBWriter.h</includes>
     <includedby refid="_intermediate_conformer_collector_8cpp" local="yes">IntermediateConformerCollector.cpp</includedby>
-    <includedby refid="main_8cpp" local="no">main.cpp</includedby>
     <incdepgraph>
-      <node id="724">
+      <node id="884">
         <label>GraphMol/RWMol.h</label>
       </node>
-      <node id="725">
+      <node id="885">
         <label>GraphMol/MolOps.h</label>
       </node>
-      <node id="720">
+      <node id="880">
         <label>IntermediateConformerCollector.h</label>
         <link refid="_intermediate_conformer_collector_8h"/>
-        <childnode refid="721" relation="include">
+        <childnode refid="881" relation="include">
         </childnode>
-        <childnode refid="748" relation="include">
+        <childnode refid="910" relation="include">
         </childnode>
       </node>
-      <node id="728">
+      <node id="888">
         <label>GraphMol/Substruct/SubstructMatch.h</label>
       </node>
-      <node id="746">
+      <node id="906">
         <label>cmath</label>
       </node>
-      <node id="747">
+      <node id="907">
         <label>cassert</label>
       </node>
-      <node id="729">
+      <node id="908">
+        <label>Eigen/Core</label>
+      </node>
+      <node id="889">
         <label>GraphMol/DistGeomHelpers/Embedder.h</label>
       </node>
-      <node id="730">
+      <node id="890">
         <label>Structures/InputPostProcessors/InputPostProcessorInterface.h</label>
         <link refid="_input_post_processor_interface_8h"/>
-        <childnode refid="731" relation="include">
+        <childnode refid="891" relation="include">
         </childnode>
       </node>
-      <node id="737">
+      <node id="897">
         <label>string</label>
       </node>
-      <node id="731">
+      <node id="891">
         <label>Structures/Atom.h</label>
         <link refid="_atom_8h"/>
-        <childnode refid="722" relation="include">
+        <childnode refid="882" relation="include">
         </childnode>
-        <childnode refid="732" relation="include">
+        <childnode refid="892" relation="include">
         </childnode>
-        <childnode refid="733" relation="include">
+        <childnode refid="893" relation="include">
         </childnode>
-        <childnode refid="734" relation="include">
+        <childnode refid="894" relation="include">
         </childnode>
-        <childnode refid="735" relation="include">
+        <childnode refid="895" relation="include">
         </childnode>
-        <childnode refid="736" relation="include">
+        <childnode refid="896" relation="include">
         </childnode>
       </node>
-      <node id="740">
+      <node id="900">
         <label>map</label>
       </node>
-      <node id="743">
+      <node id="903">
         <label>../Engines/Internals/iConformer.h</label>
         <link refid="i_conformer_8h"/>
-        <childnode refid="722" relation="include">
+        <childnode refid="882" relation="include">
         </childnode>
-        <childnode refid="732" relation="include">
+        <childnode refid="892" relation="include">
         </childnode>
-        <childnode refid="744" relation="include">
+        <childnode refid="904" relation="include">
         </childnode>
       </node>
-      <node id="742">
+      <node id="902">
         <label>Bond.h</label>
         <link refid="_bond_8h"/>
-        <childnode refid="732" relation="include">
+        <childnode refid="892" relation="include">
         </childnode>
-        <childnode refid="731" relation="include">
+        <childnode refid="891" relation="include">
         </childnode>
       </node>
-      <node id="736">
+      <node id="909">
+        <label>Eigen/Dense</label>
+      </node>
+      <node id="896">
         <label>AminoAcid.h</label>
         <link refid="_amino_acid_8h"/>
-        <childnode refid="737" relation="include">
+        <childnode refid="897" relation="include">
         </childnode>
-        <childnode refid="722" relation="include">
+        <childnode refid="882" relation="include">
         </childnode>
-        <childnode refid="733" relation="include">
+        <childnode refid="893" relation="include">
         </childnode>
-        <childnode refid="734" relation="include">
+        <childnode refid="894" relation="include">
         </childnode>
-        <childnode refid="738" relation="include">
+        <childnode refid="898" relation="include">
         </childnode>
-        <childnode refid="732" relation="include">
+        <childnode refid="892" relation="include">
         </childnode>
-        <childnode refid="739" relation="include">
+        <childnode refid="899" relation="include">
         </childnode>
       </node>
-      <node id="738">
+      <node id="898">
         <label>tuple</label>
       </node>
-      <node id="739">
+      <node id="899">
         <label>Engines/Internals/iProtein.h</label>
         <link refid="i_protein_8h"/>
-        <childnode refid="722" relation="include">
+        <childnode refid="882" relation="include">
         </childnode>
-        <childnode refid="732" relation="include">
+        <childnode refid="892" relation="include">
         </childnode>
-        <childnode refid="740" relation="include">
+        <childnode refid="900" relation="include">
         </childnode>
       </node>
-      <node id="744">
+      <node id="904">
         <label>iTransform.h</label>
         <link refid="i_transform_8h"/>
-        <childnode refid="722" relation="include">
+        <childnode refid="882" relation="include">
         </childnode>
-        <childnode refid="732" relation="include">
+        <childnode refid="892" relation="include">
         </childnode>
-        <childnode refid="745" relation="include">
+        <childnode refid="905" relation="include">
         </childnode>
-        <childnode refid="746" relation="include">
+        <childnode refid="906" relation="include">
         </childnode>
-        <childnode refid="747" relation="include">
+        <childnode refid="907" relation="include">
+        </childnode>
+        <childnode refid="908" relation="include">
+        </childnode>
+        <childnode refid="909" relation="include">
         </childnode>
       </node>
-      <node id="722">
+      <node id="882">
         <label>vector</label>
       </node>
-      <node id="745">
+      <node id="905">
         <label>array</label>
       </node>
-      <node id="727">
+      <node id="887">
         <label>GraphMol/SmilesParse/SmilesParse.h</label>
       </node>
-      <node id="741">
+      <node id="901">
         <label>Structure.h</label>
         <link refid="_structure_8h"/>
       </node>
-      <node id="721">
+      <node id="881">
         <label>Structures/Molecule.h</label>
         <link refid="_molecule_8h"/>
-        <childnode refid="722" relation="include">
+        <childnode refid="882" relation="include">
         </childnode>
-        <childnode refid="723" relation="include">
+        <childnode refid="883" relation="include">
         </childnode>
-        <childnode refid="724" relation="include">
+        <childnode refid="884" relation="include">
         </childnode>
-        <childnode refid="725" relation="include">
+        <childnode refid="885" relation="include">
         </childnode>
-        <childnode refid="726" relation="include">
+        <childnode refid="886" relation="include">
         </childnode>
-        <childnode refid="727" relation="include">
+        <childnode refid="887" relation="include">
         </childnode>
-        <childnode refid="728" relation="include">
+        <childnode refid="888" relation="include">
         </childnode>
-        <childnode refid="729" relation="include">
+        <childnode refid="889" relation="include">
         </childnode>
-        <childnode refid="730" relation="include">
+        <childnode refid="890" relation="include">
         </childnode>
-        <childnode refid="741" relation="include">
+        <childnode refid="901" relation="include">
         </childnode>
-        <childnode refid="731" relation="include">
+        <childnode refid="891" relation="include">
         </childnode>
-        <childnode refid="742" relation="include">
+        <childnode refid="902" relation="include">
         </childnode>
-        <childnode refid="743" relation="include">
+        <childnode refid="903" relation="include">
         </childnode>
       </node>
-      <node id="723">
+      <node id="883">
         <label>GraphMol/RDKitBase.h</label>
       </node>
-      <node id="735">
+      <node id="895">
         <label>iostream</label>
       </node>
-      <node id="748">
+      <node id="910">
         <label>PDBWriter.h</label>
         <link refid="_p_d_b_writer_8h"/>
-        <childnode refid="737" relation="include">
+        <childnode refid="897" relation="include">
         </childnode>
-        <childnode refid="722" relation="include">
+        <childnode refid="882" relation="include">
         </childnode>
-        <childnode refid="721" relation="include">
+        <childnode refid="881" relation="include">
         </childnode>
       </node>
-      <node id="733">
+      <node id="893">
         <label>set</label>
       </node>
-      <node id="734">
+      <node id="894">
         <label>algorithm</label>
       </node>
-      <node id="732">
+      <node id="892">
         <label>memory</label>
       </node>
-      <node id="726">
+      <node id="886">
         <label>GraphMol/FileParsers/FileParsers.h</label>
       </node>
     </incdepgraph>
     <invincdepgraph>
-      <node id="749">
+      <node id="911">
         <label>IntermediateConformerCollector.h</label>
         <link refid="_intermediate_conformer_collector_8h"/>
-        <childnode refid="750" relation="include">
-        </childnode>
-        <childnode refid="751" relation="include">
+        <childnode refid="912" relation="include">
         </childnode>
       </node>
-      <node id="751">
-        <label>main.cpp</label>
-        <link refid="main_8cpp"/>
-      </node>
-      <node id="750">
+      <node id="912">
         <label>IntermediateConformerCollector.cpp</label>
         <link refid="_intermediate_conformer_collector_8cpp"/>
       </node>
@@ -233,22 +236,23 @@
 <codeline lineno="10"><highlight class="normal"></highlight></codeline>
 <codeline lineno="11"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_smol_dock" kindref="compound">SmolDock</ref><sp/>{</highlight></codeline>
 <codeline lineno="12"><highlight class="normal"></highlight></codeline>
-<codeline lineno="13" refid="class_smol_dock_1_1_intermediate_conformer_collector" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_smol_dock_1_1_intermediate_conformer_collector" kindref="compound">IntermediateConformerCollector</ref><sp/>{</highlight></codeline>
-<codeline lineno="14"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_intermediate_conformer_collector_1ac77973d5bb5a76221e40837b911e5291" kindref="member">IntermediateConformerCollector</ref>(<ref refid="class_smol_dock_1_1_molecule" kindref="compound">Molecule</ref>*<sp/>mol,<sp/><ref refid="class_smol_dock_1_1_p_d_b_writer" kindref="compound">PDBWriter</ref>*<sp/>pdbwriter);</highlight></codeline>
-<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_intermediate_conformer_collector_1a1d878b323a17e56169fb4fad4f92a742" kindref="member">addiConformer</ref>(<ref refid="struct_smol_dock_1_1i_conformer" kindref="compound">iConformer</ref><sp/>conformer);</highlight></codeline>
-<codeline lineno="17"><highlight class="normal"></highlight></codeline>
-<codeline lineno="18"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="19" refid="class_smol_dock_1_1_intermediate_conformer_collector_1af4af1651349015597a2582237817db51" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_molecule" kindref="compound">Molecule</ref>*<sp/><ref refid="class_smol_dock_1_1_intermediate_conformer_collector_1af4af1651349015597a2582237817db51" kindref="member">molecule</ref><sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="20" refid="class_smol_dock_1_1_intermediate_conformer_collector_1a2fc9343d0d285bef646d6ae5da619ad6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_p_d_b_writer" kindref="compound">PDBWriter</ref>*<sp/><ref refid="class_smol_dock_1_1_intermediate_conformer_collector_1a2fc9343d0d285bef646d6ae5da619ad6" kindref="member">writer</ref><sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13" refid="class_smol_dock_1_1_intermediate_conformer_collector" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_smol_dock_1_1_intermediate_conformer_collector" kindref="compound">IntermediateConformerCollector</ref><sp/>{</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_intermediate_conformer_collector_1ac77973d5bb5a76221e40837b911e5291" kindref="member">IntermediateConformerCollector</ref>(<ref refid="class_smol_dock_1_1_molecule" kindref="compound">Molecule</ref>*<sp/>mol,<sp/><ref refid="class_smol_dock_1_1_p_d_b_writer" kindref="compound">PDBWriter</ref>*<sp/>pdbwriter);</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_intermediate_conformer_collector_1a1d878b323a17e56169fb4fad4f92a742" kindref="member">addiConformer</ref>(<ref refid="struct_smol_dock_1_1i_conformer" kindref="compound">iConformer</ref><sp/>conformer);</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="20" refid="class_smol_dock_1_1_intermediate_conformer_collector_1af4af1651349015597a2582237817db51" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_molecule" kindref="compound">Molecule</ref>*<sp/><ref refid="class_smol_dock_1_1_intermediate_conformer_collector_1af4af1651349015597a2582237817db51" kindref="member">molecule</ref><sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="21" refid="class_smol_dock_1_1_intermediate_conformer_collector_1a2fc9343d0d285bef646d6ae5da619ad6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_p_d_b_writer" kindref="compound">PDBWriter</ref>*<sp/><ref refid="class_smol_dock_1_1_intermediate_conformer_collector_1a2fc9343d0d285bef646d6ae5da619ad6" kindref="member">writer</ref><sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="22"><highlight class="normal"></highlight></codeline>
-<codeline lineno="23"><highlight class="normal">};</highlight></codeline>
-<codeline lineno="24"><highlight class="normal"></highlight></codeline>
-<codeline lineno="25"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="27"><highlight class="normal"></highlight></codeline>
-<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//SMOLDOCK_INTERMEDIATECONFORMERCOLLECTOR_H</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//SMOLDOCK_INTERMEDIATECONFORMERCOLLECTOR_H</highlight></codeline>
     </programlisting>
     <location file="Utilities/IntermediateConformerCollector.h"/>
   </compounddef>

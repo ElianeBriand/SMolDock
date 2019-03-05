@@ -4,63 +4,144 @@
     <compoundname>HeuristicInterface.h</compoundname>
     <includedby refid="_heuristic_factory_8h" local="yes">HeuristicFactory.h</includedby>
     <includedby refid="_random_restart_8h" local="yes">RandomRestart.h</includedby>
+    <includedby refid="_only_local_8h" local="yes">OnlyLocal.h</includedby>
+    <includedby refid="_iterated_local_search_8h" local="yes">IteratedLocalSearch.h</includedby>
+    <includedby refid="_simulated_annealing_8h" local="yes">SimulatedAnnealing.h</includedby>
     <invincdepgraph>
-      <node id="587">
+      <node id="717">
         <label>ConformerRigidDockingEngine.h</label>
         <link refid="_conformer_rigid_docking_engine_8h"/>
-        <childnode refid="588" relation="include">
+        <childnode refid="718" relation="include">
         </childnode>
-        <childnode refid="589" relation="include">
+        <childnode refid="719" relation="include">
         </childnode>
-        <childnode refid="590" relation="include">
+        <childnode refid="720" relation="include">
+        </childnode>
+        <childnode refid="721" relation="include">
         </childnode>
       </node>
-      <node id="585">
+      <node id="715">
         <label>HeuristicInterface.h</label>
         <link refid="_heuristic_interface_8h"/>
-        <childnode refid="586" relation="include">
+        <childnode refid="716" relation="include">
         </childnode>
-        <childnode refid="592" relation="include">
+        <childnode refid="726" relation="include">
+        </childnode>
+        <childnode refid="728" relation="include">
+        </childnode>
+        <childnode refid="730" relation="include">
+        </childnode>
+        <childnode refid="732" relation="include">
         </childnode>
       </node>
-      <node id="589">
+      <node id="730">
+        <label>IteratedLocalSearch.h</label>
+        <link refid="_iterated_local_search_8h"/>
+        <childnode refid="716" relation="include">
+        </childnode>
+        <childnode refid="722" relation="include">
+        </childnode>
+        <childnode refid="731" relation="include">
+        </childnode>
+      </node>
+      <node id="723">
+        <label>PoseRefiner.h</label>
+        <link refid="_pose_refiner_8h"/>
+        <childnode refid="724" relation="include">
+        </childnode>
+        <childnode refid="719" relation="include">
+        </childnode>
+        <childnode refid="725" relation="include">
+        </childnode>
+      </node>
+      <node id="725">
+        <label>vina_refiner.cpp</label>
+        <link refid="vina__refiner_8cpp"/>
+      </node>
+      <node id="719">
+        <label>cli_interface.cpp</label>
+        <link refid="cli__interface_8cpp"/>
+      </node>
+      <node id="733">
+        <label>SimulatedAnnealing.cpp</label>
+        <link refid="_simulated_annealing_8cpp"/>
+      </node>
+      <node id="720">
         <label>main.cpp</label>
         <link refid="main_8cpp"/>
       </node>
-      <node id="593">
+      <node id="724">
+        <label>PoseRefiner.cpp</label>
+        <link refid="_pose_refiner_8cpp"/>
+      </node>
+      <node id="728">
+        <label>OnlyLocal.h</label>
+        <link refid="_only_local_8h"/>
+        <childnode refid="716" relation="include">
+        </childnode>
+        <childnode refid="722" relation="include">
+        </childnode>
+        <childnode refid="729" relation="include">
+        </childnode>
+      </node>
+      <node id="727">
         <label>RandomRestart.cpp</label>
         <link refid="_random_restart_8cpp"/>
       </node>
-      <node id="588">
+      <node id="718">
         <label>ConformerRigidDockingEngine.cpp</label>
         <link refid="_conformer_rigid_docking_engine_8cpp"/>
       </node>
-      <node id="591">
+      <node id="729">
+        <label>OnlyLocal.cpp</label>
+        <link refid="_only_local_8cpp"/>
+      </node>
+      <node id="731">
+        <label>IteratedLocalSearch.cpp</label>
+        <link refid="_iterated_local_search_8cpp"/>
+      </node>
+      <node id="722">
         <label>HeuristicFactory.cpp</label>
         <link refid="_heuristic_factory_8cpp"/>
       </node>
-      <node id="592">
+      <node id="726">
         <label>RandomRestart.h</label>
         <link refid="_random_restart_8h"/>
-        <childnode refid="588" relation="include">
+        <childnode refid="716" relation="include">
         </childnode>
-        <childnode refid="591" relation="include">
+        <childnode refid="718" relation="include">
         </childnode>
-        <childnode refid="593" relation="include">
+        <childnode refid="722" relation="include">
+        </childnode>
+        <childnode refid="727" relation="include">
         </childnode>
       </node>
-      <node id="590">
+      <node id="721">
         <label>PyEngine.cpp</label>
         <link refid="_py_engine_8cpp"/>
       </node>
-      <node id="586">
+      <node id="732">
+        <label>SimulatedAnnealing.h</label>
+        <link refid="_simulated_annealing_8h"/>
+        <childnode refid="716" relation="include">
+        </childnode>
+        <childnode refid="722" relation="include">
+        </childnode>
+        <childnode refid="733" relation="include">
+        </childnode>
+      </node>
+      <node id="716">
         <label>HeuristicFactory.h</label>
         <link refid="_heuristic_factory_8h"/>
-        <childnode refid="587" relation="include">
+        <childnode refid="717" relation="include">
         </childnode>
-        <childnode refid="591" relation="include">
+        <childnode refid="716" relation="include">
         </childnode>
-        <childnode refid="590" relation="include">
+        <childnode refid="722" relation="include">
+        </childnode>
+        <childnode refid="723" relation="include">
+        </childnode>
+        <childnode refid="721" relation="include">
         </childnode>
       </node>
     </invincdepgraph>
@@ -88,14 +169,15 @@
 <codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>arma::mat<sp/><ref refid="class_smol_dock_1_1_heuristics_1_1_global_heuristic_1a1abc970d50c981e4df49833d4e7f0551" kindref="member">getResultMatrix</ref>()<sp/>=<sp/>0;</highlight></codeline>
 <codeline lineno="16"><highlight class="normal"></highlight></codeline>
 <codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_heuristics_1_1_global_heuristic_1a93c9f12a7d218837e6e5441ae5daebc1" kindref="member">~GlobalHeuristic</ref>()<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
-<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
 <codeline lineno="21"><highlight class="normal"></highlight></codeline>
-<codeline lineno="22"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="24"><highlight class="normal"></highlight></codeline>
-<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//SMOLDOCK_HEURISTICINTERFACE_H</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//SMOLDOCK_HEURISTICINTERFACE_H</highlight></codeline>
     </programlisting>
     <location file="Engines/GlobalHeuristics/HeuristicInterface.h"/>
   </compounddef>

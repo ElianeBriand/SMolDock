@@ -16,12 +16,14 @@
         <inbodydescription>
         </inbodydescription>
         <location file="Engines/Internals/iConformer.h" line="40" column="1" bodyfile="Engines/Internals/iConformer.h" bodystart="40" bodyend="-1"/>
-        <referencedby refid="class_smol_dock_1_1_molecule_1a5247ebed094d5593a5a704c0c2919c0c" compoundref="_molecule_8cpp" startline="384" endline="453">SmolDock::Molecule::generateIConformerForGivenRDKitConformerID</referencedby>
-        <referencedby refid="namespace_smol_dock_1_1_score_1ac205731c7b0098c2900d9d16fff1a93b" compoundref="_vina_like_scoring_function_8cpp" startline="149" endline="223">SmolDock::Score::vina_like_rigid_inter_scoring_func</referencedby>
+        <referencedby refid="class_smol_dock_1_1_molecule_1a5247ebed094d5593a5a704c0c2919c0c" compoundref="_molecule_8cpp" startline="555" endline="649">SmolDock::Molecule::generateIConformerForGivenRDKitConformerID</referencedby>
+        <referencedby refid="namespace_smol_dock_1_1_score_1ac205731c7b0098c2900d9d16fff1a93b" compoundref="_vina_like_rigid_scoring_function_8cpp" startline="40" endline="117">SmolDock::Score::vina_like_rigid_inter_scoring_func</referencedby>
+        <referencedby refid="namespace_smol_dock_1_1_score_1af7f12c4b8451b856342af3afdbcadce8" compoundref="_vina_like_scoring_function_8cpp" startline="20" endline="82">SmolDock::Score::VinaLikeIntermolecularScoringFunction</referencedby>
+        <referencedby refid="class_smol_dock_1_1_score_1_1_vina_like_scoring_function_1a1b8a8d8b607a9b8a0a56e8616d412b92" compoundref="_vina_like_scoring_function_8cpp" startline="85" endline="104">SmolDock::Score::VinaLikeScoringFunction::VinaLikeScoringFunction</referencedby>
       </memberdef>
-      <memberdef kind="variable" id="struct_smol_dock_1_1i_conformer_1aca79d26663d734bf23b5ed7ddc3dba57" prot="public" static="no" mutable="no">
-        <type><ref refid="struct_smol_dock_1_1i_translation" kindref="compound">iTranslation</ref></type>
-        <definition>iTranslation SmolDock::iConformer::centroidNormalizingTransform</definition>
+      <memberdef kind="variable" id="struct_smol_dock_1_1i_conformer_1a96caa4158ad18d445835710ea0df91d3" prot="public" static="no" mutable="no">
+        <type>Eigen::Translation&lt; double, 3 &gt;</type>
+        <definition>Eigen::Translation&lt;double, 3&gt; SmolDock::iConformer::centroidNormalizingTransform</definition>
         <argsstring></argsstring>
         <name>centroidNormalizingTransform</name>
         <briefdescription>
@@ -31,7 +33,8 @@
         <inbodydescription>
         </inbodydescription>
         <location file="Engines/Internals/iConformer.h" line="42" column="1" bodyfile="Engines/Internals/iConformer.h" bodystart="42" bodyend="-1"/>
-        <referencedby refid="class_smol_dock_1_1_molecule_1a5247ebed094d5593a5a704c0c2919c0c" compoundref="_molecule_8cpp" startline="384" endline="453">SmolDock::Molecule::generateIConformerForGivenRDKitConformerID</referencedby>
+        <referencedby refid="class_smol_dock_1_1_molecule_1a5247ebed094d5593a5a704c0c2919c0c" compoundref="_molecule_8cpp" startline="555" endline="649">SmolDock::Molecule::generateIConformerForGivenRDKitConformerID</referencedby>
+        <referencedby refid="class_smol_dock_1_1_engine_1_1_pose_refiner_1a8d5a30801f618205c115a52b7fa363ce" compoundref="_pose_refiner_8cpp" startline="23" endline="67">SmolDock::Engine::PoseRefiner::refinePose</referencedby>
       </memberdef>
       <memberdef kind="variable" id="struct_smol_dock_1_1i_conformer_1a45c379f6a880da313bf3519dc415e992" prot="public" static="no" mutable="no">
         <type>std::vector&lt; double &gt;</type>
@@ -45,11 +48,13 @@
         <inbodydescription>
         </inbodydescription>
         <location file="Engines/Internals/iConformer.h" line="48" column="1" bodyfile="Engines/Internals/iConformer.h" bodystart="48" bodyend="-1"/>
-        <referencedby refid="namespace_smol_dock_1afd058af9bf8a2fa90a0ec7bf42c31e31" compoundref="_internals_utility_functions_8h" startline="86" endline="94">SmolDock::applyTransformInPlace</referencedby>
-        <referencedby refid="class_smol_dock_1_1_molecule_1af6263934134836e9ce66d2254b6b6801" compoundref="_molecule_8cpp" startline="320" endline="330">SmolDock::Molecule::updateAtomPositionsFromiConformer</referencedby>
-        <referencedby refid="class_smol_dock_1_1_molecule_1a5247ebed094d5593a5a704c0c2919c0c" compoundref="_molecule_8cpp" startline="384" endline="453">SmolDock::Molecule::generateIConformerForGivenRDKitConformerID</referencedby>
-        <referencedby refid="_py_structures_8h_1a18cad6e29d14a0da9d2cd9464e7e2356" compoundref="_py_structures_8cpp" startline="40" endline="92">export_Structures</referencedby>
-        <referencedby refid="namespace_smol_dock_1_1_score_1ac205731c7b0098c2900d9d16fff1a93b" compoundref="_vina_like_scoring_function_8cpp" startline="149" endline="223">SmolDock::Score::vina_like_rigid_inter_scoring_func</referencedby>
+        <referencedby refid="namespace_smol_dock_1a1843982e01fb9a9b852c5f64363a158c" compoundref="_internals_utility_functions_8h" startline="103" endline="154">SmolDock::applyBondRotationInPlace</referencedby>
+        <referencedby refid="namespace_smol_dock_1aeb45c011ac7f85cbd394e9318f89289a" compoundref="_internals_utility_functions_8h" startline="173" endline="181">SmolDock::applyRigidTransformInPlace</referencedby>
+        <referencedby refid="class_smol_dock_1_1_molecule_1af6263934134836e9ce66d2254b6b6801" compoundref="_molecule_8cpp" startline="487" endline="500">SmolDock::Molecule::updateAtomPositionsFromiConformer</referencedby>
+        <referencedby refid="class_smol_dock_1_1_molecule_1a5247ebed094d5593a5a704c0c2919c0c" compoundref="_molecule_8cpp" startline="555" endline="649">SmolDock::Molecule::generateIConformerForGivenRDKitConformerID</referencedby>
+        <referencedby refid="_py_structures_8h_1a18cad6e29d14a0da9d2cd9464e7e2356" compoundref="_py_structures_8cpp" startline="67" endline="114">export_Structures</referencedby>
+        <referencedby refid="namespace_smol_dock_1_1_score_1ac205731c7b0098c2900d9d16fff1a93b" compoundref="_vina_like_rigid_scoring_function_8cpp" startline="40" endline="117">SmolDock::Score::vina_like_rigid_inter_scoring_func</referencedby>
+        <referencedby refid="namespace_smol_dock_1_1_score_1af7f12c4b8451b856342af3afdbcadce8" compoundref="_vina_like_scoring_function_8cpp" startline="20" endline="82">SmolDock::Score::VinaLikeIntermolecularScoringFunction</referencedby>
       </memberdef>
       <memberdef kind="variable" id="struct_smol_dock_1_1i_conformer_1ac3019c0cd62660a4392591dd9519cc9a" prot="public" static="no" mutable="no">
         <type>std::vector&lt; double &gt;</type>
@@ -63,11 +68,13 @@
         <inbodydescription>
         </inbodydescription>
         <location file="Engines/Internals/iConformer.h" line="48" column="1" bodyfile="Engines/Internals/iConformer.h" bodystart="48" bodyend="-1"/>
-        <referencedby refid="namespace_smol_dock_1afd058af9bf8a2fa90a0ec7bf42c31e31" compoundref="_internals_utility_functions_8h" startline="86" endline="94">SmolDock::applyTransformInPlace</referencedby>
-        <referencedby refid="class_smol_dock_1_1_molecule_1af6263934134836e9ce66d2254b6b6801" compoundref="_molecule_8cpp" startline="320" endline="330">SmolDock::Molecule::updateAtomPositionsFromiConformer</referencedby>
-        <referencedby refid="class_smol_dock_1_1_molecule_1a5247ebed094d5593a5a704c0c2919c0c" compoundref="_molecule_8cpp" startline="384" endline="453">SmolDock::Molecule::generateIConformerForGivenRDKitConformerID</referencedby>
-        <referencedby refid="_py_structures_8h_1a18cad6e29d14a0da9d2cd9464e7e2356" compoundref="_py_structures_8cpp" startline="40" endline="92">export_Structures</referencedby>
-        <referencedby refid="namespace_smol_dock_1_1_score_1ac205731c7b0098c2900d9d16fff1a93b" compoundref="_vina_like_scoring_function_8cpp" startline="149" endline="223">SmolDock::Score::vina_like_rigid_inter_scoring_func</referencedby>
+        <referencedby refid="namespace_smol_dock_1a1843982e01fb9a9b852c5f64363a158c" compoundref="_internals_utility_functions_8h" startline="103" endline="154">SmolDock::applyBondRotationInPlace</referencedby>
+        <referencedby refid="namespace_smol_dock_1aeb45c011ac7f85cbd394e9318f89289a" compoundref="_internals_utility_functions_8h" startline="173" endline="181">SmolDock::applyRigidTransformInPlace</referencedby>
+        <referencedby refid="class_smol_dock_1_1_molecule_1af6263934134836e9ce66d2254b6b6801" compoundref="_molecule_8cpp" startline="487" endline="500">SmolDock::Molecule::updateAtomPositionsFromiConformer</referencedby>
+        <referencedby refid="class_smol_dock_1_1_molecule_1a5247ebed094d5593a5a704c0c2919c0c" compoundref="_molecule_8cpp" startline="555" endline="649">SmolDock::Molecule::generateIConformerForGivenRDKitConformerID</referencedby>
+        <referencedby refid="_py_structures_8h_1a18cad6e29d14a0da9d2cd9464e7e2356" compoundref="_py_structures_8cpp" startline="67" endline="114">export_Structures</referencedby>
+        <referencedby refid="namespace_smol_dock_1_1_score_1ac205731c7b0098c2900d9d16fff1a93b" compoundref="_vina_like_rigid_scoring_function_8cpp" startline="40" endline="117">SmolDock::Score::vina_like_rigid_inter_scoring_func</referencedby>
+        <referencedby refid="namespace_smol_dock_1_1_score_1af7f12c4b8451b856342af3afdbcadce8" compoundref="_vina_like_scoring_function_8cpp" startline="20" endline="82">SmolDock::Score::VinaLikeIntermolecularScoringFunction</referencedby>
       </memberdef>
       <memberdef kind="variable" id="struct_smol_dock_1_1i_conformer_1a5c1fc6f9bad31ec2731337e9ba1e9a0f" prot="public" static="no" mutable="no">
         <type>std::vector&lt; double &gt;</type>
@@ -81,11 +88,13 @@
         <inbodydescription>
         </inbodydescription>
         <location file="Engines/Internals/iConformer.h" line="48" column="1" bodyfile="Engines/Internals/iConformer.h" bodystart="48" bodyend="-1"/>
-        <referencedby refid="namespace_smol_dock_1afd058af9bf8a2fa90a0ec7bf42c31e31" compoundref="_internals_utility_functions_8h" startline="86" endline="94">SmolDock::applyTransformInPlace</referencedby>
-        <referencedby refid="class_smol_dock_1_1_molecule_1af6263934134836e9ce66d2254b6b6801" compoundref="_molecule_8cpp" startline="320" endline="330">SmolDock::Molecule::updateAtomPositionsFromiConformer</referencedby>
-        <referencedby refid="class_smol_dock_1_1_molecule_1a5247ebed094d5593a5a704c0c2919c0c" compoundref="_molecule_8cpp" startline="384" endline="453">SmolDock::Molecule::generateIConformerForGivenRDKitConformerID</referencedby>
-        <referencedby refid="_py_structures_8h_1a18cad6e29d14a0da9d2cd9464e7e2356" compoundref="_py_structures_8cpp" startline="40" endline="92">export_Structures</referencedby>
-        <referencedby refid="namespace_smol_dock_1_1_score_1ac205731c7b0098c2900d9d16fff1a93b" compoundref="_vina_like_scoring_function_8cpp" startline="149" endline="223">SmolDock::Score::vina_like_rigid_inter_scoring_func</referencedby>
+        <referencedby refid="namespace_smol_dock_1a1843982e01fb9a9b852c5f64363a158c" compoundref="_internals_utility_functions_8h" startline="103" endline="154">SmolDock::applyBondRotationInPlace</referencedby>
+        <referencedby refid="namespace_smol_dock_1aeb45c011ac7f85cbd394e9318f89289a" compoundref="_internals_utility_functions_8h" startline="173" endline="181">SmolDock::applyRigidTransformInPlace</referencedby>
+        <referencedby refid="class_smol_dock_1_1_molecule_1af6263934134836e9ce66d2254b6b6801" compoundref="_molecule_8cpp" startline="487" endline="500">SmolDock::Molecule::updateAtomPositionsFromiConformer</referencedby>
+        <referencedby refid="class_smol_dock_1_1_molecule_1a5247ebed094d5593a5a704c0c2919c0c" compoundref="_molecule_8cpp" startline="555" endline="649">SmolDock::Molecule::generateIConformerForGivenRDKitConformerID</referencedby>
+        <referencedby refid="_py_structures_8h_1a18cad6e29d14a0da9d2cd9464e7e2356" compoundref="_py_structures_8cpp" startline="67" endline="114">export_Structures</referencedby>
+        <referencedby refid="namespace_smol_dock_1_1_score_1ac205731c7b0098c2900d9d16fff1a93b" compoundref="_vina_like_rigid_scoring_function_8cpp" startline="40" endline="117">SmolDock::Score::vina_like_rigid_inter_scoring_func</referencedby>
+        <referencedby refid="namespace_smol_dock_1_1_score_1af7f12c4b8451b856342af3afdbcadce8" compoundref="_vina_like_scoring_function_8cpp" startline="20" endline="82">SmolDock::Score::VinaLikeIntermolecularScoringFunction</referencedby>
       </memberdef>
       <memberdef kind="variable" id="struct_smol_dock_1_1i_conformer_1a1dbd8cb4eaa4e5e2f0afcdd1b36dd862" prot="public" static="no" mutable="no">
         <type>std::vector&lt; double &gt;</type>
@@ -99,8 +108,9 @@
         <inbodydescription>
         </inbodydescription>
         <location file="Engines/Internals/iConformer.h" line="49" column="1" bodyfile="Engines/Internals/iConformer.h" bodystart="49" bodyend="-1"/>
-        <referencedby refid="class_smol_dock_1_1_molecule_1a5247ebed094d5593a5a704c0c2919c0c" compoundref="_molecule_8cpp" startline="384" endline="453">SmolDock::Molecule::generateIConformerForGivenRDKitConformerID</referencedby>
-        <referencedby refid="namespace_smol_dock_1_1_score_1ac205731c7b0098c2900d9d16fff1a93b" compoundref="_vina_like_scoring_function_8cpp" startline="149" endline="223">SmolDock::Score::vina_like_rigid_inter_scoring_func</referencedby>
+        <referencedby refid="class_smol_dock_1_1_molecule_1a5247ebed094d5593a5a704c0c2919c0c" compoundref="_molecule_8cpp" startline="555" endline="649">SmolDock::Molecule::generateIConformerForGivenRDKitConformerID</referencedby>
+        <referencedby refid="namespace_smol_dock_1_1_score_1ac205731c7b0098c2900d9d16fff1a93b" compoundref="_vina_like_rigid_scoring_function_8cpp" startline="40" endline="117">SmolDock::Score::vina_like_rigid_inter_scoring_func</referencedby>
+        <referencedby refid="namespace_smol_dock_1_1_score_1af7f12c4b8451b856342af3afdbcadce8" compoundref="_vina_like_scoring_function_8cpp" startline="20" endline="82">SmolDock::Score::VinaLikeIntermolecularScoringFunction</referencedby>
       </memberdef>
       <memberdef kind="variable" id="struct_smol_dock_1_1i_conformer_1add04de1dd457ae228e398ffa9260497d" prot="public" static="no" mutable="no">
         <type>std::vector&lt; unsigned char &gt;</type>
@@ -114,9 +124,10 @@
         <inbodydescription>
         </inbodydescription>
         <location file="Engines/Internals/iConformer.h" line="50" column="1" bodyfile="Engines/Internals/iConformer.h" bodystart="50" bodyend="-1"/>
-        <referencedby refid="class_smol_dock_1_1_molecule_1a5247ebed094d5593a5a704c0c2919c0c" compoundref="_molecule_8cpp" startline="384" endline="453">SmolDock::Molecule::generateIConformerForGivenRDKitConformerID</referencedby>
-        <referencedby refid="_py_structures_8h_1a18cad6e29d14a0da9d2cd9464e7e2356" compoundref="_py_structures_8cpp" startline="40" endline="92">export_Structures</referencedby>
-        <referencedby refid="namespace_smol_dock_1_1_score_1ac205731c7b0098c2900d9d16fff1a93b" compoundref="_vina_like_scoring_function_8cpp" startline="149" endline="223">SmolDock::Score::vina_like_rigid_inter_scoring_func</referencedby>
+        <referencedby refid="class_smol_dock_1_1_molecule_1a5247ebed094d5593a5a704c0c2919c0c" compoundref="_molecule_8cpp" startline="555" endline="649">SmolDock::Molecule::generateIConformerForGivenRDKitConformerID</referencedby>
+        <referencedby refid="_py_structures_8h_1a18cad6e29d14a0da9d2cd9464e7e2356" compoundref="_py_structures_8cpp" startline="67" endline="114">export_Structures</referencedby>
+        <referencedby refid="namespace_smol_dock_1_1_score_1ac205731c7b0098c2900d9d16fff1a93b" compoundref="_vina_like_rigid_scoring_function_8cpp" startline="40" endline="117">SmolDock::Score::vina_like_rigid_inter_scoring_func</referencedby>
+        <referencedby refid="namespace_smol_dock_1_1_score_1af7f12c4b8451b856342af3afdbcadce8" compoundref="_vina_like_scoring_function_8cpp" startline="20" endline="82">SmolDock::Score::VinaLikeIntermolecularScoringFunction</referencedby>
       </memberdef>
       <memberdef kind="variable" id="struct_smol_dock_1_1i_conformer_1af56992de619302df905180a481a4d993" prot="public" static="no" mutable="no">
         <type>std::vector&lt; unsigned int &gt;</type>
@@ -130,9 +141,55 @@
         <inbodydescription>
         </inbodydescription>
         <location file="Engines/Internals/iConformer.h" line="51" column="1" bodyfile="Engines/Internals/iConformer.h" bodystart="51" bodyend="-1"/>
-        <referencedby refid="class_smol_dock_1_1_molecule_1a5247ebed094d5593a5a704c0c2919c0c" compoundref="_molecule_8cpp" startline="384" endline="453">SmolDock::Molecule::generateIConformerForGivenRDKitConformerID</referencedby>
-        <referencedby refid="_py_structures_8h_1a18cad6e29d14a0da9d2cd9464e7e2356" compoundref="_py_structures_8cpp" startline="40" endline="92">export_Structures</referencedby>
-        <referencedby refid="namespace_smol_dock_1_1_score_1ac205731c7b0098c2900d9d16fff1a93b" compoundref="_vina_like_scoring_function_8cpp" startline="149" endline="223">SmolDock::Score::vina_like_rigid_inter_scoring_func</referencedby>
+        <referencedby refid="class_smol_dock_1_1_molecule_1a5247ebed094d5593a5a704c0c2919c0c" compoundref="_molecule_8cpp" startline="555" endline="649">SmolDock::Molecule::generateIConformerForGivenRDKitConformerID</referencedby>
+        <referencedby refid="_py_structures_8h_1a18cad6e29d14a0da9d2cd9464e7e2356" compoundref="_py_structures_8cpp" startline="67" endline="114">export_Structures</referencedby>
+        <referencedby refid="namespace_smol_dock_1_1_score_1ac205731c7b0098c2900d9d16fff1a93b" compoundref="_vina_like_rigid_scoring_function_8cpp" startline="40" endline="117">SmolDock::Score::vina_like_rigid_inter_scoring_func</referencedby>
+        <referencedby refid="namespace_smol_dock_1_1_score_1af7f12c4b8451b856342af3afdbcadce8" compoundref="_vina_like_scoring_function_8cpp" startline="20" endline="82">SmolDock::Score::VinaLikeIntermolecularScoringFunction</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="struct_smol_dock_1_1i_conformer_1ac88e2d09609c3b4d66ca517a0fc5f184" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; unsigned int &gt;</type>
+        <definition>std::vector&lt;unsigned int&gt; SmolDock::iConformer::bondEnds1Index</definition>
+        <argsstring></argsstring>
+        <name>bondEnds1Index</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Engines/Internals/iConformer.h" line="53" column="1" bodyfile="Engines/Internals/iConformer.h" bodystart="53" bodyend="-1"/>
+        <referencedby refid="namespace_smol_dock_1a1843982e01fb9a9b852c5f64363a158c" compoundref="_internals_utility_functions_8h" startline="103" endline="154">SmolDock::applyBondRotationInPlace</referencedby>
+        <referencedby refid="class_smol_dock_1_1_molecule_1a5247ebed094d5593a5a704c0c2919c0c" compoundref="_molecule_8cpp" startline="555" endline="649">SmolDock::Molecule::generateIConformerForGivenRDKitConformerID</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="struct_smol_dock_1_1i_conformer_1ae40696d245431ced83de5f20464bab08" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; unsigned int &gt;</type>
+        <definition>std::vector&lt;unsigned int&gt; SmolDock::iConformer::bondEnds2Index</definition>
+        <argsstring></argsstring>
+        <name>bondEnds2Index</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Engines/Internals/iConformer.h" line="54" column="1" bodyfile="Engines/Internals/iConformer.h" bodystart="54" bodyend="-1"/>
+        <referencedby refid="namespace_smol_dock_1a1843982e01fb9a9b852c5f64363a158c" compoundref="_internals_utility_functions_8h" startline="103" endline="154">SmolDock::applyBondRotationInPlace</referencedby>
+        <referencedby refid="class_smol_dock_1_1_molecule_1a5247ebed094d5593a5a704c0c2919c0c" compoundref="_molecule_8cpp" startline="555" endline="649">SmolDock::Molecule::generateIConformerForGivenRDKitConformerID</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="struct_smol_dock_1_1i_conformer_1a9676e4f30ba2425d948cc11ed88b1c59" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; std::vector&lt; unsigned int &gt; &gt;</type>
+        <definition>std::vector&lt;std::vector&lt;unsigned int&gt; &gt; SmolDock::iConformer::rotatableGroups</definition>
+        <argsstring></argsstring>
+        <name>rotatableGroups</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Engines/Internals/iConformer.h" line="55" column="1" bodyfile="Engines/Internals/iConformer.h" bodystart="55" bodyend="-1"/>
+        <referencedby refid="namespace_smol_dock_1a1843982e01fb9a9b852c5f64363a158c" compoundref="_internals_utility_functions_8h" startline="103" endline="154">SmolDock::applyBondRotationInPlace</referencedby>
+        <referencedby refid="class_smol_dock_1_1_molecule_1a5247ebed094d5593a5a704c0c2919c0c" compoundref="_molecule_8cpp" startline="555" endline="649">SmolDock::Molecule::generateIConformerForGivenRDKitConformerID</referencedby>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -141,62 +198,72 @@
 <para><simplesect kind="see"><para>iAtom, <ref refid="struct_smol_dock_1_1i_protein" kindref="compound">iProtein</ref> </para></simplesect>
 </para>    </detaileddescription>
     <collaborationgraph>
-      <node id="89">
+      <node id="107">
         <label>T</label>
       </node>
-      <node id="91">
+      <node id="109">
         <label>std::vector&lt; double &gt;</label>
-        <childnode refid="88" relation="template-instance">
+        <childnode refid="106" relation="template-instance">
           <edgelabel>&lt; double &gt;</edgelabel>
         </childnode>
       </node>
-      <node id="88">
+      <node id="106">
         <label>std::vector&lt; T &gt;</label>
-        <childnode refid="89" relation="usage">
+        <childnode refid="107" relation="usage">
           <edgelabel>+elements</edgelabel>
         </childnode>
       </node>
-      <node id="85">
+      <node id="103">
         <label>SmolDock::iConformer</label>
         <link refid="struct_smol_dock_1_1i_conformer"/>
-        <childnode refid="86" relation="usage">
-          <edgelabel>+centroidNormalizingTransform</edgelabel>
+        <childnode refid="104" relation="usage">
+          <edgelabel>+rotatableGroups</edgelabel>
         </childnode>
-        <childnode refid="87" relation="usage">
+        <childnode refid="105" relation="usage">
+          <edgelabel>+bondEnds2Index</edgelabel>
+          <edgelabel>+bondEnds1Index</edgelabel>
           <edgelabel>+variant</edgelabel>
         </childnode>
-        <childnode refid="90" relation="usage">
+        <childnode refid="108" relation="usage">
           <edgelabel>+type</edgelabel>
         </childnode>
-        <childnode refid="91" relation="usage">
+        <childnode refid="109" relation="usage">
           <edgelabel>+x</edgelabel>
           <edgelabel>+y</edgelabel>
           <edgelabel>+z</edgelabel>
           <edgelabel>+atomicRadius</edgelabel>
         </childnode>
       </node>
-      <node id="87">
+      <node id="104">
+        <label>std::vector&lt; std::vector&lt; unsigned int &gt; &gt;</label>
+        <childnode refid="105" relation="usage">
+          <edgelabel>+elements</edgelabel>
+        </childnode>
+        <childnode refid="106" relation="template-instance">
+          <edgelabel>&lt; std::vector&lt; unsigned int &gt; &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="105">
         <label>std::vector&lt; unsigned int &gt;</label>
-        <childnode refid="88" relation="template-instance">
+        <childnode refid="106" relation="template-instance">
           <edgelabel>&lt; unsigned int &gt;</edgelabel>
         </childnode>
       </node>
-      <node id="90">
+      <node id="108">
         <label>std::vector&lt; unsigned char &gt;</label>
-        <childnode refid="88" relation="template-instance">
+        <childnode refid="106" relation="template-instance">
           <edgelabel>&lt; unsigned char &gt;</edgelabel>
         </childnode>
       </node>
-      <node id="86">
-        <label>SmolDock::iTranslation</label>
-        <link refid="struct_smol_dock_1_1i_translation"/>
-      </node>
     </collaborationgraph>
-    <location file="Engines/Internals/iConformer.h" line="38" column="1" bodyfile="Engines/Internals/iConformer.h" bodystart="38" bodyend="52"/>
+    <location file="Engines/Internals/iConformer.h" line="38" column="1" bodyfile="Engines/Internals/iConformer.h" bodystart="38" bodyend="57"/>
     <listofallmembers>
       <member refid="struct_smol_dock_1_1i_conformer_1a1dbd8cb4eaa4e5e2f0afcdd1b36dd862" prot="public" virt="non-virtual"><scope>SmolDock::iConformer</scope><name>atomicRadius</name></member>
-      <member refid="struct_smol_dock_1_1i_conformer_1aca79d26663d734bf23b5ed7ddc3dba57" prot="public" virt="non-virtual"><scope>SmolDock::iConformer</scope><name>centroidNormalizingTransform</name></member>
+      <member refid="struct_smol_dock_1_1i_conformer_1ac88e2d09609c3b4d66ca517a0fc5f184" prot="public" virt="non-virtual"><scope>SmolDock::iConformer</scope><name>bondEnds1Index</name></member>
+      <member refid="struct_smol_dock_1_1i_conformer_1ae40696d245431ced83de5f20464bab08" prot="public" virt="non-virtual"><scope>SmolDock::iConformer</scope><name>bondEnds2Index</name></member>
+      <member refid="struct_smol_dock_1_1i_conformer_1a96caa4158ad18d445835710ea0df91d3" prot="public" virt="non-virtual"><scope>SmolDock::iConformer</scope><name>centroidNormalizingTransform</name></member>
       <member refid="struct_smol_dock_1_1i_conformer_1aabef94f550eef03cf2d4304df78cf403" prot="public" virt="non-virtual"><scope>SmolDock::iConformer</scope><name>num_rotatable_bond</name></member>
+      <member refid="struct_smol_dock_1_1i_conformer_1a9676e4f30ba2425d948cc11ed88b1c59" prot="public" virt="non-virtual"><scope>SmolDock::iConformer</scope><name>rotatableGroups</name></member>
       <member refid="struct_smol_dock_1_1i_conformer_1add04de1dd457ae228e398ffa9260497d" prot="public" virt="non-virtual"><scope>SmolDock::iConformer</scope><name>type</name></member>
       <member refid="struct_smol_dock_1_1i_conformer_1af56992de619302df905180a481a4d993" prot="public" virt="non-virtual"><scope>SmolDock::iConformer</scope><name>variant</name></member>
       <member refid="struct_smol_dock_1_1i_conformer_1a45c379f6a880da313bf3519dc415e992" prot="public" virt="non-virtual"><scope>SmolDock::iConformer</scope><name>x</name></member>

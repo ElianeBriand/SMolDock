@@ -5,19 +5,19 @@
     <includedby refid="_py_s_t_l_wrapper_8cpp" local="yes">PySTLWrapper.cpp</includedby>
     <includedby refid="_smoldock_python_bindings_8cpp" local="yes">SmoldockPythonBindings.cpp</includedby>
     <invincdepgraph>
-      <node id="1508">
+      <node id="1924">
         <label>PySTLWrapper.h</label>
         <link refid="_py_s_t_l_wrapper_8h"/>
-        <childnode refid="1509" relation="include">
+        <childnode refid="1925" relation="include">
         </childnode>
-        <childnode refid="1510" relation="include">
+        <childnode refid="1926" relation="include">
         </childnode>
       </node>
-      <node id="1509">
+      <node id="1925">
         <label>PySTLWrapper.cpp</label>
         <link refid="_py_s_t_l_wrapper_8cpp"/>
       </node>
-      <node id="1510">
+      <node id="1926">
         <label>SmoldockPythonBindings.cpp</label>
         <link refid="_smoldock_python_bindings_8cpp"/>
       </node>
@@ -35,9 +35,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Frontends/Python/PySTLWrapper.h" line="24" column="1" bodyfile="Frontends/Python/PySTLWrapper.cpp" bodystart="48" bodyend="58"/>
-        <references refid="_py_s_t_l_wrapper_8cpp_1a20a4fa85d5a46ce8e1567e27ff8483c1" compoundref="_py_s_t_l_wrapper_8cpp" startline="40" endline="45">getVinaPostProcessorsVector</references>
-        <referencedby refid="_smoldock_python_bindings_8cpp_1a9002869529fdb857c7ffa4a170c4f3ef" compoundref="_smoldock_python_bindings_8cpp" startline="39" endline="79">BOOST_PYTHON_MODULE</referencedby>
+        <location file="Frontends/Python/PySTLWrapper.h" line="24" column="1" bodyfile="Frontends/Python/PySTLWrapper.cpp" bodystart="50" bodyend="60"/>
+        <references refid="namespace_smol_dock_1_1_wrapper_1a8da7125fc8128a615685634f003cd4bc" compoundref="_py_s_t_l_wrapper_8cpp" startline="41" endline="46">SmolDock::Wrapper::getVinaPostProcessorsVector</references>
+        <referencedby refid="_smoldock_python_bindings_8cpp_1a9002869529fdb857c7ffa4a170c4f3ef" compoundref="_smoldock_python_bindings_8cpp" startline="41" endline="79">BOOST_PYTHON_MODULE</referencedby>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -73,11 +73,10 @@
 <codeline lineno="26"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_smol_dock_1_1_wrapper" kindref="compound">SmolDock::Wrapper</ref><sp/>{</highlight></codeline>
 <codeline lineno="27"><highlight class="normal"></highlight></codeline>
 <codeline lineno="28"><highlight class="normal"></highlight></codeline>
-<codeline lineno="29"><highlight class="normal"></highlight></codeline>
-<codeline lineno="30"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="29"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
 <codeline lineno="31"><highlight class="normal"></highlight></codeline>
-<codeline lineno="32"><highlight class="normal"></highlight></codeline>
-<codeline lineno="33"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//SMOLDOCK_PYSTLWRAPPER_H</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//SMOLDOCK_PYSTLWRAPPER_H</highlight></codeline>
     </programlisting>
     <location file="Frontends/Python/PySTLWrapper.h"/>
   </compounddef>

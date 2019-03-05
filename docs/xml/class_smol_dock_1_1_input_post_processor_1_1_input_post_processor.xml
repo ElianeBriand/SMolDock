@@ -87,19 +87,19 @@
     <detaileddescription>
 <para>The purpose of input post processor is mainly to modify ligand and protein atom &amp; residue to simulate the behaviour of a particular software, and get numerically identical results. Though other uses are possible and imaginable.</para><para>For example, we consider cysteine sulfur atom as a H-bond acceptor, and sometime donor (if not part of a disulfide bridge). However, Vina does not. (Because X-Score does not either). So we correct that in a post processing step.</para><para>We find that such differences are often rather minimal and do not warrant custom importers. </para>    </detaileddescription>
     <inheritancegraph>
-      <node id="95">
+      <node id="111">
         <label>SmolDock::InputPostProcessor::VinaCompatibilityPostProcessor</label>
         <link refid="class_smol_dock_1_1_input_post_processor_1_1_vina_compatibility_post_processor"/>
-        <childnode refid="94" relation="public-inheritance">
+        <childnode refid="110" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="94">
+      <node id="110">
         <label>SmolDock::InputPostProcessor::InputPostProcessor</label>
         <link refid="class_smol_dock_1_1_input_post_processor_1_1_input_post_processor"/>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="96">
+      <node id="112">
         <label>SmolDock::InputPostProcessor::InputPostProcessor</label>
         <link refid="class_smol_dock_1_1_input_post_processor_1_1_input_post_processor"/>
       </node>

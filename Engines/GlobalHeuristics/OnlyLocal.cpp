@@ -7,7 +7,7 @@
 
 namespace SmolDock::Heuristics {
 
-    OnlyLocal::OnlyLocal(Score::ScoringFunction *scorFunc_, Optimizer::Optimizer *optimizer_,
+    OnlyLocal::OnlyLocal(Score::ScoringFunction* scorFunc_, Optimizer::Optimizer* optimizer_,
                          unsigned int seed_, OnlyLocal::Parameters params_) :
             scorFunc(scorFunc_), optimizer(optimizer_), rnd_generator(seed_), params(params_) {
 

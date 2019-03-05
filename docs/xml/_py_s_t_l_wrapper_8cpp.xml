@@ -10,232 +10,229 @@
     <includes refid="_molecule_8h" local="no">Structures/Molecule.h</includes>
     <includes refid="_vina_compatibility_post_processor_8h" local="no">Structures/InputPostProcessors/VinaCompatibilityPostProcessor.h</includes>
     <incdepgraph>
-      <node id="1481">
+      <node id="1895">
         <label>GraphMol/RWMol.h</label>
       </node>
-      <node id="1482">
+      <node id="1896">
         <label>GraphMol/MolOps.h</label>
       </node>
-      <node id="1485">
+      <node id="1899">
         <label>GraphMol/Substruct/SubstructMatch.h</label>
       </node>
-      <node id="1473">
+      <node id="1887">
         <label>PySTLWrapper.h</label>
         <link refid="_py_s_t_l_wrapper_8h"/>
       </node>
-      <node id="1503">
+      <node id="1917">
         <label>cmath</label>
       </node>
-      <node id="1504">
+      <node id="1918">
         <label>cassert</label>
       </node>
-      <node id="1472">
+      <node id="1886">
         <label>PySTLWrapper.cpp</label>
         <link refid="_py_s_t_l_wrapper_8cpp"/>
-        <childnode refid="1473" relation="include">
+        <childnode refid="1887" relation="include">
         </childnode>
-        <childnode refid="1474" relation="include">
+        <childnode refid="1888" relation="include">
         </childnode>
-        <childnode refid="1475" relation="include">
+        <childnode refid="1889" relation="include">
         </childnode>
-        <childnode refid="1476" relation="include">
+        <childnode refid="1890" relation="include">
         </childnode>
-        <childnode refid="1477" relation="include">
+        <childnode refid="1891" relation="include">
         </childnode>
-        <childnode refid="1478" relation="include">
+        <childnode refid="1892" relation="include">
         </childnode>
-        <childnode refid="1505" relation="include">
+        <childnode refid="1921" relation="include">
         </childnode>
       </node>
-      <node id="1486">
+      <node id="1919">
+        <label>Eigen/Core</label>
+      </node>
+      <node id="1900">
         <label>GraphMol/DistGeomHelpers/Embedder.h</label>
       </node>
-      <node id="1487">
+      <node id="1901">
         <label>Structures/InputPostProcessors/InputPostProcessorInterface.h</label>
         <link refid="_input_post_processor_interface_8h"/>
-        <childnode refid="1488" relation="include">
+        <childnode refid="1902" relation="include">
         </childnode>
       </node>
-      <node id="1476">
+      <node id="1890">
         <label>boost/python/suite/indexing/indexing_suite.hpp</label>
       </node>
-      <node id="1494">
+      <node id="1908">
         <label>string</label>
       </node>
-      <node id="1488">
+      <node id="1902">
         <label>Structures/Atom.h</label>
         <link refid="_atom_8h"/>
-        <childnode refid="1479" relation="include">
+        <childnode refid="1893" relation="include">
         </childnode>
-        <childnode refid="1489" relation="include">
+        <childnode refid="1903" relation="include">
         </childnode>
-        <childnode refid="1490" relation="include">
+        <childnode refid="1904" relation="include">
         </childnode>
-        <childnode refid="1491" relation="include">
+        <childnode refid="1905" relation="include">
         </childnode>
-        <childnode refid="1492" relation="include">
+        <childnode refid="1906" relation="include">
         </childnode>
-        <childnode refid="1493" relation="include">
+        <childnode refid="1907" relation="include">
         </childnode>
       </node>
-      <node id="1497">
+      <node id="1911">
         <label>map</label>
       </node>
-      <node id="1475">
+      <node id="1889">
         <label>boost/numpy.hpp</label>
       </node>
-      <node id="1500">
+      <node id="1914">
         <label>../Engines/Internals/iConformer.h</label>
         <link refid="i_conformer_8h"/>
-        <childnode refid="1479" relation="include">
+        <childnode refid="1893" relation="include">
         </childnode>
-        <childnode refid="1489" relation="include">
+        <childnode refid="1903" relation="include">
         </childnode>
-        <childnode refid="1501" relation="include">
+        <childnode refid="1915" relation="include">
         </childnode>
       </node>
-      <node id="1499">
+      <node id="1913">
         <label>Bond.h</label>
         <link refid="_bond_8h"/>
-        <childnode refid="1489" relation="include">
+        <childnode refid="1903" relation="include">
         </childnode>
-        <childnode refid="1488" relation="include">
+        <childnode refid="1902" relation="include">
         </childnode>
       </node>
-      <node id="1493">
+      <node id="1920">
+        <label>Eigen/Dense</label>
+      </node>
+      <node id="1907">
         <label>AminoAcid.h</label>
         <link refid="_amino_acid_8h"/>
-        <childnode refid="1494" relation="include">
+        <childnode refid="1908" relation="include">
         </childnode>
-        <childnode refid="1479" relation="include">
+        <childnode refid="1893" relation="include">
         </childnode>
-        <childnode refid="1490" relation="include">
+        <childnode refid="1904" relation="include">
         </childnode>
-        <childnode refid="1491" relation="include">
+        <childnode refid="1905" relation="include">
         </childnode>
-        <childnode refid="1495" relation="include">
+        <childnode refid="1909" relation="include">
         </childnode>
-        <childnode refid="1489" relation="include">
+        <childnode refid="1903" relation="include">
         </childnode>
-        <childnode refid="1496" relation="include">
+        <childnode refid="1910" relation="include">
         </childnode>
       </node>
-      <node id="1495">
+      <node id="1909">
         <label>tuple</label>
       </node>
-      <node id="1496">
+      <node id="1910">
         <label>Engines/Internals/iProtein.h</label>
         <link refid="i_protein_8h"/>
-        <childnode refid="1479" relation="include">
+        <childnode refid="1893" relation="include">
         </childnode>
-        <childnode refid="1489" relation="include">
+        <childnode refid="1903" relation="include">
         </childnode>
-        <childnode refid="1497" relation="include">
+        <childnode refid="1911" relation="include">
         </childnode>
       </node>
-      <node id="1474">
+      <node id="1888">
         <label>boost/python.hpp</label>
       </node>
-      <node id="1501">
+      <node id="1915">
         <label>iTransform.h</label>
         <link refid="i_transform_8h"/>
-        <childnode refid="1479" relation="include">
+        <childnode refid="1893" relation="include">
         </childnode>
-        <childnode refid="1489" relation="include">
+        <childnode refid="1903" relation="include">
         </childnode>
-        <childnode refid="1502" relation="include">
+        <childnode refid="1916" relation="include">
         </childnode>
-        <childnode refid="1503" relation="include">
+        <childnode refid="1917" relation="include">
         </childnode>
-        <childnode refid="1504" relation="include">
+        <childnode refid="1918" relation="include">
+        </childnode>
+        <childnode refid="1919" relation="include">
+        </childnode>
+        <childnode refid="1920" relation="include">
         </childnode>
       </node>
-      <node id="1479">
+      <node id="1893">
         <label>vector</label>
       </node>
-      <node id="1502">
+      <node id="1916">
         <label>array</label>
       </node>
-      <node id="1484">
+      <node id="1898">
         <label>GraphMol/SmilesParse/SmilesParse.h</label>
       </node>
-      <node id="1498">
+      <node id="1912">
         <label>Structure.h</label>
         <link refid="_structure_8h"/>
       </node>
-      <node id="1478">
+      <node id="1892">
         <label>Structures/Molecule.h</label>
         <link refid="_molecule_8h"/>
-        <childnode refid="1479" relation="include">
+        <childnode refid="1893" relation="include">
         </childnode>
-        <childnode refid="1480" relation="include">
+        <childnode refid="1894" relation="include">
         </childnode>
-        <childnode refid="1481" relation="include">
+        <childnode refid="1895" relation="include">
         </childnode>
-        <childnode refid="1482" relation="include">
+        <childnode refid="1896" relation="include">
         </childnode>
-        <childnode refid="1483" relation="include">
+        <childnode refid="1897" relation="include">
         </childnode>
-        <childnode refid="1484" relation="include">
+        <childnode refid="1898" relation="include">
         </childnode>
-        <childnode refid="1485" relation="include">
+        <childnode refid="1899" relation="include">
         </childnode>
-        <childnode refid="1486" relation="include">
+        <childnode refid="1900" relation="include">
         </childnode>
-        <childnode refid="1487" relation="include">
+        <childnode refid="1901" relation="include">
         </childnode>
-        <childnode refid="1498" relation="include">
+        <childnode refid="1912" relation="include">
         </childnode>
-        <childnode refid="1488" relation="include">
+        <childnode refid="1902" relation="include">
         </childnode>
-        <childnode refid="1499" relation="include">
+        <childnode refid="1913" relation="include">
         </childnode>
-        <childnode refid="1500" relation="include">
+        <childnode refid="1914" relation="include">
         </childnode>
       </node>
-      <node id="1480">
+      <node id="1894">
         <label>GraphMol/RDKitBase.h</label>
       </node>
-      <node id="1492">
+      <node id="1906">
         <label>iostream</label>
       </node>
-      <node id="1477">
+      <node id="1891">
         <label>boost/python/suite/indexing/vector_indexing_suite.hpp</label>
       </node>
-      <node id="1490">
+      <node id="1904">
         <label>set</label>
       </node>
-      <node id="1505">
+      <node id="1921">
         <label>Structures/InputPostProcessors/VinaCompatibilityPostProcessor.h</label>
         <link refid="_vina_compatibility_post_processor_8h"/>
-        <childnode refid="1487" relation="include">
+        <childnode refid="1901" relation="include">
         </childnode>
       </node>
-      <node id="1491">
+      <node id="1905">
         <label>algorithm</label>
       </node>
-      <node id="1489">
+      <node id="1903">
         <label>memory</label>
       </node>
-      <node id="1483">
+      <node id="1897">
         <label>GraphMol/FileParsers/FileParsers.h</label>
       </node>
     </incdepgraph>
+    <innernamespace refid="namespace_smol_dock_1_1_wrapper">SmolDock::Wrapper</innernamespace>
       <sectiondef kind="func">
-      <memberdef kind="function" id="_py_s_t_l_wrapper_8cpp_1a20a4fa85d5a46ce8e1567e27ff8483c1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>std::vector&lt; std::shared_ptr&lt; sd::InputPostProcessor::InputPostProcessor &gt; &gt;</type>
-        <definition>std::vector&lt; std::shared_ptr&lt;sd::InputPostProcessor::InputPostProcessor&gt; &gt; getVinaPostProcessorsVector</definition>
-        <argsstring>()</argsstring>
-        <name>getVinaPostProcessorsVector</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="Frontends/Python/PySTLWrapper.cpp" line="40" column="1" bodyfile="Frontends/Python/PySTLWrapper.cpp" bodystart="40" bodyend="45"/>
-        <referencedby refid="_py_s_t_l_wrapper_8h_1a168320ae6ebe56579c717093cbb24708" compoundref="_py_s_t_l_wrapper_8cpp" startline="48" endline="58">export_STLWrapper</referencedby>
-      </memberdef>
       <memberdef kind="function" id="_py_s_t_l_wrapper_8cpp_1a168320ae6ebe56579c717093cbb24708" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void export_STLWrapper</definition>
@@ -247,9 +244,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Frontends/Python/PySTLWrapper.cpp" line="48" column="1" bodyfile="Frontends/Python/PySTLWrapper.cpp" bodystart="48" bodyend="58"/>
-        <references refid="_py_s_t_l_wrapper_8cpp_1a20a4fa85d5a46ce8e1567e27ff8483c1" compoundref="_py_s_t_l_wrapper_8cpp" startline="40" endline="45">getVinaPostProcessorsVector</references>
-        <referencedby refid="_smoldock_python_bindings_8cpp_1a9002869529fdb857c7ffa4a170c4f3ef" compoundref="_smoldock_python_bindings_8cpp" startline="39" endline="79">BOOST_PYTHON_MODULE</referencedby>
+        <location file="Frontends/Python/PySTLWrapper.cpp" line="50" column="1" bodyfile="Frontends/Python/PySTLWrapper.cpp" bodystart="50" bodyend="60"/>
+        <references refid="namespace_smol_dock_1_1_wrapper_1a8da7125fc8128a615685634f003cd4bc" compoundref="_py_s_t_l_wrapper_8cpp" startline="41" endline="46">SmolDock::Wrapper::getVinaPostProcessorsVector</references>
+        <referencedby refid="_smoldock_python_bindings_8cpp_1a9002869529fdb857c7ffa4a170c4f3ef" compoundref="_smoldock_python_bindings_8cpp" startline="41" endline="79">BOOST_PYTHON_MODULE</referencedby>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -295,26 +292,28 @@
 <codeline lineno="36"><highlight class="normal"></highlight></codeline>
 <codeline lineno="37"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_smol_dock" kindref="compound">sd</ref><sp/>=<sp/><ref refid="namespace_smol_dock" kindref="compound">SmolDock</ref>;</highlight></codeline>
 <codeline lineno="38"><highlight class="normal"></highlight></codeline>
-<codeline lineno="39"><highlight class="normal"></highlight></codeline>
-<codeline lineno="40" refid="_py_s_t_l_wrapper_8cpp_1a20a4fa85d5a46ce8e1567e27ff8483c1" refkind="member"><highlight class="normal">std::vector&lt;<sp/>std::shared_ptr&lt;sd::InputPostProcessor::InputPostProcessor&gt;<sp/>&gt;<sp/><ref refid="_py_s_t_l_wrapper_8cpp_1a20a4fa85d5a46ce8e1567e27ff8483c1" kindref="member">getVinaPostProcessorsVector</ref>()<sp/>{</highlight></codeline>
-<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>vinaPP<sp/>=<sp/><sp/>std::make_shared&lt;sd::InputPostProcessor::VinaCompatibilityPostProcessor&gt;();</highlight></codeline>
-<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;<sp/>std::shared_ptr&lt;sd::InputPostProcessor::InputPostProcessor&gt;<sp/>&gt;<sp/>postProcessors;</highlight></codeline>
-<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/>postProcessors.push_back(vinaPP);</highlight></codeline>
-<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>postProcessors;</highlight></codeline>
-<codeline lineno="45"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39" refid="namespace_smol_dock_1_1_wrapper" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_smol_dock_1_1_wrapper" kindref="compound">SmolDock::Wrapper</ref><sp/>{</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41" refid="namespace_smol_dock_1_1_wrapper_1a8da7125fc8128a615685634f003cd4bc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;std::shared_ptr&lt;sd::InputPostProcessor::InputPostProcessor&gt;<sp/>&gt;<sp/><ref refid="namespace_smol_dock_1_1_wrapper_1a8da7125fc8128a615685634f003cd4bc" kindref="member">getVinaPostProcessorsVector</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>vinaPP<sp/>=<sp/>std::make_shared&lt;sd::InputPostProcessor::VinaCompatibilityPostProcessor&gt;();</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::vector&lt;std::shared_ptr&lt;sd::InputPostProcessor::InputPostProcessor&gt;<sp/>&gt;<sp/>postProcessors;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>postProcessors.push_back(vinaPP);</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>postProcessors;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="47"><highlight class="normal"></highlight></codeline>
-<codeline lineno="48" refid="_py_s_t_l_wrapper_8h_1a168320ae6ebe56579c717093cbb24708" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_py_s_t_l_wrapper_8cpp_1a168320ae6ebe56579c717093cbb24708" kindref="member">export_STLWrapper</ref>()<sp/>{</highlight></codeline>
-<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/>p::class_&lt;std::vector&lt;double&gt;<sp/>&gt;(</highlight><highlight class="stringliteral">&quot;DoubleVect&quot;</highlight><highlight class="normal">)</highlight></codeline>
-<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.def(p::vector_indexing_suite&lt;std::vector&lt;double&gt;<sp/>&gt;());</highlight></codeline>
-<codeline lineno="51"><highlight class="normal"></highlight></codeline>
-<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/>p::class_&lt;std::vector&lt;sd::Molecule&gt;<sp/>&gt;(</highlight><highlight class="stringliteral">&quot;MoleculeVect&quot;</highlight><highlight class="normal">)</highlight></codeline>
-<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>.def(p::vector_indexing_suite&lt;std::vector&lt;sd::Molecule&gt;<sp/>&gt;())<sp/>//<sp/>We<sp/>need<sp/>Molecule::operator==<sp/>to<sp/>use<sp/>this</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>;</highlight></codeline>
-<codeline lineno="55"><highlight class="normal"></highlight></codeline>
-<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>p::class_&lt;std::vector&lt;<sp/>std::shared_ptr&lt;sd::InputPostProcessor::InputPostProcessor&gt;<sp/>&gt;<sp/>&gt;(</highlight><highlight class="stringliteral">&quot;PostProcessorsVector&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/>p::def(</highlight><highlight class="stringliteral">&quot;getVinaPostProcessorsVector&quot;</highlight><highlight class="normal">,<sp/><ref refid="_py_s_t_l_wrapper_8cpp_1a20a4fa85d5a46ce8e1567e27ff8483c1" kindref="member">getVinaPostProcessorsVector</ref>);</highlight></codeline>
-<codeline lineno="58"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="48"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50" refid="_py_s_t_l_wrapper_8h_1a168320ae6ebe56579c717093cbb24708" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_py_s_t_l_wrapper_8cpp_1a168320ae6ebe56579c717093cbb24708" kindref="member">export_STLWrapper</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>p::class_&lt;std::vector&lt;double&gt;<sp/>&gt;(</highlight><highlight class="stringliteral">&quot;DoubleVect&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.def(p::vector_indexing_suite&lt;std::vector&lt;double&gt;<sp/>&gt;());</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>p::class_&lt;std::vector&lt;sd::Molecule&gt;<sp/>&gt;(</highlight><highlight class="stringliteral">&quot;MoleculeVect&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.def(p::vector_indexing_suite&lt;std::vector&lt;sd::Molecule&gt;<sp/>&gt;())<sp/></highlight><highlight class="comment">//<sp/>We<sp/>need<sp/>Molecule::operator==<sp/>to<sp/>use<sp/>this</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/>p::class_&lt;std::vector&lt;std::shared_ptr&lt;sd::InputPostProcessor::InputPostProcessor&gt;<sp/>&gt;<sp/>&gt;(</highlight><highlight class="stringliteral">&quot;PostProcessorsVector&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>p::def(</highlight><highlight class="stringliteral">&quot;getVinaPostProcessorsVector&quot;</highlight><highlight class="normal">,<sp/><ref refid="namespace_smol_dock_1_1_wrapper_1a8da7125fc8128a615685634f003cd4bc" kindref="member">sd::Wrapper::getVinaPostProcessorsVector</ref>);</highlight></codeline>
+<codeline lineno="60"><highlight class="normal">}</highlight></codeline>
     </programlisting>
     <location file="Frontends/Python/PySTLWrapper.cpp"/>
   </compounddef>

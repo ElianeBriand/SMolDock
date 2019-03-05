@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_metropolis_hastings_8cpp" kind="file" language="C++">
+    <compoundname>MetropolisHastings.cpp</compoundname>
+    <includes refid="_metropolis_hastings_8h" local="yes">MetropolisHastings.h</includes>
+    <incdepgraph>
+      <node id="1277">
+        <label>MetropolisHastings.h</label>
+        <link refid="_metropolis_hastings_8h"/>
+        <childnode refid="1278" relation="include">
+        </childnode>
+      </node>
+      <node id="1278">
+        <label>random</label>
+      </node>
+      <node id="1276">
+        <label>MetropolisHastings.cpp</label>
+        <link refid="_metropolis_hastings_8cpp"/>
+        <childnode refid="1277" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Created<sp/>by<sp/>briand<sp/>on<sp/>2/20/19.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_metropolis_hastings_8h" kindref="compound">MetropolisHastings.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Highly<sp/>inspired<sp/>of<sp/>autodock<sp/>Vina<sp/>Metropolis.cpp</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10" refid="namespace_smol_dock_1_1_heuristics_1afd19e47afa27af28165f6a978d81699b" refkind="member"><highlight class="normal"><ref refid="namespace_smol_dock_1_1_heuristics_1afd19e47afa27af28165f6a978d81699b" kindref="member">SmolDock::Heuristics::MetropolisAccept</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>oldScore,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>newScore,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>temperature,</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::mt19937<sp/>&amp;rndGenerator)<sp/>{</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(newScore<sp/>&lt;<sp/>oldScore)<sp/>{</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;<sp/></highlight><highlight class="comment">//<sp/>Unconditional<sp/>accept<sp/>if<sp/>better</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>acceptanceProbability<sp/>=<sp/>std::exp((oldScore<sp/>-<sp/>newScore)<sp/>/<sp/>temperature);</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/>std::uniform_real_distribution&lt;double&gt;<sp/>realProbaDistribution(0.0,<sp/>1.0);</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>value<sp/>=<sp/>realProbaDistribution(rndGenerator);</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>value<sp/>&lt;<sp/>acceptanceProbability;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="Engines/GlobalHeuristics/Utilities/MetropolisHastings.cpp"/>
+  </compounddef>
+</doxygen>

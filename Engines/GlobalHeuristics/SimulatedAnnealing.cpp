@@ -14,7 +14,7 @@
 
 namespace SmolDock::Heuristics {
 
-    SimulatedAnnealing::SimulatedAnnealing(Score::ScoringFunction *scorFunc_, Optimizer::Optimizer *optimizer_,
+    SimulatedAnnealing::SimulatedAnnealing(Score::ScoringFunction* scorFunc_, Optimizer::Optimizer* optimizer_,
                                            unsigned int seed_, SimulatedAnnealing::Parameters params_) :
             scorFunc(scorFunc_), optimizer(optimizer_), rndGenerator(seed_), params(params_) {
 
@@ -37,8 +37,8 @@ namespace SmolDock::Heuristics {
         this->result = this->optimizer->getRawResultMatrix();
 
 
-        BOOST_LOG_TRIVIAL(debug) << "SimulatedAnnealing: Score after SA = " << scoreBeforeLocalOptim;
-        BOOST_LOG_TRIVIAL(debug) << "SimulatedAnnealing: Score after local optim" << scoreAfterLocalOptim;
+        BOOST_LOG_TRIVIAL(debug) << "SimulatedAnnealing: Score after SA          = " << scoreBeforeLocalOptim;
+        BOOST_LOG_TRIVIAL(debug) << "SimulatedAnnealing: Score after local optim = " << scoreAfterLocalOptim;
 
         return true;
     }

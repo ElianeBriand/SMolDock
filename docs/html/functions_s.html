@@ -95,9 +95,6 @@ $(document).ready(function(){initNavTree('functions_s.html','');});
 <div class="textblock">Here is a list of all class members with links to the classes they belong to:</div>
 
 <h3><a id="index_s"></a>- s -</h3><ul>
-<li>s
-: <a class="el" href="namespace_smol_dock.html#a07d95036803eb2a4ef32627df95043ad">SmolDock::iQuaternion</a>
-</li>
 <li>score
 : <a class="el" href="class_smol_dock_1_1_optimizer_1_1_gradient_descent_line_search.html#a1eafe95f8c30c31960fd7ac4af247fa3">SmolDock::Optimizer::GradientDescentLineSearch</a>
 , <a class="el" href="class_smol_dock_1_1_optimizer_1_1_l___b_f_g_s.html#ab4ff4104e0300008225d26b195e24ad8">SmolDock::Optimizer::L_BFGS</a>
@@ -106,20 +103,30 @@ $(document).ready(function(){initNavTree('functions_s.html','');});
 : <a class="el" href="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine.html#a3ebcfe47e865aad0c91105a58996d22e">SmolDock::Engine::ConformerRigidDockingEngine</a>
 </li>
 <li>scorFunc
-: <a class="el" href="class_smol_dock_1_1_heuristics_1_1_random_restart.html#af92f8f1347adb435fa783c909912af77">SmolDock::Heuristics::RandomRestart</a>
+: <a class="el" href="class_smol_dock_1_1_heuristics_1_1_iterated_local_search.html#ae8f2f50ee12c9835eb8f37ae0e2629ce">SmolDock::Heuristics::IteratedLocalSearch</a>
+, <a class="el" href="class_smol_dock_1_1_heuristics_1_1_only_local.html#a7f18c8af6ee27310e2341e0cc1a8529b">SmolDock::Heuristics::OnlyLocal</a>
+, <a class="el" href="class_smol_dock_1_1_heuristics_1_1_random_restart.html#af92f8f1347adb435fa783c909912af77">SmolDock::Heuristics::RandomRestart</a>
+, <a class="el" href="class_smol_dock_1_1_heuristics_1_1_simulated_annealing.html#ac78308e5708ae4d3a0702412357fabb3">SmolDock::Heuristics::SimulatedAnnealing</a>
 </li>
 <li>scoringFunction
-: <a class="el" href="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine.html#ace88252dde52d3e8ec652e703a8c7bdf">SmolDock::Engine::ConformerRigidDockingEngine</a>
+: <a class="el" href="class_smol_dock_1_1_engine_1_1_pose_refiner.html#ae487f56c3348df65174bb1523b8f1e5f">SmolDock::Engine::PoseRefiner</a>
 , <a class="el" href="class_smol_dock_1_1_optimizer_1_1_gradient_descent_line_search.html#a5a7ea295c87622dc13f80e4315321463">SmolDock::Optimizer::GradientDescentLineSearch</a>
 , <a class="el" href="class_smol_dock_1_1_optimizer_1_1_l___b_f_g_s.html#ad517eac106ffad742e71e9191f3f82c4">SmolDock::Optimizer::L_BFGS</a>
-, <a class="el" href="class_smol_dock_1_1_re_scorer.html#aa23484f98a480115afdd978a83f9091f">SmolDock::ReScorer</a>
+, <a class="el" href="class_smol_dock_1_1_re_scorer.html#ac6472ccbf05b4df88e9a0673d4b8ebf7">SmolDock::ReScorer</a>
+</li>
+<li>scoringFunctionType
+: <a class="el" href="class_smol_dock_1_1_re_scorer.html#a72a109606586d734214a0ff3cb970f39">SmolDock::ReScorer</a>
 </li>
 <li>scoringFuncType
 : <a class="el" href="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine.html#ab58e856743bf2e8612185902f8ae233a">SmolDock::Engine::ConformerRigidDockingEngine</a>
+, <a class="el" href="class_smol_dock_1_1_engine_1_1_pose_refiner.html#a0c4e64c857db01e1c46147a1e1f8be97">SmolDock::Engine::PoseRefiner</a>
 </li>
 <li>search()
 : <a class="el" href="class_smol_dock_1_1_heuristics_1_1_global_heuristic.html#acd4f8bbe6334ba93dcd4ea1d2a8c0d38">SmolDock::Heuristics::GlobalHeuristic</a>
+, <a class="el" href="class_smol_dock_1_1_heuristics_1_1_iterated_local_search.html#ad7c6bf8bf2c8d3cde6cb6b1184ca5c4e">SmolDock::Heuristics::IteratedLocalSearch</a>
+, <a class="el" href="class_smol_dock_1_1_heuristics_1_1_only_local.html#a4557f55ce09405eff013c07214cb4e10">SmolDock::Heuristics::OnlyLocal</a>
 , <a class="el" href="class_smol_dock_1_1_heuristics_1_1_random_restart.html#abfa7882757c070d876d94090520cef92">SmolDock::Heuristics::RandomRestart</a>
+, <a class="el" href="class_smol_dock_1_1_heuristics_1_1_simulated_annealing.html#a1a354ad6f5b9055013ed27575450498f">SmolDock::Heuristics::SimulatedAnnealing</a>
 </li>
 <li>setAAId()
 : <a class="el" href="class_smol_dock_1_1_amino_acid.html#a091349e13f56cc9d28701dcfe8e30d45">SmolDock::AminoAcid</a>
@@ -164,8 +171,14 @@ $(document).ready(function(){initNavTree('functions_s.html','');});
 , <a class="el" href="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine.html#a3abc1a2cdbb3f1b9f545f863f9ec5e43">SmolDock::Engine::ConformerRigidDockingEngine</a>
 , <a class="el" href="class_smol_dock_1_1_engine_1_1_m_d_style_docking_engine.html#a47f1e2b66b5fd02861d8aa35395c5434">SmolDock::Engine::MDStyleDockingEngine</a>
 </li>
+<li>Shape
+: <a class="el" href="struct_smol_dock_1_1_engine_1_1_abstract_docking_engine_1_1_docking_box_setting.html#ada8346193e53256c29091daa7e9ced9e">SmolDock::Engine::AbstractDockingEngine::DockingBoxSetting</a>
+</li>
 <li>shorthand
 : <a class="el" href="class_smol_dock_1_1_amino_acid.html#ad0349cceaac80ad8a367c8130589dd76">SmolDock::AminoAcid</a>
+</li>
+<li>SimulatedAnnealing()
+: <a class="el" href="class_smol_dock_1_1_heuristics_1_1_simulated_annealing.html#af4f599e7be249487f22ae292d02fad2a">SmolDock::Heuristics::SimulatedAnnealing</a>
 </li>
 <li>singlebond
 : <a class="el" href="class_smol_dock_1_1_bond.html#a6cbf152f682501c998bd06a55400c9cfaccd9d70d0e74b128e8fdd74b302934f1">SmolDock::Bond</a>
@@ -175,6 +188,10 @@ $(document).ready(function(){initNavTree('functions_s.html','');});
 </li>
 <li>startingConformation
 : <a class="el" href="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function.html#afc848dd44def406206bfa2ac002d00d6">SmolDock::Score::VinaLikeRigidScoringFunction</a>
+, <a class="el" href="class_smol_dock_1_1_score_1_1_vina_like_scoring_function.html#a19b426e35ef7dfb8502a01689fcc66da">SmolDock::Score::VinaLikeScoringFunction</a>
+</li>
+<li>startingScores
+: <a class="el" href="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine.html#aff4be32d08c9a90d7b2b8353cc341bd2">SmolDock::Engine::ConformerRigidDockingEngine</a>
 </li>
 <li>stringToAtomType
 : <a class="el" href="class_smol_dock_1_1_atom.html#abe46f23e1f169949c8d3916b7e0ad38b">SmolDock::Atom</a>

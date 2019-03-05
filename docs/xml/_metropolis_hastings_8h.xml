@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_metropolis_hastings_8h" kind="file" language="C++">
+    <compoundname>MetropolisHastings.h</compoundname>
+    <includes local="no">random</includes>
+    <includedby refid="_iterated_local_search_8cpp" local="no">IteratedLocalSearch.cpp</includedby>
+    <includedby refid="_simulated_annealing_8cpp" local="no">SimulatedAnnealing.cpp</includedby>
+    <includedby refid="_metropolis_hastings_8cpp" local="yes">MetropolisHastings.cpp</includedby>
+    <incdepgraph>
+      <node id="1280">
+        <label>MetropolisHastings.h</label>
+        <link refid="_metropolis_hastings_8h"/>
+        <childnode refid="1281" relation="include">
+        </childnode>
+      </node>
+      <node id="1281">
+        <label>random</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1284">
+        <label>SimulatedAnnealing.cpp</label>
+        <link refid="_simulated_annealing_8cpp"/>
+      </node>
+      <node id="1282">
+        <label>MetropolisHastings.h</label>
+        <link refid="_metropolis_hastings_8h"/>
+        <childnode refid="1283" relation="include">
+        </childnode>
+        <childnode refid="1284" relation="include">
+        </childnode>
+        <childnode refid="1285" relation="include">
+        </childnode>
+      </node>
+      <node id="1285">
+        <label>MetropolisHastings.cpp</label>
+        <link refid="_metropolis_hastings_8cpp"/>
+      </node>
+      <node id="1283">
+        <label>IteratedLocalSearch.cpp</label>
+        <link refid="_iterated_local_search_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innernamespace refid="namespace_smol_dock_1_1_heuristics">SmolDock::Heuristics</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Created<sp/>by<sp/>briand<sp/>on<sp/>2/20/19.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>SMOLDOCK_METROPOLISHASTINGS_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SMOLDOCK_METROPOLISHASTINGS_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;random&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_smol_dock_1_1_heuristics" kindref="compound">SmolDock::Heuristics</ref><sp/>{</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="namespace_smol_dock_1_1_heuristics_1afd19e47afa27af28165f6a978d81699b" kindref="member">MetropolisAccept</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>oldScore,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>newScore,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>temperature,<sp/>std::mt19937<sp/>&amp;rndGenerator);</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//SMOLDOCK_METROPOLISHASTINGS_H</highlight></codeline>
+    </programlisting>
+    <location file="Engines/GlobalHeuristics/Utilities/MetropolisHastings.h"/>
+  </compounddef>
+</doxygen>

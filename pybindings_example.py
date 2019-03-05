@@ -33,19 +33,21 @@ m2 = mol1.getRDKitMol()
 print(m2)
 
 dbSetting = sd.DockingBoxSetting()
-dbSetting.type = sd.DockingBoxType.centeredAround;
-dbSetting.center = (10.0, 22.0, 25.0);
-dbSetting.radius = 10.0;
+dbSetting.type = sd.DockingBoxType.centeredAround
+dbSetting.center = (10.0, 22.0, 25.0)
+dbSetting.radius = 10.0
 
 cdengine = sd.Engine.ConformerRigidDockingEngine(10,
                                                  10,
                                                  receptor,
                                                  mol1,
-                                                 sd.ScoringFunctionType.VinaRigid,
-                                                 sd.GlobalHeuristicType.IteratedLocalSearch,
+                                                 sd.ScoringFunctionType.Vina,
+                                                 sd.GlobalHeuristicType.SimulatedAnnealing,
                                                  sd.LocalOptimizerType.L_BFGS,
                                                  1244)
 
+
+cdengine.setDockingBox(dbSetting)
 cdengine.setupDockingEngine()
 cdengine.runDockingEngine()
 

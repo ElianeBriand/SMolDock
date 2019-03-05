@@ -1,428 +1,344 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd"
-         version="1.8.14">
-    <compounddef id="_structure_8h" kind="file" language="C++">
-        <compoundname>Structure.h</compoundname>
-        <includedby refid="_protein_8h" local="yes">Protein.h</includedby>
-        <includedby refid="_molecule_8h" local="yes">Molecule.h</includedby>
-        <includedby refid="_structure_8cpp" local="yes">Structure.cpp</includedby>
-        <invincdepgraph>
-            <node id="1799">
-                <label>Protein.h</label>
-                <link refid="_protein_8h"/>
-                <childnode refid="1800" relation="include">
-                </childnode>
-                <childnode refid="1801" relation="include">
-                </childnode>
-                <childnode refid="1809" relation="include">
-                </childnode>
-                <childnode refid="1805" relation="include">
-                </childnode>
-                <childnode refid="1814" relation="include">
-                </childnode>
-                <childnode refid="1815" relation="include">
-                </childnode>
-                <childnode refid="1803" relation="include">
-                </childnode>
-                <childnode refid="1804" relation="include">
-                </childnode>
-                <childnode refid="1818" relation="include">
-                </childnode>
-            </node>
-            <node id="1801">
-                <label>ConformerRigidDockingEngine.h</label>
-                <link refid="_conformer_rigid_docking_engine_8h"/>
-                <childnode refid="1802" relation="include">
-                </childnode>
-                <childnode refid="1803" relation="include">
-                </childnode>
-                <childnode refid="1804" relation="include">
-                </childnode>
-            </node>
-            <node id="1818">
-                <label>PyStructures.cpp</label>
-                <link refid="_py_structures_8cpp"/>
-            </node>
-            <node id="1805">
-                <label>MDStyleDockingEngine.h</label>
-                <link refid="_m_d_style_docking_engine_8h"/>
-                <childnode refid="1806" relation="include">
-                </childnode>
-            </node>
-            <node id="1825">
-                <label>IntermediateConformerCollector.h</label>
-                <link refid="_intermediate_conformer_collector_8h"/>
-                <childnode refid="1826" relation="include">
-                </childnode>
-                <childnode refid="1803" relation="include">
-                </childnode>
-            </node>
-            <node id="1828">
-                <label>PDBWriter.cpp</label>
-                <link refid="_p_d_b_writer_8cpp"/>
-            </node>
-            <node id="1812">
-                <label>VinaLikeScoringFunction.cpp</label>
-                <link refid="_vina_like_scoring_function_8cpp"/>
-            </node>
-            <node id="1829">
-                <label>PySTLWrapper.cpp</label>
-                <link refid="_py_s_t_l_wrapper_8cpp"/>
-            </node>
-            <node id="1808">
-                <label>VinaCompatibleDockingEngine.cpp</label>
-                <link refid="_vina_compatible_docking_engine_8cpp"/>
-            </node>
-            <node id="1816">
-                <label>ReScorer.cpp</label>
-                <link refid="_re_scorer_8cpp"/>
-            </node>
-            <node id="1807">
-                <label>VinaCompatibleDockingEngine.h</label>
-                <link refid="_vina_compatible_docking_engine_8h"/>
-                <childnode refid="1808" relation="include">
-                </childnode>
-            </node>
-            <node id="1806">
-                <label>MDStyleDockingEngine.cpp</label>
-                <link refid="_m_d_style_docking_engine_8cpp"/>
-            </node>
-            <node id="1803">
-                <label>main.cpp</label>
-                <link refid="main_8cpp"/>
-            </node>
-            <node id="1824">
-                <label>Molecule.cpp</label>
-                <link refid="_molecule_8cpp"/>
-            </node>
-            <node id="1811">
-                <label>ScoringFunctionFactory.cpp</label>
-                <link refid="_scoring_function_factory_8cpp"/>
-            </node>
-            <node id="1815">
-                <label>ReScorer.h</label>
-                <link refid="_re_scorer_8h"/>
-                <childnode refid="1816" relation="include">
-                </childnode>
-                <childnode refid="1817" relation="include">
-                </childnode>
-            </node>
-            <node id="1830">
-                <label>Structure.cpp</label>
-                <link refid="_structure_8cpp"/>
-            </node>
-            <node id="1817">
-                <label>PyUtilities.cpp</label>
-                <link refid="_py_utilities_8cpp"/>
-            </node>
-            <node id="1800">
-                <label>AbstractDockingEngine.h</label>
-                <link refid="_abstract_docking_engine_8h"/>
-                <childnode refid="1801" relation="include">
-                </childnode>
-                <childnode refid="1805" relation="include">
-                </childnode>
-                <childnode refid="1807" relation="include">
-                </childnode>
-            </node>
-            <node id="1820">
-                <label>DockingResult.h</label>
-                <link refid="_docking_result_8h"/>
-                <childnode refid="1800" relation="include">
-                </childnode>
-                <childnode refid="1821" relation="include">
-                </childnode>
-                <childnode refid="1822" relation="include">
-                </childnode>
-                <childnode refid="1804" relation="include">
-                </childnode>
-                <childnode refid="1818" relation="include">
-                </childnode>
-            </node>
-            <node id="1802">
-                <label>ConformerRigidDockingEngine.cpp</label>
-                <link refid="_conformer_rigid_docking_engine_8cpp"/>
-            </node>
-            <node id="1810">
-                <label>GradientDescentLineSearch.cpp</label>
-                <link refid="_gradient_descent_line_search_8cpp"/>
-            </node>
-            <node id="1823">
-                <label>DockingResultPrinter.cpp</label>
-                <link refid="_docking_result_printer_8cpp"/>
-            </node>
-            <node id="1798">
-                <label>Structure.h</label>
-                <link refid="_structure_8h"/>
-                <childnode refid="1799" relation="include">
-                </childnode>
-                <childnode refid="1819" relation="include">
-                </childnode>
-                <childnode refid="1830" relation="include">
-                </childnode>
-            </node>
-            <node id="1819">
-                <label>Molecule.h</label>
-                <link refid="_molecule_8h"/>
-                <childnode refid="1820" relation="include">
-                </childnode>
-                <childnode refid="1800" relation="include">
-                </childnode>
-                <childnode refid="1801" relation="include">
-                </childnode>
-                <childnode refid="1809" relation="include">
-                </childnode>
-                <childnode refid="1805" relation="include">
-                </childnode>
-                <childnode refid="1824" relation="include">
-                </childnode>
-                <childnode refid="1825" relation="include">
-                </childnode>
-                <childnode refid="1827" relation="include">
-                </childnode>
-                <childnode refid="1815" relation="include">
-                </childnode>
-                <childnode refid="1803" relation="include">
-                </childnode>
-                <childnode refid="1804" relation="include">
-                </childnode>
-                <childnode refid="1829" relation="include">
-                </childnode>
-                <childnode refid="1818" relation="include">
-                </childnode>
-            </node>
-            <node id="1826">
-                <label>IntermediateConformerCollector.cpp</label>
-                <link refid="_intermediate_conformer_collector_8cpp"/>
-            </node>
-            <node id="1827">
-                <label>PDBWriter.h</label>
-                <link refid="_p_d_b_writer_8h"/>
-                <childnode refid="1825" relation="include">
-                </childnode>
-                <childnode refid="1828" relation="include">
-                </childnode>
-            </node>
-            <node id="1822">
-                <label>DockingResultPrinter.h</label>
-                <link refid="_docking_result_printer_8h"/>
-                <childnode refid="1823" relation="include">
-                </childnode>
-                <childnode refid="1803" relation="include">
-                </childnode>
-            </node>
-            <node id="1814">
-                <label>Protein.cpp</label>
-                <link refid="_protein_8cpp"/>
-            </node>
-            <node id="1813">
-                <label>PyScoringFunctions.cpp</label>
-                <link refid="_py_scoring_functions_8cpp"/>
-            </node>
-            <node id="1809">
-                <label>VinaLikeScoringFunction.h</label>
-                <link refid="_vina_like_scoring_function_8h"/>
-                <childnode refid="1802" relation="include">
-                </childnode>
-                <childnode refid="1810" relation="include">
-                </childnode>
-                <childnode refid="1811" relation="include">
-                </childnode>
-                <childnode refid="1812" relation="include">
-                </childnode>
-                <childnode refid="1803" relation="include">
-                </childnode>
-                <childnode refid="1813" relation="include">
-                </childnode>
-            </node>
-            <node id="1821">
-                <label>DockingResult.cpp</label>
-                <link refid="_docking_result_8cpp"/>
-            </node>
-            <node id="1804">
-                <label>PyEngine.cpp</label>
-                <link refid="_py_engine_8cpp"/>
-            </node>
-        </invincdepgraph>
-        <innerclass refid="class_smol_dock_1_1_structure" prot="public">SmolDock::Structure</innerclass>
-        <innernamespace refid="namespace_smol_dock">SmolDock</innernamespace>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <programlisting>
-            <codeline lineno="1">
-                <highlight class="comment">/*</highlight>
-            </codeline>
-            <codeline lineno="2">
-                <highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2018<sp/>Eliane<sp/>Briand
-                </highlight>
-            </codeline>
-            <codeline lineno="3">
-                <highlight class="comment"><sp/>*
-                </highlight>
-            </codeline>
-            <codeline lineno="4">
-                <highlight class="comment"><sp/>*<sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>SmolDock.
-                </highlight>
-            </codeline>
-            <codeline lineno="5">
-                <highlight class="comment"><sp/>*
-                </highlight>
-            </codeline>
-            <codeline lineno="6">
-                <highlight class="comment"><sp/>*<sp/>SmolDock<sp/>is<sp/>free<sp/>software:<sp/>you<sp/>can<sp/>
-                    redistribute<sp/>it<sp/>and/or<sp/>modify
-                </highlight>
-            </codeline>
-            <codeline lineno="7">
-                <highlight class="comment"><sp/>*<sp/>it<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>GNU<sp/>General
-                    <sp/>Public<sp/>License<sp/>as<sp/>published<sp/>by
-                </highlight>
-            </codeline>
-            <codeline lineno="8">
-                <highlight class="comment"><sp/>*<sp/>the<sp/>Free<sp/>Software<sp/>Foundation,<sp/>either<sp/>version
-                    <sp/>3<sp/>of<sp/>the<sp/>License,<sp/>or
-                </highlight>
-            </codeline>
-            <codeline lineno="9">
-                <highlight class="comment"><sp/>*<sp/>(at<sp/>your<sp/>option)<sp/>any<sp/>later<sp/>version.
-                </highlight>
-            </codeline>
-            <codeline lineno="10">
-                <highlight class="comment"><sp/>*
-                </highlight>
-            </codeline>
-            <codeline lineno="11">
-                <highlight class="comment"><sp/>*<sp/>SmolDock<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that
-                    <sp/>it<sp/>will<sp/>be<sp/>useful,
-                </highlight>
-            </codeline>
-            <codeline lineno="12">
-                <highlight class="comment"><sp/>*<sp/>but<sp/>WITHOUT<sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the
-                    <sp/>implied<sp/>warranty<sp/>of
-                </highlight>
-            </codeline>
-            <codeline lineno="13">
-                <highlight class="comment"><sp/>*<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR
-                    <sp/>PURPOSE.
-                    <sp/>
-                    <sp/>See<sp/>the
-                </highlight>
-            </codeline>
-            <codeline lineno="14">
-                <highlight class="comment"><sp/>*<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>for<sp/>more<sp/>
-                    details.
-                </highlight>
-            </codeline>
-            <codeline lineno="15">
-                <highlight class="comment"><sp/>*
-                </highlight>
-            </codeline>
-            <codeline lineno="16">
-                <highlight class="comment"><sp/>*<sp/>You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>the
-                    <sp/>GNU<sp/>General<sp/>Public<sp/>License
-                </highlight>
-            </codeline>
-            <codeline lineno="17">
-                <highlight class="comment"><sp/>*<sp/>along<sp/>with<sp/>SmolDock.
-                    <sp/>
-                    <sp/>If<sp/>not,<sp/>see<sp/>&lt;https://www.gnu.org/licenses/&gt;.
-                </highlight>
-            </codeline>
-            <codeline lineno="18">
-                <highlight class="comment"><sp/>*
-                </highlight>
-            </codeline>
-            <codeline lineno="19">
-                <highlight class="comment"><sp/>*/
-                </highlight>
-                <highlight class="normal"></highlight>
-            </codeline>
-            <codeline lineno="20">
-                <highlight class="normal"></highlight>
-            </codeline>
-            <codeline lineno="21">
-                <highlight class="normal"></highlight>
-                <highlight class="preprocessor">#ifndef<sp/>SMOLDOCK_STRUCTURE_H
-                </highlight>
-                <highlight class="normal"></highlight>
-            </codeline>
-            <codeline lineno="22">
-                <highlight class="normal"></highlight>
-                <highlight class="preprocessor">#define<sp/>SMOLDOCK_STRUCTURE_H
-                </highlight>
-                <highlight class="normal"></highlight>
-            </codeline>
-            <codeline lineno="23">
-                <highlight class="normal"></highlight>
-            </codeline>
-            <codeline lineno="24">
-                <highlight class="normal"></highlight>
-            </codeline>
-            <codeline lineno="25">
-                <highlight class="normal"></highlight>
-                <highlight class="keyword">namespace
-                    <sp/>
-                </highlight>
-                <highlight class="normal">
-                    <ref refid="namespace_smol_dock" kindref="compound">SmolDock</ref>
-                    <sp/>{
-                </highlight>
-            </codeline>
-            <codeline lineno="26">
-                <highlight class="normal"></highlight>
-            </codeline>
-            <codeline lineno="27">
-                <highlight class="normal"></highlight>
-            </codeline>
-            <codeline lineno="28" refid="class_smol_dock_1_1_structure" refkind="compound">
-                <highlight class="normal">
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                </highlight>
-                <highlight class="keyword">class
-                    <sp/>
-                </highlight>
-                <highlight class="normal">
-                    <ref refid="class_smol_dock_1_1_structure" kindref="compound">Structure</ref>
-                    <sp/>{
-                </highlight>
-            </codeline>
-            <codeline lineno="29">
-                <highlight class="normal"></highlight>
-            </codeline>
-            <codeline lineno="30">
-                <highlight class="normal">
-                    <sp/>
-                    <sp/>
-                    <sp/>
-                    <sp/>};
-                </highlight>
-            </codeline>
-            <codeline lineno="31">
-                <highlight class="normal"></highlight>
-            </codeline>
-            <codeline lineno="32">
-                <highlight class="normal"></highlight>
-            </codeline>
-            <codeline lineno="33">
-                <highlight class="normal">}</highlight>
-            </codeline>
-            <codeline lineno="34">
-                <highlight class="normal"></highlight>
-            </codeline>
-            <codeline lineno="35">
-                <highlight class="normal"></highlight>
-            </codeline>
-            <codeline lineno="36">
-                <highlight class="normal"></highlight>
-                <highlight class="preprocessor">#endif<sp/>//SMOLDOCK_STRUCTURE_H
-                </highlight>
-            </codeline>
-        </programlisting>
-        <location file="Structures/Structure.h"/>
-    </compounddef>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_structure_8h" kind="file" language="C++">
+    <compoundname>Structure.h</compoundname>
+    <includedby refid="_protein_8h" local="yes">Protein.h</includedby>
+    <includedby refid="_molecule_8h" local="yes">Molecule.h</includedby>
+    <includedby refid="_structure_8cpp" local="yes">Structure.cpp</includedby>
+    <invincdepgraph>
+      <node id="2323">
+        <label>Protein.h</label>
+        <link refid="_protein_8h"/>
+        <childnode refid="2324" relation="include">
+        </childnode>
+        <childnode refid="2325" relation="include">
+        </childnode>
+        <childnode refid="2334" relation="include">
+        </childnode>
+        <childnode refid="2330" relation="include">
+        </childnode>
+        <childnode refid="2338" relation="include">
+        </childnode>
+        <childnode refid="2341" relation="include">
+        </childnode>
+        <childnode refid="2343" relation="include">
+        </childnode>
+        <childnode refid="2344" relation="include">
+        </childnode>
+        <childnode refid="2327" relation="include">
+        </childnode>
+        <childnode refid="2328" relation="include">
+        </childnode>
+        <childnode refid="2329" relation="include">
+        </childnode>
+        <childnode refid="2347" relation="include">
+        </childnode>
+        <childnode refid="2340" relation="include">
+        </childnode>
+      </node>
+      <node id="2325">
+        <label>ConformerRigidDockingEngine.h</label>
+        <link refid="_conformer_rigid_docking_engine_8h"/>
+        <childnode refid="2326" relation="include">
+        </childnode>
+        <childnode refid="2327" relation="include">
+        </childnode>
+        <childnode refid="2328" relation="include">
+        </childnode>
+        <childnode refid="2329" relation="include">
+        </childnode>
+      </node>
+      <node id="2347">
+        <label>PyStructures.cpp</label>
+        <link refid="_py_structures_8cpp"/>
+      </node>
+      <node id="2330">
+        <label>MDStyleDockingEngine.h</label>
+        <link refid="_m_d_style_docking_engine_8h"/>
+        <childnode refid="2331" relation="include">
+        </childnode>
+      </node>
+      <node id="2354">
+        <label>IntermediateConformerCollector.h</label>
+        <link refid="_intermediate_conformer_collector_8h"/>
+        <childnode refid="2355" relation="include">
+        </childnode>
+      </node>
+      <node id="2338">
+        <label>PoseRefiner.h</label>
+        <link refid="_pose_refiner_8h"/>
+        <childnode refid="2339" relation="include">
+        </childnode>
+        <childnode refid="2327" relation="include">
+        </childnode>
+        <childnode refid="2340" relation="include">
+        </childnode>
+      </node>
+      <node id="2357">
+        <label>PDBWriter.cpp</label>
+        <link refid="_p_d_b_writer_8cpp"/>
+      </node>
+      <node id="2340">
+        <label>vina_refiner.cpp</label>
+        <link refid="vina__refiner_8cpp"/>
+      </node>
+      <node id="2342">
+        <label>VinaLikeScoringFunction.cpp</label>
+        <link refid="_vina_like_scoring_function_8cpp"/>
+      </node>
+      <node id="2327">
+        <label>cli_interface.cpp</label>
+        <link refid="cli__interface_8cpp"/>
+      </node>
+      <node id="2358">
+        <label>PySTLWrapper.cpp</label>
+        <link refid="_py_s_t_l_wrapper_8cpp"/>
+      </node>
+      <node id="2333">
+        <label>VinaCompatibleDockingEngine.cpp</label>
+        <link refid="_vina_compatible_docking_engine_8cpp"/>
+      </node>
+      <node id="2345">
+        <label>ReScorer.cpp</label>
+        <link refid="_re_scorer_8cpp"/>
+      </node>
+      <node id="2332">
+        <label>VinaCompatibleDockingEngine.h</label>
+        <link refid="_vina_compatible_docking_engine_8h"/>
+        <childnode refid="2333" relation="include">
+        </childnode>
+      </node>
+      <node id="2331">
+        <label>MDStyleDockingEngine.cpp</label>
+        <link refid="_m_d_style_docking_engine_8cpp"/>
+      </node>
+      <node id="2328">
+        <label>main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+      <node id="2353">
+        <label>Molecule.cpp</label>
+        <link refid="_molecule_8cpp"/>
+      </node>
+      <node id="2336">
+        <label>ScoringFunctionFactory.cpp</label>
+        <link refid="_scoring_function_factory_8cpp"/>
+      </node>
+      <node id="2344">
+        <label>ReScorer.h</label>
+        <link refid="_re_scorer_8h"/>
+        <childnode refid="2345" relation="include">
+        </childnode>
+        <childnode refid="2346" relation="include">
+        </childnode>
+      </node>
+      <node id="2359">
+        <label>Structure.cpp</label>
+        <link refid="_structure_8cpp"/>
+      </node>
+      <node id="2346">
+        <label>PyUtilities.cpp</label>
+        <link refid="_py_utilities_8cpp"/>
+      </node>
+      <node id="2339">
+        <label>PoseRefiner.cpp</label>
+        <link refid="_pose_refiner_8cpp"/>
+      </node>
+      <node id="2324">
+        <label>AbstractDockingEngine.h</label>
+        <link refid="_abstract_docking_engine_8h"/>
+        <childnode refid="2325" relation="include">
+        </childnode>
+        <childnode refid="2330" relation="include">
+        </childnode>
+        <childnode refid="2332" relation="include">
+        </childnode>
+      </node>
+      <node id="2349">
+        <label>DockingResult.h</label>
+        <link refid="_docking_result_8h"/>
+        <childnode refid="2324" relation="include">
+        </childnode>
+        <childnode refid="2350" relation="include">
+        </childnode>
+        <childnode refid="2351" relation="include">
+        </childnode>
+        <childnode refid="2329" relation="include">
+        </childnode>
+        <childnode refid="2347" relation="include">
+        </childnode>
+      </node>
+      <node id="2326">
+        <label>ConformerRigidDockingEngine.cpp</label>
+        <link refid="_conformer_rigid_docking_engine_8cpp"/>
+      </node>
+      <node id="2335">
+        <label>GradientDescentLineSearch.cpp</label>
+        <link refid="_gradient_descent_line_search_8cpp"/>
+      </node>
+      <node id="2352">
+        <label>DockingResultPrinter.cpp</label>
+        <link refid="_docking_result_printer_8cpp"/>
+      </node>
+      <node id="2322">
+        <label>Structure.h</label>
+        <link refid="_structure_8h"/>
+        <childnode refid="2323" relation="include">
+        </childnode>
+        <childnode refid="2348" relation="include">
+        </childnode>
+        <childnode refid="2359" relation="include">
+        </childnode>
+      </node>
+      <node id="2348">
+        <label>Molecule.h</label>
+        <link refid="_molecule_8h"/>
+        <childnode refid="2349" relation="include">
+        </childnode>
+        <childnode refid="2324" relation="include">
+        </childnode>
+        <childnode refid="2325" relation="include">
+        </childnode>
+        <childnode refid="2334" relation="include">
+        </childnode>
+        <childnode refid="2330" relation="include">
+        </childnode>
+        <childnode refid="2338" relation="include">
+        </childnode>
+        <childnode refid="2341" relation="include">
+        </childnode>
+        <childnode refid="2353" relation="include">
+        </childnode>
+        <childnode refid="2354" relation="include">
+        </childnode>
+        <childnode refid="2356" relation="include">
+        </childnode>
+        <childnode refid="2344" relation="include">
+        </childnode>
+        <childnode refid="2327" relation="include">
+        </childnode>
+        <childnode refid="2328" relation="include">
+        </childnode>
+        <childnode refid="2329" relation="include">
+        </childnode>
+        <childnode refid="2358" relation="include">
+        </childnode>
+        <childnode refid="2347" relation="include">
+        </childnode>
+        <childnode refid="2340" relation="include">
+        </childnode>
+      </node>
+      <node id="2355">
+        <label>IntermediateConformerCollector.cpp</label>
+        <link refid="_intermediate_conformer_collector_8cpp"/>
+      </node>
+      <node id="2356">
+        <label>PDBWriter.h</label>
+        <link refid="_p_d_b_writer_8h"/>
+        <childnode refid="2354" relation="include">
+        </childnode>
+        <childnode refid="2357" relation="include">
+        </childnode>
+        <childnode refid="2327" relation="include">
+        </childnode>
+        <childnode refid="2328" relation="include">
+        </childnode>
+        <childnode refid="2346" relation="include">
+        </childnode>
+        <childnode refid="2340" relation="include">
+        </childnode>
+      </node>
+      <node id="2351">
+        <label>DockingResultPrinter.h</label>
+        <link refid="_docking_result_printer_8h"/>
+        <childnode refid="2352" relation="include">
+        </childnode>
+        <childnode refid="2328" relation="include">
+        </childnode>
+      </node>
+      <node id="2343">
+        <label>Protein.cpp</label>
+        <link refid="_protein_8cpp"/>
+      </node>
+      <node id="2337">
+        <label>VinaLikeRigidScoringFunction.cpp</label>
+        <link refid="_vina_like_rigid_scoring_function_8cpp"/>
+      </node>
+      <node id="2341">
+        <label>VinaLikeScoringFunction.h</label>
+        <link refid="_vina_like_scoring_function_8h"/>
+        <childnode refid="2336" relation="include">
+        </childnode>
+        <childnode refid="2342" relation="include">
+        </childnode>
+      </node>
+      <node id="2350">
+        <label>DockingResult.cpp</label>
+        <link refid="_docking_result_8cpp"/>
+      </node>
+      <node id="2329">
+        <label>PyEngine.cpp</label>
+        <link refid="_py_engine_8cpp"/>
+      </node>
+      <node id="2334">
+        <label>VinaLikeRigidScoringFunction.h</label>
+        <link refid="_vina_like_rigid_scoring_function_8h"/>
+        <childnode refid="2326" relation="include">
+        </childnode>
+        <childnode refid="2335" relation="include">
+        </childnode>
+        <childnode refid="2336" relation="include">
+        </childnode>
+        <childnode refid="2337" relation="include">
+        </childnode>
+        <childnode refid="2328" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_smol_dock_1_1_structure" prot="public">SmolDock::Structure</innerclass>
+    <innernamespace refid="namespace_smol_dock">SmolDock</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2018<sp/>Eliane<sp/>Briand</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>SmolDock.</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>SmolDock<sp/>is<sp/>free<sp/>software:<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or<sp/>modify</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>it<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>as<sp/>published<sp/>by</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>the<sp/>Free<sp/>Software<sp/>Foundation,<sp/>either<sp/>version<sp/>3<sp/>of<sp/>the<sp/>License,<sp/>or</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>(at<sp/>your<sp/>option)<sp/>any<sp/>later<sp/>version.</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>SmolDock<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>but<sp/>WITHOUT<sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE.<sp/><sp/>See<sp/>the</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>for<sp/>more<sp/>details.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>along<sp/>with<sp/>SmolDock.<sp/><sp/>If<sp/>not,<sp/>see<sp/>&lt;https://www.gnu.org/licenses/&gt;.</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>SMOLDOCK_STRUCTURE_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SMOLDOCK_STRUCTURE_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_smol_dock" kindref="compound">SmolDock</ref><sp/>{</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28" refid="class_smol_dock_1_1_structure" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_smol_dock_1_1_structure" kindref="compound">Structure</ref><sp/>{</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//SMOLDOCK_STRUCTURE_H</highlight></codeline>
+    </programlisting>
+    <location file="Structures/Structure.h"/>
+  </compounddef>
 </doxygen>

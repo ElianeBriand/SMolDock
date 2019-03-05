@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['writer',['writer',['../class_smol_dock_1_1_intermediate_conformer_collector.html#a2fc9343d0d285bef646d6ae5da619ad6',1,'SmolDock::IntermediateConformerCollector']]]
+  ['variant',['variant',['../namespace_smol_dock.html#af56992de619302df905180a481a4d993',1,'SmolDock::iConformer::variant()'],['../namespace_smol_dock.html#ac452f5ddb99ed5a703615f9c03337ddd',1,'SmolDock::iProtein::variant()'],['../class_smol_dock_1_1_atom.html#a0c54fdff29130e870237ba300a4e9d25',1,'SmolDock::Atom::variant()']]],
+  ['viconformers',['viConformers',['../class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine.html#a1db0509172face64ab20380bea166765',1,'SmolDock::Engine::ConformerRigidDockingEngine']]]
 ];

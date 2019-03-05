@@ -2,7 +2,10 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
   <compounddef id="class_smol_dock_1_1_heuristics_1_1_global_heuristic" kind="class" language="C++" prot="public" abstract="yes">
     <compoundname>SmolDock::Heuristics::GlobalHeuristic</compoundname>
+    <derivedcompoundref refid="class_smol_dock_1_1_heuristics_1_1_iterated_local_search" prot="public" virt="non-virtual">SmolDock::Heuristics::IteratedLocalSearch</derivedcompoundref>
+    <derivedcompoundref refid="class_smol_dock_1_1_heuristics_1_1_only_local" prot="public" virt="non-virtual">SmolDock::Heuristics::OnlyLocal</derivedcompoundref>
     <derivedcompoundref refid="class_smol_dock_1_1_heuristics_1_1_random_restart" prot="public" virt="non-virtual">SmolDock::Heuristics::RandomRestart</derivedcompoundref>
+    <derivedcompoundref refid="class_smol_dock_1_1_heuristics_1_1_simulated_annealing" prot="public" virt="non-virtual">SmolDock::Heuristics::SimulatedAnnealing</derivedcompoundref>
     <includes refid="_heuristic_interface_8h" local="no">HeuristicInterface.h</includes>
       <sectiondef kind="public-func">
       <memberdef kind="function" id="class_smol_dock_1_1_heuristics_1_1_global_heuristic_1acd4f8bbe6334ba93dcd4ea1d2a8c0d38" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
@@ -10,7 +13,10 @@
         <definition>virtual bool SmolDock::Heuristics::GlobalHeuristic::search</definition>
         <argsstring>()=0</argsstring>
         <name>search</name>
+        <reimplementedby refid="class_smol_dock_1_1_heuristics_1_1_simulated_annealing_1a1a354ad6f5b9055013ed27575450498f">search</reimplementedby>
+        <reimplementedby refid="class_smol_dock_1_1_heuristics_1_1_iterated_local_search_1ad7c6bf8bf2c8d3cde6cb6b1184ca5c4e">search</reimplementedby>
         <reimplementedby refid="class_smol_dock_1_1_heuristics_1_1_random_restart_1abfa7882757c070d876d94090520cef92">search</reimplementedby>
+        <reimplementedby refid="class_smol_dock_1_1_heuristics_1_1_only_local_1a4557f55ce09405eff013c07214cb4e10">search</reimplementedby>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -24,7 +30,10 @@
         <definition>virtual arma::mat SmolDock::Heuristics::GlobalHeuristic::getResultMatrix</definition>
         <argsstring>()=0</argsstring>
         <name>getResultMatrix</name>
+        <reimplementedby refid="class_smol_dock_1_1_heuristics_1_1_simulated_annealing_1aa1f98c673ff2152a626b3a718a6ab5d8">getResultMatrix</reimplementedby>
+        <reimplementedby refid="class_smol_dock_1_1_heuristics_1_1_iterated_local_search_1accf03ea78392f1ee429a3de0703f6957">getResultMatrix</reimplementedby>
         <reimplementedby refid="class_smol_dock_1_1_heuristics_1_1_random_restart_1a2397763517ca92a3552c84963998ab39">getResultMatrix</reimplementedby>
+        <reimplementedby refid="class_smol_dock_1_1_heuristics_1_1_only_local_1a94ab260025c6a850836f8645c6ac33d8">getResultMatrix</reimplementedby>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -52,24 +61,42 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="77">
-        <label>SmolDock::Heuristics::RandomRestart</label>
-        <link refid="class_smol_dock_1_1_heuristics_1_1_random_restart"/>
-        <childnode refid="76" relation="public-inheritance">
+      <node id="93">
+        <label>SmolDock::Heuristics::OnlyLocal</label>
+        <link refid="class_smol_dock_1_1_heuristics_1_1_only_local"/>
+        <childnode refid="91" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="76">
+      <node id="94">
+        <label>SmolDock::Heuristics::RandomRestart</label>
+        <link refid="class_smol_dock_1_1_heuristics_1_1_random_restart"/>
+        <childnode refid="91" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="91">
         <label>SmolDock::Heuristics::GlobalHeuristic</label>
         <link refid="class_smol_dock_1_1_heuristics_1_1_global_heuristic"/>
       </node>
+      <node id="95">
+        <label>SmolDock::Heuristics::SimulatedAnnealing</label>
+        <link refid="class_smol_dock_1_1_heuristics_1_1_simulated_annealing"/>
+        <childnode refid="91" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="92">
+        <label>SmolDock::Heuristics::IteratedLocalSearch</label>
+        <link refid="class_smol_dock_1_1_heuristics_1_1_iterated_local_search"/>
+        <childnode refid="91" relation="public-inheritance">
+        </childnode>
+      </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="78">
+      <node id="96">
         <label>SmolDock::Heuristics::GlobalHeuristic</label>
         <link refid="class_smol_dock_1_1_heuristics_1_1_global_heuristic"/>
       </node>
     </collaborationgraph>
-    <location file="Engines/GlobalHeuristics/HeuristicInterface.h" line="10" column="1" bodyfile="Engines/GlobalHeuristics/HeuristicInterface.h" bodystart="10" bodyend="19"/>
+    <location file="Engines/GlobalHeuristics/HeuristicInterface.h" line="10" column="1" bodyfile="Engines/GlobalHeuristics/HeuristicInterface.h" bodystart="10" bodyend="20"/>
     <listofallmembers>
       <member refid="class_smol_dock_1_1_heuristics_1_1_global_heuristic_1a1abc970d50c981e4df49833d4e7f0551" prot="public" virt="pure-virtual"><scope>SmolDock::Heuristics::GlobalHeuristic</scope><name>getResultMatrix</name></member>
       <member refid="class_smol_dock_1_1_heuristics_1_1_global_heuristic_1acd4f8bbe6334ba93dcd4ea1d2a8c0d38" prot="public" virt="pure-virtual"><scope>SmolDock::Heuristics::GlobalHeuristic</scope><name>search</name></member>

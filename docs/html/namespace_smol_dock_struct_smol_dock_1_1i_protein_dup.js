@@ -5,6 +5,7 @@ var namespace_smol_dock_struct_smol_dock_1_1i_protein_dup =
     [ "center_x", "namespace_smol_dock.html#a8e62b22e54589f2727b0743cf58a3551", null ],
     [ "center_y", "namespace_smol_dock.html#a834d2ab9d8580f255616a13a1af785c2", null ],
     [ "center_z", "namespace_smol_dock.html#a8b3ccbb789373d51a3889158167c3c9a", null ],
+    [ "radius", "namespace_smol_dock.html#a8d25c2921468821768f2bd81574d3bc8", null ],
     [ "type", "namespace_smol_dock.html#a8a9cecc0e9750baf8d7074fe64b4331d", null ],
     [ "variant", "namespace_smol_dock.html#ac452f5ddb99ed5a703615f9c03337ddd", null ],
     [ "x", "namespace_smol_dock.html#ae36a5b0f6996e54f9ce1f746a79e23f8", null ],

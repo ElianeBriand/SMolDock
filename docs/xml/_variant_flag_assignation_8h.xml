@@ -9,117 +9,117 @@
     <includedby refid="_variant_flag_assignation_8cpp" local="yes">VariantFlagAssignation.cpp</includedby>
     <includedby refid="_protein_8cpp" local="yes">Protein.cpp</includedby>
     <incdepgraph>
-      <node id="1860">
+      <node id="2389">
         <label>string</label>
       </node>
-      <node id="1865">
+      <node id="2394">
         <label>Structures/Atom.h</label>
         <link refid="_atom_8h"/>
-        <childnode refid="1855" relation="include">
+        <childnode refid="2384" relation="include">
         </childnode>
-        <childnode refid="1856" relation="include">
+        <childnode refid="2385" relation="include">
         </childnode>
-        <childnode refid="1858" relation="include">
+        <childnode refid="2387" relation="include">
         </childnode>
-        <childnode refid="1862" relation="include">
+        <childnode refid="2391" relation="include">
         </childnode>
-        <childnode refid="1866" relation="include">
+        <childnode refid="2395" relation="include">
         </childnode>
-        <childnode refid="1861" relation="include">
+        <childnode refid="2390" relation="include">
         </childnode>
       </node>
-      <node id="1864">
+      <node id="2393">
         <label>map</label>
       </node>
-      <node id="1857">
+      <node id="2386">
         <label>Structures/Common/PDBResidueVariantTable.h</label>
         <link refid="_p_d_b_residue_variant_table_8h"/>
-        <childnode refid="1858" relation="include">
+        <childnode refid="2387" relation="include">
         </childnode>
-        <childnode refid="1859" relation="include">
+        <childnode refid="2388" relation="include">
         </childnode>
-        <childnode refid="1855" relation="include">
+        <childnode refid="2384" relation="include">
         </childnode>
-        <childnode refid="1860" relation="include">
+        <childnode refid="2389" relation="include">
         </childnode>
-        <childnode refid="1861" relation="include">
+        <childnode refid="2390" relation="include">
         </childnode>
-        <childnode refid="1865" relation="include">
+        <childnode refid="2394" relation="include">
         </childnode>
       </node>
-      <node id="1861">
+      <node id="2390">
         <label>Structures/AminoAcid.h</label>
         <link refid="_amino_acid_8h"/>
-        <childnode refid="1860" relation="include">
+        <childnode refid="2389" relation="include">
         </childnode>
-        <childnode refid="1855" relation="include">
+        <childnode refid="2384" relation="include">
         </childnode>
-        <childnode refid="1858" relation="include">
+        <childnode refid="2387" relation="include">
         </childnode>
-        <childnode refid="1862" relation="include">
+        <childnode refid="2391" relation="include">
         </childnode>
-        <childnode refid="1859" relation="include">
+        <childnode refid="2388" relation="include">
         </childnode>
-        <childnode refid="1856" relation="include">
+        <childnode refid="2385" relation="include">
         </childnode>
-        <childnode refid="1863" relation="include">
+        <childnode refid="2392" relation="include">
         </childnode>
       </node>
-      <node id="1859">
+      <node id="2388">
         <label>tuple</label>
       </node>
-      <node id="1863">
+      <node id="2392">
         <label>Engines/Internals/iProtein.h</label>
         <link refid="i_protein_8h"/>
-        <childnode refid="1855" relation="include">
+        <childnode refid="2384" relation="include">
         </childnode>
-        <childnode refid="1856" relation="include">
+        <childnode refid="2385" relation="include">
         </childnode>
-        <childnode refid="1864" relation="include">
+        <childnode refid="2393" relation="include">
         </childnode>
       </node>
-      <node id="1855">
+      <node id="2384">
         <label>vector</label>
       </node>
-      <node id="1866">
+      <node id="2395">
         <label>iostream</label>
       </node>
-      <node id="1854">
+      <node id="2383">
         <label>VariantFlagAssignation.h</label>
         <link refid="_variant_flag_assignation_8h"/>
-        <childnode refid="1855" relation="include">
+        <childnode refid="2384" relation="include">
         </childnode>
-        <childnode refid="1856" relation="include">
+        <childnode refid="2385" relation="include">
         </childnode>
-        <childnode refid="1857" relation="include">
+        <childnode refid="2386" relation="include">
         </childnode>
-        <childnode refid="1865" relation="include">
+        <childnode refid="2394" relation="include">
         </childnode>
       </node>
-      <node id="1858">
+      <node id="2387">
         <label>set</label>
       </node>
-      <node id="1862">
+      <node id="2391">
         <label>algorithm</label>
       </node>
-      <node id="1856">
+      <node id="2385">
         <label>memory</label>
       </node>
     </incdepgraph>
     <invincdepgraph>
-      <node id="1868">
+      <node id="2397">
         <label>VariantFlagAssignation.cpp</label>
         <link refid="_variant_flag_assignation_8cpp"/>
       </node>
-      <node id="1867">
+      <node id="2396">
         <label>VariantFlagAssignation.h</label>
         <link refid="_variant_flag_assignation_8h"/>
-        <childnode refid="1868" relation="include">
+        <childnode refid="2397" relation="include">
         </childnode>
-        <childnode refid="1869" relation="include">
+        <childnode refid="2398" relation="include">
         </childnode>
       </node>
-      <node id="1869">
+      <node id="2398">
         <label>Protein.cpp</label>
         <link refid="_protein_8cpp"/>
       </node>
@@ -163,15 +163,16 @@
 <codeline lineno="31"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_smol_dock" kindref="compound">SmolDock</ref><sp/>{</highlight></codeline>
 <codeline lineno="32"><highlight class="normal"></highlight></codeline>
 <codeline lineno="33"><highlight class="normal"></highlight></codeline>
-<codeline lineno="34"><highlight class="normal"></highlight></codeline>
-<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespace_smol_dock_1a43bbd3ed0ad4b1eec9e5ae8d9d99318d" kindref="member">assignApolarCarbonFlag</ref>(std::vector&lt;Atom&gt;&amp;<sp/>atomVect);</highlight></codeline>
-<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespace_smol_dock_1a2820b77a3fd140cd601c75028ed8dd51" kindref="member">assignVariantFlagsForResidueAtom</ref>(AminoAcid&amp;<sp/>residue,<sp/><ref refid="namespace_smol_dock_1ab797122db8030eb70bf4d042c897df5e" kindref="member">PDBResidueVariantAssignationType</ref><sp/>assignation_type<sp/>=<sp/><ref refid="namespace_smol_dock_1ab797122db8030eb70bf4d042c897df5eab7f023dbb86242b37e451d0b36dde93d" kindref="member">PDBResidueVariantAssignationType::GeneralPurpose</ref>);</highlight></codeline>
-<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespace_smol_dock_1a43bbd3ed0ad4b1eec9e5ae8d9d99318d" kindref="member">assignApolarCarbonFlag</ref>(std::vector&lt;Atom&gt;<sp/>&amp;atomVect);</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespace_smol_dock_1a2820b77a3fd140cd601c75028ed8dd51" kindref="member">assignVariantFlagsForResidueAtom</ref>(AminoAcid<sp/>&amp;residue,</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespace_smol_dock_1ab797122db8030eb70bf4d042c897df5e" kindref="member">PDBResidueVariantAssignationType</ref><sp/>assignation_type<sp/>=<sp/><ref refid="namespace_smol_dock_1ab797122db8030eb70bf4d042c897df5eab7f023dbb86242b37e451d0b36dde93d" kindref="member">PDBResidueVariantAssignationType::GeneralPurpose</ref>);</highlight></codeline>
 <codeline lineno="38"><highlight class="normal"></highlight></codeline>
-<codeline lineno="39"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="41"><highlight class="normal"></highlight></codeline>
-<codeline lineno="42"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//SMOLDOCK_VARIANTFLAGASSIGNATION_H</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//SMOLDOCK_VARIANTFLAGASSIGNATION_H</highlight></codeline>
     </programlisting>
     <location file="Structures/Common/VariantFlagAssignation.h"/>
   </compounddef>

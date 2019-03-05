@@ -39,7 +39,7 @@ namespace SmolDock {
 
         unsigned int num_rotatable_bond;
 
-        iTranslation centroidNormalizingTransform; /*!< If the coordinate have been normalized so as to have the centroid
+        Eigen::Translation<double, 3> centroidNormalizingTransform; /*!< If the coordinate have been normalized so as to have the centroid
                                                         as [0,0,0], then this contain the translation that restore it to its original position,
                                                         aka the coordinate of the centroid (because |normalized> = |originalPos> - |centroidPos> )
                                                         Else it's just 0,0,0 */

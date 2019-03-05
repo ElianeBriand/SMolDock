@@ -6,84 +6,94 @@
     <includes local="no">ensmallen.hpp</includes>
     <includes local="no">boost/log/trivial.hpp</includes>
     <incdepgraph>
-      <node id="878">
+      <node id="1110">
         <label>OptimizerInterface.h</label>
         <link refid="_optimizer_interface_8h"/>
-        <childnode refid="870" relation="include">
+        <childnode refid="1100" relation="include">
         </childnode>
       </node>
-      <node id="876">
+      <node id="1106">
         <label>cmath</label>
       </node>
-      <node id="877">
+      <node id="1107">
         <label>cassert</label>
       </node>
-      <node id="869">
+      <node id="1108">
+        <label>Eigen/Core</label>
+      </node>
+      <node id="1099">
         <label>Engines/ScoringFunctions/ScoringFunctionInterface.h</label>
         <link refid="_scoring_function_interface_8h"/>
-        <childnode refid="870" relation="include">
+        <childnode refid="1100" relation="include">
         </childnode>
-        <childnode refid="871" relation="include">
+        <childnode refid="1101" relation="include">
         </childnode>
       </node>
-      <node id="871">
+      <node id="1101">
         <label>Engines/Internals/iConformer.h</label>
         <link refid="i_conformer_8h"/>
-        <childnode refid="872" relation="include">
+        <childnode refid="1102" relation="include">
         </childnode>
-        <childnode refid="873" relation="include">
+        <childnode refid="1103" relation="include">
         </childnode>
-        <childnode refid="874" relation="include">
+        <childnode refid="1104" relation="include">
         </childnode>
       </node>
-      <node id="870">
+      <node id="1100">
         <label>armadillo</label>
       </node>
-      <node id="880">
+      <node id="1112">
         <label>boost/log/trivial.hpp</label>
       </node>
-      <node id="874">
+      <node id="1109">
+        <label>Eigen/Dense</label>
+      </node>
+      <node id="1104">
         <label>iTransform.h</label>
         <link refid="i_transform_8h"/>
-        <childnode refid="872" relation="include">
+        <childnode refid="1102" relation="include">
         </childnode>
-        <childnode refid="873" relation="include">
+        <childnode refid="1103" relation="include">
         </childnode>
-        <childnode refid="875" relation="include">
+        <childnode refid="1105" relation="include">
         </childnode>
-        <childnode refid="876" relation="include">
+        <childnode refid="1106" relation="include">
         </childnode>
-        <childnode refid="877" relation="include">
+        <childnode refid="1107" relation="include">
+        </childnode>
+        <childnode refid="1108" relation="include">
+        </childnode>
+        <childnode refid="1109" relation="include">
         </childnode>
       </node>
-      <node id="872">
+      <node id="1102">
         <label>vector</label>
       </node>
-      <node id="875">
+      <node id="1105">
         <label>array</label>
       </node>
-      <node id="868">
+      <node id="1098">
         <label>L_BFGS.h</label>
         <link refid="_l___b_f_g_s_8h"/>
-        <childnode refid="869" relation="include">
+        <childnode refid="1099" relation="include">
         </childnode>
-        <childnode refid="878" relation="include">
+        <childnode refid="1110" relation="include">
         </childnode>
       </node>
-      <node id="867">
+      <node id="1097">
         <label>L_BFGS.cpp</label>
         <link refid="_l___b_f_g_s_8cpp"/>
-        <childnode refid="868" relation="include">
+        <childnode refid="1098" relation="include">
         </childnode>
-        <childnode refid="879" relation="include">
+        <childnode refid="1111" relation="include">
         </childnode>
-        <childnode refid="880" relation="include">
+        <childnode refid="1112" relation="include">
         </childnode>
       </node>
-      <node id="873">
+      <node id="1103">
         <label>memory</label>
       </node>
-      <node id="879">
+      <node id="1111">
         <label>ensmallen.hpp</label>
       </node>
     </incdepgraph>
@@ -126,7 +136,7 @@
 <codeline lineno="31"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_smol_dock_1_1_optimizer" kindref="compound">SmolDock::Optimizer</ref><sp/>{</highlight></codeline>
 <codeline lineno="32"><highlight class="normal"></highlight></codeline>
 <codeline lineno="33"><highlight class="normal"></highlight></codeline>
-<codeline lineno="34" refid="class_smol_dock_1_1_optimizer_1_1_l___b_f_g_s_1a0df667e4e5b369f20fa0f4de11ed7836" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_optimizer_1_1_l___b_f_g_s_1a0df667e4e5b369f20fa0f4de11ed7836" kindref="member">L_BFGS::L_BFGS</ref>(<ref refid="class_smol_dock_1_1_score_1_1_scoring_function" kindref="compound">Score::ScoringFunction</ref><sp/>*scoringFunc_,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>maxIteration_)<sp/>:</highlight></codeline>
+<codeline lineno="34" refid="class_smol_dock_1_1_optimizer_1_1_l___b_f_g_s_1a0df667e4e5b369f20fa0f4de11ed7836" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_optimizer_1_1_l___b_f_g_s_1a0df667e4e5b369f20fa0f4de11ed7836" kindref="member">L_BFGS::L_BFGS</ref>(<ref refid="class_smol_dock_1_1_score_1_1_scoring_function" kindref="compound">Score::ScoringFunction</ref>*<sp/>scoringFunc_,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>maxIteration_)<sp/>:</highlight></codeline>
 <codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>scoringFunction(scoringFunc_),<sp/>maxIteration(maxIteration_),</highlight></codeline>
 <codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>result(scoringFunc_-&gt;getParamVectorDimension(),<sp/>1,<sp/>arma::fill::zeros),</highlight></codeline>
 <codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>score(0.0)<sp/>{</highlight></codeline>
@@ -137,9 +147,9 @@
 <codeline lineno="42"><highlight class="normal"></highlight></codeline>
 <codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespace_smol_dock_1_1_optimizer_1a7ed1dc6878a606b8dcca7558383650cea2bd34449cf1656ea5ea723145f03c127" kindref="member">ens::L_BFGS</ref><sp/>lbfgs;</highlight></codeline>
 <codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>lbfgs.MaxIterations()<sp/>=<sp/>this-&gt;<ref refid="class_smol_dock_1_1_optimizer_1_1_l___b_f_g_s_1ab6d9dfa86c156e2999cde60fa48688bf" kindref="member">maxIteration</ref>;</highlight></codeline>
-<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>lbfgs.MinGradientNorm()<sp/>=<sp/>1e-5;</highlight></codeline>
-<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>lbfgs.Factr()<sp/>=<sp/>1e-6;</highlight></codeline>
-<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>lbfgs.MinStep()<sp/>=<sp/>1e-7;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>lbfgs.MinGradientNorm()<sp/>=<sp/>1e-4;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>lbfgs.Factr()<sp/>=<sp/>1e-4;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>lbfgs.MinStep()<sp/>=<sp/>1e-5;</highlight></codeline>
 <codeline lineno="48"><highlight class="normal"></highlight></codeline>
 <codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>lbfgs.Optimize(*this-&gt;<ref refid="class_smol_dock_1_1_optimizer_1_1_l___b_f_g_s_1ad517eac106ffad742e71e9191f3f82c4" kindref="member">scoringFunction</ref>,<sp/>startingPoint);</highlight></codeline>
 <codeline lineno="50"><highlight class="normal"></highlight></codeline>
@@ -147,6 +157,7 @@
 <codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="class_smol_dock_1_1_optimizer_1_1_l___b_f_g_s_1a63a3f0b953614d1dfd8ea7ba59d92efc" kindref="member">result</ref><sp/>=<sp/>startingPoint;</highlight></codeline>
 <codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="class_smol_dock_1_1_optimizer_1_1_l___b_f_g_s_1ab4ff4104e0300008225d26b195e24ad8" kindref="member">score</ref><sp/>=<sp/>this-&gt;<ref refid="class_smol_dock_1_1_optimizer_1_1_l___b_f_g_s_1ad517eac106ffad742e71e9191f3f82c4" kindref="member">scoringFunction</ref>-&gt;<ref refid="class_smol_dock_1_1_score_1_1_scoring_function_1a92b9b5f6d23b07740dd9f6718207d31a" kindref="member">Evaluate</ref>(startingPoint);</highlight></codeline>
 <codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//*</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_LOG_TRIVIAL(debug)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;LBFGS:<sp/>x<sp/>=<sp/><sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>startingPoint.t();</highlight></codeline>
 <codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_LOG_TRIVIAL(debug)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;LBFGS:<sp/>f(x)<sp/>=<sp/><sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>this-&gt;<ref refid="class_smol_dock_1_1_optimizer_1_1_l___b_f_g_s_1ab4ff4104e0300008225d26b195e24ad8" kindref="member">score</ref>;</highlight></codeline>
 <codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//*/</highlight><highlight class="normal"></highlight></codeline>

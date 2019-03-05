@@ -36,8 +36,8 @@ namespace SmolDock::Heuristics {
     extern HeuristicParameters emptyParameters;
 
     std::shared_ptr<GlobalHeuristic> globalHeuristicFactory(GlobalHeuristicType t,
-                                                            Score::ScoringFunction *scorFunc,
-                                                            Optimizer::Optimizer *localOptimizer,
+                                                            Score::ScoringFunction* scorFunc,
+                                                            Optimizer::Optimizer* localOptimizer,
                                                             unsigned int rng_seed,
                                                             HeuristicParameters parameters);
 

@@ -99,7 +99,11 @@ $(document).ready(function(){initNavTree('_internals_utility_functions_8h.html',
 <div class="title">InternalsUtilityFunctions.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="i_conformer_8h_source.html">iConformer.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &lt;iostream&gt;</code><br />
+<code>#include &lt;cmath&gt;</code><br />
+<code>#include &lt;Eigen/Core&gt;</code><br />
+<code>#include &lt;Eigen/Dense&gt;</code><br />
+<code>#include &quot;<a class="el" href="i_conformer_8h_source.html">iConformer.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="i_transform_8h_source.html">iTransform.h</a>&quot;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for InternalsUtilityFunctions.h:</div>
@@ -108,8 +112,8 @@ $(document).ready(function(){initNavTree('_internals_utility_functions_8h.html',
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="_internals_utility_functions_8h__incl.png" border="0" usemap="#_internals_utility_functions_8h" alt=""/></div>
 <map name="_internals_utility_functions_8h" id="_internals_utility_functions_8h">
-<area shape="rect" id="node2" href="i_conformer_8h.html" title="iConformer.h" alt="" coords="71,80,169,107"/>
-<area shape="rect" id="node5" href="i_transform_8h.html" title="iTransform.h" alt="" coords="159,155,254,181"/>
+<area shape="rect" id="node6" href="i_conformer_8h.html" title="iConformer.h" alt="" coords="377,80,474,107"/>
+<area shape="rect" id="node9" href="i_transform_8h.html" title="iTransform.h" alt="" coords="306,155,401,181"/>
 </map>
 </div>
 </div><div class="textblock"><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -121,9 +125,11 @@ $(document).ready(function(){initNavTree('_internals_utility_functions_8h.html',
 <map name="_internals_utility_functions_8hdep" id="_internals_utility_functions_8hdep">
 <area shape="rect" id="node2" href="_conformer_rigid_docking_engine_8cpp.html" title="ConformerRigidDockingEngine.cpp" alt="" coords="5,80,232,107"/>
 <area shape="rect" id="node3" href="_gradient_descent_line_search_8cpp.html" title="GradientDescentLineSearch.cpp" alt="" coords="256,80,467,107"/>
-<area shape="rect" id="node4" href="_vina_like_scoring_function_8cpp.html" title="VinaLikeScoringFunction.cpp" alt="" coords="491,80,682,107"/>
-<area shape="rect" id="node5" href="_re_scorer_8cpp.html" title="ReScorer.cpp" alt="" coords="706,80,809,107"/>
-<area shape="rect" id="node6" href="main_8cpp.html" title="main.cpp" alt="" coords="833,80,908,107"/>
+<area shape="rect" id="node4" href="_pose_refiner_8cpp.html" title="PoseRefiner.cpp" alt="" coords="490,80,609,107"/>
+<area shape="rect" id="node5" href="_vina_like_rigid_scoring_function_8cpp.html" title="VinaLikeRigidScoringFunction.cpp" alt="" coords="633,80,855,107"/>
+<area shape="rect" id="node6" href="_vina_like_scoring_function_8cpp.html" title="VinaLikeScoringFunction.cpp" alt="" coords="879,80,1070,107"/>
+<area shape="rect" id="node7" href="_re_scorer_8cpp.html" title="ReScorer.cpp" alt="" coords="1094,80,1197,107"/>
+<area shape="rect" id="node8" href="main_8cpp.html" title="main.cpp" alt="" coords="1221,80,1296,107"/>
 </map>
 </div>
 </div>
@@ -137,44 +143,44 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a44a91384d128c3beb5c57ec507dddb6e"><td class="memItemLeft" align="right" valign="top">iQuaternion&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_smol_dock.html#a44a91384d128c3beb5c57ec507dddb6e">SmolDock::iQuaternionIdentityInit</a> ()</td></tr>
-<tr class="separator:a44a91384d128c3beb5c57ec507dddb6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b9f944b7ca507663d00cc948f0b90c7"><td class="memItemLeft" align="right" valign="top">Eigen::Quaternion&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_smol_dock.html#a4b9f944b7ca507663d00cc948f0b90c7">SmolDock::QuaternionIdentityInit</a> ()</td></tr>
+<tr class="separator:a4b9f944b7ca507663d00cc948f0b90c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3974d1e3a6f729a7ca05b97996ca2079"><td class="memItemLeft" align="right" valign="top">iTransform&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_smol_dock.html#a3974d1e3a6f729a7ca05b97996ca2079">SmolDock::iTransformIdentityInit</a> ()</td></tr>
-<tr class="memdesc:a3974d1e3a6f729a7ca05b97996ca2079"><td class="mdescLeft">&#160;</td><td class="mdescRight">Holds a gradient for the score function with regard to an <a class="el" href="namespace_smol_dock.html#struct_smol_dock_1_1i_transform" title="Represents a rotation and translation transform to be applied on ligand/ligand part. ">iTransform</a>.  <a href="namespace_smol_dock.html#a3974d1e3a6f729a7ca05b97996ca2079">More...</a><br /></td></tr>
+<tr class="memdesc:a3974d1e3a6f729a7ca05b97996ca2079"><td class="mdescLeft">&#160;</td><td class="mdescRight">Holds a gradient for the score function with regard to an <a class="el" href="namespace_smol_dock.html#struct_smol_dock_1_1i_transform" title="Represents a rotation. ">iTransform</a>.  <a href="namespace_smol_dock.html#a3974d1e3a6f729a7ca05b97996ca2079">More...</a><br /></td></tr>
 <tr class="separator:a3974d1e3a6f729a7ca05b97996ca2079"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a835c8bf0a7983ba17c48cd10f152726f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_smol_dock.html#a835c8bf0a7983ba17c48cd10f152726f">SmolDock::applyRotationInPlace</a> (iVect &amp;vec, const iQuaternion &amp;qt)</td></tr>
-<tr class="memdesc:a835c8bf0a7983ba17c48cd10f152726f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply the rotation given by a quaternion to a vector.  <a href="namespace_smol_dock.html#a835c8bf0a7983ba17c48cd10f152726f">More...</a><br /></td></tr>
-<tr class="separator:a835c8bf0a7983ba17c48cd10f152726f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a65d30b0d0a54dad29b43fc9acfbf6570"><td class="memItemLeft" align="right" valign="top">iVect&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_smol_dock.html#a65d30b0d0a54dad29b43fc9acfbf6570">SmolDock::applyRotation</a> (const iVect &amp;v, const iQuaternion &amp;qt)</td></tr>
-<tr class="memdesc:a65d30b0d0a54dad29b43fc9acfbf6570"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply the rotation given by a quaternion to a vector.  <a href="namespace_smol_dock.html#a65d30b0d0a54dad29b43fc9acfbf6570">More...</a><br /></td></tr>
-<tr class="separator:a65d30b0d0a54dad29b43fc9acfbf6570"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a20628b953f3dec7f26d7c8221a508160"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_smol_dock.html#a20628b953f3dec7f26d7c8221a508160">SmolDock::applyTranslationInPlace</a> (iVect &amp;v, const iTranslation &amp;t)</td></tr>
-<tr class="memdesc:a20628b953f3dec7f26d7c8221a508160"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply the provided translation to a vector.  <a href="namespace_smol_dock.html#a20628b953f3dec7f26d7c8221a508160">More...</a><br /></td></tr>
-<tr class="separator:a20628b953f3dec7f26d7c8221a508160"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a293a24f2936d34c0b73f8ef8b2d8d84b"><td class="memItemLeft" align="right" valign="top">iVect&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_smol_dock.html#a293a24f2936d34c0b73f8ef8b2d8d84b">SmolDock::applyTranslation</a> (const iVect &amp;v, const iTranslation &amp;t)</td></tr>
-<tr class="memdesc:a293a24f2936d34c0b73f8ef8b2d8d84b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply the provided translation to a vector.  <a href="namespace_smol_dock.html#a293a24f2936d34c0b73f8ef8b2d8d84b">More...</a><br /></td></tr>
-<tr class="separator:a293a24f2936d34c0b73f8ef8b2d8d84b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a73bb4756419c2b3361ae4d23b24eee20"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_smol_dock.html#a73bb4756419c2b3361ae4d23b24eee20">SmolDock::applyTransformInPlace</a> (iVect &amp;v, const iTransform &amp;tr)</td></tr>
-<tr class="memdesc:a73bb4756419c2b3361ae4d23b24eee20"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply the provided <a class="el" href="namespace_smol_dock.html#struct_smol_dock_1_1i_transform" title="Represents a rotation and translation transform to be applied on ligand/ligand part. ">iTransform</a> to a vector.  <a href="namespace_smol_dock.html#a73bb4756419c2b3361ae4d23b24eee20">More...</a><br /></td></tr>
-<tr class="separator:a73bb4756419c2b3361ae4d23b24eee20"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a19b5383f74c017874f93a6dcc8a1d508"><td class="memItemLeft" align="right" valign="top">iVect&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_smol_dock.html#a19b5383f74c017874f93a6dcc8a1d508">SmolDock::applyTransform</a> (const iVect &amp;v, const iTransform &amp;tr)</td></tr>
-<tr class="memdesc:a19b5383f74c017874f93a6dcc8a1d508"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply the provided <a class="el" href="namespace_smol_dock.html#struct_smol_dock_1_1i_transform" title="Represents a rotation and translation transform to be applied on ligand/ligand part. ">iTransform</a> to a vector.  <a href="namespace_smol_dock.html#a19b5383f74c017874f93a6dcc8a1d508">More...</a><br /></td></tr>
-<tr class="separator:a19b5383f74c017874f93a6dcc8a1d508"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0efd7dc9b004d55d9d1548b192b3ec96"><td class="memItemLeft" align="right" valign="top">iTransform&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_smol_dock.html#a0efd7dc9b004d55d9d1548b192b3ec96">SmolDock::iTransformIdentityInit</a> (unsigned int num_rot_bond)</td></tr>
+<tr class="separator:a0efd7dc9b004d55d9d1548b192b3ec96"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af5a49bb3ce9aad3b282b4ee4d24e9793"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_smol_dock.html#af5a49bb3ce9aad3b282b4ee4d24e9793">SmolDock::applyRotationInPlace</a> (Eigen::Vector3d &amp;vec, const Eigen::Quaternion&lt; double &gt; &amp;qt)</td></tr>
+<tr class="memdesc:af5a49bb3ce9aad3b282b4ee4d24e9793"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply the rotation given by a quaternion to a three positional coordinate.  <a href="namespace_smol_dock.html#af5a49bb3ce9aad3b282b4ee4d24e9793">More...</a><br /></td></tr>
+<tr class="separator:af5a49bb3ce9aad3b282b4ee4d24e9793"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa0ec22430362e4168acccb62b6efb254"><td class="memItemLeft" align="right" valign="top">Eigen::Vector3d&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_smol_dock.html#aa0ec22430362e4168acccb62b6efb254">SmolDock::applyRotation</a> (const Eigen::Vector3d &amp;vec, const Eigen::Quaternion&lt; double &gt; &amp;qt)</td></tr>
+<tr class="memdesc:aa0ec22430362e4168acccb62b6efb254"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply the rotation given by a quaternion to a vector.  <a href="namespace_smol_dock.html#aa0ec22430362e4168acccb62b6efb254">More...</a><br /></td></tr>
+<tr class="separator:aa0ec22430362e4168acccb62b6efb254"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71600710b10973404c6e2c57508cb3c7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_smol_dock.html#a71600710b10973404c6e2c57508cb3c7">SmolDock::applyTranslationInPlace</a> (Eigen::Vector3d &amp;v, const Eigen::Vector3d &amp;t)</td></tr>
+<tr class="memdesc:a71600710b10973404c6e2c57508cb3c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply the provided translation to a vector.  <a href="namespace_smol_dock.html#a71600710b10973404c6e2c57508cb3c7">More...</a><br /></td></tr>
+<tr class="separator:a71600710b10973404c6e2c57508cb3c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac75ddcfc08c2e1ba215589c6fd844cff"><td class="memItemLeft" align="right" valign="top">Eigen::Vector3d&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_smol_dock.html#ac75ddcfc08c2e1ba215589c6fd844cff">SmolDock::applyTranslation</a> (const Eigen::Vector3d &amp;v, const Eigen::Translation&lt; double, 3 &gt; &amp;t)</td></tr>
+<tr class="memdesc:ac75ddcfc08c2e1ba215589c6fd844cff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply the provided translation to a vector.  <a href="namespace_smol_dock.html#ac75ddcfc08c2e1ba215589c6fd844cff">More...</a><br /></td></tr>
+<tr class="separator:ac75ddcfc08c2e1ba215589c6fd844cff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a05fa7c1e1e1323710cbf76fad3030c3d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_smol_dock.html#a05fa7c1e1e1323710cbf76fad3030c3d">SmolDock::normalizeQuaternionInPlace</a> (Eigen::Quaternion&lt; double &gt; &amp;quat)</td></tr>
+<tr class="memdesc:a05fa7c1e1e1323710cbf76fad3030c3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Normalize a quaternion (which then has norm == 1.0)  <a href="namespace_smol_dock.html#a05fa7c1e1e1323710cbf76fad3030c3d">More...</a><br /></td></tr>
+<tr class="separator:a05fa7c1e1e1323710cbf76fad3030c3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1843982e01fb9a9b852c5f64363a158c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_smol_dock.html#a1843982e01fb9a9b852c5f64363a158c">SmolDock::applyBondRotationInPlace</a> (<a class="el" href="namespace_smol_dock.html#struct_smol_dock_1_1i_conformer">SmolDock::iConformer</a> &amp;conformer, const iTransform &amp;tr)</td></tr>
+<tr class="separator:a1843982e01fb9a9b852c5f64363a158c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea0b5b0a06c4650f4ca502a3f1da6e98"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_smol_dock.html#aea0b5b0a06c4650f4ca502a3f1da6e98">SmolDock::applyRigidTransformInPlace</a> (Eigen::Vector3d &amp;v, const iTransform &amp;tr)</td></tr>
+<tr class="memdesc:aea0b5b0a06c4650f4ca502a3f1da6e98"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply the provided <a class="el" href="namespace_smol_dock.html#struct_smol_dock_1_1i_transform" title="Represents a rotation. ">iTransform</a> to a vector (only rigid component : translation + global rotation)  <a href="namespace_smol_dock.html#aea0b5b0a06c4650f4ca502a3f1da6e98">More...</a><br /></td></tr>
+<tr class="separator:aea0b5b0a06c4650f4ca502a3f1da6e98"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23db46469f6ec19aaf0c9b8e62f479ed"><td class="memItemLeft" align="right" valign="top">Eigen::Vector3d&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_smol_dock.html#a23db46469f6ec19aaf0c9b8e62f479ed">SmolDock::applyRigidTransform</a> (const Eigen::Vector3d &amp;v, const iTransform &amp;tr)</td></tr>
+<tr class="memdesc:a23db46469f6ec19aaf0c9b8e62f479ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply the provided <a class="el" href="namespace_smol_dock.html#struct_smol_dock_1_1i_transform" title="Represents a rotation. ">iTransform</a> to a vector( only rigid component : translation + global rotation)  <a href="namespace_smol_dock.html#a23db46469f6ec19aaf0c9b8e62f479ed">More...</a><br /></td></tr>
+<tr class="separator:a23db46469f6ec19aaf0c9b8e62f479ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb45c011ac7f85cbd394e9318f89289a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_smol_dock.html#aeb45c011ac7f85cbd394e9318f89289a">SmolDock::applyRigidTransformInPlace</a> (<a class="el" href="namespace_smol_dock.html#struct_smol_dock_1_1i_conformer">SmolDock::iConformer</a> &amp;conformer, const iTransform &amp;tr)</td></tr>
+<tr class="memdesc:aeb45c011ac7f85cbd394e9318f89289a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply the provided <a class="el" href="namespace_smol_dock.html#struct_smol_dock_1_1i_transform" title="Represents a rotation. ">iTransform</a> to a confomer, atom-by-atom (only rigid component : translation + global rotation)  <a href="namespace_smol_dock.html#aeb45c011ac7f85cbd394e9318f89289a">More...</a><br /></td></tr>
+<tr class="separator:aeb45c011ac7f85cbd394e9318f89289a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afd058af9bf8a2fa90a0ec7bf42c31e31"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_smol_dock.html#afd058af9bf8a2fa90a0ec7bf42c31e31">SmolDock::applyTransformInPlace</a> (<a class="el" href="namespace_smol_dock.html#struct_smol_dock_1_1i_conformer">SmolDock::iConformer</a> &amp;conformer, const iTransform &amp;tr)</td></tr>
-<tr class="memdesc:afd058af9bf8a2fa90a0ec7bf42c31e31"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply the provided <a class="el" href="namespace_smol_dock.html#struct_smol_dock_1_1i_transform" title="Represents a rotation and translation transform to be applied on ligand/ligand part. ">iTransform</a> to a confomer, atom-by-atom.  <a href="namespace_smol_dock.html#afd058af9bf8a2fa90a0ec7bf42c31e31">More...</a><br /></td></tr>
 <tr class="separator:afd058af9bf8a2fa90a0ec7bf42c31e31"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afb62962c202721eaa8aa64d19bd42fdf"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_smol_dock.html#afb62962c202721eaa8aa64d19bd42fdf">SmolDock::quaternionNorm</a> (const iQuaternion &amp;quat)</td></tr>
-<tr class="memdesc:afb62962c202721eaa8aa64d19bd42fdf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the norm of the given quaternion.  <a href="namespace_smol_dock.html#afb62962c202721eaa8aa64d19bd42fdf">More...</a><br /></td></tr>
-<tr class="separator:afb62962c202721eaa8aa64d19bd42fdf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aba87815fd70c1b451b7ba905790ecef3"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_smol_dock.html#aba87815fd70c1b451b7ba905790ecef3">SmolDock::vectorNorm</a> (iVect v)</td></tr>
-<tr class="memdesc:aba87815fd70c1b451b7ba905790ecef3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the norm of the given vector.  <a href="namespace_smol_dock.html#aba87815fd70c1b451b7ba905790ecef3">More...</a><br /></td></tr>
-<tr class="separator:aba87815fd70c1b451b7ba905790ecef3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeef66e92064c4a5e5102102342542853"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_smol_dock.html#aeef66e92064c4a5e5102102342542853">SmolDock::normalizeQuaternionInPlace</a> (iQuaternion &amp;quat)</td></tr>
-<tr class="memdesc:aeef66e92064c4a5e5102102342542853"><td class="mdescLeft">&#160;</td><td class="mdescRight">Normalize a quaternion (which then has norm == 1.0)  <a href="namespace_smol_dock.html#aeef66e92064c4a5e5102102342542853">More...</a><br /></td></tr>
-<tr class="separator:aeef66e92064c4a5e5102102342542853"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:addb7785924a5380574728cfd0978d8f0"><td class="memItemLeft" align="right" valign="top">iQuaternion&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_smol_dock.html#addb7785924a5380574728cfd0978d8f0">SmolDock::normalizeQuaternion</a> (const iQuaternion &amp;quat)</td></tr>
-<tr class="memdesc:addb7785924a5380574728cfd0978d8f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Normalize a quaternion (which then has norm == 1.0)  <a href="namespace_smol_dock.html#addb7785924a5380574728cfd0978d8f0">More...</a><br /></td></tr>
-<tr class="separator:addb7785924a5380574728cfd0978d8f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad482fa7b49d3fa273b4baeef6f915589"><td class="memItemLeft" align="right" valign="top">Eigen::Quaternion&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_smol_dock.html#ad482fa7b49d3fa273b4baeef6f915589">SmolDock::normalizeQuaternion</a> (const Eigen::Quaternion&lt; double &gt; &amp;quat)</td></tr>
+<tr class="memdesc:ad482fa7b49d3fa273b4baeef6f915589"><td class="mdescLeft">&#160;</td><td class="mdescRight">Normalize a quaternion (which then has norm == 1.0)  <a href="namespace_smol_dock.html#ad482fa7b49d3fa273b4baeef6f915589">More...</a><br /></td></tr>
+<tr class="separator:ad482fa7b49d3fa273b4baeef6f915589"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->

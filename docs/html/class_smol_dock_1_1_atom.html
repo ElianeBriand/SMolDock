@@ -96,6 +96,7 @@ $(document).ready(function(){initNavTree('class_smol_dock_1_1_atom.html','');});
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="#pub-static-attribs">Static Public Attributes</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="#pri-static-attribs">Static Private Attributes</a> &#124;
@@ -118,12 +119,13 @@ $(document).ready(function(){initNavTree('class_smol_dock_1_1_atom.html','');});
 <div class="center"><img src="class_smol_dock_1_1_atom__coll__graph.png" border="0" usemap="#_smol_dock_1_1_atom_coll__map" alt="Collaboration graph"/></div>
 <map name="_smol_dock_1_1_atom_coll__map" id="_smol_dock_1_1_atom_coll__map">
 <area shape="rect" id="node2" title="STL class. " alt="" coords="29,505,109,583"/>
-<area shape="rect" id="node8" href="class_smol_dock_1_1_amino_acid.html" title="{SmolDock::AminoAcid\n|&#45; type\l&#45; AAId\l|+ AminoAcid()\l+ AminoAcid()\l+ getAAId()\l+ setAAId()\l+ filliProtein()\l+ getType()\l+ setType()\l}" alt="" coords="306,767,461,947"/>
+<area shape="rect" id="node8" href="class_smol_dock_1_1_amino_acid.html" title="{SmolDock::AminoAcid\n|# maxDistanceFromCentroid\l&#45; type\l&#45; AAId\l|+ AminoAcid()\l+ AminoAcid()\l+ getAAId()\l+ setAAId()\l+ filliProtein()\l+ getType()\l+ setType()\l}" alt="" coords="345,767,534,961"/>
 <area shape="rect" id="node3" title="STL class. " alt="" coords="5,233,132,325"/>
-<area shape="rect" id="node5" title="STL class. " alt="" coords="218,241,317,318"/>
-<area shape="rect" id="node10" title="STL class. " alt="" coords="592,241,708,318"/>
-<area shape="rect" id="node13" title="STL class. " alt="" coords="790,241,923,318"/>
-<area shape="rect" id="node16" href="class_smol_dock_1_1_bond.html" title="Class representing a bond in Molecule object. " alt="" coords="990,160,1129,399"/>
+<area shape="rect" id="node5" title="STL class. " alt="" coords="217,241,315,318"/>
+<area shape="rect" id="node10" title="STL class. " alt="" coords="539,241,649,318"/>
+<area shape="rect" id="node13" title="STL class. " alt="" coords="735,241,851,318"/>
+<area shape="rect" id="node15" title="STL class. " alt="" coords="981,241,1114,318"/>
+<area shape="rect" id="node18" href="class_smol_dock_1_1_bond.html" title="Class representing a bond in Molecule object. " alt="" coords="1181,160,1319,399"/>
 </map>
 </div>
 <table class="memberdecls">
@@ -132,19 +134,40 @@ Public Types</h2></td></tr>
 <tr class="memitem:a57e9a532fd04e1846c0d83edebb9fd41"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_smol_dock_1_1_atom.html#a57e9a532fd04e1846c0d83edebb9fd41">AtomType</a> : unsigned char { <br />
 &#160;&#160;<a class="el" href="class_smol_dock_1_1_atom.html#a57e9a532fd04e1846c0d83edebb9fd41aad921d60486366258809553a3db49a4a">AtomType::unknown</a> = 0, 
 <a class="el" href="class_smol_dock_1_1_atom.html#a57e9a532fd04e1846c0d83edebb9fd41ad4ac1478a4d8a4f591d35e3d75f3de65">AtomType::hydrogen</a> = 1, 
+<a class="el" href="class_smol_dock_1_1_atom.html#a57e9a532fd04e1846c0d83edebb9fd41a057f2c3be5a2ab1d3e942e9433cefeac">AtomType::boron</a> = 5, 
 <a class="el" href="class_smol_dock_1_1_atom.html#a57e9a532fd04e1846c0d83edebb9fd41ae1b832c8857262f1089376030b4298b3">AtomType::carbon</a> = 6, 
-<a class="el" href="class_smol_dock_1_1_atom.html#a57e9a532fd04e1846c0d83edebb9fd41a6124d98749365e3db2c9e5b27ca04db6">AtomType::oxygen</a> = 8, 
 <br />
 &#160;&#160;<a class="el" href="class_smol_dock_1_1_atom.html#a57e9a532fd04e1846c0d83edebb9fd41a63ebb9250f49340aece8d4ac541eaf61">AtomType::nitrogen</a> = 7, 
+<a class="el" href="class_smol_dock_1_1_atom.html#a57e9a532fd04e1846c0d83edebb9fd41a6124d98749365e3db2c9e5b27ca04db6">AtomType::oxygen</a> = 8, 
+<a class="el" href="class_smol_dock_1_1_atom.html#a57e9a532fd04e1846c0d83edebb9fd41ae35eb1830c7204b1859958817893bdeb">AtomType::fluorine</a> = 9, 
+<a class="el" href="class_smol_dock_1_1_atom.html#a57e9a532fd04e1846c0d83edebb9fd41aed2a8925c61b97c80e9f78f1ff0625ac">AtomType::magnesium</a> = 12, 
+<br />
+&#160;&#160;<a class="el" href="class_smol_dock_1_1_atom.html#a57e9a532fd04e1846c0d83edebb9fd41a2d612a8a156e7fe967c3b971975d067d">AtomType::silicon</a> = 14, 
 <a class="el" href="class_smol_dock_1_1_atom.html#a57e9a532fd04e1846c0d83edebb9fd41a3e17873c24bbb0b8ab2dac324dd67b9f">AtomType::phosporus</a> = 15, 
 <a class="el" href="class_smol_dock_1_1_atom.html#a57e9a532fd04e1846c0d83edebb9fd41a73a9bf52aa8ea9e256ec469dfce6e022">AtomType::sulfur</a> = 16, 
-<a class="el" href="class_smol_dock_1_1_atom.html#a57e9a532fd04e1846c0d83edebb9fd41af3b7d449c5ca2f53a72210e4381769be">AtomType::chlorine</a> = 17
+<a class="el" href="class_smol_dock_1_1_atom.html#a57e9a532fd04e1846c0d83edebb9fd41af3b7d449c5ca2f53a72210e4381769be">AtomType::chlorine</a> = 17, 
+<br />
+&#160;&#160;<a class="el" href="class_smol_dock_1_1_atom.html#a57e9a532fd04e1846c0d83edebb9fd41ae7956178e76c787c0a2407864ff39d67">AtomType::calcium</a> = 20, 
+<a class="el" href="class_smol_dock_1_1_atom.html#a57e9a532fd04e1846c0d83edebb9fd41a50861e7d3006ffb2d89925d0227a8853">AtomType::manganese</a> = 25, 
+<a class="el" href="class_smol_dock_1_1_atom.html#a57e9a532fd04e1846c0d83edebb9fd41abcd31c714bca2c41ffca31bd03003311">AtomType::iron</a> = 26, 
+<a class="el" href="class_smol_dock_1_1_atom.html#a57e9a532fd04e1846c0d83edebb9fd41aa6b3f1c744304a3ee2ec20446f690f45">AtomType::cobalt</a> = 27, 
+<br />
+&#160;&#160;<a class="el" href="class_smol_dock_1_1_atom.html#a57e9a532fd04e1846c0d83edebb9fd41a3d88be9e5c3e2ea6b901637c8bf698a4">AtomType::bromine</a> = 35, 
+<a class="el" href="class_smol_dock_1_1_atom.html#a57e9a532fd04e1846c0d83edebb9fd41a178a0768b3449ece2ed3e08921c6d937">AtomType::iodine</a> = 53
 <br />
  }</td></tr>
 <tr class="separator:a57e9a532fd04e1846c0d83edebb9fd41"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a77191f0919af58d733764e229cb1f973"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_smol_dock_1_1_atom.html#a77191f0919af58d733764e229cb1f973">AtomVariant</a> : unsigned int { <a class="el" href="class_smol_dock_1_1_atom.html#a77191f0919af58d733764e229cb1f973ae5e437761e40c78a4c0929be07a3ab04">AtomVariant::apolar</a> = 1 &lt;&lt; 0, 
+<tr class="memitem:a77191f0919af58d733764e229cb1f973"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_smol_dock_1_1_atom.html#a77191f0919af58d733764e229cb1f973">AtomVariant</a> : unsigned int { <br />
+&#160;&#160;<a class="el" href="class_smol_dock_1_1_atom.html#a77191f0919af58d733764e229cb1f973a334c4a4c42fdb79d7ebc3e73b517e6f8">AtomVariant::none</a> = 0, 
+<a class="el" href="class_smol_dock_1_1_atom.html#a77191f0919af58d733764e229cb1f973ae5e437761e40c78a4c0929be07a3ab04">AtomVariant::apolar</a>, 
 <a class="el" href="class_smol_dock_1_1_atom.html#a77191f0919af58d733764e229cb1f973ade31e8114bf9ba2ec47d55c59f61853d">AtomVariant::hydrogenDonor</a> = 1 &lt;&lt; 1, 
-<a class="el" href="class_smol_dock_1_1_atom.html#a77191f0919af58d733764e229cb1f973ad68216b54381a7b2b87b7924ab0191c4">AtomVariant::hydrogenAcceptor</a> = 1 &lt;&lt; 2
+<a class="el" href="class_smol_dock_1_1_atom.html#a77191f0919af58d733764e229cb1f973ad68216b54381a7b2b87b7924ab0191c4">AtomVariant::hydrogenAcceptor</a> = 1 &lt;&lt; 2, 
+<br />
+&#160;&#160;<a class="el" href="class_smol_dock_1_1_atom.html#a77191f0919af58d733764e229cb1f973a6a50e19bded8541479615e7e0b08f734">AtomVariant::covalentReversibleAcceptor</a> = 1 &lt;&lt; 3, 
+<a class="el" href="class_smol_dock_1_1_atom.html#a77191f0919af58d733764e229cb1f973abedbe1ed5af8463f77c924722c90552e">AtomVariant::customAtomFlag1</a> = 1 &lt;&lt; 29, 
+<a class="el" href="class_smol_dock_1_1_atom.html#a77191f0919af58d733764e229cb1f973abf7f4d3ed23c104fc86bb42e5ba94fe9">AtomVariant::customAtomFlag2</a> = 1 &lt;&lt; 29, 
+<a class="el" href="class_smol_dock_1_1_atom.html#a77191f0919af58d733764e229cb1f973adafa4b20b70b01a5b12ff9db5e260d7d">AtomVariant::customAtomFlag3</a> = 1 &lt;&lt; 30
+<br />
  }</td></tr>
 <tr class="separator:a77191f0919af58d733764e229cb1f973"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -203,6 +226,11 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:a90ad0859a5e5a747eecdc79b8bb80561"><td class="memItemLeft" align="right" valign="top">friend&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_smol_dock_1_1_atom.html#a90ad0859a5e5a747eecdc79b8bb80561">MoleculeTraversal</a></td></tr>
 <tr class="separator:a90ad0859a5e5a747eecdc79b8bb80561"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
+Static Public Attributes</h2></td></tr>
+<tr class="memitem:aed79f9306267e3ddbd9a9b4dade2bbbf"><td class="memItemLeft" align="right" valign="top">static std::set&lt; std::tuple&lt; <a class="el" href="class_smol_dock_1_1_atom.html#a57e9a532fd04e1846c0d83edebb9fd41">Atom::AtomType</a>, std::string, std::string, double &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_smol_dock_1_1_atom.html#aed79f9306267e3ddbd9a9b4dade2bbbf">AtomTypeLabel</a></td></tr>
+<tr class="separator:aed79f9306267e3ddbd9a9b4dade2bbbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr class="memitem:af45fc99da6ffbf539ba654c91e1bb752"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::weak_ptr&lt; <a class="el" href="class_smol_dock_1_1_bond.html">Bond</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_smol_dock_1_1_atom.html#af45fc99da6ffbf539ba654c91e1bb752">bonds</a></td></tr>
@@ -212,7 +240,7 @@ Protected Attributes</h2></td></tr>
 Private Attributes</h2></td></tr>
 <tr class="memitem:ab3867a9c2c98c5bb43ff4a6b7f1bf856"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_smol_dock_1_1_atom.html#a57e9a532fd04e1846c0d83edebb9fd41">AtomType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_smol_dock_1_1_atom.html#ab3867a9c2c98c5bb43ff4a6b7f1bf856">type</a></td></tr>
 <tr class="separator:ab3867a9c2c98c5bb43ff4a6b7f1bf856"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0c54fdff29130e870237ba300a4e9d25"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_smol_dock_1_1_atom.html#a77191f0919af58d733764e229cb1f973">AtomVariant</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_smol_dock_1_1_atom.html#a0c54fdff29130e870237ba300a4e9d25">variant</a> = <a class="el" href="class_smol_dock_1_1_atom.html#a77191f0919af58d733764e229cb1f973">Atom::AtomVariant</a>{0}</td></tr>
+<tr class="memitem:a0c54fdff29130e870237ba300a4e9d25"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_smol_dock_1_1_atom.html#a77191f0919af58d733764e229cb1f973">AtomVariant</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_smol_dock_1_1_atom.html#a0c54fdff29130e870237ba300a4e9d25">variant</a> = <a class="el" href="class_smol_dock_1_1_atom.html#a77191f0919af58d733764e229cb1f973a334c4a4c42fdb79d7ebc3e73b517e6f8">Atom::AtomVariant::none</a></td></tr>
 <tr class="separator:a0c54fdff29130e870237ba300a4e9d25"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acec4104851702c781abb5f86844cf6b3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_smol_dock_1_1_atom.html#acec4104851702c781abb5f86844cf6b3">charge</a> = 0</td></tr>
 <tr class="separator:acec4104851702c781abb5f86844cf6b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -239,8 +267,6 @@ Private Attributes</h2></td></tr>
 Static Private Attributes</h2></td></tr>
 <tr class="memitem:a699bf43dba89827d43019464a2a1507e"><td class="memItemLeft" align="right" valign="top">static unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_smol_dock_1_1_atom.html#a699bf43dba89827d43019464a2a1507e">nextAtomID</a> = 0</td></tr>
 <tr class="separator:a699bf43dba89827d43019464a2a1507e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aed79f9306267e3ddbd9a9b4dade2bbbf"><td class="memItemLeft" align="right" valign="top">static std::set&lt; std::tuple&lt; <a class="el" href="class_smol_dock_1_1_atom.html#a57e9a532fd04e1846c0d83edebb9fd41">Atom::AtomType</a>, std::string, std::string, double &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_smol_dock_1_1_atom.html#aed79f9306267e3ddbd9a9b4dade2bbbf">AtomTypeLabel</a></td></tr>
-<tr class="separator:aed79f9306267e3ddbd9a9b4dade2bbbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
 Friends</h2></td></tr>
@@ -264,7 +290,7 @@ Friends</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class representing "rich" atom in <a class="el" href="class_smol_dock_1_1_molecule.html" title="Class representing &quot;rich&quot; molecule. ">Molecule</a> and <a class="el" href="class_smol_dock_1_1_protein.html" title="Class representing &quot;rich&quot; protein. ">Protein</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="_atom_8h_source.html#l00045">45</a> of file <a class="el" href="_atom_8h_source.html">Atom.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_atom_8h_source.html#l00049">49</a> of file <a class="el" href="_atom_8h_source.html">Atom.h</a>.</p>
 </div><h2 class="groupheader">Member Enumeration Documentation</h2>
 <a id="a57e9a532fd04e1846c0d83edebb9fd41"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a57e9a532fd04e1846c0d83edebb9fd41">&#9670;&nbsp;</a></span>AtomType</h2>
@@ -288,15 +314,25 @@ Friends</h2></td></tr>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a57e9a532fd04e1846c0d83edebb9fd41aad921d60486366258809553a3db49a4a"></a>unknown&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a57e9a532fd04e1846c0d83edebb9fd41ad4ac1478a4d8a4f591d35e3d75f3de65"></a>hydrogen&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a57e9a532fd04e1846c0d83edebb9fd41a057f2c3be5a2ab1d3e942e9433cefeac"></a>boron&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a57e9a532fd04e1846c0d83edebb9fd41ae1b832c8857262f1089376030b4298b3"></a>carbon&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a57e9a532fd04e1846c0d83edebb9fd41a6124d98749365e3db2c9e5b27ca04db6"></a>oxygen&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a57e9a532fd04e1846c0d83edebb9fd41a63ebb9250f49340aece8d4ac541eaf61"></a>nitrogen&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a57e9a532fd04e1846c0d83edebb9fd41a6124d98749365e3db2c9e5b27ca04db6"></a>oxygen&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a57e9a532fd04e1846c0d83edebb9fd41ae35eb1830c7204b1859958817893bdeb"></a>fluorine&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a57e9a532fd04e1846c0d83edebb9fd41aed2a8925c61b97c80e9f78f1ff0625ac"></a>magnesium&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a57e9a532fd04e1846c0d83edebb9fd41a2d612a8a156e7fe967c3b971975d067d"></a>silicon&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a57e9a532fd04e1846c0d83edebb9fd41a3e17873c24bbb0b8ab2dac324dd67b9f"></a>phosporus&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a57e9a532fd04e1846c0d83edebb9fd41a73a9bf52aa8ea9e256ec469dfce6e022"></a>sulfur&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a57e9a532fd04e1846c0d83edebb9fd41af3b7d449c5ca2f53a72210e4381769be"></a>chlorine&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a57e9a532fd04e1846c0d83edebb9fd41ae7956178e76c787c0a2407864ff39d67"></a>calcium&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a57e9a532fd04e1846c0d83edebb9fd41a50861e7d3006ffb2d89925d0227a8853"></a>manganese&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a57e9a532fd04e1846c0d83edebb9fd41abcd31c714bca2c41ffca31bd03003311"></a>iron&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a57e9a532fd04e1846c0d83edebb9fd41aa6b3f1c744304a3ee2ec20446f690f45"></a>cobalt&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a57e9a532fd04e1846c0d83edebb9fd41a3d88be9e5c3e2ea6b901637c8bf698a4"></a>bromine&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a57e9a532fd04e1846c0d83edebb9fd41a178a0768b3449ece2ed3e08921c6d937"></a>iodine&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="_atom_8h_source.html#l00057">57</a> of file <a class="el" href="_atom_8h_source.html">Atom.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_atom_8h_source.html#l00066">66</a> of file <a class="el" href="_atom_8h_source.html">Atom.h</a>.</p>
 
 </div>
 </div>
@@ -320,12 +356,17 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a77191f0919af58d733764e229cb1f973ae5e437761e40c78a4c0929be07a3ab04"></a>apolar&#160;</td><td class="fielddoc"></td></tr>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a77191f0919af58d733764e229cb1f973a334c4a4c42fdb79d7ebc3e73b517e6f8"></a>none&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a77191f0919af58d733764e229cb1f973ae5e437761e40c78a4c0929be07a3ab04"></a>apolar&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a77191f0919af58d733764e229cb1f973ade31e8114bf9ba2ec47d55c59f61853d"></a>hydrogenDonor&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a77191f0919af58d733764e229cb1f973ad68216b54381a7b2b87b7924ab0191c4"></a>hydrogenAcceptor&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a77191f0919af58d733764e229cb1f973a6a50e19bded8541479615e7e0b08f734"></a>covalentReversibleAcceptor&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a77191f0919af58d733764e229cb1f973abedbe1ed5af8463f77c924722c90552e"></a>customAtomFlag1&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a77191f0919af58d733764e229cb1f973abf7f4d3ed23c104fc86bb42e5ba94fe9"></a>customAtomFlag2&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a77191f0919af58d733764e229cb1f973adafa4b20b70b01a5b12ff9db5e260d7d"></a>customAtomFlag3&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="_atom_8h_source.html#l00070">70</a> of file <a class="el" href="_atom_8h_source.html">Atom.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_atom_8h_source.html#l00096">96</a> of file <a class="el" href="_atom_8h_source.html">Atom.h</a>.</p>
 
 </div>
 </div>
@@ -356,7 +397,7 @@ Friends</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="_atom_8cpp_source.html#l00031">31</a> of file <a class="el" href="_atom_8cpp_source.html">Atom.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_atom_8h_source.html#l00174">atomicRadius</a>, <a class="el" href="_atom_8h_source.html#l00171">AtomID</a>, <a class="el" href="_atom_8cpp_source.html#l00086">atomTypeToAtomicRadius</a>, and <a class="el" href="_atom_8h_source.html#l00170">nextAtomID</a>.</p>
+<p class="reference">References <a class="el" href="_atom_8h_source.html#l00222">atomicRadius</a>, <a class="el" href="_atom_8h_source.html#l00219">AtomID</a>, <a class="el" href="_atom_8cpp_source.html#l00089">atomTypeToAtomicRadius</a>, and <a class="el" href="_atom_8h_source.html#l00218">nextAtomID</a>.</p>
 
 </div>
 </div>
@@ -410,9 +451,9 @@ Friends</h2></td></tr>
 </dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="class_smol_dock_1_1_atom.html#a6fdae20edd67e75fa5fab8cbdbb39faf">Atom(AtomType t)</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_atom_8cpp_source.html#l00132">132</a> of file <a class="el" href="_atom_8cpp_source.html">Atom.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_atom_8cpp_source.html#l00141">141</a> of file <a class="el" href="_atom_8cpp_source.html">Atom.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_atom_8h_source.html#l00167">atomClassInResidue</a>, <a class="el" href="_atom_8h_source.html#l00174">atomicRadius</a>, <a class="el" href="_atom_8h_source.html#l00171">AtomID</a>, <a class="el" href="_atom_8cpp_source.html#l00086">atomTypeToAtomicRadius</a>, <a class="el" href="_atom_8h_source.html#l00165">fromResidue</a>, <a class="el" href="_atom_8h_source.html#l00170">nextAtomID</a>, <a class="el" href="_atom_8h_source.html#l00166">residueType</a>, <a class="el" href="_atom_8cpp_source.html#l00073">stringToAtomType</a>, and <a class="el" href="_atom_8h_source.html#l00161">type</a>.</p>
+<p class="reference">References <a class="el" href="_atom_8h_source.html#l00215">atomClassInResidue</a>, <a class="el" href="_atom_8h_source.html#l00222">atomicRadius</a>, <a class="el" href="_atom_8h_source.html#l00219">AtomID</a>, <a class="el" href="_atom_8cpp_source.html#l00089">atomTypeToAtomicRadius</a>, <a class="el" href="_atom_8h_source.html#l00213">fromResidue</a>, <a class="el" href="_atom_8h_source.html#l00218">nextAtomID</a>, <a class="el" href="_atom_8h_source.html#l00214">residueType</a>, <a class="el" href="_atom_8cpp_source.html#l00075">stringToAtomType</a>, and <a class="el" href="_atom_8h_source.html#l00209">type</a>.</p>
 
 </div>
 </div>
@@ -444,7 +485,7 @@ Friends</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="_atom_8cpp_source.html#l00040">40</a> of file <a class="el" href="_atom_8cpp_source.html">Atom.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_atom_8h_source.html#l00174">atomicRadius</a>, <a class="el" href="_atom_8h_source.html#l00171">AtomID</a>, and <a class="el" href="_atom_8cpp_source.html#l00086">atomTypeToAtomicRadius</a>.</p>
+<p class="reference">References <a class="el" href="_atom_8h_source.html#l00222">atomicRadius</a>, <a class="el" href="_atom_8h_source.html#l00219">AtomID</a>, and <a class="el" href="_atom_8cpp_source.html#l00089">atomTypeToAtomicRadius</a>.</p>
 
 </div>
 </div>
@@ -474,9 +515,9 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_atom_8cpp_source.html#l00147">147</a> of file <a class="el" href="_atom_8cpp_source.html">Atom.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_atom_8cpp_source.html#l00156">156</a> of file <a class="el" href="_atom_8cpp_source.html">Atom.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_atom_8h_source.html#l00171">AtomID</a>, <a class="el" href="_atom_8cpp_source.html#l00073">stringToAtomType</a>, and <a class="el" href="_atom_8h_source.html#l00161">type</a>.</p>
+<p class="reference">References <a class="el" href="_atom_8h_source.html#l00219">AtomID</a>, <a class="el" href="_atom_8cpp_source.html#l00075">stringToAtomType</a>, and <a class="el" href="_atom_8h_source.html#l00209">type</a>.</p>
 
 </div>
 </div>
@@ -496,9 +537,9 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_atom_8cpp_source.html#l00192">192</a> of file <a class="el" href="_atom_8cpp_source.html">Atom.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_atom_8cpp_source.html#l00197">197</a> of file <a class="el" href="_atom_8cpp_source.html">Atom.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_atom_8h_source.html#l00161">type</a>.</p>
+<p class="reference">References <a class="el" href="_atom_8h_source.html#l00209">type</a>.</p>
 
 </div>
 </div>
@@ -517,9 +558,9 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_atom_8cpp_source.html#l00200">200</a> of file <a class="el" href="_atom_8cpp_source.html">Atom.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_atom_8cpp_source.html#l00205">205</a> of file <a class="el" href="_atom_8cpp_source.html">Atom.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_atom_8h_source.html#l00174">atomicRadius</a>.</p>
+<p class="reference">References <a class="el" href="_atom_8h_source.html#l00222">atomicRadius</a>.</p>
 
 </div>
 </div>
@@ -538,9 +579,9 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_atom_8cpp_source.html#l00104">104</a> of file <a class="el" href="_atom_8cpp_source.html">Atom.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_atom_8cpp_source.html#l00108">108</a> of file <a class="el" href="_atom_8cpp_source.html">Atom.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_atom_8h_source.html#l00171">AtomID</a>.</p>
+<p class="reference">References <a class="el" href="_atom_8h_source.html#l00219">AtomID</a>.</p>
 
 </div>
 </div>
@@ -559,9 +600,9 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_atom_8cpp_source.html#l00160">160</a> of file <a class="el" href="_atom_8cpp_source.html">Atom.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_atom_8cpp_source.html#l00169">169</a> of file <a class="el" href="_atom_8cpp_source.html">Atom.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_atom_8h_source.html#l00173">x</a>, <a class="el" href="_atom_8h_source.html#l00173">y</a>, and <a class="el" href="_atom_8h_source.html#l00173">z</a>.</p>
+<p class="reference">References <a class="el" href="_atom_8h_source.html#l00221">x</a>, <a class="el" href="_atom_8h_source.html#l00221">y</a>, and <a class="el" href="_atom_8h_source.html#l00221">z</a>.</p>
 
 </div>
 </div>
@@ -580,7 +621,7 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_atom_8cpp_source.html#l00217">217</a> of file <a class="el" href="_atom_8cpp_source.html">Atom.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_atom_8cpp_source.html#l00222">222</a> of file <a class="el" href="_atom_8cpp_source.html">Atom.cpp</a>.</p>
 
 </div>
 </div>
@@ -599,9 +640,9 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_atom_8cpp_source.html#l00100">100</a> of file <a class="el" href="_atom_8cpp_source.html">Atom.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_atom_8cpp_source.html#l00104">104</a> of file <a class="el" href="_atom_8cpp_source.html">Atom.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_atom_8h_source.html#l00161">type</a>.</p>
+<p class="reference">References <a class="el" href="_atom_8h_source.html#l00209">type</a>.</p>
 <div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
@@ -630,9 +671,9 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_atom_8cpp_source.html#l00176">176</a> of file <a class="el" href="_atom_8cpp_source.html">Atom.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_atom_8cpp_source.html#l00184">184</a> of file <a class="el" href="_atom_8cpp_source.html">Atom.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_atom_8h_source.html#l00162">variant</a>.</p>
+<p class="reference">References <a class="el" href="_atom_8h_source.html#l00210">variant</a>.</p>
 <div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-2-summary" class="dynsummary" style="display:block;">
@@ -661,9 +702,9 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_atom_8cpp_source.html#l00196">196</a> of file <a class="el" href="_atom_8cpp_source.html">Atom.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_atom_8cpp_source.html#l00201">201</a> of file <a class="el" href="_atom_8cpp_source.html">Atom.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_atom_8h_source.html#l00162">variant</a>.</p>
+<p class="reference">References <a class="el" href="_atom_8h_source.html#l00210">variant</a>.</p>
 
 </div>
 </div>
@@ -682,9 +723,9 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_atom_8cpp_source.html#l00209">209</a> of file <a class="el" href="_atom_8cpp_source.html">Atom.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_atom_8cpp_source.html#l00214">214</a> of file <a class="el" href="_atom_8cpp_source.html">Atom.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_atom_8h_source.html#l00163">charge</a>.</p>
+<p class="reference">References <a class="el" href="_atom_8h_source.html#l00211">charge</a>.</p>
 
 </div>
 </div>
@@ -703,9 +744,9 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_atom_8cpp_source.html#l00152">152</a> of file <a class="el" href="_atom_8cpp_source.html">Atom.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_atom_8cpp_source.html#l00161">161</a> of file <a class="el" href="_atom_8cpp_source.html">Atom.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_atom_8h_source.html#l00168">owningAA</a>.</p>
+<p class="reference">References <a class="el" href="_atom_8h_source.html#l00216">owningAA</a>.</p>
 
 </div>
 </div>
@@ -724,9 +765,9 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_atom_8cpp_source.html#l00108">108</a> of file <a class="el" href="_atom_8cpp_source.html">Atom.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_atom_8cpp_source.html#l00112">112</a> of file <a class="el" href="_atom_8cpp_source.html">Atom.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_atom_8cpp_source.html#l00047">atomTypeToString</a>, and <a class="el" href="_atom_8h_source.html#l00161">type</a>.</p>
+<p class="reference">References <a class="el" href="_atom_8cpp_source.html#l00047">atomTypeToString</a>, and <a class="el" href="_atom_8h_source.html#l00209">type</a>.</p>
 
 </div>
 </div>
@@ -746,9 +787,9 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_atom_8cpp_source.html#l00204">204</a> of file <a class="el" href="_atom_8cpp_source.html">Atom.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_atom_8cpp_source.html#l00209">209</a> of file <a class="el" href="_atom_8cpp_source.html">Atom.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_atom_8h_source.html#l00174">atomicRadius</a>.</p>
+<p class="reference">References <a class="el" href="_atom_8h_source.html#l00222">atomicRadius</a>.</p>
 
 </div>
 </div>
@@ -768,9 +809,9 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_atom_8cpp_source.html#l00187">187</a> of file <a class="el" href="_atom_8cpp_source.html">Atom.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_atom_8cpp_source.html#l00193">193</a> of file <a class="el" href="_atom_8cpp_source.html">Atom.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_atom_8h_source.html#l00171">AtomID</a>.</p>
+<p class="reference">References <a class="el" href="_atom_8h_source.html#l00219">AtomID</a>.</p>
 
 </div>
 </div>
@@ -790,9 +831,9 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_atom_8cpp_source.html#l00164">164</a> of file <a class="el" href="_atom_8cpp_source.html">Atom.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_atom_8cpp_source.html#l00173">173</a> of file <a class="el" href="_atom_8cpp_source.html">Atom.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_atom_8h_source.html#l00173">x</a>, <a class="el" href="_atom_8h_source.html#l00173">y</a>, and <a class="el" href="_atom_8h_source.html#l00173">z</a>.</p>
+<p class="reference">References <a class="el" href="_atom_8h_source.html#l00221">x</a>, <a class="el" href="_atom_8h_source.html#l00221">y</a>, and <a class="el" href="_atom_8h_source.html#l00221">z</a>.</p>
 
 </div>
 </div>
@@ -812,9 +853,9 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_atom_8cpp_source.html#l00172">172</a> of file <a class="el" href="_atom_8cpp_source.html">Atom.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_atom_8cpp_source.html#l00180">180</a> of file <a class="el" href="_atom_8cpp_source.html">Atom.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_atom_8h_source.html#l00161">type</a>.</p>
+<p class="reference">References <a class="el" href="_atom_8h_source.html#l00209">type</a>.</p>
 
 </div>
 </div>
@@ -834,9 +875,9 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_atom_8cpp_source.html#l00181">181</a> of file <a class="el" href="_atom_8cpp_source.html">Atom.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_atom_8cpp_source.html#l00188">188</a> of file <a class="el" href="_atom_8cpp_source.html">Atom.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_atom_8h_source.html#l00162">variant</a>.</p>
+<p class="reference">References <a class="el" href="_atom_8h_source.html#l00210">variant</a>.</p>
 <div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-3-summary" class="dynsummary" style="display:block;">
@@ -866,9 +907,9 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_atom_8cpp_source.html#l00213">213</a> of file <a class="el" href="_atom_8cpp_source.html">Atom.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_atom_8cpp_source.html#l00218">218</a> of file <a class="el" href="_atom_8cpp_source.html">Atom.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_atom_8h_source.html#l00163">charge</a>.</p>
+<p class="reference">References <a class="el" href="_atom_8h_source.html#l00211">charge</a>.</p>
 
 </div>
 </div>
@@ -888,9 +929,9 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_atom_8cpp_source.html#l00156">156</a> of file <a class="el" href="_atom_8cpp_source.html">Atom.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_atom_8cpp_source.html#l00165">165</a> of file <a class="el" href="_atom_8cpp_source.html">Atom.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_atom_8h_source.html#l00168">owningAA</a>.</p>
+<p class="reference">References <a class="el" href="_atom_8h_source.html#l00216">owningAA</a>.</p>
 
 </div>
 </div>
@@ -919,7 +960,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_variant_flag_assignation_8cpp_source.html#l00089">89</a> of file <a class="el" href="_variant_flag_assignation_8cpp_source.html">VariantFlagAssignation.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_variant_flag_assignation_8cpp_source.html#l00087">87</a> of file <a class="el" href="_variant_flag_assignation_8cpp_source.html">VariantFlagAssignation.cpp</a>.</p>
 
 </div>
 </div>
@@ -957,7 +998,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_variant_flag_assignation_8cpp_source.html#l00035">35</a> of file <a class="el" href="_variant_flag_assignation_8cpp_source.html">VariantFlagAssignation.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_variant_flag_assignation_8cpp_source.html#l00034">34</a> of file <a class="el" href="_variant_flag_assignation_8cpp_source.html">VariantFlagAssignation.cpp</a>.</p>
 
 </div>
 </div>
@@ -985,7 +1026,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_atom_8cpp_source.html#l00086">86</a> of file <a class="el" href="_atom_8cpp_source.html">Atom.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_atom_8cpp_source.html#l00089">89</a> of file <a class="el" href="_atom_8cpp_source.html">Atom.cpp</a>.</p>
 
 </div>
 </div>
@@ -1041,7 +1082,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_atom_8cpp_source.html#l00060">60</a> of file <a class="el" href="_atom_8cpp_source.html">Atom.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_atom_8cpp_source.html#l00061">61</a> of file <a class="el" href="_atom_8cpp_source.html">Atom.cpp</a>.</p>
 
 </div>
 </div>
@@ -1065,7 +1106,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_atom_8h_source.html#l00050">50</a> of file <a class="el" href="_atom_8h_source.html">Atom.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_atom_8h_source.html#l00055">55</a> of file <a class="el" href="_atom_8h_source.html">Atom.h</a>.</p>
 
 </div>
 </div>
@@ -1089,7 +1130,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_atom_8h_source.html#l00051">51</a> of file <a class="el" href="_atom_8h_source.html">Atom.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_atom_8h_source.html#l00057">57</a> of file <a class="el" href="_atom_8h_source.html">Atom.h</a>.</p>
 
 </div>
 </div>
@@ -1117,7 +1158,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_atom_8cpp_source.html#l00073">73</a> of file <a class="el" href="_atom_8cpp_source.html">Atom.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_atom_8cpp_source.html#l00075">75</a> of file <a class="el" href="_atom_8cpp_source.html">Atom.cpp</a>.</p>
 
 </div>
 </div>
@@ -1142,7 +1183,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_atom_8h_source.html#l00167">167</a> of file <a class="el" href="_atom_8h_source.html">Atom.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_atom_8h_source.html#l00215">215</a> of file <a class="el" href="_atom_8h_source.html">Atom.h</a>.</p>
 
 </div>
 </div>
@@ -1166,7 +1207,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_atom_8h_source.html#l00174">174</a> of file <a class="el" href="_atom_8h_source.html">Atom.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_atom_8h_source.html#l00222">222</a> of file <a class="el" href="_atom_8h_source.html">Atom.h</a>.</p>
 
 </div>
 </div>
@@ -1190,7 +1231,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_atom_8h_source.html#l00171">171</a> of file <a class="el" href="_atom_8h_source.html">Atom.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_atom_8h_source.html#l00219">219</a> of file <a class="el" href="_atom_8h_source.html">Atom.h</a>.</p>
 
 </div>
 </div>
@@ -1209,12 +1250,12 @@ Friends</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">= {</div><div class="line">            {<a class="code" href="class_smol_dock_1_1_atom.html#a57e9a532fd04e1846c0d83edebb9fd41aad921d60486366258809553a3db49a4a">Atom::AtomType::unknown</a>,  <span class="stringliteral">&quot;unknown&quot;</span>,  <span class="stringliteral">&quot;?&quot;</span>, 0.0},</div><div class="line">            {<a class="code" href="class_smol_dock_1_1_atom.html#a57e9a532fd04e1846c0d83edebb9fd41ad4ac1478a4d8a4f591d35e3d75f3de65">Atom::AtomType::hydrogen</a>, <span class="stringliteral">&quot;hydrogen&quot;</span>, <span class="stringliteral">&quot;H&quot;</span>, 0.3},</div><div class="line">            {<a class="code" href="class_smol_dock_1_1_atom.html#a57e9a532fd04e1846c0d83edebb9fd41ae1b832c8857262f1089376030b4298b3">Atom::AtomType::carbon</a>,   <span class="stringliteral">&quot;carbon&quot;</span>,   <span class="stringliteral">&quot;C&quot;</span>, 1.9},</div><div class="line">            {<a class="code" href="class_smol_dock_1_1_atom.html#a57e9a532fd04e1846c0d83edebb9fd41a6124d98749365e3db2c9e5b27ca04db6">Atom::AtomType::oxygen</a>,   <span class="stringliteral">&quot;oxygen&quot;</span>,   <span class="stringliteral">&quot;O&quot;</span>, 1.7},</div><div class="line">            {<a class="code" href="class_smol_dock_1_1_atom.html#a57e9a532fd04e1846c0d83edebb9fd41a63ebb9250f49340aece8d4ac541eaf61">Atom::AtomType::nitrogen</a>, <span class="stringliteral">&quot;nitrogen&quot;</span>, <span class="stringliteral">&quot;N&quot;</span>, 1.8},</div><div class="line">            {<a class="code" href="class_smol_dock_1_1_atom.html#a57e9a532fd04e1846c0d83edebb9fd41a73a9bf52aa8ea9e256ec469dfce6e022">Atom::AtomType::sulfur</a>,   <span class="stringliteral">&quot;sulfur&quot;</span>,   <span class="stringliteral">&quot;S&quot;</span>, 2.0},</div><div class="line">            {<a class="code" href="class_smol_dock_1_1_atom.html#a57e9a532fd04e1846c0d83edebb9fd41af3b7d449c5ca2f53a72210e4381769be">Atom::AtomType::chlorine</a>, <span class="stringliteral">&quot;chlorine&quot;</span>, <span class="stringliteral">&quot;CL&quot;</span>, 1.8},</div><div class="line">            {<a class="code" href="class_smol_dock_1_1_atom.html#a57e9a532fd04e1846c0d83edebb9fd41a3e17873c24bbb0b8ab2dac324dd67b9f">Atom::AtomType::phosporus</a>, <span class="stringliteral">&quot;phosphorus&quot;</span>, <span class="stringliteral">&quot;P&quot;</span>, 2.1}</div><div class="line">    }</div></div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="_atom_8h_source.html#l00176">176</a> of file <a class="el" href="_atom_8h_source.html">Atom.h</a>.</p>
+<b>Initial value:</b><div class="fragment"><div class="line">= {</div><div class="line">            {<a class="code" href="class_smol_dock_1_1_atom.html#a57e9a532fd04e1846c0d83edebb9fd41aad921d60486366258809553a3db49a4a">Atom::AtomType::unknown</a>,   <span class="stringliteral">&quot;unknown&quot;</span>,    <span class="stringliteral">&quot;?&quot;</span>,  0.0},</div><div class="line">            {<a class="code" href="class_smol_dock_1_1_atom.html#a57e9a532fd04e1846c0d83edebb9fd41ad4ac1478a4d8a4f591d35e3d75f3de65">Atom::AtomType::hydrogen</a>,  <span class="stringliteral">&quot;hydrogen&quot;</span>,   <span class="stringliteral">&quot;H&quot;</span>,  1.2},</div><div class="line">            {<a class="code" href="class_smol_dock_1_1_atom.html#a57e9a532fd04e1846c0d83edebb9fd41ae1b832c8857262f1089376030b4298b3">Atom::AtomType::carbon</a>,    <span class="stringliteral">&quot;carbon&quot;</span>,     <span class="stringliteral">&quot;C&quot;</span>,  1.9},</div><div class="line">            {<a class="code" href="class_smol_dock_1_1_atom.html#a57e9a532fd04e1846c0d83edebb9fd41a6124d98749365e3db2c9e5b27ca04db6">Atom::AtomType::oxygen</a>,    <span class="stringliteral">&quot;oxygen&quot;</span>,     <span class="stringliteral">&quot;O&quot;</span>,  1.7},</div><div class="line">            {<a class="code" href="class_smol_dock_1_1_atom.html#a57e9a532fd04e1846c0d83edebb9fd41a63ebb9250f49340aece8d4ac541eaf61">Atom::AtomType::nitrogen</a>,  <span class="stringliteral">&quot;nitrogen&quot;</span>,   <span class="stringliteral">&quot;N&quot;</span>,  1.8},</div><div class="line">            {<a class="code" href="class_smol_dock_1_1_atom.html#a57e9a532fd04e1846c0d83edebb9fd41a73a9bf52aa8ea9e256ec469dfce6e022">Atom::AtomType::sulfur</a>,    <span class="stringliteral">&quot;sulfur&quot;</span>,     <span class="stringliteral">&quot;S&quot;</span>,  2.0},</div><div class="line">            {<a class="code" href="class_smol_dock_1_1_atom.html#a57e9a532fd04e1846c0d83edebb9fd41af3b7d449c5ca2f53a72210e4381769be">Atom::AtomType::chlorine</a>,  <span class="stringliteral">&quot;chlorine&quot;</span>,   <span class="stringliteral">&quot;CL&quot;</span>, 1.8},</div><div class="line">            {<a class="code" href="class_smol_dock_1_1_atom.html#a57e9a532fd04e1846c0d83edebb9fd41a3e17873c24bbb0b8ab2dac324dd67b9f">Atom::AtomType::phosporus</a>, <span class="stringliteral">&quot;phosphorus&quot;</span>, <span class="stringliteral">&quot;P&quot;</span>,  2.1},</div><div class="line">            {<a class="code" href="class_smol_dock_1_1_atom.html#a57e9a532fd04e1846c0d83edebb9fd41ae35eb1830c7204b1859958817893bdeb">Atom::AtomType::fluorine</a>,  <span class="stringliteral">&quot;fluorine&quot;</span>,   <span class="stringliteral">&quot;F&quot;</span>,  1.5},</div><div class="line">            {<a class="code" href="class_smol_dock_1_1_atom.html#a57e9a532fd04e1846c0d83edebb9fd41a3d88be9e5c3e2ea6b901637c8bf698a4">Atom::AtomType::bromine</a>,   <span class="stringliteral">&quot;bromine&quot;</span>,    <span class="stringliteral">&quot;C&quot;</span>,  2.0},</div><div class="line">            {<a class="code" href="class_smol_dock_1_1_atom.html#a57e9a532fd04e1846c0d83edebb9fd41a178a0768b3449ece2ed3e08921c6d937">Atom::AtomType::iodine</a>,    <span class="stringliteral">&quot;iodine&quot;</span>,     <span class="stringliteral">&quot;I&quot;</span>,  2.2},</div><div class="line">            {<a class="code" href="class_smol_dock_1_1_atom.html#a57e9a532fd04e1846c0d83edebb9fd41abcd31c714bca2c41ffca31bd03003311">Atom::AtomType::iron</a>,      <span class="stringliteral">&quot;iron&quot;</span>,       <span class="stringliteral">&quot;FE&quot;</span>, 6.5}, </div><div class="line">            {<a class="code" href="class_smol_dock_1_1_atom.html#a57e9a532fd04e1846c0d83edebb9fd41aa6b3f1c744304a3ee2ec20446f690f45">Atom::AtomType::cobalt</a>,    <span class="stringliteral">&quot;cobalt&quot;</span>,     <span class="stringliteral">&quot;CO&quot;</span>, 6.5}, </div><div class="line">            {<a class="code" href="class_smol_dock_1_1_atom.html#a57e9a532fd04e1846c0d83edebb9fd41aa6b3f1c744304a3ee2ec20446f690f45">Atom::AtomType::cobalt</a>,    <span class="stringliteral">&quot;manganese&quot;</span>,  <span class="stringliteral">&quot;MN&quot;</span>, 7.0}, </div><div class="line">            {<a class="code" href="class_smol_dock_1_1_atom.html#a57e9a532fd04e1846c0d83edebb9fd41ae7956178e76c787c0a2407864ff39d67">Atom::AtomType::calcium</a>,   <span class="stringliteral">&quot;calcium&quot;</span>,    <span class="stringliteral">&quot;CA&quot;</span>, 7.9}, </div><div class="line">            {<a class="code" href="class_smol_dock_1_1_atom.html#a57e9a532fd04e1846c0d83edebb9fd41aed2a8925c61b97c80e9f78f1ff0625ac">Atom::AtomType::magnesium</a>, <span class="stringliteral">&quot;magnesium&quot;</span>,  <span class="stringliteral">&quot;MG&quot;</span>, 7.9}, </div><div class="line">            {<a class="code" href="class_smol_dock_1_1_atom.html#a57e9a532fd04e1846c0d83edebb9fd41a2d612a8a156e7fe967c3b971975d067d">Atom::AtomType::silicon</a>,   <span class="stringliteral">&quot;silicon&quot;</span>,    <span class="stringliteral">&quot;SI&quot;</span>, 1.1}, </div><div class="line">            {<a class="code" href="class_smol_dock_1_1_atom.html#a57e9a532fd04e1846c0d83edebb9fd41a057f2c3be5a2ab1d3e942e9433cefeac">Atom::AtomType::boron</a>,     <span class="stringliteral">&quot;boron&quot;</span>,      <span class="stringliteral">&quot;B&quot;</span>,  1.6}, </div><div class="line">    }</div></div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="_atom_8h_source.html#l00202">202</a> of file <a class="el" href="_atom_8h_source.html">Atom.h</a>.</p>
 
 </div>
 </div>
@@ -1230,7 +1271,7 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_atom_8h_source.html#l00048">48</a> of file <a class="el" href="_atom_8h_source.html">Atom.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_atom_8h_source.html#l00052">52</a> of file <a class="el" href="_atom_8h_source.html">Atom.h</a>.</p>
 
 </div>
 </div>
@@ -1254,7 +1295,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_atom_8h_source.html#l00158">158</a> of file <a class="el" href="_atom_8h_source.html">Atom.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_atom_8h_source.html#l00206">206</a> of file <a class="el" href="_atom_8h_source.html">Atom.h</a>.</p>
 
 </div>
 </div>
@@ -1278,7 +1319,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_atom_8h_source.html#l00163">163</a> of file <a class="el" href="_atom_8h_source.html">Atom.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_atom_8h_source.html#l00211">211</a> of file <a class="el" href="_atom_8h_source.html">Atom.h</a>.</p>
 
 </div>
 </div>
@@ -1302,7 +1343,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_atom_8h_source.html#l00165">165</a> of file <a class="el" href="_atom_8h_source.html">Atom.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_atom_8h_source.html#l00213">213</a> of file <a class="el" href="_atom_8h_source.html">Atom.h</a>.</p>
 
 </div>
 </div>
@@ -1318,7 +1359,7 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_atom_8h_source.html#l00049">49</a> of file <a class="el" href="_atom_8h_source.html">Atom.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_atom_8h_source.html#l00053">53</a> of file <a class="el" href="_atom_8h_source.html">Atom.h</a>.</p>
 
 </div>
 </div>
@@ -1342,7 +1383,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_atom_8h_source.html#l00170">170</a> of file <a class="el" href="_atom_8h_source.html">Atom.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_atom_8h_source.html#l00218">218</a> of file <a class="el" href="_atom_8h_source.html">Atom.h</a>.</p>
 
 </div>
 </div>
@@ -1366,7 +1407,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_atom_8h_source.html#l00168">168</a> of file <a class="el" href="_atom_8h_source.html">Atom.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_atom_8h_source.html#l00216">216</a> of file <a class="el" href="_atom_8h_source.html">Atom.h</a>.</p>
 
 </div>
 </div>
@@ -1390,7 +1431,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_atom_8h_source.html#l00166">166</a> of file <a class="el" href="_atom_8h_source.html">Atom.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_atom_8h_source.html#l00214">214</a> of file <a class="el" href="_atom_8h_source.html">Atom.h</a>.</p>
 
 </div>
 </div>
@@ -1414,7 +1455,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_atom_8h_source.html#l00161">161</a> of file <a class="el" href="_atom_8h_source.html">Atom.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_atom_8h_source.html#l00209">209</a> of file <a class="el" href="_atom_8h_source.html">Atom.h</a>.</p>
 
 </div>
 </div>
@@ -1428,7 +1469,7 @@ Friends</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_smol_dock_1_1_atom.html#a77191f0919af58d733764e229cb1f973">AtomVariant</a> SmolDock::Atom::variant = <a class="el" href="class_smol_dock_1_1_atom.html#a77191f0919af58d733764e229cb1f973">Atom::AtomVariant</a>{0}</td>
+          <td class="memname"><a class="el" href="class_smol_dock_1_1_atom.html#a77191f0919af58d733764e229cb1f973">AtomVariant</a> SmolDock::Atom::variant = <a class="el" href="class_smol_dock_1_1_atom.html#a77191f0919af58d733764e229cb1f973a334c4a4c42fdb79d7ebc3e73b517e6f8">Atom::AtomVariant::none</a></td>
         </tr>
       </table>
   </td>
@@ -1438,7 +1479,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_atom_8h_source.html#l00162">162</a> of file <a class="el" href="_atom_8h_source.html">Atom.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_atom_8h_source.html#l00210">210</a> of file <a class="el" href="_atom_8h_source.html">Atom.h</a>.</p>
 
 </div>
 </div>
@@ -1462,7 +1503,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_atom_8h_source.html#l00173">173</a> of file <a class="el" href="_atom_8h_source.html">Atom.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_atom_8h_source.html#l00221">221</a> of file <a class="el" href="_atom_8h_source.html">Atom.h</a>.</p>
 
 </div>
 </div>
@@ -1486,7 +1527,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_atom_8h_source.html#l00173">173</a> of file <a class="el" href="_atom_8h_source.html">Atom.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_atom_8h_source.html#l00221">221</a> of file <a class="el" href="_atom_8h_source.html">Atom.h</a>.</p>
 
 </div>
 </div>
@@ -1510,7 +1551,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_atom_8h_source.html#l00173">173</a> of file <a class="el" href="_atom_8h_source.html">Atom.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_atom_8h_source.html#l00221">221</a> of file <a class="el" href="_atom_8h_source.html">Atom.h</a>.</p>
 
 </div>
 </div>

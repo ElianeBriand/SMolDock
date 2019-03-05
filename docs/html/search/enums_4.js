@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['localoptimizertype',['LocalOptimizerType',['../namespace_smol_dock_1_1_optimizer.html#a7ed1dc6878a606b8dcca7558383650ce',1,'SmolDock::Optimizer']]]
+  ['pdbresiduevariantassignationtype',['PDBResidueVariantAssignationType',['../namespace_smol_dock.html#ab797122db8030eb70bf4d042c897df5e',1,'SmolDock']]]
 ];

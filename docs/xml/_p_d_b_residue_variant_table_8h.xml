@@ -13,121 +13,121 @@
     <includedby refid="_variant_flag_assignation_8cpp" local="yes">VariantFlagAssignation.cpp</includedby>
     <includedby refid="_protein_8cpp" local="yes">Protein.cpp</includedby>
     <incdepgraph>
-      <node id="1223">
+      <node id="1560">
         <label>string</label>
       </node>
-      <node id="1229">
+      <node id="1566">
         <label>Structures/Atom.h</label>
         <link refid="_atom_8h"/>
-        <childnode refid="1222" relation="include">
+        <childnode refid="1559" relation="include">
         </childnode>
-        <childnode refid="1226" relation="include">
+        <childnode refid="1563" relation="include">
         </childnode>
-        <childnode refid="1220" relation="include">
+        <childnode refid="1557" relation="include">
         </childnode>
-        <childnode refid="1225" relation="include">
+        <childnode refid="1562" relation="include">
         </childnode>
-        <childnode refid="1230" relation="include">
+        <childnode refid="1567" relation="include">
         </childnode>
-        <childnode refid="1224" relation="include">
+        <childnode refid="1561" relation="include">
         </childnode>
       </node>
-      <node id="1228">
+      <node id="1565">
         <label>map</label>
       </node>
-      <node id="1219">
+      <node id="1556">
         <label>PDBResidueVariantTable.h</label>
         <link refid="_p_d_b_residue_variant_table_8h"/>
-        <childnode refid="1220" relation="include">
+        <childnode refid="1557" relation="include">
         </childnode>
-        <childnode refid="1221" relation="include">
+        <childnode refid="1558" relation="include">
         </childnode>
-        <childnode refid="1222" relation="include">
+        <childnode refid="1559" relation="include">
         </childnode>
-        <childnode refid="1223" relation="include">
+        <childnode refid="1560" relation="include">
         </childnode>
-        <childnode refid="1224" relation="include">
+        <childnode refid="1561" relation="include">
         </childnode>
-        <childnode refid="1229" relation="include">
+        <childnode refid="1566" relation="include">
         </childnode>
       </node>
-      <node id="1224">
+      <node id="1561">
         <label>Structures/AminoAcid.h</label>
         <link refid="_amino_acid_8h"/>
-        <childnode refid="1223" relation="include">
+        <childnode refid="1560" relation="include">
         </childnode>
-        <childnode refid="1222" relation="include">
+        <childnode refid="1559" relation="include">
         </childnode>
-        <childnode refid="1220" relation="include">
+        <childnode refid="1557" relation="include">
         </childnode>
-        <childnode refid="1225" relation="include">
+        <childnode refid="1562" relation="include">
         </childnode>
-        <childnode refid="1221" relation="include">
+        <childnode refid="1558" relation="include">
         </childnode>
-        <childnode refid="1226" relation="include">
+        <childnode refid="1563" relation="include">
         </childnode>
-        <childnode refid="1227" relation="include">
+        <childnode refid="1564" relation="include">
         </childnode>
       </node>
-      <node id="1221">
+      <node id="1558">
         <label>tuple</label>
       </node>
-      <node id="1227">
+      <node id="1564">
         <label>Engines/Internals/iProtein.h</label>
         <link refid="i_protein_8h"/>
-        <childnode refid="1222" relation="include">
+        <childnode refid="1559" relation="include">
         </childnode>
-        <childnode refid="1226" relation="include">
+        <childnode refid="1563" relation="include">
         </childnode>
-        <childnode refid="1228" relation="include">
+        <childnode refid="1565" relation="include">
         </childnode>
       </node>
-      <node id="1222">
+      <node id="1559">
         <label>vector</label>
       </node>
-      <node id="1230">
+      <node id="1567">
         <label>iostream</label>
       </node>
-      <node id="1220">
+      <node id="1557">
         <label>set</label>
       </node>
-      <node id="1225">
+      <node id="1562">
         <label>algorithm</label>
       </node>
-      <node id="1226">
+      <node id="1563">
         <label>memory</label>
       </node>
     </incdepgraph>
     <invincdepgraph>
-      <node id="1234">
+      <node id="1571">
         <label>VariantFlagAssignation.cpp</label>
         <link refid="_variant_flag_assignation_8cpp"/>
       </node>
-      <node id="1231">
+      <node id="1568">
         <label>PDBResidueVariantTable.h</label>
         <link refid="_p_d_b_residue_variant_table_8h"/>
-        <childnode refid="1232" relation="include">
+        <childnode refid="1569" relation="include">
         </childnode>
-        <childnode refid="1233" relation="include">
+        <childnode refid="1570" relation="include">
         </childnode>
-        <childnode refid="1234" relation="include">
+        <childnode refid="1571" relation="include">
         </childnode>
-        <childnode refid="1235" relation="include">
+        <childnode refid="1572" relation="include">
         </childnode>
       </node>
-      <node id="1232">
+      <node id="1569">
         <label>PDBResidueVariantTable.cpp</label>
         <link refid="_p_d_b_residue_variant_table_8cpp"/>
       </node>
-      <node id="1233">
+      <node id="1570">
         <label>VariantFlagAssignation.h</label>
         <link refid="_variant_flag_assignation_8h"/>
-        <childnode refid="1234" relation="include">
+        <childnode refid="1571" relation="include">
         </childnode>
-        <childnode refid="1235" relation="include">
+        <childnode refid="1572" relation="include">
         </childnode>
       </node>
-      <node id="1235">
+      <node id="1572">
         <label>Protein.cpp</label>
         <link refid="_protein_8cpp"/>
       </node>
@@ -163,11 +163,10 @@
 <codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>std::set&lt;std::tuple&lt;AminoAcid::AAType,<sp/>std::vector&lt;std::tuple&lt;std::string,<sp/>Atom::AtomVariant&gt;<sp/>&gt;<sp/>&gt;<sp/>&gt;<sp/><ref refid="namespace_smol_dock_1a1c9575126d6be4889918032116fd8add" kindref="member">ResidueAtomPropertiesLookupTable_General</ref>;</highlight></codeline>
 <codeline lineno="24"><highlight class="normal"></highlight></codeline>
 <codeline lineno="25"><highlight class="normal"></highlight></codeline>
-<codeline lineno="26"><highlight class="normal"></highlight></codeline>
-<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="26"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
 <codeline lineno="28"><highlight class="normal"></highlight></codeline>
-<codeline lineno="29"><highlight class="normal"></highlight></codeline>
-<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//SMOLDOCK_PDBRESIDUEVARIANTTABLE_H</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//SMOLDOCK_PDBRESIDUEVARIANTTABLE_H</highlight></codeline>
     </programlisting>
     <location file="Structures/Common/PDBResidueVariantTable.h"/>
   </compounddef>

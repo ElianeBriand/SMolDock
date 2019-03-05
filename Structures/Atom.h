@@ -92,14 +92,21 @@ namespace SmolDock {
             iodine = 53
         };
 
+        static_assert(sizeof(unsigned int) >= 4, "unsigned int type need to be at least 32 bits for atom flag purpose");
         enum class AtomVariant : unsigned int {
             none = 0,
             apolar = 1
                     << 0, // Hydrophobic flag (notably, identifies hydrophobic carbon vs partial-charge-carrying carbon for scoring)
             hydrogenDonor = 1 << 1,
-            hydrogenAcceptor = 1 << 2
+            hydrogenAcceptor = 1 << 2,
 
-            // next flag : xxx = 1 << 3;
+            covalentReversibleAcceptor = 1 << 3,
+
+            // next flag : xxx = 1 << 4;
+            customAtomFlag1 = 1 << 29,
+            customAtomFlag2 = 1 << 29,
+            customAtomFlag3 = 1 << 30
+
         };
 
         /* Too many cases, for now we just store as-is in a string
@@ -228,6 +235,44 @@ namespace SmolDock {
 
     inline constexpr Atom::AtomVariant operator|(Atom::AtomVariant a, Atom::AtomVariant b) {
         return static_cast<Atom::AtomVariant>(static_cast<unsigned int>(a) | static_cast<unsigned int>(b));
+    }
+
+    inline constexpr bool operator&(Atom::AtomVariant a, Atom::AtomVariant b) {
+        return static_cast<bool>(static_cast<unsigned int>(a) & static_cast<unsigned int>(b));
+    }
+
+    inline std::string atomVariantToString(Atom::AtomVariant a) {
+        std::string varStr;
+
+        if(a & Atom::AtomVariant::apolar)
+        {
+            varStr.append("apolar ");
+        }
+        if(a & Atom::AtomVariant::hydrogenDonor)
+        {
+            varStr.append("hydrogenDonor ");
+        }
+        if(a & Atom::AtomVariant::hydrogenAcceptor)
+        {
+            varStr.append("hydrogenAcceptor ");
+        }
+        if(a & Atom::AtomVariant::covalentReversibleAcceptor)
+        {
+            varStr.append("covalentReversibleAcceptor ");
+        }
+        if(a & Atom::AtomVariant::customAtomFlag1)
+        {
+            varStr.append("customAtomFlag1 ");
+        }
+        if(a & Atom::AtomVariant::customAtomFlag2)
+        {
+            varStr.append("customAtomFlag2 ");
+        }
+        if(a & Atom::AtomVariant::customAtomFlag3)
+        {
+            varStr.append("customAtomFlag3 ");
+        }
+        return varStr;
     }
 
 }

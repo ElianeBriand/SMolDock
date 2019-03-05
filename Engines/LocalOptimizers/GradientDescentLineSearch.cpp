@@ -5,7 +5,7 @@
 #include "GradientDescentLineSearch.h"
 
 
-#include <Engines/ScoringFunctions/VinaLikeScoringFunction.h>
+#include <Engines/ScoringFunctions/VinaLikeRigidScoringFunction.h>
 
 #include <Engines/Internals/InternalsUtilityFunctions.h>
 
@@ -19,7 +19,7 @@
 namespace SmolDock::Optimizer {
 
 
-    GradientDescentLineSearch::GradientDescentLineSearch(Score::ScoringFunction *scoringFunc_,
+    GradientDescentLineSearch::GradientDescentLineSearch(Score::ScoringFunction* scoringFunc_,
                                                          double differentialUpsilon) :
             scoringFunction(scoringFunc_),
             differential_epsilon(differentialUpsilon),

@@ -8,414 +8,379 @@
     <includes refid="_scoring_function_interface_8h" local="yes">ScoringFunctionInterface.h</includes>
     <includes refid="_molecule_8h" local="no">Structures/Molecule.h</includes>
     <includes refid="_protein_8h" local="no">Structures/Protein.h</includes>
-    <includedby refid="_conformer_rigid_docking_engine_8cpp" local="no">ConformerRigidDockingEngine.cpp</includedby>
-    <includedby refid="_gradient_descent_line_search_8cpp" local="no">GradientDescentLineSearch.cpp</includedby>
     <includedby refid="_scoring_function_factory_8cpp" local="yes">ScoringFunctionFactory.cpp</includedby>
     <includedby refid="_vina_like_scoring_function_8cpp" local="yes">VinaLikeScoringFunction.cpp</includedby>
-    <includedby refid="main_8cpp" local="yes">main.cpp</includedby>
-    <includedby refid="_py_scoring_functions_8cpp" local="no">PyScoringFunctions.cpp</includedby>
     <incdepgraph>
-      <node id="2046">
+      <node id="2758">
         <label>Structures/Protein.h</label>
         <link refid="_protein_8h"/>
-        <childnode refid="2018" relation="include">
+        <childnode refid="2728" relation="include">
         </childnode>
-        <childnode refid="2019" relation="include">
+        <childnode refid="2729" relation="include">
         </childnode>
-        <childnode refid="2047" relation="include">
+        <childnode refid="2759" relation="include">
         </childnode>
-        <childnode refid="2048" relation="include">
+        <childnode refid="2760" relation="include">
         </childnode>
-        <childnode refid="2049" relation="include">
+        <childnode refid="2761" relation="include">
         </childnode>
-        <childnode refid="2050" relation="include">
+        <childnode refid="2762" relation="include">
         </childnode>
-        <childnode refid="2024" relation="include">
+        <childnode refid="2736" relation="include">
         </childnode>
-        <childnode refid="2036" relation="include">
+        <childnode refid="2748" relation="include">
         </childnode>
-        <childnode refid="2044" relation="include">
+        <childnode refid="2756" relation="include">
         </childnode>
-        <childnode refid="2041" relation="include">
+        <childnode refid="2753" relation="include">
         </childnode>
       </node>
-      <node id="2047">
+      <node id="2759">
         <label>ESBTL/default.h</label>
       </node>
-      <node id="2030">
+      <node id="2742">
         <label>GraphMol/RWMol.h</label>
       </node>
-      <node id="2031">
+      <node id="2743">
         <label>GraphMol/MolOps.h</label>
       </node>
-      <node id="2034">
+      <node id="2746">
         <label>GraphMol/Substruct/SubstructMatch.h</label>
       </node>
-      <node id="2022">
+      <node id="2732">
         <label>cmath</label>
       </node>
-      <node id="2023">
+      <node id="2733">
         <label>cassert</label>
       </node>
-      <node id="2035">
+      <node id="2734">
+        <label>Eigen/Core</label>
+      </node>
+      <node id="2747">
         <label>GraphMol/DistGeomHelpers/Embedder.h</label>
       </node>
-      <node id="2036">
+      <node id="2748">
         <label>Structures/InputPostProcessors/InputPostProcessorInterface.h</label>
         <link refid="_input_post_processor_interface_8h"/>
-        <childnode refid="2037" relation="include">
+        <childnode refid="2749" relation="include">
         </childnode>
       </node>
-      <node id="2042">
+      <node id="2754">
         <label>string</label>
       </node>
-      <node id="2050">
+      <node id="2762">
         <label>ESBTL/compressed_ifstream.h</label>
       </node>
-      <node id="2026">
+      <node id="2738">
         <label>ScoringFunctionInterface.h</label>
         <link refid="_scoring_function_interface_8h"/>
-        <childnode refid="2027" relation="include">
+        <childnode refid="2739" relation="include">
         </childnode>
-        <childnode refid="2017" relation="include">
+        <childnode refid="2727" relation="include">
         </childnode>
       </node>
-      <node id="2037">
+      <node id="2749">
         <label>Structures/Atom.h</label>
         <link refid="_atom_8h"/>
-        <childnode refid="2018" relation="include">
+        <childnode refid="2728" relation="include">
         </childnode>
-        <childnode refid="2019" relation="include">
+        <childnode refid="2729" relation="include">
         </childnode>
-        <childnode refid="2038" relation="include">
+        <childnode refid="2750" relation="include">
         </childnode>
-        <childnode refid="2039" relation="include">
+        <childnode refid="2751" relation="include">
         </childnode>
-        <childnode refid="2040" relation="include">
+        <childnode refid="2752" relation="include">
         </childnode>
-        <childnode refid="2041" relation="include">
+        <childnode refid="2753" relation="include">
         </childnode>
       </node>
-      <node id="2025">
+      <node id="2737">
         <label>map</label>
       </node>
-      <node id="2017">
+      <node id="2727">
         <label>Engines/Internals/iConformer.h</label>
         <link refid="i_conformer_8h"/>
-        <childnode refid="2018" relation="include">
+        <childnode refid="2728" relation="include">
         </childnode>
-        <childnode refid="2019" relation="include">
+        <childnode refid="2729" relation="include">
         </childnode>
-        <childnode refid="2020" relation="include">
+        <childnode refid="2730" relation="include">
         </childnode>
       </node>
-      <node id="2027">
+      <node id="2739">
         <label>armadillo</label>
       </node>
-      <node id="2045">
+      <node id="2757">
         <label>Bond.h</label>
         <link refid="_bond_8h"/>
-        <childnode refid="2019" relation="include">
+        <childnode refid="2729" relation="include">
         </childnode>
-        <childnode refid="2037" relation="include">
+        <childnode refid="2749" relation="include">
         </childnode>
       </node>
-      <node id="2048">
+      <node id="2760">
         <label>ESBTL/atom_classifier.h</label>
       </node>
-      <node id="2041">
+      <node id="2735">
+        <label>Eigen/Dense</label>
+      </node>
+      <node id="2753">
         <label>AminoAcid.h</label>
         <link refid="_amino_acid_8h"/>
-        <childnode refid="2042" relation="include">
+        <childnode refid="2754" relation="include">
         </childnode>
-        <childnode refid="2018" relation="include">
+        <childnode refid="2728" relation="include">
         </childnode>
-        <childnode refid="2038" relation="include">
+        <childnode refid="2750" relation="include">
         </childnode>
-        <childnode refid="2039" relation="include">
+        <childnode refid="2751" relation="include">
         </childnode>
-        <childnode refid="2043" relation="include">
+        <childnode refid="2755" relation="include">
         </childnode>
-        <childnode refid="2019" relation="include">
+        <childnode refid="2729" relation="include">
         </childnode>
-        <childnode refid="2024" relation="include">
+        <childnode refid="2736" relation="include">
         </childnode>
       </node>
-      <node id="2043">
+      <node id="2755">
         <label>tuple</label>
       </node>
-      <node id="2024">
+      <node id="2736">
         <label>Engines/Internals/iProtein.h</label>
         <link refid="i_protein_8h"/>
-        <childnode refid="2018" relation="include">
+        <childnode refid="2728" relation="include">
         </childnode>
-        <childnode refid="2019" relation="include">
+        <childnode refid="2729" relation="include">
         </childnode>
-        <childnode refid="2025" relation="include">
+        <childnode refid="2737" relation="include">
         </childnode>
       </node>
-      <node id="2020">
+      <node id="2730">
         <label>iTransform.h</label>
         <link refid="i_transform_8h"/>
-        <childnode refid="2018" relation="include">
+        <childnode refid="2728" relation="include">
         </childnode>
-        <childnode refid="2019" relation="include">
+        <childnode refid="2729" relation="include">
         </childnode>
-        <childnode refid="2021" relation="include">
+        <childnode refid="2731" relation="include">
         </childnode>
-        <childnode refid="2022" relation="include">
+        <childnode refid="2732" relation="include">
         </childnode>
-        <childnode refid="2023" relation="include">
+        <childnode refid="2733" relation="include">
+        </childnode>
+        <childnode refid="2734" relation="include">
+        </childnode>
+        <childnode refid="2735" relation="include">
         </childnode>
       </node>
-      <node id="2018">
+      <node id="2728">
         <label>vector</label>
       </node>
-      <node id="2021">
+      <node id="2731">
         <label>array</label>
       </node>
-      <node id="2033">
+      <node id="2745">
         <label>GraphMol/SmilesParse/SmilesParse.h</label>
       </node>
-      <node id="2044">
+      <node id="2756">
         <label>Structure.h</label>
         <link refid="_structure_8h"/>
       </node>
-      <node id="2028">
+      <node id="2740">
         <label>Structures/Molecule.h</label>
         <link refid="_molecule_8h"/>
-        <childnode refid="2018" relation="include">
+        <childnode refid="2728" relation="include">
         </childnode>
-        <childnode refid="2029" relation="include">
+        <childnode refid="2741" relation="include">
         </childnode>
-        <childnode refid="2030" relation="include">
+        <childnode refid="2742" relation="include">
         </childnode>
-        <childnode refid="2031" relation="include">
+        <childnode refid="2743" relation="include">
         </childnode>
-        <childnode refid="2032" relation="include">
+        <childnode refid="2744" relation="include">
         </childnode>
-        <childnode refid="2033" relation="include">
+        <childnode refid="2745" relation="include">
         </childnode>
-        <childnode refid="2034" relation="include">
+        <childnode refid="2746" relation="include">
         </childnode>
-        <childnode refid="2035" relation="include">
+        <childnode refid="2747" relation="include">
         </childnode>
-        <childnode refid="2036" relation="include">
+        <childnode refid="2748" relation="include">
         </childnode>
-        <childnode refid="2044" relation="include">
+        <childnode refid="2756" relation="include">
         </childnode>
-        <childnode refid="2037" relation="include">
+        <childnode refid="2749" relation="include">
         </childnode>
-        <childnode refid="2045" relation="include">
+        <childnode refid="2757" relation="include">
         </childnode>
-        <childnode refid="2017" relation="include">
+        <childnode refid="2727" relation="include">
         </childnode>
       </node>
-      <node id="2029">
+      <node id="2741">
         <label>GraphMol/RDKitBase.h</label>
       </node>
-      <node id="2040">
+      <node id="2752">
         <label>iostream</label>
       </node>
-      <node id="2016">
+      <node id="2726">
         <label>VinaLikeScoringFunction.h</label>
         <link refid="_vina_like_scoring_function_8h"/>
-        <childnode refid="2017" relation="include">
+        <childnode refid="2727" relation="include">
         </childnode>
-        <childnode refid="2024" relation="include">
+        <childnode refid="2736" relation="include">
         </childnode>
-        <childnode refid="2020" relation="include">
+        <childnode refid="2730" relation="include">
         </childnode>
-        <childnode refid="2026" relation="include">
+        <childnode refid="2738" relation="include">
         </childnode>
-        <childnode refid="2028" relation="include">
+        <childnode refid="2740" relation="include">
         </childnode>
-        <childnode refid="2046" relation="include">
+        <childnode refid="2758" relation="include">
         </childnode>
       </node>
-      <node id="2038">
+      <node id="2750">
         <label>set</label>
       </node>
-      <node id="2039">
+      <node id="2751">
         <label>algorithm</label>
       </node>
-      <node id="2049">
+      <node id="2761">
         <label>ESBTL/weighted_atom_iterator.h</label>
       </node>
-      <node id="2019">
+      <node id="2729">
         <label>memory</label>
       </node>
-      <node id="2032">
+      <node id="2744">
         <label>GraphMol/FileParsers/FileParsers.h</label>
       </node>
     </incdepgraph>
     <invincdepgraph>
-      <node id="2055">
+      <node id="2765">
         <label>VinaLikeScoringFunction.cpp</label>
         <link refid="_vina_like_scoring_function_8cpp"/>
       </node>
-      <node id="2056">
-        <label>main.cpp</label>
-        <link refid="main_8cpp"/>
-      </node>
-      <node id="2054">
+      <node id="2764">
         <label>ScoringFunctionFactory.cpp</label>
         <link refid="_scoring_function_factory_8cpp"/>
       </node>
-      <node id="2052">
-        <label>ConformerRigidDockingEngine.cpp</label>
-        <link refid="_conformer_rigid_docking_engine_8cpp"/>
-      </node>
-      <node id="2053">
-        <label>GradientDescentLineSearch.cpp</label>
-        <link refid="_gradient_descent_line_search_8cpp"/>
-      </node>
-      <node id="2057">
-        <label>PyScoringFunctions.cpp</label>
-        <link refid="_py_scoring_functions_8cpp"/>
-      </node>
-      <node id="2051">
+      <node id="2763">
         <label>VinaLikeScoringFunction.h</label>
         <link refid="_vina_like_scoring_function_8h"/>
-        <childnode refid="2052" relation="include">
+        <childnode refid="2764" relation="include">
         </childnode>
-        <childnode refid="2053" relation="include">
-        </childnode>
-        <childnode refid="2054" relation="include">
-        </childnode>
-        <childnode refid="2055" relation="include">
-        </childnode>
-        <childnode refid="2056" relation="include">
-        </childnode>
-        <childnode refid="2057" relation="include">
+        <childnode refid="2765" relation="include">
         </childnode>
       </node>
     </invincdepgraph>
-    <innerclass refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function" prot="public">SmolDock::Score::VinaLikeRigidScoringFunction</innerclass>
-    <innernamespace refid="namespace_smol_dock">SmolDock</innernamespace>
+    <innerclass refid="class_smol_dock_1_1_score_1_1_vina_like_scoring_function" prot="public">SmolDock::Score::VinaLikeScoringFunction</innerclass>
     <innernamespace refid="namespace_smol_dock_1_1_score">SmolDock::Score</innernamespace>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
     <programlisting>
-<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
-<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2018<sp/>Eliane<sp/>Briand</highlight></codeline>
-<codeline lineno="3"><highlight class="comment"><sp/>*</highlight></codeline>
-<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>SmolDock.</highlight></codeline>
-<codeline lineno="5"><highlight class="comment"><sp/>*</highlight></codeline>
-<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>SmolDock<sp/>is<sp/>free<sp/>software:<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or<sp/>modify</highlight></codeline>
-<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>it<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>as<sp/>published<sp/>by</highlight></codeline>
-<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>the<sp/>Free<sp/>Software<sp/>Foundation,<sp/>either<sp/>version<sp/>3<sp/>of<sp/>the<sp/>License,<sp/>or</highlight></codeline>
-<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>(at<sp/>your<sp/>option)<sp/>any<sp/>later<sp/>version.</highlight></codeline>
-<codeline lineno="10"><highlight class="comment"><sp/>*</highlight></codeline>
-<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>SmolDock<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,</highlight></codeline>
-<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>but<sp/>WITHOUT<sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of</highlight></codeline>
-<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE.<sp/><sp/>See<sp/>the</highlight></codeline>
-<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>for<sp/>more<sp/>details.</highlight></codeline>
-<codeline lineno="15"><highlight class="comment"><sp/>*</highlight></codeline>
-<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License</highlight></codeline>
-<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>along<sp/>with<sp/>SmolDock.<sp/><sp/>If<sp/>not,<sp/>see<sp/>&lt;https://www.gnu.org/licenses/&gt;.</highlight></codeline>
-<codeline lineno="18"><highlight class="comment"><sp/>*</highlight></codeline>
-<codeline lineno="19"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="20"><highlight class="normal"></highlight></codeline>
-<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>SMOLDOCK_BASICSCORINGFUNCTION_H</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SMOLDOCK_BASICSCORINGFUNCTION_H</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="23"><highlight class="normal"></highlight></codeline>
-<codeline lineno="24"><highlight class="normal"></highlight></codeline>
-<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="i_conformer_8h" kindref="compound">Engines/Internals/iConformer.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="i_protein_8h" kindref="compound">Engines/Internals/iProtein.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="i_transform_8h" kindref="compound">Engines/Internals/iTransform.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_scoring_function_interface_8h" kindref="compound">ScoringFunctionInterface.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1"><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Created<sp/>by<sp/>eliane<sp/>on<sp/>04/03/19.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>SMOLDOCK_VINALIKESCORINGFUNCTION_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SMOLDOCK_VINALIKESCORINGFUNCTION_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="i_conformer_8h" kindref="compound">Engines/Internals/iConformer.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="i_protein_8h" kindref="compound">Engines/Internals/iProtein.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="i_transform_8h" kindref="compound">Engines/Internals/iTransform.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_scoring_function_interface_8h" kindref="compound">ScoringFunctionInterface.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_molecule_8h" kindref="compound">Structures/Molecule.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_protein_8h" kindref="compound">Structures/Protein.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_smol_dock_1_1_score" kindref="compound">SmolDock::Score</ref><sp/>{</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="namespace_smol_dock_1_1_score_1af7f12c4b8451b856342af3afdbcadce8" kindref="member">VinaLikeIntermolecularScoringFunction</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>iConformer<sp/>&amp;conformer,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>iTransform<sp/>&amp;transform,</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>iProtein<sp/>&amp;protein);</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22" refid="class_smol_dock_1_1_score_1_1_vina_like_scoring_function" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_smol_dock_1_1_score_1_1_vina_like_scoring_function" kindref="compound">VinaLikeScoringFunction</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_score_1_1_scoring_function" kindref="compound">ScoringFunction</ref><sp/>{</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_score_1_1_vina_like_scoring_function_1a1b8a8d8b607a9b8a0a56e8616d412b92" kindref="member">VinaLikeScoringFunction</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_smol_dock_1_1i_conformer" kindref="compound">iConformer</ref><sp/>&amp;startingConformation_,</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_smol_dock_1_1i_protein" kindref="compound">iProtein</ref><sp/>&amp;p,</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_smol_dock_1_1i_transform" kindref="compound">iTransform</ref><sp/>&amp;initialTransform_,</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>differential_epsilon_<sp/>=<sp/>1e-3);</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
 <codeline lineno="29"><highlight class="normal"></highlight></codeline>
-<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_molecule_8h" kindref="compound">Structures/Molecule.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_protein_8h" kindref="compound">Structures/Protein.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="32"><highlight class="normal"></highlight></codeline>
-<codeline lineno="33"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_smol_dock" kindref="compound">SmolDock</ref><sp/>{</highlight></codeline>
-<codeline lineno="34"><highlight class="normal"></highlight></codeline>
-<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">Score<sp/>{</highlight></codeline>
-<codeline lineno="37"><highlight class="normal"></highlight></codeline>
-<codeline lineno="39"></codeline>
-<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="namespace_smol_dock_1_1_score_1ac205731c7b0098c2900d9d16fff1a93b" kindref="member">vina_like_rigid_inter_scoring_func</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>iConformer<sp/>&amp;conformer,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>iTransform<sp/>&amp;transform,</highlight></codeline>
-<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>iProtein<sp/>&amp;protein);</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_score_1_1_vina_like_scoring_function_1a5b2eaf1db8e2e0b98ee1f199be96a406" kindref="member">Evaluate</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>arma::mat<sp/>&amp;x)<sp/></highlight><highlight class="keyword">final</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_score_1_1_vina_like_scoring_function_1adc45f52c75b9c1d96edcdb3caf27160c" kindref="member">EvaluateWithGradient</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>arma::mat<sp/>&amp;x,<sp/>arma::mat<sp/>&amp;gradient)<sp/></highlight><highlight class="keyword">final</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>arma::mat<sp/><ref refid="class_smol_dock_1_1_score_1_1_vina_like_scoring_function_1a79981b85f1e66c1866bc5bd5f5d15105" kindref="member">getStartingConditions</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">final</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_score_1_1_vina_like_scoring_function_1a9063bb586901ea606f01c2fc8e68b2ee" kindref="member">getDifferentialEpsilon</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">final</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_smol_dock_1_1i_conformer" kindref="compound">iConformer</ref><sp/><ref refid="class_smol_dock_1_1_score_1_1_vina_like_scoring_function_1a6c9ffc4bfc5cc3d066f2a2cda2163397" kindref="member">getConformerForParamMatrix</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>arma::mat<sp/>&amp;x)<sp/></highlight><highlight class="keyword">final</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_score_1_1_vina_like_scoring_function_1ae78fe7c1766805f84d92ed585b4f7255" kindref="member">getParamVectorDimension</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">final</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_score_1_1_vina_like_scoring_function_1a16b16e34d6cac1d205e1bb8366ffeeeb" kindref="member">~VinaLikeScoringFunction</ref>()<sp/></highlight><highlight class="keyword">final</highlight><highlight class="normal"><sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50" refid="class_smol_dock_1_1_score_1_1_vina_like_scoring_function_1a0dcb6ed38cd8f88b995fb862453e7d0f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/><ref refid="struct_smol_dock_1_1i_transform" kindref="compound">iTransform</ref><sp/><ref refid="class_smol_dock_1_1_score_1_1_vina_like_scoring_function_1a0dcb6ed38cd8f88b995fb862453e7d0f" kindref="member">internalToExternalRepr</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>arma::mat<sp/>&amp;x_)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>assert(x_.n_rows<sp/>==<sp/>this-&gt;numberOfParamInState);</highlight></codeline>
 <codeline lineno="52"><highlight class="normal"></highlight></codeline>
-<codeline lineno="53" refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function" kindref="compound">VinaLikeRigidScoringFunction</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_score_1_1_scoring_function" kindref="compound">ScoringFunction</ref><sp/>{</highlight></codeline>
-<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="55"><highlight class="normal"></highlight></codeline>
-<codeline lineno="56"><highlight class="normal"></highlight></codeline>
-<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1a5972bf8e5a96678d769255137b944afc" kindref="member">VinaLikeRigidScoringFunction</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_smol_dock_1_1i_conformer" kindref="compound">iConformer</ref><sp/>&amp;startingConformation_,</highlight></codeline>
-<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_smol_dock_1_1i_protein" kindref="compound">iProtein</ref><sp/>&amp;p,</highlight></codeline>
-<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_smol_dock_1_1i_transform" kindref="compound">iTransform</ref><sp/>&amp;initialTransform_,</highlight></codeline>
-<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>differential_epsilon_<sp/>=<sp/>1e-3);</highlight></codeline>
-<codeline lineno="61"><highlight class="normal"></highlight></codeline>
-<codeline lineno="62"><highlight class="normal"></highlight></codeline>
-<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1ab89f08da2f4f79abfe9130b3593c3522" kindref="member">Evaluate</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>arma::mat<sp/>&amp;x)<sp/></highlight><highlight class="keyword">final</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="64"><highlight class="normal"></highlight></codeline>
-<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1a574511b3c12769902e2c0366d4d3db96" kindref="member">EvaluateWithGradient</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>arma::mat<sp/>&amp;x,<sp/>arma::mat<sp/>&amp;gradient)<sp/></highlight><highlight class="keyword">final</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="66"><highlight class="normal"></highlight></codeline>
-<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>arma::mat<sp/><ref refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1ad16c38589c65800f164078fcbd929e99" kindref="member">getStartingConditions</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">final</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="68"><highlight class="normal"></highlight></codeline>
-<codeline lineno="69"><highlight class="normal"></highlight></codeline>
-<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1a2173a0716d2426518a601e1525798fcd" kindref="member">getDifferentialEpsilon</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">final</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="71"><highlight class="normal"></highlight></codeline>
-<codeline lineno="72"><highlight class="normal"></highlight></codeline>
-<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_smol_dock_1_1i_conformer" kindref="compound">iConformer</ref><sp/><ref refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1a6b173e704b812af5cde72610f1143577" kindref="member">getConformerForParamMatrix</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>arma::mat<sp/>&amp;x)<sp/></highlight><highlight class="keyword">final</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="74"><highlight class="normal"></highlight></codeline>
-<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1ad5633f6ee3c7d72b593e5101730747a2" kindref="member">getParamVectorDimension</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">final</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_smol_dock_1_1i_transform" kindref="compound">iTransform</ref><sp/>tr_<sp/>=<sp/><ref refid="struct_smol_dock_1_1i_transform" kindref="compound">iTransform</ref>();</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tr_.<ref refid="struct_smol_dock_1_1i_transform_1ae79de47f6741ab7c3a97498fe0c589d3" kindref="member">transl</ref>.x()<sp/>=<sp/>x_[0];</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tr_.<ref refid="struct_smol_dock_1_1i_transform_1ae79de47f6741ab7c3a97498fe0c589d3" kindref="member">transl</ref>.y()<sp/>=<sp/>x_[1];</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tr_.<ref refid="struct_smol_dock_1_1i_transform_1ae79de47f6741ab7c3a97498fe0c589d3" kindref="member">transl</ref>.z()<sp/>=<sp/>x_[2];</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tr_.<ref refid="struct_smol_dock_1_1i_transform_1a8234938f815b9f74cc2d3289d4696dfb" kindref="member">rota</ref>.w()<sp/>=<sp/>x_[3];</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tr_.<ref refid="struct_smol_dock_1_1i_transform_1a8234938f815b9f74cc2d3289d4696dfb" kindref="member">rota</ref>.x()<sp/>=<sp/>x_[4];</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tr_.<ref refid="struct_smol_dock_1_1i_transform_1a8234938f815b9f74cc2d3289d4696dfb" kindref="member">rota</ref>.y()<sp/>=<sp/>x_[5];</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tr_.<ref refid="struct_smol_dock_1_1i_transform_1a8234938f815b9f74cc2d3289d4696dfb" kindref="member">rota</ref>.z()<sp/>=<sp/>x_[6];</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>this-&gt;<ref refid="class_smol_dock_1_1_score_1_1_vina_like_scoring_function_1a8e215909cb2c574ead7424550bdc20ad" kindref="member">numberOfRotatableBonds</ref>;<sp/>i++)<sp/>{</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tr_.<ref refid="struct_smol_dock_1_1i_transform_1aa71e9b254a08dfc310a6430056f05964" kindref="member">bondRotationsAngles</ref>.push_back(x_[7<sp/>+<sp/>i]);</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>tr_;</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71" refid="class_smol_dock_1_1_score_1_1_vina_like_scoring_function_1a97cb87260424d70f368caa48445825b7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/>arma::mat<sp/><ref refid="class_smol_dock_1_1_score_1_1_vina_like_scoring_function_1a97cb87260424d70f368caa48445825b7" kindref="member">externalToInternalRepr</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_smol_dock_1_1i_transform" kindref="compound">iTransform</ref><sp/>&amp;tr_)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>arma::mat<sp/>ret(this-&gt;<ref refid="class_smol_dock_1_1_score_1_1_vina_like_scoring_function_1a5d22a919d0162dfac85d01b93daf4154" kindref="member">numberOfParamInState</ref>,<sp/>1);</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ret[0]<sp/>=<sp/>tr_.<ref refid="struct_smol_dock_1_1i_transform_1ae79de47f6741ab7c3a97498fe0c589d3" kindref="member">transl</ref>.x();</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ret[1]<sp/>=<sp/>tr_.<ref refid="struct_smol_dock_1_1i_transform_1ae79de47f6741ab7c3a97498fe0c589d3" kindref="member">transl</ref>.y();</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ret[2]<sp/>=<sp/>tr_.<ref refid="struct_smol_dock_1_1i_transform_1ae79de47f6741ab7c3a97498fe0c589d3" kindref="member">transl</ref>.z();</highlight></codeline>
 <codeline lineno="77"><highlight class="normal"></highlight></codeline>
-<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1a9f439356ccbad3407dcb8701037cc902" kindref="member">~VinaLikeRigidScoringFunction</ref>()<sp/></highlight><highlight class="keyword">final</highlight><highlight class="normal"><sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="79"><highlight class="normal"></highlight></codeline>
-<codeline lineno="80"><highlight class="normal"></highlight></codeline>
-<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ret[3]<sp/>=<sp/>tr_.<ref refid="struct_smol_dock_1_1i_transform_1a8234938f815b9f74cc2d3289d4696dfb" kindref="member">rota</ref>.w();</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ret[4]<sp/>=<sp/>tr_.<ref refid="struct_smol_dock_1_1i_transform_1a8234938f815b9f74cc2d3289d4696dfb" kindref="member">rota</ref>.x();</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ret[5]<sp/>=<sp/>tr_.<ref refid="struct_smol_dock_1_1i_transform_1a8234938f815b9f74cc2d3289d4696dfb" kindref="member">rota</ref>.y();</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ret[6]<sp/>=<sp/>tr_.<ref refid="struct_smol_dock_1_1i_transform_1a8234938f815b9f74cc2d3289d4696dfb" kindref="member">rota</ref>.z();</highlight></codeline>
 <codeline lineno="82"><highlight class="normal"></highlight></codeline>
-<codeline lineno="83" refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1a7998fd7ab2237aa8da50d05d553ffec0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/><ref refid="struct_smol_dock_1_1i_transform" kindref="compound">iTransform</ref><sp/><ref refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1a7998fd7ab2237aa8da50d05d553ffec0" kindref="member">internalToExternalRepr</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>arma::mat<sp/>&amp;x_)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>assert(x_.n_rows<sp/>==<sp/>7);</highlight></codeline>
-<codeline lineno="85"><highlight class="normal"></highlight></codeline>
-<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_smol_dock_1_1i_transform" kindref="compound">iTransform</ref><sp/>tr_;</highlight></codeline>
-<codeline lineno="87"><highlight class="normal"></highlight></codeline>
-<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tr_.<ref refid="struct_smol_dock_1_1i_transform_1ab0039729b08d423b6e0414cec1b893e7" kindref="member">transl</ref>.<ref refid="struct_smol_dock_1_1i_translation_1a74a60efc8b2463b7ea1ca1e824a4ed28" kindref="member">x</ref><sp/>=<sp/>x_[0];</highlight></codeline>
-<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tr_.<ref refid="struct_smol_dock_1_1i_transform_1ab0039729b08d423b6e0414cec1b893e7" kindref="member">transl</ref>.<ref refid="struct_smol_dock_1_1i_translation_1a5362a54675ecc6bac99325c69521fbb5" kindref="member">y</ref><sp/>=<sp/>x_[1];</highlight></codeline>
-<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tr_.<ref refid="struct_smol_dock_1_1i_transform_1ab0039729b08d423b6e0414cec1b893e7" kindref="member">transl</ref>.<ref refid="struct_smol_dock_1_1i_translation_1a2ed07fcfc129a2bf7696b65d481317c5" kindref="member">z</ref><sp/>=<sp/>x_[2];</highlight></codeline>
-<codeline lineno="91"><highlight class="normal"></highlight></codeline>
-<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tr_.<ref refid="struct_smol_dock_1_1i_transform_1a31861b55dc94ec0172ce602cd2a4a54f" kindref="member">rota</ref>.<ref refid="struct_smol_dock_1_1i_quaternion_1a07d95036803eb2a4ef32627df95043ad" kindref="member">s</ref><sp/>=<sp/>x_[3];</highlight></codeline>
-<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tr_.<ref refid="struct_smol_dock_1_1i_transform_1a31861b55dc94ec0172ce602cd2a4a54f" kindref="member">rota</ref>.<ref refid="struct_smol_dock_1_1i_quaternion_1a3692d71434fede9771686a73240e6ba7" kindref="member">u</ref><sp/>=<sp/>x_[4];</highlight></codeline>
-<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tr_.<ref refid="struct_smol_dock_1_1i_transform_1a31861b55dc94ec0172ce602cd2a4a54f" kindref="member">rota</ref>.<ref refid="struct_smol_dock_1_1i_quaternion_1a97a15d15b2fae3ec29c2fdb2388f5e5b" kindref="member">v</ref><sp/>=<sp/>x_[5];</highlight></codeline>
-<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tr_.<ref refid="struct_smol_dock_1_1i_transform_1a31861b55dc94ec0172ce602cd2a4a54f" kindref="member">rota</ref>.<ref refid="struct_smol_dock_1_1i_quaternion_1a1ff0d5e99369aa47273864dfea352c05" kindref="member">t</ref><sp/>=<sp/>x_[6];</highlight></codeline>
-<codeline lineno="96"><highlight class="normal"></highlight></codeline>
-<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>tr_;</highlight></codeline>
-<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>this-&gt;<ref refid="class_smol_dock_1_1_score_1_1_vina_like_scoring_function_1a8e215909cb2c574ead7424550bdc20ad" kindref="member">numberOfRotatableBonds</ref>;<sp/>i++)<sp/>{</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ret[7<sp/>+<sp/>i]<sp/>=<sp/>tr_.<ref refid="struct_smol_dock_1_1i_transform_1aa71e9b254a08dfc310a6430056f05964" kindref="member">bondRotationsAngles</ref>[i];</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>ret;</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90" refid="class_smol_dock_1_1_score_1_1_vina_like_scoring_function_1a19b426e35ef7dfb8502a01689fcc66da" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_smol_dock_1_1i_conformer" kindref="compound">iConformer</ref><sp/><ref refid="class_smol_dock_1_1_score_1_1_vina_like_scoring_function_1a19b426e35ef7dfb8502a01689fcc66da" kindref="member">startingConformation</ref>;</highlight></codeline>
+<codeline lineno="91" refid="class_smol_dock_1_1_score_1_1_vina_like_scoring_function_1a5ec005e4eda5054ff3fbad82c3e3c185" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_smol_dock_1_1i_protein" kindref="compound">iProtein</ref><sp/>&amp;<ref refid="class_smol_dock_1_1_score_1_1_vina_like_scoring_function_1a5ec005e4eda5054ff3fbad82c3e3c185" kindref="member">prot</ref>;</highlight></codeline>
+<codeline lineno="92" refid="class_smol_dock_1_1_score_1_1_vina_like_scoring_function_1a870a63a88b55e78b1c8804212ee7eff7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_smol_dock_1_1i_transform" kindref="compound">iTransform</ref><sp/><ref refid="class_smol_dock_1_1_score_1_1_vina_like_scoring_function_1a870a63a88b55e78b1c8804212ee7eff7" kindref="member">initialTransform</ref>;</highlight></codeline>
+<codeline lineno="93" refid="class_smol_dock_1_1_score_1_1_vina_like_scoring_function_1a3b5b9f275d9fa9327da427486b2fd8e8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_score_1_1_vina_like_scoring_function_1a3b5b9f275d9fa9327da427486b2fd8e8" kindref="member">differential_epsilon</ref>;</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95" refid="class_smol_dock_1_1_score_1_1_vina_like_scoring_function_1a5d22a919d0162dfac85d01b93daf4154" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_score_1_1_vina_like_scoring_function_1a5d22a919d0162dfac85d01b93daf4154" kindref="member">numberOfParamInState</ref>;</highlight></codeline>
+<codeline lineno="96" refid="class_smol_dock_1_1_score_1_1_vina_like_scoring_function_1a8e215909cb2c574ead7424550bdc20ad" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_score_1_1_vina_like_scoring_function_1a8e215909cb2c574ead7424550bdc20ad" kindref="member">numberOfRotatableBonds</ref>;</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="98"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="99"><highlight class="normal"></highlight></codeline>
-<codeline lineno="100" refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1a78f389f738bb184be926a272f55baa95" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/>arma::mat<sp/><ref refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1a78f389f738bb184be926a272f55baa95" kindref="member">externalToInternalRepr</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_smol_dock_1_1i_transform" kindref="compound">iTransform</ref><sp/>&amp;tr_)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>arma::mat<sp/>ret(7,<sp/>1);</highlight></codeline>
-<codeline lineno="102"><highlight class="normal"></highlight></codeline>
-<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ret[0]<sp/>=<sp/>tr_.<ref refid="struct_smol_dock_1_1i_transform_1ab0039729b08d423b6e0414cec1b893e7" kindref="member">transl</ref>.<ref refid="struct_smol_dock_1_1i_translation_1a74a60efc8b2463b7ea1ca1e824a4ed28" kindref="member">x</ref>;</highlight></codeline>
-<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ret[1]<sp/>=<sp/>tr_.<ref refid="struct_smol_dock_1_1i_transform_1ab0039729b08d423b6e0414cec1b893e7" kindref="member">transl</ref>.<ref refid="struct_smol_dock_1_1i_translation_1a5362a54675ecc6bac99325c69521fbb5" kindref="member">y</ref>;</highlight></codeline>
-<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ret[2]<sp/>=<sp/>tr_.<ref refid="struct_smol_dock_1_1i_transform_1ab0039729b08d423b6e0414cec1b893e7" kindref="member">transl</ref>.<ref refid="struct_smol_dock_1_1i_translation_1a2ed07fcfc129a2bf7696b65d481317c5" kindref="member">z</ref>;</highlight></codeline>
-<codeline lineno="106"><highlight class="normal"></highlight></codeline>
-<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ret[3]<sp/>=<sp/>tr_.<ref refid="struct_smol_dock_1_1i_transform_1a31861b55dc94ec0172ce602cd2a4a54f" kindref="member">rota</ref>.<ref refid="struct_smol_dock_1_1i_quaternion_1a07d95036803eb2a4ef32627df95043ad" kindref="member">s</ref>;</highlight></codeline>
-<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ret[4]<sp/>=<sp/>tr_.<ref refid="struct_smol_dock_1_1i_transform_1a31861b55dc94ec0172ce602cd2a4a54f" kindref="member">rota</ref>.<ref refid="struct_smol_dock_1_1i_quaternion_1a3692d71434fede9771686a73240e6ba7" kindref="member">u</ref>;</highlight></codeline>
-<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ret[5]<sp/>=<sp/>tr_.<ref refid="struct_smol_dock_1_1i_transform_1a31861b55dc94ec0172ce602cd2a4a54f" kindref="member">rota</ref>.<ref refid="struct_smol_dock_1_1i_quaternion_1a97a15d15b2fae3ec29c2fdb2388f5e5b" kindref="member">v</ref>;</highlight></codeline>
-<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ret[6]<sp/>=<sp/>tr_.<ref refid="struct_smol_dock_1_1i_transform_1a31861b55dc94ec0172ce602cd2a4a54f" kindref="member">rota</ref>.<ref refid="struct_smol_dock_1_1i_quaternion_1a1ff0d5e99369aa47273864dfea352c05" kindref="member">t</ref>;</highlight></codeline>
-<codeline lineno="111"><highlight class="normal"></highlight></codeline>
-<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>ret;</highlight></codeline>
-<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="114"><highlight class="normal"></highlight></codeline>
-<codeline lineno="115" refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1afc848dd44def406206bfa2ac002d00d6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_smol_dock_1_1i_conformer" kindref="compound">iConformer</ref><sp/><ref refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1afc848dd44def406206bfa2ac002d00d6" kindref="member">startingConformation</ref>;</highlight></codeline>
-<codeline lineno="116" refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1a0e3280c203d37f8eadf1543e06ec9473" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_smol_dock_1_1i_protein" kindref="compound">iProtein</ref><sp/>&amp;<ref refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1a0e3280c203d37f8eadf1543e06ec9473" kindref="member">prot</ref>;</highlight></codeline>
-<codeline lineno="117" refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1ab2b508f61dadc4de3998dcf9f82108aa" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_smol_dock_1_1i_transform" kindref="compound">iTransform</ref><sp/><ref refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1ab2b508f61dadc4de3998dcf9f82108aa" kindref="member">initialTransform</ref>;</highlight></codeline>
-<codeline lineno="118" refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1ade3afba236d274a7ff1bdff886bdeaca" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1ade3afba236d274a7ff1bdff886bdeaca" kindref="member">differential_epsilon</ref>;</highlight></codeline>
-<codeline lineno="119"><highlight class="normal"></highlight></codeline>
-<codeline lineno="120"><highlight class="normal"></highlight></codeline>
-<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
-<codeline lineno="122"><highlight class="normal"></highlight></codeline>
-<codeline lineno="123"><highlight class="normal"></highlight></codeline>
-<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="125"><highlight class="normal"></highlight></codeline>
-<codeline lineno="126"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="127"><highlight class="normal"></highlight></codeline>
-<codeline lineno="128"><highlight class="normal"></highlight></codeline>
-<codeline lineno="129"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//SMOLDOCK_BASICSCORINGFUNCTION_H</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//SMOLDOCK_VINALIKESCORINGFUNCTION_H</highlight></codeline>
     </programlisting>
     <location file="Engines/ScoringFunctions/VinaLikeScoringFunction.h"/>
   </compounddef>

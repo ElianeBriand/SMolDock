@@ -5,17 +5,37 @@
 #ifndef SMOLDOCK_INTERNALSUTILITYFUNCTIONS_H
 #define SMOLDOCK_INTERNALSUTILITYFUNCTIONS_H
 
+
+#include <iostream>
+
+#include <cmath>
+
+#include <Eigen/Core>
+#include <Eigen/Dense>
+
 #include "iConformer.h"
 #include "iTransform.h"
 
+
 namespace SmolDock {
 
-    inline iQuaternion iQuaternionIdentityInit() {
-        iQuaternion qt;
-        qt.s = 1.0;
-        qt.u = 0.0;
-        qt.v = 0.0;
-        qt.t = 0.0;
+
+    /*
+     * Scratch pad : copy-pasting zone for useful expression
+     *
+     * unsigned int atom1Idx =  conformer.bondEnds1Index[rotBdIdx];
+            unsigned int atom2Idx =  conformer.bondEnds2Index[rotBdIdx];
+     *             Eigen::Vector3d rotAxis = {conformer.x[atom2Idx] - conformer.x[atom1Idx],
+                             conformer.y[atom2Idx] - conformer.y[atom1Idx],
+                             conformer.z[atom2Idx] - conformer.z[atom1Idx]};
+     *
+     */
+
+    inline Eigen::Quaternion<double> QuaternionIdentityInit() {
+        Eigen::Quaternion<double> qt(1.0,
+                                     0.0,
+                                     0.0,
+                                     0.0);
         return qt;
     }
 
@@ -25,108 +45,154 @@ namespace SmolDock {
     //! Returns a neutral transform
     inline iTransform iTransformIdentityInit() {
         iTransform tr;
-        tr.transl.x = 0.0;
-        tr.transl.y = 0.0;
-        tr.transl.z = 0.0;
-        tr.rota = iQuaternionIdentityInit();
-        for (iQuaternion &bondQuat : tr.bondRotations) {
-            bondQuat = iQuaternionIdentityInit();
+        tr.transl.x() = 0.0;
+        tr.transl.y() = 0.0;
+        tr.transl.z() = 0.0;
+        tr.rota = QuaternionIdentityInit();
+        for (double &bondAngle : tr.bondRotationsAngles) {
+            bondAngle = 0.0;
         }
         return tr;
     }
 
-    //! Apply the rotation given by a quaternion to a vector
-    inline void applyRotationInPlace(iVect &vec, const iQuaternion &qt) {
-        iVect v = vec;
-
-        //TODO : Check this quaternion rotation formula
-        //TODO : Refactor this formula to be clearer
-        vec.x = qt.s * qt.s * v.x + 2 * qt.v * qt.s * v.z - 2 * qt.t * qt.s * v.y + qt.u * qt.u * v.x +
-                2 * qt.v * qt.u * v.y + 2 * qt.t * qt.u * v.z - qt.t * qt.t * v.x - qt.v * qt.v * v.x;
-        vec.y = 2 * qt.u * qt.v * v.x + qt.v * qt.v * v.y + 2 * qt.t * qt.v * v.z + 2 * qt.s * qt.t * v.x -
-                qt.t * qt.t * v.y + qt.s * qt.s * v.y - 2 * qt.u * qt.s * v.z - qt.u * qt.u * v.y;
-        vec.z = 2 * qt.u * qt.t * v.x + 2 * qt.v * qt.t * v.y + qt.t * qt.t * v.z - 2 * qt.s * qt.v * v.x -
-                qt.v * qt.v * v.z + 2 * qt.s * qt.u * v.y - qt.u * qt.u * v.z + qt.s * qt.s * v.z;
+    inline iTransform iTransformIdentityInit(unsigned int num_rot_bond) {
+        iTransform tr;
+        tr.transl.x() = 0.0;
+        tr.transl.y() = 0.0;
+        tr.transl.z() = 0.0;
+        tr.rota = QuaternionIdentityInit();
+        for (unsigned int i = 0; i < num_rot_bond; i++) {
+            tr.bondRotationsAngles.push_back(0.0);
+        }
+        return tr;
     }
 
+    //! Apply the rotation given by a quaternion to a three positional coordinate
+    inline void applyRotationInPlace(Eigen::Vector3d &vec, const Eigen::Quaternion<double> &qt) {
+        vec = qt._transformVector(vec);
+    }
+
+
     //! Apply the rotation given by a quaternion to a vector
-    inline iVect applyRotation(const iVect &v, const iQuaternion &qt) {
-        iVect res(v);
-        applyRotationInPlace(res, qt);
+    inline Eigen::Vector3d applyRotation(const Eigen::Vector3d &vec, const Eigen::Quaternion<double> &qt) {
+        Eigen::Vector3d res(vec);
+        res = qt._transformVector(vec);
         return res;
     }
 
     //! Apply the provided translation to a vector
-    inline void applyTranslationInPlace(iVect &v, const iTranslation &t) {
-        v.x += t.x;
-        v.y += t.y;
-        v.z += t.z;
+    inline void applyTranslationInPlace(Eigen::Vector3d &v, const Eigen::Vector3d &t) {
+        v.x() += t.x();
+        v.y() += t.y();
+        v.z() += t.z();
     }
 
     //! Apply the provided translation to a vector
-    inline iVect applyTranslation(const iVect &v, const iTranslation &t) {
-        iVect res(v);
-        applyTranslationInPlace(res, t);
+    inline Eigen::Vector3d applyTranslation(const Eigen::Vector3d &v, const Eigen::Translation<double, 3> &t) {
+        Eigen::Vector3d res(v);
+        res = t * v;
         return res;
     }
 
 
-    //! Apply the provided iTransform to a vector
-    inline void applyTransformInPlace(iVect &v, const iTransform &tr) {
-        applyRotationInPlace(v, tr.rota);
-        applyTranslationInPlace(v, tr.transl);
+    //! Normalize a quaternion (which then has norm == 1.0)
+    inline void normalizeQuaternionInPlace(Eigen::Quaternion<double> &quat) {
+        quat.normalize();
     }
 
-    //! Apply the provided iTransform to a vector
-    inline iVect applyTransform(const iVect &v, const iTransform &tr) {
-        iVect res(v);
-        applyTransformInPlace(res, tr);
-        return res;
-    }
+    inline void applyBondRotationInPlace(SmolDock::iConformer &conformer, const iTransform &tr) {
+        for (unsigned int rotBondGroupIdx = 0; rotBondGroupIdx < tr.bondRotationsAngles.size(); rotBondGroupIdx++) {
+            const double &rotAngleForBond = tr.bondRotationsAngles[rotBondGroupIdx];
+            unsigned int atom1Idx = conformer.bondEnds1Index[rotBondGroupIdx];
+            unsigned int atom2Idx = conformer.bondEnds2Index[rotBondGroupIdx];
+
+//            std::cout << "-- Rotation --\n";
+//            std::cout << "  Atom 1 : " << atom1Idx << "   " << conformer.x[atom1Idx] << "," << conformer.y[atom1Idx] << "," << conformer.z[atom1Idx] << "\n";
+//            std::cout << "  Atom 2 : " << atom2Idx << "   "<< conformer.x[atom2Idx] << "," << conformer.y[atom2Idx] << "," << conformer.z[atom2Idx] << "\n";
+
+            Eigen::Vector3d axis = {
+                    (conformer.x[atom2Idx] - conformer.x[atom1Idx]),
+                    (conformer.y[atom2Idx] - conformer.y[atom1Idx]),
+                    (conformer.z[atom2Idx] - conformer.z[atom1Idx])
+            };
+
+            Eigen::Translation<double, 3> moveFromOrigin(conformer.x[atom1Idx], conformer.y[atom1Idx],
+                                                         conformer.z[atom1Idx]);
+            Eigen::Translation<double, 3> moveToOrigin = moveFromOrigin.inverse();
+
+            // std::cout << "  Axis : " << axis.x()  << "," << axis.y() << "," << axis.z() << " norm = " << axis.norm() << "\n";
+
+            axis.normalize();
+
+//            std::cout << "  Axis : " << axis.x()  << "," << axis.y() << "," << axis.z() << " norm = " << axis.norm() << "\n";
 
 
-    //! Apply the provided iTransform to a confomer, atom-by-atom
-    inline void applyTransformInPlace(SmolDock::iConformer &conformer, const iTransform &tr) {
-        for (unsigned int i = 0; i < conformer.x.size(); i++) {
-            iVect posVect = {conformer.x[i], conformer.y[i], conformer.z[i]};
-            applyTransformInPlace(posVect, tr);
-            conformer.x[i] = posVect.x;
-            conformer.y[i] = posVect.y;
-            conformer.z[i] = posVect.z;
+            assert((axis.norm() - 1) < 0.01);
+
+            Eigen::AngleAxis<double> rotation(rotAngleForBond, axis);
+
+            Eigen::Matrix<double, 3, 3> rotMatrix = rotation.toRotationMatrix();
+
+//            std::cout << "RotMatrix \n" << rotMatrix << "\n";
+
+            for (unsigned int &rotatedAtomIdx: conformer.rotatableGroups[rotBondGroupIdx]) {
+//                std::cout << " Affecting : " << rotatedAtomIdx << "\n";
+                Eigen::Vector3d startPosition(conformer.x[rotatedAtomIdx],
+                                              conformer.y[rotatedAtomIdx],
+                                              conformer.z[rotatedAtomIdx]);
+
+                Eigen::Vector3d endPosition = moveFromOrigin * (rotMatrix * (moveToOrigin * startPosition));
+
+                conformer.x[rotatedAtomIdx] = endPosition.x();
+                conformer.y[rotatedAtomIdx] = endPosition.y();
+                conformer.z[rotatedAtomIdx] = endPosition.z();
+            }
+
+//            std::cout << "-- END Rotation --" << "\n";
+
         }
     }
 
-    //! Returns the norm of the given quaternion
-    inline double quaternionNorm(const iQuaternion &quat) {
-        return std::sqrt(
-                std::pow(quat.s, 2) + std::pow(quat.u, 2) + std::pow(quat.v, 2) + std::pow(quat.t, 2)
-        );
+
+    //! Apply the provided iTransform to a vector (only rigid component : translation + global rotation)
+    inline void applyRigidTransformInPlace(Eigen::Vector3d &v, const iTransform &tr) {
+        v = tr.rota * v;
+        v = tr.transl * v;
     }
 
-    //! Returns the norm of the given vector
-    inline double vectorNorm(iVect v) {
-        return std::sqrt(
-                std::pow(v.x, 2) + std::pow(v.y, 2) + std::pow(v.z, 2)
-        );
+    //! Apply the provided iTransform to a vector( only rigid component : translation + global rotation)
+    inline Eigen::Vector3d applyRigidTransform(const Eigen::Vector3d &v, const iTransform &tr) {
+        Eigen::Vector3d res(v);
+        applyRigidTransformInPlace(res, tr);
+        return res;
     }
+
+
+    //! Apply the provided iTransform to a confomer, atom-by-atom (only rigid component : translation + global rotation)
+    // TODO: rename this function that operate on whole conformer (versus the other overload that operate on a vector, ie a temporary object)
+    inline void applyRigidTransformInPlace(SmolDock::iConformer &conformer, const iTransform &tr) {
+        for (unsigned int i = 0; i < conformer.x.size(); i++) {
+            Eigen::Vector3d posVect = {conformer.x[i], conformer.y[i], conformer.z[i]};
+            applyRigidTransformInPlace(posVect, tr);
+            conformer.x[i] = posVect.x();
+            conformer.y[i] = posVect.y();
+            conformer.z[i] = posVect.z();
+        }
+    }
+
+
+    inline void applyTransformInPlace(SmolDock::iConformer &conformer, const iTransform &tr) {
+        std::terminate(); // Check for deprecated use
+        applyRigidTransformInPlace(conformer, tr);
+        applyBondRotationInPlace(conformer, tr);
+
+    }
+
 
     //! Normalize a quaternion (which then has norm == 1.0)
-    inline void normalizeQuaternionInPlace(iQuaternion &quat) {
-        double norm = quaternionNorm(quat);
-        assert(norm == norm); // This catches NaN
-        if (norm == 0.0)
-            return;
-
-        quat.s /= norm;
-        quat.u /= norm;
-        quat.v /= norm;
-        quat.t /= norm;
-    }
-
-    //! Normalize a quaternion (which then has norm == 1.0)
-    inline iQuaternion normalizeQuaternion(const iQuaternion &quat) {
-        iQuaternion ret = quat;
-        normalizeQuaternionInPlace(ret);
+    inline Eigen::Quaternion<double> normalizeQuaternion(const Eigen::Quaternion<double> &quat) {
+        Eigen::Quaternion<double> ret = quat;
+        ret.normalize();
         return ret;
     }
 

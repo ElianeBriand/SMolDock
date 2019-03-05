@@ -8,18 +8,15 @@
     <innerclass refid="class_smol_dock_1_1_docking_result" prot="public">SmolDock::DockingResult</innerclass>
     <innerclass refid="class_smol_dock_1_1_docking_result_printer" prot="public">SmolDock::DockingResultPrinter</innerclass>
     <innerclass refid="struct_smol_dock_1_1i_conformer" prot="public">SmolDock::iConformer</innerclass>
-    <innerclass refid="struct_smol_dock_1_1i_gradient" prot="public">SmolDock::iGradient</innerclass>
     <innerclass refid="class_smol_dock_1_1_intermediate_conformer_collector" prot="public">SmolDock::IntermediateConformerCollector</innerclass>
     <innerclass refid="struct_smol_dock_1_1i_protein" prot="public">SmolDock::iProtein</innerclass>
-    <innerclass refid="struct_smol_dock_1_1i_quaternion" prot="public">SmolDock::iQuaternion</innerclass>
     <innerclass refid="struct_smol_dock_1_1i_transform" prot="public">SmolDock::iTransform</innerclass>
-    <innerclass refid="struct_smol_dock_1_1i_translation" prot="public">SmolDock::iTranslation</innerclass>
-    <innerclass refid="struct_smol_dock_1_1i_vect" prot="public">SmolDock::iVect</innerclass>
     <innerclass refid="class_smol_dock_1_1_molecule" prot="public">SmolDock::Molecule</innerclass>
     <innerclass refid="class_smol_dock_1_1_p_d_b_writer" prot="public">SmolDock::PDBWriter</innerclass>
     <innerclass refid="class_smol_dock_1_1_protein" prot="public">SmolDock::Protein</innerclass>
     <innerclass refid="class_smol_dock_1_1_re_scorer" prot="public">SmolDock::ReScorer</innerclass>
     <innerclass refid="class_smol_dock_1_1_structure" prot="public">SmolDock::Structure</innerclass>
+    <innerclass refid="class_smol_dock_1_1_version" prot="public">SmolDock::Version</innerclass>
     <innernamespace refid="namespace_smol_dock_1_1_engine">SmolDock::Engine</innernamespace>
     <innernamespace refid="namespace_smol_dock_1_1_heuristics">SmolDock::Heuristics</innernamespace>
     <innernamespace refid="namespace_smol_dock_1_1_input_post_processor">SmolDock::InputPostProcessor</innernamespace>
@@ -59,27 +56,23 @@
         <inbodydescription>
         </inbodydescription>
         <location file="Structures/Common/PDBResidueVariantTable.cpp" line="18" column="1" bodyfile="Structures/Common/PDBResidueVariantTable.cpp" bodystart="18" bodyend="-1"/>
-        <referencedby refid="namespace_smol_dock_1a2820b77a3fd140cd601c75028ed8dd51" compoundref="_variant_flag_assignation_8cpp" startline="35" endline="87">assignVariantFlagsForResidueAtom</referencedby>
+        <referencedby refid="namespace_smol_dock_1a2820b77a3fd140cd601c75028ed8dd51" compoundref="_variant_flag_assignation_8cpp" startline="34" endline="85">assignVariantFlagsForResidueAtom</referencedby>
       </memberdef>
       </sectiondef>
       <sectiondef kind="func">
-      <memberdef kind="function" id="namespace_smol_dock_1a44a91384d128c3beb5c57ec507dddb6e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="struct_smol_dock_1_1i_quaternion" kindref="compound">iQuaternion</ref></type>
-        <definition>iQuaternion SmolDock::iQuaternionIdentityInit</definition>
+      <memberdef kind="function" id="namespace_smol_dock_1a4b9f944b7ca507663d00cc948f0b90c7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>Eigen::Quaternion&lt; double &gt;</type>
+        <definition>Eigen::Quaternion&lt;double&gt; SmolDock::QuaternionIdentityInit</definition>
         <argsstring>()</argsstring>
-        <name>iQuaternionIdentityInit</name>
+        <name>QuaternionIdentityInit</name>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Engines/Internals/InternalsUtilityFunctions.h" line="13" column="1" bodyfile="Engines/Internals/InternalsUtilityFunctions.h" bodystart="13" bodyend="20"/>
-        <references refid="struct_smol_dock_1_1i_quaternion_1a07d95036803eb2a4ef32627df95043ad" compoundref="i_transform_8h" startline="25">SmolDock::iQuaternion::s</references>
-        <references refid="struct_smol_dock_1_1i_quaternion_1a1ff0d5e99369aa47273864dfea352c05" compoundref="i_transform_8h" startline="26">SmolDock::iQuaternion::t</references>
-        <references refid="struct_smol_dock_1_1i_quaternion_1a3692d71434fede9771686a73240e6ba7" compoundref="i_transform_8h" startline="26">SmolDock::iQuaternion::u</references>
-        <references refid="struct_smol_dock_1_1i_quaternion_1a97a15d15b2fae3ec29c2fdb2388f5e5b" compoundref="i_transform_8h" startline="26">SmolDock::iQuaternion::v</references>
-        <referencedby refid="namespace_smol_dock_1a3974d1e3a6f729a7ca05b97996ca2079" compoundref="_internals_utility_functions_8h" startline="26" endline="33">iTransformIdentityInit</referencedby>
+        <location file="Engines/Internals/InternalsUtilityFunctions.h" line="34" column="1" bodyfile="Engines/Internals/InternalsUtilityFunctions.h" bodystart="34" bodyend="40"/>
+        <referencedby refid="namespace_smol_dock_1a3974d1e3a6f729a7ca05b97996ca2079" compoundref="_internals_utility_functions_8h" startline="46" endline="56">iTransformIdentityInit</referencedby>
       </memberdef>
       <memberdef kind="function" id="namespace_smol_dock_1a3974d1e3a6f729a7ca05b97996ca2079" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="struct_smol_dock_1_1i_transform" kindref="compound">iTransform</ref></type>
@@ -92,58 +85,69 @@
 <para>Returns a neutral transform </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Engines/Internals/InternalsUtilityFunctions.h" line="26" column="1" bodyfile="Engines/Internals/InternalsUtilityFunctions.h" bodystart="26" bodyend="33"/>
-        <references refid="namespace_smol_dock_1a44a91384d128c3beb5c57ec507dddb6e" compoundref="_internals_utility_functions_8h" startline="13" endline="20">iQuaternionIdentityInit</references>
-        <references refid="struct_smol_dock_1_1i_transform_1a31861b55dc94ec0172ce602cd2a4a54f" compoundref="i_transform_8h" startline="46">SmolDock::iTransform::rota</references>
-        <references refid="struct_smol_dock_1_1i_transform_1ab0039729b08d423b6e0414cec1b893e7" compoundref="i_transform_8h" startline="45">SmolDock::iTransform::transl</references>
-        <references refid="struct_smol_dock_1_1i_translation_1a74a60efc8b2463b7ea1ca1e824a4ed28" compoundref="i_transform_8h" startline="36">SmolDock::iTranslation::x</references>
-        <references refid="struct_smol_dock_1_1i_translation_1a5362a54675ecc6bac99325c69521fbb5" compoundref="i_transform_8h" startline="36">SmolDock::iTranslation::y</references>
-        <references refid="struct_smol_dock_1_1i_translation_1a2ed07fcfc129a2bf7696b65d481317c5" compoundref="i_transform_8h" startline="36">SmolDock::iTranslation::z</references>
-        <referencedby refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a7bee39278168cb4d7ee6558b3a3d3bb4" compoundref="_conformer_rigid_docking_engine_8cpp" startline="135" endline="224">SmolDock::Engine::ConformerRigidDockingEngine::runDockingEngine</referencedby>
-        <referencedby refid="main_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4" compoundref="main_8cpp" startline="45" endline="155">main</referencedby>
-        <referencedby refid="class_smol_dock_1_1_re_scorer_1a4f372ac345e57254d9b00672f169d2fd" compoundref="_re_scorer_8cpp" startline="25" endline="27">SmolDock::ReScorer::getScore</referencedby>
+        <location file="Engines/Internals/InternalsUtilityFunctions.h" line="46" column="1" bodyfile="Engines/Internals/InternalsUtilityFunctions.h" bodystart="46" bodyend="56"/>
+        <references refid="struct_smol_dock_1_1i_transform_1aa71e9b254a08dfc310a6430056f05964" compoundref="i_transform_8h" startline="35">SmolDock::iTransform::bondRotationsAngles</references>
+        <references refid="namespace_smol_dock_1a4b9f944b7ca507663d00cc948f0b90c7" compoundref="_internals_utility_functions_8h" startline="34" endline="40">QuaternionIdentityInit</references>
+        <references refid="struct_smol_dock_1_1i_transform_1a8234938f815b9f74cc2d3289d4696dfb" compoundref="i_transform_8h" startline="33">SmolDock::iTransform::rota</references>
+        <references refid="struct_smol_dock_1_1i_transform_1ae79de47f6741ab7c3a97498fe0c589d3" compoundref="i_transform_8h" startline="32">SmolDock::iTransform::transl</references>
+        <referencedby refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a7bee39278168cb4d7ee6558b3a3d3bb4" compoundref="_conformer_rigid_docking_engine_8cpp" startline="134" endline="294">SmolDock::Engine::ConformerRigidDockingEngine::runDockingEngine</referencedby>
+        <referencedby refid="main_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4" compoundref="main_8cpp" startline="45" endline="174">main</referencedby>
+        <referencedby refid="class_smol_dock_1_1_engine_1_1_pose_refiner_1a8d5a30801f618205c115a52b7fa363ce" compoundref="_pose_refiner_8cpp" startline="23" endline="67">SmolDock::Engine::PoseRefiner::refinePose</referencedby>
+        <referencedby refid="class_smol_dock_1_1_re_scorer_1a102b6af24e4f5dc420c2bdfba5a792f0" compoundref="_re_scorer_8cpp" startline="22" endline="33">SmolDock::ReScorer::prepare</referencedby>
       </memberdef>
-      <memberdef kind="function" id="namespace_smol_dock_1a835c8bf0a7983ba17c48cd10f152726f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="namespace_smol_dock_1a0efd7dc9b004d55d9d1548b192b3ec96" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="struct_smol_dock_1_1i_transform" kindref="compound">iTransform</ref></type>
+        <definition>iTransform SmolDock::iTransformIdentityInit</definition>
+        <argsstring>(unsigned int num_rot_bond)</argsstring>
+        <name>iTransformIdentityInit</name>
+        <param>
+          <type>unsigned int</type>
+          <declname>num_rot_bond</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Engines/Internals/InternalsUtilityFunctions.h" line="58" column="1" bodyfile="Engines/Internals/InternalsUtilityFunctions.h" bodystart="58" bodyend="68"/>
+        <references refid="struct_smol_dock_1_1i_transform_1aa71e9b254a08dfc310a6430056f05964" compoundref="i_transform_8h" startline="35">SmolDock::iTransform::bondRotationsAngles</references>
+        <references refid="namespace_smol_dock_1a4b9f944b7ca507663d00cc948f0b90c7" compoundref="_internals_utility_functions_8h" startline="34" endline="40">QuaternionIdentityInit</references>
+        <references refid="struct_smol_dock_1_1i_transform_1a8234938f815b9f74cc2d3289d4696dfb" compoundref="i_transform_8h" startline="33">SmolDock::iTransform::rota</references>
+        <references refid="struct_smol_dock_1_1i_transform_1ae79de47f6741ab7c3a97498fe0c589d3" compoundref="i_transform_8h" startline="32">SmolDock::iTransform::transl</references>
+      </memberdef>
+      <memberdef kind="function" id="namespace_smol_dock_1af5a49bb3ce9aad3b282b4ee4d24e9793" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
         <definition>void SmolDock::applyRotationInPlace</definition>
-        <argsstring>(iVect &amp;vec, const iQuaternion &amp;qt)</argsstring>
+        <argsstring>(Eigen::Vector3d &amp;vec, const Eigen::Quaternion&lt; double &gt; &amp;qt)</argsstring>
         <name>applyRotationInPlace</name>
         <param>
-          <type><ref refid="struct_smol_dock_1_1i_vect" kindref="compound">iVect</ref> &amp;</type>
+          <type>Eigen::Vector3d &amp;</type>
           <declname>vec</declname>
         </param>
         <param>
-          <type>const <ref refid="struct_smol_dock_1_1i_quaternion" kindref="compound">iQuaternion</ref> &amp;</type>
+          <type>const Eigen::Quaternion&lt; double &gt; &amp;</type>
           <declname>qt</declname>
         </param>
         <briefdescription>
-<para>Apply the rotation given by a quaternion to a vector. </para>        </briefdescription>
+<para>Apply the rotation given by a quaternion to a three positional coordinate. </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Engines/Internals/InternalsUtilityFunctions.h" line="36" column="1" bodyfile="Engines/Internals/InternalsUtilityFunctions.h" bodystart="36" bodyend="47"/>
-        <references refid="struct_smol_dock_1_1i_quaternion_1a07d95036803eb2a4ef32627df95043ad" compoundref="i_transform_8h" startline="25">SmolDock::iQuaternion::s</references>
-        <references refid="struct_smol_dock_1_1i_quaternion_1a1ff0d5e99369aa47273864dfea352c05" compoundref="i_transform_8h" startline="26">SmolDock::iQuaternion::t</references>
-        <references refid="struct_smol_dock_1_1i_quaternion_1a3692d71434fede9771686a73240e6ba7" compoundref="i_transform_8h" startline="26">SmolDock::iQuaternion::u</references>
-        <references refid="struct_smol_dock_1_1i_quaternion_1a97a15d15b2fae3ec29c2fdb2388f5e5b" compoundref="i_transform_8h" startline="26">SmolDock::iQuaternion::v</references>
-        <references refid="struct_smol_dock_1_1i_vect_1a3ffc7082a3541ad0fadcb1880a6087a8" compoundref="i_transform_8h" startline="31">SmolDock::iVect::x</references>
-        <references refid="struct_smol_dock_1_1i_vect_1af8165339c1e38179008c4ca49a565fb4" compoundref="i_transform_8h" startline="31">SmolDock::iVect::y</references>
-        <references refid="struct_smol_dock_1_1i_vect_1a013cdafb950199deb4511843ff389e73" compoundref="i_transform_8h" startline="31">SmolDock::iVect::z</references>
-        <referencedby refid="namespace_smol_dock_1a65d30b0d0a54dad29b43fc9acfbf6570" compoundref="_internals_utility_functions_8h" startline="50" endline="54">applyRotation</referencedby>
-        <referencedby refid="namespace_smol_dock_1a73bb4756419c2b3361ae4d23b24eee20" compoundref="_internals_utility_functions_8h" startline="72" endline="75">applyTransformInPlace</referencedby>
+        <location file="Engines/Internals/InternalsUtilityFunctions.h" line="71" column="1" bodyfile="Engines/Internals/InternalsUtilityFunctions.h" bodystart="71" bodyend="73"/>
       </memberdef>
-      <memberdef kind="function" id="namespace_smol_dock_1a65d30b0d0a54dad29b43fc9acfbf6570" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="struct_smol_dock_1_1i_vect" kindref="compound">iVect</ref></type>
-        <definition>iVect SmolDock::applyRotation</definition>
-        <argsstring>(const iVect &amp;v, const iQuaternion &amp;qt)</argsstring>
+      <memberdef kind="function" id="namespace_smol_dock_1aa0ec22430362e4168acccb62b6efb254" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>Eigen::Vector3d</type>
+        <definition>Eigen::Vector3d SmolDock::applyRotation</definition>
+        <argsstring>(const Eigen::Vector3d &amp;vec, const Eigen::Quaternion&lt; double &gt; &amp;qt)</argsstring>
         <name>applyRotation</name>
         <param>
-          <type>const <ref refid="struct_smol_dock_1_1i_vect" kindref="compound">iVect</ref> &amp;</type>
-          <declname>v</declname>
+          <type>const Eigen::Vector3d &amp;</type>
+          <declname>vec</declname>
         </param>
         <param>
-          <type>const <ref refid="struct_smol_dock_1_1i_quaternion" kindref="compound">iQuaternion</ref> &amp;</type>
+          <type>const Eigen::Quaternion&lt; double &gt; &amp;</type>
           <declname>qt</declname>
         </param>
         <briefdescription>
@@ -152,20 +156,19 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Engines/Internals/InternalsUtilityFunctions.h" line="50" column="1" bodyfile="Engines/Internals/InternalsUtilityFunctions.h" bodystart="50" bodyend="54"/>
-        <references refid="namespace_smol_dock_1a835c8bf0a7983ba17c48cd10f152726f" compoundref="_internals_utility_functions_8h" startline="36" endline="47">applyRotationInPlace</references>
+        <location file="Engines/Internals/InternalsUtilityFunctions.h" line="77" column="1" bodyfile="Engines/Internals/InternalsUtilityFunctions.h" bodystart="77" bodyend="81"/>
       </memberdef>
-      <memberdef kind="function" id="namespace_smol_dock_1a20628b953f3dec7f26d7c8221a508160" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="namespace_smol_dock_1a71600710b10973404c6e2c57508cb3c7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
         <definition>void SmolDock::applyTranslationInPlace</definition>
-        <argsstring>(iVect &amp;v, const iTranslation &amp;t)</argsstring>
+        <argsstring>(Eigen::Vector3d &amp;v, const Eigen::Vector3d &amp;t)</argsstring>
         <name>applyTranslationInPlace</name>
         <param>
-          <type><ref refid="struct_smol_dock_1_1i_vect" kindref="compound">iVect</ref> &amp;</type>
+          <type>Eigen::Vector3d &amp;</type>
           <declname>v</declname>
         </param>
         <param>
-          <type>const <ref refid="struct_smol_dock_1_1i_translation" kindref="compound">iTranslation</ref> &amp;</type>
+          <type>const Eigen::Vector3d &amp;</type>
           <declname>t</declname>
         </param>
         <briefdescription>
@@ -174,27 +177,19 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Engines/Internals/InternalsUtilityFunctions.h" line="57" column="1" bodyfile="Engines/Internals/InternalsUtilityFunctions.h" bodystart="57" bodyend="61"/>
-        <references refid="struct_smol_dock_1_1i_vect_1a3ffc7082a3541ad0fadcb1880a6087a8" compoundref="i_transform_8h" startline="31">SmolDock::iVect::x</references>
-        <references refid="struct_smol_dock_1_1i_translation_1a74a60efc8b2463b7ea1ca1e824a4ed28" compoundref="i_transform_8h" startline="36">SmolDock::iTranslation::x</references>
-        <references refid="struct_smol_dock_1_1i_vect_1af8165339c1e38179008c4ca49a565fb4" compoundref="i_transform_8h" startline="31">SmolDock::iVect::y</references>
-        <references refid="struct_smol_dock_1_1i_translation_1a5362a54675ecc6bac99325c69521fbb5" compoundref="i_transform_8h" startline="36">SmolDock::iTranslation::y</references>
-        <references refid="struct_smol_dock_1_1i_vect_1a013cdafb950199deb4511843ff389e73" compoundref="i_transform_8h" startline="31">SmolDock::iVect::z</references>
-        <references refid="struct_smol_dock_1_1i_translation_1a2ed07fcfc129a2bf7696b65d481317c5" compoundref="i_transform_8h" startline="36">SmolDock::iTranslation::z</references>
-        <referencedby refid="namespace_smol_dock_1a293a24f2936d34c0b73f8ef8b2d8d84b" compoundref="_internals_utility_functions_8h" startline="64" endline="68">applyTranslation</referencedby>
-        <referencedby refid="namespace_smol_dock_1a73bb4756419c2b3361ae4d23b24eee20" compoundref="_internals_utility_functions_8h" startline="72" endline="75">applyTransformInPlace</referencedby>
+        <location file="Engines/Internals/InternalsUtilityFunctions.h" line="84" column="1" bodyfile="Engines/Internals/InternalsUtilityFunctions.h" bodystart="84" bodyend="88"/>
       </memberdef>
-      <memberdef kind="function" id="namespace_smol_dock_1a293a24f2936d34c0b73f8ef8b2d8d84b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="struct_smol_dock_1_1i_vect" kindref="compound">iVect</ref></type>
-        <definition>iVect SmolDock::applyTranslation</definition>
-        <argsstring>(const iVect &amp;v, const iTranslation &amp;t)</argsstring>
+      <memberdef kind="function" id="namespace_smol_dock_1ac75ddcfc08c2e1ba215589c6fd844cff" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>Eigen::Vector3d</type>
+        <definition>Eigen::Vector3d SmolDock::applyTranslation</definition>
+        <argsstring>(const Eigen::Vector3d &amp;v, const Eigen::Translation&lt; double, 3 &gt; &amp;t)</argsstring>
         <name>applyTranslation</name>
         <param>
-          <type>const <ref refid="struct_smol_dock_1_1i_vect" kindref="compound">iVect</ref> &amp;</type>
+          <type>const Eigen::Vector3d &amp;</type>
           <declname>v</declname>
         </param>
         <param>
-          <type>const <ref refid="struct_smol_dock_1_1i_translation" kindref="compound">iTranslation</ref> &amp;</type>
+          <type>const Eigen::Translation&lt; double, 3 &gt; &amp;</type>
           <declname>t</declname>
         </param>
         <briefdescription>
@@ -203,45 +198,68 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Engines/Internals/InternalsUtilityFunctions.h" line="64" column="1" bodyfile="Engines/Internals/InternalsUtilityFunctions.h" bodystart="64" bodyend="68"/>
-        <references refid="namespace_smol_dock_1a20628b953f3dec7f26d7c8221a508160" compoundref="_internals_utility_functions_8h" startline="57" endline="61">applyTranslationInPlace</references>
+        <location file="Engines/Internals/InternalsUtilityFunctions.h" line="91" column="1" bodyfile="Engines/Internals/InternalsUtilityFunctions.h" bodystart="91" bodyend="95"/>
       </memberdef>
-      <memberdef kind="function" id="namespace_smol_dock_1a73bb4756419c2b3361ae4d23b24eee20" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="namespace_smol_dock_1a05fa7c1e1e1323710cbf76fad3030c3d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
-        <definition>void SmolDock::applyTransformInPlace</definition>
-        <argsstring>(iVect &amp;v, const iTransform &amp;tr)</argsstring>
-        <name>applyTransformInPlace</name>
+        <definition>void SmolDock::normalizeQuaternionInPlace</definition>
+        <argsstring>(Eigen::Quaternion&lt; double &gt; &amp;quat)</argsstring>
+        <name>normalizeQuaternionInPlace</name>
         <param>
-          <type><ref refid="struct_smol_dock_1_1i_vect" kindref="compound">iVect</ref> &amp;</type>
-          <declname>v</declname>
-        </param>
-        <param>
-          <type>const <ref refid="struct_smol_dock_1_1i_transform" kindref="compound">iTransform</ref> &amp;</type>
-          <declname>tr</declname>
+          <type>Eigen::Quaternion&lt; double &gt; &amp;</type>
+          <declname>quat</declname>
         </param>
         <briefdescription>
-<para>Apply the provided <ref refid="struct_smol_dock_1_1i_transform" kindref="compound">iTransform</ref> to a vector. </para>        </briefdescription>
+<para>Normalize a quaternion (which then has norm == 1.0) </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Engines/Internals/InternalsUtilityFunctions.h" line="72" column="1" bodyfile="Engines/Internals/InternalsUtilityFunctions.h" bodystart="72" bodyend="75"/>
-        <references refid="namespace_smol_dock_1a835c8bf0a7983ba17c48cd10f152726f" compoundref="_internals_utility_functions_8h" startline="36" endline="47">applyRotationInPlace</references>
-        <references refid="namespace_smol_dock_1a20628b953f3dec7f26d7c8221a508160" compoundref="_internals_utility_functions_8h" startline="57" endline="61">applyTranslationInPlace</references>
-        <references refid="struct_smol_dock_1_1i_transform_1a31861b55dc94ec0172ce602cd2a4a54f" compoundref="i_transform_8h" startline="46">SmolDock::iTransform::rota</references>
-        <references refid="struct_smol_dock_1_1i_transform_1ab0039729b08d423b6e0414cec1b893e7" compoundref="i_transform_8h" startline="45">SmolDock::iTransform::transl</references>
-        <referencedby refid="namespace_smol_dock_1a19b5383f74c017874f93a6dcc8a1d508" compoundref="_internals_utility_functions_8h" startline="78" endline="82">applyTransform</referencedby>
-        <referencedby refid="namespace_smol_dock_1afd058af9bf8a2fa90a0ec7bf42c31e31" compoundref="_internals_utility_functions_8h" startline="86" endline="94">applyTransformInPlace</referencedby>
-        <referencedby refid="namespace_smol_dock_1_1_score_1ac205731c7b0098c2900d9d16fff1a93b" compoundref="_vina_like_scoring_function_8cpp" startline="149" endline="223">SmolDock::Score::vina_like_rigid_inter_scoring_func</referencedby>
-        <referencedby refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1a6b173e704b812af5cde72610f1143577" compoundref="_vina_like_scoring_function_8cpp" startline="316" endline="325">SmolDock::Score::VinaLikeRigidScoringFunction::getConformerForParamMatrix</referencedby>
+        <location file="Engines/Internals/InternalsUtilityFunctions.h" line="99" column="1" bodyfile="Engines/Internals/InternalsUtilityFunctions.h" bodystart="99" bodyend="101"/>
+        <referencedby refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1ab89f08da2f4f79abfe9130b3593c3522" compoundref="_vina_like_rigid_scoring_function_8cpp" startline="119" endline="128">SmolDock::Score::VinaLikeRigidScoringFunction::Evaluate</referencedby>
+        <referencedby refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1a574511b3c12769902e2c0366d4d3db96" compoundref="_vina_like_rigid_scoring_function_8cpp" startline="130" endline="209">SmolDock::Score::VinaLikeRigidScoringFunction::EvaluateWithGradient</referencedby>
+        <referencedby refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1a6b173e704b812af5cde72610f1143577" compoundref="_vina_like_rigid_scoring_function_8cpp" startline="231" endline="243">SmolDock::Score::VinaLikeRigidScoringFunction::getConformerForParamMatrix</referencedby>
+        <referencedby refid="class_smol_dock_1_1_score_1_1_vina_like_scoring_function_1a5b2eaf1db8e2e0b98ee1f199be96a406" compoundref="_vina_like_scoring_function_8cpp" startline="107" endline="117">SmolDock::Score::VinaLikeScoringFunction::Evaluate</referencedby>
+        <referencedby refid="class_smol_dock_1_1_score_1_1_vina_like_scoring_function_1adc45f52c75b9c1d96edcdb3caf27160c" compoundref="_vina_like_scoring_function_8cpp" startline="119" endline="210">SmolDock::Score::VinaLikeScoringFunction::EvaluateWithGradient</referencedby>
       </memberdef>
-      <memberdef kind="function" id="namespace_smol_dock_1a19b5383f74c017874f93a6dcc8a1d508" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="struct_smol_dock_1_1i_vect" kindref="compound">iVect</ref></type>
-        <definition>iVect SmolDock::applyTransform</definition>
-        <argsstring>(const iVect &amp;v, const iTransform &amp;tr)</argsstring>
-        <name>applyTransform</name>
+      <memberdef kind="function" id="namespace_smol_dock_1a1843982e01fb9a9b852c5f64363a158c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void SmolDock::applyBondRotationInPlace</definition>
+        <argsstring>(SmolDock::iConformer &amp;conformer, const iTransform &amp;tr)</argsstring>
+        <name>applyBondRotationInPlace</name>
         <param>
-          <type>const <ref refid="struct_smol_dock_1_1i_vect" kindref="compound">iVect</ref> &amp;</type>
+          <type><ref refid="struct_smol_dock_1_1i_conformer" kindref="compound">SmolDock::iConformer</ref> &amp;</type>
+          <declname>conformer</declname>
+        </param>
+        <param>
+          <type>const <ref refid="struct_smol_dock_1_1i_transform" kindref="compound">iTransform</ref> &amp;</type>
+          <declname>tr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Engines/Internals/InternalsUtilityFunctions.h" line="103" column="1" bodyfile="Engines/Internals/InternalsUtilityFunctions.h" bodystart="103" bodyend="154"/>
+        <references refid="struct_smol_dock_1_1i_conformer_1ac88e2d09609c3b4d66ca517a0fc5f184" compoundref="i_conformer_8h" startline="53">SmolDock::iConformer::bondEnds1Index</references>
+        <references refid="struct_smol_dock_1_1i_conformer_1ae40696d245431ced83de5f20464bab08" compoundref="i_conformer_8h" startline="54">SmolDock::iConformer::bondEnds2Index</references>
+        <references refid="struct_smol_dock_1_1i_transform_1aa71e9b254a08dfc310a6430056f05964" compoundref="i_transform_8h" startline="35">SmolDock::iTransform::bondRotationsAngles</references>
+        <references refid="struct_smol_dock_1_1i_conformer_1a9676e4f30ba2425d948cc11ed88b1c59" compoundref="i_conformer_8h" startline="55">SmolDock::iConformer::rotatableGroups</references>
+        <references refid="struct_smol_dock_1_1i_conformer_1a45c379f6a880da313bf3519dc415e992" compoundref="i_conformer_8h" startline="48">SmolDock::iConformer::x</references>
+        <references refid="struct_smol_dock_1_1i_conformer_1ac3019c0cd62660a4392591dd9519cc9a" compoundref="i_conformer_8h" startline="48">SmolDock::iConformer::y</references>
+        <references refid="struct_smol_dock_1_1i_conformer_1a5c1fc6f9bad31ec2731337e9ba1e9a0f" compoundref="i_conformer_8h" startline="48">SmolDock::iConformer::z</references>
+        <referencedby refid="namespace_smol_dock_1afd058af9bf8a2fa90a0ec7bf42c31e31" compoundref="_internals_utility_functions_8h" startline="184" endline="189">applyTransformInPlace</referencedby>
+        <referencedby refid="namespace_smol_dock_1_1_score_1af7f12c4b8451b856342af3afdbcadce8" compoundref="_vina_like_scoring_function_8cpp" startline="20" endline="82">SmolDock::Score::VinaLikeIntermolecularScoringFunction</referencedby>
+        <referencedby refid="class_smol_dock_1_1_score_1_1_vina_like_scoring_function_1a6c9ffc4bfc5cc3d066f2a2cda2163397" compoundref="_vina_like_scoring_function_8cpp" startline="221" endline="232">SmolDock::Score::VinaLikeScoringFunction::getConformerForParamMatrix</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespace_smol_dock_1aea0b5b0a06c4650f4ca502a3f1da6e98" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void SmolDock::applyRigidTransformInPlace</definition>
+        <argsstring>(Eigen::Vector3d &amp;v, const iTransform &amp;tr)</argsstring>
+        <name>applyRigidTransformInPlace</name>
+        <param>
+          <type>Eigen::Vector3d &amp;</type>
           <declname>v</declname>
         </param>
         <param>
@@ -249,13 +267,68 @@
           <declname>tr</declname>
         </param>
         <briefdescription>
-<para>Apply the provided <ref refid="struct_smol_dock_1_1i_transform" kindref="compound">iTransform</ref> to a vector. </para>        </briefdescription>
+<para>Apply the provided <ref refid="struct_smol_dock_1_1i_transform" kindref="compound">iTransform</ref> to a vector (only rigid component : translation + global rotation) </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Engines/Internals/InternalsUtilityFunctions.h" line="78" column="1" bodyfile="Engines/Internals/InternalsUtilityFunctions.h" bodystart="78" bodyend="82"/>
-        <references refid="namespace_smol_dock_1a73bb4756419c2b3361ae4d23b24eee20" compoundref="_internals_utility_functions_8h" startline="72" endline="75">applyTransformInPlace</references>
+        <location file="Engines/Internals/InternalsUtilityFunctions.h" line="158" column="1" bodyfile="Engines/Internals/InternalsUtilityFunctions.h" bodystart="158" bodyend="161"/>
+        <references refid="struct_smol_dock_1_1i_transform_1a8234938f815b9f74cc2d3289d4696dfb" compoundref="i_transform_8h" startline="33">SmolDock::iTransform::rota</references>
+        <references refid="struct_smol_dock_1_1i_transform_1ae79de47f6741ab7c3a97498fe0c589d3" compoundref="i_transform_8h" startline="32">SmolDock::iTransform::transl</references>
+        <referencedby refid="namespace_smol_dock_1a23db46469f6ec19aaf0c9b8e62f479ed" compoundref="_internals_utility_functions_8h" startline="164" endline="168">applyRigidTransform</referencedby>
+        <referencedby refid="namespace_smol_dock_1aeb45c011ac7f85cbd394e9318f89289a" compoundref="_internals_utility_functions_8h" startline="173" endline="181">applyRigidTransformInPlace</referencedby>
+        <referencedby refid="namespace_smol_dock_1afd058af9bf8a2fa90a0ec7bf42c31e31" compoundref="_internals_utility_functions_8h" startline="184" endline="189">applyTransformInPlace</referencedby>
+        <referencedby refid="namespace_smol_dock_1_1_score_1ac205731c7b0098c2900d9d16fff1a93b" compoundref="_vina_like_rigid_scoring_function_8cpp" startline="40" endline="117">SmolDock::Score::vina_like_rigid_inter_scoring_func</referencedby>
+        <referencedby refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1a6b173e704b812af5cde72610f1143577" compoundref="_vina_like_rigid_scoring_function_8cpp" startline="231" endline="243">SmolDock::Score::VinaLikeRigidScoringFunction::getConformerForParamMatrix</referencedby>
+        <referencedby refid="namespace_smol_dock_1_1_score_1af7f12c4b8451b856342af3afdbcadce8" compoundref="_vina_like_scoring_function_8cpp" startline="20" endline="82">SmolDock::Score::VinaLikeIntermolecularScoringFunction</referencedby>
+        <referencedby refid="class_smol_dock_1_1_score_1_1_vina_like_scoring_function_1a6c9ffc4bfc5cc3d066f2a2cda2163397" compoundref="_vina_like_scoring_function_8cpp" startline="221" endline="232">SmolDock::Score::VinaLikeScoringFunction::getConformerForParamMatrix</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespace_smol_dock_1a23db46469f6ec19aaf0c9b8e62f479ed" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>Eigen::Vector3d</type>
+        <definition>Eigen::Vector3d SmolDock::applyRigidTransform</definition>
+        <argsstring>(const Eigen::Vector3d &amp;v, const iTransform &amp;tr)</argsstring>
+        <name>applyRigidTransform</name>
+        <param>
+          <type>const Eigen::Vector3d &amp;</type>
+          <declname>v</declname>
+        </param>
+        <param>
+          <type>const <ref refid="struct_smol_dock_1_1i_transform" kindref="compound">iTransform</ref> &amp;</type>
+          <declname>tr</declname>
+        </param>
+        <briefdescription>
+<para>Apply the provided <ref refid="struct_smol_dock_1_1i_transform" kindref="compound">iTransform</ref> to a vector( only rigid component : translation + global rotation) </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Engines/Internals/InternalsUtilityFunctions.h" line="164" column="1" bodyfile="Engines/Internals/InternalsUtilityFunctions.h" bodystart="164" bodyend="168"/>
+        <references refid="namespace_smol_dock_1aea0b5b0a06c4650f4ca502a3f1da6e98" compoundref="_internals_utility_functions_8h" startline="158" endline="161">applyRigidTransformInPlace</references>
+      </memberdef>
+      <memberdef kind="function" id="namespace_smol_dock_1aeb45c011ac7f85cbd394e9318f89289a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void SmolDock::applyRigidTransformInPlace</definition>
+        <argsstring>(SmolDock::iConformer &amp;conformer, const iTransform &amp;tr)</argsstring>
+        <name>applyRigidTransformInPlace</name>
+        <param>
+          <type><ref refid="struct_smol_dock_1_1i_conformer" kindref="compound">SmolDock::iConformer</ref> &amp;</type>
+          <declname>conformer</declname>
+        </param>
+        <param>
+          <type>const <ref refid="struct_smol_dock_1_1i_transform" kindref="compound">iTransform</ref> &amp;</type>
+          <declname>tr</declname>
+        </param>
+        <briefdescription>
+<para>Apply the provided <ref refid="struct_smol_dock_1_1i_transform" kindref="compound">iTransform</ref> to a confomer, atom-by-atom (only rigid component : translation + global rotation) </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Engines/Internals/InternalsUtilityFunctions.h" line="173" column="1" bodyfile="Engines/Internals/InternalsUtilityFunctions.h" bodystart="173" bodyend="181"/>
+        <references refid="namespace_smol_dock_1aea0b5b0a06c4650f4ca502a3f1da6e98" compoundref="_internals_utility_functions_8h" startline="158" endline="161">applyRigidTransformInPlace</references>
+        <references refid="struct_smol_dock_1_1i_conformer_1a45c379f6a880da313bf3519dc415e992" compoundref="i_conformer_8h" startline="48">SmolDock::iConformer::x</references>
+        <references refid="struct_smol_dock_1_1i_conformer_1ac3019c0cd62660a4392591dd9519cc9a" compoundref="i_conformer_8h" startline="48">SmolDock::iConformer::y</references>
+        <references refid="struct_smol_dock_1_1i_conformer_1a5c1fc6f9bad31ec2731337e9ba1e9a0f" compoundref="i_conformer_8h" startline="48">SmolDock::iConformer::z</references>
       </memberdef>
       <memberdef kind="function" id="namespace_smol_dock_1afd058af9bf8a2fa90a0ec7bf42c31e31" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -271,96 +344,22 @@
           <declname>tr</declname>
         </param>
         <briefdescription>
-<para>Apply the provided <ref refid="struct_smol_dock_1_1i_transform" kindref="compound">iTransform</ref> to a confomer, atom-by-atom. </para>        </briefdescription>
+        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Engines/Internals/InternalsUtilityFunctions.h" line="86" column="1" bodyfile="Engines/Internals/InternalsUtilityFunctions.h" bodystart="86" bodyend="94"/>
-        <references refid="namespace_smol_dock_1a73bb4756419c2b3361ae4d23b24eee20" compoundref="_internals_utility_functions_8h" startline="72" endline="75">applyTransformInPlace</references>
-        <references refid="struct_smol_dock_1_1i_vect_1a3ffc7082a3541ad0fadcb1880a6087a8" compoundref="i_transform_8h" startline="31">SmolDock::iVect::x</references>
-        <references refid="struct_smol_dock_1_1i_conformer_1a45c379f6a880da313bf3519dc415e992" compoundref="i_conformer_8h" startline="48">SmolDock::iConformer::x</references>
-        <references refid="struct_smol_dock_1_1i_vect_1af8165339c1e38179008c4ca49a565fb4" compoundref="i_transform_8h" startline="31">SmolDock::iVect::y</references>
-        <references refid="struct_smol_dock_1_1i_conformer_1ac3019c0cd62660a4392591dd9519cc9a" compoundref="i_conformer_8h" startline="48">SmolDock::iConformer::y</references>
-        <references refid="struct_smol_dock_1_1i_vect_1a013cdafb950199deb4511843ff389e73" compoundref="i_transform_8h" startline="31">SmolDock::iVect::z</references>
-        <references refid="struct_smol_dock_1_1i_conformer_1a5c1fc6f9bad31ec2731337e9ba1e9a0f" compoundref="i_conformer_8h" startline="48">SmolDock::iConformer::z</references>
+        <location file="Engines/Internals/InternalsUtilityFunctions.h" line="184" column="1" bodyfile="Engines/Internals/InternalsUtilityFunctions.h" bodystart="184" bodyend="189"/>
+        <references refid="namespace_smol_dock_1a1843982e01fb9a9b852c5f64363a158c" compoundref="_internals_utility_functions_8h" startline="103" endline="154">applyBondRotationInPlace</references>
+        <references refid="namespace_smol_dock_1aea0b5b0a06c4650f4ca502a3f1da6e98" compoundref="_internals_utility_functions_8h" startline="158" endline="161">applyRigidTransformInPlace</references>
       </memberdef>
-      <memberdef kind="function" id="namespace_smol_dock_1afb62962c202721eaa8aa64d19bd42fdf" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type>double</type>
-        <definition>double SmolDock::quaternionNorm</definition>
-        <argsstring>(const iQuaternion &amp;quat)</argsstring>
-        <name>quaternionNorm</name>
-        <param>
-          <type>const <ref refid="struct_smol_dock_1_1i_quaternion" kindref="compound">iQuaternion</ref> &amp;</type>
-          <declname>quat</declname>
-        </param>
-        <briefdescription>
-<para>Returns the norm of the given quaternion. </para>        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="Engines/Internals/InternalsUtilityFunctions.h" line="97" column="1" bodyfile="Engines/Internals/InternalsUtilityFunctions.h" bodystart="97" bodyend="101"/>
-        <references refid="struct_smol_dock_1_1i_quaternion_1a07d95036803eb2a4ef32627df95043ad" compoundref="i_transform_8h" startline="25">SmolDock::iQuaternion::s</references>
-        <references refid="struct_smol_dock_1_1i_quaternion_1a1ff0d5e99369aa47273864dfea352c05" compoundref="i_transform_8h" startline="26">SmolDock::iQuaternion::t</references>
-        <references refid="struct_smol_dock_1_1i_quaternion_1a3692d71434fede9771686a73240e6ba7" compoundref="i_transform_8h" startline="26">SmolDock::iQuaternion::u</references>
-        <references refid="struct_smol_dock_1_1i_quaternion_1a97a15d15b2fae3ec29c2fdb2388f5e5b" compoundref="i_transform_8h" startline="26">SmolDock::iQuaternion::v</references>
-        <referencedby refid="namespace_smol_dock_1aeef66e92064c4a5e5102102342542853" compoundref="_internals_utility_functions_8h" startline="111" endline="121">normalizeQuaternionInPlace</referencedby>
-        <referencedby refid="namespace_smol_dock_1_1_score_1ac205731c7b0098c2900d9d16fff1a93b" compoundref="_vina_like_scoring_function_8cpp" startline="149" endline="223">SmolDock::Score::vina_like_rigid_inter_scoring_func</referencedby>
-      </memberdef>
-      <memberdef kind="function" id="namespace_smol_dock_1aba87815fd70c1b451b7ba905790ecef3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type>double</type>
-        <definition>double SmolDock::vectorNorm</definition>
-        <argsstring>(iVect v)</argsstring>
-        <name>vectorNorm</name>
-        <param>
-          <type><ref refid="struct_smol_dock_1_1i_vect" kindref="compound">iVect</ref></type>
-          <declname>v</declname>
-        </param>
-        <briefdescription>
-<para>Returns the norm of the given vector. </para>        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="Engines/Internals/InternalsUtilityFunctions.h" line="104" column="1" bodyfile="Engines/Internals/InternalsUtilityFunctions.h" bodystart="104" bodyend="108"/>
-        <references refid="struct_smol_dock_1_1i_vect_1a3ffc7082a3541ad0fadcb1880a6087a8" compoundref="i_transform_8h" startline="31">SmolDock::iVect::x</references>
-        <references refid="struct_smol_dock_1_1i_vect_1af8165339c1e38179008c4ca49a565fb4" compoundref="i_transform_8h" startline="31">SmolDock::iVect::y</references>
-        <references refid="struct_smol_dock_1_1i_vect_1a013cdafb950199deb4511843ff389e73" compoundref="i_transform_8h" startline="31">SmolDock::iVect::z</references>
-      </memberdef>
-      <memberdef kind="function" id="namespace_smol_dock_1aeef66e92064c4a5e5102102342542853" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type>void</type>
-        <definition>void SmolDock::normalizeQuaternionInPlace</definition>
-        <argsstring>(iQuaternion &amp;quat)</argsstring>
-        <name>normalizeQuaternionInPlace</name>
-        <param>
-          <type><ref refid="struct_smol_dock_1_1i_quaternion" kindref="compound">iQuaternion</ref> &amp;</type>
-          <declname>quat</declname>
-        </param>
-        <briefdescription>
-<para>Normalize a quaternion (which then has norm == 1.0) </para>        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="Engines/Internals/InternalsUtilityFunctions.h" line="111" column="1" bodyfile="Engines/Internals/InternalsUtilityFunctions.h" bodystart="111" bodyend="121"/>
-        <references refid="namespace_smol_dock_1afb62962c202721eaa8aa64d19bd42fdf" compoundref="_internals_utility_functions_8h" startline="97" endline="101">quaternionNorm</references>
-        <references refid="struct_smol_dock_1_1i_quaternion_1a07d95036803eb2a4ef32627df95043ad" compoundref="i_transform_8h" startline="25">SmolDock::iQuaternion::s</references>
-        <references refid="struct_smol_dock_1_1i_quaternion_1a1ff0d5e99369aa47273864dfea352c05" compoundref="i_transform_8h" startline="26">SmolDock::iQuaternion::t</references>
-        <references refid="struct_smol_dock_1_1i_quaternion_1a3692d71434fede9771686a73240e6ba7" compoundref="i_transform_8h" startline="26">SmolDock::iQuaternion::u</references>
-        <references refid="struct_smol_dock_1_1i_quaternion_1a97a15d15b2fae3ec29c2fdb2388f5e5b" compoundref="i_transform_8h" startline="26">SmolDock::iQuaternion::v</references>
-        <referencedby refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a7bee39278168cb4d7ee6558b3a3d3bb4" compoundref="_conformer_rigid_docking_engine_8cpp" startline="135" endline="224">SmolDock::Engine::ConformerRigidDockingEngine::runDockingEngine</referencedby>
-        <referencedby refid="namespace_smol_dock_1addb7785924a5380574728cfd0978d8f0" compoundref="_internals_utility_functions_8h" startline="124" endline="128">normalizeQuaternion</referencedby>
-        <referencedby refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1ab89f08da2f4f79abfe9130b3593c3522" compoundref="_vina_like_scoring_function_8cpp" startline="225" endline="234">SmolDock::Score::VinaLikeRigidScoringFunction::Evaluate</referencedby>
-        <referencedby refid="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_1a574511b3c12769902e2c0366d4d3db96" compoundref="_vina_like_scoring_function_8cpp" startline="236" endline="294">SmolDock::Score::VinaLikeRigidScoringFunction::EvaluateWithGradient</referencedby>
-      </memberdef>
-      <memberdef kind="function" id="namespace_smol_dock_1addb7785924a5380574728cfd0978d8f0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="struct_smol_dock_1_1i_quaternion" kindref="compound">iQuaternion</ref></type>
-        <definition>iQuaternion SmolDock::normalizeQuaternion</definition>
-        <argsstring>(const iQuaternion &amp;quat)</argsstring>
+      <memberdef kind="function" id="namespace_smol_dock_1ad482fa7b49d3fa273b4baeef6f915589" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>Eigen::Quaternion&lt; double &gt;</type>
+        <definition>Eigen::Quaternion&lt;double&gt; SmolDock::normalizeQuaternion</definition>
+        <argsstring>(const Eigen::Quaternion&lt; double &gt; &amp;quat)</argsstring>
         <name>normalizeQuaternion</name>
         <param>
-          <type>const <ref refid="struct_smol_dock_1_1i_quaternion" kindref="compound">iQuaternion</ref> &amp;</type>
+          <type>const Eigen::Quaternion&lt; double &gt; &amp;</type>
           <declname>quat</declname>
         </param>
         <briefdescription>
@@ -369,8 +368,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Engines/Internals/InternalsUtilityFunctions.h" line="124" column="1" bodyfile="Engines/Internals/InternalsUtilityFunctions.h" bodystart="124" bodyend="128"/>
-        <references refid="namespace_smol_dock_1aeef66e92064c4a5e5102102342542853" compoundref="_internals_utility_functions_8h" startline="111" endline="121">normalizeQuaternionInPlace</references>
+        <location file="Engines/Internals/InternalsUtilityFunctions.h" line="193" column="1" bodyfile="Engines/Internals/InternalsUtilityFunctions.h" bodystart="193" bodyend="197"/>
       </memberdef>
       <memberdef kind="function" id="namespace_smol_dock_1a7980070f5c494cfe044ad9e90e34e3e3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>std::string</type>
@@ -388,8 +386,8 @@
         <inbodydescription>
         </inbodydescription>
         <location file="Structures/AminoAcid.cpp" line="65" column="1" bodyfile="Structures/AminoAcid.cpp" bodystart="65" bodyend="75"/>
-        <references refid="class_smol_dock_1_1_amino_acid_1a23b1781c86be2991e2f668c07ad78d68" compoundref="_amino_acid_8h" startline="96">SmolDock::AminoAcid::AAShorthandSet</references>
-        <referencedby refid="namespace_smol_dock_1a2820b77a3fd140cd601c75028ed8dd51" compoundref="_variant_flag_assignation_8cpp" startline="35" endline="87">assignVariantFlagsForResidueAtom</referencedby>
+        <references refid="class_smol_dock_1_1_amino_acid_1a23b1781c86be2991e2f668c07ad78d68" compoundref="_amino_acid_8h" startline="100">SmolDock::AminoAcid::AAShorthandSet</references>
+        <referencedby refid="namespace_smol_dock_1a2820b77a3fd140cd601c75028ed8dd51" compoundref="_variant_flag_assignation_8cpp" startline="34" endline="85">assignVariantFlagsForResidueAtom</referencedby>
       </memberdef>
       <memberdef kind="function" id="namespace_smol_dock_1a788f9308991cdf8fe5af07b27ff0f389" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875d" kindref="member">AminoAcid::AAType</ref></type>
@@ -407,8 +405,8 @@
         <inbodydescription>
         </inbodydescription>
         <location file="Structures/AminoAcid.cpp" line="77" column="1" bodyfile="Structures/AminoAcid.cpp" bodystart="77" bodyend="91"/>
-        <references refid="class_smol_dock_1_1_amino_acid_1a23b1781c86be2991e2f668c07ad78d68" compoundref="_amino_acid_8h" startline="96">SmolDock::AminoAcid::AAShorthandSet</references>
-        <referencedby refid="class_smol_dock_1_1_protein_1a726524247169022a4dfc1328753e39b3" compoundref="_protein_8cpp" startline="41" endline="201">SmolDock::Protein::populateFromPDB</referencedby>
+        <references refid="class_smol_dock_1_1_amino_acid_1a23b1781c86be2991e2f668c07ad78d68" compoundref="_amino_acid_8h" startline="100">SmolDock::AminoAcid::AAShorthandSet</references>
+        <referencedby refid="class_smol_dock_1_1_protein_1a726524247169022a4dfc1328753e39b3" compoundref="_protein_8cpp" startline="42" endline="233">SmolDock::Protein::populateFromPDB</referencedby>
       </memberdef>
       <memberdef kind="function" id="namespace_smol_dock_1adc50d67bf7b33de8b30d90f97c25fb24" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>std::string</type>
@@ -425,8 +423,8 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Structures/Atom.cpp" line="47" column="1" bodyfile="Structures/Atom.cpp" bodystart="47" bodyend="58"/>
-        <references refid="class_smol_dock_1_1_atom_1aed79f9306267e3ddbd9a9b4dade2bbbf" compoundref="_atom_8h" startline="176">SmolDock::Atom::AtomTypeLabel</references>
+        <location file="Structures/Atom.cpp" line="47" column="1" bodyfile="Structures/Atom.cpp" bodystart="47" bodyend="59"/>
+        <references refid="class_smol_dock_1_1_atom_1aed79f9306267e3ddbd9a9b4dade2bbbf" compoundref="_atom_8h" startline="202">SmolDock::Atom::AtomTypeLabel</references>
       </memberdef>
       <memberdef kind="function" id="namespace_smol_dock_1abf06ab90cb8bd0858a883be16bb9f563" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>std::string</type>
@@ -443,9 +441,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Structures/Atom.cpp" line="60" column="1" bodyfile="Structures/Atom.cpp" bodystart="60" bodyend="71"/>
-        <references refid="class_smol_dock_1_1_atom_1aed79f9306267e3ddbd9a9b4dade2bbbf" compoundref="_atom_8h" startline="176">SmolDock::Atom::AtomTypeLabel</references>
-        <referencedby refid="class_smol_dock_1_1_p_d_b_writer_1aaad8350fc387575ed549a1fd8569aad2" compoundref="_p_d_b_writer_8cpp" startline="21" endline="82">SmolDock::PDBWriter::writePDB</referencedby>
+        <location file="Structures/Atom.cpp" line="61" column="1" bodyfile="Structures/Atom.cpp" bodystart="61" bodyend="73"/>
+        <references refid="class_smol_dock_1_1_atom_1aed79f9306267e3ddbd9a9b4dade2bbbf" compoundref="_atom_8h" startline="202">SmolDock::Atom::AtomTypeLabel</references>
+        <referencedby refid="class_smol_dock_1_1_p_d_b_writer_1aaad8350fc387575ed549a1fd8569aad2" compoundref="_p_d_b_writer_8cpp" startline="21" endline="80">SmolDock::PDBWriter::writePDB</referencedby>
       </memberdef>
       <memberdef kind="function" id="namespace_smol_dock_1ae559278f4b66ec9a09ddfaebb224f897" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="class_smol_dock_1_1_atom_1a57e9a532fd04e1846c0d83edebb9fd41" kindref="member">Atom::AtomType</ref></type>
@@ -462,10 +460,10 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Structures/Atom.cpp" line="73" column="1" bodyfile="Structures/Atom.cpp" bodystart="73" bodyend="84"/>
-        <references refid="class_smol_dock_1_1_atom_1aed79f9306267e3ddbd9a9b4dade2bbbf" compoundref="_atom_8h" startline="176">SmolDock::Atom::AtomTypeLabel</references>
+        <location file="Structures/Atom.cpp" line="75" column="1" bodyfile="Structures/Atom.cpp" bodystart="75" bodyend="87"/>
+        <references refid="class_smol_dock_1_1_atom_1aed79f9306267e3ddbd9a9b4dade2bbbf" compoundref="_atom_8h" startline="202">SmolDock::Atom::AtomTypeLabel</references>
         <references refid="class_smol_dock_1_1_atom_1a57e9a532fd04e1846c0d83edebb9fd41aad921d60486366258809553a3db49a4a">SmolDock::Atom::unknown</references>
-        <referencedby refid="class_smol_dock_1_1_molecule_1a5247ebed094d5593a5a704c0c2919c0c" compoundref="_molecule_8cpp" startline="384" endline="453">SmolDock::Molecule::generateIConformerForGivenRDKitConformerID</referencedby>
+        <referencedby refid="class_smol_dock_1_1_molecule_1a5247ebed094d5593a5a704c0c2919c0c" compoundref="_molecule_8cpp" startline="555" endline="649">SmolDock::Molecule::generateIConformerForGivenRDKitConformerID</referencedby>
       </memberdef>
       <memberdef kind="function" id="namespace_smol_dock_1a9c3abf1e37dc4fe013df80997dedb20b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>double</type>
@@ -482,9 +480,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Structures/Atom.cpp" line="86" column="1" bodyfile="Structures/Atom.cpp" bodystart="86" bodyend="97"/>
-        <references refid="class_smol_dock_1_1_atom_1aed79f9306267e3ddbd9a9b4dade2bbbf" compoundref="_atom_8h" startline="176">SmolDock::Atom::AtomTypeLabel</references>
-        <referencedby refid="class_smol_dock_1_1_molecule_1a5247ebed094d5593a5a704c0c2919c0c" compoundref="_molecule_8cpp" startline="384" endline="453">SmolDock::Molecule::generateIConformerForGivenRDKitConformerID</referencedby>
+        <location file="Structures/Atom.cpp" line="89" column="1" bodyfile="Structures/Atom.cpp" bodystart="89" bodyend="101"/>
+        <references refid="class_smol_dock_1_1_atom_1aed79f9306267e3ddbd9a9b4dade2bbbf" compoundref="_atom_8h" startline="202">SmolDock::Atom::AtomTypeLabel</references>
+        <referencedby refid="class_smol_dock_1_1_molecule_1a5247ebed094d5593a5a704c0c2919c0c" compoundref="_molecule_8cpp" startline="555" endline="649">SmolDock::Molecule::generateIConformerForGivenRDKitConformerID</referencedby>
       </memberdef>
       <memberdef kind="function" id="namespace_smol_dock_1a5b696009e136f369f88b0ebfc51175bc" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr <ref refid="class_smol_dock_1_1_atom_1a77191f0919af58d733764e229cb1f973" kindref="member">Atom::AtomVariant</ref></type>
@@ -505,7 +503,53 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Structures/Atom.h" line="187" column="1" bodyfile="Structures/Atom.h" bodystart="187" bodyend="188"/>
+        <location file="Structures/Atom.h" line="236" column="1" bodyfile="Structures/Atom.h" bodystart="236" bodyend="238"/>
+      </memberdef>
+      <memberdef kind="function" id="namespace_smol_dock_1a3e774ae0fc0908c0ed5dc7e9a1fb349a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>constexpr bool</type>
+        <definition>constexpr bool SmolDock::operator&amp;</definition>
+        <argsstring>(Atom::AtomVariant a, Atom::AtomVariant b)</argsstring>
+        <name>operator &amp;</name>
+        <param>
+          <type><ref refid="class_smol_dock_1_1_atom_1a77191f0919af58d733764e229cb1f973" kindref="member">Atom::AtomVariant</ref></type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type><ref refid="class_smol_dock_1_1_atom_1a77191f0919af58d733764e229cb1f973" kindref="member">Atom::AtomVariant</ref></type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Structures/Atom.h" line="240" column="1" bodyfile="Structures/Atom.h" bodystart="240" bodyend="242"/>
+      </memberdef>
+      <memberdef kind="function" id="namespace_smol_dock_1a506cf373a9b0185cffe654280332e312" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string SmolDock::atomVariantToString</definition>
+        <argsstring>(Atom::AtomVariant a)</argsstring>
+        <name>atomVariantToString</name>
+        <param>
+          <type><ref refid="class_smol_dock_1_1_atom_1a77191f0919af58d733764e229cb1f973" kindref="member">Atom::AtomVariant</ref></type>
+          <declname>a</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Structures/Atom.h" line="244" column="1" bodyfile="Structures/Atom.h" bodystart="244" bodyend="276"/>
+        <references refid="class_smol_dock_1_1_atom_1a77191f0919af58d733764e229cb1f973ae5e437761e40c78a4c0929be07a3ab04">SmolDock::Atom::apolar</references>
+        <references refid="class_smol_dock_1_1_atom_1a77191f0919af58d733764e229cb1f973a6a50e19bded8541479615e7e0b08f734">SmolDock::Atom::covalentReversibleAcceptor</references>
+        <references refid="class_smol_dock_1_1_atom_1a77191f0919af58d733764e229cb1f973abedbe1ed5af8463f77c924722c90552e">SmolDock::Atom::customAtomFlag1</references>
+        <references refid="class_smol_dock_1_1_atom_1a77191f0919af58d733764e229cb1f973abf7f4d3ed23c104fc86bb42e5ba94fe9">SmolDock::Atom::customAtomFlag2</references>
+        <references refid="class_smol_dock_1_1_atom_1a77191f0919af58d733764e229cb1f973adafa4b20b70b01a5b12ff9db5e260d7d">SmolDock::Atom::customAtomFlag3</references>
+        <references refid="class_smol_dock_1_1_atom_1a77191f0919af58d733764e229cb1f973ad68216b54381a7b2b87b7924ab0191c4">SmolDock::Atom::hydrogenAcceptor</references>
+        <references refid="class_smol_dock_1_1_atom_1a77191f0919af58d733764e229cb1f973ade31e8114bf9ba2ec47d55c59f61853d">SmolDock::Atom::hydrogenDonor</references>
+        <referencedby refid="class_smol_dock_1_1_molecule_1abefbb48c0b7647491cf7c45fa2dfd6b5" compoundref="_molecule_8cpp" startline="684" endline="732">SmolDock::Molecule::applyAtomVariant</referencedby>
       </memberdef>
       <memberdef kind="function" id="namespace_smol_dock_1a2820b77a3fd140cd601c75028ed8dd51" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -526,14 +570,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Structures/Common/VariantFlagAssignation.cpp" line="35" column="1" bodyfile="Structures/Common/VariantFlagAssignation.cpp" bodystart="35" bodyend="87"/>
-        <references refid="class_smol_dock_1_1_amino_acid_1acf07ea167386e29d0ea6b5024663aed8" compoundref="_amino_acid_8h" startline="107">SmolDock::AminoAcid::atoms</references>
+        <location file="Structures/Common/VariantFlagAssignation.cpp" line="34" column="1" bodyfile="Structures/Common/VariantFlagAssignation.cpp" bodystart="34" bodyend="85"/>
+        <references refid="class_smol_dock_1_1_amino_acid_1acf07ea167386e29d0ea6b5024663aed8" compoundref="_amino_acid_8h" startline="114">SmolDock::AminoAcid::atoms</references>
         <references refid="namespace_smol_dock_1ab797122db8030eb70bf4d042c897df5eab7f023dbb86242b37e451d0b36dde93d">GeneralPurpose</references>
-        <references refid="class_smol_dock_1_1_amino_acid_1a556f668f759abed9c33c3522106d520b" compoundref="_amino_acid_8cpp" startline="129" endline="131">SmolDock::AminoAcid::getType</references>
+        <references refid="class_smol_dock_1_1_amino_acid_1a556f668f759abed9c33c3522106d520b" compoundref="_amino_acid_8cpp" startline="127" endline="129">SmolDock::AminoAcid::getType</references>
         <references refid="namespace_smol_dock_1a1c9575126d6be4889918032116fd8add" compoundref="_p_d_b_residue_variant_table_8cpp" startline="18">ResidueAtomPropertiesLookupTable_General</references>
         <references refid="namespace_smol_dock_1a7980070f5c494cfe044ad9e90e34e3e3" compoundref="_amino_acid_8cpp" startline="65" endline="75">resTypeToString</references>
         <references refid="class_smol_dock_1_1_amino_acid_1a08692b12e7f53812c5258bd8b805875daad921d60486366258809553a3db49a4a">SmolDock::AminoAcid::unknown</references>
-        <referencedby refid="class_smol_dock_1_1_protein_1a726524247169022a4dfc1328753e39b3" compoundref="_protein_8cpp" startline="41" endline="201">SmolDock::Protein::populateFromPDB</referencedby>
+        <referencedby refid="class_smol_dock_1_1_protein_1a726524247169022a4dfc1328753e39b3" compoundref="_protein_8cpp" startline="42" endline="233">SmolDock::Protein::populateFromPDB</referencedby>
       </memberdef>
       <memberdef kind="function" id="namespace_smol_dock_1a43bbd3ed0ad4b1eec9e5ae8d9d99318d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -550,11 +594,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Structures/Common/VariantFlagAssignation.cpp" line="89" column="1" bodyfile="Structures/Common/VariantFlagAssignation.cpp" bodystart="89" bodyend="127"/>
+        <location file="Structures/Common/VariantFlagAssignation.cpp" line="87" column="1" bodyfile="Structures/Common/VariantFlagAssignation.cpp" bodystart="87" bodyend="125"/>
         <references refid="class_smol_dock_1_1_atom_1a77191f0919af58d733764e229cb1f973ae5e437761e40c78a4c0929be07a3ab04">SmolDock::Atom::apolar</references>
         <references refid="class_smol_dock_1_1_atom_1a57e9a532fd04e1846c0d83edebb9fd41ae1b832c8857262f1089376030b4298b3">SmolDock::Atom::carbon</references>
         <references refid="class_smol_dock_1_1_atom_1a57e9a532fd04e1846c0d83edebb9fd41ad4ac1478a4d8a4f591d35e3d75f3de65">SmolDock::Atom::hydrogen</references>
-        <referencedby refid="class_smol_dock_1_1_molecule_1a919f8706ff2f2beb3f7bf8d53f4c3f96" compoundref="_molecule_8cpp" startline="169" endline="318">SmolDock::Molecule::populateInternalAtomAndBondFromRWMol</referencedby>
+        <referencedby refid="class_smol_dock_1_1_molecule_1a919f8706ff2f2beb3f7bf8d53f4c3f96" compoundref="_molecule_8cpp" startline="226" endline="485">SmolDock::Molecule::populateInternalAtomAndBondFromRWMol</referencedby>
       </memberdef>
       <memberdef kind="function" id="namespace_smol_dock_1af232b04c4eb1c52a6ebea14bb1056be0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -571,7 +615,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Structures/Common/VariantFlagAssignation.h" line="35" column="1"/>
+        <location file="Structures/Common/VariantFlagAssignation.h" line="34" column="1"/>
       </memberdef>
       <memberdef kind="function" id="namespace_smol_dock_1a288ddd3593922bcc17e5feb114841802" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -593,7 +637,25 @@
         <inbodydescription>
         </inbodydescription>
         <location file="Utilities/PDBLigandUtils.cpp" line="11" column="1" bodyfile="Utilities/PDBLigandUtils.cpp" bodystart="11" bodyend="139"/>
-        <referencedby refid="class_smol_dock_1_1_molecule_1a9e3ef6b361a98cfbac69b11979d886da" compoundref="_molecule_8cpp" startline="137" endline="158">SmolDock::Molecule::populateFromPDB</referencedby>
+        <referencedby refid="class_smol_dock_1_1_molecule_1a457193a63a1c732d4f5da772c108b5ee" compoundref="_molecule_8cpp" startline="158" endline="179">SmolDock::Molecule::populateFromPDBFile</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespace_smol_dock_1a7541263622567bfb9c3f4212e05432a6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string SmolDock::getVersionString</definition>
+        <argsstring>()</argsstring>
+        <name>getVersionString</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Utilities/Version.h" line="24" column="1" bodyfile="Utilities/Version.h" bodystart="24" bodyend="33"/>
+        <references refid="class_smol_dock_1_1_version_1a4dd8dea3dc58d527f554f03a7719469d" compoundref="_version_8h" startline="15">SmolDock::Version::major</references>
+        <references refid="class_smol_dock_1_1_version_1aad80abada289dd0ac5db481212fe6373" compoundref="_version_8h" startline="16">SmolDock::Version::minor</references>
+        <references refid="class_smol_dock_1_1_version_1a9762cdb714ebd707ab111daf3a51f4dd" compoundref="_version_8h" startline="17">SmolDock::Version::patch</references>
+        <references refid="class_smol_dock_1_1_version_1a14beb2c392e50221e4def090a9bf2c7a" compoundref="_version_8h" startline="19">SmolDock::Version::tag</references>
+        <referencedby refid="main_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4" compoundref="main_8cpp" startline="45" endline="174">main</referencedby>
       </memberdef>
       </sectiondef>
     <briefdescription>

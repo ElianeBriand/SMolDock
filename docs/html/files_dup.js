@@ -1,7 +1,8 @@
 var files_dup =
 [
     [ "AbstractDockingEngine.h", "_abstract_docking_engine_8h.html", [
-      [ "AbstractDockingEngine", "class_smol_dock_1_1_engine_1_1_abstract_docking_engine.html", "class_smol_dock_1_1_engine_1_1_abstract_docking_engine" ]
+      [ "AbstractDockingEngine", "class_smol_dock_1_1_engine_1_1_abstract_docking_engine.html", "class_smol_dock_1_1_engine_1_1_abstract_docking_engine" ],
+      [ "DockingBoxSetting", "struct_smol_dock_1_1_engine_1_1_abstract_docking_engine_1_1_docking_box_setting.html", "struct_smol_dock_1_1_engine_1_1_abstract_docking_engine_1_1_docking_box_setting" ]
     ] ],
     [ "AminoAcid.cpp", "_amino_acid_8cpp.html", "_amino_acid_8cpp" ],
     [ "AminoAcid.h", "_amino_acid_8h.html", "_amino_acid_8h" ],
@@ -11,6 +12,7 @@ var files_dup =
     [ "Bond.h", "_bond_8h.html", [
       [ "Bond", "class_smol_dock_1_1_bond.html", "class_smol_dock_1_1_bond" ]
     ] ],
+    [ "cli_interface.cpp", "cli__interface_8cpp.html", "cli__interface_8cpp" ],
     [ "ConformerRigidDockingEngine.cpp", "_conformer_rigid_docking_engine_8cpp.html", null ],
     [ "ConformerRigidDockingEngine.h", "_conformer_rigid_docking_engine_8h.html", [
       [ "ConformerRigidDockingEngine", "class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine.html", "class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine" ]
@@ -37,8 +39,11 @@ var files_dup =
     [ "iConformer.h", "i_conformer_8h.html", [
       [ "iConformer", "namespace_smol_dock.html#struct_smol_dock_1_1i_conformer", [
         [ "atomicRadius", "namespace_smol_dock.html#a1dbd8cb4eaa4e5e2f0afcdd1b36dd862", null ],
-        [ "centroidNormalizingTransform", "namespace_smol_dock.html#aca79d26663d734bf23b5ed7ddc3dba57", null ],
+        [ "bondEnds1Index", "namespace_smol_dock.html#ac88e2d09609c3b4d66ca517a0fc5f184", null ],
+        [ "bondEnds2Index", "namespace_smol_dock.html#ae40696d245431ced83de5f20464bab08", null ],
+        [ "centroidNormalizingTransform", "namespace_smol_dock.html#a96caa4158ad18d445835710ea0df91d3", null ],
         [ "num_rotatable_bond", "namespace_smol_dock.html#aabef94f550eef03cf2d4304df78cf403", null ],
+        [ "rotatableGroups", "namespace_smol_dock.html#a9676e4f30ba2425d948cc11ed88b1c59", null ],
         [ "type", "namespace_smol_dock.html#add04de1dd457ae228e398ffa9260497d", null ],
         [ "variant", "namespace_smol_dock.html#af56992de619302df905180a481a4d993", null ],
         [ "x", "namespace_smol_dock.html#a45c379f6a880da313bf3519dc415e992", null ],
@@ -61,6 +66,7 @@ var files_dup =
         [ "center_x", "namespace_smol_dock.html#a8e62b22e54589f2727b0743cf58a3551", null ],
         [ "center_y", "namespace_smol_dock.html#a834d2ab9d8580f255616a13a1af785c2", null ],
         [ "center_z", "namespace_smol_dock.html#a8b3ccbb789373d51a3889158167c3c9a", null ],
+        [ "radius", "namespace_smol_dock.html#a8d25c2921468821768f2bd81574d3bc8", null ],
         [ "type", "namespace_smol_dock.html#a8a9cecc0e9750baf8d7074fe64b4331d", null ],
         [ "variant", "namespace_smol_dock.html#ac452f5ddb99ed5a703615f9c03337ddd", null ],
         [ "x", "namespace_smol_dock.html#ae36a5b0f6996e54f9ce1f746a79e23f8", null ],
@@ -68,35 +74,18 @@ var files_dup =
         [ "z", "namespace_smol_dock.html#ab95306577aa2d8bdd268504b44d046ad", null ]
       ] ]
     ] ],
+    [ "IteratedLocalSearch.cpp", "_iterated_local_search_8cpp.html", null ],
+    [ "IteratedLocalSearch.h", "_iterated_local_search_8h.html", [
+      [ "IteratedLocalSearch", "class_smol_dock_1_1_heuristics_1_1_iterated_local_search.html", "class_smol_dock_1_1_heuristics_1_1_iterated_local_search" ],
+      [ "Parameters", "class_smol_dock_1_1_heuristics_1_1_iterated_local_search.html#struct_smol_dock_1_1_heuristics_1_1_iterated_local_search_1_1_parameters", [
+        [ "proteinMaxRadius", "class_smol_dock_1_1_heuristics_1_1_iterated_local_search.html#afabde5a3f6980b204febf77a3841ac50", null ]
+      ] ]
+    ] ],
     [ "iTransform.h", "i_transform_8h.html", [
-      [ "iQuaternion", "namespace_smol_dock.html#struct_smol_dock_1_1i_quaternion", [
-        [ "s", "namespace_smol_dock.html#a07d95036803eb2a4ef32627df95043ad", null ],
-        [ "t", "namespace_smol_dock.html#a1ff0d5e99369aa47273864dfea352c05", null ],
-        [ "u", "namespace_smol_dock.html#a3692d71434fede9771686a73240e6ba7", null ],
-        [ "v", "namespace_smol_dock.html#a97a15d15b2fae3ec29c2fdb2388f5e5b", null ]
-      ] ],
-      [ "iVect", "namespace_smol_dock.html#struct_smol_dock_1_1i_vect", [
-        [ "x", "namespace_smol_dock.html#a3ffc7082a3541ad0fadcb1880a6087a8", null ],
-        [ "y", "namespace_smol_dock.html#af8165339c1e38179008c4ca49a565fb4", null ],
-        [ "z", "namespace_smol_dock.html#a013cdafb950199deb4511843ff389e73", null ]
-      ] ],
-      [ "iTranslation", "namespace_smol_dock.html#struct_smol_dock_1_1i_translation", [
-        [ "x", "namespace_smol_dock.html#a74a60efc8b2463b7ea1ca1e824a4ed28", null ],
-        [ "y", "namespace_smol_dock.html#a5362a54675ecc6bac99325c69521fbb5", null ],
-        [ "z", "namespace_smol_dock.html#a2ed07fcfc129a2bf7696b65d481317c5", null ]
-      ] ],
       [ "iTransform", "namespace_smol_dock.html#struct_smol_dock_1_1i_transform", [
-        [ "rota", "namespace_smol_dock.html#a31861b55dc94ec0172ce602cd2a4a54f", null ],
-        [ "transl", "namespace_smol_dock.html#ab0039729b08d423b6e0414cec1b893e7", null ]
-      ] ],
-      [ "iGradient", "namespace_smol_dock.html#struct_smol_dock_1_1i_gradient", [
-        [ "ds", "namespace_smol_dock.html#af93eb07f1c8b1f8fe103ed5aa028ce2c", null ],
-        [ "dt", "namespace_smol_dock.html#a728b006fb9f40f843dcca18768a0618c", null ],
-        [ "du", "namespace_smol_dock.html#a5583a237c1d002cba8afcb0b34d7a483", null ],
-        [ "dv", "namespace_smol_dock.html#aff52214e33a8a7ec32fac66f0342764d", null ],
-        [ "dx", "namespace_smol_dock.html#a4780b049dba9b298fc9259a9b626b77c", null ],
-        [ "dy", "namespace_smol_dock.html#a4c616a17c5cdd532679cc158dccc6797", null ],
-        [ "dz", "namespace_smol_dock.html#adf3e33454ba5441435ce46894df07a49", null ]
+        [ "bondRotationsAngles", "namespace_smol_dock.html#aa71e9b254a08dfc310a6430056f05964", null ],
+        [ "rota", "namespace_smol_dock.html#a8234938f815b9f74cc2d3289d4696dfb", null ],
+        [ "transl", "namespace_smol_dock.html#ae79de47f6741ab7c3a97498fe0c589d3", null ]
       ] ]
     ] ],
     [ "L_BFGS.cpp", "_l___b_f_g_s_8cpp.html", null ],
@@ -109,9 +98,16 @@ var files_dup =
     [ "MDStyleDockingEngine.h", "_m_d_style_docking_engine_8h.html", [
       [ "MDStyleDockingEngine", "class_smol_dock_1_1_engine_1_1_m_d_style_docking_engine.html", "class_smol_dock_1_1_engine_1_1_m_d_style_docking_engine" ]
     ] ],
+    [ "MetropolisHastings.cpp", "_metropolis_hastings_8cpp.html", null ],
+    [ "MetropolisHastings.h", "_metropolis_hastings_8h.html", "_metropolis_hastings_8h" ],
     [ "Molecule.cpp", "_molecule_8cpp.html", null ],
     [ "Molecule.h", "_molecule_8h.html", [
       [ "Molecule", "class_smol_dock_1_1_molecule.html", "class_smol_dock_1_1_molecule" ]
+    ] ],
+    [ "OnlyLocal.cpp", "_only_local_8cpp.html", null ],
+    [ "OnlyLocal.h", "_only_local_8h.html", [
+      [ "OnlyLocal", "class_smol_dock_1_1_heuristics_1_1_only_local.html", "class_smol_dock_1_1_heuristics_1_1_only_local" ],
+      [ "Parameters", "class_smol_dock_1_1_heuristics_1_1_only_local.html#struct_smol_dock_1_1_heuristics_1_1_only_local_1_1_parameters", null ]
     ] ],
     [ "OptimizerFactory.cpp", "_optimizer_factory_8cpp.html", "_optimizer_factory_8cpp" ],
     [ "OptimizerFactory.h", "_optimizer_factory_8h.html", "_optimizer_factory_8h" ],
@@ -126,14 +122,16 @@ var files_dup =
     [ "PDBWriter.h", "_p_d_b_writer_8h.html", [
       [ "PDBWriter", "class_smol_dock_1_1_p_d_b_writer.html", "class_smol_dock_1_1_p_d_b_writer" ]
     ] ],
+    [ "PoseRefiner.cpp", "_pose_refiner_8cpp.html", null ],
+    [ "PoseRefiner.h", "_pose_refiner_8h.html", [
+      [ "PoseRefiner", "class_smol_dock_1_1_engine_1_1_pose_refiner.html", "class_smol_dock_1_1_engine_1_1_pose_refiner" ]
+    ] ],
     [ "Protein.cpp", "_protein_8cpp.html", null ],
     [ "Protein.h", "_protein_8h.html", [
       [ "Protein", "class_smol_dock_1_1_protein.html", "class_smol_dock_1_1_protein" ]
     ] ],
     [ "PyEngine.cpp", "_py_engine_8cpp.html", "_py_engine_8cpp" ],
     [ "PyEngine.h", "_py_engine_8h.html", "_py_engine_8h" ],
-    [ "PyScoringFunctions.cpp", "_py_scoring_functions_8cpp.html", "_py_scoring_functions_8cpp" ],
-    [ "PyScoringFunctions.h", "_py_scoring_functions_8h.html", "_py_scoring_functions_8h" ],
     [ "PySTLWrapper.cpp", "_py_s_t_l_wrapper_8cpp.html", "_py_s_t_l_wrapper_8cpp" ],
     [ "PySTLWrapper.h", "_py_s_t_l_wrapper_8h.html", "_py_s_t_l_wrapper_8h" ],
     [ "PyStructures.cpp", "_py_structures_8cpp.html", "_py_structures_8cpp" ],
@@ -142,7 +140,10 @@ var files_dup =
     [ "PyUtilities.h", "_py_utilities_8h.html", "_py_utilities_8h" ],
     [ "RandomRestart.cpp", "_random_restart_8cpp.html", null ],
     [ "RandomRestart.h", "_random_restart_8h.html", [
-      [ "RandomRestart", "class_smol_dock_1_1_heuristics_1_1_random_restart.html", "class_smol_dock_1_1_heuristics_1_1_random_restart" ]
+      [ "RandomRestart", "class_smol_dock_1_1_heuristics_1_1_random_restart.html", "class_smol_dock_1_1_heuristics_1_1_random_restart" ],
+      [ "Parameters", "class_smol_dock_1_1_heuristics_1_1_random_restart.html#struct_smol_dock_1_1_heuristics_1_1_random_restart_1_1_parameters", [
+        [ "proteinMaxRadius", "class_smol_dock_1_1_heuristics_1_1_random_restart.html#a832aa45d90da0e99e4697fbbe1613701", null ]
+      ] ]
     ] ],
     [ "ReScorer.cpp", "_re_scorer_8cpp.html", null ],
     [ "ReScorer.h", "_re_scorer_8h.html", [
@@ -153,6 +154,11 @@ var files_dup =
     [ "ScoringFunctionInterface.h", "_scoring_function_interface_8h.html", [
       [ "ScoringFunction", "class_smol_dock_1_1_score_1_1_scoring_function.html", "class_smol_dock_1_1_score_1_1_scoring_function" ]
     ] ],
+    [ "SimulatedAnnealing.cpp", "_simulated_annealing_8cpp.html", null ],
+    [ "SimulatedAnnealing.h", "_simulated_annealing_8h.html", [
+      [ "SimulatedAnnealing", "class_smol_dock_1_1_heuristics_1_1_simulated_annealing.html", "class_smol_dock_1_1_heuristics_1_1_simulated_annealing" ],
+      [ "Parameters", "class_smol_dock_1_1_heuristics_1_1_simulated_annealing.html#struct_smol_dock_1_1_heuristics_1_1_simulated_annealing_1_1_parameters", null ]
+    ] ],
     [ "SmoldockPythonBindings.cpp", "_smoldock_python_bindings_8cpp.html", "_smoldock_python_bindings_8cpp" ],
     [ "Structure.cpp", "_structure_8cpp.html", null ],
     [ "Structure.h", "_structure_8h.html", [
@@ -161,6 +167,9 @@ var files_dup =
     [ "TimingsLog.h", "_timings_log_8h.html", "_timings_log_8h" ],
     [ "VariantFlagAssignation.cpp", "_variant_flag_assignation_8cpp.html", "_variant_flag_assignation_8cpp" ],
     [ "VariantFlagAssignation.h", "_variant_flag_assignation_8h.html", "_variant_flag_assignation_8h" ],
+    [ "Version.cpp", "_version_8cpp.html", null ],
+    [ "Version.h", "_version_8h.html", "_version_8h" ],
+    [ "vina_refiner.cpp", "vina__refiner_8cpp.html", "vina__refiner_8cpp" ],
     [ "VinaCompatibilityPostProcessor.cpp", "_vina_compatibility_post_processor_8cpp.html", null ],
     [ "VinaCompatibilityPostProcessor.h", "_vina_compatibility_post_processor_8h.html", [
       [ "VinaCompatibilityPostProcessor", "class_smol_dock_1_1_input_post_processor_1_1_vina_compatibility_post_processor.html", "class_smol_dock_1_1_input_post_processor_1_1_vina_compatibility_post_processor" ]
@@ -169,6 +178,9 @@ var files_dup =
     [ "VinaCompatibleDockingEngine.h", "_vina_compatible_docking_engine_8h.html", [
       [ "VinaCompatibleDockingEngine", "class_smol_dock_1_1_engine_1_1_vina_compatible_docking_engine.html", null ]
     ] ],
+    [ "VinaLikeCommon.h", "_vina_like_common_8h.html", "_vina_like_common_8h" ],
+    [ "VinaLikeRigidScoringFunction.cpp", "_vina_like_rigid_scoring_function_8cpp.html", "_vina_like_rigid_scoring_function_8cpp" ],
+    [ "VinaLikeRigidScoringFunction.h", "_vina_like_rigid_scoring_function_8h.html", "_vina_like_rigid_scoring_function_8h" ],
     [ "VinaLikeScoringFunction.cpp", "_vina_like_scoring_function_8cpp.html", "_vina_like_scoring_function_8cpp" ],
     [ "VinaLikeScoringFunction.h", "_vina_like_scoring_function_8h.html", "_vina_like_scoring_function_8h" ]
 ];

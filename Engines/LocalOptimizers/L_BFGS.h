@@ -29,7 +29,7 @@ namespace SmolDock::Optimizer {
     class L_BFGS : public Optimizer {
 
     public:
-        explicit L_BFGS(Score::ScoringFunction *scoringFunc_, unsigned int maxIteration_ = 100);
+        explicit L_BFGS(Score::ScoringFunction* scoringFunc_, unsigned int maxIteration_ = 100);
 
         bool optimize(arma::mat startingPoint) final;
 
@@ -41,7 +41,7 @@ namespace SmolDock::Optimizer {
 
 
     private:
-        Score::ScoringFunction *scoringFunction;
+        Score::ScoringFunction* scoringFunction;
         unsigned int maxIteration;
 
 

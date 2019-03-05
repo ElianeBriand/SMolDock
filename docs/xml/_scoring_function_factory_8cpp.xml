@@ -3,258 +3,287 @@
   <compounddef id="_scoring_function_factory_8cpp" kind="file" language="C++">
     <compoundname>ScoringFunctionFactory.cpp</compoundname>
     <includes refid="_scoring_function_factory_8h" local="yes">ScoringFunctionFactory.h</includes>
+    <includes refid="_vina_like_rigid_scoring_function_8h" local="yes">VinaLikeRigidScoringFunction.h</includes>
     <includes refid="_vina_like_scoring_function_8h" local="yes">VinaLikeScoringFunction.h</includes>
     <incdepgraph>
-      <node id="1728">
+      <node id="2180">
         <label>Structures/Protein.h</label>
         <link refid="_protein_8h"/>
-        <childnode refid="1700" relation="include">
+        <childnode refid="2150" relation="include">
         </childnode>
-        <childnode refid="1698" relation="include">
+        <childnode refid="2148" relation="include">
         </childnode>
-        <childnode refid="1729" relation="include">
+        <childnode refid="2181" relation="include">
         </childnode>
-        <childnode refid="1730" relation="include">
+        <childnode refid="2182" relation="include">
         </childnode>
-        <childnode refid="1731" relation="include">
+        <childnode refid="2183" relation="include">
         </childnode>
-        <childnode refid="1732" relation="include">
+        <childnode refid="2184" relation="include">
         </childnode>
-        <childnode refid="1699" relation="include">
+        <childnode refid="2149" relation="include">
         </childnode>
-        <childnode refid="1718" relation="include">
+        <childnode refid="2170" relation="include">
         </childnode>
-        <childnode refid="1726" relation="include">
+        <childnode refid="2178" relation="include">
         </childnode>
-        <childnode refid="1723" relation="include">
+        <childnode refid="2175" relation="include">
         </childnode>
       </node>
-      <node id="1729">
+      <node id="2181">
         <label>ESBTL/default.h</label>
       </node>
-      <node id="1712">
+      <node id="2164">
         <label>GraphMol/RWMol.h</label>
       </node>
-      <node id="1713">
+      <node id="2165">
         <label>GraphMol/MolOps.h</label>
       </node>
-      <node id="1716">
+      <node id="2168">
         <label>GraphMol/Substruct/SubstructMatch.h</label>
       </node>
-      <node id="1707">
+      <node id="2157">
         <label>cmath</label>
       </node>
-      <node id="1708">
+      <node id="2158">
         <label>cassert</label>
       </node>
-      <node id="1717">
+      <node id="2159">
+        <label>Eigen/Core</label>
+      </node>
+      <node id="2169">
         <label>GraphMol/DistGeomHelpers/Embedder.h</label>
       </node>
-      <node id="1718">
+      <node id="2170">
         <label>Structures/InputPostProcessors/InputPostProcessorInterface.h</label>
         <link refid="_input_post_processor_interface_8h"/>
-        <childnode refid="1719" relation="include">
+        <childnode refid="2171" relation="include">
         </childnode>
       </node>
-      <node id="1724">
+      <node id="2176">
         <label>string</label>
       </node>
-      <node id="1732">
+      <node id="2184">
         <label>ESBTL/compressed_ifstream.h</label>
       </node>
-      <node id="1702">
+      <node id="2152">
         <label>ScoringFunctionInterface.h</label>
         <link refid="_scoring_function_interface_8h"/>
-        <childnode refid="1703" relation="include">
+        <childnode refid="2153" relation="include">
         </childnode>
-        <childnode refid="1704" relation="include">
+        <childnode refid="2154" relation="include">
         </childnode>
       </node>
-      <node id="1719">
+      <node id="2171">
         <label>Structures/Atom.h</label>
         <link refid="_atom_8h"/>
-        <childnode refid="1700" relation="include">
+        <childnode refid="2150" relation="include">
         </childnode>
-        <childnode refid="1698" relation="include">
+        <childnode refid="2148" relation="include">
         </childnode>
-        <childnode refid="1720" relation="include">
+        <childnode refid="2172" relation="include">
         </childnode>
-        <childnode refid="1721" relation="include">
+        <childnode refid="2173" relation="include">
         </childnode>
-        <childnode refid="1722" relation="include">
+        <childnode refid="2174" relation="include">
         </childnode>
-        <childnode refid="1723" relation="include">
+        <childnode refid="2175" relation="include">
         </childnode>
       </node>
-      <node id="1701">
+      <node id="2151">
         <label>map</label>
       </node>
-      <node id="1704">
+      <node id="2154">
         <label>Engines/Internals/iConformer.h</label>
         <link refid="i_conformer_8h"/>
-        <childnode refid="1700" relation="include">
+        <childnode refid="2150" relation="include">
         </childnode>
-        <childnode refid="1698" relation="include">
+        <childnode refid="2148" relation="include">
         </childnode>
-        <childnode refid="1705" relation="include">
+        <childnode refid="2155" relation="include">
         </childnode>
       </node>
-      <node id="1703">
+      <node id="2153">
         <label>armadillo</label>
       </node>
-      <node id="1727">
+      <node id="2179">
         <label>Bond.h</label>
         <link refid="_bond_8h"/>
-        <childnode refid="1698" relation="include">
+        <childnode refid="2148" relation="include">
         </childnode>
-        <childnode refid="1719" relation="include">
+        <childnode refid="2171" relation="include">
         </childnode>
       </node>
-      <node id="1696">
+      <node id="2146">
         <label>ScoringFunctionFactory.cpp</label>
         <link refid="_scoring_function_factory_8cpp"/>
-        <childnode refid="1697" relation="include">
+        <childnode refid="2147" relation="include">
         </childnode>
-        <childnode refid="1709" relation="include">
+        <childnode refid="2161" relation="include">
+        </childnode>
+        <childnode refid="2185" relation="include">
         </childnode>
       </node>
-      <node id="1730">
+      <node id="2182">
         <label>ESBTL/atom_classifier.h</label>
       </node>
-      <node id="1723">
+      <node id="2160">
+        <label>Eigen/Dense</label>
+      </node>
+      <node id="2175">
         <label>AminoAcid.h</label>
         <link refid="_amino_acid_8h"/>
-        <childnode refid="1724" relation="include">
+        <childnode refid="2176" relation="include">
         </childnode>
-        <childnode refid="1700" relation="include">
+        <childnode refid="2150" relation="include">
         </childnode>
-        <childnode refid="1720" relation="include">
+        <childnode refid="2172" relation="include">
         </childnode>
-        <childnode refid="1721" relation="include">
+        <childnode refid="2173" relation="include">
         </childnode>
-        <childnode refid="1725" relation="include">
+        <childnode refid="2177" relation="include">
         </childnode>
-        <childnode refid="1698" relation="include">
+        <childnode refid="2148" relation="include">
         </childnode>
-        <childnode refid="1699" relation="include">
+        <childnode refid="2149" relation="include">
         </childnode>
       </node>
-      <node id="1725">
+      <node id="2177">
         <label>tuple</label>
       </node>
-      <node id="1699">
+      <node id="2149">
         <label>Engines/Internals/iProtein.h</label>
         <link refid="i_protein_8h"/>
-        <childnode refid="1700" relation="include">
+        <childnode refid="2150" relation="include">
         </childnode>
-        <childnode refid="1698" relation="include">
+        <childnode refid="2148" relation="include">
         </childnode>
-        <childnode refid="1701" relation="include">
+        <childnode refid="2151" relation="include">
         </childnode>
       </node>
-      <node id="1705">
+      <node id="2155">
         <label>iTransform.h</label>
         <link refid="i_transform_8h"/>
-        <childnode refid="1700" relation="include">
+        <childnode refid="2150" relation="include">
         </childnode>
-        <childnode refid="1698" relation="include">
+        <childnode refid="2148" relation="include">
         </childnode>
-        <childnode refid="1706" relation="include">
+        <childnode refid="2156" relation="include">
         </childnode>
-        <childnode refid="1707" relation="include">
+        <childnode refid="2157" relation="include">
         </childnode>
-        <childnode refid="1708" relation="include">
+        <childnode refid="2158" relation="include">
+        </childnode>
+        <childnode refid="2159" relation="include">
+        </childnode>
+        <childnode refid="2160" relation="include">
         </childnode>
       </node>
-      <node id="1700">
+      <node id="2150">
         <label>vector</label>
       </node>
-      <node id="1706">
+      <node id="2156">
         <label>array</label>
       </node>
-      <node id="1715">
+      <node id="2167">
         <label>GraphMol/SmilesParse/SmilesParse.h</label>
       </node>
-      <node id="1726">
+      <node id="2178">
         <label>Structure.h</label>
         <link refid="_structure_8h"/>
       </node>
-      <node id="1710">
+      <node id="2162">
         <label>Structures/Molecule.h</label>
         <link refid="_molecule_8h"/>
-        <childnode refid="1700" relation="include">
+        <childnode refid="2150" relation="include">
         </childnode>
-        <childnode refid="1711" relation="include">
+        <childnode refid="2163" relation="include">
         </childnode>
-        <childnode refid="1712" relation="include">
+        <childnode refid="2164" relation="include">
         </childnode>
-        <childnode refid="1713" relation="include">
+        <childnode refid="2165" relation="include">
         </childnode>
-        <childnode refid="1714" relation="include">
+        <childnode refid="2166" relation="include">
         </childnode>
-        <childnode refid="1715" relation="include">
+        <childnode refid="2167" relation="include">
         </childnode>
-        <childnode refid="1716" relation="include">
+        <childnode refid="2168" relation="include">
         </childnode>
-        <childnode refid="1717" relation="include">
+        <childnode refid="2169" relation="include">
         </childnode>
-        <childnode refid="1718" relation="include">
+        <childnode refid="2170" relation="include">
         </childnode>
-        <childnode refid="1726" relation="include">
+        <childnode refid="2178" relation="include">
         </childnode>
-        <childnode refid="1719" relation="include">
+        <childnode refid="2171" relation="include">
         </childnode>
-        <childnode refid="1727" relation="include">
+        <childnode refid="2179" relation="include">
         </childnode>
-        <childnode refid="1704" relation="include">
+        <childnode refid="2154" relation="include">
         </childnode>
       </node>
-      <node id="1711">
+      <node id="2163">
         <label>GraphMol/RDKitBase.h</label>
       </node>
-      <node id="1722">
+      <node id="2174">
         <label>iostream</label>
       </node>
-      <node id="1697">
+      <node id="2147">
         <label>ScoringFunctionFactory.h</label>
         <link refid="_scoring_function_factory_8h"/>
-        <childnode refid="1698" relation="include">
+        <childnode refid="2148" relation="include">
         </childnode>
-        <childnode refid="1699" relation="include">
+        <childnode refid="2149" relation="include">
         </childnode>
-        <childnode refid="1702" relation="include">
+        <childnode refid="2152" relation="include">
         </childnode>
       </node>
-      <node id="1709">
+      <node id="2185">
         <label>VinaLikeScoringFunction.h</label>
         <link refid="_vina_like_scoring_function_8h"/>
-        <childnode refid="1704" relation="include">
+        <childnode refid="2154" relation="include">
         </childnode>
-        <childnode refid="1699" relation="include">
+        <childnode refid="2149" relation="include">
         </childnode>
-        <childnode refid="1705" relation="include">
+        <childnode refid="2155" relation="include">
         </childnode>
-        <childnode refid="1702" relation="include">
+        <childnode refid="2152" relation="include">
         </childnode>
-        <childnode refid="1710" relation="include">
+        <childnode refid="2162" relation="include">
         </childnode>
-        <childnode refid="1728" relation="include">
+        <childnode refid="2180" relation="include">
         </childnode>
       </node>
-      <node id="1720">
+      <node id="2172">
         <label>set</label>
       </node>
-      <node id="1721">
+      <node id="2173">
         <label>algorithm</label>
       </node>
-      <node id="1731">
+      <node id="2183">
         <label>ESBTL/weighted_atom_iterator.h</label>
       </node>
-      <node id="1698">
+      <node id="2148">
         <label>memory</label>
       </node>
-      <node id="1714">
+      <node id="2166">
         <label>GraphMol/FileParsers/FileParsers.h</label>
+      </node>
+      <node id="2161">
+        <label>VinaLikeRigidScoringFunction.h</label>
+        <link refid="_vina_like_rigid_scoring_function_8h"/>
+        <childnode refid="2154" relation="include">
+        </childnode>
+        <childnode refid="2149" relation="include">
+        </childnode>
+        <childnode refid="2155" relation="include">
+        </childnode>
+        <childnode refid="2152" relation="include">
+        </childnode>
+        <childnode refid="2162" relation="include">
+        </childnode>
+        <childnode refid="2180" relation="include">
+        </childnode>
       </node>
     </incdepgraph>
     <innernamespace refid="namespace_smol_dock_1_1_score">SmolDock::Score</innernamespace>
@@ -269,20 +298,24 @@
 <codeline lineno="4"><highlight class="normal"></highlight></codeline>
 <codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_scoring_function_factory_8h" kindref="compound">ScoringFunctionFactory.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="6"><highlight class="normal"></highlight></codeline>
-<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_vina_like_scoring_function_8h" kindref="compound">VinaLikeScoringFunction.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="8"><highlight class="normal"></highlight></codeline>
-<codeline lineno="9" refid="namespace_smol_dock_1_1_score" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_smol_dock_1_1_score" kindref="compound">SmolDock::Score</ref><sp/>{</highlight></codeline>
-<codeline lineno="10"><highlight class="normal"></highlight></codeline>
-<codeline lineno="11" refid="namespace_smol_dock_1_1_score_1acda93ea4444f7dacda77b03c0b278336" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;ScoringFunction&gt;<sp/><ref refid="namespace_smol_dock_1_1_score_1acda93ea4444f7dacda77b03c0b278336" kindref="member">scoringFunctionFactory</ref>(<ref refid="namespace_smol_dock_1_1_score_1a7d8761ef06699c5fc8793056bc903911" kindref="member">ScoringFunctionType</ref><sp/>t,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_smol_dock_1_1i_conformer" kindref="compound">iConformer</ref>&amp;<sp/>conformer,</highlight></codeline>
-<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_smol_dock_1_1i_protein" kindref="compound">iProtein</ref>&amp;<sp/>protein,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_smol_dock_1_1i_transform" kindref="compound">iTransform</ref>&amp;<sp/>transform,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>differential_upsilon)<sp/>{</highlight></codeline>
-<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(t<sp/>==<sp/><ref refid="namespace_smol_dock_1_1_score_1a7d8761ef06699c5fc8793056bc903911a28bb0a5655ac4c67901e014f39619947" kindref="member">ScoringFunctionType::VinaRigid</ref>)<sp/>{</highlight></codeline>
-<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>std::make_shared&lt;VinaLikeRigidScoringFunction&gt;(conformer,protein,transform,differential_upsilon);</highlight></codeline>
-<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
-<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="19"><highlight class="normal"></highlight></codeline>
-<codeline lineno="20"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_vina_like_rigid_scoring_function_8h" kindref="compound">VinaLikeRigidScoringFunction.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_vina_like_scoring_function_8h" kindref="compound">VinaLikeScoringFunction.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10" refid="namespace_smol_dock_1_1_score" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_smol_dock_1_1_score" kindref="compound">SmolDock::Score</ref><sp/>{</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12" refid="namespace_smol_dock_1_1_score_1acda93ea4444f7dacda77b03c0b278336" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;ScoringFunction&gt;<sp/><ref refid="namespace_smol_dock_1_1_score_1acda93ea4444f7dacda77b03c0b278336" kindref="member">scoringFunctionFactory</ref>(<ref refid="namespace_smol_dock_1_1_score_1a7d8761ef06699c5fc8793056bc903911" kindref="member">ScoringFunctionType</ref><sp/>t,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_smol_dock_1_1i_conformer" kindref="compound">iConformer</ref><sp/>&amp;conformer,</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_smol_dock_1_1i_protein" kindref="compound">iProtein</ref><sp/>&amp;protein,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_smol_dock_1_1i_transform" kindref="compound">iTransform</ref><sp/>&amp;transform,</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>differential_upsilon)<sp/>{</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(t<sp/>==<sp/><ref refid="namespace_smol_dock_1_1_score_1a7d8761ef06699c5fc8793056bc903911a28bb0a5655ac4c67901e014f39619947" kindref="member">ScoringFunctionType::VinaRigid</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>std::make_shared&lt;VinaLikeRigidScoringFunction&gt;(conformer,<sp/>protein,<sp/>transform,<sp/>differential_upsilon);</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(t<sp/>==<sp/><ref refid="namespace_smol_dock_1_1_score_1a7d8761ef06699c5fc8793056bc903911ac31991e242b85fe1ed7c5d487d6b08f9" kindref="member">ScoringFunctionType::Vina</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>std::make_shared&lt;VinaLikeScoringFunction&gt;(conformer,<sp/>protein,<sp/>transform,<sp/>differential_upsilon);</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal">}</highlight></codeline>
     </programlisting>
     <location file="Engines/ScoringFunctions/ScoringFunctionFactory.cpp"/>
   </compounddef>

@@ -1,26 +1,9 @@
-/*
- * Copyright (c) 2018 Eliane Briand
- *
- * This file is part of SmolDock.
- *
- * SmolDock is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * SmolDock is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with SmolDock.  If not, see <https://www.gnu.org/licenses/>.
- *
- */
+//
+// Created by eliane on 04/03/19.
+//
 
-#ifndef SMOLDOCK_BASICSCORINGFUNCTION_H
-#define SMOLDOCK_BASICSCORINGFUNCTION_H
-
+#ifndef SMOLDOCK_VINALIKESCORINGFUNCTION_H
+#define SMOLDOCK_VINALIKESCORINGFUNCTION_H
 
 #include <Engines/Internals/iConformer.h>
 #include <Engines/Internals/iProtein.h>
@@ -30,100 +13,89 @@
 #include <Structures/Molecule.h>
 #include <Structures/Protein.h>
 
-namespace SmolDock {
-
-    /*! \namespace SmolDock::Score Free-standing docking score functions */
-    namespace Score {
-
-        //! \fn Score a protein-ligand configuration. Variant : Vina-like, rigid, inter-only
-        /*!
-         * Compute inter-molecular part of the docking score, 
-         * according to the Vina scoring function. The transform provided will
-         * be applied to the entire, rigid ligand.
-         *
-         * \param conformer Ligand conformation & position to evaluate
-         * \param transform Transformation to apply to the ligand
-         * \param protein Protein conformation to evaluate
-         * \return The docking score
-         * \sa
-        */
-        double vina_like_rigid_inter_scoring_func(const iConformer &conformer, const iTransform &transform,
-                                                  const iProtein &protein);
-
-        class VinaLikeRigidScoringFunction : public ScoringFunction {
-        public:
+namespace SmolDock::Score {
 
 
-            VinaLikeRigidScoringFunction(const iConformer &startingConformation_,
-                                         const iProtein &p,
-                                         const iTransform &initialTransform_,
-                                         double differential_epsilon_ = 1e-3);
+    double VinaLikeIntermolecularScoringFunction(const iConformer &conformer, const iTransform &transform,
+                                                 const iProtein &protein);
+
+    class VinaLikeScoringFunction : public ScoringFunction {
+    public:
+        VinaLikeScoringFunction(const iConformer &startingConformation_,
+                                const iProtein &p,
+                                const iTransform &initialTransform_,
+                                double differential_epsilon_ = 1e-3);
 
 
-            double Evaluate(const arma::mat &x) final;
+        double Evaluate(const arma::mat &x) final;
 
-            double EvaluateWithGradient(const arma::mat &x, arma::mat &gradient) final;
+        double EvaluateWithGradient(const arma::mat &x, arma::mat &gradient) final;
 
-            arma::mat getStartingConditions() const final;
-
-
-            double getDifferentialEpsilon() const final;
+        arma::mat getStartingConditions() const final;
 
 
-            iConformer getConformerForParamMatrix(const arma::mat &x) final;
-
-            unsigned int getParamVectorDimension() const final;
+        double getDifferentialEpsilon() const final;
 
 
-            ~VinaLikeRigidScoringFunction() final = default;
+        iConformer getConformerForParamMatrix(const arma::mat &x) final;
+
+        unsigned int getParamVectorDimension() const final;
 
 
-        private:
+        ~VinaLikeScoringFunction() final = default;
 
-            inline iTransform internalToExternalRepr(const arma::mat &x_) const {
-                assert(x_.n_rows == 7);
 
-                iTransform tr_;
+    private:
 
-                tr_.transl.x = x_[0];
-                tr_.transl.y = x_[1];
-                tr_.transl.z = x_[2];
+        inline iTransform internalToExternalRepr(const arma::mat &x_) const {
+            assert(x_.n_rows == this->numberOfParamInState);
 
-                tr_.rota.s = x_[3];
-                tr_.rota.u = x_[4];
-                tr_.rota.v = x_[5];
-                tr_.rota.t = x_[6];
+            iTransform tr_ = iTransform();
 
-                return tr_;
+            tr_.transl.x() = x_[0];
+            tr_.transl.y() = x_[1];
+            tr_.transl.z() = x_[2];
+
+            tr_.rota.w() = x_[3];
+            tr_.rota.x() = x_[4];
+            tr_.rota.y() = x_[5];
+            tr_.rota.z() = x_[6];
+
+            for (unsigned int i = 0; i < this->numberOfRotatableBonds; i++) {
+                tr_.bondRotationsAngles.push_back(x_[7 + i]);
             }
 
-            inline arma::mat externalToInternalRepr(const iTransform &tr_) const {
-                arma::mat ret(7, 1);
+            return tr_;
+        }
 
-                ret[0] = tr_.transl.x;
-                ret[1] = tr_.transl.y;
-                ret[2] = tr_.transl.z;
+        inline arma::mat externalToInternalRepr(const iTransform &tr_) const {
+            arma::mat ret(this->numberOfParamInState, 1);
 
-                ret[3] = tr_.rota.s;
-                ret[4] = tr_.rota.u;
-                ret[5] = tr_.rota.v;
-                ret[6] = tr_.rota.t;
+            ret[0] = tr_.transl.x();
+            ret[1] = tr_.transl.y();
+            ret[2] = tr_.transl.z();
 
-                return ret;
+            ret[3] = tr_.rota.w();
+            ret[4] = tr_.rota.x();
+            ret[5] = tr_.rota.y();
+            ret[6] = tr_.rota.z();
+
+            for (unsigned int i = 0; i < this->numberOfRotatableBonds; i++) {
+                ret[7 + i] = tr_.bondRotationsAngles[i];
             }
 
-            iConformer startingConformation;
-            const iProtein &prot;
-            const iTransform initialTransform;
-            double differential_epsilon;
+            return ret;
+        }
 
+        iConformer startingConformation;
+        const iProtein &prot;
+        const iTransform initialTransform;
+        double differential_epsilon;
 
-        };
-
-
-    }
-
+        unsigned int numberOfParamInState;
+        unsigned int numberOfRotatableBonds;
+    };
 }
 
 
-#endif //SMOLDOCK_BASICSCORINGFUNCTION_H
+#endif //SMOLDOCK_VINALIKESCORINGFUNCTION_H

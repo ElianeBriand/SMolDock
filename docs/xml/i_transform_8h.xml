@@ -7,383 +7,506 @@
     <includes local="no">array</includes>
     <includes local="no">cmath</includes>
     <includes local="no">cassert</includes>
+    <includes local="no">Eigen/Core</includes>
+    <includes local="no">Eigen/Dense</includes>
     <includedby refid="i_conformer_8h" local="yes">iConformer.h</includedby>
     <includedby refid="_gradient_descent_line_search_8h" local="yes">GradientDescentLineSearch.h</includedby>
     <includedby refid="_internals_utility_functions_8h" local="yes">InternalsUtilityFunctions.h</includedby>
+    <includedby refid="_vina_like_rigid_scoring_function_8h" local="no">VinaLikeRigidScoringFunction.h</includedby>
     <includedby refid="_vina_like_scoring_function_8h" local="no">VinaLikeScoringFunction.h</includedby>
     <includedby refid="_re_scorer_8h" local="no">ReScorer.h</includedby>
     <incdepgraph>
-      <node id="822">
+      <node id="1039">
         <label>cmath</label>
       </node>
-      <node id="823">
+      <node id="1040">
         <label>cassert</label>
       </node>
-      <node id="818">
+      <node id="1041">
+        <label>Eigen/Core</label>
+      </node>
+      <node id="1042">
+        <label>Eigen/Dense</label>
+      </node>
+      <node id="1035">
         <label>iTransform.h</label>
         <link refid="i_transform_8h"/>
-        <childnode refid="819" relation="include">
+        <childnode refid="1036" relation="include">
         </childnode>
-        <childnode refid="820" relation="include">
+        <childnode refid="1037" relation="include">
         </childnode>
-        <childnode refid="821" relation="include">
+        <childnode refid="1038" relation="include">
         </childnode>
-        <childnode refid="822" relation="include">
+        <childnode refid="1039" relation="include">
         </childnode>
-        <childnode refid="823" relation="include">
+        <childnode refid="1040" relation="include">
+        </childnode>
+        <childnode refid="1041" relation="include">
+        </childnode>
+        <childnode refid="1042" relation="include">
         </childnode>
       </node>
-      <node id="819">
+      <node id="1036">
         <label>vector</label>
       </node>
-      <node id="821">
+      <node id="1038">
         <label>array</label>
       </node>
-      <node id="820">
+      <node id="1037">
         <label>memory</label>
       </node>
     </incdepgraph>
     <invincdepgraph>
-      <node id="829">
+      <node id="1048">
         <label>ConformerRigidDockingEngine.h</label>
         <link refid="_conformer_rigid_docking_engine_8h"/>
-        <childnode refid="830" relation="include">
+        <childnode refid="1049" relation="include">
         </childnode>
-        <childnode refid="831" relation="include">
+        <childnode refid="1050" relation="include">
         </childnode>
-        <childnode refid="832" relation="include">
+        <childnode refid="1051" relation="include">
+        </childnode>
+        <childnode refid="1052" relation="include">
         </childnode>
       </node>
-      <node id="856">
+      <node id="1080">
         <label>OptimizerFactory.h</label>
         <link refid="_optimizer_factory_8h"/>
-        <childnode refid="829" relation="include">
+        <childnode refid="1048" relation="include">
         </childnode>
-        <childnode refid="857" relation="include">
+        <childnode refid="1081" relation="include">
         </childnode>
-        <childnode refid="832" relation="include">
+        <childnode refid="1065" relation="include">
+        </childnode>
+        <childnode refid="1052" relation="include">
         </childnode>
       </node>
-      <node id="840">
+      <node id="1060">
         <label>PyStructures.cpp</label>
         <link refid="_py_structures_8cpp"/>
       </node>
-      <node id="833">
+      <node id="1053">
         <label>MDStyleDockingEngine.h</label>
         <link refid="_m_d_style_docking_engine_8h"/>
-        <childnode refid="834" relation="include">
+        <childnode refid="1054" relation="include">
         </childnode>
       </node>
-      <node id="847">
+      <node id="1071">
         <label>IntermediateConformerCollector.h</label>
         <link refid="_intermediate_conformer_collector_8h"/>
-        <childnode refid="848" relation="include">
-        </childnode>
-        <childnode refid="831" relation="include">
+        <childnode refid="1072" relation="include">
         </childnode>
       </node>
-      <node id="850">
+      <node id="1088">
+        <label>IteratedLocalSearch.h</label>
+        <link refid="_iterated_local_search_8h"/>
+        <childnode refid="1082" relation="include">
+        </childnode>
+        <childnode refid="1083" relation="include">
+        </childnode>
+        <childnode refid="1089" relation="include">
+        </childnode>
+      </node>
+      <node id="1065">
+        <label>PoseRefiner.h</label>
+        <link refid="_pose_refiner_8h"/>
+        <childnode refid="1066" relation="include">
+        </childnode>
+        <childnode refid="1050" relation="include">
+        </childnode>
+        <childnode refid="1067" relation="include">
+        </childnode>
+      </node>
+      <node id="1074">
         <label>PDBWriter.cpp</label>
         <link refid="_p_d_b_writer_8cpp"/>
       </node>
-      <node id="844">
+      <node id="1067">
+        <label>vina_refiner.cpp</label>
+        <link refid="vina__refiner_8cpp"/>
+      </node>
+      <node id="1069">
         <label>VinaLikeScoringFunction.cpp</label>
         <link refid="_vina_like_scoring_function_8cpp"/>
       </node>
-      <node id="854">
+      <node id="1050">
+        <label>cli_interface.cpp</label>
+        <link refid="cli__interface_8cpp"/>
+      </node>
+      <node id="1078">
         <label>PySTLWrapper.cpp</label>
         <link refid="_py_s_t_l_wrapper_8cpp"/>
       </node>
-      <node id="836">
+      <node id="1091">
+        <label>SimulatedAnnealing.cpp</label>
+        <link refid="_simulated_annealing_8cpp"/>
+      </node>
+      <node id="1056">
         <label>VinaCompatibleDockingEngine.cpp</label>
         <link refid="_vina_compatible_docking_engine_8cpp"/>
       </node>
-      <node id="852">
+      <node id="1077">
         <label>ReScorer.cpp</label>
         <link refid="_re_scorer_8cpp"/>
       </node>
-      <node id="855">
+      <node id="1079">
         <label>ScoringFunctionInterface.h</label>
         <link refid="_scoring_function_interface_8h"/>
-        <childnode refid="856" relation="include">
+        <childnode refid="1080" relation="include">
         </childnode>
-        <childnode refid="858" relation="include">
+        <childnode refid="1082" relation="include">
         </childnode>
-        <childnode refid="860" relation="include">
+        <childnode refid="1084" relation="include">
         </childnode>
-        <childnode refid="861" relation="include">
+        <childnode refid="1086" relation="include">
         </childnode>
-        <childnode refid="841" relation="include">
+        <childnode refid="1088" relation="include">
         </childnode>
-        <childnode refid="862" relation="include">
+        <childnode refid="1090" relation="include">
         </childnode>
-        <childnode refid="864" relation="include">
+        <childnode refid="1092" relation="include">
+        </childnode>
+        <childnode refid="1093" relation="include">
+        </childnode>
+        <childnode refid="1061" relation="include">
+        </childnode>
+        <childnode refid="1094" relation="include">
+        </childnode>
+        <childnode refid="1068" relation="include">
         </childnode>
       </node>
-      <node id="825">
+      <node id="1044">
         <label>iConformer.h</label>
         <link refid="i_conformer_8h"/>
-        <childnode refid="826" relation="include">
+        <childnode refid="1045" relation="include">
         </childnode>
-        <childnode refid="855" relation="include">
+        <childnode refid="1079" relation="include">
         </childnode>
-        <childnode refid="860" relation="include">
+        <childnode refid="1092" relation="include">
         </childnode>
-        <childnode refid="830" relation="include">
+        <childnode refid="1049" relation="include">
         </childnode>
-        <childnode refid="866" relation="include">
+        <childnode refid="1096" relation="include">
         </childnode>
-        <childnode refid="841" relation="include">
+        <childnode refid="1061" relation="include">
+        </childnode>
+        <childnode refid="1068" relation="include">
         </childnode>
       </node>
-      <node id="835">
+      <node id="1055">
         <label>VinaCompatibleDockingEngine.h</label>
         <link refid="_vina_compatible_docking_engine_8h"/>
-        <childnode refid="836" relation="include">
+        <childnode refid="1056" relation="include">
         </childnode>
       </node>
-      <node id="834">
+      <node id="1054">
         <label>MDStyleDockingEngine.cpp</label>
         <link refid="_m_d_style_docking_engine_8cpp"/>
       </node>
-      <node id="831">
+      <node id="1051">
         <label>main.cpp</label>
         <link refid="main_8cpp"/>
       </node>
-      <node id="860">
+      <node id="1092">
         <label>GradientDescentLineSearch.h</label>
         <link refid="_gradient_descent_line_search_8h"/>
-        <childnode refid="829" relation="include">
+        <childnode refid="1048" relation="include">
         </childnode>
-        <childnode refid="842" relation="include">
+        <childnode refid="1062" relation="include">
         </childnode>
-        <childnode refid="857" relation="include">
+        <childnode refid="1081" relation="include">
         </childnode>
       </node>
-      <node id="846">
+      <node id="1070">
         <label>Molecule.cpp</label>
         <link refid="_molecule_8cpp"/>
       </node>
-      <node id="843">
+      <node id="1063">
         <label>ScoringFunctionFactory.cpp</label>
         <link refid="_scoring_function_factory_8cpp"/>
       </node>
-      <node id="851">
+      <node id="1076">
         <label>ReScorer.h</label>
         <link refid="_re_scorer_8h"/>
-        <childnode refid="852" relation="include">
+        <childnode refid="1077" relation="include">
         </childnode>
-        <childnode refid="853" relation="include">
+        <childnode refid="1075" relation="include">
         </childnode>
       </node>
-      <node id="853">
+      <node id="1075">
         <label>PyUtilities.cpp</label>
         <link refid="_py_utilities_8cpp"/>
       </node>
-      <node id="828">
+      <node id="1066">
+        <label>PoseRefiner.cpp</label>
+        <link refid="_pose_refiner_8cpp"/>
+      </node>
+      <node id="1086">
+        <label>OnlyLocal.h</label>
+        <link refid="_only_local_8h"/>
+        <childnode refid="1082" relation="include">
+        </childnode>
+        <childnode refid="1083" relation="include">
+        </childnode>
+        <childnode refid="1087" relation="include">
+        </childnode>
+      </node>
+      <node id="1047">
         <label>AbstractDockingEngine.h</label>
         <link refid="_abstract_docking_engine_8h"/>
-        <childnode refid="829" relation="include">
+        <childnode refid="1048" relation="include">
         </childnode>
-        <childnode refid="833" relation="include">
+        <childnode refid="1053" relation="include">
         </childnode>
-        <childnode refid="835" relation="include">
+        <childnode refid="1055" relation="include">
         </childnode>
       </node>
-      <node id="827">
+      <node id="1046">
         <label>DockingResult.h</label>
         <link refid="_docking_result_8h"/>
-        <childnode refid="828" relation="include">
+        <childnode refid="1047" relation="include">
         </childnode>
-        <childnode refid="837" relation="include">
+        <childnode refid="1057" relation="include">
         </childnode>
-        <childnode refid="838" relation="include">
+        <childnode refid="1058" relation="include">
         </childnode>
-        <childnode refid="832" relation="include">
+        <childnode refid="1052" relation="include">
         </childnode>
-        <childnode refid="840" relation="include">
+        <childnode refid="1060" relation="include">
         </childnode>
       </node>
-      <node id="865">
+      <node id="1085">
         <label>RandomRestart.cpp</label>
         <link refid="_random_restart_8cpp"/>
       </node>
-      <node id="824">
+      <node id="1043">
         <label>iTransform.h</label>
         <link refid="i_transform_8h"/>
-        <childnode refid="825" relation="include">
+        <childnode refid="1044" relation="include">
         </childnode>
-        <childnode refid="860" relation="include">
+        <childnode refid="1092" relation="include">
         </childnode>
-        <childnode refid="866" relation="include">
+        <childnode refid="1096" relation="include">
         </childnode>
-        <childnode refid="841" relation="include">
+        <childnode refid="1061" relation="include">
         </childnode>
-        <childnode refid="851" relation="include">
+        <childnode refid="1068" relation="include">
+        </childnode>
+        <childnode refid="1076" relation="include">
         </childnode>
       </node>
-      <node id="830">
+      <node id="1049">
         <label>ConformerRigidDockingEngine.cpp</label>
         <link refid="_conformer_rigid_docking_engine_8cpp"/>
       </node>
-      <node id="842">
+      <node id="1062">
         <label>GradientDescentLineSearch.cpp</label>
         <link refid="_gradient_descent_line_search_8cpp"/>
       </node>
-      <node id="839">
+      <node id="1059">
         <label>DockingResultPrinter.cpp</label>
         <link refid="_docking_result_printer_8cpp"/>
       </node>
-      <node id="826">
+      <node id="1045">
         <label>Molecule.h</label>
         <link refid="_molecule_8h"/>
-        <childnode refid="827" relation="include">
+        <childnode refid="1046" relation="include">
         </childnode>
-        <childnode refid="828" relation="include">
+        <childnode refid="1047" relation="include">
         </childnode>
-        <childnode refid="829" relation="include">
+        <childnode refid="1048" relation="include">
         </childnode>
-        <childnode refid="841" relation="include">
+        <childnode refid="1061" relation="include">
         </childnode>
-        <childnode refid="833" relation="include">
+        <childnode refid="1053" relation="include">
         </childnode>
-        <childnode refid="846" relation="include">
+        <childnode refid="1065" relation="include">
         </childnode>
-        <childnode refid="847" relation="include">
+        <childnode refid="1068" relation="include">
         </childnode>
-        <childnode refid="849" relation="include">
+        <childnode refid="1070" relation="include">
         </childnode>
-        <childnode refid="851" relation="include">
+        <childnode refid="1071" relation="include">
         </childnode>
-        <childnode refid="831" relation="include">
+        <childnode refid="1073" relation="include">
         </childnode>
-        <childnode refid="832" relation="include">
+        <childnode refid="1076" relation="include">
         </childnode>
-        <childnode refid="854" relation="include">
+        <childnode refid="1050" relation="include">
         </childnode>
-        <childnode refid="840" relation="include">
+        <childnode refid="1051" relation="include">
+        </childnode>
+        <childnode refid="1052" relation="include">
+        </childnode>
+        <childnode refid="1078" relation="include">
+        </childnode>
+        <childnode refid="1060" relation="include">
+        </childnode>
+        <childnode refid="1067" relation="include">
         </childnode>
       </node>
-      <node id="848">
+      <node id="1072">
         <label>IntermediateConformerCollector.cpp</label>
         <link refid="_intermediate_conformer_collector_8cpp"/>
       </node>
-      <node id="857">
+      <node id="1081">
         <label>OptimizerFactory.cpp</label>
         <link refid="_optimizer_factory_8cpp"/>
       </node>
-      <node id="862">
+      <node id="1094">
         <label>L_BFGS.h</label>
         <link refid="_l___b_f_g_s_8h"/>
-        <childnode refid="830" relation="include">
+        <childnode refid="1049" relation="include">
         </childnode>
-        <childnode refid="863" relation="include">
+        <childnode refid="1095" relation="include">
         </childnode>
-        <childnode refid="857" relation="include">
+        <childnode refid="1081" relation="include">
         </childnode>
       </node>
-      <node id="849">
+      <node id="1087">
+        <label>OnlyLocal.cpp</label>
+        <link refid="_only_local_8cpp"/>
+      </node>
+      <node id="1073">
         <label>PDBWriter.h</label>
         <link refid="_p_d_b_writer_8h"/>
-        <childnode refid="847" relation="include">
+        <childnode refid="1071" relation="include">
         </childnode>
-        <childnode refid="850" relation="include">
+        <childnode refid="1074" relation="include">
+        </childnode>
+        <childnode refid="1050" relation="include">
+        </childnode>
+        <childnode refid="1051" relation="include">
+        </childnode>
+        <childnode refid="1075" relation="include">
+        </childnode>
+        <childnode refid="1067" relation="include">
         </childnode>
       </node>
-      <node id="838">
+      <node id="1058">
         <label>DockingResultPrinter.h</label>
         <link refid="_docking_result_printer_8h"/>
-        <childnode refid="839" relation="include">
+        <childnode refid="1059" relation="include">
         </childnode>
-        <childnode refid="831" relation="include">
+        <childnode refid="1051" relation="include">
         </childnode>
       </node>
-      <node id="861">
+      <node id="1093">
         <label>ScoringFunctionFactory.h</label>
         <link refid="_scoring_function_factory_8h"/>
-        <childnode refid="829" relation="include">
+        <childnode refid="1048" relation="include">
         </childnode>
-        <childnode refid="843" relation="include">
+        <childnode refid="1065" relation="include">
         </childnode>
-        <childnode refid="832" relation="include">
+        <childnode refid="1063" relation="include">
+        </childnode>
+        <childnode refid="1076" relation="include">
+        </childnode>
+        <childnode refid="1052" relation="include">
         </childnode>
       </node>
-      <node id="866">
+      <node id="1096">
         <label>InternalsUtilityFunctions.h</label>
         <link refid="_internals_utility_functions_8h"/>
-        <childnode refid="830" relation="include">
+        <childnode refid="1049" relation="include">
         </childnode>
-        <childnode refid="842" relation="include">
+        <childnode refid="1062" relation="include">
         </childnode>
-        <childnode refid="844" relation="include">
+        <childnode refid="1066" relation="include">
         </childnode>
-        <childnode refid="852" relation="include">
+        <childnode refid="1064" relation="include">
         </childnode>
-        <childnode refid="831" relation="include">
+        <childnode refid="1069" relation="include">
+        </childnode>
+        <childnode refid="1077" relation="include">
+        </childnode>
+        <childnode refid="1051" relation="include">
         </childnode>
       </node>
-      <node id="845">
-        <label>PyScoringFunctions.cpp</label>
-        <link refid="_py_scoring_functions_8cpp"/>
+      <node id="1064">
+        <label>VinaLikeRigidScoringFunction.cpp</label>
+        <link refid="_vina_like_rigid_scoring_function_8cpp"/>
       </node>
-      <node id="841">
+      <node id="1068">
         <label>VinaLikeScoringFunction.h</label>
         <link refid="_vina_like_scoring_function_8h"/>
-        <childnode refid="830" relation="include">
+        <childnode refid="1063" relation="include">
         </childnode>
-        <childnode refid="842" relation="include">
-        </childnode>
-        <childnode refid="843" relation="include">
-        </childnode>
-        <childnode refid="844" relation="include">
-        </childnode>
-        <childnode refid="831" relation="include">
-        </childnode>
-        <childnode refid="845" relation="include">
+        <childnode refid="1069" relation="include">
         </childnode>
       </node>
-      <node id="863">
+      <node id="1089">
+        <label>IteratedLocalSearch.cpp</label>
+        <link refid="_iterated_local_search_8cpp"/>
+      </node>
+      <node id="1095">
         <label>L_BFGS.cpp</label>
         <link refid="_l___b_f_g_s_8cpp"/>
       </node>
-      <node id="859">
+      <node id="1083">
         <label>HeuristicFactory.cpp</label>
         <link refid="_heuristic_factory_8cpp"/>
       </node>
-      <node id="837">
+      <node id="1057">
         <label>DockingResult.cpp</label>
         <link refid="_docking_result_8cpp"/>
       </node>
-      <node id="864">
+      <node id="1084">
         <label>RandomRestart.h</label>
         <link refid="_random_restart_8h"/>
-        <childnode refid="830" relation="include">
+        <childnode refid="1082" relation="include">
         </childnode>
-        <childnode refid="859" relation="include">
+        <childnode refid="1049" relation="include">
         </childnode>
-        <childnode refid="865" relation="include">
+        <childnode refid="1083" relation="include">
+        </childnode>
+        <childnode refid="1085" relation="include">
         </childnode>
       </node>
-      <node id="832">
+      <node id="1052">
         <label>PyEngine.cpp</label>
         <link refid="_py_engine_8cpp"/>
       </node>
-      <node id="858">
+      <node id="1090">
+        <label>SimulatedAnnealing.h</label>
+        <link refid="_simulated_annealing_8h"/>
+        <childnode refid="1082" relation="include">
+        </childnode>
+        <childnode refid="1083" relation="include">
+        </childnode>
+        <childnode refid="1091" relation="include">
+        </childnode>
+      </node>
+      <node id="1082">
         <label>HeuristicFactory.h</label>
         <link refid="_heuristic_factory_8h"/>
-        <childnode refid="829" relation="include">
+        <childnode refid="1048" relation="include">
         </childnode>
-        <childnode refid="859" relation="include">
+        <childnode refid="1082" relation="include">
         </childnode>
-        <childnode refid="832" relation="include">
+        <childnode refid="1083" relation="include">
+        </childnode>
+        <childnode refid="1065" relation="include">
+        </childnode>
+        <childnode refid="1052" relation="include">
+        </childnode>
+      </node>
+      <node id="1061">
+        <label>VinaLikeRigidScoringFunction.h</label>
+        <link refid="_vina_like_rigid_scoring_function_8h"/>
+        <childnode refid="1049" relation="include">
+        </childnode>
+        <childnode refid="1062" relation="include">
+        </childnode>
+        <childnode refid="1063" relation="include">
+        </childnode>
+        <childnode refid="1064" relation="include">
+        </childnode>
+        <childnode refid="1051" relation="include">
         </childnode>
       </node>
     </invincdepgraph>
-    <innerclass refid="struct_smol_dock_1_1i_quaternion" prot="public">SmolDock::iQuaternion</innerclass>
-    <innerclass refid="struct_smol_dock_1_1i_vect" prot="public">SmolDock::iVect</innerclass>
-    <innerclass refid="struct_smol_dock_1_1i_translation" prot="public">SmolDock::iTranslation</innerclass>
     <innerclass refid="struct_smol_dock_1_1i_transform" prot="public">SmolDock::iTransform</innerclass>
-    <innerclass refid="struct_smol_dock_1_1i_gradient" prot="public">SmolDock::iGradient</innerclass>
     <innernamespace refid="namespace_smol_dock">SmolDock</innernamespace>
     <briefdescription>
     </briefdescription>
@@ -403,42 +526,25 @@
 <codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cmath&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cassert&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="13"><highlight class="normal"></highlight></codeline>
-<codeline lineno="14"><highlight class="normal"></highlight></codeline>
-<codeline lineno="15"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_smol_dock" kindref="compound">SmolDock</ref><sp/>{</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;Eigen/Core&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;Eigen/Dense&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="16"><highlight class="normal"></highlight></codeline>
-<codeline lineno="18"></codeline>
-<codeline lineno="23" refid="struct_smol_dock_1_1i_quaternion" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_smol_dock_1_1i_quaternion" kindref="compound">iQuaternion</ref><sp/>{</highlight></codeline>
-<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Quaternion<sp/>:</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="25" refid="struct_smol_dock_1_1i_quaternion_1a07d95036803eb2a4ef32627df95043ad" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="struct_smol_dock_1_1i_quaternion_1a07d95036803eb2a4ef32627df95043ad" kindref="member">s</ref>;<sp/></highlight></codeline>
-<codeline lineno="26" refid="struct_smol_dock_1_1i_quaternion_1a97a15d15b2fae3ec29c2fdb2388f5e5b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="struct_smol_dock_1_1i_quaternion_1a3692d71434fede9771686a73240e6ba7" kindref="member">u</ref>,<sp/><ref refid="struct_smol_dock_1_1i_quaternion_1a97a15d15b2fae3ec29c2fdb2388f5e5b" kindref="member">v</ref>,<sp/><ref refid="struct_smol_dock_1_1i_quaternion_1a1ff0d5e99369aa47273864dfea352c05" kindref="member">t</ref>;<sp/></highlight></codeline>
-<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
-<codeline lineno="28"><highlight class="normal"></highlight></codeline>
-<codeline lineno="30" refid="struct_smol_dock_1_1i_vect" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_smol_dock_1_1i_vect" kindref="compound">iVect</ref><sp/>{</highlight></codeline>
-<codeline lineno="31" refid="struct_smol_dock_1_1i_vect_1a013cdafb950199deb4511843ff389e73" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="struct_smol_dock_1_1i_vect_1a3ffc7082a3541ad0fadcb1880a6087a8" kindref="member">x</ref>,<sp/><ref refid="struct_smol_dock_1_1i_vect_1af8165339c1e38179008c4ca49a565fb4" kindref="member">y</ref>,<sp/><ref refid="struct_smol_dock_1_1i_vect_1a013cdafb950199deb4511843ff389e73" kindref="member">z</ref>;</highlight></codeline>
-<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
-<codeline lineno="33"><highlight class="normal"></highlight></codeline>
-<codeline lineno="35" refid="struct_smol_dock_1_1i_translation" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_smol_dock_1_1i_translation" kindref="compound">iTranslation</ref><sp/>{</highlight></codeline>
-<codeline lineno="36" refid="struct_smol_dock_1_1i_translation_1a2ed07fcfc129a2bf7696b65d481317c5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="struct_smol_dock_1_1i_translation_1a74a60efc8b2463b7ea1ca1e824a4ed28" kindref="member">x</ref>,<sp/><ref refid="struct_smol_dock_1_1i_translation_1a5362a54675ecc6bac99325c69521fbb5" kindref="member">y</ref>,<sp/><ref refid="struct_smol_dock_1_1i_translation_1a2ed07fcfc129a2bf7696b65d481317c5" kindref="member">z</ref>;</highlight></codeline>
-<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_smol_dock" kindref="compound">SmolDock</ref><sp/>{</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"></codeline>
+<codeline lineno="26"></codeline>
+<codeline lineno="30" refid="struct_smol_dock_1_1i_transform" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_smol_dock_1_1i_transform" kindref="compound">iTransform</ref><sp/>{</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Global<sp/>component</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32" refid="struct_smol_dock_1_1i_transform_1ae79de47f6741ab7c3a97498fe0c589d3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Eigen::Translation&lt;double,<sp/>3&gt;<sp/><ref refid="struct_smol_dock_1_1i_transform_1ae79de47f6741ab7c3a97498fe0c589d3" kindref="member">transl</ref>;</highlight></codeline>
+<codeline lineno="33" refid="struct_smol_dock_1_1i_transform_1a8234938f815b9f74cc2d3289d4696dfb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Eigen::Quaternion&lt;double&gt;<sp/><ref refid="struct_smol_dock_1_1i_transform_1a8234938f815b9f74cc2d3289d4696dfb" kindref="member">rota</ref>;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35" refid="struct_smol_dock_1_1i_transform_1aa71e9b254a08dfc310a6430056f05964" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::vector&lt;double&gt;<sp/><ref refid="struct_smol_dock_1_1i_transform_1aa71e9b254a08dfc310a6430056f05964" kindref="member">bondRotationsAngles</ref>;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
 <codeline lineno="38"><highlight class="normal"></highlight></codeline>
-<codeline lineno="39"><highlight class="normal"></highlight></codeline>
-<codeline lineno="41"></codeline>
-<codeline lineno="44" refid="struct_smol_dock_1_1i_transform" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_smol_dock_1_1i_transform" kindref="compound">iTransform</ref><sp/>{</highlight></codeline>
-<codeline lineno="45" refid="struct_smol_dock_1_1i_transform_1ab0039729b08d423b6e0414cec1b893e7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_smol_dock_1_1i_translation" kindref="compound">iTranslation</ref><sp/><ref refid="struct_smol_dock_1_1i_transform_1ab0039729b08d423b6e0414cec1b893e7" kindref="member">transl</ref>;</highlight></codeline>
-<codeline lineno="46" refid="struct_smol_dock_1_1i_transform_1a31861b55dc94ec0172ce602cd2a4a54f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_smol_dock_1_1i_quaternion" kindref="compound">iQuaternion</ref><sp/><ref refid="struct_smol_dock_1_1i_transform_1a31861b55dc94ec0172ce602cd2a4a54f" kindref="member">rota</ref>;</highlight></codeline>
-<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
-<codeline lineno="48"><highlight class="normal"></highlight></codeline>
-<codeline lineno="52" refid="struct_smol_dock_1_1i_gradient" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_smol_dock_1_1i_gradient" kindref="compound">iGradient</ref><sp/>{</highlight></codeline>
-<codeline lineno="53" refid="struct_smol_dock_1_1i_gradient_1adf3e33454ba5441435ce46894df07a49" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="struct_smol_dock_1_1i_gradient_1a4780b049dba9b298fc9259a9b626b77c" kindref="member">dx</ref>,<sp/><ref refid="struct_smol_dock_1_1i_gradient_1a4c616a17c5cdd532679cc158dccc6797" kindref="member">dy</ref>,<sp/><ref refid="struct_smol_dock_1_1i_gradient_1adf3e33454ba5441435ce46894df07a49" kindref="member">dz</ref>;<sp/></highlight></codeline>
-<codeline lineno="54"><highlight class="normal"></highlight></codeline>
-<codeline lineno="55" refid="struct_smol_dock_1_1i_gradient_1af93eb07f1c8b1f8fe103ed5aa028ce2c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="struct_smol_dock_1_1i_gradient_1af93eb07f1c8b1f8fe103ed5aa028ce2c" kindref="member">ds</ref>;<sp/></highlight></codeline>
-<codeline lineno="56" refid="struct_smol_dock_1_1i_gradient_1aff52214e33a8a7ec32fac66f0342764d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="struct_smol_dock_1_1i_gradient_1a5583a237c1d002cba8afcb0b34d7a483" kindref="member">du</ref>,<sp/><ref refid="struct_smol_dock_1_1i_gradient_1aff52214e33a8a7ec32fac66f0342764d" kindref="member">dv</ref>,<sp/><ref refid="struct_smol_dock_1_1i_gradient_1a728b006fb9f40f843dcca18768a0618c" kindref="member">dt</ref>;<sp/></highlight></codeline>
-<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
-<codeline lineno="58"><highlight class="normal"></highlight></codeline>
-<codeline lineno="59"><highlight class="normal"></highlight></codeline>
-<codeline lineno="60"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="61"><highlight class="normal"></highlight></codeline>
-<codeline lineno="62"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//SMOLDOCK_ITRANSFORM_H</highlight></codeline>
+<codeline lineno="39"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//SMOLDOCK_ITRANSFORM_H</highlight></codeline>
     </programlisting>
     <location file="Engines/Internals/iTransform.h"/>
   </compounddef>

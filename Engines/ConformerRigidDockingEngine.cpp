@@ -21,28 +21,13 @@
 #include <memory>
 #include <chrono>
 #include <thread>
-
+#include <algorithm>
 
 #include "ConformerRigidDockingEngine.h"
-#include "Internals/iConformer.h"
 #include "Internals/InternalsUtilityFunctions.h"
-#include <Engines/ScoringFunctions/VinaLikeScoringFunction.h>
+#include <Engines/ScoringFunctions/VinaLikeRigidScoringFunction.h>
 #include <Engines/LocalOptimizers/L_BFGS.h>
 #include "Utilities/TimingsLog.h"
-
-#include <GraphMol/RDKitBase.h>
-#include <GraphMol/RWMol.h>
-#include <GraphMol/MolOps.h>
-#include <GraphMol/Fingerprints/Fingerprints.h>
-#include <GraphMol/ChemReactions/Reaction.h>
-#include <GraphMol/ChemReactions/ReactionPickler.h>
-#include <GraphMol/ChemReactions/ReactionParser.h>
-#include <GraphMol/ChemReactions/ReactionRunner.h>
-#include <GraphMol/ChemReactions/PreprocessRxn.h>
-#include <GraphMol/ChemReactions/SanitizeRxn.h>
-#include <GraphMol/SmilesParse/SmilesParse.h>
-#include <GraphMol/Substruct/SubstructMatch.h>
-#include <DataStructs/ExplicitBitVect.h>
 
 #undef BOOST_LOG
 
@@ -52,7 +37,6 @@
 #include <boost/accumulators/statistics/stats.hpp>
 #include <boost/accumulators/statistics/mean.hpp>
 #include <boost/accumulators/statistics/moment.hpp>
-#include <Engines/GlobalHeuristics/RandomRestart.h>
 
 
 namespace SmolDock {
@@ -60,8 +44,8 @@ namespace SmolDock {
 
         ConformerRigidDockingEngine::ConformerRigidDockingEngine(unsigned int conformer_num_,
                                                                  unsigned int retryPerConformer,
-                                                                 Protein *protein,
-                                                                 Molecule *ligand,
+                                                                 Protein* protein,
+                                                                 Molecule* ligand,
                                                                  Score::ScoringFunctionType scFuncType,
                                                                  Heuristics::GlobalHeuristicType heurType,
                                                                  Optimizer::LocalOptimizerType localOptimizerType_,
@@ -141,41 +125,47 @@ namespace SmolDock {
 
             record_timings(begin_docking);
 
+
             for (auto &conformer : this->viConformers) {
 
 
                 record_timings(begin_docking_this_conformer);
 
 
-                iTransform starting_pos_tr = iTransformIdentityInit();
+                iTransform starting_pos_tr = iTransformIdentityInit(conformer.num_rotatable_bond);
                 starting_pos_tr.transl = conformer.centroidNormalizingTransform;
 
 
-                if (this->dockBoxSettings.type == DockingBoxSetting::Type::centeredAround) {
-                    starting_pos_tr.transl.x += this->dockBoxSettings.center[0];
-                    starting_pos_tr.transl.y += this->dockBoxSettings.center[1];
-                    starting_pos_tr.transl.z += this->dockBoxSettings.center[2];
+                DockingBoxSetting dbsettings = this->dockBoxSettings;
+                unsigned int seed = dis_uint(this->rnd_generator);
+
+                arma::arma_rng::set_seed(seed);
+
+                if (dbsettings.type == DockingBoxSetting::Type::centeredAround) {
+                    starting_pos_tr.transl.x() += dbsettings.center[0];
+                    starting_pos_tr.transl.y() += dbsettings.center[1];
+                    starting_pos_tr.transl.z() += dbsettings.center[2];
                 }
 
-                normalizeQuaternionInPlace(starting_pos_tr.rota);
+                starting_pos_tr.rota.normalize();
 
-                this->scoringFunction = scoringFunctionFactory(this->scoringFuncType,
-                                                               conformer,
-                                                               this->protein,
-                                                               starting_pos_tr,
-                                                               1e-3);
+                std::shared_ptr<Score::ScoringFunction> scoringFunction = scoringFunctionFactory(this->scoringFuncType,
+                                                                                                 conformer,
+                                                                                                 this->protein,
+                                                                                                 starting_pos_tr,
+                                                                                                 1e-3);
 
-                this->localOptimizer = optimizerFactory(this->localOptimizerType,
-                                                        this->scoringFunction.get(),
-                                                        1e-3);
+                std::shared_ptr<Optimizer::Optimizer> localOptimizer = optimizerFactory(this->localOptimizerType,
+                                                                                        scoringFunction.get(),
+                                                                                        1e-3);
 
                 Heuristics::HeuristicParameters hParams = Heuristics::heuristicParametersFactory(heuristicType);
 
                 if (heuristicType == Heuristics::GlobalHeuristicType::IteratedLocalSearch) {
 
-                    if (this->dockBoxSettings.type == DockingBoxSetting::Type::centeredAround) {
+                    if (dbsettings.type == DockingBoxSetting::Type::centeredAround) {
                         std::get<Heuristics::IteratedLocalSearch::Parameters>(
-                                hParams).proteinMaxRadius = this->dockBoxSettings.radius;
+                                hParams).proteinMaxRadius = dbsettings.radius;
                     } else {
                         double protRadius = this->orig_protein->getMaxRadius();
                         std::get<Heuristics::IteratedLocalSearch::Parameters>(hParams).proteinMaxRadius = protRadius;
@@ -183,9 +173,9 @@ namespace SmolDock {
                 }
 
                 if (heuristicType == Heuristics::GlobalHeuristicType::RandomRestart) {
-                    if (this->dockBoxSettings.type == DockingBoxSetting::Type::centeredAround) {
+                    if (dbsettings.type == DockingBoxSetting::Type::centeredAround) {
                         std::get<Heuristics::RandomRestart::Parameters>(
-                                hParams).proteinMaxRadius = this->dockBoxSettings.radius;
+                                hParams).proteinMaxRadius = dbsettings.radius;
                     } else {
                         double protRadius = this->orig_protein->getMaxRadius();
                         std::get<Heuristics::RandomRestart::Parameters>(hParams).proteinMaxRadius = protRadius;
@@ -195,18 +185,20 @@ namespace SmolDock {
 
                 for (unsigned int retryNum = 0; retryNum < this->retryPerConformer; retryNum++) {
 
-                    this->globalHeuristic = globalHeuristicFactory(heuristicType, this->scoringFunction.get(),
-                                                                   this->localOptimizer.get(),
-                                                                   dis_uint(this->rnd_generator) + retryNum,
-                                                                   hParams);
+                    std::shared_ptr<Heuristics::GlobalHeuristic> globalHeuristic = globalHeuristicFactory(heuristicType,
+                                                                                                          scoringFunction.get(),
+                                                                                                          localOptimizer.get(),
+                                                                                                          seed +
+                                                                                                          retryNum,
+                                                                                                          hParams);
 
-                    this->globalHeuristic->search();
+                    globalHeuristic->search();
 
-                    auto rawResultMatrix = this->globalHeuristic->getResultMatrix();
-                    double score = this->scoringFunction->Evaluate(rawResultMatrix);
+                    auto rawResultMatrix = globalHeuristic->getResultMatrix();
+                    double score = scoringFunction->Evaluate(rawResultMatrix);
 
 
-                    iConformer result = this->scoringFunction->getConformerForParamMatrix(rawResultMatrix);
+                    iConformer result = scoringFunction->getConformerForParamMatrix(rawResultMatrix);
 
                     double starting_score = Score::vina_like_rigid_inter_scoring_func(conformer, starting_pos_tr,
                                                                                       this->protein);
@@ -263,12 +255,24 @@ namespace SmolDock {
             }
 
             BOOST_LOG_TRIVIAL(info) << "   Best scores : ";
+
+            std::vector<std::tuple<int, double>> scoreAndIndices;
             for (unsigned int i = 0; i < this->scores.size(); i++) {
-                if (!(this->scores[i] < (mean(acc_score) - std::sqrt(moment<2>(acc_score)))))
-                    continue;
-                BOOST_LOG_TRIVIAL(info) << "      " << this->startingScores[i] << " -> " << this->localScores[i]
-                                        << " -> " << this->scores[i];
-                this->bestiConformer.push_back(this->allGeneratediConformer[i]);
+                scoreAndIndices.push_back(std::make_tuple(i, this->scores[i]));
+            }
+
+            std::nth_element(std::begin(scoreAndIndices),
+                             std::begin(scoreAndIndices) + conformer_num,
+                             std::end(scoreAndIndices),
+                             [](const std::tuple<int, double> &a, const std::tuple<int, double> &b) {
+                                 return std::get<1>(a) < std::get<1>(b);
+                             });
+
+            for (unsigned int i = 0; i < conformer_num; i++) {
+                BOOST_LOG_TRIVIAL(info) << "      " << this->startingScores[std::get<0>(scoreAndIndices[i])]
+                                        << " -> " << this->localScores[std::get<0>(scoreAndIndices[i])]
+                                        << " -> " << this->scores[std::get<0>(scoreAndIndices[i])];
+                this->bestiConformer.push_back(this->allGeneratediConformer[std::get<0>(scoreAndIndices[i])]);
             }
 
         }

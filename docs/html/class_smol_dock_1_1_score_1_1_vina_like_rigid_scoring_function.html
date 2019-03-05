@@ -102,7 +102,7 @@ $(document).ready(function(){initNavTree('class_smol_dock_1_1_score_1_1_vina_lik
 </div><!--header-->
 <div class="contents">
 
-<p><code>#include &lt;<a class="el" href="_vina_like_scoring_function_8h_source.html">VinaLikeScoringFunction.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="_vina_like_rigid_scoring_function_8h_source.html">VinaLikeRigidScoringFunction.h</a>&gt;</code></p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for SmolDock::Score::VinaLikeRigidScoringFunction:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
@@ -120,14 +120,12 @@ $(document).ready(function(){initNavTree('class_smol_dock_1_1_score_1_1_vina_lik
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function__coll__graph.png" border="0" usemap="#_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_coll__map" alt="Collaboration graph"/></div>
 <map name="_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_coll__map" id="_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_coll__map">
-<area shape="rect" id="node2" href="class_smol_dock_1_1_score_1_1_scoring_function.html" title="The inferface specification for ScoringFunction object. " alt="" coords="5,543,220,723"/>
-<area shape="rect" id="node3" href="namespace_smol_dock.html#struct_smol_dock_1_1i_conformer" title="Internal, fast representation of a given Molecule conformer for efficiency. " alt="" coords="517,594,671,671"/>
-<area shape="rect" id="node4" href="namespace_smol_dock.html#struct_smol_dock_1_1i_translation" title="Represents a translation. " alt="" coords="297,322,456,429"/>
-<area shape="rect" id="node10" href="namespace_smol_dock.html#struct_smol_dock_1_1i_transform" title="Represents a rotation and translation transform to be applied on ligand/ligand part. " alt="" coords="244,594,397,671"/>
-<area shape="rect" id="node12" href="namespace_smol_dock.html#struct_smol_dock_1_1i_protein" title="Internal, fast representation of Protein for efficiency. " alt="" coords="760,579,895,686"/>
-<area shape="rect" id="node6" title="STL class. " alt="" coords="776,145,892,223"/>
-<area shape="rect" id="node14" title="STL class. " alt="" coords="1019,145,1142,223"/>
-<area shape="rect" id="node11" href="namespace_smol_dock.html#struct_smol_dock_1_1i_quaternion" title="Represents a rotation. " alt="" coords="115,315,273,436"/>
+<area shape="rect" id="node2" href="class_smol_dock_1_1_score_1_1_scoring_function.html" title="The inferface specification for ScoringFunction object. " alt="" coords="15,804,229,984"/>
+<area shape="rect" id="node3" href="namespace_smol_dock.html#struct_smol_dock_1_1i_conformer" title="Internal, fast representation of a given Molecule conformer for efficiency. " alt="" coords="254,848,462,940"/>
+<area shape="rect" id="node11" href="namespace_smol_dock.html#struct_smol_dock_1_1i_protein" title="Internal, fast representation of Protein for efficiency. " alt="" coords="784,543,919,664"/>
+<area shape="rect" id="node6" title="STL class. " alt="" coords="439,145,555,223"/>
+<area shape="rect" id="node13" title="STL class. " alt="" coords="743,145,866,223"/>
+<area shape="rect" id="node10" href="namespace_smol_dock.html#struct_smol_dock_1_1i_transform" title="Represents a rotation. " alt="" coords="427,688,580,780"/>
 </map>
 </div>
 <table class="memberdecls">
@@ -173,7 +171,7 @@ Private Attributes</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="_vina_like_scoring_function_8h_source.html#l00053">53</a> of file <a class="el" href="_vina_like_scoring_function_8h_source.html">VinaLikeScoringFunction.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_vina_like_rigid_scoring_function_8h_source.html#l00053">53</a> of file <a class="el" href="_vina_like_rigid_scoring_function_8h_source.html">VinaLikeRigidScoringFunction.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a5972bf8e5a96678d769255137b944afc"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5972bf8e5a96678d769255137b944afc">&#9670;&nbsp;</a></span>VinaLikeRigidScoringFunction()</h2>
@@ -213,7 +211,7 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_vina_like_scoring_function_8cpp_source.html#l00297">297</a> of file <a class="el" href="_vina_like_scoring_function_8cpp_source.html">VinaLikeScoringFunction.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_vina_like_rigid_scoring_function_8cpp_source.html#l00212">212</a> of file <a class="el" href="_vina_like_rigid_scoring_function_8cpp_source.html">VinaLikeRigidScoringFunction.cpp</a>.</p>
 
 </div>
 </div>
@@ -269,9 +267,9 @@ Private Attributes</h2></td></tr>
 
 <p>Implements <a class="el" href="class_smol_dock_1_1_score_1_1_scoring_function.html#a92b9b5f6d23b07740dd9f6718207d31a">SmolDock::Score::ScoringFunction</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_vina_like_scoring_function_8cpp_source.html#l00225">225</a> of file <a class="el" href="_vina_like_scoring_function_8cpp_source.html">VinaLikeScoringFunction.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_vina_like_rigid_scoring_function_8cpp_source.html#l00119">119</a> of file <a class="el" href="_vina_like_rigid_scoring_function_8cpp_source.html">VinaLikeRigidScoringFunction.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_vina_like_scoring_function_8h_source.html#l00083">internalToExternalRepr()</a>, <a class="el" href="_internals_utility_functions_8h_source.html#l00111">SmolDock::normalizeQuaternionInPlace()</a>, <a class="el" href="_vina_like_scoring_function_8h_source.html#l00116">prot</a>, <a class="el" href="i_transform_8h_source.html#l00046">SmolDock::iTransform::rota</a>, <a class="el" href="_vina_like_scoring_function_8h_source.html#l00115">startingConformation</a>, and <a class="el" href="_vina_like_scoring_function_8cpp_source.html#l00149">SmolDock::Score::vina_like_rigid_inter_scoring_func()</a>.</p>
+<p class="reference">References <a class="el" href="_vina_like_rigid_scoring_function_8h_source.html#l00083">internalToExternalRepr()</a>, <a class="el" href="_internals_utility_functions_8h_source.html#l00099">SmolDock::normalizeQuaternionInPlace()</a>, <a class="el" href="_vina_like_rigid_scoring_function_8h_source.html#l00116">prot</a>, <a class="el" href="i_transform_8h_source.html#l00033">SmolDock::iTransform::rota</a>, <a class="el" href="_vina_like_rigid_scoring_function_8h_source.html#l00115">startingConformation</a>, and <a class="el" href="_vina_like_rigid_scoring_function_8cpp_source.html#l00040">SmolDock::Score::vina_like_rigid_inter_scoring_func()</a>.</p>
 <div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-2-summary" class="dynsummary" style="display:block;">
@@ -280,18 +278,15 @@ Private Attributes</h2></td></tr>
 <div class="center"><img src="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_ab89f08da2f4f79abfe9130b3593c3522_cgraph.png" border="0" usemap="#class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_ab89f08da2f4f79abfe9130b3593c3522_cgraph" alt=""/></div>
 <map name="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_ab89f08da2f4f79abfe9130b3593c3522_cgraph" id="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_ab89f08da2f4f79abfe9130b3593c3522_cgraph">
 <area shape="rect" id="node2" href="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function.html#a7998fd7ab2237aa8da50d05d553ffec0" title="SmolDock::Score::VinaLike\lRigidScoringFunction::internal\lToExternalRepr" alt="" coords="266,5,462,61"/>
-<area shape="rect" id="node3" href="namespace_smol_dock.html#aeef66e92064c4a5e5102102342542853" title="Normalize a quaternion (which then has norm == 1.0) " alt="" coords="259,86,469,127"/>
-<area shape="rect" id="node5" href="namespace_smol_dock_1_1_score.html#ac205731c7b0098c2900d9d16fff1a93b" title="Compute inter&#45;molecular part of the docking score, according to the Vina scoring function. " alt="" coords="267,151,461,193"/>
-<area shape="rect" id="node4" href="namespace_smol_dock.html#afb62962c202721eaa8aa64d19bd42fdf" title="Returns the norm of the given quaternion. " alt="" coords="518,95,701,121"/>
-<area shape="rect" id="node6" href="namespace_smol_dock.html#a73bb4756419c2b3361ae4d23b24eee20" title="Apply the provided iTransform to a vector. " alt="" coords="519,149,700,190"/>
-<area shape="rect" id="node9" href="namespace_smol_dock_1_1_score.html#ac23b7d24b31779cc5cd7d8bd4006fa52" title="SmolDock::Score::scoreFor\lAtomCouple" alt="" coords="517,214,701,255"/>
-<area shape="rect" id="node7" href="namespace_smol_dock.html#a835c8bf0a7983ba17c48cd10f152726f" title="Apply the rotation given by a quaternion to a vector. " alt="" coords="766,83,949,125"/>
-<area shape="rect" id="node8" href="namespace_smol_dock.html#a20628b953f3dec7f26d7c8221a508160" title="Apply the provided translation to a vector. " alt="" coords="764,149,951,190"/>
-<area shape="rect" id="node10" href="namespace_smol_dock_1_1_score.html#ac5efd92ad2db7d779a491ae233cbb2ec" title="SmolDock::Score::hydrogen\lBondingPossible" alt="" coords="764,214,951,255"/>
-<area shape="rect" id="node14" href="namespace_smol_dock_1_1_score.html#adae31ea0b0f6630cdad8c85e9802ed9d" title="SmolDock::Score::isHydrophobic" alt="" coords="749,280,965,307"/>
-<area shape="rect" id="node11" href="namespace_smol_dock_1_1_score.html#a0b455de7380586a1fd535f76499f16f7" title="SmolDock::Score::hydrogen\lDonorAcceptorPair" alt="" coords="1013,214,1200,255"/>
-<area shape="rect" id="node12" href="namespace_smol_dock_1_1_score.html#afc0ba7560e9104fcef4bc61ff8d461c1" title="SmolDock::Score::isHydrogen\lAcceptor" alt="" coords="1248,181,1447,222"/>
-<area shape="rect" id="node13" href="namespace_smol_dock_1_1_score.html#aada28b98ff116da3300979ddf15dc557" title="SmolDock::Score::isHydrogen\lDonor" alt="" coords="1248,246,1447,287"/>
+<area shape="rect" id="node3" href="namespace_smol_dock.html#a05fa7c1e1e1323710cbf76fad3030c3d" title="Normalize a quaternion (which then has norm == 1.0) " alt="" coords="259,86,469,127"/>
+<area shape="rect" id="node4" href="namespace_smol_dock_1_1_score.html#ac205731c7b0098c2900d9d16fff1a93b" title="Compute inter&#45;molecular part of the docking score, according to the Vina scoring function. " alt="" coords="267,151,461,193"/>
+<area shape="rect" id="node5" href="namespace_smol_dock.html#aea0b5b0a06c4650f4ca502a3f1da6e98" title="Apply the provided iTransform to a vector (only rigid component : translation + global rotation) ..." alt="" coords="517,118,728,159"/>
+<area shape="rect" id="node6" href="namespace_smol_dock_1_1_score.html#ac23b7d24b31779cc5cd7d8bd4006fa52" title="SmolDock::Score::scoreFor\lAtomCouple" alt="" coords="531,183,715,225"/>
+<area shape="rect" id="node7" href="namespace_smol_dock_1_1_score.html#ac5efd92ad2db7d779a491ae233cbb2ec" title="SmolDock::Score::hydrogen\lBondingPossible" alt="" coords="791,154,977,195"/>
+<area shape="rect" id="node11" href="namespace_smol_dock_1_1_score.html#adae31ea0b0f6630cdad8c85e9802ed9d" title="SmolDock::Score::isHydrophobic" alt="" coords="776,220,992,247"/>
+<area shape="rect" id="node8" href="namespace_smol_dock_1_1_score.html#a0b455de7380586a1fd535f76499f16f7" title="SmolDock::Score::hydrogen\lDonorAcceptorPair" alt="" coords="1040,154,1227,195"/>
+<area shape="rect" id="node9" href="namespace_smol_dock_1_1_score.html#afc0ba7560e9104fcef4bc61ff8d461c1" title="SmolDock::Score::isHydrogen\lAcceptor" alt="" coords="1275,121,1473,162"/>
+<area shape="rect" id="node10" href="namespace_smol_dock_1_1_score.html#aada28b98ff116da3300979ddf15dc557" title="SmolDock::Score::isHydrogen\lDonor" alt="" coords="1275,186,1473,227"/>
 </map>
 </div>
 
@@ -333,9 +328,9 @@ Private Attributes</h2></td></tr>
 
 <p>Implements <a class="el" href="class_smol_dock_1_1_score_1_1_scoring_function.html#a56e7633750240c7511d5f719c87eeb2f">SmolDock::Score::ScoringFunction</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_vina_like_scoring_function_8cpp_source.html#l00236">236</a> of file <a class="el" href="_vina_like_scoring_function_8cpp_source.html">VinaLikeScoringFunction.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_vina_like_rigid_scoring_function_8cpp_source.html#l00130">130</a> of file <a class="el" href="_vina_like_rigid_scoring_function_8cpp_source.html">VinaLikeRigidScoringFunction.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_vina_like_scoring_function_8h_source.html#l00118">differential_epsilon</a>, <a class="el" href="_vina_like_scoring_function_8h_source.html#l00083">internalToExternalRepr()</a>, <a class="el" href="_internals_utility_functions_8h_source.html#l00111">SmolDock::normalizeQuaternionInPlace()</a>, <a class="el" href="_vina_like_scoring_function_8h_source.html#l00116">prot</a>, <a class="el" href="i_transform_8h_source.html#l00046">SmolDock::iTransform::rota</a>, <a class="el" href="i_transform_8h_source.html#l00025">SmolDock::iQuaternion::s</a>, <a class="el" href="_vina_like_scoring_function_8h_source.html#l00115">startingConformation</a>, <a class="el" href="i_transform_8h_source.html#l00026">SmolDock::iQuaternion::t</a>, <a class="el" href="i_transform_8h_source.html#l00045">SmolDock::iTransform::transl</a>, <a class="el" href="i_transform_8h_source.html#l00026">SmolDock::iQuaternion::u</a>, <a class="el" href="i_transform_8h_source.html#l00026">SmolDock::iQuaternion::v</a>, <a class="el" href="_vina_like_scoring_function_8cpp_source.html#l00149">SmolDock::Score::vina_like_rigid_inter_scoring_func()</a>, <a class="el" href="i_transform_8h_source.html#l00036">SmolDock::iTranslation::x</a>, <a class="el" href="i_transform_8h_source.html#l00036">SmolDock::iTranslation::y</a>, and <a class="el" href="i_transform_8h_source.html#l00036">SmolDock::iTranslation::z</a>.</p>
+<p class="reference">References <a class="el" href="_vina_like_rigid_scoring_function_8h_source.html#l00118">differential_epsilon</a>, <a class="el" href="_vina_like_rigid_scoring_function_8h_source.html#l00083">internalToExternalRepr()</a>, <a class="el" href="_internals_utility_functions_8h_source.html#l00099">SmolDock::normalizeQuaternionInPlace()</a>, <a class="el" href="_vina_like_rigid_scoring_function_8h_source.html#l00116">prot</a>, <a class="el" href="i_transform_8h_source.html#l00033">SmolDock::iTransform::rota</a>, <a class="el" href="_vina_like_rigid_scoring_function_8h_source.html#l00115">startingConformation</a>, <a class="el" href="i_transform_8h_source.html#l00032">SmolDock::iTransform::transl</a>, and <a class="el" href="_vina_like_rigid_scoring_function_8cpp_source.html#l00040">SmolDock::Score::vina_like_rigid_inter_scoring_func()</a>.</p>
 <div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-3-summary" class="dynsummary" style="display:block;">
@@ -344,18 +339,15 @@ Private Attributes</h2></td></tr>
 <div class="center"><img src="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_a574511b3c12769902e2c0366d4d3db96_cgraph.png" border="0" usemap="#class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_a574511b3c12769902e2c0366d4d3db96_cgraph" alt=""/></div>
 <map name="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_a574511b3c12769902e2c0366d4d3db96_cgraph" id="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_a574511b3c12769902e2c0366d4d3db96_cgraph">
 <area shape="rect" id="node2" href="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function.html#a7998fd7ab2237aa8da50d05d553ffec0" title="SmolDock::Score::VinaLike\lRigidScoringFunction::internal\lToExternalRepr" alt="" coords="266,5,462,61"/>
-<area shape="rect" id="node3" href="namespace_smol_dock.html#aeef66e92064c4a5e5102102342542853" title="Normalize a quaternion (which then has norm == 1.0) " alt="" coords="259,86,469,127"/>
-<area shape="rect" id="node5" href="namespace_smol_dock_1_1_score.html#ac205731c7b0098c2900d9d16fff1a93b" title="Compute inter&#45;molecular part of the docking score, according to the Vina scoring function. " alt="" coords="267,151,461,193"/>
-<area shape="rect" id="node4" href="namespace_smol_dock.html#afb62962c202721eaa8aa64d19bd42fdf" title="Returns the norm of the given quaternion. " alt="" coords="518,95,701,121"/>
-<area shape="rect" id="node6" href="namespace_smol_dock.html#a73bb4756419c2b3361ae4d23b24eee20" title="Apply the provided iTransform to a vector. " alt="" coords="519,149,700,190"/>
-<area shape="rect" id="node9" href="namespace_smol_dock_1_1_score.html#ac23b7d24b31779cc5cd7d8bd4006fa52" title="SmolDock::Score::scoreFor\lAtomCouple" alt="" coords="517,214,701,255"/>
-<area shape="rect" id="node7" href="namespace_smol_dock.html#a835c8bf0a7983ba17c48cd10f152726f" title="Apply the rotation given by a quaternion to a vector. " alt="" coords="766,83,949,125"/>
-<area shape="rect" id="node8" href="namespace_smol_dock.html#a20628b953f3dec7f26d7c8221a508160" title="Apply the provided translation to a vector. " alt="" coords="764,149,951,190"/>
-<area shape="rect" id="node10" href="namespace_smol_dock_1_1_score.html#ac5efd92ad2db7d779a491ae233cbb2ec" title="SmolDock::Score::hydrogen\lBondingPossible" alt="" coords="764,214,951,255"/>
-<area shape="rect" id="node14" href="namespace_smol_dock_1_1_score.html#adae31ea0b0f6630cdad8c85e9802ed9d" title="SmolDock::Score::isHydrophobic" alt="" coords="749,280,965,307"/>
-<area shape="rect" id="node11" href="namespace_smol_dock_1_1_score.html#a0b455de7380586a1fd535f76499f16f7" title="SmolDock::Score::hydrogen\lDonorAcceptorPair" alt="" coords="1013,214,1200,255"/>
-<area shape="rect" id="node12" href="namespace_smol_dock_1_1_score.html#afc0ba7560e9104fcef4bc61ff8d461c1" title="SmolDock::Score::isHydrogen\lAcceptor" alt="" coords="1248,181,1447,222"/>
-<area shape="rect" id="node13" href="namespace_smol_dock_1_1_score.html#aada28b98ff116da3300979ddf15dc557" title="SmolDock::Score::isHydrogen\lDonor" alt="" coords="1248,246,1447,287"/>
+<area shape="rect" id="node3" href="namespace_smol_dock.html#a05fa7c1e1e1323710cbf76fad3030c3d" title="Normalize a quaternion (which then has norm == 1.0) " alt="" coords="259,86,469,127"/>
+<area shape="rect" id="node4" href="namespace_smol_dock_1_1_score.html#ac205731c7b0098c2900d9d16fff1a93b" title="Compute inter&#45;molecular part of the docking score, according to the Vina scoring function. " alt="" coords="267,151,461,193"/>
+<area shape="rect" id="node5" href="namespace_smol_dock.html#aea0b5b0a06c4650f4ca502a3f1da6e98" title="Apply the provided iTransform to a vector (only rigid component : translation + global rotation) ..." alt="" coords="517,118,728,159"/>
+<area shape="rect" id="node6" href="namespace_smol_dock_1_1_score.html#ac23b7d24b31779cc5cd7d8bd4006fa52" title="SmolDock::Score::scoreFor\lAtomCouple" alt="" coords="531,183,715,225"/>
+<area shape="rect" id="node7" href="namespace_smol_dock_1_1_score.html#ac5efd92ad2db7d779a491ae233cbb2ec" title="SmolDock::Score::hydrogen\lBondingPossible" alt="" coords="791,154,977,195"/>
+<area shape="rect" id="node11" href="namespace_smol_dock_1_1_score.html#adae31ea0b0f6630cdad8c85e9802ed9d" title="SmolDock::Score::isHydrophobic" alt="" coords="776,220,992,247"/>
+<area shape="rect" id="node8" href="namespace_smol_dock_1_1_score.html#a0b455de7380586a1fd535f76499f16f7" title="SmolDock::Score::hydrogen\lDonorAcceptorPair" alt="" coords="1040,154,1227,195"/>
+<area shape="rect" id="node9" href="namespace_smol_dock_1_1_score.html#afc0ba7560e9104fcef4bc61ff8d461c1" title="SmolDock::Score::isHydrogen\lAcceptor" alt="" coords="1275,121,1473,162"/>
+<area shape="rect" id="node10" href="namespace_smol_dock_1_1_score.html#aada28b98ff116da3300979ddf15dc557" title="SmolDock::Score::isHydrogen\lDonor" alt="" coords="1275,186,1473,227"/>
 </map>
 </div>
 
@@ -385,9 +377,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_vina_like_scoring_function_8h_source.html#l00100">100</a> of file <a class="el" href="_vina_like_scoring_function_8h_source.html">VinaLikeScoringFunction.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_vina_like_rigid_scoring_function_8h_source.html#l00100">100</a> of file <a class="el" href="_vina_like_rigid_scoring_function_8h_source.html">VinaLikeRigidScoringFunction.h</a>.</p>
 
-<p class="reference">References <a class="el" href="i_transform_8h_source.html#l00046">SmolDock::iTransform::rota</a>, <a class="el" href="i_transform_8h_source.html#l00025">SmolDock::iQuaternion::s</a>, <a class="el" href="i_transform_8h_source.html#l00026">SmolDock::iQuaternion::t</a>, <a class="el" href="i_transform_8h_source.html#l00045">SmolDock::iTransform::transl</a>, <a class="el" href="i_transform_8h_source.html#l00026">SmolDock::iQuaternion::u</a>, <a class="el" href="i_transform_8h_source.html#l00026">SmolDock::iQuaternion::v</a>, <a class="el" href="i_transform_8h_source.html#l00036">SmolDock::iTranslation::x</a>, <a class="el" href="i_transform_8h_source.html#l00036">SmolDock::iTranslation::y</a>, and <a class="el" href="i_transform_8h_source.html#l00036">SmolDock::iTranslation::z</a>.</p>
+<p class="reference">References <a class="el" href="i_transform_8h_source.html#l00033">SmolDock::iTransform::rota</a>, and <a class="el" href="i_transform_8h_source.html#l00032">SmolDock::iTransform::transl</a>.</p>
 <div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-4-summary" class="dynsummary" style="display:block;">
@@ -424,12 +416,13 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>&lt; Note that the internal representation arma::mat is not by itself normalized (because we always normalize it in the scoring function, so no constraint) </p>
 
 <p>Implements <a class="el" href="class_smol_dock_1_1_score_1_1_scoring_function.html#ac446224ef6f15aa89c1d3b604fd43a13">SmolDock::Score::ScoringFunction</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_vina_like_scoring_function_8cpp_source.html#l00316">316</a> of file <a class="el" href="_vina_like_scoring_function_8cpp_source.html">VinaLikeScoringFunction.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_vina_like_rigid_scoring_function_8cpp_source.html#l00231">231</a> of file <a class="el" href="_vina_like_rigid_scoring_function_8cpp_source.html">VinaLikeRigidScoringFunction.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_internals_utility_functions_8h_source.html#l00072">SmolDock::applyTransformInPlace()</a>, <a class="el" href="_vina_like_scoring_function_8h_source.html#l00083">internalToExternalRepr()</a>, and <a class="el" href="_vina_like_scoring_function_8h_source.html#l00115">startingConformation</a>.</p>
+<p class="reference">References <a class="el" href="_internals_utility_functions_8h_source.html#l00158">SmolDock::applyRigidTransformInPlace()</a>, <a class="el" href="_vina_like_rigid_scoring_function_8h_source.html#l00083">internalToExternalRepr()</a>, <a class="el" href="_internals_utility_functions_8h_source.html#l00099">SmolDock::normalizeQuaternionInPlace()</a>, <a class="el" href="i_transform_8h_source.html#l00033">SmolDock::iTransform::rota</a>, and <a class="el" href="_vina_like_rigid_scoring_function_8h_source.html#l00115">startingConformation</a>.</p>
 <div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-5-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-5-summary" class="dynsummary" style="display:block;">
@@ -437,10 +430,9 @@ Private Attributes</h2></td></tr>
 <div id="dynsection-5-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_a6b173e704b812af5cde72610f1143577_cgraph.png" border="0" usemap="#class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_a6b173e704b812af5cde72610f1143577_cgraph" alt=""/></div>
 <map name="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_a6b173e704b812af5cde72610f1143577_cgraph" id="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function_a6b173e704b812af5cde72610f1143577_cgraph">
-<area shape="rect" id="node2" href="namespace_smol_dock.html#a73bb4756419c2b3361ae4d23b24eee20" title="Apply the provided iTransform to a vector. " alt="" coords="294,37,475,79"/>
-<area shape="rect" id="node5" href="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function.html#a7998fd7ab2237aa8da50d05d553ffec0" title="SmolDock::Score::VinaLike\lRigidScoringFunction::internal\lToExternalRepr" alt="" coords="287,103,483,159"/>
-<area shape="rect" id="node3" href="namespace_smol_dock.html#a835c8bf0a7983ba17c48cd10f152726f" title="Apply the rotation given by a quaternion to a vector. " alt="" coords="533,5,715,47"/>
-<area shape="rect" id="node4" href="namespace_smol_dock.html#a20628b953f3dec7f26d7c8221a508160" title="Apply the provided translation to a vector. " alt="" coords="531,71,717,112"/>
+<area shape="rect" id="node2" href="namespace_smol_dock.html#aea0b5b0a06c4650f4ca502a3f1da6e98" title="Apply the provided iTransform to a vector (only rigid component : translation + global rotation) ..." alt="" coords="287,5,497,47"/>
+<area shape="rect" id="node3" href="class_smol_dock_1_1_score_1_1_vina_like_rigid_scoring_function.html#a7998fd7ab2237aa8da50d05d553ffec0" title="SmolDock::Score::VinaLike\lRigidScoringFunction::internal\lToExternalRepr" alt="" coords="294,71,490,127"/>
+<area shape="rect" id="node4" href="namespace_smol_dock.html#a05fa7c1e1e1323710cbf76fad3030c3d" title="Normalize a quaternion (which then has norm == 1.0) " alt="" coords="287,152,497,193"/>
 </map>
 </div>
 
@@ -471,9 +463,9 @@ Private Attributes</h2></td></tr>
 
 <p>Implements <a class="el" href="class_smol_dock_1_1_score_1_1_scoring_function.html#a526926e386e47c0c4bace70b75b54632">SmolDock::Score::ScoringFunction</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_vina_like_scoring_function_8cpp_source.html#l00308">308</a> of file <a class="el" href="_vina_like_scoring_function_8cpp_source.html">VinaLikeScoringFunction.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_vina_like_rigid_scoring_function_8cpp_source.html#l00223">223</a> of file <a class="el" href="_vina_like_rigid_scoring_function_8cpp_source.html">VinaLikeRigidScoringFunction.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_vina_like_scoring_function_8h_source.html#l00118">differential_epsilon</a>.</p>
+<p class="reference">References <a class="el" href="_vina_like_rigid_scoring_function_8h_source.html#l00118">differential_epsilon</a>.</p>
 
 </div>
 </div>
@@ -502,7 +494,7 @@ Private Attributes</h2></td></tr>
 
 <p>Implements <a class="el" href="class_smol_dock_1_1_score_1_1_scoring_function.html#a19d85e9febea604032a62624a70adc4e">SmolDock::Score::ScoringFunction</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_vina_like_scoring_function_8cpp_source.html#l00327">327</a> of file <a class="el" href="_vina_like_scoring_function_8cpp_source.html">VinaLikeScoringFunction.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_vina_like_rigid_scoring_function_8cpp_source.html#l00245">245</a> of file <a class="el" href="_vina_like_rigid_scoring_function_8cpp_source.html">VinaLikeRigidScoringFunction.cpp</a>.</p>
 
 </div>
 </div>
@@ -531,9 +523,9 @@ Private Attributes</h2></td></tr>
 
 <p>Implements <a class="el" href="class_smol_dock_1_1_score_1_1_scoring_function.html#a70e93a6f7e50f4a57273b0faf60e8e90">SmolDock::Score::ScoringFunction</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_vina_like_scoring_function_8cpp_source.html#l00312">312</a> of file <a class="el" href="_vina_like_scoring_function_8cpp_source.html">VinaLikeScoringFunction.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_vina_like_rigid_scoring_function_8cpp_source.html#l00227">227</a> of file <a class="el" href="_vina_like_rigid_scoring_function_8cpp_source.html">VinaLikeRigidScoringFunction.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_vina_like_scoring_function_8h_source.html#l00100">externalToInternalRepr()</a>, and <a class="el" href="_vina_like_scoring_function_8h_source.html#l00117">initialTransform</a>.</p>
+<p class="reference">References <a class="el" href="_vina_like_rigid_scoring_function_8h_source.html#l00100">externalToInternalRepr()</a>, and <a class="el" href="_vina_like_rigid_scoring_function_8h_source.html#l00117">initialTransform</a>.</p>
 <div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-6-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-6-summary" class="dynsummary" style="display:block;">
@@ -571,9 +563,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_vina_like_scoring_function_8h_source.html#l00083">83</a> of file <a class="el" href="_vina_like_scoring_function_8h_source.html">VinaLikeScoringFunction.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_vina_like_rigid_scoring_function_8h_source.html#l00083">83</a> of file <a class="el" href="_vina_like_rigid_scoring_function_8h_source.html">VinaLikeRigidScoringFunction.h</a>.</p>
 
-<p class="reference">References <a class="el" href="i_transform_8h_source.html#l00046">SmolDock::iTransform::rota</a>, <a class="el" href="i_transform_8h_source.html#l00025">SmolDock::iQuaternion::s</a>, <a class="el" href="i_transform_8h_source.html#l00026">SmolDock::iQuaternion::t</a>, <a class="el" href="i_transform_8h_source.html#l00045">SmolDock::iTransform::transl</a>, <a class="el" href="i_transform_8h_source.html#l00026">SmolDock::iQuaternion::u</a>, <a class="el" href="i_transform_8h_source.html#l00026">SmolDock::iQuaternion::v</a>, <a class="el" href="i_transform_8h_source.html#l00036">SmolDock::iTranslation::x</a>, <a class="el" href="i_transform_8h_source.html#l00036">SmolDock::iTranslation::y</a>, and <a class="el" href="i_transform_8h_source.html#l00036">SmolDock::iTranslation::z</a>.</p>
+<p class="reference">References <a class="el" href="i_transform_8h_source.html#l00033">SmolDock::iTransform::rota</a>, and <a class="el" href="i_transform_8h_source.html#l00032">SmolDock::iTransform::transl</a>.</p>
 <div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-7-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-7-summary" class="dynsummary" style="display:block;">
@@ -610,7 +602,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_vina_like_scoring_function_8h_source.html#l00118">118</a> of file <a class="el" href="_vina_like_scoring_function_8h_source.html">VinaLikeScoringFunction.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_vina_like_rigid_scoring_function_8h_source.html#l00118">118</a> of file <a class="el" href="_vina_like_rigid_scoring_function_8h_source.html">VinaLikeRigidScoringFunction.h</a>.</p>
 
 </div>
 </div>
@@ -634,7 +626,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_vina_like_scoring_function_8h_source.html#l00117">117</a> of file <a class="el" href="_vina_like_scoring_function_8h_source.html">VinaLikeScoringFunction.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_vina_like_rigid_scoring_function_8h_source.html#l00117">117</a> of file <a class="el" href="_vina_like_rigid_scoring_function_8h_source.html">VinaLikeRigidScoringFunction.h</a>.</p>
 
 </div>
 </div>
@@ -658,7 +650,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_vina_like_scoring_function_8h_source.html#l00116">116</a> of file <a class="el" href="_vina_like_scoring_function_8h_source.html">VinaLikeScoringFunction.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_vina_like_rigid_scoring_function_8h_source.html#l00116">116</a> of file <a class="el" href="_vina_like_rigid_scoring_function_8h_source.html">VinaLikeRigidScoringFunction.h</a>.</p>
 
 </div>
 </div>
@@ -682,13 +674,13 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_vina_like_scoring_function_8h_source.html#l00115">115</a> of file <a class="el" href="_vina_like_scoring_function_8h_source.html">VinaLikeScoringFunction.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_vina_like_rigid_scoring_function_8h_source.html#l00115">115</a> of file <a class="el" href="_vina_like_rigid_scoring_function_8h_source.html">VinaLikeRigidScoringFunction.h</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="_vina_like_scoring_function_8h_source.html">VinaLikeScoringFunction.h</a></li>
-<li><a class="el" href="_vina_like_scoring_function_8cpp_source.html">VinaLikeScoringFunction.cpp</a></li>
+<li><a class="el" href="_vina_like_rigid_scoring_function_8h_source.html">VinaLikeRigidScoringFunction.h</a></li>
+<li><a class="el" href="_vina_like_rigid_scoring_function_8cpp_source.html">VinaLikeRigidScoringFunction.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

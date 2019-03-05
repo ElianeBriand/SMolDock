@@ -1,0 +1,233 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_iterated_local_search_8h" kind="file" language="C++">
+    <compoundname>IteratedLocalSearch.h</compoundname>
+    <includes refid="_scoring_function_interface_8h" local="no">Engines/ScoringFunctions/ScoringFunctionInterface.h</includes>
+    <includes refid="_optimizer_interface_8h" local="no">Engines/LocalOptimizers/OptimizerInterface.h</includes>
+    <includes refid="_heuristic_interface_8h" local="yes">HeuristicInterface.h</includes>
+    <includedby refid="_heuristic_factory_8h" local="yes">HeuristicFactory.h</includedby>
+    <includedby refid="_heuristic_factory_8cpp" local="yes">HeuristicFactory.cpp</includedby>
+    <includedby refid="_iterated_local_search_8cpp" local="yes">IteratedLocalSearch.cpp</includedby>
+    <incdepgraph>
+      <node id="1022">
+        <label>HeuristicInterface.h</label>
+        <link refid="_heuristic_interface_8h"/>
+      </node>
+      <node id="1009">
+        <label>IteratedLocalSearch.h</label>
+        <link refid="_iterated_local_search_8h"/>
+        <childnode refid="1010" relation="include">
+        </childnode>
+        <childnode refid="1021" relation="include">
+        </childnode>
+        <childnode refid="1022" relation="include">
+        </childnode>
+      </node>
+      <node id="1021">
+        <label>Engines/LocalOptimizers/OptimizerInterface.h</label>
+        <link refid="_optimizer_interface_8h"/>
+        <childnode refid="1011" relation="include">
+        </childnode>
+      </node>
+      <node id="1017">
+        <label>cmath</label>
+      </node>
+      <node id="1018">
+        <label>cassert</label>
+      </node>
+      <node id="1019">
+        <label>Eigen/Core</label>
+      </node>
+      <node id="1010">
+        <label>Engines/ScoringFunctions/ScoringFunctionInterface.h</label>
+        <link refid="_scoring_function_interface_8h"/>
+        <childnode refid="1011" relation="include">
+        </childnode>
+        <childnode refid="1012" relation="include">
+        </childnode>
+      </node>
+      <node id="1012">
+        <label>Engines/Internals/iConformer.h</label>
+        <link refid="i_conformer_8h"/>
+        <childnode refid="1013" relation="include">
+        </childnode>
+        <childnode refid="1014" relation="include">
+        </childnode>
+        <childnode refid="1015" relation="include">
+        </childnode>
+      </node>
+      <node id="1011">
+        <label>armadillo</label>
+      </node>
+      <node id="1020">
+        <label>Eigen/Dense</label>
+      </node>
+      <node id="1015">
+        <label>iTransform.h</label>
+        <link refid="i_transform_8h"/>
+        <childnode refid="1013" relation="include">
+        </childnode>
+        <childnode refid="1014" relation="include">
+        </childnode>
+        <childnode refid="1016" relation="include">
+        </childnode>
+        <childnode refid="1017" relation="include">
+        </childnode>
+        <childnode refid="1018" relation="include">
+        </childnode>
+        <childnode refid="1019" relation="include">
+        </childnode>
+        <childnode refid="1020" relation="include">
+        </childnode>
+      </node>
+      <node id="1013">
+        <label>vector</label>
+      </node>
+      <node id="1016">
+        <label>array</label>
+      </node>
+      <node id="1014">
+        <label>memory</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1025">
+        <label>ConformerRigidDockingEngine.h</label>
+        <link refid="_conformer_rigid_docking_engine_8h"/>
+        <childnode refid="1026" relation="include">
+        </childnode>
+        <childnode refid="1027" relation="include">
+        </childnode>
+        <childnode refid="1028" relation="include">
+        </childnode>
+        <childnode refid="1029" relation="include">
+        </childnode>
+      </node>
+      <node id="1023">
+        <label>IteratedLocalSearch.h</label>
+        <link refid="_iterated_local_search_8h"/>
+        <childnode refid="1024" relation="include">
+        </childnode>
+        <childnode refid="1030" relation="include">
+        </childnode>
+        <childnode refid="1034" relation="include">
+        </childnode>
+      </node>
+      <node id="1031">
+        <label>PoseRefiner.h</label>
+        <link refid="_pose_refiner_8h"/>
+        <childnode refid="1032" relation="include">
+        </childnode>
+        <childnode refid="1027" relation="include">
+        </childnode>
+        <childnode refid="1033" relation="include">
+        </childnode>
+      </node>
+      <node id="1033">
+        <label>vina_refiner.cpp</label>
+        <link refid="vina__refiner_8cpp"/>
+      </node>
+      <node id="1027">
+        <label>cli_interface.cpp</label>
+        <link refid="cli__interface_8cpp"/>
+      </node>
+      <node id="1028">
+        <label>main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+      <node id="1032">
+        <label>PoseRefiner.cpp</label>
+        <link refid="_pose_refiner_8cpp"/>
+      </node>
+      <node id="1026">
+        <label>ConformerRigidDockingEngine.cpp</label>
+        <link refid="_conformer_rigid_docking_engine_8cpp"/>
+      </node>
+      <node id="1034">
+        <label>IteratedLocalSearch.cpp</label>
+        <link refid="_iterated_local_search_8cpp"/>
+      </node>
+      <node id="1030">
+        <label>HeuristicFactory.cpp</label>
+        <link refid="_heuristic_factory_8cpp"/>
+      </node>
+      <node id="1029">
+        <label>PyEngine.cpp</label>
+        <link refid="_py_engine_8cpp"/>
+      </node>
+      <node id="1024">
+        <label>HeuristicFactory.h</label>
+        <link refid="_heuristic_factory_8h"/>
+        <childnode refid="1025" relation="include">
+        </childnode>
+        <childnode refid="1024" relation="include">
+        </childnode>
+        <childnode refid="1030" relation="include">
+        </childnode>
+        <childnode refid="1031" relation="include">
+        </childnode>
+        <childnode refid="1029" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_smol_dock_1_1_heuristics_1_1_iterated_local_search" prot="public">SmolDock::Heuristics::IteratedLocalSearch</innerclass>
+    <innerclass refid="struct_smol_dock_1_1_heuristics_1_1_iterated_local_search_1_1_parameters" prot="public">SmolDock::Heuristics::IteratedLocalSearch::Parameters</innerclass>
+    <innernamespace refid="namespace_smol_dock_1_1_heuristics">SmolDock::Heuristics</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Created<sp/>by<sp/>briand<sp/>on<sp/>2/20/19.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>SMOLDOCK_ITERATEDLOCALSEARCH_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SMOLDOCK_ITERATEDLOCALSEARCH_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_scoring_function_interface_8h" kindref="compound">Engines/ScoringFunctions/ScoringFunctionInterface.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_optimizer_interface_8h" kindref="compound">Engines/LocalOptimizers/OptimizerInterface.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_heuristic_interface_8h" kindref="compound">HeuristicInterface.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_smol_dock_1_1_heuristics" kindref="compound">SmolDock::Heuristics</ref><sp/>{</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16" refid="class_smol_dock_1_1_heuristics_1_1_iterated_local_search" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_smol_dock_1_1_heuristics_1_1_iterated_local_search" kindref="compound">IteratedLocalSearch</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_heuristics_1_1_global_heuristic" kindref="compound">GlobalHeuristic</ref><sp/>{</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_smol_dock_1_1_heuristics_1_1_iterated_local_search_1_1_parameters" kindref="compound">Parameters</ref>;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_heuristics_1_1_iterated_local_search_1acf91e92645798204d8d149084ce88c78" kindref="member">IteratedLocalSearch</ref>(<ref refid="class_smol_dock_1_1_score_1_1_scoring_function" kindref="compound">Score::ScoringFunction</ref>*<sp/>scorFunc_,<sp/><ref refid="class_smol_dock_1_1_optimizer_1_1_optimizer" kindref="compound">Optimizer::Optimizer</ref>*<sp/>optimizer_,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>seed_,</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_smol_dock_1_1_heuristics_1_1_iterated_local_search_1_1_parameters" kindref="compound">IteratedLocalSearch::Parameters</ref><sp/>params_);</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_heuristics_1_1_iterated_local_search_1ad7c6bf8bf2c8d3cde6cb6b1184ca5c4e" kindref="member">search</ref>()<sp/></highlight><highlight class="keyword">final</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>arma::mat<sp/><ref refid="class_smol_dock_1_1_heuristics_1_1_iterated_local_search_1accf03ea78392f1ee429a3de0703f6957" kindref="member">getResultMatrix</ref>()<sp/></highlight><highlight class="keyword">final</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_heuristics_1_1_iterated_local_search_1adfa54a2e899e5f668afdda53182dc4c2" kindref="member">~IteratedLocalSearch</ref>()<sp/></highlight><highlight class="keyword">final</highlight><highlight class="normal"><sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29" refid="struct_smol_dock_1_1_heuristics_1_1_iterated_local_search_1_1_parameters" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_smol_dock_1_1_heuristics_1_1_iterated_local_search_1_1_parameters" kindref="compound">Parameters</ref><sp/>{</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31" refid="struct_smol_dock_1_1_heuristics_1_1_iterated_local_search_1_1_parameters_1afabde5a3f6980b204febf77a3841ac50" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="struct_smol_dock_1_1_heuristics_1_1_iterated_local_search_1_1_parameters_1afabde5a3f6980b204febf77a3841ac50" kindref="member">proteinMaxRadius</ref><sp/>=<sp/>100.0;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="36" refid="class_smol_dock_1_1_heuristics_1_1_iterated_local_search_1ae8f2f50ee12c9835eb8f37ae0e2629ce" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_score_1_1_scoring_function" kindref="compound">Score::ScoringFunction</ref>*<sp/><ref refid="class_smol_dock_1_1_heuristics_1_1_iterated_local_search_1ae8f2f50ee12c9835eb8f37ae0e2629ce" kindref="member">scorFunc</ref>;</highlight></codeline>
+<codeline lineno="37" refid="class_smol_dock_1_1_heuristics_1_1_iterated_local_search_1a84b407d019fecd61b163d2cf341438f1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_optimizer_1_1_optimizer" kindref="compound">Optimizer::Optimizer</ref>*<sp/><ref refid="class_smol_dock_1_1_heuristics_1_1_iterated_local_search_1a84b407d019fecd61b163d2cf341438f1" kindref="member">optimizer</ref>;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39" refid="class_smol_dock_1_1_heuristics_1_1_iterated_local_search_1af9e5f24199fc9f66c32d3907079e1e2f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::mt19937<sp/><ref refid="class_smol_dock_1_1_heuristics_1_1_iterated_local_search_1af9e5f24199fc9f66c32d3907079e1e2f" kindref="member">rndGenerator</ref>;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41" refid="class_smol_dock_1_1_heuristics_1_1_iterated_local_search_1a787c250be5cd5f817552e6fbc219c2ec" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>arma::mat<sp/><ref refid="class_smol_dock_1_1_heuristics_1_1_iterated_local_search_1a787c250be5cd5f817552e6fbc219c2ec" kindref="member">result</ref>;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43" refid="class_smol_dock_1_1_heuristics_1_1_iterated_local_search_1abe6936830c78c71c40e50e6d19d9691a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_smol_dock_1_1_heuristics_1_1_iterated_local_search_1_1_parameters" kindref="compound">Parameters</ref><sp/><ref refid="class_smol_dock_1_1_heuristics_1_1_iterated_local_search_1abe6936830c78c71c40e50e6d19d9691a" kindref="member">params</ref>;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//SMOLDOCK_ITERATEDLOCALSEARCH_H</highlight></codeline>
+    </programlisting>
+    <location file="Engines/GlobalHeuristics/IteratedLocalSearch.h"/>
+  </compounddef>
+</doxygen>

@@ -10,220 +10,230 @@
     <includes local="no">ESBTL/weighted_atom_iterator.h</includes>
     <includes local="no">ESBTL/compressed_ifstream.h</includes>
     <incdepgraph>
-      <node id="1267">
+      <node id="1606">
         <label>ESBTL/default.h</label>
       </node>
-      <node id="1265">
+      <node id="1604">
         <label>iomanip</label>
       </node>
-      <node id="1242">
+      <node id="1579">
         <label>GraphMol/RWMol.h</label>
       </node>
-      <node id="1243">
+      <node id="1580">
         <label>GraphMol/MolOps.h</label>
       </node>
-      <node id="1246">
+      <node id="1583">
         <label>GraphMol/Substruct/SubstructMatch.h</label>
       </node>
-      <node id="1236">
+      <node id="1573">
         <label>PDBWriter.cpp</label>
         <link refid="_p_d_b_writer_8cpp"/>
-        <childnode refid="1237" relation="include">
+        <childnode refid="1574" relation="include">
         </childnode>
-        <childnode refid="1265" relation="include">
+        <childnode refid="1604" relation="include">
         </childnode>
-        <childnode refid="1266" relation="include">
+        <childnode refid="1605" relation="include">
         </childnode>
-        <childnode refid="1267" relation="include">
+        <childnode refid="1606" relation="include">
         </childnode>
-        <childnode refid="1268" relation="include">
+        <childnode refid="1607" relation="include">
         </childnode>
-        <childnode refid="1269" relation="include">
+        <childnode refid="1608" relation="include">
         </childnode>
-        <childnode refid="1270" relation="include">
+        <childnode refid="1609" relation="include">
         </childnode>
       </node>
-      <node id="1263">
+      <node id="1600">
         <label>cmath</label>
       </node>
-      <node id="1264">
+      <node id="1601">
         <label>cassert</label>
       </node>
-      <node id="1247">
+      <node id="1602">
+        <label>Eigen/Core</label>
+      </node>
+      <node id="1584">
         <label>GraphMol/DistGeomHelpers/Embedder.h</label>
       </node>
-      <node id="1248">
+      <node id="1585">
         <label>Structures/InputPostProcessors/InputPostProcessorInterface.h</label>
         <link refid="_input_post_processor_interface_8h"/>
-        <childnode refid="1249" relation="include">
+        <childnode refid="1586" relation="include">
         </childnode>
       </node>
-      <node id="1238">
+      <node id="1575">
         <label>string</label>
       </node>
-      <node id="1270">
+      <node id="1609">
         <label>ESBTL/compressed_ifstream.h</label>
       </node>
-      <node id="1249">
+      <node id="1586">
         <label>Structures/Atom.h</label>
         <link refid="_atom_8h"/>
-        <childnode refid="1239" relation="include">
+        <childnode refid="1576" relation="include">
         </childnode>
-        <childnode refid="1250" relation="include">
+        <childnode refid="1587" relation="include">
         </childnode>
-        <childnode refid="1251" relation="include">
+        <childnode refid="1588" relation="include">
         </childnode>
-        <childnode refid="1252" relation="include">
+        <childnode refid="1589" relation="include">
         </childnode>
-        <childnode refid="1253" relation="include">
+        <childnode refid="1590" relation="include">
         </childnode>
-        <childnode refid="1254" relation="include">
+        <childnode refid="1591" relation="include">
         </childnode>
       </node>
-      <node id="1257">
+      <node id="1594">
         <label>map</label>
       </node>
-      <node id="1260">
+      <node id="1597">
         <label>../Engines/Internals/iConformer.h</label>
         <link refid="i_conformer_8h"/>
-        <childnode refid="1239" relation="include">
+        <childnode refid="1576" relation="include">
         </childnode>
-        <childnode refid="1250" relation="include">
+        <childnode refid="1587" relation="include">
         </childnode>
-        <childnode refid="1261" relation="include">
+        <childnode refid="1598" relation="include">
         </childnode>
       </node>
-      <node id="1266">
+      <node id="1605">
         <label>boost/log/trivial.hpp</label>
       </node>
-      <node id="1259">
+      <node id="1596">
         <label>Bond.h</label>
         <link refid="_bond_8h"/>
-        <childnode refid="1250" relation="include">
+        <childnode refid="1587" relation="include">
         </childnode>
-        <childnode refid="1249" relation="include">
+        <childnode refid="1586" relation="include">
         </childnode>
       </node>
-      <node id="1268">
+      <node id="1607">
         <label>ESBTL/atom_classifier.h</label>
       </node>
-      <node id="1254">
+      <node id="1603">
+        <label>Eigen/Dense</label>
+      </node>
+      <node id="1591">
         <label>AminoAcid.h</label>
         <link refid="_amino_acid_8h"/>
-        <childnode refid="1238" relation="include">
+        <childnode refid="1575" relation="include">
         </childnode>
-        <childnode refid="1239" relation="include">
+        <childnode refid="1576" relation="include">
         </childnode>
-        <childnode refid="1251" relation="include">
+        <childnode refid="1588" relation="include">
         </childnode>
-        <childnode refid="1252" relation="include">
+        <childnode refid="1589" relation="include">
         </childnode>
-        <childnode refid="1255" relation="include">
+        <childnode refid="1592" relation="include">
         </childnode>
-        <childnode refid="1250" relation="include">
+        <childnode refid="1587" relation="include">
         </childnode>
-        <childnode refid="1256" relation="include">
+        <childnode refid="1593" relation="include">
         </childnode>
       </node>
-      <node id="1255">
+      <node id="1592">
         <label>tuple</label>
       </node>
-      <node id="1256">
+      <node id="1593">
         <label>Engines/Internals/iProtein.h</label>
         <link refid="i_protein_8h"/>
-        <childnode refid="1239" relation="include">
+        <childnode refid="1576" relation="include">
         </childnode>
-        <childnode refid="1250" relation="include">
+        <childnode refid="1587" relation="include">
         </childnode>
-        <childnode refid="1257" relation="include">
+        <childnode refid="1594" relation="include">
         </childnode>
       </node>
-      <node id="1261">
+      <node id="1598">
         <label>iTransform.h</label>
         <link refid="i_transform_8h"/>
-        <childnode refid="1239" relation="include">
+        <childnode refid="1576" relation="include">
         </childnode>
-        <childnode refid="1250" relation="include">
+        <childnode refid="1587" relation="include">
         </childnode>
-        <childnode refid="1262" relation="include">
+        <childnode refid="1599" relation="include">
         </childnode>
-        <childnode refid="1263" relation="include">
+        <childnode refid="1600" relation="include">
         </childnode>
-        <childnode refid="1264" relation="include">
+        <childnode refid="1601" relation="include">
+        </childnode>
+        <childnode refid="1602" relation="include">
+        </childnode>
+        <childnode refid="1603" relation="include">
         </childnode>
       </node>
-      <node id="1239">
+      <node id="1576">
         <label>vector</label>
       </node>
-      <node id="1262">
+      <node id="1599">
         <label>array</label>
       </node>
-      <node id="1245">
+      <node id="1582">
         <label>GraphMol/SmilesParse/SmilesParse.h</label>
       </node>
-      <node id="1258">
+      <node id="1595">
         <label>Structure.h</label>
         <link refid="_structure_8h"/>
       </node>
-      <node id="1240">
+      <node id="1577">
         <label>Structures/Molecule.h</label>
         <link refid="_molecule_8h"/>
-        <childnode refid="1239" relation="include">
+        <childnode refid="1576" relation="include">
         </childnode>
-        <childnode refid="1241" relation="include">
+        <childnode refid="1578" relation="include">
         </childnode>
-        <childnode refid="1242" relation="include">
+        <childnode refid="1579" relation="include">
         </childnode>
-        <childnode refid="1243" relation="include">
+        <childnode refid="1580" relation="include">
         </childnode>
-        <childnode refid="1244" relation="include">
+        <childnode refid="1581" relation="include">
         </childnode>
-        <childnode refid="1245" relation="include">
+        <childnode refid="1582" relation="include">
         </childnode>
-        <childnode refid="1246" relation="include">
+        <childnode refid="1583" relation="include">
         </childnode>
-        <childnode refid="1247" relation="include">
+        <childnode refid="1584" relation="include">
         </childnode>
-        <childnode refid="1248" relation="include">
+        <childnode refid="1585" relation="include">
         </childnode>
-        <childnode refid="1258" relation="include">
+        <childnode refid="1595" relation="include">
         </childnode>
-        <childnode refid="1249" relation="include">
+        <childnode refid="1586" relation="include">
         </childnode>
-        <childnode refid="1259" relation="include">
+        <childnode refid="1596" relation="include">
         </childnode>
-        <childnode refid="1260" relation="include">
+        <childnode refid="1597" relation="include">
         </childnode>
       </node>
-      <node id="1241">
+      <node id="1578">
         <label>GraphMol/RDKitBase.h</label>
       </node>
-      <node id="1253">
+      <node id="1590">
         <label>iostream</label>
       </node>
-      <node id="1237">
+      <node id="1574">
         <label>PDBWriter.h</label>
         <link refid="_p_d_b_writer_8h"/>
-        <childnode refid="1238" relation="include">
+        <childnode refid="1575" relation="include">
         </childnode>
-        <childnode refid="1239" relation="include">
+        <childnode refid="1576" relation="include">
         </childnode>
-        <childnode refid="1240" relation="include">
+        <childnode refid="1577" relation="include">
         </childnode>
       </node>
-      <node id="1251">
+      <node id="1588">
         <label>set</label>
       </node>
-      <node id="1252">
+      <node id="1589">
         <label>algorithm</label>
       </node>
-      <node id="1269">
+      <node id="1608">
         <label>ESBTL/weighted_atom_iterator.h</label>
       </node>
-      <node id="1250">
+      <node id="1587">
         <label>memory</label>
       </node>
-      <node id="1244">
+      <node id="1581">
         <label>GraphMol/FileParsers/FileParsers.h</label>
       </node>
     </incdepgraph>
@@ -255,72 +265,70 @@
 <codeline lineno="20"><highlight class="normal"></highlight></codeline>
 <codeline lineno="21" refid="class_smol_dock_1_1_p_d_b_writer_1aaad8350fc387575ed549a1fd8569aad2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_p_d_b_writer_1aaad8350fc387575ed549a1fd8569aad2" kindref="member">PDBWriter::writePDB</ref>(std::string<sp/>filename)<sp/>{</highlight></codeline>
 <codeline lineno="22"><highlight class="normal"></highlight></codeline>
-<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(this-&gt;<ref refid="class_smol_dock_1_1_p_d_b_writer_1a6b87555fa4218995d083a9b3181494dc" kindref="member">ligand_to_export</ref>.size()<sp/>==<sp/>0)</highlight></codeline>
-<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_LOG_TRIVIAL(error)</highlight></codeline>
-<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;PDBWriter::writePDB<sp/>called,<sp/>yet<sp/>0<sp/>ligand<sp/>were<sp/>added<sp/>to<sp/>the<sp/>PDBWriter.<sp/>File<sp/>not<sp/>emitted.&quot;</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="29"><highlight class="normal"></highlight></codeline>
-<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ESBTL::Default_system<sp/>system(0,<sp/></highlight><highlight class="stringliteral">&quot;defsyst&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::ostringstream<sp/>filecontent;</highlight></codeline>
-<codeline lineno="32"><highlight class="normal"></highlight></codeline>
-<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>filecontent<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;AUTHOR<sp/><sp/><sp/><sp/>SmolDock&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
-<codeline lineno="34"><highlight class="normal"></highlight></codeline>
-<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>current_model<sp/>=<sp/>1;</highlight></codeline>
-<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>ligand<sp/>:<sp/>this-&gt;<ref refid="class_smol_dock_1_1_p_d_b_writer_1a6b87555fa4218995d083a9b3181494dc" kindref="member">ligand_to_export</ref>)</highlight></codeline>
-<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ESBTL::Molecular_model&lt;ESBTL::Default_system&gt;<sp/>model(0,<sp/>system);</highlight></codeline>
-<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ESBTL::Molecular_chain&lt;ESBTL::Default_system&gt;<sp/>chain(</highlight><highlight class="charliteral">&apos;A&apos;</highlight><highlight class="normal">,<sp/>model);</highlight></codeline>
-<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ESBTL::Molecular_residue&lt;ESBTL::Default_system&gt;<sp/>residue(ligand.getResidueName(),<sp/>0,<sp/></highlight><highlight class="charliteral">&apos;A&apos;</highlight><highlight class="normal">,<sp/>chain);</highlight></codeline>
-<codeline lineno="41"><highlight class="normal"></highlight></codeline>
-<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>filecontent<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;MODEL<sp/><sp/><sp/><sp/><sp/><sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::setw(3)<sp/>&lt;&lt;<sp/>current_model<sp/>&lt;&lt;std::endl;</highlight></codeline>
-<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>current_model++;</highlight></codeline>
-<codeline lineno="44"><highlight class="normal"></highlight></codeline>
-<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>current_atom_serial<sp/>=<sp/>0;</highlight></codeline>
-<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>atom_shptr:<sp/>ligand.atoms)</highlight></codeline>
-<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>pos<sp/>=<sp/>atom_shptr-&gt;getAtomPosition();</highlight></codeline>
-<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ESBTL::Molecular_atom&lt;ESBTL::Default_system,<sp/>ESBTL::Point_3&gt;<sp/>atom1(std::get&lt;0&gt;(pos),std::get&lt;1&gt;(pos),<sp/>std::get&lt;2&gt;(pos));</highlight></codeline>
-<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>atom1.is_hetatm()<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>atom1.atom_serial_number()<sp/>=<sp/>current_atom_serial;</highlight></codeline>
-<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>current_atom_serial++;</highlight></codeline>
-<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>atom1.atom_name()<sp/>=<sp/><ref refid="namespace_smol_dock_1abf06ab90cb8bd0858a883be16bb9f563" kindref="member">atomTypeToSymbolString</ref>(atom_shptr-&gt;getAtomType());</highlight></codeline>
-<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>atom1.alternate_location()<sp/>=<sp/></highlight><highlight class="charliteral">&apos;<sp/>&apos;</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>atom1.occupancy()<sp/>=<sp/>1.0;</highlight></codeline>
-<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>atom1.temperature_factor()<sp/>=<sp/>0.0;</highlight></codeline>
-<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>atom1.element()<sp/>=<sp/><sp/><ref refid="namespace_smol_dock_1abf06ab90cb8bd0858a883be16bb9f563" kindref="member">atomTypeToSymbolString</ref>(atom_shptr-&gt;getAtomType());</highlight></codeline>
-<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>atom1.charge()<sp/>=<sp/>atom_shptr-&gt;getCharge();</highlight></codeline>
-<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>atom1.residue_<sp/>=<sp/>&amp;residue;</highlight></codeline>
-<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>filecontent<sp/>&lt;&lt;<sp/>ESBTL::PDB::get_atom_pdb_format(atom1)<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
-<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>filecontent<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;TER<sp/><sp/><sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::setw(5)<sp/>&lt;&lt;<sp/>current_atom_serial<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/><sp/><sp/><sp/><sp/>LIG<sp/>A<sp/><sp/><sp/>0A&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(this-&gt;<ref refid="class_smol_dock_1_1_p_d_b_writer_1a6b87555fa4218995d083a9b3181494dc" kindref="member">ligand_to_export</ref>.empty())<sp/>{</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_LOG_TRIVIAL(error)</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;PDBWriter::writePDB<sp/>called,<sp/>yet<sp/>0<sp/>ligand<sp/>were<sp/>added<sp/>to<sp/>the<sp/>PDBWriter.<sp/>File<sp/>not<sp/>emitted.&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ESBTL::Default_system<sp/>system(0,<sp/></highlight><highlight class="stringliteral">&quot;defsyst&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::ostringstream<sp/>filecontent;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>filecontent<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;AUTHOR<sp/><sp/><sp/><sp/>SmolDock&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>current_model<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>&amp;ligand<sp/>:<sp/>this-&gt;<ref refid="class_smol_dock_1_1_p_d_b_writer_1a6b87555fa4218995d083a9b3181494dc" kindref="member">ligand_to_export</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ESBTL::Molecular_model&lt;ESBTL::Default_system&gt;<sp/>model(0,<sp/>system);</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ESBTL::Molecular_chain&lt;ESBTL::Default_system&gt;<sp/>chain(</highlight><highlight class="charliteral">&apos;A&apos;</highlight><highlight class="normal">,<sp/>model);</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ESBTL::Molecular_residue&lt;ESBTL::Default_system&gt;<sp/>residue(ligand.getResidueName(),<sp/>0,<sp/></highlight><highlight class="charliteral">&apos;A&apos;</highlight><highlight class="normal">,<sp/>chain);</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>filecontent<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;MODEL<sp/><sp/><sp/><sp/><sp/><sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::setw(3)<sp/>&lt;&lt;<sp/>current_model<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>current_model++;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>current_atom_serial<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>&amp;atom_shptr:<sp/>ligand.atoms)<sp/>{</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>pos<sp/>=<sp/>atom_shptr-&gt;getAtomPosition();</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ESBTL::Molecular_atom&lt;ESBTL::Default_system,<sp/>ESBTL::Point_3&gt;<sp/>atom1(std::get&lt;0&gt;(pos),<sp/>std::get&lt;1&gt;(pos),</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::get&lt;2&gt;(pos));</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>atom1.is_hetatm()<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>atom1.atom_serial_number()<sp/>=<sp/>current_atom_serial;</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>current_atom_serial++;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>atom1.atom_name()<sp/>=<sp/><ref refid="namespace_smol_dock_1abf06ab90cb8bd0858a883be16bb9f563" kindref="member">atomTypeToSymbolString</ref>(atom_shptr-&gt;getAtomType());</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>atom1.alternate_location()<sp/>=<sp/></highlight><highlight class="charliteral">&apos;<sp/>&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>atom1.occupancy()<sp/>=<sp/>1.0;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>atom1.temperature_factor()<sp/>=<sp/>0.0;</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>atom1.element()<sp/>=<sp/><ref refid="namespace_smol_dock_1abf06ab90cb8bd0858a883be16bb9f563" kindref="member">atomTypeToSymbolString</ref>(atom_shptr-&gt;getAtomType());</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>atom1.charge()<sp/>=<sp/>atom_shptr-&gt;getCharge();</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>atom1.residue_<sp/>=<sp/>&amp;residue;</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>filecontent<sp/>&lt;&lt;<sp/>ESBTL::PDB::get_atom_pdb_format(atom1)<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>filecontent<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;TER<sp/><sp/><sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::setw(5)<sp/>&lt;&lt;<sp/>current_atom_serial<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/><sp/><sp/><sp/><sp/>LIG<sp/>A<sp/><sp/><sp/>0A&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>filecontent<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;ENDMDL&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
 <codeline lineno="63"><highlight class="normal"></highlight></codeline>
-<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>filecontent<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;ENDMDL&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="65"><highlight class="normal"></highlight></codeline>
-<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="67"><highlight class="normal"></highlight></codeline>
-<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="67"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/>&quot;#####<sp/>PDB<sp/>#####&quot;<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="68"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/>filecontent.str()<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
 <codeline lineno="69"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/>&quot;#####<sp/>PDB<sp/>#####&quot;<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
-<codeline lineno="70"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/>filecontent.str()<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
-<codeline lineno="71"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/>&quot;#####<sp/>PDB<sp/>#####&quot;<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
-<codeline lineno="72"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="73"><highlight class="normal"></highlight></codeline>
-<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::ofstream<sp/>pdbfile;</highlight></codeline>
-<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pdbfile.open(filename);</highlight></codeline>
-<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pdbfile<sp/>&lt;&lt;<sp/>filecontent.str()<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
-<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pdbfile.close();</highlight></codeline>
+<codeline lineno="70"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::ofstream<sp/>pdbfile;</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pdbfile.open(filename);</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pdbfile<sp/>&lt;&lt;<sp/>filecontent.str()<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pdbfile.close();</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_LOG_TRIVIAL(info)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Wrote<sp/>PDB<sp/>file<sp/>:<sp/><sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>filename;</highlight></codeline>
 <codeline lineno="78"><highlight class="normal"></highlight></codeline>
-<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_LOG_TRIVIAL(info)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Wrote<sp/>PDB<sp/>file<sp/>:<sp/><sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>filename;</highlight></codeline>
-<codeline lineno="80"><highlight class="normal"></highlight></codeline>
-<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="83"><highlight class="normal"></highlight></codeline>
-<codeline lineno="84" refid="class_smol_dock_1_1_p_d_b_writer_1a74fc5d4cb9bbe5c8f0362366178dbff0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_p_d_b_writer_1a74fc5d4cb9bbe5c8f0362366178dbff0" kindref="member">PDBWriter::addLigand</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_molecule" kindref="compound">Molecule</ref>&amp;<sp/>ligand)<sp/>{</highlight></codeline>
-<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="class_smol_dock_1_1_p_d_b_writer_1a6b87555fa4218995d083a9b3181494dc" kindref="member">ligand_to_export</ref>.push_back(ligand);</highlight></codeline>
-<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="87"><highlight class="normal"></highlight></codeline>
-<codeline lineno="88"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82" refid="class_smol_dock_1_1_p_d_b_writer_1a74fc5d4cb9bbe5c8f0362366178dbff0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_p_d_b_writer_1a74fc5d4cb9bbe5c8f0362366178dbff0" kindref="member">PDBWriter::addLigand</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_smol_dock_1_1_molecule" kindref="compound">Molecule</ref><sp/>&amp;ligand)<sp/>{</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="class_smol_dock_1_1_p_d_b_writer_1a6b87555fa4218995d083a9b3181494dc" kindref="member">ligand_to_export</ref>.push_back(ligand);</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal">}</highlight></codeline>
     </programlisting>
     <location file="Utilities/PDBWriter.cpp"/>
   </compounddef>

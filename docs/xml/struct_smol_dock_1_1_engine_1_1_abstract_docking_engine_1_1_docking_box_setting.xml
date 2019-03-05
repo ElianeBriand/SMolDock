@@ -1,0 +1,153 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="struct_smol_dock_1_1_engine_1_1_abstract_docking_engine_1_1_docking_box_setting" kind="struct" language="C++" prot="public">
+    <compoundname>SmolDock::Engine::AbstractDockingEngine::DockingBoxSetting</compoundname>
+    <includes refid="_abstract_docking_engine_8h" local="no">AbstractDockingEngine.h</includes>
+      <sectiondef kind="public-type">
+      <memberdef kind="enum" id="struct_smol_dock_1_1_engine_1_1_abstract_docking_engine_1_1_docking_box_setting_1a47b735f56917ea0ad447cb93ad936296" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>Type</name>
+        <enumvalue id="struct_smol_dock_1_1_engine_1_1_abstract_docking_engine_1_1_docking_box_setting_1a47b735f56917ea0ad447cb93ad936296a312db69f5bf4447dfe3c58983083b54f" prot="public">
+          <name>everything</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="struct_smol_dock_1_1_engine_1_1_abstract_docking_engine_1_1_docking_box_setting_1a47b735f56917ea0ad447cb93ad936296a546fe0111d10555811e641851eaf2dea" prot="public">
+          <name>solventExposed</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="struct_smol_dock_1_1_engine_1_1_abstract_docking_engine_1_1_docking_box_setting_1a47b735f56917ea0ad447cb93ad936296a2f22af249c004da8890325a974b68020" prot="public">
+          <name>centeredAround</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Engines/AbstractDockingEngine.h" line="44" column="1" bodyfile="Engines/AbstractDockingEngine.h" bodystart="44" bodyend="48"/>
+      </memberdef>
+      <memberdef kind="enum" id="struct_smol_dock_1_1_engine_1_1_abstract_docking_engine_1_1_docking_box_setting_1ada8346193e53256c29091daa7e9ced9e" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>Shape</name>
+        <enumvalue id="struct_smol_dock_1_1_engine_1_1_abstract_docking_engine_1_1_docking_box_setting_1ada8346193e53256c29091daa7e9ced9ea34248a9bfcbd589d9b5fccb6a0ac6963" prot="public">
+          <name>sphere</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="struct_smol_dock_1_1_engine_1_1_abstract_docking_engine_1_1_docking_box_setting_1ada8346193e53256c29091daa7e9ced9ea18a64f7251cfb123aa7c358135d00d10" prot="public">
+          <name>cube</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Engines/AbstractDockingEngine.h" line="50" column="1" bodyfile="Engines/AbstractDockingEngine.h" bodystart="50" bodyend="53"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_smol_dock_1_1_engine_1_1_abstract_docking_engine_1_1_docking_box_setting_1a6e49255548fddaa601b5f3ed816d7618" prot="public" static="no" mutable="no">
+        <type><ref refid="struct_smol_dock_1_1_engine_1_1_abstract_docking_engine_1_1_docking_box_setting_1a47b735f56917ea0ad447cb93ad936296" kindref="member">Type</ref></type>
+        <definition>Type SmolDock::Engine::AbstractDockingEngine::DockingBoxSetting::type</definition>
+        <argsstring></argsstring>
+        <name>type</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Engines/AbstractDockingEngine.h" line="55" column="1" bodyfile="Engines/AbstractDockingEngine.h" bodystart="55" bodyend="-1"/>
+        <referencedby refid="cli__interface_8cpp_1a0ddf1224851353fc92bfbff6f499fa97" compoundref="cli__interface_8cpp" startline="47" endline="265">main</referencedby>
+        <referencedby refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a3abc1a2cdbb3f1b9f545f863f9ec5e43" compoundref="_conformer_rigid_docking_engine_8cpp" startline="84" endline="132">SmolDock::Engine::ConformerRigidDockingEngine::setupDockingEngine</referencedby>
+        <referencedby refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a7bee39278168cb4d7ee6558b3a3d3bb4" compoundref="_conformer_rigid_docking_engine_8cpp" startline="134" endline="294">SmolDock::Engine::ConformerRigidDockingEngine::runDockingEngine</referencedby>
+        <referencedby refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1acd3b7345ecae8f0c92ca0168b794eac3" compoundref="_conformer_rigid_docking_engine_8cpp" startline="307" endline="318">SmolDock::Engine::ConformerRigidDockingEngine::setDockingBox</referencedby>
+        <referencedby refid="class_smol_dock_1_1_engine_1_1_m_d_style_docking_engine_1a6de740c49189cf41d2c48f2e8e98e391" compoundref="_m_d_style_docking_engine_8cpp" startline="40" endline="48">SmolDock::Engine::MDStyleDockingEngine::setDockingBox</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="struct_smol_dock_1_1_engine_1_1_abstract_docking_engine_1_1_docking_box_setting_1a4a537e0468058541b8927cd0de59a374" prot="public" static="no" mutable="no">
+        <type>std::array&lt; double, 3 &gt;</type>
+        <definition>std::array&lt;double, 3&gt; SmolDock::Engine::AbstractDockingEngine::DockingBoxSetting::center</definition>
+        <argsstring></argsstring>
+        <name>center</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Engines/AbstractDockingEngine.h" line="57" column="1" bodyfile="Engines/AbstractDockingEngine.h" bodystart="57" bodyend="-1"/>
+        <referencedby refid="cli__interface_8cpp_1a0ddf1224851353fc92bfbff6f499fa97" compoundref="cli__interface_8cpp" startline="47" endline="265">main</referencedby>
+        <referencedby refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a3abc1a2cdbb3f1b9f545f863f9ec5e43" compoundref="_conformer_rigid_docking_engine_8cpp" startline="84" endline="132">SmolDock::Engine::ConformerRigidDockingEngine::setupDockingEngine</referencedby>
+        <referencedby refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a7bee39278168cb4d7ee6558b3a3d3bb4" compoundref="_conformer_rigid_docking_engine_8cpp" startline="134" endline="294">SmolDock::Engine::ConformerRigidDockingEngine::runDockingEngine</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="struct_smol_dock_1_1_engine_1_1_abstract_docking_engine_1_1_docking_box_setting_1adf683589681815227ac801b4ea1c454d" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double SmolDock::Engine::AbstractDockingEngine::DockingBoxSetting::radius</definition>
+        <argsstring></argsstring>
+        <name>radius</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Engines/AbstractDockingEngine.h" line="59" column="1" bodyfile="Engines/AbstractDockingEngine.h" bodystart="59" bodyend="-1"/>
+        <referencedby refid="cli__interface_8cpp_1a0ddf1224851353fc92bfbff6f499fa97" compoundref="cli__interface_8cpp" startline="47" endline="265">main</referencedby>
+        <referencedby refid="class_smol_dock_1_1_engine_1_1_conformer_rigid_docking_engine_1a7bee39278168cb4d7ee6558b3a3d3bb4" compoundref="_conformer_rigid_docking_engine_8cpp" startline="134" endline="294">SmolDock::Engine::ConformerRigidDockingEngine::runDockingEngine</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="71">
+        <label>T</label>
+      </node>
+      <node id="70">
+        <label>std::array&lt; T &gt;</label>
+        <childnode refid="71" relation="usage">
+          <edgelabel>+elements</edgelabel>
+        </childnode>
+      </node>
+      <node id="69">
+        <label>std::array&lt; double, 3 &gt;</label>
+        <childnode refid="70" relation="template-instance">
+          <edgelabel>&lt; double, 3 &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="68">
+        <label>SmolDock::Engine::AbstractDockingEngine::DockingBoxSetting</label>
+        <link refid="struct_smol_dock_1_1_engine_1_1_abstract_docking_engine_1_1_docking_box_setting"/>
+        <childnode refid="69" relation="usage">
+          <edgelabel>+center</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Engines/AbstractDockingEngine.h" line="42" column="1" bodyfile="Engines/AbstractDockingEngine.h" bodystart="42" bodyend="62"/>
+    <listofallmembers>
+      <member refid="struct_smol_dock_1_1_engine_1_1_abstract_docking_engine_1_1_docking_box_setting_1a4a537e0468058541b8927cd0de59a374" prot="public" virt="non-virtual"><scope>SmolDock::Engine::AbstractDockingEngine::DockingBoxSetting</scope><name>center</name></member>
+      <member refid="struct_smol_dock_1_1_engine_1_1_abstract_docking_engine_1_1_docking_box_setting_1adf683589681815227ac801b4ea1c454d" prot="public" virt="non-virtual"><scope>SmolDock::Engine::AbstractDockingEngine::DockingBoxSetting</scope><name>radius</name></member>
+      <member refid="struct_smol_dock_1_1_engine_1_1_abstract_docking_engine_1_1_docking_box_setting_1ada8346193e53256c29091daa7e9ced9e" prot="public" virt="non-virtual"><scope>SmolDock::Engine::AbstractDockingEngine::DockingBoxSetting</scope><name>Shape</name></member>
+      <member refid="struct_smol_dock_1_1_engine_1_1_abstract_docking_engine_1_1_docking_box_setting_1a6e49255548fddaa601b5f3ed816d7618" prot="public" virt="non-virtual"><scope>SmolDock::Engine::AbstractDockingEngine::DockingBoxSetting</scope><name>type</name></member>
+      <member refid="struct_smol_dock_1_1_engine_1_1_abstract_docking_engine_1_1_docking_box_setting_1a47b735f56917ea0ad447cb93ad936296" prot="public" virt="non-virtual"><scope>SmolDock::Engine::AbstractDockingEngine::DockingBoxSetting</scope><name>Type</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

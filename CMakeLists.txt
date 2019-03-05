@@ -73,8 +73,8 @@ set(SOURCE_LIST Structures/Structure.cpp
         Engines/ConformerRigidDockingEngine.h
         Engines/Internals/iConformer.h
         Utilities/TimingsLog.h
-        Engines/ScoringFunctions/VinaLikeScoringFunction.cpp
-        Engines/ScoringFunctions/VinaLikeScoringFunction.h
+        Engines/ScoringFunctions/VinaLikeRigidScoringFunction.cpp
+        Engines/ScoringFunctions/VinaLikeRigidScoringFunction.h
         Engines/Internals/iProtein.h
         Engines/Internals/iTransform.h
         Utilities/PDBWriter.cpp
@@ -118,7 +118,7 @@ set(SOURCE_LIST Structures/Structure.cpp
         Engines/GlobalHeuristics/SimulatedAnnealing.h
         Engines/GlobalHeuristics/Utilities/MetropolisHastings.cpp
         Engines/GlobalHeuristics/Utilities/MetropolisHastings.h
-        Utilities/Version.cpp Utilities/Version.h)
+        Utilities/Version.cpp Utilities/Version.h Engines/ScoringFunctions/VinaLikeScoringFunction.cpp Engines/ScoringFunctions/VinaLikeScoringFunction.h Engines/ScoringFunctions/VinaLikeCommon.h)
 
 set(PY_EXPORT_SOURCE_LIST Frontends/Python/PyStructures.cpp
         Frontends/Python/PyStructures.h
@@ -128,6 +128,13 @@ set(PY_EXPORT_SOURCE_LIST Frontends/Python/PyStructures.cpp
         Frontends/Python/PyUtilities.h
         Frontends/Python/PyEngine.cpp
         Frontends/Python/PyEngine.h)
+
+
+##################" REMOVE THIS FOR PROD ##########################""
+add_compile_definitions(SMOLDOCK_VERBOSE_DEBUG)
+
+
+
 
 ADD_LIBRARY(smoldock_object OBJECT ${SOURCE_LIST})
 set_target_properties(smoldock_object PROPERTIES LINK_FLAGS " -static  ")
@@ -177,6 +184,7 @@ target_link_libraries(libsmoldockPIC -Wl,-Bdynamic -Wl,-lpthread -Wl,-ldl)
 #add_compile_definitions(BOOST_LOG_DYN_LINK BOOST_TEST_DYN_LINK)
 
 
+#target_compile_definitions(smoldock PUBLIC BOOST_LOG_DYN_LINK)
 
 
 add_executable(smoldock Frontends/main.cpp)

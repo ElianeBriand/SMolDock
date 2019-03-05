@@ -7,109 +7,146 @@
     <includes refid="_optimizer_interface_8h" local="yes">OptimizerInterface.h</includes>
     <includedby refid="_conformer_rigid_docking_engine_8h" local="no">ConformerRigidDockingEngine.h</includedby>
     <includedby refid="_optimizer_factory_8cpp" local="yes">OptimizerFactory.cpp</includedby>
+    <includedby refid="_pose_refiner_8h" local="no">PoseRefiner.h</includedby>
     <includedby refid="_py_engine_8cpp" local="no">PyEngine.cpp</includedby>
     <incdepgraph>
-      <node id="1149">
+      <node id="1470">
         <label>OptimizerFactory.h</label>
         <link refid="_optimizer_factory_8h"/>
-        <childnode refid="1150" relation="include">
+        <childnode refid="1471" relation="include">
         </childnode>
-        <childnode refid="1151" relation="include">
+        <childnode refid="1472" relation="include">
         </childnode>
-        <childnode refid="1159" relation="include">
+        <childnode refid="1482" relation="include">
         </childnode>
       </node>
-      <node id="1159">
+      <node id="1482">
         <label>OptimizerInterface.h</label>
         <link refid="_optimizer_interface_8h"/>
-        <childnode refid="1152" relation="include">
+        <childnode refid="1473" relation="include">
         </childnode>
       </node>
-      <node id="1157">
+      <node id="1478">
         <label>cmath</label>
       </node>
-      <node id="1158">
+      <node id="1479">
         <label>cassert</label>
       </node>
-      <node id="1151">
+      <node id="1480">
+        <label>Eigen/Core</label>
+      </node>
+      <node id="1472">
         <label>Engines/ScoringFunctions/ScoringFunctionInterface.h</label>
         <link refid="_scoring_function_interface_8h"/>
-        <childnode refid="1152" relation="include">
+        <childnode refid="1473" relation="include">
         </childnode>
-        <childnode refid="1153" relation="include">
+        <childnode refid="1474" relation="include">
         </childnode>
       </node>
-      <node id="1153">
+      <node id="1474">
         <label>Engines/Internals/iConformer.h</label>
         <link refid="i_conformer_8h"/>
-        <childnode refid="1154" relation="include">
+        <childnode refid="1475" relation="include">
         </childnode>
-        <childnode refid="1150" relation="include">
+        <childnode refid="1471" relation="include">
         </childnode>
-        <childnode refid="1155" relation="include">
+        <childnode refid="1476" relation="include">
         </childnode>
       </node>
-      <node id="1152">
+      <node id="1473">
         <label>armadillo</label>
       </node>
-      <node id="1155">
+      <node id="1481">
+        <label>Eigen/Dense</label>
+      </node>
+      <node id="1476">
         <label>iTransform.h</label>
         <link refid="i_transform_8h"/>
-        <childnode refid="1154" relation="include">
+        <childnode refid="1475" relation="include">
         </childnode>
-        <childnode refid="1150" relation="include">
+        <childnode refid="1471" relation="include">
         </childnode>
-        <childnode refid="1156" relation="include">
+        <childnode refid="1477" relation="include">
         </childnode>
-        <childnode refid="1157" relation="include">
+        <childnode refid="1478" relation="include">
         </childnode>
-        <childnode refid="1158" relation="include">
+        <childnode refid="1479" relation="include">
+        </childnode>
+        <childnode refid="1480" relation="include">
+        </childnode>
+        <childnode refid="1481" relation="include">
         </childnode>
       </node>
-      <node id="1154">
+      <node id="1475">
         <label>vector</label>
       </node>
-      <node id="1156">
+      <node id="1477">
         <label>array</label>
       </node>
-      <node id="1150">
+      <node id="1471">
         <label>memory</label>
       </node>
     </incdepgraph>
     <invincdepgraph>
-      <node id="1161">
+      <node id="1484">
         <label>ConformerRigidDockingEngine.h</label>
         <link refid="_conformer_rigid_docking_engine_8h"/>
-        <childnode refid="1162" relation="include">
+        <childnode refid="1485" relation="include">
         </childnode>
-        <childnode refid="1163" relation="include">
+        <childnode refid="1486" relation="include">
         </childnode>
-        <childnode refid="1164" relation="include">
+        <childnode refid="1487" relation="include">
+        </childnode>
+        <childnode refid="1488" relation="include">
         </childnode>
       </node>
-      <node id="1160">
+      <node id="1483">
         <label>OptimizerFactory.h</label>
         <link refid="_optimizer_factory_8h"/>
-        <childnode refid="1161" relation="include">
+        <childnode refid="1484" relation="include">
         </childnode>
-        <childnode refid="1165" relation="include">
+        <childnode refid="1489" relation="include">
         </childnode>
-        <childnode refid="1164" relation="include">
+        <childnode refid="1490" relation="include">
+        </childnode>
+        <childnode refid="1488" relation="include">
         </childnode>
       </node>
-      <node id="1163">
+      <node id="1490">
+        <label>PoseRefiner.h</label>
+        <link refid="_pose_refiner_8h"/>
+        <childnode refid="1491" relation="include">
+        </childnode>
+        <childnode refid="1486" relation="include">
+        </childnode>
+        <childnode refid="1492" relation="include">
+        </childnode>
+      </node>
+      <node id="1492">
+        <label>vina_refiner.cpp</label>
+        <link refid="vina__refiner_8cpp"/>
+      </node>
+      <node id="1486">
+        <label>cli_interface.cpp</label>
+        <link refid="cli__interface_8cpp"/>
+      </node>
+      <node id="1487">
         <label>main.cpp</label>
         <link refid="main_8cpp"/>
       </node>
-      <node id="1162">
+      <node id="1491">
+        <label>PoseRefiner.cpp</label>
+        <link refid="_pose_refiner_8cpp"/>
+      </node>
+      <node id="1485">
         <label>ConformerRigidDockingEngine.cpp</label>
         <link refid="_conformer_rigid_docking_engine_8cpp"/>
       </node>
-      <node id="1165">
+      <node id="1489">
         <label>OptimizerFactory.cpp</label>
         <link refid="_optimizer_factory_8cpp"/>
       </node>
-      <node id="1164">
+      <node id="1488">
         <label>PyEngine.cpp</label>
         <link refid="_py_engine_8cpp"/>
       </node>
@@ -139,12 +176,13 @@
 <codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_smol_dock_1_1_optimizer_1_1_gradient_descent_line_search" kindref="compound">GradientDescentLineSearch</ref></highlight></codeline>
 <codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
 <codeline lineno="19"><highlight class="normal"></highlight></codeline>
-<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Optimizer&gt;<sp/><ref refid="namespace_smol_dock_1_1_optimizer_1a62f48a1e91b51c0d7c9152d1eeaba538" kindref="member">optimizerFactory</ref>(<ref refid="namespace_smol_dock_1_1_optimizer_1a7ed1dc6878a606b8dcca7558383650ce" kindref="member">LocalOptimizerType</ref><sp/>t,<sp/><ref refid="class_smol_dock_1_1_score_1_1_scoring_function" kindref="compound">Score::ScoringFunction</ref>*<sp/>scorFunc,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>differential_epsilon<sp/>);</highlight></codeline>
-<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Optimizer&gt;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespace_smol_dock_1_1_optimizer_1a62f48a1e91b51c0d7c9152d1eeaba538" kindref="member">optimizerFactory</ref>(<ref refid="namespace_smol_dock_1_1_optimizer_1a7ed1dc6878a606b8dcca7558383650ce" kindref="member">LocalOptimizerType</ref><sp/>t,<sp/><ref refid="class_smol_dock_1_1_score_1_1_scoring_function" kindref="compound">Score::ScoringFunction</ref>*<sp/>scorFunc,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>differential_epsilon);</highlight></codeline>
 <codeline lineno="22"><highlight class="normal"></highlight></codeline>
-<codeline lineno="23"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="24"><highlight class="normal"></highlight></codeline>
-<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//SMOLDOCK_OPTIMIZERFACTORY_H</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//SMOLDOCK_OPTIMIZERFACTORY_H</highlight></codeline>
     </programlisting>
     <location file="Engines/LocalOptimizers/OptimizerFactory.h"/>
   </compounddef>

@@ -9,7 +9,7 @@
 namespace SmolDock::Engine {
 
 
-    PoseRefiner::PoseRefiner(Protein *protein, Molecule *ligand, Score::ScoringFunctionType scFuncType,
+    PoseRefiner::PoseRefiner(Protein* protein, Molecule* ligand, Score::ScoringFunctionType scFuncType,
                              Optimizer::LocalOptimizerType localOptimizerType_,
                              unsigned int seed) :
             orig_protein(protein),
