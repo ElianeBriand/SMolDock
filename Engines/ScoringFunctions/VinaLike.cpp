@@ -70,13 +70,15 @@ namespace SmolDock::Score {
                 const unsigned char atom2AtomicNumber = protein.type[idxProt];
                 const unsigned int atom2AtomVariant = protein.variant[idxProt];
 
-                score_raw += vinaGaussComponent(distance, 0.0, 0.5);
-                score_raw += vinaGaussComponent(distance, 3.0, 2.0);
-                score_raw += vinaRepulsionComponent(distance, 0.0);
-                score_raw += vinaHydrophobicComponent(distance,
+
+                score_raw += VinaClassic::coeff_gauss1      * vinaGaussComponent(distance, 0.0, 0.5);
+                score_raw += VinaClassic::coeff_gauss2      * vinaGaussComponent(distance, 3.0, 2.0);
+                score_raw += VinaClassic::coeff_repulsion   * vinaRepulsionComponent(distance, 0.0);
+                score_raw += VinaClassic::coeff_hydrophobic * vinaHydrophobicComponent(distance,
                                                       atom1AtomicNumber, atom1AtomVariant,
                                                       atom2AtomicNumber, atom2AtomVariant);
-                score_raw += vinaHydrogenComponent(distance,
+
+                score_raw += VinaClassic::coeff_hydrogen    * vinaHydrogenComponent(distance,
                                                    atom1AtomicNumber, atom1AtomVariant,
                                                    atom2AtomicNumber, atom2AtomVariant);
 

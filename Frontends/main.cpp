@@ -125,8 +125,8 @@ int main() {
 
     sd::Engine::AbstractDockingEngine::DockingBoxSetting setting;
     setting.type = sd::Engine::AbstractDockingEngine::DockingBoxSetting::Type::centeredAround;
-    setting.center = {0.0, -4.0, 53.0};
-    setting.radius = 10.0;
+    setting.center = {2.1, -5.6, 52.0};
+    setting.radius = 14.0;
 
     docker.setDockingBox(setting);
 

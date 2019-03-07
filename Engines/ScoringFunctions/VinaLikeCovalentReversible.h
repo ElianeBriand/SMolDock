@@ -19,6 +19,8 @@ namespace SmolDock::Score {
     double VinaLikeCovalentReversibleIntermolecularScoringFunction(const iConformer &conformer, const iTransform &transform,
                                                  const iProtein &protein);
 
+    std::vector<std::tuple<std::string, double>> VinaLikeCovalentReversibleIntermolecularComponents(const iConformer &conformer, const iTransform &transform,
+                                                                   const iProtein &protein);
 
     class VinaLikeCovalentReversible : public ScoringFunction {
     public:

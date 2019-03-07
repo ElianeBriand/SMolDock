@@ -13,7 +13,6 @@
 #include <Structures/Atom.h>
 
 
-#define CONST_FUN_ATTR  ;;
 
 namespace SmolDock::Score {
 
@@ -25,7 +24,7 @@ namespace SmolDock::Score {
     // See COPYING for more details on licence information
 
 
-    CONST_FUN_ATTR inline bool isHydrophobic(const unsigned char atomicNumber, const unsigned int variantFlags) noexcept {
+    __attribute__((const)) inline bool isHydrophobic(const unsigned char atomicNumber, const unsigned int variantFlags) noexcept {
         return (atomicNumber == 6 && (variantFlags & ((const unsigned int) Atom::AtomVariant::apolar))) || // C && apolar
                atomicNumber == 9 || // F
                atomicNumber == 17 || // Cl
@@ -34,25 +33,25 @@ namespace SmolDock::Score {
     }
 
 
-    CONST_FUN_ATTR inline bool isHydrogenAcceptor(const unsigned char atomicNumber,const unsigned int atomVariantFlags) noexcept {
+    __attribute__((const)) inline bool isHydrogenAcceptor(const unsigned char atomicNumber,const unsigned int atomVariantFlags) noexcept {
         return (atomicNumber == 7 || //N
                 atomicNumber == 8) // O
                && (atomVariantFlags & ((const unsigned int) Atom::AtomVariant::hydrogenAcceptor));
     }
 
-    CONST_FUN_ATTR inline bool isHydrogenDonor(const unsigned char atomicNumber,const  unsigned int atomVariantFlags) noexcept {
+    __attribute__((const)) inline bool isHydrogenDonor(const unsigned char atomicNumber,const  unsigned int atomVariantFlags) noexcept {
         return (atomicNumber == 7 ||
                 atomicNumber == 8)
                && (atomVariantFlags & ((const unsigned int) Atom::AtomVariant::hydrogenDonor));
     }
 
-    CONST_FUN_ATTR inline bool hydrogenDonorAcceptorPair(const unsigned char atomicNumber1,const  unsigned int atom1VariantFlags,
+    __attribute__((const)) inline bool hydrogenDonorAcceptorPair(const unsigned char atomicNumber1,const  unsigned int atom1VariantFlags,
                                                                   const unsigned char atomicNumber2, const unsigned int atom2VariantFlags) noexcept {
         return isHydrogenDonor(atomicNumber1, atom1VariantFlags) &&
                isHydrogenAcceptor(atomicNumber2, atom2VariantFlags);
     }
 
-    CONST_FUN_ATTR inline bool hydrogenBondingPossible(const unsigned char atomicNumber1, const unsigned int atom1VariantFlags,
+    __attribute__((const)) inline bool hydrogenBondingPossible(const unsigned char atomicNumber1, const unsigned int atom1VariantFlags,
                                         unsigned char atomicNumber2, unsigned int atom2VariantFlags) noexcept {
         return hydrogenDonorAcceptorPair(atomicNumber1, atom1VariantFlags, atomicNumber2, atom2VariantFlags) ||
                hydrogenDonorAcceptorPair(atomicNumber2, atom2VariantFlags, atomicNumber1, atom1VariantFlags);
@@ -60,22 +59,22 @@ namespace SmolDock::Score {
 
     // ////////////////// VINA CODE END //////////////////////////////////////////////////
 
-    CONST_FUN_ATTR inline bool isCovalentReversibleAcceptor(const unsigned char atomicNumber,const unsigned int atomVariantFlags) noexcept {
+    __attribute__((const)) inline bool isCovalentReversibleAcceptor(const unsigned char atomicNumber,const unsigned int atomVariantFlags) noexcept {
         return static_cast<bool>((atomVariantFlags & ((const unsigned int) Atom::AtomVariant::covalentReversibleAcceptor)));
     }
 
-    CONST_FUN_ATTR inline bool isCovalentReversibleDonor(const unsigned char atomicNumber,const unsigned int atomVariantFlags) noexcept {
+    __attribute__((const)) inline bool isCovalentReversibleDonor(const unsigned char atomicNumber,const unsigned int atomVariantFlags) noexcept {
         return static_cast<bool>((atomVariantFlags & ((const unsigned int) Atom::AtomVariant::covalentReversibleDonor)));
     }
 
-    CONST_FUN_ATTR inline bool covalentReversiblePair(const unsigned char atomicNumber1,const  unsigned int atom1VariantFlags,
+    __attribute__((const)) inline bool covalentReversiblePair(const unsigned char atomicNumber1,const  unsigned int atom1VariantFlags,
                                                                   const unsigned char atomicNumber2, const unsigned int atom2VariantFlags) noexcept {
         return isCovalentReversibleDonor(atomicNumber1, atom1VariantFlags) &&
                 isCovalentReversibleAcceptor(atomicNumber2, atom2VariantFlags);
     }
 
 
-    CONST_FUN_ATTR inline bool covalentReversibleBondingPossible(const unsigned char atomicNumber1, const unsigned int atom1VariantFlags,
+    __attribute__((const)) inline bool covalentReversibleBondingPossible(const unsigned char atomicNumber1, const unsigned int atom1VariantFlags,
                                                                 unsigned char atomicNumber2, unsigned int atom2VariantFlags) noexcept {
         return covalentReversiblePair(atomicNumber1, atom1VariantFlags, atomicNumber2, atom2VariantFlags) ||
                 covalentReversiblePair(atomicNumber2, atom2VariantFlags, atomicNumber1, atom1VariantFlags);
@@ -104,16 +103,16 @@ namespace SmolDock::Score {
 
 
 
-    CONST_FUN_ATTR inline double distanceFromRawDistance(const double rawDistance, const double atomicRadiusLig, const double atomicRadiusProt) noexcept {
+    __attribute__((const)) inline double distanceFromRawDistance(const double rawDistance, const double atomicRadiusLig, const double atomicRadiusProt) noexcept {
         return rawDistance - (atomicRadiusLig + atomicRadiusProt);
     }
 
 
-    CONST_FUN_ATTR inline double vinaGaussComponent(const double distance, const double offset, const double multiplier) noexcept {
+    __attribute__((const)) inline double vinaGaussComponent(const double distance, const double offset, const double multiplier) noexcept {
         return std::exp(-1 * std::pow((distance - offset)/ multiplier, 2));
     }
 
-    CONST_FUN_ATTR inline double vinaRepulsionComponent(const double distance, const double cutoff) noexcept {
+    __attribute__((const)) inline double vinaRepulsionComponent(const double distance, const double cutoff) noexcept {
         if (distance < cutoff) {
             return std::pow(distance, 2);
         }else{
@@ -121,7 +120,7 @@ namespace SmolDock::Score {
         }
     }
 
-    CONST_FUN_ATTR inline double vinaHydrophobicComponent(const double distance, const unsigned char atomicNumberAtom1, const unsigned int variantFlagsAtom1,
+    __attribute__((const)) inline double vinaHydrophobicComponent(const double distance, const unsigned char atomicNumberAtom1, const unsigned int variantFlagsAtom1,
                                                                    const unsigned char atomicNumberAtom2, const unsigned int variantFlagsAtom2) noexcept
     {
         if (isHydrophobic(atomicNumberAtom1, variantFlagsAtom1) &&
@@ -137,7 +136,7 @@ namespace SmolDock::Score {
         return 0.0;
     }
 
-    CONST_FUN_ATTR inline double vinaHydrogenComponent(const double distance, const unsigned char atomicNumberAtom1, const unsigned int variantFlagsAtom1,
+    __attribute__((const)) inline double vinaHydrogenComponent(const double distance, const unsigned char atomicNumberAtom1, const unsigned int variantFlagsAtom1,
                                                                 const unsigned char atomicNumberAtom2, const unsigned int variantFlagsAtom2) noexcept
     {
         if (hydrogenBondingPossible(atomicNumberAtom1, variantFlagsAtom1, atomicNumberAtom2,
@@ -153,35 +152,12 @@ namespace SmolDock::Score {
         return 0.0;
     }
 
-    namespace VinaExtended {
-
-        constexpr const double coeff_CovalentReversible = -2.5;
-
-
-        CONST_FUN_ATTR inline double covalentReversibleComponent(const double distance, const unsigned char atomicNumberAtom1, const unsigned int variantFlagsAtom1,
-                                                                            const unsigned char atomicNumberAtom2, const unsigned int variantFlagsAtom2) noexcept
-        {
-            if (covalentReversibleBondingPossible(atomicNumberAtom1, variantFlagsAtom1, atomicNumberAtom2,
-                                        variantFlagsAtom2)) // Hydrogen donor and acceptor
-            {
-                // this corresponds to ~ 1.43 Angstrom between the two, aka classical C-O bond length
-                // these value seem weird because VdW radius as understood by vina, and covalent bond length
-                // are quite different (distance = 0 means there is 1.9+1.7 angstrom between the atoms, as given by the "atomic radii" table)
-                // Which is too long for our purpose of modeling covalent bonds.
-                // TODO: take into account the atom type (this is currently only for C-O covalent reversible)
-                if (distance < -2.1 && distance > -2.2)
-                {
-                    return 1.0;
-                }
-            }
-            return 0.0;
-        }
-    }
 
 
 
 
-    CONST_FUN_ATTR inline double
+
+    __attribute__((const)) inline double
     scoreForAtomCouple(const double distance,const unsigned char atom1AtomicNumber,const unsigned int atom1AtomVariant,
                        const unsigned char atom2AtomicNumber,const unsigned int atom2AtomVariant) noexcept {
 

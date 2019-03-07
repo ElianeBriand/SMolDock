@@ -194,7 +194,7 @@ int main(int argc, char *argv[]) {
     prot.populateFromPDB(path_to_input_receptor, postProcessors); // COX-2
 
     SmolDock::Molecule mol;
-    mol.populateFromPDB(path_to_input_ligand, "", /* No SMILES hint for bond order*/
+    mol.populateFromPDBFile(path_to_input_ligand, "", /* No SMILES hint for bond order*/
                         120 /* seed */,
                         postProcessors);
 

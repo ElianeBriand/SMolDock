@@ -205,6 +205,8 @@ namespace SmolDock {
                     auto rawResultMatrix = globalHeuristic->getResultMatrix();
                     double score = scoringFunction->Evaluate(rawResultMatrix);
 
+                    std::vector<std::tuple<std::string, double>> subcomponents =  scoringFunction->EvaluateSubcomponents(rawResultMatrix);
+
 
                     iConformer result = scoringFunction->getConformerForParamMatrix(rawResultMatrix);
 
@@ -214,9 +216,18 @@ namespace SmolDock {
                     double real_score = Score::vina_like_rigid_inter_scoring_func(result, iTransformIdentityInit(),
                                                                                   this->fullProtein);
 
-                    BOOST_LOG_TRIVIAL(debug) << "Starting score : " << starting_score;
-                    BOOST_LOG_TRIVIAL(debug) << "Score after L-BFGS: " << score;
-                    BOOST_LOG_TRIVIAL(debug) << "Real score (full prot): " << real_score;
+
+
+                    BOOST_LOG_TRIVIAL(debug) << "VinaClassic Starting score : " << starting_score;
+                    BOOST_LOG_TRIVIAL(debug) << "Score after search : " << score;
+                    BOOST_LOG_TRIVIAL(debug) << "VinaClassic end score : " << real_score;
+                    BOOST_LOG_TRIVIAL(debug) << " --- Subcomponents --- ";
+                    for(auto& subcomp: subcomponents)
+                    {
+                        BOOST_LOG_TRIVIAL(debug) << "   " << std::get<0>(subcomp) << " : " << std::get<1>(subcomp);
+                    }
+
+                    BOOST_LOG_TRIVIAL(debug) << " --------------------- ";
 
                     if (score != 0.0) {
                         this->startingScores.push_back(starting_score);
@@ -271,7 +282,7 @@ namespace SmolDock {
 
             std::vector<std::tuple<int, double>> scoreAndIndices;
             for (unsigned int i = 0; i < this->scores.size(); i++) {
-                scoreAndIndices.push_back(std::make_tuple(i, this->scores[i]));
+                scoreAndIndices.push_back(std::make_tuple(i, this->localScores[i]));
             }
 
             std::sort(std::begin(scoreAndIndices),
