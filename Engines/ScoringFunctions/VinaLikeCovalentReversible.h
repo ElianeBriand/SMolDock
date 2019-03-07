@@ -1,9 +1,9 @@
 //
-// Created by eliane on 04/03/19.
+// Created by eliane on 06/03/19.
 //
 
-#ifndef SMOLDOCK_VINALIKESCORINGFUNCTION_H
-#define SMOLDOCK_VINALIKESCORINGFUNCTION_H
+#ifndef SMOLDOCK_VINALIKECOVALENTREVERSIBLE_H
+#define SMOLDOCK_VINALIKECOVALENTREVERSIBLE_H
 
 #include <Engines/Internals/iConformer.h>
 #include <Engines/Internals/iProtein.h>
@@ -13,23 +13,28 @@
 #include <Structures/Molecule.h>
 #include <Structures/Protein.h>
 
+
 namespace SmolDock::Score {
 
-
-    double VinaLikeIntermolecularScoringFunction(const iConformer &conformer, const iTransform &transform,
+    double VinaLikeCovalentReversibleIntermolecularScoringFunction(const iConformer &conformer, const iTransform &transform,
                                                  const iProtein &protein);
 
-    class VinaLikeScoringFunction : public ScoringFunction {
+
+    class VinaLikeCovalentReversible : public ScoringFunction {
     public:
-        VinaLikeScoringFunction(const iConformer &startingConformation_,
-                                const iProtein &p,
-                                const iTransform &initialTransform_,
-                                double differential_epsilon_ = 1e-3);
+        VinaLikeCovalentReversible(const iConformer &startingConformation_,
+                                   const iProtein &p,
+                                   const iTransform &initialTransform_,
+                                   double differential_epsilon_ = 1e-3);
 
 
         double Evaluate(const arma::mat &x) final;
 
         double EvaluateWithGradient(const arma::mat &x, arma::mat &gradient) final;
+
+
+        std::vector<std::tuple<std::string, double>> EvaluateSubcomponents(const arma::mat &x) final;
+
 
         arma::mat getStartingConditions() const final;
 
@@ -42,7 +47,7 @@ namespace SmolDock::Score {
         unsigned int getParamVectorDimension() const final;
 
 
-        ~VinaLikeScoringFunction() final = default;
+        ~VinaLikeCovalentReversible() final = default;
 
 
     private:
@@ -96,6 +101,4 @@ namespace SmolDock::Score {
         unsigned int numberOfRotatableBonds;
     };
 }
-
-
-#endif //SMOLDOCK_VINALIKESCORINGFUNCTION_H
+#endif //SMOLDOCK_VINALIKECOVALENTREVERSIBLE_H

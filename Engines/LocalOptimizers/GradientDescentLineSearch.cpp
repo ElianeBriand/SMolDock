@@ -5,7 +5,7 @@
 #include "GradientDescentLineSearch.h"
 
 
-#include <Engines/ScoringFunctions/VinaLikeRigidScoringFunction.h>
+#include <Engines/ScoringFunctions/VinaLikeRigid.h>
 
 #include <Engines/Internals/InternalsUtilityFunctions.h>
 

@@ -344,7 +344,7 @@ double L_BFGS::Optimize(FunctionType& function, arma::mat& iterate)
     //
     // But don't do this on the first iteration to ensure we always take at
     // least one descent step.
-      if (itNum >= 0 && (arma::norm(gradient, 2) < minGradientNorm))
+    if (itNum > 0 && (arma::norm(gradient, 2) < minGradientNorm))
     {
       Warn << "L-BFGS gradient norm too small (terminating successfully)."
           << std::endl;
@@ -370,6 +370,15 @@ double L_BFGS::Optimize(FunctionType& function, arma::mat& iterate)
     // Save the old iterate and the gradient before stepping.
     oldIterate = iterate;
     oldGradient = gradient;
+
+    bool GradientHasNonZero = arma::any(arma::conv_to< arma::rowvec >::from(gradient));
+
+
+    if(!GradientHasNonZero)
+    {
+      Warn << "All-zero gradient. Stopping optimization." << std::endl;
+      break;
+    }
 
     if (!LineSearch(f, functionValue, iterate, gradient, newIterateTmp,
         searchDirection))

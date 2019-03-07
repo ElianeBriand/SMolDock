@@ -17,7 +17,7 @@ SET(CMAKE_CXX_COMPILER "clang++")
 SET(CMAKE_CXX_FLAGS_DEBUG "-g")
 SET(CMAKE_CXX_FLAGS_MINSIZEREL "-Os -DNDEBUG")
 SET(CMAKE_CXX_FLAGS_RELEASE "-O3 -march=native -DNDEBUG")
-SET(CMAKE_CXX_FLAGS_RELWITHDEBINFO "-O3 -march=native -g ")
+SET(CMAKE_CXX_FLAGS_RELWITHDEBINFO "-O3 -march=native -g  ")
 
 
 ######## RDKIT SETUP ######
@@ -73,8 +73,8 @@ set(SOURCE_LIST Structures/Structure.cpp
         Engines/ConformerRigidDockingEngine.h
         Engines/Internals/iConformer.h
         Utilities/TimingsLog.h
-        Engines/ScoringFunctions/VinaLikeRigidScoringFunction.cpp
-        Engines/ScoringFunctions/VinaLikeRigidScoringFunction.h
+        Engines/ScoringFunctions/VinaLikeRigid.cpp
+        Engines/ScoringFunctions/VinaLikeRigid.h
         Engines/Internals/iProtein.h
         Engines/Internals/iTransform.h
         Utilities/PDBWriter.cpp
@@ -118,7 +118,16 @@ set(SOURCE_LIST Structures/Structure.cpp
         Engines/GlobalHeuristics/SimulatedAnnealing.h
         Engines/GlobalHeuristics/Utilities/MetropolisHastings.cpp
         Engines/GlobalHeuristics/Utilities/MetropolisHastings.h
-        Utilities/Version.cpp Utilities/Version.h Engines/ScoringFunctions/VinaLikeScoringFunction.cpp Engines/ScoringFunctions/VinaLikeScoringFunction.h Engines/ScoringFunctions/VinaLikeCommon.h)
+        Utilities/Version.cpp
+        Utilities/Version.h
+        Engines/ScoringFunctions/VinaLike.cpp
+        Engines/ScoringFunctions/VinaLike.h
+        Engines/ScoringFunctions/VinaLikeCommon.h
+        Engines/GlobalHeuristics/DifferentialEvolution.cpp
+        Engines/GlobalHeuristics/DifferentialEvolution.h
+        Engines/GlobalHeuristics/Evolution.cpp
+        Engines/GlobalHeuristics/Evolution.h
+        Engines/ScoringFunctions/VinaLikeCovalentReversible.cpp Engines/ScoringFunctions/VinaLikeCovalentReversible.h)
 
 set(PY_EXPORT_SOURCE_LIST Frontends/Python/PyStructures.cpp
         Frontends/Python/PyStructures.h
@@ -133,6 +142,12 @@ set(PY_EXPORT_SOURCE_LIST Frontends/Python/PyStructures.cpp
 ##################" REMOVE THIS FOR PROD ##########################""
 add_compile_definitions(SMOLDOCK_VERBOSE_DEBUG)
 
+
+add_library(bprinter STATIC
+        Dependencies/bprinter/table_printer.h
+        Dependencies/bprinter/impl/table_printer.tpp.h
+        Dependencies/bprinter/table_printer.cpp
+        )
 
 
 
@@ -191,7 +206,7 @@ add_executable(smoldock Frontends/main.cpp)
 set_target_properties(smoldock PROPERTIES LINK_FLAGS " -Wl,--no-undefined -Wl,--as-needed -static    ")
 TARGET_LINK_LIBRARIES(smoldock libsmoldock)
 TARGET_LINK_LIBRARIES(smoldock pthread)
-target_link_libraries(smoldock boost_log)
+target_link_libraries(smoldock boost_log bprinter)
 #target_link_libraries(smoldock Vc)
 
 add_executable(smoldock_dyn Frontends/main.cpp)

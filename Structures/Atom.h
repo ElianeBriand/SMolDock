@@ -101,8 +101,9 @@ namespace SmolDock {
             hydrogenAcceptor = 1 << 2,
 
             covalentReversibleAcceptor = 1 << 3,
+            covalentReversibleDonor = 1 << 4,
 
-            // next flag : xxx = 1 << 4;
+            // next flag : xxx = 1 << 5;
             customAtomFlag1 = 1 << 29,
             customAtomFlag2 = 1 << 29,
             customAtomFlag3 = 1 << 30
@@ -166,13 +167,14 @@ namespace SmolDock {
 
         std::string getTypeAsString();
 
-        std::string getAtomSymbol();
+        std::string getAtomSymbol() const;
 
         unsigned char getAtomicNumber();
 
 
         AtomVariant getAtomVariant();
 
+        //! This erases the current variant : for non-destructive flag setting, getAtomVariant, bit-tweak, then setAtomVariant
         void setAtomVariant(AtomVariant v);
 
         unsigned int getAtomVariantAsUnderlyingType();
@@ -194,12 +196,14 @@ namespace SmolDock {
 
         void setAtomicRadius(double r);
 
-        int getCharge();
+        double getCharge() const;
 
-        void setCharge(int ch);
+        void setCharge(double ch);
 
 
         static std::set<std::tuple<Atom::AtomType, std::string, std::string, double> > AtomTypeLabel;
+
+        const std::string& getRawPDBAtomName() const;
 
     protected:
         // Bonds involving this atom
@@ -208,11 +212,12 @@ namespace SmolDock {
     private:
         AtomType type;
         AtomVariant variant = Atom::AtomVariant::none;
-        int charge = 0;
+        double charge = 0;
 
         bool fromResidue = false;
         AminoAcid::AAType residueType = AminoAcid::AAType::heteroatom;
-        std::string atomClassInResidue; // The full atom name given in the PDB (CA, CB, CZ ...)
+        std::string rawPDBAtomName; // The full atom name given in the PDB (CA, CB, CZ ...)
+
         std::weak_ptr<AminoAcid> owningAA;
 
         static unsigned int nextAtomID;
@@ -220,6 +225,8 @@ namespace SmolDock {
 
         double x, y, z;
         double atomicRadius;
+
+
 
 
     };

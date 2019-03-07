@@ -18,6 +18,8 @@
 #include "OnlyLocal.h"
 #include "IteratedLocalSearch.h"
 #include "SimulatedAnnealing.h"
+#include "DifferentialEvolution.h"
+#include "Evolution.h"
 
 namespace SmolDock::Heuristics {
 
@@ -25,13 +27,22 @@ namespace SmolDock::Heuristics {
         RandomRestart,
         OnlyLocal,
         IteratedLocalSearch,
-        SimulatedAnnealing
+        SimulatedAnnealing,
+        DifferentialEvolution,
+        Evolution
     };
 
-    using HeuristicParameters = std::variant<OnlyLocal::Parameters,
+    struct LackOfParameter {
+
+    };
+
+    using HeuristicParameters = std::variant<LackOfParameter,
+            OnlyLocal::Parameters,
             RandomRestart::Parameters,
             IteratedLocalSearch::Parameters,
-            SimulatedAnnealing::Parameters>;
+            SimulatedAnnealing::Parameters,
+            DifferentialEvolution::Parameters,
+            Evolution::Parameters>;
 
     extern HeuristicParameters emptyParameters;
 

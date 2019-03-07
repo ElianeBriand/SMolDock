@@ -20,6 +20,8 @@ namespace SmolDock::Score {
 
         virtual double EvaluateWithGradient(const arma::mat &x, arma::mat &gradient) = 0;
 
+        virtual std::vector<std::tuple<std::string,double>> EvaluateSubcomponents(const arma::mat &x) = 0;
+
 
         virtual double getDifferentialEpsilon() const = 0;
 

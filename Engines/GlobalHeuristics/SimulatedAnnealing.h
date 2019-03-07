@@ -27,7 +27,15 @@ namespace SmolDock::Heuristics {
         ~SimulatedAnnealing() final = default;
 
         struct Parameters {
-
+            unsigned int maxIterations = 100000;
+            double initTemp = 10000.0;
+            unsigned int initialNoTempDropMoves = 1000;
+            unsigned int moveCtrlSweep = 100;
+            double tolerance = 1e-3;
+            unsigned int maxToleranceSweep = 3;
+            double maxMoveSize = 5.0;
+            double initMoveSize = 0.3;
+            double gain = 0.3;
         };
 
     private:

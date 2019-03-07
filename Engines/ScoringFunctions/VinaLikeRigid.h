@@ -50,11 +50,11 @@ namespace SmolDock {
         double vina_like_rigid_inter_scoring_func(const iConformer &conformer, const iTransform &transform,
                                                   const iProtein &protein);
 
-        class VinaLikeRigidScoringFunction : public ScoringFunction {
+        class VinaLikeRigid : public ScoringFunction {
         public:
 
 
-            VinaLikeRigidScoringFunction(const iConformer &startingConformation_,
+            VinaLikeRigid(const iConformer &startingConformation_,
                                          const iProtein &p,
                                          const iTransform &initialTransform_,
                                          double differential_epsilon_ = 1e-3);
@@ -63,6 +63,9 @@ namespace SmolDock {
             double Evaluate(const arma::mat &x) final;
 
             double EvaluateWithGradient(const arma::mat &x, arma::mat &gradient) final;
+
+            std::vector<std::tuple<std::string,double>> EvaluateSubcomponents(const arma::mat &x) final;
+
 
             arma::mat getStartingConditions() const final;
 
@@ -75,7 +78,7 @@ namespace SmolDock {
             unsigned int getParamVectorDimension() const final;
 
 
-            ~VinaLikeRigidScoringFunction() final = default;
+            ~VinaLikeRigid() final = default;
 
 
         private:

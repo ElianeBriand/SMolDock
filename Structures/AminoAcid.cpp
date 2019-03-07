@@ -20,6 +20,8 @@
 
 #include <iostream>
 
+#include <boost/log/trivial.hpp>
+
 
 #include "AminoAcid.h"
 #include "Atom.h"
@@ -131,6 +133,31 @@ namespace SmolDock {
     void AminoAcid::setType(AminoAcid::AAType t) {
         this->type = t;
 
+    }
+
+    bool AminoAcid::applySpecialResidueTyping(const SpecialResidueTyping specialType) {
+        if(specialType == SpecialResidueTyping::covalentReversibleSerineOH)
+        {
+            if(this->type != AminoAcid::AAType::serine)
+            {
+                BOOST_LOG_TRIVIAL(error) << "Attempting to apply special typing covalentReversibleSerineOH to residue " << resTypeToString(this->type) <<
+                                         " which is not a serine.";
+                return false;
+            }
+
+            auto foundTargetIt = std::find_if(std::begin(this->atoms),
+                    std::end(this->atoms),
+                    [](const std::shared_ptr<Atom>& elem) {
+                                return elem->getRawPDBAtomName() == "OG";
+                            }
+                    );
+            Atom::AtomVariant variant = (*foundTargetIt)->getAtomVariant();
+            variant = variant | Atom::AtomVariant::covalentReversibleDonor;
+            (*foundTargetIt)->setAtomVariant(variant);
+            BOOST_LOG_TRIVIAL(info) << "Applied covalentReversibleSerineOH special typing (" << resTypeToString(this->type) << " #" << AAId << ")";
+            return true;
+        }
+        return false;
     }
 
 

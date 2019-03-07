@@ -25,7 +25,7 @@
 
 #include "ConformerRigidDockingEngine.h"
 #include "Internals/InternalsUtilityFunctions.h"
-#include <Engines/ScoringFunctions/VinaLikeRigidScoringFunction.h>
+#include <Engines/ScoringFunctions/VinaLikeRigid.h>
 #include <Engines/LocalOptimizers/L_BFGS.h>
 #include "Utilities/TimingsLog.h"
 
@@ -49,7 +49,8 @@ namespace SmolDock {
                                                                  Score::ScoringFunctionType scFuncType,
                                                                  Heuristics::GlobalHeuristicType heurType,
                                                                  Optimizer::LocalOptimizerType localOptimizerType_,
-                                                                 unsigned int seed) :
+                                                                 unsigned int seed,
+                                                                 Heuristics::HeuristicParameters hParams) :
                 conformer_num(conformer_num_),
                 retryPerConformer(retryPerConformer),
                 orig_protein(protein),
@@ -57,7 +58,8 @@ namespace SmolDock {
                 scoringFuncType(scFuncType),
                 heuristicType(heurType),
                 localOptimizerType(localOptimizerType_),
-                rnd_generator(seed) {
+                rnd_generator(seed),
+                heurParams(hParams){
 
 
             scores.reserve(this->conformer_num);
@@ -126,7 +128,7 @@ namespace SmolDock {
             record_timings(begin_docking);
 
 
-            for (auto &conformer : this->viConformers) {
+            for (auto& conformer : this->viConformers) {
 
 
                 record_timings(begin_docking_this_conformer);
@@ -159,28 +161,34 @@ namespace SmolDock {
                                                                                         scoringFunction.get(),
                                                                                         1e-3);
 
-                Heuristics::HeuristicParameters hParams = Heuristics::heuristicParametersFactory(heuristicType);
+                if(this->heurParams.index() == 0 ) // LackOfParameter
+                {
+                    BOOST_LOG_TRIVIAL(debug) << "Received default heuristics parameters, setting up search domain if relevant";
 
-                if (heuristicType == Heuristics::GlobalHeuristicType::IteratedLocalSearch) {
+                    this->heurParams = Heuristics::heuristicParametersFactory(heuristicType);
 
-                    if (dbsettings.type == DockingBoxSetting::Type::centeredAround) {
-                        std::get<Heuristics::IteratedLocalSearch::Parameters>(
-                                hParams).proteinMaxRadius = dbsettings.radius;
-                    } else {
-                        double protRadius = this->orig_protein->getMaxRadius();
-                        std::get<Heuristics::IteratedLocalSearch::Parameters>(hParams).proteinMaxRadius = protRadius;
+                    if (heuristicType == Heuristics::GlobalHeuristicType::IteratedLocalSearch) {
+
+                        if (dbsettings.type == DockingBoxSetting::Type::centeredAround) {
+                            std::get<Heuristics::IteratedLocalSearch::Parameters>(
+                                    this->heurParams).proteinMaxRadius = dbsettings.radius;
+                        } else {
+                            double protRadius = this->orig_protein->getMaxRadius();
+                            std::get<Heuristics::IteratedLocalSearch::Parameters>(this->heurParams).proteinMaxRadius = protRadius;
+                        }
+                    }
+
+                    if (heuristicType == Heuristics::GlobalHeuristicType::RandomRestart) {
+                        if (dbsettings.type == DockingBoxSetting::Type::centeredAround) {
+                            std::get<Heuristics::RandomRestart::Parameters>(
+                                    this->heurParams).proteinMaxRadius = dbsettings.radius;
+                        } else {
+                            double protRadius = this->orig_protein->getMaxRadius();
+                            std::get<Heuristics::RandomRestart::Parameters>(this->heurParams).proteinMaxRadius = protRadius;
+                        }
                     }
                 }
 
-                if (heuristicType == Heuristics::GlobalHeuristicType::RandomRestart) {
-                    if (dbsettings.type == DockingBoxSetting::Type::centeredAround) {
-                        std::get<Heuristics::RandomRestart::Parameters>(
-                                hParams).proteinMaxRadius = dbsettings.radius;
-                    } else {
-                        double protRadius = this->orig_protein->getMaxRadius();
-                        std::get<Heuristics::RandomRestart::Parameters>(hParams).proteinMaxRadius = protRadius;
-                    }
-                }
 
 
                 for (unsigned int retryNum = 0; retryNum < this->retryPerConformer; retryNum++) {
@@ -190,7 +198,7 @@ namespace SmolDock {
                                                                                                           localOptimizer.get(),
                                                                                                           seed +
                                                                                                           retryNum,
-                                                                                                          hParams);
+                                                                                                          this->heurParams);
 
                     globalHeuristic->search();
 
@@ -224,30 +232,35 @@ namespace SmolDock {
                 record_timings(end_docking_this_conformer);
 
 
-#ifdef SMOLDOCK_VERBOSE_DEBUG
                 acc_duration(
                         static_cast< std::chrono::duration<double> >(end_docking_this_conformer -
                                                                      begin_docking_this_conformer).count()
                 );
-#endif
 
             }
 
             record_timings(end_docking);
 
-#ifdef SMOLDOCK_VERBOSE_DEBUG
             auto total_docking_duration = static_cast< std::chrono::duration<double> >(end_docking -
                                                                                        begin_docking).count();
 
+            this->meanDuration = mean(acc_duration);
+            this->stdDevDuration = std::sqrt(moment<2>(acc_duration));
+
+#ifdef SMOLDOCK_VERBOSE_DEBUG
+
             BOOST_LOG_TRIVIAL(debug) << "Timings ConformerRigidDockingEngine docking runs"
                                      << "\n      TOTAL: " << total_docking_duration << "s"
-                                     << "\n      Mean per conformer: " << mean(acc_duration) << "s"
-                                     << "\n      StdDev per conformer: " << std::sqrt(moment<2>(acc_duration)) << "s";
+                                     << "\n      Mean per conformer: " << this->meanDuration << "s"
+                                     << "\n      StdDev per conformer: " <<  this->stdDevDuration << "s";
 #endif
 
+            this->meanScore =  mean(acc_score);
+            this->stdDevScore = std::sqrt(moment<2>(acc_score));
+
             BOOST_LOG_TRIVIAL(info) << "Results:";
-            BOOST_LOG_TRIVIAL(info) << "   Score Mean: " << mean(acc_score);
-            BOOST_LOG_TRIVIAL(info) << "   Score StdDev: " << std::sqrt(moment<2>(acc_score));
+            BOOST_LOG_TRIVIAL(info) << "   Score Mean: " << this->meanScore;
+            BOOST_LOG_TRIVIAL(info) << "   Score StdDev: " << this->stdDevScore;
             BOOST_LOG_TRIVIAL(info) << "   Scores: ";
             for (unsigned int i = 0; i < this->scores.size(); i++) {
                 BOOST_LOG_TRIVIAL(info) << "      " << this->startingScores[i] << " -> " << this->localScores[i]
@@ -261,19 +274,23 @@ namespace SmolDock {
                 scoreAndIndices.push_back(std::make_tuple(i, this->scores[i]));
             }
 
-            std::nth_element(std::begin(scoreAndIndices),
-                             std::begin(scoreAndIndices) + conformer_num,
+            std::sort(std::begin(scoreAndIndices),
                              std::end(scoreAndIndices),
                              [](const std::tuple<int, double> &a, const std::tuple<int, double> &b) {
                                  return std::get<1>(a) < std::get<1>(b);
                              });
-
             for (unsigned int i = 0; i < conformer_num; i++) {
                 BOOST_LOG_TRIVIAL(info) << "      " << this->startingScores[std::get<0>(scoreAndIndices[i])]
                                         << " -> " << this->localScores[std::get<0>(scoreAndIndices[i])]
                                         << " -> " << this->scores[std::get<0>(scoreAndIndices[i])];
                 this->bestiConformer.push_back(this->allGeneratediConformer[std::get<0>(scoreAndIndices[i])]);
             }
+            this->bestScore = std::get<1>(scoreAndIndices[0]);
+
+            BOOST_LOG_TRIVIAL(info) << "";
+            BOOST_LOG_TRIVIAL(info) << "Best score : " << this->startingScores[std::get<0>(scoreAndIndices[0])]
+                                                       << " -> " << this->localScores[std::get<0>(scoreAndIndices[0])]
+                                                       << " -> " << this->scores[std::get<0>(scoreAndIndices[0])];
 
         }
 
@@ -299,6 +316,18 @@ namespace SmolDock {
                 return false;
             }
             return true;
+        }
+
+        std::tuple<double, double> ConformerRigidDockingEngine::getMeanStdDevDuration() const {
+            return std::make_tuple(this->meanDuration,this->stdDevDuration);
+        }
+
+        std::tuple<double, double> ConformerRigidDockingEngine::getMeanStdDevScore() const {
+            return std::make_tuple(this->meanScore,this->stdDevScore);
+        }
+
+        double ConformerRigidDockingEngine::getBestScore() {
+            return this->bestScore;
         }
 
 

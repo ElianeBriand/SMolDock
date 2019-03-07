@@ -25,7 +25,27 @@ namespace SmolDock::Heuristics {
         arma::mat currentState = scorFunc->getStartingConditions();
 
         auto coolingType = ens::ExponentialSchedule();
-        ens::SA<> SimulatedAnnealer(coolingType, 10000);
+
+        unsigned int maxIterations = this->params.maxIterations;
+        double initTemp = this->params.initTemp;
+        unsigned int initialNoTempDropMoves = this->params.initialNoTempDropMoves;
+        unsigned int moveCtrlSweep = this->params.moveCtrlSweep;
+        double tolerance = this->params.tolerance;
+        unsigned int maxToleranceSweep = this->params.maxToleranceSweep;
+        double maxMoveSize = this->params.maxMoveSize;
+        double initMoveSize = this->params.initMoveSize;
+        double gain = this->params.gain;
+
+        ens::SA<> SimulatedAnnealer(coolingType,
+                                    maxIterations,
+                                    initTemp ,
+                                    initialNoTempDropMoves,
+                                    moveCtrlSweep,
+                                    tolerance,
+                                    maxToleranceSweep,
+                                    maxMoveSize,
+                                    initMoveSize,
+                                    gain);
 
         SimulatedAnnealer.Optimize(*this->scorFunc, currentState);
 

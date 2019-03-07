@@ -39,6 +39,10 @@ namespace SmolDock {
 
     enum class PDBResidueVariantAssignationType;
 
+    enum class SpecialResidueTyping {
+        covalentReversibleSerineOH
+    };
+
     class AminoAcid {
 
         friend class Protein;
@@ -95,6 +99,8 @@ namespace SmolDock {
         AAType getType() const;
 
         void setType(AAType t);
+
+        bool applySpecialResidueTyping(const SpecialResidueTyping specialType);
 
     protected:
         static std::set<std::tuple<AminoAcid::AAType, std::string, std::string> > AAShorthandSet;

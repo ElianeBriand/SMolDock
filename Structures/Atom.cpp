@@ -142,7 +142,7 @@ namespace SmolDock {
         if (PDBFormat) {
             auto first_letter = symbol_or_name.substr(0, 1); // One letter code for atom is always same as usual
             this->type = stringToAtomType(first_letter);
-            this->atomClassInResidue = symbol_or_name;
+            this->rawPDBAtomName = symbol_or_name;
             fromResidue = true;
         } else {
             this->type = stringToAtomType(symbol_or_name);
@@ -211,16 +211,20 @@ namespace SmolDock {
 
     }
 
-    int Atom::getCharge() {
+    double Atom::getCharge() const {
         return this->charge;
     }
 
-    void Atom::setCharge(int ch) {
+    void Atom::setCharge(double ch) {
         this->charge = ch;
     }
 
-    std::string Atom::getAtomSymbol() {
-        return "";
+    std::string Atom::getAtomSymbol() const {
+        return atomTypeToSymbolString(this->type);
+    }
+
+    const std::string& Atom::getRawPDBAtomName() const{
+        return this->rawPDBAtomName;
     }
 
 

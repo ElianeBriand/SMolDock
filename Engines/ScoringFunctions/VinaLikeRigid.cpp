@@ -18,7 +18,7 @@
  *
  */
 
-#include "VinaLikeRigidScoringFunction.h"
+#include "VinaLikeRigid.h"
 
 #undef BOOST_LOG
 
@@ -116,7 +116,7 @@ namespace SmolDock {
             return final_score;
         }
 
-        double VinaLikeRigidScoringFunction::Evaluate(const arma::mat &x) {
+        double VinaLikeRigid::Evaluate(const arma::mat &x) {
             assert(x.n_rows == 7);
 
             iTransform tr = this->internalToExternalRepr(x);
@@ -127,7 +127,7 @@ namespace SmolDock {
             return score_;
         }
 
-        double VinaLikeRigidScoringFunction::EvaluateWithGradient(const arma::mat &x, arma::mat &grad) {
+        double VinaLikeRigid::EvaluateWithGradient(const arma::mat &x, arma::mat &grad) {
 
             assert(!x.has_nan());
             assert(!grad.has_nan());
@@ -209,7 +209,7 @@ namespace SmolDock {
         }
 
 
-        VinaLikeRigidScoringFunction::VinaLikeRigidScoringFunction(const iConformer &startingConformation_,
+        VinaLikeRigid::VinaLikeRigid(const iConformer &startingConformation_,
                                                                    const iProtein &p,
                                                                    const iTransform &initialTransform_,
                                                                    double differential_epsilon_) :
@@ -220,15 +220,15 @@ namespace SmolDock {
                 differential_epsilon(differential_epsilon_) {}
 
 
-        double VinaLikeRigidScoringFunction::getDifferentialEpsilon() const {
+        double VinaLikeRigid::getDifferentialEpsilon() const {
             return this->differential_epsilon;
         }
 
-        arma::mat VinaLikeRigidScoringFunction::getStartingConditions() const {
+        arma::mat VinaLikeRigid::getStartingConditions() const {
             return this->externalToInternalRepr(this->initialTransform);
         }
 
-        iConformer VinaLikeRigidScoringFunction::getConformerForParamMatrix(const arma::mat &x) {
+        iConformer VinaLikeRigid::getConformerForParamMatrix(const arma::mat &x) {
             assert(x.n_rows == 7);
 
             iTransform tr = this->internalToExternalRepr(x);
@@ -242,10 +242,102 @@ namespace SmolDock {
             return ret;
         }
 
-        unsigned int VinaLikeRigidScoringFunction::getParamVectorDimension() const {
+        unsigned int VinaLikeRigid::getParamVectorDimension() const {
             return 7;
         }
 
 
+        std::vector<std::tuple<std::string, double>> VinaLikeRigid::EvaluateSubcomponents(const arma::mat &x) {
+            std::vector<std::tuple<std::string, double>> ret;
+
+            assert(x.n_rows == 7);
+
+            iTransform tr = this->internalToExternalRepr(x);
+            normalizeQuaternionInPlace(tr.rota);
+
+            assert(!this->startingConformation.x.empty());
+            assert(!this->prot.x.empty());
+            assert(std::abs(tr.rota.norm() - 1) < 0.01);
+            assert(tr.bondRotationsAngles.size() == this->startingConformation.num_rotatable_bond);
+
+
+            double gauss1_total = 0.0;
+            double gauss2_total = 0.0;
+            double repulsion_total = 0.0;
+            double hydrogen_total = 0.0;
+            double hydrophobic_total = 0.0;
+            double score_raw = 0.0;
+
+            iConformer ligand = this->startingConformation;
+            applyBondRotationInPlace(ligand, tr);
+
+            Eigen::Vector3d ProtCenterPosition = {this->prot.center_x, this->prot.center_y, this->prot.center_z};
+
+            for (unsigned int idxLig = 0; idxLig < ligand.x.size(); idxLig++) {
+                for (unsigned int idxProt = 0; idxProt < this->prot.x.size(); idxProt++) {
+
+
+                    Eigen::Vector3d LigPosition = {ligand.x[idxLig], ligand.y[idxLig], ligand.z[idxLig]};
+                    applyRigidTransformInPlace(LigPosition, tr);
+
+                    Eigen::Vector3d ProtPosition = {this->prot.x[idxProt], this->prot.y[idxProt], this->prot.z[idxProt]};
+                    Eigen::Vector3d distToCenterVector = LigPosition - ProtCenterPosition;
+
+                    double distanceToProteinCenter = distToCenterVector.norm();
+
+                    if (distanceToProteinCenter > (this->prot.radius - 1)) {
+                        score_raw += std::pow((distanceToProteinCenter - this->prot.radius), 4) + 10;
+                        continue;
+                    }
+
+                    Eigen::Vector3d distVect = ProtPosition - LigPosition;
+
+                    double rawDist = distVect.norm();
+
+                    const double cutoff = 8.0;
+                    if (rawDist >= cutoff)
+                        continue;
+
+                    double distance = distanceFromRawDistance(rawDist,  ligand.atomicRadius[idxLig], this->prot.atomicRadius[idxProt]);
+
+                    unsigned char atom1AtomicNumber = ligand.type[idxLig];
+                    unsigned int atom1AtomVariant = ligand.variant[idxLig];
+                    unsigned char atom2AtomicNumber = this->prot.type[idxProt];
+                    unsigned int atom2AtomVariant = this->prot.variant[idxProt];
+
+                    gauss1_total += vinaGaussComponent(distance, 0.0, 0.5);
+                    gauss2_total += vinaGaussComponent(distance, 3.0, 2.0);
+                    repulsion_total += vinaRepulsionComponent(distance, 0.0);
+                    hydrogen_total += vinaHydrophobicComponent(distance,
+                                                               atom1AtomicNumber, atom1AtomVariant,
+                                                               atom2AtomicNumber, atom2AtomVariant);
+                    hydrophobic_total += vinaHydrogenComponent(distance,
+                                                               atom1AtomicNumber, atom1AtomVariant,
+                                                               atom2AtomicNumber, atom2AtomVariant);
+                    score_raw += scoreForAtomCouple(distance,
+                                                    atom1AtomicNumber, atom1AtomVariant,
+                                                    atom2AtomicNumber, atom2AtomVariant);
+
+                } // for
+            } // for
+
+            double final_score = score_raw / (1 + (0.058459999999999998 * ligand.num_rotatable_bond));
+
+
+            ret.push_back(std::make_tuple("Gauss1",gauss1_total));
+            ret.push_back(std::make_tuple("Gauss2",gauss2_total));
+            ret.push_back(std::make_tuple("Repulsion",repulsion_total));
+            ret.push_back(std::make_tuple("Hydrophobic",hydrogen_total));
+            ret.push_back(std::make_tuple("Hydrogen",hydrophobic_total));
+            ret.push_back(std::make_tuple("ScoreRaw",score_raw));
+            ret.push_back(std::make_tuple("Score",final_score));
+            return ret;
+        }
+
+
     }
+
+
+
+
 }

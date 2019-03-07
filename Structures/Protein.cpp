@@ -114,7 +114,8 @@ namespace SmolDock {
                                 std::make_shared<AminoAcid>(it_res->residue_name())
                         );
 
-                        current_residue->setAAId(total_nb_residue);
+
+                        current_residue->setAAId(it_res->residue_sequence_number());
 
                         accumulator_set<double, stats<tag::mean, tag::count, tag::min, tag::max> > acc_res_x, acc_res_y, acc_res_z;
                         accumulator_set<double, stats<tag::mean, tag::max> > acc_res_distance;
@@ -130,11 +131,12 @@ namespace SmolDock {
                             total_nb_atom++;
 
                             auto current_atom = current_residue->atoms.emplace_back(
-                                    std::shared_ptr<Atom>(new Atom(it_atm->atom_name(), true,
+                                    std::shared_ptr<Atom>(new Atom(it_atm->atom_name(), true /* use PDB format */,
                                                                    stringToResType(it_res->residue_name())))
                             );
 
                             current_atom->setAtomPosition(std::make_tuple(it_atm->x(), it_atm->y(), it_atm->z()));
+                            current_atom->setCharge(static_cast<double>(it_atm->charge()));
 
                             double distance = std::sqrt(
                                     std::pow(it_atm->x(), 2) + std::pow(it_atm->y(), 2) + std::pow(it_atm->z(), 2));
@@ -328,6 +330,52 @@ namespace SmolDock {
 
         return prot;
         return iProtein();
+    }
+
+    bool Protein::applySpecialResidueTyping(AminoAcid::AAType resType,
+                                            unsigned int serialNumber,
+                                            SpecialResidueTyping specialType,
+                                            const bool ignoreMismatchingResType) {
+        if(serialNumber == 0)
+        {
+            BOOST_LOG_TRIVIAL(error) << "applySpecialResidueTyping : Cannot find residue number 0 : residue numbering starts at 1.";
+            return false;
+        }
+        if(this->aminoacids.size() < serialNumber)
+        {
+            BOOST_LOG_TRIVIAL(error) << "Attempting to apply special typing to residue #" << serialNumber << "but protein only has " <<this->aminoacids.size();
+            return false;
+        }
+
+        auto itFoundResidue = std::find_if(std::begin(this->aminoacids),
+                std::end(this->aminoacids),
+                [serialNumber](const std::shared_ptr<AminoAcid>& elem){
+            return elem->getAAId() == serialNumber;
+        });
+
+        if(itFoundResidue == std::end(this->aminoacids))
+        {
+            BOOST_LOG_TRIVIAL(error) << "Cannot find amino acid #" << serialNumber;
+            return false;
+        }
+
+        auto residue = *itFoundResidue;
+
+        if(residue->getType() != resType)
+        {
+            if(!ignoreMismatchingResType)
+            {
+                BOOST_LOG_TRIVIAL(error) << "Attempting to apply special typing to residue " << resTypeToString(resType) <<
+                                         " #" << serialNumber << " but this residue is actually a " << resTypeToString(residue->getType());
+                return false;
+            }else {
+                BOOST_LOG_TRIVIAL(warning) << "Attempting to apply special typing to residue " << resTypeToString(resType) <<
+                                         " #" << serialNumber << " but this residue is actually a " << resTypeToString(residue->getType());
+                BOOST_LOG_TRIVIAL(warning) << "The ignoreMismatchingType was set so this error is overridden.";
+            }
+        }
+
+        return residue->applySpecialResidueTyping(specialType);
     }
 
     Protein::Protein() = default;

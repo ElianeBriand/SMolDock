@@ -37,8 +37,8 @@ dbSetting.type = sd.DockingBoxType.centeredAround
 dbSetting.center = (10.0, 22.0, 25.0)
 dbSetting.radius = 10.0
 
-cdengine = sd.Engine.ConformerRigidDockingEngine(10,
-                                                 10,
+cdengine = sd.Engine.ConformerRigidDockingEngine(5,
+                                                 5,
                                                  receptor,
                                                  mol1,
                                                  sd.ScoringFunctionType.Vina,
@@ -53,5 +53,11 @@ cdengine.runDockingEngine()
 
 dockRes = cdengine.getDockingResult()
 
+pdbwriter = sd.PDBWriter()
+
+
 for mol in dockRes.ligandPoses:
-    print(Chem.MolToSmiles(mol.getRDKitMol()))
+    pdbwriter.addLigand(mol)
+
+pdbwriter.writePDB("res_py.pdb")
+

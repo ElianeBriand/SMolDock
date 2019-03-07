@@ -63,7 +63,7 @@ namespace SmolDock {
 
 
             for (auto &atom : residue.atoms) {
-                std::string complete_atom_name = atom->atomClassInResidue;
+                std::string complete_atom_name = atom->rawPDBAtomName;
                 auto nameTypeTuple_it = std::find_if(std::begin(record_for_this_AA), std::end(record_for_this_AA),
                                                      [&](const std::tuple<std::string, Atom::AtomVariant> &e) {
                                                          return std::get<0>(e) == complete_atom_name;

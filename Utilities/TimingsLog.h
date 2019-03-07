@@ -29,7 +29,7 @@
 #endif
 
 #ifndef SMOLDOCK_VERBOSE_DEBUG
-#define record_timings(A) ;;
+#define record_timings(A) auto A = std::chrono::system_clock::now()
 #define TRACE_LOG()  ;;
 #endif
 

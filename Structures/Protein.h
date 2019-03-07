@@ -44,6 +44,10 @@ namespace SmolDock {
      * \brief Class representing "rich" protein. Contains all extended attributes and functions.
      *
      */
+
+
+
+
     class Protein : Structure {
 
     public:
@@ -71,6 +75,11 @@ namespace SmolDock {
         iProtein getPartialiProtein_sphere(std::array<double, 3> center, double radius, double margin) const;
 
         double getMaxRadius() const;
+
+        bool applySpecialResidueTyping(const AminoAcid::AAType resType,
+                                        const unsigned int serialNumber,
+                                        const SpecialResidueTyping specialType,
+                                        const bool ignoreMismatchingResType = false);
 
     private:
         std::vector<std::shared_ptr<AminoAcid> > aminoacids;

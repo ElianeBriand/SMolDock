@@ -59,7 +59,8 @@ namespace SmolDock::Engine {
                                              Score::ScoringFunctionType scFuncType,
                                              Heuristics::GlobalHeuristicType heurType,
                                              Optimizer::LocalOptimizerType localOptimizerType_,
-                                             unsigned int seed);
+                                             unsigned int seed,
+                                             Heuristics::HeuristicParameters hParams = Heuristics::emptyParameters);
 
         // /// Parameters /////////////
         bool setDockingBox(DockingBoxSetting setting) final;
@@ -72,6 +73,10 @@ namespace SmolDock::Engine {
 
         // /// Results /////////////
         std::shared_ptr<DockingResult> getDockingResult() final;
+
+        std::tuple<double,double> getMeanStdDevDuration() const;
+        std::tuple<double,double> getMeanStdDevScore() const;
+        double getBestScore();
 
 
     private:
@@ -92,6 +97,9 @@ namespace SmolDock::Engine {
 
         std::mt19937 rnd_generator;
 
+
+        Heuristics::HeuristicParameters heurParams;
+
         //std::shared_ptr<RDKit::RWMol> rwmol;
 
         std::vector<iConformer> viConformers;
@@ -109,6 +117,13 @@ namespace SmolDock::Engine {
 
         std::vector<iConformer> allGeneratediConformer;
         std::vector<iConformer> bestiConformer;
+
+        double meanDuration = 0.0;
+        double stdDevDuration = 0.0;
+
+        double meanScore = 0.0;
+        double stdDevScore = 0.0;
+        double bestScore = 0.0;
 
     };
 

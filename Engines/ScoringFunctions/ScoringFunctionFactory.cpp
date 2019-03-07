@@ -4,8 +4,9 @@
 
 #include "ScoringFunctionFactory.h"
 
-#include "VinaLikeRigidScoringFunction.h"
-#include "VinaLikeScoringFunction.h"
+#include "VinaLikeRigid.h"
+#include "VinaLike.h"
+#include "VinaLikeCovalentReversible.h"
 
 namespace SmolDock::Score {
 
@@ -13,9 +14,11 @@ namespace SmolDock::Score {
                                                             const iProtein &protein, const iTransform &transform,
                                                             double differential_upsilon) {
         if (t == ScoringFunctionType::VinaRigid) {
-            return std::make_shared<VinaLikeRigidScoringFunction>(conformer, protein, transform, differential_upsilon);
+            return std::make_shared<VinaLikeRigid>(conformer, protein, transform, differential_upsilon);
         } else if (t == ScoringFunctionType::Vina) {
-            return std::make_shared<VinaLikeScoringFunction>(conformer, protein, transform, differential_upsilon);
+            return std::make_shared<VinaLike>(conformer, protein, transform, differential_upsilon);
+        } else if (t == ScoringFunctionType::VinaCovalentReversible) {
+            return std::make_shared<VinaLikeCovalentReversible>(conformer, protein, transform, differential_upsilon);
         } else {
             return nullptr;
         }
