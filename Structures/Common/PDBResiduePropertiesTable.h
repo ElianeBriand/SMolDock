@@ -20,7 +20,8 @@ namespace SmolDock {
 
     };
 
-    extern std::set<std::tuple<AminoAcid::AAType, std::vector<std::tuple<std::string, Atom::AtomVariant> > > > ResidueAtomPropertiesLookupTable_General;
+    // See the cpp file
+    extern std::map<AminoAcid::AAType, std::map<std::string, std::tuple<Atom::AtomVariant, double> > > ResidueAtomPropertiesLookupTable_General;
 
 
 }

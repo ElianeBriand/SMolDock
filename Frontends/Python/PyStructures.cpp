@@ -58,10 +58,10 @@ namespace SmolDock::Wrapper {
 }
 
 /*        bool populateFromMolFile(const std::string &filename, unsigned int seed = 36754,
-                                 std::vector<std::shared_ptr<InputPostProcessor::InputPostProcessor> > postProcessors = {});
+                                 std::vector<std::shared_ptr<InputModifier::InputModifier> > postProcessors = {});
 
         bool populateFromMol2File(const std::string &filename, unsigned int seed = 36754,
-                                  std::vector<std::shared_ptr<InputPostProcessor::InputPostProcessor> > postProcessors = {});
+                                  std::vector<std::shared_ptr<InputModifier::InputModifier> > postProcessors = {});
 */
 
 void export_Structures() {

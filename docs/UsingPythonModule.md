@@ -30,7 +30,7 @@ receptor.populateFromPDB("./DockingTests/COX2_Ibuprofen/4PH9_COX2_without_Ibupro
 These objects allow the exact reproduction of specific behaviour of various program. For example, the Vina post processors
 make it so cysteine sulfur are not considered hydrogen bond acceptor, a behaviour of the vina program (whereas SmolDock consider it so by default).
 
-If you need to closely emmulate atom typing behaviour, you may want to use/write input post processors.
+If you need to closely emulate atom typing behaviour, you may want to use/write input post processors.
 
 # Importing ligand
 
@@ -47,9 +47,62 @@ mol1.populateFromPDB("./DockingTests/COX2_Ibuprofen/VINA_Cox2_BestRes.pdb",
 ```
 
 We can also ```mol1.populateFromSMILES(string smiles)``` but we then rely on RDKit conformer generator for starting 3D conformation.
-This may or may not be fine for you application. Importing from PDB allow you to specify exact starting 3D coordinate.
+This is generally fine. Importing from PDB allow you to specify exact starting 3D coordinate.
+
+You can also use other file formats : 
+```python
+mol1.populateFromMol2("../DockingTests/COX2_Ibuprofen/VINA_Cox2_BestRes_Charged.mol2")
+mol1.populateFromMol("../DockingTests/COX2_Ibuprofen/VINA_Cox2_BestRes_Charged.mol")
+
+```
 
 
+
+# Setting up docking, and running it
+
+```python
+dbSetting = sd.DockingBoxSetting()
+dbSetting.type = sd.DockingBoxType.centeredAround
+dbSetting.center = (10.0, 22.0, 25.0) # Center of the sphere
+dbSetting.radius = 10.0 # radius of the sphere
+
+cdengine = sd.Engine.ConformerRigidDockingEngine(5, # Number of conformer
+                                                 5, # Number of "retry" per conformer
+                                                 receptor,
+                                                 mol1,
+                                                 sd.ScoringFunctionType.Vina,
+                                                 sd.GlobalHeuristicType.SimulatedAnnealing,
+                                                 sd.LocalOptimizerType.L_BFGS,
+                                                 1244)
+
+
+cdengine.setDockingBox(dbSetting)
+cdengine.setupDockingEngine()
+cdengine.runDockingEngine()
+
+dockRes = cdengine.getDockingResult()
+
+pdbwriter = sd.PDBWriter()
+
+
+for mol in dockRes.ligandPoses:
+    pdbwriter.addLigand(mol)
+
+pdbwriter.writePDB("res_py.pdb")
+```
+# Analysing results
+Exporting to PDB :
+```python
+dockRes = cdengine.getDockingResult()
+
+pdbwriter = sd.PDBWriter()
+
+
+for mol in dockRes.ligandPoses:
+    pdbwriter.addLigand(mol)
+
+pdbwriter.writePDB("res_py.pdb")
+```
 
 # Export ligand as RDKit molecule
 
@@ -60,11 +113,6 @@ rdmol1 = mol1.getRDKitMol()
 Then use rdmol1 as any other RDKit molecule.
 
 If mol1 is a docking result, it contains a conformer (the last one) which is the ligand final pose.
-
-# Setting up docking, and running it
-
-
-# Analysing results
 
 
 # Troubleshooting the python module
@@ -85,5 +133,6 @@ You are using a function to export a SmolDock Molecule (or other structure) to a
 module (mostly, RDKit), like `mol.getRDKitMol()`. This is possible if both SmolDock and the module are compiled with the exact same boost_python
 version (major, minor and subrelease version number). If it is not the case, automatic conversion will fail with the aforementioned
 error. Recompile either SmolDock or RDKit with the appropriate, same boost_python version. Or do not use the RDKit export features,
-the rest of SmolDock (and RDKit) will work perfectly fine : they just won't communicate.
+the rest of SmolDock (and RDKit) will work perfectly fine : they just won't communicate. You can also do LD_PRELOAD and/or rename
+.so file. This mostly works.
 

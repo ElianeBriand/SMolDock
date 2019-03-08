@@ -38,9 +38,9 @@ namespace sd = SmolDock;
 
 namespace SmolDock::Wrapper {
 
-    std::vector<std::shared_ptr<sd::InputPostProcessor::InputPostProcessor> > getVinaPostProcessorsVector() {
-        auto vinaPP = std::make_shared<sd::InputPostProcessor::VinaCompatibilityPostProcessor>();
-        std::vector<std::shared_ptr<sd::InputPostProcessor::InputPostProcessor> > postProcessors;
+    std::vector<std::shared_ptr<sd::InputModifier::InputModifier> > getVinaModifierVector() {
+        auto vinaPP = std::make_shared<sd::InputModifier::VinaCompatibility>();
+        std::vector<std::shared_ptr<sd::InputModifier::InputModifier> > postProcessors;
         postProcessors.push_back(vinaPP);
         return postProcessors;
     }
@@ -55,6 +55,6 @@ void export_STLWrapper() {
             .def(p::vector_indexing_suite<std::vector<sd::Molecule> >()) // We need Molecule::operator== to use this
             ;
 
-    p::class_<std::vector<std::shared_ptr<sd::InputPostProcessor::InputPostProcessor> > >("PostProcessorsVector");
-    p::def("getVinaPostProcessorsVector", sd::Wrapper::getVinaPostProcessorsVector);
+    p::class_<std::vector<std::shared_ptr<sd::InputPostProcessor::InputPostProcessor> > >("ModifierVector");
+    p::def("getVinaPostModifierVector", sd::Wrapper::getVinaPostProcessorsVector);
 }

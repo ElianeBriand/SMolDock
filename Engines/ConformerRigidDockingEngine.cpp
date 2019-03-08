@@ -282,7 +282,8 @@ namespace SmolDock {
 
             std::vector<std::tuple<int, double>> scoreAndIndices;
             for (unsigned int i = 0; i < this->scores.size(); i++) {
-                scoreAndIndices.push_back(std::make_tuple(i, this->localScores[i]));
+                // scoreAndIndices.push_back(std::make_tuple(i, this->localScores[i]));
+                scoreAndIndices.push_back(std::make_tuple(i, this->scores[i]));
             }
 
             std::sort(std::begin(scoreAndIndices),

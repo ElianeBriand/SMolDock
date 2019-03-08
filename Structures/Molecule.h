@@ -39,7 +39,7 @@
 #include <GraphMol/SmilesParse/SmilesParse.h>
 #include <GraphMol/Substruct/SubstructMatch.h>
 #include <GraphMol/DistGeomHelpers/Embedder.h>
-#include <Structures/InputPostProcessors/InputPostProcessorInterface.h>
+#include <Structures/InputModifiers/InputModifierInterface.h>
 
 #include "Structure.h"
 #include "Atom.h"
@@ -76,18 +76,42 @@ namespace SmolDock {
          * \sa populateFromPDB()
         */
         bool populateFromSMILES(const std::string &smiles, unsigned int seed = 36754,
-                                std::vector<std::shared_ptr<InputPostProcessor::InputPostProcessor> > postProcessors = {});
+                                std::vector<std::shared_ptr<InputModifier::InputModifier> > modifiers = {});
 
-
+        //! Populate atoms and bonds from a mol file.
+        /*!
+         * Populate atoms and bonds from a mol file. This uses the RDKit backend.
+         *
+         * \param filename Path to mol file
+         * \param postProcessors vector of post processor that will operate after the parsing phase
+         * \return whether the parsing and initial conformer generation was successful.
+        */
         bool populateFromMolFile(const std::string &filename, unsigned int seed = 36754,
-                                 std::vector<std::shared_ptr<InputPostProcessor::InputPostProcessor> > postProcessors = {});
+                                 std::vector<std::shared_ptr<InputModifier::InputModifier> > modifiers = {});
 
+        //! Populate atoms and bonds from a mol2 file.
+        /*!
+         * Populate atoms and bonds from a mol2 file. This uses the RDKit backend.
+         *
+         * \param filename Path to mol file
+         * \param postProcessors vector of post processor that will operate after the parsing phase
+         * \return whether the parsing and initial conformer generation was successful.
+        */
         bool populateFromMol2File(const std::string &filename, unsigned int seed = 36754,
-                                  std::vector<std::shared_ptr<InputPostProcessor::InputPostProcessor> > postProcessors = {});
+                                  std::vector<std::shared_ptr<InputModifier::InputModifier> > modifiers = {});
 
-
+        /** Returns a mol block for the molecule.
+         *
+         * \return a mol block for the molecule.
+         */
         std::string writeToMolBlock();
 
+        /** Write the molecule to a mol file
+         *
+         * \param filename File to write
+         * \param overwrite Whether to overwrite the file, if it already exist
+         * \return true on success
+         */
         bool writeToMolFile(const std::string &filename, bool overwrite = false);
 
         //! Populate atoms and bonds from a PDB file. Additionally, a SMILES string can be used for bond order hint.
@@ -107,7 +131,7 @@ namespace SmolDock {
         */
         bool
         populateFromPDBFile(const std::string &filename, const std::string &smiles_hint = "", unsigned int seed = 36754,
-                            std::vector<std::shared_ptr<InputPostProcessor::InputPostProcessor> > postProcessors = {});
+                            std::vector<std::shared_ptr<InputModifier::InputModifier> > modifiers = {});
 
 
         //! Return the number of atom in the Molecule, Hydrogen excepted
@@ -166,6 +190,11 @@ namespace SmolDock {
         */
         void setResidueName(const std::string &res_name);
 
+        /** Using the coordinate in the iConformer, the coordinate of each atoms in the molecule will be updated.
+         *
+         * \param conformer  iConformer to use
+         * \return true on success
+         */
         bool updateAtomPositionsFromiConformer(const iConformer &conformer);
 
         //! Make a copy of the Molecule object where the underlying Atom and Bond are new objects instead of references to
@@ -180,11 +209,21 @@ namespace SmolDock {
         */
         unsigned int getNumRotatableBond();
 
-
+        //! This operator returns true even for different object, if deepcopy() was not used to make the copy
         bool operator==(const Molecule &rhs) const;
 
         bool operator!=(const Molecule &rhs) const;
 
+        /** Apply a given atom variant on the atom matching the SMARTS pattern.
+         *
+         * Only one atom will be tagged with the given variant : the one with SMART atom mapping
+         * number 1. For example, given [C:1](=O)C, only the first C will be tagged. The existing variant on the atom
+         * are not removed. If the variant is already set on the atom, nothing will happend (and no warning will be given)
+         *
+         * \param smarts_pattern SMARTS pattern to match
+         * \param variant AtomVariant to apply
+         * \return true on success
+         */
         unsigned int applyAtomVariant(std::string smarts_pattern,Atom::AtomVariant variant);
 
     private:
@@ -212,7 +251,7 @@ namespace SmolDock {
 
         //! Use this if using RDKit RWMol as entry.
         bool populateInternalAtomAndBondFromRWMol(unsigned int seed,
-                                                  std::vector<std::shared_ptr<InputPostProcessor::InputPostProcessor> > postProcessors);
+                                                  std::vector<std::shared_ptr<InputModifier::InputModifier> > modifiers);
 
         int initial_conformer_id = -1;
 

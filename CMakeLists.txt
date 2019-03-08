@@ -17,7 +17,7 @@ SET(CMAKE_CXX_COMPILER "clang++")
 SET(CMAKE_CXX_FLAGS_DEBUG "-g")
 SET(CMAKE_CXX_FLAGS_MINSIZEREL "-Os -DNDEBUG")
 SET(CMAKE_CXX_FLAGS_RELEASE "-O3 -march=native -DNDEBUG")
-SET(CMAKE_CXX_FLAGS_RELWITHDEBINFO "-O3 -march=native -g  ")
+SET(CMAKE_CXX_FLAGS_RELWITHDEBINFO "-O3 -march=native -g ")
 
 
 ######## RDKIT SETUP ######
@@ -86,13 +86,13 @@ set(SOURCE_LIST Structures/Structure.cpp
         Utilities/IntermediateConformerCollector.h
         Utilities/ReScorer.cpp
         Utilities/ReScorer.h
-        Structures/Common/VariantFlagAssignation.cpp
-        Structures/Common/VariantFlagAssignation.h
-        Structures/Common/PDBResidueVariantTable.cpp
-        Structures/Common/PDBResidueVariantTable.h
-        Structures/InputPostProcessors/VinaCompatibilityPostProcessor.cpp
-        Structures/InputPostProcessors/VinaCompatibilityPostProcessor.h
-        Structures/InputPostProcessors/InputPostProcessorInterface.h
+        Structures/Common/ResiduePropertiesAssignation.cpp
+        Structures/Common/ResiduePropertiesAssignation.h
+        Structures/Common/PDBResiduePropertiesTable.cpp
+        Structures/Common/PDBResiduePropertiesTable.h
+        Structures/InputModifiers/VinaCompatibility.cpp
+        Structures/InputModifiers/VinaCompatibility.h
+        Structures/InputModifiers/InputModifierInterface.h
         Engines/ScoringFunctions/ScoringFunctionInterface.h
         Engines/LocalOptimizers/L_BFGS.cpp
         Engines/LocalOptimizers/L_BFGS.h

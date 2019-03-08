@@ -21,19 +21,19 @@
 #include <cassert>
 
 
-#include "VariantFlagAssignation.h"
+#include "ResiduePropertiesAssignation.h"
 #include "Structures/Bond.h"
 
 #include <boost/log/trivial.hpp>
 
-#include "PDBResidueVariantTable.h"
+#include "PDBResiduePropertiesTable.h"
 
 namespace SmolDock {
 
 
-    void assignVariantFlagsForResidueAtom(AminoAcid &residue, PDBResidueVariantAssignationType assignation_type) {
+    void assignPropertiesForResidueAtom(AminoAcid &residue, PDBResidueVariantAssignationType assignation_type) {
 
-        std::set<std::tuple<AminoAcid::AAType, std::vector<std::tuple<std::string, Atom::AtomVariant> > > > *ResidueAtomPropertiesLookupTable;
+        std::map<AminoAcid::AAType, std::map<std::string, std::tuple<Atom::AtomVariant, double> > > *ResidueAtomPropertiesLookupTable;
         if (assignation_type == PDBResidueVariantAssignationType::GeneralPurpose) {
             ResidueAtomPropertiesLookupTable = &ResidueAtomPropertiesLookupTable_General;
         } else {
@@ -46,11 +46,8 @@ namespace SmolDock {
                 << "Encountered unknown residue type while assigning atom variant. Check PDB file. Undefined behaviour may occur.";
 
         } else {
-            auto record_it = std::find_if(std::begin(*ResidueAtomPropertiesLookupTable),
-                                          std::end(*ResidueAtomPropertiesLookupTable),
-                                          [&](const std::tuple<AminoAcid::AAType, std::vector<std::tuple<std::string, Atom::AtomVariant> > > &e) {
-                                              return std::get<0>(e) == type;
-                                          });
+
+            auto record_it = ResidueAtomPropertiesLookupTable->find(type);
             if (record_it == std::end(*ResidueAtomPropertiesLookupTable)) {
                 // Not found
                 BOOST_LOG_TRIVIAL(error)
@@ -59,22 +56,19 @@ namespace SmolDock {
             }
 
 
-            std::vector<std::tuple<std::string, Atom::AtomVariant> > record_for_this_AA = std::get<1>(*record_it);
 
 
             for (auto &atom : residue.atoms) {
                 std::string complete_atom_name = atom->rawPDBAtomName;
-                auto nameTypeTuple_it = std::find_if(std::begin(record_for_this_AA), std::end(record_for_this_AA),
-                                                     [&](const std::tuple<std::string, Atom::AtomVariant> &e) {
-                                                         return std::get<0>(e) == complete_atom_name;
-                                                     });
-                if (nameTypeTuple_it != std::end(record_for_this_AA)) {
+                auto nameTypeTuple_it = record_it->second.find(complete_atom_name);
+                if (nameTypeTuple_it != std::end(record_it->second)) {
                     // We have an association between complete atom name and AtomVariant
-                    Atom::AtomVariant newVariant = atom->getAtomVariant() | std::get<1>(*nameTypeTuple_it);
+                    Atom::AtomVariant newVariant = atom->getAtomVariant() | std::get<0>(nameTypeTuple_it->second);
                     atom->setAtomVariant(newVariant);
+                    atom->setCharge(std::get<1>(nameTypeTuple_it->second));
                 } else {
                     BOOST_LOG_TRIVIAL(error)
-                        << "Missing AtomVariant record for residue " << resTypeToString(type) << ", atom "
+                        << "Missing record for residue " << resTypeToString(type) << ", atom "
                         << complete_atom_name;
                 }
 

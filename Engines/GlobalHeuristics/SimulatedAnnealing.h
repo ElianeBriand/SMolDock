@@ -30,7 +30,7 @@ namespace SmolDock::Heuristics {
             unsigned int maxIterations = 100000;
             double initTemp = 10000.0;
             unsigned int initialNoTempDropMoves = 1000;
-            unsigned int moveCtrlSweep = 100;
+            unsigned int moveCtrlSweep = 120;
             double tolerance = 1e-3;
             unsigned int maxToleranceSweep = 3;
             double maxMoveSize = 5.0;

@@ -36,6 +36,9 @@ It links with
 - RDKit (BSD 3-clauses)
 - Vc (BSD 3-clauses)
 
+It includes data from :
+- GROMACS implementation of Amber99ff (LGPL 2.1 or later)
+
 See COPYING for copyrights and text of these licences.
 
 # Documentation

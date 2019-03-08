@@ -70,7 +70,7 @@ namespace SmolDock {
 
 
     bool Molecule::populateFromSMILES(const std::string &smiles, unsigned int seed,
-                                      std::vector<std::shared_ptr<InputPostProcessor::InputPostProcessor> > postProcessors) {
+                                      std::vector<std::shared_ptr<InputModifier::InputModifier> > modifiers) {
         RDKit::RWMol *a = nullptr;
         try {
             /* This can throw */
@@ -90,7 +90,7 @@ namespace SmolDock {
 
         this->rwmol.reset(a);
 
-        if (this->populateInternalAtomAndBondFromRWMol(seed, std::move(postProcessors)) == false)
+        if (this->populateInternalAtomAndBondFromRWMol(seed, std::move(modifiers)) == false)
             return false;
 
         this->smiles = smiles;
@@ -156,7 +156,7 @@ namespace SmolDock {
     }
 
     bool Molecule::populateFromPDBFile(const std::string &filename, const std::string &smiles_hint, unsigned int seed,
-                                       std::vector<std::shared_ptr<InputPostProcessor::InputPostProcessor> > postProcessors) {
+                                       std::vector<std::shared_ptr<InputModifier::InputModifier> > modifiers) {
 
 
         // Flavor = 1 --> ignore alternate location
@@ -172,14 +172,14 @@ namespace SmolDock {
             AssignBondOrderFromTemplateSMILES(this->rwmol, smiles_hint);
         }
 
-        if (this->populateInternalAtomAndBondFromRWMol(seed, postProcessors) == false)
+        if (this->populateInternalAtomAndBondFromRWMol(seed, modifiers) == false)
             return false;
 
         return true;
     }
 
     bool Molecule::populateFromMolFile(const std::string &filename, unsigned int seed,
-                                       std::vector<std::shared_ptr<InputPostProcessor::InputPostProcessor> > postProcessors) {
+                                       std::vector<std::shared_ptr<InputModifier::InputModifier> > modifiers) {
 
 
         RDKit::RWMol *mol = RDKit::MolFileToMol(filename, true, true);
@@ -190,14 +190,14 @@ namespace SmolDock {
 
         this->rwmol.reset(mol);
 
-        if (this->populateInternalAtomAndBondFromRWMol(seed, postProcessors) == false)
+        if (this->populateInternalAtomAndBondFromRWMol(seed, modifiers) == false)
             return false;
 
         return true;
     }
 
     bool Molecule::populateFromMol2File(const std::string &filename, unsigned int seed,
-                                        std::vector<std::shared_ptr<InputPostProcessor::InputPostProcessor> > postProcessors) {
+                                        std::vector<std::shared_ptr<InputModifier::InputModifier> > modifiers) {
 
 
         RDKit::RWMol *mol = RDKit::Mol2FileToMol(filename, true, true);
@@ -208,7 +208,7 @@ namespace SmolDock {
 
         this->rwmol.reset(mol);
 
-        if (this->populateInternalAtomAndBondFromRWMol(seed, postProcessors) == false)
+        if (this->populateInternalAtomAndBondFromRWMol(seed, modifiers) == false)
             return false;
 
         return true;
@@ -224,7 +224,7 @@ namespace SmolDock {
     }
 
     bool Molecule::populateInternalAtomAndBondFromRWMol(unsigned int seed,
-                                                        std::vector<std::shared_ptr<InputPostProcessor::InputPostProcessor> > postProcessors) {
+                                                        std::vector<std::shared_ptr<InputModifier::InputModifier> > modifiers) {
 
         // We care about Hs only during conformer generation
         // TODO: find out if we need to care at other moments...
@@ -372,6 +372,14 @@ namespace SmolDock {
         }
 
 
+        std::vector<std::tuple<int,int>> bondsListToAvoid;
+        for (const auto &modifier : modifiers) {
+                std::vector<std::tuple<int,int>> result = modifier->deselectRotatableBonds(this->rwmol);
+                for(auto& item : result)
+                {
+                    bondsListToAvoid.push_back(item);
+                }
+        }
 
 
         // rotatable bond SMARTS from RdKit source (Lipinski.cpp)
@@ -409,6 +417,22 @@ namespace SmolDock {
             BOOST_LOG_TRIVIAL(debug) << "Rotatable bond found : " << atomMatched1->getSymbol()
                                      << "-" << atomMatched2->getSymbol() << "(" << atomMatched1->getIdx() << "-"
                                      << atomMatched2->getIdx() << ")";
+
+
+            auto avoidListMatchit = std::find_if(std::begin(bondsListToAvoid), std::end(bondsListToAvoid),
+                                                 [atom1Index, atom2Index](const std::tuple<int,int> &e) {
+                                                     // RotatableBondRemover and variant put both orientation in the bondsListToAvoid
+                                                     // so we need only check one
+                                                     return (atom1Index == std::get<0>(e)) && (atom2Index == std::get<1>(e));
+                                                 });
+            if(avoidListMatchit != std::end(bondsListToAvoid))
+            {
+                // We matched a bond from the list to avoid
+                BOOST_LOG_TRIVIAL(info) << "  Rotatable bond " << atomMatched1->getSymbol()
+                                        << "-" << atomMatched2->getSymbol() << "(" << atomMatched1->getIdx() << "-"
+                                        << atomMatched2->getIdx() << ") not taken into account due to InputModifier flagging.";
+                continue;
+            }
 
             auto itFoundBond = std::find_if(std::begin(this->bonds), std::end(this->bonds),
                                             [atom1Index, atom2Index](const std::shared_ptr<Bond> &e) {
@@ -475,9 +499,9 @@ namespace SmolDock {
         assignApolarCarbonFlag(this->atoms);
 
         // Final post processing : calling
-        for (const auto &pprocessor : postProcessors) {
+        for (const auto &modifier : modifiers) {
             for (auto &atom: this->atoms) {
-                pprocessor->processAtomFromLigand(*atom);
+                modifier->postProcessAtomFromLigand(*atom);
             }
         }
 
