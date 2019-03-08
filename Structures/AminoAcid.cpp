@@ -136,6 +136,11 @@ namespace SmolDock {
     }
 
     bool AminoAcid::applySpecialResidueTyping(const SpecialResidueTyping specialType) {
+
+        std::string atomSelector;
+        std::string specialTypingName;
+        Atom::AtomVariant variantToBeSet;
+
         if(specialType == SpecialResidueTyping::covalentReversibleSerineOH)
         {
             if(this->type != AminoAcid::AAType::serine)
@@ -145,19 +150,45 @@ namespace SmolDock {
                 return false;
             }
 
-            auto foundTargetIt = std::find_if(std::begin(this->atoms),
-                    std::end(this->atoms),
-                    [](const std::shared_ptr<Atom>& elem) {
-                                return elem->getRawPDBAtomName() == "OG";
-                            }
-                    );
-            Atom::AtomVariant variant = (*foundTargetIt)->getAtomVariant();
-            variant = variant | Atom::AtomVariant::covalentReversibleDonor;
-            (*foundTargetIt)->setAtomVariant(variant);
-            BOOST_LOG_TRIVIAL(info) << "Applied covalentReversibleSerineOH special typing (" << resTypeToString(this->type) << " #" << AAId << ")";
-            return true;
+            atomSelector = "OG";
+            variantToBeSet = Atom::AtomVariant::covalentReversibleDonor;
+            specialTypingName = "covalentReversibleSerineOH";
+
+        }else if (specialType == SpecialResidueTyping::covalentReversibleCysteineSH)
+        {
+            if(this->type != AminoAcid::AAType::cysteine)
+            {
+                BOOST_LOG_TRIVIAL(error) << "Attempting to apply special typing covalentReversibleCysteineSH to residue " << resTypeToString(this->type) <<
+                                         " which is not a cysteine.";
+                return false;
+            }
+
+            atomSelector = "SG";
+            variantToBeSet = Atom::AtomVariant::covalentReversibleDonor;
+            specialTypingName = "covalentReversibleCysteineSH";
+
+        }else {
+            BOOST_LOG_TRIVIAL(error) << "Unknown SpecialResidueTyping ID : " << static_cast<unsigned int>(specialType);
+            return false;
         }
-        return false;
+
+        // If we reach this line, we have matched a special type, and are the appropritate residue type.
+
+
+        auto foundTargetIt = std::find_if(std::begin(this->atoms),
+                                          std::end(this->atoms),
+                                          [atomSelector](const std::shared_ptr<Atom>& elem) {
+                                              return elem->getRawPDBAtomName() == atomSelector;
+                                          }
+        );
+
+
+        Atom::AtomVariant variant = (*foundTargetIt)->getAtomVariant();
+        variant = variant | variantToBeSet;
+        (*foundTargetIt)->setAtomVariant(variant);
+
+        BOOST_LOG_TRIVIAL(info) << "Applied " << specialTypingName << " special typing (" << resTypeToString(this->type) << " #" << AAId << ")";
+        return true;
     }
 
 

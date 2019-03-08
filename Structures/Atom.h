@@ -189,15 +189,12 @@ namespace SmolDock {
         void setOwningAA(std::shared_ptr<AminoAcid> &aa);
 
         std::tuple<double, double, double> getAtomPosition();
-
         void setAtomPosition(std::tuple<double, double, double> pos);
 
         double getAtomicRadius();
-
         void setAtomicRadius(double r);
 
         double getCharge() const;
-
         void setCharge(double ch);
 
 

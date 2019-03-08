@@ -24,7 +24,7 @@
 #include <vector>
 #include <memory>
 
-#include <Structures/Common/PDBResidueVariantTable.h>
+#include <Structures/Common/PDBResiduePropertiesTable.h>
 
 #include <Structures/Atom.h>
 

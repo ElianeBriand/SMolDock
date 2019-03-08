@@ -303,10 +303,10 @@ namespace SmolDock::Score {
                 gauss1_total += vinaGaussComponent(distance, 0.0, 0.5);
                 gauss2_total += vinaGaussComponent(distance, 3.0, 2.0);
                 repulsion_total += vinaRepulsionComponent(distance, 0.0);
-                hydrogen_total += vinaHydrophobicComponent(distance,
+                hydrophobic_total+= vinaHydrophobicComponent(distance,
                                                            atom1AtomicNumber, atom1AtomVariant,
                                                            atom2AtomicNumber, atom2AtomVariant);
-                hydrophobic_total += vinaHydrogenComponent(distance,
+                hydrogen_total += vinaHydrogenComponent(distance,
                                                            atom1AtomicNumber, atom1AtomVariant,
                                                            atom2AtomicNumber, atom2AtomVariant);
 
@@ -319,19 +319,16 @@ namespace SmolDock::Score {
                       + VinaClassic::coeff_hydrophobic * hydrophobic_total
                       + VinaClassic::coeff_hydrogen * hydrogen_total;
 
-        double final_score = score_raw / (1 + (VinaClassic::coeff_entropic * ligand.num_rotatable_bond));
 
         double final_score_fromSum = score_sum / (1 + (VinaClassic::coeff_entropic * ligand.num_rotatable_bond));
 
         ret.push_back(std::make_tuple("Gauss1", gauss1_total));
         ret.push_back(std::make_tuple("Gauss2", gauss2_total));
         ret.push_back(std::make_tuple("Repulsion", repulsion_total));
-        ret.push_back(std::make_tuple("Hydrophobic", hydrogen_total));
-        ret.push_back(std::make_tuple("Hydrogen", hydrophobic_total));
-        ret.push_back(std::make_tuple("ScoreRaw", score_raw));
+        ret.push_back(std::make_tuple("Hydrophobic", hydrophobic_total));
+        ret.push_back(std::make_tuple("Hydrogen", hydrogen_total));
         ret.push_back(std::make_tuple("ScoreRawSum", score_sum));
-        ret.push_back(std::make_tuple("ScoreFromSum", final_score_fromSum));
-        ret.push_back(std::make_tuple("Score", final_score));
+        ret.push_back(std::make_tuple("Score", final_score_fromSum));
         return ret;
     }
 }

@@ -26,7 +26,7 @@
 
 #include <boost/log/trivial.hpp>
 
-#include "PDBResidueVariantTable.h"
+#include "PDBResiduePropertiesTable.h"
 
 namespace SmolDock {
 

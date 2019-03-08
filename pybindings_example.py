@@ -16,7 +16,7 @@ from rdkit.Chem import AllChem
 
 # We can just import PDB file (Post processor is optional)
 receptor = sd.Protein()
-vinaPP = sd.getVinaPostProcessorsVector()  # Enhanced similarity to Vina behaviour
+vinaPP = sd.getVinaPostModifierVector()  # Enhanced similarity to Vina behaviour
 receptor.populateFromPDB("../DockingTests/COX2_Ibuprofen/4PH9_COX2_without_Ibuprofen.pdb", vinaPP)
 
 # For ligand, we have many option, like populateFromSMILES.

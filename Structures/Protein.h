@@ -33,7 +33,7 @@
 
 
 #include <Engines/Internals/iProtein.h>
-#include <Structures/InputPostProcessors/InputPostProcessorInterface.h>
+#include <Structures/InputModifiers/InputModifierInterface.h>
 
 #include "Structure.h"
 #include "AminoAcid.h"
@@ -63,19 +63,53 @@ namespace SmolDock {
          * \return whether the parsing was successful.
         */
         bool populateFromPDB(const std::string &filename,
-                             std::vector<std::shared_ptr<InputPostProcessor::InputPostProcessor> > postProcessors = {});
+                             std::vector<std::shared_ptr<InputModifier::InputModifier> > modifiers = {});
 
-        //! Return an iProtein object for use in docking engine
+        //! Return an iProtein object for use in docking engine from the complete Protein
         /*!
          *
          * \return the equivalent iProtein object
         */
         iProtein getiProtein() const;
 
+        /*! Returns an an iProtein object for use in docking engine, comprised of only the amino acid in the sphere of
+         *  given center and radius. All amino acid that have at least one atom in the sphere are included in the resulting
+         *  iProtein : there are no partially included residues.
+         *
+         * The radius and center value are filled in the resulting iProtein structure. The margin value is added to the
+         * radius during residue selection, but not to the iProtein. This allow the selection of more residues than strictly
+         * necessary to smooth out docking at the edge of the sphere. Recommended value 2 angstrom
+         *
+         * \param center center of the sphere (coordinate unit : angstrom)
+         * \param radius radius of the sphere (unit : angstrom)
+         * \param margin added to the radius during selection, but not to the radius specified in the iProtein (unit : angstrom)
+         * \return
+         */
         iProtein getPartialiProtein_sphere(std::array<double, 3> center, double radius, double margin) const;
 
+        /**
+         * Returns the radius of the smallest sphere bounding the entire protein. It is also the maximum distance between an atom
+         * and the protein centroid.
+         *
+         */
         double getMaxRadius() const;
 
+        /**
+         * Tag the specified residue atom(s) with the special type given. Allow the use of specific scoring function like CovalentReversible
+         * variant of common fields.
+         *
+         * When using this function for CovalentReversible scoring, you must tag the relevant active site residue that would form
+         * covalent bond, for example serine in a catalytic triad bases protease.
+         *
+         *
+         * \param resType Residue type
+         * \param serialNumber Serial number of the residue in the chain
+         * \param specialType The type to tag
+         * \param ignoreMismatchingResType If the residue at the given serial number does not match the residue type, and this is true, warn but continue anayway
+         * \return true on success
+         *
+         * \sa SpecialResidueTyping
+         */
         bool applySpecialResidueTyping(const AminoAcid::AAType resType,
                                         const unsigned int serialNumber,
                                         const SpecialResidueTyping specialType,

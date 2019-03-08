@@ -36,6 +36,9 @@ It links with
 - RDKit (BSD 3-clauses)
 - Vc (BSD 3-clauses)
 
+It includes data from :
+- Amber tools data file (most restrictively GPL, possibly public domain)
+
 See COPYING for copyrights and text of these licences.
 
 # Documentation

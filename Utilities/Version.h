@@ -13,7 +13,7 @@ namespace SmolDock {
     public:
 
         constexpr static unsigned int major = 0;
-        constexpr static unsigned int minor = 1;
+        constexpr static unsigned int minor = 2;
         constexpr static unsigned int patch = 1;
 
         constexpr static char const* tag = "";

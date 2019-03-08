@@ -2,7 +2,7 @@
 // Created by eliane on 29/12/18.
 //
 
-#include "PDBResidueVariantTable.h"
+#include "PDBResiduePropertiesTable.h"
 
 
 namespace SmolDock {
@@ -11,29 +11,32 @@ namespace SmolDock {
     // PDB has specific, IUPAC compliant atom name for atoms in proteinogenic amino acid
     // eg : ATOM      5  CB  LEU A 353      12.418  28.143  21.455  1.00 27.35           C
     //                   ^^
-    // Here, we use these name to assign the relevant AtomVariant flags
+    // Here, we use these name to assign the relevant AtomVariant flags, and the partial charge
     // It is basically how far the atom is to the backbone (A : alpha, B : beta, D,G,E,Z,H)
     // Search IUPAC amino acid nomenclature on the web to get nice drawings of which is which
+    // The partial charges come from Ambertools file amino12.lib
+    // (Findable for example here : https://github.com/choderalab/ambermini/blob/master/share/amber/dat/leap/lib/amino12.lib)
+    // TODO: figure out the exact licence of the file : possibly GPL or public domain
 
-    std::set<std::tuple<AminoAcid::AAType, std::vector<std::tuple<std::string, Atom::AtomVariant> > > > ResidueAtomPropertiesLookupTable_General = {
-            {AminoAcid::AAType::alanine,       {{"CA", Atom::AtomVariant::none},
-                                                       {"C", Atom::AtomVariant::none},
-                                                       {"N", Atom::AtomVariant::hydrogenDonor},
-                                                       {"O", Atom::AtomVariant::hydrogenAcceptor},
-                                                       {"OXT", Atom::AtomVariant::hydrogenAcceptor},
-                                                       {"CB", Atom::AtomVariant::apolar}}},
-            {AminoAcid::AAType::arginine,      {{"CA", Atom::AtomVariant::none},
-                                                       {"C", Atom::AtomVariant::none},
-                                                       {"N", Atom::AtomVariant::hydrogenDonor},
-                                                       {"O", Atom::AtomVariant::hydrogenAcceptor},
-                                                       {"OXT", Atom::AtomVariant::hydrogenAcceptor},
-                                                       {"CB", Atom::AtomVariant::apolar},
-                                                       {"CG",  Atom::AtomVariant::apolar},
-                                                       {"CD",  Atom::AtomVariant::none},
-                                                       {"NE",  Atom::AtomVariant::hydrogenDonor},
-                                                       {"CZ",  Atom::AtomVariant::none},
-                                                       {"NH1", Atom::AtomVariant::hydrogenDonor},
-                                                       {"NH2", Atom::AtomVariant::hydrogenDonor}}},
+    std::set<std::tuple<AminoAcid::AAType, std::vector<std::tuple<std::string, Atom::AtomVariant, double> > > > ResidueAtomPropertiesLookupTable_General = {
+            {AminoAcid::AAType::alanine,       {{"CA", Atom::AtomVariant::none,0.033700},
+                                                       {"C", Atom::AtomVariant::none, 0.597300},
+                                                       {"N", Atom::AtomVariant::hydrogenDonor, -0.415700},
+                                                       {"O", Atom::AtomVariant::hydrogenAcceptor, -0.567900},
+                                                       {"OXT", Atom::AtomVariant::hydrogenAcceptor, -0.805500},
+                                                       {"CB", Atom::AtomVariant::apolar, -0.182500}}},
+            {AminoAcid::AAType::arginine,      {{"CA", Atom::AtomVariant::none, -0.263700},
+                                                       {"C", Atom::AtomVariant::none, 0.734100},
+                                                       {"N", Atom::AtomVariant::hydrogenDonor, -0.347900},
+                                                       {"O", Atom::AtomVariant::hydrogenAcceptor, -0.589400},
+                                                       {"OXT", Atom::AtomVariant::hydrogenAcceptor, -0.826600},
+                                                       {"CB", Atom::AtomVariant::apolar, -0.000700},
+                                                       {"CG",  Atom::AtomVariant::apolar, 0.039000},
+                                                       {"CD",  Atom::AtomVariant::none, 0.048600},
+                                                       {"NE",  Atom::AtomVariant::hydrogenDonor, 0.345600},
+                                                       {"CZ",  Atom::AtomVariant::none, 0.807600},
+                                                       {"NH1", Atom::AtomVariant::hydrogenDonor, -0.862700},
+                                                       {"NH2", Atom::AtomVariant::hydrogenDonor, -0.862700}}},
             {AminoAcid::AAType::asparagine,    {{"CA", Atom::AtomVariant::none},
                                                        {"C", Atom::AtomVariant::none},
                                                        {"N", Atom::AtomVariant::hydrogenDonor},

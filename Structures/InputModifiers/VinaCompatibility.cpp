@@ -2,18 +2,18 @@
 // Created by eliane on 31/12/18.
 //
 
-#include "VinaCompatibilityPostProcessor.h"
+#include "VinaCompatibility.h"
 
 
-namespace SmolDock::InputPostProcessor {
+namespace SmolDock::InputModifier {
 
 
-    void VinaCompatibilityPostProcessor::processAtomFromLigand(SmolDock::Atom &atom) {
+    void VinaCompatibility::postProcessAtomFromLigand(SmolDock::Atom &atom) {
         // We have no special ligand-related work-arounds
 
     }
 
-    void VinaCompatibilityPostProcessor::processAtomFromProtein(SmolDock::Atom &atom, SmolDock::AminoAcid &residue) {
+    void VinaCompatibility::postProcessAtomFromProtein(SmolDock::Atom &atom, SmolDock::AminoAcid &residue) {
 
         // Vina follow X-score convention and do not consider sulfur as acceptor or donor
         // (We add this at the PDB ATOM name variant assignation stage : SmolDock::assignVariantFlagsForResidueAtom)
@@ -24,5 +24,10 @@ namespace SmolDock::InputPostProcessor {
             newatomvar &= ~(static_cast<unsigned int>(Atom::AtomVariant::hydrogenAcceptor));
             atom.setAtomVariant(static_cast<Atom::AtomVariant>(newatomvar));
         }
+    }
+
+    std::vector<std::tuple<int,int>> VinaCompatibility::deselectRotatableBonds(std::shared_ptr<RDKit::RWMol> rwmol) {
+        std::vector<std::tuple<int,int>> empty;
+        return empty;
     }
 }

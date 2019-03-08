@@ -7,11 +7,14 @@
 
 #include <Structures/Atom.h>
 
-namespace SmolDock::InputPostProcessor {
+#include <GraphMol/RWMol.h>
 
-    //! Interface definition for InputPostProcessor
+
+namespace SmolDock::InputModifier {
+
+    //! Interface definition for InputModifier
     /*!
-     * The purpose of input post processor is mainly to modify ligand and protein atom & residue to simulate the behaviour
+     * The purpose of input modifiers is mainly to alter ligand and protein atom & residue to simulate the behaviour
      * of a particular software, and get numerically identical results. Though other uses are possible and imaginable.
      *
      * For example, we consider cysteine sulfur atom as a H-bond acceptor, and sometime
@@ -21,9 +24,11 @@ namespace SmolDock::InputPostProcessor {
      * We find that such differences are often rather minimal and do not warrant custom importers.
      *
      */
-    class InputPostProcessor {
+    class InputModifier {
 
     public:
+
+        virtual std::vector<std::tuple<int,int>> deselectRotatableBonds(std::shared_ptr<RDKit::RWMol> rwmol) = 0;
 
         //! Modify the given atom of the ligand
         /*!
@@ -34,7 +39,7 @@ namespace SmolDock::InputPostProcessor {
          *
          * \param atom An atom of the ligand
          */
-        virtual void processAtomFromLigand(SmolDock::Atom &atom) = 0;
+        virtual void postProcessAtomFromLigand(SmolDock::Atom &atom) = 0;
 
         //! Modify the given atom of the protein
         /*!
@@ -44,9 +49,9 @@ namespace SmolDock::InputPostProcessor {
          * \param atom An atom of the protein
          * \param residue The amino acid containing such atom
          */
-        virtual void processAtomFromProtein(SmolDock::Atom &atom, SmolDock::AminoAcid &residue) = 0;
+        virtual void postProcessAtomFromProtein(SmolDock::Atom &atom, SmolDock::AminoAcid &residue) = 0;
 
-        virtual ~InputPostProcessor() = default;
+        virtual ~InputModifier() = default;
     };
 
 }

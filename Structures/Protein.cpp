@@ -35,12 +35,12 @@
 #include "Atom.h"
 
 #include "Structures/Common/VariantFlagAssignation.h"
-#include "Structures/Common/PDBResidueVariantTable.h"
+#include "Structures/Common/PDBResiduePropertiesTable.h"
 
 namespace SmolDock {
 
     bool Protein::populateFromPDB(const std::string &filename,
-                                  std::vector<std::shared_ptr<InputPostProcessor::InputPostProcessor> > postProcessors) {
+                                  std::vector<std::shared_ptr<InputModifier::InputModifier> > modifiers) {
 
 
 
@@ -179,10 +179,10 @@ namespace SmolDock {
 
 
                 // Post processing
-                for (auto pprocessor : postProcessors) {
+                for (auto modifier : modifiers) {
                     for (auto &residue: aminoacids) {
                         for (auto &atom: residue->atoms) {
-                            pprocessor->processAtomFromProtein(*atom, *residue);
+                            modifier->postProcessAtomFromProtein(*atom, *residue);
                         }
                     }
                 }

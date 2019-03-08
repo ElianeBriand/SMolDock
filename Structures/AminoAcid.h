@@ -40,7 +40,8 @@ namespace SmolDock {
     enum class PDBResidueVariantAssignationType;
 
     enum class SpecialResidueTyping {
-        covalentReversibleSerineOH
+        covalentReversibleSerineOH,
+        covalentReversibleCysteineSH
     };
 
     class AminoAcid {
