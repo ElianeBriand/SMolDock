@@ -49,7 +49,7 @@ namespace SmolDock {
         friend class Protein;
 
         friend void
-        assignVariantFlagsForResidueAtom(AminoAcid &residue, PDBResidueVariantAssignationType assignation_type);
+        assignPropertiesForResidueAtom(AminoAcid &residue, PDBResidueVariantAssignationType assignation_type);
 
     public:
 

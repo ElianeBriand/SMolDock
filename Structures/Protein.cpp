@@ -34,7 +34,7 @@
 #include "Protein.h"
 #include "Atom.h"
 
-#include "Structures/Common/VariantFlagAssignation.h"
+#include "Structures/Common/ResiduePropertiesAssignation.h"
 #include "Structures/Common/PDBResiduePropertiesTable.h"
 
 namespace SmolDock {
@@ -171,7 +171,7 @@ namespace SmolDock {
                         current_residue->maxDistanceFromCentroid = max(acc_res_distance);
 
 
-                        assignVariantFlagsForResidueAtom(*current_residue,
+                        assignPropertiesForResidueAtom(*current_residue,
                                                          PDBResidueVariantAssignationType::GeneralPurpose);
 
                     }

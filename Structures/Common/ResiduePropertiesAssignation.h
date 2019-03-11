@@ -33,7 +33,7 @@ namespace SmolDock {
 
     void assignApolarCarbonFlag(std::vector<Atom> &atomVect);
 
-    void assignVariantFlagsForResidueAtom(AminoAcid &residue,
+    void assignPropertiesForResidueAtom(AminoAcid &residue,
                                           PDBResidueVariantAssignationType assignation_type = PDBResidueVariantAssignationType::GeneralPurpose);
 
 

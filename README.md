@@ -37,7 +37,7 @@ It links with
 - Vc (BSD 3-clauses)
 
 It includes data from :
-- Amber tools data file (most restrictively GPL, possibly public domain)
+- GROMACS implementation of Amber99ff (LGPL 2.1 or later)
 
 See COPYING for copyrights and text of these licences.
 

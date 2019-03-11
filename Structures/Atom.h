@@ -59,7 +59,7 @@ namespace SmolDock {
         friend void assignApolarCarbonFlag(std::vector<std::shared_ptr<Atom> > &atomVect);
 
         friend void
-        assignVariantFlagsForResidueAtom(AminoAcid &residue, PDBResidueVariantAssignationType assignation_type);
+        assignPropertiesForResidueAtom(AminoAcid &residue, PDBResidueVariantAssignationType assignation_type);
 
 
         // Make the value of the enum be the atomic number

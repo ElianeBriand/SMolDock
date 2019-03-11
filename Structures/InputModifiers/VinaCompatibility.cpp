@@ -16,7 +16,7 @@ namespace SmolDock::InputModifier {
     void VinaCompatibility::postProcessAtomFromProtein(SmolDock::Atom &atom, SmolDock::AminoAcid &residue) {
 
         // Vina follow X-score convention and do not consider sulfur as acceptor or donor
-        // (We add this at the PDB ATOM name variant assignation stage : SmolDock::assignVariantFlagsForResidueAtom)
+        // (We add this at the PDB ATOM name variant assignation stage : SmolDock::assignPropertiesForResidueAtom)
         if ((residue.getType() == AminoAcid::AAType::cysteine)
             && (atom.getAtomType() == Atom::AtomType::sulfur)) {
             auto atomvar = static_cast<unsigned int>(atom.getAtomVariant());
