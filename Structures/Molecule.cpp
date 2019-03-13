@@ -363,13 +363,41 @@ namespace SmolDock {
 
         this->numberOfRotatableBonds = RDKit::Descriptors::calcNumRotatableBonds((RDKit::ROMol) (*this->rwmol));
 
-
+        rwmol_withrings = std::make_shared(*rwmol);
         unsigned int numAliphaticRing = RDKit::Descriptors::calcNumAliphaticRings((RDKit::ROMol) (*this->rwmol));
         if (numAliphaticRing > 0) {
             BOOST_LOG_TRIVIAL(error) << "Non-rigid (ie, non-aromatic) rings are unsupported yet";
             BOOST_LOG_TRIVIAL(error) << "  Found " << numAliphaticRing << " aliphatic ring(s)";
             BOOST_LOG_TRIVIAL(error) << "  Processing will continue but correctness is not guaranteed";
+
+
+            while(RDKit::Descriptors::calcNumAliphaticRings((RDKit::ROMol) (*this->rwmol)) != 0)
+            {
+                BOOST_FOREACH (const std::vector<int> &iv, this->rwmol->getRingInfo()->bondRings()) {
+                                BOOST_FOREACH (int i, iv) {
+                                                if (!this->rwmol->getBondWithIdx(i)->getIsAromatic()) {
+                                                    // This ring has a non-aromatic bond.
+
+                                                    // We remove it,
+                                                    auto bond = this->rwmol->getBondWithIdx(i);
+                                                    this->rwmol->removeBond(bond->getBeginAtomIdx(), bond->getEndAtomIdx());
+                                                    BOOST_LOG_TRIVIAL(error) << "  Removed bond to unmake rings";
+
+                                                    //We log the potential to add
+
+                                                    // Then we go to the next iteration of the unringifier
+                                                    goto nextiter;
+                                                }
+                                            }
+                            }
+                nextiter:
+                RDKit::MolOps::findSSSR(*this->rwmol);
+
+            }
+
         }
+
+
 
 
         std::vector<std::tuple<int,int>> bondsListToAvoid;

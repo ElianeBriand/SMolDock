@@ -271,7 +271,11 @@ namespace SmolDock {
 
             prot.AAId_to_AtomPositionInVect[residue->getAAId()] = std::make_tuple(size_before, size_after - 1);
         }
-
+        if(prot.x.size() == 0)
+        {
+            BOOST_LOG_TRIVIAL(error) << "The iProtein being generated has 0 atoms. Check your docking box settings.";
+            std::terminate();
+        }
         return prot;
     }
 
@@ -327,9 +331,12 @@ namespace SmolDock {
 
             prot.AAId_to_AtomPositionInVect[residue->getAAId()] = std::make_tuple(size_before, size_after - 1);
         }
-
+        if(prot.x.size() == 0)
+        {
+            BOOST_LOG_TRIVIAL(error) << "The iProtein being generated has 0 atoms. Check your docking box settings.";
+            std::terminate();
+        }
         return prot;
-        return iProtein();
     }
 
     bool Protein::applySpecialResidueTyping(AminoAcid::AAType resType,

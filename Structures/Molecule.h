@@ -239,6 +239,8 @@ namespace SmolDock {
 
     public:
         std::shared_ptr<RDKit::RWMol> rwmol;
+
+        std::shared_ptr<RDKit::RWMol> rwmol_withrings;
     private:
         std::string smiles;
 
