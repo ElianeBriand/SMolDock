@@ -15,7 +15,7 @@
 #include <Engines/ScoringFunctions/ScoringFunctionFactory.h>
 #include <Engines/GlobalHeuristics/HeuristicFactory.h>
 #include <Engines/LocalOptimizers/OptimizerFactory.h>
-#include <Engines/ConformerRigidDockingEngine.h>
+#include <Engines/ConformerDockingEngine.h>
 
 namespace p = boost::python;
 namespace np = boost::numpy;
@@ -82,7 +82,7 @@ void export_Engines() {
         bool setupDockingEngine() final;
 
         void runDockingEngine() final;*/
-        p::class_<sd::Engine::ConformerRigidDockingEngine>("ConformerRigidDockingEngine", p::init<
+        p::class_<sd::Engine::ConformerDockingEngine>("ConformerDockingEngine", p::init<
                 unsigned int,
                 unsigned int,
                 sd::Protein *,
@@ -92,10 +92,10 @@ void export_Engines() {
                 sd::Optimizer::LocalOptimizerType,
                 unsigned int
         >())
-                .def("setupDockingEngine", &sd::Engine::ConformerRigidDockingEngine::setupDockingEngine)
-                .def("runDockingEngine", &sd::Engine::ConformerRigidDockingEngine::runDockingEngine)
-                .def("getDockingResult", &sd::Engine::ConformerRigidDockingEngine::getDockingResult)
-                .def("setDockingBox", &sd::Engine::ConformerRigidDockingEngine::setDockingBox)
+                .def("setupDockingEngine", &sd::Engine::ConformerDockingEngine::setupDockingEngine)
+                .def("runDockingEngine", &sd::Engine::ConformerDockingEngine::runDockingEngine)
+                .def("getDockingResult", &sd::Engine::ConformerDockingEngine::getDockingResult)
+                .def("setDockingBox", &sd::Engine::ConformerDockingEngine::setDockingBox)
             /*   .def("populateFromPDB", &sd::Molecule::populateFromPDB, populateFromPDB_overloads())
                .def("populateFromSMILES", &sd::Molecule::populateFromSMILES, populateFromSMILES_overloads())
                .add_property("numberOfAtoms", &sd::Molecule::numberOfAtoms)

@@ -65,6 +65,8 @@ namespace SmolDock {
     public:
         Molecule();
 
+        explicit Molecule(bool noFlexibleRings);
+
 
 
         //! Populate atoms and bonds from SMILES.
@@ -201,7 +203,7 @@ namespace SmolDock {
         /*!
          * \return A new Molecule object with copied values
         */
-        Molecule deepcopy();
+        Molecule deepcopy() const;
 
         //! Number of rotatable bonds between heavy (= non-hydrogen) atoms
         /*!
@@ -240,8 +242,11 @@ namespace SmolDock {
     public:
         std::shared_ptr<RDKit::RWMol> rwmol;
 
-        std::shared_ptr<RDKit::RWMol> rwmol_withrings;
+        std::shared_ptr<RDKit::RWMol> rwmol_withoutrings;
     private:
+
+        bool noFlexibleRings = false;
+
         std::string smiles;
 
 
@@ -250,6 +255,8 @@ namespace SmolDock {
         // Mapping between atomIdx in the RDKit RWmol, and the atoms vector of this class
         std::map<int,int> RDKitAtomIdxToAtomsPosInVector;
         std::map<int,int> atomsPosInVectorToRDKitAtomIdx;
+
+        std::vector<std::tuple<unsigned int,unsigned int>> removedCyclicBondsAtomIdx;
 
         //! Use this if using RDKit RWMol as entry.
         bool populateInternalAtomAndBondFromRWMol(unsigned int seed,

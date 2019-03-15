@@ -9,6 +9,7 @@ Find the documentation on GitHub Pages : https://elianebriand.github.io/SmolDock
 
 Check that you have the required dependencies (see below), then : 
 
+    git submodule update --init --recursive  # init the submodules (tbb)
     cmake .
     make -j4
 
@@ -35,6 +36,7 @@ It includes works from :
 It links with
 - RDKit (BSD 3-clauses)
 - Vc (BSD 3-clauses)
+- Intel TBB (Apache 2.0 - git submodule)
 
 It includes data from :
 - GROMACS implementation of Amber99ff (LGPL 2.1 or later)

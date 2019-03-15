@@ -126,7 +126,7 @@ namespace SmolDock {
             {Atom::AtomType::chlorine,  "chlorine",   "CL", 1.8},
             {Atom::AtomType::phosporus, "phosphorus", "P",  2.1},
             {Atom::AtomType::fluorine,  "fluorine",   "F",  1.5},
-            {Atom::AtomType::bromine,   "bromine",    "C",  2.0},
+            {Atom::AtomType::bromine,   "bromine",    "BR",  2.0},
             {Atom::AtomType::iodine,    "iodine",     "I",  2.2},
             {Atom::AtomType::iron,      "iron",       "FE", 6.5}, // Change this
             {Atom::AtomType::cobalt,    "cobalt",     "CO", 6.5}, // Change this

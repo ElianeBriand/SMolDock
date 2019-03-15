@@ -15,25 +15,29 @@
 
 namespace SmolDock::Score {
 
+    const constexpr unsigned int VinaLike_numCoefficients = 5;
 
+    template<bool OnlyIntermolecular = false, bool useNonDefaultCoefficients = false>
     double VinaLikeIntermolecularScoringFunction(const iConformer &conformer, const iTransform &transform,
-                                                 const iProtein &protein);
+                                                 const iProtein &protein,
+                                                 std::array<double, VinaLike_numCoefficients> nonDefaultCoeffs = std::array<double, VinaLike_numCoefficients>());
+
 
     class VinaLike : public ScoringFunction {
     public:
         VinaLike(const iConformer &startingConformation_,
                                 const iProtein &p,
                                 const iTransform &initialTransform_,
-                                double differential_epsilon_ = 1e-3);
+                                double differential_epsilon_ = 1e-3,
+                                bool useNonDefaultCoefficient = false);
 
 
         double Evaluate(const arma::mat &x) final;
-
         double EvaluateWithGradient(const arma::mat &x, arma::mat &gradient) final;
 
 
         std::vector<std::tuple<std::string,double>> EvaluateSubcomponents(const arma::mat &x) final;
-
+        double EvaluateOnlyIntermolecular(const arma::mat &x) final;
 
         arma::mat getStartingConditions() const final;
 
@@ -49,7 +53,20 @@ namespace SmolDock::Score {
         ~VinaLike() final = default;
 
 
+        unsigned int getCoefficientsVectorWidth() final;
+        std::vector<std::string> getCoefficientsNames() final ;
+        std::vector<double> getCurrentCoefficients() final;
+        bool setNonDefaultCoefficients(std::vector<double> coeffs) final;
+
     private:
+
+        static const constexpr unsigned int numCoefficients = VinaLike_numCoefficients;
+        static const std::array<std::string, numCoefficients> coefficientsNames;
+
+        std::array<double, numCoefficients> nonDefaultCoefficients;
+
+
+        bool useNonDefaultCoefficient = false;
 
         inline iTransform internalToExternalRepr(const arma::mat &x_) const {
             assert(x_.n_rows == this->numberOfParamInState);
@@ -99,6 +116,8 @@ namespace SmolDock::Score {
         unsigned int numberOfParamInState;
         unsigned int numberOfRotatableBonds;
     };
+
+
 }
 
 

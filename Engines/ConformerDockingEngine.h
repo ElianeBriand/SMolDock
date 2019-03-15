@@ -44,7 +44,7 @@ namespace SmolDock::Engine {
      * and still produce a similar affinity ranking. (In practice, I do not know if it would work :
      * hence this to try it
      */
-    class ConformerRigidDockingEngine : public AbstractDockingEngine {
+    class ConformerDockingEngine : public AbstractDockingEngine {
 
     public:
 
@@ -52,7 +52,7 @@ namespace SmolDock::Engine {
         /*!
          * \param conformer_num Number of conformer to generate
         */
-        explicit ConformerRigidDockingEngine(unsigned int conformer_num,
+        explicit ConformerDockingEngine(unsigned int conformer_num,
                                              unsigned int retryPerConformer,
                                              Protein* protein,
                                              Molecule* ligand,
@@ -60,7 +60,8 @@ namespace SmolDock::Engine {
                                              Heuristics::GlobalHeuristicType heurType,
                                              Optimizer::LocalOptimizerType localOptimizerType_,
                                              unsigned int seed,
-                                             Heuristics::HeuristicParameters hParams = Heuristics::emptyParameters);
+                                             Heuristics::HeuristicParameters hParams = Heuristics::emptyParameters,
+                                             bool rigidDocking = false);
 
         // /// Parameters /////////////
         bool setDockingBox(DockingBoxSetting setting) final;
@@ -78,8 +79,11 @@ namespace SmolDock::Engine {
         std::tuple<double,double> getMeanStdDevScore() const;
         double getBestScore();
 
+        virtual ~ConformerDockingEngine() = default;
 
     private:
+
+
 
         unsigned int conformer_num;
         unsigned int retryPerConformer;
@@ -99,6 +103,8 @@ namespace SmolDock::Engine {
 
 
         Heuristics::HeuristicParameters heurParams;
+
+        bool rigidDocking = false;
 
         //std::shared_ptr<RDKit::RWMol> rwmol;
 

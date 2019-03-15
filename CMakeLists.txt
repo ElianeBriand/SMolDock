@@ -1,7 +1,16 @@
 cmake_minimum_required(VERSION 3.12)
-project(smoldock)
 
 set(CMAKE_CXX_STANDARD 17)
+
+
+SET(CMAKE_CXX_FLAGS "-Wall")
+SET(CMAKE_CXX_COMPILER "/usr/bin/g++")
+SET(CMAKE_CXX_FLAGS_DEBUG "-g")
+SET(CMAKE_CXX_FLAGS_MINSIZEREL "-Os -DNDEBUG")
+SET(CMAKE_CXX_FLAGS_RELEASE "-O3 -march=native -DNDEBUG")
+SET(CMAKE_CXX_FLAGS_RELWITHDEBINFO "-O3 -march=native -g ")
+
+project(smoldock)
 
 find_package(Boost REQUIRED)
 
@@ -12,12 +21,12 @@ find_package(PythonLibs ${PY_VERSION} REQUIRED)
 include_directories(${Boost_INCLUDE_DIRS})
 add_compile_definitions(BOOST_ALLOW_DEPRECATED_HEADERS)
 
-SET(CMAKE_CXX_FLAGS "-Wall")
-SET(CMAKE_CXX_COMPILER "clang++")
-SET(CMAKE_CXX_FLAGS_DEBUG "-g")
-SET(CMAKE_CXX_FLAGS_MINSIZEREL "-Os -DNDEBUG")
-SET(CMAKE_CXX_FLAGS_RELEASE "-O3 -march=native -DNDEBUG")
-SET(CMAKE_CXX_FLAGS_RELWITHDEBINFO "-O3 -march=native -g ")
+
+######## TBB SETUP ######
+
+add_subdirectory(Dependencies/tbb)
+include_directories(Dependencies/tbb/include)
+######## END OF TBB ######
 
 
 ######## RDKIT SETUP ######
@@ -43,6 +52,7 @@ LINK_DIRECTORIES(${VC_ROOT}/lib)
 ######## END OF VC  ######
 
 include_directories(Dependencies)
+
 include_directories(.)
 
 
@@ -69,8 +79,8 @@ set(SOURCE_LIST Structures/Structure.cpp
         Structures/Results/DockingResult.h
         Utilities/DockingResultPrinter.cpp
         Utilities/DockingResultPrinter.h
-        Engines/ConformerRigidDockingEngine.cpp
-        Engines/ConformerRigidDockingEngine.h
+        Engines/ConformerDockingEngine.cpp
+        Engines/ConformerDockingEngine.h
         Engines/Internals/iConformer.h
         Utilities/TimingsLog.h
         Engines/ScoringFunctions/VinaLikeRigid.cpp
@@ -127,7 +137,7 @@ set(SOURCE_LIST Structures/Structure.cpp
         Engines/GlobalHeuristics/DifferentialEvolution.h
         Engines/GlobalHeuristics/Evolution.cpp
         Engines/GlobalHeuristics/Evolution.h
-        Engines/ScoringFunctions/VinaLikeCovalentReversible.cpp Engines/ScoringFunctions/VinaLikeCovalentReversible.h)
+        Engines/ScoringFunctions/VinaLikeCovalentReversible.cpp Engines/ScoringFunctions/VinaLikeCovalentReversible.h Utilities/Calibration/Calibrator.cpp Utilities/Calibration/Calibrator.h)
 
 set(PY_EXPORT_SOURCE_LIST Frontends/Python/PyStructures.cpp
         Frontends/Python/PyStructures.h
@@ -175,6 +185,7 @@ set_target_properties(libsmoldock PROPERTIES PREFIX "lib")
 set_target_properties(libsmoldock PROPERTIES OUTPUT_NAME "smoldock")
 target_compile_definitions(libsmoldock PUBLIC ARMA_DONT_USE_WRAPPER)
 add_dependencies(libsmoldock smoldock_object)
+add_dependencies(libsmoldock tbb_static)
 
 ADD_LIBRARY(libsmoldockPIC SHARED ${SOURCE_LIST})
 set_target_properties(libsmoldockPIC PROPERTIES COMPILE_FLAGS " -fPIC ")
@@ -194,6 +205,7 @@ target_link_libraries(libsmoldockPIC -Wl,-Bstatic -Wl,-llapack -Wl,-lblas -Wl,-l
 target_link_libraries(libsmoldockPIC -Wl,-Bdynamic -Wl,-lgfortran)
 target_link_libraries(libsmoldockPIC -Wl,-Bdynamic -Wl,-L/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.0/ -Wl,-lgcc)
 target_link_libraries(libsmoldockPIC -Wl,-Bdynamic -Wl,-lpthread -Wl,-ldl)
+add_dependencies(libsmoldock tbb)
 
 # You need this if you do NOT generate a static executable
 #add_compile_definitions(BOOST_LOG_DYN_LINK BOOST_TEST_DYN_LINK)
@@ -203,10 +215,11 @@ target_link_libraries(libsmoldockPIC -Wl,-Bdynamic -Wl,-lpthread -Wl,-ldl)
 
 
 add_executable(smoldock Frontends/main.cpp)
-set_target_properties(smoldock PROPERTIES LINK_FLAGS " -Wl,--no-undefined -Wl,--as-needed -static    ")
+set_target_properties(smoldock PROPERTIES LINK_FLAGS " -Wl,--no-undefined -Wl,--as-needed -static   ")
 TARGET_LINK_LIBRARIES(smoldock libsmoldock)
-TARGET_LINK_LIBRARIES(smoldock pthread)
-target_link_libraries(smoldock boost_log bprinter)
+#TARGET_LINK_LIBRARIES(smoldock )
+#target_link_libraries(smoldock boost_log bprinter  tbb_static -Wl,-Bdynamic pthread  -Wl,--dynamic-linker=/lib64/ld-linux-x86-64.so.2 )
+target_link_libraries(smoldock boost_log bprinter  tbb_static pthread )
 #target_link_libraries(smoldock Vc)
 
 add_executable(smoldock_dyn Frontends/main.cpp)

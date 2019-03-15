@@ -28,7 +28,7 @@
 
 #include "Structures/InputPostProcessors/VinaCompatibilityPostProcessor.h"
 
-#include "Engines/ConformerRigidDockingEngine.h"
+#include "Engines/ConformerDockingEngine.h"
 
 #include <boost/log/core.hpp>
 #include <boost/log/trivial.hpp>
@@ -215,7 +215,7 @@ int main(int argc, char *argv[]) {
     }
 
 
-    SmolDock::Engine::ConformerRigidDockingEngine docker(20, /* Number of conformer */
+    SmolDock::Engine::ConformerDockingEngine docker(20, /* Number of conformer */
                                                          10, /* Retry per conformer */
                                                          &prot,
                                                          &mol,

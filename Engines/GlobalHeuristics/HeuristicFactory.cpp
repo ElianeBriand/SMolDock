@@ -62,4 +62,19 @@ namespace SmolDock::Heuristics {
         }
     }
 
+
+    HeuristicParameters setupSearchDomainIfRelevant(GlobalHeuristicType heuristicType, double proteinMaxRadius)
+    {
+        HeuristicParameters heurParams = Heuristics::heuristicParametersFactory(heuristicType);
+
+        if (heuristicType == Heuristics::GlobalHeuristicType::IteratedLocalSearch) {
+                std::get<Heuristics::IteratedLocalSearch::Parameters>(heurParams).proteinMaxRadius = proteinMaxRadius;
+            }
+
+        if (heuristicType == Heuristics::GlobalHeuristicType::RandomRestart) {
+            std::get<Heuristics::IteratedLocalSearch::Parameters>(heurParams).proteinMaxRadius = proteinMaxRadius;
+        }
+        return heurParams;
+    }
+
 }

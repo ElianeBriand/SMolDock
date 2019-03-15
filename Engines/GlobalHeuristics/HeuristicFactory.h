@@ -54,6 +54,8 @@ namespace SmolDock::Heuristics {
 
     HeuristicParameters heuristicParametersFactory(GlobalHeuristicType t);
 
+    HeuristicParameters setupSearchDomainIfRelevant(GlobalHeuristicType heuristicType, double proteinMaxRadius);
+
 }
 
 

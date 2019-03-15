@@ -23,4 +23,38 @@
 namespace SmolDock::Engine {
 
 
+    VinaCompatibleDockingEngine::VinaCompatibleDockingEngine(Protein* protein,
+                                                             Molecule* ligand,
+                                                             unsigned int seed) {
+        this->internalEngine = std::make_shared<ConformerDockingEngine>(10,2,protein,ligand,Score::ScoringFunctionType::Vina,
+                                          Heuristics::GlobalHeuristicType::SimulatedAnnealing,Optimizer::LocalOptimizerType::L_BFGS, seed);
+    }
+
+    bool VinaCompatibleDockingEngine::setDockingBox(AbstractDockingEngine::DockingBoxSetting setting) {
+        return this->internalEngine->setDockingBox(setting);
+    }
+
+    bool VinaCompatibleDockingEngine::setupDockingEngine() {
+        return this->internalEngine->setupDockingEngine();
+    }
+
+    void VinaCompatibleDockingEngine::runDockingEngine() {
+        this->internalEngine->runDockingEngine();
+    }
+
+    std::shared_ptr<DockingResult> VinaCompatibleDockingEngine::getDockingResult() {
+        return this->internalEngine->getDockingResult();
+    }
+
+    std::tuple<double, double> VinaCompatibleDockingEngine::getMeanStdDevDuration() const {
+        return this->internalEngine->getMeanStdDevDuration();
+    }
+
+    std::tuple<double, double> VinaCompatibleDockingEngine::getMeanStdDevScore() const {
+        return this->internalEngine->getMeanStdDevScore();
+    }
+
+    double VinaCompatibleDockingEngine::getBestScore() {
+        return this->internalEngine->getBestScore();
+    }
 }

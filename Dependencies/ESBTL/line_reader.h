@@ -83,9 +83,7 @@ class Line_reader{
     nblines+=occupancy.finalize(builder);
     builder.create_systems(default_altloc);
     
-    #ifndef NDEBUG
-    std::cout << "(ESBTL-DEBUG) Lines read " << nblines << std::endl;    
-    #endif
+
     return true;
   }
   

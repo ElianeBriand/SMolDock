@@ -36,6 +36,9 @@
 namespace SmolDock {
     namespace Score {
 
+        const std::array<std::string, VinaLikeRigid::numCoefficients>
+                VinaLikeRigid::coefficientsNames =  {"Gauss1", "Gauss2", "RepulsionExceptCovalent", "Hydrophobic","Hydrogen"};
+
 
         double vina_like_rigid_inter_scoring_func(const iConformer &ligand, const iTransform &transform,
                                                   const iProtein &protein) {
@@ -324,14 +327,37 @@ namespace SmolDock {
             double final_score = score_raw / (1 + (0.058459999999999998 * ligand.num_rotatable_bond));
 
 
-            ret.push_back(std::make_tuple("Gauss1",gauss1_total));
-            ret.push_back(std::make_tuple("Gauss2",gauss2_total));
-            ret.push_back(std::make_tuple("Repulsion",repulsion_total));
-            ret.push_back(std::make_tuple("Hydrophobic",hydrogen_total));
-            ret.push_back(std::make_tuple("Hydrogen",hydrophobic_total));
-            ret.push_back(std::make_tuple("ScoreRaw",score_raw));
-            ret.push_back(std::make_tuple("Score",final_score));
+            ret.emplace_back(std::make_tuple("Gauss1",gauss1_total));
+            ret.emplace_back(std::make_tuple("Gauss2",gauss2_total));
+            ret.emplace_back(std::make_tuple("Repulsion",repulsion_total));
+            ret.emplace_back(std::make_tuple("Hydrophobic",hydrogen_total));
+            ret.emplace_back(std::make_tuple("Hydrogen",hydrophobic_total));
+            ret.emplace_back(std::make_tuple("ScoreRaw",score_raw));
+            ret.emplace_back(std::make_tuple("Score",final_score));
             return ret;
+        }
+
+        double VinaLikeRigid::EvaluateOnlyIntermolecular(const arma::mat &x) {
+            return this->Evaluate(x);
+        }
+
+        unsigned int VinaLikeRigid::getCoefficientsVectorWidth() {
+            return this->numCoefficients;
+        }
+
+        std::vector<std::string> VinaLikeRigid::getCoefficientsNames() {
+            return std::vector<std::string>(this->coefficientsNames.begin(),this->coefficientsNames.end());
+        }
+
+        std::vector<double> VinaLikeRigid::getCurrentCoefficients() {
+            return {VinaClassic::coeff_gauss1, VinaClassic::coeff_gauss2,
+                    VinaClassic::coeff_repulsion, VinaClassic::coeff_hydrophobic,
+                    VinaClassic::coeff_hydrogen };
+        }
+
+        bool VinaLikeRigid::setNonDefaultCoefficients(std::vector<double> coeffs) {
+            BOOST_LOG_TRIVIAL(debug) << "Non default coefficients not supported yet on Vina rigid scoring function.";
+            return false;
         }
 
 

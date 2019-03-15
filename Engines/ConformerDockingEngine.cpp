@@ -23,7 +23,7 @@
 #include <thread>
 #include <algorithm>
 
-#include "ConformerRigidDockingEngine.h"
+#include "ConformerDockingEngine.h"
 #include "Internals/InternalsUtilityFunctions.h"
 #include <Engines/ScoringFunctions/VinaLikeRigid.h>
 #include <Engines/LocalOptimizers/L_BFGS.h>
@@ -42,7 +42,7 @@
 namespace SmolDock {
     namespace Engine {
 
-        ConformerRigidDockingEngine::ConformerRigidDockingEngine(unsigned int conformer_num_,
+        ConformerDockingEngine::ConformerDockingEngine(unsigned int conformer_num_,
                                                                  unsigned int retryPerConformer,
                                                                  Protein* protein,
                                                                  Molecule* ligand,
@@ -50,7 +50,8 @@ namespace SmolDock {
                                                                  Heuristics::GlobalHeuristicType heurType,
                                                                  Optimizer::LocalOptimizerType localOptimizerType_,
                                                                  unsigned int seed,
-                                                                 Heuristics::HeuristicParameters hParams) :
+                                                                 Heuristics::HeuristicParameters hParams,
+                                                                 bool rigidDocking) :
                 conformer_num(conformer_num_),
                 retryPerConformer(retryPerConformer),
                 orig_protein(protein),
@@ -59,7 +60,8 @@ namespace SmolDock {
                 heuristicType(heurType),
                 localOptimizerType(localOptimizerType_),
                 rnd_generator(seed),
-                heurParams(hParams){
+                heurParams(hParams),
+                rigidDocking(rigidDocking){
 
 
             scores.reserve(this->conformer_num);
@@ -67,7 +69,7 @@ namespace SmolDock {
         }
 
 
-        bool ConformerRigidDockingEngine::setupDockingEngine() {
+        bool ConformerDockingEngine::setupDockingEngine() {
 
             record_timings(begin_setup);
 
@@ -104,7 +106,7 @@ namespace SmolDock {
             auto duration_iprot = static_cast< std::chrono::duration<double> >(end_iprotgen -
                                                                                end_conformersgen).count();
 
-            BOOST_LOG_TRIVIAL(debug) << "Timings ConformerRigidDockingEngine setup"
+            BOOST_LOG_TRIVIAL(debug) << "Timings ConformerDockingEngine setup"
                                      << "\n      TOTAL: "
                                      << total_setup_duration << "s"
                                      << "\n      Conformer: "
@@ -117,7 +119,7 @@ namespace SmolDock {
             return true;
         }
 
-        void ConformerRigidDockingEngine::runDockingEngine() {
+        void ConformerDockingEngine::runDockingEngine() {
             using namespace boost::accumulators;
             accumulator_set<double, stats<tag::mean, tag::moment<2> > > acc_score;
             accumulator_set<double, stats<tag::mean, tag::moment<2> > > acc_duration;
@@ -134,7 +136,14 @@ namespace SmolDock {
                 record_timings(begin_docking_this_conformer);
 
 
-                iTransform starting_pos_tr = iTransformIdentityInit(conformer.num_rotatable_bond);
+
+                iTransform starting_pos_tr = this->rigidDocking ? iTransformIdentityInit(0) : iTransformIdentityInit(conformer.num_rotatable_bond);
+
+                if(this->rigidDocking)
+                {
+                    conformer.num_rotatable_bond = 0;
+                }
+
                 starting_pos_tr.transl = conformer.centroidNormalizingTransform;
 
 
@@ -165,28 +174,8 @@ namespace SmolDock {
                 {
                     BOOST_LOG_TRIVIAL(debug) << "Received default heuristics parameters, setting up search domain if relevant";
 
-                    this->heurParams = Heuristics::heuristicParametersFactory(heuristicType);
-
-                    if (heuristicType == Heuristics::GlobalHeuristicType::IteratedLocalSearch) {
-
-                        if (dbsettings.type == DockingBoxSetting::Type::centeredAround) {
-                            std::get<Heuristics::IteratedLocalSearch::Parameters>(
-                                    this->heurParams).proteinMaxRadius = dbsettings.radius;
-                        } else {
-                            double protRadius = this->orig_protein->getMaxRadius();
-                            std::get<Heuristics::IteratedLocalSearch::Parameters>(this->heurParams).proteinMaxRadius = protRadius;
-                        }
-                    }
-
-                    if (heuristicType == Heuristics::GlobalHeuristicType::RandomRestart) {
-                        if (dbsettings.type == DockingBoxSetting::Type::centeredAround) {
-                            std::get<Heuristics::RandomRestart::Parameters>(
-                                    this->heurParams).proteinMaxRadius = dbsettings.radius;
-                        } else {
-                            double protRadius = this->orig_protein->getMaxRadius();
-                            std::get<Heuristics::RandomRestart::Parameters>(this->heurParams).proteinMaxRadius = protRadius;
-                        }
-                    }
+                    double proteinMaxRadius = (dbsettings.type == DockingBoxSetting::Type::centeredAround) ? dbsettings.radius : this->orig_protein->getMaxRadius();
+                    this->heurParams = setupSearchDomainIfRelevant(this->heuristicType, proteinMaxRadius);
                 }
 
 
@@ -203,7 +192,8 @@ namespace SmolDock {
                     globalHeuristic->search();
 
                     auto rawResultMatrix = globalHeuristic->getResultMatrix();
-                    double score = scoringFunction->Evaluate(rawResultMatrix);
+                    double score_withIntra = scoringFunction->Evaluate(rawResultMatrix);
+                    double score = scoringFunction->EvaluateOnlyIntermolecular(rawResultMatrix);
 
                     std::vector<std::tuple<std::string, double>> subcomponents =  scoringFunction->EvaluateSubcomponents(rawResultMatrix);
 
@@ -219,6 +209,7 @@ namespace SmolDock {
 
 
                     BOOST_LOG_TRIVIAL(debug) << "VinaClassic Starting score : " << starting_score;
+                    BOOST_LOG_TRIVIAL(debug) << "Score with intra   : " << score_withIntra;
                     BOOST_LOG_TRIVIAL(debug) << "Score after search : " << score;
                     BOOST_LOG_TRIVIAL(debug) << "VinaClassic end score : " << real_score;
                     BOOST_LOG_TRIVIAL(debug) << " --- Subcomponents --- ";
@@ -260,7 +251,7 @@ namespace SmolDock {
 
 #ifdef SMOLDOCK_VERBOSE_DEBUG
 
-            BOOST_LOG_TRIVIAL(debug) << "Timings ConformerRigidDockingEngine docking runs"
+            BOOST_LOG_TRIVIAL(debug) << "Timings ConformerDockingEngine docking runs"
                                      << "\n      TOTAL: " << total_docking_duration << "s"
                                      << "\n      Mean per conformer: " << this->meanDuration << "s"
                                      << "\n      StdDev per conformer: " <<  this->stdDevDuration << "s";
@@ -306,7 +297,7 @@ namespace SmolDock {
 
         }
 
-        std::shared_ptr<DockingResult> ConformerRigidDockingEngine::getDockingResult() {
+        std::shared_ptr<DockingResult> ConformerDockingEngine::getDockingResult() {
             auto ret = std::make_shared<DockingResult>();
             for (const auto &confr : this->bestiConformer) {
                 Molecule finalLigand = this->orig_ligand->deepcopy();
@@ -317,7 +308,7 @@ namespace SmolDock {
         }
 
 
-        bool ConformerRigidDockingEngine::setDockingBox(AbstractDockingEngine::DockingBoxSetting setting) {
+        bool ConformerDockingEngine::setDockingBox(AbstractDockingEngine::DockingBoxSetting setting) {
             this->dockBoxSettings = setting;
 
             if (!(setting.type == DockingBoxSetting::Type::everything ||
@@ -330,15 +321,15 @@ namespace SmolDock {
             return true;
         }
 
-        std::tuple<double, double> ConformerRigidDockingEngine::getMeanStdDevDuration() const {
+        std::tuple<double, double> ConformerDockingEngine::getMeanStdDevDuration() const {
             return std::make_tuple(this->meanDuration,this->stdDevDuration);
         }
 
-        std::tuple<double, double> ConformerRigidDockingEngine::getMeanStdDevScore() const {
+        std::tuple<double, double> ConformerDockingEngine::getMeanStdDevScore() const {
             return std::make_tuple(this->meanScore,this->stdDevScore);
         }
 
-        double ConformerRigidDockingEngine::getBestScore() {
+        double ConformerDockingEngine::getBestScore() {
             return this->bestScore;
         }
 

@@ -49,16 +49,16 @@ namespace SmolDock::Heuristics {
 
         SimulatedAnnealer.Optimize(*this->scorFunc, currentState);
 
-        double scoreBeforeLocalOptim = this->scorFunc->Evaluate(currentState);
+        //double scoreBeforeLocalOptim = this->scorFunc->Evaluate(currentState);
 
         this->optimizer->optimize(currentState);
-        double scoreAfterLocalOptim = this->optimizer->getScore();
+        //double scoreAfterLocalOptim = this->optimizer->getScore();
 
         this->result = this->optimizer->getRawResultMatrix();
 
 
-        BOOST_LOG_TRIVIAL(debug) << "SimulatedAnnealing: Score after SA          = " << scoreBeforeLocalOptim;
-        BOOST_LOG_TRIVIAL(debug) << "SimulatedAnnealing: Score after local optim = " << scoreAfterLocalOptim;
+//        BOOST_LOG_TRIVIAL(debug) << "SimulatedAnnealing: Score after SA          = " << scoreBeforeLocalOptim;
+//        BOOST_LOG_TRIVIAL(debug) << "SimulatedAnnealing: Score after local optim = " << scoreAfterLocalOptim;
 
         return true;
     }

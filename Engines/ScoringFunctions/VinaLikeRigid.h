@@ -35,11 +35,16 @@ namespace SmolDock {
     /*! \namespace SmolDock::Score Free-standing docking score functions */
     namespace Score {
 
+        const constexpr unsigned int VinaLikeRigid_numCoefficients = 5;
+
         //! \fn Score a protein-ligand configuration. Variant : Vina-like, rigid, inter-only
         /*!
          * Compute inter-molecular part of the docking score, 
          * according to the Vina scoring function. The transform provided will
          * be applied to the entire, rigid ligand.
+         *
+         * Nb : can't be templatized to support non-default coeffs because it is used out of this file
+         * But it would be possible to make a "normal" overload.
          *
          * \param conformer Ligand conformation & position to evaluate
          * \param transform Transformation to apply to the ligand
@@ -61,11 +66,10 @@ namespace SmolDock {
 
 
             double Evaluate(const arma::mat &x) final;
-
             double EvaluateWithGradient(const arma::mat &x, arma::mat &gradient) final;
 
             std::vector<std::tuple<std::string,double>> EvaluateSubcomponents(const arma::mat &x) final;
-
+            double EvaluateOnlyIntermolecular(const arma::mat &x) final;
 
             arma::mat getStartingConditions() const final;
 
@@ -81,7 +85,17 @@ namespace SmolDock {
             ~VinaLikeRigid() final = default;
 
 
+            unsigned int getCoefficientsVectorWidth() final;
+            std::vector<std::string> getCoefficientsNames() final;
+            std::vector<double> getCurrentCoefficients() final;
+            bool setNonDefaultCoefficients(std::vector<double> coeffs) final;
+
         private:
+
+            static const constexpr unsigned int numCoefficients = VinaLikeRigid_numCoefficients;
+            static const std::array<std::string, numCoefficients> coefficientsNames;
+
+            std::array<double, numCoefficients> nonDefaultCoefficients;
 
             inline iTransform internalToExternalRepr(const arma::mat &x_) const {
                 assert(x_.n_rows == 7);

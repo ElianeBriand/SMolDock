@@ -17,12 +17,16 @@ namespace SmolDock::Score {
     enum class ScoringFunctionType {
         VinaRigid,
         Vina,
-        VinaCovalentReversible
+        VinaCovalentReversible,
+
     };
 
     std::shared_ptr<ScoringFunction> scoringFunctionFactory(ScoringFunctionType t, const iConformer &conformer,
                                                             const iProtein &protein, const iTransform &transform,
-                                                            double differential_upsilon);
+                                                            double differential_upsilon,
+                                                            bool useNonDefaultCoefficients = false);
+
+    std::string scoringFunctionTypeToString(ScoringFunctionType t);
 
 
 }

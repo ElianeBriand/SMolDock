@@ -24,10 +24,57 @@
 
 #include "AbstractDockingEngine.h"
 
+
+#include <GraphMol/RWMol.h>
+#include <random>
+#include <Engines/LocalOptimizers/OptimizerFactory.h>
+#include <Engines/GlobalHeuristics/HeuristicFactory.h>
+
+
+#include "AbstractDockingEngine.h"
+#include "../Structures/Protein.h"
+#include "../Structures/Molecule.h"
+
+#include "Engines/LocalOptimizers/GradientDescentLineSearch.h"
+
+#include "Engines/ScoringFunctions/ScoringFunctionFactory.h"
+
+#include "ConformerDockingEngine.h"
+
 namespace SmolDock::Engine {
 
     class VinaCompatibleDockingEngine : AbstractDockingEngine {
 
+    public:
+
+        VinaCompatibleDockingEngine(Protein* protein,
+                                    Molecule* ligand,
+                                    unsigned int seed);
+
+
+
+        // /// Parameters /////////////
+        bool setDockingBox(DockingBoxSetting setting) final;
+
+
+        // /// Actions /////////////
+        bool setupDockingEngine() final;
+
+        void runDockingEngine() final;
+
+        // /// Results /////////////
+        std::shared_ptr<DockingResult> getDockingResult() final;
+
+        std::tuple<double,double> getMeanStdDevDuration() const;
+        std::tuple<double,double> getMeanStdDevScore() const;
+        double getBestScore();
+
+        virtual ~VinaCompatibleDockingEngine() = default;
+
+
+    private:
+
+        std::shared_ptr<ConformerDockingEngine> internalEngine;
 
     };
 

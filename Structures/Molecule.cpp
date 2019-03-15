@@ -363,38 +363,44 @@ namespace SmolDock {
 
         this->numberOfRotatableBonds = RDKit::Descriptors::calcNumRotatableBonds((RDKit::ROMol) (*this->rwmol));
 
-        rwmol_withrings = std::make_shared(*rwmol);
-        unsigned int numAliphaticRing = RDKit::Descriptors::calcNumAliphaticRings((RDKit::ROMol) (*this->rwmol));
-        if (numAliphaticRing > 0) {
-            BOOST_LOG_TRIVIAL(error) << "Non-rigid (ie, non-aromatic) rings are unsupported yet";
-            BOOST_LOG_TRIVIAL(error) << "  Found " << numAliphaticRing << " aliphatic ring(s)";
-            BOOST_LOG_TRIVIAL(error) << "  Processing will continue but correctness is not guaranteed";
+        this->rwmol_withoutrings = std::make_shared<RDKit::RWMol>(*rwmol);
+        if(!this->noFlexibleRings) {
+            unsigned int numAliphaticRing = RDKit::Descriptors::calcNumAliphaticRings(
+                    (RDKit::ROMol) (*this->rwmol_withoutrings));
+            if (numAliphaticRing > 0) {
+                BOOST_LOG_TRIVIAL(debug) << "Processing non-rigid rings.";
+                BOOST_LOG_TRIVIAL(debug) << "  Found " << numAliphaticRing << " aliphatic ring(s)";
 
 
-            while(RDKit::Descriptors::calcNumAliphaticRings((RDKit::ROMol) (*this->rwmol)) != 0)
-            {
-                BOOST_FOREACH (const std::vector<int> &iv, this->rwmol->getRingInfo()->bondRings()) {
-                                BOOST_FOREACH (int i, iv) {
-                                                if (!this->rwmol->getBondWithIdx(i)->getIsAromatic()) {
-                                                    // This ring has a non-aromatic bond.
+                while (RDKit::Descriptors::calcNumAliphaticRings((RDKit::ROMol) (*this->rwmol_withoutrings)) != 0) {
+                    BOOST_FOREACH (const std::vector<int> &iv, this->rwmol_withoutrings->getRingInfo()->bondRings()) {
+                                    BOOST_FOREACH (int i, iv) {
+                                                    if (!this->rwmol_withoutrings->getBondWithIdx(i)->getIsAromatic()) {
+                                                        // This ring has a non-aromatic bond.
 
-                                                    // We remove it,
-                                                    auto bond = this->rwmol->getBondWithIdx(i);
-                                                    this->rwmol->removeBond(bond->getBeginAtomIdx(), bond->getEndAtomIdx());
-                                                    BOOST_LOG_TRIVIAL(error) << "  Removed bond to unmake rings";
+                                                        // We remove it,
+                                                        auto bond = this->rwmol_withoutrings->getBondWithIdx(i);
+                                                        this->rwmol_withoutrings->removeBond(bond->getBeginAtomIdx(),
+                                                                                             bond->getEndAtomIdx());
+                                                        BOOST_LOG_TRIVIAL(error) << "  Removed bond to unmake rings ("
+                                                                                 << bond->getBeginAtomIdx() << ","
+                                                                                 << bond->getEndAtomIdx() << ")";
 
-                                                    //We log the potential to add
-
-                                                    // Then we go to the next iteration of the unringifier
-                                                    goto nextiter;
+                                                        //We log atoms involved for future use (rotatable groups and the potential to add to simulated the bond)
+                                                        this->removedCyclicBondsAtomIdx.push_back(
+                                                                std::make_tuple(bond->getBeginAtomIdx(),
+                                                                                bond->getEndAtomIdx()));
+                                                        // Then we go to the next iteration of the unringifier
+                                                        goto nextiter;
+                                                    }
                                                 }
-                                            }
-                            }
-                nextiter:
-                RDKit::MolOps::findSSSR(*this->rwmol);
+                                }
+                    nextiter:
+                    RDKit::MolOps::findSSSR(*this->rwmol_withoutrings);
 
+                }
+                BOOST_LOG_TRIVIAL(error) << "  No more aliphatic cycles";
             }
-
         }
 
 
@@ -422,12 +428,11 @@ namespace SmolDock {
 
         std::vector<RDKit::MatchVectType> matchsRotBonds;
 
-        if (RDKit::SubstructMatch(static_cast<const RDKit::ROMol &>(*this->rwmol), *rotatableBondPatt,
+        if (RDKit::SubstructMatch(static_cast<const RDKit::ROMol &>(*this->rwmol_withoutrings), *rotatableBondPatt,
                                   matchsRotBonds)) {
             BOOST_LOG_TRIVIAL(debug) << "Rotatable bond(s) found";
         }
 
-        assert(matchsRotBonds.size() == this->numberOfRotatableBonds);
 
         for (unsigned int i = 0; i < matchsRotBonds.size(); ++i) {
             if (matchsRotBonds[i].size() < 2) {
@@ -436,8 +441,8 @@ namespace SmolDock {
             }
             unsigned int atom1Index = matchsRotBonds[i][0].second;
             unsigned int atom2Index = matchsRotBonds[i][1].second;
-            const RDKit::Atom *atomMatched1 = this->rwmol->getAtomWithIdx(atom1Index);
-            const RDKit::Atom *atomMatched2 = this->rwmol->getAtomWithIdx(atom2Index);
+            const RDKit::Atom *atomMatched1 = this->rwmol_withoutrings->getAtomWithIdx(atom1Index);
+            const RDKit::Atom *atomMatched2 = this->rwmol_withoutrings->getAtomWithIdx(atom2Index);
 
             assert(atomMatched1 != nullptr);
             assert(atomMatched2 != nullptr);
@@ -489,10 +494,26 @@ namespace SmolDock {
                     (const RDKit::Atom *atom,
                      const RDKit::Atom *avoidThisAtom,
                      const RDKit::Atom *avoidThisOtherAtom) {
+                unsigned int currentAtomIdx = atom->getIdx();
                 RDKit::ROMol::ADJ_ITER nbr, end_nbr;
-                boost::tie(nbr, end_nbr) = this->rwmol->getAtomNeighbors(atom);
+                boost::tie(nbr, end_nbr) = this->rwmol_withoutrings->getAtomNeighbors(atom);
                 while (nbr != end_nbr) {
-                    const RDKit::Atom *nbr_atom = (*this->rwmol)[*nbr];
+                    const RDKit::Atom *nbr_atom = (*this->rwmol_withoutrings)[*nbr];
+                    unsigned int consideredAtomIdx = nbr_atom->getIdx();
+
+                    // Check that the considered atom and our atom does not form a removed bond
+                    // if so, do not traverse this bond and go to next atom
+                    // This allow traversal of the molecule to make rotatable groups, while not being trapped in cycles
+                    if(std::find_if(this->removedCyclicBondsAtomIdx.begin(), this->removedCyclicBondsAtomIdx.end(),
+                            [consideredAtomIdx,currentAtomIdx](const std::tuple<unsigned int, unsigned int>& e) {
+                        return (consideredAtomIdx == std::get<0>(e) && currentAtomIdx == std::get<1>(e)) ||
+                                (consideredAtomIdx == std::get<1>(e) && currentAtomIdx == std::get<0>(e));
+                    }) != this->removedCyclicBondsAtomIdx.end())
+                    {
+                        ++nbr;
+                        continue;
+                    }
+
                     if (nbr_atom == avoidThisAtom ||
                         nbr_atom == avoidThisOtherAtom ||
                         nbr_atom == atom ||
@@ -502,14 +523,21 @@ namespace SmolDock {
                         continue;
                     }
                     atomIdxOfRotatedAtoms.push_back(nbr_atom->getIdx());
-                     //BOOST_LOG_TRIVIAL(debug) << "AdjAtom from " << atom->getIdx() <<"(" <<atom->getSymbol() << ")" <<
-                    //" : " << nbr_atom->getIdx() << " : " << nbr_atom->getSymbol();
+//                     BOOST_LOG_TRIVIAL(debug) << "AdjAtom from " << atom->getIdx() <<"(" <<atom->getSymbol() << ")" <<
+//                    " : " << nbr_atom->getIdx() << " : " << nbr_atom->getSymbol();
                     exploreAdj(nbr_atom, avoidThisAtom, avoidThisOtherAtom);
                     ++nbr;
                 }
             });
 
             exploreAdj(atomMatched1, atomMatched1, atomMatched2);
+
+//            BOOST_LOG_TRIVIAL(debug) << "adj list : ";
+//            for(auto& i: atomIdxOfRotatedAtoms)
+//            {
+//                BOOST_LOG_TRIVIAL(debug) << " " << i;
+//            }
+//            BOOST_LOG_TRIVIAL(debug) << "\n";
 
             this->rotatableBonds.emplace_back(
                     std::make_tuple(*itFoundBond, atom1Index, atom2Index, atomIdxOfRotatedAtoms));
@@ -551,7 +579,7 @@ namespace SmolDock {
         return true;
     }
 
-    Molecule Molecule::deepcopy() {
+    Molecule Molecule::deepcopy() const {
         Molecule newmol(*this);
 
 
@@ -781,6 +809,16 @@ namespace SmolDock {
         BOOST_LOG_TRIVIAL(info) << num_matched_atoms << " atoms were flagged with [" << atomVariantToString(variant) << "]";
         BOOST_LOG_TRIVIAL(debug) << "   Matching SMARTS : " << smarts_pattern;
         return num_matched_atoms;
+    }
+
+    Molecule::Molecule(bool noFlexibleRings) :
+    noFlexibleRings(noFlexibleRings){
+        if(noFlexibleRings)
+        {
+            BOOST_LOG_TRIVIAL(info) << "Molecule : All rings considered non-flexible (no rotatable bonds in cycles)";
+        }
+
+
     }
 
 
