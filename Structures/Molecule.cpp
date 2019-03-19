@@ -51,16 +51,6 @@
 #include <boost/accumulators/statistics/max.hpp>
 
 
-#include <boost/graph/visitors.hpp>
-#include <boost/graph/graph_utility.hpp>
-#include <boost/graph/adjacency_list.hpp>
-#include <boost/graph/depth_first_search.hpp>
-#include <boost/graph/connected_components.hpp> // connected_components
-#include <boost/graph/filtered_graph.hpp>
-#include <boost/graph/copy.hpp>
-#include <boost/bimap.hpp>
-
-
 namespace SmolDock {
 
     Molecule::Molecule() {

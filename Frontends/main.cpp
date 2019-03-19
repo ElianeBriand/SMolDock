@@ -31,6 +31,9 @@
 #include <Engines/Internals/InternalsUtilityFunctions.h>
 
 #include <Utilities/PDBWriter.h>
+#include <Utilities/CSVReader.h>
+#include <Utilities/SMARTSMatcher.h>
+
 #include <Structures/InputModifiers/InputModifierInterface.h>
 #include <Structures/InputModifiers/VinaCompatibility.h>
 
@@ -50,13 +53,12 @@
 namespace sd = SmolDock;
 
 
-//tbb::task_scheduler_init tbbInit(4);
+
 
 
 int main() {
 
-
-
+    //tbb::task_scheduler_init tbbInit(2);
 
     /* Setting up the logger */
     boost::log::core::get()->set_filter
@@ -110,43 +112,55 @@ int main() {
     setting.center = {2.1, -5.6, 52.0};
     setting.radius = 14.0;
 
+
     sd::Calibration::Calibrator calibrator( sd::Score::ScoringFunctionType::VinaCovalentReversible,
                                                        sd::Heuristics::GlobalHeuristicType::SimulatedAnnealing,
-                                                       sd::Optimizer::LocalOptimizerType::L_BFGS);
+                                                       sd::Optimizer::LocalOptimizerType::L_BFGS,
+                                                       10, // Max epoch
+                                                       0.5, // Initial learning rate
+                                                       32574, // RNG seed
+                                                       3, // num generated starting conformer per ligand
+                                                       4, // num retry per conformer (best score is kept)
+                                                       16, //batch size
+                                                       sd::Heuristics::emptyParameters //Specific heur params
+    );
 
     sd::Calibration::Calibrator::ReceptorID recID1 = calibrator.addReceptor(prot,setting);
 
-    sd::Molecule benzil(true);
-    benzil.populateFromSMILES("O=C(C(=O)c1ccccc1)c2ccccc2");
-    benzil.applyAtomVariant("[c,C][C:1](=O)[c,C]", sd::Atom::AtomVariant::covalentReversibleAcceptor);
-    calibrator.addReferenceLigand_Mol_Ki(recID1, benzil, 45.0e-9);
 
-    sd::Molecule CHEMBL433282(true);
-    CHEMBL433282.populateFromSMILES("[O-][N+](=O)c1ccc2c(c1)C(=O)C(=O)c3ccccc23");
-    CHEMBL433282.applyAtomVariant("[c,C][C:1](=O)[c,C]", sd::Atom::AtomVariant::covalentReversibleAcceptor);
-    calibrator.addReferenceLigand_Mol_Ki(recID1, CHEMBL433282, 15.9e-9);
+    sd::CSVReader chembl_csv("../DockingTests/hCES1/hCES1_inhib_Ki_ChEMBL.csv","\t",true);
 
-//    sd::Molecule CHEMBL467451(true);
-//    CHEMBL467451.populateFromSMILES("CCCCCCCCCCS(=O)(=O)CC(O)(O)C(F)(F)F");
-//    CHEMBL467451.applyAtomVariant("[c,C][C:1](=O)[c,C]", sd::Atom::AtomVariant::covalentReversibleAcceptor);
-//    calibrator.addReferenceLigand_Mol_Ki(recID1, CHEMBL467451, 0.302e-9);
+    std::vector<std::map<std::string,std::string>> chembl_data =  chembl_csv.getRowsAsMap();
 
-    sd::Molecule Decane_5_6_Dione(true);
-    Decane_5_6_Dione.populateFromSMILES("CCCCC(=O)C(=O)CCCC");
-    Decane_5_6_Dione.applyAtomVariant("[c,C][C:1](=O)[c,C]", sd::Atom::AtomVariant::covalentReversibleAcceptor);
-    calibrator.addReferenceLigand_Mol_Ki(recID1, Decane_5_6_Dione, 46.6e-9);
+    sd::SMARTSMatcher matchDiKetone("[c,C]C(=O)C(=O)[c,C]");
 
-    sd::Molecule CHEMBL225169(true);
-    CHEMBL225169.populateFromSMILES("CC(=C)CN1C(=O)C(=O)c2cc(Br)ccc12");
-    CHEMBL225169.applyAtomVariant("[c,C][C:1](=O)[c,C]", sd::Atom::AtomVariant::covalentReversibleAcceptor);
-    calibrator.addReferenceLigand_Mol_Ki(recID1, CHEMBL225169, 66e-9);
+    unsigned int totalAdded = 0;
+    for (unsigned int j = 0; j < chembl_data.size(); ++j) {
+        std::string smiles = chembl_data.at(j).at("CANONICAL_SMILES");
+        double ki = boost::lexical_cast<double>(chembl_data.at(j).at("STANDARD_VALUE")) * 1e-9;
+
+        if(matchDiKetone.matchesSMILES(smiles))
+        {
+            if(ki < 100e-9) // Only ligand susceptible of doing covRev binding are considered ie Ki < ~ 100nM
+            {
+                sd::Molecule molToAdd(true);
+                molToAdd.populateFromSMILES(smiles);
+                molToAdd.applyAtomVariant("[c,C][C:1](=O)[c,C]", sd::Atom::AtomVariant::covalentReversibleAcceptor);
+                calibrator.addReferenceLigand_Mol_Ki(recID1, molToAdd, ki);
+                totalAdded++;
+            }
+
+        }
+    }
+
+    BOOST_LOG_TRIVIAL(debug) << "Added " << totalAdded << " SMILES-Ki datapoints";
 
 
     calibrator.coefficientsToCalibrate({"CovalentReversible"});
 
     calibrator.setupCalibration();
 
-    calibrator.runCalibration();
+    calibrator.runCalibration2();
 
     return 0;
 

@@ -26,6 +26,7 @@
 #include "Python/PyStructures.h"
 #include "Python/PyUtilities.h"
 #include "Python/PyEngine.h"
+#include "Python/PyCalibrator.h"
 
 #undef BOOST_LOG
 
@@ -74,6 +75,7 @@ BOOST_PYTHON_MODULE (PySmolDock) {
     export_Structures();
     export_Utilities();
     export_Engines();
+    export_Calibrator();
 
 
 }

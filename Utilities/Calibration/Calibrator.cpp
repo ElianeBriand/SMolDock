@@ -1,3 +1,5 @@
+#include <utility>
+
 //
 // Created by eliane on 13/03/19.
 //
@@ -15,6 +17,7 @@
 
 #include <armadillo>
 
+#include <ensmallen.hpp>
 
 #include <Engines/Internals/InternalsUtilityFunctions.h>
 
@@ -25,20 +28,22 @@ namespace SmolDock::Calibration {
                            Heuristics::GlobalHeuristicType heurType,
                            Optimizer::LocalOptimizerType localOptimizerType_,
                            unsigned int maxLearningSteps,
-                           double learningRate,
+                           double initialLearningRate_,
                            unsigned int rngSeed,
-                           Heuristics::HeuristicParameters hParams,
                            unsigned int conformerNumber,
-                           unsigned int retryNumber) :
+                           unsigned int retryNumber,
+                           unsigned int batchSize_,
+                           Heuristics::HeuristicParameters hParams) :
             scoringFunctionType(scFuncType),
             heuristicType(heurType),
             localOptimizerType(localOptimizerType_),
             maxLearningSteps(maxLearningSteps),
-            learningRate(learningRate),
-            hParams(std::move(hParams)),
+            initialLearningRate(initialLearningRate_),
             rndGenerator(rngSeed),
             conformerNumber(conformerNumber),
-            retryNumber(retryNumber) {
+            retryNumber(retryNumber),
+            batchSize(batchSize_),
+            hParams(std::move(hParams)){
 
         if (conformerNumber == 0 || retryNumber == 0) {
             BOOST_LOG_TRIVIAL(error) << "Cannot run calibration with number of conformer/number of try per conformer = "
@@ -128,12 +133,109 @@ namespace SmolDock::Calibration {
         return true;
     }
 
+    void Calibrator::fillWorkItemVector(std::shared_ptr<std::vector<CalibratorWorkItem>> workItemVector) {
+
+        std::uniform_int_distribution<unsigned int> dis_uint(0, std::numeric_limits<unsigned int>::max());
+
+
+        for (unsigned int receptorIdx = 0; receptorIdx < this->referenceReceptor.size(); receptorIdx++) {
+            auto &protein = std::get<std::shared_ptr<Protein>>(this->referenceReceptor[receptorIdx]);
+            auto &iProt = std::get<2>(this->referenceReceptor[receptorIdx]);
+            auto &fulliProt = std::get<3>(this->referenceReceptor[receptorIdx]);
+            auto &settings = std::get<Engine::AbstractDockingEngine::DockingBoxSetting>(
+                    this->referenceReceptor[receptorIdx]);
+
+            if (this->hParams.index() == 0) // LackOfParameter
+            {
+                BOOST_LOG_TRIVIAL(debug)
+                    << "Received default heuristics parameters, setting up search domain if relevant";
+
+                double proteinMaxRadius = (settings.type ==
+                                           Engine::AbstractDockingEngine::DockingBoxSetting::Type::centeredAround) ?
+                                          settings.radius : protein->getMaxRadius();
+                this->hParams = setupSearchDomainIfRelevant(this->heuristicType, proteinMaxRadius);
+            }
+
+            for (auto &ligandRecord : this->referenceLigands[receptorIdx]) {
+                auto &conformer_vector = std::get<std::vector<iConformer>>(ligandRecord);
+                double referenceScore = std::get<double>(ligandRecord);
+
+                iTransform starting_pos_tr = iTransformIdentityInit(conformer_vector[0].num_rotatable_bond);
+                if (settings.type == Engine::AbstractDockingEngine::DockingBoxSetting::Type::centeredAround) {
+                    starting_pos_tr.transl.x() += settings.center[0];
+                    starting_pos_tr.transl.y() += settings.center[1];
+                    starting_pos_tr.transl.z() += settings.center[2];
+                }
+
+
+                for (auto &conformer : conformer_vector) {
+
+
+                    CalibratorWorkItem item = {.scFuncType_ = this->scoringFunctionType,
+                            .heurType_ = this->heuristicType,
+                            .localOptimizerType_ = this->localOptimizerType,
+                            .transform_ = starting_pos_tr,
+                            .conformer_ = &conformer,
+                            .prot_ = &iProt,
+                            .fullProt_ = &fulliProt,
+                            .seed_ = dis_uint(this->rndGenerator),
+                            .retryNumber_ = this->retryNumber,
+                            .hParams_ = this->hParams,
+                            .referenceScore_ = referenceScore,
+                    };
+
+                    workItemVector->emplace_back(std::move(item));
+
+
+                }
+
+            }
+        }
+
+    }
+
+    bool Calibrator::runCalibration2() {
+
+        auto workItemVector = std::make_shared<std::vector<CalibratorWorkItem>>();
+
+        this->fillWorkItemVector(workItemVector);
+
+
+        CalibratorEnsmallenLayer calibratorEnsLayer(workItemVector,
+                                                    this->currentCoeffs,
+                                                    this->idxOfCoeffsToCalibrate);
+
+        arma::mat coeffs_internalRepr = calibratorEnsLayer.getInitialParamMatrix();
+
+        ens::Adam optimizer(this->initialLearningRate, this->batchSize, 0.9, 0.999, 1e-8, this->maxLearningSteps, 1e-4, true);
+        optimizer.Optimize(calibratorEnsLayer, coeffs_internalRepr);
+
+        this->optResultMat = coeffs_internalRepr;
+
+        std::vector<double> updateCoeffsVector = this->currentCoeffs;
+
+        for (unsigned int j = 0; j < this->idxOfCoeffsToCalibrate.size(); ++j) {
+            unsigned int idxCoeff = this->idxOfCoeffsToCalibrate[j];
+            std::string coeffName = this->nameOfAllCoeffs[idxCoeff];
+            double nonUpdatedCoeff = this->currentCoeffs[idxCoeff];
+
+            updateCoeffsVector[idxCoeff] = coeffs_internalRepr[j];
+
+            BOOST_LOG_TRIVIAL(info) << "COEFFICIENT " << coeffName << " ---- ";
+            BOOST_LOG_TRIVIAL(info) << "   Old coeff        : " << nonUpdatedCoeff;
+            BOOST_LOG_TRIVIAL(info) << "   New coeff        : " << coeffs_internalRepr[j];
+            BOOST_LOG_TRIVIAL(info) << " ----------------------------- \n";
+        }
+
+        this->optResultVector = updateCoeffsVector;
+
+        return true;
+
+    }
 
     bool Calibrator::runCalibration() {
 
         BOOST_LOG_TRIVIAL(info) << "Running the calibration...";
-
-        std::uniform_int_distribution<unsigned int> dis_uint(0, std::numeric_limits<unsigned int>::max());
 
 
         std::vector<double> averageLossHistory;
@@ -146,79 +248,25 @@ namespace SmolDock::Calibration {
 
             auto workItemVector = std::make_shared<std::vector<CalibratorWorkItem>>();
             auto resultMutex = std::make_shared<std::mutex>();
-            auto local_scores = std::make_shared<std::vector<double>>() ;
+            auto local_scores = std::make_shared<std::vector<double>>();
             auto local_referenceScores = std::make_shared<std::vector<double>>();
             auto local_scoreComponents = std::make_shared<std::vector<std::vector<std::tuple<std::string, double>>>>();
 
 
-            for (unsigned int receptorIdx = 0; receptorIdx < this->referenceReceptor.size(); receptorIdx++) {
-                auto &protein = std::get<std::shared_ptr<Protein>>(this->referenceReceptor[receptorIdx]);
-                auto &iProt = std::get<2>(this->referenceReceptor[receptorIdx]);
-                auto &fulliProt = std::get<3>(this->referenceReceptor[receptorIdx]);
-                auto &settings = std::get<Engine::AbstractDockingEngine::DockingBoxSetting>(
-                        this->referenceReceptor[receptorIdx]);
+            this->fillWorkItemVector(workItemVector);
 
-                if (this->hParams.index() == 0) // LackOfParameter
-                {
-                    BOOST_LOG_TRIVIAL(debug)
-                        << "Received default heuristics parameters, setting up search domain if relevant";
-
-                    double proteinMaxRadius = (settings.type ==
-                                               Engine::AbstractDockingEngine::DockingBoxSetting::Type::centeredAround) ?
-                                              settings.radius : protein->getMaxRadius();
-                    this->hParams = setupSearchDomainIfRelevant(this->heuristicType, proteinMaxRadius);
-                }
-
-                for (auto &ligandRecord : this->referenceLigands[receptorIdx]) {
-                    auto &conformer_vector = std::get<std::vector<iConformer>>(ligandRecord);
-                    double referenceScore = std::get<double>(ligandRecord);
-
-                    iTransform starting_pos_tr = iTransformIdentityInit(conformer_vector[0].num_rotatable_bond);
-                    if (settings.type == Engine::AbstractDockingEngine::DockingBoxSetting::Type::centeredAround) {
-                        starting_pos_tr.transl.x() += settings.center[0];
-                        starting_pos_tr.transl.y() += settings.center[1];
-                        starting_pos_tr.transl.z() += settings.center[2];
-                    }
-
-
-                    for (auto &conformer : conformer_vector) {
-
-
-                        CalibratorWorkItem item = {.scFuncType_ = this->scoringFunctionType,
-                                .heurType_ = this->heuristicType,
-                                .localOptimizerType_ = this->localOptimizerType,
-                                .transform_ = starting_pos_tr,
-                                .conformer_ = &conformer,
-                                .prot_ = &iProt,
-                                .fullProt_ = &fulliProt,
-                                .seed_ = dis_uint(this->rndGenerator),
-                                .retryNumber_ = this->retryNumber,
-                                .hParams_ = this->hParams,
-                                .referenceScore_ = referenceScore,
-                        };
-
-                        workItemVector->emplace_back(std::move(item));
-
-
-                    }
-
-                }
-
-
-            }
 
 
             // At this point all work items for this epoch have been added
             // We parellel run them
-            tbb::parallel_for(tbb::blocked_range<size_t>(0,workItemVector->size()),
-                    CalibratorLoopRunner(workItemVector,
-                                        resultMutex,
-                                        local_scores,
-                                        local_referenceScores,
-                                        local_scoreComponents,
-                                         this->currentCoeffs)
-                    );
-
+            tbb::parallel_for(tbb::blocked_range<size_t>(0, workItemVector->size()),
+                              CalibratorLoopRunner(workItemVector,
+                                                   resultMutex,
+                                                   local_scores,
+                                                   local_referenceScores,
+                                                   local_scoreComponents,
+                                                   this->currentCoeffs)
+            );
 
 
             bprinter::TablePrinter tp(&std::cout);
@@ -264,15 +312,15 @@ namespace SmolDock::Calibration {
                 meanValueInput = meanValueInput / numElementInBatch;
 
 
-                double deltaCoeff = (this->learningRate /* /learningEpoch */) * meanValueInput * average_loss;
+                double deltaCoeff = (this->initialLearningRate /* /learningEpoch */) * meanValueInput * average_loss;
 
 
                 this->currentCoeffs[idxCoeff] = nonUpdatedCoeff + deltaCoeff;
 
-                BOOST_LOG_TRIVIAL(info) << " ---- COEFFICIENT " << coeffName << " ---- ";
+                BOOST_LOG_TRIVIAL(info) << "COEFFICIENT " << coeffName << " ---- ";
                 BOOST_LOG_TRIVIAL(info) << "   Old coeff        : " << nonUpdatedCoeff;
                 BOOST_LOG_TRIVIAL(info) << "   Mean input value : " << meanValueInput;
-                BOOST_LOG_TRIVIAL(info) << "   Learning rate    : " << this->learningRate;
+                BOOST_LOG_TRIVIAL(info) << "   Learning rate    : " << this->initialLearningRate;
                 BOOST_LOG_TRIVIAL(info) << "   Avg Loss         : " << average_loss;
                 BOOST_LOG_TRIVIAL(info) << "   Delta coeff      : " << deltaCoeff;
                 BOOST_LOG_TRIVIAL(info) << "   New coeff        : " << this->currentCoeffs[idxCoeff];
@@ -280,7 +328,7 @@ namespace SmolDock::Calibration {
             }
 
             BOOST_LOG_TRIVIAL(info) << "\n";
-            BOOST_LOG_TRIVIAL(info) << " ---- LOSS HISTORY ---- \n";
+            BOOST_LOG_TRIVIAL(info) << "     LOSS HISTORY      ";
 
             averageLossHistory.push_back(average_loss);
 
@@ -295,13 +343,12 @@ namespace SmolDock::Calibration {
             losstable.PrintFooter();
 
             BOOST_LOG_TRIVIAL(info) << "\n";
-            BOOST_LOG_TRIVIAL(info) << " ----------------------- ";
 
 
             BOOST_LOG_TRIVIAL(info) << "\n";
             BOOST_LOG_TRIVIAL(info) << " ---- CYCLE RESULTS ---- ";
-            BOOST_LOG_TRIVIAL(info) << "  Cycle #           : " << learningEpoch << " of " << this->maxLearningSteps;
-            BOOST_LOG_TRIVIAL(info) << "  Average loss      : " << average_loss;
+            BOOST_LOG_TRIVIAL(info) << "  Cycle #       : " << learningEpoch << " of " << this->maxLearningSteps;
+            BOOST_LOG_TRIVIAL(info) << "  Average loss  : " << average_loss;
             BOOST_LOG_TRIVIAL(info) << " ----------------------- \n";
 
             BOOST_LOG_TRIVIAL(info)
@@ -348,29 +395,28 @@ namespace SmolDock::Calibration {
 
 
     CalibratorLoopRunner::CalibratorLoopRunner(std::shared_ptr<std::vector<CalibratorWorkItem>> workItemList,
-            std::shared_ptr<std::mutex> resultMutex_,
-            std::shared_ptr<std::vector<double>> local_scores_,
-            std::shared_ptr<std::vector<double>> local_referenceScores_,
-            std::shared_ptr<std::vector<std::vector<std::tuple<std::string,double>>>> local_scoreComponents_,
-            std::vector<double> currentCoeffs_,
-            std::vector<unsigned int> indexShufflingArray_) :
-                workItemList(workItemList),
-                resultMutex(resultMutex_),
-                local_scores(local_scores_),
-                local_referenceScores(local_referenceScores_),
-                local_scoreComponents(local_scoreComponents_),
-                currentCoeffs(currentCoeffs_)
-            {
-        if(indexShufflingArray_.size() == 0)
-        {
+                                               std::shared_ptr<std::mutex> resultMutex_,
+                                               std::shared_ptr<std::vector<double>> local_scores_,
+                                               std::shared_ptr<std::vector<double>> local_referenceScores_,
+                                               std::shared_ptr<std::vector<std::vector<std::tuple<std::string, double>>>> local_scoreComponents_,
+                                               std::vector<double> currentCoeffs_,
+                                               std::vector<unsigned int> indexShufflingArray_) :
+            workItemList(std::move(workItemList)),
+            resultMutex(std::move(resultMutex_)),
+            local_scores(std::move(local_scores_)),
+            local_referenceScores(std::move(local_referenceScores_)),
+            local_scoreComponents(std::move(local_scoreComponents_)),
+            currentCoeffs(std::move(currentCoeffs_)) {
+        if (indexShufflingArray_.size() == 0) {
             for (unsigned int j = 0; j < this->workItemList->size(); ++j) {
                 this->indexShufflingArray.push_back(j);
             }
-        }else {
+        } else {
             assert(this->workItemList->size() == indexShufflingArray_.size());
             this->indexShufflingArray = indexShufflingArray_;
         }
     }
+
 
     void CalibratorLoopRunner::operator()(const tbb::blocked_range<size_t> &r) const {
         for (size_t i = r.begin(); i != r.end(); ++i) {
@@ -407,7 +453,7 @@ namespace SmolDock::Calibration {
                     1e-3);
 
             double bestScoreAmongRetry = std::numeric_limits<double>::max();
-            std::vector<std::tuple<std::string,double>> bestComponentsAmongRetry;
+            std::vector<std::tuple<std::string, double>> bestComponentsAmongRetry;
             for (unsigned int k = 0; k < item.retryNumber_; ++k) {
 
                 {
@@ -436,7 +482,7 @@ namespace SmolDock::Calibration {
                     continue;
                 }
 
-                if(fullScore < bestScoreAmongRetry) {
+                if (fullScore < bestScoreAmongRetry) {
                     bestScoreAmongRetry = fullScore;
                     bestComponentsAmongRetry = scoringFunction->EvaluateSubcomponents(rawResultMatrix);
                 }
@@ -462,68 +508,85 @@ namespace SmolDock::Calibration {
 
 
     CalibratorEnsmallenLayer::CalibratorEnsmallenLayer(std::shared_ptr<std::vector<CalibratorWorkItem>> workitemVector_,
-                                                       unsigned int paramSize_,
+                                                       std::vector<double> startingCoeffs_,
+                                                       std::vector<unsigned int> idxOfCoeffsToCalibrate_,
                                                        unsigned int seed_,
                                                        double differentialEpsilon_) :
-    paramSize(paramSize_),
-    workitemVector(workitemVector_),
-    differentialEpsilon(differentialEpsilon_),
-    rndGenerator(seed_)
-    {
+            workitemVector(std::move(workitemVector_)),
+            startingCoeffs(startingCoeffs_),
+            idxOfCoeffsToCalibrate(idxOfCoeffsToCalibrate_),
+            differentialEpsilon(differentialEpsilon_),
+            rndGenerator(seed_) {
         this->numWorkItem = workitemVector->size();
         for (unsigned int j = 0; j < this->numWorkItem; ++j) {
-            this->shufflexIndexArray[j] = j;
+            this->shuffledIndexArray.push_back(j);
         }
 
     }
 
     double CalibratorEnsmallenLayer::doRealEvaluate(const arma::mat &x, size_t i, size_t batchSize) {
-        std::shared_ptr<std::mutex> resultMutex;
-        std::shared_ptr<std::vector<double>> local_scores;
-        std::shared_ptr<std::vector<double>> local_referenceScores;
-        std::shared_ptr<std::vector<std::vector<std::tuple<std::string,double>>>> local_scoreComponents;
+        auto resultMutex = std::make_shared<std::mutex>();
+        auto local_scores = std::make_shared<std::vector<double>>();
+        auto local_referenceScores = std::make_shared<std::vector<double>>();
+        auto local_scoreComponents = std::make_shared<std::vector<std::vector<std::tuple<std::string, double>>>>();
 
-        std::vector<double> coeffs;
-        assert(x.n_rows == this->paramSize);
-        for (unsigned int j = 0; j < this->paramSize; ++j) {
-            coeffs[j] = x[j];
+        std::vector<double> coeffs = this->startingCoeffs;
+        assert(this->idxOfCoeffsToCalibrate.size() == x.n_rows);
+        for (unsigned int j = 0; j < this->idxOfCoeffsToCalibrate.size(); ++j) {
+            coeffs[this->idxOfCoeffsToCalibrate[j]] = x[j];
         }
 
-        tbb::parallel_for(tbb::blocked_range<size_t>(i,i+batchSize),
+        tbb::parallel_for(tbb::blocked_range<size_t>(i, i + batchSize),
                           CalibratorLoopRunner(this->workitemVector,
                                                resultMutex,
                                                local_scores,
                                                local_referenceScores,
                                                local_scoreComponents,
-                                               coeffs)
+                                               coeffs,
+                                               this->shuffledIndexArray)
         );
 
-        double totalOutputScore = std::accumulate(local_scores->begin(), local_scores->end(), 0.0);
+        double averageOutputScore =
+                std::accumulate(local_scores->begin(), local_scores->end(), 0.0) / local_scores->size();
+        double averageReferenceScore =
+                std::accumulate(local_referenceScores->begin(), local_referenceScores->end(), 0.0) /
+                local_referenceScores->size();
+        double average_loss = averageOutputScore - averageReferenceScore;
 
-        return totalOutputScore;
+        return average_loss;
     }
 
     double CalibratorEnsmallenLayer::Evaluate(const arma::mat &x, const size_t i, const size_t batchSize) {
-        return this->doRealEvaluate(x,i,batchSize);
+        return this->doRealEvaluate(x, i, batchSize);
     }
 
     void CalibratorEnsmallenLayer::Gradient(const arma::mat &x, const size_t i, arma::mat &g, const size_t batchSize) {
         assert(x.n_rows == g.n_rows);
+        double score_at_x = this->doRealEvaluate(x, i, batchSize);
         for (unsigned int j = 0; j < x.n_rows; ++j) {
             arma::mat gradientX = x;
             gradientX[j] = gradientX[j] + this->differentialEpsilon;
-            double value = this->doRealEvaluate(gradientX,i,batchSize);
+            double value = this->doRealEvaluate(gradientX, i, batchSize) - score_at_x;
             g[j] = value;
         }
     }
 
     void CalibratorEnsmallenLayer::Shuffle() {
-        std::shuffle(this->shufflexIndexArray.begin(), this->shufflexIndexArray.end(), this->rndGenerator);
+        std::shuffle(this->shuffledIndexArray.begin(), this->shuffledIndexArray.end(), this->rndGenerator);
     }
 
     size_t CalibratorEnsmallenLayer::NumFunctions() {
         return this->numWorkItem;
     }
 
+    arma::mat CalibratorEnsmallenLayer::getInitialParamMatrix() {
+        arma::mat ret(this->idxOfCoeffsToCalibrate.size(), 1, arma::fill::zeros);
+        for (unsigned int j = 0; j < this->idxOfCoeffsToCalibrate.size(); ++j) {
+            ret[j] = this->startingCoeffs[this->idxOfCoeffsToCalibrate[j]];
+        }
+        return ret;
+    }
+
 
 } // namespace SmolDock
+

@@ -137,7 +137,7 @@ set(SOURCE_LIST Structures/Structure.cpp
         Engines/GlobalHeuristics/DifferentialEvolution.h
         Engines/GlobalHeuristics/Evolution.cpp
         Engines/GlobalHeuristics/Evolution.h
-        Engines/ScoringFunctions/VinaLikeCovalentReversible.cpp Engines/ScoringFunctions/VinaLikeCovalentReversible.h Utilities/Calibration/Calibrator.cpp Utilities/Calibration/Calibrator.h)
+        Engines/ScoringFunctions/VinaLikeCovalentReversible.cpp Engines/ScoringFunctions/VinaLikeCovalentReversible.h Utilities/Calibration/Calibrator.cpp Utilities/Calibration/Calibrator.h Utilities/CSVReader.cpp Utilities/CSVReader.h Utilities/SMARTSMatcher.cpp Utilities/SMARTSMatcher.h)
 
 set(PY_EXPORT_SOURCE_LIST Frontends/Python/PyStructures.cpp
         Frontends/Python/PyStructures.h
@@ -146,7 +146,7 @@ set(PY_EXPORT_SOURCE_LIST Frontends/Python/PyStructures.cpp
         Frontends/Python/PyUtilities.cpp
         Frontends/Python/PyUtilities.h
         Frontends/Python/PyEngine.cpp
-        Frontends/Python/PyEngine.h)
+        Frontends/Python/PyEngine.h Frontends/Python/PyCalibrator.cpp Frontends/Python/PyCalibrator.h)
 
 
 ##################" REMOVE THIS FOR PROD ##########################""

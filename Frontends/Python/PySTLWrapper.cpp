@@ -29,7 +29,7 @@
 
 
 #include <Structures/Molecule.h>
-#include <Structures/InputPostProcessors/VinaCompatibilityPostProcessor.h>
+#include <Structures/InputModifiers/VinaCompatibility.h>
 
 namespace p = boost::python;
 namespace np = boost::numpy;
@@ -55,6 +55,6 @@ void export_STLWrapper() {
             .def(p::vector_indexing_suite<std::vector<sd::Molecule> >()) // We need Molecule::operator== to use this
             ;
 
-    p::class_<std::vector<std::shared_ptr<sd::InputPostProcessor::InputPostProcessor> > >("ModifierVector");
-    p::def("getVinaPostModifierVector", sd::Wrapper::getVinaPostProcessorsVector);
+    p::class_<std::vector<std::shared_ptr<sd::InputModifier::InputModifier> > >("ModifierVector");
+    p::def("getVinaPostModifierVector", sd::Wrapper::getVinaModifierVector);
 }

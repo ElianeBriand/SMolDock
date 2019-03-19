@@ -76,7 +76,8 @@ namespace SmolDock::Calibration {
     public:
 
         CalibratorEnsmallenLayer(std::shared_ptr<std::vector<CalibratorWorkItem>> workitemVector_,
-                unsigned int paramSize_,
+                std::vector<double> startingCoeffs_,
+                std::vector<unsigned int> idxOfCoeffsToCalibrate_,
                 unsigned int seed_ = 312,
                 double differentialEpsilon_ = 0.5);
 
@@ -88,16 +89,24 @@ namespace SmolDock::Calibration {
 
         size_t NumFunctions();
 
+        arma::mat getInitialParamMatrix();
+
     private:
 
         double doRealEvaluate(const arma::mat& x, size_t i, size_t batchSize);
 
-        unsigned int numWorkItem;
-        unsigned int paramSize;
-        std::vector<unsigned int> shufflexIndexArray;
         std::shared_ptr<std::vector<CalibratorWorkItem>> workitemVector;
+        std::vector<double> startingCoeffs;
+        std::vector<unsigned int> idxOfCoeffsToCalibrate;
+
+        unsigned long numWorkItem;
+        unsigned int paramSize;
+        std::vector<unsigned int> shuffledIndexArray;
+
         double differentialEpsilon;
         std::mt19937 rndGenerator;
+
+
 
     };
 
@@ -109,11 +118,12 @@ namespace SmolDock::Calibration {
                    Heuristics::GlobalHeuristicType heurType,
                    Optimizer::LocalOptimizerType localOptimizerType_,
                    unsigned int maxLearningSteps = 10,
-                   double learningRate = 0.1,
+                   double initialLearningRate_ = 0.5,
                    unsigned int rngSeed= 374,
-                   Heuristics::HeuristicParameters hParams = Heuristics::emptyParameters,
                    unsigned int conformerNumber = 4,
-                   unsigned int retryNumber = 4);
+                   unsigned int retryNumber = 4,
+                   unsigned int batchSize_ = 5,
+                   Heuristics::HeuristicParameters hParams = Heuristics::emptyParameters);
 
         ~Calibrator() = default;
 
@@ -129,9 +139,13 @@ namespace SmolDock::Calibration {
         bool setupCalibration();
         bool runCalibration();
 
+        bool runCalibration2();
+
 
 
     private:
+
+        void fillWorkItemVector(std::shared_ptr<std::vector<CalibratorWorkItem>> workItemVector);
 
         std::vector<std::string> coeffsToCalibrate;
         std::vector<std::string> nameOfAllCoeffs;
@@ -144,21 +158,26 @@ namespace SmolDock::Calibration {
 
         std::shared_ptr<Score::ScoringFunction> dummy_sf;
 
-        unsigned int maxLearningSteps = 10;
-        double learningRate = 0.01;
+        unsigned int maxLearningSteps;
+        double initialLearningRate;
 
-        Heuristics::HeuristicParameters hParams;
 
         std::mt19937 rndGenerator;
 
-        unsigned int conformerNumber = 5;
-        unsigned int retryNumber = 3;
+        unsigned int conformerNumber;
+        unsigned int retryNumber;
+        unsigned int batchSize;
+
+        Heuristics::HeuristicParameters hParams;
+
 
         ReceptorID current_max_ReceptorID = 0;
         std::vector< std::tuple<std::shared_ptr<Protein>, Engine::AbstractDockingEngine::DockingBoxSetting, iProtein, iProtein> > referenceReceptor;
         std::map<ReceptorID ,std::vector<std::tuple<std::shared_ptr<Molecule>, double, std::vector<iConformer>>>> referenceLigands;
 
 
+        arma::mat optResultMat;
+        std::vector<double> optResultVector;
 
     };
 }
