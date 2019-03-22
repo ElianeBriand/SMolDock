@@ -372,7 +372,7 @@ namespace SmolDock {
                                                         auto bond = this->rwmol_withoutrings->getBondWithIdx(i);
                                                         this->rwmol_withoutrings->removeBond(bond->getBeginAtomIdx(),
                                                                                              bond->getEndAtomIdx());
-                                                        BOOST_LOG_TRIVIAL(error) << "  Removed bond to unmake rings ("
+                                                        BOOST_LOG_TRIVIAL(debug) << "  Removed bond to unmake rings ("
                                                                                  << bond->getBeginAtomIdx() << ","
                                                                                  << bond->getEndAtomIdx() << ")";
 
@@ -389,7 +389,7 @@ namespace SmolDock {
                     RDKit::MolOps::findSSSR(*this->rwmol_withoutrings);
 
                 }
-                BOOST_LOG_TRIVIAL(error) << "  No more aliphatic cycles";
+                BOOST_LOG_TRIVIAL(debug) << "  No more aliphatic cycles";
             }
         }
 
@@ -418,10 +418,8 @@ namespace SmolDock {
 
         std::vector<RDKit::MatchVectType> matchsRotBonds;
 
-        if (RDKit::SubstructMatch(static_cast<const RDKit::ROMol &>(*this->rwmol_withoutrings), *rotatableBondPatt,
-                                  matchsRotBonds)) {
-            BOOST_LOG_TRIVIAL(debug) << "Rotatable bond(s) found";
-        }
+        RDKit::SubstructMatch(static_cast<const RDKit::ROMol &>(*this->rwmol_withoutrings), *rotatableBondPatt,
+                                  matchsRotBonds);
 
 
         for (unsigned int i = 0; i < matchsRotBonds.size(); ++i) {
@@ -437,9 +435,9 @@ namespace SmolDock {
             assert(atomMatched1 != nullptr);
             assert(atomMatched2 != nullptr);
 
-            BOOST_LOG_TRIVIAL(debug) << "Rotatable bond found : " << atomMatched1->getSymbol()
-                                     << "-" << atomMatched2->getSymbol() << "(" << atomMatched1->getIdx() << "-"
-                                     << atomMatched2->getIdx() << ")";
+//            BOOST_LOG_TRIVIAL(debug) << "Rotatable bond found : " << atomMatched1->getSymbol()
+//                                     << "-" << atomMatched2->getSymbol() << "(" << atomMatched1->getIdx() << "-"
+//                                     << atomMatched2->getIdx() << ")";
 
 
             auto avoidListMatchit = std::find_if(std::begin(bondsListToAvoid), std::end(bondsListToAvoid),
@@ -805,7 +803,7 @@ namespace SmolDock {
     noFlexibleRings(noFlexibleRings){
         if(noFlexibleRings)
         {
-            BOOST_LOG_TRIVIAL(info) << "Molecule : All rings considered non-flexible (no rotatable bonds in cycles)";
+            BOOST_LOG_TRIVIAL(debug) << "Molecule : All rings considered non-flexible (no rotatable bonds in cycles)";
         }
 
 

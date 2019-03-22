@@ -65,6 +65,9 @@ namespace SmolDock {
         bool populateFromPDB(const std::string &filename,
                              std::vector<std::shared_ptr<InputModifier::InputModifier> > modifiers = {});
 
+        bool populateFromPDBString(const std::string &PDB_Block,
+                             std::vector<std::shared_ptr<InputModifier::InputModifier> > modifiers = {});
+
         //! Return an iProtein object for use in docking engine from the complete Protein
         /*!
          *
@@ -115,7 +118,13 @@ namespace SmolDock {
                                         const SpecialResidueTyping specialType,
                                         const bool ignoreMismatchingResType = false);
 
-    private:
+
+
+    protected:
+
+        void populateFromESBTLSystems(std::string friendlyName, std::vector<ESBTL::Default_system>& systems,
+                std::vector<std::shared_ptr<InputModifier::InputModifier> > modifiers);
+
         std::vector<std::shared_ptr<AminoAcid> > aminoacids;
         std::vector<std::shared_ptr<Atom> > heteroatoms;
 
@@ -132,6 +141,9 @@ namespace SmolDock {
         double max_z = 0;
 
         double max_distance_to_center = 0;
+
+
+
 
     };
 

@@ -75,10 +75,13 @@ namespace SmolDock {
                 row.push_back(*i);
             }
 
+            if(row.size() == 0)
+                continue;
+
             if(row.size() != headers.size())
             {
-                BOOST_LOG_TRIVIAL(error) << "Encountered a row with " << row.size() << " column but header/first line had " << headers.size() << "columns.";
-                BOOST_LOG_TRIVIAL(error) << "Line number" << lineCount <<" (not counting header) will thus be discarded";
+                BOOST_LOG_TRIVIAL(error) << "Encountered a row with " << row.size() << " column but header/first line had " << headers.size() << " columns.";
+                BOOST_LOG_TRIVIAL(error) << "Line number " << lineCount <<" (not counting header) will thus be discarded";
                 continue;
             }
 
@@ -91,7 +94,7 @@ namespace SmolDock {
             lineCount++;
         }
 
-        BOOST_LOG_TRIVIAL(info) << "Read " << lineCount << "lines from " << this->filename;
+        BOOST_LOG_TRIVIAL(info) << "Read " << lineCount << " lines from " << this->filename;
 
         return ret;
     }

@@ -2,15 +2,28 @@ cmake_minimum_required(VERSION 3.12)
 
 set(CMAKE_CXX_STANDARD 17)
 
+set(BOOST_ROOT /home/briand/local)
+set(PYTHON_INCLUDE_DIR /home/briand/local/include/python3.6m)
+set(PYTHON_LIBRARY /home/briand/local/lib)
+SET(CMAKE_C_COMPILER   /home/briand/local/bin/gcc)
+SET(CMAKE_CXX_COMPILER /home/briand/local/bin/g++)
+
+# where is the target environment
+SET(CMAKE_FIND_ROOT_PATH  /home/briand/local/)
+SET(CMAKE_PREFIX_PATH /home/briand/local/)
 
 SET(CMAKE_CXX_FLAGS "-Wall")
-SET(CMAKE_CXX_COMPILER "/usr/bin/g++")
-SET(CMAKE_CXX_FLAGS_DEBUG "-g")
+#SET(CMAKE_CXX_COMPILER "/usr/bin/g++")
+SET(CMAKE_CXX_FLAGS_DEBUG "-g ")
 SET(CMAKE_CXX_FLAGS_MINSIZEREL "-Os -DNDEBUG")
 SET(CMAKE_CXX_FLAGS_RELEASE "-O3 -march=native -DNDEBUG")
-SET(CMAKE_CXX_FLAGS_RELWITHDEBINFO "-O3 -march=native -g ")
+SET(CMAKE_CXX_FLAGS_RELWITHDEBINFO "-O3 -march=native -g  ")
 
 project(smoldock)
+
+find_package(MPI REQUIRED)
+
+include_directories(${MPI_INCLUDE_PATH})
 
 find_package(Boost REQUIRED)
 
@@ -28,10 +41,9 @@ add_subdirectory(Dependencies/tbb)
 include_directories(Dependencies/tbb/include)
 ######## END OF TBB ######
 
-
 ######## RDKIT SETUP ######
 # Adjust this according to where your RDKit build is :
-set(RDKIT_ROOT /home/eliane/Projects/RDKit_Git/rdkit-Release_2018_09_1/)
+set(RDKIT_ROOT /home/briand/tmp/rdkit-Release_2018_09_1/)
 
 include_directories(${RDKIT_ROOT}/Code/)
 
@@ -44,15 +56,22 @@ set(RDKIT_LINKAGE_LIST RDKitStatic RDKitStatic RDKitForceFieldHelpers_static RDK
 
 ######## VC SETUP ######
 # Adjust this according to where your Vc build is :
-set(VC_ROOT /home/eliane/Projects/VcInstall/)
+set(VC_ROOT /home/briand/local/)
 
 include_directories(${VC_ROOT}/include/)
-
 LINK_DIRECTORIES(${VC_ROOT}/lib)
 ######## END OF VC  ######
 
-include_directories(Dependencies)
 
+######## EIGEN SETUP ######
+set(EIGEN_ROOT /home/briand/local/)
+
+include_directories(${EIGEN_ROOT}/include/eigen3)
+
+######## END OF EIGEN  ######
+
+
+include_directories(Dependencies)
 include_directories(.)
 
 
@@ -137,7 +156,16 @@ set(SOURCE_LIST Structures/Structure.cpp
         Engines/GlobalHeuristics/DifferentialEvolution.h
         Engines/GlobalHeuristics/Evolution.cpp
         Engines/GlobalHeuristics/Evolution.h
-        Engines/ScoringFunctions/VinaLikeCovalentReversible.cpp Engines/ScoringFunctions/VinaLikeCovalentReversible.h Utilities/Calibration/Calibrator.cpp Utilities/Calibration/Calibrator.h Utilities/CSVReader.cpp Utilities/CSVReader.h Utilities/SMARTSMatcher.cpp Utilities/SMARTSMatcher.h)
+        Engines/ScoringFunctions/VinaLikeCovalentReversible.cpp
+        Engines/ScoringFunctions/VinaLikeCovalentReversible.h
+        Structures/InputModifiers/RotatableBondRemover.cpp
+        Structures/InputModifiers/RotatableBondRemover.h
+        Engines/ScoringFunctions/VinaLikeCovalentReversible.cpp
+        Engines/ScoringFunctions/VinaLikeCovalentReversible.h
+        Utilities/Calibration/Calibrator.cpp
+        Utilities/Calibration/Calibrator.h
+        Utilities/CSVReader.cpp Utilities/CSVReader.h
+        Utilities/SMARTSMatcher.cpp Utilities/SMARTSMatcher.h Utilities/Calibration/MPICalibratorDirector.cpp Utilities/Calibration/MPICalibratorDirector.h Utilities/Calibration/MPICalibratorNode.cpp Utilities/Calibration/MPICalibratorNode.h Utilities/Calibration/MPICalibratorCommon.h)
 
 set(PY_EXPORT_SOURCE_LIST Frontends/Python/PyStructures.cpp
         Frontends/Python/PyStructures.h
@@ -146,7 +174,7 @@ set(PY_EXPORT_SOURCE_LIST Frontends/Python/PyStructures.cpp
         Frontends/Python/PyUtilities.cpp
         Frontends/Python/PyUtilities.h
         Frontends/Python/PyEngine.cpp
-        Frontends/Python/PyEngine.h Frontends/Python/PyCalibrator.cpp Frontends/Python/PyCalibrator.h)
+        Frontends/Python/PyEngine.h Frontends/FrontendCommon.h)
 
 
 ##################" REMOVE THIS FOR PROD ##########################""
@@ -170,7 +198,7 @@ target_compile_definitions(smoldock_object PUBLIC ARMA_DONT_USE_WRAPPER)
 
 add_custom_command(
         OUTPUT partially_linked_smoldock.o
-        COMMAND ld -Ur $<TARGET_OBJECTS:smoldock_object>   -o partially_linked_smoldock.o -Bstatic -L${RDKIT_ROOT}/lib -L /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.0/ -L /usr/lib -llapack  -lblas -lgfortran -lquadmath  -lgfortran   -lRDKitStatic -lRDKitForceFieldHelpers_static -lRDKitForceField_static -lRDKitStatic -L${Boost_LIBRARY_DIRS} -lboost_log -lboost_log_setup  -lboost_system -lboost_log -lboost_system -lboost_filesystem -lboost_date_time -lboost_thread -lboost_regex
+        COMMAND ld -Ur $<TARGET_OBJECTS:smoldock_object>   -o partially_linked_smoldock.o -Bstatic -L${RDKIT_ROOT}/lib -L /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.0/ -L /usr/lib -L /home/briand/local/lib/ -L /home/briand/local/lib64/ -L /home/briand/local/lib/gcc/x86_64-pc-linux-gnu/8.2.0/ -llapack  -lblas -lgfortran -lquadmath  -lgfortran   -lRDKitStatic -lRDKitForceFieldHelpers_static -lRDKitForceField_static -lRDKitStatic -L${Boost_LIBRARY_DIRS} -lboost_log -lboost_log_setup  -lboost_system -lboost_serialization -lboost_log -lboost_system -lboost_filesystem -lboost_date_time -lboost_thread -lboost_regex -lboost_mpi
         DEPENDS $<TARGET_OBJECTS:smoldock_object>
         COMMAND_EXPAND_LISTS
 )
@@ -179,15 +207,14 @@ add_custom_command(
 
 ADD_LIBRARY(libsmoldock STATIC partially_linked_smoldock.o)
 set_target_properties(libsmoldock PROPERTIES LINKER_LANGUAGE CXX)
-set_target_properties(libsmoldock PROPERTIES COMPILE_FLAGS " -fPIC ")
+set_target_properties(libsmoldock PROPERTIES COMPILE_FLAGS "")
 set_target_properties(libsmoldock PROPERTIES LINK_FLAGS " -static -v -fPIC -Wl,--no-undefined  ")
 set_target_properties(libsmoldock PROPERTIES PREFIX "lib")
 set_target_properties(libsmoldock PROPERTIES OUTPUT_NAME "smoldock")
 target_compile_definitions(libsmoldock PUBLIC ARMA_DONT_USE_WRAPPER)
 add_dependencies(libsmoldock smoldock_object)
-add_dependencies(libsmoldock tbb_static)
 
-ADD_LIBRARY(libsmoldockPIC SHARED ${SOURCE_LIST})
+ADD_LIBRARY(libsmoldockPIC SHARED ${SOURCE_LIST} Engines/ScoringFunctions/VinaExtendedCommon.h)
 set_target_properties(libsmoldockPIC PROPERTIES COMPILE_FLAGS " -fPIC ")
 set_target_properties(libsmoldockPIC PROPERTIES LINKER_LANGUAGE CXX)
 set_target_properties(libsmoldockPIC PROPERTIES LINK_FLAGS "  -shared  -fPIC   ")
@@ -197,7 +224,7 @@ target_compile_definitions(libsmoldockPIC PUBLIC BOOST_LOG_DYN_LINK)
 target_compile_definitions(libsmoldockPIC PUBLIC ARMA_DONT_USE_WRAPPER)
 target_link_libraries(libsmoldockPIC -Wl,-Bdynamic -Wl,-lboost_regex  -Wl,-lboost_filesystem)
 target_link_libraries(libsmoldockPIC -Wl,-Bdynamic  -Wl,-lboost_log   -Wl,-lboost_system  -Wl,-lboost_thread  )
-target_link_libraries(libsmoldockPIC -Wl,-Bdynamic -Wl,-lboost_numpy -Wl,-lboost_python-3.6-mt  -Wl,-lpython3.6m)
+target_link_libraries(libsmoldockPIC -Wl,-Bdynamic -Wl,-lboost_numpy -Wl,-lboost_python-3.6m  -Wl,-lpython3.6m)
 TARGET_LINK_LIBRARIES(libsmoldockPIC -Wl,-Bstatic -Wl,-lRDKitStatic -Wl,-lRDKitForceFieldHelpers_static -Wl,-lRDKitForceField_static)
 target_link_libraries(libsmoldockPIC -Wl,-Bstatic -Wl,-lboost_date_time  -Wl,-lboost_date_time)
 target_link_libraries(libsmoldockPIC -Wl,-Bstatic -Wl,-lVc)
@@ -205,7 +232,6 @@ target_link_libraries(libsmoldockPIC -Wl,-Bstatic -Wl,-llapack -Wl,-lblas -Wl,-l
 target_link_libraries(libsmoldockPIC -Wl,-Bdynamic -Wl,-lgfortran)
 target_link_libraries(libsmoldockPIC -Wl,-Bdynamic -Wl,-L/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.0/ -Wl,-lgcc)
 target_link_libraries(libsmoldockPIC -Wl,-Bdynamic -Wl,-lpthread -Wl,-ldl)
-add_dependencies(libsmoldock tbb)
 
 # You need this if you do NOT generate a static executable
 #add_compile_definitions(BOOST_LOG_DYN_LINK BOOST_TEST_DYN_LINK)
@@ -215,33 +241,56 @@ add_dependencies(libsmoldock tbb)
 
 
 add_executable(smoldock Frontends/main.cpp)
-set_target_properties(smoldock PROPERTIES LINK_FLAGS " -Wl,--no-undefined -Wl,--as-needed -static   ")
+set_target_properties(smoldock PROPERTIES LINK_FLAGS " -Wl,--no-undefined -Wl,--as-needed -static    ")
 TARGET_LINK_LIBRARIES(smoldock libsmoldock)
-#TARGET_LINK_LIBRARIES(smoldock )
-#target_link_libraries(smoldock boost_log bprinter  tbb_static -Wl,-Bdynamic pthread  -Wl,--dynamic-linker=/lib64/ld-linux-x86-64.so.2 )
-target_link_libraries(smoldock boost_log bprinter  tbb_static pthread )
+TARGET_LINK_LIBRARIES(smoldock pthread)
+target_link_libraries(smoldock boost_log bprinter tbb_static pthread)
+TARGET_LINK_LIBRARIES(smoldock -L/home/briand/local/lib -Wl,-rpath -Wl,/home/briand/local/lib  -Wl,--enable-new-dtags)
+TARGET_LINK_LIBRARIES(smoldock mpi open-rte open-pal m dl z rt util pthread)
 #target_link_libraries(smoldock Vc)
 
+add_executable(mpicalibrator Frontends/mpicalibrator.cpp)
+set_target_properties(mpicalibrator PROPERTIES LINK_FLAGS " -static  -Wl,--no-undefined -Wl,--as-needed ")
+TARGET_LINK_LIBRARIES(mpicalibrator libsmoldock )
+TARGET_LINK_LIBRARIES(mpicalibrator -pthread)
+target_link_libraries(mpicalibrator boost_log boost_mpi boost_serialization bprinter tbb_static pthread )
+TARGET_LINK_LIBRARIES(mpicalibrator -L/home/briand/local/lib -Wl,-rpath -Wl,/home/briand/local/lib  -Wl,--enable-new-dtags)
+TARGET_LINK_LIBRARIES(mpicalibrator mpi open-rte open-pal m dl z rt util)
+#target_link_libraries(mpicalibrator Vc)
+
+#if(MPI_COMPILE_FLAGS)
+#
+#    set_target_properties(mpicalibrator PROPERTIES
+#            COMPILE_FLAGS "${MPI_COMPILE_FLAGS} ")
+#endif()
+#
+#if(MPI_LINK_FLAGS)
+#    message( ${MPI_LINK_FLAGS} )
+#    set_target_properties(mpicalibrator PROPERTIES
+#            LINK_FLAGS " -static ${MPI_LINK_FLAGS} -static")
+#endif()
+
+
 add_executable(smoldock_dyn Frontends/main.cpp)
-set_target_properties(smoldock_dyn PROPERTIES LINK_FLAGS " -Wl,--no-undefined -Wl,--as-needed     ")
+set_target_properties(smoldock_dyn PROPERTIES LINK_FLAGS " -Wl,--no-undefined -Wl,--as-needed -static    ")
 TARGET_LINK_LIBRARIES(smoldock_dyn libsmoldock)
 TARGET_LINK_LIBRARIES(smoldock_dyn pthread)
-target_link_libraries(smoldock_dyn -Wl,-Bstatic boost_log -Wl,-Bdynamic)
-#target_link_libraries(smoldock_dyn Vc)
+target_link_libraries(smoldock_dyn -Wl,-Bstatic boost_log  boost_filesystem boost_program_options -Wl,-Bdynamic)
+#target_link_libraries(smoldock_dyn Vc )
 
 
 add_executable(vina_refiner Frontends/vina_refiner.cpp)
 set_target_properties(vina_refiner PROPERTIES LINK_FLAGS " -Wl,--no-undefined -Wl,--as-needed  -static   ")
 TARGET_LINK_LIBRARIES(vina_refiner libsmoldock)
 TARGET_LINK_LIBRARIES(vina_refiner pthread)
-target_link_libraries(vina_refiner boost_log)
+target_link_libraries(vina_refiner boost_log boost_filesystem boost_program_options)
 #target_link_libraries(vina_refiner Vc)
 
 add_executable(smoldockCLI Frontends/cli_interface.cpp)
 set_target_properties(smoldockCLI PROPERTIES LINK_FLAGS " -Wl,--no-undefined -Wl,--as-needed  -static   ")
 TARGET_LINK_LIBRARIES(smoldockCLI libsmoldock)
 TARGET_LINK_LIBRARIES(smoldockCLI pthread)
-target_link_libraries(smoldockCLI boost_log)
+target_link_libraries(smoldockCLI boost_log boost_filesystem boost_program_options)
 #target_link_libraries(smoldockCLI Vc)
 
 

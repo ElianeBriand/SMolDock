@@ -96,8 +96,8 @@ namespace SmolDock::Calibration {
 
         referenceReceptor.emplace_back(
                 std::make_tuple(std::make_shared<Protein>(prot), dbsettings, iProtein(), iProtein()));
-        current_max_ReceptorID++;
-        return current_max_ReceptorID - 1;
+        this->current_max_ReceptorID++;
+        return this->current_max_ReceptorID - 1;
     }
 
     bool Calibrator::setupCalibration() {
@@ -168,14 +168,11 @@ namespace SmolDock::Calibration {
                 }
 
 
-                for (auto &conformer : conformer_vector) {
-
-
                     CalibratorWorkItem item = {.scFuncType_ = this->scoringFunctionType,
                             .heurType_ = this->heuristicType,
                             .localOptimizerType_ = this->localOptimizerType,
                             .transform_ = starting_pos_tr,
-                            .conformer_ = &conformer,
+                            .conformerVector_ = &conformer_vector,
                             .prot_ = &iProt,
                             .fullProt_ = &fulliProt,
                             .seed_ = dis_uint(this->rndGenerator),
@@ -186,8 +183,6 @@ namespace SmolDock::Calibration {
 
                     workItemVector->emplace_back(std::move(item));
 
-
-                }
 
             }
         }
@@ -361,7 +356,6 @@ namespace SmolDock::Calibration {
 
     bool Calibrator::coefficientsToCalibrate(std::vector<std::string> nameOfCoeffs) {
 
-
         std::vector<std::string> names = this->dummy_sf->getCoefficientsNames();
         bool hasNameNotFound = false;
         for (auto &nameGiven: nameOfCoeffs) {
@@ -422,71 +416,80 @@ namespace SmolDock::Calibration {
         for (size_t i = r.begin(); i != r.end(); ++i) {
             CalibratorWorkItem &item = this->workItemList->at(this->indexShufflingArray[i]);
 
-            item.transform_.transl.x() += item.conformer_->centroidNormalizingTransform.x();
-            item.transform_.transl.y() += item.conformer_->centroidNormalizingTransform.y();
-            item.transform_.transl.z() += item.conformer_->centroidNormalizingTransform.z();
-            item.transform_.rota.normalize();
-
-            arma::arma_rng::set_seed(item.seed_);
-
-            std::shared_ptr<Score::ScoringFunction> scoringFunction = scoringFunctionFactory(
-                    item.scFuncType_,
-                    *item.conformer_,
-                    *item.prot_,
-                    item.transform_,
-                    1e-3,
-                    true);
-
-            scoringFunction->setNonDefaultCoefficients(this->currentCoeffs);
-
-
-            std::shared_ptr<Score::ScoringFunction> fullScoringFunction = scoringFunctionFactory(
-                    item.scFuncType_,
-                    *item.conformer_,
-                    *item.fullProt_,
-                    item.transform_,
-                    1e-3);
-
-            std::shared_ptr<Optimizer::Optimizer> localOptimizer = optimizerFactory(
-                    item.localOptimizerType_,
-                    scoringFunction.get(),
-                    1e-3);
-
             double bestScoreAmongRetry = std::numeric_limits<double>::max();
             std::vector<std::tuple<std::string, double>> bestComponentsAmongRetry;
-            for (unsigned int k = 0; k < item.retryNumber_; ++k) {
+            unsigned int conformerNum = 0;
+            for (auto &conformer : *(item.conformerVector_)) {
 
-                {
-                    std::lock_guard lock(*this->resultMutex);
-                    BOOST_LOG_TRIVIAL(debug) << "Run " << k << " of " << item.retryNumber_;
-                }
+                item.transform_.transl.x() += conformer.centroidNormalizingTransform.x();
+                item.transform_.transl.y() += conformer.centroidNormalizingTransform.y();
+                item.transform_.transl.z() += conformer.centroidNormalizingTransform.z();
+                item.transform_.rota.normalize();
 
-                std::shared_ptr<Heuristics::GlobalHeuristic> globalHeuristic = globalHeuristicFactory(
-                        item.heurType_,
+                arma::arma_rng::set_seed(item.seed_);
+
+                std::shared_ptr<Score::ScoringFunction> scoringFunction = scoringFunctionFactory(
+                        item.scFuncType_,
+                        conformer,
+                        *item.prot_,
+                        item.transform_,
+                        1e-3,
+                        true);
+
+                scoringFunction->setNonDefaultCoefficients(this->currentCoeffs);
+
+
+                std::shared_ptr<Score::ScoringFunction> fullScoringFunction = scoringFunctionFactory(
+                        item.scFuncType_,
+                        conformer,
+                        *item.fullProt_,
+                        item.transform_,
+                        1e-3);
+
+                fullScoringFunction->setNonDefaultCoefficients(this->currentCoeffs);
+
+
+                std::shared_ptr<Optimizer::Optimizer> localOptimizer = optimizerFactory(
+                        item.localOptimizerType_,
                         scoringFunction.get(),
-                        localOptimizer.get(),
-                        item.seed_ + k,
-                        item.hParams_);
+                        1e-3);
 
-                globalHeuristic->search();
 
-                auto rawResultMatrix = globalHeuristic->getResultMatrix();
-                double score = scoringFunction->EvaluateOnlyIntermolecular(rawResultMatrix);
-                double fullScore = fullScoringFunction->EvaluateOnlyIntermolecular(rawResultMatrix);
-                double delta_full = fullScore / score;
+                for (unsigned int k = 0; k < item.retryNumber_; ++k) {
 
-                if (delta_full > 1.2 || delta_full < 0.80) {
-                    std::lock_guard lock(*this->resultMutex);
-                    BOOST_LOG_TRIVIAL(debug)
-                        << "Discrepency between score for partial and full protein, ignoring this run ";
-                    continue;
+                    {
+                        std::lock_guard lock(*this->resultMutex);
+                        BOOST_LOG_TRIVIAL(debug) << "Run " << k << " of " << item.retryNumber_ << " for conformer " << conformerNum;
+                    }
+
+                    std::shared_ptr<Heuristics::GlobalHeuristic> globalHeuristic = globalHeuristicFactory(
+                            item.heurType_,
+                            scoringFunction.get(),
+                            localOptimizer.get(),
+                            item.seed_ + k,
+                            item.hParams_);
+
+                    globalHeuristic->search();
+
+                    auto rawResultMatrix = globalHeuristic->getResultMatrix();
+                    double score = scoringFunction->EvaluateOnlyIntermolecular(rawResultMatrix);
+                    double fullScore = fullScoringFunction->EvaluateOnlyIntermolecular(rawResultMatrix);
+                    double delta_full = fullScore / score;
+
+                    if (delta_full > 1.2 || delta_full < 0.80) {
+                        std::lock_guard lock(*this->resultMutex);
+                        BOOST_LOG_TRIVIAL(debug)
+                            << "Discrepency between score for partial and full protein, ignoring this run ";
+                        continue;
+                    }
+
+                    if (fullScore < bestScoreAmongRetry) {
+                        bestScoreAmongRetry = fullScore;
+                        bestComponentsAmongRetry = scoringFunction->EvaluateSubcomponents(rawResultMatrix);
+                    }
+
                 }
-
-                if (fullScore < bestScoreAmongRetry) {
-                    bestScoreAmongRetry = fullScore;
-                    bestComponentsAmongRetry = scoringFunction->EvaluateSubcomponents(rawResultMatrix);
-                }
-
+                conformerNum++;
             }
 
             {
@@ -499,8 +502,6 @@ namespace SmolDock::Calibration {
                 BOOST_LOG_TRIVIAL(debug) << "Score       : " << bestScoreAmongRetry;
                 BOOST_LOG_TRIVIAL(debug) << "Delta G     : " << item.referenceScore_;
                 BOOST_LOG_TRIVIAL(debug) << " --------------------------";
-
-
             }
 
         }
@@ -517,7 +518,7 @@ namespace SmolDock::Calibration {
             idxOfCoeffsToCalibrate(idxOfCoeffsToCalibrate_),
             differentialEpsilon(differentialEpsilon_),
             rndGenerator(seed_) {
-        this->numWorkItem = workitemVector->size();
+        this->numWorkItem = this->workitemVector->size();
         for (unsigned int j = 0; j < this->numWorkItem; ++j) {
             this->shuffledIndexArray.push_back(j);
         }

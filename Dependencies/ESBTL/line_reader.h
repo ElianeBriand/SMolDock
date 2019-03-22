@@ -51,7 +51,9 @@ class Line_reader{
   Line_selector& line_selector;
   Builder& builder;
 
-  template <class Occupancy_handler,class Ifstream>
+public:
+
+    template <class Occupancy_handler,class Ifstream>
   bool read_stream(Ifstream& input,Occupancy_handler occupancy,char default_altloc=char(' ')){
     int nblines=0;
 
@@ -87,7 +89,6 @@ class Line_reader{
     return true;
   }
   
-public:
   /** Constructor.*/
   Line_reader(Line_selector& line_selector, Builder& builder):line_selector(line_selector),builder(builder){}
   

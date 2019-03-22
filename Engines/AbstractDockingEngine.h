@@ -25,6 +25,9 @@
 #include "../Structures/Results/DockingResult.h"
 #include "../Structures/Molecule.h"
 
+#include <boost/serialization/serialization.hpp>
+
+
 /*! \namespace SmolDock Global namespace for SmolDock */
 namespace SmolDock {
 
@@ -41,13 +44,13 @@ namespace SmolDock {
 
             struct DockingBoxSetting {
 
-                enum class Type {
+                enum Type {
                     everything,
                     solventExposed,
                     centeredAround
                 };
 
-                enum class Shape {
+                enum Shape {
                     sphere,
                     cube
                 };
@@ -58,6 +61,13 @@ namespace SmolDock {
 
                 double radius;
 
+                template<class Archive>
+                void serialize(Archive & ar, const unsigned int version)
+                {
+                    ar & type;
+                    ar & center;
+                    ar & radius;
+                }
 
             };
 

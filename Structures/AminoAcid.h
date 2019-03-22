@@ -109,8 +109,6 @@ namespace SmolDock {
         std::array<double, 3> centroid;
         double maxDistanceFromCentroid;
 
-
-    private:
         AAType type;
 
         unsigned int AAId;
@@ -119,6 +117,7 @@ namespace SmolDock {
         std::string fullName;
 
         std::vector<std::shared_ptr<Atom> > atoms;
+
 
 
     };

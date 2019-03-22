@@ -206,7 +206,6 @@ namespace SmolDock {
         // Bonds involving this atom
         std::vector<std::weak_ptr<Bond> > bonds;
 
-    private:
         AtomType type;
         AtomVariant variant = Atom::AtomVariant::none;
         double charge = 0;

@@ -39,11 +39,9 @@
 
 #include <Utilities/Version.h>
 #include <Utilities/Calibration/Calibrator.h>
+#include <Frontends/FrontendCommon.h>
 
-#include <boost/log/core.hpp>
 #include <boost/log/trivial.hpp>
-#include <boost/log/expressions.hpp>
-#include <boost/log/utility/setup/console.hpp>
 
 #define USE_BOOST_KARMA
 #include <bprinter/table_printer.h>
@@ -54,38 +52,12 @@ namespace sd = SmolDock;
 
 
 
-
-
 int main() {
 
     //tbb::task_scheduler_init tbbInit(2);
 
     /* Setting up the logger */
-    boost::log::core::get()->set_filter
-            (
-#ifdef NDEBUG
-            boost::log::trivial::severity >= boost::log::trivial::debug
-#else
-            boost::log::trivial::severity >= boost::log::trivial::debug
-#endif
-    );
-
-    auto console_logger = boost::log::add_console_log(std::cout);
-    console_logger->set_formatter([](boost::log::record_view const &rec, boost::log::formatting_ostream &strm) {
-        if (rec[boost::log::trivial::severity] == boost::log::trivial::trace) {
-            strm << " T  "; //         use TRACE_LOG(); macro for auto file:line:function
-        } else if (rec[boost::log::trivial::severity] == boost::log::trivial::debug) {
-            strm << "{D} ";
-        } else if (rec[boost::log::trivial::severity] == boost::log::trivial::info) {
-            strm << "    ";
-        } else if (rec[boost::log::trivial::severity] == boost::log::trivial::warning) {
-            strm << "[!] ";
-        } else if (rec[boost::log::trivial::severity] >= boost::log::trivial::error) {
-            strm << "[E] ";
-        }
-
-        strm << rec[boost::log::expressions::smessage];
-    });
+    sd::setupLogPrinting();
 
 
     BOOST_LOG_TRIVIAL(info) << "SmolDock " << sd::getVersionString();
@@ -98,7 +70,12 @@ int main() {
     sd::Protein prot;
     // prot.populateFromPDB("1dpx.pdb"); // Lysozyme
     //succeeded = prot.populateFromPDB("../DockingTests/COX2_Ibuprofen/4PH9_COX2_without_Ibuprofen.pdb", modifiers); // COX-2
-    succeeded = prot.populateFromPDB("../DockingTests/hCES1/1YA8.pdb", modifiers); // hCES1
+
+//    std::ifstream input("/home/briand/CLionProjects/SmolDock/DockingTests/hCES1/1YA8.pdb");
+//    std::stringstream sstr;
+//    sstr << input.rdbuf();
+//    succeeded = prot.populateFromPDBString(sstr.str(), modifiers); // hCES1
+    succeeded = prot.populateFromPDB("/home/briand/CLionProjects/SmolDock/DockingTests/hCES1/1YA8.pdb", modifiers); // hCES1
     prot.applySpecialResidueTyping(sd::AminoAcid::AAType::serine,221,sd::SpecialResidueTyping::covalentReversibleSerineOH);
     //prot.populateFromPDB("../DockingTests/Tripeptide/Tripeptide.pdb"); // A random tripeptide
 
@@ -116,19 +93,19 @@ int main() {
     sd::Calibration::Calibrator calibrator( sd::Score::ScoringFunctionType::VinaCovalentReversible,
                                                        sd::Heuristics::GlobalHeuristicType::SimulatedAnnealing,
                                                        sd::Optimizer::LocalOptimizerType::L_BFGS,
-                                                       10, // Max epoch
+                                                       1000, // Max epoch
                                                        0.5, // Initial learning rate
                                                        32574, // RNG seed
-                                                       3, // num generated starting conformer per ligand
-                                                       4, // num retry per conformer (best score is kept)
-                                                       16, //batch size
+                                                       5, // num generated starting conformer per ligand
+                                                       3, // num retry per conformer (best score is kept)
+                                                       18, //batch size
                                                        sd::Heuristics::emptyParameters //Specific heur params
     );
 
     sd::Calibration::Calibrator::ReceptorID recID1 = calibrator.addReceptor(prot,setting);
 
 
-    sd::CSVReader chembl_csv("../DockingTests/hCES1/hCES1_inhib_Ki_ChEMBL.csv","\t",true);
+    sd::CSVReader chembl_csv("/home/briand/CLionProjects/SmolDock/DockingTests/hCES1/chembl_data.tsv","\t",true);
 
     std::vector<std::map<std::string,std::string>> chembl_data =  chembl_csv.getRowsAsMap();
 

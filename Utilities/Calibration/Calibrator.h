@@ -35,7 +35,7 @@ namespace SmolDock::Calibration {
         Heuristics::GlobalHeuristicType heurType_;
         Optimizer::LocalOptimizerType localOptimizerType_;
         iTransform transform_;
-        iConformer* conformer_ = nullptr;
+        std::vector<iConformer>* conformerVector_ = nullptr;
         const iProtein* prot_ = nullptr;
         const iProtein* fullProt_ = nullptr;
         unsigned int seed_;
@@ -129,21 +129,21 @@ namespace SmolDock::Calibration {
 
         using ReceptorID = unsigned int;
 
-        ReceptorID addReceptor(const Protein& prot, Engine::AbstractDockingEngine::DockingBoxSetting dbsettings);
+        virtual ReceptorID addReceptor(const Protein& prot, Engine::AbstractDockingEngine::DockingBoxSetting dbsettings);
 
-        bool addReferenceLigand_SMILES_Ki(ReceptorID recID, const std::string& smiles, double Ki, int seed = 364);
-        bool addReferenceLigand_Mol_Ki(ReceptorID recID, const Molecule& mol, double Ki, int seed = 364);
+        virtual bool addReferenceLigand_SMILES_Ki(ReceptorID recID, const std::string& smiles, double Ki, int seed = 364);
+        virtual bool addReferenceLigand_Mol_Ki(ReceptorID recID, const Molecule& mol, double Ki, int seed = 364);
 
         bool coefficientsToCalibrate(std::vector<std::string> nameOfCoeffs);
 
-        bool setupCalibration();
-        bool runCalibration();
+        virtual bool setupCalibration();
+        virtual bool runCalibration();
 
-        bool runCalibration2();
+        virtual bool runCalibration2();
 
 
 
-    private:
+    protected:
 
         void fillWorkItemVector(std::shared_ptr<std::vector<CalibratorWorkItem>> workItemVector);
 
