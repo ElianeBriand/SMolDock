@@ -28,7 +28,7 @@ namespace SmolDock::Score {
 
         assert(!ligand_.x.empty());
         assert(!protein.x.empty());
-        assert(std::abs(transform.rota.norm() - 1) < 0.01);
+        assert(std::abs(transform.rota.norm() - 1) < 0.1);
         assert(transform.bondRotationsAngles.size() == ligand_.num_rotatable_bond);
 
         double score_raw = 0;
@@ -387,7 +387,7 @@ namespace SmolDock::Score {
     {
         assert(!conformer.x.empty());
         assert(!protein.x.empty());
-        assert(std::abs(transform.rota.norm() - 1) < 0.01);
+        assert(std::abs(transform.rota.norm() - 1) < 0.1);
         assert(transform.bondRotationsAngles.size() == conformer.num_rotatable_bond);
 
         std::vector<std::tuple<std::string, double>> ret;

@@ -67,18 +67,20 @@ namespace mpi = boost::mpi;
 #include <Utilities/Calibration/MPICalibratorDirector.h>
 #include <Utilities/Calibration/MPICalibratorNode.h>
 
+#include <boost/lexical_cast.hpp>
+using boost::lexical_cast;
 
 int main() {
 
-    //tbb::task_scheduler_init tbbInit(std::thread::hardware_concurrency());
 
+    //        tbb::task_scheduler_init tbbInit(std::thread::hardware_concurrency());
 
 
     mpi::environment env;
     mpi::communicator world;
 
     if (world.rank() == 0) {
-        sd::setupLogPrinting();
+        sd::setupLogPrinting(false, false, "[Rank 0] ");
         auto cdirector = std::make_shared<sd::Calibration::MPICalibratorDirector>(env, world,
                                                                                   sd::Score::ScoringFunctionType::VinaCovalentReversible,
                                                                                   sd::Heuristics::GlobalHeuristicType::SimulatedAnnealing,
@@ -91,7 +93,8 @@ int main() {
                                                                                   18, //batch size
                                                                                   sd::Heuristics::emptyParameters);
 
-        cdirector->coefficientsToCalibrate({"Gauss1","Gauss2","RepulsionExceptCovalent","Hydrophobic","Hydrogen","CovalentReversible"});
+        //cdirector->coefficientsToCalibrate({"Gauss1","Gauss2","RepulsionExceptCovalent","Hydrophobic","Hydrogen","CovalentReversible"});
+        cdirector->coefficientsToCalibrate({"CovalentReversible"});
 
         sd::Engine::AbstractDockingEngine::DockingBoxSetting setting;
         setting.type = sd::Engine::AbstractDockingEngine::DockingBoxSetting::Type::centeredAround;
@@ -100,6 +103,10 @@ int main() {
         sd::Calibration::Calibrator::ReceptorID recID1 =
                 cdirector->addReceptorFromFile("/home/briand/CLionProjects/SmolDock/DockingTests/hCES1/1YA8.pdb", setting);
 
+        cdirector->applySpecialResidueTypingFromRecID(recID1,
+                sd::AminoAcid::AAType::serine,
+                221,
+                sd::SpecialResidueTyping::covalentReversibleSerineOH);
 
         sd::CSVReader chembl_csv("/home/briand/CLionProjects/SmolDock/DockingTests/hCES1/chembl_data.tsv","\t",true);
         std::vector<std::map<std::string,std::string>> chembl_data = chembl_csv.getRowsAsMap();
@@ -119,7 +126,9 @@ int main() {
         cdirector->runCalibration();
 
     } else {
-        sd::setupLogPrinting(true, true);
+        tbb::task_scheduler_init tbbInit(std::thread::hardware_concurrency());
+        //tbb::task_scheduler_init tbbInit(1);
+        sd::setupLogPrinting(false, false, "[Rank " + lexical_cast<std::string>(world.rank()) +"] ");
         auto cnode = std::make_shared<sd::Calibration::MPICalibratorNode>(env, world);
         cnode->runNode();
     }

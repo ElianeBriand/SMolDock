@@ -444,7 +444,8 @@ namespace SmolDock::Calibration {
                         conformer,
                         *item.fullProt_,
                         item.transform_,
-                        1e-3);
+                        1e-3,
+                        true);
 
                 fullScoringFunction->setNonDefaultCoefficients(this->currentCoeffs);
 

@@ -75,7 +75,7 @@ int main() {
 //    std::stringstream sstr;
 //    sstr << input.rdbuf();
 //    succeeded = prot.populateFromPDBString(sstr.str(), modifiers); // hCES1
-    succeeded = prot.populateFromPDB("/home/briand/CLionProjects/SmolDock/DockingTests/hCES1/1YA8.pdb", modifiers); // hCES1
+    succeeded = prot.populateFromPDB("1YA8.pdb", modifiers); // hCES1
     prot.applySpecialResidueTyping(sd::AminoAcid::AAType::serine,221,sd::SpecialResidueTyping::covalentReversibleSerineOH);
     //prot.populateFromPDB("../DockingTests/Tripeptide/Tripeptide.pdb"); // A random tripeptide
 
@@ -105,7 +105,7 @@ int main() {
     sd::Calibration::Calibrator::ReceptorID recID1 = calibrator.addReceptor(prot,setting);
 
 
-    sd::CSVReader chembl_csv("/home/briand/CLionProjects/SmolDock/DockingTests/hCES1/chembl_data.tsv","\t",true);
+    sd::CSVReader chembl_csv("chembl_data.tsv","\t",true);
 
     std::vector<std::map<std::string,std::string>> chembl_data =  chembl_csv.getRowsAsMap();
 
@@ -133,7 +133,7 @@ int main() {
     BOOST_LOG_TRIVIAL(debug) << "Added " << totalAdded << " SMILES-Ki datapoints";
 
 
-    calibrator.coefficientsToCalibrate({"CovalentReversible"});
+    calibrator.coefficientsToCalibrate({"Gauss1","Gauss2","RepulsionExceptCovalent","Hydrophobic","Hydrogen","CovalentReversible"});
 
     calibrator.setupCalibration();
 

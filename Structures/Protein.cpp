@@ -189,7 +189,8 @@ namespace SmolDock {
             this->max_distance_to_center = max(acc_distance);
 
 
-            BOOST_LOG_TRIVIAL(info) << "Loaded protein : " << friendlyName << "\n    --> " << total_nb_model
+            BOOST_LOG_TRIVIAL(info) << "Loaded protein : " << friendlyName;
+            BOOST_LOG_TRIVIAL(info) << "  --> " << total_nb_model
                                     << " models, "
                                     << total_nb_chain << " chains, " << total_nb_residue << " residues, "
                                     << total_nb_atom << " atoms (" << total_nb_hetatm << " heteroatoms)";

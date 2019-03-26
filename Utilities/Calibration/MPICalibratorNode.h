@@ -68,6 +68,7 @@ namespace SmolDock::Calibration {
         WorkStructure workStructure;
         std::vector<std::string> pdbBlockStrings;
         std::vector<Engine::AbstractDockingEngine::DockingBoxSetting> dbSettings;
+        std::vector<std::vector<MPISpecialResidueTyping>> specialResidueTypings;
 
         std::map<Calibrator::ReceptorID, std::vector<std::tuple<std::string, double, std::shared_ptr<Molecule>, std::vector<iConformer>>>>
                 ligandSmilesRefScore;

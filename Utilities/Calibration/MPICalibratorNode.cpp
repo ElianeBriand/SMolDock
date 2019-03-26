@@ -13,6 +13,12 @@
 #include <tbb/parallel_for.h>
 #include <tbb/blocked_range2d.h>
 
+#include <Engines/Internals/InternalsUtilityFunctions.h>
+#include <Utilities/LogUtils.h>
+#include <Structures/Atom.h>
+#include <Structures/AminoAcid.h>
+
+
 namespace SmolDock::Calibration {
 
 
@@ -43,12 +49,14 @@ namespace SmolDock::Calibration {
 
             this->pdbBlockStrings.push_back(rr.PDBBlock);
             this->dbSettings.push_back(rr.dbsetting);
+            this->specialResidueTypings.push_back(rr.specialResTypes);
         }
 
         for (unsigned int k = 0; k < this->workStructure.numRegisteredVariant; ++k) {
             RegisteredVariant rv;
             mpi::broadcast(world, rv, 0);
             this->variantsForAllLigands.push_back(rv);
+
         }
 
 
@@ -68,6 +76,11 @@ namespace SmolDock::Calibration {
                 auto smiles = std::get<std::string>(it->second.at(j));
                 mol_sptr->populateFromSMILES(smiles);
 
+                for(RegisteredVariant& variant : this->variantsForAllLigands)
+                {
+                    mol_sptr->applyAtomVariant(variant.smarts,static_cast<Atom::AtomVariant>(variant.atomVariant));
+                }
+
                 auto& conformer_vector = std::get<std::vector<iConformer>>(it->second.at(j));
                 mol_sptr->generateConformers(conformer_vector, this->workStructure.conformerPerLigand, true,
                                              dis_int(this->rndGenerator));
@@ -79,7 +92,19 @@ namespace SmolDock::Calibration {
 
             std::shared_ptr<Protein> psptr = std::make_shared<Protein>();
             psptr->populateFromPDBString(this->pdbBlockStrings[l]);
+
+            for(const MPISpecialResidueTyping& srt: this->specialResidueTypings[l]) {
+                psptr->applySpecialResidueTyping(
+                        static_cast<AminoAcid::AAType>(srt.aaType),
+                        srt.serialNumber,
+                        static_cast<SpecialResidueTyping>(srt.specialTyping)
+                        );
+
+            }
+
+
             Engine::AbstractDockingEngine::DockingBoxSetting settings = this->dbSettings[l];
+
             iProtein iProt;
             iProtein fulliProt;
 
@@ -96,6 +121,8 @@ namespace SmolDock::Calibration {
             ));
         }
 
+
+        BOOST_LOG_TRIVIAL(debug) << "Node ready for work.";
 
         int status = 0;
         this->world.send(0, MTags::ReadyForWork, status);
@@ -127,7 +154,14 @@ namespace SmolDock::Calibration {
             auto resultMutex = std::make_shared<std::mutex>();
             auto local_scores = std::make_shared<std::vector<double>>();
 
-            tbb::parallel_for(tbb::blocked_range2d<size_t>(0, conformerPerLigand, 1, 0, retryPerConformer, 1),
+            BOOST_LOG_TRIVIAL(debug) << "Received one task";
+            BOOST_LOG_TRIVIAL(debug) << " | Conformer          : " << conformerPerLigand;
+            BOOST_LOG_TRIVIAL(debug) << " | Retry              : " << retryPerConformer;
+            BOOST_LOG_TRIVIAL(debug) << " | Reference score    : " << referenceScore;
+            BOOST_LOG_TRIVIAL(debug) << " | Coefficients       : " << vectorToString(coeffs);
+            BOOST_LOG_TRIVIAL(debug) << " | Coeffs to change   : " << vectorToString(this->workStructure.idxOfCoeffsToCalibrate);
+
+            tbb::parallel_for(tbb::blocked_range2d<size_t>(0, conformerPerLigand,0, retryPerConformer),
                               MPICalibrator2DLoopRunner(
                                       this->workStructure,
                                       confvector,
@@ -138,7 +172,12 @@ namespace SmolDock::Calibration {
                                       coeffs)
                               );
 
-            double score = *(std::min_element(std::begin(*local_scores), std::end(*local_scores)));
+            // We select the top nth (n = conformerPerLigand) for averaging
+            std::sort(local_scores->begin(), local_scores->end(), std::less<double>());
+            double score = std::accumulate(local_scores->begin(), local_scores->begin() + conformerPerLigand, 0.0)/conformerPerLigand;
+
+            BOOST_LOG_TRIVIAL(debug) << "Evaluation done : "
+            << vectorToString(std::vector<double>(local_scores->begin(), local_scores->begin() + conformerPerLigand)) << " -> " << score;
 
             std::vector<double> gradientVector;
             for(unsigned int& idx : this->workStructure.idxOfCoeffsToCalibrate)
@@ -147,7 +186,7 @@ namespace SmolDock::Calibration {
                 epsilonCoeffs[idx] += this->workStructure.differentialEpsilon;
                 auto local_scores_gradient = std::make_shared<std::vector<double>>();
 
-                tbb::parallel_for(tbb::blocked_range2d<size_t>(0, conformerPerLigand, 1, 0, retryPerConformer, 1),
+                tbb::parallel_for(tbb::blocked_range2d<size_t>(0, conformerPerLigand, 0, retryPerConformer),
                                   MPICalibrator2DLoopRunner(
                                           this->workStructure,
                                           confvector,
@@ -158,15 +197,26 @@ namespace SmolDock::Calibration {
                                           epsilonCoeffs)
                 );
 
-                double gradientScore = *(std::min_element(std::begin(*local_scores_gradient), std::end(*local_scores_gradient)));
-                gradientVector.push_back(gradientScore);
+                // We select the top nth (n = conformerPerLigand) for averaging
+                std::sort(local_scores_gradient->begin(), local_scores_gradient->end(), std::less<double>());
+                double gradientScore = std::accumulate(local_scores_gradient->begin(), local_scores_gradient->begin() + conformerPerLigand, 0.0)/conformerPerLigand;
+                gradientVector.push_back(gradientScore - score);
             }
 
 
 
+
+            BOOST_LOG_TRIVIAL(debug) << "Completed one task";
+            BOOST_LOG_TRIVIAL(debug) << " | Conformer          : " << conformerPerLigand;
+            BOOST_LOG_TRIVIAL(debug) << " | Retry              : " << retryPerConformer;
+            BOOST_LOG_TRIVIAL(debug) << " | Reference score    : " << referenceScore;
+            BOOST_LOG_TRIVIAL(debug) << " | Coefficients       : " << vectorToString(coeffs);
+            BOOST_LOG_TRIVIAL(debug) << " | Score              : " << score;
+            BOOST_LOG_TRIVIAL(debug) << " | Gradient           : " << vectorToString(gradientVector);
+
             Result r;
             r.loss = score - referenceScore;
-            r.lossGradient = std::move(gradientVector);
+            r.lossGradient = gradientVector;
 
             this->world.send(0, MTags::ResultMessage, r);
         }
@@ -192,46 +242,52 @@ namespace SmolDock::Calibration {
 
     void MPICalibrator2DLoopRunner::operator()(const tbb::blocked_range2d<size_t>& r) const {
         for (size_t i = r.rows().begin(); i != r.rows().end(); ++i) {
-            const iConformer& conformer = conformerVector[i];
-
-            iTransform tr;
-            tr.transl.x() += conformer.centroidNormalizingTransform.x();
-            tr.transl.y() += conformer.centroidNormalizingTransform.y();
-            tr.transl.z() += conformer.centroidNormalizingTransform.z();
-            tr.rota.normalize();
-
-            std::shared_ptr<Score::ScoringFunction> scoringFunction = scoringFunctionFactory(
-                    this->workStructure.scoringFunctionType,
-                    conformer,
-                    this->protein,
-                    tr,
-                    1e-3,
-                    true);
-
-            scoringFunction->setNonDefaultCoefficients(this->currentCoeffs);
-
-
-            std::shared_ptr<Score::ScoringFunction> fullScoringFunction = scoringFunctionFactory(
-                    this->workStructure.scoringFunctionType,
-                    conformer,
-                    this->fullProtein,
-                    tr,
-                    1e-3);
-
-            fullScoringFunction->setNonDefaultCoefficients(this->currentCoeffs);
-
-            std::shared_ptr<Optimizer::Optimizer> localOptimizer = optimizerFactory(
-                    this->workStructure.localOptimizerType,
-                    scoringFunction.get(),
-                    1e-3);
-
             for (size_t j = r.cols().begin(); j != r.cols().end(); ++j) {
+                // BOOST_LOG_TRIVIAL(debug) << "Docking conformer " << i << " retry " << j;
+
+                const iConformer& conformer = conformerVector[i];
+
+                iTransform tr = iTransformIdentityInit(conformer.num_rotatable_bond);
+                tr.transl.x() += conformer.centroidNormalizingTransform.x();
+                tr.transl.y() += conformer.centroidNormalizingTransform.y();
+                tr.transl.z() += conformer.centroidNormalizingTransform.z();
+                tr.rota.normalize();
+
+                std::shared_ptr<Score::ScoringFunction> scoringFunction = scoringFunctionFactory(
+                        this->workStructure.scoringFunctionType,
+                        conformer,
+                        this->protein,
+                        tr,
+                        1e-3,
+                        true);
+
+                scoringFunction->setNonDefaultCoefficients(this->currentCoeffs);
+
+
+                std::shared_ptr<Score::ScoringFunction> fullScoringFunction = scoringFunctionFactory(
+                        this->workStructure.scoringFunctionType,
+                        conformer,
+                        this->fullProtein,
+                        tr,
+                        1e-3,
+                        true);
+
+                fullScoringFunction->setNonDefaultCoefficients(this->currentCoeffs);
+
+                std::shared_ptr<Optimizer::Optimizer> localOptimizer = optimizerFactory(
+                        this->workStructure.localOptimizerType,
+                        scoringFunction.get(),
+                        1e-3);
+
+
+
+
                 std::shared_ptr<Heuristics::GlobalHeuristic> globalHeuristic = globalHeuristicFactory(
                         this->workStructure.heuristicType,
                         scoringFunction.get(),
                         localOptimizer.get(),
                         this->workStructure.seed + j,
-                        Heuristics::emptyParameters);
+                        heuristicParametersFactory(this->workStructure.heuristicType));
 
                 globalHeuristic->search();
 

@@ -24,7 +24,6 @@ namespace SmolDock::Calibration {
         unsigned int rank;
         unsigned int numThread;
 
-        friend class boost::serialization::access;
 
         template<class Archive>
         void serialize(Archive & ar, const unsigned int version)
@@ -87,15 +86,33 @@ namespace SmolDock::Calibration {
 
     };
 
+    struct MPISpecialResidueTyping {
+
+        unsigned int aaType;
+        unsigned int serialNumber;
+        unsigned int specialTyping;
+
+        template<class Archive>
+        void serialize(Archive & ar, const unsigned int version)
+        {
+            ar & aaType;
+            ar & serialNumber;
+            ar & specialTyping;
+        }
+    };
+
+
     struct ReceptorRecord {
         std::string PDBBlock;
         Engine::AbstractDockingEngine::DockingBoxSetting dbsetting;
+        std::vector<MPISpecialResidueTyping> specialResTypes;
 
         template<class Archive>
         void serialize(Archive & ar, const unsigned int version)
         {
             ar & PDBBlock;
             ar & dbsetting;
+            ar & specialResTypes;
         }
 
     };

@@ -8,6 +8,7 @@
 
 #include <cmath>
 #include <thread>
+#include <chrono>
 #include <sstream>
 
 #include <boost/log/trivial.hpp>
@@ -64,6 +65,52 @@ namespace SmolDock::Calibration {
             BOOST_LOG_TRIVIAL(info) << "Registed node " << j << " with " << rmsg.numThread << " threads.";
         }
 
+        // Determining optimal allocation of workItem depending on available CPU on each node
+
+        int remainingWorkItemToAllocate = this->batchSize;
+        for (unsigned int j = 0; j < this->nodeInfo.size(); ++j) {
+            double fractionOfWorkload = static_cast<double>(this->nodeInfo.at(j).numThread) / static_cast<double>(numTotalCPU);
+            unsigned int numWorkItem = static_cast<unsigned int>(this->batchSize * fractionOfWorkload);
+            this->numWorkItemPerNode.push_back(numWorkItem);
+            remainingWorkItemToAllocate -= numWorkItem;
+        }
+
+        if(remainingWorkItemToAllocate >= 0)
+        {
+            // Spread out the remaining work items
+            unsigned int currRank = 1;
+            while(remainingWorkItemToAllocate > 0) {
+                this->numWorkItemPerNode.at(currRank) += 1;
+                remainingWorkItemToAllocate--;
+                if(currRank == this->nodeInfo.size() - 1)
+                    currRank = 1;
+                else
+                    currRank++;
+            }
+        }else {
+            BOOST_LOG_TRIVIAL(error) << "Unexpected oversubsciption of work item per batch.";
+            BOOST_LOG_TRIVIAL(error) << "   Batch size : " << this->batchSize;
+            for (unsigned int j = 0; j < this->numWorkItemPerNode.size(); ++j) {
+                BOOST_LOG_TRIVIAL(error) << "   - Node " << j+1 << " : " << this->numWorkItemPerNode.at(j) << " work items/batch";
+            }
+            BOOST_LOG_TRIVIAL(error) << "   Remaining work item : " << remainingWorkItemToAllocate;
+            std::terminate();
+        }
+
+
+        BOOST_LOG_TRIVIAL(info) << "Batch mapping information :";
+        BOOST_LOG_TRIVIAL(info) << "   Batch size : " << this->batchSize;
+        for (unsigned int j = 0; j < this->numWorkItemPerNode.size(); ++j) {
+            BOOST_LOG_TRIVIAL(info) << "   - Node " << j+1 <<
+            " : " << this->nodeInfo.at(j).numThread <<
+            " CPU for " << this->numWorkItemPerNode.at(j) << " work items/batch";
+        }
+
+
+
+
+        //this->numWorkItemPerNode
+
         std::uniform_int_distribution<int> dis_int(0, std::numeric_limits<int>::max());
 
 
@@ -87,6 +134,7 @@ namespace SmolDock::Calibration {
             ReceptorRecord rr;
             rr.PDBBlock = this->pdbBlockStrings[k];
             rr.dbsetting = this->dbSettings[k];
+            rr.specialResTypes = this->specialResidueTypings[k];
             mpi::broadcast(world, rr, 0);
         }
 
@@ -126,6 +174,9 @@ namespace SmolDock::Calibration {
 
     bool MPICalibratorDirector::runCalibration() {
 
+        calibrationStillRunning = true;
+        std::thread statusPrinter(&MPICalibratorDirector::updateAndPrintStatus, this);
+
 
 
         arma::mat coeffs_internalRepr = arma::mat(this->idxOfCoeffsToCalibrate.size(), 1);
@@ -163,6 +214,10 @@ namespace SmolDock::Calibration {
             BOOST_LOG_TRIVIAL(info) << "Node " << j << " terminated. (status = " << status <<")";
         }
 
+        calibrationStillRunning = false;
+        statusPrinter.join();
+
+
 
         return true;
     }
@@ -196,6 +251,7 @@ namespace SmolDock::Calibration {
 
         this->pdbBlockStrings.push_back(sstr.str());
         this->dbSettings.push_back(dbsettings);
+        this->specialResidueTypings.push_back(std::vector<MPISpecialResidueTyping>());
 
         this->current_max_ReceptorID++;
         return this->current_max_ReceptorID - 1;
@@ -225,11 +281,37 @@ namespace SmolDock::Calibration {
         static unsigned int batchCount = 0;
         batchCount++;
 
-        unsigned int currentSendRank = 1;
-        std::vector<mpi::request> taskRequests;
 
+        // Basically this is an allocation mecanism to have an amount of work item per node
+        // roughly proportional to the number of cpu on each node
+        // (We have collected the CPU #/node when initializing.)
+        // (We use intel TBB to spread the work on all CPU available per node, so this allow
+        // us to have around the same runtime for each node, so we dont wait for the weakest node)
+        // TODO : we need to handle slurm-type job manager, where we wont necessarily be able to just
+        // use all the CPUs of the node.
+        unsigned int currentSendRank = 1; // Careful : this is (rightfully) off-by-one from our array access index
+        std::vector<unsigned int> remainingWorkItemCapacity = this->numWorkItemPerNode;
+
+        std::vector<mpi::request> taskRequests;
         std::vector<Task> tasks;
+
         for (unsigned int k = i; k < i + batchSize; ++k) {
+
+            if(remainingWorkItemCapacity[currentSendRank - 1] == 0) {
+                // The current rank has no more cpu for us to run
+                if(currentSendRank == remainingWorkItemCapacity.size()) {
+                    // We have consumed every available cpu for this cycle, we start a new one
+                    currentSendRank = 1;
+                    remainingWorkItemCapacity = this->numWorkItemPerNode;
+                }else{
+                    // We use the next node
+                    currentSendRank++;
+                }
+            }
+            // In any cases, we will consume one cpu for the current item
+            remainingWorkItemCapacity[currentSendRank - 1]--;
+
+
             unsigned int realIdx = this->indexShuffler[k];
             std::tuple<unsigned int, unsigned int> rdlidx = RecLigIdxFromGlobalIdx(realIdx);
 
@@ -237,28 +319,33 @@ namespace SmolDock::Calibration {
             t.receptorID = std::get<0>(rdlidx);
             t.ligandIdx = std::get<1>(rdlidx);
 
+            std::vector<double> currCoeffsUpdated = this->currentCoeffs;
+            for (unsigned int k = 0; k < this->idxOfCoeffsToCalibrate.size(); ++k) {
+                currCoeffsUpdated[this->idxOfCoeffsToCalibrate[k]] = x(k);
+            }
+
+            t.coefficients = currCoeffsUpdated;
+
             taskRequests.push_back(this->world.isend(currentSendRank, MTags::TaskRequest, t));
 
-            currentSendRank++;
-            if(currentSendRank == this->numProcess)
-                currentSendRank = 1;
         }
 
         BOOST_LOG_TRIVIAL(debug) << "[Batch " << batchCount << "] Task request queued.";
+
+
         currentSendRank = 1;
+        remainingWorkItemCapacity = this->numWorkItemPerNode;
+
         std::vector<Result> resultList;
         for (unsigned int k = i; k < i + batchSize; ++k) {
-
-            auto& r = resultList.emplace_back((Result()));
-            taskRequests.push_back(this->world.irecv(currentSendRank, MTags::ResultMessage, r));
-
-            currentSendRank++;
-            if(currentSendRank == this->numProcess)
-                currentSendRank = 1;
+            resultList.push_back((Result()));
+            Result& r = resultList.back();
+//            taskRequests.push_back(this->world.irecv(boost::mpi::any_source, MTags::ResultMessage, r));
+            this->world.recv(boost::mpi::any_source, MTags::ResultMessage, r);
         }
 
-        BOOST_LOG_TRIVIAL(debug) << "[Batch " << batchCount << "] Result recv queued.";
-        mpi::wait_all(taskRequests.begin(), taskRequests.end());
+//        BOOST_LOG_TRIVIAL(debug) << "[Batch " << batchCount << "] Result recv queued.";
+//        mpi::wait_all(taskRequests.begin(), taskRequests.end());
         BOOST_LOG_TRIVIAL(debug) << "[Batch " << batchCount << "] Results received.";
 
         const unsigned int numItems = resultList.size();
@@ -294,7 +381,7 @@ namespace SmolDock::Calibration {
         unsigned int currRecId = 0;
         for(unsigned int& numLigForRec : this->numLigandPerReceptor)
         {
-            if(idx - numLigForRec < 0)
+            if(static_cast<long int>(idx) - static_cast<long int>(numLigForRec) < 0)
             {
                 return std::make_tuple(currRecId, idx);
             }
@@ -305,6 +392,27 @@ namespace SmolDock::Calibration {
         BOOST_LOG_TRIVIAL(error) << "   Total num ligand : " << this->numLigand;
         std::terminate();
         return std::make_tuple(currRecId, idx);
+    }
+
+    bool MPICalibratorDirector::applySpecialResidueTypingFromRecID(Calibrator::ReceptorID recID,
+                                                                   const AminoAcid::AAType resType,
+                                                                   const unsigned int serialNumber,
+                                                                   const SpecialResidueTyping specialType) {
+        MPISpecialResidueTyping srt;
+        srt.aaType = static_cast<unsigned int>(resType);
+        srt.serialNumber = serialNumber;
+        srt.specialTyping = static_cast<unsigned int>(specialType);
+        this->specialResidueTypings[static_cast<unsigned int>(recID)].push_back(srt);
+        return false;
+    }
+
+    void MPICalibratorDirector::updateAndPrintStatus() {
+        while(calibrationStillRunning == true)
+        {
+            using namespace std::chrono_literals;
+            std::this_thread::sleep_for(10s);
+        }
+
     }
 
 

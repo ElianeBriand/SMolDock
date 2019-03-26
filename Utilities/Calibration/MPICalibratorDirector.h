@@ -7,6 +7,9 @@
 
 
 #include <string>
+#include <atomic>
+#include <thread>
+
 #include <boost/mpi.hpp>
 #include <boost/serialization/string.hpp>
 
@@ -42,6 +45,9 @@ namespace SmolDock::Calibration {
         ReceptorID addReceptorFromFile(const std::string& filename, Engine::AbstractDockingEngine::DockingBoxSetting dbsettings);
         virtual ReceptorID addReceptor(const Protein& prot, Engine::AbstractDockingEngine::DockingBoxSetting dbsettings);
 
+        bool applySpecialResidueTypingFromRecID(ReceptorID recID, const AminoAcid::AAType resType,
+                                                const unsigned int serialNumber,
+                                                const SpecialResidueTyping specialType);
 
         virtual bool addReferenceLigand_SMILES_Ki(ReceptorID recID, const std::string& smiles, double Ki, int seed = 364);
         virtual bool addReferenceLigand_Mol_Ki(ReceptorID recID, const Molecule& mol, double Ki, int seed = 364);
@@ -62,11 +68,14 @@ namespace SmolDock::Calibration {
 
         std::tuple<unsigned int, unsigned int> RecLigIdxFromGlobalIdx(unsigned int idx);
 
+        void updateAndPrintStatus();
+
 
         mpi::environment& env;
         mpi::communicator& world;
 
         std::vector<RegisterMessage> nodeInfo;
+        std::vector<unsigned int> numWorkItemPerNode;
 
         unsigned int numProcess;
         unsigned int numTotalCPU;
@@ -74,6 +83,7 @@ namespace SmolDock::Calibration {
 
         std::vector<std::string> pdbBlockStrings;
         std::vector<Engine::AbstractDockingEngine::DockingBoxSetting> dbSettings;
+        std::vector<std::vector<MPISpecialResidueTyping>> specialResidueTypings;
 
         std::map<Calibrator::ReceptorID ,std::vector<std::tuple<std::string,double>>> ligandSmilesRefScore;
         std::vector<unsigned int> numLigandPerReceptor;
@@ -82,6 +92,8 @@ namespace SmolDock::Calibration {
         std::vector<RegisteredVariant> variantsForAllLigands;
 
         WorkStructure workStructure;
+
+        std::atomic<bool> calibrationStillRunning;
 
 
 

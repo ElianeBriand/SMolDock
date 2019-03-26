@@ -165,7 +165,16 @@ set(SOURCE_LIST Structures/Structure.cpp
         Utilities/Calibration/Calibrator.cpp
         Utilities/Calibration/Calibrator.h
         Utilities/CSVReader.cpp Utilities/CSVReader.h
-        Utilities/SMARTSMatcher.cpp Utilities/SMARTSMatcher.h Utilities/Calibration/MPICalibratorDirector.cpp Utilities/Calibration/MPICalibratorDirector.h Utilities/Calibration/MPICalibratorNode.cpp Utilities/Calibration/MPICalibratorNode.h Utilities/Calibration/MPICalibratorCommon.h)
+        Utilities/SMARTSMatcher.cpp
+        Utilities/SMARTSMatcher.h
+        )
+
+set(MPI_SOURCE_LIST Utilities/Calibration/MPICalibratorDirector.cpp
+        Utilities/Calibration/MPICalibratorDirector.h
+        Utilities/Calibration/MPICalibratorNode.cpp
+        Utilities/Calibration/MPICalibratorNode.h
+        Utilities/Calibration/MPICalibratorCommon.h
+        )
 
 set(PY_EXPORT_SOURCE_LIST Frontends/Python/PyStructures.cpp
         Frontends/Python/PyStructures.h
@@ -214,7 +223,7 @@ set_target_properties(libsmoldock PROPERTIES OUTPUT_NAME "smoldock")
 target_compile_definitions(libsmoldock PUBLIC ARMA_DONT_USE_WRAPPER)
 add_dependencies(libsmoldock smoldock_object)
 
-ADD_LIBRARY(libsmoldockPIC SHARED ${SOURCE_LIST} Engines/ScoringFunctions/VinaExtendedCommon.h)
+ADD_LIBRARY(libsmoldockPIC SHARED ${SOURCE_LIST} Engines/ScoringFunctions/VinaExtendedCommon.h Utilities/LogUtils.h)
 set_target_properties(libsmoldockPIC PROPERTIES COMPILE_FLAGS " -fPIC ")
 set_target_properties(libsmoldockPIC PROPERTIES LINKER_LANGUAGE CXX)
 set_target_properties(libsmoldockPIC PROPERTIES LINK_FLAGS "  -shared  -fPIC   ")
@@ -245,11 +254,9 @@ set_target_properties(smoldock PROPERTIES LINK_FLAGS " -Wl,--no-undefined -Wl,--
 TARGET_LINK_LIBRARIES(smoldock libsmoldock)
 TARGET_LINK_LIBRARIES(smoldock pthread)
 target_link_libraries(smoldock boost_log bprinter tbb_static pthread)
-TARGET_LINK_LIBRARIES(smoldock -L/home/briand/local/lib -Wl,-rpath -Wl,/home/briand/local/lib  -Wl,--enable-new-dtags)
-TARGET_LINK_LIBRARIES(smoldock mpi open-rte open-pal m dl z rt util pthread)
 #target_link_libraries(smoldock Vc)
 
-add_executable(mpicalibrator Frontends/mpicalibrator.cpp)
+add_executable(mpicalibrator Frontends/mpicalibrator.cpp ${MPI_SOURCE_LIST})
 set_target_properties(mpicalibrator PROPERTIES LINK_FLAGS " -static  -Wl,--no-undefined -Wl,--as-needed ")
 TARGET_LINK_LIBRARIES(mpicalibrator libsmoldock )
 TARGET_LINK_LIBRARIES(mpicalibrator -pthread)

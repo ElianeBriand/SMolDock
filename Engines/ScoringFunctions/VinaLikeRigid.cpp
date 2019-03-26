@@ -45,7 +45,7 @@ namespace SmolDock {
 
             assert(!ligand.x.empty());
             assert(!protein.x.empty());
-            assert(std::abs(transform.rota.norm() - 1) < 0.01);
+            assert(std::abs(transform.rota.norm() - 1) < 0.1);
 
 
             double score_raw = 0;

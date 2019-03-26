@@ -39,7 +39,7 @@ namespace SmolDock {
 
     enum class PDBResidueVariantAssignationType;
 
-    enum class SpecialResidueTyping {
+    enum class SpecialResidueTyping : unsigned int {
         covalentReversibleSerineOH,
         covalentReversibleCysteineSH
     };
@@ -53,7 +53,7 @@ namespace SmolDock {
 
     public:
 
-        enum class AAType {
+        enum class AAType : unsigned int {
             alanine,
             arginine,
             asparagine,

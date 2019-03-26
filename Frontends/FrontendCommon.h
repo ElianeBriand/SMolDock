@@ -12,7 +12,7 @@
 
 namespace SmolDock {
 
-    inline void setupLogPrinting(bool noDebug = false, bool onlyError = false)
+    inline void setupLogPrinting(bool noDebug = false, bool onlyError = false, std::string prefix = "")
     {
         if(noDebug)
         {
@@ -32,17 +32,17 @@ namespace SmolDock {
 
 
         auto console_logger = boost::log::add_console_log(std::cout);
-        console_logger->set_formatter([](boost::log::record_view const &rec, boost::log::formatting_ostream &strm) {
+        console_logger->set_formatter([prefix](boost::log::record_view const &rec, boost::log::formatting_ostream &strm) {
             if (rec[boost::log::trivial::severity] == boost::log::trivial::trace) {
-                strm << " T  "; //         use TRACE_LOG(); macro for auto file:line:function
+                strm << prefix << " T  "; //         use TRACE_LOG(); macro for auto file:line:function
             } else if (rec[boost::log::trivial::severity] == boost::log::trivial::debug) {
-                strm << "{D} ";
+                strm << prefix << "{D} ";
             } else if (rec[boost::log::trivial::severity] == boost::log::trivial::info) {
-                strm << "    ";
+                strm << prefix << "    ";
             } else if (rec[boost::log::trivial::severity] == boost::log::trivial::warning) {
-                strm << "[!] ";
+                strm << prefix << "[!] ";
             } else if (rec[boost::log::trivial::severity] >= boost::log::trivial::error) {
-                strm << "[E] ";
+                strm << prefix << "[E] ";
             }
 
             strm << rec[boost::log::expressions::smessage];
