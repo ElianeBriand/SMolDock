@@ -40,13 +40,15 @@ namespace SmolDock {
                 VinaLikeRigid::coefficientsNames =  {"Gauss1", "Gauss2", "RepulsionExceptCovalent", "Hydrophobic","Hydrogen"};
 
 
-        double vina_like_rigid_inter_scoring_func(const iConformer &ligand, const iTransform &transform,
+        double vina_like_rigid_inter_scoring_func(const iConformer &ligand, iTransform &transform,
                                                   const iProtein &protein) {
 
             assert(!ligand.x.empty());
             assert(!protein.x.empty());
-            assert(std::abs(transform.rota.norm() - 1) < 0.1);
 
+            if(std::abs(transform.rota.norm() - 1) > 0.1) {
+                transform.rota.normalize();
+            }
 
             double score_raw = 0;
 
@@ -260,7 +262,11 @@ namespace SmolDock {
 
             assert(!this->startingConformation.x.empty());
             assert(!this->prot.x.empty());
-            assert(std::abs(tr.rota.norm() - 1) < 0.01);
+
+            if(std::abs(tr.rota.norm() - 1) > 0.1) {
+                tr.rota.normalize();
+            }
+
             assert(tr.bondRotationsAngles.size() == this->startingConformation.num_rotatable_bond);
 
 

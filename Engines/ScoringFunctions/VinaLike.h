@@ -18,7 +18,12 @@ namespace SmolDock::Score {
     const constexpr unsigned int VinaLike_numCoefficients = 5;
 
     template<bool OnlyIntermolecular = false, bool useNonDefaultCoefficients = false>
-    double VinaLikeIntermolecularScoringFunction(const iConformer &conformer, const iTransform &transform,
+    double VinaLikeIntermolecularScoringFunction(const iConformer &conformer, iTransform &transform,
+                                                 const iProtein &protein,
+                                                 std::array<double, VinaLike_numCoefficients> nonDefaultCoeffs = std::array<double, VinaLike_numCoefficients>());
+
+    template<bool OnlyIntermolecular = false, bool useNonDefaultCoefficients = false>
+    double VinaLikeIntermolecularScoringFunction_vectorized(const iConformer_Vectorized &conformer, iTransform &transform,
                                                  const iProtein &protein,
                                                  std::array<double, VinaLike_numCoefficients> nonDefaultCoeffs = std::array<double, VinaLike_numCoefficients>());
 

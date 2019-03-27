@@ -106,10 +106,6 @@ namespace SmolDock {
             unsigned int atom1Idx = conformer.bondEnds1Index[rotBondGroupIdx];
             unsigned int atom2Idx = conformer.bondEnds2Index[rotBondGroupIdx];
 
-//            std::cout << "-- Rotation --\n";
-//            std::cout << "  Atom 1 : " << atom1Idx << "   " << conformer.x[atom1Idx] << "," << conformer.y[atom1Idx] << "," << conformer.z[atom1Idx] << "\n";
-//            std::cout << "  Atom 2 : " << atom2Idx << "   "<< conformer.x[atom2Idx] << "," << conformer.y[atom2Idx] << "," << conformer.z[atom2Idx] << "\n";
-
             Eigen::Vector3d axis = {
                     (conformer.x[atom2Idx] - conformer.x[atom1Idx]),
                     (conformer.y[atom2Idx] - conformer.y[atom1Idx]),
@@ -120,11 +116,9 @@ namespace SmolDock {
                                                          conformer.z[atom1Idx]);
             Eigen::Translation<double, 3> moveToOrigin = moveFromOrigin.inverse();
 
-            // std::cout << "  Axis : " << axis.x()  << "," << axis.y() << "," << axis.z() << " norm = " << axis.norm() << "\n";
 
             axis.normalize();
 
-//            std::cout << "  Axis : " << axis.x()  << "," << axis.y() << "," << axis.z() << " norm = " << axis.norm() << "\n";
 
 
             assert((axis.norm() - 1) < 0.01);
@@ -133,10 +127,8 @@ namespace SmolDock {
 
             Eigen::Matrix<double, 3, 3> rotMatrix = rotation.toRotationMatrix();
 
-//            std::cout << "RotMatrix \n" << rotMatrix << "\n";
 
             for (unsigned int &rotatedAtomIdx: conformer.rotatableGroups[rotBondGroupIdx]) {
-//                std::cout << " Affecting : " << rotatedAtomIdx << "\n";
                 Eigen::Vector3d startPosition(conformer.x[rotatedAtomIdx],
                                               conformer.y[rotatedAtomIdx],
                                               conformer.z[rotatedAtomIdx]);
@@ -147,9 +139,49 @@ namespace SmolDock {
                 conformer.y[rotatedAtomIdx] = endPosition.y();
                 conformer.z[rotatedAtomIdx] = endPosition.z();
             }
+        }
+    }
 
-//            std::cout << "-- END Rotation --" << "\n";
+    inline void applyBondRotationInPlace(SmolDock::iConformer_Vectorized &conformer, const iTransform &tr) {
+        for (unsigned int rotBondGroupIdx = 0; rotBondGroupIdx < tr.bondRotationsAngles.size(); rotBondGroupIdx++) {
+            const double &rotAngleForBond = tr.bondRotationsAngles[rotBondGroupIdx];
+            unsigned int atom1Idx = conformer.bondEnds1Index[rotBondGroupIdx];
+            unsigned int atom2Idx = conformer.bondEnds2Index[rotBondGroupIdx];
 
+            Eigen::Vector3d axis = {
+                    (conformer.x[atom2Idx] - conformer.x[atom1Idx]),
+                    (conformer.y[atom2Idx] - conformer.y[atom1Idx]),
+                    (conformer.z[atom2Idx] - conformer.z[atom1Idx])
+            };
+
+            axis.normalize();
+
+            assert((axis.norm() - 1) < 0.01);
+
+            Eigen::AngleAxis<double> rotation(rotAngleForBond, axis);
+
+            Eigen::Matrix<double, 3, 3> rotMatrix = rotation.toRotationMatrix();
+
+            Eigen::Translation<double, 3> moveFromOrigin(conformer.x[atom1Idx], conformer.y[atom1Idx],
+                                                         conformer.z[atom1Idx]);
+            Eigen::Translation<double, 3> moveToOrigin = moveFromOrigin.inverse();
+
+
+
+
+
+
+            for (unsigned int &rotatedAtomIdx: conformer.rotatableGroups[rotBondGroupIdx]) {
+                Eigen::Vector3d startPosition(conformer.x[rotatedAtomIdx],
+                                              conformer.y[rotatedAtomIdx],
+                                              conformer.z[rotatedAtomIdx]);
+
+                Eigen::Vector3d endPosition = moveFromOrigin * (rotMatrix * (moveToOrigin * startPosition));
+
+                conformer.x[rotatedAtomIdx] = endPosition.x();
+                conformer.y[rotatedAtomIdx] = endPosition.y();
+                conformer.z[rotatedAtomIdx] = endPosition.z();
+            }
         }
     }
 
@@ -158,6 +190,43 @@ namespace SmolDock {
     inline void applyRigidTransformInPlace(Eigen::Vector3d &v, const iTransform &tr) {
         v = tr.rota * v;
         v = tr.transl * v;
+    }
+
+    //! Apply the provided iTransform to a vector (only rigid component : translation + global rotation)
+    inline void applyRigidTransformInPlace(Vc::Vector<double> &x,
+            Vc::Vector<double> &y,
+            Vc::Vector<double> &z,
+            const iTransform &tr) {
+
+
+        // Quaternion rotation, vectorized
+        const Vc::Vector<double> xold = x;
+        const Vc::Vector<double> yold = y;
+        const Vc::Vector<double> zold = z;
+
+        double qw = tr.rota.w();
+        double qx = tr.rota.x();
+        double qy = tr.rota.y();
+        double qz = tr.rota.z();
+
+        double t2 =   qw*qx;
+        double t3 =   qw*qy;
+        double t4 =   qw*qz;
+        double t5 =  -qx*qx;
+        double t6 =   qx*qy;
+        double t7 =   qx*qz;
+        double t8 =  -qy*qy;
+        double t9 =   qy*qz;
+        double t10 = -qz*qz;
+
+
+        x = 2*( (t8 + t10)*xold + (t6 -  t4)*yold + (t3 + t7)*zold ) + xold;
+        y = 2*( (t4 +  t6)*xold + (t5 + t10)*yold + (t9 - t2)*zold ) + yold;
+        z = 2*( (t7 -  t3)*xold + (t2 +  t9)*yold + (t5 + t8)*zold ) + zold;
+
+        x = x + tr.transl.x();
+        y = y + tr.transl.y();
+        z = z + tr.transl.z();
     }
 
     //! Apply the provided iTransform to a vector( only rigid component : translation + global rotation)

@@ -10,8 +10,10 @@
 #include <cmath>
 #include <cassert>
 
-#include <Structures/Atom.h>
+#include <Vc/Vc>
 
+
+#include <Structures/Atom.h>
 
 
 namespace SmolDock::Score {
@@ -24,8 +26,26 @@ namespace SmolDock::Score {
     // See COPYING for more details on licence information
 
 
-    __attribute__((const)) inline bool isHydrophobic(const unsigned char atomicNumber, const unsigned int variantFlags) noexcept {
-        return (atomicNumber == 6 && (variantFlags & ((const unsigned int) Atom::AtomVariant::apolar))) || // C && apolar
+    __attribute__((const)) inline bool
+    isHydrophobic(const unsigned int atomicNumber, const unsigned int variantFlags) noexcept {
+        return (atomicNumber == 6 && (variantFlags & ((const unsigned int) Atom::AtomVariant::apolar))) ||
+               // C && apolar
+               atomicNumber == 9 || // F
+               atomicNumber == 17 || // Cl
+               atomicNumber == 35 || // Br
+               atomicNumber == 53; // I
+    }
+
+    __attribute__((const)) inline auto
+    isHydrophobic(const Vc::Vector<unsigned int> atomicNumber, const Vc::Vector<unsigned int> variantFlags) noexcept {
+
+        // FIXME : this is suboptimal, but I don't know how to do this with Vc
+        const Vc::Vector<unsigned int> apolarFlag;
+        for (unsigned int i = 0; i < variantFlags.size(); ++i) {
+            apolarFlag[i] = (variantFlags[i] & ((const unsigned int) Atom::AtomVariant::apolar)) ? 0 : 1;
+        }
+
+        return (atomicNumber == 6 && (apolarFlag == 1)) ||  // C && apolar
                atomicNumber == 9 || // F
                atomicNumber == 17 || // Cl
                atomicNumber == 35 || // Br
@@ -33,51 +53,61 @@ namespace SmolDock::Score {
     }
 
 
-    __attribute__((const)) inline bool isHydrogenAcceptor(const unsigned char atomicNumber,const unsigned int atomVariantFlags) noexcept {
+    __attribute__((const)) inline bool
+    isHydrogenAcceptor(const unsigned int atomicNumber, const unsigned int atomVariantFlags) noexcept {
         return (atomicNumber == 7 || //N
                 atomicNumber == 8) // O
                && (atomVariantFlags & ((const unsigned int) Atom::AtomVariant::hydrogenAcceptor));
     }
 
-    __attribute__((const)) inline bool isHydrogenDonor(const unsigned char atomicNumber,const  unsigned int atomVariantFlags) noexcept {
+    __attribute__((const)) inline bool
+    isHydrogenDonor(const unsigned int atomicNumber, const unsigned int atomVariantFlags) noexcept {
         return (atomicNumber == 7 ||
                 atomicNumber == 8)
                && (atomVariantFlags & ((const unsigned int) Atom::AtomVariant::hydrogenDonor));
     }
 
-    __attribute__((const)) inline bool hydrogenDonorAcceptorPair(const unsigned char atomicNumber1,const  unsigned int atom1VariantFlags,
-                                                                  const unsigned char atomicNumber2, const unsigned int atom2VariantFlags) noexcept {
+    __attribute__((const)) inline bool
+    hydrogenDonorAcceptorPair(const unsigned int atomicNumber1, const unsigned int atom1VariantFlags,
+                              const unsigned int atomicNumber2, const unsigned int atom2VariantFlags) noexcept {
         return isHydrogenDonor(atomicNumber1, atom1VariantFlags) &&
                isHydrogenAcceptor(atomicNumber2, atom2VariantFlags);
     }
 
-    __attribute__((const)) inline bool hydrogenBondingPossible(const unsigned char atomicNumber1, const unsigned int atom1VariantFlags,
-                                        unsigned char atomicNumber2, unsigned int atom2VariantFlags) noexcept {
+    __attribute__((const)) inline bool
+    hydrogenBondingPossible(const unsigned int atomicNumber1, const unsigned int atom1VariantFlags,
+                            unsigned char atomicNumber2, unsigned int atom2VariantFlags) noexcept {
         return hydrogenDonorAcceptorPair(atomicNumber1, atom1VariantFlags, atomicNumber2, atom2VariantFlags) ||
                hydrogenDonorAcceptorPair(atomicNumber2, atom2VariantFlags, atomicNumber1, atom1VariantFlags);
     }
 
     // ////////////////// VINA CODE END //////////////////////////////////////////////////
 
-    __attribute__((const)) inline bool isCovalentReversibleAcceptor(const unsigned char atomicNumber,const unsigned int atomVariantFlags) noexcept {
-        return static_cast<bool>((atomVariantFlags & ((const unsigned int) Atom::AtomVariant::covalentReversibleAcceptor)));
+    __attribute__((const)) inline bool
+    isCovalentReversibleAcceptor(const unsigned int atomicNumber, const unsigned int atomVariantFlags) noexcept {
+        return static_cast<bool>((atomVariantFlags &
+                                  ((const unsigned int) Atom::AtomVariant::covalentReversibleAcceptor)));
     }
 
-    __attribute__((const)) inline bool isCovalentReversibleDonor(const unsigned char atomicNumber,const unsigned int atomVariantFlags) noexcept {
-        return static_cast<bool>((atomVariantFlags & ((const unsigned int) Atom::AtomVariant::covalentReversibleDonor)));
+    __attribute__((const)) inline bool
+    isCovalentReversibleDonor(const unsigned int atomicNumber, const unsigned int atomVariantFlags) noexcept {
+        return static_cast<bool>((atomVariantFlags &
+                                  ((const unsigned int) Atom::AtomVariant::covalentReversibleDonor)));
     }
 
-    __attribute__((const)) inline bool covalentReversiblePair(const unsigned char atomicNumber1,const  unsigned int atom1VariantFlags,
-                                                                  const unsigned char atomicNumber2, const unsigned int atom2VariantFlags) noexcept {
+    __attribute__((const)) inline bool
+    covalentReversiblePair(const unsigned int atomicNumber1, const unsigned int atom1VariantFlags,
+                           const unsigned int atomicNumber2, const unsigned int atom2VariantFlags) noexcept {
         return isCovalentReversibleDonor(atomicNumber1, atom1VariantFlags) &&
-                isCovalentReversibleAcceptor(atomicNumber2, atom2VariantFlags);
+               isCovalentReversibleAcceptor(atomicNumber2, atom2VariantFlags);
     }
 
 
-    __attribute__((const)) inline bool covalentReversibleBondingPossible(const unsigned char atomicNumber1, const unsigned int atom1VariantFlags,
-                                                                unsigned char atomicNumber2, unsigned int atom2VariantFlags) noexcept {
+    __attribute__((const)) inline bool
+    covalentReversibleBondingPossible(const unsigned int atomicNumber1, const unsigned int atom1VariantFlags,
+                                      unsigned char atomicNumber2, unsigned int atom2VariantFlags) noexcept {
         return covalentReversiblePair(atomicNumber1, atom1VariantFlags, atomicNumber2, atom2VariantFlags) ||
-                covalentReversiblePair(atomicNumber2, atom2VariantFlags, atomicNumber1, atom1VariantFlags);
+               covalentReversiblePair(atomicNumber2, atom2VariantFlags, atomicNumber1, atom1VariantFlags);
     }
 
 
@@ -101,28 +131,54 @@ namespace SmolDock::Score {
     }
 
 
+    __attribute__((const)) inline double distanceFromRawDistance(const double rawDistance,
+                                                                 const double atomicRadiusLig,
+                                                                 const double atomicRadiusProt) noexcept {
+        return rawDistance - (atomicRadiusLig + atomicRadiusProt);
+    }
 
-
-    __attribute__((const)) inline double distanceFromRawDistance(const double rawDistance, const double atomicRadiusLig, const double atomicRadiusProt) noexcept {
+    __attribute__((const)) inline Vc::Vector<double> distanceFromRawDistance(const Vc::Vector<double> rawDistance,
+                                                                             const Vc::Vector<double> atomicRadiusLig,
+                                                                             const Vc::Vector<double> atomicRadiusProt) noexcept {
         return rawDistance - (atomicRadiusLig + atomicRadiusProt);
     }
 
 
-    __attribute__((const)) inline double vinaGaussComponent(const double distance, const double offset, const double multiplier) noexcept {
-        return std::exp(-1 * std::pow((distance - offset)/ multiplier, 2));
+    __attribute__((const)) inline double
+    vinaGaussComponent(const double distance,
+                       const double offset,
+                       const double multiplier) noexcept {
+        return std::exp(-1 * std::pow((distance - offset) / multiplier, 2));
+    }
+
+    __attribute__((const)) inline Vc::Vector<double>
+    vinaGaussComponent(const Vc::Vector<double> distance,
+                       const double offset,
+                       const double multiplier) noexcept {
+        // x^y = pow(x,y) = exp(y*log(x))
+        const Vc::Vector<double> centeredDist = (distance - offset) / multiplier;
+        const Vc::Vector<double> squaredDist = Vc::exp(2 * Vc::log(centeredDist)); // pow(centeredDist, 2)
+        return Vc::exp(-1 * squaredDist);
     }
 
     __attribute__((const)) inline double vinaRepulsionComponent(const double distance, const double cutoff) noexcept {
         if (distance < cutoff) {
             return std::pow(distance, 2);
-        }else{
+        } else {
             return 0.0;
         }
     }
 
-    __attribute__((const)) inline double vinaHydrophobicComponent(const double distance, const unsigned char atomicNumberAtom1, const unsigned int variantFlagsAtom1,
-                                                                   const unsigned char atomicNumberAtom2, const unsigned int variantFlagsAtom2) noexcept
-    {
+    __attribute__((const)) inline double vinaRepulsionComponent(const Vc::Vector<double> distance,
+                                                                            const double cutoff) noexcept {
+        const Vc::Vector<double> vec = Vc::iif (distance < cutoff, Vc::exp(2 * Vc::log(distance)), Vc::Vector<double>(Vc::Zero)); // iff -> cond ? x : y
+        return vec.sum();
+    }
+
+    __attribute__((const)) inline double
+    vinaHydrophobicComponent(const double distance, const unsigned int atomicNumberAtom1,
+                             const unsigned int variantFlagsAtom1,
+                             const unsigned int atomicNumberAtom2, const unsigned int variantFlagsAtom2) noexcept {
         if (isHydrophobic(atomicNumberAtom1, variantFlagsAtom1) &&
             isHydrophobic(atomicNumberAtom2, variantFlagsAtom2)) // "Hydrophobic" atoms
         {
@@ -136,9 +192,10 @@ namespace SmolDock::Score {
         return 0.0;
     }
 
-    __attribute__((const)) inline double vinaHydrogenComponent(const double distance, const unsigned char atomicNumberAtom1, const unsigned int variantFlagsAtom1,
-                                                                const unsigned char atomicNumberAtom2, const unsigned int variantFlagsAtom2) noexcept
-    {
+    __attribute__((const)) inline double
+    vinaHydrogenComponent(const double distance, const unsigned int atomicNumberAtom1,
+                          const unsigned int variantFlagsAtom1,
+                          const unsigned int atomicNumberAtom2, const unsigned int variantFlagsAtom2) noexcept {
         if (hydrogenBondingPossible(atomicNumberAtom1, variantFlagsAtom1, atomicNumberAtom2,
                                     variantFlagsAtom2)) // Hydrogen donor and acceptor
         {
@@ -153,13 +210,10 @@ namespace SmolDock::Score {
     }
 
 
-
-
-
-
     __attribute__((const)) inline double
-    scoreForAtomCouple(const double distance,const unsigned char atom1AtomicNumber,const unsigned int atom1AtomVariant,
-                       const unsigned char atom2AtomicNumber,const unsigned int atom2AtomVariant) noexcept {
+    scoreForAtomCouple(const double distance, const unsigned int atom1AtomicNumber,
+                       const unsigned int atom1AtomVariant,
+                       const unsigned int atom2AtomicNumber, const unsigned int atom2AtomVariant) noexcept {
 
         double score_intermol = 0.0;
 
@@ -175,20 +229,18 @@ namespace SmolDock::Score {
         score_intermol += VinaClassic::coeff_repulsion * repuls;
 
         const double hydrophobic = vinaHydrophobicComponent(distance,
-                                                      atom1AtomicNumber, atom1AtomVariant,
-                                                      atom2AtomicNumber, atom2AtomVariant);
+                                                            atom1AtomicNumber, atom1AtomVariant,
+                                                            atom2AtomicNumber, atom2AtomVariant);
         score_intermol += VinaClassic::coeff_hydrophobic * hydrophobic;
 
 
         const double hydrogen = vinaHydrogenComponent(distance,
                                                       atom1AtomicNumber, atom1AtomVariant,
                                                       atom2AtomicNumber, atom2AtomVariant);
-        score_intermol += VinaClassic::coeff_hydrogen  * hydrogen;
+        score_intermol += VinaClassic::coeff_hydrogen * hydrogen;
 
         return score_intermol;
     }
-
-
 
 
 }

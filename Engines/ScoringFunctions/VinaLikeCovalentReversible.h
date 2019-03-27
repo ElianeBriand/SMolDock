@@ -20,12 +20,12 @@ namespace SmolDock::Score {
 
 
     template<bool OnlyIntermolecular = false, bool useNonDefaultCoefficients = false>
-    double VinaLikeCovalentReversibleIntermolecularScoringFunction(const iConformer &conformer, const iTransform &transform,
+    double VinaLikeCovalentReversibleIntermolecularScoringFunction(const iConformer &conformer, iTransform &transform,
                                                  const iProtein &protein,
                                                  std::array<double, VinaLikeCovalentReversible_numCoefficients> nonDefaultCoeffs = std::array<double, VinaLikeCovalentReversible_numCoefficients>());
 
     template<bool useNonDefaultCoefficients = false>
-    std::vector<std::tuple<std::string, double>> VinaLikeCovalentReversibleIntermolecularComponents(const iConformer &conformer, const iTransform &transform,
+    std::vector<std::tuple<std::string, double>> VinaLikeCovalentReversibleIntermolecularComponents(const iConformer &conformer, iTransform &transform,
                                                                    const iProtein &protein,
                                                             std::array<double, VinaLikeCovalentReversible_numCoefficients> nonDefaultCoeffs = std::array<double, VinaLikeCovalentReversible_numCoefficients>());
 

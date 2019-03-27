@@ -203,7 +203,8 @@ namespace SmolDock {
                     double starting_score = Score::vina_like_rigid_inter_scoring_func(conformer, starting_pos_tr,
                                                                                       this->protein);
 
-                    double real_score = Score::vina_like_rigid_inter_scoring_func(result, iTransformIdentityInit(),
+                    iTransform tr = iTransformIdentityInit();
+                    double real_score = Score::vina_like_rigid_inter_scoring_func(result, tr,
                                                                                   this->fullProtein);
 
 

@@ -21,6 +21,7 @@
 #include <ensmallen.hpp>
 
 #include <Engines/Internals/InternalsUtilityFunctions.h>
+#include <Utilities/LogUtils.h>
 
 #include <boost/serialization/string.hpp>
 
@@ -279,7 +280,6 @@ namespace SmolDock::Calibration {
                                                        arma::mat& g,
                                                        const size_t batchSize) {
         static unsigned int batchCount = 0;
-        batchCount++;
 
 
         // Basically this is an allocation mecanism to have an amount of work item per node
@@ -294,6 +294,12 @@ namespace SmolDock::Calibration {
 
         std::vector<mpi::request> taskRequests;
         std::vector<Task> tasks;
+
+        std::vector<double> currCoeffsUpdated = this->currentCoeffs;
+        for (unsigned int k = 0; k < this->idxOfCoeffsToCalibrate.size(); ++k) {
+            currCoeffsUpdated[this->idxOfCoeffsToCalibrate[k]] = x(k);
+        }
+        coefficientHistory.push_back(currCoeffsUpdated);
 
         for (unsigned int k = i; k < i + batchSize; ++k) {
 
@@ -319,19 +325,16 @@ namespace SmolDock::Calibration {
             t.receptorID = std::get<0>(rdlidx);
             t.ligandIdx = std::get<1>(rdlidx);
 
-            std::vector<double> currCoeffsUpdated = this->currentCoeffs;
-            for (unsigned int k = 0; k < this->idxOfCoeffsToCalibrate.size(); ++k) {
-                currCoeffsUpdated[this->idxOfCoeffsToCalibrate[k]] = x(k);
-            }
-
             t.coefficients = currCoeffsUpdated;
 
             taskRequests.push_back(this->world.isend(currentSendRank, MTags::TaskRequest, t));
 
         }
 
-        BOOST_LOG_TRIVIAL(debug) << "[Batch " << batchCount << "] Task request queued.";
+        BOOST_LOG_TRIVIAL(debug) << "[Epoch " << batchCount << "] Task request queued.";
 
+        std::chrono::time_point<std::chrono::system_clock> start, end;
+        start = std::chrono::system_clock::now();
 
         currentSendRank = 1;
         remainingWorkItemCapacity = this->numWorkItemPerNode;
@@ -340,13 +343,14 @@ namespace SmolDock::Calibration {
         for (unsigned int k = i; k < i + batchSize; ++k) {
             resultList.push_back((Result()));
             Result& r = resultList.back();
-//            taskRequests.push_back(this->world.irecv(boost::mpi::any_source, MTags::ResultMessage, r));
             this->world.recv(boost::mpi::any_source, MTags::ResultMessage, r);
+            BOOST_LOG_TRIVIAL(debug) << "Received " << k - i  << " of " << (batchSize - i) << " results.";
         }
 
-//        BOOST_LOG_TRIVIAL(debug) << "[Batch " << batchCount << "] Result recv queued.";
-//        mpi::wait_all(taskRequests.begin(), taskRequests.end());
-        BOOST_LOG_TRIVIAL(debug) << "[Batch " << batchCount << "] Results received.";
+        end = std::chrono::system_clock::now();
+        int elapsed_minutes = std::chrono::duration_cast<std::chrono::minutes>
+                (end-start).count();
+        BOOST_LOG_TRIVIAL(debug) << "[Epoch " << batchCount << "] All results received.";
 
         const unsigned int numItems = resultList.size();
         const unsigned int numCoefficients = x.n_rows;
@@ -360,11 +364,29 @@ namespace SmolDock::Calibration {
         }
 
         const double meanLoss = totalLoss / numItems;
+        this->gradientHistory.push_back(std::vector<double>());
         for (unsigned int j = 0; j < numCoefficients; ++j) {
-            g(j) = totalGradientLoss.at(j) / numItems;
+            const double meanGradComponentValue = totalGradientLoss.at(j) / numItems;
+            g(j) = meanGradComponentValue;
+            this->gradientHistory.back().push_back(meanGradComponentValue);
         }
 
-        BOOST_LOG_TRIVIAL(debug) << "[Batch " << batchCount << "] Mean loss : " << meanLoss;
+        this->lossHistory.push_back(meanLoss);
+
+        BOOST_LOG_TRIVIAL(debug) << "[Epoch " << batchCount << "] Mean loss : " << meanLoss;
+        BOOST_LOG_TRIVIAL(debug) << "   Duration : " << elapsed_minutes << " minutes";
+        BOOST_LOG_TRIVIAL(debug) << "   History : ";
+        for (unsigned int l = 0; l < this->lossHistory.size(); ++l) {
+            BOOST_LOG_TRIVIAL(debug) << "     Epoch " << l << "   ->  " << this->lossHistory.at(l);
+            BOOST_LOG_TRIVIAL(debug) << "       --> Coeffs " << vectorToString(this->coefficientHistory.at(l));
+            BOOST_LOG_TRIVIAL(debug) << "       --> Gradient " << vectorToString(this->gradientHistory.at(l));
+
+        }
+
+        batchCount++;
+
+
+        BOOST_LOG_TRIVIAL(info) << "\n\n    ------\n\n";
 
         return meanLoss;
     }

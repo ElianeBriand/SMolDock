@@ -194,8 +194,8 @@ namespace SmolDock {
         this->AtomID = id;
     }
 
-    unsigned char Atom::getAtomicNumber() {
-        return static_cast<unsigned char>(this->type);
+    unsigned int Atom::getAtomicNumber() {
+        return static_cast<unsigned int>(this->type);
     }
 
     unsigned int Atom::getAtomVariantAsUnderlyingType() {

@@ -52,7 +52,7 @@ namespace SmolDock {
          * \return The docking score
          * \sa
         */
-        double vina_like_rigid_inter_scoring_func(const iConformer &conformer, const iTransform &transform,
+        double vina_like_rigid_inter_scoring_func(const iConformer &conformer, iTransform &transform,
                                                   const iProtein &protein);
 
         class VinaLikeRigid : public ScoringFunction {

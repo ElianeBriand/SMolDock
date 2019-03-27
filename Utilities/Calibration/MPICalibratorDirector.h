@@ -95,6 +95,10 @@ namespace SmolDock::Calibration {
 
         std::atomic<bool> calibrationStillRunning;
 
+        std::vector<double> lossHistory;
+        std::vector<std::vector<double>> coefficientHistory;
+        std::vector<std::vector<double>> gradientHistory;
+
 
 
     };

@@ -80,7 +80,7 @@ int main() {
     mpi::communicator world;
 
     if (world.rank() == 0) {
-        sd::setupLogPrinting(false, false, "[Rank 0] ");
+        sd::setupLogPrinting(false, false, "[MPI_0] ");
         auto cdirector = std::make_shared<sd::Calibration::MPICalibratorDirector>(env, world,
                                                                                   sd::Score::ScoringFunctionType::VinaCovalentReversible,
                                                                                   sd::Heuristics::GlobalHeuristicType::SimulatedAnnealing,
@@ -128,7 +128,7 @@ int main() {
     } else {
         tbb::task_scheduler_init tbbInit(std::thread::hardware_concurrency());
         //tbb::task_scheduler_init tbbInit(1);
-        sd::setupLogPrinting(false, false, "[Rank " + lexical_cast<std::string>(world.rank()) +"] ");
+        sd::setupLogPrinting(false, false, "[MPI_" + lexical_cast<std::string>(world.rank()) +"] ");
         auto cnode = std::make_shared<sd::Calibration::MPICalibratorNode>(env, world);
         cnode->runNode();
     }

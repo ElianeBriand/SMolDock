@@ -63,7 +63,7 @@ namespace SmolDock {
 
 
         // Make the value of the enum be the atomic number
-        enum class AtomType : unsigned char {
+        enum class AtomType : unsigned int {
             unknown = 0,
             hydrogen = 1,
 
@@ -169,7 +169,7 @@ namespace SmolDock {
 
         std::string getAtomSymbol() const;
 
-        unsigned char getAtomicNumber();
+        unsigned int getAtomicNumber();
 
 
         AtomVariant getAtomVariant();

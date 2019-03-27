@@ -17,15 +17,20 @@
 namespace SmolDock::Score {
 
     const std::array<std::string, VinaLike::numCoefficients>
-            VinaLike::coefficientsNames =  {"Gauss1", "Gauss2", "RepulsionExceptCovalent", "Hydrophobic","Hydrogen"};
+            VinaLike::coefficientsNames = {"Gauss1", "Gauss2", "RepulsionExceptCovalent", "Hydrophobic", "Hydrogen"};
 
     template<bool OnlyIntermolecular, bool useNonDefaultCoefficients>
-    double VinaLikeIntermolecularScoringFunction(const iConformer &ligand_, const iTransform &transform,
-                                                 const iProtein &protein, std::array<double, VinaLike_numCoefficients> nonDefaultCoeffs) {
+    double VinaLikeIntermolecularScoringFunction(const iConformer& ligand_, iTransform& transform,
+                                                 const iProtein& protein,
+                                                 std::array<double, VinaLike_numCoefficients> nonDefaultCoeffs) {
 
         assert(!ligand_.x.empty());
         assert(!protein.x.empty());
-        assert(std::abs(transform.rota.norm() - 1) < 0.1);
+
+        if (std::abs(transform.rota.norm() - 1) > 0.1) {
+            transform.rota.normalize();
+        }
+
         assert(transform.bondRotationsAngles.size() == ligand_.num_rotatable_bond);
 
         double score_raw = 0;
@@ -49,7 +54,7 @@ namespace SmolDock::Score {
 
 //                score_raw += VinaClassic::coeff_gauss1      * vinaGaussComponent(distance, 0.0, 0.5);
 //                score_raw += VinaClassic::coeff_gauss2      * vinaGaussComponent(distance, 3.0, 2.0);
-                    score_raw += VinaClassic::coeff_repulsion   * vinaRepulsionComponent(distance, 0.0);
+                    score_raw += VinaClassic::coeff_repulsion * vinaRepulsionComponent(distance, 0.0);
                 }
             }
         }
@@ -88,34 +93,214 @@ namespace SmolDock::Score {
 
                 const double distance = rawDist - radToRemove;
 
-                const unsigned char atom1AtomicNumber = ligand.type[idxLig];
+                const unsigned int atom1AtomicNumber = ligand.type[idxLig];
                 const unsigned int atom1AtomVariant = ligand.variant[idxLig];
-                const unsigned char atom2AtomicNumber = protein.type[idxProt];
+                const unsigned int atom2AtomicNumber = protein.type[idxProt];
                 const unsigned int atom2AtomVariant = protein.variant[idxProt];
 
-                if constexpr(useNonDefaultCoefficients)
-                {
-                    score_raw += nonDefaultCoeffs[0]      * vinaGaussComponent(distance, 0.0, 0.5);
-                    score_raw += nonDefaultCoeffs[1]     * vinaGaussComponent(distance, 3.0, 2.0);
-                    score_raw += nonDefaultCoeffs[2]   * vinaRepulsionComponent(distance, 0.0);
+                if constexpr(useNonDefaultCoefficients) {
+                    score_raw += nonDefaultCoeffs[0] * vinaGaussComponent(distance, 0.0, 0.5);
+                    score_raw += nonDefaultCoeffs[1] * vinaGaussComponent(distance, 3.0, 2.0);
+                    score_raw += nonDefaultCoeffs[2] * vinaRepulsionComponent(distance, 0.0);
                     score_raw += nonDefaultCoeffs[3] * vinaHydrophobicComponent(distance,
-                                                                                           atom1AtomicNumber, atom1AtomVariant,
-                                                                                           atom2AtomicNumber, atom2AtomVariant);
+                                                                                atom1AtomicNumber, atom1AtomVariant,
+                                                                                atom2AtomicNumber, atom2AtomVariant);
 
-                    score_raw += nonDefaultCoeffs[4]    * vinaHydrogenComponent(distance,
-                                                                                        atom1AtomicNumber, atom1AtomVariant,
-                                                                                        atom2AtomicNumber, atom2AtomVariant);
-                }else {
-                    score_raw += VinaClassic::coeff_gauss1      * vinaGaussComponent(distance, 0.0, 0.5);
-                    score_raw += VinaClassic::coeff_gauss2      * vinaGaussComponent(distance, 3.0, 2.0);
-                    score_raw += VinaClassic::coeff_repulsion   * vinaRepulsionComponent(distance, 0.0);
+                    score_raw += nonDefaultCoeffs[4] * vinaHydrogenComponent(distance,
+                                                                             atom1AtomicNumber, atom1AtomVariant,
+                                                                             atom2AtomicNumber, atom2AtomVariant);
+                } else {
+                    score_raw += VinaClassic::coeff_gauss1 * vinaGaussComponent(distance, 0.0, 0.5);
+                    score_raw += VinaClassic::coeff_gauss2 * vinaGaussComponent(distance, 3.0, 2.0);
+                    score_raw += VinaClassic::coeff_repulsion * vinaRepulsionComponent(distance, 0.0);
                     score_raw += VinaClassic::coeff_hydrophobic * vinaHydrophobicComponent(distance,
-                                                                                           atom1AtomicNumber, atom1AtomVariant,
-                                                                                           atom2AtomicNumber, atom2AtomVariant);
+                                                                                           atom1AtomicNumber,
+                                                                                           atom1AtomVariant,
+                                                                                           atom2AtomicNumber,
+                                                                                           atom2AtomVariant);
 
-                    score_raw += VinaClassic::coeff_hydrogen    * vinaHydrogenComponent(distance,
-                                                                                        atom1AtomicNumber, atom1AtomVariant,
-                                                                                        atom2AtomicNumber, atom2AtomVariant);
+                    score_raw += VinaClassic::coeff_hydrogen * vinaHydrogenComponent(distance,
+                                                                                     atom1AtomicNumber,
+                                                                                     atom1AtomVariant,
+                                                                                     atom2AtomicNumber,
+                                                                                     atom2AtomVariant);
+                }
+
+
+            } // for
+        } // for
+
+        double final_score = score_raw / (1 + (VinaClassic::coeff_entropic * ligand.num_rotatable_bond));
+        return final_score;
+    }
+
+    template<bool OnlyIntermolecular, bool useNonDefaultCoefficients>
+    double VinaLikeIntermolecularScoringFunction_vectorized(const iConformer_Vectorized& ligand_, iTransform& transform,
+                                                            const iProtein_vectorized& protein,
+                                                            std::array<double, VinaLike_numCoefficients> nonDefaultCoeffs) {
+
+        assert(ligand_.x.entriesCount() != 0);
+        assert(protein.x.entriesCount() != 0);
+
+        if (std::abs(transform.rota.norm() - 1) > 0.1) {
+            transform.rota.normalize();
+        }
+
+        assert(transform.bondRotationsAngles.size() == ligand_.num_rotatable_bond);
+
+        double score_raw = 0;
+
+        iConformer_Vectorized ligand = ligand_;
+        applyBondRotationInPlace(ligand, transform);
+
+        const double xProtCenter = protein.center_x;
+        const double yProtCenter = protein.center_y;
+        const double zProtCenter = protein.center_z;
+
+        if constexpr(!OnlyIntermolecular) // C++17
+        {
+
+            for (unsigned int idxLig1 = 0; idxLig1 < ligand.x.vectorsCount(); ++idxLig1) {
+                for (unsigned int idxLig2 = idxLig1; idxLig2 < ligand.x.vectorsCount(); ++idxLig2) {
+
+                    const Vc::Vector<double> x_diff = ligand.x.vector(idxLig1) - ligand.x.vector(idxLig2);
+                    const Vc::Vector<double> y_diff = ligand.y.vector(idxLig1) - ligand.y.vector(idxLig2);
+                    const Vc::Vector<double> z_diff = ligand.z.vector(idxLig1) - ligand.z.vector(idxLig2);
+                    const Vc::Vector<double> squared_sum = (x_diff * x_diff) + (y_diff * y_diff) + (z_diff * z_diff);
+                    const Vc::Vector<double> distances_raw = Vc::sqrt(squared_sum);
+
+                    const Vc::Vector<double> distances = distanceFromRawDistance(distance_raw,
+                                                                                 ligand.atomicRadius.vector(idxLig),
+                                                                                 ligand.atomicRadius.vector(idxLig2));
+
+                    score_raw += VinaClassic::coeff_repulsion * vinaRepulsionComponent(distances, 0.0);
+
+
+                }
+
+            }
+        }
+
+        for (unsigned int idxLig = 0; idxLig < ligand.x.vectorsCount(); ++idxLig) {
+            for (unsigned int idxProt = 0; idxProt < protein.x.vectorsCount(); idxProt++) {
+                Vc::Vector<double> xLig, yLig, zLig;
+                xLig = ligand.x.vector(idxLig);
+                yLig = ligand.y.vector(idxLig);
+                zLig = ligand.z.vector(idxLig);
+
+                applyRigidTransformInPlace(xLig, yLig, zLig, transform);
+
+                const Vc::Vector<double> xsquared_disttoProtCenter = Vc::exp(2 * Vc::log(xLig - xProtCenter));
+                const Vc::Vector<double> ysquared_disttoProtCenter = Vc::exp(2 * Vc::log(yLig - yProtCenter));
+                const Vc::Vector<double> zsquared_disttoProtCenter = Vc::exp(2 * Vc::log(zLig - zProtCenter));
+
+                const Vc::Vector<double> distancesToProtCenter = Vc::sqrt(xsquared_disttoProtCenter
+                                                                          + ysquared_disttoProtCenter
+                                                                          + zsquared_disttoProtCenter);
+
+                const Vc::Vector<double> tooFarFromCenterPenalty = Vc::iif(
+                        distanceToProteinCenter > (protein.radius - 1),
+                        Vc::exp(4 * Vc::log(distancesToProtCenter - protein.radius)) + 10,
+                        0.0);
+
+                score_raw += tooFarFromCenterPenalty.sum();
+
+
+                const Vc::Vector<double> xProt = protein.x.vector(idxProt);
+                const Vc::Vector<double> yProt = protein.y.vector(idxProt);
+                const Vc::Vector<double> zProt = protein.z.vector(idxProt);
+
+                const Vc::Vector<double> xsquared = Vc::exp(2 * Vc::log(xLig - xProt));
+                const Vc::Vector<double> ysquared = Vc::exp(2 * Vc::log(yLig - yProt));
+                const Vc::Vector<double> zsquared = Vc::exp(2 * Vc::log(zLig - zProt));
+
+                const Vc::Vector<double> rawDistances = Vc::sqrt(xsquared + ysquared + zsquared);
+
+
+
+                if(Vc::all_of(rawDistances >= VinaClassic::interaction_cutoff))
+                {
+                    /*
+                     * Theoretically, this helps because atoms which are close in idx are ~ close in position
+                     * So all_of will be true a non negigible fraction of the time
+                     * TODO : benchmark this versus just the mask
+                     */
+                    continue;
+                }
+
+                // If we have some higher and some lower than the cutoff, we we mask them at the end (?)
+                auto cutOffMask = rawDistances >= VinaClassic::interaction_cutoff;
+
+                const Vc::Vector<double> distances = distanceFromRawDistance(rawDistances,
+                                                                             ligand.atomicRadius.vector(idxLig),
+                                                                             protein.atomicRadius.vector(idxProt));
+
+                const Vc::Vector<unsigned char> atom1AtomicNumber = ligand.type.vector(idxLig);
+                const Vc::Vector<unsigned int>  atom1AtomVariant = ligand.variant.vector(idxLig);
+                const Vc::Vector<unsigned char> atom2AtomicNumber = protein.type.vector(idxProt);
+                const Vc::Vector<unsigned int>  atom2AtomVariant = protein.variant.vector(idxProt);
+
+                if constexpr(useNonDefaultCoefficients) {
+                    score_raw += nonDefaultCoeffs[0] * vinaGaussComponent(distance, 0.0, 0.5);
+                    score_raw += nonDefaultCoeffs[1] * vinaGaussComponent(distance, 3.0, 2.0);
+                    score_raw += nonDefaultCoeffs[2] * vinaRepulsionComponent(distance, 0.0);
+                    score_raw += nonDefaultCoeffs[3] * vinaHydrophobicComponent(distance,
+                                                                                atom1AtomicNumber, atom1AtomVariant,
+                                                                                atom2AtomicNumber, atom2AtomVariant);
+
+                    score_raw += nonDefaultCoeffs[4] * vinaHydrogenComponent(distance,
+                                                                             atom1AtomicNumber, atom1AtomVariant,
+                                                                             atom2AtomicNumber, atom2AtomVariant);
+                } else {
+                    score_raw += VinaClassic::coeff_gauss1 * vinaGaussComponent(distance, 0.0, 0.5);
+                    score_raw += VinaClassic::coeff_gauss2 * vinaGaussComponent(distance, 3.0, 2.0);
+                    score_raw += VinaClassic::coeff_repulsion * vinaRepulsionComponent(distance, 0.0);
+                    score_raw += VinaClassic::coeff_hydrophobic * vinaHydrophobicComponent(distance,
+                                                                                           atom1AtomicNumber,
+                                                                                           atom1AtomVariant,
+                                                                                           atom2AtomicNumber,
+                                                                                           atom2AtomVariant);
+
+                    score_raw += VinaClassic::coeff_hydrogen * vinaHydrogenComponent(distance,
+                                                                                     atom1AtomicNumber,
+                                                                                     atom1AtomVariant,
+                                                                                     atom2AtomicNumber,
+                                                                                     atom2AtomVariant);
+                }
+
+            }
+        }
+
+
+        for (unsigned int idxLig = 0; idxLig < ligand.x.size(); idxLig++) {
+            for (unsigned int idxProt = 0; idxProt < protein.x.size(); idxProt++) {
+
+                if constexpr(useNonDefaultCoefficients) {
+                    score_raw += nonDefaultCoeffs[0] * vinaGaussComponent(distance, 0.0, 0.5);
+                    score_raw += nonDefaultCoeffs[1] * vinaGaussComponent(distance, 3.0, 2.0);
+                    score_raw += nonDefaultCoeffs[2] * vinaRepulsionComponent(distance, 0.0);
+                    score_raw += nonDefaultCoeffs[3] * vinaHydrophobicComponent(distance,
+                                                                                atom1AtomicNumber, atom1AtomVariant,
+                                                                                atom2AtomicNumber, atom2AtomVariant);
+
+                    score_raw += nonDefaultCoeffs[4] * vinaHydrogenComponent(distance,
+                                                                             atom1AtomicNumber, atom1AtomVariant,
+                                                                             atom2AtomicNumber, atom2AtomVariant);
+                } else {
+                    score_raw += VinaClassic::coeff_gauss1 * vinaGaussComponent(distance, 0.0, 0.5);
+                    score_raw += VinaClassic::coeff_gauss2 * vinaGaussComponent(distance, 3.0, 2.0);
+                    score_raw += VinaClassic::coeff_repulsion * vinaRepulsionComponent(distance, 0.0);
+                    score_raw += VinaClassic::coeff_hydrophobic * vinaHydrophobicComponent(distance,
+                                                                                           atom1AtomicNumber,
+                                                                                           atom1AtomVariant,
+                                                                                           atom2AtomicNumber,
+                                                                                           atom2AtomVariant);
+
+                    score_raw += VinaClassic::coeff_hydrogen * vinaHydrogenComponent(distance,
+                                                                                     atom1AtomicNumber,
+                                                                                     atom1AtomVariant,
+                                                                                     atom2AtomicNumber,
+                                                                                     atom2AtomVariant);
                 }
 
 
@@ -127,11 +312,11 @@ namespace SmolDock::Score {
     }
 
 
-    VinaLike::VinaLike(const iConformer &startingConformation_,
-                                                     const iProtein &p,
-                                                     const iTransform &initialTransform_,
-                                                     double differential_epsilon_,
-                                                     bool useNonDefaultCoefficient)  :
+    VinaLike::VinaLike(const iConformer& startingConformation_,
+                       const iProtein& p,
+                       const iTransform& initialTransform_,
+                       double differential_epsilon_,
+                       bool useNonDefaultCoefficient) :
             useNonDefaultCoefficient(useNonDefaultCoefficient),
             startingConformation(startingConformation_),
             prot(p),
@@ -150,7 +335,7 @@ namespace SmolDock::Score {
     }
 
 
-    double VinaLike::Evaluate(const arma::mat &x) {
+    double VinaLike::Evaluate(const arma::mat& x) {
         assert(x.n_rows == this->numberOfParamInState);
 
         iTransform tr = this->internalToExternalRepr(x);
@@ -158,13 +343,15 @@ namespace SmolDock::Score {
         normalizeQuaternionInPlace(tr.rota);
 
         double score_ = this->useNonDefaultCoefficient ?
-                        VinaLikeIntermolecularScoringFunction<false,true>(this->startingConformation, tr, this->prot, this->nonDefaultCoefficients)
-                                                       : VinaLikeIntermolecularScoringFunction<false,false>(this->startingConformation, tr, this->prot);
+                        VinaLikeIntermolecularScoringFunction<false, true>(this->startingConformation, tr, this->prot,
+                                                                           this->nonDefaultCoefficients)
+                                                       : VinaLikeIntermolecularScoringFunction<false, false>(
+                        this->startingConformation, tr, this->prot);
 
         return score_;
     }
 
-    double VinaLike::EvaluateWithGradient(const arma::mat &x, arma::mat &grad) {
+    double VinaLike::EvaluateWithGradient(const arma::mat& x, arma::mat& grad) {
 
         assert(!x.has_nan());
         assert(!grad.has_nan());
@@ -175,8 +362,10 @@ namespace SmolDock::Score {
         normalizeQuaternionInPlace(tr.rota);
 
         double score_ = this->useNonDefaultCoefficient ?
-                          VinaLikeIntermolecularScoringFunction<false,true>(this->startingConformation, tr, this->prot, this->nonDefaultCoefficients)
-                        : VinaLikeIntermolecularScoringFunction<false,false>(this->startingConformation, tr, this->prot);
+                        VinaLikeIntermolecularScoringFunction<false, true>(this->startingConformation, tr, this->prot,
+                                                                           this->nonDefaultCoefficients)
+                                                       : VinaLikeIntermolecularScoringFunction<false, false>(
+                        this->startingConformation, tr, this->prot);
 
 
         // Translation
@@ -184,8 +373,11 @@ namespace SmolDock::Score {
             iTransform transform_dx = tr;
             transform_dx.transl.x() += this->differential_epsilon;
             const double gradScore = this->useNonDefaultCoefficient ?
-                              VinaLikeIntermolecularScoringFunction<false,true>(this->startingConformation, transform_dx, this->prot, this->nonDefaultCoefficients)
-                                                             : VinaLikeIntermolecularScoringFunction<false,false>(this->startingConformation, transform_dx, this->prot);
+                                     VinaLikeIntermolecularScoringFunction<false, true>(this->startingConformation,
+                                                                                        transform_dx, this->prot,
+                                                                                        this->nonDefaultCoefficients)
+                                                                    : VinaLikeIntermolecularScoringFunction<false, false>(
+                            this->startingConformation, transform_dx, this->prot);
             grad[0] = gradScore - score_;
         }
 
@@ -193,8 +385,11 @@ namespace SmolDock::Score {
             iTransform transform_dy = tr;
             transform_dy.transl.y() += this->differential_epsilon;
             const double gradScore = this->useNonDefaultCoefficient ?
-                               VinaLikeIntermolecularScoringFunction<false,true>(this->startingConformation, transform_dy, this->prot, this->nonDefaultCoefficients)
-                                                              : VinaLikeIntermolecularScoringFunction<false,false>(this->startingConformation, transform_dy, this->prot);
+                                     VinaLikeIntermolecularScoringFunction<false, true>(this->startingConformation,
+                                                                                        transform_dy, this->prot,
+                                                                                        this->nonDefaultCoefficients)
+                                                                    : VinaLikeIntermolecularScoringFunction<false, false>(
+                            this->startingConformation, transform_dy, this->prot);
             grad[1] = gradScore - score_;
         }
 
@@ -202,8 +397,11 @@ namespace SmolDock::Score {
             iTransform transform_dz = tr;
             transform_dz.transl.z() += this->differential_epsilon;
             const double gradScore = this->useNonDefaultCoefficient ?
-                               VinaLikeIntermolecularScoringFunction<false,true>(this->startingConformation, transform_dz, this->prot, this->nonDefaultCoefficients)
-                                                              : VinaLikeIntermolecularScoringFunction<false,false>(this->startingConformation, transform_dz, this->prot);
+                                     VinaLikeIntermolecularScoringFunction<false, true>(this->startingConformation,
+                                                                                        transform_dz, this->prot,
+                                                                                        this->nonDefaultCoefficients)
+                                                                    : VinaLikeIntermolecularScoringFunction<false, false>(
+                            this->startingConformation, transform_dz, this->prot);
             grad[2] = gradScore - score_;
         }
 
@@ -214,8 +412,11 @@ namespace SmolDock::Score {
             transform_dqs.rota.w() += this->differential_epsilon;
             normalizeQuaternionInPlace(transform_dqs.rota);
             const double gradScore = this->useNonDefaultCoefficient ?
-                               VinaLikeIntermolecularScoringFunction<false,true>(this->startingConformation, transform_dqs, this->prot, this->nonDefaultCoefficients)
-                                                              : VinaLikeIntermolecularScoringFunction<false,false>(this->startingConformation, transform_dqs, this->prot);
+                                     VinaLikeIntermolecularScoringFunction<false, true>(this->startingConformation,
+                                                                                        transform_dqs, this->prot,
+                                                                                        this->nonDefaultCoefficients)
+                                                                    : VinaLikeIntermolecularScoringFunction<false, false>(
+                            this->startingConformation, transform_dqs, this->prot);
             grad[3] = gradScore - score_;
         }
 
@@ -224,8 +425,11 @@ namespace SmolDock::Score {
             transform_dqx.rota.x() += this->differential_epsilon;
             normalizeQuaternionInPlace(transform_dqx.rota);
             const double gradScore = this->useNonDefaultCoefficient ?
-                               VinaLikeIntermolecularScoringFunction<false,true>(this->startingConformation, transform_dqx, this->prot, this->nonDefaultCoefficients)
-                                                              : VinaLikeIntermolecularScoringFunction<false,false>(this->startingConformation, transform_dqx, this->prot);
+                                     VinaLikeIntermolecularScoringFunction<false, true>(this->startingConformation,
+                                                                                        transform_dqx, this->prot,
+                                                                                        this->nonDefaultCoefficients)
+                                                                    : VinaLikeIntermolecularScoringFunction<false, false>(
+                            this->startingConformation, transform_dqx, this->prot);
             grad[4] = gradScore - score_;
 
         }
@@ -235,8 +439,11 @@ namespace SmolDock::Score {
             transform_dqy.rota.x() += this->differential_epsilon;
             normalizeQuaternionInPlace(transform_dqy.rota);
             const double gradScore = this->useNonDefaultCoefficient ?
-                                     VinaLikeIntermolecularScoringFunction<false,true>(this->startingConformation, transform_dqy, this->prot, this->nonDefaultCoefficients)
-                                                                    : VinaLikeIntermolecularScoringFunction<false,false>(this->startingConformation, transform_dqy, this->prot);
+                                     VinaLikeIntermolecularScoringFunction<false, true>(this->startingConformation,
+                                                                                        transform_dqy, this->prot,
+                                                                                        this->nonDefaultCoefficients)
+                                                                    : VinaLikeIntermolecularScoringFunction<false, false>(
+                            this->startingConformation, transform_dqy, this->prot);
             grad[5] = gradScore - score_;
         }
 
@@ -245,8 +452,11 @@ namespace SmolDock::Score {
             transform_dqz.rota.x() += this->differential_epsilon;
             normalizeQuaternionInPlace(transform_dqz.rota);
             const double gradScore = this->useNonDefaultCoefficient ?
-                                     VinaLikeIntermolecularScoringFunction<false,true>(this->startingConformation, transform_dqz, this->prot, this->nonDefaultCoefficients)
-                                                                    : VinaLikeIntermolecularScoringFunction<false,false>(this->startingConformation, transform_dqz, this->prot);
+                                     VinaLikeIntermolecularScoringFunction<false, true>(this->startingConformation,
+                                                                                        transform_dqz, this->prot,
+                                                                                        this->nonDefaultCoefficients)
+                                                                    : VinaLikeIntermolecularScoringFunction<false, false>(
+                            this->startingConformation, transform_dqz, this->prot);
             grad[6] = gradScore - score_;
         }
 
@@ -254,8 +464,11 @@ namespace SmolDock::Score {
             iTransform transform_dbondrot = tr;
             transform_dbondrot.bondRotationsAngles[i] += this->differential_epsilon;
             const double gradScore = this->useNonDefaultCoefficient ?
-                                     VinaLikeIntermolecularScoringFunction<false,true>(this->startingConformation, transform_dbondrot, this->prot, this->nonDefaultCoefficients)
-                                                                    : VinaLikeIntermolecularScoringFunction<false,false>(this->startingConformation, transform_dbondrot, this->prot);
+                                     VinaLikeIntermolecularScoringFunction<false, true>(this->startingConformation,
+                                                                                        transform_dbondrot, this->prot,
+                                                                                        this->nonDefaultCoefficients)
+                                                                    : VinaLikeIntermolecularScoringFunction<false, false>(
+                            this->startingConformation, transform_dbondrot, this->prot);
             grad[7 + i] = gradScore - score_;
 
         }
@@ -283,7 +496,7 @@ namespace SmolDock::Score {
         return this->externalToInternalRepr(this->initialTransform);
     }
 
-    iConformer VinaLike::getConformerForParamMatrix(const arma::mat &x) {
+    iConformer VinaLike::getConformerForParamMatrix(const arma::mat& x) {
         assert(x.n_rows == this->numberOfParamInState);
 
         iTransform tr = this->internalToExternalRepr(x);
@@ -300,7 +513,7 @@ namespace SmolDock::Score {
         return this->numberOfParamInState;
     }
 
-    std::vector<std::tuple<std::string, double>> VinaLike::EvaluateSubcomponents(const arma::mat &x) {
+    std::vector<std::tuple<std::string, double>> VinaLike::EvaluateSubcomponents(const arma::mat& x) {
         std::vector<std::tuple<std::string, double>> ret;
 
         assert(x.n_rows == this->numberOfParamInState);
@@ -310,9 +523,11 @@ namespace SmolDock::Score {
 
         assert(!this->startingConformation.x.empty());
         assert(!this->prot.x.empty());
-        assert(std::abs(tr.rota.norm() - 1) < 0.01);
         assert(tr.bondRotationsAngles.size() == this->startingConformation.num_rotatable_bond);
 
+        if (std::abs(tr.rota.norm() - 1) > 0.1) {
+            tr.rota.normalize();
+        }
 
         double gauss1_total = 0.0;
         double gauss2_total = 0.0;
@@ -333,7 +548,7 @@ namespace SmolDock::Score {
         for (unsigned int idxLig = 0; idxLig < ligand.x.size(); idxLig++) {
             for (unsigned int idxLig2 = idxLig; idxLig2 < ligand.x.size(); idxLig2++) {
 
-                if(idxLig == idxLig2)
+                if (idxLig == idxLig2)
                     continue;
 
                 Eigen::Vector3d LigDistance = {ligand.x[idxLig] - ligand.x[idxLig2],
@@ -346,12 +561,12 @@ namespace SmolDock::Score {
 
 //                score_raw += VinaClassic::coeff_gauss1      * vinaGaussComponent(distance, 0.0, 0.5);
 //                score_raw += VinaClassic::coeff_gauss2      * vinaGaussComponent(distance, 3.0, 2.0);
-                intramolecular_repuls_total +=  vinaRepulsionComponent(distance, 0.0);
+                intramolecular_repuls_total += vinaRepulsionComponent(distance, 0.0);
 
             }
         }
 
-        intramolecular_score = VinaClassic::coeff_repulsion   * intramolecular_repuls_total;
+        intramolecular_score = VinaClassic::coeff_repulsion * intramolecular_repuls_total;
 
 
         for (unsigned int idxLig = 0; idxLig < ligand.x.size(); idxLig++) {
@@ -378,22 +593,23 @@ namespace SmolDock::Score {
                 if (rawDist >= VinaClassic::interaction_cutoff)
                     continue;
 
-                double distance = distanceFromRawDistance(rawDist,  ligand.atomicRadius[idxLig], this->prot.atomicRadius[idxProt]);
+                double distance = distanceFromRawDistance(rawDist, ligand.atomicRadius[idxLig],
+                                                          this->prot.atomicRadius[idxProt]);
 
-                const unsigned char atom1AtomicNumber = ligand.type[idxLig];
+                const unsigned int atom1AtomicNumber = ligand.type[idxLig];
                 const unsigned int atom1AtomVariant = ligand.variant[idxLig];
-                const unsigned char atom2AtomicNumber = this->prot.type[idxProt];
+                const unsigned int atom2AtomicNumber = this->prot.type[idxProt];
                 const unsigned int atom2AtomVariant = this->prot.variant[idxProt];
 
                 gauss1_total += vinaGaussComponent(distance, 0.0, 0.5);
                 gauss2_total += vinaGaussComponent(distance, 3.0, 2.0);
                 repulsion_total += vinaRepulsionComponent(distance, 0.0);
-                hydrophobic_total+= vinaHydrophobicComponent(distance,
-                                                           atom1AtomicNumber, atom1AtomVariant,
-                                                           atom2AtomicNumber, atom2AtomVariant);
+                hydrophobic_total += vinaHydrophobicComponent(distance,
+                                                              atom1AtomicNumber, atom1AtomVariant,
+                                                              atom2AtomicNumber, atom2AtomVariant);
                 hydrogen_total += vinaHydrogenComponent(distance,
-                                                           atom1AtomicNumber, atom1AtomVariant,
-                                                           atom2AtomicNumber, atom2AtomVariant);
+                                                        atom1AtomicNumber, atom1AtomVariant,
+                                                        atom2AtomicNumber, atom2AtomVariant);
 
             } // for
         } // for
@@ -401,20 +617,19 @@ namespace SmolDock::Score {
 
         double score_sum = 0.0;
 
-        if(this->useNonDefaultCoefficient)
-        {
+        if (this->useNonDefaultCoefficient) {
             ret.emplace_back(std::make_tuple("NonDefaultCoeffs", 1.0));
-            score_sum =   this->nonDefaultCoefficients[0] * gauss1_total
-                          + this->nonDefaultCoefficients[1] * gauss2_total
-                          + this->nonDefaultCoefficients[2] * repulsion_total
-                          + this->nonDefaultCoefficients[3] * hydrophobic_total
-                          + this->nonDefaultCoefficients[4] * hydrogen_total;
-        }else {
-            score_sum =   VinaClassic::coeff_gauss1 * gauss1_total
-                          + VinaClassic::coeff_gauss2 * gauss2_total
-                          + VinaClassic::coeff_repulsion * repulsion_total
-                          + VinaClassic::coeff_hydrophobic * hydrophobic_total
-                          + VinaClassic::coeff_hydrogen * hydrogen_total;
+            score_sum = this->nonDefaultCoefficients[0] * gauss1_total
+                        + this->nonDefaultCoefficients[1] * gauss2_total
+                        + this->nonDefaultCoefficients[2] * repulsion_total
+                        + this->nonDefaultCoefficients[3] * hydrophobic_total
+                        + this->nonDefaultCoefficients[4] * hydrogen_total;
+        } else {
+            score_sum = VinaClassic::coeff_gauss1 * gauss1_total
+                        + VinaClassic::coeff_gauss2 * gauss2_total
+                        + VinaClassic::coeff_repulsion * repulsion_total
+                        + VinaClassic::coeff_hydrophobic * hydrophobic_total
+                        + VinaClassic::coeff_hydrogen * hydrogen_total;
         }
 
 
@@ -432,7 +647,7 @@ namespace SmolDock::Score {
         return ret;
     }
 
-    double VinaLike::EvaluateOnlyIntermolecular(const arma::mat &x) {
+    double VinaLike::EvaluateOnlyIntermolecular(const arma::mat& x) {
         assert(x.n_rows == this->numberOfParamInState);
 
         iTransform tr = this->internalToExternalRepr(x);
@@ -441,8 +656,10 @@ namespace SmolDock::Score {
 
         // Template parameter controls whether onlyIntermolecular interaction are taken into account. Here we want true
         double score_ = this->useNonDefaultCoefficient ?
-                        VinaLikeIntermolecularScoringFunction<false,true>(this->startingConformation, tr, this->prot, this->nonDefaultCoefficients)
-                                                       : VinaLikeIntermolecularScoringFunction<false,false>(this->startingConformation, tr, this->prot);
+                        VinaLikeIntermolecularScoringFunction<false, true>(this->startingConformation, tr, this->prot,
+                                                                           this->nonDefaultCoefficients)
+                                                       : VinaLikeIntermolecularScoringFunction<false, false>(
+                        this->startingConformation, tr, this->prot);
 
 
         return score_;
@@ -453,13 +670,12 @@ namespace SmolDock::Score {
     }
 
     std::vector<std::string> VinaLike::getCoefficientsNames() {
-        return std::vector<std::string>(this->coefficientsNames.begin(),this->coefficientsNames.end());
+        return std::vector<std::string>(this->coefficientsNames.begin(), this->coefficientsNames.end());
     }
 
     std::vector<double> VinaLike::getCurrentCoefficients() {
-        if(this->useNonDefaultCoefficient)
-        {
-            return std::vector<double>(this->nonDefaultCoefficients.begin(),this->nonDefaultCoefficients.end());
+        if (this->useNonDefaultCoefficient) {
+            return std::vector<double>(this->nonDefaultCoefficients.begin(), this->nonDefaultCoefficients.end());
         }
         return {VinaClassic::coeff_gauss1, VinaClassic::coeff_gauss2,
                 VinaClassic::coeff_repulsion, VinaClassic::coeff_hydrophobic,
@@ -467,14 +683,14 @@ namespace SmolDock::Score {
     }
 
     bool VinaLike::setNonDefaultCoefficients(std::vector<double> coeffs) {
-        if(coeffs.size() != this->numCoefficients)
-        {
-            BOOST_LOG_TRIVIAL(error) << "Trying to set " << this->numCoefficients <<" coefficients with vector of " << coeffs.size() << " values.";
+        if (coeffs.size() != this->numCoefficients) {
+            BOOST_LOG_TRIVIAL(error) << "Trying to set " << this->numCoefficients << " coefficients with vector of "
+                                     << coeffs.size() << " values.";
             return false;
         }
-        if(this->useNonDefaultCoefficient == false)
-        {
-            BOOST_LOG_TRIVIAL(error) << "Trying to set non default coefficient, but this scoring function was constructed with default coefficients only.";
+        if (this->useNonDefaultCoefficient == false) {
+            BOOST_LOG_TRIVIAL(error)
+                << "Trying to set non default coefficient, but this scoring function was constructed with default coefficients only.";
             BOOST_LOG_TRIVIAL(error) << "Check the parameters passed to the scoring function constructor.";
             return false;
         }

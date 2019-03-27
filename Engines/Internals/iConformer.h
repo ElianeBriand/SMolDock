@@ -24,6 +24,7 @@
 #include <vector>
 #include <memory>
 
+#include <Vc/Vc>
 
 #include "iTransform.h"
 
@@ -54,6 +55,50 @@ namespace SmolDock {
         std::vector<unsigned int> bondEnds2Index;
         std::vector<std::vector<unsigned int> > rotatableGroups;
 
+    };
+
+    struct iConformer_Vectorized {
+
+        iConformer_Vectorized() = delete;
+
+        iConformer_Vectorized(const iConformer& iconformer) :
+                num_rotatable_bond(iconformer.num_rotatable_bond),
+                centroidNormalizingTransform(iconformer.centroidNormalizingTransform),
+                x(iconformer.x.size()),
+                y(iconformer.y.size()),
+                z(iconformer.z.size()),
+
+                atomicRadius(iconformer.atomicRadius.size()),
+                type(iconformer.type.size()),
+                variant(iconformer.variant.size()),
+
+                bondEnds1Index(iconformer.bondEnds1Index),
+                bondEnds2Index(iconformer.bondEnds2Index),
+                rotatableGroups(iconformer.rotatableGroups) {
+            for (unsigned int i = 0; i < x.entriesCount(); ++i) {
+                x.scalar(i) = iconformer.x[i];
+                y.scalar(i) = iconformer.y[i];
+                z.scalar(i) = iconformer.z[i];
+
+                atomicRadius.scalar(i) = iconformer.atomicRadius[i];
+                type.scalar(i) = iconformer.type[i];
+                variant.scalar(i) = iconformer.variant[i];
+            }
+        }
+
+        unsigned int num_rotatable_bond;
+
+        Eigen::Translation<double, 3> centroidNormalizingTransform;
+
+        Vc::Memory<Vc::Vector<double>> x, y, z;
+
+        Vc::Memory<Vc::Vector<double>> atomicRadius;
+        Vc::Memory<Vc::Vector<unsigned char>> type;
+        Vc::Memory<Vc::Vector<unsigned int>> variant;
+
+        std::vector<unsigned int> bondEnds1Index;
+        std::vector<unsigned int> bondEnds2Index;
+        std::vector<std::vector<unsigned int> > rotatableGroups;
     };
 
 }

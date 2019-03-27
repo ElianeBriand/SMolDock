@@ -444,7 +444,7 @@ namespace SmolDock {
                                                  [atom1Index, atom2Index](const std::tuple<int,int> &e) {
                                                      // RotatableBondRemover and variant put both orientation in the bondsListToAvoid
                                                      // so we need only check one
-                                                     return (atom1Index == std::get<0>(e)) && (atom2Index == std::get<1>(e));
+                                                     return (int(atom1Index) == std::get<0>(e)) && (int(atom2Index) == std::get<1>(e));
                                                  });
             if(avoidListMatchit != std::end(bondsListToAvoid))
             {
@@ -681,7 +681,7 @@ namespace SmolDock {
 
             assert(current_Atom != nullptr);
 
-            conformer.type[(*atom_it)->getIdx()] = static_cast<unsigned char>((*atom_it)->getAtomicNum());
+            conformer.type[(*atom_it)->getIdx()] = static_cast<unsigned int>((*atom_it)->getAtomicNum());
             conformer.variant[(*atom_it)->getIdx()] = static_cast<unsigned int>(current_Atom->variant);
 
             const RDGeom::Point3D &position = rdkit_conformer.getAtomPos((*atom_it)->getIdx());

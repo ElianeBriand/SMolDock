@@ -22,14 +22,19 @@ namespace SmolDock::Score {
 
 
     template<bool OnlyIntermolecular, bool useNonDefaultCoefficients> // default : false
-    double VinaLikeCovalentReversibleIntermolecularScoringFunction(const iConformer &ligand_, const iTransform &transform,
+    double VinaLikeCovalentReversibleIntermolecularScoringFunction(const iConformer &ligand_, iTransform &transform,
                                                  const iProtein &protein,
                                                  std::array<double, VinaLikeCovalentReversible_numCoefficients> nonDefaultCoeffs) {
 
         assert(!ligand_.x.empty());
         assert(!protein.x.empty());
-        assert(std::abs(transform.rota.norm() - 1) < 0.1);
+
         assert(transform.bondRotationsAngles.size() == ligand_.num_rotatable_bond);
+
+        if(std::abs(transform.rota.norm() - 1) > 0.1) {
+            transform.rota.normalize();
+        }
+
 
         double score_raw = 0;
 
@@ -92,9 +97,9 @@ namespace SmolDock::Score {
                 const double distance = distanceFromRawDistance(rawDist, ligand.atomicRadius[idxLig],
                                                                 protein.atomicRadius[idxProt]);
 
-                const unsigned char atom1AtomicNumber = ligand.type[idxLig];
+                const unsigned int atom1AtomicNumber = ligand.type[idxLig];
                 const unsigned int atom1AtomVariant = ligand.variant[idxLig];
-                const unsigned char atom2AtomicNumber = protein.type[idxProt];
+                const unsigned int atom2AtomicNumber = protein.type[idxProt];
                 const unsigned int atom2AtomVariant = protein.variant[idxProt];
 
 
@@ -381,14 +386,17 @@ namespace SmolDock::Score {
     }
 
     template<bool useNonDefaultCoefficients> // default : false
-    std::vector<std::tuple<std::string, double>> VinaLikeCovalentReversibleIntermolecularComponents(const iConformer &conformer, const iTransform &transform,
+    std::vector<std::tuple<std::string, double>> VinaLikeCovalentReversibleIntermolecularComponents(const iConformer &conformer, iTransform &transform,
                                                                                                     const iProtein &protein,
                                                                                                     std::array<double, VinaLikeCovalentReversible_numCoefficients> nonDefaultCoeffs)
     {
         assert(!conformer.x.empty());
         assert(!protein.x.empty());
-        assert(std::abs(transform.rota.norm() - 1) < 0.1);
         assert(transform.bondRotationsAngles.size() == conformer.num_rotatable_bond);
+
+        if(std::abs(transform.rota.norm() - 1) > 0.1) {
+            transform.rota.normalize();
+        }
 
         std::vector<std::tuple<std::string, double>> ret;
 
@@ -462,9 +470,9 @@ namespace SmolDock::Score {
                 const double distance = distanceFromRawDistance(rawDist, ligand.atomicRadius[idxLig],
                                                           protein.atomicRadius[idxProt]);
 
-                const unsigned char atom1AtomicNumber = ligand.type[idxLig];
+                const unsigned int atom1AtomicNumber = ligand.type[idxLig];
                 const unsigned int atom1AtomVariant = ligand.variant[idxLig];
-                const unsigned char atom2AtomicNumber = protein.type[idxProt];
+                const unsigned int atom2AtomicNumber = protein.type[idxProt];
                 const unsigned int atom2AtomVariant = protein.variant[idxProt];
 
 

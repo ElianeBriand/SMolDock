@@ -254,7 +254,7 @@ set_target_properties(smoldock PROPERTIES LINK_FLAGS " -Wl,--no-undefined -Wl,--
 TARGET_LINK_LIBRARIES(smoldock libsmoldock)
 TARGET_LINK_LIBRARIES(smoldock pthread)
 target_link_libraries(smoldock boost_log bprinter tbb_static pthread)
-#target_link_libraries(smoldock Vc)
+target_link_libraries(smoldock Vc)
 
 add_executable(mpicalibrator Frontends/mpicalibrator.cpp ${MPI_SOURCE_LIST})
 set_target_properties(mpicalibrator PROPERTIES LINK_FLAGS " -static  -Wl,--no-undefined -Wl,--as-needed ")
@@ -263,7 +263,7 @@ TARGET_LINK_LIBRARIES(mpicalibrator -pthread)
 target_link_libraries(mpicalibrator boost_log boost_mpi boost_serialization bprinter tbb_static pthread )
 TARGET_LINK_LIBRARIES(mpicalibrator -L/home/briand/local/lib -Wl,-rpath -Wl,/home/briand/local/lib  -Wl,--enable-new-dtags)
 TARGET_LINK_LIBRARIES(mpicalibrator mpi open-rte open-pal m dl z rt util)
-#target_link_libraries(mpicalibrator Vc)
+target_link_libraries(mpicalibrator Vc)
 
 #if(MPI_COMPILE_FLAGS)
 #
@@ -283,7 +283,7 @@ set_target_properties(smoldock_dyn PROPERTIES LINK_FLAGS " -Wl,--no-undefined -W
 TARGET_LINK_LIBRARIES(smoldock_dyn libsmoldock)
 TARGET_LINK_LIBRARIES(smoldock_dyn pthread)
 target_link_libraries(smoldock_dyn -Wl,-Bstatic boost_log  boost_filesystem boost_program_options -Wl,-Bdynamic)
-#target_link_libraries(smoldock_dyn Vc )
+target_link_libraries(smoldock_dyn Vc )
 
 
 add_executable(vina_refiner Frontends/vina_refiner.cpp)
@@ -291,14 +291,14 @@ set_target_properties(vina_refiner PROPERTIES LINK_FLAGS " -Wl,--no-undefined -W
 TARGET_LINK_LIBRARIES(vina_refiner libsmoldock)
 TARGET_LINK_LIBRARIES(vina_refiner pthread)
 target_link_libraries(vina_refiner boost_log boost_filesystem boost_program_options)
-#target_link_libraries(vina_refiner Vc)
+target_link_libraries(vina_refiner Vc)
 
 add_executable(smoldockCLI Frontends/cli_interface.cpp)
 set_target_properties(smoldockCLI PROPERTIES LINK_FLAGS " -Wl,--no-undefined -Wl,--as-needed  -static   ")
 TARGET_LINK_LIBRARIES(smoldockCLI libsmoldock)
 TARGET_LINK_LIBRARIES(smoldockCLI pthread)
 target_link_libraries(smoldockCLI boost_log boost_filesystem boost_program_options)
-#target_link_libraries(smoldockCLI Vc)
+target_link_libraries(smoldockCLI Vc)
 
 
 # For Intel VTune/Profiler tools, you need this if you generate a static executable

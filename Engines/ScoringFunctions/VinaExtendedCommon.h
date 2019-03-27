@@ -10,11 +10,11 @@
 
 namespace SmolDock::Score::VinaExtended {
 
-    constexpr const double coeff_CovalentReversible = -25.0;
+    constexpr const double coeff_CovalentReversible = -20.0;
 
 
-    __attribute__((const)) inline double covalentReversibleComponent(const double distance, const unsigned char atomicNumberAtom1, const unsigned int variantFlagsAtom1,
-                                                                     const unsigned char atomicNumberAtom2, const unsigned int variantFlagsAtom2) noexcept
+    __attribute__((const)) inline double covalentReversibleComponent(const double distance, const unsigned int atomicNumberAtom1, const unsigned int variantFlagsAtom1,
+                                                                     const unsigned int atomicNumberAtom2, const unsigned int variantFlagsAtom2) noexcept
     {
         if (covalentReversibleBondingPossible(atomicNumberAtom1, variantFlagsAtom1, atomicNumberAtom2,
                                               variantFlagsAtom2)) // Hydrogen donor and acceptor
@@ -45,8 +45,8 @@ namespace SmolDock::Score::VinaExtended {
     }
 
     __attribute__((const)) inline double RepulsionExceptForCovalentComponent(const double distance, const double cutoff,
-                                                                             const unsigned char atomicNumberAtom1, const unsigned int variantFlagsAtom1,
-                                                                             const unsigned char atomicNumberAtom2, const unsigned int variantFlagsAtom2) noexcept {
+                                                                             const unsigned int atomicNumberAtom1, const unsigned int variantFlagsAtom1,
+                                                                             const unsigned int atomicNumberAtom2, const unsigned int variantFlagsAtom2) noexcept {
         if (! covalentReversibleBondingPossible(atomicNumberAtom1, variantFlagsAtom1, atomicNumberAtom2,
                                               variantFlagsAtom2))
         {
