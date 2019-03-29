@@ -39,6 +39,7 @@
 
 #include <Utilities/Version.h>
 #include <Utilities/Calibration/Calibrator.h>
+#include <Utilities/AdvancedErrorHandling.h>
 
 #include <thread>
 
@@ -72,6 +73,7 @@ using boost::lexical_cast;
 
 int main() {
 
+    setupAdvancedErrorHandling();
 
     //        tbb::task_scheduler_init tbbInit(std::thread::hardware_concurrency());
 

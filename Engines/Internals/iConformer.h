@@ -84,6 +84,15 @@ namespace SmolDock {
                 type.scalar(i) = iconformer.type[i];
                 variant.scalar(i) = iconformer.variant[i];
             }
+
+            for (unsigned int i = 0; i < x.vectorsCount(); ++i) {
+                for (unsigned int j = 0; j < Vc::Vector<double>::Size ; ++j) {
+                    std::cout << " -> " << i << ", " << j << std::endl;
+                    std::cout << "    " << x.vector(i)[j] << " <-> " << iconformer.x[Vc::Vector<double>::Size * i + j] << std::endl;
+                    std::cout << "    " << y.vector(i)[j] << " <-> " << iconformer.y[Vc::Vector<double>::Size * i + j] << std::endl;
+                    std::cout << "    " << z.vector(i)[j] << " <-> " << iconformer.z[Vc::Vector<double>::Size * i + j] << std::endl;
+                }
+            }
         }
 
         unsigned int num_rotatable_bond;

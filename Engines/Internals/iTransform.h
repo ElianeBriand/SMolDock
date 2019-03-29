@@ -9,7 +9,7 @@
 #include <memory>
 #include <array>
 #include <cmath>
-#include <cassert>
+#include <boost/assert.hpp>
 
 #include <Eigen/Core>
 #include <Eigen/Dense>

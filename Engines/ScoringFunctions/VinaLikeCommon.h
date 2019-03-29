@@ -8,7 +8,7 @@
 #include <boost/log/trivial.hpp>
 
 #include <cmath>
-#include <cassert>
+#include <boost/assert.hpp>
 
 #include <Vc/Vc>
 
@@ -36,20 +36,19 @@ namespace SmolDock::Score {
                atomicNumber == 53; // I
     }
 
-    __attribute__((const)) inline auto
-    isHydrophobic(const Vc::Vector<unsigned int> atomicNumber, const Vc::Vector<unsigned int> variantFlags) noexcept {
-
-        // FIXME : this is suboptimal, but I don't know how to do this with Vc
-        const Vc::Vector<unsigned int> apolarFlag;
-        for (unsigned int i = 0; i < variantFlags.size(); ++i) {
-            apolarFlag[i] = (variantFlags[i] & ((const unsigned int) Atom::AtomVariant::apolar)) ? 0 : 1;
+    __attribute__((const)) inline double
+    isHydrophobic_prepareMask(const unsigned int atomicNumber, const unsigned int variantFlags) noexcept {
+        if((atomicNumber == 6 && (variantFlags & ((const unsigned int) Atom::AtomVariant::apolar))) ||
+           // C && apolar
+           atomicNumber == 9 || // F
+           atomicNumber == 17 || // Cl
+           atomicNumber == 35 || // Br
+           atomicNumber == 53) {
+            return 1.0;
+        }else {
+            return 0.0;
         }
 
-        return (atomicNumber == 6 && (apolarFlag == 1)) ||  // C && apolar
-               atomicNumber == 9 || // F
-               atomicNumber == 17 || // Cl
-               atomicNumber == 35 || // Br
-               atomicNumber == 53; // I
     }
 
 
@@ -79,6 +78,18 @@ namespace SmolDock::Score {
                             unsigned char atomicNumber2, unsigned int atom2VariantFlags) noexcept {
         return hydrogenDonorAcceptorPair(atomicNumber1, atom1VariantFlags, atomicNumber2, atom2VariantFlags) ||
                hydrogenDonorAcceptorPair(atomicNumber2, atom2VariantFlags, atomicNumber1, atom1VariantFlags);
+    }
+
+    __attribute__((const)) inline double
+    hydrogenBondingPossible_prepareMask(const unsigned int atomicNumber1, const unsigned int atom1VariantFlags,
+                            unsigned char atomicNumber2, unsigned int atom2VariantFlags) noexcept {
+        if(hydrogenDonorAcceptorPair(atomicNumber1, atom1VariantFlags, atomicNumber2, atom2VariantFlags) ||
+           hydrogenDonorAcceptorPair(atomicNumber2, atom2VariantFlags, atomicNumber1, atom1VariantFlags)) {
+            return 1.0;
+        }else {
+            return 0.0;
+        }
+
     }
 
     // ////////////////// VINA CODE END //////////////////////////////////////////////////
@@ -157,7 +168,7 @@ namespace SmolDock::Score {
                        const double multiplier) noexcept {
         // x^y = pow(x,y) = exp(y*log(x))
         const Vc::Vector<double> centeredDist = (distance - offset) / multiplier;
-        const Vc::Vector<double> squaredDist = Vc::exp(2 * Vc::log(centeredDist)); // pow(centeredDist, 2)
+        const Vc::Vector<double> squaredDist = centeredDist * centeredDist;
         return Vc::exp(-1 * squaredDist);
     }
 
@@ -169,10 +180,9 @@ namespace SmolDock::Score {
         }
     }
 
-    __attribute__((const)) inline double vinaRepulsionComponent(const Vc::Vector<double> distance,
+    __attribute__((const)) inline Vc::Vector<double> vinaRepulsionComponent(const Vc::Vector<double> distance,
                                                                             const double cutoff) noexcept {
-        const Vc::Vector<double> vec = Vc::iif (distance < cutoff, Vc::exp(2 * Vc::log(distance)), Vc::Vector<double>(Vc::Zero)); // iff -> cond ? x : y
-        return vec.sum();
+        return  Vc::iif ((0.0 < distance) &&  (distance < cutoff), distance * distance, Vc::Vector<double>(Vc::Zero)); // iff -> cond ? x : y
     }
 
     __attribute__((const)) inline double
@@ -192,6 +202,23 @@ namespace SmolDock::Score {
         return 0.0;
     }
 
+    __attribute__((const)) inline Vc::Vector<double>
+    vinaHydrophobicComponent(const Vc::Vector<double> distances, Vc::Mask<double> hydrophobicMask) noexcept {
+
+        Vc::Vector<double> retVect(Vc::Vector<double>::Zero());
+
+        Vc::Mask<double> oneFiveDistMask = distances < 1.5;
+        Vc::Mask<double> zeroFiveDistMask = distances <= 0.5;
+
+        Vc::Mask<double> hydrophobicAndzeroFive = (hydrophobicMask && zeroFiveDistMask);
+        Vc::Mask<double> hydrophobicAndoneFive = (hydrophobicMask && oneFiveDistMask) && (!zeroFiveDistMask);
+
+        Vc::where(hydrophobicAndzeroFive)(retVect) = 1.0;
+        Vc::where(hydrophobicAndoneFive)(retVect) = (-distances / 0.7);
+
+        return retVect;
+    }
+
     __attribute__((const)) inline double
     vinaHydrogenComponent(const double distance, const unsigned int atomicNumberAtom1,
                           const unsigned int variantFlagsAtom1,
@@ -207,6 +234,22 @@ namespace SmolDock::Score {
             }
         }
         return 0.0;
+    }
+
+    __attribute__((const)) inline Vc::Vector<double>
+    vinaHydrogenComponent(const Vc::Vector<double> distances, Vc::Mask<double> hydrogenMask) noexcept {
+        Vc::Vector<double> retVect(Vc::Vector<double>::Zero());
+
+        Vc::Mask<double> zeroDistMask = distances < 0;
+        Vc::Mask<double> zeroSevenDistMask = distances < -0.7;
+
+        Vc::Mask<double> hydrogenAndZeroSeven = (hydrogenMask && zeroSevenDistMask);
+        Vc::Mask<double> hydrogenAndZero = (hydrogenMask && zeroDistMask) && (!zeroSevenDistMask);
+
+        Vc::where(hydrogenAndZeroSeven)(retVect) = 1.0;
+        Vc::where(hydrogenAndZero)(retVect) = (-distances / 0.7);
+
+        return retVect;
     }
 
 

@@ -98,7 +98,7 @@ namespace SmolDock {
             std::array<double, numCoefficients> nonDefaultCoefficients;
 
             inline iTransform internalToExternalRepr(const arma::mat &x_) const {
-                assert(x_.n_rows == 7);
+                BOOST_ASSERT(x_.n_rows == 7);
 
                 iTransform tr_;
 

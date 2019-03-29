@@ -406,7 +406,7 @@ namespace SmolDock::Calibration {
                 this->indexShufflingArray.push_back(j);
             }
         } else {
-            assert(this->workItemList->size() == indexShufflingArray_.size());
+            BOOST_ASSERT(this->workItemList->size() == indexShufflingArray_.size());
             this->indexShufflingArray = indexShufflingArray_;
         }
     }
@@ -533,7 +533,7 @@ namespace SmolDock::Calibration {
         auto local_scoreComponents = std::make_shared<std::vector<std::vector<std::tuple<std::string, double>>>>();
 
         std::vector<double> coeffs = this->startingCoeffs;
-        assert(this->idxOfCoeffsToCalibrate.size() == x.n_rows);
+        BOOST_ASSERT(this->idxOfCoeffsToCalibrate.size() == x.n_rows);
         for (unsigned int j = 0; j < this->idxOfCoeffsToCalibrate.size(); ++j) {
             coeffs[this->idxOfCoeffsToCalibrate[j]] = x[j];
         }
@@ -563,7 +563,7 @@ namespace SmolDock::Calibration {
     }
 
     void CalibratorEnsmallenLayer::Gradient(const arma::mat &x, const size_t i, arma::mat &g, const size_t batchSize) {
-        assert(x.n_rows == g.n_rows);
+        BOOST_ASSERT(x.n_rows == g.n_rows);
         double score_at_x = this->doRealEvaluate(x, i, batchSize);
         for (unsigned int j = 0; j < x.n_rows; ++j) {
             arma::mat gradientX = x;

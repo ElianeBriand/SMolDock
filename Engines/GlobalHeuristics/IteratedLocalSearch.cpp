@@ -69,7 +69,7 @@ namespace SmolDock::Heuristics {
         score_ = optimizer->getScore();
         currentState = optimizer->getRawResultMatrix();
 
-        assert(score_ < oldScore);
+        BOOST_ASSERT(score_ < oldScore);
 
         while (true) {
 

@@ -24,9 +24,19 @@ namespace SmolDock::Score {
 
     template<bool OnlyIntermolecular = false, bool useNonDefaultCoefficients = false>
     double VinaLikeIntermolecularScoringFunction_vectorized(const iConformer_Vectorized &conformer, iTransform &transform,
-                                                 const iProtein &protein,
+                                                 const iProtein_vectorized &protein,
                                                  std::array<double, VinaLike_numCoefficients> nonDefaultCoeffs = std::array<double, VinaLike_numCoefficients>());
 
+
+    double force_Instantiate_VinaLikeIntermolecularScoringFunction(const iConformer &conformer, iTransform &transform,
+                                                                        const iProtein &protein,
+                                                                        std::array<double, VinaLike_numCoefficients> nonDefaultCoeffs = std::array<double, VinaLike_numCoefficients>());
+    double force_Instantiate_VinaLikeIntermolecularScoringFunction_vectorized(const iConformer_Vectorized &conformer, iTransform &transform,
+                                                                                   const iProtein_vectorized &protein,
+                                                                                   std::array<double, VinaLike_numCoefficients> nonDefaultCoeffs = std::array<double, VinaLike_numCoefficients>());
+
+//    std::function<double(const iConformer &,iTransform &, const iProtein &, std::array<double, VinaLike_numCoefficients>)> force_instantiate_1;
+//    std::function<double(const iConformer_Vectorized &,iTransform &, const iProtein_vectorized &, std::array<double, VinaLike_numCoefficients>)> force_instantiate_2;
 
     class VinaLike : public ScoringFunction {
     public:
@@ -74,7 +84,7 @@ namespace SmolDock::Score {
         bool useNonDefaultCoefficient = false;
 
         inline iTransform internalToExternalRepr(const arma::mat &x_) const {
-            assert(x_.n_rows == this->numberOfParamInState);
+            BOOST_ASSERT(x_.n_rows == this->numberOfParamInState);
 
             iTransform tr_ = iTransform();
 

@@ -167,7 +167,7 @@ set(SOURCE_LIST Structures/Structure.cpp
         Utilities/CSVReader.cpp Utilities/CSVReader.h
         Utilities/SMARTSMatcher.cpp
         Utilities/SMARTSMatcher.h
-        )
+        Utilities/AdvancedErrorHandling.cpp Utilities/AdvancedErrorHandling.h)
 
 set(MPI_SOURCE_LIST Utilities/Calibration/MPICalibratorDirector.cpp
         Utilities/Calibration/MPICalibratorDirector.h
@@ -188,7 +188,7 @@ set(PY_EXPORT_SOURCE_LIST Frontends/Python/PyStructures.cpp
 
 ##################" REMOVE THIS FOR PROD ##########################""
 add_compile_definitions(SMOLDOCK_VERBOSE_DEBUG)
-
+add_compile_definitions(BOOST_ENABLE_ASSERT_HANDLER)
 
 add_library(bprinter STATIC
         Dependencies/bprinter/table_printer.h
@@ -207,7 +207,7 @@ target_compile_definitions(smoldock_object PUBLIC ARMA_DONT_USE_WRAPPER)
 
 add_custom_command(
         OUTPUT partially_linked_smoldock.o
-        COMMAND ld -Ur $<TARGET_OBJECTS:smoldock_object>   -o partially_linked_smoldock.o -Bstatic -L${RDKIT_ROOT}/lib -L /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.0/ -L /usr/lib -L /home/briand/local/lib/ -L /home/briand/local/lib64/ -L /home/briand/local/lib/gcc/x86_64-pc-linux-gnu/8.2.0/ -llapack  -lblas -lgfortran -lquadmath  -lgfortran   -lRDKitStatic -lRDKitForceFieldHelpers_static -lRDKitForceField_static -lRDKitStatic -L${Boost_LIBRARY_DIRS} -lboost_log -lboost_log_setup  -lboost_system -lboost_serialization -lboost_log -lboost_system -lboost_filesystem -lboost_date_time -lboost_thread -lboost_regex -lboost_mpi
+        COMMAND ld -Ur $<TARGET_OBJECTS:smoldock_object>   -o partially_linked_smoldock.o -Bstatic -L${RDKIT_ROOT}/lib -L /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.0/ -L /usr/lib -L /home/briand/local/lib/ -L /home/briand/local/lib64/ -L /home/briand/local/lib/gcc/x86_64-pc-linux-gnu/8.2.0/ -llapack  -lblas -lgfortran -lquadmath  -lgfortran   -lRDKitStatic -lunwind -lRDKitForceFieldHelpers_static -lRDKitForceField_static -lRDKitStatic -L${Boost_LIBRARY_DIRS} -lboost_log -lboost_log_setup  -lboost_system -lboost_serialization -lboost_log -lboost_system -lboost_filesystem -lboost_date_time -lboost_thread -lboost_regex -lboost_mpi
         DEPENDS $<TARGET_OBJECTS:smoldock_object>
         COMMAND_EXPAND_LISTS
 )
@@ -250,14 +250,14 @@ target_link_libraries(libsmoldockPIC -Wl,-Bdynamic -Wl,-lpthread -Wl,-ldl)
 
 
 add_executable(smoldock Frontends/main.cpp)
-set_target_properties(smoldock PROPERTIES LINK_FLAGS " -Wl,--no-undefined -Wl,--as-needed -static    ")
+set_target_properties(smoldock PROPERTIES LINK_FLAGS " -Wl,--no-undefined -Wl,--as-needed -static  -Wl,-allow-multiple-definition   ")
 TARGET_LINK_LIBRARIES(smoldock libsmoldock)
 TARGET_LINK_LIBRARIES(smoldock pthread)
 target_link_libraries(smoldock boost_log bprinter tbb_static pthread)
 target_link_libraries(smoldock Vc)
 
 add_executable(mpicalibrator Frontends/mpicalibrator.cpp ${MPI_SOURCE_LIST})
-set_target_properties(mpicalibrator PROPERTIES LINK_FLAGS " -static  -Wl,--no-undefined -Wl,--as-needed ")
+set_target_properties(mpicalibrator PROPERTIES LINK_FLAGS " -static  -Wl,--no-undefined -Wl,--as-needed -Wl,-allow-multiple-definition ")
 TARGET_LINK_LIBRARIES(mpicalibrator libsmoldock )
 TARGET_LINK_LIBRARIES(mpicalibrator -pthread)
 target_link_libraries(mpicalibrator boost_log boost_mpi boost_serialization bprinter tbb_static pthread )

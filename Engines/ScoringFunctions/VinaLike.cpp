@@ -16,6 +16,21 @@
 
 namespace SmolDock::Score {
 
+    double force_Instantiate_VinaLikeIntermolecularScoringFunction(const iConformer& conformer, iTransform& transform,
+                                                                   const iProtein& protein,
+                                                                   std::array<double, VinaLike_numCoefficients> nonDefaultCoeffs) {
+        return VinaLikeIntermolecularScoringFunction<true, false>(conformer, transform, protein, nonDefaultCoeffs);
+    }
+
+    double force_Instantiate_VinaLikeIntermolecularScoringFunction_vectorized(
+            const iConformer_Vectorized& conformer, iTransform& transform,
+            const iProtein_vectorized& protein,
+            std::array<double, VinaLike_numCoefficients> nonDefaultCoeffs) {
+        return VinaLikeIntermolecularScoringFunction_vectorized < true, false >
+                                                                                           (conformer, transform, protein, nonDefaultCoeffs
+                                                                                           );
+    }
+
     const std::array<std::string, VinaLike::numCoefficients>
             VinaLike::coefficientsNames = {"Gauss1", "Gauss2", "RepulsionExceptCovalent", "Hydrophobic", "Hydrogen"};
 
@@ -24,19 +39,19 @@ namespace SmolDock::Score {
                                                  const iProtein& protein,
                                                  std::array<double, VinaLike_numCoefficients> nonDefaultCoeffs) {
 
-        assert(!ligand_.x.empty());
-        assert(!protein.x.empty());
+        BOOST_ASSERT(!ligand_.x.empty());
+        BOOST_ASSERT(!protein.x.empty());
 
         if (std::abs(transform.rota.norm() - 1) > 0.1) {
             transform.rota.normalize();
         }
 
-        assert(transform.bondRotationsAngles.size() == ligand_.num_rotatable_bond);
+        BOOST_ASSERT(transform.bondRotationsAngles.size() == ligand_.num_rotatable_bond);
 
-        double score_raw = 0;
+        volatile double score_raw = 0;
 
         iConformer ligand = ligand_;
-        applyBondRotationInPlace(ligand, transform);
+        //applyBondRotationInPlace(ligand, transform);
 
         Eigen::Vector3d ProtCenterPosition = {protein.center_x, protein.center_y, protein.center_z};
 
@@ -60,6 +75,7 @@ namespace SmolDock::Score {
         }
 
 
+        int found = 0;
         for (unsigned int idxLig = 0; idxLig < ligand.x.size(); idxLig++) {
             for (unsigned int idxProt = 0; idxProt < protein.x.size(); idxProt++) {
 
@@ -92,6 +108,31 @@ namespace SmolDock::Score {
                 const double radToRemove = (atomicRadiusLig + atomicRadiusProt);
 
                 const double distance = rawDist - radToRemove;
+
+                if(found < 1 ) {
+                    std::cout << "NV rawDist :" << rawDist << std::endl;
+                    std::cout << "NV distances :" << distance << std::endl;
+                    std::cout << "globalIdxLig " << idxLig << std::endl;
+                    std::cout << "globalIdxProt " << idxProt << std::endl;
+
+                    Eigen::Vector3d LigPositionPlus1 = {ligand.x[idxLig+1], ligand.y[idxLig+1], ligand.z[idxLig+1]};
+                    applyRigidTransformInPlace(LigPositionPlus1, transform);
+
+                    Eigen::Vector3d LigPositionPlus2 = {ligand.x[idxLig+1], ligand.y[idxLig+1], ligand.z[idxLig+1]};
+                    applyRigidTransformInPlace(LigPositionPlus1, transform);
+
+                    std::cout << "xLig :" << LigPosition.x() << ", " << LigPositionPlus1.x() << ", " << LigPositionPlus2.x() << std::endl;
+                    std::cout << "xLigOrig :" << ligand.x[idxLig] << ", " << ligand.x[idxLig+1] << ", " << ligand.x[idxLig+2] << std::endl;
+                    std::cout << "yLig :" << LigPosition.y() << ", " << LigPositionPlus1.y() << ", " << LigPositionPlus2.y() << std::endl;
+                    std::cout << "zLig :" << LigPosition.z() << ", " << LigPositionPlus1.z() << ", " << LigPositionPlus2.z() << std::endl;
+                    std::cout << "xProt :" << protein.x[idxProt] << ", " << protein.x[idxProt+1] << ", " << protein.x[idxProt+2] << std::endl;
+                    std::cout << "yProt :" << protein.y[idxProt] << ", " << protein.y[idxProt+1] << ", " << protein.y[idxProt+2] << std::endl;
+                    std::cout << "zProt :" << protein.z[idxProt] << ", " << protein.z[idxProt+1] << ", " << protein.z[idxProt+2] << std::endl;
+                    found++;
+                }
+                if(idxLig == 2 && idxProt == 2) {
+
+                }
 
                 const unsigned int atom1AtomicNumber = ligand.type[idxLig];
                 const unsigned int atom1AtomVariant = ligand.variant[idxLig];
@@ -139,19 +180,19 @@ namespace SmolDock::Score {
                                                             const iProtein_vectorized& protein,
                                                             std::array<double, VinaLike_numCoefficients> nonDefaultCoeffs) {
 
-        assert(ligand_.x.entriesCount() != 0);
-        assert(protein.x.entriesCount() != 0);
+        BOOST_ASSERT(ligand_.x.entriesCount() != 0);
+        BOOST_ASSERT(protein.x.entriesCount() != 0);
 
         if (std::abs(transform.rota.norm() - 1) > 0.1) {
             transform.rota.normalize();
         }
 
-        assert(transform.bondRotationsAngles.size() == ligand_.num_rotatable_bond);
+        BOOST_ASSERT(transform.bondRotationsAngles.size() == ligand_.num_rotatable_bond);
 
         double score_raw = 0;
 
         iConformer_Vectorized ligand = ligand_;
-        applyBondRotationInPlace(ligand, transform);
+        //applyBondRotationInPlace(ligand, transform);
 
         const double xProtCenter = protein.center_x;
         const double yProtCenter = protein.center_y;
@@ -169,11 +210,11 @@ namespace SmolDock::Score {
                     const Vc::Vector<double> squared_sum = (x_diff * x_diff) + (y_diff * y_diff) + (z_diff * z_diff);
                     const Vc::Vector<double> distances_raw = Vc::sqrt(squared_sum);
 
-                    const Vc::Vector<double> distances = distanceFromRawDistance(distance_raw,
-                                                                                 ligand.atomicRadius.vector(idxLig),
+                    const Vc::Vector<double> distances = distanceFromRawDistance(distances_raw,
+                                                                                 ligand.atomicRadius.vector(idxLig1),
                                                                                  ligand.atomicRadius.vector(idxLig2));
 
-                    score_raw += VinaClassic::coeff_repulsion * vinaRepulsionComponent(distances, 0.0);
+                    score_raw += VinaClassic::coeff_repulsion * vinaRepulsionComponent(distances, 0.0).sum();
 
 
                 }
@@ -181,27 +222,82 @@ namespace SmolDock::Score {
             }
         }
 
+
+        int atomicNumber_VectorIdx_ligand = -1;
+        int atomicNumber_VectorIdx_protein = -1;
+        int atomVariant_VectorIdx_ligand = -1;
+        int atomVariant_VectorIdx_protein = -1;
+
+        Vc::Memory<Vc::Vector<unsigned char>, Vc::Vector<double>::Size> ligandAtomicNumInformation;
+        Vc::Memory<Vc::Vector<unsigned int>, Vc::Vector<double>::Size> ligandAtomVariantInformation;
+
+        Vc::Memory<Vc::Vector<unsigned char>, Vc::Vector<double>::Size> proteinAtomicNumInformation;
+        Vc::Memory<Vc::Vector<unsigned int>, Vc::Vector<double>::Size> proteinAtomVariantInformation;
+
+        int foundFirst = 0;
+
         for (unsigned int idxLig = 0; idxLig < ligand.x.vectorsCount(); ++idxLig) {
+            const unsigned int globalIdx_Ligand = (idxLig * Vc::Vector<double>::Size);
+            const unsigned char offsetUChar_Ligand = globalIdx_Ligand % Vc::Vector<unsigned char>::Size;
+            const unsigned char offsetUInt_Ligand = globalIdx_Ligand % Vc::Vector<unsigned int>::Size;
+
+            const unsigned int offset_UChar_ligand = offsetUChar_Ligand % Vc::Vector<double>::Size;
+            if (offset_UChar_ligand == 0) {
+                // we are at the start of a
+                atomicNumber_VectorIdx_ligand++;
+                ligandAtomicNumInformation = ligand.type.vector(atomicNumber_VectorIdx_ligand);
+            }
+
+            const unsigned int offset_UInt_ligand = offsetUInt_Ligand % Vc::Vector<double>::Size;
+            if (offset_UInt_ligand == 0) {
+                // we are at the start of a
+                atomVariant_VectorIdx_ligand++;
+                ligandAtomVariantInformation = ligand.variant.vector(atomVariant_VectorIdx_ligand);
+            }
+
+            Vc::Vector<double> ligandHydrophobicMaskMaker;
+            for (unsigned int k = 0; k < Vc::Vector<double>::Size; ++k) {
+                ligandHydrophobicMaskMaker[k] = isHydrophobic_prepareMask(
+                        ligandAtomicNumInformation[offset_UChar_ligand + k],
+                        ligandAtomVariantInformation[offset_UChar_ligand + k]
+                );
+            }
+
+            Vc::Mask<double> ligandHydrophobicMask = (ligandHydrophobicMaskMaker == Vc::Vector<double>::One());
+
             for (unsigned int idxProt = 0; idxProt < protein.x.vectorsCount(); idxProt++) {
                 Vc::Vector<double> xLig, yLig, zLig;
                 xLig = ligand.x.vector(idxLig);
                 yLig = ligand.y.vector(idxLig);
                 zLig = ligand.z.vector(idxLig);
 
+                if(foundFirst < 1) {
+                    std::cout << "xLigOrig :" << xLig << std::endl;
+                }
+
+
                 applyRigidTransformInPlace(xLig, yLig, zLig, transform);
 
-                const Vc::Vector<double> xsquared_disttoProtCenter = Vc::exp(2 * Vc::log(xLig - xProtCenter));
-                const Vc::Vector<double> ysquared_disttoProtCenter = Vc::exp(2 * Vc::log(yLig - yProtCenter));
-                const Vc::Vector<double> zsquared_disttoProtCenter = Vc::exp(2 * Vc::log(zLig - zProtCenter));
+
+
+
+                const Vc::Vector<double> xsquared_disttoProtCenter = (xLig - xProtCenter) * (xLig - xProtCenter);
+                const Vc::Vector<double> ysquared_disttoProtCenter = (yLig - yProtCenter) * (yLig - yProtCenter);
+                const Vc::Vector<double> zsquared_disttoProtCenter = (zLig - zProtCenter) * (zLig - zProtCenter);
+
+
 
                 const Vc::Vector<double> distancesToProtCenter = Vc::sqrt(xsquared_disttoProtCenter
                                                                           + ysquared_disttoProtCenter
                                                                           + zsquared_disttoProtCenter);
 
+
                 const Vc::Vector<double> tooFarFromCenterPenalty = Vc::iif(
-                        distanceToProteinCenter > (protein.radius - 1),
+                        distancesToProtCenter > (protein.radius - 1),
                         Vc::exp(4 * Vc::log(distancesToProtCenter - protein.radius)) + 10,
-                        0.0);
+                        Vc::Vector<double>(Vc::Zero));
+
+
 
                 score_raw += tooFarFromCenterPenalty.sum();
 
@@ -210,16 +306,14 @@ namespace SmolDock::Score {
                 const Vc::Vector<double> yProt = protein.y.vector(idxProt);
                 const Vc::Vector<double> zProt = protein.z.vector(idxProt);
 
-                const Vc::Vector<double> xsquared = Vc::exp(2 * Vc::log(xLig - xProt));
-                const Vc::Vector<double> ysquared = Vc::exp(2 * Vc::log(yLig - yProt));
-                const Vc::Vector<double> zsquared = Vc::exp(2 * Vc::log(zLig - zProt));
+                const Vc::Vector<double> xsquared = (xLig - xProt) * (xLig - xProt);
+                const Vc::Vector<double> ysquared = (yLig - yProt) * (yLig - yProt);
+                const Vc::Vector<double> zsquared = (zLig - zProt) * (zLig - zProt);
 
                 const Vc::Vector<double> rawDistances = Vc::sqrt(xsquared + ysquared + zsquared);
 
 
-
-                if(Vc::all_of(rawDistances >= VinaClassic::interaction_cutoff))
-                {
+                if (Vc::all_of(rawDistances >= VinaClassic::interaction_cutoff)) {
                     /*
                      * Theoretically, this helps because atoms which are close in idx are ~ close in position
                      * So all_of will be true a non negigible fraction of the time
@@ -228,85 +322,88 @@ namespace SmolDock::Score {
                     continue;
                 }
 
-                // If we have some higher and some lower than the cutoff, we we mask them at the end (?)
-                auto cutOffMask = rawDistances >= VinaClassic::interaction_cutoff;
+                // If we have some higher and some lower than the cutoff, we we mask them at the end in .sum()
+                auto cutOffMask = rawDistances < VinaClassic::interaction_cutoff;
 
                 const Vc::Vector<double> distances = distanceFromRawDistance(rawDistances,
                                                                              ligand.atomicRadius.vector(idxLig),
                                                                              protein.atomicRadius.vector(idxProt));
 
-                const Vc::Vector<unsigned char> atom1AtomicNumber = ligand.type.vector(idxLig);
-                const Vc::Vector<unsigned int>  atom1AtomVariant = ligand.variant.vector(idxLig);
-                const Vc::Vector<unsigned char> atom2AtomicNumber = protein.type.vector(idxProt);
-                const Vc::Vector<unsigned int>  atom2AtomVariant = protein.variant.vector(idxProt);
+
+                const unsigned int globalIdx_Prot = (idxLig * Vc::Vector<double>::Size);
+                const unsigned char offsetUChar_Prot = globalIdx_Prot % Vc::Vector<unsigned char>::Size;
+                const unsigned char offsetUInt_Prot = globalIdx_Prot % Vc::Vector<unsigned int>::Size;
+
+
+                if(foundFirst < 1) {
+                    std::cout << "V rawDistances :" << rawDistances << std::endl;
+                    std::cout << "V distances :" << distances << std::endl;
+                    std::cout << "globalIdxLig " << globalIdx_Ligand << std::endl;
+                    std::cout << "globalIdxProt " << globalIdx_Prot << std::endl;
+                    std::cout << "xLig :" << xLig << std::endl;
+                    std::cout << "yLig :" << yLig << std::endl;
+                    std::cout << "zLig :" << zLig << std::endl;
+                    std::cout << "xProt :" << xProt << std::endl;
+                    std::cout << "yProt :" << yProt << std::endl;
+                    std::cout << "zProt :" << zProt << std::endl;
+                    foundFirst++;
+                }
+
+                const unsigned int offset_UChar_protein = offsetUChar_Prot % Vc::Vector<double>::Size;
+                if (offset_UChar_protein == 0) {
+                    // we are at the start of a
+                    atomicNumber_VectorIdx_protein++;
+                    proteinAtomicNumInformation = protein.type.vector(atomicNumber_VectorIdx_protein);
+                }
+
+                const unsigned int offset_UInt_protein = offsetUInt_Prot % Vc::Vector<double>::Size;
+                if (offset_UInt_protein == 0) {
+                    // we are at the start of a
+                    atomVariant_VectorIdx_protein++;
+                    proteinAtomVariantInformation = protein.variant.vector(atomVariant_VectorIdx_ligand);
+                }
+
+
+                Vc::Vector<double> proteinHydrophobicMaskMaker;
+                for (unsigned int k = 0; k < Vc::Vector<double>::Size; ++k) {
+                    proteinHydrophobicMaskMaker[k] = isHydrophobic_prepareMask(
+                            proteinAtomicNumInformation[offset_UChar_protein + k],
+                            proteinAtomVariantInformation[offset_UInt_protein + k]
+                    );
+                }
+
+                Vc::Vector<double> HydrogenMaskMaker;
+                for (unsigned int k = 0; k < Vc::Vector<double>::Size; ++k) {
+                    ligandHydrophobicMaskMaker[k] = hydrogenBondingPossible_prepareMask(
+                            ligandAtomicNumInformation[offset_UChar_ligand + k],
+                            ligandAtomVariantInformation[offset_UChar_ligand + k],
+                            proteinAtomicNumInformation[offset_UChar_ligand + k],
+                            proteinAtomVariantInformation[offset_UChar_ligand + k]
+                    );
+                }
+
+
+                Vc::Mask<double> hydrophobicMask =
+                        (proteinHydrophobicMaskMaker == Vc::Vector<double>::One()) && ligandHydrophobicMask;
+                Vc::Mask<double> hydrogenMask = (HydrogenMaskMaker == Vc::Vector<double>::One());
+
 
                 if constexpr(useNonDefaultCoefficients) {
-                    score_raw += nonDefaultCoeffs[0] * vinaGaussComponent(distance, 0.0, 0.5);
-                    score_raw += nonDefaultCoeffs[1] * vinaGaussComponent(distance, 3.0, 2.0);
-                    score_raw += nonDefaultCoeffs[2] * vinaRepulsionComponent(distance, 0.0);
-                    score_raw += nonDefaultCoeffs[3] * vinaHydrophobicComponent(distance,
-                                                                                atom1AtomicNumber, atom1AtomVariant,
-                                                                                atom2AtomicNumber, atom2AtomVariant);
-
-                    score_raw += nonDefaultCoeffs[4] * vinaHydrogenComponent(distance,
-                                                                             atom1AtomicNumber, atom1AtomVariant,
-                                                                             atom2AtomicNumber, atom2AtomVariant);
+                    score_raw += nonDefaultCoeffs[0] * vinaGaussComponent(distances, 0.0, 0.5).sum(cutOffMask);
+                    score_raw += nonDefaultCoeffs[1] * vinaGaussComponent(distances, 3.0, 2.0).sum(cutOffMask);
+                    score_raw += nonDefaultCoeffs[2] * vinaRepulsionComponent(distances, 0.0).sum(cutOffMask);
+                    score_raw += nonDefaultCoeffs[3] * vinaHydrophobicComponent(distances, hydrophobicMask).sum(cutOffMask);
+                    score_raw += nonDefaultCoeffs[4] * vinaHydrogenComponent(distances, hydrogenMask).sum(cutOffMask);
                 } else {
-                    score_raw += VinaClassic::coeff_gauss1 * vinaGaussComponent(distance, 0.0, 0.5);
-                    score_raw += VinaClassic::coeff_gauss2 * vinaGaussComponent(distance, 3.0, 2.0);
-                    score_raw += VinaClassic::coeff_repulsion * vinaRepulsionComponent(distance, 0.0);
-                    score_raw += VinaClassic::coeff_hydrophobic * vinaHydrophobicComponent(distance,
-                                                                                           atom1AtomicNumber,
-                                                                                           atom1AtomVariant,
-                                                                                           atom2AtomicNumber,
-                                                                                           atom2AtomVariant);
-
-                    score_raw += VinaClassic::coeff_hydrogen * vinaHydrogenComponent(distance,
-                                                                                     atom1AtomicNumber,
-                                                                                     atom1AtomVariant,
-                                                                                     atom2AtomicNumber,
-                                                                                     atom2AtomVariant);
+                    score_raw += VinaClassic::coeff_gauss1 * vinaGaussComponent(distances, 0.0, 0.5).sum(cutOffMask);
+                    score_raw += VinaClassic::coeff_gauss2 * vinaGaussComponent(distances, 3.0, 2.0).sum(cutOffMask);
+                    score_raw += VinaClassic::coeff_repulsion * vinaRepulsionComponent(distances, 0.0).sum(cutOffMask);
+                    score_raw += VinaClassic::coeff_hydrophobic * vinaHydrophobicComponent(distances, hydrophobicMask).sum(cutOffMask);
+                    score_raw += VinaClassic::coeff_hydrogen * vinaHydrogenComponent(distances, hydrogenMask).sum(cutOffMask);
                 }
 
             }
         }
-
-
-        for (unsigned int idxLig = 0; idxLig < ligand.x.size(); idxLig++) {
-            for (unsigned int idxProt = 0; idxProt < protein.x.size(); idxProt++) {
-
-                if constexpr(useNonDefaultCoefficients) {
-                    score_raw += nonDefaultCoeffs[0] * vinaGaussComponent(distance, 0.0, 0.5);
-                    score_raw += nonDefaultCoeffs[1] * vinaGaussComponent(distance, 3.0, 2.0);
-                    score_raw += nonDefaultCoeffs[2] * vinaRepulsionComponent(distance, 0.0);
-                    score_raw += nonDefaultCoeffs[3] * vinaHydrophobicComponent(distance,
-                                                                                atom1AtomicNumber, atom1AtomVariant,
-                                                                                atom2AtomicNumber, atom2AtomVariant);
-
-                    score_raw += nonDefaultCoeffs[4] * vinaHydrogenComponent(distance,
-                                                                             atom1AtomicNumber, atom1AtomVariant,
-                                                                             atom2AtomicNumber, atom2AtomVariant);
-                } else {
-                    score_raw += VinaClassic::coeff_gauss1 * vinaGaussComponent(distance, 0.0, 0.5);
-                    score_raw += VinaClassic::coeff_gauss2 * vinaGaussComponent(distance, 3.0, 2.0);
-                    score_raw += VinaClassic::coeff_repulsion * vinaRepulsionComponent(distance, 0.0);
-                    score_raw += VinaClassic::coeff_hydrophobic * vinaHydrophobicComponent(distance,
-                                                                                           atom1AtomicNumber,
-                                                                                           atom1AtomVariant,
-                                                                                           atom2AtomicNumber,
-                                                                                           atom2AtomVariant);
-
-                    score_raw += VinaClassic::coeff_hydrogen * vinaHydrogenComponent(distance,
-                                                                                     atom1AtomicNumber,
-                                                                                     atom1AtomVariant,
-                                                                                     atom2AtomicNumber,
-                                                                                     atom2AtomVariant);
-                }
-
-
-            } // for
-        } // for
-
         double final_score = score_raw / (1 + (VinaClassic::coeff_entropic * ligand.num_rotatable_bond));
         return final_score;
     }
@@ -336,7 +433,7 @@ namespace SmolDock::Score {
 
 
     double VinaLike::Evaluate(const arma::mat& x) {
-        assert(x.n_rows == this->numberOfParamInState);
+        BOOST_ASSERT(x.n_rows == this->numberOfParamInState);
 
         iTransform tr = this->internalToExternalRepr(x);
 
@@ -353,10 +450,10 @@ namespace SmolDock::Score {
 
     double VinaLike::EvaluateWithGradient(const arma::mat& x, arma::mat& grad) {
 
-        assert(!x.has_nan());
-        assert(!grad.has_nan());
-        assert(x.n_rows == this->numberOfParamInState);
-        assert(grad.n_rows == this->numberOfParamInState);
+        BOOST_ASSERT(!x.has_nan());
+        BOOST_ASSERT(!grad.has_nan());
+        BOOST_ASSERT(x.n_rows == this->numberOfParamInState);
+        BOOST_ASSERT(grad.n_rows == this->numberOfParamInState);
 
         iTransform tr = this->internalToExternalRepr(x);
         normalizeQuaternionInPlace(tr.rota);
@@ -483,7 +580,7 @@ namespace SmolDock::Score {
         BOOST_LOG_TRIVIAL(debug) << "     dt: " << grad[6] << "   dx: " << grad[2];
         //*/
 
-        assert(score_ == score_); // catches NaN
+        BOOST_ASSERT(score_ == score_); // catches NaN
         return score_;
     }
 
@@ -497,7 +594,7 @@ namespace SmolDock::Score {
     }
 
     iConformer VinaLike::getConformerForParamMatrix(const arma::mat& x) {
-        assert(x.n_rows == this->numberOfParamInState);
+        BOOST_ASSERT(x.n_rows == this->numberOfParamInState);
 
         iTransform tr = this->internalToExternalRepr(x);
         tr.rota.normalize();
@@ -516,14 +613,14 @@ namespace SmolDock::Score {
     std::vector<std::tuple<std::string, double>> VinaLike::EvaluateSubcomponents(const arma::mat& x) {
         std::vector<std::tuple<std::string, double>> ret;
 
-        assert(x.n_rows == this->numberOfParamInState);
+        BOOST_ASSERT(x.n_rows == this->numberOfParamInState);
 
         iTransform tr = this->internalToExternalRepr(x);
         normalizeQuaternionInPlace(tr.rota);
 
-        assert(!this->startingConformation.x.empty());
-        assert(!this->prot.x.empty());
-        assert(tr.bondRotationsAngles.size() == this->startingConformation.num_rotatable_bond);
+        BOOST_ASSERT(!this->startingConformation.x.empty());
+        BOOST_ASSERT(!this->prot.x.empty());
+        BOOST_ASSERT(tr.bondRotationsAngles.size() == this->startingConformation.num_rotatable_bond);
 
         if (std::abs(tr.rota.norm() - 1) > 0.1) {
             tr.rota.normalize();
@@ -648,7 +745,7 @@ namespace SmolDock::Score {
     }
 
     double VinaLike::EvaluateOnlyIntermolecular(const arma::mat& x) {
-        assert(x.n_rows == this->numberOfParamInState);
+        BOOST_ASSERT(x.n_rows == this->numberOfParamInState);
 
         iTransform tr = this->internalToExternalRepr(x);
 
@@ -699,4 +796,5 @@ namespace SmolDock::Score {
         }
         return true;
     }
+
 }

@@ -57,6 +57,8 @@ namespace SmolDock::Calibration {
 
     bool MPICalibratorDirector::setupCalibration() {
 
+
+
         for (unsigned int j = 1; j < this->numProcess; ++j) {
             RegisterMessage rmsg;
             this->world.recv(j, MTags::RegisterNode, rmsg);

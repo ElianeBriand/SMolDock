@@ -48,7 +48,7 @@ namespace SmolDock {
 
         std::vector<double> x, y, z;
         std::vector<double> atomicRadius;
-        std::vector<unsigned int> type;
+        std::vector<unsigned char> type;
         std::vector<unsigned int> variant;
 
         //! Map the AAId of residues to the corresponding position of the atoms in the vector
@@ -61,6 +61,8 @@ namespace SmolDock {
         iProtein_vectorized() = delete;
 
         iProtein_vectorized(const iProtein& p) :
+                center_x(p.center_x), center_y(p.center_y), center_z(p.center_z),
+                radius(p.radius),
                 x(p.x.size()),
                 y(p.y.size()),
                 z(p.z.size()),
@@ -87,7 +89,7 @@ namespace SmolDock {
 
         Vc::Memory <Vc::Vector<double>> x, y, z;
         Vc::Memory <Vc::Vector<double>> atomicRadius;
-        Vc::Memory <Vc::Vector<unsigned int>> type;
+        Vc::Memory <Vc::Vector<unsigned char>> type;
         Vc::Memory <Vc::Vector<unsigned int>> variant;
 
         //! Map the AAId of residues to the corresponding position of the atoms in the vector

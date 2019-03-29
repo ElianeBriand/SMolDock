@@ -121,7 +121,7 @@ namespace SmolDock {
 
 
 
-            assert((axis.norm() - 1) < 0.01);
+            BOOST_ASSERT((axis.norm() - 1) < 0.01);
 
             Eigen::AngleAxis<double> rotation(rotAngleForBond, axis);
 
@@ -156,7 +156,7 @@ namespace SmolDock {
 
             axis.normalize();
 
-            assert((axis.norm() - 1) < 0.01);
+            BOOST_ASSERT((axis.norm() - 1) < 0.01);
 
             Eigen::AngleAxis<double> rotation(rotAngleForBond, axis);
 

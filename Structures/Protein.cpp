@@ -110,7 +110,7 @@ namespace SmolDock {
                     for (ESBTL::Default_system::Residue::Atoms_const_iterator it_atm = it_res->atoms_begin();
                          it_atm != it_res->atoms_end(); ++it_atm) {
 
-                        assert(it_atm->is_hetatm() ==
+                        BOOST_ASSERT(it_atm->is_hetatm() ==
                                0); // We expect heteroatoms to have been taken care of previously
 
 
@@ -291,7 +291,7 @@ namespace SmolDock {
             // The size_after lags behind by one.
             // This works even if there is only one atom added (then begin_idx = end_idx = size_before = size_after-1)
             // However there is an edge case : when the residue has no atom, this is incorrect, so :
-            assert(size_after > size_before); // At least one atom added
+            BOOST_ASSERT(size_after > size_before); // At least one atom added
 
             prot.AAId_to_AtomPositionInVect[residue->getAAId()] = std::make_tuple(size_before, size_after - 1);
         }
@@ -351,7 +351,7 @@ namespace SmolDock {
             // The size_after lags behind by one.
             // This works even if there is only one atom added (then begin_idx = end_idx = size_before = size_after-1)
             // However there is an edge case : when the residue has no atom, this is incorrect, so :
-            assert(size_after > size_before); // At least one atom added
+            BOOST_ASSERT(size_after > size_before); // At least one atom added
 
             prot.AAId_to_AtomPositionInVect[residue->getAAId()] = std::make_tuple(size_before, size_after - 1);
         }

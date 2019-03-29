@@ -22,6 +22,7 @@
 #include <chrono>
 #include <thread>
 #include <algorithm>
+#include <stdexcept>
 
 #include "ConformerDockingEngine.h"
 #include "Internals/InternalsUtilityFunctions.h"
@@ -120,6 +121,7 @@ namespace SmolDock {
         }
 
         void ConformerDockingEngine::runDockingEngine() {
+
             using namespace boost::accumulators;
             accumulator_set<double, stats<tag::mean, tag::moment<2> > > acc_score;
             accumulator_set<double, stats<tag::mean, tag::moment<2> > > acc_duration;

@@ -26,10 +26,10 @@ namespace SmolDock::Score {
                                                  const iProtein &protein,
                                                  std::array<double, VinaLikeCovalentReversible_numCoefficients> nonDefaultCoeffs) {
 
-        assert(!ligand_.x.empty());
-        assert(!protein.x.empty());
+        BOOST_ASSERT(!ligand_.x.empty());
+        BOOST_ASSERT(!protein.x.empty());
 
-        assert(transform.bondRotationsAngles.size() == ligand_.num_rotatable_bond);
+        BOOST_ASSERT(transform.bondRotationsAngles.size() == ligand_.num_rotatable_bond);
 
         if(std::abs(transform.rota.norm() - 1) > 0.1) {
             transform.rota.normalize();
@@ -178,7 +178,7 @@ namespace SmolDock::Score {
 
 
     double VinaLikeCovalentReversible::Evaluate(const arma::mat &x) {
-        assert(x.n_rows == this->numberOfParamInState);
+        BOOST_ASSERT(x.n_rows == this->numberOfParamInState);
 
         iTransform tr = this->internalToExternalRepr(x);
 
@@ -191,10 +191,10 @@ namespace SmolDock::Score {
 
     double VinaLikeCovalentReversible::EvaluateWithGradient(const arma::mat &x, arma::mat &grad) {
 
-        assert(!x.has_nan());
-        assert(!grad.has_nan());
-        assert(x.n_rows == this->numberOfParamInState);
-        assert(grad.n_rows == this->numberOfParamInState);
+        BOOST_ASSERT(!x.has_nan());
+        BOOST_ASSERT(!grad.has_nan());
+        BOOST_ASSERT(x.n_rows == this->numberOfParamInState);
+        BOOST_ASSERT(grad.n_rows == this->numberOfParamInState);
 
         iTransform tr = this->internalToExternalRepr(x);
         normalizeQuaternionInPlace(tr.rota);
@@ -293,7 +293,7 @@ namespace SmolDock::Score {
         BOOST_LOG_TRIVIAL(debug) << "     dt: " << grad[6] << "   dx: " << grad[2];
         //*/
 
-        assert(score_ == score_); // catches NaN
+        BOOST_ASSERT(score_ == score_); // catches NaN
         return score_;
     }
 
@@ -307,7 +307,7 @@ namespace SmolDock::Score {
     }
 
     iConformer VinaLikeCovalentReversible::getConformerForParamMatrix(const arma::mat &x) {
-        assert(x.n_rows == this->numberOfParamInState);
+        BOOST_ASSERT(x.n_rows == this->numberOfParamInState);
 
         iTransform tr = this->internalToExternalRepr(x);
         tr.rota.normalize();
@@ -326,7 +326,7 @@ namespace SmolDock::Score {
     std::vector<std::tuple<std::string, double>> VinaLikeCovalentReversible::EvaluateSubcomponents(const arma::mat &x) {
 
 
-        assert(x.n_rows == this->numberOfParamInState);
+        BOOST_ASSERT(x.n_rows == this->numberOfParamInState);
 
         iTransform tr = this->internalToExternalRepr(x);
         normalizeQuaternionInPlace(tr.rota);
@@ -336,7 +336,7 @@ namespace SmolDock::Score {
     }
 
     double VinaLikeCovalentReversible::EvaluateOnlyIntermolecular(const arma::mat &x) {
-        assert(x.n_rows == this->numberOfParamInState);
+        BOOST_ASSERT(x.n_rows == this->numberOfParamInState);
 
         iTransform tr = this->internalToExternalRepr(x);
 
@@ -390,9 +390,9 @@ namespace SmolDock::Score {
                                                                                                     const iProtein &protein,
                                                                                                     std::array<double, VinaLikeCovalentReversible_numCoefficients> nonDefaultCoeffs)
     {
-        assert(!conformer.x.empty());
-        assert(!protein.x.empty());
-        assert(transform.bondRotationsAngles.size() == conformer.num_rotatable_bond);
+        BOOST_ASSERT(!conformer.x.empty());
+        BOOST_ASSERT(!protein.x.empty());
+        BOOST_ASSERT(transform.bondRotationsAngles.size() == conformer.num_rotatable_bond);
 
         if(std::abs(transform.rota.norm() - 1) > 0.1) {
             transform.rota.normalize();

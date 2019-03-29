@@ -432,8 +432,8 @@ namespace SmolDock {
             const RDKit::Atom *atomMatched1 = this->rwmol_withoutrings->getAtomWithIdx(atom1Index);
             const RDKit::Atom *atomMatched2 = this->rwmol_withoutrings->getAtomWithIdx(atom2Index);
 
-            assert(atomMatched1 != nullptr);
-            assert(atomMatched2 != nullptr);
+            BOOST_ASSERT(atomMatched1 != nullptr);
+            BOOST_ASSERT(atomMatched2 != nullptr);
 
 //            BOOST_LOG_TRIVIAL(debug) << "Rotatable bond found : " << atomMatched1->getSymbol()
 //                                     << "-" << atomMatched2->getSymbol() << "(" << atomMatched1->getIdx() << "-"
@@ -679,9 +679,9 @@ namespace SmolDock {
             unsigned int atomsVectorIdx = this->RDKitAtomIdxToAtomsPosInVector.at(atomIdx);
             std::shared_ptr<Atom> current_Atom = this->atoms[atomsVectorIdx];
 
-            assert(current_Atom != nullptr);
+            BOOST_ASSERT(current_Atom != nullptr);
 
-            conformer.type[(*atom_it)->getIdx()] = static_cast<unsigned int>((*atom_it)->getAtomicNum());
+            conformer.type[(*atom_it)->getIdx()] = static_cast<unsigned char>((*atom_it)->getAtomicNum());
             conformer.variant[(*atom_it)->getIdx()] = static_cast<unsigned int>(current_Atom->variant);
 
             const RDGeom::Point3D &position = rdkit_conformer.getAtomPos((*atom_it)->getIdx());
@@ -702,16 +702,16 @@ namespace SmolDock {
             );
         }
 
-        assert(conformer.x.size() == num_atoms);
-        assert(conformer.x.size() == conformer.y.size());
-        assert(conformer.x.size() == conformer.z.size());
-        assert(conformer.x.size() == conformer.type.size());
-        assert(conformer.x.size() == conformer.atomicRadius.size());
+        BOOST_ASSERT(conformer.x.size() == num_atoms);
+        BOOST_ASSERT(conformer.x.size() == conformer.y.size());
+        BOOST_ASSERT(conformer.x.size() == conformer.z.size());
+        BOOST_ASSERT(conformer.x.size() == conformer.type.size());
+        BOOST_ASSERT(conformer.x.size() == conformer.atomicRadius.size());
 
 
-        assert(conformer.bondEnds1Index.size() == conformer.num_rotatable_bond);
-        assert(conformer.bondEnds1Index.size() == conformer.bondEnds2Index.size());
-        assert(conformer.bondEnds1Index.size() == conformer.rotatableGroups.size());
+        BOOST_ASSERT(conformer.bondEnds1Index.size() == conformer.num_rotatable_bond);
+        BOOST_ASSERT(conformer.bondEnds1Index.size() == conformer.bondEnds2Index.size());
+        BOOST_ASSERT(conformer.bondEnds1Index.size() == conformer.rotatableGroups.size());
 
         return conformer;
     }

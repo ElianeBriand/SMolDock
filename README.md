@@ -32,11 +32,12 @@ It includes works from :
 - RDKit (BSD 3-clauses)
 - Ensmallen (BSD 3-clauses)
 - Eigen (MPL2 licence)
+- Intel TBB (Apache 2.0 - git submodule)
 
 It links with
 - RDKit (BSD 3-clauses)
 - Vc (BSD 3-clauses)
-- Intel TBB (Apache 2.0 - git submodule)
+- libunwind (MIT licence)
 
 It includes data from :
 - GROMACS implementation of Amber99ff (LGPL 2.1 or later)

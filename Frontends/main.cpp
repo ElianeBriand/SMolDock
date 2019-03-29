@@ -20,6 +20,7 @@
 
 #include <iostream>
 #include <memory>
+#include <chrono>
 
 
 #include "Structures/Molecule.h"
@@ -27,7 +28,8 @@
 #include "Structures/Atom.h"
 #include "Utilities/DockingResultPrinter.h"
 #include "Engines/ConformerDockingEngine.h"
-#include "Engines/ScoringFunctions/VinaLikeRigid.h"
+#include <Engines/ScoringFunctions/VinaLike.h>
+#include <Engines/ScoringFunctions/VinaLikeRigid.h>
 #include <Engines/Internals/InternalsUtilityFunctions.h>
 
 #include <Utilities/PDBWriter.h>
@@ -38,6 +40,7 @@
 #include <Structures/InputModifiers/VinaCompatibility.h>
 
 #include <Utilities/Version.h>
+#include <Utilities/AdvancedErrorHandling.h>
 #include <Utilities/Calibration/Calibrator.h>
 #include <Frontends/FrontendCommon.h>
 
@@ -53,6 +56,8 @@ namespace sd = SmolDock;
 
 
 int main() {
+
+    setupAdvancedErrorHandling();
 
     //tbb::task_scheduler_init tbbInit(2);
 
@@ -82,15 +87,62 @@ int main() {
 
 
 
-    sd::iConformer conf_init = mol.getInitialConformer();
+    sd::iConformer conf_init = mol.getInitialConformer(true);
     sd::iProtein iprot = prot.getiProtein();
-    sd::iTransform tr = sd::iTransformIdentityInit();
+    sd::iTransform tr = sd::iTransformIdentityInit(conf_init.num_rotatable_bond);
+    tr.transl = conf_init.centroidNormalizingTransform;
 
     double scoreWithoutDocking = sd::Score::vina_like_rigid_inter_scoring_func(conf_init,
                                                                                      tr,
                                                                                      iprot);
-    BOOST_LOG_TRIVIAL(debug) << "Score without docking : "
-                             << scoreWithoutDocking;
+
+    sd::iConformer_Vectorized conf_init_vect(conf_init);
+    sd::iProtein_vectorized iprot_vect(iprot);
+
+    BOOST_LOG_TRIVIAL(debug) << "Score without docking : " << scoreWithoutDocking;
+
+
+    double score_vect = sd::Score::force_Instantiate_VinaLikeIntermolecularScoringFunction_vectorized(conf_init_vect,tr,iprot_vect);
+    double score_nonvect = sd::Score::force_Instantiate_VinaLikeIntermolecularScoringFunction(conf_init,tr,iprot);
+
+    BOOST_LOG_TRIVIAL(debug) << "Score vect    : " << score_vect;
+    BOOST_LOG_TRIVIAL(debug) << "Score nonvect : " << score_nonvect;
+
+
+    return 0;
+    const unsigned int numretry = 1000;
+    volatile unsigned int j;
+    std::chrono::time_point<std::chrono::system_clock> start_vectorized, end_vectorized;
+    std::chrono::time_point<std::chrono::system_clock> start_nonvect, end_nonvect;
+
+
+    start_nonvect = std::chrono::system_clock::now();
+    for (j = 0 ; j < numretry; ++j) {
+        sd::Score::force_Instantiate_VinaLikeIntermolecularScoringFunction(conf_init,tr,iprot);
+    }
+    end_nonvect = std::chrono::system_clock::now();
+
+    start_vectorized = std::chrono::system_clock::now();
+    for (j = 0 ; j < numretry; ++j) {
+        sd::Score::force_Instantiate_VinaLikeIntermolecularScoringFunction_vectorized(conf_init_vect,tr,iprot_vect);
+    }
+    end_vectorized = std::chrono::system_clock::now();
+
+
+
+
+    int elapsed_ms_vectorized = std::chrono::duration_cast<std::chrono::milliseconds>
+            (end_vectorized-start_vectorized).count();
+    int elapsed_ms_nonvect = std::chrono::duration_cast<std::chrono::milliseconds>
+            (end_nonvect-start_nonvect).count();
+
+    BOOST_LOG_TRIVIAL(debug) << "Num retry     :" << numretry;
+    BOOST_LOG_TRIVIAL(debug) << "Vectorized    :" << elapsed_ms_vectorized << " ms total";
+    BOOST_LOG_TRIVIAL(debug) << "              :" << double(elapsed_ms_vectorized)/double(numretry) << " ms/retry";
+    BOOST_LOG_TRIVIAL(debug) << "Non-vect      :" << elapsed_ms_nonvect    << " ms";
+    BOOST_LOG_TRIVIAL(debug) << "              :" << double(elapsed_ms_nonvect)/double(numretry) << " ms/retry";
+
+    return 0;
 
 
     sd::PDBWriter pwriter;

@@ -18,7 +18,7 @@
  *
  */
 
-#include <cassert>
+#include <boost/assert.hpp>
 
 
 #include "ResiduePropertiesAssignation.h"
@@ -93,7 +93,7 @@ namespace SmolDock {
                     std::shared_ptr<Atom> endA = bond->getEndA();
                     std::shared_ptr<Atom> endB = bond->getEndB();
 
-                    assert((endA.get() == atom.get()) !=
+                    BOOST_ASSERT((endA.get() == atom.get()) !=
                            (endB.get() ==
                             atom.get())); // Check that the current atom is exactly one of the end (!= is logical XOR for bool)
 

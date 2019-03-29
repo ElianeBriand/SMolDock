@@ -25,7 +25,7 @@
 #include <boost/log/trivial.hpp>
 
 #include <cmath>
-#include <cassert>
+#include <boost/assert.hpp>
 #include <iomanip>
 #include <Structures/Atom.h>
 
@@ -43,8 +43,8 @@ namespace SmolDock {
         double vina_like_rigid_inter_scoring_func(const iConformer &ligand, iTransform &transform,
                                                   const iProtein &protein) {
 
-            assert(!ligand.x.empty());
-            assert(!protein.x.empty());
+            BOOST_ASSERT(!ligand.x.empty());
+            BOOST_ASSERT(!protein.x.empty());
 
             if(std::abs(transform.rota.norm() - 1) > 0.1) {
                 transform.rota.normalize();
@@ -122,7 +122,7 @@ namespace SmolDock {
         }
 
         double VinaLikeRigid::Evaluate(const arma::mat &x) {
-            assert(x.n_rows == 7);
+            BOOST_ASSERT(x.n_rows == 7);
 
             iTransform tr = this->internalToExternalRepr(x);
             normalizeQuaternionInPlace(tr.rota);
@@ -134,10 +134,10 @@ namespace SmolDock {
 
         double VinaLikeRigid::EvaluateWithGradient(const arma::mat &x, arma::mat &grad) {
 
-            assert(!x.has_nan());
-            assert(!grad.has_nan());
-            assert(x.n_rows == 7);
-            assert(grad.n_rows == 7);
+            BOOST_ASSERT(!x.has_nan());
+            BOOST_ASSERT(!grad.has_nan());
+            BOOST_ASSERT(x.n_rows == 7);
+            BOOST_ASSERT(grad.n_rows == 7);
 
             iTransform tr = this->internalToExternalRepr(x);
             normalizeQuaternionInPlace(tr.rota);
@@ -209,7 +209,7 @@ namespace SmolDock {
             BOOST_LOG_TRIVIAL(debug) << "     dt: " << grad[6] << "   dx: " << grad[2];
             //*/
 
-            assert(score_ == score_); // catches NaN
+            BOOST_ASSERT(score_ == score_); // catches NaN
             return score_;
         }
 
@@ -234,7 +234,7 @@ namespace SmolDock {
         }
 
         iConformer VinaLikeRigid::getConformerForParamMatrix(const arma::mat &x) {
-            assert(x.n_rows == 7);
+            BOOST_ASSERT(x.n_rows == 7);
 
             iTransform tr = this->internalToExternalRepr(x);
             normalizeQuaternionInPlace(
@@ -255,19 +255,19 @@ namespace SmolDock {
         std::vector<std::tuple<std::string, double>> VinaLikeRigid::EvaluateSubcomponents(const arma::mat &x) {
             std::vector<std::tuple<std::string, double>> ret;
 
-            assert(x.n_rows == 7);
+            BOOST_ASSERT(x.n_rows == 7);
 
             iTransform tr = this->internalToExternalRepr(x);
             normalizeQuaternionInPlace(tr.rota);
 
-            assert(!this->startingConformation.x.empty());
-            assert(!this->prot.x.empty());
+            BOOST_ASSERT(!this->startingConformation.x.empty());
+            BOOST_ASSERT(!this->prot.x.empty());
 
             if(std::abs(tr.rota.norm() - 1) > 0.1) {
                 tr.rota.normalize();
             }
 
-            assert(tr.bondRotationsAngles.size() == this->startingConformation.num_rotatable_bond);
+            BOOST_ASSERT(tr.bondRotationsAngles.size() == this->startingConformation.num_rotatable_bond);
 
 
             double gauss1_total = 0.0;
