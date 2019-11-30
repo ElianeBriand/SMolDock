@@ -219,7 +219,7 @@ BOOST_AUTO_TEST_SUITE(engine_ts)
             ExampleDistanceFixture() :
             mt(452),
             dist(0.0, 12.0){
-                static_assert(Vc::Vector<double>::Size >= 3);
+                //static_assert(Vc::Vector<double>::Size >= 3);
 
                 for(unsigned int i = 0; i < numTestPoint; i++) {
                     double random_distance = dist(mt);

@@ -23,6 +23,8 @@
 #include <chrono>
 
 
+#include <boost/log/trivial.hpp>
+
 #include "Structures/Molecule.h"
 #include "Structures/Protein.h"
 #include "Structures/Atom.h"
@@ -45,7 +47,6 @@
 #include <Utilities/Calibration/Calibrator.h>
 #include <Frontends/FrontendCommon.h>
 
-#include <boost/log/trivial.hpp>
 
 #define USE_BOOST_KARMA
 #include <bprinter/table_printer.h>

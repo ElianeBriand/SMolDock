@@ -22,7 +22,6 @@
 
 
 #include <boost/python.hpp>
-#include <boost/numpy.hpp>
 
 #include <boost/python/suite/indexing/indexing_suite.hpp>
 #include <boost/python/suite/indexing/vector_indexing_suite.hpp>
@@ -32,7 +31,6 @@
 #include <Structures/InputModifiers/VinaCompatibility.h>
 
 namespace p = boost::python;
-namespace np = boost::numpy;
 
 namespace sd = SmolDock;
 

@@ -6,7 +6,6 @@
 
 
 #include <boost/python.hpp>
-#include <boost/numpy.hpp>
 
 #include <Structures/Molecule.h>
 #include <Structures/Protein.h>
@@ -18,7 +17,6 @@
 #include <Engines/ConformerDockingEngine.h>
 
 namespace p = boost::python;
-namespace np = boost::numpy;
 
 namespace sd = SmolDock;
 

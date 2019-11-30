@@ -7,7 +7,7 @@
 
 #include <Structures/Atom.h>
 
-#include <GraphMol/RWMol.h>
+#include <rdkit/GraphMol/RWMol.h>
 
 
 namespace SmolDock::InputModifier {

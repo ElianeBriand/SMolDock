@@ -20,7 +20,6 @@
 
 
 #include <boost/python.hpp>
-#include <boost/numpy.hpp>
 
 #include "Python/PySTLWrapper.h"
 #include "Python/PyStructures.h"
@@ -37,7 +36,6 @@
 
 
 namespace p = boost::python;
-namespace np = boost::numpy;
 
 BOOST_PYTHON_MODULE (PySmolDock) {
     /* Setting up the logger */

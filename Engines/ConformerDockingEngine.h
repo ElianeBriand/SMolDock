@@ -21,7 +21,7 @@
 #ifndef SMOLDOCK_CONFORMERRIGIDDOCKINGENGINE_H
 #define SMOLDOCK_CONFORMERRIGIDDOCKINGENGINE_H
 
-#include <GraphMol/RWMol.h>
+#include <rdkit/GraphMol/RWMol.h>
 #include <random>
 #include <Engines/LocalOptimizers/OptimizerFactory.h>
 #include <Engines/GlobalHeuristics/HeuristicFactory.h>

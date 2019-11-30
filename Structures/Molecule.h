@@ -23,29 +23,28 @@
 #include <vector>
 
 
-#include <GraphMol/RDKitBase.h>
-#include <GraphMol/RWMol.h>
-#include <GraphMol/MolOps.h>
-#include <GraphMol/FileParsers/FileParsers.h>
+#include <rdkit/GraphMol/RDKitBase.h>
+#include <rdkit/GraphMol/RWMol.h>
+#include <rdkit/GraphMol/MolOps.h>
+#include <rdkit/GraphMol/FileParsers/FileParsers.h>
 
 /*
-#include <GraphMol/ChemReactions/Reaction.h>
-#include <GraphMol/ChemReactions/ReactionPickler.h>
-#include <GraphMol/ChemReactions/ReactionParser.h>
-#include <GraphMol/ChemReactions/ReactionRunner.h>
-#include <GraphMol/ChemReactions/PreprocessRxn.h>
-#include <GraphMol/ChemReactions/SanitizeRxn.h>
+#include <rdkit/GraphMol/ChemReactions/Reaction.h>
+#include <rdkit/GraphMol/ChemReactions/ReactionPickler.h>
+#include <rdkit/GraphMol/ChemReactions/ReactionParser.h>
+#include <rdkit/GraphMol/ChemReactions/ReactionRunner.h>
+#include <rdkit/GraphMol/ChemReactions/PreprocessRxn.h>
+#include <rdkit/GraphMol/ChemReactions/SanitizeRxn.h>
  */
-#include <GraphMol/SmilesParse/SmilesParse.h>
-#include <GraphMol/Substruct/SubstructMatch.h>
-#include <GraphMol/DistGeomHelpers/Embedder.h>
-#include <Structures/InputModifiers/InputModifierInterface.h>
+#include <rdkit/GraphMol/SmilesParse/SmilesParse.h>
+#include <rdkit/GraphMol/Substruct/SubstructMatch.h>
+#include <rdkit/GraphMol/DistGeomHelpers/Embedder.h>
 
 #include "Structure.h"
 #include "Atom.h"
 #include "Bond.h"
 #include "../Engines/Internals/iConformer.h"
-
+#include "Structures/InputModifiers/InputModifierInterface.h"
 
 namespace SmolDock {
 

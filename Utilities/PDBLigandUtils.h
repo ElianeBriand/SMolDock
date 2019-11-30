@@ -7,12 +7,12 @@
 
 #include <memory>
 
-#include <GraphMol/RDKitBase.h>
-#include <GraphMol/RWMol.h>
-#include <GraphMol/MolOps.h>
-#include <GraphMol/SmilesParse/SmilesParse.h>
-#include <GraphMol/SmilesParse/SmilesWrite.h>
-#include <GraphMol/Substruct/SubstructMatch.h>
+#include <rdkit/GraphMol/RDKitBase.h>
+#include <rdkit/GraphMol/RWMol.h>
+#include <rdkit/GraphMol/MolOps.h>
+#include <rdkit/GraphMol/SmilesParse/SmilesParse.h>
+#include <rdkit/GraphMol/SmilesParse/SmilesWrite.h>
+#include <rdkit/GraphMol/Substruct/SubstructMatch.h>
 
 namespace SmolDock {
 

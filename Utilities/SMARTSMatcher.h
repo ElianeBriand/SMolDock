@@ -8,10 +8,10 @@
 #include <string>
 #include <memory>
 
-#include <GraphMol/GraphMol.h>
-#include <GraphMol/FileParsers/MolSupplier.h>
-#include <GraphMol/FileParsers/MolWriters.h>
-#include <GraphMol/Substruct/SubstructMatch.h>
+#include <rdkit/GraphMol/GraphMol.h>
+#include <rdkit/GraphMol/FileParsers/MolSupplier.h>
+#include <rdkit/GraphMol/FileParsers/MolWriters.h>
+#include <rdkit/GraphMol/Substruct/SubstructMatch.h>
 
 namespace SmolDock {
 

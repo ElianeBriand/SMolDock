@@ -19,7 +19,6 @@
  */
 
 #include <boost/python.hpp>
-#include <boost/numpy.hpp>
 
 #include "PyUtilities.h"
 
@@ -28,7 +27,6 @@
 
 
 namespace p = boost::python;
-namespace np = boost::numpy;
 
 namespace sd = SmolDock;
 

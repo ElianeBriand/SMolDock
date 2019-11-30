@@ -2,8 +2,8 @@
 // Created by briand on 3/8/19.
 //
 
-#include <GraphMol/SmilesParse/SmilesParse.h>
-#include <GraphMol/Substruct/SubstructMatch.h>
+#include <rdkit/GraphMol/SmilesParse/SmilesParse.h>
+#include <rdkit/GraphMol/Substruct/SubstructMatch.h>
 #include "RotatableBondRemover.h"
 
 #include <boost/log/trivial.hpp>

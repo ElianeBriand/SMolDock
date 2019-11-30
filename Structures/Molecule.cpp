@@ -27,12 +27,12 @@
 #include "Atom.h"
 #include "Utilities/PDBLigandUtils.h"
 
-#include <GraphMol/Descriptors/Lipinski.h>
-#include <GraphMol/FileParsers/MolSupplier.h>
-#include <GraphMol/FileParsers/MolWriters.h>
-#include <GraphMol/DistGeomHelpers/Embedder.h>
-#include <GraphMol/AtomIterators.h>
-#include <GraphMol/ForceFieldHelpers/MMFF/MMFF.h>
+#include <rdkit/GraphMol/Descriptors/Lipinski.h>
+#include <rdkit/GraphMol/FileParsers/MolSupplier.h>
+#include <rdkit/GraphMol/FileParsers/MolWriters.h>
+#include <rdkit/GraphMol/DistGeomHelpers/Embedder.h>
+#include <rdkit/GraphMol/AtomIterators.h>
+#include <rdkit/GraphMol/ForceFieldHelpers/MMFF/MMFF.h>
 
 #include <ESBTL/default.h>
 #include <ESBTL/atom_classifier.h>

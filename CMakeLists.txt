@@ -1,5 +1,23 @@
 cmake_minimum_required(VERSION 3.12)
 
+################ BUILD CONFIGURATION SECTION     ############################
+
+# Point this to the rdkit install directory (See Readme)
+set(RDKIT_ROOT /home/eliane/Projects/rdkit_releases/rdkit-Release_2019_09_1/rdkit_install/)
+
+
+# Command to run : mpic++ -showme:compile. Only add the argument part of the command
+set(MPI_COMPILE_FLAGS -pthread -Wl,-rpath -Wl,/usr/lib64 -Wl,--enable-new-dtags -L/usr/lib64 -lmpi_cxx -lmpi)
+
+#Command to run  : mpic++  -showme:link
+set(MPI_LINK_FLAGS  -pthread -Wl,-rpath -Wl,/usr/lib64 -Wl,--enable-new-dtags -L/usr/lib64 -lmpi_cxx -lmpi)
+
+# Version of python installed with header and libraries
+set(PY_VERSION 3.6)
+
+################ END BUILD CONFIGURATION SECTION ############################
+
+
 set(CMAKE_CXX_STANDARD 17)
 
 #set(BOOST_ROOT /home/briand/local)
@@ -48,63 +66,53 @@ project(smoldock)
 find_package(MPI REQUIRED)
 include_directories(${MPI_INCLUDE_PATH})
 
-# Use mpic++ -showme (or your MPI implementation variant) to get the corresponding compile and link flags
-
-# Command to run : mpic++ -showme:compile
-set(MPI_COMPILE_FLAGS -pthread)
-
-#Command to run  : mpic++ -static -showme:link
-# you may want to add these afterward if using openMPI : "mpi open-rte open-pal m dl z rt util"
-set(MPI_LINK_FLAGS  -pthread -Wl,-rpath -Wl,/usr/lib64 -Wl,--enable-new-dtags -L/usr/lib64 -lmpi_cxx -lmpi)
 ## END MPI ###################
 
 ## Boost #######################
 # Edit this if you have a specific Boost setup
-find_package(Boost REQUIRED)
+find_package(Boost REQUIRED regex)
 include_directories(${Boost_INCLUDE_DIRS})
 #add_compile_definitions(BOOST_ALLOW_DEPRECATED_HEADERS)
 ## END Boost ###################
 
 ## Python #######################
 # Edit version and other setup if needed
-set(PY_VERSION 3.7)
+
 find_package(PythonLibs ${PY_VERSION} REQUIRED)
 include_directories(${PYTHON_INCLUDE_DIRS})
 ## END Python ###################
 
 ######## VC SETUP ######
 # Adjust this according to where your Vc build is :
-set(VC_ROOT /usr/)
-
-include_directories(${VC_ROOT}/include/)
-LINK_DIRECTORIES(${VC_ROOT}/lib/)
+#set(VC_ROOT /usr/)
+#
+#include_directories(${VC_ROOT}/include/)
+#LINK_DIRECTORIES(${VC_ROOT}/lib/)
 ######## END OF VC  ######
 
 ######## EIGEN SETUP ######
-# Adjust this according to where your Vc build is :
-set(EIGEN_ROOT /usr/)
-
-include_directories(${EIGEN_ROOT}/include)
+find_package(Eigen3 3.3 REQUIRED NO_MODULE)
+#set(EIGEN_ROOT /usr/)
+#include_directories(${EIGEN_ROOT}/include)
 ######## END OF EIGEN  ######
 
 ######## RDKIT SETUP ######
 # Adjust this according to where your RDKit build is :
 #set(RDKIT_ROOT /home/eliane/Projects/RDKit_Git/rdkit-Release_2018_09_1)
-set(RDKIT_ROOT /home/eliane/Projects/rdkit_releases/rdkit-Release_2019_03_1/)
 
 # This directory should contain ./Code ./lib and ./lib/staticlib as setup in the build guide
-
-include_directories(${RDKIT_ROOT}/Code/)
-LINK_DIRECTORIES(${RDKIT_ROOT}/lib/staticlib)
+include(${RDKIT_ROOT}/lib/cmake/rdkit/rdkit-config.cmake)
+include_directories(${RDKIT_ROOT}/include/)
+include_directories(${RDKIT_ROOT}/include/rdkit)
 LINK_DIRECTORIES(${RDKIT_ROOT}/lib)
-set(RDKIT_LINKAGE_LIST RDKitStatic RDKitStatic)
-#set(RDKIT_LINKAGE_LIST RDKitStatic RDKitStatic RDKitForceFieldHelpers_static RDKitForceField_static)
 ######## END OF RDKIT ######
 
 
+
 ######## TBB SETUP ######
-add_subdirectory(Dependencies/tbb)
-include_directories(Dependencies/tbb/include)
+find_package( Threads )
+#add_subdirectory(Dependencies/tbb)
+#include_directories(Dependencies/tbb/include)
 ######## END OF TBB ######
 
 
@@ -237,7 +245,7 @@ set(PY_EXPORT_SOURCE_LIST Frontends/Python/PyStructures.cpp
 
 
 
-add_library(bprinter STATIC
+set(BPRINTER_SOURCE_LIST
         Dependencies/bprinter/table_printer.h
         Dependencies/bprinter/impl/table_printer.tpp.h
         Dependencies/bprinter/table_printer.cpp
@@ -246,67 +254,29 @@ add_library(bprinter STATIC
 add_compile_definitions(BOOST_ENABLE_ASSERT_HANDLER)
 
 
-ADD_LIBRARY(smoldock_object OBJECT ${SOURCE_LIST})
-set_target_properties(smoldock_object PROPERTIES LINK_FLAGS " -static  ")
-target_compile_definitions(smoldock_object PUBLIC ARMA_DONT_USE_WRAPPER)
-#target_compile_definitions(smoldock_object PUBLIC BOOST_LOG_DYN_LINK)
-
-
-
-add_custom_command(
-        OUTPUT partially_linked_smoldock.o
-        COMMAND ld -Ur $<TARGET_OBJECTS:smoldock_object>   -o partially_linked_smoldock.o -Bstatic -L${VC_ROOT}/lib/ -lVc -L${RDKIT_ROOT}/lib -L ${PATH_TO_COMPILER_INTERNAL_LIBS_1} -L /usr/lib -L ${PATH_TO_COMPILER_INTERNAL_LIBS_2} -L ${PATH_TO_COMPILER_INTERNAL_LIBS_3}  -lgfortran -llapack -lblas -lgfortran -lquadmath  -lgfortran   -lRDKitStatic -lunwind -lRDKitForceFieldHelpers_static -lRDKitForceField_static -lRDKitStatic -L${Boost_LIBRARY_DIRS} -lboost_log -lboost_log_setup  -lboost_system -lboost_serialization -lboost_log -lboost_system -lboost_filesystem -lboost_date_time -lboost_thread -lboost_regex -lboost_mpi
-        DEPENDS $<TARGET_OBJECTS:smoldock_object>
-        COMMAND_EXPAND_LISTS
-)
-
-
-
-ADD_LIBRARY(libsmoldock STATIC partially_linked_smoldock.o)
-set_target_properties(libsmoldock PROPERTIES LINKER_LANGUAGE CXX)
-set_target_properties(libsmoldock PROPERTIES COMPILE_FLAGS "")
-set_target_properties(libsmoldock PROPERTIES LINK_FLAGS " -static -v  ")
-set_target_properties(libsmoldock PROPERTIES PREFIX "lib")
-set_target_properties(libsmoldock PROPERTIES OUTPUT_NAME "smoldock")
+ADD_LIBRARY(libsmoldock SHARED ${SOURCE_LIST} ${BPRINTER_SOURCE_LIST})
 target_compile_definitions(libsmoldock PUBLIC ARMA_DONT_USE_WRAPPER)
-add_dependencies(libsmoldock smoldock_object)
-
-ADD_LIBRARY(libsmoldockPIC SHARED ${SOURCE_LIST} Engines/ScoringFunctions/VinaExtendedCommon.h Utilities/LogUtils.h)
-set_target_properties(libsmoldockPIC PROPERTIES COMPILE_FLAGS " -fPIC ")
-set_target_properties(libsmoldockPIC PROPERTIES LINKER_LANGUAGE CXX)
-set_target_properties(libsmoldockPIC PROPERTIES LINK_FLAGS "  -shared  -fPIC   ")
-set_target_properties(libsmoldockPIC PROPERTIES PREFIX "lib")
-set_target_properties(libsmoldockPIC PROPERTIES OUTPUT_NAME "smoldockPIC")
-target_compile_definitions(libsmoldockPIC PUBLIC BOOST_LOG_DYN_LINK)
-target_compile_definitions(libsmoldockPIC PUBLIC ARMA_DONT_USE_WRAPPER)
-target_link_libraries(libsmoldockPIC -Wl,-Bdynamic -Wl,-lboost_regex  -Wl,-lboost_filesystem)
-target_link_libraries(libsmoldockPIC -Wl,-Bdynamic  -Wl,-lboost_log   -Wl,-lboost_system  -Wl,-lboost_thread  )
-target_link_libraries(libsmoldockPIC -Wl,-Bdynamic -Wl,-lboost_numpy -Wl,-lboost_python-3.6-mt  -Wl,-lpython3.6m)
-TARGET_LINK_LIBRARIES(libsmoldockPIC -Wl,-Bstatic -Wl,-lRDKitStatic -Wl,-lRDKitForceFieldHelpers_static -Wl,-lRDKitForceField_static)
-target_link_libraries(libsmoldockPIC -Wl,-Bstatic -Wl,-lboost_date_time  -Wl,-lboost_date_time)
-target_link_libraries(libsmoldockPIC -Wl,-Bstatic -Wl,-lVc)
-target_link_libraries(libsmoldockPIC -Wl,-Bstatic -Wl,-llapack -Wl,-lblas -Wl,-l:libquadmath.a)
-target_link_libraries(libsmoldockPIC -Wl,-Bdynamic -Wl,-lgfortran)
-target_link_libraries(libsmoldockPIC -Wl,-Bdynamic -Wl,-L/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.0/ -Wl,-lgcc)
-target_link_libraries(libsmoldockPIC -Wl,-Bdynamic -Wl,-lpthread -Wl,-ldl)
-
-#add_compile_definitions(BOOST_LOG_DYN_LINK BOOST_TEST_DYN_LINK)
-
-
-#target_compile_definitions(smoldock PUBLIC BOOST_LOG_DYN_LINK)
+add_dependencies(libsmoldock rdkit_base)
+target_compile_definitions(libsmoldock PUBLIC BOOST_LOG_DYN_LINK)
 
 
 add_executable(smoldock Frontends/main.cpp)
-set_target_properties(smoldock PROPERTIES LINK_FLAGS " -Wl,--no-undefined -Wl,--as-needed -static  -Wl,-allow-multiple-definition   ")
-TARGET_LINK_LIBRARIES(smoldock libsmoldock)
-TARGET_LINK_LIBRARIES(smoldock pthread)
-target_link_libraries(smoldock boost_log bprinter tbb_static)
+target_link_libraries(smoldock libsmoldock)
+target_link_libraries(smoldock boost_log_setup boost_log boost_thread)
+target_link_libraries(smoldock tbb)
+target_link_libraries(smoldock rdkit_base avalon_clib AvalonLib freesasa_clib FreeSASALib maeparser )
+target_link_libraries(smoldock coordgen RingDecomposerLib URFLib RDGeneral RDStreams DataStructs )
+target_link_libraries(smoldock RDGeometryLib Alignment EigenSolvers Optimizer ForceField DistGeometry)
+target_link_libraries(smoldock Catalogs GraphMol Depictor SmilesParse FileParsers SubstructMatch ChemReactions ChemTransforms Subgraphs)
+target_link_libraries(smoldock FilterCatalog FragCatalog Descriptors Fingerprints PartialCharges MolTransforms ForceFieldHelpers)
+target_link_libraries(smoldock DistGeomHelpers MolAlign MolChemicalFeatures ShapeHelpers MolCatalog MolDraw2D FMCS MolHash MMPA)
+target_link_libraries(smoldock StructChecker ReducedGraphs Trajectory SubstructLibrary RGroupDecomposition MolInterchange SLNParse)
+target_link_libraries(smoldock MolStandardize SimDivPickers hc InfoTheory ChemicalFeatures ConformerParser)
+target_link_libraries(smoldock unwind)
+target_link_libraries(smoldock Vc)
+target_link_libraries(smoldock lapack blas)
+target_link_libraries(smoldock pthread)
 
-add_executable(smoldock_dyn Frontends/main.cpp)
-set_target_properties(smoldock_dyn PROPERTIES LINK_FLAGS " -Wl,--no-undefined -Wl,--as-needed    ")
-TARGET_LINK_LIBRARIES(smoldock_dyn libsmoldock)
-TARGET_LINK_LIBRARIES(smoldock_dyn pthread)
-target_link_libraries(smoldock_dyn -Wl,-Bstatic boost_log bprinter tbb_static  -Wl,-Bdynamic)
 
 if(SMOLDOCK_INTEL_VTUNE_EXPORT_SYMBOL)
     target_link_options(smoldock PRIVATE "-u_init" "-usetenv" "-ugetenv" "-u__errno_location" "-upthread_create" "-upthread_getattr_np")
@@ -319,58 +289,73 @@ endif()
 
 
 add_executable(goldenRecordGenerator Frontends/goldenRecordGenerator.cpp)
-set_target_properties(goldenRecordGenerator PROPERTIES LINK_FLAGS " -Wl,--no-undefined -Wl,--as-needed -static  -Wl,-allow-multiple-definition   ")
-TARGET_LINK_LIBRARIES(goldenRecordGenerator libsmoldock)
-TARGET_LINK_LIBRARIES(goldenRecordGenerator pthread)
-target_link_libraries(goldenRecordGenerator boost_log bprinter tbb_static)
+target_link_libraries(goldenRecordGenerator libsmoldock)
+target_link_libraries(goldenRecordGenerator boost_log_setup boost_log boost_thread)
+target_link_libraries(goldenRecordGenerator tbb)
+target_link_libraries(goldenRecordGenerator rdkit_base avalon_clib AvalonLib freesasa_clib FreeSASALib maeparser )
+target_link_libraries(goldenRecordGenerator coordgen RingDecomposerLib URFLib RDGeneral RDStreams DataStructs )
+target_link_libraries(goldenRecordGenerator RDGeometryLib Alignment EigenSolvers Optimizer ForceField DistGeometry)
+target_link_libraries(goldenRecordGenerator Catalogs GraphMol Depictor SmilesParse FileParsers SubstructMatch ChemReactions ChemTransforms Subgraphs)
+target_link_libraries(goldenRecordGenerator FilterCatalog FragCatalog Descriptors Fingerprints PartialCharges MolTransforms ForceFieldHelpers)
+target_link_libraries(goldenRecordGenerator DistGeomHelpers MolAlign MolChemicalFeatures ShapeHelpers MolCatalog MolDraw2D FMCS MolHash MMPA)
+target_link_libraries(goldenRecordGenerator StructChecker ReducedGraphs Trajectory SubstructLibrary RGroupDecomposition MolInterchange SLNParse)
+target_link_libraries(goldenRecordGenerator MolStandardize SimDivPickers hc InfoTheory ChemicalFeatures ConformerParser)
+target_link_libraries(goldenRecordGenerator unwind)
+target_link_libraries(goldenRecordGenerator Vc)
+target_link_libraries(goldenRecordGenerator lapack blas)
+target_link_libraries(goldenRecordGenerator pthread)
 
 
 add_executable(mpicalibrator Frontends/mpicalibrator.cpp ${MPI_SOURCE_LIST})
 set_target_properties(mpicalibrator PROPERTIES COMPILE_FLAGS "${MPI_COMPILE_FLAGS} ")
-set_target_properties(mpicalibrator PROPERTIES LINK_FLAGS " -Wl,--as-needed -Wl,-allow-multiple-definition ")
-TARGET_LINK_LIBRARIES(mpicalibrator -L${PATH_TO_COMPILER_INTERNAL_LIBS_1} -L${PATH_TO_COMPILER_INTERNAL_LIBS_2} -L ${PATH_TO_COMPILER_INTERNAL_LIBS_3})
-TARGET_LINK_LIBRARIES(mpicalibrator -Wl,-Bstatic libsmoldock )
-target_link_libraries(mpicalibrator -Wl,-Bstatic boost_log boost_mpi boost_serialization bprinter tbb_static  )
-TARGET_LINK_LIBRARIES(mpicalibrator -Wl,-Bdynamic pthread  ${MPI_LINK_FLAGS})
-target_link_libraries(mpicalibrator -Wl,-Bstatic -Wl,-llapack -Wl,-lblas -Wl,-l:libquadmath.a)
-target_link_libraries(mpicalibrator -Wl,-Bdynamic dl -Wl,-lgfortran)
-target_link_libraries(mpicalibrator -Wl,-Bstatic Vc -Wl,-Bdynamic)
-
-
-
-
-add_executable(vina_refiner Frontends/vina_refiner.cpp)
-set_target_properties(vina_refiner PROPERTIES LINK_FLAGS " -Wl,--no-undefined -Wl,--as-needed  -static   ")
-TARGET_LINK_LIBRARIES(vina_refiner libsmoldock)
-TARGET_LINK_LIBRARIES(vina_refiner pthread)
-target_link_libraries(vina_refiner boost_log boost_filesystem boost_program_options)
-
-add_executable(smoldockCLI Frontends/cli_interface.cpp)
-set_target_properties(smoldockCLI PROPERTIES LINK_FLAGS " -Wl,--no-undefined -Wl,--as-needed  -static   ")
-TARGET_LINK_LIBRARIES(smoldockCLI libsmoldock)
-TARGET_LINK_LIBRARIES(smoldockCLI pthread)
-target_link_libraries(smoldockCLI boost_log boost_filesystem boost_program_options)
+set_target_properties(mpicalibrator PROPERTIES LINK_FLAGS ${MPI_LINK_FLAGS})
+target_link_libraries(mpicalibrator libsmoldock)
+target_link_libraries(mpicalibrator boost_log_setup boost_log boost_thread)
+target_link_libraries(mpicalibrator tbb)
+target_link_libraries(mpicalibrator rdkit_base avalon_clib AvalonLib freesasa_clib FreeSASALib maeparser )
+target_link_libraries(mpicalibrator coordgen RingDecomposerLib URFLib RDGeneral RDStreams DataStructs )
+target_link_libraries(mpicalibrator RDGeometryLib Alignment EigenSolvers Optimizer ForceField DistGeometry)
+target_link_libraries(mpicalibrator Catalogs GraphMol Depictor SmilesParse FileParsers SubstructMatch ChemReactions ChemTransforms Subgraphs)
+target_link_libraries(mpicalibrator FilterCatalog FragCatalog Descriptors Fingerprints PartialCharges MolTransforms ForceFieldHelpers)
+target_link_libraries(mpicalibrator DistGeomHelpers MolAlign MolChemicalFeatures ShapeHelpers MolCatalog MolDraw2D FMCS MolHash MMPA)
+target_link_libraries(mpicalibrator StructChecker ReducedGraphs Trajectory SubstructLibrary RGroupDecomposition MolInterchange SLNParse)
+target_link_libraries(mpicalibrator MolStandardize SimDivPickers hc InfoTheory ChemicalFeatures ConformerParser)
+target_link_libraries(mpicalibrator unwind)
+target_link_libraries(mpicalibrator Vc)
+target_link_libraries(mpicalibrator lapack blas)
+target_link_libraries(mpicalibrator boost_mpi mpi_cxx mpi)
+target_link_libraries(mpicalibrator pthread)
 
 
 
 
 add_library(PySmolDock MODULE Frontends/SmoldockPythonBindings.cpp ${PY_EXPORT_SOURCE_LIST})
 set_target_properties(PySmolDock PROPERTIES COMPILE_FLAGS " -fPIC ")
-set_target_properties(PySmolDock PROPERTIES LINK_FLAGS " -shared -Wl,-nostdlib -Wl,-L./ -Wl,-lsmoldockPIC -Wl,-Bshareable")
+set_target_properties(PySmolDock PROPERTIES LINK_FLAGS " -shared ")
 set_target_properties(PySmolDock PROPERTIES PREFIX "")
 set_target_properties(PySmolDock PROPERTIES OUTPUT_NAME "PySmolDock")
 target_compile_definitions(PySmolDock PUBLIC BOOST_LOG_DYN_LINK)
 target_compile_definitions(PySmolDock PUBLIC ARMA_DONT_USE_WRAPPER)
-target_link_libraries(PySmolDock )
-add_dependencies(PySmolDock libsmoldockPIC)
-### Remove this for prod build
+target_link_libraries(PySmolDock libsmoldock)
+target_link_libraries(PySmolDock boost_log_setup boost_log boost_thread)
+target_link_libraries(PySmolDock tbb)
+target_link_libraries(PySmolDock rdkit_base avalon_clib AvalonLib freesasa_clib FreeSASALib maeparser )
+target_link_libraries(PySmolDock coordgen RingDecomposerLib URFLib RDGeneral RDStreams DataStructs )
+target_link_libraries(PySmolDock RDGeometryLib Alignment EigenSolvers Optimizer ForceField DistGeometry)
+target_link_libraries(PySmolDock Catalogs GraphMol Depictor SmilesParse FileParsers SubstructMatch ChemReactions ChemTransforms Subgraphs)
+target_link_libraries(PySmolDock FilterCatalog FragCatalog Descriptors Fingerprints PartialCharges MolTransforms ForceFieldHelpers)
+target_link_libraries(PySmolDock DistGeomHelpers MolAlign MolChemicalFeatures ShapeHelpers MolCatalog MolDraw2D FMCS MolHash MMPA)
+target_link_libraries(PySmolDock StructChecker ReducedGraphs Trajectory SubstructLibrary RGroupDecomposition MolInterchange SLNParse)
+target_link_libraries(PySmolDock MolStandardize SimDivPickers hc InfoTheory ChemicalFeatures ConformerParser)
+target_link_libraries(PySmolDock unwind)
+target_link_libraries(PySmolDock Vc)
+target_link_libraries(PySmolDock lapack blas)
+target_link_libraries(PySmolDock pthread)
 
 IF(CMAKE_BUILD_TYPE MATCHES Debug)
     target_compile_definitions(libsmoldock PUBLIC SMOLDOCK_VERBOSE_DEBUG)
     target_compile_definitions(smoldock PUBLIC SMOLDOCK_VERBOSE_DEBUG)
-    target_compile_definitions(vina_refiner PUBLIC SMOLDOCK_VERBOSE_DEBUG)
     target_compile_definitions(PySmolDock PUBLIC SMOLDOCK_VERBOSE_DEBUG)
-    target_compile_definitions(smoldock_object PUBLIC SMOLDOCK_VERBOSE_DEBUG)
 ENDIF(CMAKE_BUILD_TYPE MATCHES Debug)
 
 
@@ -389,11 +374,22 @@ set(TEST_SOURCE_LIST
 add_executable(complete_test_suite ${TEST_SOURCE_LIST})
 
 set_target_properties(complete_test_suite PROPERTIES LINK_FLAGS "   ")
-TARGET_LINK_LIBRARIES(complete_test_suite libsmoldock)
-TARGET_LINK_LIBRARIES(complete_test_suite pthread)
-target_link_libraries(complete_test_suite boost_log)
-target_link_libraries(complete_test_suite bprinter tbb_static)
-target_link_libraries(complete_test_suite ${Boost_LIBRARIES} -Wl,-Bdynamic boost_unit_test_framework )
+target_link_libraries(complete_test_suite libsmoldock)
+target_link_libraries(complete_test_suite boost_log_setup boost_log boost_thread)
+target_link_libraries(complete_test_suite tbb)
+target_link_libraries(complete_test_suite rdkit_base avalon_clib AvalonLib freesasa_clib FreeSASALib maeparser )
+target_link_libraries(complete_test_suite coordgen RingDecomposerLib URFLib RDGeneral RDStreams DataStructs )
+target_link_libraries(complete_test_suite RDGeometryLib Alignment EigenSolvers Optimizer ForceField DistGeometry)
+target_link_libraries(complete_test_suite Catalogs GraphMol Depictor SmilesParse FileParsers SubstructMatch ChemReactions ChemTransforms Subgraphs)
+target_link_libraries(complete_test_suite FilterCatalog FragCatalog Descriptors Fingerprints PartialCharges MolTransforms ForceFieldHelpers)
+target_link_libraries(complete_test_suite DistGeomHelpers MolAlign MolChemicalFeatures ShapeHelpers MolCatalog MolDraw2D FMCS MolHash MMPA)
+target_link_libraries(complete_test_suite StructChecker ReducedGraphs Trajectory SubstructLibrary RGroupDecomposition MolInterchange SLNParse)
+target_link_libraries(complete_test_suite MolStandardize SimDivPickers hc InfoTheory ChemicalFeatures ConformerParser)
+target_link_libraries(complete_test_suite unwind)
+target_link_libraries(complete_test_suite Vc)
+target_link_libraries(complete_test_suite lapack blas)
+target_link_libraries(complete_test_suite pthread)
+target_link_libraries(complete_test_suite ${Boost_LIBRARIES} boost_unit_test_framework )
 #target_link_libraries(complete_test_suite Vc)
 
 

@@ -4,11 +4,11 @@
 
 #include "SMARTSMatcher.h"
 
-#include <GraphMol/GraphMol.h>
-#include <GraphMol/FileParsers/MolSupplier.h>
-#include <GraphMol/FileParsers/MolWriters.h>
-#include <GraphMol/Substruct/SubstructMatch.h>
-#include <GraphMol/SmilesParse/SmilesParse.h>
+#include <rdkit/GraphMol/GraphMol.h>
+#include <rdkit/GraphMol/FileParsers/MolSupplier.h>
+#include <rdkit/GraphMol/FileParsers/MolWriters.h>
+#include <rdkit/GraphMol/Substruct/SubstructMatch.h>
+#include <rdkit/GraphMol/SmilesParse/SmilesParse.h>
 
 namespace SmolDock {
     SMARTSMatcher::SMARTSMatcher(const std::string &smarts_):

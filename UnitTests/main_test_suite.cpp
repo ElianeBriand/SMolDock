@@ -20,20 +20,20 @@
 
 #include <chrono>
 
-#include <GraphMol/RDKitBase.h>
-#include <GraphMol/RWMol.h>
-#include <GraphMol/MolOps.h>
-#include <GraphMol/Fingerprints/Fingerprints.h>
+#include <rdkit/GraphMol/RDKitBase.h>
+#include <rdkit/GraphMol/RWMol.h>
+#include <rdkit/GraphMol/MolOps.h>
+#include <rdkit/GraphMol/Fingerprints/Fingerprints.h>
 /*
-#include <GraphMol/ChemReactions/Reaction.h>
-#include <GraphMol/ChemReactions/ReactionPickler.h>
-#include <GraphMol/ChemReactions/ReactionParser.h>
-#include <GraphMol/ChemReactions/ReactionRunner.h>
-#include <GraphMol/ChemReactions/PreprocessRxn.h>
-#include <GraphMol/ChemReactions/SanitizeRxn.h>
+#include <rdkit/GraphMol/ChemReactions/Reaction.h>
+#include <rdkit/GraphMol/ChemReactions/ReactionPickler.h>
+#include <rdkit/GraphMol/ChemReactions/ReactionParser.h>
+#include <rdkit/GraphMol/ChemReactions/ReactionRunner.h>
+#include <rdkit/GraphMol/ChemReactions/PreprocessRxn.h>
+#include <rdkit/GraphMol/ChemReactions/SanitizeRxn.h>
  */
-#include <GraphMol/SmilesParse/SmilesParse.h>
-#include <GraphMol/Substruct/SubstructMatch.h>
+#include <rdkit/GraphMol/SmilesParse/SmilesParse.h>
+#include <rdkit/GraphMol/Substruct/SubstructMatch.h>
 #include <DataStructs/ExplicitBitVect.h>
 
 #ifndef SMOLDOCK_VERBOSE_DEBUG
@@ -139,7 +139,7 @@ BOOST_AUTO_TEST_SUITE(Structure_ts)
             SmolDock::iConformer &conformer1 = vecConformer.at(i);
             SmolDock::iConformer &conformer2 = vecConformer2.at(i);
 
-            for (int j = 0; j < conformer1.x.size(); j++) {
+            for (long unsigned int j = 0; j < conformer1.x.size(); j++) {
                 if (conformer1.x[j] != conformer2.x[j])
                     sameconformer_test_tripped = true;
                 if (conformer1.y[j] != conformer2.y[j])
