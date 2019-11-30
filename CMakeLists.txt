@@ -5,7 +5,6 @@ set(CMAKE_CXX_STANDARD 17)
 #set(BOOST_ROOT /home/briand/local)
 #set(PYTHON_INCLUDE_DIR /home/briand/local/include/python3.6m)
 #set(PYTHON_LIBRARY /home/briand/local/lib)
-#SET(CMAKE_C_COMPILER   /home/briand/local/bin/gcc)
 #SET(CMAKE_CXX_COMPILER /home/briand/local/bin/g++)
 
 # where is the target environment
@@ -13,6 +12,7 @@ set(CMAKE_CXX_STANDARD 17)
 #SET(CMAKE_PREFIX_PATH /home/briand/local/)
 
 SET(CMAKE_CXX_FLAGS "-Wall")
+SET(CMAKE_C_COMPILER  "/usr/bin/g++")
 SET(CMAKE_CXX_COMPILER "/usr/bin/g++")
 SET(CMAKE_CXX_FLAGS_DEBUG "-g ")
 SET(CMAKE_CXX_FLAGS_MINSIZEREL "-Os -DNDEBUG")
@@ -41,18 +41,7 @@ project(smoldock)
 ######################## BUILD SETUP SECTION ##############################
 ###########################################################################
 
-# If you need to edit parameters for the compiler, linkers or their flags, see above this block
 
-# Set these path to the directory contaning libgfortran (for example) and other compiler-specific libs
-set(PATH_TO_COMPILER_INTERNAL_LIBS_1 /usr/lib/gcc/x86_64-pc-linux-gnu/8.3.0/)
-
-# These two you can use if needed for other path (for example if you have a ~/local/ as a substitute for installing to /usr)
-set(PATH_TO_COMPILER_INTERNAL_LIBS_2 /usr/lib)
-set(PATH_TO_COMPILER_INTERNAL_LIBS_2 /usr/lib64/)
-
-LINK_DIRECTORIES(${PATH_TO_COMPILER_INTERNAL_LIBS_1})
-LINK_DIRECTORIES(${PATH_TO_COMPILER_INTERNAL_LIBS_2})
-LINK_DIRECTORIES(${PATH_TO_COMPILER_INTERNAL_LIBS_3})
 
 ## MPI #######################
 # Edit this if you have a specific MPI setup
@@ -78,14 +67,14 @@ include_directories(${Boost_INCLUDE_DIRS})
 
 ## Python #######################
 # Edit version and other setup if needed
-set(PY_VERSION 3.6)
+set(PY_VERSION 3.7)
 find_package(PythonLibs ${PY_VERSION} REQUIRED)
 include_directories(${PYTHON_INCLUDE_DIRS})
 ## END Python ###################
 
 ######## VC SETUP ######
 # Adjust this according to where your Vc build is :
-set(VC_ROOT /home/eliane/Projects/VcInstall)
+set(VC_ROOT /usr/)
 
 include_directories(${VC_ROOT}/include/)
 LINK_DIRECTORIES(${VC_ROOT}/lib/)

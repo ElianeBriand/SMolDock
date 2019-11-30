@@ -94,7 +94,7 @@ namespace SmolDock {
 
         // For each bond of the template, we find the corresponding one in the molecule to edit
         // Then we set it to the same characteristics
-        for (int i = 0; i < templatemol->getNumBonds(); i++) {
+        for (unsigned int i = 0; i < templatemol->getNumBonds(); i++) {
             auto template_bond = templatemol->getBondWithIdx(i);
 
             // RDKit::MatchVectType matches = std::vector<std::pair<int, int>>
@@ -102,11 +102,11 @@ namespace SmolDock {
             // So we find_if for matching queryAtomIdx to the beginning and end of the bond
             int idx_atom1 = std::get<1>(*(std::find_if(matches.begin(), matches.end(),
                                                        [&](const std::pair<int, int> &e) {
-                                                           return (std::get<0>(e) == template_bond->getBeginAtomIdx());
+                                                           return (std::get<0>(e) == (int) template_bond->getBeginAtomIdx());
                                                        })));
             int idx_atom2 = std::get<1>(*(std::find_if(matches.begin(), matches.end(),
                                                        [&](const std::pair<int, int> &e) {
-                                                           return (std::get<0>(e) == template_bond->getEndAtomIdx());
+                                                           return (std::get<0>(e) == (int) template_bond->getEndAtomIdx());
                                                        })));
 
             auto bond_to_edit = mol->getBondBetweenAtoms(idx_atom1, idx_atom2);
@@ -119,7 +119,7 @@ namespace SmolDock {
 
             int idx_atom_to_edit = std::get<1>(*(std::find_if(matches.begin(), matches.end(),
                                                               [&](const std::pair<int, int> &e) {
-                                                                  return (std::get<0>(e) == i);
+                                                                  return (std::get<0>(e) == (int) i);
                                                               })));
 
             auto atom_to_edit = mol->getAtomWithIdx(idx_atom_to_edit);
