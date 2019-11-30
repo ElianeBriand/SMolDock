@@ -52,25 +52,13 @@
 #include <Structures/Protein.h>
 
 
-BOOST_AUTO_TEST_SUITE(main_test_suite)
+BOOST_AUTO_TEST_SUITE(Structure_ts)
 
-    BOOST_AUTO_TEST_CASE(molecule_class_tests) {
+    BOOST_AUTO_TEST_CASE(moleculeClass,* boost::unit_test::timeout(10)) {
 
 
         SmolDock::Molecule mol2;
         mol2.populateFromSMILES("COCO");
-
-        /*
-        BOOST_CHECK(mol1.numberOfAtoms() == mol2.numberOfAtoms());
-        BOOST_CHECK(mol1.numberOfBonds() == mol2.numberOfBonds());
-
-    */
-
-
-        SmolDock::Molecule failed_mol;
-        bool ret_failed_smiles = failed_mol.populateFromSMILES("HcndDH"); // Garbage SMILES
-
-        BOOST_CHECK(!ret_failed_smiles);
 
 
         SmolDock::Molecule mol4;
@@ -83,11 +71,11 @@ BOOST_AUTO_TEST_SUITE(main_test_suite)
         std::cout << "[ ] Ciclosporin SMILE parsing took "
                   << static_cast< std::chrono::duration<double> >(end_largesmile - start_largesmile).count()
                   << std::endl;
-        BOOST_CHECK(mol4.numberOfAtoms() == 85);
+        BOOST_TEST(mol4.numberOfAtoms() == 85);
 
     }
 
-    BOOST_AUTO_TEST_CASE(conformer_generation_tests) {
+    BOOST_AUTO_TEST_CASE(conformerGeneration) {
 
         SmolDock::Molecule mol1;
         // This is ibuprofen
@@ -97,7 +85,7 @@ BOOST_AUTO_TEST_SUITE(main_test_suite)
         SmolDock::iConformer conformer1;
         bool res1 = mol1.generateConformer(conformer1, true, 234);
 
-        BOOST_CHECK(res1);
+        BOOST_TEST(res1);
 
 
         auto start_conformersgen = std::chrono::system_clock::now();
@@ -109,7 +97,7 @@ BOOST_AUTO_TEST_SUITE(main_test_suite)
         auto end_conformersgen = std::chrono::system_clock::now();
 
 
-        BOOST_CHECK(res2 == desired_num_conformer);
+        BOOST_TEST(res2 == desired_num_conformer);
 
         auto duration_second = static_cast< std::chrono::duration<double> >(end_conformersgen -
                                                                             start_conformersgen).count();
@@ -118,8 +106,8 @@ BOOST_AUTO_TEST_SUITE(main_test_suite)
                   << "s for "
                   << res2 << " of " << desired_num_conformer << " generated." << std::endl;
 
-        BOOST_CHECK(duration_second <
-                    1); // we hope to be faster (for ibuprofen, consistently < 2ms) but 50ms/conformer is our "something is broken" alert level
+        BOOST_TEST((duration_second / desired_num_conformer) <
+                           (50.0/1000.0)); // we hope to be faster (for ibuprofen, consistently < 2ms) but 50ms/conformer is our "something is broken" alert level
 
 
 
@@ -129,7 +117,7 @@ BOOST_AUTO_TEST_SUITE(main_test_suite)
             SmolDock::iConformer &conformer1 = vecConformer.at(i);
             SmolDock::iConformer &conformer2 = vecConformer.at(i + 1);
 
-            for (int j = 0; j < conformer1.x.size(); j++) {
+            for (unsigned int j = 0; j < conformer1.x.size(); j++) {
                 if (conformer1.x[j] == conformer2.x[j])
                     coordinate_test_tripped = true;
                 if (conformer1.y[j] == conformer2.y[j])
@@ -139,7 +127,7 @@ BOOST_AUTO_TEST_SUITE(main_test_suite)
             }
         }
 
-        BOOST_CHECK(coordinate_test_tripped == false);
+        BOOST_TEST(coordinate_test_tripped == false);
 
         std::vector<SmolDock::iConformer> vecConformer2;
         mol1.generateConformers(vecConformer2, desired_num_conformer
@@ -147,7 +135,7 @@ BOOST_AUTO_TEST_SUITE(main_test_suite)
 
         // We check that the conformers are the same
         bool sameconformer_test_tripped = false;
-        for (int i = 0; i < vecConformer.size(); i++) {
+        for (unsigned int i = 0; i < vecConformer.size(); i++) {
             SmolDock::iConformer &conformer1 = vecConformer.at(i);
             SmolDock::iConformer &conformer2 = vecConformer2.at(i);
 
@@ -161,7 +149,7 @@ BOOST_AUTO_TEST_SUITE(main_test_suite)
             }
         }
 
-        BOOST_CHECK(sameconformer_test_tripped == false);
+        BOOST_TEST(sameconformer_test_tripped == false);
 
 
     }
@@ -175,28 +163,28 @@ BOOST_AUTO_TEST_SUITE(main_test_suite)
         // prot.populateFromPDB("1dpx.pdb"); // Lysozyme
         bool res = prot.populateFromPDB("../DockingTests/COX2_Ibuprofen/4PH9_COX2_without_Ibuprofen.pdb"); // COX-2
 
-        BOOST_CHECK(res);
+        BOOST_TEST(res);
 
         SmolDock::iProtein iprot = prot.getiProtein();
 
-        BOOST_CHECK(iprot.x.size() == iprot.y.size());
-        BOOST_CHECK(iprot.x.size() == iprot.z.size());
+        BOOST_TEST(iprot.x.size() == iprot.y.size());
+        BOOST_TEST(iprot.x.size() == iprot.z.size());
 
-        BOOST_CHECK(iprot.x.size() == iprot.type.size());
-        BOOST_CHECK(iprot.type.size() == iprot.variant.size());
-        BOOST_CHECK(iprot.x.size() == iprot.atomicRadius.size());
+        BOOST_TEST(iprot.x.size() == iprot.type.size());
+        BOOST_TEST(iprot.type.size() == iprot.variant.size());
+        BOOST_TEST(iprot.x.size() == iprot.atomicRadius.size());
 
         std::vector<SmolDock::iConformer> vecConformer;
         unsigned int desired_num_conformer = 3;
         mol1.generateConformers(vecConformer, desired_num_conformer, true, 234);
 
         for (auto &conformer: vecConformer) {
-            BOOST_CHECK(conformer.x.size() == conformer.y.size());
-            BOOST_CHECK(conformer.x.size() == conformer.z.size());
+            BOOST_TEST(conformer.x.size() == conformer.y.size());
+            BOOST_TEST(conformer.x.size() == conformer.z.size());
 
-            BOOST_CHECK(conformer.x.size() == conformer.type.size());
-            BOOST_CHECK(conformer.type.size() == conformer.variant.size());
-            BOOST_CHECK(conformer.x.size() == conformer.atomicRadius.size());
+            BOOST_TEST(conformer.x.size() == conformer.type.size());
+            BOOST_TEST(conformer.type.size() == conformer.variant.size());
+            BOOST_TEST(conformer.x.size() == conformer.atomicRadius.size());
         }
 
 

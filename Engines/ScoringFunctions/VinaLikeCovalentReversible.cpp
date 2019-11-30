@@ -182,7 +182,7 @@ namespace SmolDock::Score {
 
         iTransform tr = this->internalToExternalRepr(x);
 
-        normalizeQuaternionInPlace(tr.rota);
+        tr.doHousekeeping();
 
         double score_ = VinaLikeCovalentReversibleIntermolecularScoringFunction(this->startingConformation, tr, this->prot);
 
@@ -197,7 +197,7 @@ namespace SmolDock::Score {
         BOOST_ASSERT(grad.n_rows == this->numberOfParamInState);
 
         iTransform tr = this->internalToExternalRepr(x);
-        normalizeQuaternionInPlace(tr.rota);
+        tr.doHousekeeping();
 
 
         double score_ = VinaLikeCovalentReversibleIntermolecularScoringFunction(this->startingConformation, tr, this->prot);
@@ -235,7 +235,7 @@ namespace SmolDock::Score {
         {
             iTransform transform_dqs = tr;
             transform_dqs.rota.w() += this->differential_epsilon;
-            normalizeQuaternionInPlace(transform_dqs.rota);
+            transform_dqs.doHousekeeping();
             const double gradScore = this->useNonDefaultCoefficient ?
                                      VinaLikeCovalentReversibleIntermolecularScoringFunction<false,true>(this->startingConformation, transform_dqs, this->prot, this->nonDefaultCoefficients)
                                                                     : VinaLikeCovalentReversibleIntermolecularScoringFunction<false,false>(this->startingConformation, transform_dqs, this->prot);
@@ -245,7 +245,7 @@ namespace SmolDock::Score {
         {
             iTransform transform_dqx = tr;
             transform_dqx.rota.x() += this->differential_epsilon;
-            normalizeQuaternionInPlace(transform_dqx.rota);
+            transform_dqx.doHousekeeping();
             const double gradScore = this->useNonDefaultCoefficient ?
                                      VinaLikeCovalentReversibleIntermolecularScoringFunction<false,true>(this->startingConformation, transform_dqx, this->prot, this->nonDefaultCoefficients)
                                                                     : VinaLikeCovalentReversibleIntermolecularScoringFunction<false,false>(this->startingConformation, transform_dqx, this->prot);
@@ -256,7 +256,7 @@ namespace SmolDock::Score {
         {
             iTransform transform_dqy = tr;
             transform_dqy.rota.x() += this->differential_epsilon;
-            normalizeQuaternionInPlace(transform_dqy.rota);
+            transform_dqy.doHousekeeping();
             const double gradScore = this->useNonDefaultCoefficient ?
                                      VinaLikeCovalentReversibleIntermolecularScoringFunction<false,true>(this->startingConformation, transform_dqy, this->prot, this->nonDefaultCoefficients)
                                                                     : VinaLikeCovalentReversibleIntermolecularScoringFunction<false,false>(this->startingConformation, transform_dqy, this->prot);
@@ -266,7 +266,7 @@ namespace SmolDock::Score {
         {
             iTransform transform_dqz = tr;
             transform_dqz.rota.x() += this->differential_epsilon;
-            normalizeQuaternionInPlace(transform_dqz.rota);
+            transform_dqz.doHousekeeping();
             const double gradScore = this->useNonDefaultCoefficient ?
                                      VinaLikeCovalentReversibleIntermolecularScoringFunction<false,true>(this->startingConformation, transform_dqz, this->prot, this->nonDefaultCoefficients)
                                                                     : VinaLikeCovalentReversibleIntermolecularScoringFunction<false,false>(this->startingConformation, transform_dqz, this->prot);
@@ -310,7 +310,7 @@ namespace SmolDock::Score {
         BOOST_ASSERT(x.n_rows == this->numberOfParamInState);
 
         iTransform tr = this->internalToExternalRepr(x);
-        tr.rota.normalize();
+        tr.doHousekeeping();
 
         iConformer ret = this->startingConformation;
         applyBondRotationInPlace(ret, tr);
@@ -329,7 +329,7 @@ namespace SmolDock::Score {
         BOOST_ASSERT(x.n_rows == this->numberOfParamInState);
 
         iTransform tr = this->internalToExternalRepr(x);
-        normalizeQuaternionInPlace(tr.rota);
+        tr.doHousekeeping();
 
 
         return VinaLikeCovalentReversibleIntermolecularComponents(this->startingConformation, tr, this->prot);
@@ -340,7 +340,7 @@ namespace SmolDock::Score {
 
         iTransform tr = this->internalToExternalRepr(x);
 
-        normalizeQuaternionInPlace(tr.rota);
+        tr.doHousekeeping();
 
         // Template parameter controls whether onlyIntermolecular interaction are taken into account. Here we want true
         double score_ = VinaLikeCovalentReversibleIntermolecularScoringFunction<true>(this->startingConformation, tr, this->prot);

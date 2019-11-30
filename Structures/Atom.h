@@ -104,7 +104,7 @@ namespace SmolDock {
             covalentReversibleDonor = 1 << 4,
 
             // next flag : xxx = 1 << 5;
-            customAtomFlag1 = 1 << 29,
+            customAtomFlag1 = 1 << 28,
             customAtomFlag2 = 1 << 29,
             customAtomFlag3 = 1 << 30
 

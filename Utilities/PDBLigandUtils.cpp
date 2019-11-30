@@ -46,7 +46,7 @@ namespace SmolDock {
         // RDKit::MatchVectType matches = std::vector<std::pair<int, int>>
         //  The format is (queryAtomIdx, molAtomIdx)
         RDKit::MatchVectType matches;
-        bool matching = RDKit::SubstructMatch((RDKit::ROMol) *mol, (RDKit::ROMol) *templatemol, matches);
+        bool matching = RDKit::SubstructMatch(*(RDKit::ROMol*)(mol.get()), *(RDKit::ROMol*)(templatemol.get()), matches);
 
         if (!matching) {
             // We make a copy on which we will remove all double bond/charges/... to compare
@@ -77,7 +77,7 @@ namespace SmolDock {
             }
 
 
-            bool matching = RDKit::SubstructMatch((RDKit::ROMol) *mol, (RDKit::ROMol) *templatemol_plainstruct,
+            bool matching = RDKit::SubstructMatch(*(RDKit::ROMol*)(mol.get()), *(RDKit::ROMol*)(templatemol_plainstruct.get()),
                                                   matches);
             if (!matching) // Cant reconcile even without charges or double bond
             {

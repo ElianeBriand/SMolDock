@@ -7,37 +7,50 @@ Find the documentation on GitHub Pages : https://elianebriand.github.io/SmolDock
 
 # Build
 
-Check that you have the required dependencies (see below), then : 
+See the detailed documentation in ./Docs/BuildSmoldock.md or https://elianebriand.github.io/SmolDock/BuildSmoldock.html
+
+In short : Check that you have the required dependencies (see below). Then set the relevant paths in the CMakeLists.txt. Then :
 
     git submodule update --init --recursive  # init the submodules (tbb)
-    cmake .
-    make -j4
+    mkdir build
+    cd build
+    cmake ..
+    make -j4 # To build all possible frontends and python modules
+    # or
+    make -j4 smoldock # for the c++ library and test frontend only
+
+Lots of warning but usually nothing blocking.
 
 # Work with it
 
-    cd ./cmake-build-XXX
+    cd ./build # if not already in it
     ./smoldock
    
 See Frontends/main.cpp for lack of a proper interface yet...
 
+We also have a python interface and various CLI frontend. You want also want to write your own dedicated frontend for your task.
+
+For all that and more, see the documentation in ./Docs or https://elianebriand.github.io/SmolDock/
 
 # Licencing
 SmolDock is licenced under GNU GPL version 3 or later.
 
 
 It includes works from :
-
 - ESBTL (GNU GPLv3)
-- Autodock Vina (Apache 2.0)
 - RDKit (BSD 3-clauses)
+- Autodock Vina (Apache 2.0)
 - Ensmallen (BSD 3-clauses)
-- Eigen (MPL2 licence)
 - Intel TBB (Apache 2.0 - git submodule)
 
-It links with
+It links with :
 - RDKit (BSD 3-clauses)
 - Vc (BSD 3-clauses)
 - libunwind (MIT licence)
+- Eigen (MPL2 licence)
+- Boost (Boost software licence)
+- Python libraries for the python modules (PSF)
+- Any standard-compliant MPI implementation (tested on OpenMPI)
 
 It includes data from :
 - GROMACS implementation of Amber99ff (LGPL 2.1 or later)
@@ -46,8 +59,9 @@ See COPYING for copyrights and text of these licences.
 
 # Documentation
 
-Checkout the Docs dir. We have code documentation with Doxygen in Docs/html, and sphinx-based more general HOWTO
-in Docs/build/html.
+Checkout the Docs dir. We have code documentation with Doxygen in Docs/html.
+
+Find the documentation online on GitHub Pages : https://elianebriand.github.io/SmolDock/
 
 # Dependencies
 
@@ -179,7 +193,6 @@ If the need arise to have static linking of boost into the python module, this m
 even for static libraries :
 
 
-    BOOST_ROOT
     ./bootstrap.sh --prefix=/home/builder/local/
 
     ./b2 --prefix=/home/builder/local/ --build-type=complete --build-dir=/home/builder/boost_1_69_0/build/ --layout=tagged cxxflags=" -fPIC " cflags=" -fPIC " --ignore-site-config

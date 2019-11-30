@@ -30,6 +30,7 @@
 #include "Engines/ConformerDockingEngine.h"
 #include <Engines/ScoringFunctions/VinaLike.h>
 #include <Engines/ScoringFunctions/VinaLikeRigid.h>
+#include <Engines/ScoringFunctions/VinaLikeCommon.h>
 #include <Engines/Internals/InternalsUtilityFunctions.h>
 
 #include <Utilities/PDBWriter.h>
@@ -65,8 +66,18 @@ int main() {
     sd::setupLogPrinting();
 
 
-    BOOST_LOG_TRIVIAL(info) << "SmolDock " << sd::getVersionString();
+    auto startup_moment = std::chrono::system_clock::now();
+    std::time_t startup_time = std::chrono::system_clock::to_time_t(startup_moment);
 
+
+    BOOST_LOG_TRIVIAL(info) << "SmolDock " << sd::getVersionString();
+    BOOST_LOG_TRIVIAL(info) << "";
+    BOOST_LOG_TRIVIAL(info) << "Starting processing on " << std::ctime(&startup_time);
+
+
+    
+    
+    
     std::vector<std::shared_ptr<sd::InputModifier::InputModifier>> modifiers;
     modifiers.push_back(std::make_shared<sd::InputModifier::VinaCompatibility>());
 
@@ -91,6 +102,7 @@ int main() {
     sd::iProtein iprot = prot.getiProtein();
     sd::iTransform tr = sd::iTransformIdentityInit(conf_init.num_rotatable_bond);
     tr.transl = conf_init.centroidNormalizingTransform;
+    tr.doHousekeeping();
 
     double scoreWithoutDocking = sd::Score::vina_like_rigid_inter_scoring_func(conf_init,
                                                                                      tr,
@@ -189,6 +201,11 @@ int main() {
 
     pwriter.writePDB("res_speedtest.pdb");
 
+    auto exit_moment = std::chrono::system_clock::now();
+    std::time_t exit_time = std::chrono::system_clock::to_time_t(exit_moment);
+
+    BOOST_LOG_TRIVIAL(info) << "";
+    BOOST_LOG_TRIVIAL(info) << "Ending processing on " << std::ctime(&exit_time);
     return 0;
 
 ////

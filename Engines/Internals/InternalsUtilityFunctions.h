@@ -188,8 +188,8 @@ namespace SmolDock {
 
     //! Apply the provided iTransform to a vector (only rigid component : translation + global rotation)
     inline void applyRigidTransformInPlace(Eigen::Vector3d &v, const iTransform &tr) {
-        v = tr.rota * v;
-        v = tr.transl * v;
+        v = tr.rota._transformVector(v);
+        v += tr.transl;
     }
 
     //! Apply the provided iTransform to a vector (only rigid component : translation + global rotation)
@@ -204,29 +204,38 @@ namespace SmolDock {
         const Vc::Vector<double> yold = y;
         const Vc::Vector<double> zold = z;
 
-        double qw = tr.rota.w();
-        double qx = tr.rota.x();
-        double qy = tr.rota.y();
-        double qz = tr.rota.z();
 
-        double t2 =   qw*qx;
-        double t3 =   qw*qy;
-        double t4 =   qw*qz;
-        double t5 =  -qx*qx;
-        double t6 =   qx*qy;
-        double t7 =   qx*qz;
-        double t8 =  -qy*qy;
-        double t9 =   qy*qz;
-        double t10 = -qz*qz;
+        // FIXME : Not the most efficient but ?
+        /*
+         * rotMatrix =
+         * | a1 a2 a3 |
+         * | b1 b2 b3 |
+         * | c1 c2 c3 |
+         */
+        const double a1 = tr.rotMatrix.data()[0];
+        const double a2 = tr.rotMatrix.data()[1];
+        const double a3 = tr.rotMatrix.data()[2];
+        const double b1 = tr.rotMatrix.data()[3];
+        const double b2 = tr.rotMatrix.data()[4];
+        const double b3 = tr.rotMatrix.data()[5];
+        const double c1 = tr.rotMatrix.data()[6];
+        const double c2 = tr.rotMatrix.data()[7];
+        const double c3 = tr.rotMatrix.data()[8];
 
+        /*
+         * Product :
+         * | a1 a2 a3 |   | x |
+         * | b1 b2 b3 | * | y |
+         * | c1 c2 c3 |   | z |
+         */
 
-        x = 2*( (t8 + t10)*xold + (t6 -  t4)*yold + (t3 + t7)*zold ) + xold;
-        y = 2*( (t4 +  t6)*xold + (t5 + t10)*yold + (t9 - t2)*zold ) + yold;
-        z = 2*( (t7 -  t3)*xold + (t2 +  t9)*yold + (t5 + t8)*zold ) + zold;
+        x = a1 * xold + a2* yold + a3 * zold;
+        y = b1 * xold + b2* yold + b3 * zold;
+        z = c1 * xold + c2* yold + c3 * zold;
 
-        x = x + tr.transl.x();
-        y = y + tr.transl.y();
-        z = z + tr.transl.z();
+        x += tr.transl.x();
+        y += tr.transl.y();
+        z += tr.transl.z();
     }
 
     //! Apply the provided iTransform to a vector( only rigid component : translation + global rotation)

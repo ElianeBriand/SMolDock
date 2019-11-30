@@ -666,10 +666,10 @@ namespace SmolDock {
                 acc_z(position.z);
             }
 
-            conformer.centroidNormalizingTransform = Eigen::Translation<double, 3>(mean(acc_x), mean(acc_y), mean(acc_z));
+            conformer.centroidNormalizingTransform = Eigen::Vector3d(mean(acc_x), mean(acc_y), mean(acc_z));
 
         } else {
-            conformer.centroidNormalizingTransform = Eigen::Translation<double, 3>(0.0, 0.0, 0.0);
+            conformer.centroidNormalizingTransform = Eigen::Vector3d(0.0, 0.0, 0.0);
         }
 
         for (auto atom_it = rwmol->beginAtoms(); atom_it != rwmol->endAtoms(); ++atom_it) {

@@ -29,8 +29,14 @@ namespace SmolDock {
     */
     struct iTransform {
         // Global component
-        Eigen::Translation<double, 3> transl;
+        Eigen::Vector3d transl;
+
         Eigen::Quaternion<double> rota;
+        Eigen::Matrix<double, 3,3, Eigen::RowMajor> rotMatrix;
+        inline void doHousekeeping() {
+            rota.normalize();
+            rotMatrix = rota.toRotationMatrix();
+        }
 
         std::vector<double> bondRotationsAngles;
     };

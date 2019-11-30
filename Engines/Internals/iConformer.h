@@ -40,7 +40,7 @@ namespace SmolDock {
 
         unsigned int num_rotatable_bond;
 
-        Eigen::Translation<double, 3> centroidNormalizingTransform; /*!< If the coordinate have been normalized so as to have the centroid
+        Eigen::Vector3d centroidNormalizingTransform; /*!< If the coordinate have been normalized so as to have the centroid
                                                         as [0,0,0], then this contain the translation that restore it to its original position,
                                                         aka the coordinate of the centroid (because |normalized> = |originalPos> - |centroidPos> )
                                                         Else it's just 0,0,0 */
@@ -85,19 +85,11 @@ namespace SmolDock {
                 variant.scalar(i) = iconformer.variant[i];
             }
 
-            for (unsigned int i = 0; i < x.vectorsCount(); ++i) {
-                for (unsigned int j = 0; j < Vc::Vector<double>::Size ; ++j) {
-                    std::cout << " -> " << i << ", " << j << std::endl;
-                    std::cout << "    " << x.vector(i)[j] << " <-> " << iconformer.x[Vc::Vector<double>::Size * i + j] << std::endl;
-                    std::cout << "    " << y.vector(i)[j] << " <-> " << iconformer.y[Vc::Vector<double>::Size * i + j] << std::endl;
-                    std::cout << "    " << z.vector(i)[j] << " <-> " << iconformer.z[Vc::Vector<double>::Size * i + j] << std::endl;
-                }
-            }
         }
 
         unsigned int num_rotatable_bond;
 
-        Eigen::Translation<double, 3> centroidNormalizingTransform;
+        Eigen::Vector3d centroidNormalizingTransform;
 
         Vc::Memory<Vc::Vector<double>> x, y, z;
 

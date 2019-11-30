@@ -125,7 +125,7 @@ namespace SmolDock {
             BOOST_ASSERT(x.n_rows == 7);
 
             iTransform tr = this->internalToExternalRepr(x);
-            normalizeQuaternionInPlace(tr.rota);
+            tr.doHousekeeping();
 
             double score_ = vina_like_rigid_inter_scoring_func(this->startingConformation, tr, this->prot);
 
@@ -140,7 +140,7 @@ namespace SmolDock {
             BOOST_ASSERT(grad.n_rows == 7);
 
             iTransform tr = this->internalToExternalRepr(x);
-            normalizeQuaternionInPlace(tr.rota);
+            tr.doHousekeeping();
 
             double score_ = vina_like_rigid_inter_scoring_func(this->startingConformation, tr, this->prot);
 
@@ -171,7 +171,7 @@ namespace SmolDock {
             {
                 iTransform transform_ds = tr;
                 transform_ds.rota.w() += this->differential_epsilon;
-                normalizeQuaternionInPlace(transform_ds.rota);
+                transform_ds.doHousekeeping();
                 grad[3] = vina_like_rigid_inter_scoring_func(this->startingConformation, transform_ds, this->prot) -
                           score_;
             }
@@ -179,7 +179,7 @@ namespace SmolDock {
             {
                 iTransform transform_du = tr;
                 transform_du.rota.x() += this->differential_epsilon;
-                normalizeQuaternionInPlace(transform_du.rota);
+                transform_du.doHousekeeping();
                 grad[4] = vina_like_rigid_inter_scoring_func(this->startingConformation, transform_du, this->prot) -
                           score_;
             }
@@ -187,7 +187,7 @@ namespace SmolDock {
             {
                 iTransform transform_dv = tr;
                 transform_dv.rota.y() += this->differential_epsilon;
-                normalizeQuaternionInPlace(transform_dv.rota);
+                transform_dv.doHousekeeping();
                 grad[5] = vina_like_rigid_inter_scoring_func(this->startingConformation, transform_dv, this->prot) -
                           score_;
             }
@@ -195,7 +195,7 @@ namespace SmolDock {
             {
                 iTransform transform_dt = tr;
                 transform_dt.rota.z() += this->differential_epsilon;
-                normalizeQuaternionInPlace(transform_dt.rota);
+                transform_dt.doHousekeeping();
                 grad[6] = vina_like_rigid_inter_scoring_func(this->startingConformation, transform_dt, this->prot) -
                           score_;
             }
@@ -295,7 +295,8 @@ namespace SmolDock {
                     double distanceToProteinCenter = distToCenterVector.norm();
 
                     if (distanceToProteinCenter > (this->prot.radius - 1)) {
-                        score_raw += std::pow((distanceToProteinCenter - this->prot.radius), 4) + 10;
+                        //FIXME : temporary disable
+                        //score_raw += std::pow((distanceToProteinCenter - this->prot.radius), 4) + 10;
                         continue;
                     }
 
