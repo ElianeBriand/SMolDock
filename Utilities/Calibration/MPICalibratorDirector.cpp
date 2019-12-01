@@ -121,7 +121,8 @@ namespace SmolDock::Calibration {
         this->workStructure.conformerPerLigand = this->conformerNumber;
         this->workStructure.retryPerConformer = this->retryNumber;
         this->workStructure.numRegisteredVariant = this->variantsForAllLigands.size();
-        this->workStructure.totalNumLigand = this->numLigand;
+        this->workStructure.totalNumLigand = this->totalNumLigand;
+        this->workStructure.numAnchorLigand = this->numAnchorLigand;
         this->workStructure.seed = dis_int(this->rndGenerator);
         this->workStructure.numCoeffToCalibrate = this->idxOfCoeffsToCalibrate.size();
         this->workStructure.idxOfCoeffsToCalibrate = this->idxOfCoeffsToCalibrate;
@@ -151,13 +152,25 @@ namespace SmolDock::Calibration {
                 lr.receptorID = k;
                 lr.smiles = std::get<std::string>(this->ligandSmilesRefScore[k][j]);
                 lr.deltaG = std::get<double>(this->ligandSmilesRefScore[k][j]);
+                lr.isAnchor = false;
+                lr.molblock = "";
+                mpi::broadcast(world, lr, 0);
+            }
+            for (unsigned int j = 0; j < this->anchorLigands[k].size(); ++j) {
+                LigandRecord lr;
+                lr.receptorID = k;
+                lr.smiles = this->anchorLigands[k][j]->writeToSMILES();
+                lr.deltaG = 0.0;
+                lr.isAnchor = true;
+                lr.molblock = this->anchorLigands[k][j]->writeToMolBlock();
                 mpi::broadcast(world, lr, 0);
             }
             this->numLigandPerReceptor.push_back(this->ligandSmilesRefScore[k].size());
+            this->numAnchorLigandPerReceptor.push_back(this->anchorLigands[k].size());
         }
 
 
-        for (unsigned int l = 0; l < this->numLigand; ++l) {
+        for (unsigned int l = 0; l < this->totalNumLigand; ++l) {
             this->indexShuffler.push_back(l);
         }
 
@@ -234,7 +247,7 @@ namespace SmolDock::Calibration {
         double deltaG = R * T * std::log(Ki) / 1000; // kcal/mol aka same as other docking software
 
         this->ligandSmilesRefScore[recID].emplace_back(std::make_tuple(smiles,deltaG));
-        this->numLigand++;
+        this->totalNumLigand++;
         return true;
     }
 
@@ -326,8 +339,15 @@ namespace SmolDock::Calibration {
             auto& t = tasks.emplace_back((Task()));
             t.receptorID = std::get<0>(rdlidx);
             t.ligandIdx = std::get<1>(rdlidx);
-
             t.coefficients = currCoeffsUpdated;
+
+            if(realIdx < (totalNumLigand - numAnchorLigand)) {
+                // it a normal (non-anchor) ligand
+                t.anchorLigandTask = false;
+            } else {
+                // its an anchor ligand
+                t.anchorLigandTask = true;
+            }
 
             taskRequests.push_back(this->world.isend(currentSendRank, MTags::TaskRequest, t));
 
@@ -398,24 +418,52 @@ namespace SmolDock::Calibration {
     }
 
     size_t MPICalibratorDirector::NumFunctions() {
-        return this->numLigand;
+        return this->totalNumLigand;
     }
 
     std::tuple<unsigned int, unsigned int> MPICalibratorDirector::RecLigIdxFromGlobalIdx(unsigned int idx) {
-        unsigned int currRecId = 0;
-        for(unsigned int& numLigForRec : this->numLigandPerReceptor)
-        {
-            if(static_cast<long int>(idx) - static_cast<long int>(numLigForRec) < 0)
-            {
-                return std::make_tuple(currRecId, idx);
-            }
-            idx = idx - numLigForRec;
-            currRecId++;
-        }
-        BOOST_LOG_TRIVIAL(error) << "Indexing error : unable to translate global index " << idx;
-        BOOST_LOG_TRIVIAL(error) << "   Total num ligand : " << this->numLigand;
+        /**
+         * We have N receptor with M_n ligands each
+         * The global index goes ligand 0 of receptor 0, ligand 1 of receptor 0 ... ligand M_1 of receptor 0
+         * then ligand 0 of receptor 1, etc etc
+         * So we use the numLigandPerReceptor to get back to the local index of the ligand for a given receptor
+         *
+         * Additionally, after the end of the normal (non-anchor) ligand, we have the same system for the anchor ligands
+         *
+         * NB: Code is duplicated for ease of comprehension
+         * */
+         if(idx < (this->totalNumLigand - this->numAnchorLigand)) {
+             unsigned int currRecId = 0;
+             for(unsigned int& numLigForRec : this->numLigandPerReceptor)
+             {
+                 if(static_cast<long int>(idx) - static_cast<long int>(numLigForRec) < 0)
+                 {
+                     return std::make_tuple(currRecId, idx);
+                 }
+                 idx = idx - numLigForRec;
+                 currRecId++;
+             }
+         } else  {
+             unsigned int anchor_idx = idx - (this->totalNumLigand - this->numAnchorLigand);
+             unsigned int currRecId = 0;
+             for(unsigned int& numAnchorLigForRec : this->numAnchorLigandPerReceptor)
+             {
+                 if(static_cast<long int>(anchor_idx) - static_cast<long int>(numAnchorLigForRec) < 0)
+                 {
+                     return std::make_tuple(currRecId, anchor_idx);
+                 }
+                 anchor_idx = anchor_idx - numAnchorLigForRec;
+                 currRecId++;
+             }
+         }
+
+        BOOST_LOG_TRIVIAL(error) << "Unexpected indexing error : unable to translate global index " << idx;
+        BOOST_LOG_TRIVIAL(error) << "   Total num ligand : " << this->totalNumLigand;
+        BOOST_LOG_TRIVIAL(error) << "   Anchor ligand : " << this->numAnchorLigand;
+        BOOST_LOG_TRIVIAL(error) << "   Non-anchor (deduced) : " << (this->totalNumLigand - this->numAnchorLigand);
+        BOOST_LOG_TRIVIAL(error) << "Internal state not sound, terminating.";
         std::terminate();
-        return std::make_tuple(currRecId, idx);
+        return std::make_tuple(0, idx);
     }
 
     bool MPICalibratorDirector::applySpecialResidueTypingFromRecID(Calibrator::ReceptorID recID,
@@ -438,6 +486,17 @@ namespace SmolDock::Calibration {
         }
 
     }
+
+    bool MPICalibratorDirector::addAnchorLigandFromMol2File(ReceptorID recID, std::string& filename) {
+        auto aLig = std::make_shared<Molecule>();
+        aLig->populateFromMol2File(filename);
+
+        this->anchorLigands[recID].push_back(aLig);
+        this->numAnchorLigand++;
+        this->totalNumLigand++;
+        return true;
+    }
+
 
 
 }

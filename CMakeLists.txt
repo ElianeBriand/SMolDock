@@ -224,7 +224,8 @@ set(SOURCE_LIST Structures/Structure.cpp
         Utilities/SMARTSMatcher.cpp
         Utilities/SMARTSMatcher.h
         Utilities/AdvancedErrorHandling.cpp
-        Utilities/AdvancedErrorHandling.h)
+        Utilities/AdvancedErrorHandling.h
+        Frontends/FrontendCommon.h)
 
 set(MPI_SOURCE_LIST Utilities/Calibration/MPICalibratorDirector.cpp
         Utilities/Calibration/MPICalibratorDirector.h
@@ -240,7 +241,7 @@ set(PY_EXPORT_SOURCE_LIST Frontends/Python/PyStructures.cpp
         Frontends/Python/PyUtilities.cpp
         Frontends/Python/PyUtilities.h
         Frontends/Python/PyEngine.cpp
-        Frontends/Python/PyEngine.h Frontends/FrontendCommon.h)
+        Frontends/Python/PyEngine.h)
 
 
 
@@ -262,7 +263,7 @@ target_compile_definitions(libsmoldock PUBLIC BOOST_LOG_DYN_LINK)
 
 add_executable(smoldock Frontends/main.cpp)
 target_link_libraries(smoldock libsmoldock)
-target_link_libraries(smoldock boost_log_setup boost_log boost_thread)
+target_link_libraries(smoldock boost_log_setup boost_log boost_thread boost_filesystem boost_program_options)
 target_link_libraries(smoldock tbb)
 target_link_libraries(smoldock rdkit_base avalon_clib AvalonLib freesasa_clib FreeSASALib maeparser )
 target_link_libraries(smoldock coordgen RingDecomposerLib URFLib RDGeneral RDStreams DataStructs )
@@ -310,7 +311,7 @@ add_executable(mpicalibrator Frontends/mpicalibrator.cpp ${MPI_SOURCE_LIST})
 set_target_properties(mpicalibrator PROPERTIES COMPILE_FLAGS "${MPI_COMPILE_FLAGS} ")
 set_target_properties(mpicalibrator PROPERTIES LINK_FLAGS ${MPI_LINK_FLAGS})
 target_link_libraries(mpicalibrator libsmoldock)
-target_link_libraries(mpicalibrator boost_log_setup boost_log boost_thread)
+target_link_libraries(mpicalibrator boost_log_setup boost_log boost_thread boost_filesystem boost_program_options)
 target_link_libraries(mpicalibrator tbb)
 target_link_libraries(mpicalibrator rdkit_base avalon_clib AvalonLib freesasa_clib FreeSASALib maeparser )
 target_link_libraries(mpicalibrator coordgen RingDecomposerLib URFLib RDGeneral RDStreams DataStructs )

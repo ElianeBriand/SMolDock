@@ -64,8 +64,14 @@ namespace SmolDock::Calibration {
             LigandRecord lr;
             mpi::broadcast(world, lr, 0);
 
+            if(lr.isAnchor == false) {
             this->ligandSmilesRefScore[lr.receptorID].push_back(
                     std::make_tuple(lr.smiles, lr.deltaG, nullptr, std::vector<iConformer>()));
+            } else {
+                this->anchorLigands[lr.receptorID].push_back(
+                        std::make_tuple(lr.molblock, nullptr, nullptr, std::vector<iConformer>()));
+            }
+
         }
 
 
@@ -87,6 +93,31 @@ namespace SmolDock::Calibration {
 
             }
         }
+
+        for (auto it = this->anchorLigands.begin(); it != this->anchorLigands.end(); ++it) {
+            for (unsigned int j = 0; j < it->second.size(); ++j) {
+                std::shared_ptr<Molecule> mol_ref_sptr = std::get<1>(it->second.at(j));
+                std::shared_ptr<Molecule> mol_sptr = std::get<2>(it->second.at(j));
+                mol_ref_sptr = std::make_shared<Molecule>(true);
+                mol_sptr = std::make_shared<Molecule>(true);
+                auto molblock = std::get<std::string>(it->second.at(j));
+                bool res = mol_sptr->populateFromMolBlock(molblock);
+                bool res2 = mol_ref_sptr->populateFromMolBlock(molblock);
+                if(!res || !res2) {
+                    BOOST_LOG_TRIVIAL(error) << "Cannot parse transmitted mol block to Molecule !";
+                }
+
+                for(RegisteredVariant& variant : this->variantsForAllLigands)
+                {
+                    mol_sptr->applyAtomVariant(variant.smarts,static_cast<Atom::AtomVariant>(variant.atomVariant));
+                }
+
+                auto& conformer_vector = std::get<std::vector<iConformer>>(it->second.at(j));
+                mol_sptr->generateConformers(conformer_vector, this->workStructure.conformerPerLigand, true,
+                                             dis_int(this->rndGenerator));
+            }
+        }
+
 
         for (unsigned int l = 0; l < this->pdbBlockStrings.size(); ++l) {
 
@@ -142,24 +173,42 @@ namespace SmolDock::Calibration {
             const unsigned int& recId = t.receptorID;
             const unsigned int& ligandIdx = t.ligandIdx;
             std::vector<double>& coeffs = t.coefficients;
+            bool isAnchorTask = t.anchorLigandTask;
 
             const unsigned int& conformerPerLigand = this->workStructure.conformerPerLigand;
             const unsigned int& retryPerConformer = this->workStructure.retryPerConformer;
 
-            const auto& confvector = std::get<std::vector<iConformer>>(this->ligandSmilesRefScore.at(recId).at(ligandIdx));
-            const auto& referenceScore = std::get<double>(this->ligandSmilesRefScore.at(recId).at(ligandIdx));
+            BOOST_LOG_TRIVIAL(debug) << "Received one task";
+            BOOST_LOG_TRIVIAL(debug) << " | Conformer          : " << conformerPerLigand;
+            BOOST_LOG_TRIVIAL(debug) << " | Retry   nb         : " << retryPerConformer;
+            BOOST_LOG_TRIVIAL(debug) << " | Coefficients       : " << vectorToString(coeffs);
+            BOOST_LOG_TRIVIAL(debug) << " | Coeffs to change   : " << vectorToString(this->workStructure.idxOfCoeffsToCalibrate);
+            BOOST_LOG_TRIVIAL(debug) << " | Receptor idx       : " << recId;
+            BOOST_LOG_TRIVIAL(debug) << " | Ligand idx         : " << ligandIdx;
+            BOOST_LOG_TRIVIAL(debug) << " | Is anchor ?        : " << isAnchorTask;
+
+            const auto& confvector =  isAnchorTask ? std::get<std::vector<iConformer>>(this->anchorLigands.at(recId).at(ligandIdx))
+                    : std::get<std::vector<iConformer>>(this->ligandSmilesRefScore.at(recId).at(ligandIdx));
             const iProtein& prot = std::get<2>(this->referenceReceptor[recId]);
             const iProtein& fullprot = std::get<3>(this->referenceReceptor[recId]);
+
+            if(isAnchorTask) {
+                // Anchor task : compute RMSD and loss
+                // TODO ANCHOR
+
+                Result r;
+//                r.loss = score - referenceScore;
+//                r.lossGradient = gradientVector;
+
+                this->world.send(0, MTags::ResultMessage, r);
+            } else {
+                //Non Anchor task : compute score and loss
+
+
 
             auto resultMutex = std::make_shared<std::mutex>();
             auto local_scores = std::make_shared<std::vector<double>>();
 
-            BOOST_LOG_TRIVIAL(debug) << "Received one task";
-            BOOST_LOG_TRIVIAL(debug) << " | Conformer          : " << conformerPerLigand;
-            BOOST_LOG_TRIVIAL(debug) << " | Retry              : " << retryPerConformer;
-            BOOST_LOG_TRIVIAL(debug) << " | Reference score    : " << referenceScore;
-            BOOST_LOG_TRIVIAL(debug) << " | Coefficients       : " << vectorToString(coeffs);
-            BOOST_LOG_TRIVIAL(debug) << " | Coeffs to change   : " << vectorToString(this->workStructure.idxOfCoeffsToCalibrate);
 
             tbb::parallel_for(tbb::blocked_range2d<size_t>(0, conformerPerLigand,0, retryPerConformer),
                               MPICalibrator2DLoopRunner(
@@ -204,6 +253,7 @@ namespace SmolDock::Calibration {
             }
 
 
+            const auto& referenceScore = std::get<double>(this->ligandSmilesRefScore.at(recId).at(ligandIdx));
 
 
             BOOST_LOG_TRIVIAL(debug) << "Completed one task";
@@ -219,6 +269,8 @@ namespace SmolDock::Calibration {
             r.lossGradient = gradientVector;
 
             this->world.send(0, MTags::ResultMessage, r);
+
+            }
         }
 
     }
