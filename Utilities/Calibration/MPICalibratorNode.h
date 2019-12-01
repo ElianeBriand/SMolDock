@@ -73,6 +73,9 @@ namespace SmolDock::Calibration {
         std::map<Calibrator::ReceptorID, std::vector<std::tuple<std::string, double, std::shared_ptr<Molecule>, std::vector<iConformer>>>>
                 ligandSmilesRefScore;
 
+        std::map<Calibrator::ReceptorID, std::vector<std::tuple<std::string, std::shared_ptr<Molecule>,std::shared_ptr<Molecule>, std::vector<iConformer>>>>
+                anchorLigands;
+
         std::vector<std::tuple<std::shared_ptr<Protein>, Engine::AbstractDockingEngine::DockingBoxSetting, iProtein, iProtein> > referenceReceptor;
 
 

@@ -40,6 +40,7 @@ namespace SmolDock::Calibration {
         unsigned int retryPerConformer;
         unsigned int numRegisteredVariant;
         unsigned int totalNumLigand;
+        unsigned int numAnchorLigand;
         int seed;
 
         unsigned int numCoeffToCalibrate;
@@ -122,22 +123,28 @@ namespace SmolDock::Calibration {
         std::string smiles;
         double deltaG;
 
+        bool isAnchor;
+        std::string molblock;
+
         template<class Archive>
         void serialize(Archive & ar, const unsigned int version)
         {
             ar & receptorID;
             ar & smiles;
             ar & deltaG;
+            ar & isAnchor;
+            ar & molblock;
         }
 
     };
-
 
 
     struct Task {
         unsigned int receptorID;
         unsigned int ligandIdx;
         std::vector<double> coefficients;
+
+        bool anchorLigandTask;
 
         bool endOfTasks = false;
 
@@ -147,10 +154,9 @@ namespace SmolDock::Calibration {
             ar & receptorID;
             ar & ligandIdx;
             ar & coefficients;
+            ar & anchorLigandTask;
             ar & endOfTasks;
         }
-
-
     };
 
     struct Result {

@@ -21,9 +21,13 @@
 #include <iostream>
 #include <memory>
 #include <chrono>
-
+#include <ctime>
 
 #include <boost/log/trivial.hpp>
+
+#include <boost/filesystem.hpp>
+#include <boost/program_options.hpp>
+#include <Utilities/PDBWriter.h>
 
 #include "Structures/Molecule.h"
 #include "Structures/Protein.h"
@@ -53,123 +57,153 @@
 
 #include <tbb/task_scheduler_init.h>
 
+#include "FrontendCommon.h"
+
 namespace sd = SmolDock;
+namespace po = boost::program_options;
 
 
 
-int main() {
+
+int main(int argc, char *argv[]) {
 
     setupAdvancedErrorHandling();
-
-    //tbb::task_scheduler_init tbbInit(2);
-
-    /* Setting up the logger */
     sd::setupLogPrinting();
 
 
-    auto startup_moment = std::chrono::system_clock::now();
-    std::time_t startup_time = std::chrono::system_clock::to_time_t(startup_moment);
+    BOOST_LOG_TRIVIAL(info) << "\n\nSmolDock v0.2";
+    BOOST_LOG_TRIVIAL(info) << "Copyright (C) 2019  Eliane Briand";
+    BOOST_LOG_TRIVIAL(info) << "    This program comes with ABSOLUTELY NO WARRANTY.";
+    BOOST_LOG_TRIVIAL(info) << "    This is free software, and you are welcome to redistribute it.";
+    BOOST_LOG_TRIVIAL(info) << "    You should have received a copy of the GNU General Public License version 3";
+    BOOST_LOG_TRIVIAL(info) << "    along with this program.  If not, see <https://www.gnu.org/licenses/>.\n\n";
 
 
-    BOOST_LOG_TRIVIAL(info) << "SmolDock " << sd::getVersionString();
-    BOOST_LOG_TRIVIAL(info) << "";
-    BOOST_LOG_TRIVIAL(info) << "Starting processing on " << std::ctime(&startup_time);
+    po::options_description desc("Supported options");
+    desc.add_options()
+            ("help", "help message")
+            ("receptor", po::value<std::string>(), "input receptor PDB file")
+            ("ligand", po::value<std::string>(), "input ligand mol or mol2 file")
+            ("output", po::value<std::string>(), "output PDB file for ligand conformation")
+            ("log", po::value<std::string>(), "write log to file (in addition to standard output)")
+            ("force", "overwrite output file if it already exist");
 
+    po::variables_map vm;
+    po::store(po::parse_command_line(argc, argv, desc), vm);
+    po::notify(vm);
 
-    
-    
-    
-    std::vector<std::shared_ptr<sd::InputModifier::InputModifier>> modifiers;
-    modifiers.push_back(std::make_shared<sd::InputModifier::VinaCompatibility>());
+    if (vm.count("help")) {
+        BOOST_LOG_TRIVIAL(info) << desc << "\n";
+        return 1;
+    }
 
-    bool succeeded = true;
+    bool argument_error = false;
+    if (vm.count("receptor") == 0) {
+        argument_error = true;
+        BOOST_LOG_TRIVIAL(error)
+            << "A receptor PDB file path must be provided with option --receptor (see also --help)";
+        //<< vm["include-path"].as< std::string> >() << "\n";
+    }
 
-    sd::Protein prot;
-    succeeded &= prot.populateFromPDB("../DockingTests/COX2_Ibuprofen/4PH9_COX2_without_Ibuprofen.pdb", modifiers); // COX-2
+    if (vm.count("ligand") == 0) {
+        argument_error = true;
+        BOOST_LOG_TRIVIAL(error) << "A ligand mol or mol2 file path must be provided with option --ligand (see also --help)";
+        //<< vm["input-file"].as< vector<string> >() << "\n";
+    }
 
+    if (vm.count("output") == 0) {
+        argument_error = true;
+        BOOST_LOG_TRIVIAL(error)
+            << "An output ligand PDB file path must be provided with option --output (see also --help)";
+        //<< vm["input-file"].as< vector<string> >() << "\n";
+    }
 
-    sd::Molecule mol;
-    succeeded &= mol.populateFromMol2File("../DockingTests/COX2_Ibuprofen/VINA_Cox2_BestRes_Charged.mol2", 120, modifiers); // Ibuprofen
+    if (argument_error == true)
+        return 1;
 
+    std::string path_to_input_receptor = vm["receptor"].as<std::string>();
+    std::string path_to_input_ligand = vm["ligand"].as<std::string>();
+    std::string path_to_output_ligand = vm["output"].as<std::string>();
 
-    if (!succeeded) {
-        BOOST_LOG_TRIVIAL(error) << "Error while loading input files";
-        return 2;
+    bool overwriteFiles = false;
+    if (vm.count("force"))
+        overwriteFiles = true;
+
+    bool produceLog = false;
+    std::string path_to_log;
+    if (vm.count("log")) {
+        produceLog = true;
+        path_to_log = vm["log"].as<std::string>();
+        logToFile(path_to_log);
     }
 
 
+    BOOST_LOG_TRIVIAL(info) << "input receptor path : " << path_to_input_receptor;
+    BOOST_LOG_TRIVIAL(info) << "input ligand path   : " << path_to_input_ligand;
+    BOOST_LOG_TRIVIAL(info) << "output ligand path  : " << path_to_output_ligand;
+    if (produceLog)
+        BOOST_LOG_TRIVIAL(info) << "log file path       : " << path_to_log;
 
-    sd::iConformer conf_init = mol.getInitialConformer(true);
-    sd::iProtein iprot = prot.getiProtein();
-    sd::iTransform tr = sd::iTransformIdentityInit(conf_init.num_rotatable_bond);
-    tr.transl = conf_init.centroidNormalizingTransform;
-    tr.doHousekeeping();
-
-    double scoreWithoutDocking = sd::Score::vina_like_rigid_inter_scoring_func(conf_init,
-                                                                                     tr,
-                                                                                     iprot);
-
-    sd::iConformer_Vectorized conf_init_vect(conf_init);
-    sd::iProtein_vectorized iprot_vect(iprot);
-
-    BOOST_LOG_TRIVIAL(debug) << "Score without docking : " << scoreWithoutDocking;
-
-
-    double score_vect = sd::Score::force_Instantiate_VinaLikeIntermolecularScoringFunction_vectorized(conf_init_vect,tr,iprot_vect);
-    double score_nonvect = sd::Score::force_Instantiate_VinaLikeIntermolecularScoringFunction(conf_init,tr,iprot);
-
-    BOOST_LOG_TRIVIAL(debug) << "Score vect    : " << score_vect;
-    BOOST_LOG_TRIVIAL(debug) << "Score nonvect : " << score_nonvect;
-
-
-    return 0;
-    const unsigned int numretry = 1000;
-    volatile unsigned int j;
-    std::chrono::time_point<std::chrono::system_clock> start_vectorized, end_vectorized;
-    std::chrono::time_point<std::chrono::system_clock> start_nonvect, end_nonvect;
-
-
-    start_nonvect = std::chrono::system_clock::now();
-    for (j = 0 ; j < numretry; ++j) {
-        sd::Score::force_Instantiate_VinaLikeIntermolecularScoringFunction(conf_init,tr,iprot);
+    if (!boost::filesystem::exists(path_to_input_receptor) || !boost::filesystem::is_regular_file(path_to_input_receptor)) {
+        BOOST_LOG_TRIVIAL(error) << "Receptor file not found (or not a file) : " << path_to_input_receptor;
+        return 1;
     }
-    end_nonvect = std::chrono::system_clock::now();
 
-    start_vectorized = std::chrono::system_clock::now();
-    for (j = 0 ; j < numretry; ++j) {
-        sd::Score::force_Instantiate_VinaLikeIntermolecularScoringFunction_vectorized(conf_init_vect,tr,iprot_vect);
+
+    if (!boost::filesystem::exists(path_to_input_ligand) || !boost::filesystem::is_regular_file(path_to_input_ligand)) {
+        BOOST_LOG_TRIVIAL(error) << "Ligand file not found (or not a file) : " << path_to_input_receptor;
+        return 1;
     }
-    end_vectorized = std::chrono::system_clock::now();
 
 
+    if (boost::filesystem::exists(path_to_output_ligand)) {
+        if (overwriteFiles)
+            BOOST_LOG_TRIVIAL(info) << "Output ligand file already exists, will be overwritten.";
+        else {
+            BOOST_LOG_TRIVIAL(info) << "Output file already exist, aborting";
+            return 1;
+        }
+    }
+
+    boost::filesystem::path pathOutput(path_to_output_ligand);
+    boost::filesystem::path pathReceptor(path_to_input_receptor);
+    boost::filesystem::path pathLigand(path_to_input_ligand);
+
+    std::vector<std::shared_ptr<SmolDock::InputModifier::InputModifier>> postProcessors;
+    postProcessors.push_back(std::make_shared<SmolDock::InputModifier::VinaCompatibility>());
+
+    SmolDock::Protein prot;
+    prot.populateFromPDB(path_to_input_receptor, postProcessors); // COX-2
+
+    SmolDock::Molecule mol;
+
+    if(pathLigand.extension() == ".mol")
+    {
+        mol.populateFromMolFile(pathLigand.string(),
+                                120 /* seed */,
+                                postProcessors);
+    }else if (pathLigand.extension() == ".mol2") {
+        mol.populateFromMol2File(pathLigand.string(),
+                                 120 /* seed */,
+                                 postProcessors);
+    }else {
+        BOOST_LOG_TRIVIAL(error) << "Unsupported ligand file extension \"" << pathLigand.extension() << "\"";
+        BOOST_LOG_TRIVIAL(info) << "Supported extension : mol mol2";
+    }
 
 
-    int elapsed_ms_vectorized = std::chrono::duration_cast<std::chrono::milliseconds>
-            (end_vectorized-start_vectorized).count();
-    int elapsed_ms_nonvect = std::chrono::duration_cast<std::chrono::milliseconds>
-            (end_nonvect-start_nonvect).count();
-
-    BOOST_LOG_TRIVIAL(debug) << "Num retry     :" << numretry;
-    BOOST_LOG_TRIVIAL(debug) << "Vectorized    :" << elapsed_ms_vectorized << " ms total";
-    BOOST_LOG_TRIVIAL(debug) << "              :" << double(elapsed_ms_vectorized)/double(numretry) << " ms/retry";
-    BOOST_LOG_TRIVIAL(debug) << "Non-vect      :" << elapsed_ms_nonvect    << " ms";
-    BOOST_LOG_TRIVIAL(debug) << "              :" << double(elapsed_ms_nonvect)/double(numretry) << " ms/retry";
-
-    return 0;
+    SmolDock::Engine::ConformerDockingEngine docker(20, /* Number of conformer */
+                                                    10, /* Retry per conformer */
+                                                    &prot,
+                                                    &mol,
+                                                    SmolDock::Score::ScoringFunctionType::VinaRigid, /* Scoring function */
+                                                    SmolDock::Heuristics::GlobalHeuristicType::IteratedLocalSearch, /* Global heuristic */
+                                                    SmolDock::Optimizer::LocalOptimizerType::L_BFGS, /* Local optimizer */
+                                                    1244 /* Random seed */);
 
 
-    sd::PDBWriter pwriter;
-
-
-    sd::Engine::ConformerDockingEngine docker(5, 4,&prot,&mol,
-                                                       sd::Score::ScoringFunctionType::Vina,
-                                                       sd::Heuristics::GlobalHeuristicType::SimulatedAnnealing,
-                                                       sd::Optimizer::LocalOptimizerType::L_BFGS,
-                                                       1244);
-
-
-    sd::Engine::AbstractDockingEngine::DockingBoxSetting setting;
-    setting.type = sd::Engine::AbstractDockingEngine::DockingBoxSetting::Type::centeredAround;
+    SmolDock::Engine::AbstractDockingEngine::DockingBoxSetting setting;
+    setting.type = SmolDock::Engine::AbstractDockingEngine::DockingBoxSetting::Type::centeredAround;
     setting.center = {10.0, 22.0, 25.0};
     setting.radius = 10.0;
 
@@ -181,169 +215,28 @@ int main() {
     }
 
 
-
     docker.runDockingEngine();
 
-    BOOST_LOG_TRIVIAL(debug) << "Reminder : Score without docking : "
-                             << scoreWithoutDocking;
 
-    std::shared_ptr<sd::DockingResult> res = docker.getDockingResult();
+    std::shared_ptr<SmolDock::DockingResult> res = docker.getDockingResult();
+
 
     if (res->ligandPoses.empty()) {
         BOOST_LOG_TRIVIAL(error) << "No result to export";
         return 3;
     }
 
-
+    SmolDock::PDBWriter pwriter;
     for (auto &mol1: res->ligandPoses) {
         pwriter.addLigand(mol1);
     }
 
 
-    pwriter.writePDB("res_speedtest.pdb");
+    pwriter.writePDB(path_to_output_ligand);
 
-    auto exit_moment = std::chrono::system_clock::now();
-    std::time_t exit_time = std::chrono::system_clock::to_time_t(exit_moment);
 
-    BOOST_LOG_TRIVIAL(info) << "";
-    BOOST_LOG_TRIVIAL(info) << "Ending processing on " << std::ctime(&exit_time);
+    BOOST_LOG_TRIVIAL(info) << "Done.";
+
+
     return 0;
-
-////
-////    if (!succeeded) {
-////        BOOST_LOG_TRIVIAL(error) << "Error while loading input files";
-////        return 2;
-////    }
-////
-////    sd::iConformer conf_init = mol.getInitialConformer();
-////    sd::iProtein iprot = prot.getiProtein();
-////
-////    double scoreWithoutDocking = sd::Score::vina_like_rigid_inter_scoring_func(conf_init,
-////                                                                                     sd::iTransformIdentityInit(),
-////                                                                                     iprot);
-////    BOOST_LOG_TRIVIAL(debug) << "Score without docking : "
-////                             << scoreWithoutDocking;
-////
-////
-////    sd::PDBWriter pwriter;
-////
-////
-/////*
-////     *         struct Parameters {
-////            unsigned int maxIterations = 10000;
-////            double initTemp = 10000.0;
-////            unsigned int initialNoTempDropMoves = 1000;
-////            unsigned int moveCtrlSweep = 100;
-////            double tolerance = 1e-3;
-////            unsigned int maxToleranceSweep = 3;
-////            double maxMoveSize = 5.0;
-////            double initMoveSize = 0.3;
-////            double gain = 0.3;
-////        };
-////     * */
-////
-////
-//////    sd::Heuristics::SimulatedAnnealing::Parameters param;
-////    sd::Heuristics::HeuristicParameters param((std::in_place_type_t<sd::Heuristics::SimulatedAnnealing::Parameters>()));
-////
-////    std::vector<std::tuple<double,double,double,double,double,double>> gridSearchRes;
-////
-////    for(unsigned int iteration = 1; iteration < 20; iteration++)
-////    {
-////
-////        double paramValue = iteration;
-////        std::get<sd::Heuristics::SimulatedAnnealing::Parameters>(param).maxMoveSize = paramValue;
-////
-////        sd::Engine::ConformerDockingEngine docker(5,
-////                                                       3,
-////                                                       &prot,
-////                                                       &mol,
-////                                                       sd::Score::ScoringFunctionType::Vina,
-////                                                       sd::Heuristics::GlobalHeuristicType::SimulatedAnnealing,
-////                                                       sd::Optimizer::LocalOptimizerType::L_BFGS,
-////                                                       1244,
-////                                                       param);
-////
-////
-////        sd::Engine::AbstractDockingEngine::DockingBoxSetting setting;
-////        setting.type = sd::Engine::AbstractDockingEngine::DockingBoxSetting::Type::centeredAround;
-////        setting.center = {10.0, 22.0, 25.0};
-////        setting.radius = 10.0;
-////
-////        docker.setDockingBox(setting);
-////
-////        if (!docker.setupDockingEngine()) {
-////            BOOST_LOG_TRIVIAL(error) << "Error while setting up engine";
-////            return 2;
-////        }
-////
-////
-////        docker.runDockingEngine();
-////
-////        BOOST_LOG_TRIVIAL(debug) << "Reminder : Score without docking : "
-////                                 << scoreWithoutDocking;
-////
-////        double meanDuration, stdDevDuration, meanScore, stdDevScore, bestScore;
-////        std::tie(meanDuration,stdDevDuration) = docker.getMeanStdDevDuration();
-////        std::tie(meanScore,stdDevScore) = docker.getMeanStdDevScore();
-////        bestScore = docker.getBestScore();
-////
-////        gridSearchRes.emplace_back(std::make_tuple(paramValue,
-////                                                meanDuration, stdDevDuration,bestScore, meanScore, stdDevScore));
-////    }
-////
-////    bprinter::TablePrinter tp(&std::cout);
-////    tp.AddColumn("maxMoveSize",22);
-////    tp.AddColumn("Mean Duration", 22);
-////    tp.AddColumn("StdDev Duration", 22);
-////    tp.AddColumn("Best Score", 22);
-////    tp.AddColumn("Mean Score", 22);
-////    tp.AddColumn("StdDev Score", 22);
-////
-////    tp.PrintHeader();
-////    for(auto& record: gridSearchRes)
-////    {
-////        tp <<  std::get<0>(record)
-////            << std::get<1>(record)
-////            << std::get<2>(record)
-////            << std::get<3>(record)
-////            << std::get<4>(record)
-////            << std::get<5>(record);
-////    }
-////    tp.PrintFooter();
-//
-//
-//
-//
-///*
-//    std::shared_ptr<sd::DockingResult> res = docker.getDockingResult();
-//
-//
-//    if (res->ligandPoses.empty()) {
-//        BOOST_LOG_TRIVIAL(error) << "No result to export";
-//        return 3;
-//    }
-//
-//
-//    for (auto &mol1: res->ligandPoses) {
-//        pwriter.addLigand(mol1);
-//    }
-//
-//
-//    pwriter.writePDB("res.pdb");
-//
-//    */
-//
-//
-//    return 0;
-//
-//
-//
-//    /*
-//    sd::DockingResultPrinter printer(res);
-//
-//    printer.printToConsole();
-//    */
-//    return 0;
-
 }

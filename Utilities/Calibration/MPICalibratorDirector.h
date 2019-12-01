@@ -52,6 +52,8 @@ namespace SmolDock::Calibration {
         virtual bool addReferenceLigand_SMILES_Ki(ReceptorID recID, const std::string& smiles, double Ki, int seed = 364);
         virtual bool addReferenceLigand_Mol_Ki(ReceptorID recID, const Molecule& mol, double Ki, int seed = 364);
 
+        virtual bool addAnchorLigandFromMol2File(ReceptorID recID, std::string& filename);
+
         bool applyVariantToAllLigands(const std::string& SMARTSPattern, Atom::AtomVariant variant);
 
         double EvaluateWithGradient(const arma::mat& x,
@@ -79,11 +81,15 @@ namespace SmolDock::Calibration {
 
         unsigned int numProcess;
         unsigned int numTotalCPU;
-        unsigned int numLigand = 0;
+        unsigned int totalNumLigand = 0;
+        unsigned int numAnchorLigand = 0;
 
         std::vector<std::string> pdbBlockStrings;
         std::vector<Engine::AbstractDockingEngine::DockingBoxSetting> dbSettings;
         std::vector<std::vector<MPISpecialResidueTyping>> specialResidueTypings;
+
+        std::map<Calibrator::ReceptorID , std::vector<std::shared_ptr<Molecule>>> anchorLigands;
+        std::vector<unsigned int> numAnchorLigandPerReceptor;
 
         std::map<Calibrator::ReceptorID ,std::vector<std::tuple<std::string,double>>> ligandSmilesRefScore;
         std::vector<unsigned int> numLigandPerReceptor;
