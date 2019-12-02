@@ -196,9 +196,16 @@ namespace SmolDock::Calibration {
                 // Anchor task : compute RMSD and loss
                 // TODO ANCHOR
 
+
+                std::vector<double> gradientVector;
+                for(unsigned int& idx : this->workStructure.idxOfCoeffsToCalibrate)
+                {
+                     gradientVector.push_back(0.0);
+                }
+
                 Result r;
-//                r.loss = score - referenceScore;
-//                r.lossGradient = gradientVector;
+                r.loss =  0.0;
+                r.lossGradient = gradientVector;
 
                 this->world.send(0, MTags::ResultMessage, r);
             } else {

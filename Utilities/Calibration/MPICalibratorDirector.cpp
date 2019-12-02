@@ -240,23 +240,29 @@ namespace SmolDock::Calibration {
 
 
     bool MPICalibratorDirector::addReferenceLigand_SMILES_Ki(Calibrator::ReceptorID recID, const std::string& smiles,
-                                                             double Ki, int seed) {
+                                                             double Ki) {
 
         const double R = 8.3144598;
         const double T = 310.15; // 37 degree celsius
         double deltaG = R * T * std::log(Ki) / 1000; // kcal/mol aka same as other docking software
 
+        this->addReferenceLigand_SMILES_deltaG(recID,smiles,deltaG);
+        return true;
+    }
+
+    bool MPICalibratorDirector::addReferenceLigand_SMILES_deltaG(Calibrator::ReceptorID recID,
+                                                             const std::string& smiles,
+                                                             double deltaG) {
         this->ligandSmilesRefScore[recID].emplace_back(std::make_tuple(smiles,deltaG));
         this->totalNumLigand++;
         return true;
     }
 
-    bool MPICalibratorDirector::addReferenceLigand_Mol_Ki(Calibrator::ReceptorID recID, const Molecule& mol, double Ki,
-                                                          int seed) {
+    bool MPICalibratorDirector::addReferenceLigand_Mol_Ki(Calibrator::ReceptorID recID, const Molecule& mol, double Ki) {
 
         BOOST_LOG_TRIVIAL(error) << "Cannot add ligand from Molecule class in MPICalibrator.";
         std::terminate();
-        return Calibrator::addReferenceLigand_Mol_Ki(recID, mol, Ki, seed);
+        return Calibrator::addReferenceLigand_Mol_Ki(recID, mol, Ki);
     }
 
     Calibrator::ReceptorID MPICalibratorDirector::addReceptorFromFile(const std::string& filename,
@@ -367,6 +373,9 @@ namespace SmolDock::Calibration {
             Result& r = resultList.back();
             this->world.recv(boost::mpi::any_source, MTags::ResultMessage, r);
             BOOST_LOG_TRIVIAL(debug) << "Received " << k - i  << " of " << (batchSize - i) << " results.";
+            BOOST_LOG_TRIVIAL(debug) << "  Result  ";
+            BOOST_LOG_TRIVIAL(debug) << "     |   loss          :  " << r.loss;
+            BOOST_LOG_TRIVIAL(debug) << "     |   loss gradient :  " << vectorToString(r.lossGradient);
         }
 
         end = std::chrono::system_clock::now();

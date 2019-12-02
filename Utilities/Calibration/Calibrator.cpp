@@ -20,6 +20,7 @@
 #include <ensmallen.hpp>
 
 #include <Engines/Internals/InternalsUtilityFunctions.h>
+#include <Utilities/LogUtils.h>
 
 
 namespace SmolDock::Calibration {
@@ -60,8 +61,9 @@ namespace SmolDock::Calibration {
                                                 dummy_tr,
                                                 1e-3,
                                                 true);
-
+        BOOST_LOG_TRIVIAL(debug) << " Calibrator::Calibrator() Scoring function type : " << this->scoringFunctionType;
         this->currentCoeffs = this->dummy_sf->getCurrentCoefficients();
+        BOOST_LOG_TRIVIAL(debug) << " Retrieved coeffs: " << vectorToString(this->currentCoeffs);
         this->nameOfAllCoeffs = this->dummy_sf->getCoefficientsNames();
     }
 

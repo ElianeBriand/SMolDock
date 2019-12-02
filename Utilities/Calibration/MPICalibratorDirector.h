@@ -49,8 +49,11 @@ namespace SmolDock::Calibration {
                                                 const unsigned int serialNumber,
                                                 const SpecialResidueTyping specialType);
 
-        virtual bool addReferenceLigand_SMILES_Ki(ReceptorID recID, const std::string& smiles, double Ki, int seed = 364);
-        virtual bool addReferenceLigand_Mol_Ki(ReceptorID recID, const Molecule& mol, double Ki, int seed = 364);
+        virtual bool addReferenceLigand_SMILES_Ki(ReceptorID recID, const std::string& smiles, double Ki);
+        virtual bool addReferenceLigand_SMILES_deltaG(Calibrator::ReceptorID recID,
+                                                         const std::string& smiles,
+                                                         double deltaG);
+        virtual bool addReferenceLigand_Mol_Ki(ReceptorID recID, const Molecule& mol, double Ki);
 
         virtual bool addAnchorLigandFromMol2File(ReceptorID recID, std::string& filename);
 

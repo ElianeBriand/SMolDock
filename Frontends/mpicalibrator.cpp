@@ -84,7 +84,7 @@ int main(int argc, char *argv[]) {
 
     setupAdvancedErrorHandling();
 
-    //        tbb::task_scheduler_init tbbInit(std::thread::hardware_concurrency());
+    tbb::task_scheduler_init tbbInit(std::thread::hardware_concurrency());
 
 
     mpi::environment env(argc, argv);
@@ -102,7 +102,8 @@ int main(int argc, char *argv[]) {
             ("center_x", po::value<double>(), "Center of search space : x coordinate")
             ("center_y", po::value<double>(), "Center of search space : y coordinate")
             ("center_z", po::value<double>(), "Center of search space : z coordinate")
-            ("radius", po::value<double>(), "Search space radius");
+            ("radius", po::value<double>(), "Search space radius")
+            ("batch_size", po::value<int>(), "Optimization algorithm batch size");
 
     po::variables_map vm;
     po::store(po::parse_command_line(argc, argv, desc), vm);
@@ -130,6 +131,7 @@ int main(int argc, char *argv[]) {
 
         std::time_t now = std::chrono::system_clock::to_time_t(std::chrono::system_clock::now());
         BOOST_LOG_TRIVIAL(info) << "Starting at " << std::ctime( &now);
+        BOOST_LOG_TRIVIAL(info) << "Detected CPU" << std::thread::hardware_concurrency();
 
         std::string receptor_path;
         std::string ligand_csv_path;
@@ -137,6 +139,7 @@ int main(int argc, char *argv[]) {
         std::string anchor_ligand_path;
         bool resume = false;
         double center_x, center_y, center_z, radius;
+        int batch_size = 10;
 
         if (vm.count("help")) {
             std::cout << desc << "\n";
@@ -208,9 +211,19 @@ int main(int argc, char *argv[]) {
                             " ] r = " << radius << " A for this run.";
         }
 
-        if (vm.count("resume") != 1) {
+        if (vm.count("resume") != 0) {
             BOOST_LOG_TRIVIAL(info) << "Attempting resume...";
             resume = true;
+        }
+
+
+        if (vm.count("batch_size") != 0) {
+            unsigned int batch_size_ = vm["batch_size"].as<int>();
+            if(batch_size_ <= 0) {
+                BOOST_LOG_TRIVIAL(info) << "Batch size must be positive integer";
+                MPI_Abort(MPI_COMM_WORLD, 26);
+            }
+            batch_size = batch_size_;
         }
 
 
@@ -222,9 +235,9 @@ int main(int argc, char *argv[]) {
                                                                                   1000, // Max epoch
                                                                                   0.5, // Initial learning rate
                                                                                   32574, // RNG seed
-                                                                                  15, // num generated starting conformer per ligand
+                                                                                  5, // num generated starting conformer per ligand
                                                                                   5, // num retry per conformer (best score is kept)
-                                                                                  10, //batch size
+                                                                                  batch_size, //batch size
                                                                                   sd::Heuristics::emptyParameters);
 
         cdirector->coefficientsToCalibrate({"Gauss1","Gauss2","RepulsionExceptCovalent","Hydrophobic","Hydrogen"});
@@ -238,14 +251,18 @@ int main(int argc, char *argv[]) {
                 cdirector->addReceptorFromFile(receptor_path, setting);
 
 
-        sd::CSVReader chembl_csv(ligand_csv_path,",",true);
+        sd::CSVReader chembl_csv(ligand_csv_path,",",true, "µ");
+
+
         std::vector<std::map<std::string,std::string>> chembl_data = chembl_csv.getRowsAsMap();
 
 
         for (unsigned int j = 0; j < chembl_data.size(); ++j) {
-            std::string smiles = chembl_data.at(j).at("SMILES");
-            double score = boost::lexical_cast<double>(chembl_data.at(j).at("Score"));
-            cdirector->addReferenceLigand_SMILES_Ki(recID1,smiles, score);
+            std::map<std::string,std::string> row = chembl_data.at(j);
+            std::string smiles_str = row["SMILES"];
+            std::string score_str = row["Score"];
+            double score = boost::lexical_cast<double>(score_str);
+            cdirector->addReferenceLigand_SMILES_deltaG(recID1,smiles_str, score);
         }
 
         cdirector->setupCalibration();

@@ -168,6 +168,7 @@ namespace SmolDock::Score {
 
         double final_score = score_raw / (1 + (VinaClassic::coeff_entropic * ligand.num_rotatable_bond));
 
+/*
         std::cout << "\n Non-Vectorized : \n";
         std::cout << "dist    : " << distance_total << std::endl;
         std::cout << "gauss1  : " << gauss1_total << std::endl;
@@ -176,7 +177,7 @@ namespace SmolDock::Score {
         std::cout << "hydroph : " << hydrophobic_total << std::endl;
         std::cout << "hydrog  : " << hydrogen_total << std::endl;
         std::cout << "\n\n";
-
+*/
         return final_score;
     }
 
@@ -441,6 +442,14 @@ namespace SmolDock::Score {
                 << "Discrepency between the number of rotatable bonds in the iConformer and iTransform ("
                 << this->numberOfRotatableBonds << " != " << this->initialTransform.bondRotationsAngles.size() << ")";
             std::terminate();
+        }
+
+        if (this->useNonDefaultCoefficient) {
+                this->nonDefaultCoefficients[0] = VinaClassic::coeff_gauss1;
+                this->nonDefaultCoefficients[1] = VinaClassic::coeff_gauss2;
+                this->nonDefaultCoefficients[2] = VinaClassic::coeff_repulsion;
+                this->nonDefaultCoefficients[3] = VinaClassic::coeff_hydrophobic;
+                this->nonDefaultCoefficients[4] = VinaClassic::coeff_hydrogen;
         }
 
     }
@@ -767,9 +776,9 @@ namespace SmolDock::Score {
 
         // Template parameter controls whether onlyIntermolecular interaction are taken into account. Here we want true
         double score_ = this->useNonDefaultCoefficient ?
-                        VinaLikeIntermolecularScoringFunction<false, true>(this->startingConformation, tr, this->prot,
+                        VinaLikeIntermolecularScoringFunction<true, true>(this->startingConformation, tr, this->prot,
                                                                            this->nonDefaultCoefficients)
-                                                       : VinaLikeIntermolecularScoringFunction<false, false>(
+                                                       : VinaLikeIntermolecularScoringFunction<true, false>(
                         this->startingConformation, tr, this->prot);
 
 

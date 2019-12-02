@@ -37,7 +37,7 @@ namespace SmolDock {
             std::getline(file, firstline);
 
             boost::tokenizer<boost::escaped_list_separator<char> > tk(
-                    firstline, boost::escaped_list_separator<char>('\\', '\t', '\"'));
+                    firstline, boost::escaped_list_separator<char>(escapeChar,delimiter, quoteChar));
             for (boost::tokenizer<boost::escaped_list_separator<char> >::iterator i(tk.begin());
                     i!=tk.end();++i)
             {
@@ -51,7 +51,7 @@ namespace SmolDock {
             unsigned int numColumn = 0;
 
             boost::tokenizer<boost::escaped_list_separator<char> > tk(
-                    firstline, boost::escaped_list_separator<char>('\\', '\t', '\"'));
+                    firstline, boost::escaped_list_separator<char>(escapeChar,delimiter, quoteChar));
             for (boost::tokenizer<boost::escaped_list_separator<char> >::iterator i(tk.begin());
                  i!=tk.end();++i)
             {
@@ -68,7 +68,7 @@ namespace SmolDock {
 
             std::vector<std::string> row;
             boost::tokenizer<boost::escaped_list_separator<char> > tk(
-                    line, boost::escaped_list_separator<char>('\\', '\t', '\"'));
+                    line, boost::escaped_list_separator<char>(escapeChar,delimiter, quoteChar));
             for (boost::tokenizer<boost::escaped_list_separator<char> >::iterator i(tk.begin());
                  i!=tk.end();++i)
             {

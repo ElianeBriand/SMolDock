@@ -826,7 +826,7 @@ namespace SmolDock {
     noFlexibleRings(noFlexibleRings){
         if(noFlexibleRings)
         {
-            BOOST_LOG_TRIVIAL(debug) << "Molecule : All rings considered non-flexible (no rotatable bonds in cycles)";
+            //BOOST_LOG_TRIVIAL(debug) << "Molecule : All rings considered non-flexible (no rotatable bonds in cycles)";
         }
 
 
