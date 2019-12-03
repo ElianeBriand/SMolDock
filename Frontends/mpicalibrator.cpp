@@ -54,6 +54,8 @@
 
 #include <boost/filesystem.hpp>
 
+#include <boost/archive/text_oarchive.hpp>
+#include <boost/archive/text_iarchive.hpp>
 
 #define USE_BOOST_KARMA
 #include <bprinter/table_printer.h>
@@ -73,6 +75,8 @@
 
 #include <boost/program_options.hpp>
 #include <boost/lexical_cast.hpp>
+#include <boost/regex.hpp>
+
 
 using boost::lexical_cast;
 
@@ -103,19 +107,21 @@ int main(int argc, char *argv[]) {
             ("center_y", po::value<double>(), "Center of search space : y coordinate")
             ("center_z", po::value<double>(), "Center of search space : z coordinate")
             ("radius", po::value<double>(), "Search space radius")
-            ("batch_size", po::value<int>(), "Optimization algorithm batch size");
+            ("batch_size", po::value<int>(), "Optimization algorithm batch size")
+            ("num_starting_conformer", po::value<int>(), "Num starting conformers. NB: docking is still flexible, reduce noise")
+            ("num_retry", po::value<int>(), "Num retry for each conformer. (Also noice reduction)");
 
     po::variables_map vm;
     po::store(po::parse_command_line(argc, argv, desc), vm);
     po::notify(vm);
 
-
+    std::string logfile_path;
 
     if (world.rank() == 0) {
         sd::setupLogPrinting(false, false, "[MPI_0] ");
 
         if (vm.count("log") != 0) {
-            std::string logfile_path = vm["log"].as<std::string>();
+            logfile_path = vm["log"].as<std::string>();
             sd::logToFile(logfile_path);
             BOOST_LOG_TRIVIAL(info) << "\n\n-- Logging to " << logfile_path <<" --\n\n";
         }
@@ -131,15 +137,18 @@ int main(int argc, char *argv[]) {
 
         std::time_t now = std::chrono::system_clock::to_time_t(std::chrono::system_clock::now());
         BOOST_LOG_TRIVIAL(info) << "Starting at " << std::ctime( &now);
-        BOOST_LOG_TRIVIAL(info) << "Detected CPU" << std::thread::hardware_concurrency();
+        BOOST_LOG_TRIVIAL(info) << "Detected CPU: " << std::thread::hardware_concurrency();
 
         std::string receptor_path;
         std::string ligand_csv_path;
-        std::string output_prefix;
+        std::string output_prefix = "mpicalibrator_out";
         std::string anchor_ligand_path;
         bool resume = false;
         double center_x, center_y, center_z, radius;
         int batch_size = 10;
+        sd::Calibration::MPICalibratorDirector_ResumeObject resumeObject;
+        int num_conformer_per_ligand = 5;
+        int num_retry_per_conformer = 5;
 
         if (vm.count("help")) {
             std::cout << desc << "\n";
@@ -213,7 +222,42 @@ int main(int argc, char *argv[]) {
 
         if (vm.count("resume") != 0) {
             BOOST_LOG_TRIVIAL(info) << "Attempting resume...";
-            resume = true;
+            const boost::regex my_filter(output_prefix + std::string("([0-9]+)\\.restore-state") );
+
+            int max_num = -1;
+            boost::filesystem::directory_iterator end_itr; // Default ctor yields past-the-end
+            for( boost::filesystem::directory_iterator i("./"); i != end_itr; ++i )
+            {
+                // Skip if not a file
+                if( !boost::filesystem::is_regular_file( i->status() ) ) continue;
+
+                boost::smatch what;
+
+                // Skip if no match for V2:
+                //if( !boost::regex_match( i->leaf(), what, my_filter ) ) continue;
+                // For V3:
+                if( !boost::regex_match( i->path().filename().string(), what, my_filter ) ) continue;
+
+                int numFile = lexical_cast<int>(what[0]);
+                if(numFile > max_num) {
+                    max_num = numFile;
+                }
+            }
+
+            if(max_num != -1) {
+                std::string filename = output_prefix + std::to_string(max_num) + std::string(".restore-state");
+                BOOST_LOG_TRIVIAL(info) << "Loading from: " << filename;
+                std::ifstream ifs(filename);
+                boost::archive::text_iarchive ia(ifs);
+                ia >> resumeObject;
+                resume = true;
+                BOOST_LOG_TRIVIAL(info) << "State loaded successfully";
+            }else {
+                BOOST_LOG_TRIVIAL(info) << "Resume cannot proceed without a restore-state file";
+                MPI_Abort(MPI_COMM_WORLD, 41);
+            }
+
+
         }
 
 
@@ -227,18 +271,45 @@ int main(int argc, char *argv[]) {
         }
 
 
+        if (vm.count("num_starting_conformer") != 0) {
+            unsigned int num_conformer_per_ligand_ = vm["num_starting_conformer"].as<int>();
+            if(num_conformer_per_ligand_ <= 0) {
+                BOOST_LOG_TRIVIAL(info) << "Number of starting conformer must be positive";
+                MPI_Abort(MPI_COMM_WORLD, 27);
+            }
+            num_conformer_per_ligand = num_conformer_per_ligand_;
+        }
+
+        if (vm.count("num_retry") != 0) {
+            unsigned int num_retry_per_conformer_ = vm["num_retry"].as<int>();
+            if(num_retry_per_conformer_ <= 0) {
+                BOOST_LOG_TRIVIAL(info) << "Number of retry per conformer must be positive";
+                MPI_Abort(MPI_COMM_WORLD, 28);
+            }
+            num_retry_per_conformer = num_retry_per_conformer_;
+        }
+
+
 
         auto cdirector = std::make_shared<sd::Calibration::MPICalibratorDirector>(env, world,
                                                                                   sd::Score::ScoringFunctionType::Vina,
                                                                                   sd::Heuristics::GlobalHeuristicType::SimulatedAnnealing,
                                                                                   sd::Optimizer::LocalOptimizerType::L_BFGS,
                                                                                   1000, // Max epoch
-                                                                                  0.5, // Initial learning rate
+                                                                                  1e-7, // Step size
                                                                                   32574, // RNG seed
-                                                                                  5, // num generated starting conformer per ligand
-                                                                                  5, // num retry per conformer (best score is kept)
+                                                                                  num_conformer_per_ligand, // num generated starting conformer per ligand
+                                                                                  num_retry_per_conformer, // num retry per conformer (best score is kept)
                                                                                   batch_size, //batch size
-                                                                                  sd::Heuristics::emptyParameters);
+                                                                                  sd::Heuristics::emptyParameters,
+                                                                                  output_prefix);
+
+        if(resume) {
+            BOOST_LOG_TRIVIAL(debug) << "Attempting state restore";
+            cdirector->restoreResumeState(resumeObject);
+            BOOST_LOG_TRIVIAL(info) << "State restored successfully";
+        }
+
 
         cdirector->coefficientsToCalibrate({"Gauss1","Gauss2","RepulsionExceptCovalent","Hydrophobic","Hydrogen"});
         //cdirector->coefficientsToCalibrate({"CovalentReversible"});

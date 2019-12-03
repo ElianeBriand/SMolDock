@@ -23,7 +23,18 @@
 #include <Engines/Internals/InternalsUtilityFunctions.h>
 #include <Utilities/LogUtils.h>
 
+
+#include <bprinter/table_printer.h>
+
 #include <boost/serialization/string.hpp>
+#include <boost/regex.hpp>
+#include <boost/lexical_cast.hpp>
+#include <boost/filesystem.hpp>
+
+#include <boost/archive/text_oarchive.hpp>
+#include <boost/archive/text_iarchive.hpp>
+
+using boost::lexical_cast;
 
 namespace SmolDock::Calibration {
 
@@ -33,24 +44,26 @@ namespace SmolDock::Calibration {
                                                  Heuristics::GlobalHeuristicType heurType,
                                                  Optimizer::LocalOptimizerType localOptimizerType_,
                                                  unsigned int maxLearningSteps,
-                                                 double initialLearningRate_,
+                                                 double stepSize_,
                                                  unsigned int rngSeed,
                                                  unsigned int conformerNumber,
                                                  unsigned int retryNumber,
                                                  unsigned int batchSize_,
-                                                 Heuristics::HeuristicParameters hParams)
+                                                 Heuristics::HeuristicParameters hParams,
+                                                 const std::string& restoreArchivePrefix_)
             :
             Calibrator(scFuncType,
                        heurType,
                        localOptimizerType_,
                        maxLearningSteps,
-                       initialLearningRate_,
+                       stepSize_,
                        rngSeed, conformerNumber,
                        retryNumber,
                        batchSize_,
                        hParams),
             env(env_),
-            world(world_) {
+            world(world_),
+            restoreArchivePrefix(restoreArchivePrefix_) {
         this->numProcess = this->world.size();
 
     }
@@ -129,7 +142,7 @@ namespace SmolDock::Calibration {
         this->workStructure.scoringFunctionType =this->scoringFunctionType;
         this->workStructure.heuristicType =this->heuristicType;
         this->workStructure.localOptimizerType =this->localOptimizerType;
-        this->workStructure.differentialEpsilon = 1e-3;
+        this->workStructure.differentialEpsilon = 0.5e-7;
 
         mpi::broadcast(world, this->workStructure, 0);
 
@@ -200,7 +213,8 @@ namespace SmolDock::Calibration {
             coeffs_internalRepr[k] = this->currentCoeffs[this->idxOfCoeffsToCalibrate[k]];
         }
 
-        ens::Adam optimizer(this->initialLearningRate, this->batchSize, 0.9, 0.999, 1e-8, this->maxLearningSteps, 1e-4, true);
+
+        ens::Adam optimizer(this->stepSize, this->batchSize, 0.9, 0.999, 1e-8, this->maxLearningSteps, 1e-6, true);
         optimizer.Optimize(*this, coeffs_internalRepr);
 
         this->optResultMat = coeffs_internalRepr;
@@ -322,7 +336,7 @@ namespace SmolDock::Calibration {
         }
         coefficientHistory.push_back(currCoeffsUpdated);
 
-        for (unsigned int k = i; k < i + batchSize; ++k) {
+        for (unsigned int k = i; k < (i + batchSize); ++k) {
 
             if(remainingWorkItemCapacity[currentSendRank - 1] == 0) {
                 // The current rank has no more cpu for us to run
@@ -359,7 +373,7 @@ namespace SmolDock::Calibration {
 
         }
 
-        BOOST_LOG_TRIVIAL(debug) << "[Epoch " << batchCount << "] Task request queued.";
+        BOOST_LOG_TRIVIAL(info) << "[Epoch " << batchCount << "] Task request queued.";
 
         std::chrono::time_point<std::chrono::system_clock> start, end;
         start = std::chrono::system_clock::now();
@@ -368,11 +382,11 @@ namespace SmolDock::Calibration {
         remainingWorkItemCapacity = this->numWorkItemPerNode;
 
         std::vector<Result> resultList;
-        for (unsigned int k = i; k < i + batchSize; ++k) {
+        for (unsigned int k = i; k < (i + batchSize); ++k) {
             resultList.push_back((Result()));
             Result& r = resultList.back();
             this->world.recv(boost::mpi::any_source, MTags::ResultMessage, r);
-            BOOST_LOG_TRIVIAL(debug) << "Received " << k - i  << " of " << (batchSize - i) << " results.";
+            BOOST_LOG_TRIVIAL(debug) << "Received " << k - i  << " of " << batchSize << " results.";
             BOOST_LOG_TRIVIAL(debug) << "  Result  ";
             BOOST_LOG_TRIVIAL(debug) << "     |   loss          :  " << r.loss;
             BOOST_LOG_TRIVIAL(debug) << "     |   loss gradient :  " << vectorToString(r.lossGradient);
@@ -381,7 +395,8 @@ namespace SmolDock::Calibration {
         end = std::chrono::system_clock::now();
         int elapsed_minutes = std::chrono::duration_cast<std::chrono::minutes>
                 (end-start).count();
-        BOOST_LOG_TRIVIAL(debug) << "[Epoch " << batchCount << "] All results received.";
+        BOOST_LOG_TRIVIAL(info) << "[Epoch " << batchCount << "] All results received.";
+        this->durationHistory.push_back(elapsed_minutes);
 
         const unsigned int numItems = resultList.size();
         const unsigned int numCoefficients = x.n_rows;
@@ -404,17 +419,77 @@ namespace SmolDock::Calibration {
 
         this->lossHistory.push_back(meanLoss);
 
-        BOOST_LOG_TRIVIAL(debug) << "[Epoch " << batchCount << "] Mean loss : " << meanLoss;
-        BOOST_LOG_TRIVIAL(debug) << "   Duration : " << elapsed_minutes << " minutes";
-        BOOST_LOG_TRIVIAL(debug) << "   History : ";
+        BOOST_LOG_TRIVIAL(info) << "[Epoch " << batchCount << "] Mean loss : " << meanLoss;
+        BOOST_LOG_TRIVIAL(info) << "   Duration : " << elapsed_minutes << " minutes";
+        BOOST_LOG_TRIVIAL(info) << "   History : ";
+
+        bprinter::TablePrinter tp_lossDuration(&std::cout);
+        tp_lossDuration.AddColumn("Epoch", 8);
+        tp_lossDuration.AddColumn("Mean loss", 20);
+        tp_lossDuration.AddColumn("Duration (min)", 20);
+
+        tp_lossDuration.PrintHeader();
         for (unsigned int l = 0; l < this->lossHistory.size(); ++l) {
-            BOOST_LOG_TRIVIAL(debug) << "     Epoch " << l << "   ->  " << this->lossHistory.at(l);
-            BOOST_LOG_TRIVIAL(debug) << "       --> Coeffs " << vectorToString(this->coefficientHistory.at(l));
-            BOOST_LOG_TRIVIAL(debug) << "       --> Gradient " << vectorToString(this->gradientHistory.at(l));
+            tp_lossDuration << l << this->lossHistory.at(l) << this->durationHistory.at(l);
 
         }
+        tp_lossDuration.PrintFooter();
+
+        bprinter::TablePrinter tp_coeffsGradients(&std::cout);
+        tp_coeffsGradients.AddColumn("Epoch", 8);
+        tp_coeffsGradients.AddColumn("Metric", 12);
+        tp_coeffsGradients.AddColumn("Value", 60);
+
+        tp_coeffsGradients.PrintHeader();
+        for (unsigned int l = 0; l < this->lossHistory.size(); ++l) {
+            tp_lossDuration << l << "Loss" <<  this->lossHistory.at(l);
+            tp_lossDuration << l << "Coeffs" <<  vectorToString(this->coefficientHistory.at(l));
+            tp_lossDuration << l << "Gradient" <<  vectorToString(this->gradientHistory.at(l));
+        }
+        tp_coeffsGradients.PrintFooter();
+
 
         batchCount++;
+
+
+        const boost::regex my_filter(this->restoreArchivePrefix + std::string("([0-9]+)\\.restore-state") );
+
+        int max_num = -1;
+        boost::filesystem::directory_iterator end_itr; // Default ctor yields past-the-end
+        for( boost::filesystem::directory_iterator i("./"); i != end_itr; ++i )
+        {
+            // Skip if not a file
+            if( !boost::filesystem::is_regular_file( i->status() ) ) continue;
+
+            boost::smatch what;
+
+            // Skip if no match for V2:
+            //if( !boost::regex_match( i->leaf(), what, my_filter ) ) continue;
+            // For V3:
+            if( !boost::regex_match( i->path().filename().string(), what, my_filter ) ) continue;
+
+            int numFile = lexical_cast<int>(what[0]);
+            if(numFile > max_num) {
+                max_num = numFile;
+            }
+        }
+
+
+        std::string filename;
+        if(max_num != -1) {
+            filename = this->restoreArchivePrefix + std::to_string(max_num + 1) + std::string(".restore-state");
+        } else {
+            filename = this->restoreArchivePrefix + std::to_string(1) + std::string(".restore-state");
+        }
+        BOOST_LOG_TRIVIAL(info) << "Saving to " << filename;
+
+        std::ofstream ofs(filename);
+        {
+            boost::archive::text_oarchive oa(ofs);
+            MPICalibratorDirector_ResumeObject resumeObject =  this->createResumeState();
+            oa << resumeObject;
+        }
+        BOOST_LOG_TRIVIAL(info) << "Saved.";
 
 
         BOOST_LOG_TRIVIAL(info) << "\n\n    ------\n\n";
@@ -506,6 +581,63 @@ namespace SmolDock::Calibration {
         return true;
     }
 
+
+/*
+        std::vector<double> lossHistory;
+        std::vector<int> durationHistory;
+        std::vector<std::vector<double>> coefficientHistory;
+        std::vector<std::vector<double>> gradientHistory;
+
+        std::vector<double> currentCoeffs;
+
+        std::vector<std::string> coeffsToCalibrate;
+        std::vector<std::string> nameOfAllCoeffs;
+        std::vector<unsigned int> idxOfCoeffsToCalibrate;
+
+        Score::ScoringFunctionType scoringFunctionType;
+        Heuristics::GlobalHeuristicType heuristicType;
+        Optimizer::LocalOptimizerType localOptimizerType;
+*/
+
+    MPICalibratorDirector_ResumeObject MPICalibratorDirector::createResumeState() {
+        MPICalibratorDirector_ResumeObject ro;
+        ro.lossHistory = this->lossHistory;
+        ro.durationHistory = this->durationHistory;
+        ro.coefficientHistory = this->coefficientHistory;
+        ro.gradientHistory = this->gradientHistory;
+
+
+        ro.currentCoeffs = this->currentCoeffs;
+
+        ro.coeffsToCalibrate = this->coeffsToCalibrate;
+        ro.nameOfAllCoeffs = this->nameOfAllCoeffs;
+        ro.idxOfCoeffsToCalibrate = this->idxOfCoeffsToCalibrate;
+
+        ro.scoringFunctionType = this->scoringFunctionType;
+        ro.heuristicType = this->heuristicType;
+        ro.localOptimizerType = this->localOptimizerType;
+        return ro;
+    }
+
+
+    bool MPICalibratorDirector::restoreResumeState(const MPICalibratorDirector_ResumeObject& state) {
+        this->lossHistory = state.lossHistory;
+        this->durationHistory = state.durationHistory;
+        this->coefficientHistory = state.coefficientHistory;
+        this->gradientHistory = state.gradientHistory;
+
+
+        this->currentCoeffs = state.currentCoeffs;
+
+        this->coeffsToCalibrate = state.coeffsToCalibrate;
+        this->nameOfAllCoeffs = state.nameOfAllCoeffs;
+        this->idxOfCoeffsToCalibrate = state.idxOfCoeffsToCalibrate;
+
+        this->scoringFunctionType = state.scoringFunctionType;
+        this->heuristicType = state.heuristicType;
+        this->localOptimizerType = state.localOptimizerType;
+        return true;
+    }
 
 
 }

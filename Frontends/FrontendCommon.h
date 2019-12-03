@@ -59,7 +59,7 @@ namespace SmolDock {
     inline void logToFile(const std::string& filepath) {
         auto file_logger = boost::log::add_file_log
                 (
-                        boost::log::keywords::file_name = filepath,
+                        boost::log::keywords::file_name = filepath ,
                         boost::log::keywords::open_mode = std::ios_base::app
                 );
 

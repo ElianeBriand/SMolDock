@@ -31,6 +31,7 @@ namespace SmolDock::Calibration {
                 const iProtein& fullProtein_,
                 std::shared_ptr<std::mutex> resultMutex_,
                 std::shared_ptr<std::vector<double>> local_scores_,
+                std::shared_ptr<std::vector<iConformer>> local_iconformers_,
                 std::vector<double> currentCoeffs_);
 
         void operator()(const tbb::blocked_range2d<size_t>& r) const;
@@ -42,6 +43,7 @@ namespace SmolDock::Calibration {
         const iProtein& fullProtein;
         std::shared_ptr<std::mutex> resultMutex;
         std::shared_ptr<std::vector<double>> local_scores;
+        std::shared_ptr<std::vector<iConformer>> local_iconformers;
         std::vector<double> currentCoeffs;
 
     };

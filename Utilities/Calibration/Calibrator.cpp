@@ -29,7 +29,7 @@ namespace SmolDock::Calibration {
                            Heuristics::GlobalHeuristicType heurType,
                            Optimizer::LocalOptimizerType localOptimizerType_,
                            unsigned int maxLearningSteps,
-                           double initialLearningRate_,
+                           double stepSize_,
                            unsigned int rngSeed,
                            unsigned int conformerNumber,
                            unsigned int retryNumber,
@@ -39,7 +39,7 @@ namespace SmolDock::Calibration {
             heuristicType(heurType),
             localOptimizerType(localOptimizerType_),
             maxLearningSteps(maxLearningSteps),
-            initialLearningRate(initialLearningRate_),
+            stepSize(stepSize_),
             rndGenerator(rngSeed),
             conformerNumber(conformerNumber),
             retryNumber(retryNumber),
@@ -204,7 +204,7 @@ namespace SmolDock::Calibration {
 
         arma::mat coeffs_internalRepr = calibratorEnsLayer.getInitialParamMatrix();
 
-        ens::Adam optimizer(this->initialLearningRate, this->batchSize, 0.9, 0.999, 1e-8, this->maxLearningSteps, 1e-4, true);
+        ens::Adam optimizer(this->stepSize, this->batchSize, 0.9, 0.999, 1e-8, this->maxLearningSteps, 1e-4, true);
         optimizer.Optimize(calibratorEnsLayer, coeffs_internalRepr);
 
         this->optResultMat = coeffs_internalRepr;
@@ -309,7 +309,7 @@ namespace SmolDock::Calibration {
                 meanValueInput = meanValueInput / numElementInBatch;
 
 
-                double deltaCoeff = (this->initialLearningRate /* /learningEpoch */) * meanValueInput * average_loss;
+                double deltaCoeff = (this->stepSize /* /learningEpoch */) * meanValueInput * average_loss;
 
 
                 this->currentCoeffs[idxCoeff] = nonUpdatedCoeff + deltaCoeff;
@@ -317,7 +317,7 @@ namespace SmolDock::Calibration {
                 BOOST_LOG_TRIVIAL(info) << "COEFFICIENT " << coeffName << " ---- ";
                 BOOST_LOG_TRIVIAL(info) << "   Old coeff        : " << nonUpdatedCoeff;
                 BOOST_LOG_TRIVIAL(info) << "   Mean input value : " << meanValueInput;
-                BOOST_LOG_TRIVIAL(info) << "   Learning rate    : " << this->initialLearningRate;
+                BOOST_LOG_TRIVIAL(info) << "   Step Size        : " << this->stepSize;
                 BOOST_LOG_TRIVIAL(info) << "   Avg Loss         : " << average_loss;
                 BOOST_LOG_TRIVIAL(info) << "   Delta coeff      : " << deltaCoeff;
                 BOOST_LOG_TRIVIAL(info) << "   New coeff        : " << this->currentCoeffs[idxCoeff];
