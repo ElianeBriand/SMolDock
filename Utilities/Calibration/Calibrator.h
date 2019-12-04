@@ -118,7 +118,7 @@ namespace SmolDock::Calibration {
                    Heuristics::GlobalHeuristicType heurType,
                    Optimizer::LocalOptimizerType localOptimizerType_,
                    unsigned int maxLearningSteps = 10,
-                   double initialLearningRate_ = 0.5,
+                   double stepSize_ = 1e-7,
                    unsigned int rngSeed= 374,
                    unsigned int conformerNumber = 4,
                    unsigned int retryNumber = 4,
@@ -159,7 +159,7 @@ namespace SmolDock::Calibration {
         std::shared_ptr<Score::ScoringFunction> dummy_sf;
 
         unsigned int maxLearningSteps;
-        double initialLearningRate;
+        double stepSize;
 
 
         std::mt19937 rndGenerator;

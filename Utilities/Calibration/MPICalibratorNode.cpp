@@ -18,6 +18,7 @@
 #include <Structures/Atom.h>
 #include <Structures/AminoAcid.h>
 
+#include <queue>
 
 namespace SmolDock::Calibration {
 
@@ -196,9 +197,16 @@ namespace SmolDock::Calibration {
                 // Anchor task : compute RMSD and loss
                 // TODO ANCHOR
 
+
+                std::vector<double> gradientVector;
+                for(unsigned int& idx : this->workStructure.idxOfCoeffsToCalibrate)
+                {
+                     gradientVector.push_back(0.0);
+                }
+
                 Result r;
-//                r.loss = score - referenceScore;
-//                r.lossGradient = gradientVector;
+                r.loss =  0.0;
+                r.lossGradient = gradientVector;
 
                 this->world.send(0, MTags::ResultMessage, r);
             } else {
@@ -208,7 +216,7 @@ namespace SmolDock::Calibration {
 
             auto resultMutex = std::make_shared<std::mutex>();
             auto local_scores = std::make_shared<std::vector<double>>();
-
+            auto local_iconformer = std::make_shared<std::vector<iConformer>>();
 
             tbb::parallel_for(tbb::blocked_range2d<size_t>(0, conformerPerLigand,0, retryPerConformer),
                               MPICalibrator2DLoopRunner(
@@ -218,8 +226,25 @@ namespace SmolDock::Calibration {
                                       fullprot,
                                       resultMutex,
                                       local_scores,
+                                      local_iconformer,
                                       coeffs)
                               );
+
+            std::priority_queue<std::pair<double, int>> q;
+            for (unsigned int i = 0; i < local_scores->size(); ++i) {
+                q.push(std::pair<double, int>(local_scores->at(i), i));
+            }
+            int indice_of_best = q.top().second; // Indice of best score in original array. Selected
+            iConformer best_pose = local_iconformer->at(indice_of_best);
+/*
+Code for k-bests
+            int k = conformerPerLigand; // number of indices we need
+            for (int i = 0; i < k; ++i) {
+                int ki = q.top().second;
+                std::cout << "index[" << i << "] = " << ki << std::endl;
+                q.pop();
+            }
+*/
 
             // We select the top nth (n = conformerPerLigand) for averaging
             std::sort(local_scores->begin(), local_scores->end(), std::less<double>());
@@ -234,7 +259,24 @@ namespace SmolDock::Calibration {
                 std::vector<double> epsilonCoeffs = coeffs;
                 epsilonCoeffs[idx] += this->workStructure.differentialEpsilon;
                 auto local_scores_gradient = std::make_shared<std::vector<double>>();
+                
+                /**
+                iTransform neutral_tr = iTransformIdentityInit();
+                best_pose.num_rotatable_bond = 0;
+                std::shared_ptr<Score::ScoringFunction> fullScFunc = scoringFunctionFactory(
+                                                                                this->workStructure.scoringFunctionType,
+                                                                                best_pose,
+                                                                                fullprot,
+                                                                                neutral_tr,
+                                                                                1e-3,
+                                                                                true);
 
+                auto x = fullScFunc->getStartingConditions();
+                double local_score_value = fullScFunc->EvaluateOnlyIntermolecular(x);
+                gradientVector.push_back(local_score_value - score); // CHECK THIS IF IT GOES IN THE WRONG DIRECTION
+*/
+//*
+//Old code for docking instead of just evaluating the best pose
                 tbb::parallel_for(tbb::blocked_range2d<size_t>(0, conformerPerLigand, 0, retryPerConformer),
                                   MPICalibrator2DLoopRunner(
                                           this->workStructure,
@@ -243,13 +285,15 @@ namespace SmolDock::Calibration {
                                           fullprot,
                                           resultMutex,
                                           local_scores_gradient,
+                                          local_iconformer,
                                           epsilonCoeffs)
                 );
 
                 // We select the top nth (n = conformerPerLigand) for averaging
                 std::sort(local_scores_gradient->begin(), local_scores_gradient->end(), std::less<double>());
                 double gradientScore = std::accumulate(local_scores_gradient->begin(), local_scores_gradient->begin() + conformerPerLigand, 0.0)/conformerPerLigand;
-                gradientVector.push_back(gradientScore - score);
+                gradientVector.push_back(gradientScore - score); // CHECK THIS IF IT GOES IN THE WRONG DIRECTION
+    //*/
             }
 
 
@@ -282,6 +326,7 @@ namespace SmolDock::Calibration {
                                                               const iProtein& fullProtein_,
                                                               std::shared_ptr<std::mutex> resultMutex_,
                                                               std::shared_ptr<std::vector<double>> local_scores_,
+                                                              std::shared_ptr<std::vector<iConformer>> local_iconformers_,
                                                               std::vector<double> currentCoeffs_):
             workStructure(ws),
             conformerVector(conformerVector_),
@@ -289,6 +334,7 @@ namespace SmolDock::Calibration {
             fullProtein(fullProtein_),
             resultMutex(resultMutex_),
             local_scores(local_scores_),
+            local_iconformers(local_iconformers_),
             currentCoeffs(currentCoeffs_) {
     }
 
@@ -348,6 +394,8 @@ namespace SmolDock::Calibration {
                 double fullScore = fullScoringFunction->EvaluateOnlyIntermolecular(rawResultMatrix);
                 double delta_full = fullScore / score;
 
+                iConformer pose = scoringFunction->getConformerForParamMatrix(rawResultMatrix);
+
                 if (delta_full > 1.2 || delta_full < 0.80) {
                     continue;
                 }
@@ -355,6 +403,7 @@ namespace SmolDock::Calibration {
                 {
                     std::lock_guard lock(*this->resultMutex);
                     this->local_scores->push_back(fullScore);
+                    this->local_iconformers->push_back(pose);
                 }
             }
         }

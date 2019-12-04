@@ -23,4 +23,19 @@ namespace SmolDock::Optimizer {
 
 }
 
+namespace boost {
+namespace serialization {
+
+    template<class Archive>
+    void serialize(Archive & ar, SmolDock::Optimizer::LocalOptimizerType & type, const unsigned int version)
+    {
+        long unsigned int code;
+        ar & code;
+        type = ( SmolDock::Optimizer::LocalOptimizerType) code;
+
+    }
+
+} // namespace serialization
+} // namespace boost
+
 #endif //SMOLDOCK_OPTIMIZERFACTORY_H

@@ -3,14 +3,14 @@ cmake_minimum_required(VERSION 3.12)
 ################ BUILD CONFIGURATION SECTION     ############################
 
 # Point this to the rdkit install directory (See Readme)
-set(RDKIT_ROOT /home/eliane/Projects/rdkit_releases/rdkit-Release_2019_09_1/rdkit_install/)
+set(RDKIT_ROOT /home/sdv/m2isdd/ebriand/tmp/rdkit-Release_2019_09_1b1/rdkit_install/)
 
 
 # Command to run : mpic++ -showme:compile. Only add the argument part of the command
-set(MPI_COMPILE_FLAGS -pthread -Wl,-rpath -Wl,/usr/lib64 -Wl,--enable-new-dtags -L/usr/lib64 -lmpi_cxx -lmpi)
+set(MPI_COMPILE_FLAGS -I/home/sdv/m2isdd/ebriand/local/include )
 
 #Command to run  : mpic++  -showme:link
-set(MPI_LINK_FLAGS  -pthread -Wl,-rpath -Wl,/usr/lib64 -Wl,--enable-new-dtags -L/usr/lib64 -lmpi_cxx -lmpi)
+set(MPI_LINK_FLAGS  " -v")
 
 # Version of python installed with header and libraries
 set(PY_VERSION 3.6)
@@ -20,18 +20,17 @@ set(PY_VERSION 3.6)
 
 set(CMAKE_CXX_STANDARD 17)
 
-#set(BOOST_ROOT /home/briand/local)
-#set(PYTHON_INCLUDE_DIR /home/briand/local/include/python3.6m)
-#set(PYTHON_LIBRARY /home/briand/local/lib)
-#SET(CMAKE_CXX_COMPILER /home/briand/local/bin/g++)
+set(BOOST_ROOT /home/sdv/m2isdd/ebriand/local)
+set(PYTHON_INCLUDE_DIR /home/sdv/m2isdd/ebriand/include/python3.6m)
+set(PYTHON_LIBRARY /home/sdv/m2isdd/ebriand/local/lib)
+SET(CMAKE_CXX_COMPILER /home/sdv/m2isdd/ebriand/local/bin/g++)
+SET(CMAKE_C_COMPILER /home/sdv/m2isdd/ebriand/local/bin/gcc)
 
 # where is the target environment
-#SET(CMAKE_FIND_ROOT_PATH  /home/briand/local/)
-#SET(CMAKE_PREFIX_PATH /home/briand/local/)
+SET(CMAKE_FIND_ROOT_PATH  /home/sdv/m2isdd/ebriand/local/)
+SET(CMAKE_PREFIX_PATH /home/sdv/m2isdd/ebriand/local/)
 
 SET(CMAKE_CXX_FLAGS "-Wall")
-SET(CMAKE_C_COMPILER  "/usr/bin/g++")
-SET(CMAKE_CXX_COMPILER "/usr/bin/g++")
 SET(CMAKE_CXX_FLAGS_DEBUG "-g ")
 SET(CMAKE_CXX_FLAGS_MINSIZEREL "-Os -DNDEBUG")
 SET(CMAKE_CXX_FLAGS_RELEASE "-O3 -march=native -DNDEBUG")
@@ -63,14 +62,14 @@ project(smoldock)
 
 ## MPI #######################
 # Edit this if you have a specific MPI setup
-find_package(MPI REQUIRED)
-include_directories(${MPI_INCLUDE_PATH})
+#find_package(MPI REQUIRED)
+#include_directories(${MPI_INCLUDE_PATH})
 
 ## END MPI ###################
 
 ## Boost #######################
 # Edit this if you have a specific Boost setup
-find_package(Boost REQUIRED regex)
+find_package(Boost REQUIRED regex system serialization iostreams)
 include_directories(${Boost_INCLUDE_DIRS})
 #add_compile_definitions(BOOST_ALLOW_DEPRECATED_HEADERS)
 ## END Boost ###################
