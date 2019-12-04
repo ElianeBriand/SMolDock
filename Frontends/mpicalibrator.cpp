@@ -301,6 +301,7 @@ int main(int argc, char *argv[]) {
                 MPI_Abort(MPI_COMM_WORLD, 27);
             }
             num_conformer_per_ligand = num_conformer_per_ligand_;
+            
         }
 
         if (vm.count("num_retry") != 0) {
@@ -313,9 +314,10 @@ int main(int argc, char *argv[]) {
         }
 
 
-
+        BOOST_LOG_TRIVIAL(info) << "Number of starting conformer: " << num_conformer_per_ligand;
+        BOOST_LOG_TRIVIAL(info) << "Number of retry per conformer: " << num_retry_per_conformer;
         auto cdirector = std::make_shared<sd::Calibration::MPICalibratorDirector>(env, world,
-                                                                                  sd::Score::ScoringFunctionType::VinaCovalentReversible,
+                                                                                  sd::Score::ScoringFunctionType::Vina,
                                                                                   sd::Heuristics::GlobalHeuristicType::SimulatedAnnealing,
                                                                                   sd::Optimizer::LocalOptimizerType::L_BFGS,
                                                                                   1000, // Max epoch
