@@ -96,10 +96,7 @@ namespace SmolDock::Calibration {
 
         virtual bool addReferenceLigand_SMILES_Ki(ReceptorID recID, const std::string& smiles, double Ki);
         virtual bool addReferenceLigand_SMILES_deltaG(ReceptorID recID,const std::string& smiles, double deltaG);
-
         virtual bool addReferenceLigand_Mol_Ki(ReceptorID recID, const Molecule& mol, double Ki);
-
-        virtual bool addAnchorLigandFromMol2File(ReceptorID recID, std::string& filename);
 
         virtual bool addAnchorLigandFromMol2File(ReceptorID recID, std::string& filename);
 

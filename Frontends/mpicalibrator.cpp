@@ -122,6 +122,16 @@ int main(int argc, char *argv[]) {
     unsigned int thread_per_node = -1;
     std::string logfile_path;
 
+    if (vm.count("thread_per_node") != 0) {
+        int tpn_ = vm["thread_per_node"].as<int>();
+        if(tpn_ > 0) {
+            thread_per_node = tpn_;
+        } else {
+            BOOST_LOG_TRIVIAL(error) << "Number of thread per node must be positive (" << tpn_ << " received)";
+            MPI_Abort(MPI_COMM_WORLD, 31);
+        }
+    }
+    
     if (world.rank() == 0) {
         sd::setupLogPrinting(false, false, "[MPI_0] ");
 
@@ -131,15 +141,7 @@ int main(int argc, char *argv[]) {
             BOOST_LOG_TRIVIAL(info) << "\n\n-- Logging to " << logfile_path <<" --\n\n";
         }
         
-        if (vm.count("thread_per_node") != 0) {
-            int tpn_ = vm["thread_per_node"].as<int>();
-            if(tpn_ > 0) {
-                thread_per_node = tpn_;
-            } else {
-                BOOST_LOG_TRIVIAL(error) << "Number of thread per node must be positive (" << tpn_ << " received)";
-                MPI_Abort(MPI_COMM_WORLD, 31);
-            }
-        }
+
 
         BOOST_LOG_TRIVIAL(info) << "";
         BOOST_LOG_TRIVIAL(info) << "";
@@ -152,7 +154,12 @@ int main(int argc, char *argv[]) {
 
         std::time_t now = std::chrono::system_clock::to_time_t(std::chrono::system_clock::now());
         BOOST_LOG_TRIVIAL(info) << "Starting at " << std::ctime( &now);
-        BOOST_LOG_TRIVIAL(info) << "Detected CPU: " << std::thread::hardware_concurrency();
+        BOOST_LOG_TRIVIAL(info) << "Detected cores on rank 0 node: " << std::thread::hardware_concurrency();
+        if(thread_per_node == -1) {
+            BOOST_LOG_TRIVIAL(info) << "Worker rank thread policy: one thread per detected core";
+        } else {
+            BOOST_LOG_TRIVIAL(info) << "Worker rank thread policy: " << thread_per_node << "threads per node";
+        }
 
         std::string receptor_path;
         std::string ligand_csv_path;
@@ -358,7 +365,10 @@ int main(int argc, char *argv[]) {
         cdirector->runCalibration();
 
     } else {
-        tbb::task_scheduler_init tbbInit(std::thread::hardware_concurrency());
+        if(thread_per_node == -1) {
+            thread_per_node = std::thread::hardware_concurrency();
+        }
+        tbb::task_scheduler_init tbbInit(thread_per_node);
         //tbb::task_scheduler_init tbbInit(1);
         sd::setupLogPrinting(false, false, "[MPI_" + lexical_cast<std::string>(world.rank()) +"] ");
         auto cnode = std::make_shared<sd::Calibration::MPICalibratorNode>(env, world);
