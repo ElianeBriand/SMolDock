@@ -236,9 +236,10 @@ int main(int argc, char *argv[]) {
                 // Skip if no match for V2:
                 //if( !boost::regex_match( i->leaf(), what, my_filter ) ) continue;
                 // For V3:
-                if( !boost::regex_match( i->path().filename().string(), what, my_filter ) ) continue;
-
-                int numFile = lexical_cast<int>(what[0]);
+                std::string path_as_string = i->path().filename().string();
+                bool res = boost::regex_match( path_as_string, what, my_filter, boost::match_extra) ;
+                if(!res) continue;
+                int numFile = lexical_cast<int>(what[1]);
                 if(numFile > max_num) {
                     max_num = numFile;
                 }
@@ -308,11 +309,13 @@ int main(int argc, char *argv[]) {
             BOOST_LOG_TRIVIAL(debug) << "Attempting state restore";
             cdirector->restoreResumeState(resumeObject);
             BOOST_LOG_TRIVIAL(info) << "State restored successfully";
+        }else {
+            cdirector->coefficientsToCalibrate({"Gauss1","Gauss2","RepulsionExceptCovalent","Hydrophobic","Hydrogen"});
+            //cdirector->coefficientsToCalibrate({"CovalentReversible"});
         }
 
 
-        cdirector->coefficientsToCalibrate({"Gauss1","Gauss2","RepulsionExceptCovalent","Hydrophobic","Hydrogen"});
-        //cdirector->coefficientsToCalibrate({"CovalentReversible"});
+
 
         sd::Engine::AbstractDockingEngine::DockingBoxSetting setting;
         setting.type = sd::Engine::AbstractDockingEngine::DockingBoxSetting::Type::centeredAround;

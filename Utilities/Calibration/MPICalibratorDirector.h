@@ -122,6 +122,7 @@ namespace SmolDock::Calibration {
 
         void updateAndPrintStatus();
 
+        unsigned int batchCount = 0;
 
         mpi::environment& env;
         mpi::communicator& world;

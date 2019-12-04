@@ -10,6 +10,7 @@
 #include <thread>
 #include <chrono>
 #include <sstream>
+#include <set>
 
 #include <boost/log/trivial.hpp>
 
@@ -110,6 +111,62 @@ namespace SmolDock::Calibration {
                 BOOST_LOG_TRIVIAL(error) << "   - Node " << j+1 << " : " << this->numWorkItemPerNode.at(j) << " work items/batch";
             }
             BOOST_LOG_TRIVIAL(error) << "   Remaining work item : " << remainingWorkItemToAllocate;
+            std::terminate();
+        }
+
+        // Rebalancing slightly to avoid node with 0 work items
+        // NB : This may not be optimal if the nodes are very imbalanced
+        //      but it is expected that one would prefer to have all nodes
+        //      do at least some work ? To be discussed if problem arises.
+
+        // Find nodes with max workload
+        unsigned int maxWorkItem = 0;
+        std::vector<unsigned int> idxMaxWorkItem;
+        for (unsigned int j = 0; j < this->nodeInfo.size(); ++j) {
+            unsigned int numWorkItemForNode = this->numWorkItemPerNode.at(j);
+            if(numWorkItemForNode > maxWorkItem) {
+                maxWorkItem = numWorkItemForNode;
+                idxMaxWorkItem.push_back(j);
+            }
+        }
+
+        // Find nodes with 0 workload
+        std::vector<unsigned int> idxZeroItem;
+        for (unsigned int j = 0; j < this->nodeInfo.size(); ++j) {
+            unsigned int numWorkItemForNode = this->numWorkItemPerNode.at(j);
+            if(numWorkItemForNode == 0) {
+                idxZeroItem.push_back(j);
+            }
+        }
+
+        auto it_maxLoadedNodeIdx = idxMaxWorkItem.begin();
+        for(auto zeroWorkNodeIdx : idxZeroItem) {
+            if(this->numWorkItemPerNode.at(std::distance(idxMaxWorkItem.begin(), it_maxLoadedNodeIdx)) > 2) {
+                this->numWorkItemPerNode.at(zeroWorkNodeIdx) += 1;
+                this->numWorkItemPerNode.at(std::distance(idxMaxWorkItem.begin(), it_maxLoadedNodeIdx)) -= 1;
+            }
+            if((it_maxLoadedNodeIdx + 1) == idxMaxWorkItem.end()) {
+                    // No more max loaded node to rebalance
+                    // We continue to unload this one
+                    continue;
+            } else {
+                it_maxLoadedNodeIdx++;
+            }
+        }
+
+        // Final consistency check
+        unsigned int sumWorkItem = 0;
+        for (unsigned int j = 0; j < this->nodeInfo.size(); ++j) {
+            unsigned int numWorkItemForNode = this->numWorkItemPerNode.at(j);
+            sumWorkItem += numWorkItemForNode;
+        }
+
+        if(sumWorkItem != this->batchSize) {
+            BOOST_LOG_TRIVIAL(error) << "Work load balancing unexpectedly failed ??";
+            BOOST_LOG_TRIVIAL(error) << "   Batch size : " << this->batchSize;
+            for (unsigned int j = 0; j < this->numWorkItemPerNode.size(); ++j) {
+                BOOST_LOG_TRIVIAL(error) << "   - Node " << j+1 << " : " << this->numWorkItemPerNode.at(j) << " work items/batch";
+            }
             std::terminate();
         }
 
@@ -314,7 +371,6 @@ namespace SmolDock::Calibration {
                                                        const size_t i,
                                                        arma::mat& g,
                                                        const size_t batchSize) {
-        static unsigned int batchCount = 0;
 
 
         // Basically this is an allocation mecanism to have an amount of work item per node
@@ -373,7 +429,7 @@ namespace SmolDock::Calibration {
 
         }
 
-        BOOST_LOG_TRIVIAL(info) << "[Epoch " << batchCount << "] Task request queued.";
+        BOOST_LOG_TRIVIAL(info) << "[Epoch " << this->batchCount << "] Task request queued.";
 
         std::chrono::time_point<std::chrono::system_clock> start, end;
         start = std::chrono::system_clock::now();
@@ -386,7 +442,7 @@ namespace SmolDock::Calibration {
             resultList.push_back((Result()));
             Result& r = resultList.back();
             this->world.recv(boost::mpi::any_source, MTags::ResultMessage, r);
-            BOOST_LOG_TRIVIAL(debug) << "Received " << k - i  << " of " << batchSize << " results.";
+            BOOST_LOG_TRIVIAL(debug) << "Received " << (k - i + 1)  << " of " << batchSize << " results.";
             BOOST_LOG_TRIVIAL(debug) << "  Result  ";
             BOOST_LOG_TRIVIAL(debug) << "     |   loss          :  " << r.loss;
             BOOST_LOG_TRIVIAL(debug) << "     |   loss gradient :  " << vectorToString(r.lossGradient);
@@ -395,7 +451,7 @@ namespace SmolDock::Calibration {
         end = std::chrono::system_clock::now();
         int elapsed_minutes = std::chrono::duration_cast<std::chrono::minutes>
                 (end-start).count();
-        BOOST_LOG_TRIVIAL(info) << "[Epoch " << batchCount << "] All results received.";
+        BOOST_LOG_TRIVIAL(info) << "[Epoch " << this->batchCount << "] All results received.";
         this->durationHistory.push_back(elapsed_minutes);
 
         const unsigned int numItems = resultList.size();
@@ -419,7 +475,7 @@ namespace SmolDock::Calibration {
 
         this->lossHistory.push_back(meanLoss);
 
-        BOOST_LOG_TRIVIAL(info) << "[Epoch " << batchCount << "] Mean loss : " << meanLoss;
+        BOOST_LOG_TRIVIAL(info) << "[Epoch " << this->batchCount << "] Mean loss : " << meanLoss;
         BOOST_LOG_TRIVIAL(info) << "   Duration : " << elapsed_minutes << " minutes";
         BOOST_LOG_TRIVIAL(info) << "   History : ";
 
@@ -449,7 +505,7 @@ namespace SmolDock::Calibration {
         tp_coeffsGradients.PrintFooter();
 
 
-        batchCount++;
+        this->batchCount++;
 
 
         const boost::regex my_filter(this->restoreArchivePrefix + std::string("([0-9]+)\\.restore-state") );
@@ -466,9 +522,10 @@ namespace SmolDock::Calibration {
             // Skip if no match for V2:
             //if( !boost::regex_match( i->leaf(), what, my_filter ) ) continue;
             // For V3:
-            if( !boost::regex_match( i->path().filename().string(), what, my_filter ) ) continue;
-
-            int numFile = lexical_cast<int>(what[0]);
+            std::string path_as_string = i->path().filename().string();
+            bool res = boost::regex_match( path_as_string, what, my_filter, boost::match_extra) ;
+            if(!res) continue;
+            int numFile = lexical_cast<int>(what[1]);
             if(numFile > max_num) {
                 max_num = numFile;
             }
@@ -582,22 +639,6 @@ namespace SmolDock::Calibration {
     }
 
 
-/*
-        std::vector<double> lossHistory;
-        std::vector<int> durationHistory;
-        std::vector<std::vector<double>> coefficientHistory;
-        std::vector<std::vector<double>> gradientHistory;
-
-        std::vector<double> currentCoeffs;
-
-        std::vector<std::string> coeffsToCalibrate;
-        std::vector<std::string> nameOfAllCoeffs;
-        std::vector<unsigned int> idxOfCoeffsToCalibrate;
-
-        Score::ScoringFunctionType scoringFunctionType;
-        Heuristics::GlobalHeuristicType heuristicType;
-        Optimizer::LocalOptimizerType localOptimizerType;
-*/
 
     MPICalibratorDirector_ResumeObject MPICalibratorDirector::createResumeState() {
         MPICalibratorDirector_ResumeObject ro;
@@ -626,7 +667,6 @@ namespace SmolDock::Calibration {
         this->coefficientHistory = state.coefficientHistory;
         this->gradientHistory = state.gradientHistory;
 
-
         this->currentCoeffs = state.currentCoeffs;
 
         this->coeffsToCalibrate = state.coeffsToCalibrate;
@@ -636,6 +676,51 @@ namespace SmolDock::Calibration {
         this->scoringFunctionType = state.scoringFunctionType;
         this->heuristicType = state.heuristicType;
         this->localOptimizerType = state.localOptimizerType;
+
+        // Duplicate removal
+        {
+            std::set<int> s_idx;
+            unsigned size = this->idxOfCoeffsToCalibrate.size();
+            for( unsigned i = 0; i < size; ++i ) s_idx.insert( this->idxOfCoeffsToCalibrate[i] );
+            this->idxOfCoeffsToCalibrate.assign( s_idx.begin(), s_idx.end() );
+        }   
+
+        {
+            std::set<std::string> s_allCoeffsName;
+            unsigned size = this->nameOfAllCoeffs.size();
+            for( unsigned i = 0; i < size; ++i ) s_allCoeffsName.insert( this->nameOfAllCoeffs[i] );
+            this->nameOfAllCoeffs.assign( s_allCoeffsName.begin(), s_allCoeffsName.end() );
+        }   
+
+        {
+            std::set<std::string> s_coeffsToCalibrate;
+            unsigned size = this->nameOfAllCoeffs.size();
+            for( unsigned i = 0; i < size; ++i ) s_coeffsToCalibrate.insert( this->coeffsToCalibrate[i] );
+            this->coeffsToCalibrate.assign( s_coeffsToCalibrate.begin(), s_coeffsToCalibrate.end() );
+        }   
+
+        // FIX for currentCoeffs containing the first coeffs actually
+        this->currentCoeffs = this->coefficientHistory.back();
+
+
+        {
+            iConformer dummy_cf;
+            dummy_cf.num_rotatable_bond = 0;
+            iProtein dummy_prot;
+            iTransform dummy_tr = iTransformIdentityInit(0);
+            auto dummy_sf = scoringFunctionFactory(this->scoringFunctionType,
+                                                    dummy_cf,
+                                                    dummy_prot,
+                                                    dummy_tr,
+                                                    1e-3,
+                                                    true);
+            std::vector<std::string> names = dummy_sf->getCoefficientsNames();
+            unsigned int num_coeffs = names.size();
+            this->currentCoeffs.erase(this->currentCoeffs.begin() + num_coeffs, this->currentCoeffs.end());
+        } 
+
+        this->batchCount = this->coefficientHistory.size();
+
         return true;
     }
 
