@@ -119,7 +119,7 @@ int main(int argc, char *argv[]) {
     po::store(po::parse_command_line(argc, argv, desc), vm);
     po::notify(vm);
 
-    unsigned int thread_per_node = -1;
+    int thread_per_node = -1;
     std::string logfile_path;
 
     if (vm.count("thread_per_node") != 0) {
