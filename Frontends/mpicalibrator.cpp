@@ -319,11 +319,11 @@ int main(int argc, char *argv[]) {
                                                                                   sd::Heuristics::GlobalHeuristicType::SimulatedAnnealing,
                                                                                   sd::Optimizer::LocalOptimizerType::L_BFGS,
                                                                                   1000, // Max epoch
-                                                                                  0.5, // Initial learning rate
+                                                                                  0.5e-7, // Initial learning rate
                                                                                   32574, // RNG seed
-                                                                                  5, // num generated starting conformer per ligand
-                                                                                  3, // num retry per conformer (best score is kept)
-                                                                                  18, //batch size
+                                                                                  num_conformer_per_ligand, // num generated starting conformer per ligand
+                                                                                  num_retry_per_conformer, // num retry per conformer (best score is kept)
+                                                                                  batch_size, //batch size
                                                                                   sd::Heuristics::emptyParameters);
 
         if(resume) {
