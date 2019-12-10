@@ -20,7 +20,8 @@ build system:
 - Boost (Boost software licence)
 - Python libraries for the python modules (PSF)
 
-These can be installed through your packahge manager (you might need the *-devel package).
+These can be installed through your packahge manager (you might need the \*-devel package).
+
 
 You also need to have RDKit build with a specific set of parameters. It is suggested to download the latest release and 
 adapt the following instruction :
@@ -85,12 +86,18 @@ adapt the following instruction :
  
 
 Then you will need to edit the RDKIT_ROOT path in the CMakeList.txt. It is at the top of the file, in the build configuration
-section. You'll probably need to change the other variable in that section : follow the instruction there. Then, in the SmolDock
-source directory :
+section. You'll probably need to change the other variable in that section : follow the instruction there.
+
+Then, clone SmolDock and init the submodules:
+
+    git clone https://github.com/ElianeBriand/SmolDock.git
+    git submodule update --init --recursive
+
+Then build:
 
     mkdir build
     cd build
-    cmake ..
+    cmake -DCMAKE_BUILD_TYPE=RelWithDebInfo ..
     make -j4
 
 

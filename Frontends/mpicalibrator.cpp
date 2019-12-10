@@ -158,7 +158,7 @@ int main(int argc, char *argv[]) {
         if(thread_per_node == -1) {
             BOOST_LOG_TRIVIAL(info) << "Worker rank thread policy: one thread per detected core";
         } else {
-            BOOST_LOG_TRIVIAL(info) << "Worker rank thread policy: " << thread_per_node << "threads per node";
+            BOOST_LOG_TRIVIAL(info) << "Worker rank thread policy: " << thread_per_node << " threads per node";
         }
 
         std::string receptor_path;

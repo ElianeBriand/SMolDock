@@ -18,7 +18,9 @@ namespace SmolDock::Heuristics {
     DifferentialEvolution::DifferentialEvolution(Score::ScoringFunction* scorFunc_, Optimizer::Optimizer* optimizer_,
                                            unsigned int seed_, DifferentialEvolution::Parameters params_) :
             scorFunc(scorFunc_), optimizer(optimizer_), rndGenerator(seed_), params(params_) {
+                BOOST_LOG_TRIVIAL(error) << "DifferentialEvolution is not implemented. ";
 
+                std::terminate();
     }
 
     bool DifferentialEvolution::search() {
@@ -30,7 +32,7 @@ namespace SmolDock::Heuristics {
         unsigned int maxGenerations = 25000;
         double crossoverRate = 0.6;
         double differentialWeight = 0.02;
-
+/*
         ens::DE DiffentialEvolutionHeur(populationSize, maxGenerations, crossoverRate, differentialWeight);
 
         DiffentialEvolutionHeur.Optimize(*this->scorFunc, currentState);
@@ -45,7 +47,7 @@ namespace SmolDock::Heuristics {
 
         BOOST_LOG_TRIVIAL(debug) << "DifferentialEvolution: Score after DE          = " << scoreBeforeLocalOptim;
         BOOST_LOG_TRIVIAL(debug) << "DifferentialEvolution: Score after local optim = " << scoreAfterLocalOptim;
-
+*/
         return true;
     }
 

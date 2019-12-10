@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.12)
 ################ BUILD CONFIGURATION SECTION     ############################
 
 # Point this to the rdkit install directory (See Readme)
-set(RDKIT_ROOT /home/sdv/m2isdd/ebriand/tmp/rdkit-Release_2019_09_1b1/rdkit_install/)
+set(RDKIT_ROOT /home/eliane/Projects/rdkit_releases/rdkit-Release_2019_09_1/rdkit_install/)
 
 
 # Command to run : mpic++ -showme:compile. Only add the argument part of the command
@@ -20,17 +20,19 @@ set(PY_VERSION 3.6)
 
 set(CMAKE_CXX_STANDARD 17)
 
-set(BOOST_ROOT /home/sdv/m2isdd/ebriand/local)
-set(PYTHON_INCLUDE_DIR /home/sdv/m2isdd/ebriand/include/python3.6m)
-set(PYTHON_LIBRARY /home/sdv/m2isdd/ebriand/local/lib)
-SET(CMAKE_CXX_COMPILER /home/sdv/m2isdd/ebriand/local/bin/g++)
-SET(CMAKE_C_COMPILER /home/sdv/m2isdd/ebriand/local/bin/gcc)
+#set(BOOST_ROOT /home/sdv/m2isdd/ebriand/local)
+#set(PYTHON_INCLUDE_DIR /home/sdv/m2isdd/ebriand/include/python3.6m)
+#set(PYTHON_LIBRARY /home/sdv/m2isdd/ebriand/local/lib)
+SET(CMAKE_CXX_COMPILER clang++)
+SET(CMAKE_C_COMPILER clang)
 
 # where is the target environment
-SET(CMAKE_FIND_ROOT_PATH  /home/sdv/m2isdd/ebriand/local/)
-SET(CMAKE_PREFIX_PATH /home/sdv/m2isdd/ebriand/local/)
+#SET(CMAKE_FIND_ROOT_PATH  /home/sdv/m2isdd/ebriand/local/)
+#SET(CMAKE_PREFIX_PATH /home/sdv/m2isdd/ebriand/local/)
 
 SET(CMAKE_CXX_FLAGS "-Wall")
+#SET(CMAKE_CXX_FLAGS "-Wall -fsanitize=adress -fsanitize=undefined")
+#SET(CMAKE_CXX_FLAGS "-Wall -fsanitize=memory")
 SET(CMAKE_CXX_FLAGS_DEBUG "-g ")
 SET(CMAKE_CXX_FLAGS_MINSIZEREL "-Os -DNDEBUG")
 SET(CMAKE_CXX_FLAGS_RELEASE "-O3 -march=native -DNDEBUG")
@@ -126,121 +128,64 @@ set(SMOLDOCK_INTEL_VTUNE_EXPORT_SYMBOL FALSE)
 ######################## END  BUILD SETUP SECTION #########################
 ###########################################################################
 
-
 include_directories(Dependencies)
+include_directories(Dependencies/ensmallen/include/)
 include_directories(.)
 
 
 
 set(SOURCE_LIST Structures/Structure.cpp
-        Structures/Structure.h
         Structures/Molecule.cpp
-        Structures/Molecule.h
         Structures/Protein.cpp
-        Structures/Protein.h
         Structures/Atom.cpp
-        Structures/Atom.h
         Structures/Bond.cpp
-        Structures/Bond.h
         Structures/AminoAcid.cpp
-        Structures/AminoAcid.h
-        Engines/AbstractDockingEngine.h
         Engines/MDStyleDockingEngine.cpp
-        Engines/MDStyleDockingEngine.h
         Engines/VinaCompatibleDockingEngine.cpp
-        Engines/VinaCompatibleDockingEngine.h
         Structures/Results/DockingResult.cpp
-        Structures/Results/DockingResult.h
         Utilities/DockingResultPrinter.cpp
-        Utilities/DockingResultPrinter.h
         Engines/ConformerDockingEngine.cpp
-        Engines/ConformerDockingEngine.h
-        Engines/Internals/iConformer.h
-        Utilities/TimingsLog.h
         Engines/ScoringFunctions/VinaLikeRigid.cpp
-        Engines/ScoringFunctions/VinaLikeRigid.h
-        Engines/Internals/iProtein.h
-        Engines/Internals/iTransform.h
         Utilities/PDBWriter.cpp
-        Utilities/PDBWriter.h Utilities/PDBLigandUtils.h
         Utilities/PDBLigandUtils.cpp
         Engines/LocalOptimizers/GradientDescentLineSearch.cpp
-        Engines/LocalOptimizers/GradientDescentLineSearch.h
         Utilities/IntermediateConformerCollector.cpp
-        Utilities/IntermediateConformerCollector.h
         Utilities/ReScorer.cpp
-        Utilities/ReScorer.h
         Structures/Common/ResiduePropertiesAssignation.cpp
-        Structures/Common/ResiduePropertiesAssignation.h
         Structures/Common/PDBResiduePropertiesTable.cpp
-        Structures/Common/PDBResiduePropertiesTable.h
         Structures/InputModifiers/VinaCompatibility.cpp
-        Structures/InputModifiers/VinaCompatibility.h
-        Structures/InputModifiers/InputModifierInterface.h
-        Engines/ScoringFunctions/ScoringFunctionInterface.h
         Engines/LocalOptimizers/L_BFGS.cpp
-        Engines/LocalOptimizers/L_BFGS.h
-        Engines/LocalOptimizers/OptimizerInterface.h
-        Engines/Internals/InternalsUtilityFunctions.h
-        Engines/LocalOptimizers/LocalOptimizerUtilityFunctions.h
         Engines/GlobalHeuristics/RandomRestart.cpp
-        Engines/GlobalHeuristics/RandomRestart.h
-        Engines/GlobalHeuristics/HeuristicInterface.h
         Engines/ScoringFunctions/ScoringFunctionFactory.cpp
-        Engines/ScoringFunctions/ScoringFunctionFactory.h
         Engines/LocalOptimizers/OptimizerFactory.cpp
-        Engines/LocalOptimizers/OptimizerFactory.h
         Engines/GlobalHeuristics/HeuristicFactory.cpp
-        Engines/GlobalHeuristics/HeuristicFactory.h
         Engines/PoseRefiner.cpp
-        Engines/PoseRefiner.h
         Engines/GlobalHeuristics/OnlyLocal.cpp
-        Engines/GlobalHeuristics/OnlyLocal.h
         Engines/GlobalHeuristics/IteratedLocalSearch.cpp
-        Engines/GlobalHeuristics/IteratedLocalSearch.h
         Engines/GlobalHeuristics/SimulatedAnnealing.cpp
-        Engines/GlobalHeuristics/SimulatedAnnealing.h
         Engines/GlobalHeuristics/Utilities/MetropolisHastings.cpp
-        Engines/GlobalHeuristics/Utilities/MetropolisHastings.h
         Utilities/Version.cpp
-        Utilities/Version.h
         Engines/ScoringFunctions/VinaLike.cpp
-        Engines/ScoringFunctions/VinaLike.h
-        Engines/ScoringFunctions/VinaLikeCommon.h
         Engines/GlobalHeuristics/DifferentialEvolution.cpp
-        Engines/GlobalHeuristics/DifferentialEvolution.h
         Engines/GlobalHeuristics/Evolution.cpp
-        Engines/GlobalHeuristics/Evolution.h
         Engines/ScoringFunctions/VinaLikeCovalentReversible.cpp
-        Engines/ScoringFunctions/VinaLikeCovalentReversible.h
         Structures/InputModifiers/RotatableBondRemover.cpp
-        Structures/InputModifiers/RotatableBondRemover.h
         Engines/ScoringFunctions/VinaLikeCovalentReversible.cpp
-        Engines/ScoringFunctions/VinaLikeCovalentReversible.h
         Utilities/Calibration/Calibrator.cpp
-        Utilities/Calibration/Calibrator.h
-        Utilities/CSVReader.cpp Utilities/CSVReader.h
         Utilities/SMARTSMatcher.cpp
-        Utilities/SMARTSMatcher.h
         Utilities/AdvancedErrorHandling.cpp
-        Utilities/AdvancedErrorHandling.h
-        Frontends/FrontendCommon.h)
+        Frontends/CLI/FileInputOutput.cpp
+        )
 
 set(MPI_SOURCE_LIST Utilities/Calibration/MPICalibratorDirector.cpp
-        Utilities/Calibration/MPICalibratorDirector.h
         Utilities/Calibration/MPICalibratorNode.cpp
-        Utilities/Calibration/MPICalibratorNode.h
-        Utilities/Calibration/MPICalibratorCommon.h
         )
 
 set(PY_EXPORT_SOURCE_LIST Frontends/Python/PyStructures.cpp
-        Frontends/Python/PyStructures.h
         Frontends/Python/PySTLWrapper.cpp
-        Frontends/Python/PySTLWrapper.h
         Frontends/Python/PyUtilities.cpp
-        Frontends/Python/PyUtilities.h
         Frontends/Python/PyEngine.cpp
-        Frontends/Python/PyEngine.h)
+        )
 
 
 
@@ -256,11 +201,12 @@ add_compile_definitions(BOOST_ENABLE_ASSERT_HANDLER)
 
 ADD_LIBRARY(libsmoldock SHARED ${SOURCE_LIST} ${BPRINTER_SOURCE_LIST})
 target_compile_definitions(libsmoldock PUBLIC ARMA_DONT_USE_WRAPPER)
+set_target_properties(libsmoldock PROPERTIES PREFIX "")
 add_dependencies(libsmoldock rdkit_base)
 target_compile_definitions(libsmoldock PUBLIC BOOST_LOG_DYN_LINK)
 
 
-add_executable(smoldock Frontends/main.cpp)
+add_executable(smoldock Frontends/CLI_frontend.cpp)
 target_link_libraries(smoldock libsmoldock)
 target_link_libraries(smoldock boost_log_setup boost_log boost_thread boost_filesystem boost_program_options)
 target_link_libraries(smoldock tbb)

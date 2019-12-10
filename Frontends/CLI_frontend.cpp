@@ -27,28 +27,29 @@
 
 #include <boost/filesystem.hpp>
 #include <boost/program_options.hpp>
-#include <Utilities/PDBWriter.h>
 
-#include "Structures/Molecule.h"
-#include "Structures/Protein.h"
-#include "Structures/Atom.h"
-#include "Utilities/DockingResultPrinter.h"
-#include "Engines/ConformerDockingEngine.h"
+
+#include <Structures/Molecule.h>
+#include <Structures/Protein.h>
+#include <Structures/Atom.h>
+#include <Structures/InputModifiers/InputModifierInterface.h>
+#include <Structures/InputModifiers/VinaCompatibility.h>
+
+#include <Engines/ConformerDockingEngine.h>
 #include <Engines/ScoringFunctions/VinaLike.h>
 #include <Engines/ScoringFunctions/VinaLikeRigid.h>
 #include <Engines/ScoringFunctions/VinaLikeCommon.h>
 #include <Engines/Internals/InternalsUtilityFunctions.h>
 
+#include <Utilities/DockingResultPrinter.h>
 #include <Utilities/PDBWriter.h>
 #include <Utilities/CSVReader.h>
 #include <Utilities/SMARTSMatcher.h>
-
-#include <Structures/InputModifiers/InputModifierInterface.h>
-#include <Structures/InputModifiers/VinaCompatibility.h>
-
 #include <Utilities/Version.h>
 #include <Utilities/AdvancedErrorHandling.h>
+
 #include <Utilities/Calibration/Calibrator.h>
+
 #include <Frontends/FrontendCommon.h>
 
 
@@ -57,11 +58,10 @@
 
 #include <tbb/task_scheduler_init.h>
 
-#include "FrontendCommon.h"
+
 
 namespace sd = SmolDock;
 namespace po = boost::program_options;
-
 
 
 
