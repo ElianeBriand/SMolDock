@@ -38,10 +38,10 @@ namespace SmolDock::Engine {
 
 
     bool MDStyleDockingEngine::setDockingBox(AbstractDockingEngine::DockingBoxSetting setting) {
-        if (setting.type != DockingBoxSetting::Type::everything) {
-            std::cout << "[!] DockingBoxSetting (that is not DockingBoxSetting::everything) is not yet implemented."
+        if (setting.shape != DockingBoxSetting::Shape::whole_protein) {
+            std::cout << "[!] DockingBoxSetting (that is not DockingBoxSetting::whole_protein) is not yet implemented."
                       << std::endl;
-            std::cout << "[ ] Running as if DockingBoxSetting::everything was passed" << std::endl;
+            std::cout << "[ ] Running as if DockingBoxSetting::whole_protein was passed" << std::endl;
             return false;
         }
         return true;

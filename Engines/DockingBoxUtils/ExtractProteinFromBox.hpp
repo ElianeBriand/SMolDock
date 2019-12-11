@@ -18,21 +18,19 @@
  *
  */
 
-#include <Frontends/CLI/FileInputOutput.hpp>
+#ifndef SMOLDOCK_EXTRACTPROTEINFROMBOX_H
+#define SMOLDOCK_EXTRACTPROTEINFROMBOX_H
 
+#include <Engines/Internals/iProtein.h>
+#include <Structures/Protein.h>
+#include <Engines/AbstractDockingEngine.h>
 
-#include <boost/filesystem.hpp>
+namespace SmolDock::Engine {
 
-namespace SmolDock {
-
-	ReceptorFiletype receptorFiletypeFromPath(const std::string& filename) {
-		boost::filesystem::path p(filename);
-		const std::string extension = p.extension().generic_string();
-
-		if(extension == ".pdb")
-			return ReceptorFiletype::pdb;
-		else
-			return ReceptorFiletype::unsupported;
-	}
+	iProtein extractIProteinFromBoxSetting(Protein* protein, const AbstractDockingEngine::DockingBoxSetting& setting);
 
 }
+
+
+
+#endif //SMOLDOCK_EXTRACTPROTEINFROMBOX_H

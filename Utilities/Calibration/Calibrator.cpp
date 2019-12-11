@@ -20,6 +20,7 @@
 #include <ensmallen.hpp>
 
 #include <Engines/Internals/InternalsUtilityFunctions.h>
+#include <Engines/DockingBoxUtils/ExtractProteinFromBox.hpp>
 #include <Utilities/LogUtils.h>
 
 
@@ -68,9 +69,9 @@ namespace SmolDock::Calibration {
     }
 
 
-    bool Calibrator::addReferenceLigand_SMILES_Ki(ReceptorID recID, const std::string &smiles, double Ki, int seed) {
+    bool Calibrator::addReferenceLigand_SMILES_Ki(ReceptorID recID, const std::string &smiles, double Ki) {
         auto mol_sptr = std::make_shared<Molecule>(true); // FIXME : no flexible rings
-        mol_sptr->populateFromSMILES(smiles, seed);
+        mol_sptr->populateFromSMILES(smiles, 142);
 
 
         const double R = 8.3144598;
@@ -82,7 +83,7 @@ namespace SmolDock::Calibration {
         return true;
     }
 
-    bool Calibrator::addReferenceLigand_Mol_Ki(Calibrator::ReceptorID recID, const Molecule &mol, double Ki, int seed) {
+    bool Calibrator::addReferenceLigand_Mol_Ki(Calibrator::ReceptorID recID, const Molecule &mol, double Ki) {
         auto mol_sptr = std::make_shared<Molecule>(mol.deepcopy());
 
         const double R = 8.3144598;
@@ -116,12 +117,7 @@ namespace SmolDock::Calibration {
             auto &fulliProt = std::get<3>(this->referenceReceptor[i]);
             auto &settings = std::get<Engine::AbstractDockingEngine::DockingBoxSetting>(this->referenceReceptor[i]);
 
-            if (settings.type == Engine::AbstractDockingEngine::DockingBoxSetting::Type::centeredAround) {
-                iProt = protein->getPartialiProtein_sphere(settings.center, settings.radius, 2.0);
-            } else {
-                iProt = protein->getiProtein();
-            }
-
+            iProt = extractIProteinFromBoxSetting(protein.get(), settings);
             fulliProt = protein->getiProtein();
 
             for (auto &j : this->referenceLigands[i]) {
@@ -152,8 +148,8 @@ namespace SmolDock::Calibration {
                 BOOST_LOG_TRIVIAL(debug)
                     << "Received default heuristics parameters, setting up search domain if relevant";
 
-                double proteinMaxRadius = (settings.type ==
-                                           Engine::AbstractDockingEngine::DockingBoxSetting::Type::centeredAround) ?
+                double proteinMaxRadius = (settings.shape ==
+                                           Engine::AbstractDockingEngine::DockingBoxSetting::Shape::sphere) ?
                                           settings.radius : protein->getMaxRadius();
                 this->hParams = setupSearchDomainIfRelevant(this->heuristicType, proteinMaxRadius);
             }
@@ -163,7 +159,7 @@ namespace SmolDock::Calibration {
                 double referenceScore = std::get<double>(ligandRecord);
 
                 iTransform starting_pos_tr = iTransformIdentityInit(conformer_vector[0].num_rotatable_bond);
-                if (settings.type == Engine::AbstractDockingEngine::DockingBoxSetting::Type::centeredAround) {
+                if (settings.shape == Engine::AbstractDockingEngine::DockingBoxSetting::Shape::sphere) {
                     starting_pos_tr.transl.x() += settings.center[0];
                     starting_pos_tr.transl.y() += settings.center[1];
                     starting_pos_tr.transl.z() += settings.center[2];

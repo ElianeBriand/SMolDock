@@ -14,6 +14,8 @@
 #include <tbb/blocked_range2d.h>
 
 #include <Engines/Internals/InternalsUtilityFunctions.h>
+#include <Engines/DockingBoxUtils/ExtractProteinFromBox.h>
+
 #include <Utilities/LogUtils.h>
 #include <Structures/Atom.h>
 #include <Structures/AminoAcid.h>
@@ -140,12 +142,8 @@ namespace SmolDock::Calibration {
             iProtein iProt;
             iProtein fulliProt;
 
-            if (settings.type == Engine::AbstractDockingEngine::DockingBoxSetting::Type::centeredAround) {
-                iProt = psptr->getPartialiProtein_sphere(settings.center, settings.radius, 2.0);
-            } else {
-                iProt = psptr->getiProtein();
-            }
 
+            iProt = extractIProteinFromBoxSetting(psptr.get(), settings);
             fulliProt = psptr->getiProtein();
 
             referenceReceptor.push_back(std::make_tuple(

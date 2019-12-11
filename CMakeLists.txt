@@ -60,8 +60,15 @@ project(smoldock)
 ######################## BUILD SETUP SECTION ##############################
 ###########################################################################
 
-
-
+include(ExternalProject)
+ExternalProject_Add(PDBPC
+        PREFIX ${CMAKE_CURRENT_BINARY_DIR}/PDBPC
+        SOURCE_DIR ${CMAKE_SOURCE_DIR}/Dependencies/PDBPC
+        INSTALL_DIR ${CMAKE_CURRENT_BINARY_DIR}/PDBPC_install
+        CMAKE_ARGS -DCMAKE_INSTALL_PREFIX:PATH=<INSTALL_DIR>
+        INSTALL_COMMAND ""
+        )
+set(PDBPC_LIB_PATH  ${CMAKE_CURRENT_BINARY_DIR}/PDBPC/src/PDBPC-build/libpdbpc_static_pic.a)
 ## MPI #######################
 # Edit this if you have a specific MPI setup
 #find_package(MPI REQUIRED)
@@ -174,7 +181,9 @@ set(SOURCE_LIST Structures/Structure.cpp
         Utilities/Calibration/Calibrator.cpp
         Utilities/SMARTSMatcher.cpp
         Utilities/AdvancedErrorHandling.cpp
+        Utilities/CSVReader.cpp
         Frontends/CLI/FileInputOutput.cpp
+        Engines/DockingBoxUtils/ExtractProteinFromBox.cpp
         )
 
 set(MPI_SOURCE_LIST Utilities/Calibration/MPICalibratorDirector.cpp
@@ -204,6 +213,8 @@ target_compile_definitions(libsmoldock PUBLIC ARMA_DONT_USE_WRAPPER)
 set_target_properties(libsmoldock PROPERTIES PREFIX "")
 add_dependencies(libsmoldock rdkit_base)
 target_compile_definitions(libsmoldock PUBLIC BOOST_LOG_DYN_LINK)
+add_dependencies(libsmoldock PDBPC)
+target_link_libraries(libsmoldock ${PDBPC_LIB_PATH})
 
 
 add_executable(smoldock Frontends/CLI_frontend.cpp)

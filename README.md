@@ -130,6 +130,7 @@ It links with :
 - Python libraries for the python modules (PSF)
 - Intel TBB (Apache 2.0)
 - Any standard-compliant MPI implementation (tested on OpenMPI)
+- PDBPC (GPLv3)
 
 It includes data from :
 - GROMACS implementation of Amber99ff (LGPL 2.1 or later)
