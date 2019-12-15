@@ -22,7 +22,7 @@ SmolDock::IntermediateConformerCollector* conformerCollector;
 namespace sd = SmolDock;
 
 
-BOOST_AUTO_TEST_SUITE(engine_ts)
+BOOST_AUTO_TEST_SUITE(Engines_ts)
 
     BOOST_AUTO_TEST_SUITE(geometry_ts)
 

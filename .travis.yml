@@ -1,0 +1,90 @@
+dist: xenial
+language: cpp
+compiler: gcc
+# Boost
+git:
+  depth: 1
+branches:
+  only:
+    - master
+addons:
+  apt:
+    update: true
+    sources:
+      - sourceline: 'ppa:mhier/libboost-latest'
+      - ubuntu-toolchain-r-test
+    packages:
+      - g++-7
+      - libboost1.70-dev
+      - lcov
+      - libtbb-dev
+      - libopenmpi-dev
+      - vc-dev
+      - libunwind-dev
+      - libeigen3-dev
+      - libpython3-dev
+      - wget
+      - libsqlite3-dev
+install:
+  - sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-7 90
+script:
+  - wget https://github.com/rdkit/rdkit/archive/Release_2019_09_2.tar.gz
+  - tar xf Release_2019_09_2.tar.gz
+  - mkdir rdkit_build
+  - mkdir rdkit_install
+  - cd rdkit_build
+  - cmake ../rdkit-Release_2019_09_2 -DCMAKE_INSTALL_PREFIX=../rdkit_install \
+    -DRDK_INSTALL_INTREE=OFF \
+    -DBUILD_TESTING=OFF \
+    -DCMAKE_BUILD_TYPE=Release \
+    -DRDK_BUILD_AVALON_SUPPORT=ON \
+    -DRDK_BUILD_CAIRO_SUPPORT=OFF \
+    -DRDK_BUILD_COMPRESSED_SUPPLIERS=ON \
+    -DRDK_BUILD_CONTRIB=ON \
+    -DRDK_BUILD_COORDGEN_SUPPORT=ON \
+    -DRDK_BUILD_CPP_TESTS=OFF \
+    -DRDK_BUILD_DESCRIPTORS3D=ON \
+    -DRDK_BUILD_FREESASA_SUPPORT=ON \
+    -DRDK_BUILD_INCHI_SUPPORT=OFF \
+    -DRDK_BUILD_MINIMAL_LIB=OFF \
+    -DRDK_BUILD_MOLINTERCHANGE_SUPPORT=ON \
+    -DRDK_BUILD_PGSQL=OFF \
+    -DRDK_BUILD_PYTHON_WRAPPERS=OFF \
+    -DRDK_BUILD_QT_DEMO=OFF \
+    -DRDK_BUILD_QT_SUPPORT=OFF \
+    -DRDK_BUILD_RPATH_SUPPORT=OFF \
+    -DRDK_BUILD_SLN_SUPPORT=ON \
+    -DRDK_BUILD_SWIG_CSHARP_WRAPPER=OFF    \
+    -DRDK_BUILD_SWIG_JAVA_WRAPPER=OFF      \
+    -DRDK_BUILD_SWIG_WRAPPERS=OFF          \
+    -DRDK_BUILD_TEST_GZIP=OFF              \
+    -DRDK_BUILD_THREADSAFE_SSS=ON          \
+    -DRDK_BUILD_YAEHMOP_SUPPORT=OFF         \
+    -DRDK_INSTALL_DEV_COMPONENT=ON         \
+    -DRDK_INSTALL_DLLS_MSVC=OFF            \
+    -DRDK_INSTALL_PYTHON_TESTS=OFF         \
+    -DRDK_INSTALL_STATIC_LIBS=OFF          \
+    -DRDK_OPTIMIZE_NATIVE=ON               \
+    -DRDK_PGSQL_STATIC=OFF                 \
+    -DRDK_SWIG_STATIC=OFF                  \
+    -DRDK_TEST_COVERAGE=OFF                \
+    -DRDK_TEST_MMFF_COMPLIANCE=OFF         \
+    -DRDK_TEST_MULTITHREADED=OFF           \
+    -DRDK_USE_BOOST_IOSTREAMS=OFF           \
+    -DRDK_USE_BOOST_REGEX=ON               \
+    -DRDK_USE_BOOST_SERIALIZATION=ON       \
+    -DRDK_USE_FLEXBISON=OFF                \
+    -DRDK_USE_STRICT_ROTOR_DEFINITION=ON    \
+    -DRDK_USE_URF=ON
+  - make
+  - make install
+  - cd ..
+  - mkdir build
+  - cd build
+  - cmake .. -DRDKIT_ROOT=`pwd`/../rdkit_install
+  - make
+  - make test
+  - cd ..
+after_success:
+  - chmod +x ./testCoverage.sh
+  - ./testCoverage.sh -t 1 -s 1

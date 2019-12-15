@@ -20,7 +20,7 @@
 #include <ensmallen.hpp>
 
 #include <Engines/Internals/InternalsUtilityFunctions.h>
-#include <Engines/DockingBoxUtils/ExtractProteinFromBox.hpp>
+#include <Engines/Utils/ExtractProteinFromBox.hpp>
 #include <Utilities/LogUtils.h>
 
 

@@ -18,19 +18,35 @@
  *
  */
 
-#ifndef SMOLDOCK_EXTRACTPROTEINFROMBOX_H
-#define SMOLDOCK_EXTRACTPROTEINFROMBOX_H
+#ifndef SMOLDOCK_UNITTEST_TRIPEPTIDEFIXTURE_H
+#define SMOLDOCK_UNITTEST_TRIPEPTIDEFIXTURE_H
 
-#include <Engines/Internals/iProtein.h>
+
+#include <string>
+#include <memory>
+
 #include <Structures/Protein.h>
-#include <Engines/AbstractDockingEngine.h>
+#include <Engines/Internals/iProtein.h>
 
-namespace SmolDock::Engine {
-
-	iProtein extractIProteinFromBoxSetting(Protein* protein, const AbstractDockingEngine::DockingBoxSetting& setting);
-
-}
+namespace sd = SmolDock;
 
 
 
-#endif //SMOLDOCK_EXTRACTPROTEINFROMBOX_H
+struct TripeptideFixture {
+
+	TripeptideFixture();
+
+	std::string tripeptide_PDB_block;
+
+	std::shared_ptr<sd::Protein> tripeptide_Protein;
+
+    std::shared_ptr<sd::iProtein> tripeptide_iProtein;
+
+
+
+
+};
+
+
+
+#endif //SMOLDOCK_UNITTEST_TRIPEPTIDEFIXTURE_H

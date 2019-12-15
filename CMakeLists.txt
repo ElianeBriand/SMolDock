@@ -3,14 +3,13 @@ cmake_minimum_required(VERSION 3.12)
 ################ BUILD CONFIGURATION SECTION     ############################
 
 # Point this to the rdkit install directory (See Readme)
-set(RDKIT_ROOT /home/eliane/Projects/rdkit_releases/rdkit-Release_2019_09_1/rdkit_install/)
-
+SET(RDKIT_ROOT /home/eliane/Projects/rdkit_releases/rdkit-Release_2019_09_1/rdkit_install/ CACHE PATH "RDKit install directory"  )
 
 # Command to run : mpic++ -showme:compile. Only add the argument part of the command
-set(MPI_COMPILE_FLAGS -I/home/sdv/m2isdd/ebriand/local/include )
+#set(MPI_COMPILE_FLAGS -I/home/sdv/m2isdd/ebriand/local/include )
 
 #Command to run  : mpic++  -showme:link
-set(MPI_LINK_FLAGS  " -v")
+#set(MPI_LINK_FLAGS  " -v")
 
 # Version of python installed with header and libraries
 set(PY_VERSION 3.6)
@@ -18,13 +17,8 @@ set(PY_VERSION 3.6)
 ################ END BUILD CONFIGURATION SECTION ############################
 
 
-set(CMAKE_CXX_STANDARD 17)
 
-#set(BOOST_ROOT /home/sdv/m2isdd/ebriand/local)
-#set(PYTHON_INCLUDE_DIR /home/sdv/m2isdd/ebriand/include/python3.6m)
-#set(PYTHON_LIBRARY /home/sdv/m2isdd/ebriand/local/lib)
-SET(CMAKE_CXX_COMPILER clang++)
-SET(CMAKE_C_COMPILER clang)
+set(CMAKE_CXX_STANDARD 17)
 
 # where is the target environment
 #SET(CMAKE_FIND_ROOT_PATH  /home/sdv/m2isdd/ebriand/local/)
@@ -53,6 +47,23 @@ endif()
 project(smoldock)
 
 
+option(COVERAGE_BUILD "Create a GCov-enabled build." OFF)
+set(CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/CMakeModules)
+
+if(COVERAGE_BUILD)
+    message("Enabling code coverage ...")
+    if(CMAKE_COMPILER_IS_GNUCXX)
+        include(CodeCoverage)
+        APPEND_COVERAGE_COMPILER_FLAGS()
+        set(COVERAGE_LCOV_EXCLUDES '/usr/*' '*/UnitTests/*')
+        SETUP_TARGET_FOR_COVERAGE_LCOV(
+                NAME ${PROJECT_NAME}_coverage                    # New target name
+                EXECUTABLE PDBPC_unittest # Executable in PROJECT_BINARY_DIR
+                DEPENDENCIES PDBPC_unittest                     # Dependencies to build first
+        )
+    endif()
+endif()
+
 
 
 
@@ -78,7 +89,7 @@ set(PDBPC_LIB_PATH  ${CMAKE_CURRENT_BINARY_DIR}/PDBPC/src/PDBPC-build/libpdbpc_s
 
 ## Boost #######################
 # Edit this if you have a specific Boost setup
-find_package(Boost REQUIRED regex system serialization iostreams)
+find_package(Boost REQUIRED log log_setup regex system serialization iostreams)
 include_directories(${Boost_INCLUDE_DIRS})
 #add_compile_definitions(BOOST_ALLOW_DEPRECATED_HEADERS)
 ## END Boost ###################
@@ -183,7 +194,7 @@ set(SOURCE_LIST Structures/Structure.cpp
         Utilities/AdvancedErrorHandling.cpp
         Utilities/CSVReader.cpp
         Frontends/CLI/FileInputOutput.cpp
-        Engines/DockingBoxUtils/ExtractProteinFromBox.cpp
+        Engines/Utils/ExtractProteinFromBox.cpp
         )
 
 set(MPI_SOURCE_LIST Utilities/Calibration/MPICalibratorDirector.cpp
@@ -264,8 +275,6 @@ target_link_libraries(goldenRecordGenerator pthread)
 
 
 add_executable(mpicalibrator Frontends/mpicalibrator.cpp ${MPI_SOURCE_LIST})
-set_target_properties(mpicalibrator PROPERTIES COMPILE_FLAGS "${MPI_COMPILE_FLAGS} ")
-set_target_properties(mpicalibrator PROPERTIES LINK_FLAGS ${MPI_LINK_FLAGS})
 target_link_libraries(mpicalibrator libsmoldock)
 target_link_libraries(mpicalibrator boost_log_setup boost_log boost_thread boost_filesystem boost_program_options)
 target_link_libraries(mpicalibrator tbb)
@@ -325,14 +334,17 @@ enable_testing()
 
 set(TEST_SOURCE_LIST
         UnitTests/main_test_suite.cpp
-        UnitTests/engine_test_suite.cpp)
+        UnitTests/engine_test_suite.cpp
+        UnitTests/Engines/DockingBoxUtils_test_suite.cpp
+        UnitTests/Fixtures/TripeptideFixture.cpp
+        )
 
 
 add_executable(complete_test_suite ${TEST_SOURCE_LIST})
 
 set_target_properties(complete_test_suite PROPERTIES LINK_FLAGS "   ")
 target_link_libraries(complete_test_suite libsmoldock)
-target_link_libraries(complete_test_suite boost_log_setup boost_log boost_thread)
+target_link_libraries(complete_test_suite boost_log_setup boost_log boost_thread boost_filesystem boost_program_options)
 target_link_libraries(complete_test_suite tbb)
 target_link_libraries(complete_test_suite rdkit_base avalon_clib AvalonLib freesasa_clib FreeSASALib maeparser )
 target_link_libraries(complete_test_suite coordgen RingDecomposerLib URFLib RDGeneral RDStreams DataStructs )
@@ -350,3 +362,4 @@ target_link_libraries(complete_test_suite ${Boost_LIBRARIES} boost_unit_test_fra
 #target_link_libraries(complete_test_suite Vc)
 
 
+add_test(AllUnitTest complete_test_suite --catch_system_error=yes --log_level=all )

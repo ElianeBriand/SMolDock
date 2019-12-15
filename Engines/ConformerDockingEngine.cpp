@@ -28,7 +28,7 @@
 #include <Engines/Internals/InternalsUtilityFunctions.h>
 #include <Engines/ScoringFunctions/VinaLikeRigid.h>
 #include <Engines/LocalOptimizers/L_BFGS.h>
-#include <Engines/DockingBoxUtils/ExtractProteinFromBox.hpp>
+#include <Engines/Utils/ExtractProteinFromBox.hpp>
 #include <Utilities/TimingsLog.h>
 
 #undef BOOST_LOG
