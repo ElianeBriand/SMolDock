@@ -25,10 +25,11 @@
 #include <stdexcept>
 
 #include "ConformerDockingEngine.h"
-#include "Internals/InternalsUtilityFunctions.h"
+#include <Engines/Internals/InternalsUtilityFunctions.h>
 #include <Engines/ScoringFunctions/VinaLikeRigid.h>
 #include <Engines/LocalOptimizers/L_BFGS.h>
-#include "Utilities/TimingsLog.h"
+#include <Engines/Utils/ExtractProteinFromBox.hpp>
+#include <Utilities/TimingsLog.h>
 
 #undef BOOST_LOG
 
@@ -74,23 +75,17 @@ namespace SmolDock {
 
             record_timings(begin_setup);
 
-            std::uniform_int_distribution<> dis_int(0, std::numeric_limits<int>::max());
-            std::uniform_real_distribution<double> dis_real_position(-100.0, 100.0);
+            std::uniform_int_distribution<> distrib_random_int(0, std::numeric_limits<int>::max());
+            std::uniform_real_distribution<double> distrib_real_position(-100.0, 100.0);
 
             record_timings(begin_conformersgen);
 
             this->orig_ligand->generateConformers(this->viConformers, this->conformer_num, true,
-                                                  dis_int(this->rnd_generator));
+                                                  distrib_random_int(this->rnd_generator));
 
             record_timings(end_conformersgen);
 
-            if (this->dockBoxSettings.type == DockingBoxSetting::Type::centeredAround) {
-                this->protein = this->orig_protein->getPartialiProtein_sphere(this->dockBoxSettings.center,
-                                                                              this->dockBoxSettings.radius, 2.0);
-            } else {
-                this->protein = this->orig_protein->getiProtein();
-            }
-
+            this->protein = extractIProteinFromBoxSetting(this->orig_protein,this->dockBoxSettings);
             this->fullProtein = this->orig_protein->getiProtein();
 
 
@@ -126,7 +121,7 @@ namespace SmolDock {
             accumulator_set<double, stats<tag::mean, tag::moment<2> > > acc_score;
             accumulator_set<double, stats<tag::mean, tag::moment<2> > > acc_duration;
 
-            std::uniform_int_distribution<unsigned int> dis_uint(0, std::numeric_limits<unsigned int>::max());
+            std::uniform_int_distribution<unsigned int> distrib_uint(0, std::numeric_limits<unsigned int>::max());
 
 
             record_timings(begin_docking);
@@ -150,11 +145,11 @@ namespace SmolDock {
 
 
                 DockingBoxSetting dbsettings = this->dockBoxSettings;
-                unsigned int seed = dis_uint(this->rnd_generator);
+                unsigned int seed = distrib_uint(this->rnd_generator);
 
                 arma::arma_rng::set_seed(seed);
 
-                if (dbsettings.type == DockingBoxSetting::Type::centeredAround) {
+                if (dbsettings.shape == DockingBoxSetting::Shape::sphere) {
                     starting_pos_tr.transl.x() += dbsettings.center[0];
                     starting_pos_tr.transl.y() += dbsettings.center[1];
                     starting_pos_tr.transl.z() += dbsettings.center[2];
@@ -176,7 +171,7 @@ namespace SmolDock {
                 {
                     BOOST_LOG_TRIVIAL(debug) << "Received default heuristics parameters, setting up search domain if relevant";
 
-                    double proteinMaxRadius = (dbsettings.type == DockingBoxSetting::Type::centeredAround) ? dbsettings.radius : this->orig_protein->getMaxRadius();
+                    double proteinMaxRadius = (dbsettings.shape == DockingBoxSetting::Shape::sphere) ? dbsettings.radius : this->orig_protein->getMaxRadius();
                     this->heurParams = setupSearchDomainIfRelevant(this->heuristicType, proteinMaxRadius);
                 }
 
@@ -314,11 +309,10 @@ namespace SmolDock {
         bool ConformerDockingEngine::setDockingBox(AbstractDockingEngine::DockingBoxSetting setting) {
             this->dockBoxSettings = setting;
 
-            if (!(setting.type == DockingBoxSetting::Type::everything ||
-                  setting.type == DockingBoxSetting::Type::centeredAround)) {
+            if (!(setting.shape == DockingBoxSetting::Shape::sphere)) {
                 BOOST_LOG_TRIVIAL(error) << "The passed DockingBoxSetting is not yet implemented.";
-                BOOST_LOG_TRIVIAL(error) << "Running as if DockingBoxSetting::everything was passed";
-                this->dockBoxSettings.type = DockingBoxSetting::Type::everything;
+                BOOST_LOG_TRIVIAL(error) << "Running as if DockingBoxSetting::whole_protein was passed";
+                this->dockBoxSettings.shape = DockingBoxSetting::Shape::whole_protein;
                 return false;
             }
             return true;

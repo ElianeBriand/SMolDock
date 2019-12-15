@@ -12,6 +12,8 @@
 
 #include <boost/mpi.hpp>
 #include <boost/serialization/string.hpp>
+#include <boost/serialization/serialization.hpp>
+#include <boost/serialization/vector.hpp>
 
 namespace mpi = boost::mpi;
 
@@ -20,6 +22,48 @@ namespace mpi = boost::mpi;
 #include <Structures/Atom.h>
 
 namespace SmolDock::Calibration {
+
+
+    class MPICalibratorDirector_ResumeObject {
+        // NB: update the MPICalibratorDirector resume methods when changing this
+    public:
+
+        std::vector<double> lossHistory;
+        std::vector<int> durationHistory;
+        std::vector<std::vector<double>> coefficientHistory;
+        std::vector<std::vector<double>> gradientHistory;
+
+        std::vector<double> currentCoeffs;
+
+        std::vector<std::string> coeffsToCalibrate;
+        std::vector<std::string> nameOfAllCoeffs;
+        std::vector<unsigned int> idxOfCoeffsToCalibrate;
+
+        Score::ScoringFunctionType scoringFunctionType;
+        Heuristics::GlobalHeuristicType heuristicType;
+        Optimizer::LocalOptimizerType localOptimizerType;
+
+        template<class Archive>
+        void serialize(Archive & ar, const unsigned int version)
+        {
+            ar & lossHistory;
+            ar & durationHistory;
+            ar & coefficientHistory;
+            ar & gradientHistory;
+
+            ar & currentCoeffs;
+
+            ar & coeffsToCalibrate;
+            ar & nameOfAllCoeffs;
+            ar & idxOfCoeffsToCalibrate;
+
+
+            ar & scoringFunctionType;
+            ar & heuristicType;
+            ar & localOptimizerType;
+
+        }
+    };
 
 
     class MPICalibratorDirector : public Calibrator {
@@ -32,12 +76,13 @@ namespace SmolDock::Calibration {
                               Heuristics::GlobalHeuristicType heurType,
                               Optimizer::LocalOptimizerType localOptimizerType_,
                               unsigned int maxLearningSteps = 1000,
-                              double initialLearningRate_ = 0.5,
+                              double stepSize_ = 1e-7,
                               unsigned int rngSeed = 374,
                               unsigned int conformerNumber = 4,
                               unsigned int retryNumber = 4,
                               unsigned int batchSize_ = 5,
-                              Heuristics::HeuristicParameters hParams = Heuristics::emptyParameters);
+                              Heuristics::HeuristicParameters hParams = Heuristics::emptyParameters,
+                              const std::string& restoreArchivePrefix_ = "mpicalibrator_out");
 
         virtual bool setupCalibration();
         virtual bool runCalibration();
@@ -49,8 +94,11 @@ namespace SmolDock::Calibration {
                                                 const unsigned int serialNumber,
                                                 const SpecialResidueTyping specialType);
 
-        virtual bool addReferenceLigand_SMILES_Ki(ReceptorID recID, const std::string& smiles, double Ki, int seed = 364);
-        virtual bool addReferenceLigand_Mol_Ki(ReceptorID recID, const Molecule& mol, double Ki, int seed = 364);
+        virtual bool addReferenceLigand_SMILES_Ki(ReceptorID recID, const std::string& smiles, double Ki);
+        virtual bool addReferenceLigand_SMILES_deltaG(ReceptorID recID,const std::string& smiles, double deltaG);
+        virtual bool addReferenceLigand_Mol_Ki(ReceptorID recID, const Molecule& mol, double Ki);
+
+        virtual bool addAnchorLigandFromMol2File(ReceptorID recID, std::string& filename);
 
         bool applyVariantToAllLigands(const std::string& SMARTSPattern, Atom::AtomVariant variant);
 
@@ -64,12 +112,16 @@ namespace SmolDock::Calibration {
         size_t NumFunctions();
 
 
+        MPICalibratorDirector_ResumeObject createResumeState();
+        bool restoreResumeState(const MPICalibratorDirector_ResumeObject& state);
+
     private:
 
         std::tuple<unsigned int, unsigned int> RecLigIdxFromGlobalIdx(unsigned int idx);
 
         void updateAndPrintStatus();
 
+        unsigned int batchCount = 0;
 
         mpi::environment& env;
         mpi::communicator& world;
@@ -79,11 +131,15 @@ namespace SmolDock::Calibration {
 
         unsigned int numProcess;
         unsigned int numTotalCPU;
-        unsigned int numLigand = 0;
+        unsigned int totalNumLigand = 0;
+        unsigned int numAnchorLigand = 0;
 
         std::vector<std::string> pdbBlockStrings;
         std::vector<Engine::AbstractDockingEngine::DockingBoxSetting> dbSettings;
         std::vector<std::vector<MPISpecialResidueTyping>> specialResidueTypings;
+
+        std::map<Calibrator::ReceptorID , std::vector<std::shared_ptr<Molecule>>> anchorLigands;
+        std::vector<unsigned int> numAnchorLigandPerReceptor;
 
         std::map<Calibrator::ReceptorID ,std::vector<std::tuple<std::string,double>>> ligandSmilesRefScore;
         std::vector<unsigned int> numLigandPerReceptor;
@@ -96,8 +152,11 @@ namespace SmolDock::Calibration {
         std::atomic<bool> calibrationStillRunning;
 
         std::vector<double> lossHistory;
+        std::vector<int> durationHistory;
         std::vector<std::vector<double>> coefficientHistory;
         std::vector<std::vector<double>> gradientHistory;
+
+        std::string restoreArchivePrefix;
 
 
 

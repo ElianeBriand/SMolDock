@@ -58,5 +58,20 @@ namespace SmolDock::Heuristics {
 
 }
 
+namespace boost {
+namespace serialization {
+
+    template<class Archive>
+    void serialize(Archive & ar, SmolDock::Heuristics::GlobalHeuristicType & type, const unsigned int version)
+    {
+        long unsigned int code;
+        ar & code;
+        type = ( SmolDock::Heuristics::GlobalHeuristicType) code;
+
+    }
+
+} // namespace serialization
+} // namespace boost
+
 
 #endif //SMOLDOCK_HEURISTICFACTORY_H

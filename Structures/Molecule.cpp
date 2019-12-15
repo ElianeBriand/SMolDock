@@ -27,6 +27,7 @@
 #include "Atom.h"
 #include "Utilities/PDBLigandUtils.h"
 
+#include <rdkit/GraphMol/RDKitBase.h>
 #include <rdkit/GraphMol/Descriptors/Lipinski.h>
 #include <rdkit/GraphMol/FileParsers/MolSupplier.h>
 #include <rdkit/GraphMol/FileParsers/MolWriters.h>
@@ -191,6 +192,24 @@ namespace SmolDock {
 
 
         RDKit::RWMol *mol = RDKit::Mol2FileToMol(filename, true, true);
+
+        if (mol == nullptr) {
+            return false;
+        }
+
+        this->rwmol.reset(mol);
+
+        if (this->populateInternalAtomAndBondFromRWMol(seed, modifiers) == false)
+            return false;
+
+        return true;
+    }
+
+    bool Molecule::populateFromMolBlock(const std::string &molBlock, unsigned int seed,
+                              std::vector<std::shared_ptr<InputModifier::InputModifier> > modifiers) {
+
+
+        RDKit::RWMol *mol = RDKit::MolBlockToMol(molBlock, true, true);
 
         if (mol == nullptr) {
             return false;
@@ -736,6 +755,10 @@ namespace SmolDock {
         return molBlock;
     }
 
+    std::string Molecule::writeToSMILES(){
+        std::string molBlock = RDKit::MolToSmiles(*(this->rwmol));
+        return molBlock;
+    }
     bool Molecule::writeToMolFile(const std::string &filename, bool overwrite) {
         std::ofstream molFile;
 
@@ -803,7 +826,7 @@ namespace SmolDock {
     noFlexibleRings(noFlexibleRings){
         if(noFlexibleRings)
         {
-            BOOST_LOG_TRIVIAL(debug) << "Molecule : All rings considered non-flexible (no rotatable bonds in cycles)";
+            //BOOST_LOG_TRIVIAL(debug) << "Molecule : All rings considered non-flexible (no rotatable bonds in cycles)";
         }
 
 

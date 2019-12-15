@@ -44,29 +44,26 @@ namespace SmolDock {
 
             struct DockingBoxSetting {
 
-                enum Type {
-                    everything,
-                    solventExposed,
-                    centeredAround
-                };
 
                 enum Shape {
                     sphere,
-                    cube
+                    cube,
+                    whole_protein
                 };
 
-                Type type;
+                Shape shape;
 
                 std::array<double, 3> center;
-
                 double radius;
+                std::array<double, 3> size;
 
                 template<class Archive>
                 void serialize(Archive & ar, const unsigned int version)
                 {
-                    ar & type;
+                    ar & shape;
                     ar & center;
                     ar & radius;
+                    ar & size;
                 }
 
             };

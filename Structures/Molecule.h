@@ -101,11 +101,28 @@ namespace SmolDock {
         bool populateFromMol2File(const std::string &filename, unsigned int seed = 36754,
                                   std::vector<std::shared_ptr<InputModifier::InputModifier> > modifiers = {});
 
+        //! Populate atoms and bonds from a mol block.
+        /*!
+         * Populate atoms and bonds from a mol block. This uses the RDKit backend.
+         *
+         * \param molBlock Mol format molecule block as string
+         * \param postProcessors vector of post processor that will operate after the parsing phase
+         * \return whether the parsing and initial conformer generation was successful.
+        */
+        bool populateFromMolBlock(const std::string &molBlock, unsigned int seed = 36754,
+                                  std::vector<std::shared_ptr<InputModifier::InputModifier> > modifiers = {});
+
         /** Returns a mol block for the molecule.
          *
          * \return a mol block for the molecule.
          */
         std::string writeToMolBlock();
+
+        /** Returns a SMILES for the molecule.
+         *
+         * \return a SMILES for the molecule.
+         */
+        std::string writeToSMILES();
 
         /** Write the molecule to a mol file
          *

@@ -3,14 +3,13 @@ cmake_minimum_required(VERSION 3.12)
 ################ BUILD CONFIGURATION SECTION     ############################
 
 # Point this to the rdkit install directory (See Readme)
-set(RDKIT_ROOT /home/eliane/Projects/rdkit_releases/rdkit-Release_2019_09_1/rdkit_install/)
-
+SET(RDKIT_ROOT /home/eliane/Projects/rdkit_releases/rdkit-Release_2019_09_1/rdkit_install/ CACHE PATH "RDKit install directory"  )
 
 # Command to run : mpic++ -showme:compile. Only add the argument part of the command
-set(MPI_COMPILE_FLAGS -pthread -Wl,-rpath -Wl,/usr/lib64 -Wl,--enable-new-dtags -L/usr/lib64 -lmpi_cxx -lmpi)
+#set(MPI_COMPILE_FLAGS -I/home/sdv/m2isdd/ebriand/local/include )
 
 #Command to run  : mpic++  -showme:link
-set(MPI_LINK_FLAGS  -pthread -Wl,-rpath -Wl,/usr/lib64 -Wl,--enable-new-dtags -L/usr/lib64 -lmpi_cxx -lmpi)
+#set(MPI_LINK_FLAGS  " -v")
 
 # Version of python installed with header and libraries
 set(PY_VERSION 3.6)
@@ -18,20 +17,16 @@ set(PY_VERSION 3.6)
 ################ END BUILD CONFIGURATION SECTION ############################
 
 
+
 set(CMAKE_CXX_STANDARD 17)
 
-#set(BOOST_ROOT /home/briand/local)
-#set(PYTHON_INCLUDE_DIR /home/briand/local/include/python3.6m)
-#set(PYTHON_LIBRARY /home/briand/local/lib)
-#SET(CMAKE_CXX_COMPILER /home/briand/local/bin/g++)
-
 # where is the target environment
-#SET(CMAKE_FIND_ROOT_PATH  /home/briand/local/)
-#SET(CMAKE_PREFIX_PATH /home/briand/local/)
+#SET(CMAKE_FIND_ROOT_PATH  /home/sdv/m2isdd/ebriand/local/)
+#SET(CMAKE_PREFIX_PATH /home/sdv/m2isdd/ebriand/local/)
 
 SET(CMAKE_CXX_FLAGS "-Wall")
-SET(CMAKE_C_COMPILER  "/usr/bin/g++")
-SET(CMAKE_CXX_COMPILER "/usr/bin/g++")
+#SET(CMAKE_CXX_FLAGS "-Wall -fsanitize=adress -fsanitize=undefined")
+#SET(CMAKE_CXX_FLAGS "-Wall -fsanitize=memory")
 SET(CMAKE_CXX_FLAGS_DEBUG "-g ")
 SET(CMAKE_CXX_FLAGS_MINSIZEREL "-Os -DNDEBUG")
 SET(CMAKE_CXX_FLAGS_RELEASE "-O3 -march=native -DNDEBUG")
@@ -52,6 +47,27 @@ endif()
 project(smoldock)
 
 
+option(COVERAGE_BUILD "Create a GCov-enabled build." OFF)
+set(CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/CMakeModules)
+
+if(COVERAGE_BUILD)
+    message("Enabling code coverage ...")
+    if(CMAKE_COMPILER_IS_GNUCXX)
+        include(CodeCoverage)
+        APPEND_COVERAGE_COMPILER_FLAGS()
+        set(COVERAGE_LCOV_EXCLUDES '/usr/*' '*/UnitTests/*' '*/Dependencies/*' '*/include/rdkit/*' '*/Frontends/*')
+        SETUP_TARGET_FOR_COVERAGE_LCOV(
+                NAME ${PROJECT_NAME}_coverage                    # New target name
+                EXECUTABLE complete_test_suite # Executable in PROJECT_BINARY_DIR
+                DEPENDENCIES complete_test_suite                     # Dependencies to build first
+        )
+    endif()
+endif()
+
+
+if(CMAKE_COMPILER_IS_GNUCXX)
+    add_compile_definitions(Vc_GCC)
+endif()
 
 
 
@@ -59,19 +75,27 @@ project(smoldock)
 ######################## BUILD SETUP SECTION ##############################
 ###########################################################################
 
-
-
+include(ExternalProject)
+ExternalProject_Add(PDBPC
+        PREFIX ${CMAKE_CURRENT_BINARY_DIR}/PDBPC
+        SOURCE_DIR ${CMAKE_SOURCE_DIR}/Dependencies/PDBPC
+        INSTALL_DIR ${CMAKE_CURRENT_BINARY_DIR}/PDBPC_install
+        CMAKE_ARGS -DCMAKE_INSTALL_PREFIX:PATH=<INSTALL_DIR>
+        INSTALL_COMMAND ""
+        )
+set(PDBPC_LIB_PATH  ${CMAKE_CURRENT_BINARY_DIR}/PDBPC/src/PDBPC-build/libpdbpc_static_pic.a)
 ## MPI #######################
 # Edit this if you have a specific MPI setup
-find_package(MPI REQUIRED)
-include_directories(${MPI_INCLUDE_PATH})
+#find_package(MPI REQUIRED)
+#include_directories(${MPI_INCLUDE_PATH})
 
 ## END MPI ###################
 
 ## Boost #######################
 # Edit this if you have a specific Boost setup
-find_package(Boost REQUIRED regex)
+find_package(Boost REQUIRED log log_setup regex system serialization iostreams)
 include_directories(${Boost_INCLUDE_DIRS})
+
 #add_compile_definitions(BOOST_ALLOW_DEPRECATED_HEADERS)
 ## END Boost ###################
 
@@ -92,6 +116,7 @@ include_directories(${PYTHON_INCLUDE_DIRS})
 
 ######## EIGEN SETUP ######
 find_package(Eigen3 3.3 REQUIRED NO_MODULE)
+include_directories(${EIGEN3_INCLUDE_DIR})
 #set(EIGEN_ROOT /usr/)
 #include_directories(${EIGEN_ROOT}/include)
 ######## END OF EIGEN  ######
@@ -127,120 +152,66 @@ set(SMOLDOCK_INTEL_VTUNE_EXPORT_SYMBOL FALSE)
 ######################## END  BUILD SETUP SECTION #########################
 ###########################################################################
 
-
 include_directories(Dependencies)
+include_directories(Dependencies/ensmallen/include/)
 include_directories(.)
 
 
 
 set(SOURCE_LIST Structures/Structure.cpp
-        Structures/Structure.h
         Structures/Molecule.cpp
-        Structures/Molecule.h
         Structures/Protein.cpp
-        Structures/Protein.h
         Structures/Atom.cpp
-        Structures/Atom.h
         Structures/Bond.cpp
-        Structures/Bond.h
         Structures/AminoAcid.cpp
-        Structures/AminoAcid.h
-        Engines/AbstractDockingEngine.h
         Engines/MDStyleDockingEngine.cpp
-        Engines/MDStyleDockingEngine.h
         Engines/VinaCompatibleDockingEngine.cpp
-        Engines/VinaCompatibleDockingEngine.h
         Structures/Results/DockingResult.cpp
-        Structures/Results/DockingResult.h
         Utilities/DockingResultPrinter.cpp
-        Utilities/DockingResultPrinter.h
         Engines/ConformerDockingEngine.cpp
-        Engines/ConformerDockingEngine.h
-        Engines/Internals/iConformer.h
-        Utilities/TimingsLog.h
         Engines/ScoringFunctions/VinaLikeRigid.cpp
-        Engines/ScoringFunctions/VinaLikeRigid.h
-        Engines/Internals/iProtein.h
-        Engines/Internals/iTransform.h
         Utilities/PDBWriter.cpp
-        Utilities/PDBWriter.h Utilities/PDBLigandUtils.h
         Utilities/PDBLigandUtils.cpp
         Engines/LocalOptimizers/GradientDescentLineSearch.cpp
-        Engines/LocalOptimizers/GradientDescentLineSearch.h
         Utilities/IntermediateConformerCollector.cpp
-        Utilities/IntermediateConformerCollector.h
         Utilities/ReScorer.cpp
-        Utilities/ReScorer.h
         Structures/Common/ResiduePropertiesAssignation.cpp
-        Structures/Common/ResiduePropertiesAssignation.h
         Structures/Common/PDBResiduePropertiesTable.cpp
-        Structures/Common/PDBResiduePropertiesTable.h
         Structures/InputModifiers/VinaCompatibility.cpp
-        Structures/InputModifiers/VinaCompatibility.h
-        Structures/InputModifiers/InputModifierInterface.h
-        Engines/ScoringFunctions/ScoringFunctionInterface.h
         Engines/LocalOptimizers/L_BFGS.cpp
-        Engines/LocalOptimizers/L_BFGS.h
-        Engines/LocalOptimizers/OptimizerInterface.h
-        Engines/Internals/InternalsUtilityFunctions.h
-        Engines/LocalOptimizers/LocalOptimizerUtilityFunctions.h
         Engines/GlobalHeuristics/RandomRestart.cpp
-        Engines/GlobalHeuristics/RandomRestart.h
-        Engines/GlobalHeuristics/HeuristicInterface.h
         Engines/ScoringFunctions/ScoringFunctionFactory.cpp
-        Engines/ScoringFunctions/ScoringFunctionFactory.h
         Engines/LocalOptimizers/OptimizerFactory.cpp
-        Engines/LocalOptimizers/OptimizerFactory.h
         Engines/GlobalHeuristics/HeuristicFactory.cpp
-        Engines/GlobalHeuristics/HeuristicFactory.h
         Engines/PoseRefiner.cpp
-        Engines/PoseRefiner.h
         Engines/GlobalHeuristics/OnlyLocal.cpp
-        Engines/GlobalHeuristics/OnlyLocal.h
         Engines/GlobalHeuristics/IteratedLocalSearch.cpp
-        Engines/GlobalHeuristics/IteratedLocalSearch.h
         Engines/GlobalHeuristics/SimulatedAnnealing.cpp
-        Engines/GlobalHeuristics/SimulatedAnnealing.h
         Engines/GlobalHeuristics/Utilities/MetropolisHastings.cpp
-        Engines/GlobalHeuristics/Utilities/MetropolisHastings.h
         Utilities/Version.cpp
-        Utilities/Version.h
         Engines/ScoringFunctions/VinaLike.cpp
-        Engines/ScoringFunctions/VinaLike.h
-        Engines/ScoringFunctions/VinaLikeCommon.h
         Engines/GlobalHeuristics/DifferentialEvolution.cpp
-        Engines/GlobalHeuristics/DifferentialEvolution.h
         Engines/GlobalHeuristics/Evolution.cpp
-        Engines/GlobalHeuristics/Evolution.h
         Engines/ScoringFunctions/VinaLikeCovalentReversible.cpp
-        Engines/ScoringFunctions/VinaLikeCovalentReversible.h
         Structures/InputModifiers/RotatableBondRemover.cpp
-        Structures/InputModifiers/RotatableBondRemover.h
         Engines/ScoringFunctions/VinaLikeCovalentReversible.cpp
-        Engines/ScoringFunctions/VinaLikeCovalentReversible.h
         Utilities/Calibration/Calibrator.cpp
-        Utilities/Calibration/Calibrator.h
-        Utilities/CSVReader.cpp Utilities/CSVReader.h
         Utilities/SMARTSMatcher.cpp
-        Utilities/SMARTSMatcher.h
         Utilities/AdvancedErrorHandling.cpp
-        Utilities/AdvancedErrorHandling.h)
+        Utilities/CSVReader.cpp
+        Frontends/CLI/FileInputOutput.cpp
+        Engines/Utils/ExtractProteinFromBox.cpp
+        )
 
 set(MPI_SOURCE_LIST Utilities/Calibration/MPICalibratorDirector.cpp
-        Utilities/Calibration/MPICalibratorDirector.h
         Utilities/Calibration/MPICalibratorNode.cpp
-        Utilities/Calibration/MPICalibratorNode.h
-        Utilities/Calibration/MPICalibratorCommon.h
         )
 
 set(PY_EXPORT_SOURCE_LIST Frontends/Python/PyStructures.cpp
-        Frontends/Python/PyStructures.h
         Frontends/Python/PySTLWrapper.cpp
-        Frontends/Python/PySTLWrapper.h
         Frontends/Python/PyUtilities.cpp
-        Frontends/Python/PyUtilities.h
         Frontends/Python/PyEngine.cpp
-        Frontends/Python/PyEngine.h Frontends/FrontendCommon.h)
+        )
 
 
 
@@ -256,13 +227,16 @@ add_compile_definitions(BOOST_ENABLE_ASSERT_HANDLER)
 
 ADD_LIBRARY(libsmoldock SHARED ${SOURCE_LIST} ${BPRINTER_SOURCE_LIST})
 target_compile_definitions(libsmoldock PUBLIC ARMA_DONT_USE_WRAPPER)
+set_target_properties(libsmoldock PROPERTIES PREFIX "")
 add_dependencies(libsmoldock rdkit_base)
 target_compile_definitions(libsmoldock PUBLIC BOOST_LOG_DYN_LINK)
+add_dependencies(libsmoldock PDBPC)
+target_link_libraries(libsmoldock ${PDBPC_LIB_PATH})
 
 
-add_executable(smoldock Frontends/main.cpp)
+add_executable(smoldock Frontends/CLI_frontend.cpp)
 target_link_libraries(smoldock libsmoldock)
-target_link_libraries(smoldock boost_log_setup boost_log boost_thread)
+target_link_libraries(smoldock boost_log_setup boost_log boost_thread boost_filesystem boost_program_options)
 target_link_libraries(smoldock tbb)
 target_link_libraries(smoldock rdkit_base avalon_clib AvalonLib freesasa_clib FreeSASALib maeparser )
 target_link_libraries(smoldock coordgen RingDecomposerLib URFLib RDGeneral RDStreams DataStructs )
@@ -307,10 +281,8 @@ target_link_libraries(goldenRecordGenerator pthread)
 
 
 add_executable(mpicalibrator Frontends/mpicalibrator.cpp ${MPI_SOURCE_LIST})
-set_target_properties(mpicalibrator PROPERTIES COMPILE_FLAGS "${MPI_COMPILE_FLAGS} ")
-set_target_properties(mpicalibrator PROPERTIES LINK_FLAGS ${MPI_LINK_FLAGS})
 target_link_libraries(mpicalibrator libsmoldock)
-target_link_libraries(mpicalibrator boost_log_setup boost_log boost_thread)
+target_link_libraries(mpicalibrator boost_log_setup boost_log boost_thread boost_filesystem boost_program_options)
 target_link_libraries(mpicalibrator tbb)
 target_link_libraries(mpicalibrator rdkit_base avalon_clib AvalonLib freesasa_clib FreeSASALib maeparser )
 target_link_libraries(mpicalibrator coordgen RingDecomposerLib URFLib RDGeneral RDStreams DataStructs )
@@ -368,14 +340,17 @@ enable_testing()
 
 set(TEST_SOURCE_LIST
         UnitTests/main_test_suite.cpp
-        UnitTests/engine_test_suite.cpp)
+        UnitTests/engine_test_suite.cpp
+        UnitTests/Engines/DockingBoxUtils_test_suite.cpp
+        UnitTests/Fixtures/TripeptideFixture.cpp
+        )
 
 
 add_executable(complete_test_suite ${TEST_SOURCE_LIST})
 
 set_target_properties(complete_test_suite PROPERTIES LINK_FLAGS "   ")
 target_link_libraries(complete_test_suite libsmoldock)
-target_link_libraries(complete_test_suite boost_log_setup boost_log boost_thread)
+target_link_libraries(complete_test_suite boost_log_setup boost_log boost_thread boost_filesystem boost_program_options)
 target_link_libraries(complete_test_suite tbb)
 target_link_libraries(complete_test_suite rdkit_base avalon_clib AvalonLib freesasa_clib FreeSASALib maeparser )
 target_link_libraries(complete_test_suite coordgen RingDecomposerLib URFLib RDGeneral RDStreams DataStructs )
@@ -393,3 +368,4 @@ target_link_libraries(complete_test_suite ${Boost_LIBRARIES} boost_unit_test_fra
 #target_link_libraries(complete_test_suite Vc)
 
 
+add_test(smoldock_unittest complete_test_suite --catch_system_error=yes --log_level=all )

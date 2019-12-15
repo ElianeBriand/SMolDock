@@ -33,9 +33,8 @@ namespace SmolDock::Heuristics {
         double mutationSize = 0.5;
         double selectPercent = 0.2;
         double tolerance = -1;
-        double objectiveChange = 1e-3;
 
-        ens::CNE CNEvolutionHeur(populationSize, maxGenerations, mutationProb, mutationSize, selectPercent, tolerance, objectiveChange);
+        ens::CNE CNEvolutionHeur(populationSize, maxGenerations, mutationProb, mutationSize, selectPercent, tolerance);
 
         CNEvolutionHeur.Optimize(*this->scorFunc, currentState);
 

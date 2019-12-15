@@ -118,7 +118,7 @@ namespace SmolDock::Calibration {
                    Heuristics::GlobalHeuristicType heurType,
                    Optimizer::LocalOptimizerType localOptimizerType_,
                    unsigned int maxLearningSteps = 10,
-                   double initialLearningRate_ = 0.5,
+                   double stepSize_ = 1e-7,
                    unsigned int rngSeed= 374,
                    unsigned int conformerNumber = 4,
                    unsigned int retryNumber = 4,
@@ -131,8 +131,8 @@ namespace SmolDock::Calibration {
 
         virtual ReceptorID addReceptor(const Protein& prot, Engine::AbstractDockingEngine::DockingBoxSetting dbsettings);
 
-        virtual bool addReferenceLigand_SMILES_Ki(ReceptorID recID, const std::string& smiles, double Ki, int seed = 364);
-        virtual bool addReferenceLigand_Mol_Ki(ReceptorID recID, const Molecule& mol, double Ki, int seed = 364);
+        virtual bool addReferenceLigand_SMILES_Ki(ReceptorID recID, const std::string& smiles, double Ki);
+        virtual bool addReferenceLigand_Mol_Ki(ReceptorID recID, const Molecule& mol, double Ki);
 
         bool coefficientsToCalibrate(std::vector<std::string> nameOfCoeffs);
 
@@ -159,7 +159,7 @@ namespace SmolDock::Calibration {
         std::shared_ptr<Score::ScoringFunction> dummy_sf;
 
         unsigned int maxLearningSteps;
-        double initialLearningRate;
+        double stepSize;
 
 
         std::mt19937 rndGenerator;

@@ -18,6 +18,8 @@ namespace SmolDock::Heuristics {
     DifferentialEvolution::DifferentialEvolution(Score::ScoringFunction* scorFunc_, Optimizer::Optimizer* optimizer_,
                                            unsigned int seed_, DifferentialEvolution::Parameters params_) :
             scorFunc(scorFunc_), optimizer(optimizer_), rndGenerator(seed_), params(params_) {
+                BOOST_LOG_TRIVIAL(error) << "DifferentialEvolution is not implemented. ";
+
 
     }
 

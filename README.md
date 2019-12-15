@@ -1,5 +1,10 @@
 A small protein-ligand docking software.
 
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+[![Build Status](https://travis-ci.com/ElianeBriand/SmolDock.svg?branch=master)](https://travis-ci.com/ElianeBriand/SmolDock)
+[![codecov](https://codecov.io/gh/ElianeBriand/SmolDock/branch/master/graph/badge.svg)](https://codecov.io/gh/ElianeBriand/SmolDock)
+
+
 I'm reimplementing something similar to Autodock Vina because I find the source code to be somewhat
 difficult to understand.
 
@@ -20,7 +25,8 @@ build system:
 - Boost (Boost software licence)
 - Python libraries for the python modules (PSF)
 
-These can be installed through your packahge manager (you might need the *-devel package).
+These can be installed through your packahge manager (you might need the \*-devel package).
+
 
 You also need to have RDKit build with a specific set of parameters. It is suggested to download the latest release and 
 adapt the following instruction :
@@ -85,12 +91,18 @@ adapt the following instruction :
  
 
 Then you will need to edit the RDKIT_ROOT path in the CMakeList.txt. It is at the top of the file, in the build configuration
-section. You'll probably need to change the other variable in that section : follow the instruction there. Then, in the SmolDock
-source directory :
+section. You'll probably need to change the other variable in that section : follow the instruction there.
+
+Then, clone SmolDock and init the submodules:
+
+    git clone https://github.com/ElianeBriand/SmolDock.git
+    git submodule update --init --recursive
+
+Then build:
 
     mkdir build
     cd build
-    cmake ..
+    cmake -DCMAKE_BUILD_TYPE=RelWithDebInfo ..
     make -j4
 
 
@@ -123,6 +135,7 @@ It links with :
 - Python libraries for the python modules (PSF)
 - Intel TBB (Apache 2.0)
 - Any standard-compliant MPI implementation (tested on OpenMPI)
+- PDBPC (GPLv3)
 
 It includes data from :
 - GROMACS implementation of Amber99ff (LGPL 2.1 or later)

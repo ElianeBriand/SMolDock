@@ -14,10 +14,13 @@
 #include <tbb/blocked_range2d.h>
 
 #include <Engines/Internals/InternalsUtilityFunctions.h>
+#include <Engines/DockingBoxUtils/ExtractProteinFromBox.h>
+
 #include <Utilities/LogUtils.h>
 #include <Structures/Atom.h>
 #include <Structures/AminoAcid.h>
 
+#include <queue>
 
 namespace SmolDock::Calibration {
 
@@ -64,8 +67,14 @@ namespace SmolDock::Calibration {
             LigandRecord lr;
             mpi::broadcast(world, lr, 0);
 
+            if(lr.isAnchor == false) {
             this->ligandSmilesRefScore[lr.receptorID].push_back(
                     std::make_tuple(lr.smiles, lr.deltaG, nullptr, std::vector<iConformer>()));
+            } else {
+                this->anchorLigands[lr.receptorID].push_back(
+                        std::make_tuple(lr.molblock, nullptr, nullptr, std::vector<iConformer>()));
+            }
+
         }
 
 
@@ -88,6 +97,31 @@ namespace SmolDock::Calibration {
             }
         }
 
+        for (auto it = this->anchorLigands.begin(); it != this->anchorLigands.end(); ++it) {
+            for (unsigned int j = 0; j < it->second.size(); ++j) {
+                std::shared_ptr<Molecule> mol_ref_sptr = std::get<1>(it->second.at(j));
+                std::shared_ptr<Molecule> mol_sptr = std::get<2>(it->second.at(j));
+                mol_ref_sptr = std::make_shared<Molecule>(true);
+                mol_sptr = std::make_shared<Molecule>(true);
+                auto molblock = std::get<std::string>(it->second.at(j));
+                bool res = mol_sptr->populateFromMolBlock(molblock);
+                bool res2 = mol_ref_sptr->populateFromMolBlock(molblock);
+                if(!res || !res2) {
+                    BOOST_LOG_TRIVIAL(error) << "Cannot parse transmitted mol block to Molecule !";
+                }
+
+                for(RegisteredVariant& variant : this->variantsForAllLigands)
+                {
+                    mol_sptr->applyAtomVariant(variant.smarts,static_cast<Atom::AtomVariant>(variant.atomVariant));
+                }
+
+                auto& conformer_vector = std::get<std::vector<iConformer>>(it->second.at(j));
+                mol_sptr->generateConformers(conformer_vector, this->workStructure.conformerPerLigand, true,
+                                             dis_int(this->rndGenerator));
+            }
+        }
+
+
         for (unsigned int l = 0; l < this->pdbBlockStrings.size(); ++l) {
 
             std::shared_ptr<Protein> psptr = std::make_shared<Protein>();
@@ -108,12 +142,8 @@ namespace SmolDock::Calibration {
             iProtein iProt;
             iProtein fulliProt;
 
-            if (settings.type == Engine::AbstractDockingEngine::DockingBoxSetting::Type::centeredAround) {
-                iProt = psptr->getPartialiProtein_sphere(settings.center, settings.radius, 2.0);
-            } else {
-                iProt = psptr->getiProtein();
-            }
 
+            iProt = extractIProteinFromBoxSetting(psptr.get(), settings);
             fulliProt = psptr->getiProtein();
 
             referenceReceptor.push_back(std::make_tuple(
@@ -142,24 +172,49 @@ namespace SmolDock::Calibration {
             const unsigned int& recId = t.receptorID;
             const unsigned int& ligandIdx = t.ligandIdx;
             std::vector<double>& coeffs = t.coefficients;
+            bool isAnchorTask = t.anchorLigandTask;
 
             const unsigned int& conformerPerLigand = this->workStructure.conformerPerLigand;
             const unsigned int& retryPerConformer = this->workStructure.retryPerConformer;
 
-            const auto& confvector = std::get<std::vector<iConformer>>(this->ligandSmilesRefScore.at(recId).at(ligandIdx));
-            const auto& referenceScore = std::get<double>(this->ligandSmilesRefScore.at(recId).at(ligandIdx));
+            BOOST_LOG_TRIVIAL(debug) << "Received one task";
+            BOOST_LOG_TRIVIAL(debug) << " | Conformer          : " << conformerPerLigand;
+            BOOST_LOG_TRIVIAL(debug) << " | Retry   nb         : " << retryPerConformer;
+            BOOST_LOG_TRIVIAL(debug) << " | Coefficients       : " << vectorToString(coeffs);
+            BOOST_LOG_TRIVIAL(debug) << " | Coeffs to change   : " << vectorToString(this->workStructure.idxOfCoeffsToCalibrate);
+            BOOST_LOG_TRIVIAL(debug) << " | Receptor idx       : " << recId;
+            BOOST_LOG_TRIVIAL(debug) << " | Ligand idx         : " << ligandIdx;
+            BOOST_LOG_TRIVIAL(debug) << " | Is anchor ?        : " << isAnchorTask;
+
+            const auto& confvector =  isAnchorTask ? std::get<std::vector<iConformer>>(this->anchorLigands.at(recId).at(ligandIdx))
+                    : std::get<std::vector<iConformer>>(this->ligandSmilesRefScore.at(recId).at(ligandIdx));
             const iProtein& prot = std::get<2>(this->referenceReceptor[recId]);
             const iProtein& fullprot = std::get<3>(this->referenceReceptor[recId]);
 
+            if(isAnchorTask) {
+                // Anchor task : compute RMSD and loss
+                // TODO ANCHOR
+
+
+                std::vector<double> gradientVector;
+                for(unsigned int& idx : this->workStructure.idxOfCoeffsToCalibrate)
+                {
+                     gradientVector.push_back(0.0);
+                }
+
+                Result r;
+                r.loss =  0.0;
+                r.lossGradient = gradientVector;
+
+                this->world.send(0, MTags::ResultMessage, r);
+            } else {
+                //Non Anchor task : compute score and loss
+
+
+
             auto resultMutex = std::make_shared<std::mutex>();
             auto local_scores = std::make_shared<std::vector<double>>();
-
-            BOOST_LOG_TRIVIAL(debug) << "Received one task";
-            BOOST_LOG_TRIVIAL(debug) << " | Conformer          : " << conformerPerLigand;
-            BOOST_LOG_TRIVIAL(debug) << " | Retry              : " << retryPerConformer;
-            BOOST_LOG_TRIVIAL(debug) << " | Reference score    : " << referenceScore;
-            BOOST_LOG_TRIVIAL(debug) << " | Coefficients       : " << vectorToString(coeffs);
-            BOOST_LOG_TRIVIAL(debug) << " | Coeffs to change   : " << vectorToString(this->workStructure.idxOfCoeffsToCalibrate);
+            auto local_iconformer = std::make_shared<std::vector<iConformer>>();
 
             tbb::parallel_for(tbb::blocked_range2d<size_t>(0, conformerPerLigand,0, retryPerConformer),
                               MPICalibrator2DLoopRunner(
@@ -169,8 +224,25 @@ namespace SmolDock::Calibration {
                                       fullprot,
                                       resultMutex,
                                       local_scores,
+                                      local_iconformer,
                                       coeffs)
                               );
+
+            std::priority_queue<std::pair<double, int>> q;
+            for (unsigned int i = 0; i < local_scores->size(); ++i) {
+                q.push(std::pair<double, int>(local_scores->at(i), i));
+            }
+            int indice_of_best = q.top().second; // Indice of best score in original array. Selected
+            iConformer best_pose = local_iconformer->at(indice_of_best);
+/*
+Code for k-bests
+            int k = conformerPerLigand; // number of indices we need
+            for (int i = 0; i < k; ++i) {
+                int ki = q.top().second;
+                std::cout << "index[" << i << "] = " << ki << std::endl;
+                q.pop();
+            }
+*/
 
             // We select the top nth (n = conformerPerLigand) for averaging
             std::sort(local_scores->begin(), local_scores->end(), std::less<double>());
@@ -185,7 +257,24 @@ namespace SmolDock::Calibration {
                 std::vector<double> epsilonCoeffs = coeffs;
                 epsilonCoeffs[idx] += this->workStructure.differentialEpsilon;
                 auto local_scores_gradient = std::make_shared<std::vector<double>>();
+                
+                /**
+                iTransform neutral_tr = iTransformIdentityInit();
+                best_pose.num_rotatable_bond = 0;
+                std::shared_ptr<Score::ScoringFunction> fullScFunc = scoringFunctionFactory(
+                                                                                this->workStructure.scoringFunctionType,
+                                                                                best_pose,
+                                                                                fullprot,
+                                                                                neutral_tr,
+                                                                                1e-3,
+                                                                                true);
 
+                auto x = fullScFunc->getStartingConditions();
+                double local_score_value = fullScFunc->EvaluateOnlyIntermolecular(x);
+                gradientVector.push_back(local_score_value - score); // CHECK THIS IF IT GOES IN THE WRONG DIRECTION
+*/
+//*
+//Old code for docking instead of just evaluating the best pose
                 tbb::parallel_for(tbb::blocked_range2d<size_t>(0, conformerPerLigand, 0, retryPerConformer),
                                   MPICalibrator2DLoopRunner(
                                           this->workStructure,
@@ -194,16 +283,19 @@ namespace SmolDock::Calibration {
                                           fullprot,
                                           resultMutex,
                                           local_scores_gradient,
+                                          local_iconformer,
                                           epsilonCoeffs)
                 );
 
                 // We select the top nth (n = conformerPerLigand) for averaging
                 std::sort(local_scores_gradient->begin(), local_scores_gradient->end(), std::less<double>());
                 double gradientScore = std::accumulate(local_scores_gradient->begin(), local_scores_gradient->begin() + conformerPerLigand, 0.0)/conformerPerLigand;
-                gradientVector.push_back(gradientScore - score);
+                gradientVector.push_back(gradientScore - score); // CHECK THIS IF IT GOES IN THE WRONG DIRECTION
+    //*/
             }
 
 
+            const auto& referenceScore = std::get<double>(this->ligandSmilesRefScore.at(recId).at(ligandIdx));
 
 
             BOOST_LOG_TRIVIAL(debug) << "Completed one task";
@@ -219,6 +311,8 @@ namespace SmolDock::Calibration {
             r.lossGradient = gradientVector;
 
             this->world.send(0, MTags::ResultMessage, r);
+
+            }
         }
 
     }
@@ -230,6 +324,7 @@ namespace SmolDock::Calibration {
                                                               const iProtein& fullProtein_,
                                                               std::shared_ptr<std::mutex> resultMutex_,
                                                               std::shared_ptr<std::vector<double>> local_scores_,
+                                                              std::shared_ptr<std::vector<iConformer>> local_iconformers_,
                                                               std::vector<double> currentCoeffs_):
             workStructure(ws),
             conformerVector(conformerVector_),
@@ -237,6 +332,7 @@ namespace SmolDock::Calibration {
             fullProtein(fullProtein_),
             resultMutex(resultMutex_),
             local_scores(local_scores_),
+            local_iconformers(local_iconformers_),
             currentCoeffs(currentCoeffs_) {
     }
 
@@ -296,6 +392,8 @@ namespace SmolDock::Calibration {
                 double fullScore = fullScoringFunction->EvaluateOnlyIntermolecular(rawResultMatrix);
                 double delta_full = fullScore / score;
 
+                iConformer pose = scoringFunction->getConformerForParamMatrix(rawResultMatrix);
+
                 if (delta_full > 1.2 || delta_full < 0.80) {
                     continue;
                 }
@@ -303,6 +401,7 @@ namespace SmolDock::Calibration {
                 {
                     std::lock_guard lock(*this->resultMutex);
                     this->local_scores->push_back(fullScore);
+                    this->local_iconformers->push_back(pose);
                 }
             }
         }

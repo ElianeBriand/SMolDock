@@ -20,6 +20,8 @@
 #include <ensmallen.hpp>
 
 #include <Engines/Internals/InternalsUtilityFunctions.h>
+#include <Engines/Utils/ExtractProteinFromBox.hpp>
+#include <Utilities/LogUtils.h>
 
 
 namespace SmolDock::Calibration {
@@ -28,7 +30,7 @@ namespace SmolDock::Calibration {
                            Heuristics::GlobalHeuristicType heurType,
                            Optimizer::LocalOptimizerType localOptimizerType_,
                            unsigned int maxLearningSteps,
-                           double initialLearningRate_,
+                           double stepSize_,
                            unsigned int rngSeed,
                            unsigned int conformerNumber,
                            unsigned int retryNumber,
@@ -38,7 +40,7 @@ namespace SmolDock::Calibration {
             heuristicType(heurType),
             localOptimizerType(localOptimizerType_),
             maxLearningSteps(maxLearningSteps),
-            initialLearningRate(initialLearningRate_),
+            stepSize(stepSize_),
             rndGenerator(rngSeed),
             conformerNumber(conformerNumber),
             retryNumber(retryNumber),
@@ -60,15 +62,16 @@ namespace SmolDock::Calibration {
                                                 dummy_tr,
                                                 1e-3,
                                                 true);
-
+        BOOST_LOG_TRIVIAL(debug) << " Calibrator::Calibrator() Scoring function type : " << this->scoringFunctionType;
         this->currentCoeffs = this->dummy_sf->getCurrentCoefficients();
+        BOOST_LOG_TRIVIAL(debug) << " Retrieved coeffs: " << vectorToString(this->currentCoeffs);
         this->nameOfAllCoeffs = this->dummy_sf->getCoefficientsNames();
     }
 
 
-    bool Calibrator::addReferenceLigand_SMILES_Ki(ReceptorID recID, const std::string &smiles, double Ki, int seed) {
+    bool Calibrator::addReferenceLigand_SMILES_Ki(ReceptorID recID, const std::string &smiles, double Ki) {
         auto mol_sptr = std::make_shared<Molecule>(true); // FIXME : no flexible rings
-        mol_sptr->populateFromSMILES(smiles, seed);
+        mol_sptr->populateFromSMILES(smiles, 142);
 
 
         const double R = 8.3144598;
@@ -80,7 +83,7 @@ namespace SmolDock::Calibration {
         return true;
     }
 
-    bool Calibrator::addReferenceLigand_Mol_Ki(Calibrator::ReceptorID recID, const Molecule &mol, double Ki, int seed) {
+    bool Calibrator::addReferenceLigand_Mol_Ki(Calibrator::ReceptorID recID, const Molecule &mol, double Ki) {
         auto mol_sptr = std::make_shared<Molecule>(mol.deepcopy());
 
         const double R = 8.3144598;
@@ -114,12 +117,7 @@ namespace SmolDock::Calibration {
             auto &fulliProt = std::get<3>(this->referenceReceptor[i]);
             auto &settings = std::get<Engine::AbstractDockingEngine::DockingBoxSetting>(this->referenceReceptor[i]);
 
-            if (settings.type == Engine::AbstractDockingEngine::DockingBoxSetting::Type::centeredAround) {
-                iProt = protein->getPartialiProtein_sphere(settings.center, settings.radius, 2.0);
-            } else {
-                iProt = protein->getiProtein();
-            }
-
+            iProt = extractIProteinFromBoxSetting(protein.get(), settings);
             fulliProt = protein->getiProtein();
 
             for (auto &j : this->referenceLigands[i]) {
@@ -150,8 +148,8 @@ namespace SmolDock::Calibration {
                 BOOST_LOG_TRIVIAL(debug)
                     << "Received default heuristics parameters, setting up search domain if relevant";
 
-                double proteinMaxRadius = (settings.type ==
-                                           Engine::AbstractDockingEngine::DockingBoxSetting::Type::centeredAround) ?
+                double proteinMaxRadius = (settings.shape ==
+                                           Engine::AbstractDockingEngine::DockingBoxSetting::Shape::sphere) ?
                                           settings.radius : protein->getMaxRadius();
                 this->hParams = setupSearchDomainIfRelevant(this->heuristicType, proteinMaxRadius);
             }
@@ -161,7 +159,7 @@ namespace SmolDock::Calibration {
                 double referenceScore = std::get<double>(ligandRecord);
 
                 iTransform starting_pos_tr = iTransformIdentityInit(conformer_vector[0].num_rotatable_bond);
-                if (settings.type == Engine::AbstractDockingEngine::DockingBoxSetting::Type::centeredAround) {
+                if (settings.shape == Engine::AbstractDockingEngine::DockingBoxSetting::Shape::sphere) {
                     starting_pos_tr.transl.x() += settings.center[0];
                     starting_pos_tr.transl.y() += settings.center[1];
                     starting_pos_tr.transl.z() += settings.center[2];
@@ -202,7 +200,7 @@ namespace SmolDock::Calibration {
 
         arma::mat coeffs_internalRepr = calibratorEnsLayer.getInitialParamMatrix();
 
-        ens::Adam optimizer(this->initialLearningRate, this->batchSize, 0.9, 0.999, 1e-8, this->maxLearningSteps, 1e-4, true);
+        ens::Adam optimizer(this->stepSize, this->batchSize, 0.9, 0.999, 1e-8, this->maxLearningSteps, 1e-4, true);
         optimizer.Optimize(calibratorEnsLayer, coeffs_internalRepr);
 
         this->optResultMat = coeffs_internalRepr;
@@ -307,7 +305,7 @@ namespace SmolDock::Calibration {
                 meanValueInput = meanValueInput / numElementInBatch;
 
 
-                double deltaCoeff = (this->initialLearningRate /* /learningEpoch */) * meanValueInput * average_loss;
+                double deltaCoeff = (this->stepSize /* /learningEpoch */) * meanValueInput * average_loss;
 
 
                 this->currentCoeffs[idxCoeff] = nonUpdatedCoeff + deltaCoeff;
@@ -315,7 +313,7 @@ namespace SmolDock::Calibration {
                 BOOST_LOG_TRIVIAL(info) << "COEFFICIENT " << coeffName << " ---- ";
                 BOOST_LOG_TRIVIAL(info) << "   Old coeff        : " << nonUpdatedCoeff;
                 BOOST_LOG_TRIVIAL(info) << "   Mean input value : " << meanValueInput;
-                BOOST_LOG_TRIVIAL(info) << "   Learning rate    : " << this->initialLearningRate;
+                BOOST_LOG_TRIVIAL(info) << "   Step Size        : " << this->stepSize;
                 BOOST_LOG_TRIVIAL(info) << "   Avg Loss         : " << average_loss;
                 BOOST_LOG_TRIVIAL(info) << "   Delta coeff      : " << deltaCoeff;
                 BOOST_LOG_TRIVIAL(info) << "   New coeff        : " << this->currentCoeffs[idxCoeff];

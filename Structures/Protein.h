@@ -75,12 +75,11 @@ namespace SmolDock {
         */
         iProtein getiProtein() const;
 
-        /*! Returns an an iProtein object for use in docking engine, comprised of only the amino acid in the sphere of
-         *  given center and radius. All amino acid that have at least one atom in the sphere are included in the resulting
-         *  iProtein : there are no partially included residues.
+        /*! Returns an an iProtein object for use in docking engine, comprised of only the residue in the sphere of
+         *  given center and radius + margin, considering the centroid of the residue.
          *
          * The radius and center value are filled in the resulting iProtein structure. The margin value is added to the
-         * radius during residue selection, but not to the iProtein. This allow the selection of more residues than strictly
+         * radius during atom selection, but not to the iProtein. This allow the selection of more residues than strictly
          * necessary to smooth out docking at the edge of the sphere. Recommended value 2 angstrom
          *
          * \param center center of the sphere (coordinate unit : angstrom)

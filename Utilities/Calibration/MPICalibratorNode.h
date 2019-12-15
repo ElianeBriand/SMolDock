@@ -31,6 +31,7 @@ namespace SmolDock::Calibration {
                 const iProtein& fullProtein_,
                 std::shared_ptr<std::mutex> resultMutex_,
                 std::shared_ptr<std::vector<double>> local_scores_,
+                std::shared_ptr<std::vector<iConformer>> local_iconformers_,
                 std::vector<double> currentCoeffs_);
 
         void operator()(const tbb::blocked_range2d<size_t>& r) const;
@@ -42,6 +43,7 @@ namespace SmolDock::Calibration {
         const iProtein& fullProtein;
         std::shared_ptr<std::mutex> resultMutex;
         std::shared_ptr<std::vector<double>> local_scores;
+        std::shared_ptr<std::vector<iConformer>> local_iconformers;
         std::vector<double> currentCoeffs;
 
     };
@@ -72,6 +74,9 @@ namespace SmolDock::Calibration {
 
         std::map<Calibrator::ReceptorID, std::vector<std::tuple<std::string, double, std::shared_ptr<Molecule>, std::vector<iConformer>>>>
                 ligandSmilesRefScore;
+
+        std::map<Calibrator::ReceptorID, std::vector<std::tuple<std::string, std::shared_ptr<Molecule>,std::shared_ptr<Molecule>, std::vector<iConformer>>>>
+                anchorLigands;
 
         std::vector<std::tuple<std::shared_ptr<Protein>, Engine::AbstractDockingEngine::DockingBoxSetting, iProtein, iProtein> > referenceReceptor;
 
