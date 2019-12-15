@@ -9,6 +9,7 @@ git:
 branches:
   only:
     - master
+    - staging
 addons:
   apt:
     update: true
@@ -16,8 +17,8 @@ addons:
       - sourceline: 'ppa:mhier/libboost-latest'
       - ubuntu-toolchain-r-test
     packages:
-      - g++-7
-      - g++-7-multilib
+      - g++-8
+      - g++-8-multilib
       - libhwloc-plugins
       - openmpi-bin
       - libboost1.70-dev
@@ -32,7 +33,7 @@ addons:
       - wget
       - libsqlite3-dev
 install:
-  - sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-7 90
+  - sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-8 90
 script:
   - set -e
   - export PYTHON_EXECUTABLE=`which python3`
@@ -93,7 +94,7 @@ script:
   - cd ..
   - mkdir build
   - cd build
-  - cmake .. -DRDKIT_ROOT=`pwd`/../rdkit_install
+  - cmake -DVC_NO_FOR_EACH_N=ON -DRDKIT_ROOT=`pwd`/../rdkit_install ..
   - make
   - make test
   - cd ..

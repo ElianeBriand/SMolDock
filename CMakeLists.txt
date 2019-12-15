@@ -65,7 +65,8 @@ if(COVERAGE_BUILD)
 endif()
 
 
-if(CMAKE_COMPILER_IS_GNUCXX)
+option(VC_NO_FOR_EACH_N "Disable std::for_each_n in Vc for old libstdc++" OFF)
+if(VC_NO_FOR_EACH_N)
     add_compile_definitions(Vc_GCC)
 endif()
 
