@@ -341,7 +341,7 @@ int main(int argc, char *argv[]) {
 
 
         sd::Engine::AbstractDockingEngine::DockingBoxSetting setting;
-        setting.type = sd::Engine::AbstractDockingEngine::DockingBoxSetting::Type::centeredAround;
+        setting.shape = sd::Engine::AbstractDockingEngine::DockingBoxSetting::Shape::sphere;
         setting.center = {center_x, center_y, center_z};
         setting.radius = radius;
         sd::Calibration::Calibrator::ReceptorID recID1 =

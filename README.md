@@ -20,13 +20,20 @@ build system:
 - Intel TBB (Apache 2.0)
 - Any standard-compliant MPI implementation (OpenMPI tested to work)
 - Vc SIMD (BSD 3-clauses)
+- Armadillo (Apache 2.0)
 - libunwind (MIT licence)
 - Eigen (MPL2 licence)
 - Boost (Boost software licence)
 - Python libraries for the python modules (PSF)
 
-These can be installed through your packahge manager (you might need the \*-devel package).
 
+These can be installed through your package manager (you might need the \*-devel package). For example, for Ubuntu bionic you would need something like :
+
+```
+apt-get install g++-8 g++-8-multilib libhwloc-plugins openmpi-bin libopenmpi-dev libboost-all-dev lcov zlib1g-dev libzip-dev libbz2-dev lzma liblzma-dev libtbb-dev libopenmpi-dev vc-dev libzstd-dev xz-utils libunwind-dev libarmadillo-dev libeigen3-dev libpython3.7-dev python3.7-dev wget libsqlite3-dev
+```
+
+(See alos .travis.yml, as the CI script generally is able to build and run the software)
 
 You also need to have RDKit build with a specific set of parameters. It is suggested to download the latest release and 
 adapt the following instruction :
@@ -74,7 +81,7 @@ adapt the following instruction :
       -DRDK_TEST_COVERAGE=OFF                \
       -DRDK_TEST_MMFF_COMPLIANCE=OFF         \
       -DRDK_TEST_MULTITHREADED=OFF           \
-      -DRDK_USE_BOOST_IOSTREAMS=OFF           \
+      -DRDK_USE_BOOST_IOSTREAMS=ON           \
       -DRDK_USE_BOOST_REGEX=ON               \
       -DRDK_USE_BOOST_SERIALIZATION=ON       \
       -DRDK_USE_FLEXBISON=OFF                \
@@ -134,6 +141,7 @@ It links with :
 - Boost (Boost software licence)
 - Python libraries for the python modules (PSF)
 - Intel TBB (Apache 2.0)
+- Armadillo (Apache 2.0)
 - Any standard-compliant MPI implementation (tested on OpenMPI)
 - PDBPC (GPLv3)
 

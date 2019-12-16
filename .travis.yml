@@ -14,28 +14,33 @@ addons:
   apt:
     update: true
     sources:
-      - sourceline: 'ppa:mhier/libboost-latest'
-      - ubuntu-toolchain-r-test
     packages:
-      - g++-8
-      - g++-8-multilib
+      - g++
       - libhwloc-plugins
       - openmpi-bin
-      - libboost1.70-dev
+      - libopenmpi-dev
+      - libboost-all-dev
       - lcov
+      - zlib1g-dev
+      - libzip-dev
+      - libbz2-dev
+      - lzma
+      - liblzma-dev
       - libtbb-dev
       - libopenmpi-dev
       - vc-dev
+      - libzstd-dev
+      - xz-utils
       - libunwind-dev
+      - libarmadillo-dev
       - libeigen3-dev
       - libpython3.7-dev
       - python3.7-dev
       - wget
       - libsqlite3-dev
 install:
-  - sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-8 90
+#  - sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-8 90
 script:
-  - set -e
   - export PYTHON_EXECUTABLE=`which python3`
   - export PYTHON_INCLUDE_DIR=$(python3 -c "from distutils.sysconfig import get_python_inc; print(get_python_inc())")
   - export PYTHON_LIBRARY=$(python3 -c "import distutils.sysconfig as sysconfig; print(sysconfig.get_config_var('LIBDIR'))")
@@ -90,7 +95,7 @@ script:
     -DRDK_TEST_COVERAGE=OFF                \
     -DRDK_TEST_MMFF_COMPLIANCE=OFF         \
     -DRDK_TEST_MULTITHREADED=OFF           \
-    -DRDK_USE_BOOST_IOSTREAMS=OFF           \
+    -DRDK_USE_BOOST_IOSTREAMS=ON           \
     -DRDK_USE_BOOST_REGEX=ON               \
     -DRDK_USE_BOOST_SERIALIZATION=ON       \
     -DRDK_USE_FLEXBISON=OFF                \
@@ -100,12 +105,16 @@ script:
   - make
   - make install
   - cd ..
+  - export LD_LIBRARY_PATH=`pwd`/rdkit_install/lib/:$LD_LIBRARY_PATH
   - mkdir build
   - cd build
-  - cmake -DVC_NO_FOR_EACH_N=ON -DRDKIT_ROOT=`pwd`/../rdkit_install ..
+  - cmake -DRDKIT_ROOT=`pwd`/../rdkit_install ..
   - make
-  - make test
+  - ctest --verbose
   - cd ..
+  - sleep 10
 after_success:
-  - chmod +x ./testCoverage.sh
-  - ./testCoverage.sh -t 1 -s 1
+  - export LD_LIBRARY_PATH=`pwd`/rdkit_install/lib/:$LD_LIBRARY_PATH
+  - chmod +x ./runCoverage.sh
+  - ./runCoverage.sh -t 1 -s 1 -l 0
+  - sleep 10

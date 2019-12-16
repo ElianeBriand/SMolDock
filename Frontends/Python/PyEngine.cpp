@@ -45,18 +45,15 @@ void wrap_centerarray_setter(sd::Engine::AbstractDockingEngine::DockingBoxSettin
 void export_Engines() {
 
     p::class_<sd::Engine::AbstractDockingEngine::DockingBoxSetting>("DockingBoxSetting")
-            .def_readwrite("type", &sd::Engine::AbstractDockingEngine::DockingBoxSetting::type)
+            .def_readwrite("shape", &sd::Engine::AbstractDockingEngine::DockingBoxSetting::shape)
             .def_readwrite("radius", &sd::Engine::AbstractDockingEngine::DockingBoxSetting::radius)
             .add_property("center", &wrap_centerarray_getter, &wrap_centerarray_setter);
 
-    p::enum_<sd::Engine::AbstractDockingEngine::DockingBoxSetting::Type>("DockingBoxType")
-            .value("everything", sd::Engine::AbstractDockingEngine::DockingBoxSetting::Type::everything)
-                    //.value("solventExposed", sd::Engine::AbstractDockingEngine::DockingBoxSetting::Type::solventExposed)
-            .value("centeredAround", sd::Engine::AbstractDockingEngine::DockingBoxSetting::Type::centeredAround);
-
     p::enum_<sd::Engine::AbstractDockingEngine::DockingBoxSetting::Shape>("DockingBoxShape")
-            .value("sphere", sd::Engine::AbstractDockingEngine::DockingBoxSetting::Shape::sphere)
-            .value("cube", sd::Engine::AbstractDockingEngine::DockingBoxSetting::Shape::cube);
+            .value("whole_protein", sd::Engine::AbstractDockingEngine::DockingBoxSetting::Shape::whole_protein)
+                    //.value("solventExposed", sd::Engine::AbstractDockingEngine::DockingBoxSetting::Type::solventExposed)
+            .value("sphere", sd::Engine::AbstractDockingEngine::DockingBoxSetting::Shape::sphere);
+
 
     p::enum_<sd::Score::ScoringFunctionType>("ScoringFunctionType")
             .value("VinaRigid", sd::Score::ScoringFunctionType::VinaRigid)
