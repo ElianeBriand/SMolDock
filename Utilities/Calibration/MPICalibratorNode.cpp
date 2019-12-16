@@ -14,7 +14,7 @@
 #include <tbb/blocked_range2d.h>
 
 #include <Engines/Internals/InternalsUtilityFunctions.h>
-#include <Engines/DockingBoxUtils/ExtractProteinFromBox.h>
+#include <Engines/Utils/ExtractProteinFromBox.hpp>
 
 #include <Utilities/LogUtils.h>
 #include <Structures/Atom.h>

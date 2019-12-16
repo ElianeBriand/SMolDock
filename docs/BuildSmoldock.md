@@ -64,7 +64,7 @@ to download the latest release and  adapt the following instruction: (see below 
       -DRDK_TEST_COVERAGE=OFF                \
       -DRDK_TEST_MMFF_COMPLIANCE=OFF         \
       -DRDK_TEST_MULTITHREADED=OFF           \
-      -DRDK_USE_BOOST_IOSTREAMS=OFF           \
+      -DRDK_USE_BOOST_IOSTREAMS=ON           \
       -DRDK_USE_BOOST_REGEX=ON               \
       -DRDK_USE_BOOST_SERIALIZATION=ON       \
       -DRDK_USE_FLEXBISON=OFF                \

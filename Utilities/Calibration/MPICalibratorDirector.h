@@ -83,6 +83,8 @@ namespace SmolDock::Calibration {
                               unsigned int batchSize_ = 5,
                               Heuristics::HeuristicParameters hParams = Heuristics::emptyParameters,
                               const std::string& restoreArchivePrefix_ = "mpicalibrator_out");
+        
+        virtual ~MPICalibratorDirector() = default;
 
         virtual bool setupCalibration();
         virtual bool runCalibration();
