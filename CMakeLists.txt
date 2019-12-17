@@ -65,7 +65,8 @@ if(COVERAGE_BUILD)
 endif()
 
 
-if(CMAKE_COMPILER_IS_GNUCXX)
+option(VC_NO_FOR_EACH_N "Disable std::for_each_n in Vc for old libstdc++" OFF)
+if(VC_NO_FOR_EACH_N)
     add_compile_definitions(Vc_GCC)
 endif()
 
@@ -86,8 +87,8 @@ ExternalProject_Add(PDBPC
 set(PDBPC_LIB_PATH  ${CMAKE_CURRENT_BINARY_DIR}/PDBPC/src/PDBPC-build/libpdbpc_static_pic.a)
 ## MPI #######################
 # Edit this if you have a specific MPI setup
-#find_package(MPI REQUIRED)
-#include_directories(${MPI_INCLUDE_PATH})
+find_package(MPI REQUIRED)
+include_directories(${MPI_INCLUDE_PATH})
 
 ## END MPI ###################
 
@@ -236,7 +237,6 @@ target_link_libraries(libsmoldock ${PDBPC_LIB_PATH})
 
 add_executable(smoldock Frontends/CLI_frontend.cpp)
 target_link_libraries(smoldock libsmoldock)
-target_link_libraries(smoldock boost_log_setup boost_log boost_thread boost_filesystem boost_program_options)
 target_link_libraries(smoldock tbb)
 target_link_libraries(smoldock rdkit_base avalon_clib AvalonLib freesasa_clib FreeSASALib maeparser )
 target_link_libraries(smoldock coordgen RingDecomposerLib URFLib RDGeneral RDStreams DataStructs )
@@ -245,11 +245,12 @@ target_link_libraries(smoldock Catalogs GraphMol Depictor SmilesParse FileParser
 target_link_libraries(smoldock FilterCatalog FragCatalog Descriptors Fingerprints PartialCharges MolTransforms ForceFieldHelpers)
 target_link_libraries(smoldock DistGeomHelpers MolAlign MolChemicalFeatures ShapeHelpers MolCatalog MolDraw2D FMCS MolHash MMPA)
 target_link_libraries(smoldock StructChecker ReducedGraphs Trajectory SubstructLibrary RGroupDecomposition MolInterchange SLNParse)
-target_link_libraries(smoldock MolStandardize SimDivPickers hc InfoTheory ChemicalFeatures ConformerParser)
+target_link_libraries(smoldock MolStandardize SimDivPickers hc InfoTheory ChemicalFeatures ConformerParser )
+target_link_libraries(smoldock boost_log_setup boost_log boost_thread boost_filesystem boost_program_options boost_iostreams)
 target_link_libraries(smoldock unwind)
 target_link_libraries(smoldock Vc)
 target_link_libraries(smoldock lapack blas)
-target_link_libraries(smoldock pthread)
+target_link_libraries(smoldock z zstd zip lzma bz2 pthread)
 
 
 if(SMOLDOCK_INTEL_VTUNE_EXPORT_SYMBOL)
@@ -264,8 +265,6 @@ endif()
 
 add_executable(goldenRecordGenerator Frontends/goldenRecordGenerator.cpp)
 target_link_libraries(goldenRecordGenerator libsmoldock)
-target_link_libraries(goldenRecordGenerator boost_log_setup boost_log boost_thread)
-target_link_libraries(goldenRecordGenerator tbb)
 target_link_libraries(goldenRecordGenerator rdkit_base avalon_clib AvalonLib freesasa_clib FreeSASALib maeparser )
 target_link_libraries(goldenRecordGenerator coordgen RingDecomposerLib URFLib RDGeneral RDStreams DataStructs )
 target_link_libraries(goldenRecordGenerator RDGeometryLib Alignment EigenSolvers Optimizer ForceField DistGeometry)
@@ -274,15 +273,16 @@ target_link_libraries(goldenRecordGenerator FilterCatalog FragCatalog Descriptor
 target_link_libraries(goldenRecordGenerator DistGeomHelpers MolAlign MolChemicalFeatures ShapeHelpers MolCatalog MolDraw2D FMCS MolHash MMPA)
 target_link_libraries(goldenRecordGenerator StructChecker ReducedGraphs Trajectory SubstructLibrary RGroupDecomposition MolInterchange SLNParse)
 target_link_libraries(goldenRecordGenerator MolStandardize SimDivPickers hc InfoTheory ChemicalFeatures ConformerParser)
+target_link_libraries(goldenRecordGenerator boost_log_setup boost_log boost_thread boost_filesystem boost_program_options boost_iostreams)
+target_link_libraries(goldenRecordGenerator tbb)
 target_link_libraries(goldenRecordGenerator unwind)
 target_link_libraries(goldenRecordGenerator Vc)
 target_link_libraries(goldenRecordGenerator lapack blas)
-target_link_libraries(goldenRecordGenerator pthread)
+target_link_libraries(goldenRecordGenerator z zip lzma bz2 pthread)
 
 
 add_executable(mpicalibrator Frontends/mpicalibrator.cpp ${MPI_SOURCE_LIST})
 target_link_libraries(mpicalibrator libsmoldock)
-target_link_libraries(mpicalibrator boost_log_setup boost_log boost_thread boost_filesystem boost_program_options)
 target_link_libraries(mpicalibrator tbb)
 target_link_libraries(mpicalibrator rdkit_base avalon_clib AvalonLib freesasa_clib FreeSASALib maeparser )
 target_link_libraries(mpicalibrator coordgen RingDecomposerLib URFLib RDGeneral RDStreams DataStructs )
@@ -292,11 +292,12 @@ target_link_libraries(mpicalibrator FilterCatalog FragCatalog Descriptors Finger
 target_link_libraries(mpicalibrator DistGeomHelpers MolAlign MolChemicalFeatures ShapeHelpers MolCatalog MolDraw2D FMCS MolHash MMPA)
 target_link_libraries(mpicalibrator StructChecker ReducedGraphs Trajectory SubstructLibrary RGroupDecomposition MolInterchange SLNParse)
 target_link_libraries(mpicalibrator MolStandardize SimDivPickers hc InfoTheory ChemicalFeatures ConformerParser)
+target_link_libraries(mpicalibrator boost_log_setup boost_log boost_thread boost_filesystem boost_program_options boost_iostreams)
 target_link_libraries(mpicalibrator unwind)
 target_link_libraries(mpicalibrator Vc)
 target_link_libraries(mpicalibrator lapack blas)
 target_link_libraries(mpicalibrator boost_mpi mpi_cxx mpi)
-target_link_libraries(mpicalibrator pthread)
+target_link_libraries(mpicalibrator z zip lzma bz2 pthread)
 
 
 
@@ -309,7 +310,7 @@ set_target_properties(PySmolDock PROPERTIES OUTPUT_NAME "PySmolDock")
 target_compile_definitions(PySmolDock PUBLIC BOOST_LOG_DYN_LINK)
 target_compile_definitions(PySmolDock PUBLIC ARMA_DONT_USE_WRAPPER)
 target_link_libraries(PySmolDock libsmoldock)
-target_link_libraries(PySmolDock boost_log_setup boost_log boost_thread)
+
 target_link_libraries(PySmolDock tbb)
 target_link_libraries(PySmolDock rdkit_base avalon_clib AvalonLib freesasa_clib FreeSASALib maeparser )
 target_link_libraries(PySmolDock coordgen RingDecomposerLib URFLib RDGeneral RDStreams DataStructs )
@@ -319,9 +320,10 @@ target_link_libraries(PySmolDock FilterCatalog FragCatalog Descriptors Fingerpri
 target_link_libraries(PySmolDock DistGeomHelpers MolAlign MolChemicalFeatures ShapeHelpers MolCatalog MolDraw2D FMCS MolHash MMPA)
 target_link_libraries(PySmolDock StructChecker ReducedGraphs Trajectory SubstructLibrary RGroupDecomposition MolInterchange SLNParse)
 target_link_libraries(PySmolDock MolStandardize SimDivPickers hc InfoTheory ChemicalFeatures ConformerParser)
+target_link_libraries(PySmolDock boost_log_setup boost_log boost_thread boost_filesystem boost_program_options boost_iostreams)
 target_link_libraries(PySmolDock unwind)
 target_link_libraries(PySmolDock Vc)
-target_link_libraries(PySmolDock lapack blas)
+target_link_libraries(PySmolDock z zstd zip lzma bz2 lapack blas)
 target_link_libraries(PySmolDock pthread)
 
 IF(CMAKE_BUILD_TYPE MATCHES Debug)
@@ -350,7 +352,7 @@ add_executable(complete_test_suite ${TEST_SOURCE_LIST})
 
 set_target_properties(complete_test_suite PROPERTIES LINK_FLAGS "   ")
 target_link_libraries(complete_test_suite libsmoldock)
-target_link_libraries(complete_test_suite boost_log_setup boost_log boost_thread boost_filesystem boost_program_options)
+
 target_link_libraries(complete_test_suite tbb)
 target_link_libraries(complete_test_suite rdkit_base avalon_clib AvalonLib freesasa_clib FreeSASALib maeparser )
 target_link_libraries(complete_test_suite coordgen RingDecomposerLib URFLib RDGeneral RDStreams DataStructs )
@@ -360,10 +362,11 @@ target_link_libraries(complete_test_suite FilterCatalog FragCatalog Descriptors 
 target_link_libraries(complete_test_suite DistGeomHelpers MolAlign MolChemicalFeatures ShapeHelpers MolCatalog MolDraw2D FMCS MolHash MMPA)
 target_link_libraries(complete_test_suite StructChecker ReducedGraphs Trajectory SubstructLibrary RGroupDecomposition MolInterchange SLNParse)
 target_link_libraries(complete_test_suite MolStandardize SimDivPickers hc InfoTheory ChemicalFeatures ConformerParser)
+target_link_libraries(complete_test_suite boost_log_setup boost_log boost_thread boost_filesystem boost_program_options boost_iostreams)
 target_link_libraries(complete_test_suite unwind)
 target_link_libraries(complete_test_suite Vc)
 target_link_libraries(complete_test_suite lapack blas)
-target_link_libraries(complete_test_suite pthread)
+target_link_libraries(complete_test_suite z zip zstd lzma bz2 pthread)
 target_link_libraries(complete_test_suite ${Boost_LIBRARIES} boost_unit_test_framework )
 #target_link_libraries(complete_test_suite Vc)
 
