@@ -29,11 +29,8 @@ build system:
 
 These can be installed through your package manager (you might need the \*-devel package). For example, for Ubuntu bionic you would need something like :
 
-```
-apt-get install g++-8 g++-8-multilib libhwloc-plugins openmpi-bin libopenmpi-dev libboost-all-dev lcov zlib1g-dev libzip-dev libbz2-dev lzma liblzma-dev libtbb-dev libopenmpi-dev vc-dev libzstd-dev xz-utils libunwind-dev libarmadillo-dev libeigen3-dev libpython3.7-dev python3.7-dev wget libsqlite3-dev
-```
 
-(See alos .travis.yml, as the CI script generally is able to build and run the software)
+(See also .travis.yml, as the CI script generally is able to build and run the software)
 
 You also need to have RDKit build with a specific set of parameters. It is suggested to download the latest release and 
 adapt the following instruction :
