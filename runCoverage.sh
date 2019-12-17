@@ -24,7 +24,7 @@ if [[ $LOCAL != 0 ]] ;
 then
 cmake .. -DCOVERAGE_BUILD=ON -DCMAKE_BUILD_TYPE=Debug
 else
-cmake .. -DCOVERAGE_BUILD=ON -DCMAKE_BUILD_TYPE=Debug -DRDKIT_ROOT=`pwd`/../rdkit_install
+cmake .. -DCOVERAGE_BUILD=ON -DCMAKE_BUILD_TYPE=Debug -DRDKIT_ROOT=`pwd`/../rdkit_install 
 fi
 make -j$THREAD complete_test_suite
 ./complete_test_suite
